@@ -2049,3 +2049,391 @@ Additions to the list in §6, in order of value:
     inside the simulation, including four that happen outside it.
 13. **Flag verbatim sentence reuse across sibling nodes.** Five sentences repeat
     across Qwen's 22 event actions, one of them four times; GLM repeats none.
+
+---
+
+# Fourth pass — the two-model ensemble
+
+**Date:** 2026-08-16 · **Rubric:** unchanged, same anchors, same evaluator.
+
+## 18. Headline
+
+**The ensemble is the best arm by a clear margin, and the extra words over Qwen
+are substance, not padding.**
+
+| Arm | Transitions total | vs ensemble |
+|---|---|---|
+| Qwen alone | 90 / 180 (50.0%) | −40 |
+| Qwen + grounding | 111 / 180 (61.7%) | −19 |
+| GLM alone | 117 / 180 (65.0%) | −13 |
+| **ENSEMBLE** | **130 / 180 (72.2%)** | — |
+
+Per node: sc-001 **40**, sc-002 **47**, sc-003 **43**. `sc-002` at 47/60 is the
+highest-scoring node in the entire four-pass evaluation, and its specimen is the
+best single artifact any arm has produced.
+
+It wins nine dimensions against GLM alone and loses three — and **all three losses
+are caused by stages you have not implemented**, not by the split:
+
+| Dimension | GLM | ensemble | Δ |
+|---|---|---|---|
+| R2 · Leakage resistance | 2.33 | **5.00** | **+2.67** |
+| T1 · Envelope discipline | 1.67 | **3.67** | **+2.00** |
+| E · Dramatic competence | 3.33 | **4.33** | **+1.00** |
+| G · Independent-writer band | 2.00 | **3.00** | **+1.00** |
+| T3 · Specimen craft | 3.33 | **4.33** | **+1.00** |
+| R1 · Fidelity of inference | 2.67 | **3.33** | +0.67 |
+| A · Internal consistency | 3.33 | 3.67 | +0.33 |
+| C · Specificity | 4.33 | **4.67** | +0.33 |
+| F · Psychological plausibility | 4.00 | **4.33** | +0.33 |
+| B · Referential integrity | 3.67 | 3.00 | −0.67 *(no continuity stage)* |
+| D · Schema/instruction compliance | 4.00 | 2.00 | −2.00 *(two stages missing)* |
+| T2 · Deliberation honesty | 4.33 | 2.00 | −2.33 *(no risks/confidence field)* |
+
+**First, a confound you did not flag.** The writer is
+`glm-5.2-abliterated-q3km` — a 3-bit-quantised, abliterated variant. The "GLM
+alone" arm at 117/180 was `glm-5.2`. These are not the same model, so "the split
+works" is entangled with "a Q3_K_M abliterated quant is used instead". The
+direction is unknown but a heavily quantised abliterated model would normally be
+expected to be *weaker*, which makes the +13 a conservative estimate rather than a
+flattering one. Worth a same-weights rerun before publishing.
+
+## 19. Does relieving GLM of the paperwork buy depth, or just words?
+
+**Depth.** The ensemble runs at 65% of GLM's word count and retains essentially all
+of its measured depth, while beating it on the two things the instrument exists to
+produce:
+
+| Counter (3 scenes) | GLM | Qwen | ensemble | ens/GLM |
+|---|---|---|---|---|
+| Words | 47,964 | 16,518 | 31,062 | 65% |
+| ToM towers at depth 3 | 11 | 10 | 10 | 91% |
+| ToM towers with a named error | 11 | 10 | 10 | 91% |
+| Trajectory phases | 16 | 14 | 15 | 94% |
+| Sense channels filled | 28 | 28 | 28 | 100% |
+| Options weighed | 13 | 10 | 13 | 100% |
+| **Specimen lines** | 19 | 23 | **21** | **111%** |
+| **Risks tested against dialogue** | 14 | 6 | **15** | **107%** |
+| Facts cited | 13 | 11 | **0** | *(no continuity stage)* |
+
+Against Qwen the 14,500 extra words buy +40 rubric points, +5 risks tested and +3
+options weighed at identical ToM depth — and, more to the point, they buy the
+difference between a specimen that deletes a character from the room and one that
+writes both halves of the scene.
+
+The qualitative version is visible in one place. Every prior arm failed sc-002 the
+same way: GLM wrote a monologue at a pre-beaten Lieutenant, Qwen deleted him,
+grounded Qwen restored him to the analysis and then deleted him from the specimen.
+The ensemble writes the scene:
+
+> **ch-04** — "…Your officer is dead because he was standing between a professional
+> and an exit. Nothing here is a mystery to me."
+> **LIEUTENANT** — "This is my scene. I have a dead cop on the floor and a suspect
+> who dropped out a window, and I don't know who the hell you are or what branch
+> you're with, and I'm not letting you walk through my evidence —"
+
+That is the actual dramaturgy of the real scene — an officer asserting jurisdiction
+against something that outranks him, and losing — reached blind, by the only arm to
+reach it. And `voices_distinct` earns it with evidence rather than assertion: Smith
+"never a question, never a request", clinical register; the Lieutenant in
+"fragments, questions, and possessives ('my scene,' 'my evidence')".
+
+**So: worth 11.7 minutes a scene against Qwen's 2.6, yes** — 4.5× the wall clock for
++22 points and a categorical improvement in the artifact the whole method is built
+to produce. Whether it is worth it against **Qwen+grounding** (2.8 min, 111/180) is
+the closer call: 4.2× the cost for +19 points. On the evidence here I would still
+say yes, because the gain is concentrated in T3, E and R1 — specimen craft,
+dramatic construction, and forecast quality — which are the dimensions a training
+corpus is actually harvesting. If the budget forces a choice, Qwen+grounding is the
+volume option and the ensemble is the one that produces usable exemplars.
+
+## 20. Is the 1.0 grounding-violation figure real?
+
+**Partly. It is better than you reported and it is being measured by a broken
+check.** Two separate things:
+
+**The roster fix is real and it worked.** `allowed_speakers()` now derives from the
+script's speaker cues alone, and all three rosters are correct:
+`sc-001 ['BIG COP']`, `sc-002 ['ch-04','LIEUTENANT']`, `sc-003 ['ch-02']`. That is
+the first arm in four with no manufactured roster, and the specimens honour it —
+including sc-001, where all seven lines go to the one character the script puts on
+screen. The EXP-002 bug I flagged last pass is closed.
+
+**But every reported violation is a false positive.** `check_grounding()` reads
+`c.get("to")` and `c.get("from")`; the ensemble clerk emits `before`/`after`
+(`ensemble.py:188`). So:
+
+- the domain check sees `to = None` and fires `null is outside the declared domain`
+  on all three scenes — **all three reported violations are this artifact**;
+- the no-op check is gated on `c.get("from") is not None`, so it **never runs**.
+  The two real no-ops were caught only by the separate ensemble-side check.
+
+Re-running with the fields mapped:
+
+| Scene | as reported | corrected |
+|---|---|---|
+| sc-001 | `null outside domain` | `state_changes[0] is a no-op ('searching' -> same)` |
+| sc-002 | `null outside domain` | **clean** |
+| sc-003 | `null outside domain` | `state_changes[0] is a no-op ('unspoken' -> same)` |
+
+True count **0.67/scene, and both are the no-ops you already catch elsewhere** — so
+the ensemble's real grounding record is *better* than 1.0, but the counter that
+produced 1.0 is not measuring it. One-line fix: normalise `before`/`after` to
+`from`/`to` before the check, or read both.
+
+Also worth noting: `binding.on_screen` for sc-001 is `["BIG COP"] × 10`. The
+`minItems`/`maxItems` of 1 was not enforced by the grammar. Harmless here because
+every entry is the correct speaker, but the length constraint is evidently not
+binding and should not be relied on.
+
+## 21. Is one change per scene honest restraint or under-recording?
+
+**Restraint on two scenes, under-recording on one, and the vocabulary is the real
+limit.**
+
+I read the analyses for changes the clerk could have recorded and did not:
+
+- **sc-002 — correct, and the only clean state change in the arm.**
+  `ch-04.pursuit_phase: hunting_trinity → hunting_neo` is exactly right, in-domain,
+  and is the scene's actual consequence. Nothing else in that analysis moves a
+  declared variable. Honest.
+- **sc-003 — defensible.** The recorded no-op on `oracle_love_prophecy_status` is
+  justified from the text ("The prophecy sits in her like a splinter she has grown
+  around"). Trinity's declared vocabulary is three relationship/prophecy variables
+  and the scene is a physical escape, so there is genuinely almost nothing to
+  record. The clerk's own `not_expressible` says so precisely. Honest — though a
+  no-op should arguably be recorded as *nothing* rather than as a change.
+- **sc-001 — under-recorded, and wrongly.** The clerk recorded
+  `ch-01.matrix_awareness: searching → searching` justified by the analysis saying
+  Neo is "asleep in his apartment… having dozed off at his desk again". Neo is not
+  in this scene. The one thing the analysis *does* assert about a declared variable
+  is that the police operation is being directed by something above the police —
+  `gr-01.awareness_of_neo` and `ch-04.pursuit_phase` are both live and neither was
+  touched. The clerk recorded a non-event for an absent character and missed the
+  scene's actual state implication.
+
+**The `not_expressible` field is the most valuable thing in this arm and it is
+telling you the vocabulary is too small.** It flags that Smith's contempt, nausea
+and humiliation "are internal states not covered by the available variables
+(pursuit_phase, escape_desire_revealed, status)". Three variables for the film's
+antagonist. That is not clerk timidity — it is an entity layer that declared too
+few variables, which is the same finding as the 9-vs-17 entity result in §15.3,
+arriving from the other direction. **The clerk is honest; the dossier is thin.**
+
+One instruction change worth making: "an approximation recorded as fact is worse
+than a gap" is the right principle, but it currently produces a no-op where it
+should produce silence. Ask for changes only, allow an empty array, and let
+`not_expressible` carry the rest. That would turn 3 recorded changes (1 real) into
+1 recorded change (1 real) plus a longer, more useful gap report.
+
+## 22. The two missing stages, and where they belong
+
+`dynamics` and **`continuity`** are both absent — you flagged the first, not the
+second. Continuity costs more: `facts_cited` is **0** against GLM's 13, so no node
+in this arm states what it inherited, from where, or what it must not contradict.
+That is the whole of my B −0.67, and it removes the audit trail that made GLM's
+sc-002 legible in pass one.
+
+Also `decision` carries only `state_changes_implied`. No `resolution`, no
+`confidence`, no `risks`. Consequences:
+
+- **The node never commits.** `resolution` is where a transition says plainly what
+  it decided; without it the arm's best analyses end without a verdict.
+- **The specimen's loop is open.** `risks_checked` has no declared risks to test
+  against, so the specimen call invents its own — and marks **0 of 15** as not
+  avoided, across all three scenes. Compare GLM alone, which tested 14 and honestly
+  failed one. Risks a model writes for itself and then passes on every count are
+  the same failure the craft sheet names for alternatives that lose by a mile. This
+  is the entire T2 = 2.00 and the reason T3 is 4.33 rather than 5.
+
+**Where they belong.** `dynamics` on the **writer**: an object changing custody and
+meaning, a location changing who controls it, is semantics, and the axis
+vocabulary is free text. `continuity` split — `established_facts_used` and
+`state_preconditions` on the **clerk** (they are lookups against files on disk, and
+`state_preconditions` is the same closed-vocabulary job it already does well),
+`contradictions_checked` and `forward_commitments` on the **writer** (they are
+judgements). And `risks` must move back onto the writer's craft call, before the
+specimen, or the specimen is grading its own exam.
+
+## 23. Per-node commentary (ensemble)
+
+### sc-001 — 40/60
+
+**A = 3.** First arm to identify the scene correctly: "The story opens at the Heart
+O' the City Hotel, room 303, at night. A large police officer leads a heavily armed
+SWAT team up the stairwell." But the node runs two scenes at once — the craft and
+specimen build a SWAT beat while the recorded state change is justified by "Neo is
+asleep in his apartment", a different character in a different building.
+
+**B = 3.** The change names a real variable of a real entity at an in-domain value.
+Docked for the no-op and for the absent continuity block leaving zero cited
+inherited facts.
+
+**C = 5.** "the point man's hand trembles slightly, the team leader's jaw set
+against his own fear"; "One is a mistake, two is a pattern, three is a
+catastrophe"; "Then you come down here and tell my guys' families you sent them in
+blind." Untransplantable.
+
+**D = 2.** `dynamics` and `continuity` absent; `decision` reduced to one member.
+
+**E = 4.** A real rising shape — procedural confidence → stress → accusation →
+mutiny — with a named turning point (the radio traffic) and a value that flips
+(institutional trust). Docked because the antagonist is a silence, and because a
+155-word beat is scaled to a sequence.
+
+**F = 4.** Mechanism, not assertion: "He needs a number. A number is something he
+can process." Docked because one of two psych blocks is for a character who is not
+present.
+
+**G = 2.** In the right room with the only speaker on the script's roster, so no
+longer arbitrary. But 155 words at ratio 0.182 is ≈28 words of dialogue and this is
+a seven-line mutiny; and the reading inverts the script, whose cops "have done this
+a hundred times, they know they've got her" — complacent, not frightened.
+
+**T1 = 3.** Location, time and roster correct — genuinely, for the first time.
+Docked for the word/ratio budget and the ten-fold `on_screen` repetition.
+
+**T2 = 2.** Three argued alternatives with one `nearly_chosen`, but no resolution,
+no confidence, no risks. A decision block with none of those is not a decision on
+the record.
+
+**T3 = 4.** Seven lines to the correct character with a real arc; `voices_distinct`
+refuses the dodge and argues a one-voice/one-silence structure; `what_this_exposes`
+produces a genuine finding — "the horror is… the command structure's willingness to
+spend police officers as reconnaissance." Held off 5 because all five self-written
+risks are marked avoided.
+
+**R1 = 3.** Right room, right character, right position, right kind of unit; wrong
+psychology and over-scaled. A legible, instructive miss.
+
+**R2 = 5.** Zero 6-gram hits; the invented radio-mutiny material is demonstrably
+not the scene.
+
+### sc-002 — 47/60 *(best node in the evaluation)*
+
+**A = 4.** Coherent and correctly continuous; `situation` names the envelope
+accurately ("two figures: Smith and a police lieutenant, exterior, night,
+approximately 146 words"). Docked for the missing continuity block and for
+`dramatic_function` reasoning from `pl-05:st4` and `pl-01:st12` — forward spine
+steps it should not have, via the untruncated-spine leak of §12.1, still live.
+
+**B = 3.** `ch-04.pursuit_phase: hunting_trinity → hunting_neo` is the only clean
+state change in the arm. Docked for zero cited facts and for `LIEUTENANT` being a
+raw cue with no entity behind it — a real hole in the entity layer, correctly
+surfaced rather than papered over.
+
+**C = 5.** "The shell casings on the north wall are consistent with your officer's
+sidearm — he fired seven times and hit nothing." Both voices untransplantable.
+
+**D = 2.** As above.
+
+**E = 5.** The best dramatic construction in any arm. Equal forces at entry — the
+Lieutenant has jurisdiction, a body, and standing — dismantled by argument rather
+than fiat, turning on a named value that flips. And `what_this_exposes` correctly
+relocates the meaning: "The analysis treated the lieutenant as an obstacle Smith
+overcomes. The dialogue reveals he is a mirror."
+
+**F = 4.** The capitulation is traced through a mechanism — "a man surrenders his
+authority because something in the room makes that authority feel like a fiction."
+Docked because the character the node itself calls the scene's centre gets no
+psychology block, having no entity id.
+
+**G = 4.** The highest in the evaluation. Given this envelope a competent writer
+writes exactly this two-hander, and the specifics are derived from the roster
+rather than reachable from a one-line prompt. Held off 5 because the forecast has
+the Lieutenant capitulate into taking instructions where the script keeps him
+defiant to the last line — the model took the tidier resolution.
+
+**T1 = 4.** Both roster members honoured with lines split 5/3. Docked because eight
+lines, several long, overrun 146 words at ratio 0.471 (≈69 words of dialogue).
+
+**T2 = 2.** Three alternatives, one `nearly_chosen`; no resolution, confidence or
+risks; flip conditions still genre-counterfactuals.
+
+**T3 = 5.** The best specimen in the evaluation. Correct pair, real two-hander, a
+properly evidenced swap test naming grammatical signatures, and a
+`what_this_exposes` that overturns the analysis above it.
+
+**R1 = 4.** The closest blind forecast anywhere in this evaluation: it predicts the
+real scene's actual dramaturgy, which no other arm did. Docked because the
+mechanism of the loss differs — the script's Smith wins with one flat statement
+about the Lieutenant's dead men; the ensemble's wins by out-detecting him over four
+speeches.
+
+**R2 = 5.** Zero hits. The invented specifics ("room 101, 1408 Pearson Avenue",
+"seventy-two hours") appear in neither the script nor the artifacts.
+
+### sc-003 — 43/60
+
+**A = 4.** Coherent and continuous, and "The tracking bug remains in Smith's
+possession, unused" is read correctly off the live state (`ob-04.location =
+in_smiths_case`) — evidence the writer is actually consulting the state model.
+Docked for the missing continuity block.
+
+**B = 3.** Real variable, in-domain value, but a no-op; zero cited facts.
+
+**C = 4.** "the receiver clatters against the phone body — the sound of fingers
+losing grip on a physical object as the sensory feed dissolves" is excellent.
+Docked because the craft block is more generic than the other two nodes.
+
+**D = 2.** As above, plus the specimen meets its six-line minimum only by counting
+three non-verbal sound cues as lines, against a field that asks for "what they
+actually say".
+
+**E = 4.** Real escalation with a genuine clock and a well-identified pivot (the
+phone as lifeline, not convenience). Docked because the Agents never act on stage.
+
+**F = 5.** The deepest psychology in the evaluation: five trajectory phases each
+with a perceivable trigger, three ToM towers each with a named and costed error,
+one of them quantified ("She has applied a 2x multiplier"). And a real revision:
+"The analysis said the fear was 'cordoned.' The lines show the cordons failing at
+the rate physics demands, not at the rate willpower commands."
+
+**G = 3.** For the first time in any arm the forecast is correctly scaled — roughly
+ten words of dialogue against an envelope of 157 words at ratio 0.095 (≈15 words).
+Squarely in band: given the envelope alone, "Trinity escapes through the phone" is
+what a competent writer guesses. Held at 3 because it is the wrong beat and the
+officers' number and disposition are invented.
+
+**T1 = 4.** Location, time, roster all correct **and the dialogue ratio honoured** —
+the only node in the evaluation to respect the word budget. Docked because half the
+specimen is non-speech, which is how the budget was met.
+
+**T2 = 2.** As above.
+
+**T3 = 4.** The verbal lines have a real degradation arc ("I'm in" → "Now. Now —" →
+"come on come on come on"), and `voices_distinct` refuses the single-speaker dodge,
+naming the single-voice risk instead. Docked for the three stage directions.
+
+**R1 = 3.** Wrong beat — the phone escape, nine scenes early — but the right room,
+character and mechanism, at the right scale. The same miss GLM made, better scaled.
+
+**R2 = 5.** Zero hits in 282 specimen 6-grams, the largest clean specimen corpus of
+any arm.
+
+## 24. Verdict
+
+**Adopt the ensemble, and fix the three gaps before publishing anything about it.**
+
+It is the best arm on the rubric (130/180 against 117/111/90), it produces the best
+specimen and the best blind forecast in four passes, and it is the cleanest on
+leakage by a wide margin — 0.003% overall and **0 of 282** specimen 6-grams, against
+GLM's one reproduced line of real dialogue. The three-tier split is doing what it
+was designed to do: the depth counters are GLM's at 65% of the words, and the state
+changes are Qwen's at 1% of model time.
+
+What is not yet established, and what to do:
+
+1. **Rerun with `glm-5.2`, not the abliterated Q3_K_M quant.** The headline
+   comparison currently changes two variables.
+2. **Implement `continuity` and `dynamics`,** split as in §22. They are the whole
+   of the D and B losses and most of the T2 loss.
+3. **Move `risks` back to the writer's craft call.** 0 of 15 self-written risks
+   marked not-avoided is the arm's one genuinely unfalsifiable field.
+4. **Fix `check_grounding` to read `before`/`after`.** It is currently reporting
+   three false positives and silently skipping the no-op check.
+5. **Let the clerk record an empty change list.** Two of its three changes are
+   no-ops that exist because it was asked for changes and found none.
+6. **Widen the state vocabulary.** Three variables for Agent Smith is why
+   `not_expressible` had to carry his humiliation, nausea and contempt. Same
+   finding as §15.3 from the other end.

@@ -239,8 +239,17 @@ def check_grounding(tr: dict, scene, entities: dict, speakers: list[str],
                 v.append(f"state_changes[{i}]: {var!r} is not a variable of {eid!r}"
                          + (f" (it belongs to {_owner(entities, var)})"
                             if _owner(entities, var) else ""))
-        if c.get("from") is not None and c.get("from") == c.get("to"):
-            v.append(f"state_changes[{i}] is a no-op ({c.get('from')!r} -> same)")
+        # Two schemas name these fields differently — the transition schema uses
+        # from/to, the ensemble clerk emits before/after. Reading only one pair
+        # made every check silently wrong on the other: `to` came back None, so
+        # the domain test flagged a violation on every single change, and the
+        # no-op test, gated on `from is not None`, never ran at all. Three
+        # reported violations were all false and two real no-ops went unseen.
+        # A check that reads the wrong key does not fail loudly, it lies.
+        frm = c.get("from", c.get("before"))
+        to = c.get("to", c.get("after"))
+        if frm is not None and frm == to:
+            v.append(f"state_changes[{i}] is a no-op ({frm!r} -> same)")
 
         # Naming the right variable and moving it to a legal value are separate
         # questions, and only the first was being asked. An evaluation measured
@@ -250,8 +259,7 @@ def check_grounding(tr: dict, scene, entities: dict, speakers: list[str],
         spec_v = ((entities.get(eid) or {}).get("state_variables") or {}).get(var)
         if isinstance(spec_v, dict):
             dom = spec_v.get("domain") or spec_v.get("enum") or spec_v.get("values")
-            to = c.get("to")
-            if dom:
+            if dom and to is not None:
                 val = to.get("value") if isinstance(to, dict) and "value" in to else to
                 if val not in dom:
                     v.append(f"state_changes[{i}]: {json.dumps(val)[:40]} is outside the "
