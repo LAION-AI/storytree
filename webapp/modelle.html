@@ -1,0 +1,412 @@
+<meta charset="utf-8">
+<title>Welches Modell wofür</title>
+<style>
+:root{
+  --ground:#e9ebee;--surface:#f7f8fa;--surface-2:#eef0f3;--sunken:#dfe3e8;
+  --ink:#161a1f;--ink-2:#39424d;--muted:#66717e;--faint:#93a0ae;
+  --line:#cfd6de;--line-soft:#dde3ea;
+  --heat:#c2451a;--heat-soft:#f0d5c9;--quench:#2f6f8f;--quench-soft:#cfdfe8;
+  --good:#3f7d55;--good-soft:#d6e6db;--crit:#b03b26;--crit-soft:#f2d7d1;
+  --warn:#8a6a12;--warn-soft:#f0e6cc;
+  --shadow:0 1px 2px rgba(20,28,38,.07),0 10px 28px -14px rgba(20,28,38,.25);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;
+  --line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--quench:#6aa8c6;--quench-soft:#152935;
+  --good:#67a97e;--good-soft:#17281d;--crit:#d4715c;--crit-soft:#2e1713;
+  --warn:#c99b45;--warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.75);
+}}
+:root[data-theme="dark"]{
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;
+  --line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--quench:#6aa8c6;--quench-soft:#152935;
+  --good:#67a97e;--good-soft:#17281d;--crit:#d4715c;--crit-soft:#2e1713;
+  --warn:#c99b45;--warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.75);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0}
+a{color:var(--quench)}
+.wrap{max-width:950px;margin:0 auto;padding:0 26px 100px}
+header.top{border-bottom:1px solid var(--line);background:var(--surface);margin-bottom:40px}
+header.top .wrap{padding-top:50px;padding-bottom:32px}
+.kicker{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--heat);
+  font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(29px,4.8vw,42px);line-height:1.12;letter-spacing:-.02em;margin-bottom:14px}
+.standfirst{font-size:18.5px;color:var(--ink-2);max-width:63ch;font-family:var(--serif);line-height:1.5}
+.meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:20px;font-size:12.5px;color:var(--faint);
+  font-family:var(--mono)}
+h2{font-size:25px;letter-spacing:-.015em;margin:52px 0 8px}
+h2 .num{font-family:var(--mono);font-size:12px;color:var(--heat);display:block;
+  margin-bottom:7px;letter-spacing:.08em;font-weight:700}
+h3{font-size:17.5px;margin:30px 0 9px}
+p{margin:0 0 14px;max-width:68ch}
+ul,ol{max-width:66ch;padding-left:22px}li{margin-bottom:8px}
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1.5px 5px;
+  border-radius:4px;border:1px solid var(--line-soft)}
+strong{font-weight:650}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:18px 0}
+th{text-align:left;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;padding:8px 12px 8px 0;border-bottom:1px solid var(--line)}
+td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line-soft);vertical-align:top}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;padding-right:0}
+tr.total td{border-top:2px solid var(--line);font-weight:650}
+.scroll{overflow-x:auto}
+.good{color:var(--good);font-weight:650}.bad{color:var(--crit);font-weight:650}
+.warnc{color:var(--warn);font-weight:650}
+.punch{border-radius:9px;padding:18px 22px;margin:22px 0;border:1px solid;box-shadow:var(--shadow)}
+.punch.no{background:var(--crit-soft);border-color:var(--crit)}
+.punch.yes{background:var(--good-soft);border-color:var(--good)}
+.punch.hm{background:var(--warn-soft);border-color:var(--warn)}
+.punch .lbl{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.punch.no .lbl{color:var(--crit)}.punch.yes .lbl{color:var(--good)}.punch.hm .lbl{color:var(--warn)}
+.punch .big{font-family:var(--serif);font-size:20px;line-height:1.35;margin-bottom:8px}
+.punch p{margin-bottom:0;font-size:15px}
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;
+  padding:18px 22px;margin:20px 0}
+.eyebrow{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-bottom:9px}
+.analogy{background:var(--quench-soft);border-left:3px solid var(--quench);border-radius:0 8px 8px 0;
+  padding:15px 19px;margin:20px 0}
+.analogy .lbl{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--quench);
+  font-weight:700;margin-bottom:7px}
+.analogy p{margin-bottom:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;padding:14px 16px}
+.stat .n{font-family:var(--mono);font-size:22px;font-weight:700;line-height:1;
+  font-variant-numeric:tabular-nums}
+.stat .l{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-top:7px}
+.stat .s{font-size:12px;color:var(--muted);margin-top:4px}
+.note{font-size:13.5px;color:var(--muted)}
+.bar{display:grid;grid-template-columns:150px 1fr 60px;align-items:center;gap:12px;margin:8px 0}
+.bar .nm{font-size:13.5px;color:var(--ink-2)}
+.bar .track{height:20px;background:var(--sunken);border-radius:4px;overflow:hidden;position:relative}
+.bar .fill{height:100%;border-radius:4px}
+.bar .val{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-align:right}
+.verdictbox{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
+@media(max-width:700px){.verdictbox{grid-template-columns:1fr}.bar{grid-template-columns:100px 1fr 50px}}
+.vb{border:1px solid var(--line-soft);border-radius:9px;padding:17px 20px;background:var(--surface)}
+.vb h4{font-family:var(--serif);font-size:18px;margin:0 0 4px;font-weight:600}
+.vb .role{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+.vb.a .role{color:var(--quench)}.vb.b .role{color:var(--heat)}
+.vb ul{padding-left:18px;margin:8px 0 0;font-size:14.5px}
+.vb li{margin-bottom:5px}
+hr{border:0;border-top:1px solid var(--line);margin:46px 0}
+footer{color:var(--faint);font-size:13px;border-top:1px solid var(--line);padding-top:20px;margin-top:48px}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="kicker">Modelleignung · alle Messungen zusammengefasst</div>
+  <h1>Welches Modell taugt wofür</h1>
+  <p class="standfirst">Zwei Sprachmodelle, dieselben Aufgaben, gemessen statt geschätzt: Rubrik
+  über achtzehn Dimensionen, mechanische Integritätsprüfungen, Durchsatz auf eigener Hardware.
+  Die kurze Antwort ist keine Rangliste, sondern eine Arbeitsteilung.</p>
+  <div class="meta"><span>16. August 2026</span><span>GLM-5.2 · Qwen3.8-27B</span>
+  <span>9 Knoten · 18 Dimensionen · 3 Scaffold-Arme</span></div>
+</div></header>
+
+<div class="wrap">
+
+<h2><span class="num">00</span>Was die Aufgabe verlangt</h2>
+<p>Bevor man Modelle vergleicht, muss klar sein, woran sie scheitern können. Dieses System baut
+Drehbücher nicht als Text, sondern als Gerüst: Handlungsstränge, Figurenprofile mit
+Zustandsvariablen, Ereignisse, Szenenprofile — und erst ganz am Ende Prosa.</p>
+
+<p>Daraus folgen drei sehr verschiedene Fähigkeiten, und kein Modell ist in allen dreien gleich
+gut:</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Fähigkeit</th><th>Was schiefgehen kann</th><th>Wie man es prüft</th></tr></thead>
+<tbody>
+<tr><td><strong>Buchhaltung</strong></td><td>Eine Variable, die einer anderen Figur gehört. Ein Wert außerhalb der eigenen Definition.</td><td>mechanisch, gegen Dateien</td></tr>
+<tr><td><strong>Erdung</strong></td><td>Eine Szene im falschen Gebäude. Eine Figur, die dort nicht sein kann.</td><td>mechanisch + Lesen</td></tr>
+<tr><td><strong>Dramatik</strong></td><td>Alles formal korrekt und trotzdem langweilig.</td><td>nur Rubrik</td></tr>
+</tbody></table></div>
+
+<div class="analogy"><div class="lbl">Warum diese Dreiteilung wichtig ist</div>
+<p>Die schwersten Fehler in diesem Projekt waren <strong>formal einwandfrei</strong>. Ein
+erfundenes Ereignis bei 95% angegebener Sicherheit, ein Anfangswert außerhalb der eigenen
+Wertespanne — beides besteht jede Schemaprüfung. Ein Modell nach „gibt es Formatfehler?" zu
+beurteilen misst die billigste der drei Fähigkeiten.</p></div>
+
+<h2><span class="num">01</span>Die Antwort in einem Satz</h2>
+
+<div class="punch yes">
+  <div class="lbl">Empfehlung</div>
+  <div class="big">Qwen3.8 zum Erfinden, GLM-5.2 zum Erschließen — und beim Erschließen ist
+  Qwen mit Scaffold fast aufgeschlossen.</div>
+  <p>Die Modelle sind beim <em>Erfinden</em> gleichauf und beim <em>Erschließen</em> fünfzehn
+  Punkte auseinander. Ein Gesamtwert über beide Richtungen hätte genau diese Unterscheidung
+  verschwiegen.</p>
+</div>
+
+<div class="scroll"><table>
+<thead><tr><th>Aufgabe</th><th class="num">GLM-5.2</th><th class="num">Qwen3.8</th><th class="num">Qwen + Scaffold</th></tr></thead>
+<tbody>
+<tr><td>Vorwärts erfinden</td><td class="num">65,2%</td><td class="num good">66,7%</td><td class="num">—</td></tr>
+<tr><td>Rückwärts erschließen</td><td class="num good">65,0%</td><td class="num bad">50,0%</td><td class="num">61,7%</td></tr>
+</tbody></table></div>
+
+<h2><span class="num">02</span>Buchhaltung: Qwen deutlich besser</h2>
+<p>Das System verfolgt, wie sich Figuren und Dinge über die Geschichte verändern. Jede Variable
+wird zuerst <em>deklariert</em> — mit Namen, Typ und der Menge zulässiger Werte — und danach
+bewegt. Wird dabei geschludert, ist die ganze Zeitrechnung wertlos.</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Prüfung (Ereignisebene)</th><th class="num">GLM-5.2</th><th class="num">Qwen3.8</th></tr></thead>
+<tbody>
+<tr><td>Teilnehmer existieren als Entität</td><td class="num">35/35</td><td class="num">35/35</td></tr>
+<tr><td>Kausalverweise zeigen auf echte Ereignisse</td><td class="num">48/48</td><td class="num">46/46</td></tr>
+<tr><td>Änderung nennt eine Variable der genannten Figur</td><td class="num">127/127</td><td class="num">34/34</td></tr>
+<tr><td>Änderung bewegt tatsächlich etwas</td><td class="num warnc">124/127</td><td class="num good">34/34</td></tr>
+<tr><td><strong>Wert liegt in der deklarierten Wertemenge</strong></td><td class="num bad">0/85</td><td class="num good">11/13</td></tr>
+</tbody></table></div>
+
+<div class="punch no">
+  <div class="lbl">Der teuerste einzelne Befund</div>
+  <div class="big">GLM verfehlt <strong>jeden einzelnen</strong> Wert — und keine Prüfung schlägt
+  Alarm.</div>
+  <p>Es schreibt <code>"after": {"status": "severed"}</code>, während die Wertemenge blanke
+  Zeichenketten <code>["intact", "severed", …]</code> enthält. Ein Objekt kann niemals einem
+  Eintrag gleichen. Eine Verpackung <em>eine Ebene tief</em>, vom deklarierten Anfangswert nach
+  unten durchgereicht, entwertet die komplette Zustandsebene — bei grünem Schema.</p>
+</div>
+
+<p>Qwen schreibt die blanke Zeichenkette und trifft. Das ist kein Stilunterschied, sondern der
+Unterschied zwischen einer Zustandsverfolgung, die man auswerten kann, und einer, die nur so
+aussieht.</p>
+
+<p class="note">Gefunden wurde das durch eine Meinungsverschiedenheit zwischen zwei Zählern: mein
+Werkzeug meldete 127/127, die Bewertung 42/127. Beide hatten recht — der eine prüfte den
+<em>Variablennamen</em>, der andere den <em>Wert</em>. Beide Prüfungen stehen jetzt im Werkzeug.</p>
+
+<h2><span class="num">03</span>Erdung: GLM deutlich besser</h2>
+<p>Erdung heißt: sich an das halten, was in den vorliegenden Unterlagen steht. Genau hier liegt
+Qwens Schwäche, und sie ist scharf umrissen.</p>
+
+<div class="card">
+  <div class="eyebrow">Der repräsentative Fehlfall</div>
+  <p style="margin-bottom:0">Qwen konstruiert für eine Figur ein Ereignis, das ihr
+  <strong>nicht widerfahren kann</strong>. Es widerspricht ihrem eigenen Dossier, widerspricht dem
+  Knoten, den dasselbe Modell unmittelbar davor geschrieben hatte, und bewegt eine
+  Zustandsvariable, die einer <em>anderen</em> Figur gehört. Angegebene Sicherheit:
+  <strong>95%</strong>. Zwei von drei Szenen spielen zudem im falschen Gebäude.</p>
+</div>
+
+<p>GLM hat den gegenteiligen Fehler: In einer blind geschriebenen Szene taucht <strong>wörtlich
+die echte Dialogzeile</strong> aus der Vorlage auf. Es hat das Drehbuch nicht gesehen — aber es
+kennt den Film. Bei einem bekannten Werk genügt die dünne Szenenhülle als Abrufschlüssel.</p>
+
+<div class="analogy"><div class="lbl">Zwei Arten, dieselbe Aufgabe zu verfehlen</div>
+<p><strong>GLM erinnert sich</strong>, wo es schließen sollte. <strong>Qwen erfindet</strong>, wo
+es sich an die Unterlagen halten sollte. Für die Rekonstruktion ist Qwens Fehler der schlimmere,
+weil er plausibel aussieht: eine erfundene Szene liest sich wie eine gute Szene, eine erinnerte
+Zeile fällt beim Vergleich sofort auf.</p></div>
+
+<h3>Und GLMs eigene Schwäche, gemessen</h3>
+<p>Regeltreue bricht bei GLM zusammen, sobald es sich an einer Vorlage festhalten muss:</p>
+
+<div class="bar"><span class="nm">frei erfinden</span><div class="track"><div class="fill" style="width:100%;background:var(--good)"></div></div><span class="val">127/127</span></div>
+<div class="bar"><span class="nm">aus Vorlage</span><div class="track"><div class="fill" style="width:23%;background:var(--crit)"></div></div><span class="val">19/84</span></div>
+
+<p>Dieselbe Vorschrift, dieselbe Woche, dasselbe Modell. Das Nachdenken bleibt dabei gut — die
+Selbstkorrekturen in den Analysen sind echt, eine kippt sogar ihren eigenen zuvor benannten
+Wendepunkt. Es ist die Buchhaltung, die aussetzt, nicht das Denken.</p>
+
+<h2><span class="num">04</span>Dramatik: GLM tiefer, Qwen dünner</h2>
+<p>GLM schreibt das <strong>2,9-fache</strong> an Text. Das ist Substanz mit stark abnehmendem
+Ertrag: 2,9× Wörter kaufen 1,30× Bewertung, also zahlen sich etwa 45% der Zusatzwörter aus.</p>
+
+<p>Was die nützliche Hälfte kauft, ist benennbar. GLM baut aus, was Figur A über Figur B glaubt —
+einschließlich der Stelle, an der dieser Glaube <em>falsch</em> ist und was der Irrtum kosten
+wird. Qwen liefert einen Satz pro Feld.</p>
+
+<div class="punch hm">
+  <div class="lbl">Der Punkt, der zählt</div>
+  <div class="big">Qwen ist nicht leer, sondern komprimiert — und Kompression trifft nicht
+  gleichmäßig.</div>
+  <p>Sie zerstört bevorzugt das Material <em>zweiter Ordnung</em>: wer was über wen glaubt, wo
+  dieser Glaube irrt, in welchen Phasen sich eine Figur wandelt. Genau der Stoff, für den diese
+  Ebene existiert. Eine Ein-Satz-Fassung davon ist so gut wie keine.</p>
+</div>
+
+<h3>Die Ereignisstruktur, wo es sichtbar wird</h3>
+<div class="scroll"><table>
+<thead><tr><th>Merkmal</th><th class="num">GLM-5.2</th><th class="num">Qwen3.8</th></tr></thead>
+<tbody>
+<tr><td>Umkehrungen (Wendepunkte)</td><td class="num good">7 von 20</td><td class="num bad">0 von 22</td></tr>
+<tr><td>verschiedene Schauplätze</td><td class="num good">5</td><td class="num bad">1</td></tr>
+<tr><td>Entitäten deklariert (Brief verlangt 30–40)</td><td class="num warnc">17</td><td class="num bad">9</td></tr>
+<tr><td>wortgleich wiederholte Sätze</td><td class="num good">0</td><td class="num bad">5</td></tr>
+</tbody></table></div>
+
+<p><strong>Null Umkehrungen in 22 Ereignissen</strong>, auch im Höhepunkt — die Geschichte endet
+auf einem Flackern statt auf einer Wende. Und 19 der 22 Ereignisse haben genau eine Ursache und
+eine Wirkung: eine Kette, kein Geflecht.</p>
+
+<p>Die Unterbesetzung richtet dabei nachweisbaren Folgeschaden an: Weil nur <em>ein</em> Ortsobjekt
+existiert, hatte die Ereignisebene keine legale Möglichkeit, eine Figur dorthin zu setzen, wo der
+Brief sie hinstellt. Der unmögliche Schluss der Geschichte folgt direkt daraus.</p>
+
+<h2><span class="num">05</span>Was ein Gerüst reparieren kann — und was nicht</h2>
+<p>Die interessanteste Frage ist nicht, welches Modell besser ist, sondern welche Fehler man
+<em>abstellen</em> kann. Dazu wurden zwei Eingriffe getrennt gemessen.</p>
+
+<h3>Anweisung allein: gemischt</h3>
+<p>Ein Prompt-Zusatz aus den gemessenen Fehlern half bei der übertriebenen Sicherheit (95→85,
+90→65) und <strong>schadete</strong> bei der Ortstreue.</p>
+
+<p>Das ist kein Zufall. <strong>Sicherheit ist ein lokales Feld</strong> — das Modell füllt es an
+einer Stelle, dort erreicht es eine Anweisung. <strong>Ortstreue ist eine globale Bedingung</strong>
+über die ganze Ausgabe hinweg, und sie stand bereits im Prompt. Nochmal dasselbe zu sagen half
+nicht.</p>
+
+<h3>Konstruktion: deutlich</h3>
+<p>Statt zu bitten, wurde der Ort als unveränderlicher Wert und die Besetzung als geschlossene
+Liste ins Schema gebunden — und zwar als <em>erstes</em> Feld, damit das Modell die Fakten in den
+eigenen Kontext geschrieben hat, bevor es zu denken beginnt.</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Rubrik, Rekonstruktion</th><th class="num">Punkte</th><th class="num">Prozent</th></tr></thead>
+<tbody>
+<tr><td>Qwen ohne Gerüst</td><td class="num">90/180</td><td class="num">50,0%</td></tr>
+<tr><td><strong>Qwen mit Gerüst</strong></td><td class="num good">111/180</td><td class="num good">61,7%</td></tr>
+<tr><td>GLM</td><td class="num">117/180</td><td class="num">65,0%</td></tr>
+</tbody></table></div>
+
+<p>Neun von zwölf Dimensionen verbessert. Drei Viertel des Abstands zu GLM aufgeholt.</p>
+
+<div class="punch yes">
+  <div class="lbl">Der Mechanismus war nicht der erwartete</div>
+  <div class="big">In den richtigen Raum gezwungen zu werden machte die Analyse zum richtigen
+  Konflikt.</div>
+  <p>Erwartet war, dass Erdung nur die <em>Zulässigkeit</em> von Behauptungen regelt. Tatsächlich:
+  ohne Bindung verlegte das Modell die halbe Szene woandershin und produzierte eine
+  Parallelmontage, in der niemand jemanden opponiert. Ans Gebäude gebunden, lieferte dasselbe
+  Modell eine direkte Gegnerschaft zweier anwesender Figuren — und die erste
+  geschichtsspezifische Kippbedingung überhaupt.</p>
+</div>
+
+<h3>Und ein Fehler in meiner eigenen Messung</h3>
+<p>Der erste veröffentlichte Wert — „Verstöße 11 → 2" — war falsch, und die Ursache ist
+lehrreich genug, sie stehen zu lassen.</p>
+
+<p>Meine Besetzungsliste stammte nicht aus dem Drehbuch, sondern aus Drehbuch <em>plus</em>
+Ereignis-Teilnehmern. Bei einer Szene mit <em>einem</em> Sprecher enthielt sie drei — und weil ich
+zusätzlich die Länge festgeschrieben hatte, <strong>erzwang</strong> das Schema, dass zwei
+abwesende Figuren als anwesend gelistet werden. Das Modell gehorchte. Die Bewertung wertete das als
+schwersten Einzelfehler des Durchgangs — und mein Gerüst hatte ihn verlangt.</p>
+
+<p>Meine Nachprüfung konnte das nicht sehen, weil sie gegen <em>dieselbe erfundene Liste</em>
+verglich. Korrigiert lautet das Ergebnis 5,3 → 4,0 Verstöße pro Szene statt 11 → 2. Der
+Qualitätsgewinn wurde davon unabhängig gemessen und bleibt bestehen.</p>
+
+<div class="analogy"><div class="lbl">Die Regel, die daraus wurde</div>
+<p>Niemals gegen eine Liste prüfen, die die Apparatur selbst erzeugt hat. Eine Prüfung, die ihre
+Wahrheitsquelle mit dem Geprüften teilt, misst <strong>Gehorsam, nicht Richtigkeit</strong>.</p></div>
+
+<h2><span class="num">06</span>Geschwindigkeit, und warum sie hier mitentscheidet</h2>
+<div class="grid">
+  <div class="stat"><div class="n good">104 ×</div><div class="l">Durchsatz</div><div class="s">2.812 gegen 27 tok/s</div></div>
+  <div class="stat"><div class="n good">8 ×</div><div class="l">pro Szene</div><div class="s">2,6 statt 24,3 min</div></div>
+  <div class="stat"><div class="n">27 B</div><div class="l">Qwen, dicht</div><div class="s">passt auf eine Karte</div></div>
+  <div class="stat"><div class="n">754 B</div><div class="l">GLM, MoE</div><div class="s">braucht 5+ Karten</div></div>
+</div>
+
+<p>Der Grund ist architektonisch: Qwen ist ein <strong>dichtes</strong> Modell und passt auf eine
+Grafikkarte, also werden aus acht Karten acht echte Arbeiter. GLM ist ein Mixture-of-Experts, das
+über alle acht verteilt werden muss — dort arbeitet immer nur eine Karte, und gleichzeitige
+Anfragen bringen <em>gar nichts</em> (gemessen flach von 1 bis 8).</p>
+
+<p>Für die Qualitätsfrage ist Tempo kein Argument. Für die Praxis schon: Bei achtfacher
+Geschwindigkeit kann man sich mehr Aufrufe pro Szene leisten — und genau darin besteht das
+Gerüst.</p>
+
+<h2><span class="num">07</span>Die Empfehlung, aufgeschlüsselt</h2>
+
+<div class="verdictbox">
+  <div class="vb a">
+    <div class="role">Vorwärts erfinden</div>
+    <h4>Qwen3.8-27B</h4>
+    <ul>
+      <li>Rubrik minimal vorn (66,7 gegen 65,2)</li>
+      <li>Buchhaltung deutlich besser: 11/13 gegen 0/85 gültige Werte</li>
+      <li>keine Leerlauf-Änderungen</li>
+      <li>achtmal schneller</li>
+    </ul>
+    <p style="font-size:14px;margin:11px 0 0;color:var(--muted)">Mit Prüfungen gegen
+    Anteilssummen, Entitätenzahl und Umkehrungsdichte — dort liegen seine belegten Schwächen.</p>
+  </div>
+  <div class="vb b">
+    <div class="role">Rückwärts erschließen</div>
+    <h4>GLM-5.2</h4>
+    <ul>
+      <li>15 Punkte vor Qwen ohne Gerüst, 3 mit</li>
+      <li>tiefere Theory-of-Mind-Türme</li>
+      <li>echte Selbstkorrekturen in den Analysen</li>
+      <li>bleibt beim Ort: 3/3 gegen 1/3</li>
+    </ul>
+    <p style="font-size:14px;margin:11px 0 0;color:var(--muted)">Mit Zwang auf blanke Werte statt
+    verpackter — sonst ist die Zustandsebene wertlos.</p>
+  </div>
+</div>
+
+<p><strong>Der Oberbau gehört auf das stärkste verfügbare Modell, unabhängig von allem oben.</strong>
+Er umfasst etwa acht Aufrufe von rund tausend — 0,4% des Volumens — und legt trotzdem alles fest.
+Ein Fehler in den Figurenprofilen vergiftet 224 Szenen. Bei acht Aufrufen ist das stärkste Modell
+praktisch gratis.</p>
+
+<h2><span class="num">08</span>Was beide Modelle nicht können</h2>
+<p>Drei Dinge sind bei beiden aufgetreten und sind vermutlich Eigenschaften der Aufgabe, nicht der
+Modelle:</p>
+
+<ol>
+<li><strong>Aufwand skaliert nicht mit der Aufgabe.</strong> Fragt man nach vier Figurenanalysen in
+einem Aufruf, kommen vier Hülsen. Fragt man vier Mal nach je einer, kommen vier vollständige. Das
+Modell hat ein Budget und teilt es. Diese eine Erkenntnis ist der Unterschied zwischen 0 von 4 und
+4 von 4 bestandenen Szenen.</li>
+<li><strong>Selbstbewertung funktioniert nicht.</strong> 95% Sicherheit auf einer dreifach falschen
+Prognose. Wer sein eigenes Werk benotet, ist mild — Schreiben und Prüfen müssen getrennte Aufrufe
+sein.</li>
+<li><strong>Formal korrekt ist nicht inhaltlich richtig.</strong> Beide Modelle bestehen alle
+Formatprüfungen. Die schwersten Fehler waren einwandfrei formatiert.</li>
+</ol>
+
+<hr>
+<h2 style="margin-top:0">Kurz gefasst</h2>
+<ol>
+<li><strong>Keine Rangliste, eine Arbeitsteilung.</strong> Gleichauf beim Erfinden, fünfzehn Punkte
+auseinander beim Erschließen. Der Mittelwert über beide wäre die falsche Zahl gewesen.</li>
+<li><strong>Qwen führt Buch, GLM denkt tiefer.</strong> 11/13 gegen 0/85 gültige Zustandswerte auf
+der einen Seite; 2,9-fache Tiefe und echte Selbstkorrektur auf der anderen.</li>
+<li><strong>Ein Teil der Schwächen ist reparierbar.</strong> Zwang im Schema holte 12 von 15
+Punkten auf. Bitten im Prompt half bei einem lokalen Feld und schadete bei einer globalen
+Bedingung.</li>
+<li><strong>Tempo ist kein Qualitätsargument, aber ein Budgetargument.</strong> Achtfache
+Geschwindigkeit finanziert die zusätzlichen Aufrufe, aus denen das Gerüst besteht.</li>
+<li><strong>Auch die Messung war zweimal kaputt</strong> — einmal gegen eine selbst erfundene
+Liste geprüft, einmal blind für eine ganze Fehlerklasse. Beides steht in den Protokollen, weil ein
+Ergebnis nur so viel wert ist wie das Werkzeug, das es erzeugt hat.</li>
+</ol>
+
+<footer>
+Alle Zahlen aus Läufen auf dieser Maschine, 15.–16. August 2026. Rubrik mit verankerten
+Beschreibungen für die Noten 1, 3 und 5, damit ein anderer Prüfer zum selben Ergebnis käme.
+Vollständige Bewertung, Experimentprotokolle und Quellcode im Projektarchiv.<br>
+Weiterführend: <a href="qualitaet.html">Qualitätsvergleich im Detail</a> ·
+<a href="rekonstruktion-skalierung.html">Kosten und Hochrechnung</a> ·
+<a href="glm-local.html">GLM-5.2 auf eigener Hardware</a> ·
+<a href="glm-erklaert.html">Grundlagen erklärt</a> ·
+<a href="index.html">alle Projekte</a>.
+</footer>
+</div>
