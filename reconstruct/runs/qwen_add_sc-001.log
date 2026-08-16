@@ -1,0 +1,38 @@
+LOCAL RECONSTRUCTION · http://127.0.0.1:8104/v1 · thinking=off
+  scenes: sc-001
+
+  === sc-001 ===
+    characters: ['ch-01', 'ch-02']
+    ! speakers with no entity: ['BIG COP']
+      craft                        27s  in= 12,300 out= 1,610  60.1 t/s  think=     0c
+      psych.ch-01                  57s  in= 11,791 out= 3,852  67.3 t/s  think=     0c
+      psych.ch-02                  50s  in= 10,541 out= 3,265  64.9 t/s  think=     0c
+      specimen                     23s  in=  5,473 out= 1,736  76.7 t/s  think=     0c
+      dynamics                      2s  in=  4,649 out=     2   1.2 t/s  think=     0c
+      continuity                    7s  in=  2,792 out=   597  88.8 t/s  think=     0c
+
+  LOCAL scaffolded · sc-001 · 2.8 min · 6 calls
+    violations 0    words  6,694   psych 2/2 w/ trajectory, 2/2 complete
+    ToM 3 towers (3 at depth 3)   specimen 8 lines   alts 2 (1 close)   dynamics 0
+    verdict: pass
+  hosted scaffolded
+    violations 0    words 11,222   psych 2/2 w/ trajectory, 2/2 complete
+    ToM 4 towers (4 at depth 3)   specimen 7 lines   alts 2 (1 close)   dynamics 4
+    verdict: pass
+  hosted single-call
+    violations 16   words  3,898   psych 0/2 w/ trajectory, 0/2 complete
+    ToM 2 towers (2 at depth 3)   specimen 0 lines   alts 2 (0 close)   dynamics 1
+    verdict: thin
+      gap: trajectories are snapshots, not arcs
+      gap: every alternative lost by a mile — the choice was already made
+      gap: no specimen exchange — the analysis is untested until someone speaks
+      gap: risks never checked against the actual lines
+
+========================================================================
+  1 scenes · 6 calls · 2.8 min wall
+  tokens: 47,546 in · 11,062 out
+  decode: 66.9 tok/s mean over all calls
+  per scene: 2.8 min
+  reasoning_content returned: 0 chars
+  extrapolated to all 224 scenes: 10.3 h
+  -> runs/matrix/transitions_qwen_addendum

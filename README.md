@@ -71,6 +71,7 @@ Read in this order:
 6. [`docs/06-local-inference.md`](docs/06-local-inference.md) — running a 754B model on 8×A100, and three confident predictions that measurement destroyed
 7. [`docs/07-quality-evaluation.md`](docs/07-quality-evaluation.md) — rubric and scores
 8. [`docs/08-operations.md`](docs/08-operations.md) — how to actually run it
+9. [`docs/experiments/`](docs/experiments/README.md) — **the experiment log.** Every intervention tried, prediction recorded before the run, negative results kept. Written to be reconstructable without access to whoever ran it
 
 ## Quick start
 

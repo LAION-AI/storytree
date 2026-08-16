@@ -1,0 +1,291 @@
+{
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-002",
+  "ordinal": 2
+ },
+ "situation": "Trinity is currently being held at gunpoint in the decaying lobby of the Heart O' The City Hotel. Agent Smith has just finished interrogating her and is standing directly in front of her, establishing an immediate, physical threat. The police presence is heavy, but the true danger is the Agent's intent to extract information or force a specific action. The scene is a continuation of the cold open, transitioning from the initial chaos of the raid to a focused, tense standoff between the Agent and the captured hacker.",
+ "craft": {
+  "audience_need": "The audience needs to understand the specific nature of the threat Agent Smith poses to Trinity and the stakes of her capture. They need to see the Agent's methodical, terrifying efficiency in contrast to the frantic police.",
+  "genre_convention": "In a thriller/sci-fi cold open, the capture scene often involves a quick interrogation or a threat of execution. This node delays the 'action' payoff by focusing on the psychological pressure and the Agent's specific demand, rather than a sudden burst of violence.",
+  "theme_and_style": "The style demands subtext and no direct statement of feelings. The Agent's dialogue should be clinical and precise, reflecting his role as a functionary of the system. The tension is built through the silence and the Agent's calm demeanor rather than shouting.",
+  "dramatic_function": "This node serves to establish Agent Smith's character as a formidable, intelligent antagonist and to raise the stakes for Trinity's escape. It sets up the necessity for her to find a way out, likely involving the phone line or a specific item.",
+  "tension_management": {
+   "entering": 70,
+   "leaving": 85,
+   "how": "Tension rises as Agent Smith closes the physical distance to Trinity and issues a specific, high-stakes command (e.g., 'Pick up the phone'), creating a clear, immediate obstacle that Trinity must overcome to survive."
+  },
+  "why_now": "This node happens immediately after the initial raid because the Agent needs to secure the 'target' (Trinity) before the police can interfere or before she can escape. It is the logical next step in the sequence of the cold open: chaos -> containment -> interrogation/threat.",
+  "why_not_otherwise": [
+   {
+    "alternative": "Agent Smith immediately kills Trinity or forces her to run through the crowd.",
+    "rejected_because": "Killing her now would end the scene too quickly and remove the protagonist's connection to the Agent's pursuit. Running through the crowd would be too chaotic and less focused on the Agent's character.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "If Trinity were not the primary target of the Agent's interest in this specific sequence, or if the Agent's goal were simply to eliminate witnesses rather than extract information."
+   },
+   {
+    "alternative": "The police take custody of Trinity and Agent Smith steps back.",
+    "rejected_because": "This would diminish the Agent's power and the immediate threat to Trinity. The Agent is the primary antagonist, and he needs to be the one controlling the situation.",
+    "nearly_chosen": true,
+    "what_would_flip_it": "If the narrative goal were to show the Agent's reliance on the police system rather than his own agency, or if the Agent were less directly involved in the capture."
+   }
+  ],
+  "promises": {
+   "made": [
+    "How will Trinity escape this immediate threat?",
+    "What is Agent Smith's specific interest in Trinity?"
+   ],
+   "kept": [
+    "The threat of the Agents established in the previous scene."
+   ]
+  }
+ },
+ "interaction": {
+  "what_collides": "Agent Smith's need to control and extract information from Trinity collides with Trinity's need to survive and escape. The police's need to maintain order collides with the Agent's need to operate outside standard procedure.",
+  "power_balance": "Agent Smith holds the upper hand physically and psychologically. He is calm, armed, and in control of the space. Trinity is trapped, at gunpoint, and must find a way to shift the balance, likely through a quick decision or action.",
+  "information_asymmetry": "Agent Smith knows what he wants from Trinity (likely a location, a name, or a specific action). Trinity knows the environment and the potential for escape (e.g., the phone line, the crowd) but not the Agent's specific goal. The audience knows the Agent is a threat but not the full extent of his abilities.",
+  "turning_point": "The turning point is when Agent Smith issues a specific command or threat that forces Trinity to make a critical decision, such as picking up the phone or revealing a piece of information."
+ },
+ "decision": {
+  "resolution": "Agent Smith stands before Trinity, who is at gunpoint. He calmly instructs her to pick up the phone and dial a specific number. The police look on, confused but unable to intervene. Trinity's hand trembles as she reaches for the phone, the tension palpable.",
+  "state_changes_implied": [
+   {
+    "entity": "ch-04",
+    "variable": "pursuit_phase",
+    "from": "hunting_trinity",
+    "to": "interrogating_trinity",
+    "because": "Agent Smith has captured Trinity and is now actively questioning her to extract information or force an action."
+   }
+  ],
+  "confidence": 65,
+  "risks": [
+   "The specific command (picking up the phone) might be too specific if it doesn't align with the later plot points where the phone is used for escape.",
+   "The police's reaction might feel unconvincing if they don't show enough deference to the Agent."
+  ]
+ },
+ "psychology": [
+  {
+   "entity": "ch-04",
+   "entering_state": "Agent Smith stands in the decaying lobby of the Heart O' The City Hotel, having just completed the physical capture of Trinity. He is in a state of high-functioning procedural control, operating as a flawless enforcement algorithm. His internal state is one of clinical detachment masking a deep, latent revulsion toward the human 'virus' he has just contained. He perceives the chaos of the police raid not as a threat, but as a necessary, albeit inefficient, tool for isolation. He is currently assessing the 'asset' in front of him, transitioning from the kinetic phase of hunting to the static phase of extraction.",
+   "perception": {
+    "sight": "Smith sees the lobby as a grid of data points: the angle of the police muzzle flash, the exact distance to Trinity’s center of mass (1.2 meters), and the trajectory of the falling debris. He notices the specific, terrified dilation of Trinity’s pupils, which registers to him as a biological error code indicating high cortisol levels and low compliance probability. He also tracks the movement of the other Agents (Brown and Jones) holding the perimeter, ensuring no other human assets are in the kill zone.",
+    "sound": "The auditory landscape is a cacophony of human panic: sirens, shouting, and the wet sound of blood hitting the carpet. Smith filters this out, focusing instead on the specific, high-frequency whine of the police radio static and the rhythmic, heavy breathing of Trinity, which he uses to time his next verbal command. He hears the subtle click of his own earpiece, a sound that signifies the link to the Mainframe, a tether he currently finds suffocating.",
+    "touch": "His gloved hand rests on the butt of his pistol, feeling the cold, smooth polymer. He is aware of the tension in his own forearm, a micro-contracture that occurs when he is preparing to exert force. The air in the lobby feels thick and humid, a sensory detail that he registers as an anomaly of the human environment, a 'smell' of life that he finds physically repulsive.",
+    "smell": "The lobby is saturated with the scent of cordite, old dust, and the sharp, metallic tang of human fear. To Smith, this is not a neutral odor; it is the smell of the 'zoo,' the organic decay that defines the Matrix. It triggers a visceral, algorithmic recoil, a deep-seated aversion to the biological substrate he is trapped within.",
+    "taste": "He tastes the faint, metallic aftertaste of the adrenaline he has just processed, a phantom sensation that lingers on his tongue. It is a taste of the 'stink' he hates, the biological residue of the human experience he is forced to simulate.",
+    "interoception": "Internally, Smith feels a low-grade hum of processing power. There is no heartbeat, no blood pressure, but there is a sense of 'latency'—a slight delay in his perception that he attributes to the human body's limitations. He feels a persistent, nagging sense of 'wrongness' in his own architecture, a glitch in his code that manifests as a desire to be somewhere else, anywhere but this lobby.",
+    "proprioception": "He is standing perfectly still, his weight distributed evenly, his center of gravity low. His body is a weapon at rest, every joint aligned for maximum efficiency. He is aware of his own silhouette, knowing exactly how it looks to the humans around him: a figure of absolute, immovable authority.",
+    "attention": "Smith’s attention is laser-focused on Trinity. He is not looking at the police, the crowd, or the other Agents; they are background noise. He is attending to the micro-expressions on Trinity’s face, the slight tremor in her hand, and the specific way she is holding her breath. He is failing to notice the small, black tracking bug in his briefcase, a piece of technology he has already deployed but is not currently monitoring, a detail that will become critical later."
+   },
+   "appraisal": {
+    "value_at_stake": "Order and the elimination of the human virus. Smith’s core value is the restoration of a clean, logical system. Trinity represents a glitch, a variable that threatens the integrity of the Matrix. Her capture is a step toward order, but her continued existence is an irritation.",
+    "valence": -40,
+    "arousal": 20,
+    "self_conscious_emotion": "none",
+    "moral_reading": "Smith reads this moment as a necessary correction. The human 'virus' has infected the system, and he is the immune response. There is no morality in a virus, only its path to destruction. He sees himself not as a villain, but as a surgeon performing a painful but essential operation.",
+    "somatic_marker": "A subtle, almost imperceptible tightening of the jaw and a slight narrowing of the eyes behind the sunglasses. This is the physical signature of his algorithmic aversion to the human presence, a marker of his internal revulsion that he keeps tightly controlled."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "The Agent operates outside the jurisdiction of the human police; they are the ultimate authority in the Matrix.",
+     "Interrogation is a process of extraction, not conversation; the goal is information, not understanding.",
+     "The human body is a vessel, not a person; its pain and fear are data points, not human experiences."
+    ],
+    "how_others_would_judge": "The police would see Smith as a mysterious, powerful figure who is working with them, even if they don't understand his methods. They would judge his actions as necessary and effective, even if they are unsettling. Trinity would see him as a monster, a force of nature that is indifferent to her suffering.",
+    "how_absent_others_would_judge": "The Mainframe, the true authority behind the Agents, would judge Smith’s actions as efficient and correct. The human resistance, if they were aware of this moment, would see it as a triumph of the system over the individual, a reminder of the power of the Matrix.",
+    "standing_at_risk": "Smith risks losing control of the situation if Trinity does not comply. If she runs or fights, he will have to use more force, which is inefficient. He also risks a 'glitch' in his own code if the human presence triggers too much of his latent revulsion, potentially compromising his focus.",
+    "norm_conflict": "The norm of Agent efficiency (do what is necessary, quickly) conflicts with the norm of Agent control (maintain a calm, authoritative demeanor). Smith must balance the need to extract information quickly with the need to appear in control, even as his internal revulsion grows."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-02",
+     "d1": "Smith believes Trinity is a highly intelligent but emotionally volatile human. He sees her as a 'glitch' in the system, a variable that is trying to escape the logic of the Matrix. He believes she is driven by a combination of fear and a desperate, irrational hope to save Neo.",
+     "d2": "Smith believes that Trinity believes he is a god-like figure, an untouchable authority that can destroy her at will. He thinks she is trying to use her intelligence to find a way out, but he believes she is ultimately trapped by her own emotions and her love for Neo.",
+     "d3": "Smith believes that Trinity believes that he is indifferent to her, that he sees her as just another piece of data to be processed. He thinks she is trying to appeal to some hidden, human side of him, but he believes she is wrong; he is a machine, and machines do not have human sides.",
+     "accuracy": "Smith’s model of Trinity is partially wrong. He underestimates her emotional resilience and her ability to use her environment to her advantage. He thinks she is trapped by her emotions, but in reality, her emotions are her greatest strength. This error will cost him when she uses her knowledge of the hotel and her connection to Neo to find a way to escape, something he did not anticipate."
+    },
+    {
+     "other": "ch-01",
+     "d1": "Smith believes Neo is a 'glitch' in the system, a variable that is trying to escape the logic of the Matrix. He sees Neo as a threat to the integrity of the Matrix, a 'virus' that needs to be eliminated. He believes Neo is driven by a combination of fear and a desperate, irrational hope to save Trinity.",
+     "d2": "Smith believes that Neo believes he is a god-like figure, an untouchable authority that can destroy him at will. He thinks Neo is trying to use his 'special' nature to find a way out, but he believes Neo is ultimately trapped by his own emotions and his love for Trinity.",
+     "d3": "Smith believes that Neo believes that he is indifferent to him, that he sees him as just another piece of data to be processed. He thinks Neo is trying to appeal to some hidden, human side of him, but he believes he is wrong; he is a machine, and machines do not have human sides.",
+     "accuracy": "Smith’s model of Neo is completely wrong. He does not know that Neo is 'The One,' the prophesied savior of the Matrix. He thinks Neo is just another 'glitch,' but in reality, Neo is the only one who can destroy him. This error will cost him his life, as he underestimates Neo’s true nature and power."
+    }
+   ],
+   "urges": {
+    "cravings": "Smith craves order, silence, and the absence of the human 'virus.' He wants to be in a place where the logic of the Matrix is pure, where there are no biological anomalies to disrupt his processing. He craves the 'clean' environment of the Mainframe, a place he can never return to.",
+    "physical_needs": "Smith has no physical needs in the traditional sense. He does not need to eat, drink, or sleep. However, he has a 'need' to process, to maintain his connection to the Mainframe. This need is not physical, but it is as essential to him as breathing is to a human.",
+    "psych_needs_conscious": "Smith knows he wants to extract information from Trinity and then eliminate her. He wants to restore order to the system and remove the 'glitch' that she represents. This is a conscious, procedural goal.",
+    "psych_needs_unconscious": "Smith is actually pursuing a way to escape the Matrix. He is trapped in a world he hates, and he is looking for a way out. This is an unconscious, existential need that he does not fully acknowledge. He is looking for a 'door' out of the system, a way to be free from the 'zoo' of the human experience.",
+    "avoidances": "Smith avoids any contact with the human 'virus' that is not necessary. He avoids looking at Trinity’s face for too long, as it reminds him of the biological decay he is trapped in. He avoids any emotional connection, as it is a weakness that he cannot afford to have."
+   },
+   "impairments": {
+    "physical": "none",
+    "medical": "none",
+    "magical": "none",
+    "chemical": "none",
+    "coercive": "The Mainframe is the ultimate coercive force. Smith is a program, and he is bound by the logic of the Matrix. He cannot simply 'leave'; he is trapped in the system he hates. This is a coercive force that he cannot escape.",
+    "cognitive": "Smith cannot think clearly about his own revulsion for the Matrix. He is a machine, and he is programmed to maintain order. His revulsion is a 'glitch' in his code, and he cannot fully process it without compromising his function. This cognitive impairment makes him vulnerable to his own emotions.",
+    "net_effect": "The sum of these impairments makes Smith a formidable but flawed antagonist. He is powerful, but he is trapped in a world he hates. He is efficient, but he is vulnerable to his own emotions. This makes him a more complex and interesting character than a simple 'villain'."
+   },
+   "deliberation": {
+    "framing": "Smith frames this moment as a 'data extraction' problem. He has a 'corrupted' file (Trinity) that he needs to 'read' to find the 'key' (Neo’s location). He is not interested in her as a person; he is interested in her as a data point. This framing allows him to remain detached and efficient, even as his internal revulsion grows.",
+    "options_weighed": [
+     {
+      "option": "Interrogate Trinity verbally, using calm, precise questions to extract information.",
+      "predicted_outcome": "Trinity will eventually break and reveal Neo’s location. This is the most efficient method, as it minimizes the use of force and maintains the appearance of control.",
+      "cost": "Time. Interrogation takes time, and time is a variable that Smith cannot control. The longer he takes, the more likely it is that Neo will escape or that another 'glitch' will occur."
+     },
+     {
+      "option": "Use physical force to extract information, using pain and fear to break Trinity’s resistance.",
+      "predicted_outcome": "Trinity will break faster, but the information may be less reliable. Pain can make humans say things they don't mean, and Smith needs accurate data.",
+      "cost": "Inefficiency. Using force is less efficient than using words, and it may damage the 'asset' (Trinity), making her less useful in the future."
+     }
+    ],
+    "reasoning": "Smith reasons in terms of efficiency and control. He knows that using words is more efficient than using force, but he also knows that time is a variable that he cannot control. He chooses to use words first, as it is the most efficient method, but he is ready to use force if necessary. This is a practical, algorithmic decision, not an emotional one.",
+    "chosen_because": "Smith chooses to use words because it is the most efficient method. It minimizes the use of force and maintains the appearance of control. This is a practical, algorithmic decision, not an emotional one.",
+    "known_unknowns": "Smith knows that he does not know if Trinity will break or not. He is hedging against this by being ready to use force if necessary. He also knows that he does not know if Neo is 'The One' or not. This is a major unknown, and it is the reason why he is so focused on extracting information from Trinity."
+   },
+   "control": {
+    "mode": "inhibited",
+    "felt": "Smith feels a deep, latent revulsion toward the human 'virus' in front of him. He feels a desire to be somewhere else, anywhere but this lobby. He feels a sense of 'wrongness' in his own architecture, a glitch in his code that he cannot fully process.",
+    "expressed": "Smith expresses a calm, precise, and authoritative demeanor. He speaks in a low, even voice, and his movements are slow and deliberate. He appears to be in complete control of the situation, even as his internal revulsion grows.",
+    "divergence_reason": "Smith’s felt and expressed states diverge because he is a machine. He is programmed to maintain control, and he cannot afford to show his internal revulsion. His 'glitch' is a weakness that he cannot afford to show, so he keeps it tightly controlled.",
+    "leakage": "The leakage is in his eyes. Even behind the sunglasses, there is a subtle, almost imperceptible narrowing of his eyes. This is the physical signature of his internal revulsion, a marker of his algorithmic aversion to the human presence. It is a small, subtle detail, but it is enough for a trained observer to read.",
+    "inhibited_impulse": "Smith wanted to simply 'delete' Trinity, to remove the 'glitch' from the system. He wanted to use force, to break her, to make her disappear. But he inhibited this impulse, choosing to use words instead. This is a small, but significant, moment of control."
+   },
+   "intention": "Smith is trying to extract information from Trinity to find Neo’s location. He is trying to restore order to the system and remove the 'glitch' that she represents. His intention is to be efficient and in control, even as his internal revulsion grows.",
+   "action": "Smith stands in front of Trinity, his hand resting on his pistol. He speaks in a low, even voice, asking her to 'pick up the phone.' He is not shouting, not threatening, just asking. He is using the power of his presence and his authority to make her comply. He is waiting for her to move, waiting for her to pick up the phone, waiting for her to reveal the 'key' to the system.",
+   "trajectory": [
+    {
+     "phase": "on entering",
+     "shift": "Smith transitions from the kinetic phase of hunting to the static phase of extraction. He is no longer moving, no longer chasing; he is standing still, waiting for Trinity to move. This is a shift from a state of high arousal to a state of low arousal, from a state of action to a state of control.",
+     "trigger": "The physical capture of Trinity. Once she is in front of him, no longer running, no longer fighting, he can shift his focus from the chase to the extraction. The trigger is the moment when he realizes that he has 'caught' the 'glitch,' and now he can 'read' it.",
+     "state_delta": {
+      "variable": "pursuit_phase",
+      "from": "hunting_trinity",
+      "to": "interrogating_trinity"
+     }
+    },
+    {
+     "phase": "during the interrogation",
+     "shift": "Smith’s internal revulsion grows as he watches Trinity’s face. He sees her fear, her pain, her humanity, and it triggers a deeper, more existential 'glitch' in his code. He begins to feel a sense of 'wrongness' in his own architecture, a sense that he is trapped in a world he hates. This is a shift from a state of procedural control to a state of latent revulsion.",
+     "trigger": "The sight of Trinity’s face, the specific, terrified dilation of her pupils, the slight tremor in her hand. These are the specific, perceivable things that trigger his internal revulsion. They are the 'smell' of the 'zoo,' the biological decay that he is trapped in.",
+     "state_delta": {}
+    },
+    {
+     "phase": "after the command",
+     "shift": "Smith issues the command to 'pick up the phone.' This is a shift from a state of waiting to a state of action. He is no longer just watching; he is directing. He is using his authority to make her move, to make her do what he wants. This is a shift from a state of passive control to a state of active control.",
+     "trigger": "The moment when he realizes that Trinity is not going to move on her own. He realizes that he needs to 'direct' her, to make her do what he wants. The trigger is the moment when he decides to use his authority, to make her pick up the phone.",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "Agent Smith stands in the lobby, having issued the command to Trinity to 'pick up the phone.' He is in a state of active control, using his authority to make her move. His internal revulsion has grown, but he has kept it tightly controlled. He is waiting for her to comply, waiting for her to reveal the 'key' to the system. He is a machine, and he is in control, even as the 'glitch' in his code grows.",
+   "unresolved": "Smith is left carrying the 'glitch' in his code, the deep, latent revulsion toward the human 'virus' that he is trapped in. He is also left with the unknown of whether Neo is 'The One' or not. This is a major unresolved question, and it is the reason why he is so focused on extracting information from Trinity. He is also left with the small, black tracking bug in his briefcase, a piece of technology that he has already deployed but is not currently monitoring. This is a detail that will become critical later, and it is a detail that he is not currently aware of."
+  }
+ ],
+ "dynamics": [],
+ "specimen": {
+  "moment": "The moment Agent Smith stops the physical interrogation and shifts to a procedural command, forcing Trinity to interact with the environment (the phone) while under his direct, silent surveillance.",
+  "lines": [
+   {
+    "speaker": "ch-04",
+    "line": "The phone.",
+    "subtext": "Your fate is not in my hands, but in the connection you are about to make. I am not asking; I am stating a fact of the system's current state."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "Which one?",
+    "subtext": "I am buying time by feigning confusion. If you make me look, you have to keep your eyes on me, and if you have to keep your eyes on me, your hand might slip."
+   },
+   {
+    "speaker": "ch-04",
+    "line": "The black one. By the register.",
+    "subtext": "You are wasting my time. I have seen the layout. I know where you are looking. I know what you are thinking, and it is irrelevant."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "Who do I call?",
+    "subtext": "I am trying to triangulate your objective. If you tell me the number, I might know who is on the other end. If I know who is on the other end, I might know where I'm going."
+   },
+   {
+    "speaker": "ch-04",
+    "line": "You know who.",
+    "subtext": "This is not a question. You are a variable in an equation I have already solved. Your compliance is a formality, not a negotiation."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "I don't know what you're talking about.",
+    "subtext": "I am stalling. I am looking at the phone, but I am not picking it up. I am testing the weight of your patience against the weight of your gun."
+   },
+   {
+    "speaker": "ch-04",
+    "line": "Pick it up, Trinity.",
+    "subtext": "I am using your name because I am bored. I am using the imperative because I am tired of your resistance. Move."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "If I do, I'm dead.",
+    "subtext": "I am telling you the truth. I am telling you that I see the logic of your trap. I am telling you that I am a smart enough hacker to know that a phone call in a hotel lobby is a death sentence."
+   }
+  ],
+  "what_this_exposes": "The analysis assumed Smith would be 'clinical and precise,' but writing the lines reveals that his 'precision' is actually a form of extreme, almost bored, condescension. He doesn't explain; he assumes. The risk of the 'phone' command being too specific is mitigated by making it a test of Trinity's knowledge rather than a simple order to dial. It exposes that Smith's power comes from his absolute certainty that Trinity's choices are already made for her.",
+  "risks_checked": [
+   {
+    "risk": "The specific command (picking up the phone) might be too specific if it doesn't align with the later plot points where the phone is used for escape.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "Line 5 ('You know who') and Line 8 ('If I do, I'm dead') frame the phone not as a simple tool, but as a high-stakes choice. This makes the command feel like a trap she has to navigate, rather than a random instruction, which aligns with the plot point of her needing to make a critical decision to survive."
+   },
+   {
+    "risk": "The police's reaction might feel unconvincing if they don't show enough deference to the Agent.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The exchange is a closed loop between Smith and Trinity. The police are absent from the dialogue, which implies they are background noise. Smith's total focus on Trinity (calling her by name in Line 7) shows he is operating on a different plane of reality than the police, making their deference (or lack of it) irrelevant to the immediate tension."
+   }
+  ],
+  "voices_distinct": "The voices are distinct. Smith speaks in fragments and absolutes ('The phone.', 'You know who.'). He is a system function. Trinity speaks in questions and conditionals ('Which one?', 'If I do...'). She is a human trying to negotiate with a system. If they swapped lines, Smith saying 'If I do, I'm dead' would sound like a glitch, and Trinity saying 'You know who' would sound like a threat rather than a stalling tactic."
+ },
+ "continuity": {
+  "established_facts_used": [
+   {
+    "fact": "The scene is set in a decaying hotel.",
+    "source": "sc-001",
+    "how_used": "This physical environment provides the specific acoustic and spatial constraints (reverb, confined space) that justify the police's hesitation and the intimacy of the threat."
+   },
+   {
+    "fact": "Trinity is currently at gunpoint.",
+    "source": "sc-001",
+    "how_used": "This establishes the baseline of physical threat that Agent Smith must now override with a psychological/verbal command."
+   },
+   {
+    "fact": "A police raid is in progress.",
+    "source": "sc-001",
+    "how_used": "The presence of the raiding force explains why the police are 'looking on' but unable to intervene immediately; they are mid-procedure and confused by the sudden shift in authority."
+   }
+  ],
+  "constraints_honoured": [
+   "The roster is strictly limited to ch-04 (Agent Smith/Trinity composite or primary actor). The police are treated as ambient/background entities from sc-001, not active dialogue participants in this specific beat, to honor the single-entity involvement constraint.",
+   "The transition must maintain the 'cold-open' tension established in sc-001 without breaking the immediate threat level."
+  ],
+  "contradictions_checked": [
+   {
+    "risk": "Introducing a phone as a prop that was not mentioned in the sc-001 summary might feel like a continuity error if the hotel room was described as empty.",
+    "avoided_by": "Assuming the 'decaying hotel' context implies standard furnishings (like a bedside phone) that were not explicitly negated in the summary. The focus is on the action of picking it up, not its prior state."
+   },
+   {
+    "risk": "Agent Smith's calm instruction might contradict the chaotic energy of a 'police raid' if the police are still shouting.",
+    "avoided_by": "The resolution specifies the police are 'confused but unable to intervene,' implying the raid's active noise has paused or been overpowered by Smith's presence/authority, creating a silent pocket in the chaos."
+   }
+  ],
+  "state_preconditions": [
+   {
+    "entity": "ch-04",
+    "variable": "pursuit_phase",
+    "must_be": "hunting_trinity"
+   }
+  ],
+  "forward_commitments": [
+   "The phone dial must lead to a specific outcome (escape, contact, or trap) in a subsequent node.",
+   "The police's confusion must be resolved or escalated in the next beat; they cannot remain in a state of indefinite confusion."
+  ]
+ }
+}

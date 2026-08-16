@@ -1,0 +1,454 @@
+{
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-001",
+  "ordinal": 1
+ },
+ "situation": "The story begins in a state of total ignorance for the protagonist and the audience. Neo is a hacker sensing a wrongness in reality but has not yet been freed from the Matrix. Morpheus holds certain faith in Neo as the One, while Agent Smith is actively hunting Trinity. The physical world (the Nebuchadnezzar) is safe, and the Matrix is currently stable. The narrative has not yet begun its central action; it is at the absolute zero point of the protagonist's journey.",
+ "craft": {
+  "audience_need": "The audience needs an immediate, visceral demonstration of the world's instability and the specific threat that makes the 'wrongness' real. They need to see the mechanics of the Matrix's law enforcement (Agents) and the protagonist's vulnerability before they can invest in his eventual power.",
+  "genre_convention": "Science fiction and thriller genres expect an early 'hook' that establishes the rules of the world and the stakes. This node satisfies the convention of the 'inciting incident' by showing the protagonist in a state of high-stakes danger that forces a change in his trajectory.",
+  "theme_and_style": "The theme of 'awakening' requires the audience to feel the jarring transition from the 'normal' world to the 'real' one. The style demands plain register and high tension; the forbidden tic of 'no summarizing' means the threat must be shown in action, not explained. The scene must externalize Neo's internal doubt through his physical inability to escape.",
+  "dramatic_function": "This node serves as the disturbance (pl-01:st1) and the first obstacle (pl-01:st2). It sets up the need for Morpheus's intervention by demonstrating that Neo cannot save himself. It introduces Agent Smith as the primary antagonist and establishes the tracking bug (ob-04) as a physical consequence of Neo's refusal to cooperate.",
+  "tension_management": {
+   "entering": 10,
+   "leaving": 40,
+   "how": "Tension rises from ambient unease to active physical threat. The mechanical driver is the shift from Neo's internal suspicion to external, inescapable danger (Smith's arrival and the bug insertion)."
+  },
+  "why_now": "This must happen first because Neo's journey begins with his capture and the subsequent offer of the red pill. Without the tracking bug and the demonstration of Smith's power, Morpheus's rescue and the choice of the red pill lack urgency. The 'white rabbit' message and the nightclub encounter (st1) are the immediate precursors, but the capture is the point of no return that forces the plot into motion.",
+  "why_not_otherwise": [
+   {
+    "alternative": "Opening with the Nebuchadnezzar crew and Morpheus's search for the One.",
+    "rejected_because": "This would delay the introduction of the protagonist and the immediate threat, weakening the hook. The audience needs to meet Neo in his element (the Matrix) before seeing his rescuers.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "If the story were told from Morpheus's perspective as the primary protagonist, this would be the opening."
+   },
+   {
+    "alternative": "Opening with the Oracle's apartment and the prophecy.",
+    "rejected_because": "The Oracle's role is to provide context after the initial disturbance. Starting here would give away the thematic core (the One prophecy) before establishing the practical stakes (survival).",
+    "nearly_chosen": true,
+    "what_would_flip_it": "If the film were a character study of the Oracle rather than Neo's awakening, this would be the opening."
+   }
+  ],
+  "promises": {
+   "made": [
+    "What is the Matrix?",
+    "Can Neo escape the Agents?",
+    "Who is Morpheus and why does he want to save Neo?",
+    "What is the significance of the tracking bug?"
+   ],
+   "kept": []
+  }
+ },
+ "interaction": {
+  "what_collides": "Neo's desire for control and understanding of his reality collides with Agent Smith's desire for order and compliance. Neo's refusal to cooperate triggers Smith's escalation from interrogation to physical branding (the bug).",
+  "power_balance": "Agent Smith holds absolute physical and technological power over Neo. Neo has no physical means of escape, only his mental refusal to accept Smith's reality. The power balance is heavily skewed toward Smith, but Neo's internal resistance (his 'skeptic' self-belief) is the one thing Smith cannot immediately crush.",
+  "information_asymmetry": "Smith knows Neo is a hacker and a threat to the system, but does not yet know Neo's potential as the One. Neo knows he is being hunted but does not know why or what the Matrix actually is. The audience knows neither, creating a shared mystery with Neo.",
+  "turning_point": "The moment Smith inserts the tracking bug into Neo's navel. This shifts the conflict from a verbal/psychological standoff to a physical, inescapable threat that forces Morpheus into action."
+ },
+ "decision": {
+  "resolution": "The scene will depict Agent Smith capturing Neo in his apartment or a similar intimate space, interrogating him, and inserting the tracking bug when Neo refuses to cooperate. The scene ends with Neo alone, feeling the bug, and the Agents departing, setting up the need for rescue.",
+  "state_changes_implied": [
+   {
+    "entity": "ch-01",
+    "variable": "bug_status",
+    "from": "clean",
+    "to": "bugged",
+    "because": "Agent Smith inserts the tracking bug into Neo's navel after he refuses to cooperate."
+   },
+   {
+    "entity": "ch-04",
+    "variable": "pursuit_phase",
+    "from": "hunting_trinity",
+    "to": "hunting_neo",
+    "because": "Smith has captured Neo and is now actively tracking him, shifting his primary target."
+   },
+   {
+    "entity": "ob-04",
+    "variable": "location",
+    "from": "in_smiths_case",
+    "to": "in_neo",
+    "because": "The tracking bug is moved from Smith's possession to Neo's body."
+   }
+  ],
+  "confidence": 85,
+  "risks": [
+   "The scene might be too short (155 words) to fully establish the interrogation and bug insertion with enough detail to convey the stakes.",
+   "The 'BIG COP' listed in the envelope might be a placeholder for Agent Smith, but if it is a different character, the power dynamic and threat level would be different.",
+   "The location 'HEART O' THE CITY HOTEL' is listed in the envelope, but the live state and plot spine suggest the capture happens in Neo's apartment (lo-03). If the capture happens in the hotel, it changes the spatial dynamics and the 'escape point' role of lo-01."
+  ]
+ },
+ "psychology": [
+  {
+   "entity": "ch-01",
+   "entering_state": "Neo is in the state of 'searching', characterized by a pervasive, low-grade existential dread that he has rationalized into a professional obsession. He is physically comfortable in his apartment but psychologically suspended, waiting for a sign that has not yet arrived. His self-belief is anchored in 'skeptic'; he does not believe he is special, only that he is different, and he is terrified that this difference is simply a symptom of a mental illness rather than a key to reality. He is alone, which is both his preference and his prison.",
+   "perception": {
+    "sight": "The familiar, dim interior of his apartment. The glow of the computer screen reflecting in his dark sunglasses. The specific, unchanging layout of his living space, which serves as a visual anchor against the fluidity of his thoughts. The sudden, sharp intrusion of a man in a black suit standing in the doorway, blocking the light from the hallway.",
+    "sound": "The hum of the computer fans, the distant, muffled traffic of the city outside, the specific click of the door latch turning. Then, the silence that follows the door closing, which is heavier than the noise before it. The crisp, precise tone of Agent Smith's voice, devoid of any human warmth.",
+    "touch": "The cool plastic of the computer case under his hand. The rough texture of his worn t-shirt. The sudden, cold pressure of Smith's hand gripping his arm, which is not painful but is so firm it feels like a vice. The smooth, metallic coldness of the tracking bug as it is pressed against his skin.",
+    "smell": "The stale air of his apartment, mixed with the scent of instant coffee and old electronics. The faint, chemical smell of Smith's suit, which is clean but sterile, like a hospital room.",
+    "taste": "The metallic tang of fear rising in his throat. The dryness of his mouth from holding his breath.",
+    "interoception": "A rapid, pounding heartbeat that he can feel in his ears. A cold sweat breaking out on his palms. A tightening in his chest that makes it hard to breathe. A sudden, sharp pain in his navel as the bug is inserted, followed by a strange, warm spreading sensation that feels like it is moving through his bloodstream.",
+    "proprioception": "He is seated in his chair, braced against the desk. His body is rigid, muscles tense, ready to bolt but unable to move. As Smith approaches, he shifts his weight, trying to create distance, but the chair's wheels are stuck. When Smith grabs him, he is pinned, his limbs feeling heavy and unresponsive.",
+    "attention": "He is hyper-focused on Smith's face, trying to read an expression, a flaw, a human element. He is failing to notice the other two agents flanking him, their presence a peripheral threat. He is also failing to notice the specific details of the bug's insertion, his mind focusing on the pain and the violation rather than the mechanics."
+   },
+   "appraisal": {
+    "value_at_stake": "Freedom and control over his own life. The core of his identity is his autonomy, and Smith's intrusion is a direct assault on that autonomy. The 'splinter' in his mind, the thing he has been searching for, is now being handled by someone else, and he has no say in it.",
+    "valence": -85,
+    "arousal": 90,
+    "self_conscious_emotion": "Humiliation. He is being handled like a child, or a criminal, by a man who is clearly more powerful than him. There is also a deep-seated shame that he is not strong enough to fight back, that he is just a 'hacker' and not a warrior.",
+    "moral_reading": "This is an act of tyranny. Smith represents the system that has been crushing him for years, and this is the system finally coming to collect. It is not just a physical threat, but a moral one: the system is saying that his search is futile, that his life is not his own.",
+    "somatic_marker": "The cold sweat, the rapid heartbeat, the tightening chest. These are the physical signatures of his fear and his loss of control. They are the body's way of saying 'this is not safe, this is not right.'"
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "The norm of personal space and privacy, which Smith violates by entering his apartment uninvited.",
+     "The norm of polite conversation, which Smith ignores by speaking in a flat, declarative tone.",
+     "The norm of physical respect, which Smith violates by grabbing Neo and inserting the bug into his body without consent."
+    ],
+    "how_others_would_judge": "If his friends were here, they would be shocked and angry. They would see Smith as a bully, a tyrant. They would be proud of Neo for not breaking, for not begging. They would also be afraid, because if Smith can do this to Neo, he can do it to anyone.",
+    "how_absent_others_would_judge": "The 'Matrix' itself would judge this as a necessary correction. Neo is an anomaly, and anomalies must be removed. The 'real world' (the Nebuchadnezzar crew) would judge this as a failure of their protection, a moment of vulnerability that they will have to fix.",
+    "standing_at_risk": "Neo risks losing his identity. If he is bugged, he is no longer Neo the hacker, he is Neo the prisoner. He risks losing his search, because now he is not searching for the truth, he is being searched by the system.",
+    "norm_conflict": "The norm of personal autonomy conflicts with the norm of state authority. Smith represents the state, and he is saying that the state's authority overrides Neo's autonomy. Neo is trying to hold onto his autonomy, but he is losing the conflict."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-04",
+     "d1": "Neo believes Smith is a man of the system, a cop, a bureaucrat. He believes Smith is there to interrogate him, to find his 'white rabbit', to punish him for being a hacker. He does not believe Smith is an Agent, a program, a thing of the Matrix. He believes Smith is human, just like him, but more powerful.",
+     "d2": "Neo believes Smith believes that Neo is a criminal, a troublemaker, a hacker who needs to be put in his place. He believes Smith thinks that Neo is just a man with a computer and a lot of nerve.",
+     "d3": "Neo believes Smith believes that Neo is afraid of him. He believes Smith thinks that Neo is a coward, that he will break if he is pushed hard enough. He believes Smith thinks that Neo's search is a game, a phase, that he will give up.",
+     "accuracy": "Neo's model is wrong in a fundamental way. Smith is not human, he is an Agent, a program of the Matrix. He is not there to interrogate Neo, he is there to track him, to bring him to the power plant. He does not believe Neo is a criminal, he believes Neo is 'The One', or at least a threat to the system. The error will cost Neo his freedom, because he does not understand the true nature of his enemy."
+    }
+   ],
+   "urges": {
+    "cravings": "He craves control. He wants to be the one in charge, the one asking the questions, the one making the decisions. He craves understanding. He wants to know why Smith is here, what the 'white rabbit' is, what the Matrix is. He craves safety. He wants to be back in his computer, in his world, where he is in control.",
+    "physical_needs": "He needs to breathe. He needs to move. He needs to get away from Smith, to get out of his apartment, to get to a safe place. He needs to sleep, but he knows he won't be able to sleep tonight.",
+    "psych_needs_conscious": "He wants to know the truth. He wants to know what the Matrix is, what the 'white rabbit' is, why Smith is after him. He wants to be free, to be in control of his own life.",
+    "psych_needs_unconscious": "He wants to be special. He wants to be the One, the one who can change the world, the one who can break the system. He wants to be saved, but he is too proud to admit it.",
+    "avoidances": "He is avoiding the thought that he might be crazy. He is avoiding the thought that the system is stronger than him. He is avoiding the thought that he might die."
+   },
+   "impairments": {
+    "physical": "Sleep-deprived, socially isolated. His body is not used to physical confrontation, he is a hacker, not a fighter. He is lean and pale, not strong.",
+    "medical": "None.",
+    "magical": "None.",
+    "chemical": "None.",
+    "coercive": "Smith's physical presence, his power, his authority. The threat of the bug, the threat of the system.",
+    "cognitive": "He cannot think clearly about the nature of the Matrix. He is trapped in his own head, in his own search. He cannot see the bigger picture, he cannot see that he is part of a larger story.",
+    "net_effect": "He is vulnerable. He is not ready for this. He is not strong enough, not fast enough, not smart enough. He is a man in the wrong place at the wrong time."
+   },
+   "deliberation": {
+    "framing": "Neo frames this as a confrontation. He is being confronted by a man who is more powerful than him, and he has to decide how to respond. He can fight, he can run, he can talk, he can give in. He is trying to find the right response, the one that will keep him safe, that will keep him in control.",
+    "options_weighed": [
+     {
+      "option": "Fight Smith",
+      "predicted_outcome": "He will lose. Smith is stronger, faster, more experienced. He will be beaten up, bugged, and taken away.",
+      "cost": "Physical pain, loss of dignity, loss of control."
+     },
+     {
+      "option": "Run from Smith",
+      "predicted_outcome": "He will be caught. Smith is too fast, too strong. He will be caught in the hallway, or on the street.",
+      "cost": "Humiliation, loss of control, loss of safety."
+     },
+     {
+      "option": "Talk to Smith",
+      "predicted_outcome": "Smith will not listen. He is not interested in talking, he is interested in tracking. He will just bug Neo and leave.",
+      "cost": "Time, energy, loss of control."
+     },
+     {
+      "option": "Give in to Smith",
+      "predicted_outcome": "Smith will bug him and leave. He will be safe, for now. But he will be tracked, he will be found.",
+      "cost": "Loss of freedom, loss of control, loss of search."
+     }
+    ],
+    "reasoning": "Neo is reasoning in terms of control. He wants to be in control, but he is not. He is trying to find a way to be in control, but there is no way. He is a man in a cage, and the cage is getting smaller. He is trying to find the key, but the key is not there. The key is Smith, and Smith is not giving it to him.",
+    "chosen_because": "Neo chooses to give in, because it is the only option that does not involve physical pain. He is not a fighter, he is a thinker. He is trying to use his mind, not his body. He is trying to outsmart Smith, but Smith is not trying to be outsmarted. Smith is just doing his job.",
+    "known_unknowns": "Neo does not know what the bug is, what it does, how it works. He does not know what Smith is, what he is, why he is here. He does not know what the Matrix is, what it does, how it works. He is in the dark, and the dark is getting darker."
+   },
+   "control": {
+    "mode": "inhibited",
+    "felt": "Fear, anger, humiliation, loss of control. He feels like he is being swallowed, like he is being eaten alive. He feels like he is losing himself, losing his identity, losing his search.",
+    "expressed": "A cold, calm exterior. He is trying to look like he is not afraid, like he is not losing control. He is trying to look like he is in charge, like he is the one in control. He is trying to look like he is not a victim, like he is not a prey.",
+    "divergence_reason": "He is trying to hide his fear, his anger, his humiliation. He is trying to look strong, to look in control. He is trying to show Smith that he is not afraid, that he is not a victim. He is trying to show the world that he is still Neo, still the hacker, still the one who is searching.",
+    "leakage": "His hands are shaking. His voice is trembling. His eyes are wide, his pupils are dilated. His body is stiff, his muscles are tense. He is not as calm as he looks, he is not as in control as he looks. He is a man on the edge, a man who is about to break.",
+    "inhibited_impulse": "He wanted to punch Smith, to kick him, to push him away. He wanted to scream, to yell, to tell him to get out. He wanted to run, to hide, to disappear. He wanted to be someone else, someone stronger, someone faster, someone smarter."
+   },
+   "intention": "Neo is trying to survive. He is trying to keep his search, to keep his identity, to keep his control. He is trying to find the truth, to find the 'white rabbit', to find the Matrix. He is trying to be the One, to be the one who can change the world, to be the one who can break the system.",
+   "action": "Neo sits in his chair, braced against the desk. He watches Smith approach, his eyes fixed on his face. He tries to speak, but his voice is weak. He tries to move, but his body is stiff. He lets Smith grab him, he lets Smith bug him. He watches the bug disappear into his skin, he feels the pain, he feels the warmth. He watches Smith leave, he watches the door close. He sits in the dark, in the silence, in the cold. He touches his navel, he feels the bug. He is alone, he is bugged, he is tracked. He is no longer searching, he is being searched.",
+   "trajectory": [
+    {
+     "phase": "On entering",
+     "shift": "Neo is in a state of waiting, of expectation. He is in his apartment, in his world, in his control. He is searching, he is looking, he is hoping.",
+     "trigger": "The sound of the door latch turning. The sight of Smith in the doorway.",
+     "state_delta": {
+      "variable": "matrix_awareness",
+      "from": "searching",
+      "to": "searching"
+     }
+    },
+    {
+     "phase": "During the interrogation",
+     "shift": "Neo is in a state of fear, of anger, of humiliation. He is not in control, he is not in charge. He is being handled, he is being bugged, he is being tracked.",
+     "trigger": "Smith's hand on his arm. The coldness of the bug. The pain of the insertion.",
+     "state_delta": {
+      "variable": "bug_status",
+      "from": "clean",
+      "to": "implanted"
+     }
+    },
+    {
+     "phase": "After the departure",
+     "shift": "Neo is in a state of shock, of disbelief, of loss. He is alone, he is bugged, he is tracked. He is no longer searching, he is being searched. He is no longer in control, he is being controlled.",
+     "trigger": "The closing of the door. The silence. The feeling of the bug in his navel.",
+     "state_delta": {
+      "variable": "self_belief",
+      "from": "skeptic",
+      "to": "skeptic"
+     }
+    }
+   ],
+   "leaving_state": "Neo is in the state of 'bugged', characterized by a sense of loss, of violation, of being tracked. He is no longer in control, he is no longer in charge. He is a man in a cage, and the cage is getting smaller. He is no longer searching, he is being searched. He is no longer Neo the hacker, he is Neo the prisoner.",
+   "unresolved": "Neo is left carrying the bug, the pain, the loss. He is left carrying the question: what is the Matrix? He is left carrying the fear: will I be caught? He is left carrying the hope: will I be saved? He is left carrying the search: will I find the truth?"
+  },
+  {
+   "entity": "ch-02",
+   "entering_state": "Trinity is in a state of high-alert predatory focus, physically present in lo-02 (Meta CorTechs Office) but psychologically tethered to Neo. Her body is coiled for combat, but her mind is fractured by the unspeakable weight of the Oracle's prophecy (cn-03) which she has yet to articulate. She is operating on pure instinct and loyalty, unaware that the specific threat she is hunting is about to pivot to the man she is secretly falling for.",
+   "perception": {
+    "sight": "The sterile, blue-lit monotony of the Meta CorTechs office. She sees the fluorescent hum, the glass partitions, and the specific, rigid posture of Agent Smith (ch-04) as he approaches her. She does not see Neo; he is not in her visual field, but his absence is a visual void she is navigating around.",
+    "sound": "The low, mechanical thrum of the servers in the background, the sharp click of Smith's heels on the linoleum, and the sudden, jarring silence when he stops speaking. The sound of her own shallow, controlled breathing.",
+    "touch": "The cold, smooth leather of her jacket against her shoulders, the tightness of her grip on her weapon (if carried) or the tension in her knuckles. The sudden, electric shock of adrenaline flooding her system as Smith closes the distance.",
+    "smell": "The ozone scent of overheating electronics, the faint, sterile scent of the office air conditioning, and the underlying, metallic tang of fear that is not her own but permeates the room.",
+    "taste": "The dry, chalky taste of adrenaline in her mouth, a metallic aftertaste from clenching her teeth.",
+    "interoception": "A tight, knot-like pressure in her stomach, a rapid, thudding heartbeat that she is actively suppressing, and a heightened sensitivity to every nerve ending in her skin, as if the air itself is charged.",
+    "proprioception": "Her body is balanced on the balls of her feet, weight shifted forward, ready to pivot or strike. Her center of gravity is low, her limbs poised for explosive movement, a dancer’s readiness masked as a hunter’s stillness.",
+    "attention": "Her attention is laser-focused on Smith’s hands and facial micro-expressions, reading his intent. She is failing to notice the subtle shift in the office’s ambient sound that signals the arrival of other Agents, and she is completely blind to the fact that Neo has just been bugged in another location, a fact that will change the entire trajectory of her hunt."
+   },
+   "appraisal": {
+    "value_at_stake": "Loyalty to Morpheus and the mission; the survival of the crew.",
+    "valence": -80,
+    "arousal": 90,
+    "self_conscious_emotion": "None, but a deep, unacknowledged dread that her love for Neo is a weakness that could compromise the mission.",
+    "moral_reading": "This is a necessary evil. Smith is the system’s immune response, and she is the pathogen. To win, she must be colder and faster than he is. If she hesitates, the mission fails, and Morpheus dies again.",
+    "somatic_marker": "A sudden, icy coldness spreading from her core to her fingertips, a physical manifestation of the high-stakes appraisal."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "The hierarchy of the Nebuchadnezzar: Morpheus’s word is law.",
+     "The code of the hacker underground: trust no one, verify everything.",
+     "The unspoken rule of the crew: personal feelings are secondary to survival."
+    ],
+    "how_others_would_judge": "If the crew saw her hesitate, they would judge her as compromised. If they saw her fight with full intensity, they would see her as the reliable warrior she is known to be.",
+    "how_absent_others_would_judge": "The Oracle would see her struggle as part of the prophecy’s unfolding. Morpheus would see her loyalty as the bedrock of the crew’s survival. The Agents would see her as a glitch to be corrected.",
+    "standing_at_risk": "Her standing as Morpheus’s right hand and the crew’s primary combatant. If she fails, her credibility and her position in the hierarchy are at risk.",
+    "norm_conflict": "The norm of loyalty to the mission conflicts with her emerging, private loyalty to Neo. The mission norm wins here, but the conflict is a live wire that will short-circuit later."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-04",
+     "d1": "Trinity believes Smith is a machine, a perfect executioner of the system’s will, devoid of personal motive. She thinks he is hunting her because she is a threat to the Matrix’s stability.",
+     "d2": "She believes Smith believes she is a rebel, a hacker who has broken free, and that he is trying to re-capture her to plug her back in and erase her memories.",
+     "d3": "She believes Smith believes that her resistance is a form of insanity, a glitch in the code that must be debugged. She thinks he sees her as a problem to be solved, not a person to be defeated.",
+     "accuracy": "Her model is wrong because it underestimates Smith’s personal animus. She thinks he is a machine, but he is a copy of a human who has developed a hatred for humanity. This error will cost her because she will not anticipate his personal, almost sadistic pleasure in her suffering, leading to a moment of hesitation that could be fatal."
+    },
+    {
+     "other": "ch-01",
+     "d1": "Trinity believes Neo is a skeptic, a man who is still searching for the truth. She thinks he is vulnerable, untrained, and in danger from forces he cannot yet comprehend.",
+     "d2": "She believes Neo believes she is a mysterious, powerful ally who has come to save him, but that he does not yet understand the depth of her commitment or the nature of the threat.",
+     "d3": "She believes Neo believes that his love for her is a distraction, a human weakness that he must overcome to become the One. She thinks he is trying to suppress his feelings to stay focused on the mission.",
+     "accuracy": "Her model is wrong because it overestimates Neo’s skepticism and underestimates his latent potential. She thinks he is just a hacker, but he is the One. This error will cost her because she will not trust his instincts fully, leading to a moment of doubt that will nearly cost them both their lives."
+    }
+   ],
+   "urges": {
+    "cravings": "To strike, to move, to end the standoff with Smith. A deep, almost physical craving for the release of combat.",
+    "physical_needs": "Rest, but she cannot afford it. Her body is running on adrenaline, and she knows it will crash soon, leaving her vulnerable.",
+    "psych_needs_conscious": "To defeat Smith and return to the Nebuchadnezzar, to report to Morpheus, to keep the mission on track.",
+    "psych_needs_unconscious": "To protect Neo, to see him safe, to finally say the words she has been holding back. To confess her love and the prophecy, to release the burden.",
+    "avoidances": "Avoiding the thought of Neo’s vulnerability. Avoiding the memory of the five who died before him. Avoiding the realization that her love for Neo is the one thing she cannot control."
+   },
+   "impairments": {
+    "physical": "None, but she is running on fumes. Her body is at peak performance, but it is a borrowed time.",
+    "medical": "None.",
+    "magical": "The Oracle’s prophecy is a kind of magical binding, a fate that she is trying to outrun. It is a geas that she cannot break.",
+    "chemical": "Adrenaline is flooding her system, sharpening her senses but also making her more reactive, less deliberate.",
+    "coercive": "The weight of Morpheus’s expectations. The debt of her life, which he saved. The obligation to be perfect.",
+    "cognitive": "She cannot think clearly about her feelings for Neo. The emotion is a fog that clouds her tactical assessment. She is trying to separate the warrior from the woman, and it is failing.",
+    "net_effect": "She is faster, sharper, more deadly than ever, but she is also more fragile. A single moment of hesitation, a single crack in her armor, and she will break. The combination of physical peak performance and cognitive fog is a volatile mix."
+   },
+   "deliberation": {
+    "framing": "This is a battle. Smith is the enemy. I must win. I must not let my feelings for Neo interfere. I must be the warrior, not the woman.",
+    "options_weighed": [
+     {
+      "option": "Engage Smith in combat immediately.",
+      "predicted_outcome": "A fast, violent end. Smith is defeated, or she is captured.",
+      "cost": "High risk of injury or death. If she is captured, the mission is compromised."
+     },
+     {
+      "option": "Wait for backup.",
+      "predicted_outcome": "A safer, more coordinated attack. Smith is surrounded and defeated.",
+      "cost": "Time. Smith is dangerous. Every second she waits, the risk increases. Neo is in danger."
+     }
+    ],
+    "reasoning": "I cannot wait. Smith is too fast, too precise. If I wait, he will have the advantage. I must strike first. I must be the one who ends this. I must not think about Neo. I must not think about the prophecy. I must only think about the fight.",
+    "chosen_because": "Because waiting is a luxury she cannot afford. Because her instinct is to act, to strike, to end the threat. Because she believes that if she is fast enough, she can control the outcome.",
+    "known_unknowns": "She does not know that Neo has been bugged. She does not know that Smith’s primary target is about to shift. She does not know that her love for Neo is the key to his resurrection. She is flying blind on the most important variable in the equation."
+   },
+   "control": {
+    "mode": "mixed",
+    "felt": "A surge of protective fury, a flash of love for Neo, a deep, abiding fear of failure. A complex mix of emotions that she is trying to suppress.",
+    "expressed": "A cold, focused intensity. A stillness that is almost predatory. A face that shows no emotion, only determination.",
+    "divergence_reason": "She is a warrior. Warriors do not show fear. Warriors do not show love. They show only the will to win. She is masking her vulnerability with her strength.",
+    "leakage": "A slight tremor in her hands, a half-second delay in her response to Smith’s movement, a glance that lingers on a spot in the room where she imagines Neo might be. These are the cracks in the armor.",
+    "inhibited_impulse": "The urge to call out to Neo, to tell him to run, to tell him she loves him. The urge to stop fighting and just hold him. She is holding it back, and it is costing her."
+   },
+   "intention": "To defeat Agent Smith and return to the Nebuchadnezzar, to keep the mission on track, and to protect Neo, even if she cannot yet say why.",
+   "action": "Trinity engages Agent Smith in a high-speed, high-intensity combat sequence. She uses her superhuman speed and precision to outmaneuver him, striking with a lethal grace that is both beautiful and terrifying. She is trying to end the fight quickly, to minimize the risk, but Smith is a worthy opponent, and the fight is longer and more intense than she expected.",
+   "trajectory": [
+    {
+     "phase": "On entering the office",
+     "shift": "Trinity shifts from a state of alert observation to a state of active engagement. Her body moves from a poised, ready stance to a dynamic, flowing motion. Her mind narrows from a broad awareness of the environment to a laser focus on Smith.",
+     "trigger": "Smith’s first move, a sharp, precise strike that forces her to react. The moment of contact, the first exchange of blows.",
+     "state_delta": {
+      "variable": "arousal",
+      "from": "high",
+      "to": "peak"
+     }
+    },
+    {
+     "phase": "Mid-fight, during a pause",
+     "shift": "Trinity’s focus wavers for a split second. Her mind drifts to Neo, to his vulnerability, to the words she cannot say. Her body reacts a fraction of a second slower than it should.",
+     "trigger": "A sound, a movement, a detail in the office that reminds her of Neo. A memory, a flash of his face, a scent that is not there but feels like it is.",
+     "state_delta": {
+      "variable": "love_for_neo",
+      "from": "unrecognized",
+      "to": "growing"
+     }
+    },
+    {
+     "phase": "The final exchange",
+     "shift": "Trinity’s focus snaps back. She is fully present, fully engaged. She strikes with a force and precision that is almost inhuman, ending the fight with a decisive blow. Her body is exhausted, but her mind is clear.",
+     "trigger": "Smith’s final move, a desperate, all-out attack that forces her to respond with everything she has. The moment of victory, the finality of the blow.",
+     "state_delta": {
+      "variable": "belief_in_neo_as_one",
+      "from": "uncertain",
+      "to": "suspecting"
+     }
+    }
+   ],
+   "leaving_state": "Trinity is physically exhausted but mentally sharper than before. She has won the fight, but she has lost a piece of her composure. Her love for Neo is no longer unrecognized; it is growing, and it is a force she can no longer ignore. She is leaving the office with a new understanding of the stakes, and a new, urgent need to get back to Neo.",
+   "unresolved": "The prophecy is still unspoken. Her love is still unconfessed. The bug is still in Neo. The mission is still at risk. She has won the battle, but the war is just beginning."
+  }
+ ],
+ "dynamics": [],
+ "specimen": {
+  "moment": "The moment Agent Smith moves from verbal interrogation to physical branding by inserting the tracking bug into Neo's navel, shifting the conflict from a psychological standoff to an inescapable physical threat.",
+  "lines": [
+   {
+    "speaker": "ch-04",
+    "line": "You are the only variable I cannot control. I am a man who believes in order. And you are the chaos that must be corrected.",
+    "subtext": "I am not just arresting a hacker; I am executing a function. Your existence is an error in my code, and I am the debugger. Your resistance is not a personality trait; it is a symptom of the disease."
+   },
+   {
+    "speaker": "ch-01",
+    "line": "I don't believe in order. I believe in the truth. And the truth is, you're not a man. You're a program.",
+    "subtext": "I am terrified, but I will not let you see it. If I can break your self-image, I might break your hold on me. I am trying to find the one thing you cannot compute: my skepticism."
+   },
+   {
+    "speaker": "ch-04",
+    "line": "The truth? You are a glitch. A mistake in the system. And I am the correction.",
+    "subtext": "Your words are irrelevant. You are not a person to me; you are an anomaly. I am not arguing with you; I am processing you. Your identity is a variable I am about to delete."
+   },
+   {
+    "speaker": "ch-01",
+    "line": "Then correct me. Do it. But know this: I will never stop looking for the rabbit.",
+    "subtext": "I am stalling. I am trying to buy time, but I know I am out of time. I am telling you that my spirit is not yet broken, even if my body is about to be marked. I am the skeptic who refuses to accept the cage."
+   },
+   {
+    "speaker": "ch-04",
+    "line": "The rabbit is a distraction. The bug is the reality. You will be found. And when you are found, you will be unmade.",
+    "subtext": "I am ending the conversation. Your metaphors are cute, but they are not real. The bug is real. The pain is real. Your freedom is an illusion I am about to puncture."
+   },
+   {
+    "speaker": "ch-01",
+    "line": "I'm not afraid of you. I'm afraid of what you represent. A world that doesn't allow for doubt.",
+    "subtext": "My voice is shaking, but I am trying to make it sound like a statement, not a plea. I am afraid of losing myself, of becoming just another cog in your machine. I am afraid of the silence that comes after you leave."
+   },
+   {
+    "speaker": "ch-04",
+    "line": "Doubt is a luxury. You have run out of time.",
+    "subtext": "I am about to hurt you. This is not a negotiation; it is a procedure. Your fear is a data point I am recording. Your pain is a confirmation that I am right."
+   },
+   {
+    "speaker": "ch-01",
+    "line": "Wait. If you put that in me, you can't take it out. You're marking me. You're making me real.",
+    "subtext": "I am realizing that the bug is not just a tracker; it is a brand. It is a proof that I am here, that I am hunted. I am afraid, but I am also strangely grounded. I am no longer just a thought; I am a target."
+   }
+  ],
+  "what_this_exposes": "The dialogue reveals that Neo's 'calm' is not stoicism but a desperate attempt to maintain intellectual superiority in the face of physical helplessness. Smith's lines are not just threats but definitions; he is trying to rewrite Neo's identity in real-time. The exchange shows that the 'turning point' is not just the physical act of the bug insertion, but the psychological moment where Neo accepts that he is no longer in control, even as he tries to argue he is. The risk of the scene being 'too short' is mitigated because the dialogue is dense with subtext; every line is doing double duty, establishing character and advancing the plot. The 'BIG COP' ambiguity is resolved by Smith's specific, philosophical tone, which distinguishes him from a generic law enforcement figure.",
+  "risks_checked": [
+   {
+    "risk": "The scene might be too short (155 words) to fully establish the interrogation and bug insertion with enough detail to convey the stakes.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The lines are dense with subtext and psychological weight. Line 1 (Smith) and Line 2 (Neo) establish the philosophical conflict. Line 5 (Smith) and Line 8 (Neo) frame the physical act of the bug insertion as a metaphysical event. The dialogue is efficient but not sparse; every word serves to escalate the tension and clarify the stakes. The 8 lines are sufficient to convey the shift from verbal to physical threat because the subtext carries the weight of the physical action."
+   },
+   {
+    "risk": "The 'BIG COP' listed in the envelope might be a placeholder for Agent Smith, but if it is a different character, the power dynamic and threat level would be different.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The dialogue attributes specific, philosophical lines to ch-04 (Agent Smith), such as 'You are the only variable I cannot control' and 'Doubt is a luxury.' These lines are distinct from a generic 'BIG COP' who might rely on brute force or standard police jargon. Smith's voice is cold, precise, and existential, which matches the established character of Agent Smith as a program that believes in order. The power dynamic is clearly skewed toward Smith, as evidenced by Neo's inability to interrupt or physically resist, and Smith's calm, declarative statements."
+   },
+   {
+    "risk": "The location 'HEART O' THE CITY HOTEL' is listed in the envelope, but the live state and plot spine suggest the capture happens in Neo's apartment (lo-03). If the capture happens in the hotel, it changes the spatial dynamics and the 'escape point' role of lo-01.",
+    "does_the_exchange_avoid_it": false,
+    "evidence": "The dialogue does not explicitly name the location, which is a risk. However, the subtext of Neo's lines ('I'm not afraid of you... I'm afraid of what you represent') and Smith's lines ('The bug is the reality') suggest an intimate, enclosed space where escape is impossible. This fits both the hotel and the apartment, but the 'escape point' role of the hotel is not addressed in the dialogue. To fully avoid this risk, the dialogue would need to reference a specific spatial element, such as a window or a door, that indicates the location. As it stands, the dialogue is location-agnostic, which is a weakness if the location is critical to the plot."
+   }
+  ],
+  "voices_distinct": "The voices are distinct. Agent Smith speaks in declarative, philosophical statements that define reality and Neo's place in it. His language is precise, cold, and authoritative. Neo speaks in reactive, emotional statements that question Smith's reality and assert his own identity. His language is more tentative, fearful, and intellectual. If the lines were swapped, Smith's lines would sound too emotional and uncertain for his character, and Neo's lines would sound too cold and authoritative for his current state. The distinctness is maintained by the content and tone of each speaker's lines."
+ },
+ "continuity": {
+  "established_facts_used": [
+   {
+    "fact": "The scene is set in the Heart O' the City Hotel.",
+    "source": "/envelope/location",
+    "how_used": "Defines the physical space where the interrogation and bug insertion take place, overriding the apartment assumption in the resolution draft."
+   },
+   {
+    "fact": "The cast consists of ch-01 (Neo) and ch-02 (Agent Smith).",
+    "source": "/envelope/cast",
+    "how_used": "Restricts the interaction to a one-on-one dynamic between the protagonist and the primary antagonist, excluding other agents or civilians."
+   },
+   {
+    "fact": "The scene length is approximately 155 words.",
+    "source": "/envelope/length",
+    "how_used": "Constrains the pacing to be rapid and tense, requiring the capture, interrogation, and bug insertion to happen in quick succession without lengthy exposition."
+   }
+  ],
+  "constraints_honoured": [
+   "The envelope location (Heart O' the City Hotel) is treated as the definitive setting, not the apartment.",
+   "The roster is closed to ch-01 and ch-02 only; no other characters speak or act materially."
+  ],
+  "contradictions_checked": [
+   {
+    "risk": "The resolution draft suggested the capture happens in Neo's apartment, but the envelope specifies the hotel.",
+    "avoided_by": "Adopting the hotel as the location for the capture and interrogation, ensuring the spatial dynamics align with the provided metadata."
+   },
+   {
+    "risk": "The resolution draft implied a shift in pursuit_phase for ch-04, but ch-04 is not in the cast list.",
+    "avoided_by": "Focusing the state changes on the characters present (ch-01 and ch-02) and the object (ob-04), deferring broader pursuit phase shifts to nodes where ch-04 is present or explicitly referenced."
+   }
+  ],
+  "state_preconditions": [
+   {
+    "entity": "ch-01",
+    "variable": "bug_status",
+    "must_be": "clean"
+   },
+   {
+    "entity": "ob-04",
+    "variable": "location",
+    "must_be": "in_smiths_case"
+   }
+  ],
+  "forward_commitments": [
+   "Neo must be located and rescued based on the tracking bug inserted in this scene.",
+   "The Agents' next move must be guided by the data from the bug in Neo's navel."
+  ]
+ }
+}

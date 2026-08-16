@@ -45,6 +45,14 @@ sys.path.insert(0, str(ROOT))
 import requests
 
 from scriptforge import jsonschema_mini as js, reverse, scaffold, screenplay as sp
+
+sys.path.insert(0, str(ROOT.parent))
+from narrativeforge.model_notes import addendum_for
+
+# The addendum is the single variable under test. When off, the system prompt is
+# byte-identical to the one that produced the baseline nodes.
+ADDENDUM = addendum_for(os.environ.get("LOCAL_MODEL", "")) if os.environ.get("ADDENDUM") == "1" else ""
+SYSTEM = reverse.BLIND_SYSTEM + ADDENDUM
 from scriptforge.nodegen import entity_digest
 from scriptforge.pipeline import Project
 from scriptforge.transitions import (
@@ -157,7 +165,7 @@ def repair(part, doc, schema, node_id, think, rounds=2):
         if not errs:
             return doc, []
         print(f"      repairing {part}: {len(errs)} violation(s)")
-        doc = call(reverse.BLIND_SYSTEM,
+        doc = call(SYSTEM,
                    scaffold.repair_prompt(node_id, part, doc, errs, schema),
                    schema, tag=f"repair.{part}.{i+1}", think=think)
     return doc, js.validate(doc, schema)
@@ -199,33 +207,33 @@ def run_scene(project: Project, scene_id: str, think: str) -> dict:
                                    if k in ("target", "situation", "craft",
                                             "interaction", "decision")},
                     "required": ["target", "situation", "craft", "interaction", "decision"]}
-    craft = call(reverse.BLIND_SYSTEM,
+    craft = call(SYSTEM,
                  scaffold.craft_prompt(scene_id, blind, env, roster),
                  craft_schema, tag="craft", think=think)
     craft, _ = repair("craft", craft, craft_schema, scene_id, think)
 
     psych = []
     for eid in on_screen:
-        p = call(reverse.BLIND_SYSTEM,
+        p = call(SYSTEM,
                  scaffold.psych_prompt(scene_id, eid, ents[eid], blind, craft, roster),
                  PSYCH_SCHEMA, tag=f"psych.{eid}", think=think)
         p, _ = repair(f"psych.{eid}", p, PSYCH_SCHEMA, scene_id, think)
         p["entity"] = eid
         psych.append(p)
 
-    specimen = call(reverse.BLIND_SYSTEM,
+    specimen = call(SYSTEM,
                     scaffold.specimen_prompt(scene_id, craft, psych, roster),
                     SPECIMEN_SCHEMA, tag="specimen", think=think)
     specimen, _ = repair("specimen", specimen, SPECIMEN_SCHEMA, scene_id, think)
 
     dyn_schema = {"type": "array", "items": DYNAMICS_SCHEMA}
-    dynamics = call(reverse.BLIND_SYSTEM,
+    dynamics = call(SYSTEM,
                     scaffold.dynamics_prompt(scene_id, blind, craft, roster),
                     dyn_schema, tag="dynamics", think=think)
     if isinstance(dynamics, dict):
         dynamics = dynamics.get("dynamics") or list(dynamics.values())[0]
 
-    continuity = call(reverse.BLIND_SYSTEM,
+    continuity = call(SYSTEM,
                       scaffold.continuity_prompt(scene_id, blind, craft, psych),
                       CONTINUITY_SCHEMA, tag="continuity", think=think)
     continuity, _ = repair("continuity", continuity, CONTINUITY_SCHEMA, scene_id, think)
