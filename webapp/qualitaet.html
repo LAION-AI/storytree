@@ -1,0 +1,347 @@
+<meta charset="utf-8">
+<title>Zwei Modelle im Test</title>
+<style>
+:root{
+  --ground:#e9ebee;--surface:#f7f8fa;--surface-2:#eef0f3;--sunken:#dfe3e8;
+  --ink:#161a1f;--ink-2:#39424d;--muted:#66717e;--faint:#93a0ae;
+  --line:#cfd6de;--line-soft:#dde3ea;
+  --heat:#c2451a;--heat-soft:#f0d5c9;--quench:#2f6f8f;--quench-soft:#cfdfe8;
+  --good:#3f7d55;--good-soft:#d6e6db;--crit:#b03b26;--crit-soft:#f2d7d1;
+  --warn:#8a6a12;--warn-soft:#f0e6cc;
+  --shadow:0 1px 2px rgba(20,28,38,.07),0 10px 28px -14px rgba(20,28,38,.25);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;
+  --line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--quench:#6aa8c6;--quench-soft:#152935;
+  --good:#67a97e;--good-soft:#17281d;--crit:#d4715c;--crit-soft:#2e1713;
+  --warn:#c99b45;--warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.75);
+}}
+:root[data-theme="dark"]{
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;
+  --line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--quench:#6aa8c6;--quench-soft:#152935;
+  --good:#67a97e;--good-soft:#17281d;--crit:#d4715c;--crit-soft:#2e1713;
+  --warn:#c99b45;--warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.75);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0}
+a{color:var(--quench)}
+.wrap{max-width:940px;margin:0 auto;padding:0 26px 100px}
+header.top{border-bottom:1px solid var(--line);background:var(--surface);margin-bottom:40px}
+header.top .wrap{padding-top:50px;padding-bottom:32px}
+.kicker{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--heat);
+  font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(29px,4.8vw,42px);line-height:1.12;letter-spacing:-.02em;margin-bottom:14px}
+.standfirst{font-size:18.5px;color:var(--ink-2);max-width:63ch;font-family:var(--serif);line-height:1.5}
+.meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:20px;font-size:12.5px;color:var(--faint);
+  font-family:var(--mono)}
+h2{font-size:25px;letter-spacing:-.015em;margin:50px 0 8px}
+h2 .num{font-family:var(--mono);font-size:12px;color:var(--heat);display:block;
+  margin-bottom:7px;letter-spacing:.08em;font-weight:700}
+h3{font-size:17.5px;margin:28px 0 9px}
+p{margin:0 0 14px;max-width:68ch}
+ul,ol{max-width:66ch;padding-left:22px}li{margin-bottom:7px}
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1.5px 5px;
+  border-radius:4px;border:1px solid var(--line-soft)}
+strong{font-weight:650}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:18px 0}
+th{text-align:left;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;padding:8px 12px 8px 0;border-bottom:1px solid var(--line)}
+td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line-soft);vertical-align:top}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;padding-right:0}
+tr.total td{border-top:2px solid var(--line);font-weight:650}
+.scroll{overflow-x:auto}
+.good{color:var(--good);font-weight:650}.bad{color:var(--crit);font-weight:650}
+.warnc{color:var(--warn);font-weight:650}
+.punch{border-radius:9px;padding:18px 22px;margin:22px 0;border:1px solid;box-shadow:var(--shadow)}
+.punch.no{background:var(--crit-soft);border-color:var(--crit)}
+.punch.yes{background:var(--good-soft);border-color:var(--good)}
+.punch.hm{background:var(--warn-soft);border-color:var(--warn)}
+.punch .lbl{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.punch.no .lbl{color:var(--crit)}.punch.yes .lbl{color:var(--good)}.punch.hm .lbl{color:var(--warn)}
+.punch .big{font-family:var(--serif);font-size:20px;line-height:1.35;margin-bottom:8px}
+.punch p{margin-bottom:0;font-size:15px}
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;
+  padding:18px 22px;margin:20px 0}
+.eyebrow{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-bottom:9px}
+.analogy{background:var(--quench-soft);border-left:3px solid var(--quench);border-radius:0 8px 8px 0;
+  padding:15px 19px;margin:20px 0}
+.analogy .lbl{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--quench);
+  font-weight:700;margin-bottom:7px}
+.analogy p{margin-bottom:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;padding:14px 16px}
+.stat .n{font-family:var(--mono);font-size:22px;font-weight:700;line-height:1;
+  font-variant-numeric:tabular-nums}
+.stat .l{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-top:7px}
+.stat .s{font-size:12px;color:var(--muted);margin-top:4px}
+.note{font-size:13.5px;color:var(--muted)}
+.bar{display:grid;grid-template-columns:108px 1fr 54px;align-items:center;gap:12px;margin:7px 0}
+.bar .nm{font-size:13px;color:var(--ink-2)}
+.bar .track{height:19px;background:var(--sunken);border-radius:4px;overflow:hidden}
+.bar .fill{height:100%;border-radius:4px}
+.bar .val{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-align:right}
+hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+footer{color:var(--faint);font-size:13px;border-top:1px solid var(--line);padding-top:20px;margin-top:48px}
+@media(max-width:640px){.bar{grid-template-columns:82px 1fr 46px}}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="kicker">Qualitätsmessung · zwei Modelle, dieselbe Aufgabe</div>
+  <h1>Wer schreibt besser — und wobei genau?</h1>
+  <p class="standfirst">Neun Bausteine einer Drehbuchstruktur, von zwei Sprachmodellen unter
+  identischen Bedingungen erzeugt und von einem dritten nach achtzehn Kriterien benotet. Das
+  Gesamtergebnis ist knapp. Die Aufschlüsselung ist es nicht.</p>
+  <div class="meta"><span>16. August 2026</span><span>GLM-5.2 gegen Qwen3.8-27B</span>
+  <span>9 Knoten · 18 Dimensionen</span></div>
+</div></header>
+
+<div class="wrap">
+
+<h2><span class="num">00</span>Was hier eigentlich verglichen wird</h2>
+<p>Das System schreibt kein Drehbuch am Stück. Es baut zuerst ein Gerüst: Wer sind die Figuren, was
+wollen sie, welche Handlungsstränge laufen, was geschieht in welcher Reihenfolge, und was verändert
+sich in jeder einzelnen Szene. Der eigentliche Text entsteht ganz zum Schluss aus diesem Gerüst.</p>
+
+<p>Getestet wurden also nicht Dialogzeilen, sondern <strong>Bausteine des Gerüsts</strong> — und
+zwar in beiden Richtungen, in denen das System arbeitet:</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Richtung</th><th>Aufgabe</th><th>Getestete Bausteine</th></tr></thead>
+<tbody>
+<tr><td><strong>Vorwärts</strong></td><td>aus einer Prämisse eine eigene Geschichte erfinden</td><td>ein Handlungsstrang, eine Figur, ein Ereignis</td></tr>
+<tr><td><strong>Rückwärts</strong></td><td>aus einem fertigen Drehbuch das Gerüst zurückgewinnen</td><td>dieselben drei, plus drei Szenenanalysen</td></tr>
+</tbody></table></div>
+
+<p>Die Rückwärtsrichtung hat eine Regel, ohne die alles wertlos wäre: <strong>das Modell darf die
+Szene nicht lesen, über die es nachdenkt.</strong> Es kennt nur, was vorher etabliert wurde, und
+die äußere Hülle der Szene — welcher Raum, wer auftritt, ungefähre Länge. Daraus muss es
+<em>entscheiden</em>, was geschehen sollte.</p>
+
+<div class="analogy"><div class="lbl">Warum diese Regel</div>
+<p>Wer den Ausgang kennt, kann ihn mühelos begründen. Rückwärts wirkt jede Entscheidung zwingend.
+Solche Analysen klingen tiefsinnig und sagen nichts. Erst die Blindheit macht aus der Übung eine
+Messung — man kann nachher vergleichen, was das Modell vorhergesagt hat und was wirklich
+dasteht.</p></div>
+
+<h2><span class="num">01</span>Das Gesamtergebnis, und warum es täuscht</h2>
+
+<div class="grid">
+  <div class="stat"><div class="n">65,1%</div><div class="l">GLM-5.2</div><div class="s">gewinnt 11 Kriterien</div></div>
+  <div class="stat"><div class="n">57,1%</div><div class="l">Qwen3.8</div><div class="s">gewinnt 3</div></div>
+  <div class="stat"><div class="n">8 ×</div><div class="l">schneller</div><div class="s">Qwen, pro Szene</div></div>
+  <div class="stat"><div class="n">6</div><div class="l">verglichene Knoten</div><div class="s">plus 3 nur GLM</div></div>
+</div>
+
+<p>Acht Punkte Abstand — das sieht nach einem klaren Sieg aus. Aufgeschlüsselt nach Richtung
+verschwindet er zur Hälfte und verdoppelt sich zur anderen:</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Richtung</th><th class="num">GLM-5.2</th><th class="num">Qwen3.8</th><th>Ergebnis</th></tr></thead>
+<tbody>
+<tr><td><strong>Vorwärts erfinden</strong></td><td class="num">65,2%</td><td class="num good">66,7%</td><td class="good">Qwen minimal vorn</td></tr>
+<tr><td><strong>Rückwärts erschließen</strong></td><td class="num good">65,0%</td><td class="num bad">50,0%</td><td class="bad">15 Punkte für GLM</td></tr>
+</tbody></table></div>
+
+<div class="punch yes">
+  <div class="lbl">Das eigentliche Ergebnis</div>
+  <div class="big">Gleichauf beim Erfinden. Fünfzehn Punkte auseinander beim Erschließen.</div>
+  <p>Der gesamte Abstand im Gesamtwert stammt aus <em>einer</em> der beiden Richtungen. Ein
+  Mittelwert über beide verschweigt genau die Information, die eine Entscheidung treffen würde.</p>
+</div>
+
+<h2><span class="num">02</span>Der aufschlussreichste Befund über GLM</h2>
+<p>Zwei Kriterien liegen weit auseinander und beschreiben zusammen ein Muster:</p>
+
+<div class="bar"><span class="nm">Spezifität</span><div class="track"><div class="fill" style="width:93%;background:var(--good)"></div></div><span class="val">4,67</span></div>
+<div class="bar"><span class="nm">„andere Wahl?"</span><div class="track"><div class="fill" style="width:47%;background:var(--crit)"></div></div><span class="val">2,33</span></div>
+
+<p><strong>Spezifität</strong> fragt: Überlebt dieser Text das Verpflanzen in eine andere
+Geschichte? Steht dort etwas, das nur hier stimmen kann? Antwort: durchgehend ja.</p>
+
+<p><strong>Das zweite Kriterium</strong> fragt etwas anderes: Hätte ein anderer kompetenter Autor
+mit denselben Vorgaben etwas in diesem Bereich geschrieben? Antwort: meistens nein.</p>
+
+<div class="analogy"><div class="lbl">Was das heißt</div>
+<p>Das Modell schreibt den Satz hervorragend — und wählt den falschen Satz. Jeder Baustein steckt
+voller unverwechselbarer Details. Die meisten Bausteine haben die falsche Größe oder sind die
+falsche Einheit. Ein Handwerker, der jedes Teil sauber fertigt, aber wiederholt das falsche Teil
+fertigt.</p></div>
+
+<h3>Und ein Befund, der eine frühere Annahme umdreht</h3>
+<p>Bei einem anderen Modell hieß der Befund einmal: <em>das Prüfen von Vorschriften ist echte
+Arbeit, das Nachdenken ist Theater.</em> Bei GLM ist es genau umgekehrt — und das ist messbar:</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Aufgabe</th><th class="num">Vorschrift eingehalten</th></tr></thead>
+<tbody>
+<tr><td>frei erfinden</td><td class="num good">127 von 127</td></tr>
+<tr><td>aus einer Vorlage erschließen</td><td class="num bad">19 von 84</td></tr>
+</tbody></table></div>
+
+<p>Dieselbe Vorschrift, dieselbe Woche, dasselbe Modell. Sobald es sich an einer Quelle festhalten
+muss, hört das Regelbefolgen auf, während das Nachdenken gut bleibt. Die Selbstkorrekturen in den
+Analysen sind echt — eine kippt sogar ihren eigenen zuvor benannten Wendepunkt. Es ist kein
+Theater. Es ist die Buchhaltung, die fehlt.</p>
+
+<h2><span class="num">03</span>Mehr Wörter — mehr Substanz oder mehr Polster?</h2>
+<p>GLM schreibt das <strong>2,9-fache</strong> an Text. Die naheliegende Vermutung ist Geschwätz.
+Sie ist falsch, aber nur halb:</p>
+
+<div class="punch hm">
+  <div class="lbl">Die Antwort</div>
+  <div class="big">Substanz — mit stark abnehmendem Ertrag. Das 2,9-fache an Wörtern kauft das
+  1,30-fache an Bewertung.</div>
+  <p>Etwa 45% der zusätzlichen Wörter zahlen sich aus. Der Rest ist Ausbau ohne Gegenwert.</p>
+</div>
+
+<p>Was die nützliche Hälfte kauft, lässt sich benennen. Bei derselben Figur in derselben Szene baut
+GLM ein Modell davon, was Figur A glaubt, dass Figur B denkt — inklusive der Stelle, an der dieser
+Glaube <em>falsch</em> ist und was der Irrtum kosten wird. Qwen liefert einen Satz pro Feld.</p>
+
+<div class="analogy"><div class="lbl">Der entscheidende Punkt</div>
+<p>Qwen ist nicht leer, sondern <strong>komprimiert</strong>. Und Kompression trifft nicht
+gleichmäßig: Sie zerstört bevorzugt das Material zweiter Ordnung — wer was über wen glaubt, wo
+dieser Glaube irrt, in welchen Phasen sich eine Figur wandelt. Genau das ist der Stoff, für den
+diese Ebene existiert. Eine Ein-Satz-Fassung davon ist so gut wie keine.</p></div>
+
+<h2><span class="num">04</span>Wo Qwen deutlich gewinnt</h2>
+<p>Und es ist nicht klein. Es geht um die Buchhaltung — jene Zustandsvariablen, mit denen das
+System verfolgt, wie sich Figuren und Dinge über die Geschichte verändern.</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Prüfung</th><th class="num">GLM</th><th class="num">Qwen</th></tr></thead>
+<tbody>
+<tr><td>Anfangswert passt zum selbst deklarierten Typ</td><td class="num bad">0 von 62</td><td class="num good">30 von 30</td></tr>
+<tr><td>Zustandsänderung landet auf einem gültigen Wert</td><td class="num bad">42 von 127</td><td class="num good">32 von 34</td></tr>
+<tr><td>Änderungen, die nichts ändern</td><td class="num">3 von 127</td><td class="num good">0 von 34</td></tr>
+</tbody></table></div>
+
+<p>Die erste Zeile ist bemerkenswert: GLM deklariert eine Zahlenspanne und schreibt eine Zeile
+später einen Anfangswert, der nicht hineinpasst — in <em>keinem einzigen</em> von 62 Fällen
+passend. Und der Fehler pflanzt sich fort, weil alles Spätere auf diesem Anfangswert aufbaut.</p>
+
+<p class="note">Bei GLM gewinnen dafür andere Zähler: Anteile summieren korrekt auf 1,0 statt auf
+1,20, alle Synopsis-Punkte sind abgedeckt, und es deklariert 17 Entitäten statt 9.</p>
+
+<h2><span class="num">05</span>Zwei Arten, die Aufgabe zu verfehlen</h2>
+<p>Die Blindregel lässt sich auf zwei Weisen verletzen — und jedes Modell hat seine eigene.</p>
+
+<div class="card">
+  <div class="eyebrow">GLM: es erinnert sich</div>
+  <p style="margin-bottom:0">In einer der drei Szenen taucht im blind geschriebenen Musterdialog
+  <strong>wörtlich die echte erste Zeile</strong> der Figur auf. Das Modell hat das Drehbuch nicht
+  gesehen — aber es kennt den Film. Bei einem berühmten Werk genügt die dünne Szenenhülle als
+  Abrufschlüssel. Auffällig: Wo die Rollenliste generisch war, erfand es stattdessen frei.</p>
+</div>
+
+<div class="card">
+  <div class="eyebrow">Qwen: es erfindet, und schlechter</div>
+  <p style="margin-bottom:0">In einer Szene konstruiert es ein Ereignis, das der betreffenden Figur
+  <em>nicht widerfahren kann</em>. Es widerspricht ihrem eigenen Dossier, widerspricht dem Knoten,
+  den dasselbe Modell unmittelbar davor geschrieben hatte, und bewegt eine Zustandsvariable, die
+  einer <em>anderen</em> Figur gehört. Angegebene Sicherheit: <strong>95%</strong>. Zwei von drei
+  Szenen spielen außerdem im falschen Gebäude.</p>
+</div>
+
+<div class="punch hm">
+  <div class="lbl">Eine Korrektur an meiner eigenen Messung</div>
+  <div class="big">Ich hatte „Qwen: null Leckage" gemeldet. Das war ein Artefakt meiner
+  Normierung.</div>
+  <p>Pro Token gerechnet ist eine von Qwens Szenen sogar die <em>leckste</em> im ganzen Satz. Die
+  Null kam von den zwei Szenen, in denen es stattdessen erfunden hat. Qualitativ bleibt ein
+  Unterschied: GLMs Leck ist eine tragende <em>Dialogzeile</em>, Qwens sind Prosafetzen in der
+  Analyse — Treffer in Dialogzeilen 1 von 75 gegen 0 von 59.</p>
+</div>
+
+<h2><span class="num">06</span>Kann man das per Anweisung reparieren?</h2>
+<p>Naheliegender Versuch: Man schreibt dem Modell die gemessenen Fehler in die Systemanweisung.
+Nicht als allgemeinen Rat, sondern konkret — <em>„Bevor du eine Sicherheit angibst, benenne die
+Tatsache, die falsch sein müsste, damit du irrst. Kannst du keine nennen, liegt der Wert unter
+60."</em></p>
+
+<div class="scroll"><table>
+<thead><tr><th>Gemessen</th><th class="num">ohne Zusatz</th><th class="num">mit Zusatz</th></tr></thead>
+<tbody>
+<tr><td>angegebene Sicherheit</td><td class="num">92</td><td class="num good">75</td></tr>
+<tr><td>Alternativen ohne echten Inhalt</td><td class="num">3</td><td class="num good">2</td></tr>
+<tr><td>im vorgegebenen Raum geblieben</td><td class="num good">1 von 2</td><td class="num bad">0 von 2</td></tr>
+</tbody></table></div>
+
+<p>Die Sicherheitsangabe — der schwerste gemessene Fehler des Modells — <strong>ließ sich per
+Anweisung korrigieren</strong>, auf beiden Szenen gleichgerichtet.</p>
+
+<p>Die Ortstreue nicht. Die eine Szene, in der eine Verbesserung möglich war, wurde
+<strong>schlechter</strong>: ohne Zusatz nannte das Modell den richtigen Ort, mit Zusatz gar keinen
+und driftete zu Figuren ab, die die Rollenliste nicht vorsah.</p>
+
+<div class="punch no">
+  <div class="lbl">Die unbequeme Vermutung</div>
+  <div class="big">Ausgerechnet die Klausel ist gekippt, deren Vorgabe schon vorher im Prompt
+  stand.</div>
+  <p>Falls Aufmerksamkeit für Anweisungen selbst ein begrenztes Budget ist, verdrängen neue
+  Klauseln die vorhandenen. Das wäre dasselbe Verdünnungsphänomen, das wir am <em>Ausgabevolumen</em>
+  gemessen haben — nur diesmal an der <em>Anweisungstreue</em>. Die Konsequenz wäre unangenehm:
+  Prompt-Reparaturen ließen sich nicht einfach stapeln.</p>
+</div>
+
+<p class="note">Zwei Szenen, drei von acht Klauseln getestet. Das ist eine Richtungsangabe, kein
+Beweis — und die Gegenprobe ist bereits als eigenes Experiment spezifiziert.</p>
+
+<h2><span class="num">07</span>Was die Prüfung im eigenen Code gefunden hat</h2>
+<p>Die Bewertung sollte Modelle beurteilen. Sie fand drei Fehler in der Werkzeugkette — und der
+größte war der unauffälligste.</p>
+
+<ol>
+<li><strong>Die Dossiers waren nicht blind.</strong> Zwar wurde die Inhaltsangabe ausgeblendet, die
+Figurenprofile aber nicht — und die waren <em>sehend</em> geschrieben. Ein Ortsprofil nannte in
+einem Nebensatz, was der Hauptfigur am Ende widerfährt.</li>
+<li><strong>Ein Verknüpfungsfehler, der still blieb.</strong> Eine Funktion verband Ereignisse und
+Szenen über ein Feld, das <em>kein einziges</em> Ereignis besitzt — die Beziehung ist andersherum
+gespeichert. Sie gab immer „nichts erreicht" zurück. Ein zweiter Fehler daneben las das als „keine
+Begrenzung". Zusammen bekam jeder blinde Aufruf den <strong>vollständigen Handlungsbogen samt
+Ausgang</strong>. Nichts ist dabei fehlgeschlagen: Am Anfang eines Laufs ist „nichts erreicht" eine
+völlig normale Antwort, und sie hat nie aufgehört, so auszusehen.</li>
+<li><strong>Meine eigene Leck-Messung war kaputt</strong> und meldete selbstbewusst null Prozent
+auf einem Text, der eine wörtlich übernommene Zeile enthielt.</li>
+</ol>
+
+<p>Das Muster, das dreimal auftrat und deshalb als Regel notiert wurde: <strong>Jedes Feld, das
+eine sehende Rekonstruktion mit einem Urteil über das ganze Werk füllt, ist ein
+Lösungsschlüssel</strong> — gleich auf welcher Ebene es sitzt.</p>
+
+<hr>
+<h2 style="margin-top:0">Was ich daraus ableite</h2>
+<ol>
+<li><strong>Qwen vorwärts, GLM rückwärts.</strong> Beim Erfinden gleichauf, bei achtfacher
+Geschwindigkeit und deutlich besserer Buchhaltung. Beim Erschließen fünfzehn Punkte zurück.</li>
+<li><strong>Ein Gesamtwert über beide Richtungen wäre die falsche Zahl gewesen</strong> — er hätte
+exakt die Unterscheidung verschwiegen, die eine Entscheidung trägt.</li>
+<li><strong>Manche Fehler sind Anweisungsprobleme, andere nicht.</strong> Die Sicherheitsangabe
+ließ sich reparieren, die Ortstreue nicht. Dieser Unterschied entscheidet, ob man am Prompt
+arbeitet oder das Modell wechselt.</li>
+<li><strong>Formal korrekt heißt nicht inhaltlich richtig.</strong> Beide Modelle bestanden alle
+Formatprüfungen. Die schwersten Fehler — eine erfundene Unmöglichkeit bei 95% Sicherheit, ein
+Anfangswert außerhalb der eigenen Spanne — waren einwandfrei formatiert.</li>
+</ol>
+
+<footer>
+Neun Knoten, achtzehn Kriterien mit verankerten Beschreibungen für die Noten 1, 3 und 5, damit ein
+anderer Prüfer zum selben Ergebnis käme. Vollständige Bewertung mit Belegen je Note:
+<code>docs/07-quality-evaluation.md</code> im Projektarchiv · technischer Kontext:
+<a href="glm-local.html">GLM-5.2 lokal</a> · <a href="glm-erklaert.html">Grundlagen erklärt</a> ·
+<a href="index.html">alle Projekte</a>.
+</footer>
+</div>
