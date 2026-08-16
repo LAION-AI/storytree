@@ -1,0 +1,105 @@
+{
+  "rubric_id": "expose",
+  "version": 1,
+  "title": "EXPOSÉ node",
+  "inherits": "universal",
+  "gate": {"min_per_dimension": 3, "min_mean": 4.0, "max_rounds": 5, "on_gate_miss": "quarantine and record"},
+  "length_budget": {
+    "rule": "~300 words per act (three-act feature ~= 900 words); ~200 words per chapter for a novel.",
+    "derived_from": "ROOT.dramatic_structure",
+    "tolerance": 0.15,
+    "note": "Budget is checked mechanically before the judge is called; a breach outside tolerance is a D=1 and the artifact is returned to the author without spending a judge call."
+  },
+  "dimensions": [
+    {
+      "id": "X1",
+      "name": "Cold comprehensibility",
+      "question": "Can a reader who has never heard of this story follow it end to end?",
+      "anchors": {
+        "1": "Assumes the reader knows the work: unexplained proper nouns, references to 'the ship' or 'the device' before either exists, pronouns without antecedents.",
+        "3": "Followable with effort. One or two places require the reader to hold an unexplained term until it is defined later.",
+        "5": "Every proper noun, faction and object is introduced before it is used, and a cold reader could retell the plot afterwards."
+      }
+    },
+    {
+      "id": "X2",
+      "name": "World explained only where it matters",
+      "question": "Is the worldbuilding load-bearing, or is it padding?",
+      "anchors": {
+        "1": "Either a worldbuilding essay that the plot never uses, or no world at all where the plot depends on a rule the reader is never told.",
+        "3": "The needed rules are present but arrive with surplus: physics, politics or religion explained past the point where the plot consumes them.",
+        "5": "Every world fact stated is later used by an event in the exposé, and every event that depends on a world fact has that fact already stated. Nothing else is there."
+      }
+    },
+    {
+      "id": "X3",
+      "name": "Entity introduction in context",
+      "question": "Is each important entity introduced as this reader would need it, with no prior knowledge assumed?",
+      "anchors": {
+        "1": "Entities appear mid-sentence as if already known, or are introduced by role label only.",
+        "3": "Characters are introduced adequately; locations, groups and objects appear without introduction and have to be inferred.",
+        "5": "Each important entity gets its introduction at first use, in context, at the length its importance warrants — and the protagonist gets more than the courier."
+      }
+    },
+    {
+      "id": "X4",
+      "name": "Causal chain honouring every plot — implicitly",
+      "question": "Does every plot from the ROOT get discharged by events, without ever being named as a plot?",
+      "anchors": {
+        "1": "Plots are named ('the relationship plot then develops'), or one or more ROOT plots leave no trace in the exposé at all.",
+        "3": "All plots are traceable, but at least one is discharged in a single clause rather than by a chain, or the exposé steps out to label a thread.",
+        "5": "Every ROOT plot is carried by concrete events in correct story order, each connected to the next by because/therefore, and no plot is ever named as such."
+      }
+    },
+    {
+      "id": "X5",
+      "name": "Structural conformity",
+      "question": "Does the exposé follow the ROOT's dramatic structure — acts, turning points, plot points?",
+      "anchors": {
+        "1": "The declared structure and the exposé's shape do not correspond; the climax is where the ROOT says the midpoint is, or acts have no visible boundary.",
+        "3": "Act boundaries are discernible and roughly proportioned, but a declared turning point is missing or lands in the wrong act.",
+        "5": "Each act occupies its stated share, each declared turning point appears at its position and does turn something, and the climax falls where the ROOT places it."
+      }
+    },
+    {
+      "id": "X6",
+      "name": "In-world jargon glossed",
+      "question": "Are artifacts, powers, technologies and coined terms explained enough to follow?",
+      "anchors": {
+        "1": "Coined terms used as if standard English. The reader must guess what the central technology does.",
+        "3": "The central term is glossed; secondary coinages are not, or are glossed after their first load-bearing use.",
+        "5": "Every coined term is glossed at first use in a clause, not a paragraph, and the gloss is sufficient to follow every later use."
+      }
+    },
+    {
+      "id": "X7",
+      "name": "Processing fluency / readability",
+      "question": "Does it read cleanly on the first pass, without backtracking?",
+      "anchors": {
+        "1": "Requires re-reading: garden-path sentences, three clauses of subordination, referents that resolve backwards, or a paragraph that must be held in memory before it makes sense.",
+        "3": "Mostly fluent with local snags — one overloaded sentence, one ambiguous pronoun, one list that outruns working memory.",
+        "5": "First-pass readable throughout. Information arrives in the order the reader needs it; each sentence is resolvable when it ends."
+      }
+    },
+    {
+      "id": "X8",
+      "name": "Protagonist likeability and the open heart",
+      "question": "Does the exposé show what makes the protagonist likeable and what opens the audience's heart?",
+      "anchors": {
+        "1": "The protagonist is a plot function. Nothing in the exposé would make a reader want them to succeed.",
+        "3": "Sympathy is asserted rather than produced — the exposé says they are principled or lonely instead of showing the moment that demonstrates it.",
+        "5": "At least one concrete moment in the chain earns admiration and at least one exposes vulnerability, and both are events the script actually contains."
+      }
+    },
+    {
+      "id": "X9",
+      "name": "Human-experience topics woven in",
+      "question": "Are the ROOT's topics present in the events rather than announced?",
+      "anchors": {
+        "1": "Topics are absent, or stated as thesis sentences the events do not support.",
+        "3": "Topics are visible in the events but only for one or two of them; the rest are asserted or dropped.",
+        "5": "Each ROOT topic surfaces through at least one event where a character pays for it, and no sentence exists solely to state the theme."
+      }
+    }
+  ]
+}

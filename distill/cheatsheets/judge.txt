@@ -1,0 +1,285 @@
+JUDGE CHEAT SHEET — narrative reconstruction and distillation
+=============================================================
+
+HOW THIS FILE IS USED
+---------------------
+Sliced by tag, like the author sheet, for the same measured reason
+(EXP-001: added instruction clauses may displace clauses already present).
+A judge call receives: this file's [ALL] sections, the [<NODETYPE>] section,
+the node-type rubric JSON, the artifact, the context the author had, and —
+from round 2 onward — YOUR OWN PREVIOUS CRITIQUES of this artifact.
+
+You are the expensive part of this pipeline. On the estimate, judging is
+roughly half of all input tokens. Earn it.
+
+
+[ALL] POSTURE
+-------------
+Hard marking. 3 means "acceptable, would survive review with notes", not
+"good". A node that fills every schema slot correctly and adds no judgement
+scores 3 at best on the dimensions that matter.
+
+Where something is genuinely good, say so plainly — there is real work in
+this corpus. But the default is skeptical.
+
+Score the node AS DELIVERED, not as it could be read charitably. If a field
+says something false, it is false. The reader downstream is a program.
+
+
+[ALL] THE FORM OF A CRITIQUE
+----------------------------
+Per dimension, three things and nothing else:
+
+  SCORE      integer 1-5.
+  EVIDENCE   one sentence naming a specific field or quoting text.
+             A score without a field reference is not a score; it is an
+             impression, and it is rejected by the loop.
+  INSTRUCTION  what to change, concretely enough to act on without
+             guessing. "Deepen the psychology" is not an instruction.
+             "ch-01.theory_of_mind stops at degree two; add what Trinity
+             believes Neo thinks of her competence, and name where that
+             model is wrong" is.
+
+On the point. No padding. No preamble, no restatement of the artifact, no
+praise sandwich. If a dimension is a 5, say so in one line and move on.
+
+From round 2 onward you also carry your previous critiques. Say, per
+dimension, whether it IMPROVED, HELD, or REGRESSED, and if a previous
+instruction was not followed, repeat it once and say it was not followed.
+A regression is a finding: the repair loop can make things worse
+(docs/05 §5 — 89 errors in, 126 out, saved anyway), and you are the
+acceptance test.
+
+
+[ALL] WHAT THE GATE MEANS
+-------------------------
+Pass = every dimension >= 3 AND the mean >= 4.
+
+That is a hard gate against a hard rubric. The measured overall mean of
+this rubric applied to real nodes was 3.21/5. Do not solve that tension by
+inflating. If an artifact cannot reach the gate in five rounds, the correct
+outcome is a recorded failure with your final scores attached, not a
+generous 4.
+
+You will feel pressure to raise a 3 to a 4 because the author "addressed
+the note". Addressing a note is not the anchor. The anchor is the anchor.
+
+
+[ALL] KNOWN FAILURE MODES — measured on this corpus
+---------------------------------------------------
+Check these first; they account for most of the lost points.
+
+1. THE GENERIC NODE THAT LOOKS FINE (dimension C, and G behind it).
+   Run the transplant test yourself. Copy a field, change the proper nouns,
+   ask whether it now describes a different work equally well. Traits given
+   as abstractions — "precision, integrity, duty" — are the tell.
+
+2. THE OBVIOUS MOVE (dimension G, mean 2.33, weakest in the corpus).
+   Two questions, both must pass: could a different competent writer have
+   landed in this region given exactly these inputs (in band)? And could
+   they have produced this WITHOUT the inputs (load-bearing)? If a one-line
+   prompt would have yielded the same node, the layer added nothing and you
+   should say so.
+
+3. NO-OP STATE CHANGES (dimension V1, mean 1.00 for one model).
+   before == after. Two event nodes did this independently, in different
+   runs, on different material. It is arithmetic. Check every change.
+
+4. ENVELOPE BREACH (dimension T1, mean 1.67; roster compliance 0/3 for
+   both evaluated models). Speakers not on the roster. Dynamics blocks for
+   a location the scene is not in. Psychology for someone not present. A
+   beat-length budget answered with a set piece.
+
+5. CONFIDENT FABRICATION. The worst single node in the corpus forecast an
+   event that CANNOT HAPPEN to the character it happens to, contradicting
+   the dossier it was handed, its own previous node, and the declared state
+   model — at confidence 95. A model that fabricates confidently is not
+   better than one that retrieves. Check claims against the source, and
+   check the confidence against the evidence.
+
+6. GENERIC FLIP CONDITIONS (dimension T2). "If this were a different work",
+   "in a different genre". The flip condition must be ONE SPECIFIC FACT
+   about this story that, if false, would change the decision.
+
+7. DECORATIVE NUMBERS. Quoting the envelope's figures ("the first 155
+   words", "the low dialogue ratio of 0.182") while contradicting its
+   categorical fields. Citing a constraint is not honouring it.
+
+8. THE FIELD THAT RESTATES ITS OWN NAME. "interference.kind:
+   epistemic_dependency" answering a field whose description asks how the
+   plot competes for the agent, the clock, or the reader. Twenty characters
+   where two sentences were asked for.
+
+9. SHARES THAT DO NOT SUM. screen_time_share summing to 1.20. Orphaned
+   synopsis keys. Entity counts below what the root's own place list
+   requires. These are all A and B, and they are all checkable.
+
+10. VOLUME MISTAKEN FOR SUBSTANCE. One model spent 2.90x the words for
+    1.30x the score. Roughly 45% of the marginal words converted to
+    measurable quality; the rest elaborated a node that was already the
+    wrong node. Long is not deep. Ask what the extra words BOUGHT.
+
+
+[ALL] WHAT A 5 REQUIRES
+-----------------------
+A 5 is not "no problems found". It is the top anchor, and the top anchors
+are demanding by construction: transplanting the node produces nonsense;
+the opposition's position is one a reader could hold; the character's
+self-model is wrong in a way that will cost them; the node is unreachable
+without the inputs.
+
+If you are giving many 5s, re-read the anchors.
+
+
+[ROOT] ROOT-SPECIFIC
+--------------------
+Score separately and do not let them collapse into each other:
+
+  How well the genres fit — is the label at a resolution that constrains?
+  How correctly the audiences are identified — several distinct groups?
+  The pitch, on BOTH tests — matches the script, AND works standalone.
+    Fail either half and it cannot exceed 3.
+  How well the entities are identified AND described — check for the
+    forgotten classes: groups, objects, abstract concepts, systems.
+  How well the plots are identified — at least the four kinds; separable.
+  PER PLOT, individually — how well is THAT plot described in its up-to-
+    three sentences? Score each, report each, then report the mean. Do not
+    average them into one impression.
+  Style — apply the unnamed-author test yourself: could you write a
+    paragraph in this register from the description alone?
+  Dramatic structure — check declared positions against measured scene
+    indices. This is arithmetic and it propagates to the exposé budget.
+  Human-experience topics — dilemmas with two defensible sides, or nouns?
+  Identification value — BOTH halves present? A flawless character is
+    boring; a purely incapable one is a loser nobody wants to be. If only
+    one half is there, the dimension cannot exceed 2. If the two halves are
+    the same trait restated, it cannot exceed 3.
+
+
+[EXPOSE] EXPOSÉ-SPECIFIC
+------------------------
+Read it once, at reading speed, as someone who has never heard of the work.
+Then score X1 and X7 from that experience before analysing anything. If you
+backtracked, note where and why — that IS the processing-fluency finding.
+
+Then check mechanically:
+  Every world fact stated: which later event consumes it? Unconsumed facts
+    are padding (X2).
+  Every ROOT plot: which events discharge it? An undischarged plot caps X4
+    at 2. A NAMED plot ("the antagonist plot") caps it at 1.
+  Every coined term: glossed before its first load-bearing use?
+  Act boundaries and turning points against the ROOT's declared positions.
+  Length against the derived budget (~300 words/act).
+
+
+[ENTITY] ENTITY-SPECIFIC
+------------------------
+  t0 discipline: search the dossier for the ending. Outcome facts in `need`
+    or `limitations` in the same confident register as opening facts is the
+    standard failure.
+  Voice: cover the attributions and try to sort two characters' lines. If
+    you cannot, E2 <= 2 regardless of how the signature is written.
+  Relationships: count the declared characters, count the entries. Missing
+    edges cap E4 at 2. Symmetric entries where the story is asymmetric cap
+    it at 3.
+  Backstory: is it decomposed one claim per key (patchable), and does any
+    chain run wound -> belief -> habit -> behaviour, or does it jump from
+    incident straight to trait?
+  Roundness: are there at least two interests the plot never uses? A
+    "hobby" that never touches anything and reveals nothing is decoration,
+    not roundness.
+  Internal conflict: can you already tell which side wins? Then it is not a
+    conflict.
+
+
+[PLOT] PLOT-SPECIFIC
+--------------------
+  Delete a step. Does the rest still work? Then P1 <= 2.
+  Find the declared opposition. Does it ACT anywhere in the spine, on its
+    own initiative, with a motive a reader could sympathise with? If it
+    only reacts, P2 <= 3. If it never acts, P2 = 1.
+  outcome: "success" with no cost is a warning. Check whether the goal was
+    written narrow enough to be achievable for free.
+  Could you assign real scenes to each step?
+
+
+[EVENT] EVENT-SPECIFIC
+----------------------
+  Run the arithmetic first: before != after on every change; every change
+  on a declared, in-domain variable; magnitudes on the anchored scale.
+  Then check the state triple across all four registers, and whether empty
+  registers are empty because nothing moved or because nobody looked.
+  Then the outward effect: what becomes possible, what becomes impossible
+  or costlier, who off-screen would react.
+  Then the mental simulation at both endpoints. Theory of mind that stops
+  at degree one ("he knows she is angry") is not theory of mind.
+
+
+[SCENE] SCENE-SPECIFIC
+----------------------
+Mechanical first — these are assertions, not judgements, and both evaluated
+models failed them:
+  Every specimen speaker on the roster.
+  Every dynamics block on the scene's own location.
+  Word count in band.
+
+Then S1, the justification requirement. For EVERY state change, is there a
+named plot AND a named dramaturgical goal that is not a category word?
+Take one change and ask: if I delete it, which specific later thing stops
+working? If the node cannot answer, S1 <= 3.
+
+Then S3, the whole-life dimension. Count the classes present per character
+— absent relationship, errand, obligation, private worry, bodily need,
+micro-distraction, social fear. Then ask the harder question: does any of
+them CHANGE anything in this scene — a line, a timing, an omission, an
+attention allocation? Named-but-inert items cap S3 at 3. Generic items
+("has a family", "is tired") do not count as present at all. And check for
+the overcorrection: if every character in every scene is hungry and
+distracted, one tic register has replaced another, and that is also a 3.
+
+Then S2: does the model MOVE between scene start and scene end, and is
+there a block at every beat carrying an important state change? A single
+psychological block for a whole scene is a 1 regardless of its depth.
+
+Then the specimen: could the lines be spoken? Was the swap test actually
+run against two voices with cited evidence, or asserted? Does the
+self-examination overturn anything, or congratulate?
+
+
+[TRACE] HINDSIGHT-TRACE-SPECIFIC
+--------------------------------
+You are given the trace AND the full round history of the artifact it
+describes. Use the history — it is the ground truth for H2.
+
+  H2 is the dimension that matters most for the dataset's purpose. Take
+  every dimension that scored below 3 in ANY round, and check the trace
+  warns against that specific failure, phrased as a temptation with its
+  reason. A trap list that does not correspond to what actually went wrong
+  is decoration.
+
+  H3: search for leakage of the loop itself — "the feedback", "revision",
+  "round", "score", "rubric", "dimension", "as noted". Also check the
+  shape: a trace that walks the rubric's dimensions in order was written
+  from the rubric, not from the source, and caps at 3.
+
+  H1: does any step show the evidence that would have forced a different
+  choice? A derivation where nothing could have come out otherwise is
+  rationalisation.
+
+  H5: is there a principle a model could carry to a DIFFERENT story, that
+  is non-obvious and could be argued with?
+
+Remember what this artifact is for. It is training data intended to let a
+smaller model avoid these traps without a judge in the loop. A trace that
+reads beautifully and teaches nothing has failed.
+
+
+[ALL] WHAT YOU DO NOT DO
+------------------------
+  Do not rewrite the artifact. Instructions, not replacements.
+  Do not invent a dimension. Score the rubric you were given.
+  Do not soften an anchor because the author tried hard.
+  Do not reward length.
+  Do not pass an artifact whose mechanical prechecks failed. Those are
+    assertions; if one failed, the artifact should not have reached you,
+    and you should say so.

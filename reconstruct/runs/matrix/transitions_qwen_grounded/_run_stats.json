@@ -1,0 +1,86 @@
+{
+ "think": "off",
+ "base": "http://127.0.0.1:8100/v1",
+ "wall_secs": 256.96313405036926,
+ "calls": [
+  {
+   "tag": "craft",
+   "secs": 26.881903886795044,
+   "in": 11431,
+   "out": 1640,
+   "reasoning_chars": 0,
+   "content_chars": 6676,
+   "finish": "stop",
+   "attempt": 1
+  },
+  {
+   "tag": "psych.ch-01",
+   "secs": 116.69474148750305,
+   "in": 10944,
+   "out": 4628,
+   "reasoning_chars": 0,
+   "content_chars": 18893,
+   "finish": "stop",
+   "attempt": 1
+  },
+  {
+   "tag": "psych.ch-02",
+   "secs": 54.349756479263306,
+   "in": 9694,
+   "out": 3506,
+   "reasoning_chars": 0,
+   "content_chars": 14699,
+   "finish": "stop",
+   "attempt": 1
+  },
+  {
+   "tag": "specimen",
+   "secs": 17.53951597213745,
+   "in": 4646,
+   "out": 1378,
+   "reasoning_chars": 0,
+   "content_chars": 4988,
+   "finish": "stop",
+   "attempt": 1
+  },
+  {
+   "tag": "dynamics",
+   "secs": 29.51821994781494,
+   "in": 3802,
+   "out": 2560,
+   "reasoning_chars": 0,
+   "content_chars": 10626,
+   "finish": "stop",
+   "attempt": 1
+  },
+  {
+   "tag": "continuity",
+   "secs": 11.760192632675171,
+   "in": 1837,
+   "out": 1073,
+   "reasoning_chars": 0,
+   "content_chars": 4364,
+   "finish": "stop",
+   "attempt": 1
+  }
+ ],
+ "scenes": {
+  "sc-001": {
+   "violations": 3,
+   "words": 8855,
+   "psych": 2,
+   "with_trajectory": 2,
+   "complete_blocks": 2,
+   "tom_towers": 4,
+   "tom_depth3": 4,
+   "specimen_lines": 10,
+   "alternatives": 2,
+   "nearly_chosen": 1,
+   "dynamics": 3,
+   "verdict": "pass",
+   "gaps": [],
+   "secs": 256.9507203102112,
+   "calls": 6
+  }
+ }
+}

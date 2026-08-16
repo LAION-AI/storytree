@@ -1,0 +1,112 @@
+{
+  "rubric_id": "root",
+  "version": 1,
+  "title": "ROOT node — the story root",
+  "inherits": "universal",
+  "gate": {"min_per_dimension": 3, "min_mean": 4.0, "max_rounds": 5, "on_gate_miss": "quarantine and record"},
+  "notes": "Reconstruction node: R1 (fidelity of inference, sighted reading) also applies — see reconstruction.json. The ROOT is written sighted, so R1 is scored as accuracy against the source, never as blind-forecast coherence.",
+  "dimensions": [
+    {
+      "id": "RT1",
+      "name": "Genre precision",
+      "question": "Is the genre named at a resolution that constrains anything?",
+      "anchors": {
+        "1": "A one-word bucket — 'fantasy', 'action', 'thriller'. Names a shelf, not a work. Two hundred other films fit the same label.",
+        "3": "A compound label with a modifier ('cyberpunk action thriller') that narrows the field but still admits dozens of works, and does not name the specific conventions this work honours or refuses.",
+        "5": "A nuanced compound naming the tradition, the register, and at least one convention the work deliberately violates, such that a reader could predict this work's shape from the label alone and would be surprised by the wrong films matching it."
+      }
+    },
+    {
+      "id": "RT2",
+      "name": "Audience identification",
+      "question": "Are the target audiences correctly and distinctly identified?",
+      "anchors": {
+        "1": "One undifferentiated audience, or an audience the work demonstrably does not serve. 'General audiences' for a work with a hard content profile.",
+        "3": "A plausible primary audience with the right age band and content flags, but the secondary audiences are absent or are restatements of the primary in different words.",
+        "5": "Two or more genuinely distinct groups, each with its own stated reason for engaging (what that group is there for is different per group), consistent with the work's actual content, register and difficulty."
+      }
+    },
+    {
+      "id": "RT3",
+      "name": "Elevator pitch — dual test",
+      "question": "Does the pitch match the script AND work standalone? Both halves must pass.",
+      "anchors": {
+        "1": "Fails either half hard: describes a story the script does not tell, or requires prior knowledge of the work to parse ('Neo learns the truth about the Matrix' — meaningless cold).",
+        "3": "Accurate to the script and comprehensible cold, but generic in shape — a logline that would fit the genre's median entry; or it withholds so much that a cold reader cannot tell what the work is about.",
+        "5": "Every clause checks out against the script, and a reader who has never heard of the work understands the world, the protagonist's problem, and what is at stake, in a few sentences, with no unexplained proper nouns."
+      }
+    },
+    {
+      "id": "RT4",
+      "name": "Entity roster — coverage and description",
+      "question": "Are the cast and important entities identified, and does each one-to-three-sentence description earn its place?",
+      "anchors": {
+        "1": "The roster misses entities the work cannot be described without, or is padded with entities that influence nothing. Descriptions are role labels ('the mentor', 'the villain').",
+        "3": "The load-bearing characters and locations are present, but non-character entity classes (groups, objects, concepts, systems, conditions) are under-represented, and several descriptions state function rather than content.",
+        "5": "Every entity whose removal would change the plot is present, across all classes; each description says what the entity concretely is and what it does to the story, and would let a reader recognise it in the script."
+      }
+    },
+    {
+      "id": "RT5",
+      "name": "Plot identification",
+      "question": "Are the right plots identified, and are they plots rather than themes or summaries?",
+      "anchors": {
+        "1": "Fewer than the four required kinds (main-character, character-growth, relationship, antagonist), or the 'plots' are themes, settings, or a single plot cut into pieces.",
+        "3": "The four kinds are present and separable, but one is a thin restatement of another, or a plot the work obviously runs (a side-character line, a social theme) is missing.",
+        "5": "All required kinds plus the work's genuinely distinct additional lines; each is separable — you could remove one and name exactly what stops working — and each has a different agent, clock or arena."
+      }
+    },
+    {
+      "id": "RT6",
+      "name": "Per-plot description",
+      "per_item": true,
+      "item_key": "plots[]",
+      "question": "For EACH plot: do its one-to-three sentences state a causal chain?",
+      "anchors": {
+        "1": "A topic, not a chain: 'the story of his growth'. No agent, no opposition, no consequence. Or a chronology joined by 'and then'.",
+        "3": "Agent, want and obstacle are present, but the chain is stated at one level of abstraction above the events — a reader could not say which scenes belong to it.",
+        "5": "Within three sentences: who wants what, what specifically resists, what it costs, and how it resolves — with each clause following causally from the last, and the chain assignable to concrete scenes."
+      }
+    },
+    {
+      "id": "RT7",
+      "name": "Writing style — the unnamed-author test",
+      "question": "Does the style description let a writer reproduce the register without being told whose it is?",
+      "anchors": {
+        "1": "Adjectives only: 'fast-paced, gritty, atmospheric'. True of a thousand works. Or it names an author instead of describing the style.",
+        "3": "Names pacing and dialogue register with some specificity, but gives no prohibition, no sentence-level habit, and no test a draft could fail.",
+        "5": "Covers pacing, dialogue register, atmosphere, and the introspective/terse axis with at least one falsifiable handle each — a thing the prose does, a thing it never does — such that a competent writer given only this description would produce recognisably this register, and no author is named."
+      }
+    },
+    {
+      "id": "RT8",
+      "name": "Dramatic structure",
+      "question": "Are act/chapter count, turning points, plot points and climax placed where the work actually puts them?",
+      "anchors": {
+        "1": "A template asserted over the work (a generic three-act with 25/50/25 splits) that the script's own scene positions contradict, or no structure at all.",
+        "3": "The act count is right and the climax is roughly located, but turning points are named without positions, or positions are given that do not match the measured scene indices.",
+        "5": "Act/chapter count, each turning point and plot point, and the climax are placed at positions that check out against the work's own measured scene ordering, and the placement is what the exposé length budget is then derived from."
+      }
+    },
+    {
+      "id": "RT9",
+      "name": "Human-experience topics and dilemmas",
+      "question": "Are the central topics ones any reader relates to, and are they this work's rather than the genre's?",
+      "anchors": {
+        "1": "Genre furniture mistaken for theme ('the fight against the machines'), or an abstraction list with no dilemma in it ('freedom, destiny, love').",
+        "3": "Real human topics named (poverty, curiosity, greed, obligation), but stated as topics rather than as dilemmas — no competing goods, nothing a reader could come down on either side of.",
+        "5": "Each topic is stated as a dilemma with two defensible sides, is demonstrably what the work spends its screen time on, and connects to a specific plot or character rather than floating above the work."
+      }
+    },
+    {
+      "id": "RT10",
+      "name": "Identification value of the protagonist",
+      "question": "Are BOTH halves supplied — what the audience would admire, and what vulnerabilities open their heart?",
+      "anchors": {
+        "1": "Only one half, or neither. A flawless competence list (nobody identifies with perfection) or a catalogue of failures with nothing to want to be (nobody wants to be a loser). Or the two halves are the same trait restated.",
+        "3": "Both halves present but generic: a stock virtue and a stock wound, either of which would fit any protagonist in the genre, with no link between them.",
+        "5": "A named strength, virtue or competence the audience would want for themselves, and a weakness they recognise in themselves, with the two mechanically connected — the strength costs something, or the flaw is the price of the virtue. For a villainous protagonist the admirable term is competence, intelligence or style, and it is named as such."
+      }
+    }
+  ]
+}

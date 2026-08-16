@@ -1,0 +1,60 @@
+{
+  "rubric_id": "plot",
+  "version": 1,
+  "title": "PLOT node — one plot per node",
+  "inherits": "universal",
+  "gate": {"min_per_dimension": 3, "min_mean": 4.0, "max_rounds": 5, "on_gate_miss": "quarantine and record"},
+  "measured_context": "P1 and P2 are the two weakest type-specific dimensions in the existing evaluation (both 2.50 mean for GLM, P1 2.00 for Qwen). Expect to spend revision rounds here.",
+  "dimensions": [
+    {
+      "id": "P1",
+      "name": "Spine causality",
+      "source": "docs/07 §1.3, unchanged",
+      "anchors": {
+        "1": "'And then, and then.' Steps are a chronology; remove one and the rest still work. `because` is empty or decorative.",
+        "3": "Causality is real in places — usually late in the spine — but early steps are sequential and cross-plot `because` links are missing where causes plainly exist.",
+        "5": "Each step requires its predecessor; the cross-plot `because` links are the actual load path and could not be deleted without the spine collapsing."
+      }
+    },
+    {
+      "id": "P2",
+      "name": "Resistance reality",
+      "source": "docs/07 §1.3, unchanged",
+      "anchors": {
+        "1": "Resistance is a list. No declared opponent takes an action anywhere in the spine, or the 'opponents' are abstractions with no dossier and no agency.",
+        "3": "Resistance acts, but reactively and without a stated motive a reader could sympathise with; the force balance favours the agent throughout.",
+        "5": "The opposition counters with equal force and cunning, has a logical and sympathisable motive, and its moves appear as spine steps."
+      }
+    },
+    {
+      "id": "P3",
+      "name": "Separability",
+      "question": "Is this a distinct plot, or a facet of another one?",
+      "anchors": {
+        "1": "Removing this plot changes nothing, or removing it also removes another declared plot because they are the same chain seen twice.",
+        "3": "Distinct, but shares its agent, its clock and its arena with another plot, so the two rise and fall together.",
+        "5": "Removing it breaks something nameable that no other plot supplies, and it differs from every sibling in at least one of agent, clock or arena."
+      }
+    },
+    {
+      "id": "P4",
+      "name": "Scene assignability",
+      "question": "Could a reader assign concrete scenes to this plot's steps?",
+      "anchors": {
+        "1": "The spine sits at a level of abstraction where no scene could be assigned to any step.",
+        "3": "Most steps are assignable; one or two are summary statements covering an unbounded stretch of the work.",
+        "5": "Every step names an action specific enough that the scenes discharging it can be identified, and the step count is proportionate to the work's length."
+      }
+    },
+    {
+      "id": "P5",
+      "name": "Cost of outcome",
+      "question": "Does resolution cost something nameable?",
+      "anchors": {
+        "1": "`outcome: success` with no cost — the goal was written narrow enough to be achievable for free.",
+        "3": "A cost is stated but is generic ('it takes a toll') or is paid by someone the reader has no stake in.",
+        "5": "The resolution costs a named thing the agent wanted, declared as a state change, paid by someone the reader cares about."
+      }
+    }
+  ]
+}

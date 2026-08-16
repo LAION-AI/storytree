@@ -1,0 +1,61 @@
+{
+  "rubric_id": "trace",
+  "version": 1,
+  "title": "HINDSIGHT TRACE node — the post-hoc derivation written after an artifact passes",
+  "inherits": "universal",
+  "gate": {"min_per_dimension": 3, "min_mean": 4.0, "max_rounds": 5, "on_gate_miss": "quarantine and record"},
+  "what_it_is": "Once an artifact passes its gate, the author writes a derivation from the source material to the finished artifact, in the voice of someone who never received judge feedback but intuitively knew what to do and what traps to avoid. It must cover what NOT to do, using the actual problems hit in earlier rounds. Its purpose is fine-tuning data that teaches a model to avoid those traps directly, without needing a judge.",
+  "honesty_note": "This is deliberately hindsight wearing the costume of deliberation — the thing docs/03-reconstruction.md forbids in blind reasoning. It is admissible here only because the trace is training data for a generation policy, never evidence about the model's inference. Every trace is stored with `is_hindsight: true` and the round history that produced it, so it can never be mistaken for a forecast.",
+  "dimensions": [
+    {
+      "id": "H1",
+      "name": "Derivation validity",
+      "question": "Does the trace actually derive the artifact from the source, or does it announce the artifact and rationalise?",
+      "anchors": {
+        "1": "Starts from the conclusion. 'The genre is X because the work is X.' No step could have come out differently.",
+        "3": "A real derivation for the spine, but the specific choices that made this artifact good arrive without a reason — the trace explains the obvious and asserts the non-obvious.",
+        "5": "Each substantive choice is reached from evidence a reader can check in the source, and at least one step shows the evidence that would have forced a different choice."
+      }
+    },
+    {
+      "id": "H2",
+      "name": "Trap coverage — fidelity to what actually went wrong",
+      "question": "Does the trace warn against the specific failures this artifact's earlier rounds actually contained?",
+      "anchors": {
+        "1": "No traps, or generic writing advice ('avoid clichés'). The trace could have been written before the loop ran.",
+        "3": "Some traps named and they are real, but they are the easy ones; at least one dimension that scored below 3 in an early round is not addressed anywhere.",
+        "5": "Every dimension that scored below the gate in any round is represented by a named trap, phrased as a temptation with its reason ('the obvious move here is X, which fails because Y'), and each is recognisable as what the earlier draft actually did."
+      }
+    },
+    {
+      "id": "H3",
+      "name": "No-feedback voice",
+      "question": "Is the trace clean of any trace of the judge?",
+      "anchors": {
+        "1": "References the critique directly: 'the feedback said', 'after revision', 'in the second round', 'score', 'rubric', 'dimension'.",
+        "3": "No direct reference, but the shape gives it away — the trace walks the rubric's dimensions in order, or corrects itself mid-derivation in a way only feedback would produce.",
+        "5": "Reads as one continuous act of judgement by a writer who has done this before. Traps are anticipated, never repaired."
+      }
+    },
+    {
+      "id": "H4",
+      "name": "Learning coverage",
+      "question": "For this node type, does the trace reflect what the artifact had to get right?",
+      "anchors": {
+        "1": "Covers one aspect and ignores the rest.",
+        "3": "Covers most of the node type's required content but treats one required area as an afterthought.",
+        "5": "Covers every area the node type's rubric scores — for a ROOT that means the pitch, the entities, the audiences, the genres, the identification value and the human-condition topics, each with a reason, not a mention."
+      }
+    },
+    {
+      "id": "H5",
+      "name": "Transferability",
+      "question": "Does the trace yield a principle that generalises beyond this work?",
+      "anchors": {
+        "1": "Wholly work-specific; nothing a model could carry to a different story.",
+        "3": "A generalisation is offered but is a truism, or is so general it constrains nothing.",
+        "5": "At least one stated principle that is general, non-obvious, and falsifiable — it would tell a writer to do something different on a different story, and a counter-example could be constructed."
+      }
+    }
+  ]
+}

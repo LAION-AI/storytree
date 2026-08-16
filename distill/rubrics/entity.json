@@ -1,0 +1,99 @@
+{
+  "rubric_id": "entity",
+  "version": 1,
+  "title": "ENTITY node — one character, location, object, group or concept per node",
+  "inherits": "universal",
+  "gate": {"min_per_dimension": 3, "min_mean": 4.0, "max_rounds": 5, "on_gate_miss": "quarantine and record"},
+  "applicability": {
+    "character": ["E1", "E2", "E3", "E4", "E5", "E6", "E7"],
+    "location": ["E1", "E3", "E8"],
+    "object": ["E1", "E3", "E8"],
+    "group": ["E1", "E3", "E8"],
+    "concept": ["E1", "E3", "E8"]
+  },
+  "dimensions": [
+    {
+      "id": "E1",
+      "name": "t0 discipline",
+      "source": "docs/07 §1.3, unchanged",
+      "question": "Is this the entity before anything happens?",
+      "anchors": {
+        "1": "The dossier knows the ending. Outcome facts sit in the same fields and the same confident register as opening facts, so any consumer is handed the resolution.",
+        "3": "Opening state is broadly correct, but the story's thesis or the arc's destination has been written into a t0 field (need, limitations) where it removes the uncertainty the middle runs on.",
+        "5": "The entity before anything happens. Everything forward-looking is confined to `arc`, and the declared state variables genuinely start where the story starts."
+      }
+    },
+    {
+      "id": "E2",
+      "name": "Voice separability",
+      "source": "docs/07 §1.3, unchanged",
+      "question": "Could a reader sort unattributed lines?",
+      "anchors": {
+        "1": "No speech signature, or one whose contents are true of any careful/laconic/wry character.",
+        "3": "A signature exists and names a register, but gives no prohibition and no stress behaviour — enough to describe the voice, not enough to reproduce or falsify it.",
+        "5": "Five testable handles including a real `never_says` and a real `under_stress`; a reader handed unattributed lines could sort them."
+      }
+    },
+    {
+      "id": "E3",
+      "name": "Attribute completeness",
+      "question": "Are the required profile fields present AND filled with content rather than category words?",
+      "anchors": {
+        "1": "Required fields missing, or filled with the field name restated ('problem-solving strategy: solves problems pragmatically'). Physical description is a stock type.",
+        "3": "All fields present; roughly half carry real content and the rest are single adjectives. Big Five given as labels with no behavioural consequence.",
+        "5": "Every required field carries a claim that could be false: an age with a consequence, a build and face specific enough to cast, a coping strategy you could watch someone execute, Big Five scores each tied to an observable habit, education and intellectual capability that predict how this person reasons under pressure."
+      }
+    },
+    {
+      "id": "E4",
+      "name": "Relationship matrix",
+      "question": "Is there an individual relationship to every other declared character, asymmetric where it should be?",
+      "anchors": {
+        "1": "Relationships listed for a favoured few, or one blanket statement covering the cast. Missing edges to characters this one demonstrably interacts with.",
+        "3": "Every declared character is covered, but several entries are one-word labels ('ally', 'rival') and the matrix is symmetric where the story is not — A's view of B is B's view of A restated.",
+        "5": "An entry per other declared character; each states what this character wants from that one, what they believe that one thinks of them, and what they would never say to them; asymmetries are explicit and consequential."
+      }
+    },
+    {
+      "id": "E5",
+      "name": "Backstory causality and addressability",
+      "question": "Does the backstory produce the present-day person, and is it decomposed one claim per key?",
+      "anchors": {
+        "1": "A chronology of events with no consequence, or a free-text block that cannot be patched (multi-sentence values under one key), or a backstory that contradicts a declared trait.",
+        "3": "Decomposed correctly and roughly causal, but the chain runs event→trait in one hop: a childhood incident is asserted to have produced a trait with no intervening habit or belief.",
+        "5": "Several hundred words from childhood forward, one self-contained claim per key, each patchable; at least two traits trace wound → belief → habit → present behaviour, and at least one belief the character holds is visibly wrong."
+      }
+    },
+    {
+      "id": "E6",
+      "name": "Off-cliché roundness",
+      "question": "Does the character have interests, habits and textures the plot does not need?",
+      "anchors": {
+        "1": "Every stated trait serves the plot. The character is a role with a name — a soldier who likes soldiering.",
+        "3": "One or two non-plot details, but they are decorative (a hobby that never affects anything and reveals nothing) or they are the genre's standard-issue quirk.",
+        "5": "At least two interests, habits or tastes that the plot does not use, that cut against the character's type, and that a reader would remember — and at least one of them makes a scene harder rather than easier."
+      }
+    },
+    {
+      "id": "E7",
+      "name": "Internal conflict",
+      "question": "Is there a real internal conflict — usually competing goals — with a cost either way?",
+      "anchors": {
+        "1": "No internal conflict declared, or a false one where one side obviously wins ('wants to do the right thing but is afraid').",
+        "3": "Two goals named that genuinely compete, but the reader can already tell which will lose, or the conflict never touches the declared state variables.",
+        "5": "Two goods the character cannot both have, each with a named cost, each defensible; the conflict is expressed in declared state variables so a later scene can move it."
+      }
+    },
+    {
+      "id": "E8",
+      "name": "Non-mind entity dynamics",
+      "applies_to": ["location", "object", "group", "concept"],
+      "question": "For a location, object, group or concept: what forces act on it, and what changes its meaning?",
+      "anchors": {
+        "1": "A description with no dynamics. A room's dimensions; a faction's name and size. Nothing that could change.",
+        "3": "Dynamics stated in the abstract ('the city is under pressure') with no mechanism and no declared variable that could move.",
+        "5": "Named forces with directions, at least one declared state variable that the story will move, and a stated way the entity's meaning to the characters can invert."
+      }
+    }
+  ]
+}

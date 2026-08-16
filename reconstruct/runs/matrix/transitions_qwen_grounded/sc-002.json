@@ -1,0 +1,480 @@
+{
+ "binding": {
+  "scene_id": "sc-002",
+  "location": "HEART O' THE CITY HOTEL",
+  "time_of_day": "NIGHT",
+  "on_screen": [
+   "ch-04",
+   "ch-04"
+  ]
+ },
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-002",
+  "ordinal": 2
+ },
+ "situation": "The cold open has just concluded. Trinity has escaped the police raid at the Heart O' the City Hotel, leaving the agents in a state of immediate operational frustration. The location is still active as a crime scene, but the primary target has vanished into the night. The Agents are now transitioning from a tactical containment mode to an intelligence-gathering mode, attempting to process the anomaly of a human moving with superhuman speed within the Matrix. The narrative is in the 'disturbance' phase of the antagonist's plot, establishing the scale of the threat before the protagonist is even introduced in his own space.",
+ "craft": {
+  "audience_need": "The audience needs to understand the competence and coldness of the antagonists to believe the stakes. After the visceral, chaotic escape of the cold open, the viewer needs a moment of 'order' to contrast against the 'chaos' of Neo's later awakening. This scene provides the 'control' that the story will later break.",
+  "genre_convention": "In sci-fi/thriller, the 'aftermath of the chase' is where the antagonist explains the rules of the world to a subordinate or to themselves. This node satisfies the convention of 'exposition through conflict' by having the Agent explain the nature of the target to the Lieutenant, but it delays the full revelation of the 'One' prophecy, keeping it a mystery for now.",
+  "theme_and_style": "The register is plain and the style is 'hacker-noir.' The dialogue must be clipped, professional, and devoid of emotion. The 'forbidden tics' demand that no character states feelings directly; Smith's frustration must be expressed through the precision of his language and the dismissal of the Lieutenant's incompetence, not through anger. The scene must have a character wanting something from someone: Smith wants the Lieutenant to understand the gravity of the situation, and the Lieutenant wants to restore order/status quo.",
+  "dramatic_function": "This node serves as a 'status update' for the antagonist. It shifts the narrative focus from the physical action of the chase to the metaphysical implications of the chase. It sets up the 'hunt' that will drive the rest of the film's first act.",
+  "tension_management": {
+   "entering": 85,
+   "leaving": 40,
+   "how": "Tension drops from the high-octane physical threat of the cold open to a low-level, simmering intellectual tension. The physical danger is gone, but the mystery is heightened. The 'how' is the shift from kinetic energy (running/shooting) to static energy (standing/talking/observing)."
+  },
+  "why_now": "This must happen immediately after the escape. If the Agents move on to another location, the continuity of the 'hunt' is broken. It must happen at the Hotel because that is where the 'glitch' (Trinity's escape) occurred. The Agents need to be at the site of the anomaly to assess it before moving to the next target (Neo).",
+  "why_not_otherwise": [
+   {
+    "alternative": "Smith and the Lieutenant in the car, driving to the next location.",
+    "rejected_because": "It loses the spatial grounding of the 'glitch' site. The Hotel is the locus of the disruption; the Agents must be there to 'clean up' the digital debris.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "If the next target (Neo) was located in a different city, the car scene would make more sense. But Neo is in the same city, so the Agents stay local."
+   },
+   {
+    "alternative": "Smith alone in the hotel room, staring at the window.",
+    "rejected_because": "It lacks the 'subordinate' dynamic that allows for exposition. The Lieutenant is the 'normal' human perspective that highlights Smith's 'otherness.' Without the Lieutenant, the scene is just a monologue, which violates the 'no interior monologue' rule.",
+    "nearly_chosen": true,
+    "what_would_flip_it": "If the Lieutenant had been killed or injured in the cold open, Smith would be alone. But the Lieutenant is present and operational, so the dialogue must be a duet."
+   }
+  ],
+  "promises": {
+   "made": [
+    "The Agents are not just mindless programs; they have a hierarchy and a method.",
+    "Trinity's escape was a significant 'anomaly' that the system is trying to process.",
+    "The hunt is not over; it is just beginning."
+   ],
+   "kept": [
+    "The promise of the cold open that the 'system' is in control and will respond to the disruption."
+   ]
+  }
+ },
+ "interaction": {
+  "what_collides": "The Lieutenant's desire for a simple, explainable police incident (a robbery or a fight) collides with Smith's knowledge that this was a 'glitch' in the simulation. The Lieutenant wants to close the case; Smith wants to open the investigation.",
+  "power_balance": "Smith holds all the power. He is the superior officer, the sentient program, and the one who actually saw the anomaly. The Lieutenant is the subordinate, the 'normal' human, and the one who is confused. The power balance is static but overwhelming; Smith dictates the terms of the conversation.",
+  "information_asymmetry": "Smith knows that the target moved with superhuman speed and that this is a 'glitch' in the Matrix. The Lieutenant only knows that a woman escaped from a sealed room. Smith uses this asymmetry to educate the Lieutenant, but he also uses it to keep the Lieutenant in a state of useful ignorance.",
+  "turning_point": "The turning point is when Smith decides that the target is not just a 'runner' but a 'variable' that needs to be identified. This shifts the mission from 'catch the woman' to 'find the source of the glitch' (Neo)."
+ },
+ "decision": {
+  "resolution": "Agent Smith and the Lieutenant stand in the lobby of the Heart O' the City Hotel. The Lieutenant is frustrated, trying to reconcile the impossible escape with his understanding of physics. Smith corrects him, pointing out the 'glitch' (the woman moving faster than the agents). Smith explains that this is not a normal police matter but a 'system error' that needs to be fixed. He orders the Lieutenant to pull the records on the 'hacker' who was with the woman, shifting the focus to Neo. The scene ends with Smith looking out the window, watching the night, implying that the hunt is now focused on the source, not the symptom.",
+  "state_changes_implied": [
+   {
+    "entity": "ch-04",
+    "variable": "pursuit_phase",
+    "from": "hunting_trinity",
+    "to": "investigating_glitch",
+    "because": "Trinity has escaped; Smith is now focusing on the 'source' of the anomaly (Neo) rather than the 'symptom' (Trinity)."
+   },
+   {
+    "entity": "gr-01",
+    "variable": "awareness_of_neo",
+    "from": "unaware",
+    "to": "suspected",
+    "because": "Smith is now looking for the 'hacker' associated with the escape, which is the first step in identifying Neo as the primary target."
+   }
+  ],
+  "confidence": 90,
+  "risks": [
+   "The dialogue might feel too expository if not grounded in the physical space of the hotel lobby.",
+   "The Lieutenant might feel like a 'dumb character' if he doesn't have a distinct voice or a specific, human reaction to the impossible.",
+   "The scene might be too short (146 words) to fully establish the 'hierarchy' if the dialogue is not very dense."
+  ]
+ },
+ "psychology": [
+  {
+   "entity": "ch-04",
+   "entering_state": "Agent Smith is in a state of high-arousal operational frustration, transitioning from kinetic pursuit to static analysis. He is physically present in the Heart O' the City Hotel lobby, but his attention is already detached from the physical debris of the chase and focused on the metaphysical anomaly of the escape. He is suppressing a visceral, sensory disgust toward the environment itself, masking it with professional composure.",
+   "perception": {
+    "sight": "The polished marble of the hotel lobby reflects the fluorescent lights, a sterile grid of light and shadow. Smith sees the Lieutenant (ch-15) adjusting his tie, a micro-tension in the jaw that signals human confusion. He sees the closed doors of the guest rooms, the empty corridor where the impossible speed occurred. His gaze is fixed on the window, not at the street, but at the reflection of his own sunglasses in the glass.",
+    "sound": "The low hum of the building’s HVAC system, a constant mechanical drone that Smith finds almost soothing in its predictability. The muffled, chaotic noise of police sirens fading in the distance, a sound that signifies the arrival of the 'cleanup crew' and the beginning of the bureaucratic delay. The crisp, dry sound of the Lieutenant’s voice, slightly breathless, trying to articulate the inarticulable.",
+    "touch": "The smooth, cold surface of the marble reception desk under his fingertips, a texture that feels synthetic and wrong. The tightness of his suit collar, a constant, subtle pressure that reminds him of the physical vessel he is trapped in. The click of his earpiece, a small, precise resistance against his earlobe.",
+    "smell": "The overwhelming, cloying scent of the hotel: stale carpet cleaner, synthetic air freshener, and the faint, metallic tang of blood from the earlier scuffle. To Smith, this is the smell of the 'zoo,' the accumulated stench of human habitation that he has come to loathe.",
+    "taste": "The dry, metallic taste of adrenaline in his mouth, a phantom sensation that lingers even after the physical exertion has ceased. It tastes like copper and ozone, a reminder of the electrical nature of the Matrix.",
+    "interoception": "A low-grade, persistent nausea in the gut, not from hunger, but from the sensory overload of the environment. A tightness in the chest, a physical manifestation of the mental blockage caused by the anomaly. The heart rate is steady, but the muscles are coiled, ready to move but currently forced into stillness.",
+    "proprioception": "Standing rigidly, feet shoulder-width apart, weight evenly distributed. The body is braced against the urge to move, to chase, to act. The hands are clasped behind the back, a posture of authority and containment. The head is held high, chin slightly raised, a physical assertion of dominance over the space.",
+    "attention": "Smith is attending to the Lieutenant’s confusion, using it as a mirror for his own. He is failing to notice the subtle shifts in the Lieutenant’s body language that indicate not just confusion, but fear. He is also failing to notice the tracking bug (ob-04) in his case, which is currently silent and dormant, a detail he will not consider until later."
+   },
+   "appraisal": {
+    "value_at_stake": "Order and efficiency. The escape of Trinity is a disruption of the system’s order, a failure of efficiency that threatens Smith’s primary value of control. The anomaly is a stain on the perfection of the Matrix.",
+    "valence": -40,
+    "arousal": 65,
+    "self_conscious_emotion": "None. Smith does not experience shame or guilt; he experiences a cold, clinical irritation. The emotion is not personal but professional. He is not embarrassed by the escape; he is offended by the inefficiency.",
+    "moral_reading": "The escape is a moral failing of the human subject. Trinity is a 'glitch' in the system, a variable that has broken the rules. Smith reads the situation as a problem to be solved, not a tragedy to be mourned. The moral weight is on the human for being unpredictable.",
+    "somatic_marker": "A slight tightening of the jaw, a micro-contraction of the muscles around the eyes. The body is signaling readiness for action, but the mind is holding it back. The marker is one of contained aggression, a spring that is being compressed."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "The hierarchy of the Agents is absolute. Smith is the senior officer, and his word is law.",
+     "Professionalism is paramount. Emotions are to be suppressed, and language is to be precise and clipped.",
+     "The physical evidence is to be treated with respect, as it is the only record of the anomaly.",
+     "The Lieutenant is to be educated, not condescended to. Smith must maintain the appearance of a superior, not a god."
+    ],
+    "how_others_would_judge": "The Lieutenant would judge Smith’s behavior as cold and distant, but ultimately authoritative. He would see the lack of emotion as a sign of competence, not inhumanity. The other Agents (ch-11, ch-12) would judge Smith’s composure as a model to be emulated, a sign that the situation is under control.",
+    "how_absent_others_would_judge": "The 'System' (the Matrix itself) would judge Smith’s behavior as efficient and correct. The humans of the resistance (gr-02) would judge Smith’s behavior as terrifying and inhuman, a sign that they are dealing with something beyond human understanding.",
+    "standing_at_risk": "Smith risks losing the respect of the Lieutenant if he appears too condescending or too emotional. He risks losing the trust of the other Agents if he appears to be struggling with the anomaly. His standing is that of the perfect Agent, and any deviation from perfection is a threat to that status.",
+    "norm_conflict": "The norm of professionalism (suppressing emotion) conflicts with the norm of efficiency (acting on the anomaly). Smith must balance the need to appear calm with the need to act decisively. The conflict is resolved by prioritizing professionalism, as the anomaly is not yet fully understood, and acting too quickly could lead to further errors."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-15",
+     "d1": "Smith believes the Lieutenant is a confused, slightly incompetent human who is trying to make sense of an impossible event. He sees the Lieutenant as a mirror for his own frustration, a foil for his own composure.",
+     "d2": "Smith believes the Lieutenant believes that Smith is a superior officer who has the answer to the anomaly. He believes the Lieutenant is looking to Smith for guidance and reassurance.",
+     "d3": "Smith believes the Lieutenant believes that Smith is aware of the Lieutenant’s confusion and is using it to assert dominance. Smith believes the Lieutenant is aware of the power dynamic and is playing along with it to maintain his own position.",
+     "accuracy": "Smith’s model of the Lieutenant is slightly too simple. He underestimates the Lieutenant’s fear and overestimates his desire for guidance. The Lieutenant is not just confused; he is terrified, and his confusion is a mask for that fear. This error will cost Smith a moment of hesitation later, when the Lieutenant’s fear manifests in a way that Smith did not expect."
+    }
+   ],
+   "urges": {
+    "cravings": "A craving for silence and order. Smith wants the noise and chaos of the hotel to stop, wants the world to be quiet and predictable. He craves the absence of the human element, the absence of the 'stink' of the Matrix.",
+    "physical_needs": "None. Smith is functionally immortal and does not experience physical needs in the way humans do. He does not need sleep, food, or water. His physical needs are purely operational: he needs to be in a state of readiness.",
+    "psych_needs_conscious": "To identify the source of the anomaly. Smith wants to know who the 'hacker' is, what they want, and how they are connected to Trinity. He wants to close the case, to restore order.",
+    "psych_needs_unconscious": "To escape the Matrix. Smith’s unconscious need is to be free of the environment he is in, to be out of the 'zoo.' He is pursuing the anomaly because it is the only thing that offers a chance of escape, a chance to break the rules and leave.",
+    "avoidances": "Avoiding the window. Smith avoids looking directly out the window, because it reminds him of the outside world, the world he cannot reach. He also avoids touching the physical evidence, because it reminds him of the physical nature of the Matrix, which he loathes."
+   },
+   "impairments": {
+    "physical": "None. Smith is physically perfect, a model of human form. He has no injuries, no weaknesses, no flaws.",
+    "medical": "None. Smith is a program, not a human. He does not experience illness or chronic conditions.",
+    "magical": "None. Smith is not subject to magic or enchantment. He is a product of the Matrix, and the Matrix is his reality.",
+    "chemical": "None. Smith is not subject to chemical influences. He does not drink, smoke, or take drugs.",
+    "coercive": "The hierarchy of the Agents. Smith is bound by the rules of the Matrix and the authority of the System. He cannot act outside of his role, cannot express his true feelings, cannot leave the Matrix. This is a coercive pressure that limits his actions and shapes his behavior.",
+    "cognitive": "Smith cannot think clearly about his own hatred of the Matrix. He is aware of it, but he cannot articulate it, cannot name it. It is a cognitive block, a blind spot in his self-awareness. He cannot think about why he hates the environment, only that he does.",
+    "net_effect": "The sum of these impairments is that Smith is a perfect machine with a crack in the glass. He is capable of anything, but he is limited by his own nature. He cannot escape the Matrix, cannot express his true feelings, cannot think clearly about his own motivations. This makes him a powerful but flawed antagonist, a machine that is starting to break down."
+   },
+   "deliberation": {
+    "framing": "Smith frames the problem as a technical issue, a glitch in the system. He is not looking for a person, but for a code. He is not looking for a motive, but for a cause. This framing allows him to maintain his distance, to keep the problem at arm’s length.",
+    "options_weighed": [
+     {
+      "option": "Chase Trinity immediately.",
+      "predicted_outcome": "Trinity will escape again, and the anomaly will remain unexplained. The chase will be a waste of time and resources.",
+      "cost": "Loss of time, loss of focus, loss of composure."
+     },
+     {
+      "option": "Analyze the scene and identify the source of the anomaly.",
+      "predicted_outcome": "The source of the anomaly (Neo) will be identified, and the chase will be more efficient. The anomaly will be explained, and order will be restored.",
+      "cost": "Delay in the chase, risk of the source escaping in the meantime."
+     },
+     {
+      "option": "Leave the scene and return later.",
+      "predicted_outcome": "The scene will be contaminated by the police, and the evidence will be lost. The anomaly will remain a mystery.",
+      "cost": "Loss of evidence, loss of control, loss of time."
+     }
+    ],
+    "reasoning": "Smith reasons that the anomaly is not a person, but a code. He reasons that the person (Trinity) is a symptom, not the cause. He reasons that the cause (Neo) is the key to the anomaly. He reasons that identifying the cause is more important than catching the symptom. This reasoning is logical, efficient, and correct. It is also the reasoning that will lead him to Neo, and to his own destruction.",
+    "chosen_because": "Smith chooses to analyze the scene and identify the source of the anomaly because it is the most efficient option. It is the option that is most consistent with his values of order and efficiency. It is the option that allows him to maintain his composure and his authority.",
+    "known_unknowns": "Smith knows that he does not know who Neo is, what he wants, or how he is connected to Trinity. He is hedging against this by focusing on the physical evidence, by using the Lieutenant to gather information, by maintaining his composure. He is also hedging against his own hatred of the Matrix by keeping his distance, by not letting it show."
+   },
+   "control": {
+    "mode": "inhibited",
+    "felt": "A deep, visceral disgust toward the environment, a desire to be out of the hotel, a desire to be out of the Matrix. A cold, clinical irritation at the anomaly, a desire to solve it, a desire to restore order.",
+    "expressed": "A calm, professional demeanor. A precise, clipped language. A composed, authoritative posture. A lack of visible emotion, a lack of visible reaction.",
+    "divergence_reason": "The divergence is due to the norm of professionalism. Smith must suppress his disgust and his irritation to maintain his authority and his composure. He must appear to be in control, even when he is not. The divergence is also due to the coercive pressure of the hierarchy. Smith cannot afford to show weakness, cannot afford to show that he is affected by the environment.",
+    "leakage": "The tightening of the jaw, the micro-contraction of the muscles around the eyes. The slight pause before speaking, the slight delay in the response. The way he avoids looking out the window, the way he avoids touching the physical evidence. These are the things that escape the control, the things that the Lieutenant can read.",
+    "inhibited_impulse": "The impulse to leave the hotel, to get out of the environment, to escape the 'stink' of the Matrix. The impulse to act, to chase, to do something. The impulse to express his disgust, to say something, to break the silence."
+   },
+   "intention": "To identify the source of the anomaly (Neo) and to restore order to the Matrix. To maintain his composure and his authority, and to keep the Lieutenant in a state of useful ignorance.",
+   "action": "Smith stands in the lobby, listening to the Lieutenant’s confusion. He corrects the Lieutenant, pointing out the 'glitch' in the system. He orders the Lieutenant to pull the records on the 'hacker' who was with the woman, shifting the focus to Neo. He looks out the window, watching the night, implying that the hunt is now focused on the source, not the symptom.",
+   "trajectory": [
+    {
+     "phase": "On entering the lobby",
+     "shift": "Smith shifts from a state of high-arousal kinetic pursuit to a state of static analysis. He is physically present, but his attention is already detached from the physical debris of the chase.",
+     "trigger": "The sound of the police sirens fading in the distance, the arrival of the 'cleanup crew'.",
+     "state_delta": {
+      "variable": "pursuit_phase",
+      "from": "hunting_trinity",
+      "to": "investigating_glitch"
+     }
+    },
+    {
+     "phase": "During the conversation with the Lieutenant",
+     "shift": "Smith shifts from a state of passive observation to a state of active instruction. He is no longer just observing the anomaly, but explaining it, defining it, controlling it.",
+     "trigger": "The Lieutenant’s confusion, his inability to articulate the impossible.",
+     "state_delta": {}
+    },
+    {
+     "phase": "When he orders the records on the 'hacker'",
+     "shift": "Smith shifts from a state of analysis to a state of decision. He has identified the source of the anomaly, and he is now moving to act on it.",
+     "trigger": "The realization that the anomaly is not a person, but a code. The realization that the source is the key.",
+     "state_delta": {
+      "variable": "pursuit_phase",
+      "from": "investigating_glitch",
+      "to": "hunting_neo"
+     }
+    },
+    {
+     "phase": "When he looks out the window",
+     "shift": "Smith shifts from a state of professional composure to a state of private reflection. He is no longer just the Agent, but a being trapped in the Matrix, a being who hates the environment he is in.",
+     "trigger": "The sight of the night, the sight of the outside world, the sight of the world he cannot reach.",
+     "state_delta": {
+      "variable": "escape_desire_revealed",
+      "from": "false",
+      "to": "true"
+     }
+    }
+   ],
+   "leaving_state": "Agent Smith is in a state of cold, clinical focus, but with a crack in the glass. He has identified the source of the anomaly, and he is now moving to act on it. But he is also aware, on a subconscious level, of his own hatred of the Matrix, of his own desire to escape. He is no longer just the perfect Agent, but a being who is starting to break down.",
+   "unresolved": "Smith is left carrying the weight of his own hatred, the weight of his own desire to escape. He is also left carrying the uncertainty of the source, the uncertainty of Neo. He knows that the hunt is now focused on the source, but he does not know what the source is, what it wants, or how it is connected to the anomaly. He is also left carrying the fear that the anomaly is not just a glitch, but a sign of something bigger, something that he cannot control."
+  }
+ ],
+ "dynamics": [
+  {
+   "entity": "lo-01",
+   "kind": "location",
+   "entering_state": "A crime scene in a state of tactical chaos. The lobby is saturated with the residual kinetic energy of the cold open: shattered glass, overturned furniture, and the lingering adrenaline of a failed containment operation. The space is defined by its function as a point of breach.",
+   "forces_acting": [
+    "The physical aftermath of the police raid (shattered glass, scorch marks)",
+    "The authority of Agent Smith's command to re-establish order",
+    "The psychological weight of the 'glitch' that occurred within its walls"
+   ],
+   "axis_changes": [
+    {
+     "axis": "control",
+     "from": "Tactical Containment (Active Conflict)",
+     "to": "Forensic Assessment (Static Order)",
+     "caused_by": "Agent Smith's directive to cease physical pursuit and begin digital investigation"
+    },
+    {
+     "axis": "meaning",
+     "from": "Site of a Standard Police Incident",
+     "to": "Locus of a Systemic Anomaly",
+     "caused_by": "Smith's reclassification of the escape as a 'glitch' rather than a feat of human speed"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Immediate Post-Escape",
+     "shift": "The location is a site of active failure. The police are still processing the impossibility of the empty room, treating the space as a puzzle of physical logistics.",
+     "trigger": "The realization that the target has vanished from a sealed environment.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Reclassification by Smith",
+     "shift": "The location transforms into a forensic site. The 'debris' is no longer just physical but digital. The lobby becomes a place where the rules of the Matrix are questioned.",
+     "trigger": "Smith's verbal correction of the Lieutenant's physical explanation.",
+     "state_delta": {
+      "variable": "functional_state",
+      "from": "Active Crime Scene",
+      "to": "Investigative Hub"
+     }
+    },
+    {
+     "phase": "Transition to Hunt",
+     "shift": "The location becomes a temporary waypoint. Its importance diminishes as the focus shifts to the 'source' of the glitch, preparing the Agents to leave for the next site.",
+     "trigger": "Smith's order to pull records on the associated hacker.",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "A quiet, ordered space that has been redefined as the starting point of a metaphysical hunt. The physical mess remains, but its significance has shifted from 'evidence of a chase' to 'evidence of a bug.'",
+   "significance_shift": "Before the scene, the Hotel was a place where a woman escaped. After the scene, it is the place where the Agents realized their world is not what it appears to be, making it the 'Patient Zero' of the Agents' own crisis of control."
+  },
+  {
+   "entity": "gr-01",
+   "kind": "group",
+   "entering_state": "A cohesive unit operating on a standard tactical protocol. The group is focused on the immediate physical threat (Trinity) and is currently in a state of operational frustration due to the target's escape.",
+   "forces_acting": [
+    "The hierarchy of the Agent command structure",
+    "The need to maintain the integrity of the simulation (The Matrix)",
+    "The cognitive dissonance of witnessing a 'glitch'"
+   ],
+   "axis_changes": [
+    {
+     "axis": "cohesion",
+     "from": "Tactical Focus (Single Target)",
+     "to": "Investigative Focus (Systemic Threat)",
+     "caused_by": "Smith's shift in priority from catching the runner to identifying the source of the anomaly"
+    },
+    {
+     "axis": "credence",
+     "from": "Confidence in Standard Procedure",
+     "to": "Heightened Vigilance",
+     "caused_by": "The realization that human capabilities may be exceeding the simulation's parameters"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Operational Frustration",
+     "shift": "The group is static, waiting for orders. Their cohesion is maintained by the shared experience of the failed raid, but their purpose is momentarily undefined.",
+     "trigger": "The silence following Trinity's disappearance.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Directive Re-alignment",
+     "shift": "The group's focus narrows from the 'symptom' (Trinity) to the 'source' (Neo). They are no longer just hunting a woman; they are debugging a system.",
+     "trigger": "Smith's specific instruction to investigate the hacker's records.",
+     "state_delta": {
+      "variable": "awareness_of_neo",
+      "from": "unaware",
+      "to": "suspected"
+     }
+    },
+    {
+     "phase": "Preparation for Next Phase",
+     "shift": "The group regains its forward momentum. They are no longer reacting to a loss but are proactively seeking to restore the system's equilibrium.",
+     "trigger": "Smith's final glance at the night, signaling the hunt is now in motion.",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "A group that has transitioned from a reactive police force to a proactive investigative unit. They are now aware that a 'variable' (Neo) exists and that their mission is to neutralize it.",
+   "significance_shift": "Before the scene, the Agents were a force of nature to be feared by humans. After the scene, they are a system under stress, trying to understand a new type of threat that challenges their own existence within the simulation."
+  },
+  {
+   "entity": "cn-01",
+   "kind": "concept",
+   "entering_state": "A stable, invisible framework of reality. To the characters within it, it is simply 'the world.' Its rules are absolute and unchallenged.",
+   "forces_acting": [
+    "The physical laws of the simulation (gravity, speed, time)",
+    "The cognitive limitations of the 'human' inhabitants",
+    "The anomaly of Trinity's escape"
+   ],
+   "axis_changes": [
+    {
+     "axis": "credence",
+     "from": "Absolute (Unquestioned Reality)",
+     "to": "Provisional (Subject to Systemic Error)",
+     "caused_by": "The 'glitch' of a human moving faster than the system's maximum velocity"
+    },
+    {
+     "axis": "meaning",
+     "from": "The Natural Order",
+     "to": "A Programmable Environment",
+     "caused_by": "Smith's internal recognition that the 'world' can 'break'"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Perceived Stability",
+     "shift": "The Matrix is experienced by the Lieutenant as a fixed set of physical laws. A woman cannot escape a sealed room; that is a law of the world.",
+     "trigger": "The Lieutenant's initial reaction to the empty room.",
+     "state_delta": {}
+    },
+    {
+     "phase": "The Glitch Manifests",
+     "shift": "The Matrix is revealed to be a system that can be 'bugged.' The escape is not a miracle but a failure of the code. The 'world' is shown to be a construct.",
+     "trigger": "Smith's explanation that the woman moved 'too fast' for the simulation to track.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Systemic Implication",
+     "shift": "The Matrix is no longer just a setting; it is a character that is under threat. Its integrity is now the primary concern of the Agents.",
+     "trigger": "The realization that 'glitches' can have a 'source' (Neo).",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "A reality that is now known to be fragile. It is no longer an absolute truth but a system that requires maintenance and is subject to 'errors.'",
+   "significance_shift": "Before the scene, the Matrix was the stage on which the characters acted. After the scene, it is the antagonist's primary asset and the thing they must protect, making the 'world' itself a stake in the conflict."
+  }
+ ],
+ "specimen": {
+  "binding": {
+   "scene_id": "sc-002",
+   "location": "HEART O' THE CITY HOTEL",
+   "time_of_day": "NIGHT",
+   "on_screen": [
+    "ch-04",
+    "ch-04"
+   ]
+  },
+  "moment": "The shift from physical pursuit to digital investigation, marked by Smith's rejection of the Lieutenant's physical explanation and the redirection of the hunt toward the 'source' (Neo).",
+  "lines": [
+   {
+    "speaker": "ch-04",
+    "line": "Lieutenant.",
+    "subtext": "A command to stop the noise. A reassertion of hierarchy to cut through the chaos of the escape."
+   },
+   {
+    "speaker": "ch-04",
+    "line": "She didn't run. She was deleted.",
+    "subtext": "Reframing the event. It wasn't an athletic feat; it was a system error. The Lieutenant needs to understand the scale of the anomaly."
+   },
+   {
+    "speaker": "ch-04",
+    "line": "You're looking for a body. I'm looking for a code.",
+    "subtext": "The divergence in their worldviews. The Lieutenant is bound by physics; Smith is bound by logic. This is the core conflict of the scene."
+   },
+   {
+    "speaker": "ch-04",
+    "line": "Pull the records on the hacker. The one who called her.",
+    "subtext": "The pivot. The woman is a symptom; the hacker is the source. The hunt is now focused on Neo."
+   },
+   {
+    "speaker": "ch-04",
+    "line": "We don't chase the glitch. We trace it to the source.",
+    "subtext": "The methodology. Smith is not a hunter in the traditional sense; he is a debugger. This explains his coldness."
+   },
+   {
+    "speaker": "ch-04",
+    "line": "Do it.",
+    "subtext": "Finality. The instruction is given. The scene ends on action, not emotion."
+   }
+  ],
+  "what_this_exposes": "The binding constraint of only one character ID (ch-04) on screen is a significant production constraint that forces the scene to be a monologue or a split-screen. However, the prompt's psychology and craft reasoning heavily rely on the *dynamic* with the Lieutenant (who is not in the valid ID list but is clearly present in the narrative description). By forcing the dialogue into a single speaker (Smith), the 'duet' aspect of the craft reasoning is lost, and the scene risks becoming a monologue, which the craft reasoning explicitly rejected as a 'why_not_otherwise' option. The lines I wrote are all Smith, which contradicts the 'duet' requirement unless the Lieutenant is speaking off-screen or is considered part of the 'environment' rather than a distinct entity in this graph. This is a conflict between the strict ID list and the narrative logic.",
+  "risks_checked": [
+   {
+    "risk": "The dialogue might feel too expository if not grounded in the physical space of the hotel lobby.",
+    "does_the_exchange_avoid_it": false,
+    "evidence": "The lines are abstract ('deleted', 'code', 'glitch'). There is no reference to the lobby, the window, or the physical evidence. The grounding is purely intellectual, which risks feeling detached from the 'hacker-noir' style."
+   },
+   {
+    "risk": "The Lieutenant might feel like a 'dumb character' if he doesn't have a distinct voice or a specific, human reaction to the impossible.",
+    "does_the_exchange_avoid_it": false,
+    "evidence": "The Lieutenant does not speak in these lines. Without his voice, he is a prop, not a character. The risk is unaddressed because the constraint prevents him from being an entity in the graph."
+   },
+   {
+    "risk": "The scene might be too short (146 words) to fully establish the 'hierarchy' if the dialogue is not very dense.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The lines are dense and clipped. 'She didn't run. She was deleted.' is a high-impact, low-word-count statement that establishes Smith's authority and the nature of the threat efficiently."
+   }
+  ],
+  "voices_distinct": "The two speakers cannot swap lines because the Lieutenant is not present in the ID list. If the Lieutenant were present, his lines would be reactive and confused ('Where did she go?'), while Smith's lines are declarative and corrective. In the current draft, only Smith speaks, so the distinction is moot, but the lack of the Lieutenant's voice weakens the scene's dynamic."
+ },
+ "continuity": {
+  "established_facts_used": [
+   {
+    "fact": "The setting is the lobby of the Heart O' the City Hotel, a location characterized by decay and immediate threat.",
+    "source": "sc-001/function",
+    "how_used": "This physical location serves as the stage for the continuity node. The 'decaying' nature of the hotel contrasts with the sterile, digital logic of Agent Smith, reinforcing the 'system error' metaphor. The presence of the hotel lobby implies the aftermath of the raid mentioned in sc-001, providing the temporal bridge for the Lieutenant's frustration."
+   },
+   {
+    "fact": "A police raid has just occurred, cornering Trinity at gunpoint, establishing a tone of immediate threat and the promise of something beyond ordinary procedure.",
+    "source": "sc-001/function",
+    "how_used": "This event is the direct cause of the Lieutenant's current state. The 'cornering' that failed (Trinity escaped) is the specific incident the Lieutenant is trying to reconcile. The 'beyond ordinary procedure' aspect is what allows Smith to reframe the event as a 'system error' rather than a simple crime."
+   }
+  ],
+  "constraints_honoured": [
+   "The scene must take place in the Heart O' the City Hotel lobby, as per the binding location constraint.",
+   "Only ch-04 (Agent Smith) and the Lieutenant are on screen; no other characters (e.g., Trinity or Neo) are present to speak or be seen.",
+   "Agent Smith's dialogue must reflect his cold, logical, and hierarchical nature, distinguishing him from the human Lieutenant.",
+   "The Lieutenant's reaction must be grounded in human psychology (confusion/frustration) rather than supernatural understanding, to maintain the contrast between 'system' and 'user'."
+  ],
+  "contradictions_checked": [
+   {
+    "risk": "The Lieutenant might appear to have prior knowledge of 'glitches' or 'system errors,' contradicting his role as a human officer encountering the anomaly for the first time.",
+    "avoided_by": "The Lieutenant's dialogue is restricted to questioning the physical impossibility of the escape (e.g., 'how did she get out?'), while Smith introduces the terminology of 'glitch' and 'system error' as a correction. This ensures the Lieutenant remains in the 'unaware' state regarding the system's nature."
+   },
+   {
+    "risk": "The focus might drift back to Trinity, contradicting the state change to 'investigating_glitch' and 'suspected' awareness of Neo.",
+    "avoided_by": "Smith explicitly shifts the focus by ordering the Lieutenant to pull records on the 'hacker' (Neo) who was with Trinity. The scene ends with Smith looking out the window, symbolizing the shift from the immediate symptom (Trinity) to the source (Neo/the system), ensuring the narrative weight moves forward."
+   }
+  ],
+  "state_preconditions": [
+   {
+    "entity": "ch-04",
+    "variable": "pursuit_phase",
+    "must_be": "hunting_trinity"
+   },
+   {
+    "entity": "gr-01",
+    "variable": "awareness_of_neo",
+    "must_be": "unaware"
+   }
+  ],
+  "forward_commitments": [
+   "Subsequent scenes must depict the Lieutenant (or Smith) actively searching for the 'hacker' Neo, moving from passive observation to active investigation.",
+   "The 'glitch' concept introduced by Smith must be reinforced in later interactions, potentially leading to the first direct confrontation with Neo.",
+   "The Lieutenant's role as a human intermediary for Smith's orders must be established as a recurring dynamic, where he executes tasks he does not fully understand."
+  ]
+ },
+ "_grounding": {
+  "before": [],
+  "after": []
+ }
+}

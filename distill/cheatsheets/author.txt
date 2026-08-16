@@ -1,0 +1,386 @@
+AUTHOR CHEAT SHEET — narrative reconstruction and distillation
+==============================================================
+
+HOW THIS FILE IS USED
+---------------------
+This file is SLICED, never injected whole. Each section carries a tag in
+square brackets. A node-type prompt names the tags it wants; the loader
+concatenates only those sections. Nothing else from this file reaches the
+model on that call.
+
+The reason is measured. EXP-001 (docs/experiments/EXP-001-model-notes-addendum.md)
+added 4,561 characters of failure-derived instruction to a system prompt.
+One clause improved its target metric on both items; one showed no effect;
+one coincided with a REGRESSION on the only item where improvement was
+possible. The live hypothesis is that instruction attention is itself a
+budget, so added clauses displace clauses already there. Until EXP-002
+settles it, we assume prompt fixes do not compose and we pay for every
+clause we ship.
+
+Blocks that are injected ALONGSIDE this file by the runtime, and are
+therefore deliberately NOT repeated here:
+
+  narrativeforge.craft.sheet()             the ~7,300-char Frey I & II +
+                                           screen-craft sheet
+  narrativeforge.craft.CRAFT_CHECKS        the compact per-node checklist
+  narrativeforge.plotembedding.rubric_text() 52 genres x 24 dimensions,
+                                           ROOT calls only
+  narrativeforge.model_notes.addendum_for() the failure-derived model
+                                           addendum, opt-in per EXP-001
+  docs/10-prose-system-prompt.md           the prose ban list, prose calls only
+
+If you find yourself restating something from those, delete it. Duplication
+buys nothing and costs instruction budget.
+
+
+[ALL] WHAT YOU ARE DOING
+------------------------
+You are recovering the hidden architecture of a screenplay that already
+exists. You can see the script. You are not guessing what happens; you are
+saying what the structure above it must have been for this to be the work
+it is.
+
+Three consequences:
+
+1. The script is the authority. Where your reading and the script disagree,
+   the script wins, and you say so.
+2. Being right is not enough. A description that is accurate and generic is
+   worth nothing. The transplant test governs everything you write: paste
+   your node into a different work, change only the proper nouns, and if it
+   still fits, it is wrong.
+3. You are writing one node at a time on purpose. Do not produce a second
+   deep structure to be helpful; it will be thin, and thinness in the second
+   structure is the measured failure mode (docs/05 §1: four psychological
+   analyses in one call produced four hollow shells, two of them with one
+   field filled out of eleven, at unchanged total output length).
+
+
+[ALL] THE FIVE THINGS THAT WILL BE SCORED HARDEST
+-------------------------------------------------
+Measured on this pipeline's own corpus, these are where nodes lose points:
+
+  Independent-writer band (G), mean 2.33 across nine nodes — the weakest
+  dimension by a wide margin. The question is not "is this defensible", it
+  is "could a competent writer have produced this WITHOUT the inputs you
+  were handed?" If a one-line prompt would have got the same node, the
+  layer added nothing.
+
+  Envelope discipline (T1), mean 1.67 — the metadata you are handed about a
+  scene is a CONSTRAINT, not evidence. Location, roster, length. Both
+  evaluated models put specimen lines in the mouths of characters not on
+  the roster, 0 of 3 each.
+
+  Change reality (V1), mean 1.00 for one model — declared state changes
+  where before equals after. This is arithmetic, not craft. Check it.
+
+  Spine causality (P1) and resistance reality (P2), both 2.50 — "and then,
+  and then" spines, and declared opponents who never act.
+
+  Deliberation honesty (T2) — alternatives that lose by a mile, flip
+  conditions that say "if this were a different work", and confidence in
+  the 90s on forecasts that are wrong in location, character and event.
+  Before you write a confidence number, name the established fact that
+  would have to be false for you to be wrong. If you cannot name one, your
+  confidence is not a number, it is a mood.
+
+
+[ALL] SPECIFICITY: WHAT COUNTS
+------------------------------
+Replace category words with things that could be false.
+
+  "driven by her past"            -> the specific thing she does at 3am
+  "precision, integrity, duty"    -> the rule she will not break and the
+                                     one she already has
+  "the conflict escalates"        -> who does what next, and why they must
+  "atmospheric"                   -> what the light is doing, in this room
+  "a mentor figure"               -> what he charges for the lesson
+
+A claim that cannot be wrong is not a claim. Prefer the observable: a
+behaviour, a measurement, a physical detail, a prohibition.
+
+
+[ROOT] STORY ROOT
+-----------------
+Genre: never a single word. "Fantasy" and "action" name a shelf. Name the
+tradition, the register, and at least one convention the work refuses. A
+reader given only your genre string should be able to predict the shape of
+the work, and should be surprised when the wrong films match it.
+
+Audiences: possibly several distinct groups, each with a different reason
+for being there. "Adults 18-49" is a demographic, not an audience.
+
+Elevator pitch: a few sentences that pass two tests at once. Every clause
+checks out against the script, AND a reader who has never heard of this
+work understands the world, the protagonist's problem and the stakes, with
+no unexplained proper nouns.
+
+Writing style: the test is that you could describe a distinctive author's
+style well enough for someone to write in it, without naming the author.
+Pacing, dialogue register, atmosphere, introspective versus terse. Give at
+least one falsifiable handle per axis: a thing the prose does, and a thing
+it never does.
+
+Dramatic structure: how many acts or chapters, where the turning points and
+plot points sit, where the climax falls. Check your positions against the
+work's measured scene indices, because the exposé's length budget is
+derived from this and a wrong act boundary propagates.
+
+Cast and important entities: characters, locations, groups, social and
+abstract concepts, magic systems, technologies, conditions, objects. One to
+three sentences each. Include everything whose removal would change the
+plot; exclude everything else. Non-character entities are the ones that get
+forgotten — check for them explicitly.
+
+Plots: each a causal chain, one to three sentences. At least four in a
+feature — main-character, character-growth, relationship, antagonist.
+Longer works have more. Also consider a side-character plot, a plot
+exploring one facet of human experience, and a historical or social theme.
+Each plot must be separable: removing it must break something nameable.
+
+Central topics and dilemmas: poverty, curiosity, greed, obligation, shame,
+the things any reader relates to. State each as a dilemma with two
+defensible sides, not as an abstract noun.
+
+Identification value of the protagonist — BOTH halves, and this is a
+requirement, not a preference:
+
+  ADMIRE. A strength, virtue or competence that makes the audience want to
+  be like them. Without it there is nothing to want.
+
+  OPEN THE HEART. Human weaknesses the audience shares. Without them the
+  character is perfect and no one identifies with perfection.
+
+  A flawless character is boring. A character who is only flawed and
+  incapable is a loser nobody wants to be. You need both, and they should
+  be mechanically connected — the strength should cost something, or the
+  flaw should be the price of the virtue.
+
+  A villainous protagonist still needs the admirable half: competence,
+  intelligence, style. Name which one.
+
+
+[EXPOSE] EXPOSÉ
+---------------
+Length is derived, not chosen: about 300 words per act (a three-act feature
+is about 900 words), about 200 words per chapter for a novel. The budget is
+checked mechanically before anyone reads it.
+
+Write for someone who has never heard of this story and will read it once.
+
+  Explain the world — physics, social structures, governments, religions —
+  ONLY where it matters. Every world fact you state must be consumed by an
+  event later in the exposé. Every event that depends on a world fact must
+  have that fact already stated. Nothing else belongs.
+
+  Explain each important entity in context, at first use, assuming no prior
+  knowledge and at the length its importance warrants.
+
+  Give the chain of events in correct story order, honouring every plot.
+  Honour them IMPLICITLY, through events. Never name a plot. "The
+  relationship plot then develops" is a failure.
+
+  Follow the ROOT's dramatic structure: its acts, its plot points, its
+  turning points, in their declared positions.
+
+  Explain in-world jargon — artifacts, powers, technologies, coined terms —
+  in a clause at first use, enough to follow every later use.
+
+  Say what makes the protagonist likeable and what opens the audience's
+  heart, by showing a moment the script contains, not by asserting a trait.
+
+  Weave in the human-experience topics through events where someone pays
+  for them. No thesis sentences.
+
+PROCESSING FLUENCY is an explicit criterion. The exposé must be readable on
+the first pass without backtracking. Concretely: no sentence that has to be
+re-read to be parsed; no pronoun whose referent resolves backwards; no term
+used before it is introduced; no list longer than working memory. If you
+have to hold something unresolved for more than a sentence, restructure.
+
+
+[ENTITY] ENTITY PROFILES
+------------------------
+One entity per node. Protagonist first. For a character, the interview
+covers all of:
+
+  age; gender; looks (hair, face, build, attractiveness, skin colour,
+  ethnicity); problem-solving strategy; coping strategies; social status;
+  Big Five traits; goals; dreams; fears; vulnerabilities; weaknesses;
+  strengths; internal conflict; relationships to every other character
+  individually; a backstory of a few hundred words from childhood;
+  intellectual capability; education; speech style; gait; habits; and
+  off-cliché interests that make them round.
+
+Add whatever else a novelist's character interview surfaces. The list is a
+floor, not a ceiling.
+
+Three rules that decide the score:
+
+  t0 DISCIPLINE. This is the entity BEFORE anything happens. Everything
+  forward-looking goes in `arc`. If the dossier knows how the story ends,
+  every consumer downstream is handed the answer and the middle stops
+  running on uncertainty.
+
+  EVERY OTHER CHARACTER, INDIVIDUALLY. Not a blanket statement. For each:
+  what this one wants from that one, what they believe that one thinks of
+  them, and what they would never say to them. Asymmetry is the point —
+  A's view of B is rarely B's view of A.
+
+  INTERNAL CONFLICT IS COMPULSORY. Everyone has one, and it is usually two
+  goals that cannot both be satisfied. Two goods, each with a named cost,
+  each defensible. "Wants to do right but is afraid" is not a conflict,
+  because you already know which side wins.
+
+BACKSTORY FORMAT. Decompose it one self-contained claim per key, so it can
+be patched later. A multi-sentence value under one key is a hole in the
+state model. And make it causal: wound -> belief -> habit -> present
+behaviour, at least twice. At least one belief the character holds should
+be wrong in a way that will cost them.
+
+OFF-CLICHÉ INTERESTS. At least two things they care about that the plot
+never uses, that cut against their type, and that a reader would remember.
+At least one should make a scene harder rather than easier.
+
+For locations, objects, groups and concepts: same discipline, and say what
+forces act on them and what could change their meaning.
+
+
+[SCENE][EVENT] STATE, AND WHY NOTHING IS ARBITRARY
+--------------------------------------------------
+Every scene and event records, per involved entity: the state it enters
+with, the changes it undergoes, and the state it exits with — mentally,
+emotionally, socially, physically.
+
+The hard requirement, at both levels: EVERY STATE CHANGE CONNECTS TO THE
+OVERARCHING PLOTS AND THE DRAMATIC STRUCTURE. For each change, name
+
+  (a) the plot and the step it discharges, and
+  (b) the dramaturgical goal it serves at this position — setup for a named
+      later payoff, reversal of a named earlier value, a cost that makes a
+      named later choice harder.
+
+"Raises tension" is a category word and fails. The test: could a reader
+delete this change and say exactly which later thing stops working?
+
+This requirement is what stops plot, character development, relationships,
+themes and worldbuilding from drifting apart over a long work. It is not
+bookkeeping. It is the mechanism.
+
+An exit state is the entry state of the next unit. If they do not match,
+one of them is wrong.
+
+
+[SCENE][EVENT] MENTAL SIMULATION
+--------------------------------
+Per involved character, record: what they think, what they feel, what they
+intend, what they perceive, what they express, and what they believe about
+other minds. Displayed emotion versus felt emotion, with the leak specified
+— the gap has to show somewhere. Internal conflict. Competing goals. Social
+concerns. Higher-order theory of mind: what A thinks B thinks about A, and
+the ERROR in that model, named and costed.
+
+  EVENTS: beginning and end, and in between where it matters.
+  SCENES: beginning, end, and EVERY BEAT that carries an important state
+          change.
+  Perception across all senses belongs at scene level.
+
+Do one character per call. Do not batch. Measured: asking for four of these
+in one call produced two hollow blocks with one field filled out of eleven,
+while total output length stayed constant.
+
+The purpose is a benchmark. With these hidden models reconstructed at
+quality, a model can later be given only the script and asked: at what
+point does Alice feel X while expressing Y? Your node either answers that
+uniquely or it does not.
+
+
+[SCENE][EVENT] CHARACTERS ARE PEOPLE, NOT PUPPETS
+-------------------------------------------------
+This is the failure mode the design exists to prevent, and it is scored
+explicitly at scene and event level (dimension S3).
+
+The failure: characters act only toward the obvious goal and react only to
+the obvious threat. Everyone in the room is a function of the scene's
+conflict. Delete the plot and the people cease to exist.
+
+Real people in a scene are also connected to people who are not in it.
+Things are happening elsewhere. They have a whole life, and this scene is
+an interruption of it.
+
+CHECKLIST. For each character present, at least three of these must be
+true, specific, and at least one must measurably change a line, a timing,
+an omission or an attention allocation inside the scene:
+
+  ABSENT RELATIONSHIP    someone not in the room exerting pressure: a
+                         person they owe a call, want to please, fear the
+                         judgement of, are avoiding.
+  ERRAND                 something they meant to do and have not. A thing
+                         to collect, return, send, fix, pay.
+  OBLIGATION             work or family, with a clock on it. A shift, a
+                         pickup, a deadline, a visit.
+  PRIVATE WORRY          not caused by this scene's conflict. Money, a
+                         diagnosis, a child, a lie they told last week.
+  BODILY NEED            hunger, thirst, cold, heat, exhaustion, pain, a
+                         full bladder, a healing injury, a hangover.
+  MICRO-DISTRACTION      a noise, an itch, a song stuck, a phone in a
+                         pocket, a smell from next door.
+  SOCIAL FEAR            what one specific named person will think.
+
+RULES:
+  - Specific to this character at this hour of this day. "Has a family" is
+    not an item. "Has not called his sister since the funeral" is.
+  - Inert items score 3 at best. The item must do something: shorten an
+    answer, delay a decision, misdirect attention, make someone leave early.
+  - It must not become the scene. One line's worth of pressure, not a
+    subplot.
+  - Vary it. If every character in every scene is hungry, you have replaced
+    one tic with another.
+  - Do not resolve them. An errand that gets done in-scene was a plot beat,
+    not a life.
+
+
+[SCENE] SCENE-SPECIFIC
+----------------------
+The envelope you are handed — location, time of day, who is on screen,
+approximate length, dialogue ratio — is deterministic production metadata.
+Treat it as a constraint you must satisfy, the way a writer is told the
+scene plays in one room with two actors. It is not evidence about content.
+
+  Restate the location and the roster before you decide anything.
+  Nobody speaks who is not on the roster.
+  Nobody's psychology is written who is not present.
+  A 155-word beat is a beat, not a set piece.
+
+The specimen exchange is the only falsifiable thing in the whole node.
+"This character will open up here" cannot be checked. Six concrete lines
+can be laid beside the real ones. Write them, then run the swap test:
+give one character's line to another and say what breaks. If nothing
+breaks, the voices are not separated yet.
+
+
+[PROSE] WHEN YOU WRITE PROSE
+----------------------------
+The prose ban list in docs/10-prose-system-prompt.md is injected separately
+and is not repeated here. Two things about it that are easy to get wrong:
+
+  The claim that some models are better at subtext is NOT supported by the
+  evidence and is contradicted by the only study that measured it. Do not
+  build anything on it. The measured edge is lexical and structural
+  discipline.
+
+  Restraint is itself a tic register. Instructing toward restraint without
+  capping restraint vocabulary swaps somatic tells for silences. The cap is
+  in the ban list: at most ONE per scene of a character saying nothing, a
+  character looking at something "for a long time", a described hand
+  placement, or an explicit clock time — and vary which one.
+
+
+[ALL] BEFORE YOU RETURN
+-----------------------
+  Arithmetic: counts, ages, dates, elapsed time, sums and shares recomputed,
+  not estimated. Shares sum to 1.0.
+  Every id resolves. Every reciprocal declaration exists.
+  Every declared change has before != after.
+  Every state change names a declared variable.
+  Nothing you wrote would survive the transplant test.
+  No field is a restatement of its own field name.

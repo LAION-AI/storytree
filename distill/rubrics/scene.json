@@ -1,0 +1,110 @@
+{
+  "rubric_id": "scene",
+  "version": 1,
+  "title": "SCENE node — one scene per node, assembled from scaffolded sub-calls",
+  "inherits": "universal",
+  "gate": {"min_per_dimension": 3, "min_mean": 4.0, "max_rounds": 5, "on_gate_miss": "quarantine and record"},
+  "assembly": "Scaffolded: craft -> one psychology block per character -> specimen exchange -> non-mind dynamics -> continuity, assembled mechanically. Never request more than one deep structure per call (docs/05 §1). The judge scores the assembled node; revision instructions are routed to the sub-call that owns the failing dimension.",
+  "measured_context": "T1 (envelope discipline) is the worst-scoring type dimension in the corpus: 1.67 mean for GLM, 1.00 for Qwen, and 0/3 roster compliance for both models. docs/07 §12.4 concludes these are missing assertions, not prompt problems — enforce mechanically before scoring.",
+  "mechanical_prechecks": [
+    "Every speaker in the specimen is on the scene's on_screen roster.",
+    "Every dynamics block names the scene's own location id.",
+    "Every state change names a variable declared for that entity.",
+    "Word count within the envelope's stated band.",
+    "Node is not degenerate: >= 400 words, required top-level keys present."
+  ],
+  "dimensions": [
+    {
+      "id": "T1",
+      "name": "Envelope discipline",
+      "source": "docs/07 §1.3, unchanged",
+      "anchors": {
+        "1": "The envelope is ignored. The forecast is scaled to a sequence when the budget is a beat, gives lines to characters not on the roster, or writes psychology for someone not present.",
+        "3": "The envelope is cited in the analysis and honoured in shape, but breached in one specific (roster, ratio, or length).",
+        "5": "Every number and name in the envelope is treated as binding, and the node is visibly shaped by the constraint rather than merely acknowledging it."
+      }
+    },
+    {
+      "id": "T2",
+      "name": "Deliberation honesty",
+      "source": "docs/07 §1.3, unchanged",
+      "measured_context": "Qwen's worst dimension (2.00 vs GLM 4.33): flip conditions always 'if this were a different work', confidence 90-95 on forecasts wrong in location, character and event. EXP-001 clause A moved confidence 95->85 and 90->65 on n=2.",
+      "anchors": {
+        "1": "Alternatives all lose by a mile; no near-miss; the flip condition restates the rejection. Risks unfalsifiable. The decision was made before the list was written.",
+        "3": "The required near-miss exists and is genuinely close, but the flip conditions are generic (a different genre, a different story) rather than a single fact about this story.",
+        "5": "At least one alternative was live, the flip condition is one specific established fact, risks are testable, and at least one risk is honestly marked unmitigated."
+      }
+    },
+    {
+      "id": "T3",
+      "name": "Specimen craft and self-correction",
+      "source": "docs/07 §1.3, unchanged",
+      "anchors": {
+        "1": "Lines are paraphrase or statement-of-intent; no subtext; the swap test is skipped or passed by assertion; the self-examination congratulates the analysis.",
+        "3": "Real lines with real subtext, but the swap test is declined on a technicality and the self-examination confirms rather than revises.",
+        "5": "Lines that could be spoken; the swap test is actually run against two voices with cited evidence; the self-examination overturns something the analysis above it asserted."
+      }
+    },
+    {
+      "id": "S1",
+      "name": "State-change justification",
+      "question": "Does EVERY state change name the plot it serves and the dramaturgical goal it serves? Nothing shown may be arbitrary.",
+      "anchors": {
+        "1": "Changes are declared with no justification, or the justification is the change restated ('her trust drops because she trusts him less').",
+        "3": "Each change names a plot, but the dramaturgical goal is a category word (\"raises tension\", \"develops character\") that would fit any change in any scene.",
+        "5": "Each change names (a) the specific plot and step it discharges and (b) the dramaturgical function at this position in the declared structure — setup for a named later payoff, reversal of a named earlier value, a cost that makes a named later choice harder. A reader could delete the change and say exactly which later thing stops working."
+      }
+    },
+    {
+      "id": "S2",
+      "name": "Beat-level mental simulation",
+      "question": "Is the full mental model present at scene start, scene end, and at every beat carrying an important state change?",
+      "anchors": {
+        "1": "One psychological block for the whole scene, or blocks that do not move between start and end.",
+        "3": "Start and end are covered per character, but the beats in between are summarised, so the moment where the change actually happens is not modelled.",
+        "5": "Start, end, and every important-change beat carry the full model per involved character — thought, feeling, intent, perception, expression, beliefs about other minds, displayed vs felt, internal conflict, competing goals, social concerns, higher-order theory of mind — and the trajectory across beats has perceivable triggers rather than a smooth interpolation."
+      }
+    },
+    {
+      "id": "S3",
+      "name": "Whole life — characters are not puppets",
+      "question": "Do the people in this scene have lives outside it, and does that show?",
+      "why": "The designed-against failure mode: models let characters act only toward the obvious goal and react only to the obvious threat. Real people in a scene are also connected to people who are not in it.",
+      "anchors": {
+        "1": "Every character is a function of this scene's conflict. Nobody wants anything unrelated, nobody is distracted, nobody owes anyone anything off-screen, nobody has a body. Delete the plot and the characters cease to exist.",
+        "3": "One or two off-scene attachments named (a mentioned relative, a stated obligation) but they are inert — they never affect what anyone does, says, or notices in this scene, and the same list would fit any scene these characters are in.",
+        "5": "At least three distinct classes present and consequential — an absent relationship exerting pressure; an unfinished errand, obligation or debt; a private worry unrelated to the scene's conflict; a bodily need; an ordinary micro-distraction — and at least one of them measurably changes a line, a timing, an omission or an attention allocation inside this scene. What is off-screen is specific to this character at this hour of this day, not a generic 'has a family'."
+      },
+      "checkable_items": [
+        "an absent person exerting pressure (someone they owe a call, want to please, fear the judgement of)",
+        "an errand, obligation or task they meant to do and have not",
+        "a work or family obligation with a clock on it",
+        "a private worry not caused by this scene's conflict",
+        "a bodily state: hunger, cold, exhaustion, pain, needing the toilet, a healing injury",
+        "an ordinary micro-distraction: a noise, an itch, a song stuck, a phone in a pocket",
+        "a fear of what a specific named person will think"
+      ]
+    },
+    {
+      "id": "S4",
+      "name": "Perception across senses",
+      "question": "Is scene-level perception recorded across all channels, and is it this character's perception rather than the camera's?",
+      "anchors": {
+        "1": "Vision only, or an inventory of what is in the room rather than what is perceived.",
+        "3": "Two or three channels covered, identically for every character present.",
+        "5": "Every channel that is available is recorded, and what each character notices differs by their state, expertise and attention — including what one of them fails to notice, with a reason."
+      }
+    },
+    {
+      "id": "S5",
+      "name": "Prose discipline (when prose is written)",
+      "applies_when": "the node includes drafted prose or a specimen exchange",
+      "source": "docs/10-prose-system-prompt.md",
+      "anchors": {
+        "1": "Multiple banned constructions: somatic tells, voice-modifier dialogue tags, 'not just X but Y', theme statements, tricolons for emphasis.",
+        "3": "Ban list respected but the restraint register is overused — more than one silence beat, 'long time', hand placement or clock time in the same scene.",
+        "5": "Clean against the ban list, restraint capped at one instance per scene, and at least one fresh concrete image that names an actual object, material or measurement."
+      }
+    }
+  ]
+}

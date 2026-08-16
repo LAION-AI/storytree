@@ -44,7 +44,7 @@ sys.path.insert(0, str(ROOT))
 
 import requests
 
-from scriptforge import jsonschema_mini as js, reverse, scaffold, screenplay as sp
+from scriptforge import grounding, jsonschema_mini as js, reverse, scaffold, screenplay as sp
 
 sys.path.insert(0, str(ROOT.parent))
 from narrativeforge.model_notes import addendum_for
@@ -52,7 +52,9 @@ from narrativeforge.model_notes import addendum_for
 # The addendum is the single variable under test. When off, the system prompt is
 # byte-identical to the one that produced the baseline nodes.
 ADDENDUM = addendum_for(os.environ.get("LOCAL_MODEL", "")) if os.environ.get("ADDENDUM") == "1" else ""
-SYSTEM = reverse.BLIND_SYSTEM + ADDENDUM
+GROUNDED = os.environ.get("GROUNDED") == "1"
+SYSTEM = reverse.BLIND_SYSTEM + ADDENDUM + (
+    "\n\n" + grounding.GROUNDING_CLAUSE if GROUNDED else "")
 from scriptforge.nodegen import entity_digest
 from scriptforge.pipeline import Project
 from scriptforge.transitions import (
@@ -207,6 +209,10 @@ def run_scene(project: Project, scene_id: str, think: str) -> dict:
                                    if k in ("target", "situation", "craft",
                                             "interaction", "decision")},
                     "required": ["target", "situation", "craft", "interaction", "decision"]}
+    speakers = grounding.allowed_speakers(scene, ents, on_screen)
+    if GROUNDED:
+        craft_schema = grounding.bind_schema(craft_schema, scene, ents,
+                                             speakers, sorted(ents))
     craft = call(SYSTEM,
                  scaffold.craft_prompt(scene_id, blind, env, roster),
                  craft_schema, tag="craft", think=think)
@@ -221,10 +227,13 @@ def run_scene(project: Project, scene_id: str, think: str) -> dict:
         p["entity"] = eid
         psych.append(p)
 
+    spec_schema = (grounding.bind_schema(SPECIMEN_SCHEMA, scene, ents,
+                                         speakers, sorted(ents))
+                   if GROUNDED else SPECIMEN_SCHEMA)
     specimen = call(SYSTEM,
                     scaffold.specimen_prompt(scene_id, craft, psych, roster),
-                    SPECIMEN_SCHEMA, tag="specimen", think=think)
-    specimen, _ = repair("specimen", specimen, SPECIMEN_SCHEMA, scene_id, think)
+                    spec_schema, tag="specimen", think=think)
+    specimen, _ = repair("specimen", specimen, spec_schema, scene_id, think)
 
     dyn_schema = {"type": "array", "items": DYNAMICS_SCHEMA}
     dynamics = call(SYSTEM,
@@ -238,8 +247,33 @@ def run_scene(project: Project, scene_id: str, think: str) -> dict:
                       CONTINUITY_SCHEMA, tag="continuity", think=think)
     continuity, _ = repair("continuity", continuity, CONTINUITY_SCHEMA, scene_id, think)
 
-    return scaffold.assemble(scene_id, "scene", craft, psych, dynamics,
-                             specimen, continuity)
+    tr = scaffold.assemble(scene_id, "scene", craft, psych, dynamics,
+                           specimen, continuity)
+    if GROUNDED:
+        tr.setdefault("binding", (craft.get("binding") or
+                                  grounding.binding_block(scene, speakers)))
+        viol = grounding.check_grounding(tr, scene, ents, speakers, blind.get("prior"))
+        print(f"    grounding: {len(viol)} violation(s)")
+        for x in viol[:5]:
+            print(f"      ! {x}")
+        if viol:
+            # one targeted round: the violations are concrete, so hand them back
+            # verbatim rather than asking the model to look again.
+            fixed = call(SYSTEM,
+                         scaffold.repair_prompt(scene_id, "grounding", tr, viol,
+                                                TRANSITION_SCHEMA),
+                         TRANSITION_SCHEMA, tag="reground", think=think)
+            after = grounding.check_grounding(fixed, scene, ents, speakers,
+                                              blind.get("prior"))
+            print(f"    after reground: {len(after)} violation(s)")
+            if len(after) < len(viol):
+                tr = fixed
+            else:
+                print("      keeping the original — reground did not improve it")
+        tr["_grounding"] = {"before": viol,
+                            "after": grounding.check_grounding(
+                                tr, scene, ents, speakers, blind.get("prior"))}
+    return tr
 
 
 def measure(tr: dict) -> dict:

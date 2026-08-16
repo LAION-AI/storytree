@@ -1,0 +1,140 @@
+{
+ "node_id": "matrix-1999",
+ "round": 1,
+ "scores": [
+  {
+   "dimension": "A",
+   "score": 3,
+   "evidence": "The field `style.prose_touchstones` lists \"Keanu Reeves\" and \"Laurence Fishburne\" (actors) alongside \"Philip K. Dick\" (author), contradicting the field's implicit semantic constraint of literary/authorial style references, and `pov.tense` claims \"present\" while the script's standard action lines (e.g., \"A PHONE begins to RING\") are in present tense but the narrative voice is often descriptive/past in summary contexts, creating ambiguity.",
+   "instruction": "Remove actor names from `style.prose_touchstones` and replace them with specific stylistic influences (e.g., \"Wachowski dialogue rhythm\", \"Buddhist minimalism\") or remove the field if no clear authorial model exists; clarify `pov.tense` to \"screenplay_standard\" or remove if not applicable."
+  },
+  {
+   "dimension": "B",
+   "score": 2,
+   "evidence": "The `setting.places` list includes \"Zion (Underground City)\" and \"Machine World (Power Plants, Sewers)\", but the `scene_headings` in the structural overview do not contain any scene explicitly located in Zion, and the \"Machine World\" is a composite description not matching the specific location IDs like \"POWER PLANT\" or \"SEWER MAIN\".",
+   "instruction": "Remove \"Zion\" from `setting.places` as it is not a scene location in this screenplay (only mentioned in dialogue), and replace \"Machine World\" with the specific location IDs present in the script (e.g., \"POWER PLANT\", \"SEWER MAIN\", \"FETUS FIELDS\")."
+  },
+  {
+   "dimension": "C",
+   "score": 3,
+   "evidence": "The `logline` \"A hacker discovers his reality is a computer simulation...\" is a generic description that could apply to *The Truman Show*, *Inception*, or *Ready Player One* without changing proper nouns, failing the transplant test for uniqueness.",
+   "instruction": "Rewrite the `logline` to include specific, non-transferable details from this script, such as \"A hacker named Neo is offered a choice between a red and blue pill by a man named Morpheus, leading him to discover he is a battery in a machine world.\" to ensure it cannot be transplanted to other simulation films."
+  },
+  {
+   "dimension": "D",
+   "score": 2,
+   "evidence": "The `style.prose_touchstones` field contains actors (\"Keanu Reeves\", \"Laurence Fishburne\") which is a schema violation for a field expecting stylistic/authorial touchstones, and the `constraints.target_word_count` of 10000 is arbitrary and not derived from the source material's length.",
+   "instruction": "Fix `style.prose_touchstones` to contain only authors or specific stylistic schools; derive `constraints.target_word_count` from the actual word count of the provided screenplay or remove it if not a hard constraint from the prompt."
+  },
+  {
+   "dimension": "E",
+   "score": 3,
+   "evidence": "The `premise` describes the conflict as \"fight the Agents... to save his mentor\", which captures the plot but lacks the specific dramatic tension of the \"choice\" (red/blue pill) and the \"belief\" mechanism that drives the climax, making the dramatic engine feel generic.",
+   "instruction": "Enhance the `premise` to explicitly state the dramatic mechanism: \"Neo must choose between ignorance and truth, and his belief in the prophecy is the only variable that allows him to override the simulation's rules, pitting his faith against the Agents' deterministic control.\""
+  },
+  {
+   "dimension": "F",
+   "score": 3,
+   "evidence": "The `audience.reader_promise` describes the experience as \"visceral... grounded in philosophical inquiry\", but the `plot_embedding` scores `philosophical_depth` at 5 while `action_adventure` is also 5, failing to distinguish the specific psychological weight of Neo's identity crisis (the 'splinter in the mind') which is the core psychological driver.",
+   "instruction": "Refine `audience.reader_promise` to focus on the psychological transformation: \"A visceral action thriller that uses the simulation concept to externalize Neo's internal struggle with identity and agency, where the 'correct' choice is validated only through his willingness to believe.\""
+  },
+  {
+   "dimension": "G",
+   "score": 2,
+   "evidence": "The `genre_primary` is \"science_fiction\" and `genre_secondary` includes \"action_adventure\", which is the most obvious, default classification for this film; a different writer would land on this exact combination without deep analysis of the specific 'mythic' or 'cyberpunk' sub-texts that define this specific iteration.",
+   "instruction": "Justify the genre choice by highlighting the specific 'mythic' or 'cyberpunk' elements that distinguish this from generic sci-fi action, or move \"mythic\" to primary if the prophetic arc is the dominant structural driver."
+  },
+  {
+   "dimension": "RT1",
+   "score": 3,
+   "evidence": "The `genre_primary` is \"science_fiction\" and `genre_secondary` includes \"action_adventure\" and \"philosophical_thriller\", which is a compound label but still broad enough to admit *Blade Runner*, *Ghost in the Shell*, and *The Truman Show*, failing to name the specific convention of 'mythic hero's journey within a cyberpunk setting' that this work honours.",
+   "instruction": "Refine `genre_primary` to \"cyberpunk_mythic_scifi\" or add a specific tag like \"chosen_one_narrative\" to constrain the field to works that combine simulation theory with prophetic hero arcs."
+  },
+  {
+   "dimension": "RT2",
+   "score": 2,
+   "evidence": "The `audience` field lists only one undifferentiated \"adult\" audience with \"upper\" reading level, missing the distinct secondary audiences such as \"philosophy enthusiasts\" or \"action movie fans\" who engage for different reasons (intellectual vs. visceral).",
+   "instruction": "Split `audience` into distinct groups: \"Primary: Adult action fans seeking high-concept spectacle\" and \"Secondary: Philosophy/sci-fi readers interested in simulation theory and Baudrillardian themes\", specifying the different engagement reasons for each."
+  },
+  {
+   "dimension": "RT3",
+   "score": 3,
+   "evidence": "The `logline` \"A hacker discovers his reality is a computer simulation and must choose between comfortable ignorance or a war to free humanity\" is accurate but generic; it withholds the specific 'choice' mechanism (pills) and the 'One' prophecy which are the unique hooks of this story.",
+   "instruction": "Rewrite the `logline` to include the specific hook: \"A hacker is offered a choice between a red and blue pill by a resistance leader, leading him to discover he is 'The One' destined to end the war between humans and machines, but only if he believes.\""
+  },
+  {
+   "dimension": "RT4",
+   "score": 2,
+   "evidence": "The `setting.places` list omits critical locations that drive the plot, such as \"INTERROGATION ROOM\", \"DOJO\", \"ORACLE'S APARTMENT\", and \"GOVERNMENT BUILDING\", and does not identify non-character entities like \"The Agents\" as a system or \"The Pill\" as an object.",
+   "instruction": "Expand `setting.places` to include all major plot locations (Interrogation Room, Dojo, Oracle's Apartment, Government Building) and add a `key_entities` section to identify \"The Agents\" (system), \"The Red/Blue Pills\" (objects), and \"The Oracle\" (character/concept)."
+  },
+  {
+   "dimension": "RT5",
+   "score": 2,
+   "evidence": "The `premise` describes a single plot line (Neo's journey) but does not identify the distinct sub-plots: the Agent's internal conflict (Smith's hatred of the Matrix), Cypher's betrayal arc, and the Resistance's operational plot (saving Morpheus), which are separable and have different agents/clocks.",
+   "instruction": "Explicitly identify the four required plot types: 1) Main Character (Neo's awakening), 2) Antagonist (Smith's existential dread and desire to escape), 3) Relationship (Neo/Morpheus mentorship and Neo/Trinity romance), 4) Character Growth (Neo's belief in himself). Describe each as a distinct causal chain."
+  },
+  {
+   "dimension": "RT6",
+   "score": 3,
+   "evidence": "The `premise` states \"Neo must decide if he is 'The One'... and fight the Agents\", which provides agent and obstacle but lacks the specific causal chain of how his belief enables the final victory (the 'bullet time' moment) and the cost (Morpheus's near-death).",
+   "instruction": "For the main plot, specify the causal chain: \"Neo's doubt prevents him from accessing his powers; his choice to save Morpheus (instead of himself) validates his belief, allowing him to perceive the code and defeat Smith, but only at the cost of Morpheus's life (or near-death).\""
+  },
+  {
+   "dimension": "RT7",
+   "score": 2,
+   "evidence": "The `style` field lists \"prose_touchstones\" including actors, and `forbidden_tics` includes \"Expository dialogue that explains the plot without conflict\", but the script is heavy on expository dialogue (Morpheus explaining the Matrix), so this 'forbidden tic' is actually a dominant feature, not a forbidden one.",
+   "instruction": "Revise `style.forbidden_tics` to reflect actual stylistic choices: \"Slow, static dialogue without visual metaphor or action\" (since the script uses dialogue to drive visual/action sequences) and remove actors from `prose_touchstones`."
+  },
+  {
+   "dimension": "RT8",
+   "score": 3,
+   "evidence": "The `constraints` list `scene_count_target` as 224, which matches the structural overview, but the `premise` and `logline` do not reference the specific structural turning points (e.g., the 'Red Pill' scene at ~sc-029, the 'Oracle' scene at ~sc-085, the 'Rescue' at ~sc-148), making the dramatic structure implicit rather than explicit.",
+   "instruction": "Add a `dramatic_structure` field to explicitly map the act breaks and key turning points to scene indices (e.g., Act 1 ends at sc-034, Act 2 midpoint at sc-085, Act 3 climax at sc-216) to ensure the structure is verifiable against the script."
+  },
+  {
+   "dimension": "RT9",
+   "score": 3,
+   "evidence": "The `plot_embedding` scores `philosophical_depth` at 5 and cites \"Baudrillard, Plato's Allegory\", but the `premise` does not frame the central dilemma as a choice between \"comfortable ignorance\" (blue pill) and \"painful truth\" (red pill) in a way that highlights the two defensible sides (Cypher's preference for ignorance vs. Neo's preference for truth).",
+   "instruction": "Rewrite the `premise` or add a `themes` field to explicitly state the dilemma: \"The central dilemma is whether truth is worth the suffering: Cypher argues that ignorance is bliss (blue pill), while Neo argues that even painful truth is preferable to comfortable lies (red pill).\""
+  },
+  {
+   "dimension": "RT10",
+   "score": 2,
+   "evidence": "The `premise` describes Neo as a \"computer programmer who suspects his world is artificial\" and a \"prophesied savior\", but does not identify the specific vulnerability (his doubt/inability to believe) that connects to his strength (his potential to believe), leaving the identification value generic.",
+   "instruction": "Refine the protagonist description to explicitly state the mechanical connection: \"Neo's strength is his latent ability to believe (which allows him to override the Matrix), but his vulnerability is his chronic doubt (which prevents him from accessing it until he makes a selfless choice).\""
+  },
+  {
+   "dimension": "R1",
+   "score": 4,
+   "evidence": "The `premise` states \"Neo must decide if he is 'The One,' a prophesied savior\", which is accurate, but the `setting.period` says \"1999 (simulated 1999 / actual 2199)\", while the script says \"much closer to 2197\" and \"we honestly do not know\", making the 2199 date a slight fabrication.",
+   "instruction": "Correct `setting.period` to \"Simulated 1999 / Actual ~2197 (unknown exact year)\" to match the script's dialogue about the uncertainty of the year."
+  },
+  {
+   "dimension": "R2",
+   "score": 4,
+   "evidence": "The `style.prose_touchstones` includes \"Philip K. Dick\", which is a common association but not explicitly stated in the script; however, the script does reference Baudrillard, so the inclusion of a philosophical touchstone is defensible, but the inclusion of actors is a leakage of external cultural context not present in the text.",
+   "instruction": "Remove actor names from `style.prose_touchstones` as they are external cultural knowledge not derived from the screenplay text; keep \"Philip K. Dick\" only if it can be justified by specific stylistic parallels in the text, otherwise remove it as well."
+  }
+ ],
+ "mechanical": {
+  "scene_count_match": true,
+  "dialogue_ratio_match": true,
+  "entity_resolution": "partial (Zion not in scenes, Machine World composite)",
+  "plot_ids_resolvable": "no explicit plot IDs, only premise",
+  "sums_check": "n/a"
+ },
+ "gate": {
+  "min_score": 2,
+  "mean": 2.71,
+  "passed": false
+ },
+ "verdict": {
+  "decision": "revise",
+  "top_instructions": [
+   "Fix `setting.places` to remove 'Zion' (not a scene location) and 'Machine World' (composite), replacing them with specific location IDs like 'POWER PLANT' and 'SEWER MAIN' present in the script.",
+   "Rewrite `logline` and `premise` to include specific, non-transferable details (red/blue pill, 'The One' prophecy, belief mechanism) to pass the transplant test and clearly identify the distinct sub-plots (Agent's internal conflict, Cypher's betrayal).",
+   "Correct `style.prose_touchstones` to remove actor names and `setting.period` to match the script's '2197'/'unknown' year, and add a `dramatic_structure` field mapping turning points to scene indices."
+  ]
+ }
+}

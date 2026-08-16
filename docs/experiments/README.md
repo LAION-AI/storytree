@@ -53,6 +53,7 @@ Where that check was not done, the entry must say so.
 | ID | Question | Status |
 |---|---|---|
 | [EXP-001](EXP-001-model-notes-addendum.md) | Does a failure-derived system-prompt addendum reduce the failures it was written against? | mixed |
+| [EXP-002](EXP-002-grounding-scaffold.md) | Do the failures a prompt clause could not fix yield to schema-level enforcement? | supported |
 
 ## Earlier work, recorded outside this format
 

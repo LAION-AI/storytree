@@ -1,0 +1,41 @@
+LOCAL RECONSTRUCTION · http://127.0.0.1:8102/v1 · thinking=off
+  scenes: sc-003
+
+  === sc-003 ===
+    characters: ['ch-02']
+      craft                        22s  in= 11,548 out= 1,329  59.9 t/s  think=     0c
+      psych.ch-02                  51s  in=  9,384 out= 3,472  68.7 t/s  think=     0c
+      specimen                     11s  in=  3,751 out=   900  79.5 t/s  think=     0c
+      dynamics                      1s  in=  3,492 out=     2   1.6 t/s  think=     0c
+      continuity                    8s  in=  1,875 out=   685  84.7 t/s  think=     0c
+    grounding: 2 violation(s)
+      ! state_changes[0]: 'spatial_location' is not a variable of 'ch-02'
+      ! confidence 95 asserted while 1 grounding violation(s) stand
+      reground                     63s  in= 14,905 out= 6,277 100.1 t/s  think=     0c
+    after reground: 2 violation(s)
+      keeping the original — reground did not improve it
+
+  LOCAL scaffolded · sc-003 · 2.6 min · 6 calls
+    violations 3    words  3,662   psych 1/1 w/ trajectory, 1/1 complete
+    ToM 1 towers (1 at depth 3)   specimen 7 lines   alts 2 (1 close)   dynamics 0
+    verdict: pass
+  hosted scaffolded
+    violations 0    words 10,175   psych 1/1 w/ trajectory, 1/1 complete
+    ToM 3 towers (3 at depth 3)   specimen 8 lines   alts 2 (1 close)   dynamics 5
+    verdict: pass
+  hosted single-call
+    violations 5    words  4,557   psych 1/1 w/ trajectory, 1/1 complete
+    ToM 2 towers (2 at depth 3)   specimen 0 lines   alts 2 (0 close)   dynamics 2
+    verdict: thin
+      gap: every alternative lost by a mile — the choice was already made
+      gap: no specimen exchange — the analysis is untested until someone speaks
+      gap: risks never checked against the actual lines
+
+========================================================================
+  1 scenes · 6 calls · 2.6 min wall
+  tokens: 44,955 in · 12,665 out
+  decode: 81.1 tok/s mean over all calls
+  per scene: 2.6 min
+  reasoning_content returned: 0 chars
+  extrapolated to all 224 scenes: 9.7 h
+  -> runs/matrix/transitions_qwen_grounded

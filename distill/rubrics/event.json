@@ -1,0 +1,66 @@
+{
+  "rubric_id": "event",
+  "version": 1,
+  "title": "EVENT node — one event per node",
+  "inherits": "universal",
+  "gate": {"min_per_dimension": 3, "min_mean": 4.0, "max_rounds": 5, "on_gate_miss": "quarantine and record"},
+  "measured_context": "V1 (change reality) scored 1.00 mean for GLM across two nodes — both event nodes independently declared state changes with before == after, in different runs on different material. It is a mechanical check; run it in code before spending a judge call.",
+  "mechanical_prechecks": [
+    "Every state change lands on a variable declared in the entity layer.",
+    "before != after for every declared change.",
+    "Exactly one parent plot; every referenced entity id resolves.",
+    "Magnitudes sit on the anchored scale."
+  ],
+  "dimensions": [
+    {
+      "id": "V1",
+      "name": "Change reality",
+      "source": "docs/07 §1.3, unchanged",
+      "anchors": {
+        "1": "The declared changes do not change anything: before equals after, or magnitudes are off the anchored scale, or nothing belonging to the protagonist moves in a unit that is supposed to be about them.",
+        "3": "Real changes on real variables, but at least one is padding, or a magnitude is defensible only loosely, or a change the prose obviously implies is not declared.",
+        "5": "Every declared change is a change, lands on a declared variable, sits on an anchored magnitude a reader could defend, and the set is complete with respect to the action."
+      }
+    },
+    {
+      "id": "V2",
+      "name": "Externalisation",
+      "source": "docs/07 §1.3, unchanged",
+      "anchors": {
+        "1": "Interiors narrated as interiors; direct speech in a field that forbids it; state changes no camera could record.",
+        "3": "Predominantly external, with a labelled interior or a summary where an act was available.",
+        "5": "Everything is photographable or audible; dialogue is reported as semantics and illocutionary force even where the writer can see the lines."
+      }
+    },
+    {
+      "id": "V3",
+      "name": "State triple completeness",
+      "question": "For every involved entity: initial state, the change, and the ending state — across mental, emotional, social and physical registers.",
+      "anchors": {
+        "1": "One register only (usually physical), or entities involved in the event with no state recorded at all.",
+        "3": "All involved entities have entry and exit states, but two or more registers are empty for most of them, and the empty ones are empty because they were not considered rather than because nothing moved.",
+        "5": "Each involved entity has entry state, change and exit state; every register is either filled or explicitly marked unchanged with a reason; the exit state of each is the entry state the next event will consume."
+      }
+    },
+    {
+      "id": "V4",
+      "name": "Outward effect",
+      "question": "Does the node say how the event affects things outside itself?",
+      "anchors": {
+        "1": "The event is sealed. Nothing outside it changes, and no later event is made possible or impossible.",
+        "3": "An effect is claimed in general terms ('this raises the stakes') without naming what specifically becomes available, blocked, or more expensive.",
+        "5": "Names at least one thing that becomes possible, one that becomes impossible or costlier, and one off-screen party who would react — each traceable to a declared entity or plot."
+      }
+    },
+    {
+      "id": "V5",
+      "name": "Mental simulation — endpoints",
+      "question": "For each involved character at beginning and end (and in between where it matters): thought, feeling, intent, perception, expression, beliefs about other minds; displayed vs felt; internal conflict; competing goals; social concerns; higher-order theory of mind.",
+      "anchors": {
+        "1": "States labelled, not produced. Theory of mind absent or first-degree only ('he knows she is angry'). Displayed and felt are the same value everywhere.",
+        "3": "Both endpoints present for the main characters with a real felt/displayed gap somewhere, but theory of mind stops at degree two, the secondary characters get one line each, and no error is named in anyone's model of anyone.",
+        "5": "Both endpoints for every materially involved character; at least one theory-of-mind tower reaching degree three with the error in it named and costed; displayed and felt differ where they should and the leak is specified; competing goals and social concerns are the ones this character would actually have."
+      }
+    }
+  ]
+}

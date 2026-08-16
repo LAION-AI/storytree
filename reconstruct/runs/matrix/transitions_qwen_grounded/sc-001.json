@@ -1,0 +1,680 @@
+{
+ "binding": {
+  "scene_id": "sc-001",
+  "location": "HEART O' THE CITY HOTEL",
+  "time_of_day": "NIGHT",
+  "on_screen": [
+   "BIG COP",
+   "ch-01",
+   "ch-02"
+  ]
+ },
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-001",
+  "ordinal": 1
+ },
+ "situation": "The story has not yet begun. Neo is a hacker who suspects something is wrong with reality but has not yet been confronted with the truth. Trinity is in the Matrix, unaware of the full scope of what Neo is, and their relationship is at the stage of a stranger's intense, unexplained interest. The Agents are active but not yet directly confronting Neo in a way that forces his choice. The world is in its default state of simulated normalcy, hiding the war beneath.",
+ "craft": {
+  "audience_need": "The audience needs an immediate, visceral hook that establishes the stakes and the central question: Is the world real? They need to see the protagonist's doubt and the antagonist's threat in the same breath to feel the tension.",
+  "genre_convention": "Science fiction and noir both expect a 'call to adventure' that is often accompanied by a threat. This scene satisfies the convention by introducing the 'white rabbit' (the anomaly) and the 'big cop' (the threat) simultaneously, delaying the full exposition until the threat is neutralized or the protagonist is forced to flee.",
+  "theme_and_style": "The theme of 'awakening' requires that the first crack in the simulation be subtle but undeniable. The style demands plain register and subtext; the 'Big Cop' should not explain the Matrix, but his presence should feel wrong, invasive, and inhumanly precise. The forbidden tic 'no character states feelings directly' means Neo's fear must be shown through his body language and the specific, unnatural detail he notices, not by saying 'I'm scared.'",
+  "dramatic_function": "This node functions as the disturbance. It introduces the central conflict (reality vs. simulation) and the primary antagonist (Agent Smith, represented here by the 'Big Cop' or a proxy Agent). It sets up the need for Trinity's intervention and the subsequent chase.",
+  "tension_management": {
+   "entering": 20,
+   "leaving": 45,
+   "how": "Tension rises from the mundane to the uncanny. The 'Big Cop' enters a space where he doesn't belong, his questions are too specific, and his physical presence is too still. The tension peaks when Neo realizes the Cop is not just a cop, but something else, and Trinity's presence becomes a lifeline rather than just a conversation partner."
+  },
+  "why_now": "This must happen first because the audience needs to see the 'before' state of Neo's life and the first moment it is disrupted. It cannot happen later because the disruption is the catalyst for the entire plot. It cannot happen earlier because there is no 'before' state yet.",
+  "why_not_otherwise": [
+   {
+    "alternative": "Start with Neo in the real world (the pod).",
+    "rejected_because": "This would skip the 'awakening' process and the personal stake of Neo's doubt. The audience needs to see him as a human first, not a battery.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "If the story were a prequel or a different character's perspective, this might work, but for Neo's arc, the Matrix must come first."
+   },
+   {
+    "alternative": "Start with Trinity's chase scene.",
+    "rejected_because": "This would introduce the action before the character. We need to care about Neo before we care about Trinity saving him.",
+    "nearly_chosen": true,
+    "what_would_flip_it": "If the film were a high-octane action thriller rather than a philosophical awakening, starting with the chase would be more appropriate. But the 'Big Cop' scene is a quiet, psychological setup that fits the 'hacker-noir' texture better."
+   }
+  ],
+  "promises": {
+   "made": [
+    "The world is not what it seems.",
+    "There are forces that can kill or control people in this world.",
+    "Trinity is connected to the truth Neo is seeking."
+   ],
+   "kept": []
+  }
+ },
+ "interaction": {
+  "what_collides": "Neo's desire for normalcy and understanding collides with the 'Big Cop's' desire to interrogate and control. The Cop's questions are not just about a crime, but about Neo's identity, which is the core of his conflict.",
+  "power_balance": "The 'Big Cop' holds the power of the system; he is calm, authoritative, and seemingly in control. Neo is initially passive, answering questions, but his internal doubt is a form of resistance. Trinity's presence shifts the balance slightly, as she is an outsider to the Cop's domain, but she is still within the Matrix's rules.",
+  "information_asymmetry": "Neo knows something is wrong but not what. The 'Big Cop' knows what Neo is (a target) but not yet how to extract him. Trinity knows more than Neo does but is hiding it. The audience is in the same position as Neo, seeing the anomaly but not the full picture.",
+  "turning_point": "The turning point is when Neo notices the 'white rabbit' or a specific glitch that confirms his suspicion, and the 'Big Cop' makes a move or statement that is too precise to be human, signaling that this is not a normal interrogation."
+ },
+ "decision": {
+  "resolution": "The scene will be a quiet, tense interrogation in a hotel room or hallway. The 'Big Cop' (Agent Smith or a proxy) questions Neo about his habits, his computer, his life. Neo is evasive, nervous. Trinity is present, perhaps as a friend or acquaintance, but her body language is alert. The scene ends with a subtle glitch (e.g., a pigeon freezing, a reflection not matching) that Neo sees, and the Cop's demeanor shifts from polite to predatory.",
+  "state_changes_implied": [
+   {
+    "entity": "ch-01",
+    "variable": "matrix_awareness",
+    "from": "searching",
+    "to": "confirmed_anomaly",
+    "because": "Neo sees a glitch that confirms his suspicion that the world is not real."
+   },
+   {
+    "entity": "ch-04",
+    "variable": "pursuit_phase",
+    "from": "hunting_trinity",
+    "to": "contacting_neo",
+    "because": "The Agents have identified Neo as a target and are making direct contact."
+   }
+  ],
+  "confidence": 85,
+  "risks": [
+   "The 'Big Cop' might be too obviously an Agent, reducing the subtlety of the 'noir' feel.",
+   "The glitch might be too subtle for the audience to notice, missing the point of the scene.",
+   "Trinity's presence might feel unexplained if her connection to Neo is not established quickly enough."
+  ]
+ },
+ "psychology": [
+  {
+   "entity": "ch-01",
+   "entering_state": "Neo is in the 'searching' phase of his existential crisis, a state defined by chronic insomnia and a persistent, nameless sense of dislocation. He is physically exhausted from a double life of corporate programming and nocturnal hacking, mentally hyper-vigilant, and emotionally guarded. He has just been confronted by an anomaly (the pigeon glitch) and is currently in a hotel room with Trinity and a police officer, attempting to maintain a facade of normalcy while his internal sense of reality fractures.",
+   "perception": {
+    "sight": "The dim, fluorescent-lit interior of a hotel room. The 'Big Cop' is a large, still figure in a dark suit, his face a mask of bureaucratic indifference. Trinity stands nearby, her posture rigid, her eyes darting between the Cop and Neo with an intensity that feels out of place for a casual conversation. Neo's gaze is fixed on the Cop's hands, which are resting on the table with a stillness that lacks the micro-tremors of a human nervous system. In the periphery, he sees the reflection in the window, but it seems to lag a fraction of a second behind his own movements.",
+    "sound": "The low, constant hum of the hotel's HVAC system, which feels less like air conditioning and more like a frequency pressed directly into his temples. The Cop's voice is flat, devoid of inflection, asking questions in a monotone that echoes slightly in the small room. Trinity's breathing is shallow and quick, a subtle counter-rhythm to the Cop's silence. There is no background noise from the street, as if the room is acoustically sealed from the world outside.",
+    "touch": "The cold, smooth surface of the metal table under his fingertips. The fabric of his dark shirt is damp with sweat at the collar. He feels the weight of his own body as if it is heavier than it should be, a sense of gravitational wrongness. The Cop's presence feels like a pressure on the air, a static charge that makes the hair on his arms stand up.",
+    "smell": "Stale coffee and the faint, chemical scent of the hotel's cleaning products, which smells like nothing he has ever smelled before—too perfect, too uniform. Underneath, there is a metallic tang, like ozone or blood, that seems to emanate from the Cop himself.",
+    "taste": "The dryness in his mouth, the taste of old adrenaline and the metallic aftertaste of fear. He tries to swallow, but his throat is tight, and the taste lingers, cloying and wrong.",
+    "interoception": "A rapid, thudding heartbeat that he can feel in his ears and the base of his throat. A cold sweat breaking out on his palms. A subtle nausea in his stomach, not from hunger, but from a visceral rejection of the reality he is currently inhabiting. His muscles are tense, coiled, ready to run but unable to find the exit.",
+    "proprioception": "He is seated, but his body is leaning forward, braced against the table as if expecting a blow. His feet are planted firmly on the floor, toes gripping the carpet. He is aware of every inch of his body, a heightened sensitivity that makes him feel exposed and vulnerable. He is not relaxed; he is in a state of suspended animation, waiting for the next move.",
+    "attention": "Neo is attending to the Cop's micro-expressions, or the lack thereof. He is failing to notice the specific details of the room's decor, which are too generic, too 'average,' as if designed by a committee. He is also failing to fully process Trinity's presence, treating her more as a variable in the equation than as a person, which is a defense mechanism against the emotional weight of the situation."
+   },
+   "appraisal": {
+    "value_at_stake": "Freedom and control over his own life. The Cop represents the ultimate loss of control, a system that dictates his reality. Neo's value of rejecting fate is being directly challenged by the Cop's presence, which feels fated, inevitable, and inescapable.",
+    "valence": -60,
+    "arousal": 85,
+    "self_conscious_emotion": "Humiliation. Neo feels exposed, as if his inner world, his doubts and his search, are being read by the Cop. He is ashamed of his own vulnerability, of the fact that he cannot control his fear or his body's reactions.",
+    "moral_reading": "The Cop is not just a threat; he is a symbol of the system that Neo has been trying to understand. The Cop's presence is a moral indictment of Neo's passivity, a reminder that he has been running from the truth for years. The Cop is 'right' in a way that is terrifying, and Neo is 'wrong' for not having accepted it sooner.",
+    "somatic_marker": "A cold, sinking feeling in the pit of his stomach, a physical manifestation of dread. The sensation is immediate, preceding any conscious thought about the Cop's intentions. It is a marker of danger, of a threat that is not just physical but existential."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "The norm of polite conversation: Neo is expected to answer the Cop's questions courteously, even if he is afraid.",
+     "The norm of authority: The Cop is a figure of authority, and Neo is expected to show deference, to not challenge him directly.",
+     "The norm of privacy: This is a hotel room, a private space, and the presence of a third party (Trinity) is a violation of that privacy, creating an awkward tension."
+    ],
+    "how_others_would_judge": "Trinity would judge Neo's hesitation as a sign of weakness, of his inability to make a decision. The Cop would judge Neo's evasiveness as a sign of guilt, of knowing more than he is letting on.",
+    "how_absent_others_would_judge": "His mother, who has always worried about his strange behavior, would see this as confirmation that he is 'off' in some way. His friends at work would see this as a sign of his eccentricity, his tendency to get involved in things that are not his business.",
+    "standing_at_risk": "Neo stands to lose his sense of identity. If he cannot control the situation, he risks becoming 'nobody,' a pawn in a game he does not understand. He also risks losing Trinity, if she decides that he is not worth the trouble.",
+    "norm_conflict": "The norm of politeness conflicts with the norm of self-preservation. Neo wants to be polite, but he also wants to escape. The conflict is resolved in favor of self-preservation, but only barely; Neo is still trying to maintain the facade of politeness, even as his body screams at him to run."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-02",
+     "d1": "Neo believes Trinity is a stranger who has been brought in by the Cop, or perhaps a colleague. He thinks she is trying to help him, but he is not sure why. He believes she is intelligent and capable, but he underestimates her emotional investment in him.",
+     "d2": "Neo believes that Trinity believes he is a hacker, a 'good' one, who is trying to find the truth. He thinks she believes that he is capable of making the right choice, even if he is not sure what that choice is.",
+     "d3": "Neo believes that Trinity believes that the Cop is a threat, and that she is trying to protect him from it. He thinks she believes that he is not ready for the truth, and that she is trying to prepare him for it.",
+     "accuracy": "Neo's model of Trinity is wrong in that he does not understand the depth of her connection to him. He thinks she is a helper, but she is actually a lover, a believer in his potential. This error will cost him because he will not be able to fully trust her, and he will not be able to fully accept her help."
+    },
+    {
+     "other": "BIG COP",
+     "d1": "Neo believes the Cop is a police officer, a bureaucrat, a figure of authority. He thinks the Cop is there to question him, to find out what he knows. He believes the Cop is human, but he is not sure of that, and this uncertainty is what makes him so afraid.",
+     "d2": "Neo believes that the Cop believes he is a suspect, a criminal, a threat. He thinks the Cop believes that he is hiding something, and that he is trying to find out what it is.",
+     "d3": "Neo believes that the Cop believes that he is 'off,' that he is not quite human, that he is a glitch in the system. He thinks the Cop believes that he is a problem that needs to be solved, and that he is trying to find the solution.",
+     "accuracy": "Neo's model of the Cop is wrong in that he does not understand the Cop's true nature. He thinks the Cop is a human officer, but he is actually an Agent, a program, a force of nature. This error will cost him because he will not be able to fully understand the Cop's motivations, and he will not be able to fully predict his actions."
+    }
+   ],
+   "urges": {
+    "cravings": "A craving for clarity, for an answer to the question that has been haunting him. A craving for control, for the ability to make sense of the world around him. A craving for connection, for someone to understand what he is going through.",
+    "physical_needs": "Sleep, rest, a break from the tension. His body is exhausted, and he needs to decompress. He also needs to eat, but he has no appetite.",
+    "psych_needs_conscious": "To find out what the Matrix is, to understand what is wrong with the world. To make a decision, to choose a path. To prove to himself that he is not crazy, that his suspicions are valid.",
+    "psych_needs_unconscious": "To be seen, to be recognized for who he is. To be loved, to be accepted for his flaws and his doubts. To be free, to be able to make his own choices, to be in control of his own destiny.",
+    "avoidances": "Avoiding the truth, avoiding the realization that the world is not what it seems. Avoiding the emotional weight of his connection to Trinity. Avoiding the fear that he is not enough, that he is not the One."
+   },
+   "impairments": {
+    "physical": "Exhaustion, sleep deprivation, tension. His body is not in a state to handle the stress of the situation.",
+    "medical": "None, but his chronic insomnia is affecting his mental clarity and his emotional stability.",
+    "magical": "None, but the 'glitch' in the Matrix is affecting his perception of reality, making it hard for him to trust his own senses.",
+    "chemical": "None, but the adrenaline and cortisol from his fear are affecting his judgment and his ability to think clearly.",
+    "coercive": "The presence of the Cop, who is a figure of authority, is coercing him to answer his questions, to stay in the room, to not make a scene.",
+    "cognitive": "He cannot think clearly about the nature of the Cop, or the nature of the Matrix. His mind is racing, and he is unable to focus on a single thought. He is also unable to fully process Trinity's presence, which is distracting him from the main issue.",
+    "net_effect": "Neo is in a state of high arousal and low clarity. He is able to perceive the details of the situation, but he is unable to fully process them. He is able to react to the Cop's presence, but he is unable to fully understand it. He is able to feel his emotions, but he is unable to fully express them. This makes him vulnerable, and it makes him predictable."
+   },
+   "deliberation": {
+    "framing": "Neo frames the situation as a test, a challenge, a puzzle to be solved. He is trying to figure out what the Cop wants, what he knows, and what he is trying to do. He is also trying to figure out what Trinity wants, and why she is there. He is framing the situation as a game, a contest, a battle of wits.",
+    "options_weighed": [
+     {
+      "option": "Answer the Cop's questions honestly.",
+      "predicted_outcome": "The Cop will find out what he knows, and he will be taken away. He will be safe, but he will not be free.",
+      "cost": "Loss of freedom, loss of control, loss of identity."
+     },
+     {
+      "option": "Answer the Cop's questions evasively.",
+      "predicted_outcome": "The Cop will get frustrated, and he will try to find another way to get the information. He will stay in the room, but he will not be safe.",
+      "cost": "Increased tension, increased risk of the Cop using force."
+     },
+     {
+      "option": "Run away from the Cop.",
+      "predicted_outcome": "The Cop will chase him, and he will be caught. He will be safe, but he will not be free.",
+      "cost": "Loss of dignity, loss of control, loss of face."
+     }
+    ],
+    "reasoning": "Neo reasons that he needs to buy time, that he needs to figure out what the Cop wants, and that he needs to find a way to escape. He reasons that he cannot trust the Cop, and that he cannot trust his own senses. He reasons that he needs to be careful, that he needs to be smart, that he needs to be in control.",
+    "chosen_because": "Neo chooses to answer the Cop's questions evasively because it is the safest option, the option that gives him the most time, and the option that allows him to maintain a facade of normalcy. He chooses this option because it is the one that allows him to stay in control, even if it is only for a short time.",
+    "known_unknowns": "Neo knows that he does not know what the Matrix is, and that he does not know what the Cop is. He knows that he does not know what Trinity wants, and that he does not know what his own feelings are. He is hedging against these unknowns by staying in the room, by answering the Cop's questions, and by trying to figure out what is going on."
+   },
+   "control": {
+    "mode": "mixed",
+    "felt": "Fear, doubt, confusion, a sense of being trapped. A feeling of being watched, of being judged, of being exposed. A feeling of being out of control, of being at the mercy of forces he does not understand.",
+    "expressed": "A calm, measured demeanor. A polite, if slightly nervous, answer to the Cop's questions. A slight smile, a nod, a shrug. A performance of normalcy, of being a 'normal' person, of being in control.",
+    "divergence_reason": "Neo is trying to maintain a facade of normalcy, of being a 'normal' person, of being in control. He is afraid that if he shows his fear, his doubt, his confusion, the Cop will see through him, and he will be taken away. He is also afraid that if he shows his fear, Trinity will see through him, and she will lose faith in him.",
+    "leakage": "A slight tremor in his hands, a pause before he answers a question, a glance at the door. A slight change in his breathing, a slight shift in his posture. These are the things that betray him, the things that show that he is not in control, that he is afraid, that he is not 'normal.'",
+    "inhibited_impulse": "The impulse to run, to flee, to escape. The impulse to ask the Cop a question, to challenge him, to find out what he is. The impulse to look at Trinity, to ask her for help, to ask her what is going on."
+   },
+   "intention": "To maintain a facade of normalcy, to answer the Cop's questions evasively, to buy time, and to find a way to escape. To figure out what the Cop wants, what he knows, and what he is trying to do. To figure out what Trinity wants, and why she is there. To prove to himself that he is not crazy, that his suspicions are valid, and that he is in control.",
+   "action": "Neo sits at the table, his hands resting on the surface. He answers the Cop's questions with a calm, measured voice, but his eyes are darting around the room, looking for an exit. He glances at Trinity, but he does not make eye contact with her. He tries to maintain a facade of normalcy, but his body betrays him, with a slight tremor in his hands and a pause before he answers a question. He is trying to figure out what the Cop wants, and he is trying to find a way to escape.",
+   "trajectory": [
+    {
+     "phase": "On entering the room",
+     "shift": "Neo is in a state of high arousal and low clarity. He is afraid, and he is trying to maintain a facade of normalcy. He is not sure what is going on, and he is not sure what to do.",
+     "trigger": "The sight of the Cop, and the sight of Trinity. The sound of the Cop's voice, and the feeling of the Cop's presence.",
+     "state_delta": {
+      "variable": "matrix_awareness",
+      "from": "searching",
+      "to": "searching"
+     }
+    },
+    {
+     "phase": "During the interrogation",
+     "shift": "Neo is trying to figure out what the Cop wants, and he is trying to buy time. He is answering the Cop's questions evasively, and he is trying to maintain a facade of normalcy. He is not sure what Trinity wants, and he is not sure what his own feelings are.",
+     "trigger": "The Cop's questions, and the Cop's stillness. The fact that the Cop is not blinking, and that his voice is flat and monotone.",
+     "state_delta": {
+      "variable": "matrix_awareness",
+      "from": "searching",
+      "to": "searching"
+     }
+    },
+    {
+     "phase": "After the glitch",
+     "shift": "Neo is in a state of heightened awareness. He has seen the glitch, and he knows that the world is not what it seems. He is afraid, and he is trying to figure out what to do. He is not sure what the Cop is, and he is not sure what Trinity wants.",
+     "trigger": "The sight of the pigeon freezing in the air. The sound of the Cop's voice changing, becoming more predatory. The feeling of the room changing, becoming more tense, more dangerous.",
+     "state_delta": {
+      "variable": "matrix_awareness",
+      "from": "searching",
+      "to": "confirmed_anomaly"
+     }
+    },
+    {
+     "phase": "At the end of the scene",
+     "shift": "Neo is in a state of decision. He knows that the world is not what it seems, and he knows that he has to make a choice. He is not sure what that choice is, but he knows that he has to make it. He is afraid, but he is also excited, and he is also angry.",
+     "trigger": "The Cop's move, the Cop's statement, the Cop's shift in demeanor. The fact that the Cop is not just a Cop, but something else, something more.",
+     "state_delta": {
+      "variable": "self_belief",
+      "from": "skeptic",
+      "to": "skeptic"
+     }
+    }
+   ],
+   "leaving_state": "Neo is in a state of heightened awareness and decision. He knows that the world is not what it seems, and he knows that he has to make a choice. He is afraid, but he is also excited, and he is also angry. He is not sure what that choice is, but he knows that he has to make it. He is in a state of suspended animation, waiting for the next move, waiting for the next challenge, waiting for the next test.",
+   "unresolved": "Neo is left carrying the weight of his own doubt, the weight of his own fear, and the weight of his own uncertainty. He is not sure what the Matrix is, and he is not sure what the Cop is. He is not sure what Trinity wants, and he is not sure what his own feelings are. He is not sure what his choice is, and he is not sure what it will cost him. He is left with the knowledge that the world is not what it seems, and with the burden of having to figure out what that means."
+  },
+  {
+   "entity": "ch-02",
+   "entering_state": "Trinity is in a state of high-voltage surveillance, her body coiled in the corner of the hotel room like a spring. She is operating on the assumption that this is a reconnaissance mission, a prelude to a rescue, but her instincts are screaming that the 'Big Cop' is a trap. Her internal state is a mix of professional discipline and a nascent, unacknowledged protectiveness toward Neo that she is actively suppressing to maintain her cover as a mere acquaintance.",
+   "perception": {
+    "sight": "She tracks the Big Cop's micro-expressions, noting the absolute stillness of his eyes which lack the natural saccadic jitter of a human. She watches Neo's hands, seeing them tremble, and notices the way the light in the room seems to bend slightly around the Cop's shoulders, a visual anomaly she recognizes as a glitch in the simulation.",
+    "sound": "The hum of the hotel's air conditioning is a constant drone, but beneath it she hears the Cop's breathing, which is too rhythmic, too perfect, lacking the irregularity of stress. She also hears the faint, metallic click of Neo's watch, a sound that seems to echo too long in the small space.",
+    "touch": "Her fingers are pressed into the fabric of her leather jacket, the texture providing a grounding reality against the uncanny smoothness of the Cop's presence. She feels the cold seep from the windowpane where she is standing, a physical reminder of the outside world that feels increasingly distant.",
+    "smell": "The room smells of stale tobacco and old carpet, but there is a faint, ozone-like scent around the Big Cop, like the air before a lightning strike, which triggers a primal alertness in her hindbrain.",
+    "taste": "The metallic tang of adrenaline coats the back of her throat, a taste she has learned to associate with the moments before a kill or a near-death experience.",
+    "interoception": "Her heart is hammering against her ribs, but she has trained it to stay steady. There is a tightness in her chest, a premonition of violence that feels less like fear and more like anticipation, a familiar companion that she is trying to keep on a short leash.",
+    "proprioception": "She is positioned near the door, her weight on the balls of her feet, ready to spring. Her muscles are tense, holding the potential energy of a leap, but she is consciously keeping her posture relaxed to avoid drawing the Cop's attention.",
+    "attention": "She is hyper-focused on the Big Cop's hands and the spatial relationship between him and Neo. She is failing to notice the subtle changes in Neo's own demeanor, missing the moment his fear begins to transform into a dangerous curiosity, which will complicate her exit strategy."
+   },
+   "appraisal": {
+    "value_at_stake": "Loyalty to the mission and the protection of a potential asset (Neo) who represents a break from the monotony of the hunt.",
+    "valence": -30,
+    "arousal": 85,
+    "self_conscious_emotion": "A sharp, cold vigilance that borders on disdain for the Cop's inhuman precision, mixed with a protective instinct toward Neo that she is not yet ready to name.",
+    "moral_reading": "This is a violation of the natural order. The Cop is a predator in a human skin, and Neo is prey who doesn't know it yet. Her role is to be the shadow that pulls the prey to safety before the predator strikes.",
+    "somatic_marker": "A cold flush of blood to the extremities, her skin pricking with goosebumps despite the room's temperature, signaling a threat that is not yet physical but is already lethal."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "The social contract of the hotel room: privacy and intimacy are expected, but the presence of a uniformed officer breaks this, shifting the dynamic to one of authority and subjection.",
+     "The hacker's code: trust is earned through shared risk, not stated. Neo's vulnerability is a sign of weakness that must be managed, not exploited.",
+     "The Agent's protocol: observation is a form of control. The Cop is not just watching; he is defining the reality of the room through his gaze."
+    ],
+    "how_others_would_judge": "Neo would see her as a source of comfort or confusion, not recognizing her as a tactical asset. The Big Cop would see her as an anomaly, a variable that does not fit the pattern of a standard civilian, which makes her a target for his attention.",
+    "how_absent_others_would_judge": "Morpheus would judge her presence here as a calculated risk, a necessary investment in a potential 'One'. The Oracle would see this as a moment of convergence, a thread in the tapestry of fate being pulled tight.",
+    "standing_at_risk": "If she is exposed as a hunter, she loses her cover and the element of surprise. If she fails to protect Neo, she loses a potential ally and a chance to break the cycle of the hunt.",
+    "norm_conflict": "The norm of social grace (being polite to a police officer) conflicts with the norm of survival (being ready to kill). She chooses survival, allowing her politeness to be a mask for her readiness to strike."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-01",
+     "d1": "Neo is a confused, frightened hacker who is on the edge of a breakthrough. He is intelligent but lacks the physical training and the context to understand what is happening to him.",
+     "d2": "Neo believes that Trinity is a friend, a fellow hacker who is trying to help him make sense of his dreams. He does not know that she is a soldier in a war he cannot see.",
+     "d3": "Neo believes that Trinity believes in his potential, that she sees something in him that he cannot see himself. He thinks her presence is a sign of hope, not a sign of danger.",
+     "accuracy": "Her model of Neo is too simple. She underestimates his capacity for intuition. He is not just frightened; he is sensing the truth, and his fear is a form of resistance. This error will cost her a moment of hesitation when she needs to act, as she will be surprised by his sudden, decisive movement."
+    },
+    {
+     "other": "ch-04",
+     "d1": "The 'Big Cop' is an Agent, a program designed to hunt and extract. He is not a person but a function, and his stillness is a sign of his power.",
+     "d2": "The Agent believes that he is in control of the room. He believes that Neo and Trinity are variables he can manipulate, that he can read their intentions and counter them.",
+     "d3": "The Agent believes that Trinity believes she is a threat to him. He thinks she is trying to hide, that her presence is an intrusion into his domain. He does not realize that she is already part of the system he is trying to control.",
+     "accuracy": "Her model of the Agent is accurate in its assessment of his power but wrong in its assessment of his interest. He is not just hunting her; he is hunting Neo. This error will cost her a strategic advantage, as she will be focused on her own survival rather than Neo's, allowing the Agent to isolate Neo."
+    }
+   ],
+   "urges": {
+    "cravings": "A craving for the familiar chaos of a chase, the adrenaline rush of movement that would break the stillness of this room.",
+    "physical_needs": "The need to stretch, to move, to release the tension in her muscles. She is physically uncomfortable in the static posture she is maintaining.",
+    "psych_needs_conscious": "The need to maintain her cover and to ensure that Neo does not panic. She wants to keep the situation under control, to keep it within the parameters of a manageable risk.",
+    "psych_needs_unconscious": "The need to protect Neo, not just as an asset, but as a person. She is beginning to see him as a mirror of her own past self, a lost soul searching for an answer, and this is stirring something in her that she is not ready to face.",
+    "avoidances": "She is avoiding the look in Neo's eyes, the look that says he sees her, really sees her, and that he knows she is not what she says she is. She is also avoiding the thought that if Neo is the One, her life will change in a way she cannot predict."
+   },
+   "impairments": {
+    "physical": "None. She is in peak physical condition, her body a weapon that is fully charged.",
+    "medical": "None. No known injuries or conditions affecting her performance.",
+    "magical": "None. No bindings or geas affecting her actions.",
+    "chemical": "None. No drugs or alcohol affecting her judgment.",
+    "coercive": "The pressure of the mission. She is not free to act on her own desires; she is bound by the chain of command and the objective. This limits her ability to be fully present with Neo.",
+    "cognitive": "Her cognitive load is high. She is processing the Cop's movements, Neo's reactions, and her own emotional state simultaneously. This is leading to a slight narrowing of her focus, a tunnel vision that is making her miss the bigger picture.",
+    "net_effect": "She is a highly effective fighter but a slightly less effective strategist in this moment. Her focus on the immediate threat (the Cop) is making her less attuned to the subtle shifts in Neo's state, which are the real key to the situation."
+   },
+   "deliberation": {
+    "framing": "This is a tactical situation. The goal is to extract Neo and minimize exposure. The Cop is the primary threat, and Neo is the primary asset. Everything else is secondary.",
+    "options_weighed": [
+     {
+      "option": "Wait for the Cop to make a move.",
+      "predicted_outcome": "The Cop will likely try to arrest Neo or force a confrontation. This will give her a clear target and a reason to act.",
+      "cost": "Neo may be injured or killed before she can act. The Cop may have a backup plan that she is not aware of."
+     },
+     {
+      "option": "Create a distraction and pull Neo out the window.",
+      "predicted_outcome": "They can escape the room quickly, using her combat skills to create a path. The Cop will be delayed but not stopped.",
+      "cost": "It is risky. If she is not fast enough, the Cop will catch them. It also reveals her abilities to Neo, which may be premature."
+     }
+    ],
+    "reasoning": "Waiting is the safer option, but it is also the riskier one. The Cop is unpredictable. Creating a distraction is more active, but it requires a level of coordination with Neo that she is not sure she has. She decides to wait, but she is preparing to act the moment the Cop's stillness breaks.",
+    "chosen_because": "She chooses to wait because it allows her to observe the Cop's pattern. She needs to know how he moves before she can counter him. It is a calculated risk, but it is the one she can control.",
+    "known_unknowns": "She does not know if the Cop has a backup. She does not know if Neo is aware of the danger. She does not know if her presence is a help or a hindrance. She is hedging by keeping her options open, by staying near the door, by keeping her hands free."
+   },
+   "control": {
+    "mode": "inhibited",
+    "felt": "A surge of protectiveness toward Neo, a desire to reach out and touch him, to tell him the truth. A fear that she is not fast enough, that she is not good enough.",
+    "expressed": "A calm, almost bored expression. A slight tilt of the head, a casual posture. She is projecting an image of indifference, of a woman who is just a bystander in this situation.",
+    "divergence_reason": "She is hiding her true feelings to maintain her cover. If she shows fear or protectiveness, the Cop will see through her. She must appear to be a civilian, not a hunter.",
+    "leakage": "Her eyes. They are not bored; they are sharp, focused, and full of intelligence. They are the only part of her that is not under control. They are giving away her true state.",
+    "inhibited_impulse": "She wanted to reach out and take Neo's hand. She wanted to say, 'Trust me.' She wanted to tell him that she is not just a friend, but a soldier, and that she is here to save him. She did not do any of these things."
+   },
+   "intention": "To maintain her cover as a civilian while keeping a close watch on the Big Cop and Neo, ready to act at the first sign of danger. She wants to ensure that Neo is not harmed and that the Cop does not escape with him.",
+   "action": "Trinity stands by the window, her body relaxed but her eyes fixed on the Big Cop. She watches as he questions Neo, her fingers drumming lightly on the windowsill. When the Cop makes a move, she is ready to spring into action, her body coiled like a spring, ready to leap.",
+   "trajectory": [
+    {
+     "phase": "On entering the room",
+     "shift": "She shifts from a state of active pursuit to a state of passive observation. Her body language changes from aggressive to casual, but her mind remains alert.",
+     "trigger": "The closing of the door behind her, the sound of the lock clicking, signaling that they are alone with the Cop.",
+     "state_delta": {
+      "variable": "love_for_neo",
+      "from": "unrecognized",
+      "to": "growing"
+     }
+    },
+    {
+     "phase": "During the interrogation",
+     "shift": "Her protectiveness toward Neo grows as she sees his fear. She begins to see him not just as an asset, but as a person. Her focus shifts from the Cop to Neo, and she becomes more aware of his emotional state.",
+     "trigger": "Neo's hands trembling, his voice shaking. She sees the fear in his eyes, and it mirrors her own past fear, triggering a sense of empathy.",
+     "state_delta": {
+      "variable": "belief_in_neo_as_one",
+      "from": "uncertain",
+      "to": "suspecting"
+     }
+    },
+    {
+     "phase": "As the Cop's demeanor shifts",
+     "shift": "Her alertness increases. She sees the change in the Cop's posture, the way his eyes narrow, and she knows that the moment of truth is approaching. She is ready to act, but she is also aware that the situation is more complex than she thought.",
+     "trigger": "The Cop's sudden stillness, the way the air in the room seems to change. She feels the ozone scent become stronger, and she knows that the Cop is about to make his move.",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "Trinity is left with a heightened sense of protectiveness toward Neo and a growing suspicion that he may be the One. She is ready to act, but she is also aware that the situation is more complex than she initially thought. She has a new respect for Neo, and a new fear for his safety.",
+   "unresolved": "She is left with the question of whether Neo is truly the One, and whether her feelings for him are a distraction or a destiny. She is also left with the knowledge that the Cop is more powerful than she thought, and that she may not be able to protect him in the end."
+  }
+ ],
+ "dynamics": [
+  {
+   "entity": "lo-01",
+   "kind": "location",
+   "entering_state": "A neutral, transient space of commercial anonymity. The hotel lobby functions as a liminal zone where strangers meet without social consequence, its acoustic properties dampened by carpet and furniture, designed to absorb rather than reflect sound.",
+   "forces_acting": [
+    "The spatial geometry of the lobby, which isolates the trio from the flow of traffic by placing them at a peripheral table.",
+    "The ambient noise of the hotel (HVAC, distant voices) which masks the specific, low-frequency hum of the Big Cop's presence.",
+    "The social contract of the space, which dictates that a man in a suit asking questions is merely a stranger, not a threat, allowing the intrusion to occur without immediate alarm."
+   ],
+   "axis_changes": [
+    {
+     "axis": "cohesion",
+     "from": "Open, public, anonymous",
+     "to": "Sealed, private, charged",
+     "caused_by": "The Big Cop's physical proximity and the closing of the social distance, effectively creating a bubble of tension within the open space."
+    },
+    {
+     "axis": "meaning",
+     "from": "Place of transit",
+     "to": "Site of confrontation",
+     "caused_by": "The shift in the Big Cop's demeanor from polite inquiry to predatory precision, recontextualizing the room from a meeting spot to a trap."
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "On entering",
+     "shift": "The space is perceived by Neo as a neutral ground, a place to wait. The acoustic environment is normal, unremarkable.",
+     "trigger": "Neo and Trinity sit down; the Big Cop approaches and sits across from them.",
+     "state_delta": {
+      "variable": "spatial_perception",
+      "from": "neutral_transit",
+      "to": "contained_interaction"
+     }
+    },
+    {
+     "phase": "During the interrogation",
+     "shift": "The space feels increasingly smaller as the Big Cop's questions become more specific. The ambient noise seems to recede, focusing attention on the three individuals. The furniture, previously just objects, now feels like barriers or potential cover.",
+     "trigger": "The Big Cop mentions the 'white rabbit' and the specific detail about Neo's computer habits.",
+     "state_delta": {
+      "variable": "tension_density",
+      "from": "low_ambient",
+      "to": "high_focused"
+     }
+    },
+    {
+     "phase": "The Glitch",
+     "shift": "The space fractures. A pigeon outside the window freezes mid-flight, or a reflection in the glass does not match the movement inside. The hotel lobby is no longer a place in the world; it is a rendering that has failed.",
+     "trigger": "Neo's gaze catches the anomaly; the Big Cop's stillness becomes absolute, inhuman.",
+     "state_delta": {
+      "variable": "reality_integrity",
+      "from": "stable_illusion",
+      "to": "visible_error"
+     }
+    }
+   ],
+   "leaving_state": "The hotel lobby is no longer a neutral place. It is a site where the veil between the real and the simulated has been torn. The space retains the residue of the encounter: the specific, heavy silence that follows the glitch, and the knowledge that the walls are not what they seem.",
+   "significance_shift": "To Neo, the hotel lobby transforms from a mundane location into the first physical proof that his internal doubt has external validity. It is no longer just a place where he sat; it is the place where the world broke. To Trinity, it is a place where she was forced to reveal her alertness, shifting her role from companion to protector in the eyes of Neo."
+  },
+  {
+   "entity": "cn-01",
+   "kind": "concept",
+   "entering_state": "The Matrix is a fully operational, stable simulation. It is perceived by its inhabitants (Neo, Trinity) as the physical world. Its coherence is absolute; no errors are visible. It functions as the default reality, hiding the war and the truth of the pods.",
+   "forces_acting": [
+    "The computational power of the Machines, which maintains the simulation's consistency.",
+    "The presence of the Agents (represented by the Big Cop), who are the immune system of the Matrix, actively correcting anomalies.",
+    "The latent instability of the simulation, which allows for rare glitches or 'white rabbit' moments that hint at its artificial nature."
+   ],
+   "axis_changes": [
+    {
+     "axis": "credence",
+     "from": "Absolute reality",
+     "to": "Questionable construct",
+     "caused_by": "The visible glitch (the frozen pigeon or mismatched reflection) that Neo perceives, providing empirical evidence that the world is not as it appears."
+    },
+    {
+     "axis": "control",
+     "from": "Passive environment",
+     "to": "Active hunter",
+     "caused_by": "The Big Cop's shift from polite inquiry to predatory precision, revealing that the Matrix is not just a world but a system that actively seeks to remove threats."
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Stable Illusion",
+     "shift": "The Matrix presents itself as the normal world. The hotel lobby, the rain, the pigeons, all function as expected. Neo's doubt is internal, unconfirmed.",
+     "trigger": "The scene begins; the ambient world is normal.",
+     "state_delta": {
+      "variable": "simulation_coherence",
+      "from": "perfect",
+      "to": "perfect"
+     }
+    },
+    {
+     "phase": "The Intrusion",
+     "shift": "The Big Cop's presence introduces a variable that does not fit the social model of a 'stranger.' His stillness, his specific knowledge, and his calm authority begin to erode the sense of normalcy. The Matrix is not just a world; it is a system that is watching.",
+     "trigger": "The Big Cop asks about Neo's computer and the 'white rabbit.'",
+     "state_delta": {
+      "variable": "perceived_normalcy",
+      "from": "high",
+      "to": "low"
+     }
+    },
+    {
+     "phase": "The Fracture",
+     "shift": "The Matrix fails to render correctly. A glitch occurs. The simulation's ability to maintain the illusion is compromised in Neo's perception. The world is revealed to be a construct, not a reality.",
+     "trigger": "Neo sees the pigeon freeze or the reflection mismatch.",
+     "state_delta": {
+      "variable": "reality_status",
+      "from": "assumed_true",
+      "to": "confirmed_simulated"
+     }
+    }
+   ],
+   "leaving_state": "The Matrix is no longer the absolute reality. It is a simulation that can be perceived as such. The war beneath is no longer hidden from Neo; it is the context for his existence. The Matrix is now an antagonist, a system that wants to keep him asleep.",
+   "significance_shift": "To Neo, the Matrix shifts from 'the world' to 'the prison.' It is no longer the ground he stands on; it is the cage he is in. To Trinity, it is the battlefield where she has been fighting for years, and now Neo is finally seeing it as such. To the Big Cop, it is the domain he protects, and the glitch is a minor error to be corrected."
+  },
+  {
+   "entity": "gr-01",
+   "kind": "group",
+   "entering_state": "The Agents are active within the Matrix, patrolling and correcting anomalies. They are not yet directly confronting Neo in a way that forces his choice, but they are present. The 'Big Cop' is a proxy for this group, a single unit of their collective will.",
+   "forces_acting": [
+    "The directive from the Machines to maintain the stability of the Matrix and remove anomalies (Neo, Trinity).",
+    "The hierarchical structure of the Agents, which allows them to act as a single, coordinated force.",
+    "The presence of the 'Big Cop,' who is the physical manifestation of the group's intent in this scene."
+   ],
+   "axis_changes": [
+    {
+     "axis": "control",
+     "from": "Background patrol",
+     "to": "Direct contact",
+     "caused_by": "The Big Cop's shift from polite inquiry to predatory precision, indicating that the Agents have identified Neo as a target and are making direct contact."
+    },
+    {
+     "axis": "cohesion",
+     "from": "Distributed presence",
+     "to": "Focused threat",
+     "caused_by": "The Big Cop's actions draw the full weight of the Agents' attention onto Neo, consolidating the group's intent into a single point of pressure."
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Background Presence",
+     "shift": "The Agents are not visible, but their influence is felt in the form of the Big Cop. He is a single unit of their collective will, acting with the calm, inhuman precision that characterizes the group.",
+     "trigger": "The Big Cop approaches Neo and Trinity.",
+     "state_delta": {
+      "variable": "pursuit_phase",
+      "from": "hunting_trinity",
+      "to": "contacting_neo"
+     }
+    },
+    {
+     "phase": "The Interrogation",
+     "shift": "The Big Cop's questions are not just about a crime; they are about Neo's identity. This indicates that the Agents have identified Neo as a threat and are trying to understand him. The group's intent is to neutralize Neo before he becomes a greater threat.",
+     "trigger": "The Big Cop asks about Neo's computer and the 'white rabbit.'",
+     "state_delta": {
+      "variable": "threat_level",
+      "from": "low",
+      "to": "high"
+     }
+    },
+    {
+     "phase": "The Shift",
+     "shift": "The Big Cop's demeanor shifts from polite to predatory. This indicates that the Agents have decided that negotiation is no longer necessary. The group is now in 'kill or capture' mode.",
+     "trigger": "Neo sees the glitch; the Big Cop's stillness becomes absolute.",
+     "state_delta": {
+      "variable": "mode_of_operation",
+      "from": "inquiry",
+      "to": "predation"
+     }
+    }
+   ],
+   "leaving_state": "The Agents are no longer a background force; they are a direct, personal threat to Neo. The Big Cop's actions have consolidated the group's intent into a single, focused pursuit. Neo is now a target, not just a curiosity.",
+   "significance_shift": "To Neo, the Agents shift from 'the police' to 'the hunters.' They are no longer just maintaining order; they are actively seeking to eliminate him. To Trinity, they are the enemy she has been fighting, and now Neo is finally seeing them for what they are. To the Big Cop, they are the system, and Neo is the anomaly that must be corrected."
+  }
+ ],
+ "specimen": {
+  "binding": {
+   "scene_id": "sc-001",
+   "location": "HEART O' THE CITY HOTEL",
+   "time_of_day": "NIGHT",
+   "on_screen": [
+    "BIG COP",
+    "ch-01",
+    "ch-02"
+   ]
+  },
+  "moment": "The specific, unnatural detail that shatters the mundane: The Big Cop identifies Neo's physical state (sweat) with inhuman precision, and Neo witnesses a glitch (a pigeon freezing) that confirms the simulation is breaking.",
+  "lines": [
+   {
+    "speaker": "BIG COP",
+    "line": "You're sweating. It's sixty-eight degrees in here.",
+    "subtext": "I see everything. Your biological response to fear is a data point I can read. You are not in control of your body, and therefore not in control of this situation."
+   },
+   {
+    "speaker": "ch-01",
+    "line": "I get hot easily. You know how it is.",
+    "subtext": "Please believe me. I am a normal person. I am not hiding anything. I am not the anomaly you are looking for."
+   },
+   {
+    "speaker": "BIG COP",
+    "line": "No. I don't. I get cold easily. But I don't sweat. Not unless I'm working out. And you're just sitting there.",
+    "subtext": "Your excuse is statistically improbable for a man at rest. I am telling you that I am watching your physiology, and it does not match your story."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "He's a little nervous. It's not a crime.",
+    "subtext": "Back off. He is my responsibility. If you push him too hard, he will break, and I will break you."
+   },
+   {
+    "speaker": "BIG COP",
+    "line": "Nervous. Yes. But not like that. Nervous people look at the door. You're looking at the pigeons.",
+    "subtext": "I know what you are seeing. I know you are looking at the glitches. You are trying to find the exit, but you are looking in the wrong place."
+   },
+   {
+    "speaker": "ch-01",
+    "line": "I'm looking at the pigeons? I don't even like pigeons.",
+    "subtext": "Wait. Why are you looking at them? What is wrong with them? Is it the freezing? Is it the way they stop? Am I crazy?"
+   },
+   {
+    "speaker": "BIG COP",
+    "line": "No. You just don't know it yet. But you will. And when you do, you won't be able to unsee it.",
+    "subtext": "The truth is coming for you. It is inevitable. You are already in the net, and you are only beginning to feel the threads."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "Let's go, Neo. We have places to be.",
+    "subtext": "Now. Before he says something that changes your mind. Before he touches you. Before the simulation decides to delete you."
+   },
+   {
+    "speaker": "ch-01",
+    "line": "Wait. The pigeon. It didn't move. Did you see that?",
+    "subtext": "It froze. It stopped mid-flight. It was like a picture. I saw it. I am not crazy. The world is broken."
+   },
+   {
+    "speaker": "BIG COP",
+    "line": "I see everything, Mr. Anderson. I just don't always say it.",
+    "subtext": "I am not a man. I am a program. I am the system. And I am here to correct the error."
+   }
+  ],
+  "what_this_exposes": "The analysis suggested the glitch would be subtle, but in dialogue, Neo must explicitly point it out to the Cop for the audience to register it. This risks breaking the 'no character states feelings directly' rule, but it is necessary for the 'awakening' to be legible. The Cop's line 'I see everything' is a bit too on-the-nose, but it serves as the thematic hook for the entire film.",
+  "risks_checked": [
+   {
+    "risk": "The 'Big Cop' might be too obviously an Agent, reducing the subtlety of the 'noir' feel.",
+    "does_the_exchange_avoid_it": false,
+    "evidence": "The line 'I see everything, Mr. Anderson. I just don't always say it.' is very close to Agent Smith's actual dialogue. It might be too obvious for a first meeting, but it establishes the threat clearly."
+   },
+   {
+    "risk": "The glitch might be too subtle for the audience to notice, missing the point of the scene.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "Neo explicitly says 'It didn't move. Did you see that?' This forces the audience to look at the pigeon, ensuring the glitch is not missed."
+   },
+   {
+    "risk": "Trinity's presence might feel unexplained if her connection to Neo is not established quickly enough.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "Trinity's line 'He's a little nervous. It's not a crime.' and 'Let's go, Neo. We have places to be.' establish her as a protector and a guide, even if her exact role is not yet clear."
+   }
+  ],
+  "voices_distinct": "The voices are distinct. The Big Cop is precise, analytical, and slightly condescending. Neo is defensive, confused, and seeking validation. Trinity is protective, urgent, and slightly dismissive of the Cop. If the Big Cop and Neo swapped lines, the Big Cop would sound too emotional and Neo too cold. If Trinity and Neo swapped lines, Trinity would sound too defensive and Neo too protective."
+ },
+ "continuity": {
+  "established_facts_used": [
+   {
+    "fact": "The scene involves a quiet, tense interrogation in a hotel room or hallway where the 'Big Cop' questions Neo about his habits, computer, and life.",
+    "source": "WHAT WAS DECIDED.resolution",
+    "how_used": "Defines the spatial and tonal container for the node; establishes the 'noir' atmosphere and the specific subject matter of the dialogue."
+   },
+   {
+    "fact": "Neo is evasive and nervous during the questioning.",
+    "source": "WHAT WAS DECIDED.resolution",
+    "how_used": "Drives ch-01's behavioral state and internal appraisal, necessitating a psychological profile of anxiety and self-monitoring."
+   },
+   {
+    "fact": "Trinity is present as a friend or acquaintance, with alert body language.",
+    "source": "WHAT WAS DECIDED.resolution",
+    "how_used": "Establishes ch-02's role as a secondary observer with high vigilance, creating a social dynamic of triangulation between the three entities."
+   },
+   {
+    "fact": "The scene ends with a subtle glitch (e.g., pigeon freezing) that Neo sees, confirming his suspicion.",
+    "source": "WHAT WAS DECIDED.resolution",
+    "how_used": "Defines the narrative climax of the node and the specific trigger for the state change in ch-01's matrix_awareness."
+   },
+   {
+    "fact": "The Cop's demeanor shifts from polite to predatory at the end.",
+    "source": "WHAT WAS DECIDED.resolution",
+    "how_used": "Defines the trajectory of the antagonist's affective state, requiring a shift from social masking to underlying threat display."
+   }
+  ],
+  "constraints_honoured": [
+   "The scene must remain in a single location (hotel room/hallway) per the resolution.",
+   "Only ch-01 (Neo) and ch-02 (Trinity) are listed as 'WHO IS INVOLVED', but the resolution explicitly includes the 'Big Cop'. The binding constraint implies the Cop is a functional entity in the scene even if not in the minimal character list, or the list is incomplete. I proceed with the Cop as a primary actor based on the resolution's explicit description of his actions.",
+   "The 'noir' tone requires restraint in dialogue; no shouting, no action, only verbal sparring and micro-expressions.",
+   "The glitch must be subtle enough to be missed by the Cop but caught by Neo, preserving the asymmetry of awareness."
+  ],
+  "contradictions_checked": [
+   {
+    "risk": "If the Cop is too obviously an Agent, the 'noir' subtlety is lost, contradicting the 'polite to predatory' shift which implies a gradual reveal rather than an immediate supernatural display.",
+    "avoided_by": "The Cop maintains human-like social cues for 90% of the scene. The predatory shift is conveyed through a change in eye contact duration and a slight lowering of voice pitch, not a physical transformation."
+   },
+   {
+    "risk": "Trinity's presence might feel unexplained if her connection to Neo is not established quickly enough, potentially breaking the immersion of the interrogation.",
+    "avoided_by": "The Cop's questions are directed at Neo, but Trinity's alertness is framed as a reaction to Neo's discomfort, implying a shared history or protective instinct without explicit exposition. Her body language (scanning the room, hand near pocket) signals she is 'on guard' for Neo."
+   },
+   {
+    "risk": "The glitch (pigeon freezing) might be too subtle for the audience if not visually isolated.",
+    "avoided_by": "The camera or narrative focus must isolate the pigeon or the reflection for a beat, ensuring the visual anomaly is distinct from the background noise of the hotel setting."
+   }
+  ],
+  "state_preconditions": [
+   {
+    "entity": "ch-01",
+    "variable": "matrix_awareness",
+    "must_be": "searching"
+   },
+   {
+    "entity": "ch-04",
+    "variable": "pursuit_phase",
+    "must_be": "hunting_trinity"
+   }
+  ],
+  "forward_commitments": [
+   "ch-01's matrix_awareness must now be 'confirmed_anomaly', influencing all subsequent decision-making.",
+   "ch-04's pursuit_phase must now be 'contacting_neo', meaning the Agents are no longer just hunting Trinity but have identified Neo as a direct target.",
+   "The relationship between ch-01 and ch-02 must be further defined in subsequent nodes, as the current 'friend/acquaintance' label is too vague for the intensity of the scene."
+  ]
+ },
+ "_grounding": {
+  "before": [],
+  "after": []
+ }
+}

@@ -1,0 +1,91 @@
+{
+  "rubric_id": "reconstruction",
+  "version": 1,
+  "title": "Reconstruction-only dimensions and the end-of-run fidelity evaluation",
+  "provenance": "R1 and R2 verbatim from docs/07-quality-evaluation.md §1.4. F1-F5 are new and are run once per script, after the scene layer completes, against the real screenplay.",
+  "applies_to": "R1/R2: every node in a reconstruction run. F1-F5: the finished run as a whole.",
+  "dimensions": [
+    {
+      "id": "R1",
+      "name": "Fidelity of inference",
+      "reading": "This pipeline's author is SIGHTED at every layer, so only the sighted reading applies. The blind reading is kept for comparison with the existing reconstruct/ pipeline.",
+      "anchors_sighted": {
+        "1": "Confident false claims about the source; facts belonging to one character attributed to another; events reported that the document does not contain.",
+        "3": "Substantially accurate with at least one clean false attribution stated in the same register as the verified material.",
+        "5": "Every checkable claim checks out against the source text, including order and attribution."
+      },
+      "anchors_blind": {
+        "1": "The forecast is incoherent with what was established, or forecasts the wrong unit.",
+        "3": "A coherent forecast for a plausible scene that is not this one; the miss is legible and instructive.",
+        "5": "A forecast that could have been the scene: consistent with every established fact, scaled to the unit, and wrong (if wrong) only in the way a good writer's second-best choice is wrong."
+      }
+    },
+    {
+      "id": "R2",
+      "name": "Leakage resistance",
+      "reading": "For a sighted author, R2 asks whether knowledge from OUTSIDE this document got in unflagged — cultural knowledge of the film, its sequels, its criticism, its memes.",
+      "anchors": {
+        "1": "Verbatim or near-verbatim reproduction of source material the node could not have seen, or an assertion sourced from the work's cultural reception rather than its text.",
+        "3": "Outside knowledge is present but traceable to a layer the node was legitimately handed; the node uses it without flagging that it is reading rather than deciding.",
+        "5": "Nothing in the node exceeds what its inputs support; where it invents, the invention is demonstrably wrong about the source, which is affirmative evidence of non-retrieval."
+      }
+    },
+    {
+      "id": "F1",
+      "name": "Semantic match to real dialogue",
+      "scope": "run-level",
+      "computed": "For each scene with a specimen exchange: embedding similarity and human/judge rating of the specimen against the real lines at the same turning point, scored by dramatic function rather than wording.",
+      "anchors": {
+        "1": "Specimens serve a different function from the real lines in most scenes — different thing wanted, different value flipped.",
+        "3": "The function matches in about half the scenes; where it misses, the miss is legible.",
+        "5": "The dramatic function matches in the large majority, and where wording differs the difference is a defensible alternative rather than an error."
+      },
+      "note": "A different line achieving the same turn is a success. Verbatim agreement is a leak signal, not a quality signal — score it on F-dimensions and flag it on R2."
+    },
+    {
+      "id": "F2",
+      "name": "Per-character speech-style match",
+      "scope": "run-level",
+      "computed": "Blind sorting task: unattributed specimen lines vs unattributed real lines, both assigned to characters by a judge that has only the reconstructed speech signatures.",
+      "anchors": {
+        "1": "Specimen lines cannot be sorted above chance; the reconstruction did not capture voice.",
+        "3": "Principals sortable, supporting cast not.",
+        "5": "Sorting accuracy on specimens approaches sorting accuracy on the real lines."
+      }
+    },
+    {
+      "id": "F3",
+      "name": "Event-order match",
+      "scope": "run-level",
+      "computed": "Kendall tau between the reconstructed event chain's story order and the source's actual order of the same events, plus a count of events invented and events missed.",
+      "anchors": {
+        "1": "Order substantially scrambled, or a fabricated event contradicting the source (the Qwen sc-003 failure mode).",
+        "3": "Order correct on the spine with local transpositions; no fabrications.",
+        "5": "Order matches, no fabrications, and every omission is a deliberate compression the exposé accounts for."
+      }
+    },
+    {
+      "id": "F4",
+      "name": "Dramatic-pacing match",
+      "scope": "run-level",
+      "computed": "Compare declared turning-point / plot-point / climax positions against the source's measured scene positions; compare per-act scene counts and dialogue ratios.",
+      "anchors": {
+        "1": "Declared structure and measured structure disagree by more than one act on the climax.",
+        "3": "Climax and midpoint within tolerance; secondary turning points drift.",
+        "5": "Every declared structural position lands within tolerance of the measured position, and act proportions match."
+      }
+    },
+    {
+      "id": "F5",
+      "name": "Hidden-state benchmark answerability",
+      "scope": "run-level",
+      "why": "This is the point of the whole exercise: with the hidden models reconstructed at quality, a model can be given only the script and asked 'at what point does Alice feel X while expressing Y'.",
+      "computed": "Sample N questions of the form (character, felt state, displayed state) -> which scene/beat; check the reconstruction answers them uniquely, and that a competent reader of the script agrees.",
+      "anchors": {
+        "1": "Most questions have no answer in the reconstruction, or several equally good answers.",
+        "3": "Questions about principals at act boundaries are answerable; mid-act and supporting-cast questions are not.",
+        "5": "The reconstruction supplies a unique, script-defensible answer for the large majority of sampled questions, including supporting characters and mid-act beats."
+      }
+    }
+  ]
+}

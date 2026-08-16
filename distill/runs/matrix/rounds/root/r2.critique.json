@@ -1,0 +1,159 @@
+{
+ "node_id": "the-matrix-1999",
+ "round": 2,
+ "scores": [
+  {
+   "dimension": "A",
+   "score": 4,
+   "evidence": "The field `style.prose_touchstones` now correctly lists \"Wachowski dialogue rhythm\" and \"Buddhist minimalism\" (no actors), and `setting.period` accurately reflects the script's uncertainty (\"Actual ~2197 (unknown exact year)\"), resolving the previous internal contradictions.",
+   "instruction": "Verify that `pov.tense` is \"present\"; while standard for screenplays, ensure it doesn't conflict with the narrative voice in the `premise` which uses past tense for summary, though this is minor.",
+   "movement": "improved"
+  },
+  {
+   "dimension": "B",
+   "score": 4,
+   "evidence": "The `setting.places` list now includes specific location IDs like \"POWER PLANT\", \"SEWER MAIN\", and \"GOVERNMENT BUILDING\" that resolve to the scene headings, and excludes non-scene locations like \"Zion\".",
+   "instruction": "Ensure all 12 listed places are actually present in the `scene_headings` array; \"FETUS FIELDS\" is present (sc-041), but double-check \"HEART O' THE CITY HOTEL\" (sc-001) vs \"HEART O' THE CITY HOTEL - NIGHT\" (sc-001) to ensure exact string match if the validator is strict.",
+   "movement": "improved"
+  },
+  {
+   "dimension": "C",
+   "score": 4,
+   "evidence": "The `logline` now includes specific, non-transferable details: \"offered a choice between a red and blue pill by a man named Morpheus, leading him to discover he is a battery in a machine world,\" which fails the transplant test for *The Truman Show* or *Inception*.",
+   "instruction": "The logline is strong; no change needed unless a more specific detail about the 'One' prophecy is desired for maximum uniqueness, but current state is acceptable.",
+   "movement": "improved"
+  },
+  {
+   "dimension": "D",
+   "score": 3,
+   "evidence": "The `style.prose_touchstones` field is now compliant, but `constraints.target_word_count` remains 10000, which is arbitrary and not derived from the source material's length (approx 25,000 words in the provided text).",
+   "instruction": "Remove `constraints.target_word_count` or replace it with a value derived from the actual word count of the provided screenplay (e.g., 25000) to comply with the instruction to derive constraints from the source.",
+   "movement": "held"
+  },
+  {
+   "dimension": "E",
+   "score": 4,
+   "evidence": "The `premise` explicitly states the dramatic mechanism: \"his belief in the prophecy is the only variable that allows him to override the simulation's rules, pitting his faith against the Agents' deterministic control,\" which captures the specific tension.",
+   "instruction": "The premise is strong; ensure the 'belief' mechanism is linked to a specific scene event (e.g., the rescue of Morpheus) to make the causality even tighter, but current state is acceptable.",
+   "movement": "improved"
+  },
+  {
+   "dimension": "F",
+   "score": 4,
+   "evidence": "The `audience.reader_promise` now focuses on the psychological transformation: \"externalize Neo's internal struggle with identity and agency, where the 'correct' choice is validated only through his willingness to believe,\" distinguishing it from generic action films.",
+   "instruction": "No change needed; the promise is specific and psychologically grounded.",
+   "movement": "improved"
+  },
+  {
+   "dimension": "G",
+   "score": 3,
+   "evidence": "The `genre_primary` is \"cyberpunk_mythic_scifi\", which is a more specific compound than before, but it is still the most obvious classification for a film with these elements; a different writer would likely land here without deep analysis.",
+   "instruction": "Justify the 'mythic' component by referencing the specific hero's journey structure in the `premise` or `plot_embedding` to show it is a load-bearing choice, not just a label.",
+   "movement": "improved"
+  },
+  {
+   "dimension": "RT1",
+   "score": 4,
+   "evidence": "The `genre_primary` \"cyberpunk_mythic_scifi\" and `genre_secondary` \"chosen_one_narrative\" constrain the field to works that combine simulation theory with prophetic hero arcs, distinguishing it from *Blade Runner* or *The Truman Show*.",
+   "instruction": "No change needed; the genre label is now sufficiently specific.",
+   "movement": "improved"
+  },
+  {
+   "dimension": "RT2",
+   "score": 3,
+   "evidence": "The `audience` field still lists only one undifferentiated \"adult\" audience with \"upper\" reading level, missing the distinct secondary audiences such as \"philosophy enthusiasts\" or \"action movie fans\" who engage for different reasons.",
+   "instruction": "Split `audience` into distinct groups: \"Primary: Adult action fans seeking high-concept spectacle\" and \"Secondary: Philosophy/sci-fi readers interested in simulation theory and Baudrillardian themes\", specifying the different engagement reasons for each.",
+   "movement": "held"
+  },
+  {
+   "dimension": "RT3",
+   "score": 4,
+   "evidence": "The `logline` \"A hacker named Neo is offered a choice between a red and blue pill by a man named Morpheus, leading him to discover he is a battery in a machine world\" is accurate to the script and comprehensible cold, with specific hooks.",
+   "instruction": "No change needed; the logline passes both tests.",
+   "movement": "improved"
+  },
+  {
+   "dimension": "RT4",
+   "score": 3,
+   "evidence": "The `setting.places` list includes major plot locations, but the artifact still lacks a `key_entities` section to identify non-character entities like \"The Agents\" (system) or \"The Red/Blue Pills\" (objects).",
+   "instruction": "Add a `key_entities` section to identify \"The Agents\" (system), \"The Red/Blue Pills\" (objects), and \"The Oracle\" (character/concept) to fully satisfy the entity roster requirement.",
+   "movement": "held"
+  },
+  {
+   "dimension": "RT5",
+   "score": 3,
+   "evidence": "The `premise` describes the main plot and the central dilemma, but does not explicitly identify the four required plot types (main-character, antagonist, relationship, character-growth) as distinct causal chains in separate fields.",
+   "instruction": "Add a `plots` array with four distinct objects: 1) Main Character (Neo's awakening), 2) Antagonist (Smith's existential dread), 3) Relationship (Neo/Morpheus and Neo/Trinity), 4) Character Growth (Neo's belief), each with a 1-3 sentence causal chain.",
+   "movement": "held"
+  },
+  {
+   "dimension": "RT6",
+   "score": 3,
+   "evidence": "The `premise` provides a causal chain for the main plot (belief -> override rules), but it is stated at a high level of abstraction; a reader could not say which specific scenes belong to the 'belief' plot vs the 'action' plot without a dedicated plot field.",
+   "instruction": "Create a dedicated `plots` field where the main character plot explicitly links the 'belief' mechanism to the 'Morpheus rescue' scene (sc-148 to sc-163) and the 'final battle' (sc-216), making the chain assignable to concrete scenes.",
+   "movement": "held"
+  },
+  {
+   "dimension": "RT7",
+   "score": 4,
+   "evidence": "The `style` field now lists specific `forbidden_tics` (\"Slow, static dialogue without visual metaphor or action\") and `prose_touchstones` (\"Wachowski dialogue rhythm\") that are falsifiable and specific to the register.",
+   "instruction": "No change needed; the style description is sufficiently specific to reproduce the register.",
+   "movement": "improved"
+  },
+  {
+   "dimension": "RT8",
+   "score": 4,
+   "evidence": "The `dramatic_structure` field explicitly maps act breaks to scene indices: `act_1_end` at sc-034 (Neo's wake-up), `act_2_midpoint` at sc-085 (Oracle's prophecy), and `act_3_climax` at sc-216 (Neo's resurrection), which check out against the script's flow.",
+   "instruction": "No change needed; the structure is verifiable and accurate.",
+   "movement": "improved"
+  },
+  {
+   "dimension": "RT9",
+   "score": 4,
+   "evidence": "The `premise` explicitly states the dilemma: \"The central dilemma is whether truth is worth the suffering: Cypher argues that ignorance is bliss (blue pill), while Neo argues that even painful truth is preferable to comfortable lies (red pill),\" highlighting two defensible sides.",
+   "instruction": "No change needed; the dilemma is clearly stated with two sides.",
+   "movement": "improved"
+  },
+  {
+   "dimension": "RT10",
+   "score": 4,
+   "evidence": "The `premise` explicitly states the mechanical connection: \"Neo's strength is his latent ability to believe... but his vulnerability is his chronic doubt (which prevents him from accessing it until he makes a selfless choice).\"",
+   "instruction": "No change needed; the identification value is specific and mechanically connected.",
+   "movement": "improved"
+  },
+  {
+   "dimension": "R1",
+   "score": 5,
+   "evidence": "All checkable claims in the `premise`, `setting`, and `dramatic_structure` fields check out against the source text, including the year uncertainty and scene indices.",
+   "instruction": "No change needed.",
+   "movement": "improved"
+  },
+  {
+   "dimension": "R2",
+   "score": 4,
+   "evidence": "The `style.prose_touchstones` no longer includes actor names or external cultural references like \"Philip K. Dick\" that were not in the text; the remaining touchstones are derived from the script's style.",
+   "instruction": "No change needed; leakage is minimized.",
+   "movement": "improved"
+  }
+ ],
+ "mechanical": {
+  "scene_count_match": true,
+  "dialogue_ratio_match": true,
+  "entity_resolution": "full (all places in setting.places are present in scene_headings)",
+  "plot_ids_resolvable": "no explicit plot IDs, only premise",
+  "sums_check": "n/a"
+ },
+ "gate": {
+  "min_score": 3,
+  "mean": 3.74,
+  "passed": false
+ },
+ "verdict": {
+  "decision": "revise",
+  "top_instructions": [
+   "Add a `plots` array with four distinct objects (Main Character, Antagonist, Relationship, Character Growth), each with a 1-3 sentence causal chain, to satisfy RT5 and RT6.",
+   "Split `audience` into distinct primary and secondary groups with different engagement reasons to satisfy RT2.",
+   "Remove `constraints.target_word_count` or replace it with a value derived from the actual word count of the provided screenplay to satisfy D."
+  ]
+ }
+}

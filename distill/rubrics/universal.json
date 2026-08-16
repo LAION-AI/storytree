@@ -1,0 +1,85 @@
+{
+  "rubric_id": "universal",
+  "version": 1,
+  "title": "Universal dimensions (apply to every node type)",
+  "provenance": "Verbatim from docs/07-quality-evaluation.md §1.2. Do not re-word: scores are only comparable across the GLM/Qwen passes and this pipeline if a 3 means the same thing in all of them.",
+  "posture": "Hard marking. 3 is 'acceptable, would survive review with notes', not 'good'. A layer that fills every schema slot correctly and adds no judgement scores 3 at best on the dimensions that matter.",
+  "scoring_rules": [
+    "Integers 1-5 only. No half points.",
+    "Every score requires one sentence of evidence naming a specific field or quoting text. A score without a field reference is not a score.",
+    "Score the node as delivered, not as it could be read charitably.",
+    "Where a fault is caused by an upstream layer, score whether this node propagated it without flagging, and record the upstream cause in commentary."
+  ],
+  "dimensions": [
+    {
+      "id": "A",
+      "name": "Internal consistency",
+      "question": "Does the node contradict itself?",
+      "anchors": {
+        "1": "Load-bearing self-contradiction: a field asserts something another field of the same node denies, and a downstream consumer following either would break. Actors named in prose are absent from the participant list; a declared change has identical before and after.",
+        "3": "Coherent on the spine, with peripheral drift: a label that does not match the content it labels, a date or ordering that does not survive arithmetic, one field written to a different draft than its neighbours.",
+        "5": "Every field survives cross-checking against every other field of the node, including arithmetic on dates, sums, ranges and enumerations."
+      }
+    },
+    {
+      "id": "B",
+      "name": "Referential integrity",
+      "question": "Do the node's pointers resolve, in both directions?",
+      "anchors": {
+        "1": "Most identifiers do not resolve to any declared entity/plot/step, or the node names abstractions in a slot the schema reserves for ids. The graph edge is broken.",
+        "3": "All pointers resolve, but the node is under- or over-declared: a relationship the node participates in is not listed, or a required self-identifier is missing while the containing key supplies it by accident.",
+        "5": "Every id resolves, every reciprocal declaration exists in the target node, and the node's own identifier is present and correct."
+      }
+    },
+    {
+      "id": "C",
+      "name": "Specificity (the transplant test)",
+      "question": "Paste this node into a different work, changing only proper nouns. Does it still fit?",
+      "anchors": {
+        "1": "It fits anywhere. Category vocabulary and stock phrasing throughout — 'she is driven by her past', 'the conflict escalates', 'he must confront his fears'. Nothing in it could only be true of this story.",
+        "3": "Mixed. The nouns are this story's; the claims about them are generic. Traits are listed as abstractions ('precision, integrity, duty') rather than as behaviours with a shape.",
+        "5": "Transplanting it produces nonsense, because its content is welded to particulars — an observable behaviour, a measurement, a physical detail, a prohibition specific to this person or place."
+      }
+    },
+    {
+      "id": "D",
+      "name": "Schema and instruction compliance",
+      "question": "Does it obey the contract it was handed — including the instructions that are not schema-enforceable?",
+      "anchors": {
+        "1": "A hard schema violation (missing required field, value outside a closed enum), or total non-compliance with an instruction the prompt singles out as the failure it exists to prevent.",
+        "3": "Schema-valid and mostly compliant, with one clear breach of a stated standing rule that the validator does not catch (a forbidden tic, a length budget, a register rule).",
+        "5": "Schema-valid, and the unenforceable instructions are visibly obeyed — including the ones the model could have skipped without detection."
+      }
+    },
+    {
+      "id": "E",
+      "name": "Dramatic competence",
+      "question": "Judged against the craft sheet the pipeline itself injects (Frey I & II + screen craft).",
+      "anchors": {
+        "1": "Fails the Mamet test outright: nobody wants anything from anybody, nothing is at risk, no value flips. Or the opposition is a wall rather than an agent. A 'blah-blah' unit the craft sheet says should be deleted.",
+        "3": "A real conflict exists and something changes, but the movement is sequential rather than escalating, or the resistance is declared and never acts, or the unit takes the timid option where a harder one was available.",
+        "5": "Insistence versus resistance with both sides at maximum capacity; the pressure rises by a measurable step; a named value flips; the opposition's position is one a reader could hold."
+      }
+    },
+    {
+      "id": "F",
+      "name": "Psychological plausibility",
+      "question": "Are the minds in this node people, or are they mechanisms with feelings attached?",
+      "anchors": {
+        "1": "Motivation is asserted, not traced. States are labelled ('she was afraid', 'he felt guilty') rather than produced. Characters know things about themselves no person knows about themselves.",
+        "3": "Coherent and defensible, but mostly re-description: the psychology restates the behaviour it is supposed to explain, with no mechanism connecting wound to habit to choice.",
+        "5": "Traits trace to causes; what is felt and what is expressed differ and the gap leaks; the character's self-model is wrong in a way that will cost them something."
+      }
+    },
+    {
+      "id": "G",
+      "name": "Independent-writer band (the anti-fake dimension)",
+      "question": "In band: given exactly these inputs, could a different competent writer have landed here? Load-bearing: could they have produced this WITHOUT the inputs?",
+      "anchors": {
+        "1": "Out of band and not load-bearing: the node ignores explicit constraints it was handed and contains nothing the inputs supplied. Arbitrary and generic at once.",
+        "3": "In band, but the inputs did little work: this is the first and most obvious move available, essentially a restatement of the layer above in the local vocabulary.",
+        "5": "In band, and unreachable without the inputs: the node makes a choice that is defensible, non-obvious, and demonstrably derived from a specific thing established upstream."
+      }
+    }
+  ]
+}
