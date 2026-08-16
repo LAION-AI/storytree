@@ -454,6 +454,11 @@ def _flatten_text(node) -> str:
 
 def grade(score: dict) -> tuple[str, list[str]]:
     """Turn the metrics into a pass/warn verdict with named gaps."""
+    # An empty psychology list is not a thin document, it is an absent one.
+    # Scored by summing over the blocks, zero blocks produced a clean sheet and
+    # a `pass`. Fail it explicitly before any other rule runs.
+    if not score.get("characters"):
+        return "fail", ["no psychology block was produced at all"]
     gaps = []
     if score["characters"] and score["tom_depth3"] < score["characters"]:
         gaps.append("not every character reasons to the third degree")

@@ -1,0 +1,40 @@
+ENSEMBLE · writer=glm-5.2-abliterated-q3km @ http://127.0.0.1:8099/v1
+           clerk =qwen3.8-27b @ http://127.0.0.1:8107/v1
+
+  === sc-001 ===
+      GLM   craft                     137s  out= 2,904   21.2 t/s
+      GLM   psych.ch-01               343s  out= 6,674   19.4 t/s
+      GLM   psych.ch-02               372s  out= 7,271   19.5 t/s
+      GLM   specimen                   97s  out= 1,872   19.3 t/s
+      Qwen  bookkeeping                 5s  out=   162   32.7 t/s
+    15.9 min · 14,136 words · 1 changes from a 13-term vocabulary
+    code problems 1 · grounding 1 · inexpressible 0 · pass
+      ! change[0]: no-op, "searching" unchanged
+
+  === sc-002 ===
+      GLM   craft                      87s  out= 1,887   21.6 t/s
+      GLM   psych.ch-04               326s  out= 6,482   19.9 t/s
+      GLM   specimen                  106s  out= 2,258   21.3 t/s
+      Qwen  bookkeeping                 6s  out=   302   53.4 t/s
+    8.8 min · 8,009 words · 1 changes from a 3-term vocabulary
+    code problems 0 · grounding 1 · inexpressible 2 · pass
+      ~ could not express: The analysis asserts that Smith's contempt for the system is 'sealed behind professional f
+      ~ could not express: The analysis details Smith's internal psychological state (humiliation, nausea, contempt) 
+
+  === sc-003 ===
+      GLM   craft                     152s  out= 2,681   17.6 t/s
+      GLM   psych.ch-02               374s  out= 7,166   19.1 t/s
+      GLM   specimen                  100s  out= 2,015   20.2 t/s
+      Qwen  bookkeeping                 6s  out=   342   54.6 t/s
+    10.5 min · 8,917 words · 1 changes from a 3-term vocabulary
+    code problems 1 · grounding 1 · inexpressible 2 · pass
+      ! change[0]: no-op, "unspoken" unchanged
+      ~ could not express: The analysis asserts that Trinity's belief in Neo as the One is 'uncertain' (or at least n
+      ~ could not express: The analysis describes Trinity's physiological state (heart rate, adrenaline, tremor) and 
+
+======================================================================
+  3 scene(s) · 35.2 min wall
+  writer: 10 calls, 41,210 out, 34.9 min
+  clerk : 3 calls, 806 out, 0.3 min (1% of model time)
+  thinking suppressed: yes
+  -> runs/matrix/transitions_ensemble

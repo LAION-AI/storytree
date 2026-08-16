@@ -1,0 +1,14 @@
+ENSEMBLE · writer=glm-5.2-abliterated-q3km @ http://127.0.0.1:8099/v1
+           clerk =qwen3.8-27b @ http://127.0.0.1:8107/v1
+
+  === sc-001 ===
+      GLM   craft                     144s  out= 2,479   17.2 t/s
+      GLM   specimen                  132s  out= 2,856   21.7 t/s
+      Qwen  bookkeeping                12s  out=   856   70.0 t/s
+    4.8 min · 4,443 words · 1 changes from a 13-term vocabulary
+    code problems 0 · grounding 1 · inexpressible 6 · pass
+      ~ could not express: The analysis states that 'Every named character is at their starting state: Neo is an unaw
+      ~ could not express: The analysis states that 'the Oracle's prophecies are unspoken', which aligns with ch-02.o
+
+  === sc-002 ===
+Terminated

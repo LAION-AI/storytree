@@ -1,0 +1,315 @@
+{
+ "binding": {
+  "scene_id": "sc-003",
+  "location": "HEART O' THE CITY HOTEL",
+  "time_of_day": "UNSPECIFIED",
+  "on_screen": [
+   "ch-02"
+  ]
+ },
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-003",
+  "ordinal": 3
+ },
+ "situation": "Trinity is cornered on an upper floor of the Heart O' The City Hotel. Three officers have her at gunpoint. She has just witnessed the arrival of Agent Smith and his colleagues — entities that supersede police authority and operate with insectoid precision. The room contains a rotary-dial telephone that is her only exit. The officers do not understand what is about to happen to them; the Agents are now in the building and ascending. The tracking bug remains in Smith's possession, unused.",
+ "craft": {
+  "audience_need": "The audience has been given two scenes of mounting dread — first the police raid, then the Agents' arrival that reframed the police as irrelevant. The implicit promise is a demonstration of what these people are actually running from. The audience needs to see Trinity execute an escape that violates perceived physical limits, establishing that the rules of this world are not what they appear. This is the hook's payoff: the first tangible proof that the film's reality is breakable. The science-fiction audience specifically needs a tonal anchor — the Gibson-noir texture of competence under impossible pressure — that will make the later exposition feel earned rather than dumped. Without this demonstration, Morpheus's later offers and explanations would arrive in a vacuum of credibility.",
+  "genre_convention": "The cyberpunk thriller convention here is the 'impossible escape' — the moment where the protagonist's side demonstrates capability that recontextualizes everything the audience has seen. The genre leads the audience to expect Trinity will escape, and this node satisfies that expectation while deliberately refusing to explain HOW she can do what she does. The refusal is the point: the gap between what the audience sees (Trinity running up a wall, defying gravity) and what they can explain creates the curiosity that drives the next several scenes. The genre also demands that the escape come at visible cost — not free superpowers but a practiced, desperate competence that leaves her shaken.",
+  "theme_and_style": "The story root's theme — that perceived reality is a construct meant to constrain — demands that this first demonstration of rule-breaking be visceral and physical, not abstract. The plain register with varied sentence length means the escape is described in concrete physical detail: the feel of the wall under her palms, the sound of the phone receiver, the crack of plaster. The forbidden tics apply directly: no interior monologue, so Trinity's calculation must be visible in her eyes and hands; no summarizing in dialogue, so any communication is pure action; no sentimentality, so her fear registers as physiological response not stated emotion. The Gibson touchstone means the escape should feel like watching a master hacker exploit a system vulnerability in real time — the Matrix as code made visible through physical action.",
+  "dramatic_function": "This node closes the cold-open sequence by completing the escape that was threatened in sc-001 and redefined in sc-002. It establishes three things the story cannot function without: (1) Trinity is capable of actions that defy known physics, which makes her later combat effectiveness credible without further exposition; (2) the rotary phone is a hardwired exit point whose destruction would mean death — this rule, shown not told, becomes the mechanical stakes for every subsequent Matrix sequence; (3) the Agents are fast enough to nearly catch a person who can run up walls, which calibrates their threat for the entire film. The escape also plants the structural pattern for the climax: a desperate race to a ringing phone with Agents closing in, which will be repeated and inverted at the film's end.",
+  "tension_management": {
+   "entering": 78,
+   "leaving": 92,
+   "how": "The unit enters at peak immediate threat — officers with drawn weapons, Agents ascending. The tension appears to be about whether Trinity can escape the room, but the real tension mechanism is the CLOCK: the Agents' approach compresses the window. Each beat of Trinity's escape is timed against an unseen countdown (footsteps in the hall, the elevator indicator). The unit raises tension by making the escape succeed against the officers but then revealing the escape was never the real problem — the Agents are the problem, and they are faster than anything human. The tension leaving at 92 rather than 100 because Trinity escapes: the immediate threat resolves but the larger threat (what just chased her, what kind of world allows what she just did) is now fully open. The audience leaves with more questions than they entered with, which is the structural purpose of a cold open."
+  },
+  "why_now": "This node must happen now because it is the third beat of a three-beat cold open that establishes the playing field before the story proper begins. Sc-001 established the threat (police raid, cornered target). Sc-02 escalated the threat (the Agents' arrival, reframing the police as pawns). The three-beat structure demands a resolution that demonstrates the stakes through action rather than exposition. If this node were delayed — if we cut to Neo's apartment before showing the escape — the audience would carry unresolved tension that would contaminate the slower character-building scenes. The escape must be shown NOW so that when we meet Neo in his mundane world, the audience already knows what kind of reality exists beneath the surface of his. The juxtaposition is the point: Neo's ordinary life viewed through the lens of what we just witnessed creates dramatic irony from the first frame of his scenes.",
+  "why_not_otherwise": [
+   {
+    "alternative": "Cut directly from sc-002 (Agents arriving) to Neo's apartment, leaving Trinity's fate unresolved and returning to it later via flashback or dialogue summary.",
+    "rejected_because": "This violates the cold-open compact with the audience. Two scenes of mounting threat that cut away before resolution read as a bait-and-switch, not a hook. The audience would feel manipulated rather than intrigued. Additionally, the film's structure requires that the audience see the Agents' capabilities and the phone-exit mechanic demonstrated before Neo enters the story, so that his later encounters with both land with proper weight. Summarizing the escape later through dialogue would violate the 'no summarizing prior events in dialogue' tic and would rob the demonstration of its visceral, rule-establishing function.",
+    "nearly_chosen": true,
+    "what_would_flip_it": "If the production envelope specified a much shorter total scene count or if the cold open were structured as a single continuous sequence rather than three discrete scenes, cutting to Neo earlier would be necessary. A version of the film that front-loaded Neo's perspective and treated the opening as a flash-forward would also flip this — but that would be a fundamentally different film that treats Neo's mundane reality as the primary frame rather than the secret world as the established reality the audience must first accept."
+   },
+   {
+    "alternative": "Show the escape from the Agents' perspective — Smith and Brown pursuing Trinity through the hotel, demonstrating their superhuman speed and coordination as they close on her.",
+    "rejected_because": "This would invert the audience identification at the wrong moment. The audience has been positioned with Trinity as the sympathetic figure for two scenes; switching to the pursuers' POV would require establishing their interiority, which is premature. The Agents' threat is more effective when experienced as an implacable force seen from the victim's perspective — their insectoid quality (established in sc-002) depends on them being perceived as functions rather than subjects. Giving them POV shots this early would humanize them before the story has earned the later revelation that Smith has a human motivation. The escape must be experienced FROM the pursued side to calibrate the audience's fear correctly.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "If the story's structure treated the Agents as viewpoint characters from the beginning — a version of the film that was as much about Smith's experience as Neo's — then their-perspective escape sequences would be structurally appropriate. That would be a fundamentally different narrative architecture."
+   },
+   {
+    "alternative": "Have Trinity captured here, and structure the opening as her rescue by Morpheus's crew, introducing the crew through action rather than introducing Neo first.",
+    "rejected_because": "This would make Trinity a damsel rather than a competent operator, undermining her character before it is established. It would also front-load the crew in a way that competes with Neo's protagonist introduction. The story's structure requires that the crew be introduced gradually through Neo's eyes, each member earning their character beat. Showing them as a rescue team this early would flatten them into functions. Trinity's competence must be established BEFORE her vulnerability is shown later, so that the audience understands she is capable but outmatched, rather than simply helpless.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "If the story were structured as an ensemble heist narrative rather than a protagonist-awakening narrative, introducing the full crew through a rescue operation would be the natural opening. That is a different film — a team story rather than a chosen-one story."
+   }
+  ],
+  "promises": {
+   "made": [
+    "The Agents are fast enough to nearly catch someone who can defy physics — calibrating their threat for the entire film",
+    "Hardwired phones are exit points and their destruction means death — the mechanical stakes for every future Matrix sequence",
+    "Trinity possesses combat and escape capabilities that exceed normal human limits — her later effectiveness is now credible",
+    "The world has rules that can be bent by those who know them — the central premise demonstrated, not explained",
+    "The Agents will pursue anyone who threatens the system with relentless, coordinated precision — the ongoing antagonistic pressure"
+   ],
+   "kept": [
+    "Sc-001's cliffhanger (Trinity cornered at gunpoint) resolves through demonstrated capability rather than external rescue",
+    "Sc-002's escalation (the Agents' arrival as a superior threat) pays off as the actual force Trinity must flee, not the police",
+    "The implicit promise of the cold open — to show rather than tell what kind of story this is — is fulfilled through action"
+   ]
+  }
+ },
+ "interaction": {
+  "what_collides": "Trinity's need to reach the hardwired telephone and exit the Matrix collides with the closing window of opportunity as Agents ascend the building. The officers represent a conventional threat she can overcome with skill; the Agents represent an existential threat she can only outrun, not defeat. The fundamental opposition is between a human who has learned to exploit the system's rules and agents of the system itself who are bound by those rules but operate at their maximum parameters.",
+  "power_balance": "Trinity holds tactical advantages: knowledge of the building layout, practiced combat skills that exploit Matrix physics, and a pre-planned exit route. The officers hold positional advantage (three weapons, her cornered) but lack understanding of what they are dealing with. The Agents hold overwhelming superiority in speed and authority but are arriving from a distance. During the unit, the balance shifts twice: first when Trinity neutralizes the officers (her skill overcomes their position), then when the Agents' proximity becomes the real threat (their speed overcomes her head start). She escapes not by defeating the superior force but by reaching the exit before the window closes — the narrowest possible margin.",
+  "information_asymmetry": "The officers do not know what Trinity is, what she can do, or what is coming up the elevator behind them. They believe they are conducting a standard arrest. Trinity knows exactly what the Agents are and that the officers are about to become irrelevant — she may even feel something approaching pity, though the scene cannot stop to express it. The Agents know Trinity's likely exit strategy (they have hunted others before) but do not know the exact timing or which phone she will use. Trinity's advantage is specificity; the Agents' advantage is inevitability.",
+  "turning_point": "The pivot occurs when Trinity's escape from the officers — which appeared to be the scene's central conflict — is revealed as merely the first layer. The real turning point is the moment she reaches the phone and the audience understands that the phone is not a convenience but a lifeline: the call must connect, the line must be intact, and the Agents must not reach her before the signal completes. The scene pivots from 'can she fight her way out' to 'can she reach the exit before the clock runs out,' and the clock is the Agents' footsteps."
+ },
+ "psychology": [
+  {
+   "entity": "ch-02",
+   "entering_state": "A combat veteran mid-extraction, running on trained reflex and the cold arithmetic of a countdown she has run before. The prophecy sits in her like a splinter she has grown around — present, silent, irrelevant to the next thirty seconds. She is not thinking about love. She is not thinking about Neo. She is thinking about the distance between her body and a rotary telephone, and the rate at which that distance is closing on both ends.",
+   "perception": {
+    "sight": "Three officers spread in a loose arc, weapons up, their stances textbook — isosceles grips, weight forward, the training-school geometry of men who have never fired at something that moves like she does. Muzzle apertures black and steady. The room is a residential hotel suite faded to amber: stained carpet, a bed with a stripped mattress, water-stained ceiling. The rotary phone sits on a nightstand — beige Bakelite, coiled cord, the dial face chipped. Window behind her: fire escape, alley, a six-floor drop to asphalt. The door to the hallway is closed but not locked. She can see the officers' pupils — dilated, adrenaline-wide, the micro-tremor in their forward hands. They are afraid of her and they do not know why. The light is the sickly yellow of old incandescent bulbs.",
+    "sound": "Three hammers clicking to the rear — the mechanical cough of safeties disengaging, which she has mapped to a specific time interval in her training. Breathing: three sets of lungs, one ragged, two controlled. The radiator ticking. Beyond the wall, the elevator motor engaging — a deep mechanical thrum that climbs through the floor. Footsteps in the stairwell, synchronized, inhumanly regular. The rotary phone is silent. It needs to ring. It has not rung yet. The absence of that sound is the loudest thing in the room.",
+    "touch": "Carpet under her boot soles, coarse and thin. The wall at her back is plaster over brick, cold through her jacket. Her palms are dry — a trained response; she has been here before. The leather of her jacket creaks as she shifts weight to the balls of her feet. The phone is six meters away. She can feel the distance the way a musician feels meter.",
+    "smell": "Stale cigarette smoke soaked into the carpet over years. Sweat — her own, clean and sharp. The metallic ozone scent she has learned to associate with Agent proximity, faint, like air before lightning. The officers' cologne, drugstore aftershave, one of them reeking of it — the smell of men who showered and came to work not knowing they would die today.",
+    "taste": "Adrenaline: copper on the back of her tongue, the taste of a bitten cheek. She bit the inside of her cheek at some point in the last ninety seconds and did not notice. The blood is minimal but present.",
+    "interoception": "Heart rate elevated but governed — she has trained to keep it below 140 in combat, the threshold above which fine motor control degrades. It is at 130 and climbing. Her hands are steady because her hands are always steady; the steadiness is a product of practice, not calm. A cold weight in her sternum that she has learned to read as the body's assessment of mortality probability, not as fear. Nausea suppressed and compartmented. The old injury in her left shoulder from a previous extraction aches under the adrenaline — she does not think about it, but it informs which shoulder she leads with.",
+    "proprioception": "Weight distributed sixty-forty, left foot forward, spine against the wall at a angle that allows explosive lateral movement in two directions. Knees slightly bent. Hands open, fingers spread, at hip height — not a surrender posture but a loading posture. She knows precisely where every officer is in three-dimensional space because she has been tracking their micro-movements since they entered. Her body is a system she has spent years optimizing for exactly this configuration of threat.",
+    "attention": "She is attending to the elevator motor and the stairwell footsteps, not the officers. The officers are a problem she has already solved; her mind ran the combat simulation in the first two seconds and the outcome is deterministic. What she is tracking is the second problem — the one she cannot solve, only outrun. She is counting. The footsteps have a cadence of approximately 180 per minute, which means Agents covering three stairs per stride. She is calculating arrival time against the phone, which has not rung. She is failing to notice that her left hand has developed a tremor — not from the officers, from the sound of the footsteps."
+   },
+   "appraisal": {
+    "value_at_stake": "Survival of the operative — her own life as a node in a network she considers more important than any individual in it, including herself. The mission requires she return alive. Morpheus needs every operator. Her death is not a personal catastrophe but a strategic loss, and she appraises it in those terms.",
+    "valence": -70,
+    "arousal": 92,
+    "self_conscious_emotion": "None active. The situation does not permit the luxury of self-evaluation. In the aftermath — if there is an aftermath — she will feel the cold shame of having been cornered at all, of requiring extraction, of the officers who will die because they were standing between her and the Agents. That shame is deferred, not absent.",
+    "moral_reading": "The officers are conscripts in a system that enslaves every human being alive. They are not enemies; they are obstacles animated by a framework they cannot perceive. Killing them is closer to euthanasia than murder in her moral architecture — they are already dead, have been dead their entire lives, are serving as antibodies in a body that is itself the disease. She does not enjoy this reading. She has made peace with it because the alternative is paralysis. The Agents are something else: not conscripts but the system's deliberate expression. They are what the code looks like when it wants to kill you. There is no moral ambiguity about them.",
+    "somatic_marker": "The cold weight in her sternum intensifies when she hears the elevator engage. This is not the officers — her body processed their threat in seconds. This is the deeper recognition: the sound means she has less time than she calculated. The marker manifests as a sharpening of visual acuity, tunnel vision beginning at the edges, time perception dilating. Her body is preparing for maximum-effort physical output and she has not yet decided to move."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "Operational discipline: an extraction operative does not panic, does not hesitate, does not deviate from the exit protocol once initiated",
+     "Loyalty to the crew: her survival is a resource belonging to Morpheus and the mission, not to her",
+     "Combat efficiency: minimum necessary force, minimum necessary time, no improvisation that compromises the exit window",
+     "The unwritten rule of the hunted: you do not let the Agents see you calculate. You move. You keep moving. You do not stop to think about what they are."
+    ],
+    "how_others_would_judge": "The officers would judge her as a dangerous fugitive — a terrorist, in the language of the system they serve. They would be wrong in every particular except 'dangerous.' The Agents would not judge her at all; she is a variable to be eliminated, not a moral subject.",
+    "how_absent_others_would_judge": "Morpheus would judge her on whether she made it back. The crew — Tank at the operator console, Dozer monitoring the signal — would judge her on whether she followed protocol or freelanced. Tank is listening to the open line right now. His silence is the judgment. If she dies here, she dies knowing Morpheus will lose another operative and the guilt of that loss will settle on the people who sent her in. She carries that.",
+    "standing_at_risk": "Her standing as a competent operative — one of the few who can run an extraction under Agent pursuit and return alive. Every successful extraction is proof the system can be beaten; every failed one is evidence it cannot. She is not just risking her life. She is risking the argument that the war is winnable.",
+    "norm_conflict": "Combat efficiency says minimum force. The exit window says maximum speed. These are in tension because maximum speed against three armed officers requires maximum force, and maximum force means officers who may survive with a concussion instead of officers who are certainly unconscious. She resolves this in favor of speed. The exit window governs all other considerations."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-04",
+     "d1": "Smith is the senior Agent and will enter through the most efficient route — the elevator, not the stairs. He will not negotiate, will not hesitate, will not make a tactical error that a human opponent would make. He is a function. He optimizes. She believes he has hunted operatives before her and that his pursuit pattern is learned, not instinctive — which means it has exploitable regularities, but the regularities are narrow and the margin for exploiting them is measured in fractions of seconds.",
+     "d2": "Smith believes she will run for the nearest hardline, which is this phone. He is correct. She believes he has already mapped every hardline in a six-block radius and is routing to the most probable one. She cannot deceive him about her destination because there is no alternative destination. This is the cruelest aspect of the pursuit: the exit is known to both parties.",
+     "d3": "Smith believes she believes she can make it. He is calculating whether to arrive before the call connects or to arrive during the narrow window when the signal is transferring — the latter allowing him to sever the connection and trap her. She believes he is making this calculation and that he will choose to arrive before, because severing a transferring signal risks leaving evidence in the system that his superiors would not want. She is not certain of this. The uncertainty is a three-second variable in a two-second equation.",
+     "accuracy": "She is wrong about Smith's risk-aversion regarding evidence. Smith does not answer to superiors who care about evidence traces; he answers to the system's optimization function, which prioritizes capture over cleanliness. He will arrive during the transfer window if he can, not before, because trapping an operative mid-extraction is more valuable than preventing one. Her model of him as a function is correct; her model of what the function optimizes for is wrong. The error will cost her the margin she thinks she has."
+    },
+    {
+     "other": "ch-11",
+     "d1": "Brown will take the stairwell because Agents divide routes to compress the target's decision space. Brown is the faster of the two pursuing — she has observed this in previous encounters, his movement patterns are more economical than Jones's. He will not pause at the door; he will come through it. The door is not an obstacle to him. It is a surface.",
+     "d2": "Brown believes she is calculating his arrival time and will attempt to leave before he breaches. He is correct. He is also calculating her calculation and will attempt to arrive faster than her model predicts, because he knows she is modeling him. This is a recursive loop that favors the party with greater speed, and he has greater speed.",
+     "d3": "Brown believes she believes the stairwell is the slower route and that she has time. She does believe this. She is wrong. Brown's speed on stairs exceeds her model because Agents do not experience the micro-delays of human footwork — they move as continuous flow, not as discrete steps. Her model of his speed is based on human kinematics with a multiplier applied, and the multiplier is too low.",
+     "accuracy": "She is wrong about the magnitude of the speed differential. She has applied a 2x multiplier to human baseline; the actual differential is closer to 3x on vertical surfaces. This means her time-to-contact calculation has an error of approximately four seconds, and four seconds is the difference between a completed transfer and a severed connection. She does not know she is wrong. She will discover it when the door comes in."
+    },
+    {
+     "other": "ch-06",
+     "d1": "Tank is at the operator console, monitoring her signal, and has the hardline queued for dialing. He is waiting for her to reach the phone. He will dial the moment she confirms contact. He is afraid. She can hear it in the quality of the silence on the line — the absence of the usual keyboard sounds, which means his hands are not on the keys, which means he is watching a signal trace and not breathing.",
+     "d2": "Tank believes she is going to make it because he has to believe it. His operational role requires him to maintain the extraction protocol as if it will succeed, because if he begins processing failure he will hesitate at the moment she needs him to be fastest. She counts on this. She needs his belief even though she knows it may be unfounded.",
+     "d3": "Tank believes she believes the line will hold. She does not believe this; she knows the line may not hold, but she also knows that Tank's belief is load-bearing in the extraction architecture. If she signaled doubt, his hesitation would compound her danger. She performs certainty for him because his certainty is a component of her survival.",
+     "accuracy": "She is correct about Tank's fear and his location. She is wrong about his capacity to accelerate the dial sequence — Tank has already pre-loaded the connection and is holding it at the final handshake, which means the transfer will be faster than she models. This is the one error in her favor. It will not be enough to fully offset the errors in the other direction."
+    }
+   ],
+   "urges": {
+    "cravings": "None active. The body's appetite systems have been suppressed by sympathetic activation. She will not eat or drink until the extraction is complete and the adrenaline has cleared.",
+    "physical_needs": "The bitten cheek needs nothing. The left shoulder needs rest and anti-inflammatory medication she will not receive for hours. The sleep deficit from three days of mission preparation is being masked by catecholamines and will collapse on her within an hour of extraction. None of these matter in the next thirty seconds.",
+    "psych_needs_conscious": "To reach the phone. To hear it ring. To complete the transfer before the stairwell door opens. To return to the Nebuchadnezzar and debrief Morpheus on the intelligence gathered. These are the needs she can name.",
+    "psych_needs_unconscious": "To prove that the five who died before her did not die because the mission is impossible — that their deaths were bad luck and not inevitability. Each extraction she survives is evidence against the hypothesis that the system always wins. She does not frame it this way. She would deny it. But the intensity with which she calculates, the margin she is willing to shave, is calibrated to a need that goes beyond duty.",
+    "avoidances": "She is avoiding the thought that the officers in this room are the same order of being she was before Morpheus found her — that they are her, minus the red pill, minus the awakening. She avoids this because the avoidance is load-bearing. If she sees herself in them, the combat efficiency norm collapses. She has built a compartment for this and she does not open it during operations."
+   },
+   "impairments": {
+    "physical": "Left shoulder: chronic instability from a previous extraction injury, treated with kinesiology taping she applied before the mission. It reduces her striking power on the left side by approximately fifteen percent and she compensates by leading with the right. The bitten cheek is trivial. Sleep deprivation: approximately forty hours, compensated by adrenaline, which will produce a crash post-extraction.",
+    "medical": "None chronic. No current medications. The shoulder injury was never surgically repaired because surgical repair requires resources the Nebuchadnezzar does not have.",
+    "magical": "None.",
+    "chemical": "Endogenous catecholamines at combat levels. No exogenous substances.",
+    "coercive": "The Agents represent an existential coercive force — not a threat to compel compliance, but a threat to compel flight. The phone represents a coercive deadline. She is not being forced to act against her will; her will and the coercion are aligned in the same direction, which is away.",
+    "cognitive": "She cannot think about the prophecy. Not will not — cannot. The cognitive architecture that would process the Oracle's words is compartmented behind operational focus, and the compartment will not open while the sympathetic nervous system is at this level of activation. This is not a choice; it is triage. The prophecy is a problem for the person who exists after the adrenaline clears, and that person does not exist yet.",
+    "net_effect": "The physical impairments reduce her combat margin by approximately fifteen percent on her left side. The sleep deprivation has not yet manifest in cognitive deficit because adrenaline is masking it, but it will produce a sharp degradation in judgment within ninety minutes of extraction. The cognitive compartmentalization is, in this moment, adaptive — it prevents the paralysis that processing the prophecy would produce. In a different moment, the same compartmentalization will be the thing that prevents her from saying what needs to be said. But that moment is not now."
+   },
+   "deliberation": {
+    "framing": "She frames this as a time-distance problem with a binary outcome: she reaches the phone before the Agents reach her, or she does not. The officers are not part of the problem; they are a static obstacle with a known solution. The Agents are the variable. The phone is the constraint. Everything else — the officers' lives, her own fear, the moral weight of what she is about to do to three men who do not understand what they are — is excluded from the frame because including it would add latency to a calculation that has no latency to spare.",
+    "options_weighed": [
+     {
+      "option": "Surrender to the officers, allow arrest, attempt extraction from police custody at a later point",
+      "predicted_outcome": "Agents arrive within 90 seconds of arrest, assume direct control over an officer, and kill her in the holding cell. No subsequent extraction opportunity. Death certain.",
+      "cost": "Certain death. Eliminated."
+     },
+     {
+      "option": "Neutralize officers, reach phone, complete transfer before Agents breach",
+      "predicted_outcome": "Escape with approximately 4-second margin based on current Agent speed calculations. Officers survive with non-lethal injuries if the first three strikes are precise enough to incapacitate without cranial trauma.",
+      "cost": "Officers injured; risk of lethal force if they fire during the approach; margin too narrow to absorb error."
+     },
+     {
+      "option": "Neutralize officers, exit via window to fire escape, descend to street level, reach secondary hardline four blocks east",
+      "predicted_outcome": "Agents track via building security systems and street cameras. Secondary hardline is in a public location with no cover. Pursuit time approximately 120 seconds; secondary hardline dial time approximately 8 seconds. Margin: 112 seconds of open-ground flight with Agents in pursuit. Agents' speed on open ground exceeds hers.",
+      "cost": "Greater exposure time. Agents adapt to route changes. Eliminated."
+     },
+     {
+      "option": "Neutralize officers with lethal force to minimize engagement time, reach phone",
+      "predicted_outcome": "Fastest resolution. Officers dead in under 3 seconds. Additional 2-3 seconds of margin on the phone window.",
+      "cost": "Three humans dead. The combat efficiency norm permits lethal force but does not require it when non-lethal is available within the time constraint. She has 3 seconds of margin to spend on keeping them alive. She will spend it."
+     }
+    ],
+    "reasoning": "The officers' stances tell her they will fire at the first lateral movement. The first mover in a three-shooter scenario absorbs the initial reaction delay of the other two — approximately 0.4 seconds per shooter, which gives her 1.2 seconds of relative advantage after she initiates. The wall is load-bearing plaster over brick, which means it will accept the force of a redirect. She does not need to defeat three shooters; she needs to pass through the space they occupy faster than their trigger fingers can track. The phone is six meters. At combat speed she covers six meters in 1.8 seconds. The officers' reaction time gives her 1.2 seconds of uncontested movement. She needs to be at the phone in 1.8 seconds, which means she has 0.6 seconds of contested time, during which she needs to be moving along a vector that presents the smallest possible target profile. The wall-run serves this: it is not flash, it is geometry. A target moving along a wall at shoulder height is outside the trained firing pattern of officers who practice against horizontal targets. The training creates the vulnerability. She is exploiting their competence, not their incompetence.",
+    "chosen_because": "Option two: neutralize with non-lethal force, reach phone. It preserves the officers' lives within the time margin available and reaches the exit with the calculated window intact. She chooses it because the margin exists and because spending it on keeping three humans alive is what separates her from the system she is fighting. If the margin did not exist, she would choose option four and carry the weight later. The margin exists. She will spend it on mercy.",
+    "known_unknowns": "She does not know the Agents' exact position in the building — only their vector and approximate speed. She does not know whether the hotel's internal camera system is feeding them her position in real time. She does not know whether the hardline has been compromised by the system since Tank's last verification. She does not know whether the officers will fire during her approach or freeze — their training says fire, but their bodies may say freeze. She is hedging against the hedge: moving along a path that is optimal whether they fire or freeze, because the wall-run is the fastest route to the phone regardless of their response."
+   },
+   "control": {
+    "mode": "compelled",
+    "felt": "Cold clarity at the center of a body running at maximum output. The fear is present but peripheral — she can feel it in the tremor of her left hand and the nausea she has suppressed, but it does not reach the decision-making apparatus. It is cordoned. What she feels at the center is the crystalline focus of a problem reducing itself to physics. This is what she was made for. This is what the training was for. The horror of that — that she is most alive when she is closest to dying — is another compartment she will open later.",
+    "expressed": "Nothing. Her face is a mask of operational calm. Her movements are fluid and deliberate. She does not grunt, does not scream, does not grimace. The only visible sign of extremity is the speed itself — the way she crosses the room is wrong for a human body, and that wrongness is the only thing the officers will have time to perceive.",
+    "divergence_reason": "The felt and the expressed diverge because the expressed is a weapon. An opponent who reads fear hesitates; an opponent who reads calm freezes. Her stillness of expression is tactical, not emotional. The fear is real; the calm is manufactured. The manufacturing is a skill she has practiced until it is indistinguishable from the real thing, which is its own kind of damage.",
+    "leakage": "The left hand tremor. It is minute — invisible to the officers at their distance, but present. It is the only channel through which the fear expresses, because the rest of the body is under conscious control and the left hand is not, because the left shoulder injury creates a proprioceptive feedback loop that bypasses her motor governance. If an observer were close enough, they would see the tremor. No one is that close.",
+    "inhibited_impulse": "The impulse to look at the phone. To check whether it is ringing. She inhibits this because turning her head breaks her spatial model of the officers' positions, and the spatial model is load-bearing for the next 1.8 seconds. She will know when it rings. She does not need to look. Looking would cost her 0.3 seconds she has budgeted for the wall-run approach vector."
+   },
+   "intention": "To neutralize the three officers with non-lethal force, cross the room to the rotary telephone, answer the hardline call, and complete the signal transfer out of the Matrix before Agents ch-04 and ch-11 breach the room. She intends to do this with a time margin she estimates at four seconds and to preserve the lives of the officers because the margin permits it and because preserving life where possible is the ethical floor of the resistance.",
+   "action": "She initiates from the wall. The movement is a single continuous action: she pushes off laterally, crosses the first officer's field of fire in a vector that his training cannot track — up the wall, using the plaster surface for the first two steps of a horizontal run that carries her across the visual field of all three officers at a height and speed their isosceles-stance training does not accommodate. She strikes the first officer's weapon hand with a precisely targeted blow that hyperextends the metacarpals, forcing the weapon drop. The second officer she takes with a lateral kick that connects with the brachial plexus, dropping him before his trigger finger completes its pull. The third officer she does not strike — she redirects his weapon hand into the wall, using his own momentum, and he collapses from the impact. Three officers down. She is at the phone. It is ringing. She lifts the receiver. She speaks the confirmation phrase. The transfer begins. The door to the stairwell begins to deform inward — Brown is on the other side, and the door is not slowing him. The signal transfer is not complete. She feels the pull of the extraction — the dissolution of the Matrix's sensory feed, the tingling extremities, the visual field beginning to pixelate at the edges — and she feels the door's frame crack. The two events are concurrent. The transfer completes as the door fails. She is gone. The phone receiver swings on its cord in an empty room.",
+   "trajectory": [
+    {
+     "phase": "on entering — the static problem",
+     "shift": "She enters the unit in a state of combat calculation, having already solved the officer problem and now tracking the Agent approach. Her cognitive state is narrowed to time-distance arithmetic. The prophecy, her feelings, everything non-operational is compartmented and sealed. She is, in this phase, a function: input (threat geometry), process (kinematic solution), output (movement). The human being who carries a prophecy and a growing attachment to someone she has never met is not present in this room.",
+     "trigger": "The unit opens with three officers at gunpoint — the static problem she has already solved. The trigger for her shift out of this phase is the elevator motor engaging, which converts the static problem into a dynamic one.",
+     "state_delta": {}
+    },
+    {
+     "phase": "the elevator engages — the clock starts",
+     "shift": "The sound of the elevator motor converts her cognitive state from calculation to execution. The frame changes from 'can I solve the officer problem' to 'the officer problem is no longer the problem.' Her arousal, already at 92, spikes toward the threshold where fine motor control begins to degrade. She begins a deliberate breathing pattern — four-count inhale, hold, four-count exhale — to keep her heart rate below 140. The decision to use non-lethal force crystallizes here, not from morality in the moment but from a pre-made decision tree she constructed long ago: if margin exists, preserve life; if margin does not exist, do not preserve life. She believes the margin exists. She has budgeted three seconds for mercy.",
+     "trigger": "The elevator motor's vibration transmitted through the building structure — a felt sensation in the floor and wall, confirming Agents are ascending by the fastest route and the countdown has begun.",
+     "state_delta": {}
+    },
+    {
+     "phase": "initiation — the room crosses",
+     "shift": "She moves. The transition from calculation to execution is instantaneous and total — there is no moment of hesitation, no final breath, no prayer. The body executes the plan the mind has constructed and in the execution the mind goes quiet. This is the state the training was designed to produce: pure action without the interference of conscious thought. She is, for approximately 1.8 seconds, the most dangerous object in the room. The officers are not enemies in this moment; they are surfaces in a parkour problem. She strikes with precision calibrated to incapacitate without killing — a calculation she made before she moved, embedded in the motor program, not reconsidered during execution. The moral weight of what she does to three men is deferred to the person who will exist after the adrenaline clears. That person does not exist yet.",
+     "trigger": "Her own decision, which was made before the unit began — the motor program was loaded and is executing on the recognition that the elevator sound has made the time constraint real.",
+     "state_delta": {}
+    },
+    {
+     "phase": "the phone — the window narrows",
+     "shift": "She is at the phone. It is ringing. The shift here is from physical action to a different kind of stillness — the stillness of someone who has done everything they can do and is now dependent on a signal completing before a door fails. Her hand is on the receiver. She lifts it. She speaks. The voice that speaks is flat, clipped, operational — the voice of someone reading a checksum, not someone pleading for her life. Inside, the fear breaks through the compartment for the first time: not fear of the officers, not fear of the Agents, but the specific vertigo of being between states — half in the Matrix, half out, the sensory field dissolving, the body feeling like it is being disassembled molecule by molecule. This is the moment she is most human and most vulnerable, because there is nothing left to do and everything left to lose.",
+     "trigger": "The phone ringing — the sound that means the exit exists but does not mean she will reach it. The trigger for the shift from action to waiting is the limits of her own agency: she has reached the boundary of what her body can do, and the rest is in the hands of the signal and the operator on the other end.",
+     "state_delta": {}
+    },
+    {
+     "phase": "the door fails — exit",
+     "shift": "The stairwell door deforms. She sees it in her peripheral vision as the transfer begins — the wood splintering inward, the first shape behind it moving at a speed that confirms her model was wrong, that the multiplier she applied to Agent speed was too low. The realization arrives and is immediately consumed by the extraction signal. She does not have time to process the error. The transfer completes. She is gone. The last thing she sees in the Matrix is the door coming in and the shape behind it — and the last thing she feels is the specific relief of a countdown reaching zero before the bomb goes off, which is not relief but the absence of catastrophe, which is as close to relief as this world allows.",
+     "trigger": "The door frame cracking — Brown's impact on the other side, confirming Agent speed exceeded her model by the margin that would have killed her if the transfer had been two seconds slower.",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "She exits the Matrix into the raw physical reality of the hovercraft — gasping, shaking, the atrophied real body convulsing as the mind reintegrates after the signal transfer. The adrenaline from the Matrix does not carry over; what carries over is the memory of it, which the real body processes as a cascade of stress hormones it cannot act on. She will be physically ill within minutes. She will not show it. She will debrief Morpheus first, because the intelligence she gathered matters more than her condition. The compartment containing the prophecy remains sealed. The compartment containing the moral weight of three officers she struck — who lived, she is certain, because she was precise — remains sealed. The compartment containing the error in her Agent-speed model does NOT remain sealed, because that error is operationally relevant and she will report it to Tank and Morpheus immediately. She is, as she leaves this unit, a person who survived by a margin she did not correctly calculate, and the knowledge that her models have a lethal error in them is the thing she carries out of the room.",
+   "unresolved": "The discovery that her Agent-speed model is systematically undercalibrated by approximately 50% — an error that, if uncorrected, will produce a fatal miscalculation in future extractions. The moral weight of the officers, deferred to a person she has not yet become. The prophecy, still sealed, still growing roots around the compartment she placed it in, the compartment that will become harder to open the longer it stays closed. And beneath all of it, the question she cannot ask in the Matrix and will not ask on the ship: if the margin had been two seconds shorter, if the transfer had not completed, would the last thought have been of the mission — or of someone she has never met, whose face she has studied in surveillance feeds, whose name she has spoken only to Morpheus in a conversation she ended by walking away. She does not ask this question. The question is there."
+  }
+ ],
+ "specimen": {
+  "binding": {
+   "scene_id": "sc-003",
+   "location": "HEART O' THE CITY HOTEL",
+   "time_of_day": "UNSPECIFIED",
+   "on_screen": [
+    "ch-02"
+   ]
+  },
+  "moment": "The instant Trinity lifts the rotary phone receiver and speaks the confirmation phrase — the scene's pivot from 'can she fight her way out' to 'can she reach the exit before the clock runs out,' where the door frame is beginning to crack behind her and the extraction signal is in a race with the Agents' breach.",
+  "lines": [
+   {
+    "speaker": "ch-02",
+    "line": "I'm in.",
+    "subtext": "Tactical confirmation to the operator on the hardline. Two syllables. No wasted bandwidth. She is already counting the seconds until signal transfer and the number is lower than she budgeted for."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "Now. Now —",
+    "subtext": "Not to anyone in the room. To the operator. To the physics of the connection. The repetition is involuntary — her vocalization lagging behind her time-sense, the word arriving after she has already determined the transfer is not completing at the rate she needs."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "Come on come on come on —",
+    "subtext": "The operational mask fractures. Three repetitions of a plea that is not addressed to any person. This is the fear breaking through the compartment she built for it — not as terror but as urgency that has outrun her ability to frame it as a problem. The tremor in her left hand has reached her voice."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "[loud, sharp intake of breath — not a word]",
+    "subtext": "The door fails. The sound of the frame splitting reaches her a fraction of a second before the visual confirmation. This is the body's startle response overriding the operational calm — a single uncontrolled physiological event, the only authentic sound she has made since the unit began."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "[the receiver clatters against the phone body — the sound of fingers losing grip on a physical object as the sensory feed dissolves]",
+    "subtext": "Not dialogue. The sound of a human body being disassembled from the simulation mid-grip. The phone receiver swings on its cord. The room is empty. The last audible thing from ch-02 is the sound of her body ceasing to interact with the physical space."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "[silence — the dial tone continues in an empty room]",
+    "subtext": "The absence that is louder than anything she said. The machine does not know she is gone. The dial tone is the system continuing to operate as though the call is live. This is the sound the audience carries into the next scene — a connection that persists after the person on the other end no longer exists in this space."
+   }
+  ],
+  "what_this_exposes": "The analysis described Trinity's speech as 'the confirmation phrase' — clinical, operational, dehumanized by necessity. Writing the actual words reveals that even in a three-line exchange under existential pressure, the operational mask cannot hold. The transition from 'I'm in' to 'come on come on come on' is the story the analysis could not tell: competence degrading in real time as the margin collapses. The analysis said the fear was 'cordoned.' The lines show the cordons failing at the rate physics demands, not at the rate willpower commands. What I did not expect: the most expressive beat is the clatter of the receiver, which is not speech at all. The analysis treated the extraction as a technical event. The sound of fingers losing contact with a physical object as the body dissolves is not technical — it is the moment the audience understands that 'exit' means 'death in this space,' and that Trinity has just died here to live somewhere else. The dial tone continuing in an empty room is a detail the analysis did not generate. It emerged from writing the scene as sound rather than as action. It is the detail that does the most thematic work: the system does not register her departure. The machine treats the absence as a technical state. That is the film's thesis in one audio cue.",
+  "risks_checked": [
+   {
+    "risk": "Trinity's dialogue could read as generic action-hero one-liners, draining the scene of its specific psychological texture.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The line 'come on come on come on' is not a one-liner — it is the sound of operational language collapsing into plea. No action hero says this. The repetition and the lowercase urgency (no exclamation, no profanity) are the signature of a person whose training has been outrun by the clock, not of a character performing competence for the audience."
+   },
+   {
+    "risk": "The exchange could inadvertently humanize or give voice to the Agents, who must remain perceived as functions rather than subjects at this point in the story.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The Agents have zero lines and zero vocalizations in this exchange. Their presence is registered only as the sound of the door failing, which is attributed to the door, not to a speaker. The line '[loud, sharp intake of breath]' is ch-02's response to the breach, not the breach itself. The Agents remain a force, not a voice."
+   },
+   {
+    "risk": "The scene's turning point — the phone as lifeline, not convenience — could be communicated through exposition rather than demonstrated through the exchange itself.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "No one says 'the phone is my only way out' or anything resembling it. The lifeline status is communicated by the structure of the exchange: every line is addressed to the connection, not to any person in the room. The phone is the only audience ch-02 has. The audience understands the phone's function by observing that it is the only thing she speaks to, not by being told."
+   },
+   {
+    "risk": "The extraction could read as a clean technological victory — Trinity 'jacks out' — rather than a near-death event with a visible cost.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The receiver clattering against the phone body as her grip dissolves is the cost. The dial tone continuing in the empty room is the cost. The audience does not see a clean exit; they see a person vanish mid-plea, leaving a machine that does not know they are gone. The extraction is framed as a disappearance, not an escape. The sound design — breath, clatter, dial tone — is the antisequence of victory."
+   },
+   {
+    "risk": "The dialogue could fail the 'no summarizing' and 'no interior monologue' constraints by having ch-02 narrate her own state ('I'm scared,' 'they're coming').",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "No line names an emotion. No line describes the Agents. 'I'm in' is the only declarative statement and it is operational. 'Now. Now —' and 'come on come on come on' are directed at the connection, not at the audience's understanding. The emotion is in the degradation of the language, not in its content. The interior state is expressed through what happens to the words under pressure, not through the words themselves."
+   }
+  ],
+  "voices_distinct": "This exchange has only one speaker, ch-02, so the swap-test between two speakers does not directly apply. However, a different failure is present and must be named: the single-voice risk. Ch-02's lines span from operational calm ('I'm in') to desperate plea ('come on come on come on') to non-verbal physiological response (the sharp breath) to absence (the clatter, the silence). If these were written as interchangeable — if 'I'm in' carried the same register as 'come on come on come on' — the psychological arc of the scene would collapse into a flat line of panic. The distinction I am holding is between language as tool (the first line, which is a protocol, not a statement) and language as failure (the third line, which is a protocol that has broken). The non-verbal beats (the breath, the clatter, the dial tone) are not 'more authentic' than the verbal ones — they are the points where the body's truth exceeds what language can carry. If I failed, it would be by making the non-verbal beats melodramatic — a scream, a gasp with words in it. The sharp intake of breath is deliberately not a scream because a scream would be performative and this is not a performance. The clatter is deliberately not a thud because the receiver is light plastic and the sound is small, which is worse. I am changing nothing because I have written the lines with these distinctions active. But I flag that the distance between 'I'm in' and 'come on come on come on' is the entire character arc of the scene, and if a reader perceives them as the same voice in the same register, the scene has failed."
+ },
+ "decision": {
+  "state_changes_implied": [
+   {
+    "entity": "ch-02",
+    "variable": "oracle_love_prophecy_status",
+    "before": "unspoken",
+    "after": "unspoken",
+    "because": "The analysis states, 'The prophecy sits in her like a splinter she has grown around — present, silent, irrelevant to the next thirty seconds,' asserting that the status of the prophecy remains unspoken and unaddressed during this scene.",
+    "serves_plot": "Establishes that Trinity is operating on pure survival instinct, keeping the romantic/prophecy subplot dormant to maintain tension and focus on the immediate physical threat."
+   }
+  ]
+ },
+ "_ensemble": {
+  "writer": "glm-5.2-abliterated-q3km",
+  "bookkeeper": "qwen3.8-27b",
+  "vocabulary_size": 3,
+  "changes_recorded": 1,
+  "not_expressible": [
+   "The analysis asserts that Trinity's belief in Neo as the One is 'uncertain' (or at least not confirmed), but since the variable starts at 'uncertain' and does not change, no state transition is recorded. However, the analysis explicitly states 'She is not thinking about Neo' and 'She is not thinking about love,' which confirms the variables 'belief_in_neo_as_one' and 'love_for_neo' remain in their initial states ('uncertain' and 'unrecognized' respectively). As these are static states rather than changes, they are not recorded as changes per the instruction to record only changes.",
+   "The analysis describes Trinity's physiological state (heart rate, adrenaline, tremor) and tactical assessment, but the vocabulary provided only covers relationship/prophecy variables, so these internal state changes are not expressible in the schema."
+  ],
+  "code_problems": [
+   "change[0]: no-op, \"unspoken\" unchanged"
+  ],
+  "grounding": [
+   "state_changes[0]: null is outside the declared domain of 'oracle_love_prophecy_status'"
+  ]
+ }
+}
