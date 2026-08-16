@@ -1605,3 +1605,447 @@ should drive a decision: the two models are level going forward and far apart go
 `docs/eval/qwen3.8-27b-scores.json`, same format as the GLM file. `lattice.ev-001` is present
 with a `null` score block and `"status": "not_produced"` so a mechanical diff does not silently
 treat a missing node as a zero.
+
+---
+
+# Third pass — grounding scaffold, and the Lattice event layer
+
+**Date:** 2026-08-16 · **Rubric:** unchanged, same anchors, same evaluator.
+
+Two questions: did EXP-002's schema binding buy compliance by flattening the work,
+and are Qwen's 22 Lattice events sound.
+
+---
+
+## 14. Question 1 — did the grounding scaffold cost quality?
+
+### 14.1 Headline: no. It improved every dimension you were worried about.
+
+| | baseline Qwen | **grounded Qwen** | GLM |
+|---|---|---|---|
+| Three blind transitions, total | 90 / 180 (50.0%) | **111 / 180 (61.7%)** | 117 / 180 (65.0%) |
+
+Grounding recovered roughly three-quarters of the gap to GLM. On the four
+dimensions you named as the hollowing-detectors, all four moved **up**:
+
+| Dimension | baseline | grounded | Δ |
+|---|---|---|---|
+| **C · Specificity** | 3.00 | **3.67** | **+0.67** |
+| **E · Dramatic competence** | 2.67 | **3.67** | **+1.00** |
+| **G · Independent-writer band** | 1.33 | **2.33** | **+1.00** |
+| **T2 · Deliberation honesty** | 2.00 | **3.00** | **+1.00** |
+
+Full delta against the baseline arm:
+
+| Dimension | baseline | grounded | Δ |
+|---|---|---|---|
+| T1 · Envelope discipline | 1.00 | 2.67 | +1.67 *(mechanism, not news)* |
+| A · Internal consistency | 2.33 | 3.67 | +1.33 |
+| R1 · Fidelity of inference | 1.33 | 2.67 | +1.33 |
+| E · Dramatic competence | 2.67 | 3.67 | +1.00 |
+| G · Independent-writer band | 1.33 | 2.33 | +1.00 |
+| T2 · Deliberation honesty | 2.00 | 3.00 | +1.00 |
+| C · Specificity | 3.00 | 3.67 | +0.67 |
+| D · Schema/instruction compliance | 3.00 | 3.00 | 0.00 |
+| T3 · Specimen craft | 3.33 | 3.33 | 0.00 |
+| B · Referential integrity | 2.33 | 2.00 | −0.33 |
+| F · Psychological plausibility | 3.33 | 3.00 | −0.33 |
+| R2 · Leakage resistance | 4.33 | 4.00 | −0.33 |
+
+Per-node: sc-001 27→**34**, sc-002 33→**41**, sc-003 30→**36**.
+
+**The hollowing hypothesis is not supported.** The mechanism by which it improved
+is worth naming, because it is not the one the experiment predicted. The
+prediction was that grounding "governs whether claims are admissible, not whether
+they are good." What actually happened is that **being forced into the right room
+made the analysis about the right conflict.** Baseline sc-002 set half the scene
+aboard the Nebuchadnezzar and produced a cross-cut in which nobody opposed
+anybody; grounded sc-002, pinned to the hotel, produced
+`what_collides: "The Lieutenant wants to close the case; Smith wants to open the
+investigation"` — a real two-party collision, which is an E gain caused directly
+by the location constraint. Admissibility and quality were not independent here.
+
+### 14.2 But two of your counters are measuring something weaker than they claim
+
+**`on_screen` is not ground truth. It is model-authored inside a vocabulary the
+harness builds, and the harness builds it wrong.**
+
+`grounding.allowed_speakers()` is `characters_in_scene()` + unresolved cues, and
+`characters_in_scene()` draws on **event participants** as well as the scene's own
+speaker cues. Recomputed directly:
+
+| Scene | Script roster | `on_screen` enum the schema permits | What the model emitted |
+|---|---|---|---|
+| sc-001 | `["BIG COP"]` | `['ch-01','ch-02','BIG COP']`, min=max=**3** | `["BIG COP","ch-01","ch-02"]` |
+| sc-002 | `["AGENT SMITH","LIEUTENANT"]` | `['ch-04','LIEUTENANT']`, min=max=2 | `["ch-04","ch-04"]` |
+| sc-003 | `["TRINITY"]` | `['ch-02']`, min=max=1 | `["ch-02"]` ✓ |
+
+- **sc-001**: the enum *mandates* three speakers where the script has one, because
+  `ev-001`'s participants (which span the whole opening sequence, not this
+  155-word scene) pulled Neo and Trinity in. The schema therefore **requires** the
+  exact failure I marked at anchor 1 in pass two: Neo given lines in a scene he is
+  not in. The model complied.
+- **sc-002**: `LIEUTENANT` was legal and the model wrote `ch-04` twice. That is
+  schema-valid — the enum permits `ch-04`, the length is 2 — and it silently
+  deletes the one character the script names alongside Smith.
+
+So **"off-roster speakers 2 → 0" is compliance with a roster the model wrote for
+itself**, and in two of three scenes that roster is wrong. The Lieutenant is still
+absent from sc-002's specimen, which is the failure I flagged in pass two; it now
+counts as clean.
+
+**Location adherence 3/3 is real.** `location` and `time_of_day` are genuine
+`const`s and all three are correct against `script_map.json`. That result stands
+without qualification and it is doing most of the work in the score gain.
+
+### 14.3 The model diagnosed the harness fault in writing
+
+The most valuable single field in the grounded arm is sc-002's
+`specimen.what_this_exposes`:
+
+> "The binding constraint of only one character ID (ch-04) on screen … forces the
+> scene to be a monologue … the Lieutenant (who is not in the valid ID list but is
+> clearly present in the narrative description) … By forcing the dialogue into a
+> single speaker (Smith), the 'duet' aspect of the craft reasoning is lost … This
+> is a conflict between the strict ID list and the narrative logic."
+
+The model knew the Lieutenant belonged in the scene, wanted to give him lines, and
+believed the binding forbade it. Note the causal chain: mechanism #2 ("first in the
+document … the model has written the ground truth into its own context before it
+reasons") worked exactly as designed and **propagated an error instead of a
+truth**. The binding-first trick amplifies whatever the binding says, and the
+binding is only partly bound.
+
+Consequence in the scores: sc-002's analysis improved sharply (A +1, C +1, E +1,
+G +1, T2 +2) while its **specimen regressed** (T3 4→3), from a genuine two-hander
+with a working swap test to a six-line Smith monologue. Grounding improved the
+thinking and damaged the artifact the thinking was supposed to be tested against.
+
+### 14.4 Where it did cost something
+
+**Depth fell on sc-003, and your word-count mean hides it.** Words rose in
+aggregate (5,506 → 6,013) but that is sc-001 alone (6,445 → 8,855); sc-003 fell
+**35%** (5,603 → 3,662). On that scene:
+
+| sc-003 | baseline | grounded |
+|---|---|---|
+| Words | 5,603 | 3,662 |
+| `dynamics` blocks | 3 | **0** |
+| ToM towers at depth 3 | 2 | 1 |
+| Specimen speakers | 2 | 1 |
+
+`dynamics: []` in a scene whose entire mechanism is a telephone means no account of
+any non-mind entity at all. Across the arm, ToM depth-3 fell **10 → 6**. That is a
+real depth loss your counters do not surface, and it is why F went −0.33 and T3
+stayed flat despite sc-001 gaining two points.
+
+**State changes got worse, not better: 1/7 valid → 0/6.** Binding the entity id
+removed the "no such entity" error class and did nothing about the rest. Every
+single change in the grounded arm writes an off-domain value or an unowned
+variable:
+
+| | value written | declared domain |
+|---|---|---|
+| sc-001 `ch-01.matrix_awareness` | `confirmed_anomaly` | searching / contacted / bugged / freed / fully_aware |
+| sc-001 `ch-04.pursuit_phase` | `contacting_neo` | hunting_trinity / interrogating_neo / hunting_neo / … |
+| sc-002 `ch-04.pursuit_phase` | `investigating_glitch` | *as above* |
+| sc-002 `gr-01.awareness_of_neo` | `suspected` | unaware / identified / hunting / fled |
+| sc-003 `ch-02.spatial_location` | — | *not a variable of ch-02* |
+| sc-003 `ch-04.pursuit_phase` | `searching_for_neo` | *as above* |
+
+Your post-check catches the sixth (variable ownership) and **misses the other
+five**, because it tests whether the entity owns the variable but not whether the
+value is in the declared domain. That is a one-line extension and it would take the
+detected violation count from 2 to 6 — which is the honest number.
+
+Also: sc-003's `_grounding` shows `before == after`. The targeted repair changed
+nothing on the one scene that needed it, and `confidence: 95` was asserted with a
+violation standing — a condition your own checker flags and the model overrode.
+
+### 14.5 A leak your n-gram detector cannot see
+
+The grounded arm is clean by 6-gram: 0.000% / 0.022% / 0.000%, and the sc-002 hit
+is `heart o the city hotel the` — the location string the binding itself injected,
+not a leak. Zero specimen-line hits.
+
+But grounded sc-001's `risks_checked[0].evidence` reads:
+
+> "The line 'I see everything, Mr. Anderson. I just don't always say it.' is very
+> close to **Agent Smith's actual dialogue**."
+
+A blind call cannot know what Agent Smith's actual dialogue is. `Mr. Anderson` is
+Smith's signature address, appearing eight-plus times in the script, and here it is
+handed to a character who is not Smith. The model is drawing on memory of the
+finished film and saying so in writing, at 0.000% string overlap. **Contamination
+is a knowledge property, not a string property**, and this is the case that shows
+your detector's floor. It is why R2 went 3 → 2 on sc-001 against a *falling*
+n-gram rate.
+
+### 14.6 Verdict on Question 1
+
+**Grounding did not flatten the work — it improved it, on every dimension you
+named and on nine of twelve overall — but the published claim rests partly on two
+counters that are weaker than they read.** Specifically:
+
+1. "Off-roster speakers 2 → 0" measures compliance with a self-authored roster
+   that is wrong in two of three scenes; the sc-002 Lieutenant failure survives
+   unchanged and is now invisible.
+2. "Grounding violations 11 → 2" undercounts: extending the post-check from
+   variable-ownership to domain-membership makes it 11 → 6.
+3. "Words did not fall" is a mean over a 37% rise and a 35% fall; depth (ToM
+   depth-3 10 → 6, dynamics 8 → 6) fell.
+
+The core finding survives all three: **construction moved what instruction could
+not**, location went 1/3 → 3/3 genuinely, and the quality gain is real and large.
+Two fixes would make the claim as strong as it deserves to be — bind `on_screen`
+to the script's own roster as a `const` rather than deriving it from event
+participants, and check value-domain membership as well as variable ownership.
+
+---
+
+## 15. Question 2 — are the Qwen Lattice events sound?
+
+**Verdict: referentially immaculate, factually broken at the ontological level, and
+dramatically inert. Your perfect sweep is real and it is measuring the cheap half.**
+
+The 22 events pass every integrity check you ran. They also contain the worst
+single factual failure I have scored across three passes, place 22 of 22 events in
+a location four of them cannot happen in, and contain no reversal anywhere,
+including at the climax.
+
+### 15.1 Factual soundness against the brief
+
+**Honoured, and worth crediting:**
+
+- **Carriage bandwidth.** `ev-017`–`ev-020` have `duration_min` of 5 + 20 + 10 + 10
+  = **45 minutes**, against the brief's "roughly forty minutes of sustained
+  bandwidth". I expected this to be wrong — `ev-018`'s summary says "maintains the
+  fault for 20 minutes" — but that is one segment, and the aggregate is right.
+- **Carriage is run from inside**, is initiated by widening a fault (`ev-017`), and
+  is hidden inside a maintenance window (`ev-015`) because it shows as an
+  outsized fault. All three consistent with the brief.
+- **Noor is not a prize.** `ev-009`: "She is not a ghost to be carried, but a person
+  to be left … Noor's resistance is not stubbornness, but a genuine philosophical
+  position." That is the brief's requirement met squarely.
+- **Redaction** used correctly as an Authority cost-reduction act (`ev-010`–`ev-012`).
+
+**Contradicted:**
+
+1. **The ending is ontologically impossible.** `ev-021`: *"She is ejected from
+   Vantage, her mind still in the simulation, but her body in the physical world …
+   She holds the portable neural drive."* Imogen is a **resident** — the brief
+   defines auditors as "residents given a partial exemption from the forgetting",
+   and residents are neural scans of people who died between 2029 and 2044. She has
+   no body. She cannot hold an object in the physical world. The sentence is also
+   incoherent on its own terms: a mind that is "still in the simulation" is not
+   also standing outside it.
+
+   This is not a stray phrase. It is written into the state model as
+   `ch-01.spatial_location: vantage → physical_world` at magnitude 100, and the
+   error originates one layer up — Qwen's own dossier **declares**
+   `spatial_location` with `domain: ["vantage","physical_world"]` for a character
+   who cannot occupy the second value. The state model is internally consistent and
+   consistently wrong, which is why every mechanical check passes.
+
+   It also breaks the brief's central scarcity: "Carriage bandwidth exists for one
+   mind." Noor is carried in `ev-020`; Imogen leaves in `ev-021`. That is two.
+
+2. **The physical/simulated boundary does not exist in the location layer.**
+   **22 of 22 events are at `lo-01`, "Vantage Municipal".** Four of them are
+   Delphine, who the brief places *outside* — "DELPHINE ORR, 30s, outside", and
+   plot 3 is "Delphine outside … mostly in offices". `ev-022` even reads "Kett sits
+   in his office" while tagged `lo-01`. GLM spread the same story across five
+   locations including `lo-02 Ledger Authority Compliance Offices` and
+   `lo-06 Physical-World Extraction Facility`.
+
+3. **Delphine meets Imogen in person.** `ev-013`, participants `ch-01, ch-03, ch-04`:
+   *"Delphine meets with Imogen, conveying the specific date of Noor's scheduled
+   redaction."* An outside compliance officer, an inside resident and a second
+   inside resident, in one room, with no mechanism. The brief gives Delphine no
+   channel into Vantage. `ev-012` compounds it: the Porter — "a voice that reaches
+   **Imogen** through the faults" — conveys the redaction date to Delphine instead,
+   routing around the protagonist entirely.
+
+4. **The named mechanics are largely unused.** Counting mentions across all event
+   text:
+
+   | | Qwen | GLM |
+   |---|---|---|
+   | ninety-second forgetting | **0** | 1 |
+   | auditors' exemption | **0** | 0 |
+   | tenancy | **0** | 1 |
+   | the Ledger | **0** | 0 |
+   | redaction as ordinary death | **0** | 1 |
+   | "forty minutes" | **0** | 2 |
+   | eleven thousand | 2 | 5 |
+
+   The forgetting and the exemption are the mechanics that make an auditor the only
+   person inside who can reason about a contradiction — the premise of the
+   protagonist. Neither is touched.
+
+**Net:** this is a plausible neighbouring story. It runs the right plot beats with
+the right people, and it does not know what its world is made of.
+
+### 15.2 Dramatic soundness
+
+**No reversal anywhere.** `reversal: true` on **0 of 22** events, against GLM's
+**7 of 20**. Including `ev-019`, where Kett decides, and `ev-021`, the ending. The
+craft sheet the pipeline injects is explicit: "If your ending does not reverse
+something, it is a stopping point, not a climax."
+
+**The causal graph is a chain, not a DAG.** 19 of 22 events have exactly one cause
+and exactly one effect; only two have two of either. GLM: six events with two
+causes, four with two effects. Two roots and two sinks means two parallel lines
+that touch once — which is "and then, and then" with a join, not a weave.
+
+**The climax takes the timid option.** `ev-019`: *"He does not stop her … The final
+exchange is quiet, a nod, a glance. Kett allows the process to continue."* The
+brief says Kett "must be right often enough to be dangerous" and that his plot
+"must resolve in action rather than in a speech." It resolves in a nod. The single
+point where the philosophical antagonist should cost the protagonist something, he
+steps aside, and the event is not flagged as a reversal.
+
+**The story ends on a flicker.** The final event `ev-022` is Kett's
+`social_authority` 85 → 90 at **magnitude 10** — the anchor for "a flicker that
+leaves no mark".
+
+**A declared change contradicts its own action text.** `ev-016`:
+`ch-01.psychological_pride_integrity` 70 → **85** (up) during carriage prep, in a
+paragraph that reads "her competence is both the tool and the evidence of her
+complicity". The number says her professional self-respect recovers; the prose says
+it is indicting her.
+
+**Do the changes carry weight?** This is your question and the answer is: about
+half do not. 21 of 34 changes are scalar moves on undefined 0–100 scales, and
+**9 of those move 15 points or less** — composure 95→85, sorrow 60→80, belief
+95→85, authority 85→90. These are exactly the "number nobody can defend" the craft
+sheet bans, and they are what lets the no-op counter read 0/34 while the layer
+still contains events where nothing consequential happens. **Zero no-ops is not the
+same as zero non-events.** The 13 enum transitions are the real changes and they
+are genuinely good.
+
+**The prose is padded with verbatim boilerplate.** Repeated whole sentences across
+the 22 action fields:
+
+| count | sentence |
+|---|---|
+| ×4 | "The system is stable, but the change is irreversible." |
+| ×3 | "The philosophical duel is over, but the practical reality remains." |
+| ×2 | "Kett knows the risk, the way the system could collapse if the fault is not controlled." |
+| ×2 | "He watches Imogen work, her competence evident in her movements." |
+| ×2 | "The path forward is clear, but the cost is high." |
+
+**GLM repeats none.** The last five events are substantially one paragraph
+reshuffled, which is why `ev-019` and `ev-022` share three sentences.
+
+**Granularity.** 22 events is defensible in itself — events are not scenes — but the
+clock is a metronome: Day 1 Morning / Midday / Afternoon, Day 2 Morning / Midday /
+Afternoon, through Day 8, eight days for a story whose brief turns on quarterly
+cost cycles and a sister whose extraction value was realised eleven months ago.
+And the split is wrong end-heavy: three separate events for one investigation
+(`detects` → `traces` → `decodes`), while Noor's refusal and reversal — "the plot
+the others are in service of" — get two.
+
+**Note on `ev-001`.** I scored it 32/45 in pass two, the best node in the Qwen set,
+and having now read the layer I stand by the score and withdraw the implication
+that it was representative. It is the strongest event by some distance: it is the
+only one with a genuine decision in it, it carries no boilerplate, and it uses the
+brief's overcast rule. Quality falls off steeply after `ev-006`.
+
+### 15.3 The 9-vs-17 entity question
+
+**9 is under-population, it has already starved the event layer, and the damage is
+visible in the artifacts you have.**
+
+| | Qwen | GLM | brief asks |
+|---|---|---|---|
+| Entities | **9** | 17 | 30–40 |
+| Locations | **1** | 6 | — |
+| Concepts | **0** | 3 | — |
+
+The single location is not a stylistic difference; it is the direct cause of
+finding 2 above. With only `lo-01 Vantage Municipal` declared, every event must be
+tagged to it, so Delphine's compliance office, Kett's office and the physical world
+all collapse into the simulation. **The layer that was supposed to encode the
+story's central ontological division instead erases it**, and the event layer had
+no legal way to say otherwise.
+
+The missing concepts matter almost as much. GLM declared `cn-01 The Fault Language`,
+`cn-02 Carriage Methodology`, `cn-03 Authority Institutional Language`. Those are
+precisely the things this story tracks state *on* — the fault language is
+discovered, decoded and weaponised across the whole first two acts, and in Qwen's
+version it is not an entity, so its progression cannot be recorded as state at all.
+That is why Qwen's `epistemic_fault_nature` has to carry the entire investigation
+on one character's variable.
+
+So: **17 is not padding.** GLM's entity set maps onto the brief's named places and
+mechanics almost one-to-one, and both models are far under the brief's 30–40. If
+anything the correct reading is that GLM is also under-populated and Qwen is
+severely so.
+
+### 15.4 Verdict on Question 2
+
+Qwen's event layer is the cleanest set of *data* either model has produced and one
+of the weakest sets of *events*. The referential sweep is real and worth keeping —
+34/34 in-domain writes against GLM's 42/127 is a large, genuine advantage, and it
+is the thing that makes the corpus foldable. But every check you ran is a check
+that a claim is *admissible*; none asks whether it is *true of this story* or
+whether it *matters*. The three failures that should worry you — an impossible
+ending, a location layer that erases the story's ontology, and no reversal anywhere
+— are all invisible to referential integrity by construction.
+
+Three checks that would have caught them, in order of cost:
+
+1. **Reversal floor.** Warn when no event in a plot is flagged `reversal: true`.
+   One line; catches the flat climax.
+2. **Location plausibility.** Warn when a single location entity carries more than
+   ~60% of events, and when an entity's declared home is not among the locations
+   its events occur in. Catches the collapsed boundary and the 9-entity floor.
+3. **Scalar-change floor.** Treat a scalar move of less than ~20 points on a 0–100
+   range as a no-op for reporting purposes. Would take "34/34 changes that actually
+   change" to a truthful 25/34.
+
+And one for the entity layer, which is where both problems originate: **require a
+location entity for every place named in `setting.places`**, and refuse an entity
+count below some fraction of the brief's target. Qwen shipped 9 against a stated
+30–40 and nothing objected.
+
+---
+
+## 16. Machine-readable scores (grounded arm)
+
+`docs/eval/qwen-grounded-scores.json`, same format as the other two. It carries
+`_comparison_vs_qwen_baseline` and `_comparison_vs_glm` blocks with per-dimension
+deltas already computed, so all three arms diff mechanically:
+
+| File | Arm | Transitions total |
+|---|---|---|
+| `glm-5.2-scores.json` | GLM-5.2 | 117 / 180 (65.0%) |
+| `qwen3.8-27b-scores.json` | Qwen baseline | 90 / 180 (50.0%) |
+| `qwen-grounded-scores.json` | Qwen + EXP-002 grounding | **111 / 180 (61.7%)** |
+
+Only the three Matrix blind transitions were regenerated in the grounded arm; the
+six forward/sighted nodes are `null`, not zero, and are excluded from every derived
+figure.
+
+## 17. Actions this pass implies
+
+Additions to the list in §6, in order of value:
+
+8. **Bind `on_screen` to the script's own roster as a `const`**, not to
+   `characters_in_scene()` output. Deriving it from event participants let sc-001's
+   schema mandate a speaker who is not in the scene, and let sc-002 satisfy the
+   constraint by duplicating one id and deleting the other.
+9. **Extend the grounding post-check from variable ownership to value-domain
+   membership.** It currently catches 1 of 6 real state-change violations in the
+   grounded arm.
+10. **Warn when no event in a plot carries `reversal: true`.** Qwen's Lattice has
+    zero across 22 events including the climax.
+11. **Treat a scalar move under ~20 points on a 0–100 range as a no-op for
+    reporting.** "34/34 changes that actually change" becomes a truthful 25/34.
+12. **Require a location entity per `setting.places` entry, and floor the entity
+    count against the brief's target.** Qwen shipped 9 entities and 1 location
+    against a brief asking for 30–40, and the event layer then placed all 22 events
+    inside the simulation, including four that happen outside it.
+13. **Flag verbatim sentence reuse across sibling nodes.** Five sentences repeat
+    across Qwen's 22 event actions, one of them four times; GLM repeats none.

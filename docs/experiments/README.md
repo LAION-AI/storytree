@@ -48,12 +48,18 @@ Where that check was not done, the entry must say so.
 
 **A negative result is a result.** Do not delete a failed arm.
 
+**Never grade against a roster the harness authored.** EXP-002 reported
+"off-roster speakers 2 → 0" while the constraint that produced the output and the
+check that scored it drew on the *same* wrong list. A check that shares its
+source of truth with the thing it checks measures compliance, not correctness.
+Corrections go in the entry, in place, not in a new one.
+
 ## Index
 
 | ID | Question | Status |
 |---|---|---|
 | [EXP-001](EXP-001-model-notes-addendum.md) | Does a failure-derived system-prompt addendum reduce the failures it was written against? | mixed |
-| [EXP-002](EXP-002-grounding-scaffold.md) | Do the failures a prompt clause could not fix yield to schema-level enforcement? | supported |
+| [EXP-002](EXP-002-grounding-scaffold.md) | Do the failures a prompt clause could not fix yield to schema-level enforcement? | supported on quality (+11.7pts); violation count corrected downward |
 
 ## Earlier work, recorded outside this format
 

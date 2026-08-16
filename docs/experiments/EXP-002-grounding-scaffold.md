@@ -1,9 +1,19 @@
 # EXP-002 · Grounding by construction rather than by instruction
 
-**Status: supported.** Grounding violations fell 11 → 2 across three scenes.
-Location adherence went 1/3 → 3/3 and off-roster speakers 2 → 0, both on the two
-dimensions a prompt clause had failed to move in EXP-001. Output length did not
-fall. n=3.
+**Status: supported on quality, with the headline violation count corrected
+downward.** A rubric pass scored the grounded arm **111/180 against 90/180**
+ungrounded (50.0% → 61.7%), recovering three quarters of the gap to GLM's
+117/180, with all four quality dimensions rising. But the violation count first
+reported here was wrong: **11 → 2 was measured against a roster the harness had
+authored**, and the checker was blind to an entire error class. Corrected, it is
+5.3 → 4.0 violations per scene. n=3.
+
+> **Correction, recorded in place.** The original claim in this entry was
+> "violations 11 → 2, off-roster speakers 2 → 0". Both numbers were artifacts of
+> two bugs in the measurement, found by an independent rubric evaluation and
+> confirmed by re-reading the outputs. The bugs and their consequences are in
+> §Correction below. The quality result was found *after* the bugs and is
+> unaffected by them.
 
 ---
 
@@ -145,6 +155,90 @@ of its own.
   survives where enforcement is structurally impossible.
 - Not that the addendum was worthless — it owns the confidence result, which
   grounding does not touch.
+
+## Correction — two bugs in the scaffold, found by the rubric pass
+
+**The roster was not ground truth.** `allowed_speakers()` was built on
+`characters_in_scene()`, which unions the script's speaker cues with *event
+participants*. On sc-001 the script has one speaking cue; the enum had three,
+and `binding.on_screen` carried `minItems = maxItems = 3`.
+
+The schema therefore **mandated** that two characters not in the scene be listed
+as present, and the model complied by giving them lines. The rubric pass scored
+that as the arm's worst single failure. The harness had required it.
+
+The post-check could not see this, because it compared the output against the
+same invented roster. "Off-roster speakers: 0" meant only that the model obeyed a
+roster the harness made up. The model itself diagnosed the fault in writing, in
+`what_this_exposes`: the Lieutenant *"is not in the valid ID list but is clearly
+present in the narrative description… a conflict between the strict ID list and
+the narrative logic."*
+
+**And silence was not checked.** On sc-002 the model satisfied the enum by
+repeating one speaker six times and dropping the other person in the room. Zero
+off-roster violations, one character deleted. Only one direction was being
+tested.
+
+**Third, the domain class was invisible.** The check tested whether a state
+change named a variable the entity *owns*, never whether the value was inside
+that variable's declared domain. The rubric pass measured 0 of 6 state changes
+valid in an arm this entry called clean.
+
+### Fixes
+
+- Ground truth for who speaks is the script's speaker cues, resolved to ids where
+  possible. Event participants describe who a scene is *about* — a different and
+  larger set.
+- `minItems`/`maxItems` removed from `on_screen`. A fixed length does not verify
+  presence, it mandates it, which is precisely how the constraint manufactured
+  the failure it was meant to prevent.
+- Both directions checked: speakers who should not be there, and roster members
+  given nothing.
+- Domain membership added to `check_grounding`.
+
+### Corrected results, all arms re-scored with the fixed checker
+
+| Arm | n | Total | Location | Off-roster | Silence | Domain | Ownership | Other |
+|---|---|---|---|---|---|---|---|---|
+| baseline | 3 | 16 | 2 | 3 | 2 | 2 | 4 | 3 |
+| addendum | 2 | 10 | 2 | 3 | 2 | 2 | 0 | 1 |
+| **grounded** | 3 | **12** | **0** | **2** | **1** | 5 | 1 | 3 |
+
+Per scene: baseline 5.3, addendum 5.0, **grounded 4.0**.
+
+**Location is still a complete win** — 2 → 0, and it was the dimension a prompt
+clause could not move. That result stands.
+
+**The domain column went the wrong way, 2 → 5, and the reason is instructive.**
+Binding entity ids did not create these errors; it *exposed* them. In the
+baseline a state change naming an unknown entity short-circuited before the value
+was ever examined. With entities constrained, every change now reaches the domain
+check, and the value errors that were always there become countable. The error
+class moved from invisible to visible, which is an improvement in measurement and
+not in the artifact.
+
+## The rubric result
+
+Scored by the same evaluator, same rubric, same anchors as the two earlier passes:
+
+| | Ungrounded | Grounded | GLM |
+|---|---|---|---|
+| Total | 90/180 (50.0%) | **111/180 (61.7%)** | 117/180 (65.0%) |
+
+Nine of twelve dimensions improved. The four flagged in advance as the ones that
+would reveal hollow compliance all rose: specificity +0.67, dramatic competence
++1.00, independent-writer band +1.00, deliberation honesty +1.00.
+
+**The mechanism was not the predicted one.** The prediction was that grounding
+governs admissibility and not quality. What the evaluator found is that **being
+forced into the right room made the analysis about the right conflict.** The
+ungrounded sc-002 set half the scene elsewhere and produced a cross-cut in which
+nobody opposed anybody; pinned to the hotel, the same model produced a direct
+opposition between two present characters, and the first story-specific flip
+condition in any arm.
+
+Costs, which are real: sc-003 lost 35% of its words and all three dynamics
+blocks, and arm-wide theory-of-mind depth-3 fell from 10 to 6.
 
 ## Threats to validity
 

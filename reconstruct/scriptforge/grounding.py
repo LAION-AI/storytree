@@ -51,30 +51,49 @@ def _norm(s: str) -> str:
     return "".join(c for c in (s or "").lower() if c.isalnum())
 
 
-def allowed_speakers(scene, entities: dict, resolved: list[str]) -> list[str]:
-    """Who may be given a line: resolved entity ids plus unresolved raw cues.
+def allowed_speakers(scene, entities: dict, resolved: list[str] | None = None) -> list[str]:
+    """Exactly who speaks in this scene, per the script. Nothing else.
 
-    Unresolved cues are kept deliberately. A cue with no entity is a hole in the
-    entity layer, and dropping it would leave the model no legal way to write the
-    scene it was handed — which is how a constraint turns into a corruption. The
-    measured failure was a specimen giving six lines to someone not on the roster
-    and none to the one who was; both halves of that are prevented by an
-    enumeration containing exactly the people present.
+    The first version of this took `characters_in_scene()` — cues *plus event
+    participants* — as its base and appended unresolved cues. That was wrong in a
+    way worth recording, because it made the constraint actively harmful rather
+    than merely loose.
+
+    On a scene whose only script cue is one police officer, it produced an enum
+    of three, and `binding.on_screen` carried `minItems = maxItems = 3`. The
+    schema therefore *mandated* that two characters who are not in the scene be
+    listed as present, and the model dutifully gave them lines. An evaluation
+    scored that as the arm's worst failure — and the harness had required it.
+
+    Worse, the error was invisible to the post-check, because the check compared
+    the output against the same wrong roster that produced it. "Off-roster
+    speakers: 0" meant only that the model complied with a roster the harness had
+    invented.
+
+    Ground truth for who speaks is the script's speaker cues and nothing else.
+    Event participants describe who a scene is *about*, which is a different and
+    larger set. `resolved` is accepted and ignored, kept only so existing callers
+    do not break.
     """
-    out = list(resolved)
     by_key = {}
     for eid, e in entities.items():
         for label in [e.get("canonical_name", "")] + list(e.get("aliases") or []):
             if _norm(label):
                 by_key[_norm(label)] = eid
+
+    out: list[str] = []
     for cue in getattr(scene, "speakers", []) or []:
         hit = by_key.get(_norm(cue))
         if hit is None:
             hit = next((eid for k, eid in by_key.items()
                         if k and (k in _norm(cue) or _norm(cue) in k) and len(k) > 3), None)
-        if hit is None and cue not in out:
-            out.append(cue)
-    return out or list(entities)[:1]
+        # An unresolved cue is kept as its raw name. It marks a hole in the
+        # entity layer, and dropping it would leave the model no legal way to
+        # write the scene it was handed.
+        pick = hit or cue
+        if pick not in out:
+            out.append(pick)
+    return out
 
 
 def binding_block(scene, speakers: list[str]) -> dict:
@@ -87,10 +106,14 @@ def binding_block(scene, speakers: list[str]) -> dict:
             "scene_id": {"const": scene.scene_id},
             "location": {"const": scene.location},
             "time_of_day": {"const": scene.time_of_day or "UNSPECIFIED"},
+            # No minItems/maxItems. A fixed length does not verify presence, it
+            # *mandates* it — and when the roster was wrong that is exactly how a
+            # constraint manufactured the failure it was meant to prevent. The
+            # enum bounds who may appear; how many appear is the model's to get
+            # right, and is checked afterwards instead.
             "on_screen": {
-                "type": "array",
+                "type": "array", "minItems": 1,
                 "items": {"type": "string", "enum": speakers},
-                "minItems": len(speakers), "maxItems": len(speakers),
             },
         },
     }
@@ -190,11 +213,16 @@ def check_grounding(tr: dict, scene, entities: dict, speakers: list[str],
         v.append(f"decision never mentions the bound location ({scene.location!r})")
 
     # -- roster: only people present speak, and people present should speak --
-    said = {l.get("speaker") for l in (spec.get("lines") or []) if isinstance(l, dict)}
-    for s in sorted(said - set(speakers)):
+    said = [l.get("speaker") for l in (spec.get("lines") or []) if isinstance(l, dict)]
+    for s in sorted(set(said) - set(speakers)):
         v.append(f"specimen gives lines to {s!r}, who is not on screen")
-    if speakers and not (said & set(speakers)):
-        v.append(f"specimen gives no lines to anyone on screen (roster: {speakers})")
+    # Silence is the other half, and it was the half that hid. One arm satisfied
+    # the enum by repeating a single speaker six times and dropping the other
+    # person in the room entirely — zero off-roster violations, one character
+    # deleted. Both directions have to be checked.
+    for s in speakers:
+        if s not in said:
+            v.append(f"specimen gives no lines to {s!r}, who is on screen")
 
     # -- state changes must name a variable that belongs to the named entity --
     for i, c in enumerate(dec.get("state_changes_implied") or []):
@@ -213,6 +241,21 @@ def check_grounding(tr: dict, scene, entities: dict, speakers: list[str],
                             if _owner(entities, var) else ""))
         if c.get("from") is not None and c.get("from") == c.get("to"):
             v.append(f"state_changes[{i}] is a no-op ({c.get('from')!r} -> same)")
+
+        # Naming the right variable and moving it to a legal value are separate
+        # questions, and only the first was being asked. An evaluation measured
+        # 0 of 6 state changes valid in an arm this check scored clean, because
+        # one model wraps values in objects while the domain holds bare strings —
+        # so every value misses while every name is correct.
+        spec_v = ((entities.get(eid) or {}).get("state_variables") or {}).get(var)
+        if isinstance(spec_v, dict):
+            dom = spec_v.get("domain") or spec_v.get("enum") or spec_v.get("values")
+            to = c.get("to")
+            if dom:
+                val = to.get("value") if isinstance(to, dict) and "value" in to else to
+                if val not in dom:
+                    v.append(f"state_changes[{i}]: {json.dumps(val)[:40]} is outside the "
+                             f"declared domain of {var!r}")
 
     # -- confidence must be earned --
     conf = dec.get("confidence")
