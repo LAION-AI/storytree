@@ -130,7 +130,7 @@ def run_scaffolded(project: Project, scene_id: str) -> dict:
                   for s, v in scenes_all.items() if s < scene_id},
         "live_state": {e: v.get("state", {}) for e, v in ents.items()},
     }
-    blind = reverse.blind_context(ctx, {})
+    blind = reverse.blind_context(ctx, {}, position=scene.index / max(1, len(parsed)))
     env = reverse.envelope(scene, len(parsed) - scene.index, len(parsed))
 
     events = (docs["events"] or {}).get("events", {})

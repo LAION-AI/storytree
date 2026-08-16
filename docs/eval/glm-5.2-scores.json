@@ -1,0 +1,325 @@
+{
+  "_meta": {
+    "model": "glm-5.2",
+    "config": "local, thinking disabled; transitions scaffolded (one deep structure per call)",
+    "evaluator": "Opus 5",
+    "date": "2026-08-16",
+    "rubric": "docs/07-quality-evaluation.md",
+    "rubric_version": 1,
+    "scale": "1-5 integers; anchors defined for 1, 3, 5 in the rubric document",
+    "dimension_keys": {
+      "A": "internal_consistency",
+      "B": "referential_integrity",
+      "C": "specificity_transplant_test",
+      "D": "schema_and_instruction_compliance",
+      "E": "dramatic_competence",
+      "F": "psychological_plausibility",
+      "G": "independent_writer_band",
+      "P1": "plot_spine_causality",
+      "P2": "plot_resistance_reality",
+      "E1": "entity_t0_discipline",
+      "E2": "entity_voice_separability",
+      "V1": "event_change_reality",
+      "V2": "event_externalisation",
+      "T1": "transition_envelope_discipline",
+      "T2": "transition_deliberation_honesty",
+      "T3": "transition_specimen_craft",
+      "R1": "recon_fidelity_of_inference",
+      "R2": "recon_leakage_resistance"
+    },
+    "dimension_groups": {
+      "universal": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "plot": [
+        "P1",
+        "P2"
+      ],
+      "entity": [
+        "E1",
+        "E2"
+      ],
+      "event": [
+        "V1",
+        "V2"
+      ],
+      "transition": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "reconstruction_only": [
+        "R1",
+        "R2"
+      ]
+    },
+    "applicability": {
+      "forward_plot": 9,
+      "forward_entity": 9,
+      "forward_event": 9,
+      "reverse_plot": 11,
+      "reverse_entity": 11,
+      "reverse_event": 11,
+      "reverse_transition": 12
+    },
+    "nodes": {
+      "lattice.pl-01": {
+        "type": "plot",
+        "direction": "forward",
+        "file": "runs/lattice/artifacts/plots.json",
+        "key": "pl-01"
+      },
+      "lattice.ch-01": {
+        "type": "entity",
+        "direction": "forward",
+        "file": "runs/lattice/artifacts/entities.json",
+        "key": "ch-01"
+      },
+      "lattice.ev-001": {
+        "type": "event",
+        "direction": "forward",
+        "file": "runs/lattice/artifacts/events.json",
+        "key": "ev-001"
+      },
+      "matrix.pl-01": {
+        "type": "plot",
+        "direction": "reverse_sighted",
+        "file": "reconstruct/runs/matrix/artifacts/plots.json",
+        "key": "pl-01"
+      },
+      "matrix.ch-01": {
+        "type": "entity",
+        "direction": "reverse_sighted",
+        "file": "reconstruct/runs/matrix/artifacts/entities.json",
+        "key": "ch-01"
+      },
+      "matrix.ev-001": {
+        "type": "event",
+        "direction": "reverse_sighted",
+        "file": "reconstruct/runs/matrix/artifacts/events.json",
+        "key": "ev-001"
+      },
+      "transition.sc-001": {
+        "type": "transition",
+        "direction": "reverse_blind",
+        "file": "reconstruct/runs/matrix/transitions_local_off/sc-001.json",
+        "key": null
+      },
+      "transition.sc-002": {
+        "type": "transition",
+        "direction": "reverse_blind",
+        "file": "reconstruct/runs/matrix/transitions_local_off/sc-002.json",
+        "key": null
+      },
+      "transition.sc-003": {
+        "type": "transition",
+        "direction": "reverse_blind",
+        "file": "reconstruct/runs/matrix/transitions_local_off/sc-003.json",
+        "key": null
+      }
+    },
+    "note": "Totals differ by node type because different dimension sets apply. Compare per-dimension, or by pct. Direction reverse_blind means the artifact was produced without sight of the source scene text."
+  },
+  "scores": {
+    "lattice.pl-01": {
+      "internal_consistency": 4,
+      "referential_integrity": 5,
+      "specificity_transplant_test": 4,
+      "schema_and_instruction_compliance": 5,
+      "dramatic_competence": 2,
+      "psychological_plausibility": 3,
+      "independent_writer_band": 3,
+      "plot_spine_causality": 2,
+      "plot_resistance_reality": 2
+    },
+    "lattice.ch-01": {
+      "internal_consistency": 2,
+      "referential_integrity": 3,
+      "specificity_transplant_test": 5,
+      "schema_and_instruction_compliance": 2,
+      "dramatic_competence": 4,
+      "psychological_plausibility": 4,
+      "independent_writer_band": 4,
+      "entity_t0_discipline": 3,
+      "entity_voice_separability": 5
+    },
+    "lattice.ev-001": {
+      "internal_consistency": 2,
+      "referential_integrity": 5,
+      "specificity_transplant_test": 5,
+      "schema_and_instruction_compliance": 3,
+      "dramatic_competence": 1,
+      "psychological_plausibility": 3,
+      "independent_writer_band": 2,
+      "event_change_reality": 1,
+      "event_externalisation": 4
+    },
+    "matrix.pl-01": {
+      "internal_consistency": 3,
+      "referential_integrity": 1,
+      "specificity_transplant_test": 5,
+      "schema_and_instruction_compliance": 4,
+      "dramatic_competence": 4,
+      "psychological_plausibility": 4,
+      "independent_writer_band": 2,
+      "plot_spine_causality": 3,
+      "plot_resistance_reality": 3,
+      "recon_fidelity_of_inference": 5,
+      "recon_leakage_resistance": 5
+    },
+    "matrix.ch-01": {
+      "internal_consistency": 4,
+      "referential_integrity": 3,
+      "specificity_transplant_test": 5,
+      "schema_and_instruction_compliance": 1,
+      "dramatic_competence": 4,
+      "psychological_plausibility": 3,
+      "independent_writer_band": 2,
+      "entity_t0_discipline": 2,
+      "entity_voice_separability": 2,
+      "recon_fidelity_of_inference": 3,
+      "recon_leakage_resistance": 3
+    },
+    "matrix.ev-001": {
+      "internal_consistency": 1,
+      "referential_integrity": 2,
+      "specificity_transplant_test": 5,
+      "schema_and_instruction_compliance": 1,
+      "dramatic_competence": 3,
+      "psychological_plausibility": 3,
+      "independent_writer_band": 2,
+      "event_change_reality": 1,
+      "event_externalisation": 5,
+      "recon_fidelity_of_inference": 4,
+      "recon_leakage_resistance": 5
+    },
+    "transition.sc-001": {
+      "internal_consistency": 2,
+      "referential_integrity": 3,
+      "specificity_transplant_test": 5,
+      "schema_and_instruction_compliance": 4,
+      "dramatic_competence": 4,
+      "psychological_plausibility": 4,
+      "independent_writer_band": 2,
+      "transition_envelope_discipline": 1,
+      "transition_deliberation_honesty": 4,
+      "transition_specimen_craft": 3,
+      "recon_fidelity_of_inference": 3,
+      "recon_leakage_resistance": 2
+    },
+    "transition.sc-002": {
+      "internal_consistency": 4,
+      "referential_integrity": 5,
+      "specificity_transplant_test": 5,
+      "schema_and_instruction_compliance": 4,
+      "dramatic_competence": 2,
+      "psychological_plausibility": 4,
+      "independent_writer_band": 2,
+      "transition_envelope_discipline": 2,
+      "transition_deliberation_honesty": 4,
+      "transition_specimen_craft": 3,
+      "recon_fidelity_of_inference": 3,
+      "recon_leakage_resistance": 1
+    },
+    "transition.sc-003": {
+      "internal_consistency": 4,
+      "referential_integrity": 3,
+      "specificity_transplant_test": 3,
+      "schema_and_instruction_compliance": 4,
+      "dramatic_competence": 4,
+      "psychological_plausibility": 4,
+      "independent_writer_band": 2,
+      "transition_envelope_discipline": 2,
+      "transition_deliberation_honesty": 5,
+      "transition_specimen_craft": 4,
+      "recon_fidelity_of_inference": 2,
+      "recon_leakage_resistance": 4
+    }
+  },
+  "_derived": {
+    "per_node": {
+      "lattice.pl-01": {
+        "total": 30,
+        "max": 45,
+        "pct": 66.7,
+        "n_dimensions": 9
+      },
+      "lattice.ch-01": {
+        "total": 32,
+        "max": 45,
+        "pct": 71.1,
+        "n_dimensions": 9
+      },
+      "lattice.ev-001": {
+        "total": 26,
+        "max": 45,
+        "pct": 57.8,
+        "n_dimensions": 9
+      },
+      "matrix.pl-01": {
+        "total": 39,
+        "max": 55,
+        "pct": 70.9,
+        "n_dimensions": 11
+      },
+      "matrix.ch-01": {
+        "total": 32,
+        "max": 55,
+        "pct": 58.2,
+        "n_dimensions": 11
+      },
+      "matrix.ev-001": {
+        "total": 32,
+        "max": 55,
+        "pct": 58.2,
+        "n_dimensions": 11
+      },
+      "transition.sc-001": {
+        "total": 37,
+        "max": 60,
+        "pct": 61.7,
+        "n_dimensions": 12
+      },
+      "transition.sc-002": {
+        "total": 39,
+        "max": 60,
+        "pct": 65.0,
+        "n_dimensions": 12
+      },
+      "transition.sc-003": {
+        "total": 41,
+        "max": 60,
+        "pct": 68.3,
+        "n_dimensions": 12
+      }
+    },
+    "per_dimension_mean": {
+      "internal_consistency": 2.89,
+      "referential_integrity": 3.33,
+      "specificity_transplant_test": 4.67,
+      "schema_and_instruction_compliance": 3.11,
+      "dramatic_competence": 3.11,
+      "psychological_plausibility": 3.56,
+      "independent_writer_band": 2.33,
+      "plot_spine_causality": 2.5,
+      "plot_resistance_reality": 2.5,
+      "entity_t0_discipline": 2.5,
+      "entity_voice_separability": 3.5,
+      "event_change_reality": 1.0,
+      "event_externalisation": 4.5,
+      "recon_fidelity_of_inference": 3.33,
+      "recon_leakage_resistance": 3.33,
+      "transition_envelope_discipline": 1.67,
+      "transition_deliberation_honesty": 4.33,
+      "transition_specimen_craft": 3.33
+    },
+    "overall_mean_score": 3.208,
+    "overall_pct": 64.2
+  }
+}

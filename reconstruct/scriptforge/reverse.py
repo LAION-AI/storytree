@@ -31,6 +31,7 @@ record that no amount of post-hoc annotation can fake.
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass, field
 
 from . import screenplay as sp
@@ -336,7 +337,128 @@ OUTCOME_BEARING = ("expose", "synopsis", "ending_first", "plot_summary_short",
                    "plot_summary_long", "jacket_copy")
 
 
-def blind_context(ctx: dict, upto_step: dict | None = None) -> dict:
+# Sentence `when` values, in story order. A dossier sentence stamped later than
+# the scene being reasoned about cannot be known by a blind writer.
+WHEN_ORDER = {"before_script": 0, "standing": 0, "act_one": 1, "act_two": 2,
+              "act_three": 3, "climax": 4, "resolution": 5}
+
+# Dossier sections that are, by construction, judgements about the finished work
+# rather than descriptions of a thing that exists. "Where is this hotel, who
+# controls it, what does it look like" is knowable at any point. "What this hotel
+# means to the story" is only knowable once you have read the story.
+#
+# The `when` stamp alone is not enough to catch these, and that is the whole
+# reason this list exists: the sighted writer stamped an outcome sentence as
+# `standing` — always true — because in a completed work it *is* always true. It
+# named the protagonist's fate in the climax and would have survived a purely
+# time-based filter at every act.
+ROLE_SECTIONS = frozenset({"significance", "symbolic_load", "causal_power"})
+
+# Same problem at sentence granularity, for sections that are otherwise fine.
+ROLE_TAGS = frozenset({"narrative_role", "theme", "arc", "role", "foreshadow",
+                       "symbolism", "significance"})
+
+
+def _act_at(position: float) -> int:
+    """Which act a scene at `position` (0.0–1.0 through the work) sits in."""
+    if position < 0.25:
+        return 1
+    if position < 0.75:
+        return 2
+    if position < 0.92:
+        return 3
+    return 4
+
+
+def blind_entities(entities: dict, act: int) -> dict:
+    """Remove from every dossier what was only knowable by reading to the end.
+
+    This closes a hole that made the blind channel only partly blind, and it is
+    worth stating plainly because it invalidated earlier claims about these
+    reconstructions.
+
+    `blind_context()` stripped the exposé, so no synopsis reached the blind call.
+    But the *entity dossiers* were written sighted — recovered from the whole
+    finished screenplay — and nobody stripped those. A location dossier's
+    significance sentence named what happens to the protagonist in the climax,
+    and the same entity's state variable listed the climax role among its
+    allowed values. Transitions were reading the ending off the dossier and
+    presenting it as forward reasoning.
+
+    The fix is structural rather than heuristic, because the schema already
+    carries the needed information: every dossier sentence has a `when` stamp.
+    A sentence marked `act_three` is not available to a writer working on an
+    act-one scene. So:
+
+      - drop sentences stamped later than the current act
+      - drop `arc`, which is a whole-work summary and therefore derived from the
+        ending by construction
+      - keep only the *current* value of each state variable, never the domain:
+        an enumeration of allowed values is a list of the states this entity is
+        going to reach
+
+    `standing` and `before_script` survive — those are legitimately knowable at
+    any point.
+    """
+    out: dict = {}
+    for eid, ent in (entities or {}).items():
+        e = {k: v for k, v in ent.items() if k not in ("arc", "state_variables")}
+
+        prof = {}
+        for section, body in (ent.get("profile") or {}).items():
+            if section in ROLE_SECTIONS:
+                continue
+            if not isinstance(body, dict):
+                prof[section] = body
+                continue
+            kept = {}
+            for sid, sentence in body.items():
+                if not isinstance(sentence, dict):
+                    kept[sid] = sentence
+                    continue
+                if ROLE_TAGS.intersection(sentence.get("tags") or ()):
+                    continue
+                when = WHEN_ORDER.get(sentence.get("when", "standing"), 0)
+                if when <= act:
+                    kept[sid] = sentence
+            if kept:
+                prof[section] = kept
+        e["profile"] = prof
+
+        # Relationships carry the same sentence shape as profile sections, with
+        # the same `when` and `tags`, and they leaked for exactly the same
+        # reason: a relationship note stating what one character's death does to
+        # another is a statement about the ending. Filtering `profile` alone was
+        # not enough — anywhere the dossier holds stamped sentences has to be
+        # filtered by the same rule.
+        rels = {}
+        for other, rel in (ent.get("relationships") or {}).items():
+            if not isinstance(rel, dict):
+                rels[other] = rel
+                continue
+            r = dict(rel)
+            notes = rel.get("notes")
+            if isinstance(notes, dict):
+                r["notes"] = {
+                    nid: n for nid, n in notes.items()
+                    if not (isinstance(n, dict) and (
+                        ROLE_TAGS.intersection(n.get("tags") or ())
+                        or WHEN_ORDER.get(n.get("when", "standing"), 0) > act))
+                }
+            rels[other] = r
+        if rels:
+            e["relationships"] = rels
+
+        # current value only — the domain enumerates where this is heading
+        state = ent.get("state") or {}
+        e["state"] = {k: (v.get("value") if isinstance(v, dict) and "value" in v else v)
+                      for k, v in state.items()}
+        out[eid] = e
+    return out
+
+
+def blind_context(ctx: dict, upto_step: dict | None = None,
+                  position: float | None = None) -> dict:
     """Strip everything a writer at this point could not know.
 
     A review found the hole this closes. The blind call was being handed the
@@ -351,6 +473,15 @@ def blind_context(ctx: dict, upto_step: dict | None = None) -> dict:
     itself a description of the ending.
     """
     out = {k: v for k, v in ctx.items() if k not in OUTCOME_BEARING}
+
+    # The dossiers were written sighted. Strip what a writer at this point in the
+    # work could not have known. See blind_entities() for why this is not
+    # optional.
+    act = _act_at(position if position is not None else 0.0)
+    for key in ("entities", "live_state"):
+        if isinstance(out.get(key), dict):
+            out[key] = blind_entities(out[key], act)
+
     plots = ctx.get("plots") or []
     if plots and upto_step:
         trimmed = []
@@ -515,3 +646,46 @@ __all__ = [
     "story_root_prompt", "expose_prompt", "plots_prompt", "entities_prompt",
     "blind_transition_prompt", "scene_node_prompt", "SCENE_NODE_SCHEMA",
 ]
+
+
+def leak_score(blind_output: str, source_text: str, n: int = 8) -> dict:
+    """Measure how much of a blind output appears verbatim in the source.
+
+    Why this exists alongside `blind_entities()`, rather than instead of it.
+
+    The structural filter removes what is structurally identifiable: sections
+    that are whole-work judgements, sentences stamped later than the current
+    act, role-tagged notes, state domains. Measured on a real reconstruction
+    that removed 41% of the dossier text and eliminated the explicit
+    outcome statements.
+
+    It does not remove everything, and it cannot. The dossiers are prose written
+    by a model that had read the whole work, so outcome knowledge is diffused
+    into ordinary descriptive language rather than confined to fields that can
+    be named. After filtering, roughly twenty phrases per dossier set still
+    carry some forward information, and tightening the filter further starts
+    deleting things a blind writer legitimately would know.
+
+    So the honest position is: filter what can be filtered, then *measure* what
+    is left. A rising leak score across a run means the blind channel is
+    degrading and the forecasts are worth less than they look. An 8-gram shared
+    with the source is not proof of leakage — common phrasing exists — but a
+    specimen line matching verbatim is, and that is exactly what this catches.
+
+    Returns the shared n-grams and a rate. Judge runs by the trend, not by zero.
+    """
+    def grams(text: str) -> set:
+        # Normalise before comparing. The first version of this split raw JSON on
+        # whitespace, so tokens carried quotes and braces and matched nothing —
+        # it reported a confident 0.000% on a transition that was later shown to
+        # contain a verbatim line of source dialogue. A detector that cannot fail
+        # is not a detector.
+        w = re.findall(r"[a-z0-9']+", text.lower())
+        return {" ".join(w[i:i + n]) for i in range(max(0, len(w) - n + 1))}
+
+    out_g = grams(blind_output)
+    if not out_g:
+        return {"rate": 0.0, "shared": [], "n": n, "total": 0}
+    shared = sorted(out_g & grams(source_text))
+    return {"rate": len(shared) / len(out_g), "shared": shared[:20],
+            "n": n, "total": len(out_g)}
