@@ -71,7 +71,10 @@ Read in this order:
 6. [`docs/06-local-inference.md`](docs/06-local-inference.md) — running a 754B model on 8×A100, and three confident predictions that measurement destroyed
 7. [`docs/07-quality-evaluation.md`](docs/07-quality-evaluation.md) — rubric and scores
 8. [`docs/08-operations.md`](docs/08-operations.md) — how to actually run it
-9. [`docs/experiments/`](docs/experiments/README.md) — **the experiment log.** Every intervention tried, prediction recorded before the run, negative results kept. Written to be reconstructable without access to whoever ran it
+9. [`docs/09-anthropic-prose-research.md`](docs/09-anthropic-prose-research.md) — what practitioners claim Anthropic models do better at prose, with evidence tiers. Contains a significant **negative** result
+10. [`docs/09b-rp-ecosystem-evidence.md`](docs/09b-rp-ecosystem-evidence.md) — the roleplay-finetune ecosystem as revealed preference
+11. [`docs/10-prose-system-prompt.md`](docs/10-prose-system-prompt.md) — an actionable prose addendum, every clause traced to a finding
+12. [`docs/experiments/`](docs/experiments/README.md) — **the experiment log.** Every intervention tried, prediction recorded before the run, negative results kept. Written to be reconstructable without access to whoever ran it
 
 ## Quick start
 
