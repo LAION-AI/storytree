@@ -1,0 +1,39 @@
+==========================================================================
+PROBE A — native reasoning_content vs reasoning_effort
+==========================================================================
+  A.effort=default       reasoning=  4,371 chars  content= 1,738 chars  rtok=  6121  otok=  480   79.3s
+  A.effort=low           reasoning=     76 chars  content= 1,832 chars  rtok=   452  otok=  498   12.8s
+  A.effort=medium        reasoning=  1,112 chars  content= 1,707 chars  rtok=  1950  otok=  470   29.1s
+  A.effort=high          reasoning=  2,982 chars  content= 1,728 chars  rtok=  3148  otok=  472   42.4s
+
+==========================================================================
+PROBE B — is the native trace about the things we need?
+==========================================================================
+  scoring the longest native trace (A.effort=default, 4,371 chars)
+    perception         2 hits  yes
+    appraisal          6 hits  yes
+    theory_of_mind     0 hits  NO
+    inhibition         0 hits  NO
+    trajectory         0 hits  NO
+    craft              0 hits  NO
+    object_state       0 hits  NO
+  -> saved /home/deployer/laion/bookwriter/runs/probes/native_trace.txt
+
+==========================================================================
+PROBE C — deliberate written-out structured transition
+==========================================================================
+  content=12,669 chars  native_reasoning=5,641 chars
+  reasoning_tokens=5816  completion_tokens=2934  166.2s
+  parsed OK. entities covered: ['Willa']
+    Willa: trajectory phases=4  tom d1/d2/d3 = True/True/True
+  marker scores on the explicit trace:
+    perception        16
+    appraisal          8
+    theory_of_mind     1
+    inhibition         4
+    trajectory         0
+    craft              1
+    object_state       2
+  -> saved /home/deployer/laion/bookwriter/runs/probes/explicit_transition.json
+
+full results -> /home/deployer/laion/bookwriter/runs/probes/probe_results.json

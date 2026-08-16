@@ -1,0 +1,461 @@
+<meta charset="utf-8">
+<title>Narrativeforge Status</title>
+<style>
+:root{
+  --ground:#e9ebee; --surface:#f7f8fa; --surface-2:#eef0f3; --sunken:#dfe3e8;
+  --ink:#161a1f; --ink-2:#39424d; --muted:#66717e; --faint:#93a0ae;
+  --line:#cfd6de; --line-soft:#dde3ea;
+  --heat:#c2451a; --heat-soft:#f0d5c9; --heat-ink:#8f3212;
+  --quench:#2f6f8f; --quench-soft:#cfdfe8; --quench-ink:#23566f;
+  --good:#3f7d55; --good-soft:#d6e6db; --crit:#b03b26; --crit-soft:#f2d7d1;
+  --warn:#8a6a12; --warn-soft:#f0e6cc;
+  --shadow:0 1px 2px rgba(20,28,38,.07), 0 8px 24px -12px rgba(20,28,38,.22);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --script:"Courier New",Courier,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#101419; --surface:#171d24; --surface-2:#1d242c; --sunken:#0b0e12;
+  --ink:#e4e8ec; --ink-2:#b9c2cc; --muted:#8b96a3; --faint:#5f6b78;
+  --line:#2b343e; --line-soft:#222a33;
+  --heat:#e2723f; --heat-soft:#3a2318; --heat-ink:#f0a077;
+  --quench:#6aa8c6; --quench-soft:#152935; --quench-ink:#9cc9dd;
+  --good:#67a97e; --good-soft:#17281d; --crit:#d4715c; --crit-soft:#2e1713;
+  --warn:#c99b45; --warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#101419; --surface:#171d24; --surface-2:#1d242c; --sunken:#0b0e12;
+  --ink:#e4e8ec; --ink-2:#b9c2cc; --muted:#8b96a3; --faint:#5f6b78;
+  --line:#2b343e; --line-soft:#222a33;
+  --heat:#e2723f; --heat-soft:#3a2318; --heat-ink:#f0a077;
+  --quench:#6aa8c6; --quench-soft:#152935; --quench-ink:#9cc9dd;
+  --good:#67a97e; --good-soft:#17281d; --crit:#d4715c; --crit-soft:#2e1713;
+  --warn:#c99b45; --warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0}
+a{color:var(--quench)}
+:focus-visible{outline:2px solid var(--heat);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.wrap{max-width:960px;margin:0 auto;padding:0 26px 110px}
+header.top{border-bottom:1px solid var(--line);background:var(--surface);margin-bottom:44px}
+header.top .wrap{padding-top:52px;padding-bottom:36px}
+.kicker{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--heat);
+  font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(30px,5vw,44px);line-height:1.12;letter-spacing:-.02em;margin-bottom:16px}
+.standfirst{font-size:19px;color:var(--ink-2);max-width:64ch;font-family:var(--serif);line-height:1.5}
+.meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:24px;font-size:12.5px;color:var(--faint);
+  font-family:var(--mono)}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.links a{display:inline-block;padding:8px 14px;border-radius:7px;background:var(--heat);
+  color:#fff;text-decoration:none;font-size:13.5px;font-weight:600}
+.links a.alt{background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line)}
+
+h2{font-size:26px;letter-spacing:-.015em;margin:52px 0 6px;padding-top:8px}
+h2 .num{font-family:var(--mono);font-size:12px;color:var(--heat);display:block;
+  margin-bottom:7px;letter-spacing:.08em;font-weight:700}
+h3{font-size:18px;margin:30px 0 10px}
+p{margin:0 0 15px;max-width:68ch}
+ul,ol{max-width:66ch;padding-left:22px} li{margin-bottom:8px}
+code{font-family:var(--mono);font-size:.88em;background:var(--surface-2);padding:1.5px 5px;
+  border-radius:4px;border:1px solid var(--line-soft)}
+strong{font-weight:650}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;padding:14px 16px}
+.stat .n{font-family:var(--mono);font-size:24px;font-weight:700;line-height:1;color:var(--ink)}
+.stat .l{font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-top:7px}
+.stat .s{font-size:12px;color:var(--muted);margin-top:4px}
+
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;
+  padding:20px 24px;margin:20px 0}
+.card.raised{box-shadow:var(--shadow)}
+.eyebrow{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-bottom:9px}
+.verdict{border-radius:9px;padding:18px 22px;margin:22px 0;border:1px solid;box-shadow:var(--shadow)}
+.verdict.no{background:var(--crit-soft);border-color:var(--crit)}
+.verdict.yes{background:var(--good-soft);border-color:var(--good)}
+.verdict.hold{background:var(--warn-soft);border-color:var(--warn)}
+.verdict .lbl{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.verdict.no .lbl{color:var(--crit)} .verdict.yes .lbl{color:var(--good)} .verdict.hold .lbl{color:var(--warn)}
+.verdict .big{font-family:var(--serif);font-size:21px;line-height:1.35;margin-bottom:8px}
+.verdict p{margin-bottom:0;font-size:15px}
+
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:18px 0}
+th{text-align:left;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;padding:8px 12px 8px 0;border-bottom:1px solid var(--line)}
+td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line-soft);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;padding-right:0}
+.scroll{overflow-x:auto}
+.good{color:var(--good);font-weight:650} .bad{color:var(--crit);font-weight:650}
+
+.bar{display:grid;grid-template-columns:120px 1fr 66px;align-items:center;gap:13px;margin:9px 0}
+.bar .nm{font-size:13px;color:var(--ink-2);font-family:var(--mono)}
+.bar .track{height:20px;background:var(--sunken);border-radius:4px;overflow:hidden}
+.bar .fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:8px;
+  font-size:11.5px;font-family:var(--mono);color:#fff;font-weight:600}
+.bar .val{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-align:right}
+
+.pipe{font-family:var(--mono);font-size:12.5px;line-height:1.75;color:var(--ink-2);
+  background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;
+  padding:18px 20px;overflow-x:auto;margin:20px 0}
+.pipe b{color:var(--heat)} .pipe i{color:var(--faint);font-style:normal}
+
+pre{background:var(--sunken);border:1px solid var(--line);border-radius:7px;padding:15px 17px;
+  overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:1.55;margin:18px 0}
+.script{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;
+  padding:22px 26px;font-family:var(--script);font-size:13.5px;line-height:1.45;
+  white-space:pre-wrap;margin:18px 0;overflow-x:auto}
+.quote{border-left:3px solid var(--quench);padding:4px 0 4px 18px;margin:20px 0;
+  font-size:15px;color:var(--ink-2);max-width:66ch}
+.quote .src{display:block;margin-top:7px;font-size:12px;color:var(--faint);font-family:var(--mono)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tag{font-family:var(--mono);font-size:11.5px;padding:3px 9px;border-radius:5px;
+  background:var(--surface-2);border:1px solid var(--line-soft);color:var(--muted)}
+.tag.g{background:var(--good-soft);border-color:transparent;color:var(--good)}
+.tag.r{background:var(--crit-soft);border-color:transparent;color:var(--crit)}
+.tag.h{background:var(--heat-soft);border-color:transparent;color:var(--heat-ink)}
+.note{font-size:13.5px;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--line);margin:46px 0}
+footer{color:var(--faint);font-size:13px;border-top:1px solid var(--line);padding-top:22px;margin-top:50px}
+.prog{height:10px;background:var(--sunken);border-radius:5px;overflow:hidden;margin:12px 0 6px}
+.prog i{display:block;height:100%;background:var(--heat);border-radius:5px}
+@media (max-width:640px){.bar{grid-template-columns:84px 1fr 56px}}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="kicker">Status report · narrativeforge</div>
+  <h1>Two stories, built as graphs before a word was written</h1>
+  <p class="standfirst">Where the system stands: what it generates, what it measures, what it
+  refuses to accept, and what the second story looks like now that eight of its seventeen pages
+  exist. Every number here is read off the artifacts on disk, not estimated.</p>
+  <div class="meta">
+    <span>15 August 2026</span><span>grok-4.6 via Hyprlab</span><span>$3.20 logged</span>
+  </div>
+  <div class="links">
+    <a href="./">Open the viewer — Missing Hours</a>
+    <a class="alt" href="./false-weight.html">False Weight</a>
+    <a class="alt" href="./report.html">The reasoning-trace report</a>
+  </div>
+</div></header>
+
+<div class="wrap">
+
+<h2><span class="num">01</span>What the system is</h2>
+<p>The whitepaper describes an <em>analysis</em> pipeline: take a finished novel or screenplay and
+decompose it into seven layers of machine-readable structure. Its section 14 notes that the reason
+for building it is the <em>reverse</em> direction. This is that reverse direction, running.</p>
+
+<div class="pipe">
+brief
+ └─ <b>STORY ROOT</b> <i>L0/L1 — genre, audience, style, world rules, plot embedding</i>
+      └─ <b>EXPOSÉ</b> <i>L2 — ending decided first, then a sentence-addressable synopsis</i>
+           └─ <b>PLOTS</b> <i>L4 — cause-and-effect chains with keyed spines</i>
+                └─ <b>ENTITIES</b> <i>L3 — dossiers; this object IS the world state at t0</i>
+                     └─ <b>EVENTS</b> <i>L5 — causal DAG declaring which state must change</i>
+                          └─ <b>SCENES</b> <i>L6 — beats carrying literal RFC 6902 patch ops</i>
+                               └─ <b>PROSE</b> <i>T6 — one page per scene, the leaves</i>
+</div>
+
+<p><strong>Plots come before entities on purpose.</strong> Analysing an existing text you must
+declare a variable before recording a delta against it, so entities come first. Generating, a cast
+invented before its plots is a cast with nothing to do. So the plot layer forward-declares entity
+ids and the entity layer writes dossiers for exactly those.</p>
+
+<h3>The patch model, which is the load-bearing idea</h3>
+<p>The world state is one JSON document keyed by entity id. At t0 it <em>is</em> the entity layer.
+Every later state is reached by applying RFC 6902 operations, and <strong>beats are the only thing
+in the whole pipeline that authors an operation</strong>. Event-, scene- and plot-level patches are
+derived views over the same beat ops, grouped differently — so nothing is written twice and nothing
+can drift.</p>
+<pre>world_state(T) = apply(world_state_t0, concat(ops of every beat before T))</pre>
+<p>Two schema rules make it work. <strong>No arrays in patchable regions</strong>, because JSON
+Pointer addresses arrays by index and a story is a long sequence of insertions. And <strong>sentence
+addressability</strong>: every prose block inside a dossier is decomposed one sentence per key, so
+the story can revise a single sentence of a backstory at a known point in time.</p>
+
+<h2><span class="num">02</span>Both stories, side by side</h2>
+<div class="scroll"><table>
+<thead><tr><th></th><th class="num">False Weight</th><th class="num">Missing Hours</th></tr></thead>
+<tbody>
+<tr><td>Premise</td><td class="num">forge, false relic</td><td class="num">VR battle royale, 1984</td></tr>
+<tr><td>Plots</td><td class="num">2</td><td class="num">3</td></tr>
+<tr><td>Entities</td><td class="num">15</td><td class="num">33</td></tr>
+<tr><td>Events</td><td class="num">14</td><td class="num">17</td></tr>
+<tr><td>Scenes</td><td class="num">14</td><td class="num">17</td></tr>
+<tr><td>Beats</td><td class="num">62</td><td class="num">72</td></tr>
+<tr><td>Patch operations</td><td class="num">64</td><td class="num good">160</td></tr>
+<tr><td>Pages written</td><td class="num">14 / 14</td><td class="num">8 / 17</td></tr>
+<tr><td>Words of script</td><td class="num">11,530</td><td class="num">6,351 so far</td></tr>
+<tr><td>Structural errors</td><td class="num good">0</td><td class="num good">0</td></tr>
+</tbody></table></div>
+<p class="note">Missing Hours carries 2.5× the patch density of False Weight on a comparable number
+of scenes. That is the brief doing its work: a town whose inhabitants lose their memories every
+night generates far more tracked state change than a village with a forged relic.</p>
+
+<h2><span class="num">03</span>Missing Hours — where it stands</h2>
+
+<div class="grid">
+  <div class="stat"><div class="n">17</div><div class="l">scenes</div><div class="s">all defined</div></div>
+  <div class="stat"><div class="n">~53</div><div class="l">A4 pages</div><div class="s">projected</div></div>
+  <div class="stat"><div class="n">53–55</div><div class="l">minutes</div><div class="s">screen time</div></div>
+  <div class="stat"><div class="n">~11.1k</div><div class="l">words</div><div class="s">projected</div></div>
+  <div class="stat"><div class="n">160</div><div class="l">patch ops</div><div class="s">across 72 beats</div></div>
+  <div class="stat"><div class="n">R</div><div class="l">rating</div><div class="s">from the embedding</div></div>
+</div>
+
+<div class="prog"><i style="width:47%"></i></div>
+<p class="note">8 of 17 pages written. Page count is not guessed from words — the finished pages are
+re-wrapped at screenplay margins (action 61 characters, dialogue 35, parentheticals 24) and the
+resulting line count divided by 58 lines per A4 page. At one page per minute of screen time, that
+is <strong>an hour-long episode, not a feature</strong>. A feature would need roughly double: 34
+scenes rather than 17.</p>
+
+<h3>The three plots</h3>
+<div class="scroll"><table>
+<thead><tr><th>id</th><th>type</th><th>whose</th><th>goal</th><th class="num">outcome</th></tr></thead>
+<tbody>
+<tr><td><code>pl-01</code></td><td>external_main</td><td>Hale</td>
+    <td>The Dawn Site — gather every Daywalker token and speak the invocation</td>
+    <td class="num">transformation<br>of goal</td></tr>
+<tr><td><code>pl-02</code></td><td>investigation</td><td><strong>Cora, a Host</strong></td>
+    <td>The Kept Hours — rebuild the erased nights from Polaroids and cassette until she holds one she can keep</td>
+    <td class="num">partial success</td></tr>
+<tr><td><code>pl-03</code></td><td>growth_internal</td><td>Hale</td>
+    <td>The Unremembered Customer — leave the match unmarked, the customer no Host can place</td>
+    <td class="num bad">failure</td></tr>
+</tbody></table></div>
+<p>The second plot belongs to <strong>a Host, not a player</strong>, with its own nine-step spine.
+That satisfies the brief's requirement that at least one Host become a character in her own right
+rather than a device for the protagonist's education — and it does so structurally, not by
+assertion. The third plot's outcome is <code>failure</code>: his goal to stay unmarked is precisely
+what breaks.</p>
+
+<h3>The protagonist</h3>
+<div class="card">
+<div class="eyebrow">ch-01 · Hale · aliases: the Analyst, the careful man, the unremembered customer</div>
+<p><strong>Want.</strong> Every token in hand, the invocation spoken in his favour, and to leave
+unmarked — the customer no Host can place.</p>
+<p><strong>Need.</strong> To recognise one particular mind as real. He would deny the need if it
+were named.</p>
+<p><strong>Wound.</strong> He has been inventory to other systems his whole life and swore to be the
+one who reads the ledger. Being forgotten feels like safety; being kept feels like being owned.</p>
+<p style="margin-bottom:0"><strong>Arc.</strong> A detached solver who maps a town like a ledger and
+feeds cleanly so no Host can place him → a man who withholds the invocation, pays with the prize and
+a permanent burn, and becomes the face in her archive.</p>
+</div>
+<p>The want and the need are in direct opposition, and the wound explains why: his detachment is not
+a pose but a defence. That is what makes its collapse cost him something — the craft sheet's
+requirement that a flaw be shown as competence first, so that losing it hurts.</p>
+
+<h3>The causal link the brief demanded</h3>
+<p>The brief required that the Psychologist's interference cause the awakening. It does, mechanically:
+<code>ev-004</code> has her stacking hypnotic writes on <em>the same three Hosts</em> Hale is
+carefully rationing, and <code>ev-006</code> is where the third drain plus those writes tear the
+memory wipe open. <strong>His carefulness is a precondition of the break.</strong> The other four
+rivals register as weather — <code>ev-005</code> records them only as UV cages, dry districts, a
+college cult and a heartless body.</p>
+<p>The object the whole investigation hangs on is <code>ob-08</code>: a Polaroid of Hale's face. It
+survives what her memory does not.</p>
+
+<h3>The tension curve</h3>
+<p>Scene tension, in reading order, as generated:</p>
+<div class="bars">
+  <div class="bar"><span class="nm">sc-001</span><div class="track"><div class="fill" style="width:28%;background:var(--quench)">20→28</div></div><span class="val">+8</span></div>
+  <div class="bar"><span class="nm">sc-003</span><div class="track"><div class="fill" style="width:38%;background:var(--quench)">28→38</div></div><span class="val">+10</span></div>
+  <div class="bar"><span class="nm">sc-004</span><div class="track"><div class="fill" style="width:42%;background:var(--quench)">30→42</div></div><span class="val">+12</span></div>
+  <div class="bar"><span class="nm">sc-005</span><div class="track"><div class="fill" style="width:55%;background:var(--heat)">40→55</div></div><span class="val">+15</span></div>
+  <div class="bar"><span class="nm">sc-006</span><div class="track"><div class="fill" style="width:68%;background:var(--heat)">50→68</div></div><span class="val">+18</span></div>
+  <div class="bar"><span class="nm">sc-008</span><div class="track"><div class="fill" style="width:75%;background:var(--heat)">65→75</div></div><span class="val">+10</span></div>
+</div>
+<p class="note">Monotonically rising, with the largest jump at the rupture. This is Frey's
+"slowly rising conflict" — attack, counterattack, escalation — appearing as a measurable property of
+the artifact rather than as an instruction nobody checked.</p>
+
+<h3>How it reads</h3>
+<div class="script">EXT. MAIN STREET - NIGHT
+
+Thin neon on brick. At both ends of the street the fog smears like a bad tape.
+
+HALE walks the sidewalk, overcoat neat, a folded paper map in one hand, a pencil in the other. He checks doors, then alley mouths, then windows. Faces last.</div>
+<p><strong>"Faces last."</strong> His entire flaw, dramatised in a two-word action line rather than
+stated. A few lines later a druggist mentions offhand that the road keeps dumping people back and he
+keeps seeing the same taillights — the closed loop planted without a single character explaining it.
+Both are the direction rule working: nothing explained in dialogue that can be shown in behaviour.</p>
+
+<h2><span class="num">04</span>What was learned</h2>
+
+<h3>Reasoning traces: the API will not give you the real one</h3>
+<div class="verdict no">
+  <div class="lbl">Finding</div>
+  <div class="big">What comes back as <code>reasoning_content</code> is a compressed summary, not the trace.</div>
+  <p>Measured at 0.17–0.95 characters per billed reasoning token, where English prose runs about
+  4.0. At default effort you see roughly a sixth of what was thought. Reading it confirms the
+  arithmetic: it restates the task and drafts the answer.</p>
+</div>
+<p>Worse, it is not <em>about</em> the right things. Scored for the content a transition needs:
+theory of mind, inhibition, trajectory, craft reasoning and object state all appear <strong>zero
+times</strong>. Only appraisal and a thin perception signal are present.</p>
+
+<div class="verdict yes">
+  <div class="lbl">Countermeasure</div>
+  <div class="big">Asked to write the reasoning out on purpose against a strict schema, it produces something better than the private trace would have been.</div>
+  <p>Same model, same node: 62,781 characters at 4.18 chars per token — real content, not a
+  compression artifact. 10,187 words, every theory-of-mind tower reaching the third degree with its
+  error named, 15 trajectory phases, all 10 cited facts carrying a source pointer. ~$0.15 per node.</p>
+</div>
+<p>Three forcing constraints made the difference, all of them from the brief rather than from me:
+<strong>trajectory over snapshot</strong> (each phase needs a perceivable trigger, which keeps the
+reasoning filmable), <strong>non-mind entities as first-class</strong> (the relic changes on named
+axes — <code>custody: with_willa → on_the_bench_between_them</code> is blocking, power reading and
+theme in one field), and — the one that surprised me — <strong>naming where each theory of mind is
+wrong</strong>, which turns dramatic irony from a hope into a schema requirement.</p>
+
+<h3>The craft sheet changes the output, measurably</h3>
+<p>Frey's <em>How to Write a Damn Good Novel</em> I and II, compressed to 6,752 tokens and injected
+into every generative prompt, with a 401-token variant for the deep layers. The clearest evidence is
+what the model then writes into its own standing notes:</p>
+<div class="quote">PREMISE (exactly one): Keeping a useful lie for love leads to a debt the next
+generation pays. Prove this. Cut anything that does not.<br><br>
+CRUCIBLE: Joss cannot walk away. Winter closes the roads… Name this bond whenever a reader could ask
+why she does not simply leave.<br><br>
+First appearance: sympathy through work, cold, and a debt she cannot refuse. She is struggling, not
+merely enduring. No wimp stretch.
+<span class="src">keep_in_mind, generated with the craft sheet — none of this was in the brief</span></div>
+<p>Premise, crucible, ruling passion, want-versus-need, growth axis, plant and payoff, equalised
+forces, exposition as weapons. The run <em>without</em> the sheet produced none of these.</p>
+<p>Volume II corrected something my second-hand sources had backwards: the ladder is
+<strong>sympathy → identification → empathy</strong>, and the rungs are operationally distinct.
+Sympathy is making the reader feel sorry — the character need not be admirable. Identification is
+the reader endorsing the <em>goal</em>, which is the lever for a compromised protagonist. Empathy is
+sensory detail pinned to the feeling it produces. And the payoff sentence: <strong>the reader is
+transported by taking sides in a moral decision</strong>, which is why inner conflict is not
+decoration.</p>
+
+<h3>The plot embedding discriminates</h3>
+<p>52 genres and 24 dimensions, each 0–5, identical across every work. The test of a coordinate
+system is whether two different works land in different places. They do:</p>
+<div class="scroll"><table>
+<thead><tr><th></th><th>False Weight</th><th>Missing Hours</th></tr></thead>
+<tbody>
+<tr><td>Dominant</td>
+  <td>drama 5, fantasy 5,<br>family_drama 4, low_fantasy 4</td>
+  <td>science_fiction 5, psychological_thriller 5,<br>drama 4, horror 4, thriller 4, psych_horror 4</td></tr>
+<tr><td>Non-zero genres</td><td class="num">13 / 52</td><td class="num">25 / 52</td></tr>
+<tr><td>Genre mass</td><td class="num">36</td><td class="num">64</td></tr>
+<tr><td>Rating</td><td class="num">PG-13</td><td class="num">R</td></tr>
+</tbody></table></div>
+<p>The validator refuses hedging: more than six genres at 4 or above is flagged as scoring avoided
+rather than scoring done. One systematic model failure showed up three times — mislabelling the
+<code>dominant</code> list — so that field is now <strong>derived mechanically</strong> from the
+scores instead of trusted.</p>
+
+<h3>Cost and throughput</h3>
+<div class="grid">
+  <div class="stat"><div class="n">$3.20</div><div class="l">logged spend</div><div class="s">26 pipeline calls</div></div>
+  <div class="stat"><div class="n">298k</div><div class="l">reasoning tokens</div><div class="s">vs 134k output</div></div>
+  <div class="stat"><div class="n">2.2×</div><div class="l">reasoning ratio</div><div class="s">whitepaper assumed 1.4</div></div>
+  <div class="stat"><div class="n">5.5 min</div><div class="l">per page</div><div class="s">0.70 s / target word</div></div>
+</div>
+<p>Structure is cheap: all five upper layers of Missing Hours — 3 plots, 33 entities, 17 events —
+cost <strong>$0.77 across five calls</strong>. Pages are the expensive part, and they got slower once
+the craft sheet enlarged every prompt. <strong>Wall-clock is the constraint, not money.</strong>
+Sibling nodes at the same depth are independent and parallelise cleanly; that is the obvious next
+build.</p>
+
+<h2><span class="num">05</span>What refuses to accept bad work</h2>
+<p>Twenty-one deterministic rules, adapted from the whitepaper's C1–C10. Span-anchoring has no
+meaning without a source text and is replaced by graph-completeness and budget rules.</p>
+<div class="tags">
+  <span class="tag">G1 every event serves a plot</span>
+  <span class="tag">G2 every spine step discharged</span>
+  <span class="tag">G3 causal graph acyclic and connected</span>
+  <span class="tag h">G5 state continuity</span>
+  <span class="tag">G6 bidirectional scene/event coverage</span>
+  <span class="tag">G7 primary edges form one tree</span>
+  <span class="tag">G10 no direct speech below the exposé</span>
+  <span class="tag">G12 no arrays in patchable regions</span>
+  <span class="tag">G13 sentence decomposition</span>
+  <span class="tag h">G15 declare-then-realise</span>
+  <span class="tag">G17 t0 mirrors declared inits</span>
+  <span class="tag">G20 values stay in declared domains</span>
+</div>
+<p><strong>G5 and G15 are the ones that matter.</strong> G5 catches contradiction mechanically:
+because state is <em>computed</em> by folding patches rather than described, a claim that disagrees
+with the fold cannot hide. G15 enforces the split between L5 declaring what must change and L6
+realising exactly that — no more, no less.</p>
+<div class="verdict yes">
+  <div class="lbl">Test results</div>
+  <div class="big">52 engine assertions, 23 of 23 injected errors caught, 79 DOM assertions, and the browser's fold reproduces the Python fold byte for byte.</div>
+  <p>The whitepaper's phase-0 exit criterion is a validator catching over 90% of deliberately
+  introduced faults. Both finished graphs validate with <strong>zero structural errors</strong>.</p>
+</div>
+
+<h2><span class="num">06</span>The viewer and the co-writer</h2>
+<p>Ten tabs over the graph: story root with the embedding, exposé with every synopsis sentence and
+the plot that claims it, plots as swimlanes with cross-plot causation drawn between them, a cast
+browser with copyable JSON pointers, canvas DAGs for events and scenes with a fixed inspector, a
+scrubber that folds the world forward beat by beat, the reasoning transitions, and the script.</p>
+<p>The co-writer is a chat dock with <strong>fourteen tools</strong> — read, upsert per layer,
+RFC 6902 patch, delete, validate, and <code>show</code>, which opens the relevant tab and selects
+what it just built. Any OpenAI-compatible endpoint; the key lives in your browser and never in the
+page. Tested end to end against the live API, not stubbed:</p>
+<div class="scroll"><table>
+<thead><tr><th>Run</th><th>Tool sequence</th><th class="num">Result</th></tr></thead>
+<tbody>
+<tr><td>New project from an idea</td><td><code>get_overview → read_node → new_project → set_story_root → show</code></td><td class="num good">6/6</td></tr>
+<tr><td>Targeted change</td><td><code>get_overview → patch → show</code></td><td class="num good">5/5</td></tr>
+<tr><td>Multi-step request</td><td><code>… → upsert_plot → show → validate</code></td><td class="num good">5/5</td></tr>
+</tbody></table></div>
+<p>The second run is the interesting one: it patched rather than rewrote, and the title survived.
+The multi-step run initially <em>failed</em> — the agent finished one layer and stopped. That was my
+system prompt, not the plumbing, and the fix was an explicit rule that finishing a layer is not
+finishing the request.</p>
+
+<h2><span class="num">07</span>Limits, stated plainly</h2>
+<ul>
+<li><strong>Self-consistency is not accuracy.</strong> The same model writes the reasoning and
+grades its own world. Nothing yet checks a transition's declared preconditions against the state the
+fold actually computes.</li>
+<li><strong>The two existing transitions were reconstructed backwards</strong>, for nodes that
+already existed. That is an easier task than deciding a node that does not, and the honest
+forward-versus-backward comparison is not in yet.</li>
+<li><strong>The repair loop only patches the layer that just ran.</strong> A violation whose real
+cause lives one layer up is reported rather than silently fixed in the wrong place.</li>
+<li><strong>Scene segmentation carries forward the folded state and a two-scene tail</strong>, not
+the full prior text. Boundary events across a batch edge are where continuity would drift first.</li>
+<li><strong>One model annotating and being trained on its own annotations is circular.</strong> The
+whitepaper flags this; a cross-model audit on a sample would be cheap.</li>
+<li><strong>The published artifact cannot run the co-writer.</strong> A strict content policy blocks
+external hosts there, and it also blocks page-initiated downloads. Both work from the Cloudflare
+link.</li>
+</ul>
+
+<hr>
+<h2 style="margin-top:0"><span class="num">08</span>In short</h2>
+<ol>
+<li>Two complete story graphs exist, both validating with <strong>zero structural errors</strong>,
+built for about <strong>$3.20</strong> of model time.</li>
+<li><em>Missing Hours</em> is <strong>17 scenes, ~53 A4 pages, 53–55 minutes</strong> — an hour of
+television. Structure and scenes are finished; 8 of 17 pages are written.</li>
+<li>The protagonist is <strong>Hale</strong>, and the second lead is a Host who owns her own
+investigation plot.</li>
+<li>Grok will not hand over its real reasoning, but it will write a better one deliberately if the
+schema forces it to.</li>
+<li>Cost is not the constraint. <strong>Wall-clock is</strong>, and it parallelises.</li>
+</ol>
+
+<footer>
+Generated from the artifacts in <code>runs/api-grok</code> and <code>runs/bennington</code> on
+15 August 2026. Page counts computed by re-wrapping the finished pages at screenplay margins.
+Remaining pages continue to generate; this page reflects the state at the time of writing.
+</footer>
+</div>

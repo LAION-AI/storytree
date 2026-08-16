@@ -1,0 +1,135 @@
+{
+ "normalization": {
+  "version": 1,
+  "steps": [
+   "unicode NFC",
+   "CRLF and CR -> LF",
+   "tabs -> 4 spaces",
+   "strip trailing whitespace per line",
+   "collapse runs of 3+ blank lines to 2",
+   "strip a UTF-8 BOM",
+   "ensure the text ends with exactly one newline"
+  ]
+ },
+ "source_chars": 3080,
+ "scene_count": 5,
+ "coverage": 0.9802,
+ "scenes": {
+  "sc-001": {
+   "index": 1,
+   "heading": "EXT. HARBOUR WALL - PRE-DAWN",
+   "kind": "EXT",
+   "location": "HARBOUR WALL",
+   "time_of_day": "PRE-DAWN",
+   "start_char": 48,
+   "end_char": 652,
+   "start_quote": "EXT. HARBOUR WALL - PRE-DAWN",
+   "end_quote": "torch across the water. Nothing.",
+   "anchors_unique": true,
+   "word_count": 83,
+   "line_count": 14,
+   "speakers": [
+    "MAREN",
+    "RADIO"
+   ],
+   "dialogue_ratio": 0.643
+  },
+  "sc-002": {
+   "index": 2,
+   "heading": "INT. HARBOUR STATION - OFFICE - DAWN",
+   "kind": "INT",
+   "location": "HARBOUR STATION - OFFICE",
+   "time_of_day": "DAWN",
+   "start_char": 662,
+   "end_char": 1641,
+   "start_quote": "INT. HARBOUR STATION - OFFICE - DAWN",
+   "end_quote": "off the board and goes.",
+   "anchors_unique": true,
+   "word_count": 142,
+   "line_count": 22,
+   "speakers": [
+    "DEREK",
+    "MAREN"
+   ],
+   "dialogue_ratio": 0.727
+  },
+  "sc-003": {
+   "index": 3,
+   "heading": "INT/EXT. LAUNCH BOAT - HARBOUR MOUTH - MORNING",
+   "kind": "INT/EXT",
+   "location": "LAUNCH BOAT - HARBOUR MOUTH",
+   "time_of_day": "MORNING",
+   "start_char": 1642,
+   "end_char": 2133,
+   "start_quote": "INT/EXT. LAUNCH BOAT - HARBOUR",
+   "end_quote": "She turns the wheel anyway.",
+   "anchors_unique": true,
+   "word_count": 66,
+   "line_count": 13,
+   "speakers": [
+    "DEREK",
+    "MAREN"
+   ],
+   "dialogue_ratio": 0.692
+  },
+  "sc-004": {
+   "index": 4,
+   "heading": "EXT. SANDBAR - MORNING",
+   "kind": "EXT",
+   "location": "SANDBAR",
+   "time_of_day": "MORNING",
+   "start_char": 2134,
+   "end_char": 2477,
+   "start_quote": "EXT. SANDBAR - MORNING\n\nLow",
+   "end_quote": "photographs it against the shoreline.",
+   "anchors_unique": true,
+   "word_count": 56,
+   "line_count": 8,
+   "speakers": [
+    "MAREN"
+   ],
+   "dialogue_ratio": 0.375
+  },
+  "sc-005": {
+   "index": 5,
+   "heading": "INT. HARBOUR STATION - OFFICE - NIGHT",
+   "kind": "INT",
+   "location": "HARBOUR STATION - OFFICE",
+   "time_of_day": "NIGHT",
+   "start_char": 2478,
+   "end_char": 3080,
+   "start_quote": "INT. HARBOUR STATION - OFFICE - NIGHT",
+   "end_quote": "boxes.\n\nFADE OUT.\n\nTHE END",
+   "anchors_unique": true,
+   "word_count": 98,
+   "line_count": 14,
+   "speakers": [
+    "DEREK",
+    "MAREN"
+   ],
+   "dialogue_ratio": 0.5
+  }
+ },
+ "source_file": "/home/deployer/laion/bookwriter/reconstruct/samples/tideline.fountain",
+ "summary": {
+  "scenes": 5,
+  "words": 445,
+  "lines": 71,
+  "estimated_pages_a4": 1.2,
+  "estimated_runtime_min": 1,
+  "mean_scene_words": 89,
+  "mean_dialogue_ratio": 0.587,
+  "distinct_speakers": [
+   "DEREK",
+   "MAREN",
+   "RADIO"
+  ],
+  "locations": [
+   "HARBOUR STATION - OFFICE",
+   "HARBOUR WALL",
+   "LAUNCH BOAT - HARBOUR MOUTH",
+   "SANDBAR"
+  ]
+ },
+ "problems": []
+}

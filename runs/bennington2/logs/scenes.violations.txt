@@ -1,0 +1,5 @@
+[ERROR  ] G14 @ sc-011#b6: beat belongs to event ev-011 (story index 22) after a beat at index 24; beats inside a scene must not run backwards
+[ERROR  ] G14 @ sc-011#b7: beat belongs to event ev-011 (story index 22) after a beat at index 24; beats inside a scene must not run backwards
+[ERROR  ] G20 @ sc-030#b2.changes[1]: value 'lo-03' outside declared domain ['ch-03', 'ch-01', 'ch-04', 'lo-04']
+[ERROR  ] G5.scene @ sc-011.exit_states.ch-01.location: declares 'lo-01', but folding every beat up to this point yields 'lo-04'
+[ERROR  ] G5.scene @ sc-011.exit_states.ch-04.cole_read: declares 4, but folding every beat up to this point yields 2

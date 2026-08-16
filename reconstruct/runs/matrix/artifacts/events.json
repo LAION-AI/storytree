@@ -1,0 +1,1592 @@
+{
+ "events": {
+  "ev-001": {
+   "story_time": {
+    "index": 1,
+    "label": "day 1, night",
+    "duration_min": 10
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03",
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-03",
+     "step": "st1"
+    },
+    {
+     "plot": "pl-05",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-02",
+    "ch-04",
+    "ch-11",
+    "ch-12",
+    "gr-01"
+   ],
+   "summary": "Trinity escapes Agents in the Heart O' the City Hotel; Cypher probes her feelings for Neo; Agents identify Neo as next target.",
+   "action": "A trace program races across a computer screen as Cypher and Trinity converse over a tapped phone line. Cypher asks Trinity whether she likes watching Neo, pressing whether she believes Morpheus's claim, but Trinity deflects. Police storm Room 303 of the Heart O' the City Hotel, but Trinity dispatches them with superhuman speed. Agent Smith arrives with Brown and Jones, informing a lieutenant that his men are already dead. Morpheus directs Trinity to another exit at Wells and Lake. She races across rooftops, leaps impossibly between buildings, crashes through a window, and reaches a phone booth just as a garbage truck smashes through it. She vanishes through the phone. The Agents confirm their next target is Neo.",
+   "state_changes": [
+    {
+     "entity": "ch-02",
+     "variable": "oracle_love_prophecy_status",
+     "path": "/ch-02/state/oracle_love_prophecy_status",
+     "dimension": "epistemic",
+     "before": "unspoken",
+     "after": "unspoken",
+     "magnitude": 0
+    },
+    {
+     "entity": "ch-02",
+     "variable": "love_for_neo",
+     "path": "/ch-02/state/love_for_neo",
+     "dimension": "emotional",
+     "before": "unrecognized",
+     "after": "unrecognized",
+     "magnitude": 10
+    },
+    {
+     "entity": "ch-04",
+     "variable": "pursuit_phase",
+     "path": "/ch-04/state/pursuit_phase",
+     "dimension": "spatial",
+     "before": "hunting_trinity",
+     "after": "hunting_trinity",
+     "magnitude": 0
+    },
+    {
+     "entity": "gr-01",
+     "variable": "awareness_of_neo",
+     "path": "/gr-01/state/awareness_of_neo",
+     "dimension": "epistemic",
+     "before": "unaware",
+     "after": "identified",
+     "magnitude": 30
+    },
+    {
+     "entity": "lo-01",
+     "variable": "narrative_role",
+     "path": "/lo-01/state/narrative_role",
+     "dimension": "world",
+     "before": "escape_point",
+     "after": "escape_point",
+     "magnitude": 0
+    }
+   ],
+   "caused_by": [],
+   "causes": [
+    "ev-002"
+   ],
+   "causal_note": "Root event: establishes the Agents' awareness of Neo and plants the love prophecy question via Cypher's probe, both of which drive all subsequent events.",
+   "reversal": false,
+   "plot_function": "disturbance",
+   "is_root": true,
+   "is_sink": false
+  },
+  "ev-002": {
+   "story_time": {
+    "index": 2,
+    "label": "day 2, late night",
+    "duration_min": 15
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-03",
+   "participants": [
+    "ch-01",
+    "ch-15",
+    "ch-02"
+   ],
+   "summary": "Neo's computer sends cryptic messages; Choi calls Neo a savior; at a nightclub Trinity tells Neo the answer is looking for him.",
+   "action": "Neo sleeps at his computer when the screen displays messages telling him to wake up, that the Matrix has him, and to follow the white rabbit. Choi arrives to buy software and calls Neo his personal savior. Neo notices a white rabbit tattoo on Dujour's jacket and joins them at a nightclub. There, Trinity approaches him directly, revealing she knows his name and his obsessive search. She tells him the answer he seeks is also seeking him, that the question driving him is the same one that drove her, and that when he is ready to know what the Matrix is, the answer will find him. She vanishes into the crowd.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "matrix_awareness",
+     "path": "/ch-01/state/matrix_awareness",
+     "dimension": "epistemic",
+     "before": "searching",
+     "after": "contacted",
+     "magnitude": 20
+    },
+    {
+     "entity": "lo-03",
+     "variable": "contacted",
+     "path": "/lo-03/state/contacted",
+     "dimension": "technological",
+     "before": false,
+     "after": true,
+     "magnitude": 40
+    }
+   ],
+   "caused_by": [
+    "ev-001"
+   ],
+   "causes": [
+    "ev-003"
+   ],
+   "causal_note": "Neo's computer messages and Trinity's nightclub approach are the disturbance that sets Neo on the path to Morpheus.",
+   "reversal": false,
+   "plot_function": "disturbance",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-003": {
+   "story_time": {
+    "index": 3,
+    "label": "day 3, morning to afternoon",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-05",
+   "plots": [
+    "pl-05",
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-05",
+     "step": "st2"
+    },
+    {
+     "plot": "pl-01",
+     "step": "st2"
+    }
+   ],
+   "location": "lo-02",
+   "participants": [
+    "ch-01",
+    "ch-16",
+    "ch-04",
+    "ch-11",
+    "ch-12",
+    "ch-03",
+    "gr-01"
+   ],
+   "summary": "Neo is late to work, receives a phone from Morpheus, fails to escape via scaffold, and is captured and bugged by Agent Smith.",
+   "action": "Neo arrives late to Meta CorTechs where Rhineheart threatens his job. A FedEx package delivers a cellular phone that rings immediately; Morpheus guides Neo away from Agents searching the office. Neo nearly escapes through a scaffold but freezes at the height and is captured. In the interrogation room, Agent Smith details Neo's double life and offers a clean slate for cooperation. Neo defiantly refuses, demanding his phone call. Smith seals Neo's mouth shut and inserts a living tracking bug into his navel. Neo wakes screaming in his apartment, believing it was a dream—until Morpheus calls.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "matrix_awareness",
+     "path": "/ch-01/state/matrix_awareness",
+     "dimension": "epistemic",
+     "before": "contacted",
+     "after": "bugged",
+     "magnitude": 30
+    },
+    {
+     "entity": "ch-01",
+     "variable": "bug_status",
+     "path": "/ch-01/state/bug_status",
+     "dimension": "physiological",
+     "before": "clean",
+     "after": "implanted",
+     "magnitude": 60
+    },
+    {
+     "entity": "ch-04",
+     "variable": "pursuit_phase",
+     "path": "/ch-04/state/pursuit_phase",
+     "dimension": "spatial",
+     "before": "hunting_trinity",
+     "after": "interrogating_neo",
+     "magnitude": 40
+    },
+    {
+     "entity": "gr-01",
+     "variable": "awareness_of_neo",
+     "path": "/gr-01/state/awareness_of_neo",
+     "dimension": "epistemic",
+     "before": "identified",
+     "after": "hunting",
+     "magnitude": 30
+    },
+    {
+     "entity": "ob-04",
+     "variable": "location",
+     "path": "/ob-04/state/location",
+     "dimension": "spatial",
+     "before": "in_smiths_case",
+     "after": "in_neo",
+     "magnitude": 60
+    },
+    {
+     "entity": "lo-02",
+     "variable": "agents_present",
+     "path": "/lo-02/state/agents_present",
+     "dimension": "spatial",
+     "before": false,
+     "after": true,
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-002"
+   ],
+   "causes": [
+    "ev-004"
+   ],
+   "causal_note": "The Agents' interrogation and bugging of Neo creates the physiological obstacle that Morpheus's crew must remove before Neo can be freed.",
+   "reversal": false,
+   "plot_function": "obstacle",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-004": {
+   "story_time": {
+    "index": 4,
+    "label": "day 3, night",
+    "duration_min": 30
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st3"
+    },
+    {
+     "plot": "pl-02",
+     "step": "st2"
+    }
+   ],
+   "location": "lo-04",
+   "participants": [
+    "ch-01",
+    "ch-02",
+    "ch-03",
+    "ch-05",
+    "ch-09",
+    "ch-10"
+   ],
+   "summary": "Trinity extracts the bug from Neo, Morpheus offers the red and blue pills, and Neo chooses truth.",
+   "action": "Trinity, Apoc, and Switch pick up Neo at the Adams Street bridge. Switch forces Neo to remove his shirt at gunpoint. Trinity uses a device to extract the living tracking bug from his navel, discarding it on the pavement as a common wire tap. At the Hotel Lafayette, Morpheus greets Neo and explains the Matrix as a prison for the mind. He offers a red pill and a blue pill: the blue returns Neo to his old life, the red shows him how deep the rabbit hole goes. Neo swallows the red pill. Cypher works with Apoc to trace Neo's carrier signal as a mirror begins to liquefy and crawl up Neo's body.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "bug_status",
+     "path": "/ch-01/state/bug_status",
+     "dimension": "physiological",
+     "before": "implanted",
+     "after": "extracted",
+     "magnitude": 60
+    },
+    {
+     "entity": "ch-01",
+     "variable": "matrix_awareness",
+     "path": "/ch-01/state/matrix_awareness",
+     "dimension": "epistemic",
+     "before": "bugged",
+     "after": "contacted",
+     "magnitude": 20
+    },
+    {
+     "entity": "ob-01",
+     "variable": "consumed",
+     "path": "/ob-01/state/consumed",
+     "dimension": "physiological",
+     "before": false,
+     "after": true,
+     "magnitude": 80
+    },
+    {
+     "entity": "ob-02",
+     "variable": "offered",
+     "path": "/ob-02/state/offered",
+     "dimension": "material",
+     "before": false,
+     "after": true,
+     "magnitude": 40
+    },
+    {
+     "entity": "ob-04",
+     "variable": "location",
+     "path": "/ob-04/state/location",
+     "dimension": "spatial",
+     "before": "in_neo",
+     "after": "discarded",
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-003"
+   ],
+   "causes": [
+    "ev-005"
+   ],
+   "causal_note": "The red pill is the crucible: once taken, Neo's body and mind are irrevocably bound to the real world. The bug extraction removes the Agents' surveillance advantage.",
+   "reversal": false,
+   "plot_function": "point_of_no_return",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-005": {
+   "story_time": {
+    "index": 5,
+    "label": "day 4, dawn",
+    "duration_min": 10
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-07",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Neo wakes naked in a human crop pod, is unplugged by a machine, and flushed into the waste system.",
+   "action": "Neo awakens naked and bald in a magenta gelatin pod among endless towers of human crops. A machine unplugs the coaxial cable from his skull and releases him. He is flushed through a waste disposal pipe, nearly drowning, before the Nebuchadnezzar snatches him from the sewer main. Morpheus greets him and says welcome to the real world. Neo passes out.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "freed_from_matrix",
+     "path": "/ch-01/state/freed_from_matrix",
+     "dimension": "world",
+     "before": false,
+     "after": true,
+     "magnitude": 90
+    },
+    {
+     "entity": "ch-01",
+     "variable": "physical_condition",
+     "path": "/ch-01/state/physical_condition",
+     "dimension": "physiological",
+     "before": "normal",
+     "after": "atrophied",
+     "magnitude": 70
+    },
+    {
+     "entity": "lo-07",
+     "variable": "neo_freed",
+     "path": "/lo-07/state/neo_freed",
+     "dimension": "world",
+     "before": false,
+     "after": true,
+     "magnitude": 80
+    }
+   ],
+   "caused_by": [
+    "ev-004"
+   ],
+   "causes": [
+    "ev-006"
+   ],
+   "causal_note": "The red pill trace program pinpoints Neo's body, enabling extraction. Physical rebirth into the real world.",
+   "reversal": false,
+   "plot_function": "rebirth",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-006": {
+   "story_time": {
+    "index": 6,
+    "label": "day 4-5, recovery and revelation",
+    "duration_min": 40
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02",
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st3"
+    },
+    {
+     "plot": "pl-01",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-06",
+   "participants": [
+    "ch-01",
+    "ch-03",
+    "ch-02",
+    "ch-06",
+    "ch-07"
+   ],
+   "summary": "Morpheus explains the Matrix and the scorched real world; Neo rejects it violently and is told he cannot go back.",
+   "action": "Neo wakes in the Nebuchadnezzar's infirmary where Dozer and Morpheus rebuild his atrophied muscles. Morpheus explains the year is closer to 2199. In the Construct, he shows Neo the desert of the real, the fetus fields, and the power plant where humans are grown as batteries. Neo rejects the truth violently, demanding to be let out, and vomits. Later, Morpheus apologizes for breaking the rule against freeing a mind past a certain age, confesses that five before Neo died because he misunderstood the Oracle, and states his belief that Neo is the sixth and the last, the One.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "matrix_awareness",
+     "path": "/ch-01/state/matrix_awareness",
+     "dimension": "epistemic",
+     "before": "contacted",
+     "after": "fully_aware",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "physical_condition",
+     "path": "/ch-01/state/physical_condition",
+     "dimension": "physiological",
+     "before": "atrophied",
+     "after": "rebuilt",
+     "magnitude": 40
+    },
+    {
+     "entity": "ch-03",
+     "variable": "five_dead_guilt",
+     "path": "/ch-03/state/five_dead_guilt",
+     "dimension": "psychological",
+     "before": "carrying",
+     "after": "confessed",
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-005"
+   ],
+   "causes": [
+    "ev-007"
+   ],
+   "causal_note": "Neo's full awareness of the Matrix and Morpheus's confession of fallibility establish the epistemic and psychological baseline for all subsequent training and the Oracle visit.",
+   "reversal": false,
+   "plot_function": "state_of_rupture",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-007": {
+   "story_time": {
+    "index": 7,
+    "label": "day 5-6, training",
+    "duration_min": 45
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st6"
+    }
+   ],
+   "location": "lo-05",
+   "participants": [
+    "ch-01",
+    "ch-03",
+    "ch-06",
+    "ch-08"
+   ],
+   "summary": "Combat skills are uploaded; Neo fights Morpheus in the dojo, fails the jump program, and learns death in the Matrix kills the body.",
+   "action": "Tank uploads combat programs directly into Neo's brain, including jujitsu, kenpo, and drunken boxing. In the dojo, Neo fights Morpheus and learns that Matrix rules can be bent or broken. He lands a blow that knocks off Morpheus's glasses but is ultimately beaten. In the jump program, Neo attempts an impossible rooftop leap and fails, crashing through the simulated street. Morpheus explains that the mind makes the Matrix real and that the body cannot live without the mind. In a city street training program, Morpheus warns Neo that anyone still hardwired can become an Agent and that every person who has fought an Agent has died, but that Neo will succeed because his strength is not bound by the Matrix's rules.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "combat_training",
+     "path": "/ch-01/state/combat_training",
+     "dimension": "technological",
+     "before": "none",
+     "after": "tested",
+     "magnitude": 70
+    },
+    {
+     "entity": "lo-05",
+     "variable": "loaded_environment",
+     "path": "/lo-05/state/loaded_environment",
+     "dimension": "technological",
+     "before": "empty",
+     "after": "city_street_training",
+     "magnitude": 60
+    }
+   ],
+   "caused_by": [
+    "ev-006"
+   ],
+   "causes": [
+    "ev-008"
+   ],
+   "causal_note": "Training prepares Neo with combat skills and the philosophical framework for bending Matrix rules, directly enabling his later fights with Agents.",
+   "reversal": false,
+   "plot_function": "training",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-008": {
+   "story_time": {
+    "index": 8,
+    "label": "day 6, night",
+    "duration_min": 15
+   },
+   "primary_plot": "pl-04",
+   "plots": [
+    "pl-04",
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-04",
+     "step": "st1"
+    },
+    {
+     "plot": "pl-04",
+     "step": "st2"
+    },
+    {
+     "plot": "pl-01",
+     "step": "st7"
+    }
+   ],
+   "location": "lo-06",
+   "participants": [
+    "ch-05",
+    "ch-01"
+   ],
+   "summary": "Cypher confides his regret over the red pill and tells Neo about the five dead predecessors, advising him to run from Agents.",
+   "action": "Late at night on the main deck, Cypher offers Neo a drink and confesses he regrets taking the red pill, asking why he did not choose the blue. He reveals that Morpheus has found five previous Ones who all died because Morpheus got them believing in a prophecy. Cypher advises Neo to run from Agents. Then, in a restaurant inside the Matrix, Cypher meets Agent Smith and agrees to betray Morpheus in exchange for reinsertion into the Matrix as a rich, important man with no memory. He offers the access codes to Zion's mainframe via Morpheus.",
+   "state_changes": [
+    {
+     "entity": "ch-05",
+     "variable": "betrayal_phase",
+     "path": "/ch-05/state/betrayal_phase",
+     "dimension": "social",
+     "before": "none",
+     "after": "negotiated",
+     "magnitude": 60
+    },
+    {
+     "entity": "ch-04",
+     "variable": "escape_desire_revealed",
+     "path": "/ch-04/state/escape_desire_revealed",
+     "dimension": "psychological",
+     "before": false,
+     "after": true,
+     "magnitude": 40
+    }
+   ],
+   "caused_by": [
+    "ev-007"
+   ],
+   "causes": [
+    "ev-009"
+   ],
+   "causal_note": "Cypher's disillusionment surfaces and his secret deal with Smith is struck, creating the betrayal that will trap the crew and force Neo's climactic choice.",
+   "reversal": false,
+   "plot_function": "seeds_of_doubt",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-009": {
+   "story_time": {
+    "index": 9,
+    "label": "day 7, morning to afternoon",
+    "duration_min": 30
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-02",
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st7"
+    },
+    {
+     "plot": "pl-02",
+     "step": "st4"
+    },
+    {
+     "plot": "pl-03",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-08",
+   "participants": [
+    "ch-01",
+    "ch-03",
+    "ch-02",
+    "ch-13",
+    "ch-14"
+   ],
+   "summary": "Neo meets the Oracle, who tells him he is not the One and that Morpheus will sacrifice himself; Trinity tries and fails to disclose her prophecy.",
+   "action": "Morpheus takes Neo to see the Oracle. In the car, Trinity tries to tell Neo what the Oracle told her but is physically unable to speak. At the Oracle's apartment, a spoon boy teaches Neo there is no spoon. The Oracle tells Neo he has the gift but is waiting for something, possibly his next life. She says he is not the One but reveals that Morpheus believes so strongly he will sacrifice his life for Neo, and that one of them will die. She tells him to take a cookie and he will feel right as rain. Morpheus tells Neo he need not share what was said. In the car back, Trinity asks if Neo is all right; he replies he is right as rain.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "oracle_consulted",
+     "path": "/ch-01/state/oracle_consulted",
+     "dimension": "epistemic",
+     "before": false,
+     "after": true,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "oracle_prophecy_received",
+     "path": "/ch-01/state/oracle_prophecy_received",
+     "dimension": "epistemic",
+     "before": "none",
+     "after": "not_the_one",
+     "magnitude": 60
+    },
+    {
+     "entity": "ch-02",
+     "variable": "oracle_love_prophecy_status",
+     "path": "/ch-02/state/oracle_love_prophecy_status",
+     "dimension": "epistemic",
+     "before": "unspoken",
+     "after": "partially_disclosed",
+     "magnitude": 30
+    },
+    {
+     "entity": "ch-13",
+     "variable": "consulted_by_neo",
+     "path": "/ch-13/state/consulted_by_neo",
+     "dimension": "epistemic",
+     "before": false,
+     "after": true,
+     "magnitude": 40
+    },
+    {
+     "entity": "lo-08",
+     "variable": "neo_visited",
+     "path": "/lo-08/state/neo_visited",
+     "dimension": "spatial",
+     "before": false,
+     "after": true,
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-008"
+   ],
+   "causes": [
+    "ev-010"
+   ],
+   "causal_note": "The Oracle's denial and the prophecy of Morpheus's sacrifice shape Neo's belief and create the dramatic structure for the betrayal and rescue.",
+   "reversal": false,
+   "plot_function": "prophecy_and_denial",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-010": {
+   "story_time": {
+    "index": 10,
+    "label": "day 7, afternoon",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-04",
+   "plots": [
+    "pl-04",
+    "pl-05",
+    "pl-01",
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-04",
+     "step": "st4"
+    },
+    {
+     "plot": "pl-04",
+     "step": "st5"
+    },
+    {
+     "plot": "pl-05",
+     "step": "st3"
+    },
+    {
+     "plot": "pl-01",
+     "step": "st8"
+    },
+    {
+     "plot": "pl-02",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-04",
+   "participants": [
+    "ch-05",
+    "ch-08",
+    "ch-03",
+    "ch-02",
+    "ch-01",
+    "ch-09",
+    "ch-04",
+    "gr-01"
+   ],
+   "summary": "Cypher's trap springs: the hardline is cut, Mouse is killed, Morpheus is captured, and Trinity and Neo escape through the walls.",
+   "action": "Returning to the Hotel Lafayette, Neo experiences déjà vu as the Agents brick up the windows. Cypher drops a cell phone in a garbage can, signaling the Agents. The hardline is cut. Mouse is gunned down against the bricked windows. Morpheus fights Agent Smith hand to hand, telling Trinity to get Neo out because he is all that matters. Trinity, Neo, and the others escape through the plumbing walls as police fire into them. Morpheus is overwhelmed and captured. Agent Smith identifies himself to Morpheus before the cops take him.",
+   "state_changes": [
+    {
+     "entity": "ch-05",
+     "variable": "betrayal_phase",
+     "path": "/ch-05/state/betrayal_phase",
+     "dimension": "social",
+     "before": "negotiated",
+     "after": "executing",
+     "magnitude": 40
+    },
+    {
+     "entity": "ch-08",
+     "variable": "alive",
+     "path": "/ch-08/state/alive",
+     "dimension": "physiological",
+     "before": true,
+     "after": false,
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-03",
+     "variable": "captivity_status",
+     "path": "/ch-03/state/captivity_status",
+     "dimension": "spatial",
+     "before": "free",
+     "after": "captured",
+     "magnitude": 80
+    },
+    {
+     "entity": "lo-04",
+     "variable": "status",
+     "path": "/lo-04/state/status",
+     "dimension": "world",
+     "before": "safe_house",
+     "after": "trap",
+     "magnitude": 80
+    },
+    {
+     "entity": "lo-04",
+     "variable": "hardline_intact",
+     "path": "/lo-04/state/hardline_intact",
+     "dimension": "technological",
+     "before": true,
+     "after": false,
+     "magnitude": 80
+    },
+    {
+     "entity": "gr-02",
+     "variable": "crew_alive_count",
+     "path": "/gr-02/state/crew_alive_count",
+     "dimension": "social",
+     "before": 8,
+     "after": 7,
+     "magnitude": 20
+    }
+   ],
+   "caused_by": [
+    "ev-009"
+   ],
+   "causes": [
+    "ev-011"
+   ],
+   "causal_note": "Cypher's signal triggers the trap; the hardline cut and Morpheus's capture force the crisis that defines Neo's choice and Cypher's murder spree aboard the ship.",
+   "reversal": true,
+   "plot_function": "crisis_forced_by_betrayal",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-011": {
+   "story_time": {
+    "index": 11,
+    "label": "day 7, afternoon to evening",
+    "duration_min": 15
+   },
+   "primary_plot": "pl-04",
+   "plots": [
+    "pl-04",
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-04",
+     "step": "st6"
+    },
+    {
+     "plot": "pl-04",
+     "step": "st7"
+    },
+    {
+     "plot": "pl-01",
+     "step": "st8"
+    }
+   ],
+   "location": "lo-06",
+   "participants": [
+    "ch-05",
+    "ch-06",
+    "ch-07",
+    "ch-09",
+    "ch-10",
+    "ch-02",
+    "ch-01"
+   ],
+   "summary": "Cypher exits first, shoots Tank and Dozer, unplugs Apoc and Switch killing them, and prepares to unplug Neo before Tank kills him.",
+   "action": "Cypher exits the Matrix first and retrieves a lightning rifle. He blasts Tank and then Dozer, killing Dozer. He calls Trinity in the TV repair shop and taunts her, revealing he gave them Morpheus. He unplugs Apoc, killing him instantly, then unplugs Switch. He stands over Neo, demanding Trinity confirm whether she believes Neo is the One. Trinity whispers yes. Wounded but alive, Tank levels the rifle and fires a bolt that kills Cypher. Trinity throws her arms around Neo as the phone rings for their exit.",
+   "state_changes": [
+    {
+     "entity": "ch-07",
+     "variable": "alive",
+     "path": "/ch-07/state/alive",
+     "dimension": "physiological",
+     "before": true,
+     "after": false,
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-09",
+     "variable": "alive",
+     "path": "/ch-09/state/alive",
+     "dimension": "physiological",
+     "before": true,
+     "after": false,
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-10",
+     "variable": "alive",
+     "path": "/ch-10/state/alive",
+     "dimension": "physiological",
+     "before": true,
+     "after": false,
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-05",
+     "variable": "alive",
+     "path": "/ch-05/state/alive",
+     "dimension": "physiological",
+     "before": true,
+     "after": false,
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-05",
+     "variable": "betrayal_phase",
+     "path": "/ch-05/state/betrayal_phase",
+     "dimension": "social",
+     "before": "executing",
+     "after": "thwarted",
+     "magnitude": 40
+    },
+    {
+     "entity": "ch-06",
+     "variable": "wounded",
+     "path": "/ch-06/state/wounded",
+     "dimension": "physiological",
+     "before": false,
+     "after": true,
+     "magnitude": 70
+    },
+    {
+     "entity": "gr-02",
+     "variable": "crew_alive_count",
+     "path": "/gr-02/state/crew_alive_count",
+     "dimension": "social",
+     "before": 7,
+     "after": 4,
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-010"
+   ],
+   "causes": [
+    "ev-012"
+   ],
+   "causal_note": "Cypher's murder spree decimates the crew; Tank's survival saves Neo's life and enables the rescue mission. Trinity's whispered yes confirms her growing love.",
+   "reversal": true,
+   "plot_function": "murder_aboard_ship",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-012": {
+   "story_time": {
+    "index": 12,
+    "label": "day 7, evening",
+    "duration_min": 15
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st9"
+    },
+    {
+     "plot": "pl-03",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-06",
+   "participants": [
+    "ch-01",
+    "ch-02",
+    "ch-06",
+    "ch-03"
+   ],
+   "summary": "Neo refuses to let Morpheus die and decides to re-enter the Matrix to rescue him; Trinity insists on joining.",
+   "action": "Tank explains that the Agents are hacking Morpheus's mind for Zion's access codes and that they must pull the plug to protect Zion. Neo remembers the Oracle told him this would happen and that he would have to choose between his life and Morpheus's. He declares he is going in, revealing to Trinity that the Oracle told him he is not the One. Trinity insists on joining him, pulling rank as the ranking officer on the ship. Tank loads them into the Construct where Neo requests guns, lots of guns.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "self_belief",
+     "path": "/ch-01/state/self_belief",
+     "dimension": "psychological",
+     "before": "skeptic",
+     "after": "uncertain",
+     "magnitude": 30
+    },
+    {
+     "entity": "ch-03",
+     "variable": "captivity_status",
+     "path": "/ch-03/state/captivity_status",
+     "dimension": "spatial",
+     "before": "captured",
+     "after": "captured",
+     "magnitude": 0
+    },
+    {
+     "entity": "ch-03",
+     "variable": "mind_integrity",
+     "path": "/ch-03/state/mind_integrity",
+     "dimension": "psychological",
+     "before": "intact",
+     "after": "under_attack",
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-05",
+     "variable": "loaded_environment",
+     "path": "/lo-05/state/loaded_environment",
+     "dimension": "technological",
+     "before": "city_street_training",
+     "after": "weapons_rack",
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-011"
+   ],
+   "causes": [
+    "ev-013"
+   ],
+   "causal_note": "Neo's choice against self-interest is the moral turning point of the film: he acts on belief without certainty, choosing Morpheus's life over his own.",
+   "reversal": false,
+   "plot_function": "choice_against_self_interest",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-013": {
+   "story_time": {
+    "index": 13,
+    "label": "day 7, afternoon (Matrix time)",
+    "duration_min": 25
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-02",
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st10"
+    },
+    {
+     "plot": "pl-02",
+     "step": "st6"
+    },
+    {
+     "plot": "pl-05",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-09",
+   "participants": [
+    "ch-01",
+    "ch-02",
+    "ch-04",
+    "ch-11",
+    "ch-12",
+    "ch-03",
+    "ch-06"
+   ],
+   "summary": "Neo and Trinity storm the government building, massacre the lobby, and rescue Morpheus by helicopter; Smith tortures Morpheus and reveals his desire to escape.",
+   "action": "Neo and Trinity enter the government building lobby armed to the teeth, massacring every guard and soldier in their path. They ride the elevator to the executive floor, blowing it and ascending the shaft. Agent Smith tortures Morpheus with serum, revealing his hatred of the Matrix as a zoo, a prison, and his need to escape. Morpheus resists. Neo fires a mounted machine gun through the office windows from the helicopter, raking the room with bullets. Morpheus breaks his restraints and dives out the window. Neo leaps after him, catching him in midair on a climbing rope as the helicopter falls. Trinity severs the rope and swings to safety as the helicopter crashes into a skyscraper. Morpheus tells Trinity that the Oracle told Neo exactly what he needed to hear.",
+   "state_changes": [
+    {
+     "entity": "ch-03",
+     "variable": "captivity_status",
+     "path": "/ch-03/state/captivity_status",
+     "dimension": "spatial",
+     "before": "captured",
+     "after": "rescued",
+     "magnitude": 70
+    },
+    {
+     "entity": "ch-03",
+     "variable": "mind_integrity",
+     "path": "/ch-03/state/mind_integrity",
+     "dimension": "psychological",
+     "before": "under_attack",
+     "after": "restored",
+     "magnitude": 60
+    },
+    {
+     "entity": "ch-04",
+     "variable": "pursuit_phase",
+     "path": "/ch-04/state/pursuit_phase",
+     "dimension": "spatial",
+     "before": "torturing_morpheus",
+     "after": "fighting_neo",
+     "magnitude": 40
+    },
+    {
+     "entity": "lo-09",
+     "variable": "morpheus_held",
+     "path": "/lo-09/state/morpheus_held",
+     "dimension": "spatial",
+     "before": true,
+     "after": false,
+     "magnitude": 60
+    }
+   ],
+   "caused_by": [
+    "ev-012"
+   ],
+   "causes": [
+    "ev-014"
+   ],
+   "causal_note": "The lobby massacre and helicopter rescue are the escalation through action that vindicates Morpheus's faith and forces Smith into direct combat with Neo.",
+   "reversal": false,
+   "plot_function": "escalation_through_action",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-014": {
+   "story_time": {
+    "index": 14,
+    "label": "day 7, late afternoon",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-05",
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st11"
+    },
+    {
+     "plot": "pl-05",
+     "step": "st5"
+    },
+    {
+     "plot": "pl-03",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-10",
+   "participants": [
+    "ch-01",
+    "ch-04",
+    "ch-02",
+    "ch-06"
+   ],
+   "summary": "At the subway station, Neo refuses to run, fights Smith hand to hand, throws him in front of a train, and declares his name; Trinity's disclosure is interrupted by the train.",
+   "action": "At the subway station, Morpheus exits through the phone. Trinity tries to tell Neo what the Oracle told her about falling in love, but a train blasts into the station, drowning her voice. Neo asks her to promise to tell him the rest. The old man in the corner transforms into Agent Smith, who shoots at Trinity as she disappears through the phone, destroying the receiver. Neo refuses to run. He and Smith draw guns simultaneously, both emptying their magazines, then fight hand to hand. Smith overpowers Neo, choking him near the third rail. As a train approaches, Neo declares his name is Neo, hurls Smith against the ceiling, and backflips onto the platform as the train barrels over Smith. Smith reconstitutes from the last car and pursues.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "self_belief",
+     "path": "/ch-01/state/self_belief",
+     "dimension": "psychological",
+     "before": "uncertain",
+     "after": "beginning_to_believe",
+     "magnitude": 40
+    },
+    {
+     "entity": "ch-04",
+     "variable": "pursuit_phase",
+     "path": "/ch-04/state/pursuit_phase",
+     "dimension": "spatial",
+     "before": "fighting_neo",
+     "after": "fighting_neo",
+     "magnitude": 0
+    },
+    {
+     "entity": "lo-10",
+     "variable": "exit_phone_functional",
+     "path": "/lo-10/state/exit_phone_functional",
+     "dimension": "technological",
+     "before": true,
+     "after": false,
+     "magnitude": 80
+    },
+    {
+     "entity": "ch-02",
+     "variable": "love_for_neo",
+     "path": "/ch-02/state/love_for_neo",
+     "dimension": "emotional",
+     "before": "growing",
+     "after": "urgent",
+     "magnitude": 30
+    }
+   ],
+   "caused_by": [
+    "ev-013"
+   ],
+   "causes": [
+    "ev-015"
+   ],
+   "causal_note": "Neo's refusal to run and his declaration of identity mark the beginning of his belief; the destroyed exit phone forces a new escape route through the Heart O' the City Hotel.",
+   "reversal": false,
+   "plot_function": "trial_by_combat",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-015": {
+   "story_time": {
+    "index": 15,
+    "label": "day 7, late afternoon to dusk",
+    "duration_min": 15
+   },
+   "primary_plot": "pl-05",
+   "plots": [
+    "pl-05",
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-05",
+     "step": "st6"
+    },
+    {
+     "plot": "pl-01",
+     "step": "st12"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01",
+    "ch-04",
+    "ch-11",
+    "ch-12",
+    "ch-06",
+    "ch-03",
+    "ch-02",
+    "gr-03"
+   ],
+   "summary": "Neo races through the city to the Heart O' the City Hotel; Smith waits in room 303 and shoots him dead as Sentinels attack the ship.",
+   "action": "Neo sprints through the city, stealing phones from pedestrians as Agents pursue and inhabit civilians. Tank guides him to an old exit at the Heart O' the City Hotel, room 303. Sentinels attack the Nebuchadnezzar, burning through the hull. Morpheus charges the EMP but cannot detonate while Neo is still in the Matrix. Neo kicks through the hotel room door to find Agent Smith waiting with a cocked pistol. Smith fires three shots into Neo's chest. Neo falls to the carpet, blood smearing the wallpaper. Agent Brown confirms he is gone. Smith says goodbye. On the main deck, Neo's life monitors snap flatline. Morpheus stumbles in disbelief.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "alive",
+     "path": "/ch-01/state/alive",
+     "dimension": "physiological",
+     "before": true,
+     "after": false,
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-01",
+     "variable": "physical_condition",
+     "path": "/ch-01/state/physical_condition",
+     "dimension": "physiological",
+     "before": "rebuilt",
+     "after": "wounded",
+     "magnitude": 90
+    },
+    {
+     "entity": "lo-06",
+     "variable": "hull_integrity",
+     "path": "/lo-06/state/hull_integrity",
+     "dimension": "material",
+     "before": "intact",
+     "after": "breached",
+     "magnitude": 60
+    },
+    {
+     "entity": "lo-06",
+     "variable": "sentinel_proximity",
+     "path": "/lo-06/state/sentinel_proximity",
+     "dimension": "spatial",
+     "before": "clear",
+     "after": "attacking",
+     "magnitude": 80
+    },
+    {
+     "entity": "gr-03",
+     "variable": "proximity_to_ship",
+     "path": "/gr-03/state/proximity_to_ship",
+     "dimension": "spatial",
+     "before": "clear",
+     "after": "attacking",
+     "magnitude": 80
+    },
+    {
+     "entity": "lo-01",
+     "variable": "narrative_role",
+     "path": "/lo-01/state/narrative_role",
+     "dimension": "world",
+     "before": "escape_point",
+     "after": "resurrection_site",
+     "magnitude": 60
+    }
+   ],
+   "caused_by": [
+    "ev-014"
+   ],
+   "causes": [
+    "ev-016"
+   ],
+   "causal_note": "Neo's death in the Matrix is the apparent death required by the plot structure; the simultaneous Sentinel attack creates dual-world stakes binding both timelines.",
+   "reversal": true,
+   "plot_function": "apparent_death",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-016": {
+   "story_time": {
+    "index": 16,
+    "label": "day 7, dusk",
+    "duration_min": 10
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03",
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-03",
+     "step": "st6"
+    },
+    {
+     "plot": "pl-01",
+     "step": "st13"
+    }
+   ],
+   "location": "lo-06",
+   "participants": [
+    "ch-02",
+    "ch-01",
+    "ch-06",
+    "ch-03",
+    "cn-03"
+   ],
+   "summary": "Trinity confesses the Oracle's love prophecy over Neo's dead body, kisses him, and his heart restarts.",
+   "action": "Amid the ship's destruction, Trinity whispers to Neo's body that the Oracle told her she would fall in love and that the man she loved would be the One. She tells him he cannot be dead because she loves him. She kisses him, believing with all her heart he will feel her lips and know they speak the truth. In room 303 of the Heart O' the City Hotel, Neo's eyes snap open. On the main deck, the monitors jump back to life. Tank and Morpheus stare in disbelief. Trinity tells Neo to get up.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "alive",
+     "path": "/ch-01/state/alive",
+     "dimension": "physiological",
+     "before": false,
+     "after": true,
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-02",
+     "variable": "oracle_love_prophecy_status",
+     "path": "/ch-02/state/oracle_love_prophecy_status",
+     "dimension": "epistemic",
+     "before": "partially_disclosed",
+     "after": "confessed",
+     "magnitude": 70
+    },
+    {
+     "entity": "ch-02",
+     "variable": "love_for_neo",
+     "path": "/ch-02/state/love_for_neo",
+     "dimension": "emotional",
+     "before": "urgent",
+     "after": "confessed",
+     "magnitude": 60
+    },
+    {
+     "entity": "ch-02",
+     "variable": "belief_in_neo_as_one",
+     "path": "/ch-02/state/belief_in_neo_as_one",
+     "dimension": "psychological",
+     "before": "uncertain",
+     "after": "confirmed",
+     "magnitude": 70
+    },
+    {
+     "entity": "cn-03",
+     "variable": "disclosed",
+     "path": "/cn-03/state/disclosed",
+     "dimension": "epistemic",
+     "before": false,
+     "after": true,
+     "magnitude": 80
+    },
+    {
+     "entity": "cn-03",
+     "variable": "fulfilled",
+     "path": "/cn-03/state/fulfilled",
+     "dimension": "world",
+     "before": false,
+     "after": true,
+     "magnitude": 90
+    }
+   ],
+   "caused_by": [
+    "ev-015"
+   ],
+   "causes": [
+    "ev-017"
+   ],
+   "causal_note": "Trinity's confession fulfills the Oracle's love prophecy and triggers Neo's resurrection. The prophecy is self-fulfilling, not declarative.",
+   "reversal": true,
+   "plot_function": "resurrection_trigger",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-017": {
+   "story_time": {
+    "index": 17,
+    "label": "day 7, dusk",
+    "duration_min": 10
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st14"
+    },
+    {
+     "plot": "pl-05",
+     "step": "st7"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01",
+    "ch-04",
+    "ch-11",
+    "ch-12",
+    "ch-03",
+    "ch-02",
+    "gr-01"
+   ],
+   "summary": "Neo awakens as the One, stops bullets, sees the Matrix as code, dives into and destroys Smith; the remaining Agents flee.",
+   "action": "Neo rises to his feet as the three Agents fire. He raises his hand and the bullets slow and stop in midair. He plucks one from the air and sees the Matrix as cascading green code for the first time. Agent Smith attacks in fury but Neo blocks every blow and sends him flying with one strike. Neo dives into Smith's body, destroying him from within in an explosion of light. The remaining Agents, Brown and Jones, flee in fear. On the main deck, Morpheus declares Neo is the One. Neo reaches for the ringing phone as Sentinels descend on the ship.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "is_the_one",
+     "path": "/ch-01/state/is_the_one",
+     "dimension": "world",
+     "before": false,
+     "after": true,
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-01",
+     "variable": "self_belief",
+     "path": "/ch-01/state/self_belief",
+     "dimension": "psychological",
+     "before": "beginning_to_believe",
+     "after": "the_one",
+     "magnitude": 80
+    },
+    {
+     "entity": "ch-01",
+     "variable": "physical_condition",
+     "path": "/ch-01/state/physical_condition",
+     "dimension": "physiological",
+     "before": "wounded",
+     "after": "transformed",
+     "magnitude": 80
+    },
+    {
+     "entity": "ch-04",
+     "variable": "status",
+     "path": "/ch-04/state/status",
+     "dimension": "world",
+     "before": "active",
+     "after": "destroyed",
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-11",
+     "variable": "status",
+     "path": "/ch-11/state/status",
+     "dimension": "world",
+     "before": "active",
+     "after": "fled",
+     "magnitude": 70
+    },
+    {
+     "entity": "ch-12",
+     "variable": "status",
+     "path": "/ch-12/state/status",
+     "dimension": "world",
+     "before": "active",
+     "after": "fled",
+     "magnitude": 70
+    },
+    {
+     "entity": "gr-01",
+     "variable": "awareness_of_neo",
+     "path": "/gr-01/state/awareness_of_neo",
+     "dimension": "epistemic",
+     "before": "hunting",
+     "after": "fled",
+     "magnitude": 70
+    },
+    {
+     "entity": "cn-01",
+     "variable": "compromised",
+     "path": "/cn-01/state/compromised",
+     "dimension": "world",
+     "before": false,
+     "after": true,
+     "magnitude": 80
+    },
+    {
+     "entity": "cn-02",
+     "variable": "fulfillment_status",
+     "path": "/cn-02/state/fulfillment_status",
+     "dimension": "world",
+     "before": "pending",
+     "after": "fulfilled",
+     "magnitude": 90
+    }
+   ],
+   "caused_by": [
+    "ev-016"
+   ],
+   "causes": [
+    "ev-018"
+   ],
+   "causal_note": "Neo's transformation into the One is triggered by Trinity's love; he destroys Smith and compromises the Matrix, fulfilling the prophecy through action and love.",
+   "reversal": false,
+   "plot_function": "transformation",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-018": {
+   "story_time": {
+    "index": 18,
+    "label": "day 7, dusk to night",
+    "duration_min": 10
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st15"
+    },
+    {
+     "plot": "pl-05",
+     "step": "st7"
+    }
+   ],
+   "location": "lo-06",
+   "participants": [
+    "ch-01",
+    "ch-03",
+    "ch-02",
+    "ch-06",
+    "gr-03",
+    "ob-03"
+   ],
+   "summary": "Morpheus detonates the EMP saving the ship; Neo makes a phone call promising a world without rules and rises into the sky.",
+   "action": "Neo reaches for the ringing phone in the Matrix as Trinity yells now. Morpheus turns the EMP key, detonating an electromagnetic pulse that floods the overflow pit with white light. The Sentinels blink and fall dead, filling the pit with cold metal carcasses. In the still darkness, Neo opens his eyes and Trinity kisses him. Later, Neo makes a phone call to the Matrix, telling whoever is listening that he imagines a world without rules, without controls, and that he will show them a world of hope and peace. He hangs up, steps out of the phone booth, puts on sunglasses, and rises into the sky, flying faster than a speeding bullet.",
+   "state_changes": [
+    {
+     "entity": "ob-03",
+     "variable": "detonated",
+     "path": "/ob-03/state/detonated",
+     "dimension": "world",
+     "before": false,
+     "after": true,
+     "magnitude": 80
+    },
+    {
+     "entity": "lo-06",
+     "variable": "hull_integrity",
+     "path": "/lo-06/state/hull_integrity",
+     "dimension": "material",
+     "before": "breached",
+     "after": "breached",
+     "magnitude": 0
+    },
+    {
+     "entity": "lo-06",
+     "variable": "sentinel_proximity",
+     "path": "/lo-06/state/sentinel_proximity",
+     "dimension": "spatial",
+     "before": "attacking",
+     "after": "destroyed",
+     "magnitude": 80
+    },
+    {
+     "entity": "gr-03",
+     "variable": "proximity_to_ship",
+     "path": "/gr-03/state/proximity_to_ship",
+     "dimension": "spatial",
+     "before": "attacking",
+     "after": "destroyed",
+     "magnitude": 80
+    },
+    {
+     "entity": "ch-03",
+     "variable": "faith_in_neo",
+     "path": "/ch-03/state/faith_in_neo",
+     "dimension": "psychological",
+     "before": "certain",
+     "after": "vindicated",
+     "magnitude": 60
+    }
+   ],
+   "caused_by": [
+    "ev-017"
+   ],
+   "causes": [],
+   "causal_note": "The EMP saves the ship, and Neo's closing phone call promises change without delivering it—the film is a beginning, not an ending.",
+   "reversal": false,
+   "plot_function": "resolution",
+   "is_root": false,
+   "is_sink": true
+  }
+ }
+}

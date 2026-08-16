@@ -1,0 +1,95 @@
+{
+ "plots": [
+  {
+   "plot_id": "pl-01",
+   "type": "external_main",
+   "title": "The Tide-Window Search",
+   "agent": [
+    "ent-maren"
+   ],
+   "resistance": [
+    "ent-derek",
+    "ent-coastguard",
+    "env-tide"
+   ],
+   "goal": "Recover the person who went over the east-wall railing before the tide carries them past searchable ground.",
+   "stakes": "If she waits for Coastguard, the whole tide closes the window and whoever went over is already past the bar; if she launches and still finds no one, the station gains only another unofficial box and she will not sleep.",
+   "outcome": "failure",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "state_of_rupture",
+     "intent": "Before dawn Maren finds the east-wall railing bent outward and takes wet paint on her fingers as the stamp that somebody has just gone over. She reports the going-over to the station; a torch sweep of the black water returns nothing.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "institutional_refusal",
+     "intent": "Derek, coat still on, reports that Coastguard cannot launch for four hours. Maren names those four hours as the whole tide, so official rescue will arrive only after the search window has already closed.",
+     "because": []
+    },
+    "st3": {
+     "step": 3,
+     "function": "contested_warrant",
+     "intent": "She traces a west-to-east line on the three-handed tide charts and claims an entry at three has already carried the person past the bar. He denies she can know the hour of entry; she answers with the wet paint.",
+     "because": []
+    },
+    "st4": {
+     "step": 4,
+     "function": "unsanctioned_commitment",
+     "intent": "He looks from the floor to her wet boots and asks how long she was on the wall; she withholds any answer, takes the station-boat key off the board, and leaves without removing her coat. He goes with her.",
+     "because": []
+    },
+    "st5": {
+     "step": 5,
+     "function": "definition_clash",
+     "intent": "At the harbour mouth he tells her the trip is not a search and that she already knows it. She answers that it remains a search until someone with authority tells her otherwise.",
+     "because": []
+    },
+    "st6": {
+     "step": 6,
+     "function": "point_of_no_return",
+     "intent": "Ahead the bar shows as a white line of broken water. He speaks her name as a warning; she acknowledges the risk and turns the wheel across the bar anyway.",
+     "because": []
+    },
+    "st7": {
+     "step": 7,
+     "function": "empty_yield",
+     "intent": "At low water she walks the grey sandbar nobody stands on twice while he stays at the boat. She finds a shoe, replaces it exactly where it lay, marks the spot with a stick, and photographs it against the shoreline; no living person and no body are found.",
+     "because": []
+    },
+    "st8": {
+     "step": 8,
+     "function": "archival_cost",
+     "intent": "That night she dates the photograph and files it with a railing bolt and a bagged shoe in a fifth identical box, which she shelves beside four others. Derek, eyes still closed, tells her she does not sleep; the person who went over is never returned and Coastguard never arrives inside the day.",
+     "because": []
+    }
+   },
+   "resolution_step": "st8",
+   "thematic_function": "Proves that insisting a missing person is still searchable does not recover them; the only return from the day's will is another unofficial box on the shelf.",
+   "screen_time_share": 1.0,
+   "interference": [],
+   "covers_synopsis": [
+    "s01",
+    "s02",
+    "s03",
+    "s04",
+    "s05",
+    "s06",
+    "s07",
+    "s08",
+    "s09",
+    "s10",
+    "s11",
+    "s12",
+    "s13",
+    "s14",
+    "s15",
+    "s16",
+    "s17",
+    "s18",
+    "s19"
+   ]
+  }
+ ]
+}

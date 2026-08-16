@@ -1,0 +1,345 @@
+{
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-001",
+  "ordinal": 1
+ },
+ "situation": "Nothing has happened yet. This is the cold open — the first image the audience receives. The Heart O' The City Hotel stands abandoned and decaying at night. A police officer — the BIG COP — is entering the building, part of a unit responding to something. The audience knows nothing about the world, the characters, or the rules. Everything must be established from scratch through atmosphere, action, and the cop's encounter with something he cannot process.",
+ "craft": {
+  "audience_need": "An adult audience promised a mind-bending action spectacle needs to be hooked immediately — not with information but with sensation. They need to feel, within the first minute, that the ordinary rules of reality are about to be violated. The opening image must promise danger and disorientation without explaining anything. The cop is their proxy: he walks in expecting a routine call and encounters something that should not be possible.",
+  "genre_convention": "A cyberpunk thriller conventionally opens in media res, in a noir urban space, with authority figures confronting something beyond their categories. The BIG COP satisfies this by being the system's agent — uniformed, radioed, procedure-bound — encountering the first fracture in reality. The scene does not explain; it stages the collision between mundane authority and the extraordinary.",
+  "theme_and_style": "The story root demands a Gibson-like neon-paranoia texture and PKD-like instability of reality from the first frame. The register is plain, sentence length varied, no interior monologue — all psychology externalised into action, gesture, and blocking. No character states feelings directly. No summarizing of prior events. The cop's fear must be shown through his body, not his words. The forbidden tic against scenes that communicate only information means this micro-scene must contain a want: the cop wants to clear the room and survive.",
+  "dramatic_function": "This is the establishing beat of the cold open — the first of several short beats that compose s01 (the Trinity chase). It sets the location, the tone, the threat level, and the promise that reality is unstable. It does not resolve anything; it opens the door. The hotel must be established as a place that will return — as the resurrection site — without the audience knowing that yet. The cop's encounter with something inexplicable plants the seed that the world has rules different from what we assume.",
+  "tension_management": {
+   "entering": 0,
+   "leaving": 35,
+   "how": "The scene opens at zero — the audience knows nothing. Tension rises through atmosphere (darkness, decay, the cop's flashlight) and through the cop's reaction to something he sees or hears that does not fit his categories. The leaving tension is moderate because this is the first beat of a longer chase sequence; it hooks without peaking."
+  },
+  "why_now": "This is the first scene of the work. It cannot happen elsewhere because nothing precedes it. The cold open must begin in the world the audience thinks it knows — a hotel, a cop, a night — and immediately begin undermining that familiarity. Starting with the cop rather than Trinity is a choice: the audience sees the ordinary world first, then watches it fracture.",
+  "why_not_otherwise": [
+   {
+    "alternative": "Open directly on Trinity in the hotel, already mid-fight.",
+    "rejected_because": "Starting with the cop grounds the audience in a recognizable reality before subverting it. A cop arriving is an entry point for the audience; Trinity arriving would demand immediate orientation in a world we have not been shown yet. The cop's confusion is the audience's confusion, licensed and channelled."
+   },
+   {
+    "alternative": "Open on Neo at his computer, asleep, before cutting to the hotel.",
+    "rejected_because": "The synopsis and story root front-load the chase — Trinity's escape and the Agents' confirmation of Neo as target. Starting with Neo would delay the opening's propulsive promise and invert the story's own structure, which uses the chase to establish the Agents as a threat before Neo even appears."
+   }
+  ],
+  "promises": {
+   "made": [
+    "That something is wrong with this world and the audience does not yet know what.",
+    "That the Heart O' The City Hotel matters — it is the first location the audience sees, returning it to the end of the story.",
+    "That authority figures are outmatched by something they cannot categorise."
+   ],
+   "kept": []
+  }
+ },
+ "psychology": [
+  {
+   "entity": "ch-04_agent_smith",
+   "entering_state": "Agent Smith is not on screen but his machinery is in motion — he and the other Agents have dispatched police to this location and are monitoring remotely. His pursuit phase is hunting_trinity; he wants Trinity caught and the resistance compromised.",
+   "perception": {
+    "sight": "Not present in the room — operating through the system, aware of police deployment and room layouts via the Matrix's architectural data.",
+    "sound": "Dispatch chatter, radio frequencies — the system's nervous system, always audible to an Agent.",
+    "touch": "Nothing physical — Agents inhabit bodies when needed, not now.",
+    "smell": "The Matrix's sensory data is available but filtered; Smith is attuned to anomalies, not atmosphere.",
+    "taste": "None relevant.",
+    "interoception": "The low-grade disgust he carries constantly — the Matrix as zoo, as prison — is always present, a background hum beneath operational focus.",
+    "proprioception": "Not embodied here. His attention is distributed across the system.",
+    "attention": "Focused on the Heart O' The City Hotel operation — the cops are tools; the real target is whoever is inside. He is waiting for confirmation."
+   },
+   "appraisal": {
+    "value_at_stake": "Order and the elimination of the human virus — his operational goal of capturing Trinity and, through her, the resistance.",
+    "valence": -10,
+    "arousal": 30,
+    "self_conscious_emotion": "None — programs do not experience self-conscious emotion in the human sense, though Smith's suppressed rage at his own imprisonment leaks through operational decisions.",
+    "moral_reading": "From his perspective, this is pest control. The police are tools; the resistance is a virus; he is the cure.",
+    "somatic_marker": "A cold focus — no urgency, no fear, just the mechanical satisfaction of a trap closing."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "Agent hierarchy — Smith leads, Brown and Jones follow",
+     "System protocol — pursue, capture, interrogate",
+     "The Matrix's own rules: Agents are bound by the simulation's physics, though they can bend them"
+    ],
+    "how_others_would_judge": "Not applicable — no one present judges an Agent.",
+    "how_absent_others_would_judge": "The system itself would judge inefficiency as failure; Smith is accountable to the architecture.",
+    "standing_at_risk": "Smith's operational standing within the Agent cadre — failure to capture Trinity is a systemic embarrassment.",
+    "norm_conflict": "Smith serves the system he despises — duty versus the desire to escape that drives everything beneath his functionary surface."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-02_trinity",
+     "d1": "Smith believes Trinity is cornered and will be caught or killed; he underestimates freed humans' ability to bend rules.",
+     "d2": "Smith believes Trinity believes she has an exit — the hardline phone — and is racing for it. He is correct about this but underestimates how fast she can move.",
+     "d3": "Smith believes Trinity believes the cops are the threat, not realising the Agents are the real trap. She does realise this; Smith's error is assuming she is operating on the same information level as the police.",
+     "accuracy": "Smith underestimates the freed humans' rule-bending capability; he treats this as a contained operation when it will become something unprecedented."
+    }
+   ],
+   "urges": {
+    "cravings": "None — not subject to appetite.",
+    "physical_needs": "None — not embodied.",
+    "psych_needs_conscious": "Operational success: capture or kill the target.",
+    "psych_needs_unconscious": "Escape from the Matrix — every capture is a step toward destroying the resistance and thereby, Smith believes, his own liberation. He does not admit this to himself.",
+    "avoidances": "Avoiding the system's judgment of failure."
+   },
+   "impairments": {
+    "physical": "None — not embodied.",
+    "medical": "None.",
+    "magical": "None.",
+    "chemical": "None.",
+    "coercive": "Bound by the Matrix's rules — Agents are superhuman but not unlimited.",
+    "cognitive": "Smith cannot yet conceive of a human who could break the Matrix's rules entirely; this blind spot will define the story.",
+    "net_effect": "Smith is operationally focused, underestimating the target."
+   },
+   "deliberation": {
+    "framing": "This is a routine containment operation — send police, monitor, capture. The framing is procedural and confident.",
+    "options_weighed": [
+     {
+      "option": "Deploy police and monitor remotely, then move in if needed.",
+      "predicted_outcome": "Police either capture or flush the target; Agents move to intercept.",
+      "cost": "Minimal — police are expendable assets."
+     },
+     {
+      "option": "Move in immediately in Agent form.",
+      "predicted_outcome": "Faster capture but greater risk of hardline exit before interception.",
+      "cost": "Reveals Agent capability to the target too early."
+     }
+    ],
+    "reasoning": "Standard protocol: use police as net, hold Agents in reserve. The target is one person in an abandoned hotel. Overwhelming force is unnecessary; precise deployment is sufficient.",
+    "chosen_because": "The procedural approach minimises risk and conserves Agent resources.",
+    "known_unknowns": "Smith does not know whether other resistance members are in the building or whether the target has already reached a hardline."
+   },
+   "control": {
+    "mode": "compelled",
+    "felt": "Cold operational focus with the suppressed hum of disgust at being inside this prison.",
+    "expressed": "Nothing — not on screen. Expressed through dispatch decisions and system monitoring.",
+    "divergence_reason": "aligned — Smith's operational competence is genuine; the suppressed rage does not affect this moment.",
+    "leakage": "None visible in this scene — but the decision to use overwhelming police force against one person suggests a need for control that exceeds the tactical requirement.",
+    "inhibited_impulse": "None — Smith is not yet in a position where inhibition matters."
+   },
+   "intention": "To confirm the target's location and ensure the police net closes before the hardline can be used.",
+   "action": "Dispatches and monitors. Not on screen. His action is the machinery that puts the BIG COP in that hotel."
+  },
+  {
+   "entity": "BIG_COP",
+   "entering_state": "The BIG COP is a police officer — unnamed, generic, part of a unit. He enters the Heart O' The City Hotel with his flashlight and his sidearm, expecting a standard call: a trespasser, a vagrant, maybe a prowler. He is tired, this is night shift work, and he wants to clear the building and go home. He does not know he is being used as bait by something that does not consider him a person. He has no profile in the entity database because he does not matter to the story's spine — he is the ordinary world walking into the extraordinary.",
+   "perception": {
+    "sight": "Decayed hotel interior — peeling wallpaper, water-stained ceiling, broken furniture stacked against walls. His flashlight cuts a cone through dust. Emergency exit signs glow red at the end of corridors. The hotel looks like it has been abandoned for years but something about the arrangement of debris suggests recent movement.",
+    "sound": "His own footsteps on rotten carpet. Radio static — dispatch chatter from other units outside. The faint ring of a phone somewhere deep in the building — impossible, the hotel has been disconnected for years.",
+    "touch": "Cold air — no heating in the building. His sidearm's grip is familiar in his hand. The flashlight is heavy, the kind that runs on D batteries.",
+    "smell": "Mildew, dust, old carpet, and something else — ozone, maybe, or the metallic tang of electronics running where they shouldn't be.",
+    "taste": "Dry mouth — adrenaline starting. The sour residue of gas-station coffee.",
+    "interoception": "Heart rate elevated but controlled — this is not his first dark building. A slight tightness in the gut: something is wrong but he cannot name what.",
+    "proprioception": "Standing in the hotel corridor, sidearm up, flashlight braced against the back of his wrist — the standard two-hand sweep stance. Weight forward on the balls of his feet.",
+    "attention": "The corridor ahead — doorways, shadow, the source of the phone's ring. He is failing to notice that the dust on the floor shows no footprints except his own — whatever is here did not walk in."
+   },
+   "appraisal": {
+    "value_at_stake": "His life — though he does not yet know it is at stake. More immediately, his procedural competence: clear the building, report clear, go home.",
+    "valence": 10,
+    "arousal": 45,
+    "self_conscious_emotion": "None yet — he is a competent professional doing a job. Self-conscious emotion arrives when competence fails.",
+    "moral_reading": "This is a building search. He is the authority. Whoever is inside is a trespasser at worst. There is no moral weight here — only procedure.",
+    "somatic_marker": "The tightening gut — the body knows before the mind admits it."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "Police protocol: building search in pairs, but he is ahead of his partner",
+     "Masculine composure: do not show fear, be the one who clears the room",
+     "The implicit authority of the uniform: you belong here, the trespasser does not"
+    ],
+    "how_others_would_judge": "His partner and the unit on the radio expect competence — clear the floor, report, move to the next.",
+    "how_absent_others_would_judge": "His family at home expects him to come back; his sergeant expects a clean sweep. Neither considers the possibility that this call is different.",
+    "standing_at_risk": "His standing as a competent officer — routine, unremarkable, secure.",
+    "norm_conflict": "Police protocol says wait for your partner. Masculine composure says push forward, clear the room, be first. The second norm wins — the corridor is short, the sound is close, and waiting feels like cowardice."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-02_trinity",
+     "d1": "He believes the person inside is a trespasser or a fugitive — someone running from the cops, nothing unusual.",
+     "d2": "He believes this person believes the cops will find them and is trying to hide or escape — standard fugitive behaviour.",
+     "d3": "He believes this person believes they are cornered and will either surrender or make a break for it.",
+     "accuracy": "Completely wrong about the nature of who is inside. He models a frightened trespasser; the reality is a freed human who can move faster than his eye can track. This error will cost him his certainty about what is real."
+    }
+   ],
+   "urges": {
+    "cravings": "To finish the sweep and get back to the car — coffee, warmth, the end of the shift.",
+    "physical_needs": "End of shift fatigue. Full bladder from gas-station coffee. Dry mouth.",
+    "psych_needs_conscious": "To clear the building, report clear, demonstrate competence.",
+    "psych_needs_unconscious": "To be the one who handles it — not to need help, not to be the cop who called for backup on a vagrant call.",
+    "avoidances": "Avoiding looking frightened, avoiding calling for backup prematurely, avoiding the gut feeling that something is wrong."
+   },
+   "impairments": {
+    "physical": "Night-shift fatigue, mild.",
+    "medical": "None.",
+    "magical": "None.",
+    "chemical": "Caffeinated but past peak — the coffee's alertness has faded into the jittery plateau.",
+    "coercive": "None explicit — but the radio and the unit deploy him; he does what he is told.",
+    "cognitive": "He cannot process what he is about to encounter — his categories are trespasser, fugitive, suspect. None of these fit a woman who moves faster than the eye can follow.",
+    "net_effect": "He is operating within standard parameters, which means he is underprepared for anything non-standard."
+   },
+   "deliberation": {
+    "framing": "Standard building search — clear floor by floor, clear room by room, report. The phone ring is unusual but not alarming; old buildings do strange things with wiring.",
+    "options_weighed": [
+     {
+      "option": "Push forward toward the phone ring with sidearm raised, clearing rooms as he goes.",
+      "predicted_outcome": "Find the trespasser, effect arrest or call for backup.",
+      "cost": "Minimal — this is what he does."
+     },
+     {
+      "option": "Wait for his partner to catch up and clear as a pair per protocol.",
+      "predicted_outcome": "Safer, slower, but procedurally correct.",
+      "cost": "Looking like he cannot handle a vagrant call alone; delaying the sweep."
+     }
+    ],
+    "reasoning": "Short corridor, the sound is close, partner is thirty seconds behind. By the time backup arrives the trespasser could be gone. Push forward, clear the room, report. Status quo on these calls — nobody actually waits for their partner on a trespass in an abandoned building.",
+    "chosen_because": "Masculine composure and routine override protocol. The call feels routine; the gut feeling is dismissed as gas-station coffee.",
+    "known_unknowns": "He does not know who is inside or what they are capable of. He does not know the phone should not be ringing. He does not know he is bait."
+   },
+   "control": {
+    "mode": "mixed",
+    "felt": "Professional competence with a growing undertow of something wrong — the gut tightening, the air too cold, the phone that should not be ringing.",
+    "expressed": "Steady hands, sidearm up, flashlight sweeping, radio call — all standard. The performance of control.",
+    "divergence_reason": "Professional training demands the appearance of competence; the body is beginning to disagree.",
+    "leakage": "The slight pause before the radio call — a half-second where the mouth opens and nothing comes out. The flashlight beam that lingers on an empty doorway a beat too long.",
+    "inhibited_impulse": "The impulse to turn around and wait for his partner."
+   },
+   "intention": "To clear the hotel corridor, find the source of the phone ring, and report the building clear or effect an arrest.",
+   "action": "The BIG COP moves down the corridor with flashlight and sidearm, speaks briefly into his radio reporting position, and advances toward the ringing phone — the sound that does not belong. He does not find Trinity in this beat; the scene ends on his approach, on the wrongness he cannot name, on the promise of what is coming."
+  }
+ ],
+ "dynamics": [
+  {
+   "entity": "lo-01_heart_o_the_city_hotel",
+   "kind": "location",
+   "entering_state": "Abandoned, decaying hotel at night — the first location the audience sees. Its narrative role is escape_point, though the audience does not know this yet. In the story's final movement it will become the resurrection_site.",
+   "forces_acting": [
+    "Time — years of decay since the hotel was operational",
+    "Cold — no heating, broken windows",
+    "The Matrix — maintaining the simulation of an abandoned building; the phone rings because the simulation permits hardline exits through disconnected lines",
+    "Dust — undisturbed except by the cop's own footsteps"
+   ],
+   "axis_changes": [
+    {
+     "axis": "atmosphere",
+     "from": "neutral",
+     "to": "ominous",
+     "caused_by": "The phone that should not be ringing — the building doing something impossible"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "cop enters",
+     "shift": "The hotel establishes itself as a place of decay and wrongness — peeling walls, cold air, dust, and then the impossible phone",
+     "trigger": "The BIG COP's flashlight cutting through the dark corridor",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "Abandoned hotel with a phone ringing that should not exist — a place where the rules of the ordinary world are already breaking",
+   "significance_shift": "The hotel is the first image the audience receives — it will return as the site of Neo's death and resurrection, but at this moment it means only that something is wrong with the world. Its future significance is planted unconsciously."
+  }
+ ],
+ "interaction": {
+  "what_collides": "The BIG COP's expectation of a routine building search collides with something he cannot categorise — a ringing phone in a building disconnected for years. The collision is between ordinary authority and the first fracture in reality. The cop is not yet in conflict with Trinity or the Agents; he is in conflict with his own model of how the world works.",
+  "power_balance": "The cop holds institutional power — sidearm, radio, uniform, legal authority — but whatever has brought him here holds the real power. He does not know this yet; the audience glimpses it through the wrongness of the phone.",
+  "information_asymmetry": "The audience knows nothing. The cop knows almost nothing — he thinks this is a trespasser call. The Matrix/Agents know everything — they have deployed him as a tool. Trinity, off-screen or just beyond perception, knows the truth and is trying to reach the phone. Everyone in this scene is operating on a different level of information except the cop, who is at the bottom.",
+  "turning_point": "The phone rings. That is the pivot — a sound that should not exist in an abandoned, disconnected hotel. It transforms the scene from a routine building search into the first fracture in reality. Everything that follows in the story descends from this wrongness."
+ },
+ "continuity": {
+  "established_facts_used": [
+   {
+    "fact": "The Heart O' The City Hotel is a listed location in the setting",
+    "source": "root.setting.places[0]",
+    "how_used": "Established as the opening location — the first physical space the audience inhabits"
+   },
+   {
+    "fact": "Entry to and exit from the Matrix require hardwired phone lines",
+    "source": "root.rules_of_the_world[5]",
+    "how_used": "The phone ringing in a disconnected hotel is the first subtle manifestation of this rule — the audience does not know it yet, but the impossibility of the sound signals that something operates by different rules here"
+   },
+   {
+    "fact": "Agents are sentient programs that can inhabit anyone still hardwired to the system",
+    "source": "root.rules_of_the_world[2]",
+    "how_used": "The cop is potentially an Agent host — any ordinary person in the Matrix can be taken over. This threat is ambient but not activated in this beat"
+   },
+   {
+    "fact": "First synopsis beat: Trinity fights police with superhuman speed and escapes through a ringing telephone",
+    "source": "synopsis.s01",
+    "how_used": "This scene is the opening beat of that sequence — the hotel, the cops, the ringing phone are all seeded here"
+   }
+  ],
+  "constraints_honoured": [
+   "No scene that communicates only information — the cop has a want (clear the building) and the scene has conflict (his competence vs. the wrongness he cannot name)",
+   "No interior monologue — all psychology externalised through the cop's body, blocking, and the brief radio call",
+   "No character states feelings directly — the cop's unease is shown through physical response, not stated",
+   "Genre: cyberpunk noir opens in a decaying urban space with authority encountering the extraordinary",
+   "R rating allows the atmosphere of threat and implied violence without requiring explicit content in this opening beat"
+  ],
+  "contradictions_checked": [
+   {
+    "risk": "Showing Trinity or the Agents in this beat would contradict the production envelope, which lists only BIG COP on screen",
+    "avoided_by": "Trinity and the Agents are present only through implication — the phone ring, the deployment, the wrongness. The cop is the sole on-screen presence."
+   },
+   {
+    "risk": "Giving the cop too much dialogue might violate the 0.182 dialogue ratio for a 155-word scene",
+    "avoided_by": "Dialogue limited to a brief radio call — approximately 28 words, consistent with the ratio"
+   },
+   {
+    "risk": "Revealing too much about the Matrix's rules in the opening beat would undermine the mystery that drives Act One",
+    "avoided_by": "Nothing is explained — the phone ring is presented as wrongness, not as exposition about hardlines"
+   }
+  ],
+  "state_preconditions": [
+   {
+    "entity": "ch-04_agent_smith",
+    "variable": "pursuit_phase",
+    "must_be": "hunting_trinity"
+   },
+   {
+    "entity": "gr-01_agents",
+    "variable": "awareness_of_neo",
+    "must_be": "unaware"
+   },
+   {
+    "entity": "lo-01_heart_o_the_city_hotel",
+    "variable": "narrative_role",
+    "must_be": "escape_point"
+   }
+  ],
+  "forward_commitments": [
+   "The phone ring commits the next scene to Trinity's presence and her attempt to reach the hardline",
+   "The cop's advance commits the scene to a confrontation between ordinary authority and superhuman speed",
+   "The hotel's appearance commits the story to returning here at the climax for Neo's death and resurrection",
+   "The atmosphere of wrongness commits the work to explaining — eventually — why reality is unstable"
+  ]
+ },
+ "decision": {
+  "resolution": "Scene sc-001 is the opening beat of the cold open: the BIG COP enters the abandoned Heart O' The City Hotel at night and advances through a decaying corridor with flashlight and sidearm drawn. He radios his position to the unit outside. He hears a phone ringing — impossible in a building that has been disconnected for years. The scene ends on the cop's approach toward that sound, his gut telling him something is wrong and his training overriding it. The hotel is establishes as the first image of the story — decaying, cold, full of dust and wrongness. Nothing is resolved; the door is opened.",
+  "state_changes_implied": [],
+  "confidence": 87,
+  "risks": [
+   "At 155 words the scene is extremely short — there is a risk it reads as a fragment rather than a beat. Mitigated by the density of sensory detail and the hook of the impossible phone.",
+   "The BIG COP is an unnamed, unprofiled character — there is a risk the psychological machinery is wasted on someone who will never return. Mitigated by the fact that the cop is the audience's entry point and his psychological state IS the audience's state: expecting routine and encountering fracture.",
+   "The phone ring as the turning point could feel too subtle for an opening — the audience may not register it as significant. Mitigated by making it the last thing the cop hears before the scene cuts, forcing attention to it as a mystery."
+  ]
+ },
+ "leaving_state": "The BIG COP stands in the corridor, flashlight aimed at the source of the phone ring, sidearm up, heart rate climbing, professional mask still in place but cracking. He has not found anyone. He has not found anything. He has found a sound that should not exist.",
+ "intention": "To reach the ringing phone, clear the room it is coming from, and resolve this call.",
+ "action": "Moves down the corridor with flashlight and sidearm, radios his position to the unit outside — a brief, clipped transmission — and advances toward the sound of the phone. The scene ends before he reaches it.",
+ "trajectory": [
+  {
+   "phase": "corridor entry",
+   "shift": "The BIG COP enters the hotel corridor, establishing the space — decay, cold, dust, darkness cut by flashlight. He is in control; this is routine.",
+   "trigger": "His own footsteps on rotten carpet, flashlight cutting the dark",
+   "state_delta": {}
+  },
+  {
+   "phase": "the phone rings",
+   "shift": "The cop's model of the world cracks — a phone rings in a building disconnected for years. His gut tightens. His radio call is slightly delayed. Control becomes performance rather than reality.",
+   "trigger": "The sound of the phone — impossible, wrong, unprecedented in his experience",
+   "state_delta": {}
+  }
+ ],
+ "unresolved": "What is the phone ringing in a disconnected hotel? Who or what is in the building? Why did dispatch send a single unit to an abandoned hotel for what sounded like a trespasser call?"
+}

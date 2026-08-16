@@ -1,0 +1,314 @@
+{
+ "plots": [
+  {
+   "plot_id": "pl-01",
+   "type": "external_main",
+   "title": "The Dawn Site",
+   "agent": [
+    "ch-01"
+   ],
+   "resistance": [
+    "ch-02",
+    "ch-03",
+    "ch-04",
+    "ch-05",
+    "ch-06",
+    "ch-07",
+    "ch-08",
+    "ch-09",
+    "pl-02",
+    "pl-03"
+   ],
+   "goal": "Locate every Daywalker token and speak the dawn invocation at the one fixed site, ending the match in his favor and taking the single prize.",
+   "stakes": "Unfed frenzy and elimination; a rival completing first; remaining trapped in the underclass that bought him the ticket.",
+   "outcome": "transformation_of_goal",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "competent_entry",
+     "intent": "The Analyst spawns in closed 1984 Bennington with period clothes, one hundred dollars, and a hunger that will frenzy him if he stalls. He maps the town at night like a ledger and feeds in rotation on a hardware clerk, a night nurse, and a graveyard-shift waitress, always short of the death threshold so they regenerate.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "goal_lock",
+     "intent": "He isolates the Daywalker Ritual as a finite set of locatable tokens and one dawn invocation at one fixed site. The prize is the only paying exit; failure means frenzy, vanishing, or watching another Guest take the single win.",
+     "because": []
+    },
+    "st3": {
+     "step": 3,
+     "function": "world_state_squeeze",
+     "intent": "Five rivals rewrite the town without meeting him: UV shop-lights cage downtown, hospital blood goes dry under tribute talk, a college cult of willing donors forms, a heartless body appears at the treeline, and a Psychologist writes into Host deception networks. He treats the rewrites as weather and uses the waitress's unremarked photographs as a private map of streets he has not yet walked.",
+     "because": []
+    },
+    "st4": {
+     "step": 4,
+     "function": "forced_dependency",
+     "intent": "Her Polaroid stack has caught Ritual residue he cannot afford to lose: chalk, a church window at the wrong hour, a hardware invoice for UV tubes that points at the dawn site. Hunger, the Architect's maze, and the Syndicate's dry wards have closed every other decode before dawn, so he must use her investigation even as he becomes its repeating figure.",
+     "because": [
+      "pl-02:st4"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "resource_hardening",
+     "intent": "Hosts begin locking the diner after dark, the nurse will not meet his eye, and Main Street becomes a corridor of shop-lights he has to cross already hungry. The clean rotation is no longer a clean rotation.",
+     "because": [
+      "pl-02:st5"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "rule_reversal",
+     "intent": "He pulls the last token from a Polaroid of the dawn site taken on a night she cannot remember. Completing the invocation would end the match, and a ended match is a wipe with no morning after for any stack of photographs.",
+     "because": [
+      "pl-02:st4"
+     ]
+    },
+    "st7": {
+     "step": 7,
+     "function": "ticking_choice",
+     "intent": "Dawn is two hours out, hunger is near frenzy, and UV lights are already being dragged toward the stone. He can take the stack, speak the words, and leave with the prize, or remain in a town that now has his face.",
+     "because": [
+      "pl-02:st8"
+     ]
+    },
+    "st8": {
+     "step": 8,
+     "function": "withheld_invocation",
+     "intent": "At the dawn site he holds every token and does not speak the invocation; he puts the tokens and her cassette into her hands and steps back into the last shade as sun takes the stone. Sun catches his hand and leaves a scorch that will not regenerate; the prize is forfeit and he remains inside a waking town with no exit but hunger.",
+     "because": [
+      "pl-03:st5",
+      "pl-02:st8"
+     ]
+    }
+   },
+   "resolution_step": "st8",
+   "thematic_function": "Stages mastery as a solvable board of tokens, hunger, and rival weather so that refusing the win is a visible action rather than a speech.",
+   "screen_time_share": 0.42,
+   "interference": [
+    {
+     "with": "pl-02",
+     "kind": "competes for the Polaroid stack and the last hours before dawn: her archive is his only remaining decode and her only continuous self"
+    },
+    {
+     "with": "pl-03",
+     "kind": "same agent and same dawn; speaking the invocation would cancel the recognition the internal plot is forcing"
+    }
+   ],
+   "covers_synopsis": [
+    "s01",
+    "s02",
+    "s05",
+    "s06",
+    "s07",
+    "s08",
+    "s13",
+    "s14",
+    "s16",
+    "s20",
+    "s21",
+    "s23",
+    "s25"
+   ]
+  },
+  {
+   "plot_id": "pl-02",
+   "type": "investigation",
+   "title": "The Kept Hours",
+   "agent": [
+    "ch-02"
+   ],
+   "resistance": [
+    "ch-01",
+    "ch-03",
+    "pl-01"
+   ],
+   "goal": "Rebuild the missing hours from Polaroids and cassette until she holds a continuous night she can keep, and stop being emptied.",
+   "stakes": "Sliding back into a wipe with no ballast; existential collapse if the evidence forces a simulation-belief without analog cover; remaining a renewable throat while the road out of town still loops.",
+   "outcome": "partial_success",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "ordinary_want",
+     "intent": "The waitress already keeps a Polaroid camera and a cassette recorder because she is saving diner tips to leave Bennington and wants proof the town was real when she goes. She photographs the empty diner at close and records the last song off the radio; one early unremarked frame includes the careful man who paid and tipped.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "unseen_conjunction",
+     "intent": "The Psychologist, testing whether a modeled mind can hold a lie across a sleep, stacks hypnotic writes on the same three Hosts the Analyst is draining. Neither the writes nor the rotational drains would wake anyone alone.",
+     "because": [
+      "pl-01:st1"
+     ]
+    },
+    "st3": {
+     "step": 3,
+     "function": "state_of_rupture",
+     "intent": "Together the writes and the drains tear the failsafe. After a third careful feed the waitress surfaces with a scrap of the night still in her mouth and finds a Polaroid she does not remember taking, then another.",
+     "because": [
+      "pl-01:st1"
+     ]
+    },
+    "st4": {
+     "step": 4,
+     "function": "inquiry",
+     "intent": "She begins speaking the missing hours onto cassette between customers and matches a bruise to the nurse who has the same gap. The stack starts catching streets, chalk, a church window at the wrong hour, and a hardware invoice for UV tubes.",
+     "because": []
+    },
+    "st5": {
+     "step": 5,
+     "function": "uncanny_recognition",
+     "intent": "He returns for his rotation and she flinches at his face before she has a reason, then pours the coffee anyway because the till is real and the road out of town still loops her back. Hosts begin locking the diner after dark and the nurse will not meet his eye.",
+     "because": [
+      "pl-01:st4"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "proof_as_weapon",
+     "intent": "A stretch of cassette plays in the empty diner and his own calm instructions are on the tape, a feed she recorded without knowing what the sounds were. The repeating figure now has a voice she can replay after sleep.",
+     "because": []
+    },
+    "st7": {
+     "step": 7,
+     "function": "experiment_backfire",
+     "intent": "The Psychologist sees Hosts comparing notes she did not implant and pushes one more write to save the experiment. The extra write only multiplies the fragments walking around town.",
+     "because": [
+      "pl-01:st5"
+     ]
+    },
+    "st8": {
+     "step": 8,
+     "function": "armed_vigil",
+     "intent": "She is waiting at the dawn site with the UV lamp in one hand and the archive in the other, ready to burn him rather than lose another night she has finally kept. Sleep would spare her and erase the only hours she has held.",
+     "because": [
+      "pl-01:st6"
+     ]
+    },
+    "st9": {
+     "step": 9,
+     "function": "seized_continuity",
+     "intent": "She hides the tokens where no Guest will find them before another nightfall, denying the board a winner, and she keeps the Polaroid of his face in the stack that is now her memory. After sunrise she clips the still-developing polaroid to the diner register beside her tip jar; the cassette runs to leader and hisses; a roll-bar climbs the front window; the looping road stays closed.",
+     "because": [
+      "pl-01:st8"
+     ]
+    }
+   },
+   "resolution_step": "st9",
+   "thematic_function": "Gives one Host a ruling passion that is not him and analog agency that alters the board without his permission; the town's claim against being inventory.",
+   "screen_time_share": 0.33,
+   "interference": [
+    {
+     "with": "pl-01",
+     "kind": "her inquiry both supplies and threatens his win condition; a finished Ritual would wipe the match and every hour she has kept"
+    },
+    {
+     "with": "pl-03",
+     "kind": "every object she keeps makes him visible to himself; his leaks feed the case she is building"
+    }
+   ],
+   "covers_synopsis": [
+    "s03",
+    "s04",
+    "s09",
+    "s10",
+    "s11",
+    "s12",
+    "s13",
+    "s16",
+    "s17",
+    "s19",
+    "s22",
+    "s24",
+    "s26"
+   ]
+  },
+  {
+   "plot_id": "pl-03",
+   "type": "growth_internal",
+   "title": "The Unremembered Customer",
+   "agent": [
+    "ch-01"
+   ],
+   "resistance": [
+    "pl-01",
+    "ch-02"
+   ],
+   "goal": "Leave the match unmarked: take the prize, remain the customer no Host can place, and keep treating nights as inventory.",
+   "stakes": "If the mask holds he takes the prize and cancels her kept hours with the match-end wipe; if it fails he loses the prize, his cover, a hand that will not regenerate, and the last self that could feed clean and walk away.",
+   "outcome": "failure",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "mask_as_method",
+     "intent": "Fastidious small manners — he pays, he tips, he returns what he did not mean to take — operate as control, not conscience. Feeding is clean, short of threshold, and leaves him the unremembered customer.",
+     "because": [
+      "pl-01:st1"
+     ]
+    },
+    "st2": {
+     "step": 2,
+     "function": "first_leak",
+     "intent": "He returns one Polaroid he should have kept, a fastidious leak in a discipline that has been nothing but control. The object leaves his pocket and lands in her stack; the unremembered customer hands her a face.",
+     "because": [
+      "pl-02:st5"
+     ]
+    },
+    "st3": {
+     "step": 3,
+     "function": "divided_will",
+     "intent": "He starts a hypnotic overwrite that would take the last token cold, then stops mid-gesture, because another write will crack her regulation and burn the archive he still means to spend. The stopped hand is the first time care and tactic cannot be told apart.",
+     "because": [
+      "pl-02:st6"
+     ]
+    },
+    "st4": {
+     "step": 4,
+     "function": "moral_inversion",
+     "intent": "He holds the last token against the Polaroid of the dawn site. The invocation that would make him immune would also close the match, and a closed match leaves no morning for a stack of photographs.",
+     "because": [
+      "pl-01:st6"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "want_versus_need",
+     "intent": "Dawn is two hours out and hunger is near frenzy; she is at the stone with a lamp that will burn him. He can take the stack and leave with the prize, or remain the face in a town that will not wipe him — both things he wants will not fit in the same morning.",
+     "because": [
+      "pl-02:st8"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "irreversible_cost",
+     "intent": "He does not speak. Sun lays a scorch across one hand that will not regenerate, and he remains inside the match, prize forfeit, now the face in her archive. The last version of himself that could treat a night as inventory is what he pays.",
+     "because": [
+      "pl-01:st8"
+     ]
+    }
+   },
+   "resolution_step": "st6",
+   "thematic_function": "Moves him from detached solver to a man who cannot unsee a particular face; the mask fails in photographable increments until the debt is a scorch and a kept hour the wipe cannot cancel.",
+   "screen_time_share": 0.25,
+   "interference": [
+    {
+     "with": "pl-01",
+     "kind": "want versus need in one body: the prize and the particular face will not share a dawn"
+    },
+    {
+     "with": "pl-02",
+     "kind": "using her investigation requires a proximity that destroys the unremembered-customer cover this plot is trying to keep"
+    }
+   ],
+   "covers_synopsis": [
+    "s15",
+    "s18",
+    "s20",
+    "s21",
+    "s23",
+    "s25"
+   ]
+  }
+ ]
+}

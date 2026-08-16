@@ -1,0 +1,2154 @@
+{
+ "events": {
+  "ev-001": {
+   "event_id": "ev-001",
+   "story_time": {
+    "index": 2,
+    "label": "Night 1, 23:10",
+    "duration_min": 170
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st1"
+    },
+    {
+     "plot": "pl-03",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01",
+    "ch-02",
+    "ch-08",
+    "ch-09"
+   ],
+   "summary": "Hale maps closed Bennington and feeds three Hosts short of death, paying and tipping to lock a clean rotation.",
+   "action": "Hale walks the dark downtown grid with a paper map and a pencil, marking alleys, closing times, and which doors stay unlocked after midnight. At Briggs and Son he pays cash for a flashlight, leaves the correct change, then feeds on the clerk in the back aisle just short of collapse and steadies the man against a paint shelf before leaving. At the hospital he repeats the same measured drain on the night nurse and sets a vending coffee at her station as he goes. Last he sits at the diner counter, finishes a plate, leaves a tip larger than the check, and takes the waitress's wrist with the same economy, stopping while she can still stand. He writes three names and three regeneration windows in the map margin.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 35,
+     "after": 12,
+     "magnitude": 55
+    },
+    {
+     "entity": "ch-01",
+     "variable": "cash",
+     "path": "/ch-01/state/cash",
+     "dimension": "material",
+     "before": 100,
+     "after": 74,
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "position",
+     "path": "/ch-01/state/position",
+     "dimension": "spatial",
+     "before": "lo-01",
+     "after": "lo-02",
+     "magnitude": 20
+    },
+    {
+     "entity": "ch-01",
+     "variable": "detachment",
+     "path": "/ch-01/state/detachment",
+     "dimension": "psychological",
+     "before": 92,
+     "after": 90,
+     "magnitude": 8
+    },
+    {
+     "entity": "ch-02",
+     "variable": "blood_level",
+     "path": "/ch-02/state/blood_level",
+     "dimension": "physiological",
+     "before": 100,
+     "after": 60,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-08",
+     "variable": "blood_level",
+     "path": "/ch-08/state/blood_level",
+     "dimension": "physiological",
+     "before": 100,
+     "after": 63,
+     "magnitude": 45
+    },
+    {
+     "entity": "ch-08",
+     "variable": "somatic_mark",
+     "path": "/ch-08/state/somatic_mark",
+     "dimension": "physiological",
+     "before": false,
+     "after": true,
+     "magnitude": 40
+    },
+    {
+     "entity": "ch-09",
+     "variable": "blood_level",
+     "path": "/ch-09/state/blood_level",
+     "dimension": "physiological",
+     "before": 100,
+     "after": 65,
+     "magnitude": 45
+    },
+    {
+     "entity": "ch-09",
+     "variable": "bruise_visible",
+     "path": "/ch-09/state/bruise_visible",
+     "dimension": "physiological",
+     "before": false,
+     "after": true,
+     "magnitude": 40
+    },
+    {
+     "entity": "ob-07",
+     "variable": "amount",
+     "path": "/ob-07/state/amount",
+     "dimension": "material",
+     "before": 86,
+     "after": 94,
+     "magnitude": 15
+    }
+   ],
+   "caused_by": [],
+   "causes": [
+    "ev-002",
+    "ev-003",
+    "ev-004",
+    "ev-005",
+    "ev-006"
+   ],
+   "causal_note": "The match has just sealed; hunger starts the clock and the town is still an open ledger he can treat as inventory.",
+   "reversal": true,
+   "plot_function": "competent_entry",
+   "is_root": true,
+   "is_sink": false
+  },
+  "ev-002": {
+   "event_id": "ev-002",
+   "story_time": {
+    "index": 4,
+    "label": "Night 1, 02:20",
+    "duration_min": 18
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-02",
+   "participants": [
+    "ch-02"
+   ],
+   "summary": "Cora photographs the empty diner and the careful customer, and records the last radio song to prove the town was real.",
+   "action": "At close Cora wipes the last circle of crumbs off the counter and photographs the empty stools and the neon clock, because the tip jar is her ticket out of Bennington and she wants proof the room was real. She photographs the last customer as well, the careful man whose bill is still under the salt, taking the frame the way she takes the register tape. She slots a cassette and records the last radio song until the station signs off into hiss. She clips both new prints to the existing stack in her locker without studying the faces.",
+   "state_changes": [
+    {
+     "entity": "ob-02",
+     "variable": "frame_count",
+     "path": "/ob-02/state/frame_count",
+     "dimension": "material",
+     "before": 6,
+     "after": 8,
+     "magnitude": 25
+    },
+    {
+     "entity": "ob-02",
+     "variable": "content_flag",
+     "path": "/ob-02/state/content_flag",
+     "dimension": "epistemic",
+     "before": "town_proof",
+     "after": "hale_unremarked",
+     "magnitude": 35
+    },
+    {
+     "entity": "ob-01",
+     "variable": "film_left",
+     "path": "/ob-01/state/film_left",
+     "dimension": "material",
+     "before": 12,
+     "after": 10,
+     "magnitude": 10
+    },
+    {
+     "entity": "ch-02",
+     "variable": "archive_depth",
+     "path": "/ch-02/state/archive_depth",
+     "dimension": "material",
+     "before": 6,
+     "after": 8,
+     "magnitude": 20
+    }
+   ],
+   "caused_by": [
+    "ev-001"
+   ],
+   "causes": [
+    "ev-006"
+   ],
+   "causal_note": "He has just paid, tipped, and left a face in the room she already uses a camera to keep.",
+   "reversal": true,
+   "plot_function": "plant",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-003": {
+   "event_id": "ev-003",
+   "story_time": {
+    "index": 6,
+    "label": "Night 1, 04:05",
+    "duration_min": 40
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st2"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Hale isolates the Daywalker Ritual as a finite set of locatable tokens and one dawn invocation at one fixed stone.",
+   "action": "Before first light Hale spreads the marked map on a closed shop window and cross-checks church bulletins, a hardware circular, and the names of civic stones. He isolates a finite set of objects that must already exist in town and one dawn invocation that can be spoken at only one site. He writes the word ritual once, then the count of tokens, then the stone in the old green. He folds the map so that column faces in. Hunger has come back into his hands; he puts them in his pockets and walks on, treating the prize as the only paying door left in a town whose road already looped him once.",
+   "state_changes": [
+    {
+     "entity": "cn-01",
+     "variable": "decoded_by_hale",
+     "path": "/cn-01/state/decoded_by_hale",
+     "dimension": "epistemic",
+     "before": "rumor",
+     "after": "tokens_and_site",
+     "magnitude": 70
+    },
+    {
+     "entity": "ch-01",
+     "variable": "position",
+     "path": "/ch-01/state/position",
+     "dimension": "spatial",
+     "before": "lo-02",
+     "after": "lo-01",
+     "magnitude": 15
+    },
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 12,
+     "after": 26,
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-001"
+   ],
+   "causes": [
+    "ev-008"
+   ],
+   "causal_note": "The night walk has given him a ledger of civic objects, so the win condition can be isolated as tokens and one stone rather than rumor.",
+   "reversal": true,
+   "plot_function": "goal_lock",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-004": {
+   "event_id": "ev-004",
+   "story_time": {
+    "index": 8,
+    "label": "Night 2, 01:00",
+    "duration_min": 95
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st2"
+    }
+   ],
+   "location": "lo-02",
+   "participants": [
+    "ch-03",
+    "ch-02",
+    "ch-08",
+    "ch-09"
+   ],
+   "summary": "Anja stacks hypnotic writes on the same three Hosts Hale is draining, testing whether a lie can survive a sleep.",
+   "action": "Anja Reeve sits with the hardware clerk, the night nurse, and the diner waitress on the same night, not to feed but to write. She looks each of them in the eye long enough to lay a false hour over a true one: a closed storeroom, a completed chart, a customer who was never there. She is testing whether a modeled mind will carry a lie across a sleep. She does not know the three names already sit in another Guest's margin with regeneration windows beside them. She notes the baseline in a pocket book and walks back toward the college before any of the three lie down.",
+   "state_changes": [
+    {
+     "entity": "ch-03",
+     "variable": "writes_on_rotation",
+     "path": "/ch-03/state/writes_on_rotation",
+     "dimension": "technological",
+     "before": 0,
+     "after": 3,
+     "magnitude": 55
+    },
+    {
+     "entity": "ch-03",
+     "variable": "experiment_phase",
+     "path": "/ch-03/state/experiment_phase",
+     "dimension": "epistemic",
+     "before": "baseline",
+     "after": "stacking",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-03",
+     "variable": "position",
+     "path": "/ch-03/state/position",
+     "dimension": "spatial",
+     "before": "lo-08",
+     "after": "lo-02",
+     "magnitude": 20
+    },
+    {
+     "entity": "ch-03",
+     "variable": "hunger",
+     "path": "/ch-03/state/hunger",
+     "dimension": "physiological",
+     "before": 30,
+     "after": 36,
+     "magnitude": 10
+    },
+    {
+     "entity": "cn-03",
+     "variable": "phase",
+     "path": "/cn-03/state/phase",
+     "dimension": "technological",
+     "before": "latent",
+     "after": "conjunct",
+     "magnitude": 60
+    }
+   ],
+   "caused_by": [
+    "ev-001"
+   ],
+   "causes": [
+    "ev-006"
+   ],
+   "causal_note": "Only now does a stable three-Host rotation exist for her to write on, so the two interferences can land on the same minds.",
+   "reversal": true,
+   "plot_function": "unseen_conjunction",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-005": {
+   "event_id": "ev-005",
+   "story_time": {
+    "index": 10,
+    "label": "Night 2 into Night 3",
+    "duration_min": 200
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st3"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01",
+    "ch-02",
+    "ch-04",
+    "ch-05",
+    "ch-06",
+    "ch-07",
+    "ch-08",
+    "ch-09"
+   ],
+   "summary": "Rivals rewrite the town as UV cages, dry wards, a college cult, and a heartless body, while the rotation Hosts regain color.",
+   "action": "By the next night Main Street is a corridor of hardware-store UV tubes, shop-lights aimed at the sidewalks, and a crossing that would burn a Guest who tried it at a walk. Hospital coolers that held bags yesterday hold ice and a handwritten tribute list. On the college lawn a ring of students pass a cup and do not flinch at teeth. At the treeline a body lies open and heartless. A carbon invoice for UV tubes hangs on the hardware spike. The clerk, the nurse, and the waitress have their color back. Hale reads each rewrite as weather and keeps walking the long way around the lights.",
+   "state_changes": [
+    {
+     "entity": "ch-04",
+     "variable": "uv_grid_extent",
+     "path": "/ch-04/state/uv_grid_extent",
+     "dimension": "world",
+     "before": 0,
+     "after": 48,
+     "magnitude": 55
+    },
+    {
+     "entity": "lo-01",
+     "variable": "uv_coverage",
+     "path": "/lo-01/state/uv_coverage",
+     "dimension": "world",
+     "before": 0,
+     "after": 48,
+     "magnitude": 55
+    },
+    {
+     "entity": "lo-01",
+     "variable": "crossing_safe_for_guests",
+     "path": "/lo-01/state/crossing_safe_for_guests",
+     "dimension": "spatial",
+     "before": true,
+     "after": false,
+     "magnitude": 60
+    },
+    {
+     "entity": "ch-05",
+     "variable": "blood_monopoly",
+     "path": "/ch-05/state/blood_monopoly",
+     "dimension": "world",
+     "before": "open",
+     "after": "squeezed",
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-04",
+     "variable": "blood_stores",
+     "path": "/lo-04/state/blood_stores",
+     "dimension": "material",
+     "before": "stocked",
+     "after": "squeezed",
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-04",
+     "variable": "night_access",
+     "path": "/lo-04/state/night_access",
+     "dimension": "social",
+     "before": "open_enough",
+     "after": "badge_only",
+     "magnitude": 40
+    },
+    {
+     "entity": "ch-06",
+     "variable": "cult_count",
+     "path": "/ch-06/state/cult_count",
+     "dimension": "social",
+     "before": 0,
+     "after": 14,
+     "magnitude": 40
+    },
+    {
+     "entity": "lo-08",
+     "variable": "cult_visible",
+     "path": "/lo-08/state/cult_visible",
+     "dimension": "social",
+     "before": false,
+     "after": true,
+     "magnitude": 35
+    },
+    {
+     "entity": "gr-03",
+     "variable": "formed",
+     "path": "/gr-03/state/formed",
+     "dimension": "social",
+     "before": false,
+     "after": true,
+     "magnitude": 40
+    },
+    {
+     "entity": "lo-05",
+     "variable": "body_at_treeline",
+     "path": "/lo-05/state/body_at_treeline",
+     "dimension": "world",
+     "before": false,
+     "after": true,
+     "magnitude": 45
+    },
+    {
+     "entity": "ch-07",
+     "variable": "heart_taken",
+     "path": "/ch-07/state/heart_taken",
+     "dimension": "magical",
+     "before": false,
+     "after": true,
+     "magnitude": 40
+    },
+    {
+     "entity": "ob-06",
+     "variable": "issued",
+     "path": "/ob-06/state/issued",
+     "dimension": "epistemic",
+     "before": false,
+     "after": true,
+     "magnitude": 30
+    },
+    {
+     "entity": "lo-03",
+     "variable": "uv_stock",
+     "path": "/lo-03/state/uv_stock",
+     "dimension": "material",
+     "before": 48,
+     "after": 16,
+     "magnitude": 40
+    },
+    {
+     "entity": "gr-04",
+     "variable": "active",
+     "path": "/gr-04/state/active",
+     "dimension": "political",
+     "before": false,
+     "after": true,
+     "magnitude": 45
+    },
+    {
+     "entity": "ch-02",
+     "variable": "blood_level",
+     "path": "/ch-02/state/blood_level",
+     "dimension": "physiological",
+     "before": 60,
+     "after": 88,
+     "magnitude": 35
+    },
+    {
+     "entity": "ch-08",
+     "variable": "blood_level",
+     "path": "/ch-08/state/blood_level",
+     "dimension": "physiological",
+     "before": 63,
+     "after": 90,
+     "magnitude": 30
+    },
+    {
+     "entity": "ch-09",
+     "variable": "blood_level",
+     "path": "/ch-09/state/blood_level",
+     "dimension": "physiological",
+     "before": 65,
+     "after": 89,
+     "magnitude": 30
+    },
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 26,
+     "after": 41,
+     "magnitude": 30
+    }
+   ],
+   "caused_by": [
+    "ev-001"
+   ],
+   "causes": [
+    "ev-008",
+    "ev-010"
+   ],
+   "causal_note": "The closed match is now live long enough for five other Guests to spend a night rewriting sectors according to their own tactics.",
+   "reversal": true,
+   "plot_function": "world_state_squeeze",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-006": {
+   "event_id": "ev-006",
+   "story_time": {
+    "index": 12,
+    "label": "Night 3, 01:40 into late morning",
+    "duration_min": 85
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st3"
+    }
+   ],
+   "location": "lo-02",
+   "participants": [
+    "ch-01",
+    "ch-02"
+   ],
+   "summary": "After a third careful feed Cora wakes holding scraps of the night and finds Polaroids she does not remember taking.",
+   "action": "Hale takes the waitress's wrist a third time at the empty end of the counter and stops, as before, while she can still lock her knees. She sleeps on the break-room cot. When she surfaces the night is still in her mouth in scraps she should not have. In her locker a Polaroid she does not remember taking shows the alley behind the diner at an hour she cannot place, and under it another, and under that the careful man from a different night. She lines the prints on the prep table and does not clock in on time. A seam of roll-bar crawls the break-room TV and holds.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 41,
+     "after": 19,
+     "magnitude": 45
+    },
+    {
+     "entity": "ch-01",
+     "variable": "position",
+     "path": "/ch-01/state/position",
+     "dimension": "spatial",
+     "before": "lo-01",
+     "after": "lo-02",
+     "magnitude": 15
+    },
+    {
+     "entity": "ch-02",
+     "variable": "blood_level",
+     "path": "/ch-02/state/blood_level",
+     "dimension": "physiological",
+     "before": 88,
+     "after": 54,
+     "magnitude": 45
+    },
+    {
+     "entity": "ch-02",
+     "variable": "retained_night",
+     "path": "/ch-02/state/retained_night",
+     "dimension": "epistemic",
+     "before": 0,
+     "after": 24,
+     "magnitude": 70
+    },
+    {
+     "entity": "ch-02",
+     "variable": "archive_depth",
+     "path": "/ch-02/state/archive_depth",
+     "dimension": "material",
+     "before": 8,
+     "after": 12,
+     "magnitude": 30
+    },
+    {
+     "entity": "ch-02",
+     "variable": "existential_stability",
+     "path": "/ch-02/state/existential_stability",
+     "dimension": "psychological",
+     "before": 88,
+     "after": 76,
+     "magnitude": 35
+    },
+    {
+     "entity": "ob-02",
+     "variable": "frame_count",
+     "path": "/ob-02/state/frame_count",
+     "dimension": "material",
+     "before": 8,
+     "after": 12,
+     "magnitude": 30
+    },
+    {
+     "entity": "ob-01",
+     "variable": "film_left",
+     "path": "/ob-01/state/film_left",
+     "dimension": "material",
+     "before": 10,
+     "after": 6,
+     "magnitude": 15
+    },
+    {
+     "entity": "cn-02",
+     "variable": "integrity",
+     "path": "/cn-02/state/integrity",
+     "dimension": "technological",
+     "before": "intact",
+     "after": "seamed",
+     "magnitude": 75
+    },
+    {
+     "entity": "cn-03",
+     "variable": "phase",
+     "path": "/cn-03/state/phase",
+     "dimension": "technological",
+     "before": "conjunct",
+     "after": "torn",
+     "magnitude": 80
+    }
+   ],
+   "caused_by": [
+    "ev-001",
+    "ev-002",
+    "ev-004"
+   ],
+   "causes": [
+    "ev-007",
+    "ev-009"
+   ],
+   "causal_note": "Only the stacked writes plus a third rotational drain can tear the failsafe, and only her existing stack can hand her a night she did not keep.",
+   "reversal": true,
+   "plot_function": "state_of_rupture",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-007": {
+   "event_id": "ev-007",
+   "story_time": {
+    "index": 14,
+    "label": "Day 3, 16:20",
+    "duration_min": 110
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-02",
+   "participants": [
+    "ch-02",
+    "ch-09"
+   ],
+   "summary": "Cora records the missing hours, matches her bruise to Denise, and the stack begins catching Ritual residue.",
+   "action": "Between the lunch lull and the dinner rush Cora speaks the missing hours onto the cassette, naming what the prints hold and what they do not. Denise Cole comes in off shift with her collar high; Cora matches the bruise at her own wrist to the one at Denise's throat without asking permission. They do not agree what the gap means. That afternoon Cora photographs a chalk mark on brick, a church window lit at the wrong hour, and the hardware carbon for UV tubes, and she clips the invoice into the stack. She keeps the recorder running under the counter. Denise leaves without finishing her coffee and does not look at the door.",
+   "state_changes": [
+    {
+     "entity": "ob-03",
+     "variable": "track",
+     "path": "/ob-03/state/track",
+     "dimension": "epistemic",
+     "before": "last_song",
+     "after": "missing_hours",
+     "magnitude": 55
+    },
+    {
+     "entity": "ch-02",
+     "variable": "archive_depth",
+     "path": "/ch-02/state/archive_depth",
+     "dimension": "material",
+     "before": 12,
+     "after": 18,
+     "magnitude": 40
+    },
+    {
+     "entity": "ob-02",
+     "variable": "frame_count",
+     "path": "/ob-02/state/frame_count",
+     "dimension": "material",
+     "before": 12,
+     "after": 18,
+     "magnitude": 40
+    },
+    {
+     "entity": "ob-02",
+     "variable": "content_flag",
+     "path": "/ob-02/state/content_flag",
+     "dimension": "epistemic",
+     "before": "hale_unremarked",
+     "after": "ritual_residue",
+     "magnitude": 65
+    },
+    {
+     "entity": "ch-02",
+     "variable": "retained_night",
+     "path": "/ch-02/state/retained_night",
+     "dimension": "epistemic",
+     "before": 24,
+     "after": 44,
+     "magnitude": 40
+    },
+    {
+     "entity": "ch-09",
+     "variable": "retained_night",
+     "path": "/ch-09/state/retained_night",
+     "dimension": "epistemic",
+     "before": 0,
+     "after": 20,
+     "magnitude": 45
+    },
+    {
+     "entity": "ch-09",
+     "variable": "avoidance_of_hale",
+     "path": "/ch-09/state/avoidance_of_hale",
+     "dimension": "social",
+     "before": "neutral",
+     "after": "averted",
+     "magnitude": 35
+    },
+    {
+     "entity": "ch-09",
+     "variable": "position",
+     "path": "/ch-09/state/position",
+     "dimension": "spatial",
+     "before": "lo-04",
+     "after": "lo-02",
+     "magnitude": 20
+    },
+    {
+     "entity": "ob-06",
+     "variable": "holder",
+     "path": "/ob-06/state/holder",
+     "dimension": "material",
+     "before": "lo-03",
+     "after": "ch-02",
+     "magnitude": 30
+    },
+    {
+     "entity": "ch-02",
+     "variable": "existential_stability",
+     "path": "/ch-02/state/existential_stability",
+     "dimension": "psychological",
+     "before": 76,
+     "after": 67,
+     "magnitude": 25
+    },
+    {
+     "entity": "cn-02",
+     "variable": "integrity",
+     "path": "/cn-02/state/integrity",
+     "dimension": "technological",
+     "before": "seamed",
+     "after": "leaking",
+     "magnitude": 50
+    },
+    {
+     "entity": "gr-02",
+     "variable": "comparing_notes",
+     "path": "/gr-02/state/comparing_notes",
+     "dimension": "social",
+     "before": false,
+     "after": true,
+     "magnitude": 60
+    },
+    {
+     "entity": "ob-01",
+     "variable": "film_left",
+     "path": "/ob-01/state/film_left",
+     "dimension": "material",
+     "before": 6,
+     "after": 2,
+     "magnitude": 15
+    }
+   ],
+   "caused_by": [
+    "ev-006"
+   ],
+   "causes": [
+    "ev-008",
+    "ev-011",
+    "ev-013"
+   ],
+   "causal_note": "The torn wipe has left her scraps and objects; only now can she build a case instead of swallowing another clean morning.",
+   "reversal": true,
+   "plot_function": "inquiry",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-008": {
+   "event_id": "ev-008",
+   "story_time": {
+    "index": 16,
+    "label": "Night 4, 00:30",
+    "duration_min": 80
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-02",
+   "participants": [
+    "ch-01",
+    "ch-02"
+   ],
+   "summary": "Hale reads Ritual residue in Cora's stack, lifts two tokens, and pockets one print because every other decode is now closed.",
+   "action": "Hale finds the stack where Cora leaves it under the register during a smoke. The chalk, the wrong-hour window, and the UV invoice mark streets his own map had as blanks, and two of the tokens sit in the world exactly where the prints say. He walks those streets the long way around the shop-lights, lifts both tokens, and pockets one print he will need, the church window, because a hungry man does not leave his only remaining decode on a waitstaff shelf. Hospital wards are closed to him. The diner is still serving. He puts the rest of the stack back in order, corners aligned.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "tokens_held",
+     "path": "/ch-01/state/tokens_held",
+     "dimension": "material",
+     "before": 0,
+     "after": 2,
+     "magnitude": 55
+    },
+    {
+     "entity": "ob-04",
+     "variable": "assembled",
+     "path": "/ob-04/state/assembled",
+     "dimension": "material",
+     "before": 0,
+     "after": 2,
+     "magnitude": 55
+    },
+    {
+     "entity": "ob-04",
+     "variable": "holder",
+     "path": "/ob-04/state/holder",
+     "dimension": "material",
+     "before": "scattered",
+     "after": "ch-01",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 19,
+     "after": 45,
+     "magnitude": 40
+    },
+    {
+     "entity": "ch-01",
+     "variable": "detachment",
+     "path": "/ch-01/state/detachment",
+     "dimension": "psychological",
+     "before": 90,
+     "after": 83,
+     "magnitude": 25
+    },
+    {
+     "entity": "ob-02",
+     "variable": "frame_count",
+     "path": "/ob-02/state/frame_count",
+     "dimension": "material",
+     "before": 18,
+     "after": 17,
+     "magnitude": 20
+    }
+   ],
+   "caused_by": [
+    "ev-003",
+    "ev-005",
+    "ev-007"
+   ],
+   "causes": [
+    "ev-009",
+    "ev-014"
+   ],
+   "causal_note": "He now knows what tokens look like, rivals have sealed the hospital and the crossings, and her stack is the first map that still has streets on it.",
+   "reversal": true,
+   "plot_function": "forced_dependency",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-009": {
+   "event_id": "ev-009",
+   "story_time": {
+    "index": 18,
+    "label": "Night 4, 02:10",
+    "duration_min": 22
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02",
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st5"
+    },
+    {
+     "plot": "pl-03",
+     "step": "st2"
+    }
+   ],
+   "location": "lo-02",
+   "participants": [
+    "ch-01",
+    "ch-02"
+   ],
+   "summary": "Cora flinches at Hale's face and pours anyway; he returns the Polaroid he should have kept.",
+   "action": "He comes back for the rotation and she flinches at his face before she has a reason, the coffee pot ticking against the rim of his cup. She pours anyway because the till is real and last time she drove the loop road it delivered her back to the same lot. He pays, tips, and sets the church-window Polaroid on the counter face-up, returning what he did not mean to keep, a fastidious correction that hands her a street and a silhouette she can hold after sleep. She does not thank him. She puts the print in the stack and takes his empty plate with her wrist turned out of reach.",
+   "state_changes": [
+    {
+     "entity": "ch-02",
+     "variable": "stance_on_hale",
+     "path": "/ch-02/state/stance_on_hale",
+     "dimension": "emotional",
+     "before": "customer",
+     "after": "flinch",
+     "magnitude": 55
+    },
+    {
+     "entity": "ch-01",
+     "variable": "cover",
+     "path": "/ch-01/state/cover",
+     "dimension": "social",
+     "before": "unremembered",
+     "after": "leaking",
+     "magnitude": 60
+    },
+    {
+     "entity": "ch-01",
+     "variable": "detachment",
+     "path": "/ch-01/state/detachment",
+     "dimension": "psychological",
+     "before": 83,
+     "after": 71,
+     "magnitude": 40
+    },
+    {
+     "entity": "ch-01",
+     "variable": "cash",
+     "path": "/ch-01/state/cash",
+     "dimension": "material",
+     "before": 74,
+     "after": 69,
+     "magnitude": 10
+    },
+    {
+     "entity": "ob-07",
+     "variable": "amount",
+     "path": "/ob-07/state/amount",
+     "dimension": "material",
+     "before": 94,
+     "after": 98,
+     "magnitude": 8
+    },
+    {
+     "entity": "ob-02",
+     "variable": "frame_count",
+     "path": "/ob-02/state/frame_count",
+     "dimension": "material",
+     "before": 17,
+     "after": 18,
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-02",
+     "variable": "archive_depth",
+     "path": "/ch-02/state/archive_depth",
+     "dimension": "material",
+     "before": 18,
+     "after": 19,
+     "magnitude": 20
+    },
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 45,
+     "after": 53,
+     "magnitude": 20
+    }
+   ],
+   "caused_by": [
+    "ev-006",
+    "ev-008"
+   ],
+   "causes": [
+    "ev-010",
+    "ev-011"
+   ],
+   "causal_note": "She now has scraps of a face, and he has just made himself return to the only archive he can still spend.",
+   "reversal": true,
+   "plot_function": "first_leak",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-010": {
+   "event_id": "ev-010",
+   "story_time": {
+    "index": 20,
+    "label": "Night 4, 21:00 into Night 5",
+    "duration_min": 90
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01",
+    "ch-02",
+    "ch-09",
+    "ch-04",
+    "ch-05"
+   ],
+   "summary": "The diner locks after dark, Denise refuses Hale's eye, and Main Street tightens into a UV corridor; the rotation dies.",
+   "action": "That night the diner door is locked at dark with a handwritten card about a private function. Denise Cole, back on the ward, turns her whole body from the corridor when a man in period clothes asks for the night desk. Main Street's UV corridor has tightened until even the alleys throw a violet edge. Hale counts his remaining cash and his remaining hours and does not get the clerk, the nurse, or the waitress. He crosses the last unlit service lane already shaking, hunger climbing past the point where the map still feels like control.",
+   "state_changes": [
+    {
+     "entity": "lo-02",
+     "variable": "after_dark_policy",
+     "path": "/lo-02/state/after_dark_policy",
+     "dimension": "social",
+     "before": "open",
+     "after": "locked",
+     "magnitude": 55
+    },
+    {
+     "entity": "ch-09",
+     "variable": "avoidance_of_hale",
+     "path": "/ch-09/state/avoidance_of_hale",
+     "dimension": "social",
+     "before": "averted",
+     "after": "refusing",
+     "magnitude": 45
+    },
+    {
+     "entity": "ch-09",
+     "variable": "position",
+     "path": "/ch-09/state/position",
+     "dimension": "spatial",
+     "before": "lo-02",
+     "after": "lo-04",
+     "magnitude": 15
+    },
+    {
+     "entity": "ch-04",
+     "variable": "uv_grid_extent",
+     "path": "/ch-04/state/uv_grid_extent",
+     "dimension": "world",
+     "before": 48,
+     "after": 74,
+     "magnitude": 40
+    },
+    {
+     "entity": "lo-01",
+     "variable": "uv_coverage",
+     "path": "/lo-01/state/uv_coverage",
+     "dimension": "world",
+     "before": 48,
+     "after": 74,
+     "magnitude": 40
+    },
+    {
+     "entity": "gr-02",
+     "variable": "rotation_viable",
+     "path": "/gr-02/state/rotation_viable",
+     "dimension": "world",
+     "before": true,
+     "after": false,
+     "magnitude": 70
+    },
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 53,
+     "after": 67,
+     "magnitude": 35
+    },
+    {
+     "entity": "ch-05",
+     "variable": "blood_monopoly",
+     "path": "/ch-05/state/blood_monopoly",
+     "dimension": "world",
+     "before": "squeezed",
+     "after": "dry",
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-04",
+     "variable": "blood_stores",
+     "path": "/lo-04/state/blood_stores",
+     "dimension": "material",
+     "before": "squeezed",
+     "after": "dry",
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-04",
+     "variable": "night_access",
+     "path": "/lo-04/state/night_access",
+     "dimension": "social",
+     "before": "badge_only",
+     "after": "sealed",
+     "magnitude": 40
+    },
+    {
+     "entity": "ch-01",
+     "variable": "detachment",
+     "path": "/ch-01/state/detachment",
+     "dimension": "psychological",
+     "before": 71,
+     "after": 65,
+     "magnitude": 20
+    },
+    {
+     "entity": "ch-01",
+     "variable": "position",
+     "path": "/ch-01/state/position",
+     "dimension": "spatial",
+     "before": "lo-02",
+     "after": "lo-01",
+     "magnitude": 15
+    },
+    {
+     "entity": "ch-02",
+     "variable": "blood_level",
+     "path": "/ch-02/state/blood_level",
+     "dimension": "physiological",
+     "before": 54,
+     "after": 70,
+     "magnitude": 20
+    }
+   ],
+   "caused_by": [
+    "ev-005",
+    "ev-009"
+   ],
+   "causes": [
+    "ev-013"
+   ],
+   "causal_note": "Her flinch has a social afterlife, and the Architect's grid has had another night to close the last safe crossing.",
+   "reversal": true,
+   "plot_function": "resource_hardening",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-011": {
+   "event_id": "ev-011",
+   "story_time": {
+    "index": 22,
+    "label": "Night 5, 00:50",
+    "duration_min": 16
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02",
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st6"
+    }
+   ],
+   "location": "lo-02",
+   "participants": [
+    "ch-01",
+    "ch-02"
+   ],
+   "summary": "In the empty diner Cora plays the cassette; Hale's own calm feed instructions are on the tape.",
+   "action": "Cora unlocks for herself after closing and sets the cassette in the deck. Hale is already in the back booth. The tape gives back his own voice, calm, telling her to hold still and breathe, a feed she recorded without knowing what the sounds were. She does not look at him while it plays. She lets it run to the click and rewinds to the same instructions and lets them play again. The repeating figure now has a voice that will still be on the ribbon after she sleeps. He does not take the tape. His hand stays on the table, fingers aligned with the Formica grain.",
+   "state_changes": [
+    {
+     "entity": "ob-03",
+     "variable": "track",
+     "path": "/ob-03/state/track",
+     "dimension": "epistemic",
+     "before": "missing_hours",
+     "after": "hale_instructions",
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-02",
+     "variable": "stance_on_hale",
+     "path": "/ch-02/state/stance_on_hale",
+     "dimension": "emotional",
+     "before": "flinch",
+     "after": "investigator",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-02",
+     "variable": "retained_night",
+     "path": "/ch-02/state/retained_night",
+     "dimension": "epistemic",
+     "before": 44,
+     "after": 60,
+     "magnitude": 35
+    },
+    {
+     "entity": "ch-02",
+     "variable": "existential_stability",
+     "path": "/ch-02/state/existential_stability",
+     "dimension": "psychological",
+     "before": 67,
+     "after": 55,
+     "magnitude": 35
+    },
+    {
+     "entity": "ch-01",
+     "variable": "cover",
+     "path": "/ch-01/state/cover",
+     "dimension": "social",
+     "before": "leaking",
+     "after": "named",
+     "magnitude": 70
+    },
+    {
+     "entity": "cn-04",
+     "variable": "town_risk",
+     "path": "/cn-04/state/town_risk",
+     "dimension": "psychological",
+     "before": "safe",
+     "after": "exposed",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "position",
+     "path": "/ch-01/state/position",
+     "dimension": "spatial",
+     "before": "lo-01",
+     "after": "lo-02",
+     "magnitude": 15
+    },
+    {
+     "entity": "ch-01",
+     "variable": "detachment",
+     "path": "/ch-01/state/detachment",
+     "dimension": "psychological",
+     "before": 65,
+     "after": 52,
+     "magnitude": 40
+    }
+   ],
+   "caused_by": [
+    "ev-007",
+    "ev-009"
+   ],
+   "causes": [
+    "ev-012",
+    "ev-015"
+   ],
+   "causal_note": "She has been recording since the inquiry, and his return has given her a reason to play the ribbon at the man it names.",
+   "reversal": true,
+   "plot_function": "proof_as_weapon",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-012": {
+   "event_id": "ev-012",
+   "story_time": {
+    "index": 24,
+    "label": "Night 5, 01:10",
+    "duration_min": 8
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-03",
+     "step": "st3"
+    }
+   ],
+   "location": "lo-02",
+   "participants": [
+    "ch-01",
+    "ch-02"
+   ],
+   "summary": "Hale starts a hypnotic overwrite that would take the last token cold, then stops mid-gesture.",
+   "action": "He stands, comes around the counter, and starts the look that writes: one more overwrite would put the last token in his hand tonight and send her into a sleep that would scrub the archive he still means to spend. Mid-gesture he stops. The hand drops to the sugar caddy and stays there, a held breath made visible. She watches the stopped hand the way she watches the tape deck. He takes nothing. He leaves the booth money under the saucer and goes out the back, the write unfinished, care and tactic no longer separable in the shape of the fingers.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "detachment",
+     "path": "/ch-01/state/detachment",
+     "dimension": "psychological",
+     "before": 52,
+     "after": 34,
+     "magnitude": 55
+    },
+    {
+     "entity": "ch-02",
+     "variable": "existential_stability",
+     "path": "/ch-02/state/existential_stability",
+     "dimension": "psychological",
+     "before": 55,
+     "after": 51,
+     "magnitude": 15
+    },
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 67,
+     "after": 75,
+     "magnitude": 20
+    }
+   ],
+   "caused_by": [
+    "ev-011"
+   ],
+   "causes": [
+    "ev-014",
+    "ev-016"
+   ],
+   "causal_note": "The tape has just proved that another write will crack the only archive he can still spend, so the cheap take is no longer cheap.",
+   "reversal": true,
+   "plot_function": "divided_will",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-013": {
+   "event_id": "ev-013",
+   "story_time": {
+    "index": 26,
+    "label": "Night 5, 03:20",
+    "duration_min": 50
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st7"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-03",
+    "ch-02",
+    "ch-08",
+    "ch-09"
+   ],
+   "summary": "Anja sees Hosts comparing notes she did not implant and stacks one more write; the extra write multiplies the fragments.",
+   "action": "Anja finds the nurse and the waitress comparing bruises and hours she did not implant, and the clerk downtown doing the same with a delivery boy. She reads it as contamination of the experiment rather than a result. She writes again, harder, stacking a fresh lie over the leaking ones to see if the failsafe can be forced shut. The extra write does not shut anything. More Hosts wake with scraps. A man at the bus stop describes last night to a woman who should not remember him. Anja closes the pocket book without a new baseline and walks faster than the hunger in her own throat.",
+   "state_changes": [
+    {
+     "entity": "ch-03",
+     "variable": "noticed_comparison",
+     "path": "/ch-03/state/noticed_comparison",
+     "dimension": "epistemic",
+     "before": false,
+     "after": true,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-03",
+     "variable": "experiment_phase",
+     "path": "/ch-03/state/experiment_phase",
+     "dimension": "epistemic",
+     "before": "stacking",
+     "after": "doubling_down",
+     "magnitude": 55
+    },
+    {
+     "entity": "ch-03",
+     "variable": "writes_on_rotation",
+     "path": "/ch-03/state/writes_on_rotation",
+     "dimension": "technological",
+     "before": 3,
+     "after": 7,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-03",
+     "variable": "position",
+     "path": "/ch-03/state/position",
+     "dimension": "spatial",
+     "before": "lo-02",
+     "after": "lo-01",
+     "magnitude": 15
+    },
+    {
+     "entity": "ch-03",
+     "variable": "hunger",
+     "path": "/ch-03/state/hunger",
+     "dimension": "physiological",
+     "before": 36,
+     "after": 48,
+     "magnitude": 20
+    },
+    {
+     "entity": "cn-03",
+     "variable": "phase",
+     "path": "/cn-03/state/phase",
+     "dimension": "technological",
+     "before": "torn",
+     "after": "spreading",
+     "magnitude": 70
+    },
+    {
+     "entity": "cn-02",
+     "variable": "integrity",
+     "path": "/cn-02/state/integrity",
+     "dimension": "technological",
+     "before": "leaking",
+     "after": "torn",
+     "magnitude": 60
+    },
+    {
+     "entity": "ch-02",
+     "variable": "retained_night",
+     "path": "/ch-02/state/retained_night",
+     "dimension": "epistemic",
+     "before": 60,
+     "after": 76,
+     "magnitude": 30
+    },
+    {
+     "entity": "ch-08",
+     "variable": "retained_night",
+     "path": "/ch-08/state/retained_night",
+     "dimension": "epistemic",
+     "before": 0,
+     "after": 24,
+     "magnitude": 40
+    },
+    {
+     "entity": "ch-09",
+     "variable": "retained_night",
+     "path": "/ch-09/state/retained_night",
+     "dimension": "epistemic",
+     "before": 20,
+     "after": 38,
+     "magnitude": 30
+    },
+    {
+     "entity": "ch-02",
+     "variable": "existential_stability",
+     "path": "/ch-02/state/existential_stability",
+     "dimension": "psychological",
+     "before": 51,
+     "after": 40,
+     "magnitude": 30
+    },
+    {
+     "entity": "cn-04",
+     "variable": "town_risk",
+     "path": "/cn-04/state/town_risk",
+     "dimension": "psychological",
+     "before": "exposed",
+     "after": "critical",
+     "magnitude": 55
+    }
+   ],
+   "caused_by": [
+    "ev-007",
+    "ev-010"
+   ],
+   "causes": [
+    "ev-015"
+   ],
+   "causal_note": "Hosts are now comparing in public, so the experiment she designed is visibly dirty, and the only move left that still looks like method is one more write.",
+   "reversal": true,
+   "plot_function": "experiment_backfire",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-014": {
+   "event_id": "ev-014",
+   "story_time": {
+    "index": 28,
+    "label": "Night 6, 01:15",
+    "duration_min": 35
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st6"
+    },
+    {
+     "plot": "pl-03",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-06",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Hale lifts the last token at Founders' Stone and understands that speaking the invocation would wipe every kept hour.",
+   "action": "Using a Polaroid of Founders' Stone taken on a night Cora cannot remember, Hale lifts the last token from the base of the monument, where moss had covered the cut. He holds all four in one hand and holds the print in the other. Completing the invocation at first light would end the match, and an ended match is a wipe with no morning after for any stack of photographs. He puts the tokens inside his jacket, not yet in the ritual order. Hunger is starting to show in the way he stands. He does not speak the words. Dawn is still hours off.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "tokens_held",
+     "path": "/ch-01/state/tokens_held",
+     "dimension": "material",
+     "before": 2,
+     "after": 4,
+     "magnitude": 70
+    },
+    {
+     "entity": "ob-04",
+     "variable": "assembled",
+     "path": "/ob-04/state/assembled",
+     "dimension": "material",
+     "before": 2,
+     "after": 4,
+     "magnitude": 70
+    },
+    {
+     "entity": "cn-01",
+     "variable": "decoded_by_hale",
+     "path": "/cn-01/state/decoded_by_hale",
+     "dimension": "epistemic",
+     "before": "tokens_and_site",
+     "after": "full_cost",
+     "magnitude": 80
+    },
+    {
+     "entity": "ch-01",
+     "variable": "detachment",
+     "path": "/ch-01/state/detachment",
+     "dimension": "psychological",
+     "before": 34,
+     "after": 22,
+     "magnitude": 40
+    },
+    {
+     "entity": "ch-01",
+     "variable": "position",
+     "path": "/ch-01/state/position",
+     "dimension": "spatial",
+     "before": "lo-02",
+     "after": "lo-06",
+     "magnitude": 30
+    },
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 75,
+     "after": 83,
+     "magnitude": 20
+    },
+    {
+     "entity": "lo-06",
+     "variable": "tokens_present",
+     "path": "/lo-06/state/tokens_present",
+     "dimension": "material",
+     "before": "absent",
+     "after": "with_hale",
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-008",
+    "ev-012"
+   ],
+   "causes": [
+    "ev-015",
+    "ev-016"
+   ],
+   "causal_note": "The stack already mapped this stone, and the stopped write left him only the slow path, so the last token and its true cost arrive in the same hand.",
+   "reversal": true,
+   "plot_function": "rule_reversal",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-015": {
+   "event_id": "ev-015",
+   "story_time": {
+    "index": 30,
+    "label": "Night 6, 04:05",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-02",
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st7"
+    },
+    {
+     "plot": "pl-02",
+     "step": "st8"
+    },
+    {
+     "plot": "pl-03",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-06",
+   "participants": [
+    "ch-01",
+    "ch-02"
+   ],
+   "summary": "Two hours before dawn Cora waits at the stone with a live UV lamp; Hale holds every token and takes the cassette.",
+   "action": "Two hours before sunrise Cora is already at the stone with the hardware-store UV lamp in one hand and the archive in the other. She has come to burn him rather than lose another night she has finally kept. Hale is there with every token. Shop-lights are being dragged up the green toward them, a violet edge eating the last shade. He takes the cassette from her outer pocket because the stack is the last decode and the last continuous self, and both of them know it. She raises the lamp. He does not step into the beam. Hunger has him near the shake that precedes frenzy. Dawn is a color in the east, not yet a line.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 83,
+     "after": 91,
+     "magnitude": 35
+    },
+    {
+     "entity": "ch-02",
+     "variable": "stance_on_hale",
+     "path": "/ch-02/state/stance_on_hale",
+     "dimension": "emotional",
+     "before": "investigator",
+     "after": "armed",
+     "magnitude": 60
+    },
+    {
+     "entity": "ch-02",
+     "variable": "position",
+     "path": "/ch-02/state/position",
+     "dimension": "spatial",
+     "before": "lo-02",
+     "after": "lo-06",
+     "magnitude": 40
+    },
+    {
+     "entity": "ob-05",
+     "variable": "holder",
+     "path": "/ob-05/state/holder",
+     "dimension": "material",
+     "before": "lo-03",
+     "after": "ch-02",
+     "magnitude": 50
+    },
+    {
+     "entity": "ob-05",
+     "variable": "powered",
+     "path": "/ob-05/state/powered",
+     "dimension": "technological",
+     "before": false,
+     "after": true,
+     "magnitude": 55
+    },
+    {
+     "entity": "lo-06",
+     "variable": "uv_encroaching",
+     "path": "/lo-06/state/uv_encroaching",
+     "dimension": "world",
+     "before": false,
+     "after": true,
+     "magnitude": 45
+    },
+    {
+     "entity": "ch-04",
+     "variable": "uv_grid_extent",
+     "path": "/ch-04/state/uv_grid_extent",
+     "dimension": "world",
+     "before": 74,
+     "after": 90,
+     "magnitude": 30
+    },
+    {
+     "entity": "ch-01",
+     "variable": "detachment",
+     "path": "/ch-01/state/detachment",
+     "dimension": "psychological",
+     "before": 22,
+     "after": 14,
+     "magnitude": 30
+    },
+    {
+     "entity": "ob-03",
+     "variable": "holder",
+     "path": "/ob-03/state/holder",
+     "dimension": "material",
+     "before": "ch-02",
+     "after": "ch-01",
+     "magnitude": 45
+    },
+    {
+     "entity": "ob-02",
+     "variable": "content_flag",
+     "path": "/ob-02/state/content_flag",
+     "dimension": "epistemic",
+     "before": "ritual_residue",
+     "after": "dawn_site",
+     "magnitude": 40
+    }
+   ],
+   "caused_by": [
+    "ev-011",
+    "ev-013",
+    "ev-014"
+   ],
+   "causes": [
+    "ev-016"
+   ],
+   "causal_note": "He now holds every token, she now holds hours the extra write would not let her drop, and dawn is close enough to force both into the same patch of shade.",
+   "reversal": true,
+   "plot_function": "ticking_choice",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-016": {
+   "event_id": "ev-016",
+   "story_time": {
+    "index": 32,
+    "label": "Night 6, 05:52",
+    "duration_min": 12
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st8"
+    },
+    {
+     "plot": "pl-03",
+     "step": "st6"
+    }
+   ],
+   "location": "lo-06",
+   "participants": [
+    "ch-01",
+    "ch-02"
+   ],
+   "summary": "Hale withholds the invocation, gives Cora the tokens and cassette, and takes a sun-scorch that will not regenerate.",
+   "action": "He does not speak the invocation. He puts the four tokens into her free hand and presses the cassette in after them, then steps back into the last scrap of shade as the sun takes the stone. Light catches the hand he used to give the tokens and lays a scorch across it that does not begin to close. She fires the Polaroid at his face while the burn is still smoking. He remains inside the match, prize forfeit, now a face in a stack that will outlast a sleep. The lamp stays on. He does not come toward it.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "prize_claim",
+     "path": "/ch-01/state/prize_claim",
+     "dimension": "world",
+     "before": "pursuing",
+     "after": "forfeit",
+     "magnitude": 95
+    },
+    {
+     "entity": "ch-01",
+     "variable": "sun_injury",
+     "path": "/ch-01/state/sun_injury",
+     "dimension": "physiological",
+     "before": "none",
+     "after": "hand_scorch",
+     "magnitude": 90
+    },
+    {
+     "entity": "ch-01",
+     "variable": "tokens_held",
+     "path": "/ch-01/state/tokens_held",
+     "dimension": "material",
+     "before": 4,
+     "after": 0,
+     "magnitude": 80
+    },
+    {
+     "entity": "ch-01",
+     "variable": "cover",
+     "path": "/ch-01/state/cover",
+     "dimension": "social",
+     "before": "named",
+     "after": "archived",
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-01",
+     "variable": "detachment",
+     "path": "/ch-01/state/detachment",
+     "dimension": "psychological",
+     "before": 14,
+     "after": 6,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 91,
+     "after": 97,
+     "magnitude": 25
+    },
+    {
+     "entity": "ob-04",
+     "variable": "holder",
+     "path": "/ob-04/state/holder",
+     "dimension": "material",
+     "before": "ch-01",
+     "after": "ch-02",
+     "magnitude": 70
+    },
+    {
+     "entity": "ob-03",
+     "variable": "holder",
+     "path": "/ob-03/state/holder",
+     "dimension": "material",
+     "before": "ch-01",
+     "after": "ch-02",
+     "magnitude": 40
+    },
+    {
+     "entity": "lo-06",
+     "variable": "tokens_present",
+     "path": "/lo-06/state/tokens_present",
+     "dimension": "material",
+     "before": "with_hale",
+     "after": "with_cora",
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-06",
+     "variable": "sun_on_stone",
+     "path": "/lo-06/state/sun_on_stone",
+     "dimension": "world",
+     "before": false,
+     "after": true,
+     "magnitude": 60
+    },
+    {
+     "entity": "ob-08",
+     "variable": "exists",
+     "path": "/ob-08/state/exists",
+     "dimension": "material",
+     "before": false,
+     "after": true,
+     "magnitude": 85
+    },
+    {
+     "entity": "ob-08",
+     "variable": "holder",
+     "path": "/ob-08/state/holder",
+     "dimension": "material",
+     "before": "none",
+     "after": "ch-02",
+     "magnitude": 70
+    },
+    {
+     "entity": "ob-01",
+     "variable": "film_left",
+     "path": "/ob-01/state/film_left",
+     "dimension": "material",
+     "before": 2,
+     "after": 1,
+     "magnitude": 10
+    },
+    {
+     "entity": "ob-02",
+     "variable": "frame_count",
+     "path": "/ob-02/state/frame_count",
+     "dimension": "material",
+     "before": 18,
+     "after": 19,
+     "magnitude": 30
+    },
+    {
+     "entity": "ob-02",
+     "variable": "content_flag",
+     "path": "/ob-02/state/content_flag",
+     "dimension": "epistemic",
+     "before": "dawn_site",
+     "after": "hale_face",
+     "magnitude": 70
+    }
+   ],
+   "caused_by": [
+    "ev-012",
+    "ev-014",
+    "ev-015"
+   ],
+   "causes": [
+    "ev-017"
+   ],
+   "causal_note": "The stopped hand, the known cost of a closed match, and a lamp already raised leave him only the refusal, and sun is already on the stone.",
+   "reversal": true,
+   "plot_function": "withheld_invocation",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-017": {
+   "event_id": "ev-017",
+   "story_time": {
+    "index": 34,
+    "label": "Morning after, 06:40",
+    "duration_min": 50
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st9"
+    }
+   ],
+   "location": "lo-02",
+   "participants": [
+    "ch-02"
+   ],
+   "summary": "Cora hides the tokens, clips Hale's still-developing face beside the tip jar, and keeps the hours the wipe cannot cancel.",
+   "action": "Before another nightfall Cora hides the tokens under the stone's north face, where no Guest walking the dawn site would think to look, denying the board a winner. After sunrise she clips the still-developing Polaroid of his face to the diner register beside the tip jar. The cassette runs to leader and hisses. A roll-bar climbs the front window and holds. She turns the lock to open for breakfast because the till is still how she leaves town, and the looping road is still closed. The scorch on his hand, somewhere in the last shade, will not regenerate.",
+   "state_changes": [
+    {
+     "entity": "ch-02",
+     "variable": "tokens_hidden",
+     "path": "/ch-02/state/tokens_hidden",
+     "dimension": "material",
+     "before": false,
+     "after": true,
+     "magnitude": 80
+    },
+    {
+     "entity": "ob-04",
+     "variable": "holder",
+     "path": "/ob-04/state/holder",
+     "dimension": "material",
+     "before": "ch-02",
+     "after": "hidden",
+     "magnitude": 75
+    },
+    {
+     "entity": "lo-06",
+     "variable": "tokens_present",
+     "path": "/lo-06/state/tokens_present",
+     "dimension": "material",
+     "before": "with_cora",
+     "after": "hidden_nearby",
+     "magnitude": 70
+    },
+    {
+     "entity": "ch-02",
+     "variable": "stance_on_hale",
+     "path": "/ch-02/state/stance_on_hale",
+     "dimension": "emotional",
+     "before": "armed",
+     "after": "archivist",
+     "magnitude": 55
+    },
+    {
+     "entity": "ch-02",
+     "variable": "position",
+     "path": "/ch-02/state/position",
+     "dimension": "spatial",
+     "before": "lo-06",
+     "after": "lo-02",
+     "magnitude": 25
+    },
+    {
+     "entity": "ob-07",
+     "variable": "polaroid_clipped_beside",
+     "path": "/ob-07/state/polaroid_clipped_beside",
+     "dimension": "material",
+     "before": false,
+     "after": true,
+     "magnitude": 70
+    },
+    {
+     "entity": "lo-02",
+     "variable": "register_display",
+     "path": "/lo-02/state/register_display",
+     "dimension": "material",
+     "before": "notes_only",
+     "after": "hale_polaroid",
+     "magnitude": 65
+    },
+    {
+     "entity": "lo-02",
+     "variable": "window_artifact",
+     "path": "/lo-02/state/window_artifact",
+     "dimension": "technological",
+     "before": "none",
+     "after": "roll_bar",
+     "magnitude": 40
+    },
+    {
+     "entity": "ob-03",
+     "variable": "track",
+     "path": "/ob-03/state/track",
+     "dimension": "epistemic",
+     "before": "hale_instructions",
+     "after": "leader_hiss",
+     "magnitude": 35
+    },
+    {
+     "entity": "lo-07",
+     "variable": "fog_read",
+     "path": "/lo-07/state/fog_read",
+     "dimension": "technological",
+     "before": "weather",
+     "after": "static",
+     "magnitude": 40
+    },
+    {
+     "entity": "ch-03",
+     "variable": "experiment_phase",
+     "path": "/ch-03/state/experiment_phase",
+     "dimension": "epistemic",
+     "before": "doubling_down",
+     "after": "failed",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-02",
+     "variable": "retained_night",
+     "path": "/ch-02/state/retained_night",
+     "dimension": "epistemic",
+     "before": 76,
+     "after": 94,
+     "magnitude": 40
+    },
+    {
+     "entity": "ch-02",
+     "variable": "archive_depth",
+     "path": "/ch-02/state/archive_depth",
+     "dimension": "material",
+     "before": 19,
+     "after": 24,
+     "magnitude": 30
+    },
+    {
+     "entity": "ch-02",
+     "variable": "existential_stability",
+     "path": "/ch-02/state/existential_stability",
+     "dimension": "psychological",
+     "before": 40,
+     "after": 54,
+     "magnitude": 35
+    },
+    {
+     "entity": "ob-08",
+     "variable": "holder",
+     "path": "/ob-08/state/holder",
+     "dimension": "material",
+     "before": "ch-02",
+     "after": "lo-02",
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-016"
+   ],
+   "causes": [],
+   "causal_note": "He has just put the board in her hands and stepped into a scorch, so only she can hide the tokens and pin the hour the wipe cannot touch.",
+   "reversal": true,
+   "plot_function": "seized_continuity",
+   "is_root": false,
+   "is_sink": true
+  }
+ }
+}

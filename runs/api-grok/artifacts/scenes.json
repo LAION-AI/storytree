@@ -1,0 +1,3065 @@
+{
+ "scenes": {
+  "sc-001": {
+   "scene_id": "sc-001",
+   "discourse_index": 1,
+   "chapter": 1,
+   "primary_event": "ev-001",
+   "events": [
+    "ev-001"
+   ],
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02",
+    "pl-01"
+   ],
+   "story_time_label": "twenty-one days before the rite, morning",
+   "location": "lo-01",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02",
+    "ob-02",
+    "ob-03"
+   ],
+   "offstage_referenced": [
+    "ob-01",
+    "lo-04",
+    "gr-01",
+    "cn-02",
+    "gr-03"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "location": "forge_house",
+     "task": "at_forge",
+     "debt_account": "unsettled",
+     "belonging": "of_the_house"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "household_role": "master_of_house",
+     "disclosure": "withheld"
+    },
+    "lo-01": {
+     "occupancy": "both_present",
+     "household_character": "raising_home"
+    },
+    "ob-02": {
+     "completeness": "unfinished",
+     "custody": "forge"
+    },
+    "ob-03": {
+     "last_weighing": "idle"
+    },
+    "cn-02": {
+     "status": "pending_rite",
+     "days_until_rite": 21
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-001",
+     "type": "action",
+     "text": "Willa sets unfinished bar stock on the forge-house balance and waits for the arm to settle. Orren stands at the counterweight with the day's heat already drawn. Neither looks toward the village chest. The midwinter count is still twenty-one days off.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-02",
+      "ob-03"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-001",
+     "type": "dialogue",
+     "text": "She names the short weight as a figure she will enter, not as a fault in the heat. He adjusts the counterweight, confirms the same number, and does not dispute it. She records the shortfall on the stock slate. They leave the bars on the pan long enough for the arm to hold.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-03",
+      "ob-02"
+     ],
+     "changes": [
+      {
+       "entity": "ob-03",
+       "variable": "last_weighing",
+       "dimension": "material",
+       "before": "idle",
+       "after": "stock_check",
+       "magnitude": 25,
+       "op": {
+        "op": "replace",
+        "path": "/ob-03/state/last_weighing",
+        "value": "stock_check"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-001",
+     "type": "dialogue",
+     "text": "He states that the compact will take this iron together with the village relic, and that the hamlet has no reserve of coin, grain, or a second piece. She keeps the count and treats the reminder as work already known, not as a question that wants an answer.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "cn-02",
+      "gr-01"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-001",
+     "type": "dialogue",
+     "text": "She does not ask what the years of teaching and board have made her owe him. He assigns her the next heat as master of the house and does not open that account. They lift the bars off the pan and return them to the unfinished pile.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-02"
+     ],
+     "changes": []
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "location": "forge_house",
+     "task": "at_forge",
+     "debt_account": "unsettled",
+     "belonging": "of_the_house"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "household_role": "master_of_house",
+     "disclosure": "withheld"
+    },
+    "lo-01": {
+     "occupancy": "both_present",
+     "household_character": "raising_home"
+    },
+    "ob-02": {
+     "completeness": "unfinished",
+     "custody": "forge"
+    },
+    "ob-03": {
+     "last_weighing": "stock_check"
+    },
+    "cn-02": {
+     "status": "pending_rite",
+     "days_until_rite": 21
+    }
+   },
+   "dramatic_function": "Establish the unfinished tithe, the pending compact, and the household debt she will not ask him to settle.",
+   "tension_in": 25,
+   "tension_out": 32,
+   "questions_opened": {
+    "q01": "What does Willa owe Orren for raising and for craft?",
+    "q02": "Will the thin tithe-iron and the relic be enough to hold the compact?"
+   },
+   "questions_closed": [],
+   "target_words": 850
+  },
+  "sc-002": {
+   "scene_id": "sc-002",
+   "discourse_index": 2,
+   "chapter": 1,
+   "primary_event": "ev-002",
+   "events": [
+    "ev-002"
+   ],
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "story_time_label": "twenty-one days before the rite, night",
+   "location": "lo-04",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "gr-02",
+    "ob-01",
+    "lo-04"
+   ],
+   "offstage_referenced": [
+    "ch-01",
+    "ch-02",
+    "ob-02",
+    "gr-01",
+    "gr-03",
+    "cn-02",
+    "lo-01"
+   ],
+   "entry_states": {
+    "ob-01": {
+     "custody": "village_chest",
+     "presented_and_accepted": false,
+     "publicly_intact": true
+    },
+    "lo-04": {
+     "chest_status": "holding_relic",
+     "aware_of_forgery": false
+    },
+    "gr-02": {
+     "camp_state": "settled_poor",
+     "hunger": 78
+    },
+    "gr-01": {
+     "grain_right": "held_pending_rite",
+     "knows_forgery": false
+    },
+    "cn-02": {
+     "status": "pending_rite",
+     "days_until_rite": 21,
+     "challenge_made": false
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-002",
+     "type": "action",
+     "text": "After dark a far-slope band enters Highkettle on foot and goes to the village chest, not to the forge-house. They force the lock. They are few and carry little. They do not search the houses.",
+     "participants": [
+      "gr-02",
+      "lo-04",
+      "ob-01"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-002",
+     "type": "action",
+     "text": "They lift the presentation-relic from the chest and take it because they can carry one object and because their own slopes have no Hold protection and they are hungry. They do not linger to weigh it.",
+     "participants": [
+      "gr-02",
+      "ob-01"
+     ],
+     "changes": [
+      {
+       "entity": "ob-01",
+       "variable": "custody",
+       "dimension": "material",
+       "before": "village_chest",
+       "after": "raiders",
+       "magnitude": 90,
+       "op": {
+        "op": "replace",
+        "path": "/ob-01/state/custody",
+        "value": "raiders"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-002",
+     "type": "action",
+     "text": "They do not go on to the forge for the year's iron, being unable to carry both. The village chest is left empty. They turn back toward the winter pass with only the piece.",
+     "participants": [
+      "gr-02",
+      "lo-04",
+      "ob-01",
+      "ob-02"
+     ],
+     "changes": [
+      {
+       "entity": "lo-04",
+       "variable": "chest_status",
+       "dimension": "material",
+       "before": "holding_relic",
+       "after": "empty",
+       "magnitude": 85,
+       "op": {
+        "op": "replace",
+        "path": "/lo-04/state/chest_status",
+        "value": "empty"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-002",
+     "type": "transition",
+     "text": "The band withdraws the way they came, now holding the stolen presentation-piece among their poor kit. They do not post a claim or a message. They go because they are hungry, not because they mean to break a rite.",
+     "participants": [
+      "gr-02",
+      "ob-01",
+      "lo-02"
+     ],
+     "changes": [
+      {
+       "entity": "gr-02",
+       "variable": "camp_state",
+       "dimension": "material",
+       "before": "settled_poor",
+       "after": "holding_theft",
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/gr-02/state/camp_state",
+        "value": "holding_theft"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 5,
+     "event_id": "ev-002",
+     "type": "reversal",
+     "text": "With the relic gone and no coin or fighters or replacement piece in the hamlet, the coming presentation and the year's grain-right stand at risk. The Hold's compact demands the relic with the iron. No watch is raised before morning.",
+     "participants": [
+      "gr-01",
+      "ob-01",
+      "cn-02",
+      "gr-03"
+     ],
+     "changes": [
+      {
+       "entity": "gr-01",
+       "variable": "grain_right",
+       "dimension": "political",
+       "before": "held_pending_rite",
+       "after": "at_risk",
+       "magnitude": 80,
+       "op": {
+        "op": "replace",
+        "path": "/gr-01/state/grain_right",
+        "value": "at_risk"
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ob-01": {
+     "custody": "raiders",
+     "presented_and_accepted": false,
+     "publicly_intact": true
+    },
+    "lo-04": {
+     "chest_status": "empty",
+     "aware_of_forgery": false
+    },
+    "gr-02": {
+     "camp_state": "holding_theft",
+     "hunger": 78
+    },
+    "gr-01": {
+     "grain_right": "at_risk",
+     "knows_forgery": false
+    },
+    "cn-02": {
+     "status": "pending_rite",
+     "days_until_rite": 21,
+     "challenge_made": false
+    }
+   },
+   "dramatic_function": "Rupture the given compact by stealing the relic and leaving the unfinished iron behind.",
+   "tension_in": 32,
+   "tension_out": 58,
+   "questions_opened": {
+    "q03": "Can the relic be recovered and presented before midwinter?"
+   },
+   "questions_closed": [],
+   "target_words": 550
+  },
+  "sc-003": {
+   "scene_id": "sc-003",
+   "discourse_index": 3,
+   "chapter": 2,
+   "primary_event": "ev-003",
+   "events": [
+    "ev-003"
+   ],
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-02"
+   ],
+   "story_time_label": "twenty days before the rite, morning",
+   "location": "lo-01",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02",
+    "gr-01",
+    "ob-02"
+   ],
+   "offstage_referenced": [
+    "ob-01",
+    "lo-04",
+    "lo-02",
+    "cn-02",
+    "gr-03"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "location": "forge_house",
+     "task": "at_forge",
+     "debt_account": "unsettled",
+     "belonging": "of_the_house"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "body_condition": 54,
+     "disclosure": "withheld",
+     "household_role": "master_of_house"
+    },
+    "lo-01": {
+     "occupancy": "both_present",
+     "household_character": "raising_home"
+    },
+    "ob-02": {
+     "completeness": "unfinished",
+     "custody": "forge"
+    },
+    "gr-01": {
+     "grain_right": "at_risk",
+     "smith_labor": "orren_and_apprentice",
+     "knows_forgery": false
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-003",
+     "type": "action",
+     "text": "In the morning the hamlet gathers at the forge-house and reports the empty chest. The unfinished tithe-iron is still on the forge. Orren hears the charge without offering to walk. Willa stands in her work clothes and does not sit.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "gr-01",
+      "ob-02",
+      "lo-01"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-003",
+     "type": "dialogue",
+     "text": "The hamlet charges her with retrieving the relic on foot before the rite, with no mount, no guide, and no spare days. They put the commission on her as the one who can still walk the pass, not as a volunteer.",
+     "participants": [
+      "gr-01",
+      "ch-01",
+      "ch-02"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-003",
+     "type": "dialogue",
+     "text": "They name the reasons they will not send Orren: the tithe-iron is still short, his body cannot make the crossing, and a woman on the path is less likely to be met as a fighter. He does not contradict them.",
+     "participants": [
+      "gr-01",
+      "ch-01",
+      "ch-02",
+      "ob-02"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-003",
+     "type": "decision",
+     "text": "She accepts the commission without having settled what she owes him for raising and for craft. He does not offer to go in her place and does not speak the thing he has withheld. The hamlet treats the acceptance as the end of the meeting.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "gr-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "task",
+       "dimension": "social",
+       "before": "at_forge",
+       "after": "commissioned",
+       "magnitude": 80,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/task",
+        "value": "commissioned"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 5,
+     "event_id": "ev-003",
+     "type": "transition",
+     "text": "She leaves the forge-house for the village path with a pack the hamlet can spare, no mount, and no guide. Orren remains at the unfinished iron. The house holds only him.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "lo-01",
+      "gr-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "location",
+       "dimension": "spatial",
+       "before": "forge_house",
+       "after": "village",
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/location",
+        "value": "village"
+       }
+      },
+      {
+       "entity": "lo-01",
+       "variable": "occupancy",
+       "dimension": "spatial",
+       "before": "both_present",
+       "after": "orren_only",
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/lo-01/state/occupancy",
+        "value": "orren_only"
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "location": "village",
+     "task": "commissioned",
+     "debt_account": "unsettled",
+     "belonging": "of_the_house"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "body_condition": 54,
+     "disclosure": "withheld",
+     "household_role": "master_of_house"
+    },
+    "lo-01": {
+     "occupancy": "orren_only",
+     "household_character": "raising_home"
+    },
+    "ob-02": {
+     "completeness": "unfinished",
+     "custody": "forge"
+    },
+    "gr-01": {
+     "grain_right": "at_risk",
+     "smith_labor": "orren_and_apprentice",
+     "knows_forgery": false
+    }
+   },
+   "dramatic_function": "Force the commission that sends her out before the household debt can be spoken.",
+   "tension_in": 58,
+   "tension_out": 70,
+   "questions_opened": {
+    "q04": "Will the crossing spend the hours in which Orren might have spoken first?",
+    "q05": "Will she return with the piece in time for the rite?"
+   },
+   "questions_closed": [],
+   "target_words": 950
+  },
+  "sc-004": {
+   "scene_id": "sc-004",
+   "discourse_index": 4,
+   "chapter": 2,
+   "primary_event": "ev-004",
+   "events": [
+    "ev-004"
+   ],
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "story_time_label": "ascent, twenty to fourteen days before the rite",
+   "location": "lo-02",
+   "pov": "ch-01",
+   "narrative_mode": "summary",
+   "present": [
+    "ch-01",
+    "lo-02"
+   ],
+   "offstage_referenced": [
+    "gr-02",
+    "ob-01",
+    "ch-02",
+    "lo-03",
+    "cn-02",
+    "gr-03"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "location": "village",
+     "stamina": 86,
+     "task": "commissioned",
+     "hands_frosted": false
+    },
+    "lo-02": {
+     "passability": "open_on_foot",
+     "traffic": "none"
+    },
+    "cn-02": {
+     "days_until_rite": 21,
+     "status": "pending_rite"
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-004",
+     "type": "transition",
+     "text": "Willa leaves the village path and climbs the winter pass on foot in the last weeks before midwinter. The path is open. She meets no holders of the pass and no mounted traffic. She does not turn back.",
+     "participants": [
+      "ch-01",
+      "lo-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "location",
+       "dimension": "spatial",
+       "before": "village",
+       "after": "winter_pass",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/location",
+        "value": "winter_pass"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-004",
+     "type": "action",
+     "text": "She is the only traffic on the pass. Ahead the far-slope band is a party of hungry people, not an army. She rations sleep and fuel and judges each day's distance by the weight of the pack and the state of her feet.",
+     "participants": [
+      "ch-01",
+      "lo-02",
+      "gr-02"
+     ],
+     "changes": [
+      {
+       "entity": "lo-02",
+       "variable": "traffic",
+       "dimension": "spatial",
+       "before": "none",
+       "after": "willa_ascent",
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/lo-02/state/traffic",
+        "value": "willa_ascent"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-004",
+     "type": "action",
+     "text": "The crossing exacts cold and walking time she cannot spare. She spends stamina she will need for the return and for the work waiting at the forge. She keeps moving because a late arrival spends the retrieval.",
+     "participants": [
+      "ch-01",
+      "lo-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "stamina",
+       "dimension": "physiological",
+       "before": 86,
+       "after": 58,
+       "magnitude": 45,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/stamina",
+        "value": 58
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-004",
+     "type": "action",
+     "text": "She keeps a count of days against the rite. By the time the far slope comes in sight the remaining days have fallen from twenty-one to fourteen. She does not rest an extra night to recover the spent strength.",
+     "participants": [
+      "ch-01",
+      "cn-02"
+     ],
+     "changes": [
+      {
+       "entity": "cn-02",
+       "variable": "days_until_rite",
+       "dimension": "world",
+       "before": 21,
+       "after": 14,
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/cn-02/state/days_until_rite",
+        "value": 14
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "location": "winter_pass",
+     "stamina": 58,
+     "task": "commissioned",
+     "hands_frosted": false
+    },
+    "lo-02": {
+     "passability": "open_on_foot",
+     "traffic": "willa_ascent"
+    },
+    "cn-02": {
+     "days_until_rite": 14,
+     "status": "pending_rite"
+    }
+   },
+   "dramatic_function": "Spend irreplaceable walking time and stamina on the open winter pass.",
+   "tension_in": 70,
+   "tension_out": 74,
+   "questions_opened": {
+    "q06": "Will the camp still hold the piece when she reaches it?"
+   },
+   "questions_closed": [],
+   "target_words": 650
+  },
+  "sc-005": {
+   "scene_id": "sc-005",
+   "discourse_index": 5,
+   "chapter": 3,
+   "primary_event": "ev-005",
+   "events": [
+    "ev-005"
+   ],
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "story_time_label": "fourteen days before the rite, night",
+   "location": "lo-03",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "gr-02",
+    "ob-01",
+    "lo-03"
+   ],
+   "offstage_referenced": [
+    "ch-02",
+    "cn-02",
+    "lo-02",
+    "gr-01"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "location": "winter_pass",
+     "stamina": 58,
+     "relic_knowledge": "unread",
+     "task": "commissioned"
+    },
+    "ob-01": {
+     "custody": "raiders",
+     "publicly_intact": true,
+     "presented_and_accepted": false
+    },
+    "lo-03": {
+     "occupancy": "band_camped",
+     "alertness": "hungry_rest"
+    },
+    "gr-02": {
+     "camp_state": "holding_theft",
+     "hunger": 78
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-005",
+     "type": "transition",
+     "text": "After dark Willa finds the lee camp and comes down off the pass into its edge. She does not announce herself. She waits until the band is down to hungry rest and does not draw a weapon.",
+     "participants": [
+      "ch-01",
+      "gr-02",
+      "lo-03"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "location",
+       "dimension": "spatial",
+       "before": "winter_pass",
+       "after": "raider_camp",
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/location",
+        "value": "raider_camp"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-005",
+     "type": "discovery",
+     "text": "She reads the stolen object among their poor kit by weight and by the feel of worked iron. She confirms the piece by its presentation shape and by a heft that sits wrong for its size. She does not open it there.",
+     "participants": [
+      "ch-01",
+      "ob-01"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-005",
+     "type": "action",
+     "text": "She lifts the piece and withdraws. She kills no one for a village object. She leaves them the rest of what they have. The camp does not raise a watch in time to stop her.",
+     "participants": [
+      "ch-01",
+      "ob-01",
+      "gr-02",
+      "lo-03"
+     ],
+     "changes": [
+      {
+       "entity": "ob-01",
+       "variable": "custody",
+       "dimension": "material",
+       "before": "raiders",
+       "after": "willa",
+       "magnitude": 90,
+       "op": {
+        "op": "replace",
+        "path": "/ob-01/state/custody",
+        "value": "willa"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-005",
+     "type": "reversal",
+     "text": "Only after she is gone does the camp find the piece missing. Their rest breaks into the knowledge of the loss. They do not pursue into the dark in any force she can hear.",
+     "participants": [
+      "gr-02",
+      "lo-03",
+      "ob-01",
+      "ch-01"
+     ],
+     "changes": [
+      {
+       "entity": "lo-03",
+       "variable": "alertness",
+       "dimension": "social",
+       "before": "hungry_rest",
+       "after": "piece_gone",
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/lo-03/state/alertness",
+        "value": "piece_gone"
+       }
+      },
+      {
+       "entity": "gr-02",
+       "variable": "camp_state",
+       "dimension": "material",
+       "before": "holding_theft",
+       "after": "missing_the_piece",
+       "magnitude": 65,
+       "op": {
+        "op": "replace",
+        "path": "/gr-02/state/camp_state",
+        "value": "missing_the_piece"
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "location": "raider_camp",
+     "stamina": 58,
+     "relic_knowledge": "unread",
+     "task": "commissioned"
+    },
+    "ob-01": {
+     "custody": "willa",
+     "publicly_intact": true,
+     "presented_and_accepted": false
+    },
+    "lo-03": {
+     "occupancy": "band_camped",
+     "alertness": "piece_gone"
+    },
+    "gr-02": {
+     "camp_state": "missing_the_piece",
+     "hunger": 78
+    }
+   },
+   "dramatic_function": "Recover the relic by craft and stealth without killing for a village object.",
+   "tension_in": 74,
+   "tension_out": 62,
+   "questions_opened": {
+    "q07": "Why does the recovered piece sit wrong for its size?"
+   },
+   "questions_closed": [
+    "q06"
+   ],
+   "target_words": 750
+  },
+  "sc-006": {
+   "scene_id": "sc-006",
+   "discourse_index": 6,
+   "chapter": 3,
+   "primary_event": "ev-006",
+   "events": [
+    "ev-006"
+   ],
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-02"
+   ],
+   "story_time_label": "return, fourteen to six days before the rite",
+   "location": "lo-02",
+   "pov": "ch-01",
+   "narrative_mode": "summary",
+   "present": [
+    "ch-01",
+    "lo-02"
+   ],
+   "offstage_referenced": [
+    "ch-02",
+    "ob-01",
+    "lo-01",
+    "gr-01",
+    "cn-02"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "location": "raider_camp",
+     "stamina": 58,
+     "hands_frosted": false,
+     "task": "commissioned",
+     "relic_knowledge": "unread"
+    },
+    "lo-02": {
+     "traffic": "willa_ascent",
+     "passability": "open_on_foot"
+    },
+    "cn-02": {
+     "days_until_rite": 14,
+     "status": "pending_rite"
+    },
+    "ob-01": {
+     "custody": "willa"
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-006",
+     "type": "transition",
+     "text": "Willa recrosses the winter pass with the relic in the pack. The return takes longer than the ascent. She does not meet Orren on the path. She does not stop to open the piece.",
+     "participants": [
+      "ch-01",
+      "lo-02",
+      "ob-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "location",
+       "dimension": "spatial",
+       "before": "raider_camp",
+       "after": "winter_pass",
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/location",
+        "value": "winter_pass"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-006",
+     "type": "action",
+     "text": "Cold takes her hands. She wraps them and keeps walking, and the frost stays in the skin. She does not stop to thaw them properly, because a late return spends the retrieval.",
+     "participants": [
+      "ch-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "hands_frosted",
+       "dimension": "physiological",
+       "before": false,
+       "after": true,
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/hands_frosted",
+        "value": true
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-006",
+     "type": "action",
+     "text": "No messenger from the house meets her on the return, and she does not meet Orren on the path. She spends her remaining strength on the recrossing. The hours go to walking, not to hearing him.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "lo-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "stamina",
+       "dimension": "physiological",
+       "before": 58,
+       "after": 30,
+       "magnitude": 60,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/stamina",
+        "value": 30
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-006",
+     "type": "transition",
+     "text": "She is the only traffic on the return. The pass is still open on foot. No Hold party meets her. She keeps the piece in the pack and does not show it to anyone on the way down.",
+     "participants": [
+      "ch-01",
+      "lo-02",
+      "ob-01",
+      "gr-03"
+     ],
+     "changes": [
+      {
+       "entity": "lo-02",
+       "variable": "traffic",
+       "dimension": "spatial",
+       "before": "willa_ascent",
+       "after": "willa_return",
+       "magnitude": 35,
+       "op": {
+        "op": "replace",
+        "path": "/lo-02/state/traffic",
+        "value": "willa_return"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 5,
+     "event_id": "ev-006",
+     "type": "action",
+     "text": "She counts the remaining days against the presentation. By the time the home slope comes in sight the rite is six days off. She does not camp an extra night to spare the hands.",
+     "participants": [
+      "ch-01",
+      "cn-02"
+     ],
+     "changes": [
+      {
+       "entity": "cn-02",
+       "variable": "days_until_rite",
+       "dimension": "world",
+       "before": 14,
+       "after": 6,
+       "magnitude": 60,
+       "op": {
+        "op": "replace",
+        "path": "/cn-02/state/days_until_rite",
+        "value": 6
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "location": "winter_pass",
+     "stamina": 30,
+     "hands_frosted": true,
+     "task": "commissioned",
+     "relic_knowledge": "unread"
+    },
+    "lo-02": {
+     "traffic": "willa_return",
+     "passability": "open_on_foot"
+    },
+    "cn-02": {
+     "days_until_rite": 6,
+     "status": "pending_rite"
+    },
+    "ob-01": {
+     "custody": "willa"
+    }
+   },
+   "dramatic_function": "Exact frost injury and the missed hearing as the price of bringing the piece back.",
+   "tension_in": 62,
+   "tension_out": 68,
+   "questions_opened": {
+    "q08": "What will the marked hands and the unheard hours cost at the forge-house?"
+   },
+   "questions_closed": [
+    "q04",
+    "q05"
+   ],
+   "target_words": 700
+  },
+  "sc-007": {
+   "scene_id": "sc-007",
+   "discourse_index": 7,
+   "chapter": 4,
+   "primary_event": "ev-007",
+   "events": [
+    "ev-007"
+   ],
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02",
+    "pl-01"
+   ],
+   "story_time_label": "six days before the rite, evening",
+   "location": "lo-01",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02",
+    "ob-01",
+    "ob-03",
+    "lo-01"
+   ],
+   "offstage_referenced": [
+    "lo-02",
+    "gr-01",
+    "gr-03",
+    "cn-02",
+    "ob-02",
+    "lo-04"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "location": "winter_pass",
+     "relic_knowledge": "unread",
+     "task": "commissioned",
+     "hands_frosted": true,
+     "stamina": 30,
+     "debt_account": "unsettled"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "disclosure": "withheld",
+     "levy_paying": true,
+     "household_role": "master_of_house"
+    },
+    "lo-01": {
+     "occupancy": "orren_only",
+     "household_character": "raising_home"
+    },
+    "lo-02": {
+     "traffic": "willa_return"
+    },
+    "ob-01": {
+     "custody": "willa",
+     "publicly_intact": true
+    },
+    "ob-03": {
+     "last_weighing": "stock_check"
+    },
+    "ob-02": {
+     "completeness": "unfinished",
+     "custody": "forge"
+    },
+    "cn-02": {
+     "days_until_rite": 6
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-007",
+     "type": "transition",
+     "text": "Willa reaches the forge-house in the evening with the pack still on. Orren is there. She does not sleep. She does not put the piece back in the village chest. The unfinished tithe-iron is still on the forge.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01",
+      "ob-02",
+      "lo-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "location",
+       "dimension": "spatial",
+       "before": "winter_pass",
+       "after": "forge_house",
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/location",
+        "value": "forge_house"
+       }
+      },
+      {
+       "entity": "lo-01",
+       "variable": "occupancy",
+       "dimension": "spatial",
+       "before": "orren_only",
+       "after": "both_present",
+       "magnitude": 45,
+       "op": {
+        "op": "replace",
+        "path": "/lo-01/state/occupancy",
+        "value": "both_present"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-007",
+     "type": "action",
+     "text": "The pass behind her holds no traffic now. She sets the recovered relic on the forge balance before she eats or sleeps. Her marked hands work the pan as they would for a bad heat.",
+     "participants": [
+      "ch-01",
+      "ob-01",
+      "ob-03",
+      "lo-02"
+     ],
+     "changes": [
+      {
+       "entity": "lo-02",
+       "variable": "traffic",
+       "dimension": "spatial",
+       "before": "willa_return",
+       "after": "none",
+       "magnitude": 20,
+       "op": {
+        "op": "replace",
+        "path": "/lo-02/state/traffic",
+        "value": "none"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-007",
+     "type": "discovery",
+     "text": "The weight is wrong for the piece the village has presented for forty years. She records the false weight as she would record a bad heat. She does not give Orren the figure as a charge, and she does not call the hamlet.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01",
+      "ob-03"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-007",
+     "type": "revelation",
+     "text": "She reads Orren's weld in the join and an inclusion where a living levy sits. She does not take that reading to the hamlet or to the Hold. She keeps the piece in her own custody through the rest of the evening.",
+     "participants": [
+      "ch-01",
+      "ob-01",
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "relic_knowledge",
+       "dimension": "epistemic",
+       "before": "unread",
+       "after": "read_as_forgery",
+       "magnitude": 90,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/relic_knowledge",
+        "value": "read_as_forgery"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 5,
+     "event_id": "ev-007",
+     "type": "decision",
+     "text": "She does not sleep on the reading. The commission is finished in the only way the hamlet will count: the piece is in the house and the rite is still days off. She does not give the piece back to the chest.",
+     "participants": [
+      "ch-01",
+      "ob-01",
+      "lo-04"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "task",
+       "dimension": "social",
+       "before": "commissioned",
+       "after": "returned_with_piece",
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/task",
+        "value": "returned_with_piece"
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "location": "forge_house",
+     "relic_knowledge": "read_as_forgery",
+     "task": "returned_with_piece",
+     "hands_frosted": true,
+     "stamina": 30,
+     "debt_account": "unsettled"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "disclosure": "withheld",
+     "levy_paying": true,
+     "household_role": "master_of_house"
+    },
+    "lo-01": {
+     "occupancy": "both_present",
+     "household_character": "raising_home"
+    },
+    "lo-02": {
+     "traffic": "none"
+    },
+    "ob-01": {
+     "custody": "willa",
+     "publicly_intact": true
+    },
+    "ob-03": {
+     "last_weighing": "stock_check"
+    },
+    "ob-02": {
+     "completeness": "unfinished",
+     "custody": "forge"
+    },
+    "cn-02": {
+     "days_until_rite": 6
+    }
+   },
+   "dramatic_function": "Let craft read the recovered piece as a forty-year forgery and keep that reading inside the house.",
+   "tension_in": 68,
+   "tension_out": 82,
+   "questions_opened": {
+    "q09": "Will she take the reading of the weld and the levy to Orren before the rite?",
+    "q10": "Will she present a piece she now knows is false?"
+   },
+   "questions_closed": [
+    "q03",
+    "q07",
+    "q08"
+   ],
+   "target_words": 900
+  },
+  "sc-008": {
+   "scene_id": "sc-008",
+   "discourse_index": 8,
+   "chapter": 2,
+   "primary_event": "ev-008",
+   "events": [
+    "ev-008"
+   ],
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "story_time_label": "six days before the rite, night",
+   "location": "lo-01",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02",
+    "ob-01",
+    "cn-01",
+    "lo-01"
+   ],
+   "offstage_referenced": [
+    "gr-01",
+    "gr-03",
+    "cn-02"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "location": "forge_house",
+     "relic_knowledge": "read_as_forgery",
+     "task": "returned_with_piece",
+     "hands_frosted": true,
+     "debt_account": "unsettled"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "disclosure": "withheld",
+     "household_role": "master_of_house",
+     "levy_paying": true
+    },
+    "ob-01": {
+     "custody": "willa",
+     "publicly_intact": true
+    },
+    "cn-01": {
+     "old_reasons_status": "unheard",
+     "settlement": "open"
+    },
+    "lo-01": {
+     "occupancy": "both_present",
+     "household_character": "raising_home"
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-008",
+     "type": "action",
+     "text": "Willa brings the recovered piece from the bench into the work room where Orren is banking the fire. She sets the relic between them and keeps her frosted hands in view. She does not preface the metal with a charge or a question. He stops the work and looks at the piece rather than at her.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-008",
+     "type": "discovery",
+     "text": "She sets out the wrong weight, the forty-year weld, and the inclusion as facts of the metal, not as an accusation of the man. She treats the reading as work he is owed to hear first. She does not take the same reading to the village or name the Hold. The piece stays in her custody while she speaks.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "relic_knowledge",
+       "dimension": "epistemic",
+       "before": "read_as_forgery",
+       "after": "reading_taken_to_orren",
+       "magnitude": 75,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/relic_knowledge",
+        "value": "reading_taken_to_orren"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-008",
+     "type": "revelation",
+     "text": "He does not deny forging the piece forty years ago. He does not deny binding the levy to himself so the compact would hold. He receives the weld as his own work and the inclusion as his own tax. He does not ask what she intends to do with the knowledge before he speaks of how it was made.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "disclosure",
+       "dimension": "epistemic",
+       "before": "withheld",
+       "after": "admitted",
+       "magnitude": 85,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/disclosure",
+        "value": "admitted"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-008",
+     "type": "dialogue",
+     "text": "He states that the original was lost in a slide year the village could not have survived, and that the reasons were good then. He names the hunger of that winter and the closed pass as the ground of the weld. He offers those reasons as history, not as a present plea. She lets him finish the account.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "cn-01"
+     ],
+     "changes": [
+      {
+       "entity": "cn-01",
+       "variable": "old_reasons_status",
+       "dimension": "epistemic",
+       "before": "unheard",
+       "after": "heard_as_past",
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/cn-01/state/old_reasons_status",
+        "value": "heard_as_past"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 5,
+     "event_id": "ev-008",
+     "type": "reaction",
+     "text": "He does not ask her to hide the reading from the Hold. He does not ask her to take it there either. She does not yet answer what she will do with the knowledge or the piece. The fire settles. Neither of them puts the relic back as if unread.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01",
+      "gr-03"
+     ],
+     "changes": []
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "location": "forge_house",
+     "relic_knowledge": "reading_taken_to_orren",
+     "task": "returned_with_piece",
+     "hands_frosted": true,
+     "debt_account": "unsettled"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "disclosure": "admitted",
+     "household_role": "master_of_house",
+     "levy_paying": true
+    },
+    "ob-01": {
+     "custody": "willa",
+     "publicly_intact": true
+    },
+    "cn-01": {
+     "old_reasons_status": "heard_as_past",
+     "settlement": "open"
+    },
+    "lo-01": {
+     "occupancy": "both_present",
+     "household_character": "raising_home"
+    }
+   },
+   "dramatic_function": "Take the craft reading to Orren so the weld and levy are admitted inside the house.",
+   "tension_in": 70,
+   "tension_out": 82,
+   "questions_opened": {
+    "q18": "What will she do with the admitted reading before the rite?",
+    "q19": "Do the slide-year reasons still govern the coming presentation?"
+   },
+   "questions_closed": [
+    "q07"
+   ],
+   "target_words": 800
+  },
+  "sc-009": {
+   "scene_id": "sc-009",
+   "discourse_index": 9,
+   "chapter": 2,
+   "primary_event": "ev-009",
+   "events": [
+    "ev-009"
+   ],
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "story_time_label": "five days before the rite",
+   "location": "lo-01",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02",
+    "ob-01",
+    "cn-01",
+    "cn-02",
+    "lo-01"
+   ],
+   "offstage_referenced": [
+    "gr-01",
+    "gr-03"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "location": "forge_house",
+     "relic_knowledge": "reading_taken_to_orren",
+     "debt_account": "unsettled"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "disclosure": "admitted",
+     "body_condition": 54,
+     "levy_paying": true
+    },
+    "ob-01": {
+     "custody": "willa",
+     "publicly_intact": true
+    },
+    "cn-01": {
+     "old_reasons_status": "heard_as_past",
+     "settlement": "open"
+    },
+    "cn-02": {
+     "status": "pending_rite",
+     "days_until_rite": 6,
+     "challenge_made": false
+    },
+    "lo-01": {
+     "occupancy": "both_present"
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-009",
+     "type": "dialogue",
+     "text": "The next day they work the meaning of the weld as if it were a job on the books. She asks whether the levy can be moved to another body, paused for a season, or paid off in iron. He answers that no act available to them can transfer, pause, or discharge it.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01",
+      "cn-02"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-009",
+     "type": "dialogue",
+     "text": "He names the only endings: his death, or the relic broken in public so the steward must record a challenge. She restates that the village has paid tithe-iron for years for a right that is only his bodily tax. He does not correct the restatement. Neither of them offers a third ending.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01",
+      "gr-01"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-009",
+     "type": "discovery",
+     "text": "She has him hold a bar and watch the tremor he no longer hides. The years of the levy sit in the shake and in how long he needs before he can set the bar down. He does not claim the shake is only age or only work. The old necessity is visible as a body already spent.",
+     "participants": [
+      "ch-01",
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "body_condition",
+       "dimension": "physiological",
+       "before": 54,
+       "after": 44,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/body_condition",
+        "value": 44
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-009",
+     "type": "conflict",
+     "text": "She does not grant that the slide year's necessity still governs the coming rite. He does not offer a new reason in its place. He says only that the compact will stand while he continues to pay, and that the hamlet has not been told. She leaves that last fact unamended.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "cn-01",
+      "cn-02",
+      "gr-01"
+     ],
+     "changes": []
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "location": "forge_house",
+     "relic_knowledge": "reading_taken_to_orren",
+     "debt_account": "unsettled"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "disclosure": "admitted",
+     "body_condition": 44,
+     "levy_paying": true
+    },
+    "ob-01": {
+     "custody": "willa",
+     "publicly_intact": true
+    },
+    "cn-01": {
+     "old_reasons_status": "heard_as_past",
+     "settlement": "open"
+    },
+    "cn-02": {
+     "status": "pending_rite",
+     "days_until_rite": 6,
+     "challenge_made": false
+    },
+    "lo-01": {
+     "occupancy": "both_present"
+    }
+   },
+   "dramatic_function": "Test the old reasons against a levy that cannot be moved, paused, or paid off.",
+   "tension_in": 82,
+   "tension_out": 88,
+   "questions_opened": {
+    "q20": "Can any act they have transfer, pause, or discharge the levy?"
+   },
+   "questions_closed": [
+    "q19",
+    "q20"
+   ],
+   "target_words": 700
+  },
+  "sc-010": {
+   "scene_id": "sc-010",
+   "discourse_index": 10,
+   "chapter": 2,
+   "primary_event": "ev-010",
+   "events": [
+    "ev-010"
+   ],
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02",
+    "pl-01"
+   ],
+   "story_time_label": "four days before the rite",
+   "location": "lo-01",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02",
+    "ob-01",
+    "ob-02",
+    "cn-01",
+    "lo-01"
+   ],
+   "offstage_referenced": [
+    "gr-01",
+    "gr-03",
+    "cn-02"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "location": "forge_house",
+     "debt_account": "unsettled",
+     "relic_knowledge": "reading_taken_to_orren",
+     "task": "returned_with_piece",
+     "belonging": "of_the_house"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "disclosure": "admitted",
+     "body_condition": 44
+    },
+    "ob-01": {
+     "custody": "willa",
+     "publicly_intact": true
+    },
+    "ob-02": {
+     "completeness": "unfinished",
+     "custody": "forge"
+    },
+    "cn-01": {
+     "settlement": "open",
+     "old_reasons_status": "heard_as_past"
+    },
+    "cn-02": {
+     "days_until_rite": 6,
+     "status": "pending_rite"
+    },
+    "gr-01": {
+     "grain_right": "at_risk",
+     "knows_forgery": false
+    },
+    "lo-01": {
+     "occupancy": "both_present"
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-010",
+     "type": "action",
+     "text": "Four days remain. The relic stays in her custody on the house side of the bench, not returned to the chest and not broken. The unfinished tithe-iron waits on the forge. She does not open either course by a public act. He does not press her for a decision before the work of the day.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01",
+      "ob-02"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-010",
+     "type": "conflict",
+     "text": "She names the two spends of the recovery. Staying to work the truth of the piece risks a late or doubtful presentation that starves the hamlet. Carrying the relic to the steward as if unread spends the walk and the frost on a fraud she now owns. He does not deny either spend.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01",
+      "gr-01"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-010",
+     "type": "dialogue",
+     "text": "She tries to name what she owes him for the raising, for the craft, and for the lie that kept the grain coming, and she cannot make the three debts add into one payable sum. He does not offer a figure that would clear them. The ledger stays open because no payment fits the time left.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "cn-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "debt_account",
+       "dimension": "psychological",
+       "before": "unsettled",
+       "after": "cannot_settle",
+       "magnitude": 80,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/debt_account",
+        "value": "cannot_settle"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-010",
+     "type": "decision",
+     "text": "She does not break the piece. She does not take the reading to the village. She keeps both courses open long enough that neither can be finished cleanly before the steward's table. The object remains hers. What is owed cannot be settled in the days that remain.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01",
+      "cn-01",
+      "gr-01"
+     ],
+     "changes": [
+      {
+       "entity": "cn-01",
+       "variable": "settlement",
+       "dimension": "psychological",
+       "before": "open",
+       "after": "unpayable",
+       "magnitude": 75,
+       "op": {
+        "op": "replace",
+        "path": "/cn-01/state/settlement",
+        "value": "unpayable"
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "location": "forge_house",
+     "debt_account": "cannot_settle",
+     "relic_knowledge": "reading_taken_to_orren",
+     "task": "returned_with_piece",
+     "belonging": "of_the_house"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "disclosure": "admitted",
+     "body_condition": 44
+    },
+    "ob-01": {
+     "custody": "willa",
+     "publicly_intact": true
+    },
+    "ob-02": {
+     "completeness": "unfinished",
+     "custody": "forge"
+    },
+    "cn-01": {
+     "settlement": "unpayable",
+     "old_reasons_status": "heard_as_past"
+    },
+    "cn-02": {
+     "days_until_rite": 6,
+     "status": "pending_rite"
+    },
+    "gr-01": {
+     "grain_right": "at_risk",
+     "knows_forgery": false
+    },
+    "lo-01": {
+     "occupancy": "both_present"
+    }
+   },
+   "dramatic_function": "Bind her between exposing the piece and spending the recovery on a fraud she now owns.",
+   "tension_in": 88,
+   "tension_out": 92,
+   "questions_opened": {
+    "q21": "Will she present the piece as unread or work its truth and risk the rite?",
+    "q22": "Can what she owes him for raising, craft, and the lie be paid before the steward's table?"
+   },
+   "questions_closed": [
+    "q22"
+   ],
+   "target_words": 750
+  },
+  "sc-011": {
+   "scene_id": "sc-011",
+   "discourse_index": 11,
+   "chapter": 2,
+   "primary_event": "ev-011",
+   "events": [
+    "ev-011"
+   ],
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02",
+    "pl-01"
+   ],
+   "story_time_label": "three days before the rite",
+   "location": "lo-01",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02",
+    "ob-02",
+    "cn-01",
+    "cn-02",
+    "lo-01"
+   ],
+   "offstage_referenced": [
+    "gr-01",
+    "gr-03",
+    "ob-01"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "location": "forge_house",
+     "debt_account": "cannot_settle",
+     "belonging": "of_the_house",
+     "task": "returned_with_piece"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "disclosure": "admitted",
+     "household_role": "master_of_house"
+    },
+    "ob-01": {
+     "custody": "willa",
+     "publicly_intact": true
+    },
+    "ob-02": {
+     "completeness": "unfinished",
+     "custody": "forge"
+    },
+    "cn-01": {
+     "settlement": "unpayable",
+     "old_reasons_status": "heard_as_past"
+    },
+    "cn-02": {
+     "days_until_rite": 6,
+     "status": "pending_rite"
+    },
+    "gr-01": {
+     "smith_labor": "orren_and_apprentice",
+     "grain_right": "at_risk",
+     "knows_forgery": false
+    },
+    "lo-01": {
+     "occupancy": "both_present",
+     "household_character": "raising_home"
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-011",
+     "type": "decision",
+     "text": "Willa sets the terms of what she will and will not do, speaking them as a cut in the work rather than as a plea. She will not break the relic. She will not tell the Hold or the village. She will not keep the lie after he dies. He listens without interrupting the list.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "cn-01",
+      "ob-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "debt_account",
+       "dimension": "psychological",
+       "before": "cannot_settle",
+       "after": "partitioned",
+       "magnitude": 85,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/debt_account",
+        "value": "partitioned"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-011",
+     "type": "decision",
+     "text": "She adds that she will work the winter because the hamlet cannot spare a smith, and that she will leave when the pass opens in spring. She does not ask him to approve the leaving. She does not withdraw it. He does not refuse the terms or treat them as a question.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "gr-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "belonging",
+       "dimension": "social",
+       "before": "of_the_house",
+       "after": "wintering_then_leaving",
+       "magnitude": 80,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/belonging",
+        "value": "wintering_then_leaving"
+       }
+      },
+      {
+       "entity": "gr-01",
+       "variable": "smith_labor",
+       "dimension": "social",
+       "before": "orren_and_apprentice",
+       "after": "willa_covering_winter",
+       "magnitude": 60,
+       "op": {
+        "op": "replace",
+        "path": "/gr-01/state/smith_labor",
+        "value": "willa_covering_winter"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-011",
+     "type": "action",
+     "text": "They go back to the unfinished tithe and work it through the day. They draw the bars to the weight the remaining stock will bear and no more. The iron comes out thin and honest to the shortage. Neither of them adds scrap they do not have to fake a fuller levy.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-02"
+     ],
+     "changes": [
+      {
+       "entity": "ob-02",
+       "variable": "completeness",
+       "dimension": "material",
+       "before": "unfinished",
+       "after": "finished_thin",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/ob-02/state/completeness",
+        "value": "finished_thin"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-011",
+     "type": "reversal",
+     "text": "When the last bar is stamped she restates the partition: silence now, winter labor, leaving at the spring opening. What is owed will not be cleared; it will be cut into costs each of them will carry. He does not bargain for a different cut. The house keeps working under those terms.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "cn-01"
+     ],
+     "changes": [
+      {
+       "entity": "cn-01",
+       "variable": "settlement",
+       "dimension": "psychological",
+       "before": "unpayable",
+       "after": "partitioned",
+       "magnitude": 80,
+       "op": {
+        "op": "replace",
+        "path": "/cn-01/state/settlement",
+        "value": "partitioned"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 5,
+     "event_id": "ev-011",
+     "type": "transition",
+     "text": "They stack the thin tithe by the door with the relic still in her keeping. Three days remain before the steward's table. She counts them against the walk to the midwinter ground, not against any further talk. He banks the fire. Neither reopens the terms.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01",
+      "ob-02",
+      "cn-02"
+     ],
+     "changes": [
+      {
+       "entity": "cn-02",
+       "variable": "days_until_rite",
+       "dimension": "world",
+       "before": 6,
+       "after": 3,
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/cn-02/state/days_until_rite",
+        "value": 3
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "location": "forge_house",
+     "debt_account": "partitioned",
+     "belonging": "wintering_then_leaving",
+     "task": "returned_with_piece"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "disclosure": "admitted",
+     "household_role": "master_of_house"
+    },
+    "ob-01": {
+     "custody": "willa",
+     "publicly_intact": true
+    },
+    "ob-02": {
+     "completeness": "finished_thin",
+     "custody": "forge"
+    },
+    "cn-01": {
+     "settlement": "partitioned",
+     "old_reasons_status": "heard_as_past"
+    },
+    "cn-02": {
+     "days_until_rite": 3,
+     "status": "pending_rite"
+    },
+    "gr-01": {
+     "smith_labor": "willa_covering_winter",
+     "grain_right": "at_risk",
+     "knows_forgery": false
+    },
+    "lo-01": {
+     "occupancy": "both_present",
+     "household_character": "raising_home"
+    }
+   },
+   "dramatic_function": "Partition the unpaid debt into silence, winter labor, and leaving when the pass opens.",
+   "tension_in": 92,
+   "tension_out": 78,
+   "questions_opened": {
+    "q23": "Will she remain through the winter and leave at the spring opening?",
+    "q24": "Will the steward accept the thin tithe and the unread relic?"
+   },
+   "questions_closed": [
+    "q18",
+    "q21"
+   ],
+   "target_words": 900
+  },
+  "sc-012": {
+   "scene_id": "sc-012",
+   "discourse_index": 12,
+   "chapter": 3,
+   "primary_event": "ev-012",
+   "events": [
+    "ev-012"
+   ],
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-02"
+   ],
+   "story_time_label": "midwinter day, the rite",
+   "location": "lo-05",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02",
+    "gr-03",
+    "ob-01",
+    "ob-02",
+    "lo-05",
+    "cn-02"
+   ],
+   "offstage_referenced": [
+    "gr-01",
+    "lo-01",
+    "cn-01"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "location": "forge_house",
+     "task": "returned_with_piece",
+     "hands_frosted": true,
+     "belonging": "wintering_then_leaving",
+     "relic_knowledge": "reading_taken_to_orren"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "levy_paying": true,
+     "disclosure": "admitted"
+    },
+    "lo-01": {
+     "occupancy": "both_present"
+    },
+    "ob-01": {
+     "custody": "willa",
+     "presented_and_accepted": false,
+     "publicly_intact": true
+    },
+    "ob-02": {
+     "completeness": "finished_thin",
+     "custody": "forge"
+    },
+    "lo-05": {
+     "rite_status": "not_yet",
+     "occupancy": "empty"
+    },
+    "gr-01": {
+     "grain_right": "at_risk",
+     "knows_forgery": false,
+     "smith_labor": "willa_covering_winter"
+    },
+    "gr-03": {
+     "accepted_this_year": false,
+     "pass_policy": "protecting"
+    },
+    "cn-02": {
+     "status": "pending_rite",
+     "days_until_rite": 3,
+     "challenge_made": false
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-012",
+     "type": "transition",
+     "text": "On midwinter day Willa and Orren leave the forge-house with the relic in her pack and the thin tithe between them. The house stands empty behind them. They walk the short cold road to the midwinter ground. Her frosted hands stay ungloved on the straps so the steward can see the crossing.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01",
+      "ob-02",
+      "lo-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "location",
+       "dimension": "spatial",
+       "before": "forge_house",
+       "after": "presentation_ground",
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/location",
+        "value": "presentation_ground"
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "location",
+       "dimension": "spatial",
+       "before": "forge_house",
+       "after": "presentation_ground",
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/location",
+        "value": "presentation_ground"
+       }
+      },
+      {
+       "entity": "lo-01",
+       "variable": "occupancy",
+       "dimension": "spatial",
+       "before": "both_present",
+       "after": "empty",
+       "magnitude": 35,
+       "op": {
+        "op": "replace",
+        "path": "/lo-01/state/occupancy",
+        "value": "empty"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-012",
+     "type": "action",
+     "text": "The Hold's steward is already at the table with the year's book. Willa sets the village weight and the thin tithe on the board. She presents both as Highkettle's due. Orren stands a pace behind and does not speak for the house. No one of the hamlet has come to speak against the weight.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "gr-03",
+      "ob-01",
+      "ob-02",
+      "gr-01"
+     ],
+     "changes": [
+      {
+       "entity": "ob-01",
+       "variable": "custody",
+       "dimension": "material",
+       "before": "willa",
+       "after": "steward_table",
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/ob-01/state/custody",
+        "value": "steward_table"
+       }
+      },
+      {
+       "entity": "ob-02",
+       "variable": "custody",
+       "dimension": "material",
+       "before": "forge",
+       "after": "steward_table",
+       "magnitude": 45,
+       "op": {
+        "op": "replace",
+        "path": "/ob-02/state/custody",
+        "value": "steward_table"
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "task",
+       "dimension": "social",
+       "before": "returned_with_piece",
+       "after": "presented",
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/task",
+        "value": "presented"
+       }
+      },
+      {
+       "entity": "ob-02",
+       "variable": "completeness",
+       "dimension": "material",
+       "before": "finished_thin",
+       "after": "presented",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/ob-02/state/completeness",
+        "value": "presented"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-012",
+     "type": "action",
+     "text": "The steward weighs the tithe by the board-mark and turns the relic once in the light. The steward does not cut, does not sound the weld, and does not test the inclusion. No public challenge is spoken. The steward accepts both objects as sufficient for the year and marks the book.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "gr-03",
+      "ob-01",
+      "ob-02",
+      "lo-05",
+      "cn-02"
+     ],
+     "changes": [
+      {
+       "entity": "ob-01",
+       "variable": "presented_and_accepted",
+       "dimension": "political",
+       "before": false,
+       "after": true,
+       "magnitude": 90,
+       "op": {
+        "op": "replace",
+        "path": "/ob-01/state/presented_and_accepted",
+        "value": true
+       }
+      },
+      {
+       "entity": "lo-05",
+       "variable": "rite_status",
+       "dimension": "political",
+       "before": "not_yet",
+       "after": "accepted",
+       "magnitude": 85,
+       "op": {
+        "op": "replace",
+        "path": "/lo-05/state/rite_status",
+        "value": "accepted"
+       }
+      },
+      {
+       "entity": "lo-05",
+       "variable": "occupancy",
+       "dimension": "spatial",
+       "before": "empty",
+       "after": "presentation_done",
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/lo-05/state/occupancy",
+        "value": "presentation_done"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-012",
+     "type": "dialogue",
+     "text": "The steward names the year's protection and the grain-right as renewed, reading the compact as a record rather than a blessing. The steward releases them with the pass left open for the winter. The Hold's acceptance is the book-mark and nothing more. Willa does not correct the record.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "gr-03",
+      "cn-02"
+     ],
+     "changes": [
+      {
+       "entity": "gr-03",
+       "variable": "accepted_this_year",
+       "dimension": "political",
+       "before": false,
+       "after": true,
+       "magnitude": 85,
+       "op": {
+        "op": "replace",
+        "path": "/gr-03/state/accepted_this_year",
+        "value": true
+       }
+      },
+      {
+       "entity": "gr-03",
+       "variable": "pass_policy",
+       "dimension": "political",
+       "before": "protecting",
+       "after": "renewed_one_year",
+       "magnitude": 80,
+       "op": {
+        "op": "replace",
+        "path": "/gr-03/state/pass_policy",
+        "value": "renewed_one_year"
+       }
+      },
+      {
+       "entity": "cn-02",
+       "variable": "status",
+       "dimension": "political",
+       "before": "pending_rite",
+       "after": "standing_this_year",
+       "magnitude": 90,
+       "op": {
+        "op": "replace",
+        "path": "/cn-02/state/status",
+        "value": "standing_this_year"
+       }
+      },
+      {
+       "entity": "cn-02",
+       "variable": "days_until_rite",
+       "dimension": "world",
+       "before": 3,
+       "after": 0,
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/cn-02/state/days_until_rite",
+        "value": 0
+       }
+      }
+     ]
+    },
+    {
+     "beat": 5,
+     "event_id": "ev-012",
+     "type": "reaction",
+     "text": "No villager stands at the ground to hear a challenge or to be told one. Her frosted hands stay visible on the table edge while the steward closes the book. She lets the year's acceptance stand on a levy she will not name at the table. The steward leaves the accepted pieces on the board for the walk home.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "gr-03",
+      "gr-01",
+      "ob-01",
+      "ob-02"
+     ],
+     "changes": [
+      {
+       "entity": "gr-01",
+       "variable": "grain_right",
+       "dimension": "political",
+       "before": "at_risk",
+       "after": "secured_one_year",
+       "magnitude": 90,
+       "op": {
+        "op": "replace",
+        "path": "/gr-01/state/grain_right",
+        "value": "secured_one_year"
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "location": "presentation_ground",
+     "task": "presented",
+     "hands_frosted": true,
+     "belonging": "wintering_then_leaving",
+     "relic_knowledge": "reading_taken_to_orren"
+    },
+    "ch-02": {
+     "location": "presentation_ground",
+     "levy_paying": true,
+     "disclosure": "admitted"
+    },
+    "lo-01": {
+     "occupancy": "empty"
+    },
+    "ob-01": {
+     "custody": "steward_table",
+     "presented_and_accepted": true,
+     "publicly_intact": true
+    },
+    "ob-02": {
+     "completeness": "presented",
+     "custody": "steward_table"
+    },
+    "lo-05": {
+     "rite_status": "accepted",
+     "occupancy": "presentation_done"
+    },
+    "gr-01": {
+     "grain_right": "secured_one_year",
+     "knows_forgery": false,
+     "smith_labor": "willa_covering_winter"
+    },
+    "gr-03": {
+     "accepted_this_year": true,
+     "pass_policy": "renewed_one_year"
+    },
+    "cn-02": {
+     "status": "standing_this_year",
+     "days_until_rite": 0,
+     "challenge_made": false
+    }
+   },
+   "dramatic_function": "Present the forged relic and thin tithe so the steward accepts a year without an inner test.",
+   "tension_in": 78,
+   "tension_out": 70,
+   "questions_opened": {
+    "q25": "Will the hamlet learn that the protection dies with Orren?"
+   },
+   "questions_closed": [
+    "q24"
+   ],
+   "target_words": 850
+  },
+  "sc-013": {
+   "scene_id": "sc-013",
+   "discourse_index": 13,
+   "chapter": 3,
+   "primary_event": "ev-013",
+   "events": [
+    "ev-013"
+   ],
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02",
+    "pl-01"
+   ],
+   "story_time_label": "midwinter night, back at the forge-house",
+   "location": "lo-01",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02",
+    "cn-01",
+    "ob-01",
+    "ob-02",
+    "lo-01"
+   ],
+   "offstage_referenced": [
+    "gr-03",
+    "lo-05",
+    "cn-02"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "location": "presentation_ground",
+     "task": "presented",
+     "belonging": "wintering_then_leaving",
+     "relic_knowledge": "reading_taken_to_orren",
+     "debt_account": "partitioned"
+    },
+    "ch-02": {
+     "location": "presentation_ground",
+     "disclosure": "admitted",
+     "levy_paying": true,
+     "household_role": "master_of_house"
+    },
+    "lo-01": {
+     "occupancy": "empty",
+     "household_character": "raising_home"
+    },
+    "ob-01": {
+     "custody": "steward_table",
+     "presented_and_accepted": true,
+     "publicly_intact": true
+    },
+    "ob-02": {
+     "custody": "steward_table",
+     "completeness": "presented"
+    },
+    "cn-01": {
+     "settlement": "partitioned",
+     "old_reasons_status": "heard_as_past"
+    },
+    "cn-02": {
+     "status": "standing_this_year",
+     "challenge_made": false
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-013",
+     "type": "transition",
+     "text": "They walk the accepted pieces back from the midwinter ground and bring them into the forge-house. She sets the relic and the thin tithe on the house bench, not in the village chest. The house holds both of them again. Neither treats the return as a finished talk.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01",
+      "ob-02",
+      "lo-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "location",
+       "dimension": "spatial",
+       "before": "presentation_ground",
+       "after": "forge_house",
+       "magnitude": 25,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/location",
+        "value": "forge_house"
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "location",
+       "dimension": "spatial",
+       "before": "presentation_ground",
+       "after": "forge_house",
+       "magnitude": 25,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/location",
+        "value": "forge_house"
+       }
+      },
+      {
+       "entity": "lo-01",
+       "variable": "occupancy",
+       "dimension": "spatial",
+       "before": "empty",
+       "after": "both_present",
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/lo-01/state/occupancy",
+        "value": "both_present"
+       }
+      },
+      {
+       "entity": "ob-01",
+       "variable": "custody",
+       "dimension": "material",
+       "before": "steward_table",
+       "after": "returned_house",
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ob-01/state/custody",
+        "value": "returned_house"
+       }
+      },
+      {
+       "entity": "ob-02",
+       "variable": "custody",
+       "dimension": "material",
+       "before": "steward_table",
+       "after": "returned_house",
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ob-02/state/custody",
+        "value": "returned_house"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-013",
+     "type": "dialogue",
+     "text": "That night she tells him, as a reading of metal rather than a verdict, that she knows the weld, the false weight, and the levy. She does not dress the facts as forgiveness or as a sentence. She does not ask him to deny them again. He receives the naming without amending the admission he already gave.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01",
+      "cn-01"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-013",
+     "type": "dialogue",
+     "text": "He names the old reasons again: the slide year, and the village that could not have survived it. He does not ask to be forgiven. He does not add a new defense for the years since. She lets the old reasons stand as past and does not grant that they still hold.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "cn-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "disclosure",
+       "dimension": "epistemic",
+       "before": "admitted",
+       "after": "renamed_without_pardon",
+       "magnitude": 80,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/disclosure",
+        "value": "renamed_without_pardon"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-013",
+     "type": "decision",
+     "text": "She does not reopen the question of staying past the spring opening of the pass. He does not ask her to stay. They leave the accepted pieces on the bench and bank the fire as they would after any late job. The naming is finished and nothing in it restores the house.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01",
+      "ob-02",
+      "lo-01"
+     ],
+     "changes": []
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "location": "forge_house",
+     "task": "presented",
+     "belonging": "wintering_then_leaving",
+     "relic_knowledge": "reading_taken_to_orren",
+     "debt_account": "partitioned"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "disclosure": "renamed_without_pardon",
+     "levy_paying": true,
+     "household_role": "master_of_house"
+    },
+    "lo-01": {
+     "occupancy": "both_present",
+     "household_character": "raising_home"
+    },
+    "ob-01": {
+     "custody": "returned_house",
+     "presented_and_accepted": true,
+     "publicly_intact": true
+    },
+    "ob-02": {
+     "custody": "returned_house",
+     "completeness": "presented"
+    },
+    "cn-01": {
+     "settlement": "partitioned",
+     "old_reasons_status": "heard_as_past"
+    },
+    "cn-02": {
+     "status": "standing_this_year",
+     "challenge_made": false
+    }
+   },
+   "dramatic_function": "Name the weld and levy as metal after the year is bought, without granting pardon.",
+   "tension_in": 70,
+   "tension_out": 62,
+   "questions_opened": {
+    "q26": "Does the naming restore pardon or the old household?"
+   },
+   "questions_closed": [],
+   "target_words": 750
+  },
+  "sc-014": {
+   "scene_id": "sc-014",
+   "discourse_index": 14,
+   "chapter": 3,
+   "primary_event": "ev-014",
+   "events": [
+    "ev-014"
+   ],
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "story_time_label": "the morning after the rite",
+   "location": "lo-01",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02",
+    "lo-01",
+    "ob-03"
+   ],
+   "offstage_referenced": [
+    "ob-01",
+    "cn-01"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "location": "forge_house",
+     "belonging": "wintering_then_leaving",
+     "debt_account": "partitioned",
+     "task": "presented"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "household_role": "master_of_house",
+     "levy_paying": true,
+     "disclosure": "renamed_without_pardon",
+     "body_condition": 44
+    },
+    "lo-01": {
+     "household_character": "raising_home",
+     "occupancy": "both_present"
+    },
+    "ob-03": {
+     "last_weighing": "stock_check",
+     "in_use": false
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-014",
+     "type": "action",
+     "text": "In the morning they take up shared work without restoring the house that raised her. He goes to the fire as a man still paying the levy in his body. She takes the winter's smith-labor as already decided and does not unpack the leaving. Neither greets the other as master or child of the house.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "lo-01"
+     ],
+     "changes": [
+      {
+       "entity": "lo-01",
+       "variable": "household_character",
+       "dimension": "social",
+       "before": "raising_home",
+       "after": "shared_work_not_home",
+       "magnitude": 90,
+       "op": {
+        "op": "replace",
+        "path": "/lo-01/state/household_character",
+        "value": "shared_work_not_home"
+       }
+      },
+      {
+       "entity": "lo-01",
+       "variable": "occupancy",
+       "dimension": "spatial",
+       "before": "both_present",
+       "after": "both_after_break",
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/lo-01/state/occupancy",
+        "value": "both_after_break"
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "household_role",
+       "dimension": "social",
+       "before": "master_of_house",
+       "after": "coworker_after_break",
+       "magnitude": 85,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/household_role",
+        "value": "coworker_after_break"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-014",
+     "type": "action",
+     "text": "She clears the forge balance of the last stock-check and sets a true bar on the pan. She watches the arm come level and does not look to him for confirmation. He sees the weighing and does not correct it. The true bar sits at the mark.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-03"
+     ],
+     "changes": [
+      {
+       "entity": "ob-03",
+       "variable": "last_weighing",
+       "dimension": "material",
+       "before": "stock_check",
+       "after": "true_bar_level",
+       "magnitude": 75,
+       "op": {
+        "op": "replace",
+        "path": "/ob-03/state/last_weighing",
+        "value": "true_bar_level"
+       }
+      },
+      {
+       "entity": "ob-03",
+       "variable": "in_use",
+       "dimension": "spatial",
+       "before": false,
+       "after": true,
+       "magnitude": 20,
+       "op": {
+        "op": "replace",
+        "path": "/ob-03/state/in_use",
+        "value": true
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-014",
+     "type": "action",
+     "text": "She records the level weight in the stock book and leaves the true bar on the pan. The house holds two workers under a cost already partitioned. Neither treats the morning as a restoration. The arm of the balance hangs still at the true mark while they go on with the day's iron.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "lo-01",
+      "ob-03"
+     ],
+     "changes": []
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "location": "forge_house",
+     "belonging": "wintering_then_leaving",
+     "debt_account": "partitioned",
+     "task": "presented"
+    },
+    "ch-02": {
+     "location": "forge_house",
+     "household_role": "coworker_after_break",
+     "levy_paying": true,
+     "disclosure": "renamed_without_pardon",
+     "body_condition": 44
+    },
+    "lo-01": {
+     "household_character": "shared_work_not_home",
+     "occupancy": "both_after_break"
+    },
+    "ob-03": {
+     "last_weighing": "true_bar_level",
+     "in_use": true
+    }
+   },
+   "dramatic_function": "Return to shared work that is no longer home, and set a true bar until the arm comes level.",
+   "tension_in": 62,
+   "tension_out": 48,
+   "questions_opened": {},
+   "questions_closed": [
+    "q26"
+   ],
+   "target_words": 550
+  }
+ }
+}

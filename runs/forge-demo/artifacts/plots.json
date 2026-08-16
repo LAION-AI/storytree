@@ -1,0 +1,121 @@
+{
+ "plots": [
+  {
+   "plot_id": "pl-01",
+   "type": "external_main",
+   "title": "The Fetch",
+   "agent": [
+    "ch-01"
+   ],
+   "resistance": [
+    "ch-02",
+    "lo-01",
+    "gr-01",
+    "gr-02",
+    "cn-01"
+   ],
+   "goal": "Bring the stolen village weight home, whole enough to present, before the midwinter rite.",
+   "stakes": "If no piece arrives, Highkettle forfeits one year of pass-protection and winter grain-right.",
+   "outcome": "transformation_of_goal",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "state_of_rupture",
+     "intent": "Raiders take the village weight from the niche above the slack-tub, leaving a dark rectangle in sooted plaster three weeks before midwinter. The lane's year becomes contingent on a fetch.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "public_charge",
+     "intent": "Olla stands in the forge-house doorway, counts the days left until the rite in the voice she uses for tithe and burial, and puts the fetch on the house that keeps the iron.",
+     "because": [
+      "pl-01:st1"
+     ]
+    },
+    "st3": {
+     "step": 3,
+     "function": "unasked_sending",
+     "intent": "Bram sends Hetta under the cover-norm that the younger body walks and the elder keeps the fire. She accepts, asks only what bread and coal the house can spare, and does not ask why he will not go.",
+     "because": [
+      "pl-01:st2",
+      "pl-02:st1"
+     ]
+    },
+    "st4": {
+     "step": 4,
+     "function": "bodily_cost",
+     "intent": "She walks the high pass alone with no mount and no second walker. The miles take heat, food, and sleep and give her the poorer-slope camp.",
+     "because": [
+      "pl-01:st3"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "taking",
+     "intent": "At the camp she takes the piece from hungry people by a bargain toward grain or a modest theft, need meeting need. Custody moves onto her back; the object is still, to her, the village's iron.",
+     "because": [
+      "pl-01:st4"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "mass_doubt",
+     "intent": "On the return the piece sits short against her spine, short of the mass her hands expect for a bar of that size. Craft attention snags; she means only to check it for travel-damage.",
+     "because": [
+      "pl-01:st5"
+     ]
+    },
+    "st7": {
+     "step": 7,
+     "function": "craft_reading",
+     "intent": "Checking the piece on the path, she reads a quench-line, a bloom, and a stamp forty years too young the way he taught her to read any suspect bar. She knows it is his early work before anyone confesses.",
+     "because": [
+      "pl-01:st6"
+     ]
+    },
+    "st8": {
+     "step": 8,
+     "function": "return_knowing",
+     "intent": "She comes home with the piece and with questions that are quench, bloom, and stamp-date. The walking-days have spent the hour in which his reasons could have arrived as a telling.",
+     "because": [
+      "pl-01:st7"
+     ]
+    },
+    "st9": {
+     "step": 9,
+     "function": "unchallenged_presentation",
+     "intent": "At the midwinter ground she presents the piece and the steward takes it without a public challenge. The lane keeps its year; Bram stands behind her still paying; the object she has delivered is a known-false weight.",
+     "because": [
+      "pl-01:st8",
+      "pl-02:st4"
+     ]
+    }
+   },
+   "resolution_step": "st9",
+   "thematic_function": "Plants true weight versus false weight in expected mass, pack-seat, and stamp-date, and shows that closing a dated job can install a lie the lane will eat as grain.",
+   "screen_time_share": 0.55,
+   "interference": [
+    {
+     "with": "pl-02",
+     "kind": "recovery_spends_the_chance_to_hear_him_first"
+    },
+    {
+     "with": "pl-02",
+     "kind": "owing_decision_causes_presentation_manner"
+    }
+   ],
+   "covers_synopsis": [
+    "s06",
+    "s07",
+    "s08",
+    "s09",
+    "s10",
+    "s12",
+    "s13",
+    "s14",
+    "s15",
+    "s19"
+   ]
+  }
+ ]
+}

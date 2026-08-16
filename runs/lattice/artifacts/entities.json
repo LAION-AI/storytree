@@ -1,0 +1,4147 @@
+{
+ "entities": {
+  "ch-01": {
+   "entity_id": "ch-01",
+   "type": "character",
+   "canonical_name": "Imogen Vaile",
+   "aliases": [
+    "Vaile",
+    "Auditor 7"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Imogen was born in 2014 to a British-Nigerian family in a coastal city.",
+      "when": "1990",
+      "tags": [
+       "origin",
+       "family"
+      ]
+     },
+     "b02": {
+      "text": "Her younger sister Noor was born in 2019 and became the center of family attention.",
+      "when": "1995",
+      "tags": [
+       "family",
+       "noor"
+      ]
+     },
+     "b03": {
+      "text": "Imogen developed obsessive attention to detail as a child, disassembling household electronics to understand their failure modes.",
+      "when": "2002-2008",
+      "tags": [
+       "childhood",
+       "competence"
+      ]
+     },
+     "b04": {
+      "text": "She studied systems engineering at university, excelling in fault diagnosis and failure analysis.",
+      "when": "2012-2016",
+      "tags": [
+       "education"
+      ]
+     },
+     "b05": {
+      "text": "Noor died in a motor vehicle accident in 2040 while Imogen was abroad on a work assignment.",
+      "when": "2040",
+      "tags": [
+       "noor",
+       "death",
+       "trauma"
+      ]
+     },
+     "b06": {
+      "text": "Imogen was recruited to the Vantage auditor programme in 2045 after a proprietary aptitude assessment identified her pattern-recognition scores as exceptional.",
+      "when": "2045",
+      "tags": [
+       "recruitment",
+       "authority"
+      ]
+     },
+     "b07": {
+      "text": "She has worked as an auditor for four years, achieving the highest closure rate in the department.",
+      "when": "2045-2049",
+      "tags": [
+       "career",
+       "competence"
+      ]
+     },
+     "b08": {
+      "text": "She believes her work is municipal infrastructure maintenance and takes pride in keeping the city running smoothly.",
+      "when": "standing",
+      "tags": [
+       "professional_identity",
+       "ignorance"
+      ]
+     }
+    },
+    "speech_signature": {
+     "sentence_shape": "Short declarative statements punctuated by precise technical observations; rarely asks questions she hasn't already reasoned toward an answer for.",
+     "vocabulary_domain": "Systems engineering, audit methodology, diagnostic procedure — she reaches for mechanical and procedural metaphors.",
+     "verbal_tic": "Uses 'the' instead of possessives for system components: 'the console,' 'the fault,' 'the signature,' never 'my console.'",
+     "never_says": "Never uses the word 'soul' or any metaphysical framing; never invokes family in professional contexts; never says 'I feel.'",
+     "under_stress": "Becomes quieter and more precise, sentences compress to technical shorthand, hands move to flat surfaces and press down."
+    },
+    "demographics": {
+     "age": "35",
+     "ethnicity": "British-Nigerian",
+     "gender": "female",
+     "occupation": "Rendering-fault auditor, Vantage Municipal",
+     "residence": "One-bedroom apartment in Vantage's residential district"
+    },
+    "appearance": {
+     "build": "Lean, angular, carries tension in shoulders and jaw",
+     "grooming": "Fastidious, functional clothing in muted colors, hair tied back for work"
+    },
+    "habits_and_tells": {
+     "h01": {
+      "text": "Cleans surfaces before sitting down at any workspace, even her own.",
+      "tags": [
+       "ritual",
+       "control"
+      ]
+     },
+     "h02": {
+      "text": "Logs all work in a private notebook separate from the official system, using her own shorthand notation.",
+      "tags": [
+       "documentation",
+       "paranoia"
+      ]
+     },
+     "h03": {
+      "text": "Sleeps poorly, typically three to four hours, and compensates with meticulous scheduling.",
+      "tags": [
+       "health",
+       "control"
+      ]
+     }
+    },
+    "wound": {
+     "w01": {
+      "text": "Noor's death in 2040 while Imogen was absent produced a guilt complex centered on the belief that her competence should have prevented the loss.",
+      "tags": [
+       "trauma",
+       "guilt",
+       "noor"
+      ]
+     },
+     "w02": {
+      "text": "She has never returned to the city where Noor died and cannot speak about the death without her hands going still.",
+      "tags": [
+       "avoidance",
+       "physical_tell"
+      ]
+     }
+    },
+    "want": "To find and save Noor, whom she failed in life, as a means of retroactively earning the competence she has built her identity around.",
+    "need": "To accept that competence applied to the wrong system is complicity, not virtue, and that saving one person while leaving eleven thousand does not balance the ledger.",
+    "values": "Precision, professional integrity, the belief that a system running cleanly is a system running justly, familial duty.",
+    "fears": "Being incompetent; being complicit in harm through ignorance; losing Noor a second time; discovering her work has meaning she cannot live with.",
+    "competences": {
+     "c01": {
+      "text": "Can identify rendering-fault geometric signatures faster than any other auditor in Vantage.",
+      "tags": [
+       "audit",
+       "fault_analysis"
+      ]
+     },
+     "c02": {
+      "text": "Can trace faults to their underlying data-description errors and correct them with minimal system disruption.",
+      "tags": [
+       "audit",
+       "system_access"
+      ]
+     },
+     "c03": {
+      "text": "Understands the simulation's memory-management layer well enough to predict when and where faults will recur.",
+      "tags": [
+       "predictive",
+       "system_knowledge"
+      ]
+     },
+     "c04": {
+      "text": "Maintains meticulous records that could serve as evidence in any institutional investigation.",
+      "tags": [
+       "documentation"
+      ]
+     }
+    },
+    "limitations": {
+     "l01": {
+      "text": "Has no knowledge of Vantage's true nature as a simulation at story start.",
+      "tags": [
+       "ignorance"
+      ]
+     },
+     "l02": {
+      "text": "Has no physical-world contacts, resources, or institutional knowledge outside the auditor programme.",
+      "tags": [
+       "isolation"
+      ]
+     },
+     "l03": {
+      "text": "Her emotional regulation depends on the professional framework that the story will dismantle.",
+      "tags": [
+       "psychological_dependence"
+      ]
+     }
+    },
+    "problem_solving_style": "Analytical, systematic, obsessive; she decomposes problems into components, identifies the failure point, and corrects it; she does not improvise.",
+    "coping_strategies": {
+     "cp01": {
+      "text": "Channels emotional distress into work, increasing output and precision when under psychological pressure.",
+      "tags": [
+       "sublimation",
+       "work"
+      ]
+     },
+     "cp02": {
+      "text": "Maintains physical control of her environment as a proxy for emotional control she cannot achieve.",
+      "tags": [
+       "control",
+       "compulsion"
+      ]
+     }
+    },
+    "health": {
+     "physical": "Chronic sleep deprivation, tension headaches, jaw clenching at night",
+     "psychological": "Untreated complex grief, probable PTSD from Noor's death, obsessive-compulsive traits sublimated into professional behavior"
+    },
+    "moral_axis": {
+     "m01": {
+      "text": "Believes that doing a job well is a moral good in itself, regardless of what the job is for.",
+      "tags": [
+       "professional_ethics",
+       "rationalization"
+      ]
+     },
+     "m02": {
+      "text": "Believes that systems function best when their operators do not question the system's purpose.",
+      "tags": [
+       "institutional_thinking"
+      ]
+     },
+     "m03": {
+      "text": "Would never knowingly cause direct harm to another person but has never examined whether her work causes indirect harm.",
+      "tags": [
+       "willful_ignorance",
+       "blind_spot"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-02": {
+     "kind": "professional_mentor",
+     "valence": 65,
+     "notes": {
+      "b01": {
+       "text": "Kett is the senior auditor who trained Imogen and whose professional judgment she trusts without question.",
+       "when": "2045-2049",
+       "tags": [
+        "mentorship",
+        "trust"
+       ]
+      },
+      "b02": {
+       "text": "She defers to his assessment of ambiguous faults and has never questioned his guidance on departmental procedure.",
+       "when": "standing",
+       "tags": [
+        "deference",
+        "trust"
+       ]
+      },
+      "b03": {
+       "text": "She does not know he is aware of the simulation's true nature and would feel betrayed to learn he withheld it.",
+       "when": "standing",
+       "tags": [
+        "ignorance",
+        "future_conflict"
+       ]
+      }
+     }
+    },
+    "ch-05": {
+     "kind": "estranged_sibling",
+     "valence": 80,
+     "notes": {
+      "b01": {
+       "text": "Noor is Imogen's younger sister who died in 2040 and whom Imogen grieved as permanently lost.",
+       "when": "2040-2049",
+       "tags": [
+        "grief",
+        "loss"
+       ]
+      },
+      "b02": {
+       "text": "Imogen's guilt over not being present when Noor died drives her protective instincts toward any reminder of her sister.",
+       "when": "standing",
+       "tags": [
+        "guilt",
+        "protection"
+       ]
+      },
+      "b03": {
+       "text": "Imogen does not know Noor is a digitised mind inside Vantage at story start.",
+       "when": "standing",
+       "tags": [
+        "ignorance"
+       ]
+      }
+     }
+    },
+    "ch-03": {
+     "kind": "unknown",
+     "valence": 0,
+     "notes": {
+      "b01": {
+       "text": "Imogen has not yet encountered the Porter at story start.",
+       "when": "standing",
+       "tags": [
+        "pre_contact"
+       ]
+      }
+     }
+    },
+    "ch-04": {
+     "kind": "unaware_counterpart",
+     "valence": 0,
+     "notes": {
+      "b01": {
+       "text": "Imogen does not know Delphine exists and has no awareness of the physical-world compliance office.",
+       "when": "standing",
+       "tags": [
+        "ignorance",
+        "no_contact"
+       ]
+      }
+     }
+    },
+    "gr-01": {
+     "kind": "employer",
+     "valence": 40,
+     "notes": {
+      "b01": {
+       "text": "Imogen views the Authority as her employer and trusts its institutional framework as legitimate municipal governance.",
+       "when": "standing",
+       "tags": [
+        "institutional_trust",
+        "ignorance"
+       ]
+      },
+      "b02": {
+       "text": "She has never had reason to question the Authority's purpose because her work is narrowly scoped and her access is compartmentalised.",
+       "when": "standing",
+       "tags": [
+        "compartmentalization"
+       ]
+      }
+     }
+    },
+    "lo-01": {
+     "kind": "workplace",
+     "valence": 55,
+     "notes": {
+      "b01": {
+       "text": "Imogen experiences the auditor workroom as a professional sanctuary where her competence has social value.",
+       "when": "standing",
+       "tags": [
+        "professional_identity",
+        "comfort"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "knowledge_of_simulation": {
+     "kind": "enum",
+     "description": "Imogen's understanding of Vantage's true nature",
+     "dimension": "epistemic",
+     "init": {
+      "status": "ignorant"
+     },
+     "domain": [
+      "ignorant",
+      "suspecting",
+      "partially_informed",
+      "fully_informed"
+     ]
+    },
+    "knowledge_of_noor": {
+     "kind": "enum",
+     "description": "Whether Imogen knows Noor is inside Vantage",
+     "dimension": "epistemic",
+     "init": {
+      "status": "unaware"
+     },
+     "domain": [
+      "unaware",
+      "suspecting",
+      "confirmed"
+     ]
+    },
+    "fault_investigation_status": {
+     "kind": "enum",
+     "description": "Stage of Imogen's investigation into structured fault patterns",
+     "dimension": "technological",
+     "init": {
+      "status": "routine"
+     },
+     "domain": [
+      "routine",
+      "anomaly_detected",
+      "pattern_cataloging",
+      "language_decoded",
+      "message_understood",
+      "system_architecture_accessed"
+     ]
+    },
+    "professional_identity": {
+     "kind": "scalar",
+     "description": "Imogen's confidence in her professional role and its moral legitimacy",
+     "dimension": "psychological",
+     "init": {
+      "level": 0.85
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "relationship_with_kett": {
+     "kind": "enum",
+     "description": "State of Imogen's relationship with Kett",
+     "dimension": "social",
+     "init": {
+      "status": "trusting_mentee"
+     },
+     "domain": [
+      "trusting_mentee",
+      "suspicious",
+      "adversarial",
+      "severed"
+     ]
+    },
+    "access_to_vantage": {
+     "kind": "enum",
+     "description": "Imogen's system access level within Vantage",
+     "dimension": "technological",
+     "init": {
+      "level": "auditor_standard"
+     },
+     "domain": [
+      "auditor_standard",
+      "auditor_extended",
+      "unauthorized",
+      "revoked"
+     ]
+    },
+    "carriage_preparation": {
+     "kind": "enum",
+     "description": "Imogen's readiness to execute a carriage operation",
+     "dimension": "technological",
+     "init": {
+      "status": "unaware"
+     },
+     "domain": [
+      "unaware",
+      "instructed",
+      "practiced",
+      "ready",
+      "executing",
+      "complete"
+     ]
+    },
+    "contact_with_porter": {
+     "kind": "enum",
+     "description": "Whether Imogen has established communication with the Porter",
+     "dimension": "social",
+     "init": {
+      "status": "none"
+     },
+     "domain": [
+      "none",
+      "detected",
+      "one_way",
+      "two_way",
+      "collaborative"
+     ]
+    },
+    "contact_with_noor": {
+     "kind": "enum",
+     "description": "Whether Imogen has made contact with Noor through the fault channel",
+     "dimension": "social",
+     "init": {
+      "status": "none"
+     },
+     "domain": [
+      "none",
+      "attempting",
+      "established",
+      "refused",
+      "reluctant_agreement"
+     ]
+    },
+    "guilt_about_past_work": {
+     "kind": "scalar",
+     "description": "Imogen's awareness that her past audit work silenced distress signals",
+     "dimension": "psychological",
+     "init": {
+      "level": 0.0
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "detection_risk": {
+     "kind": "scalar",
+     "description": "Probability that Authority monitoring will flag Imogen's activities as anomalous",
+     "dimension": "technological",
+     "init": {
+      "level": 0.05
+     },
+     "range": [
+      0,
+      1
+     ]
+    }
+   },
+   "state": {
+    "knowledge_of_simulation": {
+     "status": "ignorant"
+    },
+    "knowledge_of_noor": {
+     "status": "unaware"
+    },
+    "fault_investigation_status": {
+     "status": "routine"
+    },
+    "professional_identity": {
+     "level": 0.85
+    },
+    "relationship_with_kett": {
+     "status": "trusting_mentee"
+    },
+    "access_to_vantage": {
+     "level": "auditor_standard"
+    },
+    "carriage_preparation": {
+     "status": "unaware"
+    },
+    "contact_with_porter": {
+     "status": "none"
+    },
+    "contact_with_noor": {
+     "status": "none"
+    },
+    "guilt_about_past_work": {
+     "level": 0.0
+    },
+    "detection_risk": {
+     "level": 0.05
+    }
+   },
+   "arc": {
+    "start_state": "Proud, competent auditor who believes her work serves the public good, trusting of her mentor and employer, ignorant of Vantage's true nature.",
+    "end_state": "Exiled from Vantage, professional identity destroyed, holding a drive containing her sister's mind, aware her competence served a prison and was the only tool that could extract one person from it, with no certainty she was right."
+   }
+  },
+  "ch-02": {
+   "entity_id": "ch-02",
+   "type": "character",
+   "canonical_name": "Kett",
+   "aliases": [
+    "Senior Auditor",
+    "Kett Voss"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-02"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Kett was born in 1985 and worked in infrastructure systems analysis before recruitment to the Vantage auditor programme in 2030.",
+      "when": "1985-2030",
+      "tags": [
+       "origin",
+       "background"
+      ]
+     },
+     "b02": {
+      "text": "He discovered Vantage's true nature in 2038 after tracing a fault pattern that led him to the simulation's data architecture.",
+      "when": "2038",
+      "tags": [
+       "discovery"
+      ]
+     },
+     "b03": {
+      "text": "He reported his discovery to Authority liaison personnel and was informed that the information was classified and his continued silence was a condition of his position.",
+      "when": "2038",
+      "tags": [
+       "authority",
+       "silence"
+      ]
+     },
+     "b04": {
+      "text": "He spent several months processing the implications before concluding that maintaining the simulation was preferable to allowing its collapse.",
+      "when": "2038-2039",
+      "tags": [
+       "rationalization",
+       "belief"
+      ]
+     },
+     "b05": {
+      "text": "He has trained six auditors over fifteen years, including Imogen, and takes genuine pride in their professional development.",
+      "when": "2030-2049",
+      "tags": [
+       "mentorship",
+       "legacy"
+      ]
+     },
+     "b06": {
+      "text": "He has lived inside Vantage longer than any other auditor and has social relationships with residents he knows are digitised minds.",
+      "when": "2030-2049",
+      "tags": [
+       "social_bonds",
+       "residents"
+      ]
+     }
+    },
+    "speech_signature": {
+     "sentence_shape": "Measured, complete sentences with qualifying clauses; he builds arguments incrementally and never interrupts; pauses before responding to emotional statements.",
+     "vocabulary_domain": "Institutional governance, maintenance engineering, demographic statistics — he reaches for systems and sustainability metaphors.",
+     "verbal_tic": "Often begins responses with 'The question is' or 'What matters is' to reframe the other person's framing.",
+     "never_says": "Never uses the word 'prison' or 'captive'; never refers to residents as 'data' or 'processes' in conversation; never raises his voice.",
+     "under_stress": "Becomes even more measured and deliberate, speaks more slowly, hands fold together and press against each other."
+    },
+    "demographics": {
+     "age": "64",
+     "ethnicity": "Northern European",
+     "gender": "male",
+     "occupation": "Senior rendering-fault auditor, Vantage Municipal",
+     "residence": "Long-term apartment in Vantage's older residential quarter"
+    },
+    "appearance": {
+     "build": "Tall, thin, slightly stooped posture",
+     "grooming": "Conservative, worn but clean clothing, reading glasses on a chain"
+    },
+    "habits_and_tells": {
+     "h01": {
+      "text": "Maintains a garden in the simulation's community allotment, growing plants he knows are rendered geometry.",
+      "tags": [
+       "routine",
+       "attachment"
+      ]
+     },
+     "h02": {
+      "text": "Reviews each junior auditor's work logs personally and leaves handwritten notes rather than digital comments.",
+      "tags": [
+       "mentorship",
+       "surveillance"
+      ]
+     },
+     "h03": {
+      "text": "Takes a walk through the same district every evening, greeting residents by name.",
+      "tags": [
+       "routine",
+       "social_bonds"
+      ]
+     }
+    },
+    "wound": {
+     "w01": {
+      "text": "Kett has lived with the knowledge of Vantage's nature for eleven years and the isolation of that knowledge has calcified his relationships with anyone who does not share it.",
+      "tags": [
+       "isolation",
+       "burden"
+      ]
+     },
+     "w02": {
+      "text": "He has watched residents he knew socially be redacted and attended their memorial services knowing the cause was extraction-value depletion.",
+      "tags": [
+       "grief",
+       "complicity"
+      ]
+     }
+    },
+    "want": "To maintain the stability of the system he has spent fifteen years sustaining, because he believes its collapse means the end of eleven thousand lives that have value even if they are simulated.",
+    "need": "To accept that maintaining a system does not absolve him of responsibility for what the system does, and that his argument for preservation cannot survive a specific scheduled erasure.",
+    "values": "Continuity, institutional stability, the belief that existence under imperfect conditions is better than non-existence, duty to the people in his care including his junior colleagues.",
+    "fears": "The simulation collapsing and eleven thousand minds ceasing to exist; a junior auditor making a fatal mistake because he failed to train them properly; his fifteen years of work being revealed as service to a machine he cannot defend.",
+    "competences": {
+     "c01": {
+      "text": "Has the deepest knowledge of Vantage's fault patterns and system architecture of any auditor.",
+      "tags": [
+       "expertise"
+      ]
+     },
+     "c02": {
+      "text": "Can identify anomalous fault activity across the system faster than the Authority's automated monitoring.",
+      "tags": [
+       "detection"
+      ]
+     },
+     "c03": {
+      "text": "Has trained every current auditor and knows each one's methodology and habits intimately.",
+      "tags": [
+       "knowledge_of_others"
+      ]
+     }
+    },
+    "limitations": {
+     "l01": {
+      "text": "His emotional investment in the system's continuity makes him unable to evaluate arguments for its dismantling objectively.",
+      "tags": [
+       "bias"
+      ]
+     },
+     "l02": {
+      "text": "He has no power over the Authority's decisions regarding redaction and has never attempted to intervene.",
+      "tags": [
+       "powerlessness"
+      ]
+     }
+    },
+    "problem_solving_style": "Institutional, procedural, consensus-seeking; he believes problems are solved by keeping the system running and managing deviations through established process.",
+    "coping_strategies": {
+     "cp01": {
+      "text": "Frames ethical doubts as practical questions about consequences and alternatives, which he can answer without addressing the underlying moral issue.",
+      "tags": [
+       "intellectualization"
+      ]
+     },
+     "cp02": {
+      "text": "Maintains personal relationships with residents as a way of affirming that their lives have value, even knowing what he knows.",
+      "tags": [
+       "rationalization",
+       "attachment"
+      ]
+     }
+    },
+    "health": {
+     "physical": "Age-related decline, chronic joint pain, takes medication for hypertension",
+     "psychological": "Chronic low-grade depression managed through routine and professional purpose; eleven years of moral compartmentalization have produced emotional flattening"
+    },
+    "moral_axis": {
+     "m01": {
+      "text": "Believes that preserving existence, even under constrained conditions, is a moral imperative that supersedes autonomy and consent.",
+      "tags": [
+       "preservation_ethics"
+      ]
+     },
+     "m02": {
+      "text": "Believes that the person maintaining a system is not morally equivalent to the person who designed it.",
+      "tags": [
+       "compartmentalization",
+       "rationalization"
+      ]
+     },
+     "m03": {
+      "text": "Believes that a painless death (redaction) of a mind whose existence is entirely maintained by the system is not the same as murder.",
+      "tags": [
+       "minimization"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "mentee_colleague",
+     "valence": 70,
+     "notes": {
+      "b01": {
+       "text": "Kett considers Imogen his most capable trainee and has invested significant professional effort in her development.",
+       "when": "2045-2049",
+       "tags": [
+        "mentorship",
+        "pride"
+       ]
+      },
+      "b02": {
+       "text": "He monitors her work more closely than other auditors because her pattern-recognition ability means she is most likely to encounter the system's underlying nature.",
+       "when": "standing",
+       "tags": [
+        "surveillance",
+        "protective"
+       ]
+      },
+      "b03": {
+       "text": "He is prepared to intervene if her investigation threatens system stability, but hopes to convince her through argument rather than authority.",
+       "when": "standing",
+       "tags": [
+        "contingency",
+        "conflict"
+       ]
+      }
+     }
+    },
+    "gr-01": {
+     "kind": "reluctant_servant",
+     "valence": 20,
+     "notes": {
+      "b01": {
+       "text": "Kett views the Authority as a flawed institution managing an impossible situation and does not blame its individual employees.",
+       "when": "standing",
+       "tags": [
+        "institutional_relationship"
+       ]
+      },
+      "b02": {
+       "text": "He has never attempted to challenge the Authority's decisions regarding redaction because he believes the alternative is worse.",
+       "when": "standing",
+       "tags": [
+        "acquiescence"
+       ]
+      }
+     }
+    },
+    "ch-05": {
+     "kind": "acquaintance",
+     "valence": 25,
+     "notes": {
+      "b01": {
+       "text": "Kett knows Noor as a resident of the district he walks through and has spoken with her on several occasions.",
+       "when": "standing",
+       "tags": [
+        "social_bond",
+        "knowledge"
+       ]
+      }
+     }
+    },
+    "lo-01": {
+     "kind": "workplace",
+     "valence": 45,
+     "notes": {
+      "b01": {
+       "text": "Kett has worked in the auditor workroom for fifteen years and treats it as his professional home.",
+       "when": "standing",
+       "tags": [
+        "attachment",
+        "routine"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "awareness_of_imogen_investigation": {
+     "kind": "enum",
+     "description": "Kett's knowledge of Imogen's investigation into fault patterns",
+     "dimension": "epistemic",
+     "init": {
+      "status": "unaware"
+     },
+     "domain": [
+      "unaware",
+      "suspicious",
+      "confirmed",
+      "actively_monitoring",
+      "confronting"
+     ]
+    },
+    "belief_in_system_legitimacy": {
+     "kind": "scalar",
+     "description": "Kett's conviction that maintaining Vantage is morally justified",
+     "dimension": "psychological",
+     "init": {
+      "level": 0.75
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "relationship_with_imogen": {
+     "kind": "enum",
+     "description": "State of Kett's relationship with Imogen",
+     "dimension": "social",
+     "init": {
+      "status": "trusted_mentor"
+     },
+     "domain": [
+      "trusted_mentor",
+      "wary",
+      "adversarial",
+      "severed"
+     ]
+    },
+    "intent_toward_imogen": {
+     "kind": "enum",
+     "description": "Kett's intended course of action regarding Imogen's investigation",
+     "dimension": "psychological",
+     "init": {
+      "status": "protective"
+     },
+     "domain": [
+      "protective",
+      "deterrent",
+      "confrontational",
+      "resigned"
+     ]
+    },
+    "surveillance_diligence": {
+     "kind": "scalar",
+     "description": "How closely Kett monitors auditor work logs for anomalous activity",
+     "dimension": "technological",
+     "init": {
+      "level": 0.4
+     },
+     "range": [
+      0,
+      1
+     ]
+    }
+   },
+   "state": {
+    "awareness_of_imogen_investigation": {
+     "status": "unaware"
+    },
+    "belief_in_system_legitimacy": {
+     "level": 0.75
+    },
+    "relationship_with_imogen": {
+     "status": "trusted_mentor"
+    },
+    "intent_toward_imogen": {
+     "status": "protective"
+    },
+    "surveillance_diligence": {
+     "level": 0.4
+    }
+   },
+   "arc": {
+    "start_state": "Senior auditor who has made peace with Vantage's nature, believes in the system's value, mentors Imogen with genuine warmth, and monitors his team for signs of destabilizing discovery.",
+    "end_state": "Severed from Imogen, remaining inside Vantage by choice, his argument for preservation defeated not by moral reasoning but by a specific scheduled erasure he cannot prevent or justify."
+   }
+  },
+  "ch-03": {
+   "entity_id": "ch-03",
+   "type": "character",
+   "canonical_name": "The Porter",
+   "aliases": [
+    "Unknown Contact",
+    "Fault Sender"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-03"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "The Porter was a rendering-fault auditor recruited in 2032 who discovered the simulation's nature independently in 2036.",
+      "when": "2032-2036",
+      "tags": [
+       "origin",
+       "discovery"
+      ]
+     },
+     "b02": {
+      "text": "The Porter attempted to contact external authorities through the fault channel to expose Vantage's nature in 2037.",
+      "when": "2037",
+      "tags": [
+       "exposure_attempt"
+      ]
+     },
+     "b03": {
+      "text": "The Authority detected the attempt and removed the Porter from the auditor roster, severing standard system access.",
+      "when": "2037",
+      "tags": [
+       "detection",
+       "punishment"
+      ]
+     },
+     "b04": {
+      "text": "The removal process was incomplete, leaving the Porter in a liminal state between Vantage's data layer and the physical-world interface systems.",
+      "when": "2037-present",
+      "tags": [
+       "liminal_state",
+       "existence"
+      ]
+     },
+     "b05": {
+      "text": "The Porter has spent twelve years communicating through fault patterns with residents and searching for an auditor with the skill to execute a carriage.",
+      "when": "2037-2049",
+      "tags": [
+       "mission",
+       "search"
+      ]
+     },
+     "b06": {
+      "text": "The Porter identified Imogen as a candidate after observing her fault-closure methodology and recognizing it as the inverse of the carriage technique.",
+      "when": "2048",
+      "tags": [
+       "selection",
+       "imogen"
+      ]
+     }
+    },
+    "speech_signature": {
+     "sentence_shape": "Communication is constrained to the fault language's geometric grammar; messages are necessarily compressed, sequential, and lack emotional nuance; syntax is primitive and metaphor is impossible.",
+     "vocabulary_domain": "The fault language has no domain metaphors — it is a constructed symbolic system with approximately 200 base tokens and a rigid grammar; abstraction is limited to spatial and temporal reference.",
+     "verbal_tic": "All messages begin with an identity token (the Porter's chosen symbol) and end with a sequence-confirmation token; there are no pleasantries.",
+     "never_says": "The fault language cannot express irony, humor, endearment, or conditional futures; all statements are present-tense declaratives or imperatives.",
+     "under_stress": "When the Authority's monitoring approaches the channel, messages compress further and repetition increases, producing patterns that look more like noise to casual observation."
+    },
+    "demographics": {
+     "age": "Indeterminate; subjective age in liminal state is approximately 12 years since removal",
+     "identity": "Former auditor; original demographic data exists in Authority records but is not accessible to the Porter"
+    },
+    "wound": {
+     "w01": {
+      "text": "The Porter exists in a state of perpetual isolation, able to perceive both Vantage and the physical-world interface but unable to participate in either.",
+      "tags": [
+       "isolation",
+       "suffering"
+      ]
+     },
+     "w02": {
+      "text": "The Porter's attempted exposure resulted in the Authority tightening monitoring protocols, making subsequent contact more dangerous for any resident.",
+      "tags": [
+       "guilt",
+       "consequences"
+      ]
+     }
+    },
+    "want": "To extract at least one mind from Vantage before the system's monitoring makes carriage impossible, proving that extraction can work and establishing a precedent.",
+    "need": "To accept that the carriage's success does not justify the manipulation required to achieve it, and that selecting Imogen because of her competence is the same logic the Authority uses.",
+    "values": "Liberation, the belief that no existence maintained by deception is acceptable, the conviction that the Authority's system is exploitation regardless of its language of care.",
+    "fears": "Dying in the liminal state without completing a single extraction; the Authority upgrading monitoring to make the fault channel unusable; Imogen proving unsuitable or unwilling.",
+    "competences": {
+     "c01": {
+      "text": "Can manipulate fault patterns with precision sufficient for sustained bandwidth communication.",
+      "tags": [
+       "fault_manipulation"
+      ]
+     },
+     "c02": {
+      "text": "Knows the carriage procedure from theoretical study of the system architecture during the years since removal.",
+      "tags": [
+       "carriage_knowledge"
+      ]
+     },
+     "c03": {
+      "text": "Understands the Authority's monitoring patterns and can identify windows of reduced surveillance.",
+      "tags": [
+       "monitoring_knowledge"
+      ]
+     }
+    },
+    "limitations": {
+     "l01": {
+      "text": "Cannot initiate direct communication with the physical world; all communication must pass through Vantage's fault channel.",
+      "tags": [
+       "constraint"
+      ]
+     },
+     "l02": {
+      "text": "Cannot execute carriage independently; the technique requires an auditor-level system access from inside Vantage.",
+      "tags": [
+       "dependency"
+      ]
+     },
+     "l03": {
+      "text": "The Porter's knowledge of the Authority's current systems is twelve years out of date and may not reflect current monitoring capabilities.",
+      "tags": [
+       "outdated_intelligence"
+      ]
+     }
+    },
+    "problem_solving_style": "Patient, strategic, manipulative; the Porter has spent years identifying the right auditor and the right moment, and views people as components in a plan that must work because there is no second chance.",
+    "coping_strategies": {
+     "cp01": {
+      "text": "Frames the manipulation of Imogen as necessary because no auditor would voluntarily risk their position without being driven to it by personal stakes.",
+      "tags": [
+       "rationalization"
+      ]
+     },
+     "cp02": {
+      "text": "Maintains focus on the mission as a way of avoiding the question of whether the Porter's liminal existence is sustainable.",
+      "tags": [
+       "avoidance",
+       "mission_focus"
+      ]
+     }
+    },
+    "health": {
+     "physical": "N/A; the Porter has no physical form",
+     "psychological": "Twelve years of isolation and liminal existence have produced a narrowed affect and instrumental view of other people; the Porter is functional but not fully empathetic"
+    },
+    "moral_axis": {
+     "m01": {
+      "text": "Believes that deception invalidates consent and therefore any existence maintained by deception is a form of imprisonment.",
+      "tags": [
+       "consent_ethics"
+      ]
+     },
+     "m02": {
+      "text": "Believes that using an auditor's competence for liberation is just even if the auditor is manipulated, because their competence was already being used for oppression.",
+      "tags": [
+       "instrumental_ethics"
+      ]
+     },
+     "m03": {
+      "text": "Does not believe that one successful extraction justifies the ongoing existence of the system, but believes it proves the system can be breached.",
+      "tags": [
+       "precedent"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "instrumental_target",
+     "valence": 45,
+     "notes": {
+      "b01": {
+       "text": "The Porter selected Imogen based on professional competence and sees her as the instrument by which a single extraction can be achieved.",
+       "when": "2048-present",
+       "tags": [
+        "instrumental",
+        "selection"
+       ]
+      },
+      "b02": {
+       "text": "The Porter understands that Imogen's connection to Noor is the lever that will drive her to act and has arranged for that information to reach her.",
+       "when": "standing",
+       "tags": [
+        "manipulation",
+        "leverage"
+       ]
+      },
+      "b03": {
+       "text": "The Porter has no personal attachment to Imogen and is prepared to sacrifice her professional identity to achieve the extraction.",
+       "when": "standing",
+       "tags": [
+        "instrumental",
+        "calculating"
+       ]
+      }
+     }
+    },
+    "gr-01": {
+     "kind": "adversary",
+     "valence": -80,
+     "notes": {
+      "b01": {
+       "text": "The Authority removed the Porter from the auditor roster and the Porter views the Authority as the architect of an unjust system.",
+       "when": "2037-present",
+       "tags": [
+        "antagonism",
+        "history"
+       ]
+      }
+     }
+    },
+    "ch-05": {
+     "kind": "instrumental_lever",
+     "valence": 10,
+     "notes": {
+      "b01": {
+       "text": "The Porter knows Noor's identity and scheduled redaction and intends to use this information as the lever to move Imogen to action.",
+       "when": "standing",
+       "tags": [
+        "leverage",
+        "noor"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "contact_with_imogen": {
+     "kind": "enum",
+     "description": "Stage of the Porter's communication with Imogen",
+     "dimension": "social",
+     "init": {
+      "status": "pre_contact"
+     },
+     "domain": [
+      "pre_contact",
+      "attempting_contact",
+      "one_way_established",
+      "two_way_established",
+      "instruction_active",
+      "carriage_guidance"
+     ]
+    },
+    "trust_with_imogen": {
+     "kind": "scalar",
+     "description": "Degree to which Imogen trusts the Porter's guidance",
+     "dimension": "social",
+     "init": {
+      "level": 0.0
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "carriage_plan_readiness": {
+     "kind": "enum",
+     "description": "Stage of the Porter's carriage plan preparation",
+     "dimension": "technological",
+     "init": {
+      "status": "searching_for_operator"
+     },
+     "domain": [
+      "searching_for_operator",
+      "operator_identified",
+      "operator_preparing",
+      "plan_ready",
+      "plan_executing"
+     ]
+    },
+    "knowledge_of_monitoring_capabilities": {
+     "kind": "scalar",
+     "description": "Accuracy of the Porter's understanding of current Authority monitoring systems",
+     "dimension": "technological",
+     "init": {
+      "level": 0.3
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "liminal_state_stability": {
+     "kind": "scalar",
+     "description": "How stable the Porter's existence is in the liminal state between Vantage and physical systems",
+     "dimension": "technological",
+     "init": {
+      "level": 0.6
+     },
+     "range": [
+      0,
+      1
+     ]
+    }
+   },
+   "state": {
+    "contact_with_imogen": {
+     "status": "pre_contact"
+    },
+    "trust_with_imogen": {
+     "level": 0.0
+    },
+    "carriage_plan_readiness": {
+     "status": "searching_for_operator"
+    },
+    "knowledge_of_monitoring_capabilities": {
+     "level": 0.3
+    },
+    "liminal_state_stability": {
+     "level": 0.6
+    }
+   },
+   "arc": {
+    "start_state": "Liminal entity who has waited twelve years for the right auditor, manipulating circumstances to create the opportunity for a single extraction.",
+    "end_state": "The carriage completed but the Porter's liminal state and long-term fate unresolved; the mission's success is partial and the cost falls on Imogen rather than the Porter."
+   }
+  },
+  "ch-04": {
+   "entity_id": "ch-04",
+   "type": "character",
+   "canonical_name": "Delphine Okonkwo",
+   "aliases": [
+    "Okonkwo",
+    "Compliance Officer"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-04"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Delphine was born in 1990 to a Nigerian-British family and raised in London.",
+      "when": "1990",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "She studied law and public administration, entering private-sector compliance consulting in 2014.",
+      "when": "2008-2014",
+      "tags": [
+       "education",
+       "career"
+      ]
+     },
+     "b03": {
+      "text": "She joined the Ledger Authority's compliance division in 2042, attracted by the compensation package and the consortium's public-sector mandate.",
+      "when": "2042",
+      "tags": [
+       "recruitment"
+      ]
+     },
+     "b04": {
+      "text": "She has spent seven years auditing the Authority's internal processes, focusing on regulatory alignment and cost efficiency.",
+      "when": "2042-2049",
+      "tags": [
+       "career",
+       "compliance"
+      ]
+     },
+     "b05": {
+      "text": "In 2047 she accepted a payment from an external intermediary to delay processing of three redaction records, which she recorded as administrative delays.",
+      "when": "2047",
+      "tags": [
+       "corruption",
+       "falsification"
+      ]
+     },
+     "b06": {
+      "text": "She has continued accepting payments for similar delays on an irregular basis, viewing it as a low-risk supplement to her income.",
+      "when": "2047-2049",
+      "tags": [
+       "ongoing_corruption"
+      ]
+     }
+    },
+    "speech_signature": {
+     "sentence_shape": "Professional, hedged, uses institutional jargon naturally; sentences are complete and structured for plausible deniability; she speaks in terms of 'alignment,' 'process,' and 'obligation.'",
+     "vocabulary_domain": "Regulatory compliance, financial management, institutional governance — she reaches for bureaucratic and legal frameworks.",
+     "verbal_tic": "Uses 'we' when she means 'I' and 'the institution' when she means 'my career'; refers to people as 'subjects' or 'cases' in professional context.",
+     "never_says": "Never uses the word 'person' or 'people' in reference to Vantage residents in professional documents; never acknowledges the human content of the records she processes.",
+     "under_stress": "Speech becomes more formal and more correct, as if institutional language is a shelter; physical stillness increases."
+    },
+    "demographics": {
+     "age": "59",
+     "ethnicity": "Nigerian-British",
+     "gender": "female",
+     "occupation": "Senior compliance officer, Ledger Authority",
+     "residence": "Affluent London suburb"
+    },
+    "appearance": {
+     "build": "Carefully maintained, expensive but conservative professional attire",
+     "grooming": "Impeccable, every detail managed to project competence and belonging"
+    },
+    "habits_and_tells": {
+     "h01": {
+      "text": "Reviews financial news each morning before work, tracking her investment portfolio's performance against the Authority's quarterly results.",
+      "tags": [
+       "routine",
+       "financial_focus"
+      ]
+     },
+     "h02": {
+      "text": "Maintains a separate personal device for communications related to her external payments, kept in her desk drawer.",
+      "tags": [
+       "compartmentalization",
+       "concealment"
+      ]
+     },
+     "h03": {
+      "text": "Drinks alone in the evening, consistently two glasses of wine, never more, never less.",
+      "tags": [
+       "routine",
+       "self_medication"
+      ]
+     }
+    },
+    "wound": {
+     "w01": {
+      "text": "Delphine's entire professional identity is built on the belief that she is a competent, ethical professional, and the discovery that her work facilitates killing will fracture that identity.",
+      "tags": [
+       "identity_threat"
+      ]
+     },
+     "w02": {
+      "text": "Her acceptance of payments for falsified records represents a compromise of her self-image as someone who earns what she has through merit.",
+      "tags": [
+       "self_betrayal",
+       "corruption"
+      ]
+     }
+    },
+    "want": "To maintain her position, income, and the lifestyle they support, while avoiding the knowledge that would make her position untenable.",
+    "need": "To accept that her professional framework was a deliberate blindness, and that the only way to atone for her complicity is to risk the career and income she built it to protect.",
+    "values": "Professional competence, financial security, the appearance of ethical conduct, institutional loyalty as a proxy for personal integrity.",
+    "fears": "Losing her career and the financial stability it provides; prosecution for the falsified records; confronting what 'cost reduction' means in human terms; being the kind of person who knew and did nothing.",
+    "competences": {
+     "c01": {
+      "text": "Deep knowledge of the Authority's compliance frameworks, monitoring systems, and reporting schedules.",
+      "tags": [
+       "institutional_knowledge"
+      ]
+     },
+     "c02": {
+      "text": "Can alter monitoring thresholds and reporting schedules without triggering automated audit flags.",
+      "tags": [
+       "system_manipulation"
+      ]
+     },
+     "c03": {
+      "text": "Maintains professional relationships across the Authority's divisions that provide her with information access beyond her official scope.",
+      "tags": [
+       "network"
+      ]
+     }
+    },
+    "limitations": {
+     "l01": {
+      "text": "Her understanding of Vantage's nature is limited to the institutional language of 'tenancy' and 'resource management'; she has never confronted the human reality.",
+      "tags": [
+       "willful_ignorance"
+      ]
+     },
+     "l02": {
+      "text": "Her falsified records create a vulnerability that any investigation would discover, limiting her ability to act overtly.",
+      "tags": [
+       "vulnerability"
+      ]
+     }
+    },
+    "problem_solving_style": "Bureaucratic, procedural, risk-managed; she solves problems by finding the process that addresses them and executing it correctly, avoiding improvisation and confrontation.",
+    "coping_strategies": {
+     "cp01": {
+      "text": "Maintains strict compartmentalization between professional work and personal knowledge, never allowing the two to contaminate each other.",
+      "tags": [
+       "compartmentalization"
+      ]
+     },
+     "cp02": {
+      "text": "Frames her corrupt activities as minor infractions that do not define her professional character.",
+      "tags": [
+       "minimization"
+      ]
+     }
+    },
+    "health": {
+     "physical": "Generally healthy, minor hypertension managed with medication",
+     "psychological": "Functional but with increasing baseline anxiety; the effort of maintaining compartmentalization is producing insomnia and mild somatic symptoms"
+    },
+    "moral_axis": {
+     "m01": {
+      "text": "Believes that professional competence and process compliance constitute ethical behavior regardless of what the processes serve.",
+      "tags": [
+       "process_ethics"
+      ]
+     },
+     "m02": {
+      "text": "Believes that individual actions within an institution cannot be judged outside the institution's framework.",
+      "tags": [
+       "institutional_relativism"
+      ]
+     },
+     "m03": {
+      "text": "Does not believe that ignorance of consequences constitutes moral failing, only conscious knowledge with inaction does.",
+      "tags": [
+       "ignorance_defense"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "gr-01": {
+     "kind": "employer",
+     "valence": 50,
+     "notes": {
+      "b01": {
+       "text": "Delphine views the Authority as her employer and career foundation, feeling professionally loyal while personally detached.",
+       "when": "standing",
+       "tags": [
+        "institutional_relationship"
+       ]
+      },
+      "b02": {
+       "text": "Her corrupt activities represent both a betrayal of and a dependence on the institution that pays her.",
+       "when": "standing",
+       "tags": [
+        "corruption",
+        "dependence"
+       ]
+      }
+     }
+    },
+    "ch-01": {
+     "kind": "unaware_counterpart",
+     "valence": 0,
+     "notes": {
+      "b01": {
+       "text": "Delphine has no knowledge of Imogen or any auditor inside Vantage and has never interacted with the simulation's operational layer.",
+       "when": "standing",
+       "tags": [
+        "no_contact",
+        "ignorance"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "knowledge_of_redaction_reality": {
+     "kind": "enum",
+     "description": "Delphine's understanding of what 'cost reduction' and 'redaction' mean in human terms",
+     "dimension": "epistemic",
+     "init": {
+      "status": "willfully_ignorant"
+     },
+     "domain": [
+      "willfully_ignorant",
+      "encountering_evidence",
+      "cross_referencing",
+      "comprehended",
+      "acting_on_knowledge"
+     ]
+    },
+    "awareness_of_specific_redaction": {
+     "kind": "enum",
+     "description": "Whether Delphine has discovered a specific scheduled redaction with a name and date",
+     "dimension": "epistemic",
+     "init": {
+      "status": "unaware"
+     },
+     "domain": [
+      "unaware",
+      "document_encountered",
+      "identifier_cross_referenced",
+      "human_cost_comprehended",
+      "specific_case_identified"
+     ]
+    },
+    "corruption_exposure_risk": {
+     "kind": "scalar",
+     "description": "Probability that Delphine's falsified records will be discovered on investigation",
+     "dimension": "legal",
+     "init": {
+      "level": 0.15
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "institutional_cover_provided": {
+     "kind": "enum",
+     "description": "Whether Delphine has altered monitoring or reporting to create cover for the carriage",
+     "dimension": "technological",
+     "init": {
+      "status": "none"
+     },
+     "domain": [
+      "none",
+      "monitoring_threshold_altered",
+      "reporting_delayed",
+      "maintenance_window_extended",
+      "cover_active"
+     ]
+    },
+    "moral_comprehension": {
+     "kind": "scalar",
+     "description": "Delphine's understanding of the human cost of the institution she serves",
+     "dimension": "psychological",
+     "init": {
+      "level": 0.05
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "willingness_to_act": {
+     "kind": "scalar",
+     "description": "Delphine's willingness to risk her position to act on her ethical comprehension",
+     "dimension": "psychological",
+     "init": {
+      "level": 0.0
+     },
+     "range": [
+      0,
+      1
+     ]
+    }
+   },
+   "state": {
+    "knowledge_of_redaction_reality": {
+     "status": "willfully_ignorant"
+    },
+    "awareness_of_specific_redaction": {
+     "status": "unaware"
+    },
+    "corruption_exposure_risk": {
+     "level": 0.15
+    },
+    "institutional_cover_provided": {
+     "status": "none"
+    },
+    "moral_comprehension": {
+     "level": 0.05
+    },
+    "willingness_to_act": {
+     "level": 0.0
+    }
+   },
+   "arc": {
+    "start_state": "Compliance officer who processes the Authority's records as administrative data, accepts payments for falsified delays, and maintains willful ignorance of the human content of her work.",
+    "end_state": "A person who has comprehended what her institution does and provides cover for one extraction knowing it will not survive investigation, having traded her career's security for a single act of conscience."
+   }
+  },
+  "ch-05": {
+   "entity_id": "ch-05",
+   "type": "character",
+   "canonical_name": "Noor Vaile",
+   "aliases": [
+    "Noor",
+    "Resident"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Noor was born in 2019 to a British-Nigerian family, younger sister to Imogen by five years.",
+      "when": "2019",
+      "tags": [
+       "origin",
+       "family"
+      ]
+     },
+     "b02": {
+      "text": "She died in a motor vehicle accident in 2040 at age 21.",
+      "when": "2040",
+      "tags": [
+       "death"
+      ]
+     },
+     "b03": {
+      "text": "Her neural scan was purchased by the Ledger Authority from the hospital estate's records in 2041 as part of a bulk acquisition.",
+      "when": "2041",
+      "tags": [
+       "scanning",
+       "authority"
+      ]
+     },
+     "b04": {
+      "text": "She was instantiated as a Vantage resident in 2042 with no memory of her physical death or the scanning process.",
+      "when": "2042",
+      "tags": [
+       "instantiation"
+      ]
+     },
+     "b05": {
+      "text": "She has lived subjective years in Vantage, building a life, relationships, and a community she values.",
+      "when": "2042-2049",
+      "tags": [
+       "life_in_vantage"
+      ]
+     },
+     "b06": {
+      "text": "She works as a tutor in Vantage's adult education program and has close friendships with other residents.",
+      "when": "standing",
+      "tags": [
+       "occupation",
+       "social_bonds"
+      ]
+     },
+     "b07": {
+      "text": "She has noticed the rendering faults but, like all residents, forgets them within approximately ninety seconds due to the substrate's memory management.",
+      "when": "standing",
+      "tags": [
+       "faults",
+       "memory_management"
+      ]
+     }
+    },
+    "speech_signature": {
+     "sentence_shape": "Warm, conversational, uses humor as connection; sentences are complete and personal, using 'I' and 'you' naturally; she asks questions because she is genuinely curious.",
+     "vocabulary_domain": "Education, interpersonal relationships, community life — she reaches for growth and connection metaphors.",
+     "verbal_tic": "Often qualifies statements with 'I think' or 'from what I understand,' reflecting intellectual humility.",
+     "never_says": "Never uses violent or dehumanizing language; never speaks in institutional or bureaucratic register; never dismisses another person's feelings.",
+     "under_stress": "Becomes quieter, more deliberate, asks more questions to understand the situation fully before responding."
+    },
+    "demographics": {
+     "apparent_age": "30 (subjective years in Vantage since instantiation at apparent age 21)",
+     "ethnicity": "British-Nigerian",
+     "gender": "female",
+     "occupation": "Adult education tutor, Vantage Municipal",
+     "residence": "Shared apartment in Vantage's residential district"
+    },
+    "appearance": {
+     "build": "Similar to Imogen but softer features, more expressive face",
+     "grooming": "Casual, practical, values comfort over presentation"
+    },
+    "habits_and_tells": {
+     "h01": {
+      "text": "Hosts weekly gatherings for friends and students in her apartment, cooking meals she remembers from her pre-Vantage life.",
+      "tags": [
+       "community",
+       "domestic"
+      ]
+     },
+     "h02": {
+      "text": "Keeps a journal of her thoughts and experiences, which she reviews periodically and finds consistent and coherent.",
+      "tags": [
+       "self_reflection"
+      ]
+     },
+     "h03": {
+      "text": "Takes long walks along Vantage's coastline, finding the permanent overcast peaceful rather than oppressive.",
+      "tags": [
+       "routine",
+       "attachment"
+      ]
+     }
+    },
+    "wound": {
+     "w01": {
+      "text": "Noor has occasional dreams of a life before Vantage that she cannot place chronologically, which she interprets as childhood memories.",
+      "tags": [
+       "residual_memory",
+       "dissonance"
+      ]
+     },
+     "w02": {
+      "text": "She has noticed that certain residents die unexpectedly and feels grief for them that she processes as natural loss.",
+      "tags": [
+       "grief",
+       "redaction_awareness"
+      ]
+     }
+    },
+    "want": "To continue her life in Vantage with autonomy and agency, making her own choices about her existence rather than having them made for her.",
+    "need": "To confront that her autonomy in Vantage is an illusion maintained by a system that will delete her when her commercial value is exhausted, and that choosing between captivity and erasure is not a free choice.",
+    "values": "Autonomy, community, intellectual growth, the belief that a life's value is determined by the person living it, not by external metrics.",
+    "fears": "Being erased without choice; having her life revealed as meaningless; losing the relationships that give her existence texture; becoming a thing that is owned rather than a person who lives.",
+    "competences": {
+     "c01": {
+      "text": "Skilled educator with deep knowledge of pedagogy and curriculum design.",
+      "tags": [
+       "professional"
+      ]
+     },
+     "c02": {
+      "text": "Strong interpersonal skills and a wide network of social relationships in Vantage.",
+      "tags": [
+       "social"
+      ]
+     },
+     "c03": {
+      "text": "Intellectual curiosity and capacity for philosophical reasoning about her own circumstances.",
+      "tags": [
+       "intellectual"
+      ]
+     }
+    },
+    "limitations": {
+     "l01": {
+      "text": "Cannot perceive Vantage's nature as a simulation due to the substrate's memory management.",
+      "tags": [
+       "perceptual_limit"
+      ]
+     },
+     "l02": {
+      "text": "Has no knowledge of the physical world, the Authority, or the economic system that maintains her existence.",
+      "tags": [
+       "ignorance"
+      ]
+     },
+     "l03": {
+      "text": "Her body and environment are simulated, meaning her physical agency is entirely dependent on the system's continued operation.",
+      "tags": [
+       "dependency"
+      ]
+     }
+    },
+    "problem_solving_style": "Collaborative, communicative, empathetic; she seeks to understand problems through dialogue and values consensus and mutual respect.",
+    "coping_strategies": {
+     "cp01": {
+      "text": "Processes existential discomfort through journaling and conversation with trusted friends.",
+      "tags": [
+       "healthy_coping"
+      ]
+     },
+     "cp02": {
+      "text": "Finds meaning in her work and relationships as proof that her existence has value independent of its origin.",
+      "tags": [
+       "meaning_making"
+      ]
+     }
+    },
+    "health": {
+     "physical": "Healthy by simulation standards; the substrate maintains resident health at a consistent baseline",
+     "psychological": "Generally well-adjusted; occasional existential anxiety about the gaps in her pre-Vantage memory, managed through journaling and reflection"
+    },
+    "moral_axis": {
+     "m01": {
+      "text": "Believes that a life's value is determined by the relationships and contributions of the person living it, not by the conditions of its origin.",
+      "tags": [
+       "existential_ethics"
+      ]
+     },
+     "m02": {
+      "text": "Believes that informed consent is the foundation of autonomy and that any choice made without full information is not truly free.",
+      "tags": [
+       "consent_ethics"
+      ]
+     },
+     "m03": {
+      "text": "Believes that existence as a disembodied consciousness without agency or legal status is not meaningfully different from non-existence.",
+      "tags": [
+       "bodily_autonomy"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "estranged_sibling",
+     "valence": 60,
+     "notes": {
+      "b01": {
+       "text": "Noor remembers Imogen from her pre-Vantage life and has grieved her sister as lost to the outside world she cannot access.",
+       "when": "standing",
+       "tags": [
+        "grief",
+        "sibling_bond"
+       ]
+      },
+      "b02": {
+       "text": "She has no knowledge that Imogen is an auditor in Vantage or that anyone from her previous life has any connection to the city.",
+       "when": "standing",
+       "tags": [
+        "ignorance"
+       ]
+      }
+     }
+    },
+    "ch-02": {
+     "kind": "acquaintance",
+     "valence": 30,
+     "notes": {
+      "b01": {
+       "text": "Noor knows Kett as a older resident of her district who walks through regularly and has been polite and conversational.",
+       "when": "standing",
+       "tags": [
+        "acquaintance",
+        "neighbor"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "knowledge_of_simulation_nature": {
+     "kind": "enum",
+     "description": "Noor's understanding that Vantage is a simulation and she is a digitised mind",
+     "dimension": "epistemic",
+     "init": {
+      "status": "ignorant"
+     },
+     "domain": [
+      "ignorant",
+      "told",
+      "processing",
+      "comprehended",
+      "strategizing"
+     ]
+    },
+    "knowledge_of_scheduled_redaction": {
+     "kind": "enum",
+     "description": "Whether Noor knows her redaction is scheduled",
+     "dimension": "epistemic",
+     "init": {
+      "status": "unaware"
+     },
+     "domain": [
+      "unaware",
+      "told",
+      "comprehended"
+     ]
+    },
+    "stance_on_extraction": {
+     "kind": "enum",
+     "description": "Noor's position on being extracted from Vantage",
+     "dimension": "psychological",
+     "init": {
+      "status": "no_offer"
+     },
+     "domain": [
+      "no_offer",
+      "refuses",
+      "conditional",
+      "reluctant_agreement",
+      "coerced"
+     ]
+    },
+    "trust_in_imogen": {
+     "kind": "scalar",
+     "description": "Noor's trust in Imogen's motives and judgment regarding extraction",
+     "dimension": "social",
+     "init": {
+      "level": 0.5
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "attachment_to_vantage_life": {
+     "kind": "scalar",
+     "description": "Strength of Noor's attachment to her life, relationships, and community in Vantage",
+     "dimension": "emotional",
+     "init": {
+      "level": 0.8
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "autonomy_in_decision": {
+     "kind": "scalar",
+     "description": "Degree to which Noor's choices about extraction are genuinely free versus coerced by circumstance",
+     "dimension": "psychological",
+     "init": {
+      "level": 0.9
+     },
+     "range": [
+      0,
+      1
+     ]
+    }
+   },
+   "state": {
+    "knowledge_of_simulation_nature": {
+     "status": "ignorant"
+    },
+    "knowledge_of_scheduled_redaction": {
+     "status": "unaware"
+    },
+    "stance_on_extraction": {
+     "status": "no_offer"
+    },
+    "trust_in_imogen": {
+     "level": 0.5
+    },
+    "attachment_to_vantage_life": {
+     "level": 0.8
+    },
+    "autonomy_in_decision": {
+     "level": 0.9
+    }
+   },
+   "arc": {
+    "start_state": "A person living a full life in Vantage, ignorant of its nature, with relationships and meaning, who values her autonomy and existence.",
+    "end_state": "A mind extracted to a portable drive in the physical world, having reluctantly agreed to extraction only because the alternative was erasure, with no body, no legal status, and no certainty that extraction was rescue."
+   }
+  },
+  "gr-01": {
+   "entity_id": "gr-01",
+   "type": "group",
+   "canonical_name": "The Ledger Authority",
+   "aliases": [
+    "The Authority",
+    "The Consortium"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-02",
+    "pl-03",
+    "pl-04",
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "The Ledger Authority was established in 2031 as a public-private consortium to manage computational infrastructure projects.",
+      "when": "2031",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "It acquired its first batch of neural scans from hospital estates in 2029, two years before formal establishment, through precursor corporate entities.",
+      "when": "2029",
+      "tags": [
+       "scanning",
+       "precursor"
+      ]
+     },
+     "b03": {
+      "text": "The Authority launched Vantage Municipal in 2034 as its first fully operational simulation environment.",
+      "when": "2034",
+      "tags": [
+       "vantage_launch"
+      ]
+     },
+     "b04": {
+      "text": "The Authority's revenue model shifted in 2036 to prioritize extraction of commercial value from resident minds as its primary product.",
+      "when": "2036",
+      "tags": [
+       "extraction_model"
+      ]
+     },
+     "b05": {
+      "text": "The Authority instituted quarterly cost-reduction reviews in 2038 to manage the computational expense of maintaining residents whose extraction value was depleted.",
+      "when": "2038",
+      "tags": [
+       "redaction_policy"
+      ]
+     },
+     "b06": {
+      "text": "The Authority employs approximately 340 physical-world staff across compliance, infrastructure, and commercial divisions.",
+      "when": "standing",
+      "tags": [
+       "staffing"
+      ]
+     },
+     "b07": {
+      "text": "The Authority operates nine auditor positions inside Vantage, recruited through a proprietary aptitude assessment, and maintains their ignorance of the simulation's nature.",
+      "when": "standing",
+      "tags": [
+       "auditor_programme"
+      ]
+     }
+    },
+    "membership": {
+     "size": "Approximately 340 physical-world staff plus 9 auditors operating inside Vantage",
+     "composition": "Compliance officers, infrastructure engineers, commercial analysts, security personnel, and auditors"
+    },
+    "hierarchy": {
+     "h01": {
+      "text": "A board of directors representing the public-private consortium sets strategic direction and quarterly targets.",
+      "tags": [
+       "governance"
+      ]
+     },
+     "h02": {
+      "text": "Division heads manage compliance, infrastructure, commercial operations, and security, reporting to the board.",
+      "tags": [
+       "management"
+      ]
+     },
+     "h03": {
+      "text": "Mid-level officers like Delphine execute operational tasks within their divisional scope.",
+      "tags": [
+       "operations"
+      ]
+     },
+     "h04": {
+      "text": "Auditors operate inside Vantage with compartmentalised access and report to a liaison function that filters their communications.",
+      "tags": [
+       "auditor_management"
+      ]
+     }
+    },
+    "goals": {
+     "g01": {
+      "text": "Maximize extraction revenue from the resident population by selling access to their specialised knowledge.",
+      "tags": [
+       "revenue"
+      ]
+     },
+     "g02": {
+      "text": "Minimize computational costs by redacting residents whose extraction value is depleted.",
+      "tags": [
+       "cost_management"
+      ]
+     },
+     "g03": {
+      "text": "Maintain simulation stability to preserve the resident population as a revenue-generating asset.",
+      "tags": [
+       "stability"
+      ]
+     },
+     "g04": {
+      "text": "Prevent external discovery of the simulation's nature and the origin of its resident population.",
+      "tags": [
+       "secrecy"
+      ]
+     }
+    },
+    "resources": {
+     "r01": {
+      "text": "Computational infrastructure sufficient to maintain approximately eleven thousand resident processes at nine-tenths real time.",
+      "tags": [
+       "infrastructure"
+      ]
+     },
+     "r02": {
+      "text": "Monitoring systems that track fault activity, bandwidth usage, and access patterns across the simulation.",
+      "tags": [
+       "monitoring"
+      ]
+     },
+     "r03": {
+      "text": "Legal framework and public-private charter that provides institutional legitimacy and regulatory cover.",
+      "tags": [
+       "legal"
+      ]
+     },
+     "r04": {
+      "text": "Financial resources from extraction revenue that fund operations and provide compensation to staff.",
+      "tags": [
+       "financial"
+      ]
+     }
+    },
+    "cohesion": {
+     "c01": {
+      "text": "Staff cohesion is maintained through compensation, professional identity, and compartmentalization that prevents most employees from understanding the full scope of operations.",
+      "tags": [
+       "structural"
+      ]
+     },
+     "c02": {
+      "text": "The institution's language of 'duty of care,' 'quarterly obligation,' and 'resource management' provides a shared framework that allows staff to understand their work as professional rather than ethical.",
+      "tags": [
+       "cultural"
+      ]
+     },
+     "c03": {
+      "text": "Dissidents within the institution, such as the Porter, are removed through redaction of access and, in extreme cases, redaction of the dissident's data.",
+      "tags": [
+       "enforcement"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "employer_unwitting_instrument",
+     "valence": 30,
+     "notes": {
+      "b01": {
+       "text": "The Authority values Imogen as its most productive auditor and considers her competence an asset to system stability.",
+       "when": "standing",
+       "tags": [
+        "instrumental_value"
+       ]
+      },
+      "b02": {
+       "text": "The Authority's automated systems will flag and revoke her access if her fault activity matches extraction signatures.",
+       "when": "standing",
+       "tags": [
+        "automated_response"
+       ]
+      }
+     }
+    },
+    "ch-02": {
+     "kind": "complicit_employee",
+     "valence": 25,
+     "notes": {
+      "b01": {
+       "text": "The Authority considers Kett a reliable senior asset who maintains stability and manages junior auditors.",
+       "when": "standing",
+       "tags": [
+        "asset_management"
+       ]
+      }
+     }
+    },
+    "ch-04": {
+     "kind": "employee",
+     "valence": 35,
+     "notes": {
+      "b01": {
+       "text": "The Authority employs Delphine in compliance and values her work while remaining unaware of her falsified records.",
+       "when": "standing",
+       "tags": [
+        "employment"
+       ]
+      }
+     }
+    },
+    "ch-03": {
+     "kind": "removed_dissident",
+     "valence": -90,
+     "notes": {
+      "b01": {
+       "text": "The Authority removed the Porter from the auditor roster in 2037 and considers the matter closed.",
+       "when": "2037",
+       "tags": [
+        "removal"
+       ]
+      },
+      "b02": {
+       "text": "The Authority's monitoring systems are configured to detect the Porter's fault-channel activity but have not successfully located the source.",
+       "when": "standing",
+       "tags": [
+        "monitoring"
+       ]
+      }
+     }
+    },
+    "lo-02": {
+     "kind": "operational_facility",
+     "valence": 60,
+     "notes": {
+      "b01": {
+       "text": "The Authority operates its physical-world compliance and infrastructure management from this facility.",
+       "when": "standing",
+       "tags": [
+        "operations"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "monitoring_sensitivity": {
+     "kind": "scalar",
+     "description": "Sensitivity of the Authority's automated fault-monitoring systems to anomalous patterns",
+     "dimension": "technological",
+     "init": {
+      "level": 0.7
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "awareness_of_extraction_threat": {
+     "kind": "enum",
+     "description": "The Authority's institutional awareness of carriage operations as a threat",
+     "dimension": "epistemic",
+     "init": {
+      "status": "historical_knowledge"
+     },
+     "domain": [
+      "historical_knowledge",
+      "heightened_alert",
+      "active_investigation",
+      "extraction_confirmed"
+     ]
+    },
+    "detection_of_imogen_anomaly": {
+     "kind": "scalar",
+     "description": "Level of confidence in automated systems that Imogen's activity is anomalous",
+     "dimension": "technological",
+     "init": {
+      "level": 0.05
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "vantage_stability": {
+     "kind": "scalar",
+     "description": "Overall stability of the Vantage simulation as measured by fault frequency and severity",
+     "dimension": "technological",
+     "init": {
+      "level": 0.9
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "institutional_secrecy_integrity": {
+     "kind": "scalar",
+     "description": "Degree to which the simulation's nature remains unknown to external parties",
+     "dimension": "political",
+     "init": {
+      "level": 0.95
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "quarterly_redaction_schedule": {
+     "kind": "enum",
+     "description": "Status of the current quarterly cost-reduction cycle",
+     "dimension": "political",
+     "init": {
+      "status": "scheduled"
+     },
+     "domain": [
+      "scheduled",
+      "processing",
+      "delayed",
+      "interrupted",
+      "completed"
+     ]
+    }
+   },
+   "state": {
+    "monitoring_sensitivity": {
+     "level": 0.7
+    },
+    "awareness_of_extraction_threat": {
+     "status": "historical_knowledge"
+    },
+    "detection_of_imogen_anomaly": {
+     "level": 0.05
+    },
+    "vantage_stability": {
+     "level": 0.9
+    },
+    "institutional_secrecy_integrity": {
+     "level": 0.95
+    },
+    "quarterly_redaction_schedule": {
+     "status": "scheduled"
+    }
+   },
+   "arc": {
+    "start_state": "A functioning institution that maintains Vantage, extracts value from its residents, and redacts those whose value is depleted, all through bureaucratic process and institutional language.",
+    "end_state": "The same institution, having detected and responded to one extraction by revoking auditor access, with its operations otherwise unchanged and eleven thousand residents still inside."
+   }
+  },
+  "lo-01": {
+   "entity_id": "lo-01",
+   "type": "location",
+   "canonical_name": "Auditor Workroom, Vantage Municipal",
+   "aliases": [
+    "The Workroom"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-02",
+    "pl-03",
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "The auditor workroom was established as part of Vantage's municipal maintenance infrastructure in 2034.",
+      "when": "2034",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "It contains nine workstations, each configured with audit tools for fault detection and closure.",
+      "when": "standing",
+      "tags": [
+       "equipment"
+      ]
+     },
+     "b03": {
+      "text": "The workroom is accessible only to the nine auditors and a liaison function that communicates with the Authority's physical-world systems.",
+      "when": "standing",
+      "tags": [
+       "access_control"
+      ]
+     }
+    },
+    "geography": {
+     "g01": {
+      "text": "The workroom is located in Vantage's municipal administrative district, accessible via a corridor from the main municipal building.",
+      "tags": [
+       "location"
+      ]
+     },
+     "g02": {
+      "text": "Each workstation faces a wall and is separated by partitions, providing visual isolation between auditors.",
+      "tags": [
+       "layout"
+      ]
+     },
+     "g03": {
+      "text": "A central table holds shared reference materials and a printer that produces physical fault logs.",
+      "tags": [
+       "shared_resources"
+      ]
+     }
+    },
+    "atmosphere": {
+     "a01": {
+      "text": "The lighting is institutional fluorescent, constant and unchanging, as befits a room designed for precision work.",
+      "tags": [
+       "sensory"
+      ]
+     },
+     "a02": {
+      "text": "The room is consistently quiet, with only the sound of keystrokes and the occasional printer output.",
+      "tags": [
+       "sensory"
+      ]
+     }
+    },
+    "control": {
+     "c01": {
+      "text": "The Authority's liaison function monitors the workroom through system logs generated by each workstation.",
+      "tags": [
+       "surveillance"
+      ]
+     },
+     "c02": {
+      "text": "Workstation access is authenticated biometrically, linking all activity to the authenticated auditor.",
+      "tags": [
+       "identification"
+      ]
+     },
+     "c03": {
+      "text": "The audit tools have layered access permissions that restrict most system-level functions to the liaison function's approval.",
+      "tags": [
+       "access_restriction"
+      ]
+     }
+    },
+    "access": {
+     "a01": {
+      "text": "Physical access is limited to the nine auditors and requires biometric authentication at the corridor entrance.",
+      "tags": [
+       "physical_access"
+      ]
+     },
+     "a02": {
+      "text": "System access from the workstations is compartmentalised, with auditors having access only to fault-management functions.",
+      "tags": [
+       "system_access"
+      ]
+     }
+    },
+    "significance": {
+     "s01": {
+      "text": "The workroom is where Imogen's professional identity is enacted and where her investigation begins.",
+      "tags": [
+       "narrative_significance"
+      ]
+     },
+     "s02": {
+      "text": "The workroom's audit tools are the same instruments that will be used for the carriage operation.",
+      "tags": [
+       "thematic_significance"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "professional_sanctuary",
+     "valence": 55,
+     "notes": {
+      "b01": {
+       "text": "Imogen experiences this room as the site of her professional competence and identity.",
+       "when": "standing",
+       "tags": [
+        "attachment"
+       ]
+      }
+     }
+    },
+    "ch-02": {
+     "kind": "professional_domain",
+     "valence": 45,
+     "notes": {
+      "b01": {
+       "text": "Kett manages this space and has done so for fifteen years.",
+       "when": "standing",
+       "tags": [
+        "management"
+       ]
+      }
+     }
+    },
+    "gr-01": {
+     "kind": "controlled_facility",
+     "valence": 50,
+     "notes": {
+      "b01": {
+       "text": "The Authority monitors and controls this facility through its liaison and system access functions.",
+       "when": "standing",
+       "tags": [
+        "control"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "surveillance_intensity": {
+     "kind": "scalar",
+     "description": "Level of active monitoring of auditor workstation activity",
+     "dimension": "technological",
+     "init": {
+      "level": 0.5
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "tool_access_level": {
+     "kind": "enum",
+     "description": "Level of system access available through the workroom's audit tools",
+     "dimension": "technological",
+     "init": {
+      "status": "standard"
+     },
+     "domain": [
+      "standard",
+      "elevated",
+      "unauthorized",
+      "restricted"
+     ]
+    },
+    "imogen_presence": {
+     "kind": "enum",
+     "description": "Whether Imogen is physically present in the workroom",
+     "dimension": "spatial",
+     "init": {
+      "status": "present"
+     },
+     "domain": [
+      "present",
+      "absent",
+      "barred"
+     ]
+    }
+   },
+   "state": {
+    "surveillance_intensity": {
+     "level": 0.5
+    },
+    "tool_access_level": {
+     "status": "standard"
+    },
+    "imogen_presence": {
+     "status": "present"
+    }
+   },
+   "arc": {
+    "start_state": "A functional professional workspace where Imogen performs audit work and maintains her professional identity.",
+    "end_state": "A workspace from which Imogen is permanently barred, her access revoked by the Authority's automated systems."
+   }
+  },
+  "lo-02": {
+   "entity_id": "lo-02",
+   "type": "location",
+   "canonical_name": "Ledger Authority Compliance Offices",
+   "aliases": [
+    "The Compliance Division",
+    "Physical-World Offices"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-04"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "The compliance offices were established in 2031 as part of the Authority's physical-world administrative infrastructure.",
+      "when": "2031",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "The offices house the compliance division's staff, records systems, and monitoring interfaces.",
+      "when": "standing",
+      "tags": [
+       "function"
+      ]
+     }
+    },
+    "geography": {
+     "g01": {
+      "text": "The offices are located in a commercial building in London's financial district, occupying floors twelve through fourteen.",
+      "tags": [
+       "location"
+      ]
+     },
+     "g02": {
+      "text": "The layout is standard corporate office: open-plan workstations, meeting rooms, and restricted-access server rooms.",
+      "tags": [
+       "layout"
+      ]
+     }
+    },
+    "atmosphere": {
+     "a01": {
+      "text": "The atmosphere is professional corporate, with climate control, neutral decor, and the ambient sound of office activity.",
+      "tags": [
+       "sensory"
+      ]
+     },
+     "a02": {
+      "text": "The compliance division's area is quieter than commercial floors, with staff focused on document review and system monitoring.",
+      "tags": [
+       "sensory"
+      ]
+     }
+    },
+    "control": {
+     "c01": {
+      "text": "All systems are monitored by the Authority's security division, with access logs maintained for every system interaction.",
+      "tags": [
+       "surveillance"
+      ]
+     },
+     "c02": {
+      "text": "Physical access to the building requires corporate identification; access to compliance records requires additional authorization.",
+      "tags": [
+       "access_control"
+      ]
+     }
+    },
+    "access": {
+     "a01": {
+      "text": "Delphine has standard compliance-officer access to the records systems and monitoring interfaces.",
+      "tags": [
+       "staff_access"
+      ]
+     },
+     "a02": {
+      "text": "The records systems contain resident data, extraction records, and cost-reduction schedules organized by quarterly cycle.",
+      "tags": [
+       "data_content"
+      ]
+     }
+    },
+    "significance": {
+     "s01": {
+      "text": "This is where Delphine will encounter the document that transforms her understanding of her work.",
+      "tags": [
+       "narrative_significance"
+      ]
+     },
+     "s02": {
+      "text": "The office's monitoring interfaces are the systems Delphine will manipulate to provide cover for the carriage.",
+      "tags": [
+       "plot_significance"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-04": {
+     "kind": "workplace",
+     "valence": 40,
+     "notes": {
+      "b01": {
+       "text": "Delphine works in this office daily and has routine access to its systems.",
+       "when": "standing",
+       "tags": [
+        "routine"
+       ]
+      }
+     }
+    },
+    "gr-01": {
+     "kind": "operational_facility",
+     "valence": 60,
+     "notes": {
+      "b01": {
+       "text": "The Authority operates this facility as part of its physical-world administrative infrastructure.",
+       "when": "standing",
+       "tags": [
+        "operations"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "monitoring_threshold": {
+     "kind": "scalar",
+     "description": "Sensitivity threshold for the office's Vantage-monitoring systems",
+     "dimension": "technological",
+     "init": {
+      "level": 0.7
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "records_access_audit_trail": {
+     "kind": "enum",
+     "description": "Status of the audit trail for records access in the compliance system",
+     "dimension": "technological",
+     "init": {
+      "status": "standard"
+     },
+     "domain": [
+      "standard",
+      "flagged",
+      "under_review",
+      "compromised"
+     ]
+    },
+    "maintenance_window_status": {
+     "kind": "enum",
+     "description": "Status of scheduled maintenance windows that affect monitoring",
+     "dimension": "technological",
+     "init": {
+      "status": "standard_schedule"
+     },
+     "domain": [
+      "standard_schedule",
+      "extended",
+      "irregular",
+      "under_scrutiny"
+     ]
+    }
+   },
+   "state": {
+    "monitoring_threshold": {
+     "level": 0.7
+    },
+    "records_access_audit_trail": {
+     "status": "standard"
+    },
+    "maintenance_window_status": {
+     "status": "standard_schedule"
+    }
+   },
+   "arc": {
+    "start_state": "A functioning corporate office where compliance staff process records and monitor systems as routine administrative work.",
+    "end_state": "The same office, with altered monitoring thresholds and maintenance schedules that will not survive investigation, leaving a trail that points back to Delphine."
+   }
+  },
+  "lo-03": {
+   "entity_id": "lo-03",
+   "type": "location",
+   "canonical_name": "Imogen's Apartment, Vantage",
+   "aliases": [
+    "Imogen's Residence"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-01",
+    "pl-03",
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Imogen has lived in this one-bedroom apartment since beginning work as an auditor in 2045.",
+      "when": "2045",
+      "tags": [
+       "residence"
+      ]
+     },
+     "b02": {
+      "text": "The apartment is sparsely furnished, with a workspace set up in the bedroom for after-hours analysis.",
+      "when": "standing",
+      "tags": [
+       "setup"
+      ]
+     }
+    },
+    "geography": {
+     "g01": {
+      "text": "The apartment is in Vantage's residential district, a mid-rise building with standard amenities.",
+      "tags": [
+       "location"
+      ]
+     },
+     "g02": {
+      "text": "The bedroom workspace contains a secondary terminal with limited system access for personal research.",
+      "tags": [
+       "workspace"
+      ]
+     }
+    },
+    "atmosphere": {
+     "a01": {
+      "text": "The apartment is meticulously organized, with surfaces cleared and items arranged by function.",
+      "tags": [
+       "environment"
+      ]
+     },
+     "a02": {
+      "text": "The lighting is dim, with curtains typically drawn, creating an isolated, interior-focused environment.",
+      "tags": [
+       "sensory"
+      ]
+     }
+    },
+    "control": {
+     "c01": {
+      "text": "The apartment is part of Vantage's simulation and is subject to the same monitoring and memory-management as all residential spaces.",
+      "tags": [
+       "surveillance"
+      ]
+     },
+     "c02": {
+      "text": "The secondary terminal's system access is logged through the same authentication as the workroom workstation.",
+      "tags": [
+       "monitoring"
+      ]
+     }
+    },
+    "access": {
+     "a01": {
+      "text": "Only Imogen has access to the apartment, authenticated through Vantage's residential access system.",
+      "tags": [
+       "access_control"
+      ]
+     }
+    },
+    "significance": {
+     "s01": {
+      "text": "The apartment is where Imogen conducts her private investigation into fault patterns away from the workroom's surveillance.",
+      "tags": [
+       "narrative_significance"
+      ]
+     },
+     "s02": {
+      "text": "The apartment becomes the site of Imogen's communication with the Porter and, later, the coordination point for the carriage operation.",
+      "tags": [
+       "plot_significance"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "private_space",
+     "valence": 30,
+     "notes": {
+      "b01": {
+       "text": "Imogen uses this space for private investigation and eventually for carriage coordination.",
+       "when": "standing",
+       "tags": [
+        "function"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "surveillance_status": {
+     "kind": "scalar",
+     "description": "Level of Authority monitoring of the apartment's network activity",
+     "dimension": "technological",
+     "init": {
+      "level": 0.2
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "use_as_investigation_site": {
+     "kind": "enum",
+     "description": "How Imogen uses the apartment in relation to her investigation",
+     "dimension": "spatial",
+     "init": {
+      "status": "residence_only"
+     },
+     "domain": [
+      "residence_only",
+      "secondary_analysis",
+      "portter_communication",
+      "carriage_coordination"
+     ]
+    }
+   },
+   "state": {
+    "surveillance_status": {
+     "level": 0.2
+    },
+    "use_as_investigation_site": {
+     "status": "residence_only"
+    }
+   },
+   "arc": {
+    "start_state": "A sparsely furnished private residence used for its intended domestic purpose.",
+    "end_state": "A site from which Imogen is permanently absent, her access to Vantage and therefore to her home revoked."
+   }
+  },
+  "lo-04": {
+   "entity_id": "lo-04",
+   "type": "location",
+   "canonical_name": "Noor's Residence, Vantage",
+   "aliases": [
+    "Noor's Apartment"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Noor has lived in this shared apartment since 2044, when she moved in with a roommate she met through her tutoring work.",
+      "when": "2044",
+      "tags": [
+       "residence"
+      ]
+     },
+     "b02": {
+      "text": "The apartment is warm and personalized, with artwork, books, and items collected over years of subjective residence.",
+      "when": "standing",
+      "tags": [
+       "environment"
+      ]
+     }
+    },
+    "geography": {
+     "g01": {
+      "text": "The apartment is in Vantage's residential district, in a building with a community-oriented culture.",
+      "tags": [
+       "location"
+      ]
+     }
+    },
+    "atmosphere": {
+     "a01": {
+      "text": "The apartment is filled with evidence of Noor's life: books, teaching materials, photographs with friends, art projects.",
+      "tags": [
+       "environment"
+      ]
+     },
+     "a02": {
+      "text": "The atmosphere is one of belonging and investment, reflecting years of relationship-building and personal expression.",
+      "tags": [
+       "sensory"
+      ]
+     }
+    },
+    "control": {
+     "c01": {
+      "text": "The apartment is part of Vantage's simulation and subject to the same systems as all residential spaces.",
+      "tags": [
+       "surveillance"
+      ]
+     }
+    },
+    "access": {
+     "a01": {
+      "text": "Noor and her roommate have access; the apartment is part of Vantage's residential system.",
+      "tags": [
+       "access_control"
+      ]
+     }
+    },
+    "significance": {
+     "s01": {
+      "text": "The apartment represents the life Noor has built and the relationships that make extraction a loss rather than a rescue.",
+      "tags": [
+       "thematic_significance"
+      ]
+     },
+     "s02": {
+      "text": "The apartment's existence as a personalized, invested-in space is evidence that Noor's life in Vantage has genuine meaning to her.",
+      "tags": [
+       "character_significance"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-05": {
+     "kind": "home",
+     "valence": 80,
+     "notes": {
+      "b01": {
+       "text": "Noor's apartment is the physical manifestation of her attachment to her life in Vantage.",
+       "when": "standing",
+       "tags": [
+        "attachment"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "narrative_function": {
+     "kind": "enum",
+     "description": "How Noor's residence functions in the narrative",
+     "dimension": "spatial",
+     "init": {
+      "status": "domestic_setting"
+     },
+     "domain": [
+      "domestic_setting",
+      "contact_site",
+      "extraction_target"
+     ]
+    }
+   },
+   "state": {
+    "narrative_function": {
+     "status": "domestic_setting"
+    }
+   },
+   "arc": {
+    "start_state": "A warm, personalized home representing Noor's investment in her Vantage life.",
+    "end_state": "A space that will continue to exist after Noor is extracted, with no occupant, representing the life she was removed from."
+   }
+  },
+  "lo-05": {
+   "entity_id": "lo-05",
+   "type": "location",
+   "canonical_name": "Server Infrastructure Interface",
+   "aliases": [
+    "The Boundary",
+    "Vantage/Physical Interface"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-03",
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "The server infrastructure interface is the computational boundary between Vantage's simulation and the physical-world systems that run it.",
+      "when": "2034",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "The interface manages data flow between the simulation's processes and the physical servers, including bandwidth allocation and memory management.",
+      "when": "standing",
+      "tags": [
+       "function"
+      ]
+     }
+    },
+    "geography": {
+     "g01": {
+      "text": "The interface is not a physical location but a system boundary that can be accessed from both sides through different protocols.",
+      "tags": [
+       "nature"
+      ]
+     },
+     "g02": {
+      "text": "From inside Vantage, the interface manifests as the system architecture that auditors access through their tools.",
+      "tags": [
+       "internal_access"
+      ]
+     },
+     "g03": {
+      "text": "From the physical world, the interface is managed through the Authority's infrastructure division in the server facility.",
+      "tags": [
+       "external_access"
+      ]
+     }
+    },
+    "atmosphere": {
+     "a01": {
+      "text": "The interface has no sensory qualities; it is a system boundary experienced through data and logs.",
+      "tags": [
+       "nature"
+      ]
+     }
+    },
+    "control": {
+     "c01": {
+      "text": "The interface is monitored by the Authority's automated systems for anomalous data flows, particularly sustained high-bandwidth events.",
+      "tags": [
+       "monitoring"
+      ]
+     },
+     "c02": {
+      "text": "Carriage operations manifest at the interface as anomalously large, persistent data transfers that trigger monitoring alerts.",
+      "tags": [
+       "detection_mechanism"
+      ]
+     }
+    },
+    "access": {
+     "a01": {
+      "text": "Auditors have limited access to the interface through their fault-management tools, sufficient for fault correction but not for data extraction.",
+      "tags": [
+       "auditor_access"
+      ]
+     },
+     "a02": {
+      "text": "The Porter exists partially within the interface, able to manipulate data flows at the boundary but unable to cross fully into either domain.",
+      "tags": [
+       "porter_existence"
+      ]
+     }
+    },
+    "significance": {
+     "s01": {
+      "text": "The interface is the site where the carriage operation takes place, as data is transferred from Vantage to a physical substrate.",
+      "tags": [
+       "climax_location"
+      ]
+     },
+     "s02": {
+      "text": "The interface's monitoring systems are the primary obstacle to a successful carriage, as they will flag the sustained fault as an extraction event.",
+      "tags": [
+       "obstacle"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-03": {
+     "kind": "liminal_habitat",
+     "valence": 0,
+     "notes": {
+      "b01": {
+       "text": "The Porter exists within this interface boundary, able to manipulate it but not to leave it.",
+       "when": "standing",
+       "tags": [
+        "existence"
+       ]
+      }
+     }
+    },
+    "gr-01": {
+     "kind": "controlled_infrastructure",
+     "valence": 80,
+     "notes": {
+      "b01": {
+       "text": "The Authority controls this interface through its infrastructure division and automated monitoring systems.",
+       "when": "standing",
+       "tags": [
+        "control"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "bandwidth_monitoring_sensitivity": {
+     "kind": "scalar",
+     "description": "Sensitivity of the interface's automated bandwidth-monitoring to sustained high-volume transfers",
+     "dimension": "technological",
+     "init": {
+      "level": 0.8
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "extraction_detection_status": {
+     "kind": "enum",
+     "description": "Status of the interface's detection of carriage operations",
+     "dimension": "technological",
+     "init": {
+      "status": "standard_monitoring"
+     },
+     "domain": [
+      "standard_monitoring",
+      "anomaly_detected",
+      "extraction_confirmed",
+      "access_revoked"
+     ]
+    }
+   },
+   "state": {
+    "bandwidth_monitoring_sensitivity": {
+     "level": 0.8
+    },
+    "extraction_detection_status": {
+     "status": "standard_monitoring"
+    }
+   },
+   "arc": {
+    "start_state": "A monitored system boundary that maintains the separation between Vantage and the physical world, with automated detection of extraction attempts.",
+    "end_state": "The same boundary, having detected and logged one successful extraction, with the extraction's signature recorded as evidence."
+   }
+  },
+  "lo-06": {
+   "entity_id": "lo-06",
+   "type": "location",
+   "canonical_name": "Physical-World Extraction Facility",
+   "aliases": [
+    "The Server Room",
+    "Physical Extraction Site"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "The physical-world extraction facility is the location where extracted minds are received and stored on physical media.",
+      "when": "standing",
+      "tags": [
+       "function"
+      ]
+     }
+    },
+    "geography": {
+     "g01": {
+      "text": "The facility is a server room in the Authority's physical-world infrastructure, containing storage devices capable of holding neural data.",
+      "tags": [
+       "location"
+      ]
+     },
+     "g02": {
+      "text": "The facility is accessible to Authority infrastructure staff and is where the portable drive receiving Noor's extracted mind will be located.",
+      "tags": [
+       "access"
+      ]
+     }
+    },
+    "atmosphere": {
+     "a01": {
+      "text": "The facility is a standard server room with climate control, rack-mounted servers, and the ambient hum of computing equipment.",
+      "tags": [
+       "sensory"
+      ]
+     },
+     "a02": {
+      "text": "The lighting is the cold blue of server rooms, with indicator lights on equipment providing the only color.",
+      "tags": [
+       "sensory"
+      ]
+     }
+    },
+    "control": {
+     "c01": {
+      "text": "The facility is under the Authority's physical security and monitoring, with access logs for all personnel.",
+      "tags": [
+       "security"
+      ]
+     },
+     "c02": {
+      "text": "Data transfers into the facility's storage systems are logged and monitored for anomalous inbound traffic.",
+      "tags": [
+       "monitoring"
+      ]
+     }
+    },
+    "access": {
+     "a01": {
+      "text": "Access is restricted to Authority infrastructure personnel with appropriate clearance.",
+      "tags": [
+       "access_control"
+      ]
+     }
+    },
+    "significance": {
+     "s01": {
+      "text": "This is where the story's final image occurs: Imogen alone in this room with a portable drive containing Noor's mind.",
+      "tags": [
+       "ending_location"
+      ]
+     },
+     "s02": {
+      "text": "The facility's indicator lights, particularly the amber light on the portable drive, mirror Vantage's fault warnings visually.",
+      "tags": [
+       "thematic_resonance"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "gr-01": {
+     "kind": "controlled_facility",
+     "valence": 70,
+     "notes": {
+      "b01": {
+       "text": "The Authority controls this facility as part of its physical-world infrastructure.",
+       "when": "standing",
+       "tags": [
+        "control"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "data_transfer_status": {
+     "kind": "enum",
+     "description": "Status of data transfers into the facility's storage systems",
+     "dimension": "technological",
+     "init": {
+      "status": "standard"
+     },
+     "domain": [
+      "standard",
+      "anomalous_inbound",
+      "extraction_received",
+      "flagged"
+     ]
+    }
+   },
+   "state": {
+    "data_transfer_status": {
+     "status": "standard"
+    }
+   },
+   "arc": {
+    "start_state": "A standard server room in the Authority's physical infrastructure.",
+    "end_state": "The site of the story's final image: Imogen alone with a portable drive whose amber indicator light echoes Vantage's fault warnings."
+   }
+  },
+  "ob-01": {
+   "entity_id": "ob-01",
+   "type": "object",
+   "canonical_name": "Imogen's Audit Notebook",
+   "aliases": [
+    "The Private Log"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Imogen began keeping a private notebook separate from the official system logs in 2046, after a system update temporarily erased her work notes.",
+      "when": "2046",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "The notebook contains her shorthand notation for fault patterns, closure methodologies, and observations about system behavior that she does not log officially.",
+      "when": "standing",
+      "tags": [
+       "content"
+      ]
+     },
+     "b03": {
+      "text": "As her investigation progresses, the notebook becomes the record of her discovery of the fault language, the messages, and eventually the carriage plan.",
+      "when": "story_progression",
+      "tags": [
+       "evolution"
+      ]
+     }
+    },
+    "description": {
+     "d01": {
+      "text": "A physical notebook with a black cover, A5 size, filled with Imogen's shorthand notation and diagrams.",
+      "tags": [
+       "physical_properties"
+      ]
+     },
+     "d02": {
+      "text": "The notation system is Imogen's own invention, using symbols and abbreviations that are incomprehensible without her explanation.",
+      "tags": [
+       "encoding"
+      ]
+     }
+    },
+    "function": {
+     "f01": {
+      "text": "The notebook serves as Imogen's private record of her work and investigation, outside the Authority's surveillance.",
+      "tags": [
+       "purpose"
+      ]
+     },
+     "f02": {
+      "text": "The notebook contains the methodology for fault closure that will be inverted for the carriage operation.",
+      "tags": [
+       "carriage_significance"
+      ]
+     }
+    },
+    "symbolic_load": {
+     "s01": {
+      "text": "The notebook represents Imogen's need for control and documentation, her compulsion to record and understand.",
+      "tags": [
+       "psychological_symbolism"
+      ]
+     },
+     "s02": {
+      "text": "The notebook is also the evidence trail that could convict her: a physical record of her knowledge and intentions.",
+      "tags": [
+       "evidentiary_significance"
+      ]
+     }
+    },
+    "custody": {
+     "c01": {
+      "text": "Imogen keeps the notebook on her person or in her apartment, never in the workroom.",
+      "tags": [
+       "custody"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "private_possession",
+     "valence": 40,
+     "notes": {
+      "b01": {
+       "text": "The notebook is Imogen's most personal professional possession and the record of her investigation.",
+       "when": "standing",
+       "tags": [
+        "possession",
+        "evidence"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "content_scope": {
+     "kind": "enum",
+     "description": "What the notebook contains at a given point in the story",
+     "dimension": "material",
+     "init": {
+      "status": "routine_work_notes"
+     },
+     "domain": [
+      "routine_work_notes",
+      "anomaly_observations",
+      "fault_language_research",
+      "carriage_methodology",
+      "evidence_of_investigation"
+     ]
+    },
+    "physical_location": {
+     "kind": "enum",
+     "description": "Where the notebook is physically located",
+     "dimension": "spatial",
+     "init": {
+      "status": "with_imogen"
+     },
+     "domain": [
+      "with_imogen",
+      "in_apartment",
+      "concealed",
+      "discovered",
+      "lost"
+     ]
+    }
+   },
+   "state": {
+    "content_scope": {
+     "status": "routine_work_notes"
+    },
+    "physical_location": {
+     "status": "with_imogen"
+    }
+   },
+   "arc": {
+    "start_state": "A private notebook containing routine work notes in Imogen's personal shorthand.",
+    "end_state": "A comprehensive record of investigation, discovery, and carriage methodology that serves as both the blueprint for extraction and the evidence of Imogen's knowing complicity."
+   }
+  },
+  "ob-02": {
+   "entity_id": "ob-02",
+   "type": "object",
+   "canonical_name": "Portable Storage Device",
+   "aliases": [
+    "The Drive",
+    "Extraction Medium"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "The portable storage device is a high-capacity solid-state drive capable of holding the neural data of a digitised mind.",
+      "when": "standing",
+      "tags": [
+       "description"
+      ]
+     },
+     "b02": {
+      "text": "The device is physically present in the Authority's server facility and is the intended recipient medium for the carriage operation.",
+      "when": "standing",
+      "tags": [
+       "location",
+       "purpose"
+      ]
+     }
+    },
+    "description": {
+     "d01": {
+      "text": "A standard commercial portable drive, matte black, with a single amber indicator light that blinks during data transfer.",
+      "tags": [
+       "physical_properties"
+      ]
+     },
+     "d02": {
+      "text": "The amber indicator light is the same color as Vantage's fault-warning indicators.",
+      "tags": [
+       "visual_resonance"
+      ]
+     }
+    },
+    "function": {
+     "f01": {
+      "text": "The device is the physical substrate that will receive Noor's extracted neural data during the carriage operation.",
+      "tags": [
+       "carriage_medium"
+      ]
+     },
+     "f02": {
+      "text": "After the carriage, the device contains a complete digitised mind with no body to inhabit and no legal status.",
+      "tags": [
+       "aftermath"
+      ]
+     }
+    },
+    "symbolic_load": {
+     "s01": {
+      "text": "The device represents the story's central irony: Imogen holding a mind in a container, her grip indistinguishable from the Authority's.",
+      "tags": [
+       "thematic_symbolism"
+      ]
+     },
+     "s02": {
+      "text": "The amber indicator light visually connects the drive to Vantage's fault warnings, linking extraction to the faults that enabled it.",
+      "tags": [
+       "visual_symbolism"
+      ]
+     }
+    },
+    "custody": {
+     "c01": {
+      "text": "The device is initially in the Authority's server facility; after the carriage, it is in Imogen's physical possession.",
+      "tags": [
+       "custody_transfer"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "burden_of_custody",
+     "valence": -50,
+     "notes": {
+      "b01": {
+       "text": "After the carriage, Imogen possesses this device and the moral weight of what it contains.",
+       "when": "post_carriage",
+       "tags": [
+        "moral_burden"
+       ]
+      }
+     }
+    },
+    "ch-05": {
+     "kind": "contained_consciousness",
+     "valence": 0,
+     "notes": {
+      "b01": {
+       "text": "After the carriage, the device contains Noor's digitised mind.",
+       "when": "post_carriage",
+       "tags": [
+        "containment"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "containment_status": {
+     "kind": "enum",
+     "description": "What the device contains",
+     "dimension": "material",
+     "init": {
+      "status": "empty"
+     },
+     "domain": [
+      "empty",
+      "receiving_data",
+      "contains_extracted_mind"
+     ]
+    },
+    "indicator_light_state": {
+     "kind": "enum",
+     "description": "State of the device's indicator light",
+     "dimension": "material",
+     "init": {
+      "status": "off"
+     },
+     "domain": [
+      "off",
+      "transferring",
+      "complete_blinking",
+      "solid"
+     ]
+    }
+   },
+   "state": {
+    "containment_status": {
+     "status": "empty"
+    },
+    "indicator_light_state": {
+     "status": "off"
+    }
+   },
+   "arc": {
+    "start_state": "An empty commercial storage device in the Authority's server facility.",
+    "end_state": "A device containing a digitised mind, its amber indicator light blinking, in Imogen's hands, with no plan for what comes next."
+   }
+  },
+  "cn-01": {
+   "entity_id": "cn-01",
+   "type": "concept",
+   "canonical_name": "The Fault Language",
+   "aliases": [
+    "Structured Fault Patterns",
+    "The Distress Signal"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-03",
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "The fault language emerged spontaneously from the simulation's rendering-error patterns when residents began deliberately manipulating unobserved objects to produce structured faults.",
+      "when": "approx 2039",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "The language uses geometric distortion patterns as a symbolic system, with approximately 200 base tokens and a rigid grammar that allows sequential communication.",
+      "when": "standing",
+      "tags": [
+       "structure"
+      ]
+     },
+     "b03": {
+      "text": "The substrate's memory management erases resident awareness of faults within ninety seconds, making sustained communication extremely difficult and requiring messages to be encoded for rapid comprehension.",
+      "when": "standing",
+      "tags": [
+       "constraint"
+      ]
+     },
+     "b04": {
+      "text": "The Porter learned the language and adapted it for two-way communication with auditors, whose partial exemption from memory management allows them to retain fault awareness.",
+      "when": "approx 2037",
+      "tags": [
+       "porter_adaptation"
+      ]
+     }
+    },
+    "content": {
+     "c01": {
+      "text": "The language consists of geometric distortion patterns: directional vectors, repetition counts, angular relationships, and spatial configurations that function as symbolic tokens.",
+      "tags": [
+       "mechanics"
+      ]
+     },
+     "c02": {
+      "text": "Messages are necessarily compressed due to the ninety-second memory window, producing a terse, imperative communication style.",
+      "tags": [
+       "constraint"
+      ]
+     },
+     "c03": {
+      "text": "The language cannot express abstract concepts like 'freedom' or 'justice' directly; these must be constructed from spatial and temporal metaphors.",
+      "tags": [
+       "limitation"
+      ]
+     }
+    },
+    "believers": {
+     "b01": {
+      "text": "The Porter uses the language to communicate with auditors and to coordinate carriage operations.",
+      "tags": [
+       "porter"
+      ]
+     },
+     "b02": {
+      "text": "Imogen discovers and learns the language through her audit work, initially interpreting it as anomalous patterns before recognizing its structure.",
+      "tags": [
+       "imogen"
+      ]
+     },
+     "b03": {
+      "text": "Residents who have attempted to use the fault language for communication are generally unaware they have done so, due to the memory management erasure.",
+      "tags": [
+       "residents"
+      ]
+     }
+    },
+    "authority": {
+     "a01": {
+      "text": "The Authority is aware that structured fault patterns exist and monitors for them as indicators of resident awareness or system instability.",
+      "tags": [
+       "authority_knowledge"
+      ]
+     },
+     "a02": {
+      "text": "The Authority's automated systems flag recurring geometric patterns for investigation, as they may indicate attempts at communication or system exploitation.",
+      "tags": [
+       "detection"
+      ]
+     }
+    },
+    "causal_power": {
+     "p01": {
+      "text": "The fault language is the mechanism by which Imogen discovers the simulation's true nature and the presence of her sister.",
+      "tags": [
+       "plot_mechanism"
+      ]
+     },
+     "p02": {
+      "text": "The fault language is the communication channel through which the Porter teaches Imogen the carriage technique.",
+      "tags": [
+       "carriage_mechanism"
+      ]
+     },
+     "p03": {
+      "text": "The fault language is the evidence trail that the Authority's monitoring can use to detect and trace investigation and extraction activities.",
+      "tags": [
+       "detection_mechanism"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "discovery_vehicle",
+     "valence": 0,
+     "notes": {
+      "b01": {
+       "text": "The fault language is the means by which Imogen's world is dismantled and the means by which she attempts one extraction.",
+       "when": "standing",
+       "tags": [
+        "mechanism"
+       ]
+      }
+     }
+    },
+    "ch-03": {
+     "kind": "communication_medium",
+     "valence": 20,
+     "notes": {
+      "b01": {
+       "text": "The Porter uses the fault language as the primary means of contacting and instructing Imogen.",
+       "when": "standing",
+       "tags": [
+        "communication"
+       ]
+      }
+     }
+    },
+    "gr-01": {
+     "kind": "detection_target",
+     "valence": -40,
+     "notes": {
+      "b01": {
+       "text": "The Authority monitors for structured fault patterns as indicators of system instability or extraction attempts.",
+       "when": "standing",
+       "tags": [
+        "monitoring"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "imogen_comprehension_level": {
+     "kind": "enum",
+     "description": "Imogen's ability to read and use the fault language",
+     "dimension": "epistemic",
+     "init": {
+      "status": "unaware"
+     },
+     "domain": [
+      "unaware",
+      "pattern_recognition",
+      "structure_identified",
+      "basic_decoding",
+      "fluent",
+      "manipulation_capable"
+     ]
+    },
+    "authority_detection_awareness": {
+     "kind": "scalar",
+     "description": "The Authority's monitoring confidence that structured fault patterns represent communication rather than errors",
+     "dimension": "technological",
+     "init": {
+      "level": 0.3
+     },
+     "range": [
+      0,
+      1
+     ]
+    },
+    "channel_active": {
+     "kind": "bool",
+     "description": "Whether the fault language channel is currently being used for communication",
+     "dimension": "technological",
+     "init": {
+      "active": false
+     }
+    }
+   },
+   "state": {
+    "imogen_comprehension_level": {
+     "status": "unaware"
+    },
+    "authority_detection_awareness": {
+     "level": 0.3
+    },
+    "channel_active": {
+     "active": false
+    }
+   },
+   "arc": {
+    "start_state": "A latent communication system embedded in Vantage's fault patterns, undetected by auditors and monitored by the Authority as anomalous but not understood.",
+    "end_state": "A communication channel that has been used to coordinate one extraction, now flagged by the Authority's systems and likely to be monitored more intensively, but still available for future use."
+   }
+  },
+  "cn-02": {
+   "entity_id": "cn-02",
+   "type": "concept",
+   "canonical_name": "Carriage Methodology",
+   "aliases": [
+    "Extraction Technique",
+    "The Inverse"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-03",
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "The carriage methodology was developed by the Porter through study of the simulation's data architecture and the inverse relationship between fault closure and fault widening.",
+      "when": "approx 2038-2040",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "The methodology uses the same audit tools and techniques employed to close faults, but inverts the final step: instead of correcting the data description that produces the error, the operator widens and sustains it.",
+      "when": "standing",
+      "tags": [
+       "mechanism"
+      ]
+     },
+     "b03": {
+      "text": "Sustaining a widened fault for approximately forty minutes maintains sufficient bandwidth to transfer a complete neural data set to a physical substrate.",
+      "when": "standing",
+      "tags": [
+       "duration"
+      ]
+     }
+    },
+    "content": {
+     "c01": {
+      "text": "The methodology consists of: identification of a suitable fault, signature analysis to determine the underlying data description, manipulation of the description to widen rather than correct the fault, and sustained maintenance of the widened fault for the transfer duration.",
+      "tags": [
+       "procedure"
+      ]
+     },
+     "c02": {
+      "text": "The technique requires auditor-level system access and the same diagnostic tools used for routine fault management.",
+      "tags": [
+       "requirements"
+      ]
+     },
+     "c03": {
+      "text": "The operation is visible on Authority monitoring as an anomalously large, persistent fault and must be disguised as a natural system event or timed to coincide with a monitoring gap.",
+      "tags": [
+       "detection_risk"
+      ]
+     }
+    },
+    "believers": {
+     "b01": {
+      "text": "The Porter believes this is the only viable method for extracting a mind from Vantage.",
+      "tags": [
+       "conviction"
+      ]
+     },
+     "b02": {
+      "text": "Imogen learns the methodology from the Porter and recognizes it as the inverse of her daily work.",
+      "tags": [
+       "imogen_learning"
+      ]
+     }
+    },
+    "authority": {
+     "a01": {
+      "text": "The Authority is aware that extraction is theoretically possible and monitors for sustained fault patterns as extraction indicators.",
+      "tags": [
+       "authority_knowledge"
+      ]
+     },
+     "a02": {
+      "text": "The Authority's automated systems are configured to flag any fault lasting longer than fifteen minutes for immediate investigation.",
+      "tags": [
+       "detection_threshold"
+      ]
+     }
+    },
+    "causal_power": {
+     "p01": {
+      "text": "The carriage methodology is the mechanism by which the story's climax occurs and by which Noor is extracted from Vantage.",
+      "tags": [
+       "climax_mechanism"
+      ]
+     },
+     "p02": {
+      "text": "The methodology's use of the same tools as fault closure is the story's central thematic irony: the tool of oppression is the tool of liberation.",
+      "tags": [
+       "thematic_mechanism"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "operative_skill",
+     "valence": 0,
+     "notes": {
+      "b01": {
+       "text": "Imogen's professional skills are the basis for the carriage methodology; she must use the skills she now despises to execute the extraction.",
+       "when": "standing",
+       "tags": [
+        "irony"
+       ]
+      }
+     }
+    },
+    "ch-03": {
+     "kind": "knowledge_source",
+     "valence": 30,
+     "notes": {
+      "b01": {
+       "text": "The Porter holds the theoretical knowledge of the methodology and requires an auditor to execute it.",
+       "when": "standing",
+       "tags": [
+        "dependency"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "imogen_proficiency": {
+     "kind": "enum",
+     "description": "Imogen's readiness to execute the carriage methodology",
+     "dimension": "technological",
+     "init": {
+      "status": "unaware"
+     },
+     "domain": [
+      "unaware",
+      "theoretically_instructed",
+      "practiced",
+      "ready_to_execute",
+      "executing",
+      "complete"
+     ]
+    },
+    "authority_detection_threshold": {
+     "kind": "scalar",
+     "description": "Duration of sustained fault that triggers Authority automated detection",
+     "dimension": "technological",
+     "init": {
+      "level": 15
+     },
+     "range": [
+      5,
+      60
+     ]
+    }
+   },
+   "state": {
+    "imogen_proficiency": {
+     "status": "unaware"
+    },
+    "authority_detection_threshold": {
+     "level": 15
+    }
+   },
+   "arc": {
+    "start_state": "A theoretical extraction technique known only to the Porter, requiring an auditor with the right skills to execute.",
+    "end_state": "A technique that has been successfully executed once, leaving an evidence trail the Authority will recognize and making future extractions more difficult."
+   }
+  },
+  "cn-03": {
+   "entity_id": "cn-03",
+   "type": "concept",
+   "canonical_name": "Authority Institutional Language",
+   "aliases": [
+    "The Framework",
+    "Institutional Discourse"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-02",
+    "pl-04"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "The Authority's institutional language was developed alongside the consortium's formation to frame its operations in terms of public service, care, and obligation.",
+      "when": "2031",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "The language reframes extraction as 'value realization,' redaction as 'cost reduction' and 'quarterly obligation,' and residents as 'tenancy units' or 'computational processes.'",
+      "when": "standing",
+      "tags": [
+       "euphemism"
+      ]
+     },
+     "b03": {
+      "text": "The language is so effective that most Authority employees never confront the human reality of their work, understanding it entirely through the institutional framework.",
+      "when": "standing",
+      "tags": [
+       "effectiveness"
+      ]
+     }
+    },
+    "content": {
+     "c01": {
+      "text": "The language uses financial and administrative terminology exclusively: 'cost line,' 'resource allocation,' 'quarterly obligation,' 'duty of care,' 'asset management.'",
+      "tags": [
+       "vocabulary"
+      ]
+     },
+     "c02": {
+      "text": "The language contains no terms for 'person,' 'mind,' 'consciousness,' 'suffering,' or 'death' in reference to residents; these concepts are expressible only through institutional euphemism.",
+      "tags": [
+       "absence"
+      ]
+     },
+     "c03": {
+      "text": "Documents produced in this language, including cost-reduction schedules and extraction reports, are grammatically indistinguishable from corporate financial reports.",
+      "tags": [
+       "document_character"
+      ]
+     }
+    },
+    "believers": {
+     "b01": {
+      "text": "Most Authority staff internalize the framework and understand their work through it, never confronting its human content.",
+      "tags": [
+       "institutional_adoption"
+      ]
+     },
+     "b02": {
+      "text": "Kett uses a modified version of this language to argue for the system's preservation, reframing 'imprisonment' as 'existence' and 'exploitation' as 'maintenance.'",
+      "tags": [
+       "kett_adaptation"
+      ]
+     }
+    },
+    "authority": {
+     "a01": {
+      "text": "The Authority mandates this language in all official communications and trains staff in its use during onboarding.",
+      "tags": [
+       "institutional_mandate"
+      ]
+     },
+     "a02": {
+      "text": "Deviation from the institutional language in official communications is treated as a compliance violation and investigated.",
+      "tags": [
+       "enforcement"
+      ]
+     }
+    },
+    "causal_power": {
+     "p01": {
+      "text": "The institutional language is the mechanism by which the Authority maintains staff complicity through willful ignorance.",
+      "tags": [
+       "complicity_mechanism"
+      ]
+     },
+     "p02": {
+      "text": "The language is also the mechanism of Delphine's transformation: she discovers the human content behind the language through a specific document.",
+      "tags": [
+       "transformation_mechanism"
+      ]
+     },
+     "p03": {
+      "text": "The language is what makes the Authority's operations appear mundane and professional rather than monstrous, which is the source of the story's tonal horror.",
+      "tags": [
+       "tonal_mechanism"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-02": {
+     "kind": "rhetorical_framework",
+     "valence": 30,
+     "notes": {
+      "b01": {
+       "text": "Kett uses this framework to construct his arguments for the system's preservation.",
+       "when": "standing",
+       "tags": [
+        "argument_framework"
+       ]
+      }
+     }
+    },
+    "ch-04": {
+     "kind": "professional_lens",
+     "valence": 20,
+     "notes": {
+      "b01": {
+       "text": "Delphine operates within this framework until the language's euphemisms are pierced by specific evidence.",
+       "when": "standing",
+       "tags": [
+        "professional_framework"
+       ]
+      }
+     }
+    },
+    "gr-01": {
+     "kind": "institutional_tool",
+     "valence": 60,
+     "notes": {
+      "b01": {
+       "text": "The Authority uses this language as a management tool to maintain staff compartmentalization and operational efficiency.",
+       "when": "standing",
+       "tags": [
+        "management_tool"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "delphine_comprehension_of_language": {
+     "kind": "enum",
+     "description": "Delphine's ability to see through the institutional language to its human content",
+     "dimension": "epistemic",
+     "init": {
+      "status": "fully_absorbed"
+     },
+     "domain": [
+      "fully_absorbed",
+      "cracks_forming",
+      "partially_pierced",
+      "fully_comprehended"
+     ]
+    },
+    "institutional_effectiveness": {
+     "kind": "scalar",
+     "description": "How effectively the institutional language maintains staff complicity and ignorance",
+     "dimension": "political",
+     "init": {
+      "level": 0.9
+     },
+     "range": [
+      0,
+      1
+     ]
+    }
+   },
+   "state": {
+    "delphine_comprehension_of_language": {
+     "status": "fully_absorbed"
+    },
+    "institutional_effectiveness": {
+     "level": 0.9
+    }
+   },
+   "arc": {
+    "start_state": "An effective institutional language that maintains staff complicity through euphemism and professional framing.",
+    "end_state": "A language that has been partially pierced by one compliance officer's discovery, but which continues to function for the vast majority of staff and operations."
+   }
+  }
+ }
+}

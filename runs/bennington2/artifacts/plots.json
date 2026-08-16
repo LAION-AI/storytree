@@ -1,0 +1,498 @@
+{
+ "plots": [
+  {
+   "plot_id": "pl-01",
+   "type": "external_main",
+   "title": "The Measured Exit",
+   "agent": [
+    "ch-01"
+   ],
+   "resistance": [
+    "ch-03",
+    "ch-04",
+    "ch-02",
+    "ch-05",
+    "pl-02",
+    "pl-05"
+   ],
+   "goal": "Be first through the seventh-dawn chapel rite with a declared blood-value stake and take the single purse.",
+   "stakes": "Miss the only paying exit: another guest completes and the purse is gone, or the window closes and every remaining guest forfeits.",
+   "outcome": "failure",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "inciting_entry",
+     "intent": "Cole Harlan enters the sealed seven-night match, takes a motor-court room, and starts timing streets and hunger instead of hunting.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "goal_lock",
+     "intent": "He commits to mapping hunger, sun, stored-blood decay, and the chapel window, then declaring first at seventh dawn. The rules arrive as limits he can fail, not as a briefing.",
+     "because": []
+    },
+    "st3": {
+     "step": 3,
+     "function": "price_of_admission",
+     "intent": "Hunger forces a first feed on Voss's terms; Cole pays enough to walk away unbound and still owes the clock a next feed. A cleaner wait is not available.",
+     "because": [
+      "pl-02:st2"
+     ]
+    },
+    "st4": {
+     "step": 4,
+     "function": "recon_and_plant",
+     "intent": "He tests a sleep-erasure where the loss can be seen, opens a timing notebook, pockets an ordinary chapel key, and files a ledger line on Maren as if it were Voss's claim.",
+     "because": [
+      "pl-02:st1"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "false_clearing",
+     "intent": "After Whitlock, Julian Marek fails to come in from a late dawn and is destroyed in open sun. Cole files the burning as a rival removed rather than as a tighter clock on everyone still inside.",
+     "because": [
+      "pl-05:st3"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "stolen_measure",
+     "intent": "Lena's use of the notebook puts her a night ahead toward a second chapel door. Cole cannot recompute the lost night; analysis has already been spent.",
+     "because": [
+      "pl-04:st4"
+     ]
+    },
+    "st7": {
+     "step": 7,
+     "function": "wrong_file",
+     "intent": "He is forced to re-read his own evidence: the Maren line is not a claim against her, and the notebook is not a hunt map. The route he meant to ride to the rite is a clock on someone else.",
+     "because": [
+      "pl-05:st5"
+     ]
+    },
+    "st8": {
+     "step": 8,
+     "function": "threshold",
+     "intent": "At first light he reaches the chapel's main door with enough undeclared blood-value to pay the ceremony. Other guests are arriving by other doors.",
+     "because": []
+    },
+    "st9": {
+     "step": 9,
+     "function": "refusal_of_the_stake",
+     "intent": "In the doorway with Maren he does not declare. The window closes on him; the purse and the exit are gone.",
+     "because": [
+      "pl-05:st7"
+     ]
+    }
+   },
+   "resolution_step": "st9",
+   "thematic_function": "Proves that a clean mapped payout cannot be taken once a host's word has started to count.",
+   "screen_time_share": 0.26,
+   "interference": [
+    {
+     "with": "pl-05",
+     "kind": "same_agent_same_dawn"
+    },
+    {
+     "with": "pl-04",
+     "kind": "same_notebook_and_tower_door"
+    },
+    {
+     "with": "pl-02",
+     "kind": "same_blood_value_and_clock"
+    }
+   ],
+   "covers_synopsis": [
+    "s01",
+    "s02",
+    "s04",
+    "s05",
+    "s10",
+    "s15",
+    "s20",
+    "s22",
+    "s23"
+   ]
+  },
+  {
+   "plot_id": "pl-02",
+   "type": "antagonist",
+   "title": "The Cornered Book",
+   "agent": [
+    "ch-03"
+   ],
+   "resistance": [
+    "ch-01",
+    "ch-04",
+    "ch-02",
+    "ch-06",
+    "pl-01",
+    "pl-05"
+   ],
+   "goal": "Corner stored blood and named-host access-rights so any dawn stake has to pass through the Lodge ledger, restoring a solvency Voss lost once before.",
+   "stakes": "Decay, unpaid feeds, and a rival completion wipe the only position he knows how to hold; he arrives at chapel with nothing he can legally declare.",
+   "outcome": "failure",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "going_concern",
+     "intent": "Anton Voss is already running a paper tribute book from the Lodge: taxing feeds, stamping vials that will decay, selling exclusive access to named hosts. Inside a prior loss, the book is the only order that looks solvent.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "bind_the_newcomer",
+     "intent": "He prices Cole's first feed as inventory and offers client terms that would put Cole on the book. Hunger makes Cole pay something without accepting the bind, leaving a rival inside the market.",
+     "because": [
+      "pl-01:st1"
+     ]
+    },
+    "st3": {
+     "step": 3,
+     "function": "tighten_the_tax",
+     "intent": "He raises tribute and has a nonpayer hunted through downtown, making the book the only path to blood that will not draw enforcement. Stamped potency is already sliding.",
+     "because": []
+    },
+    "st4": {
+     "step": 4,
+     "function": "corner_in_chaos",
+     "intent": "He uses the Whitlock wreck and Julian's unwritten sun-death to take the remaining vials and named-host rights. The grab is the correct move in a town that honors only what is stamped.",
+     "because": [
+      "pl-05:st3",
+      "pl-01:st5"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "collection_on_the_wrong_body",
+     "intent": "He sends enforcement to close a guest debt that Cole's delay and the tribute market both required. Deacon Ward, present because he wrote the address down and went, is killed; the debt closes on a host.",
+     "because": [
+      "pl-01:st6",
+      "pl-03:st4"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "false_victory",
+     "intent": "He reaches the chapel with the cornered ledger and the last vials, ready to declare a stake the town has been trained to treat as his.",
+     "because": []
+    },
+    "st7": {
+     "step": 7,
+     "function": "unspendable_line",
+     "intent": "He cannot stake the credit standing in Maren's name, and the vials have decayed past use. The window closes on a correctly run market that will not pay him.",
+     "because": [
+      "pl-05:st2"
+     ]
+    }
+   },
+   "resolution_step": "st7",
+   "thematic_function": "Shows that pricing people as inventory can be locally right and still leave the bookie with nothing he is allowed to spend.",
+   "screen_time_share": 0.2,
+   "interference": [
+    {
+     "with": "pl-01",
+     "kind": "same_blood_value_and_dawn_stake"
+    },
+    {
+     "with": "pl-05",
+     "kind": "same_ledger_line"
+    },
+    {
+     "with": "pl-03",
+     "kind": "same_host_as_inventory_versus_witness"
+    }
+   ],
+   "covers_synopsis": [
+    "s03",
+    "s06",
+    "s13",
+    "s15",
+    "s18",
+    "s23"
+   ]
+  },
+  {
+   "plot_id": "pl-03",
+   "type": "investigation",
+   "title": "The Night She Kept",
+   "agent": [
+    "ch-02",
+    "ch-06"
+   ],
+   "resistance": [
+    "ch-03",
+    "ch-01",
+    "pl-02"
+   ],
+   "goal": "Reconstruct the erased hours from bruises, a cassette, and written notes, then keep one night awake so the account cannot be slept off.",
+   "stakes": "Sleep returns her to a usable host; the only other witness is spendable; without a kept night she cannot hold what was done to her.",
+   "outcome": "partial_success",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "state_of_rupture",
+     "intent": "Maren Ellison wakes with bruises sleep should have taken and finds a cassette from the shop downstairs of her own voice in hours she cannot remember. She treats both as work, not as a haunting.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "corroborating_hand",
+     "intent": "Deacon Ward reads incident notes back as fact to people who will not keep them. She starts matching his entries to the tape.",
+     "because": []
+    },
+    "st3": {
+     "step": 3,
+     "function": "pattern_and_song",
+     "intent": "She stays awake later, sets the cassette against a Hollow song that now means something else, and asks questions the town answers with work-talk and shrugs.",
+     "because": []
+    },
+    "st4": {
+     "step": 4,
+     "function": "market_shadow",
+     "intent": "Other guests stay off her without explanation as money moves through Voss's book. She can feel the market shift and cannot read the line.",
+     "because": [
+      "pl-05:st2",
+      "pl-02:st3"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "witness_spent",
+     "intent": "Deacon is killed in the collection her looking and the guest-debt both pulled him toward. She takes his pocket book off him before anyone else can.",
+     "because": [
+      "pl-02:st5"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "point_of_no_return",
+     "intent": "She refuses sleep through the seventh night, keeping bruises, tape, and Deacon's pages as the only testimony the town cannot erase.",
+     "because": [
+      "pl-02:st5"
+     ]
+    },
+    "st7": {
+     "step": 7,
+     "function": "testimony_without_court",
+     "intent": "She brings the cassette, the notes, and the bruises to the chapel at first light and keeps the night. The credit in her name is never collected.",
+     "because": [
+      "pl-01:st8"
+     ]
+    }
+   },
+   "resolution_step": "st7",
+   "thematic_function": "Makes whose word counts a practical problem of copies, bruises, and a night someone refused to sleep.",
+   "screen_time_share": 0.18,
+   "interference": [
+    {
+     "with": "pl-02",
+     "kind": "same_host_spent_two_ways"
+    },
+    {
+     "with": "pl-05",
+     "kind": "same_kept_night_as_proof_of_owing"
+    },
+    {
+     "with": "pl-01",
+     "kind": "same_chapel_hour"
+    }
+   ],
+   "covers_synopsis": [
+    "s07",
+    "s09",
+    "s14",
+    "s19",
+    "s23"
+   ]
+  },
+  {
+   "plot_id": "pl-04",
+   "type": "intrigue",
+   "title": "The Tower Door",
+   "agent": [
+    "ch-04"
+   ],
+   "resistance": [
+    "ch-01",
+    "ch-03",
+    "pl-01",
+    "pl-02"
+   ],
+   "goal": "Convert a better reading of Cole into his timing notes, reach the chapel by the memorial-tower door those notes mark, and complete the rite first.",
+   "stakes": "Remain a taxed guest with no independent path to the purse once vials decay and Voss owns the obvious doors.",
+   "outcome": "success",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "superior_read",
+     "intent": "Lena Cho watches Cole measure rooms and people and notes that she is better at the second. Julian Marek opens the Whitlock house as a party that also feeds.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "the_question",
+     "intent": "In a Whitlock room she asks the question that makes Cole concede, without naming a debt, that he has already spent value on one host. She spends the concession as a fix on where his map will fail.",
+     "because": [
+      "pl-05:st3"
+     ]
+    },
+    "st3": {
+     "step": 3,
+     "function": "theft_of_meaning",
+     "intent": "She copies the timing notebook and files it as a hunt map to a second chapel entrance through the memorial tower.",
+     "because": [
+      "pl-01:st4"
+     ]
+    },
+    "st4": {
+     "step": 4,
+     "function": "night_taken",
+     "intent": "She uses that reading to put herself a night ahead of his analysis, a lead he cannot recompute from the system alone.",
+     "because": []
+    },
+    "st5": {
+     "step": 5,
+     "function": "second_threshold",
+     "intent": "She enters the chapel by the memorial-tower door Cole timed, inside the last-dawn window, with a stake she can declare.",
+     "because": [
+      "pl-01:st4"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "first_completion",
+     "intent": "She declares and completes the rite; the match ends for her alone. She leaves with the purse and no one left to have been right about.",
+     "because": [
+      "pl-01:st9",
+      "pl-02:st7"
+     ]
+    }
+   },
+   "resolution_step": "st6",
+   "thematic_function": "Prices Lena's people-reading above Cole's systems and still leaves the win unpaid in any human currency.",
+   "screen_time_share": 0.16,
+   "interference": [
+    {
+     "with": "pl-01",
+     "kind": "same_map_wrongly_filed"
+    },
+    {
+     "with": "pl-05",
+     "kind": "same_confession_extracted"
+    },
+    {
+     "with": "pl-02",
+     "kind": "competing_path_to_a_declarable_stake"
+    }
+   ],
+   "covers_synopsis": [
+    "s08",
+    "s12",
+    "s16",
+    "s21",
+    "s22"
+   ]
+  },
+  {
+   "plot_id": "pl-05",
+   "type": "growth_internal",
+   "title": "What He Owes",
+   "agent": [
+    "ch-01"
+   ],
+   "resistance": [
+    "ch-03",
+    "ch-04",
+    "ch-05",
+    "pl-01"
+   ],
+   "goal": "Keep Maren off the open market as a measured node without owing her, so the match remains a system that cannot surprise him.",
+   "stakes": "Either the obligation forms and blocks the clean payout, or it does not and he completes as the market he mapped.",
+   "outcome": "transformation_of_goal",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "unindebted_state",
+     "intent": "Cole feeds as little as the hunger clock allows and treats hosts as nodes. Nothing in his first hours shows a man who has owed anyone.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "unnamed_outlay",
+     "intent": "He times Maren's sets at The Hollow and quietly pays into Voss's book to keep other guests off her. The ledger records a credit in her name; he files the receipt as analysis, the extra payment leaking a preference he will not name.",
+     "because": [
+      "pl-02:st1",
+      "pl-03:st1"
+     ]
+    },
+    "st3": {
+     "step": 3,
+     "function": "forced_proximity",
+     "intent": "At Whitlock, cocaine, drink, and the rooms Julian flatters then withholds wreck Cole's working distance from Maren. The morning collects on whatever yes the night could hold.",
+     "because": [
+      "pl-04:st1"
+     ]
+    },
+    "st4": {
+     "step": 4,
+     "function": "sideways_admission",
+     "intent": "Lena's question forces him to concede that value has already been spent on one host. He still will not call it a debt.",
+     "because": [
+      "pl-04:st2"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "reclassification",
+     "intent": "He is brought to see that the Maren line is his own credit in her name, not Voss's claim, and that the notebook clocks the window in which she can keep a night by not sleeping.",
+     "because": [
+      "pl-04:st4",
+      "pl-03:st4"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "irreversible_spend",
+     "intent": "Deacon's death closes a guest debt with a host's life. Cole can no longer keep Maren as inventory without becoming the market he came to map.",
+     "because": [
+      "pl-02:st5"
+     ]
+    },
+    "st7": {
+     "step": 7,
+     "function": "transformed_choice",
+     "intent": "At the chapel door he holds enough blood to pay and does not declare, remaining in the shade with Maren as the window closes. The need to owe her has replaced the want to exit clean.",
+     "because": [
+      "pl-03:st6",
+      "pl-02:st5"
+     ]
+    }
+   },
+   "resolution_step": "st7",
+   "thematic_function": "Collapses analysis-without-owing into an obligation that cannot be cashed and an exit that cannot be taken cleanly.",
+   "screen_time_share": 0.2,
+   "interference": [
+    {
+     "with": "pl-01",
+     "kind": "same_agent_cannot_have_both"
+    },
+    {
+     "with": "pl-02",
+     "kind": "same_credit_misfiled_as_claim"
+    },
+    {
+     "with": "pl-03",
+     "kind": "same_host_whose_word_starts_to_count"
+    }
+   ],
+   "covers_synopsis": [
+    "s11",
+    "s12",
+    "s17",
+    "s24"
+   ]
+  }
+ ]
+}

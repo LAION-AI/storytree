@@ -1,0 +1,752 @@
+{
+ "craft": {
+  "audience_need": "The audience has been in a sustained cold-open chase for four scenes — they need the escape to land before they invest in anything else. A genre-savvy audience (sci-fi action, 18-49 band, Gibson/PKD-inclined) needs the extraction mechanic — the ringing phone as exit point — demonstrated now, because every future Matrix scene's stakes depend on understanding that entry and exit require hardwired lines. Without this, the life-or-death urgency of being trapped in the Matrix later is unearned.",
+  "dramatic_function": "This node closes the cold open by completing Trinity's extraction: she reaches the ringing hardline phone and exits the Matrix, with Morpheus guiding her via voice. It pays off the promise of escape established in sc-001 (the hotel as escape point), demonstrates the phone-line exit mechanic that will govern every future Matrix scene, and introduces Morpheus as the operational authority behind the crew — the voice that says when to move and when to go. The scene then transitions the story out of the cold open and toward Neo.",
+  "genre_convention": "The genre leads the reader to expect the chase to resolve with extraction — the hero escapes by the skin of her teeth. This node satisfies that expectation precisely: the phone rings, she answers, she is gone. It does not delay or refuse the convention; four scenes of chase is already at the upper limit for an opening before the audience begins to feel strung along. The satisfaction must come from the how, not the whether.",
+  "promises": {
+   "kept": [
+    "sc-001's implicit promise that the hotel is an escape point — now the phone rings and extraction occurs",
+    "sc-002's promise that the Agents are the real threat — they are one step behind, confirming their competence and menace even in failure"
+   ],
+   "made": [
+    "The phone-line exit mechanic is now a rule — every future Matrix scene will carry the implied question: is there a hardline available?",
+    "Morpheus as a voice of calm authority — who is this man who commands Trinity's movements? The audience will want to see him",
+    "The Agents failed to catch Trinity this time — they will not fail again so easily; their competence is established by proximity"
+   ]
+  },
+  "tension_management": {
+   "entering": 75,
+   "how": "The extraction succeeds — Trinity is out. Tension drops from the chase peak to a brief plateau. But Morpheus's dialogue carries a note of foreboding — something about the operation was unusual, or the Agents were closer than expected — which seeds the next tension rather than letting the story go flat. The shift from kinetic chase tension to informational/threat tension bridges the transition into Neo's world.",
+   "leaving": 35
+  },
+  "theme_and_style": "The story root's theme — that reality is a prison and belief is the only exit — demands that even this mechanical extraction beat carry thematic weight. The phone as exit point is not just a plot device; it is the first concrete demonstration that the Matrix is a system with rules, and that those rules can be used against it. The register is plain, dialogue carries subtext (Morpheus's calm is control, not reassurance), and no character states feelings directly. No interior monologue. No summarizing. The 90-word budget demands extreme economy — every line must do double duty as information and character.",
+  "why_not_otherwise": [
+   {
+    "alternative": "Cut directly to Neo's introduction now, leaving Trinity's extraction implied rather than shown.",
+    "nearly_chosen": true,
+    "rejected_because": "The phone-line exit mechanic has not yet been established on screen. If the audience does not see someone exit through a ringing phone, the life-or-death stakes of being trapped in the Matrix later (the cut hardline at the Hotel Lafayette, the chase to reach room 303) have no foundation. This rule must be planted before it can be exploited.",
+    "what_would_flip_it": "If the exit mechanic had already been shown in sc-001 through sc-004, this scene would be redundant and the cut to Neo would be correct."
+   },
+   {
+    "alternative": "Extend the chase with one more obstacle before the extraction.",
+    "nearly_chosen": false,
+    "rejected_because": "Four scenes of chase is already at the limit. A fifth obstacle before resolution would push past diminishing returns into tedium. The audience needs the release, not another delay.",
+    "what_would_flip_it": "If the prior four scenes had been shorter or less intense, one more obstacle before the exit would be justified."
+   },
+   {
+    "alternative": "Show Trinity reaching the phone and then cut away before she exits, withholding the extraction to create suspense.",
+    "nearly_chosen": false,
+    "rejected_because": "Withholding the exit mechanic would frustrate rather than intrigue — the audience does not yet know enough about the world's rules to find ambiguity meaningful. They would simply not understand what happened.",
+    "what_would_flip_it": "If the audience already understood the phone-as-exit rule from prior context, withholding the completion would create genuine suspense about whether she made it."
+   }
+  ],
+  "why_now": "The extraction must happen now because four scenes of pursuit have built to the point of release. Sc-003 won the fight but did not complete the escape; sc-004 sustained the pressure without advancing any state. A fifth scene of pure chase would deflate. The phone-line exit must be shown before the story shifts to Neo, because every subsequent Matrix scene depends on the audience understanding that extraction requires a hardwired phone. This is the last moment where that rule can be established organically within the action rather than through exposition."
+ },
+ "decision": {
+  "confidence": 82,
+  "resolution": "A 90-word micro-scene in which Trinity, guided by Morpheus's voice, reaches the ringing hardline phone in the Heart O' The City Hotel and exits the Matrix. The MAN is a civilian bystander — a brief human contrast point, someone who occupies the ordinary world Trinity is about to slip out of. Morpheus speaks with calm authority, confirming the extraction and seeding a note of unease — the Agents were too close, or the operation did not go as planned. Trinity answers the phone and is gone. The scene closes the cold open and positions the story to transition to Neo.",
+  "risks": [
+   "The MAN's role is ambiguous in the production envelope — if this figure is meant to be more significant than a bystander (e.g., a resistance contact, a planted observer), the scene's dynamics would shift substantially",
+   "At 90 words the scene has almost no room for error — if the phone-exit mechanic is not clearly conveyed in that space, the foundational rule is planted ambiguously",
+   "If Morpheus is physically present in the Matrix rather than a voice on the line, the scene must account for his own extraction, which 90 words cannot accommodate",
+   "The tension drop to 35 risks feeling anticlimactic if the transition to Neo's world is not immediate in the following scene"
+  ],
+  "state_changes_implied": [
+   {
+    "because": "Trinity has answered the hardline phone and been extracted, closing the escape arc that opened in sc-001",
+    "entity": "lo-01",
+    "from": "escape_point",
+    "to": "escape_completed",
+    "variable": "narrative_role"
+   },
+   {
+    "because": "Trinity has exited the Matrix successfully; the pursuit is thwarted for now",
+    "entity": "ch-04",
+    "from": "hunting_trinity",
+    "to": "searching_for_next_lead",
+    "variable": "pursuit_phase"
+   },
+   {
+    "because": "The phone-line exit has been demonstrated on screen, establishing it as a concrete rule of the world",
+    "entity": "cn-01",
+    "from": "false",
+    "to": "true",
+    "variable": "exit_mechanic_established"
+   }
+  ]
+ },
+ "interaction": {
+  "information_asymmetry": "Morpheus knows the full extraction plan — where the phone is, when it will ring, what comes next. Trinity knows only what Morpheus tells her in the moment. The Agents know Trinity is in the hotel but not the exact location of the hardline. The MAN knows nothing — he is an ordinary person in an ordinary hotel, and Trinity's presence is a disruption he cannot contextualize.",
+  "power_balance": "Morpheus holds informational and operational power — he is the voice that says when to move, when to stop, when to go. Trinity holds physical capability but is dependent on his guidance. The Agents hold systemic power but are one step behind — their authority is vast but their timing is off. The MAN holds no power at all — he is a civilian in a world he does not understand is a simulation.",
+  "turning_point": "The phone rings. That sound — a ringing phone in an abandoned hotel — is the pivot. Everything before it is chase; everything after it is extraction. The ring is the mechanism that resolves the scene, and it must arrive with the force of a mechanical inevitability: the system operates, the exit opens, Trinity is gone.",
+  "what_collides": "Trinity's urgent need to reach the hardline before the Agents converge on her position collides with Morpheus's calm, procedural authority — he is guiding her movements from outside, and his composure is both reassurance and pressure. The MAN, a civilian bystander, represents the ordinary world that does not know what is happening inside it — his presence is the contrast that makes Trinity's exit feel alien."
+ },
+ "situation": "The story is still inside the cold open. Trinity has defeated the police officers in the Heart O' The City Hotel (sc-003) but has not yet exited the Matrix. The Agents split their search pattern (sc-004), meaning they are closing in on her location but have not yet arrived. The hardline phone — the only means of exit from the Matrix — has not yet rung. Trinity's extraction is incomplete; the chase tension is unresolved. Morpheus has been a presence implied by the operation but not yet directly established on screen as the voice guiding Trinity. The production envelope places this scene at the Heart O' The City Hotel with Trinity, Morpheus, and a MAN, at roughly 90 words with high dialogue ratio — a micro-scene that must close the cold open's escape beat.",
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-005",
+  "ordinal": 5
+ },
+ "psychology": [
+  {
+   "entity": "ch-02",
+   "entering_state": "Trinity is at the tail end of a sustained extraction under fire. She has neutralized the police in the Heart O' The City Hotel but has not yet reached the hardline. Her body is running on combat adrenaline and the cold certainty of operational procedure; the Oracle's prophecy is buried so deep it might as well not exist. She is pure operator right now — a weapon following a voice.",
+   "perception": {
+    "sight": "The hotel corridor stretches ahead — dim, institutional lighting, worn carpet, numbered doors. She can see the phone at the end of the hall or in a room — a hardline handset, the kind with a cord. The MAN is visible: an ordinary person, perhaps a hotel guest or a desk clerk, blurred at the periphery of her attention. The aftermath of the fight — fallen officers, scattered debris — is behind her, not worth looking at.",
+    "sound": "Morpheus's voice in her ear — calm, procedural, the voice that says move and stop and go. Behind her, distant: the sound of pursuit reorganizing — boots, doors, the mechanical efficiency of Agents redirecting their search. The phone has not yet rung. The silence before it rings is what she listens for.",
+    "touch": "Black leather stiff against skin damp with sweat. The recoil ache in her hands and forearms from the fight — she fought through and won but the body remembers the impact. The headset bud pressed into her ear, the only physical connection to safety.",
+    "smell": "Hotel smell — industrial carpet cleaner, stale air, the copper tang of blood that is not hers. The cold metallic nothing-smell of the Matrix's rendered air, which she has learned to recognize the way a fish recognizes water.",
+    "taste": "Adrenaline metallic on the back of her tongue. Dry mouth — she has been running and fighting and has not swallowed in minutes.",
+    "interoception": "Heart rate elevated but controlled — not the panicked hammer of fear but the sustained drum of a body that knows exactly how long it can maintain this output. A low ache in her ribs from a hit she took during the fight and did not register until now. The faint tremor in her fingers that comes at the end of an adrenaline cycle, when the body starts to anticipate the crash that will come after extraction.",
+    "proprioception": "She is upright, moving through the corridor with the low, fast posture of someone who expects to be shot at. Weight forward on the balls of her feet, center of gravity low, every step a controlled fall toward the phone. Her body knows the geometry of extraction — the angle of approach to a hardline, the speed needed to cross the last distance, the position of the handset and the motion of lifting it to her ear.",
+    "attention": "Fixed on the hardline phone — where it is, whether it has rung, how many seconds until it rings. Morpheus's voice is the second layer: she is tracking his instructions in parallel with her own spatial awareness. The MAN registers as an obstacle category, not a person — she has clocked his position and dismissed him. She is failing to notice the ache in her ribs, the tremor in her hands, anything that is not the mission."
+   },
+   "appraisal": {
+    "value_at_stake": "Loyalty to Morpheus and the mission — she is the instrument of his operational plan, and her extraction is its completion. Her own survival is subordinate to the mission's success; if she dies here, the mission fails, and that is what matters.",
+    "valence": 45,
+    "arousal": 82,
+    "self_conscious_emotion": "Pride — she has done what was asked. She won the fight, she is at the exit, she is about to complete the extraction. The pride is not expressed or even consciously registered; it is the quiet satisfaction of a professional at the end of a clean job, even if the job was ugly.",
+    "moral_reading": "This is righteous work. The police were collateral — they are sleeping, prisoners of a system she was sent to fight. She has harmed no one who was truly free. The Agents are the enemy; the civilians are the wounded she cannot yet save. Extraction is not retreat — it is the preservation of the cause's instrument for the next operation.",
+    "somatic_marker": "A tightening in the chest that is not fear but readiness — the body bracing for the last sprint, the last reach for the phone. The sensation of a held breath about to be released."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "Operational chain of command: Morpheus gives the order, Trinity executes. No negotiation, no hesitation, no questioning in the field.",
+     "Crew loyalty: extraction is mandatory — you do not leave an operator in the Matrix. The hardline is a communal resource protected by the whole crew.",
+     "Secrecy from civilians: the Matrix's population must not be alerted to the resistance's operations. The MAN is a civilian who must not be harmed, warned, or engaged beyond the minimum necessary.",
+     "Combat pragmatism: in the field, the mission comes before comfort, before fear, before everything."
+    ],
+    "how_others_would_judge": "Morpheus would judge her by whether she reaches the hardline and exits cleanly — anything else is secondary. The crew on the Nebuchadnezzar, monitoring her vitals, would judge her by the steadiness of her biosigns: a clean extraction reads as a controlled heart rate and a clean disconnect. If she falters, they will know before she does.",
+    "how_absent_others_would_judge": "The broader resistance — other hovercraft crews, the remnants of Zion's intelligence apparatus — would judge this operation by whether it preserved the operative and the hardline. A blown hardline is a lost exit point for everyone. The Oracle, somewhere, would judge her not by the extraction but by what she carries unspoken — though Trinity does not think about the Oracle in the field.",
+    "standing_at_risk": "Her standing as Morpheus's most trusted field operative — the one he sends in first, the one he trusts with the hardest extractions. A clean exit confirms it. A fumbled exit, or a moment of hesitation, would not strip her of the role but would plant the first seed of doubt in a crew that has already lost five.",
+    "norm_conflict": "The norm of combat pragmatism — do whatever the mission requires — collides with the norm of secrecy from civilians: the MAN is in her path, and engaging him, moving him, or alarming him all carry risks. The mission norm wins. She will not harm him, but she will not slow down for him either."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-03",
+     "d1": "Morpheus is watching the operation from the Nebuchadnezzar, reading her vitals and the Matrix's security status through the operator's screens. He knows where the hardline is, when it will ring, and what the Agents' search pattern looks like. He is calm because he has planned for this; his calm is control, not indifference.",
+     "d2": "Morpheus believes she is capable of reaching the hardline without further guidance — he is giving her coordinates and timing, not hand-holding. He trusts her to handle whatever is between her and the phone.",
+     "d3": "Trinity believes Morpheus believes she believes in the mission absolutely — that her commitment to the cause is total and unfractured. She thinks he does not know about the tremor in her hands, the ache in her ribs, the fraction of a second of exhaustion she is concealing. She thinks he reads her as steady because she is steady.",
+     "accuracy": "Trinity is wrong about Morpheus's reading of her emotional state — not in this moment, but in the larger pattern. She believes Morpheus sees her as a pure instrument, and she performs that role so well she has partly become it. But Morpheus knows about the Oracle's prophecy (he sent Trinity to the Oracle; he knows what was said), and he is watching not just her combat performance but the slow, unspoken shift in her that the prophecy has begun. She does not know he knows. The cost of this error is that she will continue to hide the prophecy's weight from the one person who might understand it, deepening her isolation precisely when the crew's coherence matters most."
+    },
+    {
+     "other": "ch-04",
+     "d1": "Agent Smith and the other Agents are in the building, executing a search pattern. They know she is here. They do not know exactly where the hardline is — if they did, they would have already cut it. They are one step behind, but only one step. Their search is systematic and will close on her position within a window she cannot precisely calculate.",
+     "d2": "The Agents believe she is cornered — that the building is contained and her escape routes are limited. They believe time is on their side.",
+     "d3": "Trinity believes the Agents believe she has nowhere to go — that they are sweeping systematically and will find her. She believes they do not know about the hardline, because if they knew, they would have disabled it. She assumes their model of her is of a trapped operative, not an operative with an exit.",
+     "accuracy": "Trinity is partially wrong about the Agents' knowledge of the hardline. The Agents are more aware of the Matrix's hardline infrastructure than she credits — they may not know which specific phone is active for this extraction, but they understand the phone-exit mechanic as well as she does. The cost of this error is tactical overconfidence: she believes reaching the phone guarantees safety, but the Agents' search pattern may be designed to converge on hardline locations, not on her. She is racing to a point they may already be modeling."
+    },
+    {
+     "other": "ch-01",
+     "d1": "Neo does not exist in Trinity's active awareness in this scene. He is not yet part of her operational world. He is, at most, a name in Morpheus's mission file — the next target, the reason for this extraction's intelligence gathering. She has no emotional attachment to him yet because she has not met him.",
+     "d2": "N/A — Neo has no awareness of Trinity at this point, and Trinity does not believe he does.",
+     "d3": "N/A — there is no third-order belief to model because the relationship does not yet exist in either direction.",
+     "accuracy": "Trinity's model of Neo as an abstract mission target is not wrong per se — she has no reason to think of him as anything else. But the Oracle's prophecy, currently buried, means her neutrality is already a performance she is performing for herself. She does not know that the name in the file is the man the Oracle said she would love, because she has not allowed herself to connect those two facts. The cost of this disconnection is that when she does meet him, the professional distance she has maintained will fracture in ways she cannot predict or control."
+    }
+   ],
+   "urges": {
+    "cravings": "Nothing appetitive. She is not hungry, not seeking comfort, not wanting contact. The only pull is toward the phone — toward the exit, toward the release of the drop back into the real body on the Nebuchadnezzar.",
+    "physical_needs": "Her body needs the extraction to complete so the adrenaline can cycle down. She needs water. She needs the ache in her ribs to stop registering. She needs to be out of the leather and back in the chair, where the body is real and the pain is honest.",
+    "psych_needs_conscious": "She needs to reach the phone before the Agents converge. She needs to follow Morpheus's instructions without error. She needs the extraction to be clean.",
+    "psych_needs_unconscious": "She needs the mission to mean something — needs the violence and the running and the hiding to add up to a cause worth the cost. She has been doing this long enough that the question is not conscious, but the exhaustion underneath the adrenaline is not just physical. Five operatives have died. She is still here. The question of why is one she cannot ask in the field, but it is there.",
+    "avoidances": "She is avoiding the crash — the moment after extraction when the body stops running and the mind has nothing to do but sit with itself. She is avoiding thinking about the MAN as a person, because thinking about him as a person means thinking about what she is doing to his world. She is avoiding, at the deepest level, the Oracle's prophecy, which she has filed so far from her active awareness that it might as well be in another building."
+   },
+   "impairments": {
+    "physical": "Rib contusion from the fight — not debilitating but registering as a sharp catch on deep breaths. Residual tremor in her hands from the adrenaline cycle. General muscular fatigue from sustained high-intensity exertion across four scenes of chase and combat.",
+    "medical": "none",
+    "magical": "none",
+    "chemical": "Adrenaline saturation — she is at the tail end of a prolonged fight-or-flight response. Cortisol and epinephrine are still elevated, which sharpens focus but narrows it. She is not impaired in the field-relevant sense, but her peripheral awareness — social cues, emotional registers, anything that is not the mission — is suppressed.",
+    "coercive": "The operational chain of command — Morpheus's voice is not coercive in the hostile sense, but it is absolute. She cannot choose to deviate from his instructions without violating the deepest norm of her professional identity. This is a constraint she has internalized so thoroughly it does not feel like a constraint.",
+    "cognitive": "She cannot think about the Oracle's prophecy right now — not because it is suppressed by force, but because the adrenaline and the mission focus have so narrowed her attention that the prophecy is not in her cognitive field. This is not denial in the psychological sense; it is triage. The cost is that the prophecy continues to accumulate pressure in a compartment she is not monitoring.",
+    "net_effect": "She is combat-effective but running on fumes. Her body will complete the extraction; her mind is not yet a problem because it has nothing to do but follow the voice. The impairment that matters is the one she cannot see: the accumulated weight of five dead operatives and an unspoken prophecy, which is waiting for the moment the adrenaline stops."
+   },
+   "deliberation": {
+    "framing": "This is a procedural problem: reach the hardline before the search pattern closes. She has framed it as a timing equation — her speed versus their convergence — with Morpheus as the variable she cannot control but can trust. The phone will ring when it rings; her job is to be there when it does.",
+    "options_weighed": [
+     {
+      "option": "Move directly to the hardline phone at maximum speed, ignoring the MAN and any other civilian obstacle.",
+      "predicted_outcome": "She reaches the phone in the minimum time. The MAN is startled but unharmed. She exits before the Agents can converge on her position.",
+      "cost": "The MAN may alert someone — hotel security, a 911 call — that feeds back into the Agents' intelligence picture. But this is a minor cost compared to the time saved."
+     },
+     {
+      "option": "Take a slower, concealed approach — avoid the MAN, use cover, reduce the chance of being spotted.",
+      "predicted_outcome": "She reaches the phone later. The Agents' search pattern has more time to close. The risk of missing the ring window increases.",
+      "cost": "Time. In a convergence race, time is the only currency that matters."
+     },
+     {
+      "option": "Wait for Morpheus to confirm the hardline is active before committing to the approach.",
+      "predicted_outcome": "She gets confirmation but loses seconds. If the phone rings while she is waiting, she misses it.",
+      "cost": "The hardline's ring window may be narrow. Waiting for confirmation is the safe play, but safety costs speed."
+     }
+    ],
+    "reasoning": "Move fast, move direct. The search pattern is closing. Every second spent concealing or confirming is a second the Agents' net tightens. The MAN is not a threat — he is a civilian who will not understand what he sees. Morpheus will tell me when to go. I go when he says go. The phone rings, I pick it up, I am out. That is the whole calculation.",
+    "chosen_because": "Direct approach maximizes time margin before Agent convergence. The MAN is a non-factor in the tactical equation. Morpheus's voice is the confirmation — she does not need to wait for a second signal.",
+    "known_unknowns": "She does not know exactly how close the Agents are — only that they are in the building and searching. She does not know the precise moment the phone will ring — only that Morpheus will tell her. She is hedging by being at the phone before it rings, so that when it does, she is already there."
+   },
+   "control": {
+    "mode": "compelled",
+    "felt": "Exhaustion beginning to press through the adrenaline — the body knows it is near the end and is starting to let go of the tension it has been holding. The ache in the ribs is louder now. There is a faint, disorienting sense that the corridor is longer than it should be, which is the Matrix's rendering lag at the edge of her perception. She feels the pull of the phone the way a diver feels the surface.",
+    "expressed": "Nothing. Her face is blank behind the sunglasses. Her movement is controlled, fast, and deliberate — no wasted motion, no hesitation, no visible exhaustion. She is performing the role of the operator so completely that the performance has become the reality. To the MAN, she would look like a woman in black leather moving with purpose through a hotel corridor — strange, perhaps alarming, but not readable as anything specific.",
+    "divergence_reason": "The divergence is between the body's approaching limit and the performance of capability. She cannot afford to show exhaustion because the exhaustion would read as vulnerability, and vulnerability is not something an operator in the field can carry. The divergence is not strategic — it is automatic, the result of years of training and the survival-level suppression of anything that is not the mission.",
+    "leakage": "The slight catch in her stride when the rib pain spikes — a half-step that corrects so fast it might be imagination. The way her hand reaches for the phone before it has finished ringing — she is already in motion toward it, her body arriving before the sound fully registers, which means she has been counting the seconds since Morpheus's last instruction.",
+    "inhibited_impulse": "Nothing dramatic. She does not want to stop, to rest, to look back. The one impulse she inhibits is the urge to ask Morpheus if the Agents are closer than expected — a question that would be a confession of doubt she cannot make."
+   },
+   "intention": "Reach the hardline phone, answer it, exit the Matrix. Complete the extraction. Do it clean.",
+   "action": "Trinity reaches the ringing hardline phone in the Heart O' The City Hotel, guided by Morpheus's voice. She answers the phone and is extracted from the Matrix — her body in the Matrix goes still, then is gone. The MAN, if present, sees a woman pick up a phone and disappear, or perhaps sees nothing at all — the Matrix smoothing the seam of her exit. The extraction is clean.",
+   "trajectory": [
+    {
+     "phase": "Approaching the phone — the corridor",
+     "shift": "Trinity is in pure operator mode — adrenaline-driven, mission-focused, the Oracle's prophecy and every personal concern completely suppressed. She is a body executing a plan, nothing more.",
+     "trigger": "Morpheus's voice directing her to the hardline's location — the instruction is the trigger that channels her movement from the aftermath of the fight toward the exit point.",
+     "state_delta": {}
+    },
+    {
+     "phase": "The phone rings",
+     "shift": "The sound of the ring is the first signal that the exit is real and imminent. Her body responds before her mind does — she is already moving toward the handset. The adrenaline shifts from combat-sustaining to extraction-sustaining: the same chemical but a different purpose. The relief is not emotional — it is physiological, the body recognizing that the sprint is almost over.",
+     "trigger": "The sound of the hardline phone ringing — the mechanical, specific, unmistakable ring of a phone that is an exit, not a communication.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Answering the phone",
+     "shift": "The moment of contact — her hand on the handset, the plastic warm or cold against her ear. For a fraction of a second, the Matrix resolves into perfect clarity: the hotel, the phone, the MAN, the world she is about to leave. Then the extraction begins. The adrenaline drops. The body in the Matrix goes still as the consciousness is pulled. The ache in the ribs, the tremor in the hands — all of it vanishes as the simulation's sensory feed cuts out.",
+     "trigger": "The physical act of lifting the handset to her ear — the last voluntary motion she makes inside the Matrix.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Extraction complete — the real world",
+     "shift": "Trinity is back in her body on the Nebuchadnezzar. The adrenaline crash begins. The combat is over; the mission is complete. For a moment, she is only a body in a chair, breathing, feeling the real ache that the Matrix's version of her body only echoed. The relief of extraction is physical first — the honest pain of the real body — and emotional second, in a quiet register she does not express. She does not think about the Oracle. She does not think about Neo. She thinks about the next operation, because that is what operators do.",
+     "trigger": "The disconnection from the Matrix — the sensory cut, the return to the real body's proprioception, the operator's voice confirming she is out.",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "Extracted. Back in her real body. The adrenaline is crashing, the mission is complete, and the compartment where she keeps the Oracle's prophecy and the question of why she is still alive when five others are not is still sealed. She is a professional who has done her job. She is also, beneath that, a woman carrying a weight she has not yet begun to understand, and the extraction has not given her any reason to look at it.",
+   "unresolved": "The Oracle's prophecy remains unspoken and unexamined. The ache in her ribs will heal; the ache of five dead operatives will not. She has completed the extraction without confronting either, and the narrowness of her operational focus — the thing that kept her alive — is also the thing that keeps her from asking whether survival is enough."
+  },
+  {
+   "entity": "ch-03",
+   "entering_state": "Free, aboard the Nebuchadnezzar in the real world, monitoring the Matrix operation on screens. Certain that Neo is the One, carrying the guilt of five dead candidates. Calm but watchful — this extraction is unusual; the Agents were closer than expected. His faith in Neo is unwavering, but the operational anomaly nags at him.",
+   "perception": {
+    "sight": "Green cascade of Matrix code on the operator's monitors, Trinity's position rendered as a flickering dot inside the Heart O' The City Hotel's floor plan. The crew around him — Tank at the keyboard, the others watching. He sees the Agents' positions on the grid, two blips converging, one moment behind.",
+    "sound": "Tank's keyboard clatter, the low hum of the Nebuchadnezzar's life-support, Morpheus's own voice calm and measured as he guides Trinity through the line. The distant ping of the hardline phone activating — a signal tone through the comms channel.",
+    "touch": "The worn leather of the operator's chair arm beneath his fingers, the slight vibration of the ship's reactors through the deck plates, the cool recycled air on his skin.",
+    "smell": "Recycled air — metallic, faintly organic, the deep-machine smell of a hovercraft at depth.",
+    "taste": "Nothing — the flat taste of recycled air, the residual adrenaline-bite at the back of his throat.",
+    "interoception": "Heartbeat elevated but controlled — the combat-anxiety of watching someone you are responsible for navigate danger you cannot directly touch. A tightness across his chest that he identifies as operational concern, not fear.",
+    "proprioception": "Standing behind Tank's chair, weight evenly distributed, one hand resting on the chair back. Upright, balanced, the posture of a commander who has stood watch over a hundred extractions.",
+    "attention": "Focused on Trinity's position on the screen and the timing of the hardline ring. Noticing the Agents' convergence pattern — how close they are, how the gap has narrowed compared to standard extractions. He is NOT attending to the crew's reactions behind him, nor to the broader strategic implications of what the Agents' proximity means."
+   },
+   "appraisal": {
+    "value_at_stake": "Belief with the heart and gut — his faith that the mission is proceeding as it must, that the One will be found, that every operation is a step toward Neo. Also his responsibility for the lives of his crew — Trinity is his subordinate, his instrument, and his person.",
+    "valence": 35,
+    "arousal": 65,
+    "self_conscious_emotion": "Pride held in check by the five dead — he has been right before and wrong before, and the difference killed people. The extraction working is not vindication; it is the minimum acceptable outcome.",
+    "moral_reading": "Trinity's survival is a necessary good — not because she is expendable, but because the mission requires her and because he does not let his people die. The Agents' proximity is a sign that the system is adapting, which means the prophecy's path is being contested. This reads to him as confirmation that they are on the right track — the system resists what threatens it.",
+    "somatic_marker": "A warmth in the gut that is half relief and half anticipation — the body recognizing that the extraction is about to succeed while already orienting toward the next problem."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "Commander's authority — Morpheus's voice is the one that says when to move and when to go; his orders are not questioned",
+     "Crew loyalty — the Nebuchadnezzar's crew trusts his judgment absolutely; breaking that trust would be catastrophic",
+     "Operational discipline — in the field, the commander is calm, controlled, never panics; emotion is processed after extraction, not during",
+     "Prophecy faith — among the crew, Morpheus's belief in the One is the organizing principle; doubting it openly would destabilize the crew"
+    ],
+    "how_others_would_judge": "The crew would see his calm as competence and authority — the expected performance of a commander during an extraction. Any crack in that composure would read as alarm.",
+    "how_absent_others_would_judge": "The freed humans of Zion would judge him by results — Trinity extracted is a point in his favor; the five dead are marks against. The Oracle, if she is watching in any sense, would see the pattern he cannot: that his faith is correct in conclusion but flawed in mechanism.",
+    "standing_at_risk": "His authority as commander and his credibility as the prophet-leader. If the extraction fails, the crew's faith in him cracks. If the Agents' proximity becomes a pattern, his tactical judgment comes into question.",
+    "norm_conflict": "Commander's composure vs. genuine concern — the norm demands calm, but the operational anomaly (Agents closer than expected) genuinely worries him. Composure wins; he will not share the concern with the crew until he has analyzed it."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-02",
+     "d1": "Trinity is the most capable operator in the field; she will execute the extraction cleanly if given the right timing. She trusts his judgment absolutely and will not question his guidance in the moment.",
+     "d2": "Trinity believes Morpheus has the operation under control — that his calm means the situation is manageable, that the hardline is secure, that she will get out. She relies on his composure as a signal.",
+     "d3": "Morpheus believes Trinity believes he is infallible in these moments — that she does not see the five dead behind his eyes, that she sees only the commander. He believes she would not follow him if she saw the doubt he has carried since the fifth death.",
+     "accuracy": "He is wrong that Trinity does not see his doubt — she has been with him long enough to read the micro-expressions, the slight tightening when things go wrong. She follows him not because she cannot see the cracks but because she has chosen to trust him anyway. This error costs him the ability to be honest with her about the operational anomaly; he will downplay the Agents' proximity, and she will not press, and the concern will remain unshared."
+    }
+   ],
+   "urges": {
+    "cravings": "None active — the extraction overrides all appetitive needs.",
+    "physical_needs": "Slight fatigue from sustained vigilance; the recycled air leaves a low-grade dehydration he ignores.",
+    "psych_needs_conscious": "To complete Trinity's extraction safely and begin the transition to Neo — the next phase of the search that has defined his life.",
+    "psych_needs_unconscious": "To have this operation confirm that the system is behaving as prophecy would predict — that the resistance he encounters is evidence of significance, not evidence of failure. He needs the Agents' proximity to MEAN something, not to be random.",
+    "avoidances": "He is avoiding the thought that the Agents' improved response time could be a sign that someone inside the operation is compromised. He is not thinking about Cypher. He is not thinking about the possibility that the system is adapting because it is being fed information."
+   },
+   "impairments": {
+    "physical": "Slight fatigue — sustained operational vigilance with no sleep cycle. Not yet debilitating.",
+    "medical": "none",
+    "magical": "none",
+    "chemical": "none",
+    "coercive": "none — this is his operation, his ship, his call.",
+    "cognitive": "His faith in Neo is a lens that filters everything — the operational anomaly is being read as confirmation of the prophecy's significance rather than as a tactical warning. He cannot currently think clearly about the possibility that the Agents' proximity is unrelated to Neo and is instead a product of internal compromise. The five dead have taught him that his belief is fallible, but the epiphany of seeing Neo has overwhelmed that lesson with renewed certainty.",
+    "net_effect": "Fully operational but with a cognitive blind spot: he will process the operational anomaly as prophecy-significant rather than as a security concern. His tactical judgment is sound for the extraction; his strategic judgment is compromised by the need to see pattern where there may be none."
+   },
+   "deliberation": {
+    "framing": "This extraction is the close of one phase and the opening of another. Trinity gets out, the Agents are thwarted, and the search moves to its next target: Neo. The operational anomaly is a data point — the system is responding faster, which means either the system is adapting or the operation is significant. He frames it as the latter.",
+    "options_weighed": [
+     {
+      "option": "Proceed with the extraction as planned — give Trinity the timing, let the hardline ring, guide her out.",
+      "predicted_outcome": "Trinity exits cleanly; the cold open resolves; the operation transitions to Neo.",
+      "cost": "Minimal — this is the standard procedure; the risk is in the timing window, which is narrow but sufficient."
+     },
+     {
+      "option": "Abort the extraction and find an alternate hardline because the Agents are too close.",
+      "predicted_outcome": "Trinity remains in the Matrix longer, increasing exposure; the crew loses confidence in the primary extraction plan; the operation is delayed.",
+      "cost": "High — aborting a viable extraction signals panic, undermines crew trust, and extends danger unnecessarily."
+     },
+     {
+      "option": "Proceed but flag the operational anomaly to the crew for analysis after extraction.",
+      "predicted_outcome": "Trinity exits; the crew debriefs the Agents' improved response time; Morpheus maintains composure during the extraction and addresses the concern after.",
+      "cost": "Low in the moment; the risk is that the analysis leads somewhere he does not want it to go — internal compromise."
+     }
+    ],
+    "reasoning": "The hardline is live, the timing window is sufficient, Trinity is the best operator he has. The standard procedure works. The Agents are close but not close enough — the gap is seconds, not zero. You do not abort a working plan because the margin is narrow; you execute and then you study why the margin was narrow. This is the calculus of every extraction he has ever run.",
+    "chosen_because": "The extraction is viable. Aborting would cost more than executing. The anomaly is noted but does not change the tactical decision — it changes what he studies afterward.",
+    "known_unknowns": "He does not know WHY the Agents were closer than expected. He does not know if this is systemic adaptation, a response to Trinity's specific activity, or information-driven. He is hedging by noting it for post-extraction analysis — but he is not, at this moment, considering the possibility that someone on his crew is feeding the Agents data."
+   },
+   "control": {
+    "mode": "inhibited",
+    "felt": "A low hum of operational concern beneath the surface of absolute calm. The five dead are always there — a weight in the chest that tightens when someone he is responsible for is in the field. The Agents' proximity adds a new note: not fear, but the sharp alertness of a pattern that does not match expectation.",
+    "expressed": "Calm, measured authority. His voice is the voice that says when to move and when to go — steady, uninflected, the cadence of a man who has done this a hundred times and will do it a hundred more. The razor-thin smile does not appear; this is work, not philosophy.",
+    "divergence_reason": "The commander's mask — the crew needs to see calm, not concern. His composure is not a lie but a performance of a real part of himself: he IS calm, in the sense that his training overrides the concern. But the concern exists, and the composure is the discipline of not showing it.",
+    "leakage": "A fractional pause — a beat of silence between the last instruction and the confirmation that the hardline is live. Not a hesitation, but the space where a man who was only procedure would not pause. A crew member watching closely might notice that his hand on the chair back tightens slightly when the Agents' blips converge on the screen.",
+    "inhibited_impulse": "The impulse to warn Trinity that the Agents are closer than usual — to add a note of urgency that the standard procedure does not include. He inhibits it because it would not change her actions and would only add anxiety to a situation that requires precision, not speed."
+   },
+   "intention": "To guide Trinity through the hardline extraction safely, close this phase of the operation, and transition toward Neo.",
+   "action": "Morpheus speaks the timing and confirmation into the comms — guiding Trinity to the ringing phone, confirming the hardline is live, watching her signal vanish from the Matrix display as she exits. He notes the Agents' proximity for later analysis but does not flag it to the crew in the moment.",
+   "trajectory": [
+    {
+     "phase": "pre-extraction monitoring",
+     "shift": "Morpheus enters the scene in full commander mode — calm, authoritative, monitoring the operation. He is watching the screen, tracking Trinity's position and the Agents' convergence. The operational anomaly registers but is filed for later.",
+     "trigger": "The scene opens with Morpheus at the operator's station, watching Trinity's dot and the Agents' blips on the Matrix display.",
+     "state_delta": {}
+    },
+    {
+     "phase": "hardline activation",
+     "shift": "The phone rings — the hardline goes live. Morpheus's focus narrows to the timing window: Trinity must reach the phone before the Agents close the gap. His arousal spikes slightly — not visible, but internally the tightness in his chest increases.",
+     "trigger": "The signal tone of the hardline phone activating comes through the comms channel.",
+     "state_delta": {}
+    },
+    {
+     "phase": "extraction confirmation",
+     "shift": "Trinity answers the phone. Her signal vanishes from the Matrix display. The extraction is complete. Morpheus's chest loosens — not relief visible to the crew, but the internal release of a held breath. The operational concern remains, now separated from the immediate danger and available for analysis.",
+     "trigger": "Trinity's signal disappears from the Matrix display — she is out.",
+     "state_delta": {}
+    },
+    {
+     "phase": "post-extraction assessment",
+     "shift": "With Trinity safe, Morpheus's attention shifts from the immediate extraction to the anomaly: the Agents were closer than expected. He begins to process this as a data point — significant, possibly prophecy-related, not yet a security concern. His composure holds but his mind is already moving to the next phase: Neo.",
+     "trigger": "The confirmation that Trinity is back aboard, safe, and the comms channel closes.",
+     "state_delta": {
+      "variable": "five_dead_guilt",
+      "from": "carrying",
+      "to": "carrying"
+     }
+    }
+   ],
+   "leaving_state": "Calm, operationally satisfied but carrying a new thread of unease about the Agents' proximity. His faith in Neo remains certain. The five dead remain carried. The extraction is one more successful step toward the One — but the margin was narrower than it should have been, and he has not yet decided what that means.",
+   "unresolved": "The operational anomaly — the Agents were closer than expected. Morpheus has noted it but not analyzed it. He does not yet know whether this is systemic adaptation, prophecy-significant resistance, or evidence of internal compromise. The question is filed but not examined, and the longer it sits unexamined, the more dangerous it becomes."
+  }
+ ],
+ "dynamics": [
+  {
+   "axis_changes": [
+    {
+     "axis": "narrative_role",
+     "caused_by": "Trinity answers the ringing hardline and is extracted, completing the escape arc opened in sc-001",
+     "from": "escape_point_under_pressure",
+     "to": "spent_extraction_site"
+    },
+    {
+     "axis": "condition",
+     "caused_by": "Trinity's fight in sc-003 left spent shell casings, broken furniture, and unconscious officers; now the phone is off the hook and she is simply absent",
+     "from": "disrupted_but_still_hot",
+     "to": "abandoned crime_scene"
+    },
+    {
+     "axis": "meaning",
+     "caused_by": "The extraction succeeds here, proving the hotel can serve as an exit — but also proving that exits leave traces the Agents can read",
+     "from": "promise of escape",
+     "to": "evidence of escape — a place the system will now scrub and investigate"
+    }
+   ],
+   "entering_state": "Abandoned hotel room with a hardline phone that has not yet rung — the destination Trinity has been racing toward since sc-001, still contested ground with the Agents closing in on the building",
+   "entity": "lo-01",
+   "forces_acting": [
+    "Trinity's physical arrival — she enters the room, completing the geographic arc of the chase",
+    "The phone system — the hardline rings on Morpheus's signal from outside the Matrix, opening the exit",
+    "The Agents' search pattern — they are combing the building and will reach this room moments after Trinity is gone, converting it from escape point to evidence",
+    "The MAN's civilian presence — an ordinary person occupying the space, making the hotel feel like a real place with real bystanders rather than a sealed tactical arena"
+   ],
+   "kind": "location",
+   "leaving_state": "Empty room with a phone off the hook and no sign of Trinity except the aftermath of sc-003's violence — the Agents will arrive to find the bird has flown",
+   "significance_shift": "Before this scene the hotel was the goal — the place Trinity needed to reach. After this scene it is a crime scene — the place where the Agents were one step too slow. To the Nebuchadnezzar crew it is now a burned location, unusable for future extractions. To the Agents it is a trailhead: evidence that their quarry uses hardline phones in abandoned hotels, a tactical signature they can now pattern-match against.",
+   "trajectory": [
+    {
+     "phase": "on entering",
+     "shift": "Trinity arrives in the room; the hotel is no longer a destination but the final stage of the escape — she is inside the exit point but the exit has not yet opened",
+     "state_delta": {
+      "from": "destination_under_pressure",
+      "to": "occupied_with_exit_pending",
+      "variable": "narrative_role"
+     },
+     "trigger": "Trinity's footsteps crossing the threshold, breathing hard, scanning the room for the phone"
+    },
+    {
+     "phase": "the phone rings",
+     "shift": "The hardline activates — the room transforms from a hiding place into a functional extraction point. The phone's ring is the sound of the system being used against itself",
+     "state_delta": {
+      "from": "occupied_with_exit_pending",
+      "to": "exit_active",
+      "variable": "narrative_role"
+     },
+     "trigger": "The telephone on the nightstand rings — a sharp mechanical sound cutting through the silence"
+    },
+    {
+     "phase": "after Trinity answers and vanishes",
+     "shift": "Trinity is gone; the phone is dead, the room is empty, and the hotel reverts to an inert physical space — but now it is a space the Agents will read as evidence rather than background",
+     "state_delta": {
+      "from": "exit_active",
+      "to": "spent_extraction_site",
+      "variable": "narrative_role"
+     },
+     "trigger": "Trinity lifts the receiver to her ear and her body dissolves — the visual signature of extraction"
+    }
+   ]
+  },
+  {
+   "axis_changes": [
+    {
+     "axis": "credence",
+     "caused_by": "The audience sees extraction happen — a person answers a ringing phone and disappears. What was abstract worldbuilding becomes an observed rule",
+     "from": "simulated reality with unspoken exit rules",
+     "to": "simulated reality with one known exploit: hardline phones open exits"
+    },
+    {
+     "axis": "meaning",
+     "caused_by": "The phone-as-exit demonstration reframes the Matrix from pure prison to system with a vulnerability — the phone lines are the back door",
+     "from": "prison — a trap to be escaped",
+     "to": "prison with a back door — a system whose own infrastructure can be turned against it"
+    },
+    {
+     "axis": "cohesion",
+     "caused_by": "The Agents' failure to intercept the extraction reveals a limit: they control the system but cannot close every hardline simultaneously in real time",
+     "from": "seamless systemic authority — the Agents appeared omnipotent in sc-002 and sc-004",
+     "to": "systemic authority with exploitable latency — the Agents can be beaten by timing"
+    }
+   ],
+   "entering_state": "The Matrix as an opaque simulation — the audience has seen people move and fight within it but has not yet seen anyone leave it. The rules of entry and exit are unknown; the phone-as-exit mechanic is conceptual, not demonstrated",
+   "entity": "cn-01",
+   "forces_acting": [
+    "Morpheus's external signal — he triggers the hardline to ring from outside the simulation, proving the Matrix is a system that can be operated upon from beyond its boundaries",
+    "The Agents' search authority — they are systematically sweeping the building, exercising the system's internal law enforcement function",
+    "Trinity's body — her physical presence inside the simulation is what is at stake; the Matrix holds her until the hardline opens",
+    "The hardline phone — a physical infrastructure element of the simulation that carries a double function: ordinary communication device and back-channel to the real world"
+   ],
+   "kind": "concept",
+   "leaving_state": "The Matrix as a known system — one rule is now established (hardline phones enable extraction), making it legible as a constructed environment with boundaries and exploits rather than an unknowable trap. The Agents' authority is vast but not instantaneous",
+   "significance_shift": "Before this scene the Matrix was a place where things happen —chases, fights, chases, fights, pursuit. After this scene it is a system with rules the audience can reason about. The phone-line exit is not just a plot convenience; it is the first piece of the Matrix's architecture the audience is given to hold. Every future Matrix scene will carry the implicit question: is there a hardline available, and can the characters reach it before the Agents close it? The Matrix has gone from setting to puzzle.",
+   "trajectory": [
+    {
+     "phase": "before the phone rings",
+     "shift": "The Matrix holds Trinity — she is inside it, physically present, and the Agents are using the system's internal logic (search patterns, building sweeps) to trap her. The simulation is functioning as a prison",
+     "state_delta": {
+      "from": "unknown_rules",
+      "to": "prison_state_active",
+      "variable": "exit_mechanic_established"
+     },
+     "trigger": "Trinity stands in the hotel room, waiting; the silence of the room contrasts with the pursuit behind her"
+    },
+    {
+     "phase": "the phone rings and Trinity answers",
+     "shift": "The Matrix's own infrastructure is repurposed — a telephone, an ordinary object within the simulation, becomes a portal out. The system is used against itself. The exit mechanic is now a demonstrated fact, not a rumor",
+     "state_delta": {
+      "from": "prison_state_active",
+      "to": "true",
+      "variable": "exit_mechanic_established"
+     },
+     "trigger": "The phone rings; Trinity lifts the receiver; her body dissolves into the line"
+    },
+    {
+     "phase": "after extraction",
+     "shift": "The Matrix retains its prison function but its authority is dented — the Agents arrive to find the room empty, and the system could not close the hardline in time. The simulation is still a trap, but it is a trap with a known weakness",
+     "state_delta": {
+      "from": "true",
+      "to": "exit_mechanic_demonstrated_and_agents_thwarted",
+      "variable": "exit_mechanic_established"
+     },
+     "trigger": "The phone goes dead; the room is empty; the Agents' search pattern reaches a closed door"
+    }
+   ]
+  },
+  {
+   "axis_changes": [
+    {
+     "axis": "control",
+     "caused_by": "The hardline rings and Trinity exits before the Agents' sweep reaches the room — their authority is unable to close the window in time",
+     "from": "closing — systematically reducing Trinity's escape space, one step behind",
+     "to": "arrived too late — the quarry is gone and the trail must be rebuilt from scratch"
+    },
+    {
+     "axis": "cohesion",
+     "caused_by": "The failure to intercept is a data point: the resistance uses hardline phones in abandoned buildings. The Agents can now pattern-match future searches against this signature",
+     "from": "unified pursuit — all three Agents converging on the same target",
+     "to": "dispersed reassessment — the pursuit fails and the Agents must regroup, analyze the scene, and find a new lead"
+    },
+    {
+     "axis": "credence",
+     "caused_by": "The Agents came close enough to make the extraction a near thing — Morpheus's unease implies their proximity was unusual, elevating the audience's estimation of the Agents' competence even in failure",
+     "from": "threatening but abstract — they were the pursuers, the voice on the phone, the looming presence",
+     "to": "competent and adaptive — they nearly caught her, and they will adjust their tactics"
+    }
+   ],
+   "entering_state": "Agents in active pursuit — they have been systematically closing on Trinity's location since sc-002, splitting their search pattern in sc-004 to cover the hotel. They are inside the building, combing room by room, and are minutes or seconds from the hardline phone's location",
+   "entity": "gr-01",
+   "forces_acting": [
+    "The Agents' own search protocol — a systematic sweep of the hotel that will converge on the hardline room moments after extraction",
+    "The timing of the phone ring — Morpheus's external signal opens the exit at the last viable second, and the Agents cannot close the hardline before Trinity answers",
+    "Trinity's escape velocity — her speed through the building in sc-003 and sc-004 bought just enough margin for the phone to ring before the sweep arrives",
+    "The Matrix's infrastructure — the Agents operate through the system's own rules, which means they are bound by the same latency that makes the hardline exploitable"
+   ],
+   "kind": "group",
+   "leaving_state": "Agents arriving at an empty room — the pursuit has failed, but the tactical signature of the extraction (hardline phone, abandoned hotel, resistance operative) is now in their possession as intelligence. They will hunt the next lead, not this one",
+   "significance_shift": "Before this scene the Agents were the threat — the force chasing Trinity through the city. After this scene they are the threat that almost caught her — and the audience's understanding of what 'almost' costs shifts. The Agents are not slow or stupid; they are a system that is fast enough to be terrifying and just slow enough to be beaten. That margin — the seconds between the phone ringing and the door opening — is the only thing keeping the resistance alive. To the characters the Agents now mean something more precise: they are beatable, but only by a margin that is shrinking.",
+   "trajectory": [
+    {
+     "phase": "closing sweep",
+     "shift": "The Agents' search pattern tightens — they are moving through the hotel's interior, reducing the distance between themselves and the hardline room. Their authority is spatial: they are filling the building the way water fills a sinking ship",
+     "state_delta": {
+      "from": "hunting_trinity",
+      "to": "hunting_trinity",
+      "variable": "pursuit_phase"
+     },
+     "trigger": "Footsteps in the hallway — the sound of dress shoes on hotel carpet, measured and deliberate"
+    },
+    {
+     "phase": "extraction beats sweep",
+     "shift": "The phone rings and Trinity is gone before the Agents arrive. The pursuit fails — not because the Agents were incompetent but because the extraction was timed to the second. The system's own infrastructure moved faster than the system's own enforcers",
+     "state_delta": {
+      "from": "hunting_trinity",
+      "to": "searching_for_next_lead",
+      "variable": "pursuit_phase"
+     },
+     "trigger": "The phone rings and Trinity's body dissolves — the extraction completes before the Agents' sweep reaches the door"
+    },
+    {
+     "phase": "aftermath",
+     "shift": "The Agents arrive at an empty room with a dead phone. They have failed, but the failure generates intelligence: the resistance uses hardlines, they use abandoned buildings, they have an operator outside the system who times the exits. The Agents' next move is analytical, not chase",
+     "state_delta": {
+      "from": "searching_for_next_lead",
+      "to": "analyzing_extraction_signature",
+      "variable": "pursuit_phase"
+     },
+     "trigger": "An Agent pushes open the door to find the room vacant, the phone silent, no one to interrogate"
+    }
+   ]
+  },
+  {
+   "axis_changes": [
+    {
+     "axis": "control",
+     "caused_by": "Morpheus's voice on the line demonstrates the command structure — he is not in the field with Trinity; he is outside, operating the extraction, directing her from beyond the simulation",
+     "from": "implied resistance cell — a crew mentioned or glimpsed but not operationally demonstrated",
+     "to": "demonstrated command structure — an operator calls the shots from outside, a soldier executes inside, and the extraction protocol works"
+    },
+    {
+     "axis": "cohesion",
+     "caused_by": "Trinity's successful extraction under live fire confirms the crew can operate under Agent pressure — but Morpheus's unease implies the margin was too thin, seeding doubt about whether the next operation will hold",
+     "from": "intact but unproven under direct Agent pressure — sc-001 through sc-004 showed competence against police, not against the Agents themselves",
+     "to": "intact and proven — but rattled. The crew works, but the margin is shrinking"
+    }
+   ],
+   "entering_state": "The Nebuchadnezzar crew as an implied unit — Trinity is its visible operative, Morpheus its implied authority, but the audience has not yet seen the command structure in action. The crew's extraction protocol — how they enter and leave the Matrix — is theoretical",
+   "entity": "gr-02",
+   "forces_acting": [
+    "Morpheus's voice — he is the external operator, the mind outside the system guiding the body inside it. His calm is the crew's operational discipline made audible",
+    "Trinity's execution — she is the operative who carries the protocol through to completion, answering the phone at the right moment",
+    "The extraction protocol itself — the timed phone ring, the hardline as exit, the operator's authority to call the moment. This is the crew's core tactical technology",
+    "The Agents' pressure — the closeness of the pursuit tests the crew's protocol under real conditions and nearly breaks it"
+   ],
+   "kind": "group",
+   "leaving_state": "The Nebuchadnezzar crew as a demonstrated operational unit — the command structure (Morpheus directs, operative executes, extraction is timed) is now visible. The protocol works, but Morpheus's unease signals that the crew's margin of safety is eroding",
+   "significance_shift": "Before this scene the crew was a name and a presence — Trinity was alone in the field, Morpheus was a voice from the dark. After this scene the crew is a machine: an operator, a soldier, a protocol, and a margin. To the audience the crew now means 'people who have a system for escaping the prison.' To the Agents the crew now means 'an organized cell with external support and timed extraction capability.' To the crew itself — to Morpheus — it means something less comforting: the system held, but barely, and barely is not a strategy.",
+   "trajectory": [
+    {
+     "phase": "Morpheus's voice arrives",
+     "shift": "The crew's command structure becomes audible — Morpheus is not in the room but he is present through the phone, and his voice is the operational authority. The crew shifts from implied to demonstrated",
+     "state_delta": {
+      "from": "implied_resistance_cell",
+      "to": "command_structure_audible",
+      "variable": "operational_visibility"
+     },
+     "trigger": "Morpheus's voice on the line — calm, directive, the tone of someone who has done this many times"
+    },
+    {
+     "phase": "extraction executes",
+     "shift": "The protocol completes: the phone rings on Morpheus's signal, Trinity answers, she is extracted. The crew's core tactical technology — hardline extraction under pressure — is proven in the field",
+     "state_delta": {
+      "from": "command_structure_audible",
+      "to": "extraction_protocol_demonstrated",
+      "variable": "operational_visibility"
+     },
+     "trigger": "Trinity lifts the receiver and her body dissolves"
+    },
+    {
+     "phase": "Morpheus's unease",
+     "shift": "The extraction succeeds but Morpheus's tone carries a note of foreboding — the Agents were closer than expected, or the operation deviated from plan. The crew's confidence is dented even in victory",
+     "state_delta": {
+      "from": "extraction_protocol_demonstrated",
+      "to": "protocol_proven_but_margin_thinning",
+      "variable": "operational_visibility"
+     },
+     "trigger": "Morpheus's line after extraction — a shift from operational calm to something quieter, more worried"
+    }
+   ]
+  }
+ ],
+ "specimen": {
+  "lines": [
+   {
+    "line": "Trinity. You're clear.",
+    "speaker": "ch-03",
+    "subtext": "The path to the hardline is confirmed safe — but the pause before this line, the one the psychology named as leakage, is where his concern about the Agents' proximity lives. He is saying 'go' while thinking 'they were too close.'"
+   },
+   {
+    "line": "I see it.",
+    "speaker": "ch-02",
+    "subtext": "She sees the phone, the room, the exit. Minimal confirmation — she is conserving every word for breath. The rib pain is pressing through the adrenaline but she will not name it."
+   },
+   {
+    "line": "Hey — this floor's supposed to be empty.",
+    "speaker": "ch-02",
+    "subtext": "He is a civilian standing where a civilian should not be, reacting to a woman in black leather who does not belong here. His confusion is the ordinary world's incomprehension made audible — he cannot contextualize what he is seeing because he does not know there is a context."
+   },
+   {
+    "line": "The line is live. Take it.",
+    "speaker": "ch-03",
+    "subtext": "Operational confirmation that the hardline is connected and the exit is open — but 'take it' carries the weight of permission, not just instruction. He is telling her to leave. The fractional beat of silence before this line is the space where a man who was only procedure would not have paused."
+   },
+   {
+    "line": "Morpheus — they were right behind me.",
+    "speaker": "ch-02",
+    "subtext": "She is reporting, but she is also releasing the doubt she could not voice during the chase — the question she wanted to ask and inhibited. Now, at the threshold of safety, it comes out not as fear but as operational data, because that is the only form she can let it take."
+   },
+   {
+    "line": "I know.",
+    "speaker": "ch-03",
+    "subtext": "He has been tracking the Agents' positions on his display. He already knows they were closer than the operation profile predicted. Two words that carry the full weight of his operational concern — the pattern does not match expectation — while revealing nothing of that concern to Trinity. She is safe; the analysis can wait."
+   }
+  ],
+  "moment": "The phone rings. Trinity reaches the hardline in the Heart O' The City Hotel. Morpheus confirms the line is live. The MAN — a civilian — occupies the ordinary world she is about to slip out of. She answers the phone and is gone.",
+  "risks_checked": [
+   {
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The MAN gets one line — 'this floor's supposed to be empty' — which establishes him as a confused civilian bystander and nothing more. He reacts to Trinity's presence as an intrusion, not as a plot function. His incomprehension is the contrast that makes the exit feel alien. He does not participate in the extraction.",
+    "risk": "The MAN's role is ambiguous in the production envelope — if this figure is meant to be more significant than a bystander, the scene's dynamics would shift substantially."
+   },
+   {
+    "does_the_exchange_avoid_it": true,
+    "evidence": "Morpheus says 'The line is live. Take it' — 'line' and 'take it' together with the ringing phone and Trinity's disappearance convey the mechanic: a connected hardline phone is the exit. No ambiguity survives the line.",
+    "risk": "At 90 words the scene has almost no room for error — if the phone-exit mechanic is not clearly conveyed in that space, the foundational rule is planted ambiguously."
+   },
+   {
+    "does_the_exchange_avoid_it": true,
+    "evidence": "Morpheus speaks as a voice — he says 'You're clear' and 'The line is live' from a position of oversight, not proximity. He confirms the line status, which is something only an operator outside the Matrix would do. No physical presence is implied.",
+    "risk": "If Morpheus is physically present in the Matrix rather than a voice on the line, the scene must account for his own extraction, which 90 words cannot accommodate."
+   },
+   {
+    "does_the_exchange_avoid_it": true,
+    "evidence": "Trinity's 'they were right behind me' and Morpheus's 'I know' land the tension at 35, not zero. The extraction succeeds but the final exchange seeds foreboding — the Agents were closer than expected, and Morpheus is already thinking about why. The drop is from kinetic chase to informational unease, not from chase to flat.",
+    "risk": "The tension drop to 35 risks feeling anticlimactic if the transition to Neo's world is not immediate in the following scene."
+   }
+  ],
+  "voices_distinct": "The voices cannot be swapped. Morpheus speaks in short, weighted imperatives — 'You're clear,' 'The line is live. Take it,' 'I know' — each line carrying operational authority and the gravity of a man who sees patterns others do not. His economy is the economy of command. Trinity's lines are sensory and reportorial — 'I see it' is immediate perception, 'they were right behind me' is field data released at the threshold of safety. Her economy is the economy of someone conserving breath. The MAN's line is the only one that could belong to an ordinary person — confused, reactive, anchored in the mundane ('this floor's supposed to be empty'). If Trinity and Morpheus swapped lines, 'I see it' would sound strange from a man who speaks in commands, and 'The line is live' would sound strange from a woman who reports what her eyes find. The distinction holds.",
+  "what_this_exposes": "The exchange reveals that Morpheus's 'I know' is the line doing the heaviest lifting — it is two words that carry his entire operational concern, his authority, and his decision not to share that concern with Trinity in the moment. The dialogue also reveals that Trinity's final line is not just a report but a confession: 'they were right behind me' is the closest she comes to admitting fear, and she can only do it because the phone is in her hand and the exit is one second away. The MAN's line, which the analysis treated as a contrast point, actually does something the analysis did not anticipate — it makes the hotel feel inhabited, which makes Trinity's exit feel more like an intrusion into reality than an escape from pursuit. The ordinary world is not empty; she is slipping out of it while someone watches and does not understand."
+ },
+ "continuity": {
+  "constraints_honoured": [
+   "World rule: freed humans exit the Matrix through a hardline telephone — the handset must be picked up and the exit must be visually concrete, not abstract or unexplained.",
+   "World rule: Morpheus operates from outside the Matrix; he guides operatives via voice comms, not physical presence inside the simulation.",
+   "World rule: Agents cannot be everywhere at once but can track and pursue; Trinity's escape must feel narrow, not comfortable.",
+   "Tension constraint: this node must close at 35 — a deliberate comedown from the sustained 70+ of the chase, but not zero, because Morpheus's unease keeps a thread alive.",
+   "Length constraint: 90 words of screen action — every beat must be load-bearing; no room for atmospheric filler."
+  ],
+  "contradictions_checked": [
+   {
+    "avoided_by": "Morpheus is strictly a voice on the phone line, not physically present in the hotel room; he never appears on screen in this scene, preventing the need to account for his own extraction within the 90-word envelope.",
+    "risk": "Morpheus could have been written as physically present in the Matrix, which would require explaining how he exits and would break the voice-only guidance role established by the scene's design."
+   },
+   {
+    "avoided_by": "The phone is already ringing when Trinity enters the room — Morpheus has prepared the exit — and the act of lifting the receiver and vanishing is the only described action, making the cause-and-effect unambiguous.",
+    "risk": "The phone-exit mechanic could have been left visually ambiguous, failing to establish the foundational world rule that a hardline phone is the exit point from the Matrix."
+   },
+   {
+    "avoided_by": "The MAN does not speak to Trinity, does not assist her, and does not block her path; he is simply present in the hallway as she passes — a body occupying the ordinary world she is about to leave, nothing more.",
+    "risk": "The MAN could have been written as a resistance contact or a planted observer, which would have introduced a new character relationship the 90-word scene cannot establish and which would shift the scene's dynamics away from its function as a closing beat."
+   },
+   {
+    "avoided_by": "Morpheus's line explicitly flags that the Agents were closer than expected — 'They almost had you' — which reframes the escape as lucky rather than clean, sustaining a residual unease that the next scene can inherit when transitioning to Neo.",
+    "risk": "The tension drop to 35 could feel anticlimactic if no residual threat or unease is seeded, making the Agents' pursuit seem definitively over rather than merely paused."
+   },
+   {
+    "avoided_by": "The Agents are not shown reaching the room or failing to reach it; the scene cuts after Trinity's exit, leaving their position deliberately unresolved, consistent with their state change to 'searching_for_next_lead' rather than 'defeated.'",
+    "risk": "Trinity's escape could have contradicted sc-004's establishment that the Agents are actively splitting their search pattern in the hotel — if she exits too easily, their competence established in sc-002 is undermined."
+   }
+  ],
+  "established_facts_used": [
+   {
+    "fact": "The Heart O' The City Hotel is the location where Trinity was cornered by police; the hotel setting with its decaying corridors and room 303 is established.",
+    "how_used": "The phone Trinity reaches is the hardline inside this hotel — she never left the building, she fought through the police within it, and the exit point was always here.",
+    "source": "sc-001"
+   },
+   {
+    "fact": "Agent Smith and colleagues are a tier of authority above local police with insectoid, non-human precision; their presence reframes the real threat as the men in suits, not the cops.",
+    "how_used": "Morpheus's unease in this scene references the Agents specifically — 'they almost had you' — confirming the Agents, not the police, were the genuine danger and that the escape was narrower than the audience may have realized.",
+    "source": "sc-002"
+   },
+   {
+    "fact": "Trinity demonstrated inhuman combat capability and won the physical fight with the police, but her extraction had not yet occurred; the scene ended on frustrated profanity, the real threat unresolved.",
+    "how_used": "This scene is the completion of that unresolved arc — she fought and won in sc-003 but had not yet escaped; here she actually exits, closing the open loop.",
+    "source": "sc-003"
+   },
+   {
+    "fact": "The Agents split their search pattern at the hotel, sustaining pressure on Trinity's escape without advancing any state variable.",
+    "how_used": "The Agents' split search means they are converging on the hotel from multiple directions; Morpheus's urgency and his comment that they were too close is grounded in the fact that the Agents were actively closing in.",
+    "source": "sc-004"
+   }
+  ],
+  "forward_commitments": [
+   "The hardline phone-exit mechanic is now a demonstrated world rule: any future scene involving extraction or entry to the Matrix must treat a ringing phone as the required conduit. This is load-bearing for every subsequent operation scene.",
+   "Morpheus's unease — 'they almost had you' or equivalent — plants a seed that the operation did not go cleanly. A later scene must either confirm this (the Agents got closer than they should have, suggesting a leak or heightened surveillance) or redirect it into the larger arc of the system adapting to the resistance.",
+   "The cold open is now closed. The next scene must transition away from Trinity and the hotel to Neo's world — a civilian context — and the tonal shift must not pretend the hotel sequence didn't happen. The audience now knows: impossible movement, Agents, phone-exits. Neo's ordinary reality will be read against that backdrop.",
+   "The MAN, as a civilian bystander who witnessed nothing remarkable, is not a forward commitment — he is a closing device. No later scene owes him anything unless a future node explicitly re-engages the hotel as a location.",
+   "The Agents' state is now 'searching_for_next_lead' — they have lost Trinity but are not defeated. A later scene must show them redirecting, and the transition to Neo suggests their next lead may point toward him."
+  ],
+  "state_preconditions": [
+   {
+    "entity": "ch-02",
+    "must_be": "in_hotel",
+    "variable": "location"
+   },
+   {
+    "entity": "ch-02",
+    "must_be": "escaped_police_but_not_yet_extracted",
+    "variable": "escape_status"
+   },
+   {
+    "entity": "ch-03",
+    "must_be": "monitoring_from_outside",
+    "variable": "presence_in_matrix"
+   },
+   {
+    "entity": "ch-04",
+    "must_be": "searching_hotel",
+    "variable": "pursuit_phase"
+   },
+   {
+    "entity": "cn-01",
+    "must_be": "false",
+    "variable": "exit_mechanic_established"
+   }
+  ]
+ }
+}

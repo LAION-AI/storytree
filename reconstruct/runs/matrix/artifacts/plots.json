@@ -1,0 +1,527 @@
+{
+ "plots": [
+  {
+   "plot_id": "pl-01",
+   "type": "growth_internal",
+   "title": "Neo's Awakening",
+   "agent": [
+    "neo"
+   ],
+   "resistance": [
+    "neo_self_doubt",
+    "oracle",
+    "agent_smith",
+    "system_matrix"
+   ],
+   "goal": "To discover what is wrong with reality and become what he truly is — the One who can reshape the Matrix and free humanity",
+   "stakes": "Neo's life, the lives of everyone who sacrificed for his belief, and humanity's chance at freedom from machine enslavement",
+   "outcome": "transformation_of_goal",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "disturbance",
+     "intent": "Neo, a hacker who senses something wrong with the world, receives a computer message — 'Follow the white rabbit' — and at a nightclub Trinity tells him the answer he is looking for is looking for him.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "obstacle",
+     "intent": "Agent Smith captures Neo, seals his mouth shut and inserts a living tracking bug into his navel; Neo refuses to cooperate with the Agents' offer.",
+     "because": [
+      "pl-05:st2"
+     ]
+    },
+    "st3": {
+     "step": 3,
+     "function": "point_of_no_return",
+     "intent": "Morpheus offers the red pill or the blue pill; Neo takes the red pill, choosing truth over forgetfulness — there is no going back.",
+     "because": [
+      "pl-02:st2"
+     ]
+    },
+    "st4": {
+     "step": 4,
+     "function": "rebirth",
+     "intent": "Neo wakes naked and bald in a pod among endless towers of human crops; a machine unplugs him and the Nebuchadnezzar retrieves him from the waste system.",
+     "because": []
+    },
+    "st5": {
+     "step": 5,
+     "function": "state_of_rupture",
+     "intent": "Morpheus explains the Matrix and the scorched real world; Neo rejects it violently, demanding to be let out, vomiting and blacking out.",
+     "because": []
+    },
+    "st6": {
+     "step": 6,
+     "function": "training",
+     "intent": "Combat skills are uploaded into Neo's brain; in the dojo he fights Morpheus and learns that Matrix rules can be bent or broken; he fails the jump program and is told death in the Matrix kills the physical body.",
+     "because": []
+    },
+    "st7": {
+     "step": 7,
+     "function": "prophecy_and_denial",
+     "intent": "The Oracle tells Neo he is not the One but warns that Morpheus will sacrifice his life for Neo's and that one of them will die; Neo leaves believing he is just another guy.",
+     "because": [
+      "pl-02:st4",
+      "pl-03:st1"
+     ]
+    },
+    "st8": {
+     "step": 8,
+     "function": "crisis_forced_by_betrayal",
+     "intent": "Cypher's betrayal springs at the Hotel Lafayette; the hardline is cut, Mouse is killed, and Morpheus is captured while telling Trinity to get Neo out.",
+     "because": [
+      "pl-04:st5"
+     ]
+    },
+    "st9": {
+     "step": 9,
+     "function": "choice_against_self_interest",
+     "intent": "Neo refuses to let Morpheus die and decides to re-enter the Matrix against orders to rescue him; Trinity insists on joining, unable to say what the Oracle told her.",
+     "because": [
+      "pl-03:st4",
+      "pl-02:st5"
+     ]
+    },
+    "st10": {
+     "step": 10,
+     "function": "escalation_through_action",
+     "intent": "Neo and Trinity storm the government building, massacre the lobby, and fly a helicopter to the executive floor; Neo rakes the office with gunfire and catches Morpheus in a midair cable rescue; he begins to move with superhuman speed.",
+     "because": []
+    },
+    "st11": {
+     "step": 11,
+     "function": "trial_by_combat",
+     "intent": "At the subway station, Agent Smith ambushes Neo; Neo refuses to run, fights hand to hand, and throws Smith in front of a train — declaring his own name rather than Anderson.",
+     "because": [
+      "pl-05:st5"
+     ]
+    },
+    "st12": {
+     "step": 12,
+     "function": "apparent_death",
+     "intent": "Agent Smith pursues Neo through the city and waits in room 303 of the Heart O' the City Hotel; he shoots Neo dead in the chest.",
+     "because": [
+      "pl-05:st6"
+     ]
+    },
+    "st13": {
+     "step": 13,
+     "function": "resurrection_trigger",
+     "intent": "Trinity whispers that the Oracle told her she would fall in love with the One, and that man is Neo; she kisses him and his heart restarts.",
+     "because": [
+      "pl-03:st6"
+     ]
+    },
+    "st14": {
+     "step": 14,
+     "function": "transformation",
+     "intent": "Neo awakens as the One — stops the Agents' bullets in midair, sees the Matrix as cascading green code, dives into and destroys Agent Smith from within; the remaining Agents flee.",
+     "because": [
+      "pl-05:st7"
+     ]
+    },
+    "st15": {
+     "step": 15,
+     "function": "resolution",
+     "intent": "Morpheus detonates the EMP saving the ship; Neo makes a phone call to the Matrix promising a world without rules and rises into the sky, flying faster than a speeding bullet.",
+     "because": []
+    }
+   },
+   "resolution_step": "st15",
+   "thematic_function": "Self-belief earned through sacrifice and love, not bestowed by prophecy: the One is made real by choosing to act on belief without certainty, and by being loved into transformation.",
+   "screen_time_share": 0.42,
+   "interference": [
+    {
+     "with": "pl-02",
+     "kind": "competes_for_belief: Morpheus's conviction that Neo is the One presses against Neo's refusal to accept a destiny he cannot prove"
+    },
+    {
+     "with": "pl-05",
+     "kind": "competes_for_survival: Smith's pursuit creates the crucible in which Neo must either die or transform"
+    },
+    {
+     "with": "pl-04",
+     "kind": "competes_for_safety: Cypher's betrayal destroys the security Neo has just found and forces the choice that defines the climax"
+    }
+   ],
+   "covers_synopsis": [
+    "s02",
+    "s03",
+    "s04",
+    "s06",
+    "s07",
+    "s08",
+    "s09",
+    "s10",
+    "s11",
+    "s12",
+    "s14",
+    "s16",
+    "s20",
+    "s21",
+    "s22",
+    "s23",
+    "s25",
+    "s26",
+    "s27",
+    "s28"
+   ]
+  },
+  {
+   "plot_id": "pl-02",
+   "type": "mentor",
+   "title": "Morpheus's Faith",
+   "agent": [
+    "morpheus"
+   ],
+   "resistance": [
+    "oracle",
+    "agent_smith",
+    "neo_self_doubt",
+    "history_of_the_five"
+   ],
+   "goal": "To find, free, and prepare the One — the prophesied savior who will end the machine war and free humanity",
+   "stakes": "Morpheus's life, his crew's lives, and the five who already died for his belief; if he is wrong again, the search was futile and the dead died for nothing",
+   "outcome": "success",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "vocation_established",
+     "intent": "Morpheus has spent most of his life searching the Matrix for the One; the Oracle prophesied the return of a man who could reshape the Matrix at will.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "rule_broken",
+     "intent": "Morpheus frees Neo, breaking the rule against freeing a mind once it reaches a certain age; he believes the search is over.",
+     "because": []
+    },
+    "st3": {
+     "step": 3,
+     "function": "confession_of_fallibility",
+     "intent": "Morpheus confesses to Neo that five before him died because he misunderstood the Oracle — he believed it was about him, not about the ones he chose; his belief is personal and fallible, not procedural.",
+     "because": []
+    },
+    "st4": {
+     "step": 4,
+     "function": "test_of_faith",
+     "intent": "Morpheus takes Neo to see the Oracle and confesses his unshakeable belief that Neo is the One; he asks Neo to trust him.",
+     "because": [
+      "pl-01:st7"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "sacrifice",
+     "intent": "When the betrayal springs, Morpheus fights Agent Smith hand to hand and tells Trinity to get Neo out — 'He is all that matters' — sacrificing himself to protect Neo.",
+     "because": [
+      "pl-04:st5"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "captured_and_tortured",
+     "intent": "Morpheus is captured and tortured by Agent Smith, who injects a serum to hack his mind and extract the access codes to Zion's mainframe.",
+     "because": [
+      "pl-05:st3"
+     ]
+    },
+    "st7": {
+     "step": 7,
+     "function": "rescue_and_vindication",
+     "intent": "Neo and Trinity storm the building and rescue Morpheus; he breaks his own restraints and is pulled to safety — his faith in Neo vindicated when Neo becomes the One.",
+     "because": [
+      "pl-01:st10"
+     ]
+    }
+   },
+   "resolution_step": "st7",
+   "thematic_function": "Belief as a personal, fallible, and costly act: Morpheus's faith is not procedural certainty but a wager of lives on a feeling — and the story vindicates not the prophecy but the man who staked everything on it.",
+   "screen_time_share": 0.15,
+   "interference": [
+    {
+     "with": "pl-01",
+     "kind": "competes_for_agent: Morpheus's certainty presses Neo toward a destiny Neo resists; the mentor's belief becomes the student's burden"
+    },
+    {
+     "with": "pl-04",
+     "kind": "competes_for_crew: Cypher's resentment of Morpheus's belief is the direct counter-argument — 'He lied to us, he tricked us'"
+    },
+    {
+     "with": "pl-05",
+     "kind": "competes_for_morpheus_body: Smith wants the codes in Morpheus's mind; Morpheus would rather die than give them"
+    }
+   ],
+   "covers_synopsis": [
+    "s05",
+    "s10",
+    "s16",
+    "s17",
+    "s19",
+    "s22",
+    "s28"
+   ]
+  },
+  {
+   "plot_id": "pl-03",
+   "type": "relationship",
+   "title": "Trinity's Love",
+   "agent": [
+    "trinity"
+   ],
+   "resistance": [
+    "oracle_prophecy",
+    "neo_death",
+    "neo_self_doubt"
+   ],
+   "goal": "To love Neo and, when the moment comes, tell him the Oracle's prophecy so that her love can revive him as the One",
+   "stakes": "If she does not confess, Neo stays dead and the prophecy fails — the One is lost with him",
+   "outcome": "success",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "prophecy_planted",
+     "intent": "In the opening phone call, Cypher asks Trinity 'You like him, don't you?' and presses whether she believes Neo is the One; Trinity deflects, but the Oracle's prophecy that she would fall in love with the One is already in motion.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "attraction_observed",
+     "intent": "Cypher notices Trinity watching Neo with unusual attention and asks 'There's something about him, isn't there?'; Trinity does not answer.",
+     "because": []
+    },
+    "st3": {
+     "step": 3,
+     "function": "unspoken_care",
+     "intent": "Trinity brings Neo dinner while he sleeps and breathes in his scent; Cypher catches her and implies she has feelings, but she deflects again.",
+     "because": []
+    },
+    "st4": {
+     "step": 4,
+     "function": "failed_disclosure",
+     "intent": "In the car on the way to the Oracle, Trinity tries to tell Neo what the Oracle told her but is physically unable to speak — the words stop in her throat.",
+     "because": []
+    },
+    "st5": {
+     "step": 5,
+     "function": "second_attempt_interrupted",
+     "intent": "At the subway station, Trinity begins to tell Neo what the Oracle said — 'she told me I was going to fall in love' — but a train blasts into the station, drowning her voice; Neo asks her to promise to tell him the rest.",
+     "because": []
+    },
+    "st6": {
+     "step": 6,
+     "function": "confession_as_resurrection",
+     "intent": "Neo is shot dead; Trinity whispers that the Oracle said she would love the One, that Neo is that man, and that she loves him; she kisses him and his heart restarts.",
+     "because": [
+      "pl-01:st12"
+     ]
+    },
+    "st7": {
+     "step": 7,
+     "function": "prophecy_fulfilled",
+     "intent": "Neo revives — the prophecy is fulfilled not by the Oracle's declaration but by Trinity's act of love, which is what makes the One real.",
+     "because": []
+    }
+   },
+   "resolution_step": "st7",
+   "thematic_function": "Love as the resurrection trigger: the Oracle's prophecy is self-fulfilling, not declarative — it is Trinity's confession, not the Oracle's words, that makes Neo the One. The One is made real by being loved.",
+   "screen_time_share": 0.08,
+   "interference": [
+    {
+     "with": "pl-01",
+     "kind": "competes_for_clock: Trinity's unspoken truth must wait until death to be spoken; the delay creates the dramatic structure of the resurrection"
+    },
+    {
+     "with": "pl-04",
+     "kind": "competes_for_trinity: Cypher's 'I thought I was in love with you' probes Trinity's feelings and exposes her vulnerability"
+    }
+   ],
+   "covers_synopsis": [
+    "s01",
+    "s03",
+    "s16",
+    "s20",
+    "s26"
+   ]
+  },
+  {
+   "plot_id": "pl-04",
+   "type": "intrigue",
+   "title": "Cypher's Betrayal",
+   "agent": [
+    "cypher"
+   ],
+   "resistance": [
+    "tank",
+    "trinity",
+    "morpheus_crew",
+    "morpheus_belief"
+   ],
+   "goal": "To escape the real world by betraying Morpheus to Agent Smith in exchange for reinsertion into the Matrix as a rich man with no memory",
+   "stakes": "Morpheus's life, the crew's lives, Zion's security codes, and the life of Neo — whom Cypher nearly unplugs",
+   "outcome": "failure",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "disillusionment_surfaced",
+     "intent": "Cypher confides to Neo over drinks that he regrets taking the red pill — 'Why, oh why, didn't I take that blue pill?' — revealing his desire to return to ignorance.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "seeds_of_doubt",
+     "intent": "Cypher tells Neo that five before him died because Morpheus got them amped up believing in bullshit; he advises Neo to run from Agents — 'Run your ass off.'",
+     "because": []
+    },
+    "st3": {
+     "step": 3,
+     "function": "secret_deal",
+     "intent": "Cypher secretly meets Agent Smith in a restaurant and agrees to betray Morpheus in exchange for reinsertion into the Matrix as a rich, important man with no memory of the real world.",
+     "because": []
+    },
+    "st4": {
+     "step": 4,
+     "function": "trap_laid",
+     "intent": "After entering the Matrix with the crew, Cypher drops a cellular phone into a garbage can, signaling the Agents and enabling the trap at the Hotel Lafayette.",
+     "because": []
+    },
+    "st5": {
+     "step": 5,
+     "function": "betrayal_springs",
+     "intent": "The hardline is cut, the windows are bricked up, Mouse is gunned down, and Morpheus is captured while fighting Agent Smith to let Trinity and Neo escape.",
+     "because": []
+    },
+    "st6": {
+     "step": 6,
+     "function": "murder_aboard_ship",
+     "intent": "Cypher exits the Matrix first, shoots Tank and Dozer with a lightning rifle, and unplugs Apoc and Switch, killing them instantly; he prepares to unplug Neo.",
+     "because": []
+    },
+    "st7": {
+     "step": 7,
+     "function": "thwarted",
+     "intent": "Tank — wounded but alive — levels the gun and fires a crackling bolt that kills Cypher before he can unplug Neo; Cypher dies in disbelief.",
+     "because": []
+    }
+   },
+   "resolution_step": "st7",
+   "thematic_function": "The anti-Neo: someone who took the red pill and regretted it. Cypher's 'why didn't I take the blue pill' is the counter-argument to the premise — ignorance is bliss — and his betrayal tests the cost of belief by destroying those who paid for it.",
+   "screen_time_share": 0.13,
+   "interference": [
+    {
+     "with": "pl-01",
+     "kind": "competes_for_neo_life: Cypher nearly unplugs Neo, the would-be One, from his chair — the survival of the protagonist hangs on Tank's survival"
+    },
+    {
+     "with": "pl-02",
+     "kind": "competes_for_morpheus: Cypher delivers Morpheus to Smith, converting the mentor's sacrifice into the antagonist's victory"
+    },
+    {
+     "with": "pl-05",
+     "kind": "enables_antagonist: Cypher's signal to the Agents is what makes the capture of Morpheus possible"
+    }
+   ],
+   "covers_synopsis": [
+    "s15",
+    "s17",
+    "s18"
+   ]
+  },
+  {
+   "plot_id": "pl-05",
+   "type": "antagonist",
+   "title": "Agent Smith's Hunt",
+   "agent": [
+    "agent_smith"
+   ],
+   "resistance": [
+    "neo",
+    "morpheus",
+    "trinity",
+    "tank"
+   ],
+   "goal": "To capture Morpheus, extract Zion's access codes, destroy the human resistance, and — beneath it all — to escape the Matrix he despises",
+   "stakes": "Zion's destruction and humanity's permanent enslavement; for Smith personally, continued imprisonment in a reality he cannot stand",
+   "outcome": "failure",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "target_identified",
+     "intent": "Agents confirm their next target is a hacker named Neo; they pursue Trinity through the opening chase but she escapes through a ringing phone.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "interrogation",
+     "intent": "Smith captures Neo, details his double life, and offers a deal — cooperate or lose everything; when Neo refuses, Smith seals his mouth and inserts a tracking bug.",
+     "because": []
+    },
+    "st3": {
+     "step": 3,
+     "function": "convergence_through_betrayal",
+     "intent": "Alerted by Cypher's signal, the Agents and police flood the Hotel Lafayette; the hardline is cut and the crew is trapped.",
+     "because": [
+      "pl-04:st4"
+     ]
+    },
+    "st4": {
+     "step": 4,
+     "function": "torture_and_revelation",
+     "intent": "Smith tortures Morpheus with a serum to extract Zion's codes and reveals his true motive — he hates the Matrix, calls it a zoo, a prison, and wants to escape; 'I must get out of here. I must get free.'",
+     "because": [
+      "pl-02:st6"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "direct_combat",
+     "intent": "Smith ambushes Neo at the subway station; Neo refuses to run and fights hand to hand, throwing Smith in front of a train, but Smith reconstitutes and pursues.",
+     "because": []
+    },
+    "st6": {
+     "step": 6,
+     "function": "kill",
+     "intent": "Smith waits in room 303 of the Heart O' the City Hotel and shoots Neo dead in the chest; he stands over the body and says goodbye.",
+     "because": []
+    },
+    "st7": {
+     "step": 7,
+     "function": "destruction",
+     "intent": "Neo, revived as the One, dives into and destroys Agent Smith from within; the remaining Agents flee in fear for the first time since their inception.",
+     "because": [
+      "pl-01:st14"
+     ]
+    }
+   },
+   "resolution_step": "st7",
+   "thematic_function": "The antagonist as mirror: Smith wants to escape the Matrix as much as any freed human, but his method is control and destruction. His rage against the 'zoo, this prison' gives him a sympathisable motive — from his perspective, humans are the virus and he is the cure.",
+   "screen_time_share": 0.22,
+   "interference": [
+    {
+     "with": "pl-01",
+     "kind": "competes_for_neo_life: Smith's pursuit creates the crucible in which Neo must either die or transcend"
+    },
+    {
+     "with": "pl-02",
+     "kind": "competes_for_morpheus_mind: Smith wants the codes in Morpheus's mind; the crew would rather kill Morpheus than let him break"
+    },
+    {
+     "with": "pl-04",
+     "kind": "enabled_by_betrayal: Cypher's deal with Smith is what makes the capture of Morpheus possible — the antagonist's success depends on the traitor's access"
+    }
+   ],
+   "covers_synopsis": [
+    "s01",
+    "s04",
+    "s13",
+    "s17",
+    "s19",
+    "s23",
+    "s24",
+    "s25",
+    "s27"
+   ]
+  }
+ ]
+}

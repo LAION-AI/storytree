@@ -1,0 +1,78 @@
+narrativeforge · runs/bennington2 · backend=hyprlab
+  · story_root  generating (82,073 prompt chars)
+    normalised dominant: ['science_fiction', 'thriller', 'crime', 'horror', 'drama'] -> ['science_fiction', 'crime', 'drama', 'horror', 'psychological_thriller', 'thriller']
+    validation: 1 error(s), repair attempt 1
+    applied 1 repair op(s)
+    validation: clean (0 error(s), 0 warning(s))
+  · expose      generating (31,959 prompt chars)
+    validation: clean (0 error(s), 0 warning(s))
+  · plots       generating (44,289 prompt chars)
+    validation: clean (0 error(s), 0 warning(s))
+  · entities    generating (64,919 prompt chars)
+    validation: 3 error(s), repair attempt 1
+    applied 3 repair op(s)
+    validation: clean (0 error(s), 4 warning(s))
+  · events      generating (63,555 prompt chars)
+    validation: 1 error(s), repair attempt 1
+    applied 1 repair op(s)
+    validation: clean (0 error(s), 4 warning(s))
+
+validation: 0 error(s), 4 warning(s)
+usage: 8 calls · 161,963 in · 71,372 out · 110,337 reasoning · $1.27
+narrativeforge · runs/bennington2 · backend=hyprlab
+  · scenes      batch 1/4: 9 events (80,463 prompt chars)
+  · scenes      batch 2/4: 9 events (82,513 prompt chars)
+  · scenes      batch 3/4: 9 events (86,660 prompt chars)
+  · scenes      batch 4/4: 9 events (81,177 prompt chars)
+    validation: 8 error(s), repair attempt 1
+    applied 14 repair op(s)
+    validation: 7 error(s), repair attempt 2
+    applied 7 repair op(s)
+    validation: 5 error(s) remain after 2 repair attempt(s) — quarantining for review
+  · prose       sc-001 (target 450 words)
+  · prose       sc-002 (target 400 words)
+  · prose       sc-003 (target 700 words)
+  · prose       sc-004 (target 550 words)
+  · prose       sc-005 (target 650 words)
+  · prose       sc-006 (target 400 words)
+  · prose       sc-007 (target 600 words)
+  · prose       sc-008 (target 400 words)
+  · prose       sc-009 (target 650 words)
+  · prose       sc-010 (target 750 words)
+  · prose       sc-011 (target 1400 words)
+  · prose       sc-012 (target 500 words)
+  · prose       sc-013 (target 950 words)
+  · prose       sc-014 (target 650 words)
+  · prose       sc-015 (target 800 words)
+  · prose       sc-016 (target 1100 words)
+  · prose       sc-017 (target 600 words)
+  · prose       sc-018 (target 650 words)
+  · prose       sc-019 (target 550 words)
+  · prose       sc-020 (target 500 words)
+  · prose       sc-021 (target 450 words)
+  · prose       sc-022 (target 500 words)
+  · prose       sc-023 (target 600 words)
+  · prose       sc-024 (target 400 words)
+  · prose       sc-025 (target 550 words)
+  · prose       sc-026 (target 450 words)
+  · prose       sc-027 (target 600 words)
+  · prose       sc-028 (target 500 words)
+  · prose       sc-029 (target 450 words)
+  · prose       sc-030 (target 500 words)
+  · prose       sc-031 (target 450 words)
+  · prose       sc-032 (target 500 words)
+  · prose       sc-033 (target 650 words)
+  · prose       sc-034 (target 550 words)
+  · prose       sc-035 (target 550 words)
+
+validation: 5 error(s), 4 warning(s)
+[ERROR  ] G14 @ sc-011#b6: beat belongs to event ev-011 (story index 22) after a beat at index 24; beats inside a scene must not run backwards
+[ERROR  ] G14 @ sc-011#b7: beat belongs to event ev-011 (story index 22) after a beat at index 24; beats inside a scene must not run backwards
+[ERROR  ] G20 @ sc-030#b2.changes[1]: value 'lo-03' outside declared domain ['ch-03', 'ch-01', 'ch-04', 'lo-04']
+[ERROR  ] G5.scene @ sc-011.exit_states.ch-01.location: declares 'lo-01', but folding every beat up to this point yields 'lo-04'
+[ERROR  ] G5.scene @ sc-011.exit_states.ch-04.cole_read: declares 4, but folding every beat up to this point yields 2
+[WARNING] G23 @ /ch-03/profile/moral_axis/m01/text: the t0 dossier appears to know the ending ('ending'); a starting state that contains its own outcome removes the uncertainty the story runs on
+[WARNING] G23 @ /ch-04/profile/speech_signature/vocabulary_domain: the t0 dossier appears to know the ending ('ending'); a starting state that contains its own outcome removes the uncertainty the story runs on
+[WARNING] G23 @ /ch-06/profile/moral_axis/m01/text: the t0 dossier appears to know the ending ('will die'); a starting state that contains its own outcome removes the uncertainty the story runs on
+[WARNING] G23 @ /lo-02/profile/backstory/b01/text: the t0 dossier appears to know the ending ('ending'); a starting state that contains its own outcome removes the uncertainty the story runs on
+usage: 41 calls · 734,807 in · 102,108 out · 520,211 reasoning · $4.68

@@ -1,0 +1,24 @@
+######## STAGE 1: upper layers (root -> expose -> plots -> entities -> events -> scenes)
+narrativeforge · runs/lattice · backend=hyprlab
+  · story_root  present, skipping
+  · expose      present, skipping
+  · plots       present, skipping
+  · entities    generating (78,428 prompt chars)
+    validation: 57 error(s), repair attempt 1
+    repair rejected: 0 -> 6 schema error(s), reverting
+    validation: 57 error(s), repair attempt 2
+    repair rejected: 0 -> 6 schema error(s), reverting
+    validation: 57 error(s) remain after 2 repair attempt(s) — quarantining for review
+  · events      generating (66,818 prompt chars)
+    validation: 70 error(s), repair attempt 1
+    repair rejected: 0 -> 4 schema error(s), reverting
+    validation: 70 error(s), repair attempt 2
+    repair rejected: 0 -> 6 schema error(s), reverting
+    validation: 70 error(s) remain after 2 repair attempt(s) — quarantining for review
+  · scenes      batch 1/1: 20 events (135,761 prompt chars)
+Terminated
+rc=143 after upper layers
+
+######## STAGE 2: forge — explicit written-out reasoning, one node per call
+narrativeforge forge · runs/lattice · backend=hyprlab · entity_passes=1
+  · ev-021    transition

@@ -1,0 +1,329 @@
+<meta charset="utf-8">
+<title>The Lattice — Baustand</title>
+<style>
+:root{
+  --ground:#e9ebee;--surface:#f7f8fa;--surface-2:#eef0f3;--sunken:#dfe3e8;
+  --ink:#161a1f;--ink-2:#39424d;--muted:#66717e;--faint:#93a0ae;
+  --line:#cfd6de;--line-soft:#dde3ea;
+  --heat:#c2451a;--heat-soft:#f0d5c9;--quench:#2f6f8f;--quench-soft:#cfdfe8;
+  --good:#3f7d55;--good-soft:#d6e6db;--crit:#b03b26;--crit-soft:#f2d7d1;
+  --warn:#8a6a12;--warn-soft:#f0e6cc;
+  --shadow:0 1px 2px rgba(20,28,38,.07),0 10px 28px -14px rgba(20,28,38,.25);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;
+  --line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--quench:#6aa8c6;--quench-soft:#152935;
+  --good:#67a97e;--good-soft:#17281d;--crit:#d4715c;--crit-soft:#2e1713;
+  --warn:#c99b45;--warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.75);
+}}
+:root[data-theme="dark"]{
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;
+  --line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--quench:#6aa8c6;--quench-soft:#152935;
+  --good:#67a97e;--good-soft:#17281d;--crit:#d4715c;--crit-soft:#2e1713;
+  --warn:#c99b45;--warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.75);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:16px;line-height:1.64;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0}
+a{color:var(--quench)}
+.wrap{max-width:940px;margin:0 auto;padding:0 26px 100px}
+header.top{border-bottom:1px solid var(--line);background:var(--surface);margin-bottom:40px}
+header.top .wrap{padding-top:50px;padding-bottom:32px}
+.kicker{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--heat);
+  font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(29px,4.8vw,42px);line-height:1.12;letter-spacing:-.02em;margin-bottom:14px}
+.standfirst{font-size:18.5px;color:var(--ink-2);max-width:64ch;font-family:var(--serif);line-height:1.5}
+.meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:20px;font-size:12.5px;color:var(--faint);
+  font-family:var(--mono)}
+h2{font-size:25px;letter-spacing:-.015em;margin:50px 0 8px}
+h2 .num{font-family:var(--mono);font-size:12px;color:var(--heat);display:block;
+  margin-bottom:7px;letter-spacing:.08em;font-weight:700}
+h3{font-size:17.5px;margin:28px 0 9px}
+p{margin:0 0 14px;max-width:68ch}
+ul,ol{max-width:66ch;padding-left:22px}li{margin-bottom:7px}
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1.5px 5px;
+  border-radius:4px;border:1px solid var(--line-soft)}
+strong{font-weight:650}
+.pipeline{background:var(--surface);border:1px solid var(--line-soft);border-radius:9px;
+  padding:6px 0;margin:24px 0;overflow:hidden}
+.step{display:grid;grid-template-columns:26px 1fr auto;gap:14px;align-items:center;
+  padding:11px 20px;border-bottom:1px solid var(--line-soft)}
+.step:last-child{border-bottom:0}
+.dot{width:13px;height:13px;border-radius:50%;justify-self:center}
+.dot.done{background:var(--good)}
+.dot.now{background:var(--heat);box-shadow:0 0 0 4px var(--heat-soft)}
+.dot.wait{background:transparent;border:2px solid var(--line)}
+.step .nm{font-weight:600;font-size:15px}
+.step .sub{font-size:13px;color:var(--muted);font-weight:400;margin-top:1px}
+.step .rt{font-family:var(--mono);font-size:12.5px;color:var(--faint);text-align:right;white-space:nowrap}
+.step.done .nm{color:var(--ink-2)}
+.step.wait .nm{color:var(--faint)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;padding:14px 16px}
+.stat .n{font-family:var(--mono);font-size:23px;font-weight:700;line-height:1;
+  font-variant-numeric:tabular-nums}
+.stat .l{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-top:7px}
+.stat .s{font-size:12px;color:var(--muted);margin-top:4px}
+.punch{border-radius:9px;padding:18px 22px;margin:22px 0;border:1px solid;box-shadow:var(--shadow)}
+.punch.no{background:var(--crit-soft);border-color:var(--crit)}
+.punch.yes{background:var(--good-soft);border-color:var(--good)}
+.punch.hm{background:var(--warn-soft);border-color:var(--warn)}
+.punch .lbl{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.punch.no .lbl{color:var(--crit)}.punch.yes .lbl{color:var(--good)}.punch.hm .lbl{color:var(--warn)}
+.punch .big{font-family:var(--serif);font-size:20px;line-height:1.35;margin-bottom:8px}
+.punch p{margin-bottom:0;font-size:15px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:18px 0}
+th{text-align:left;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;padding:8px 12px 8px 0;border-bottom:1px solid var(--line)}
+td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line-soft);vertical-align:top}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;padding-right:0}
+.scroll{overflow-x:auto}
+.good{color:var(--good);font-weight:650}.bad{color:var(--crit);font-weight:650}
+pre{background:var(--sunken);border:1px solid var(--line);border-radius:7px;padding:14px 16px;
+  overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:1.55;margin:16px 0}
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;
+  padding:18px 22px;margin:20px 0}
+.eyebrow{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-bottom:9px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tag{font-family:var(--mono);font-size:11.5px;padding:3px 9px;border-radius:5px;
+  background:var(--surface-2);border:1px solid var(--line-soft);color:var(--muted)}
+.tag.hi{background:var(--quench-soft);border-color:transparent;color:var(--quench)}
+.tag.lo{background:var(--sunken);color:var(--faint)}
+.note{font-size:13.5px;color:var(--muted)}
+.glossary dt{font-weight:650;font-size:15px;margin-top:14px}
+.glossary dd{margin:3px 0 0;color:var(--ink-2);font-size:15px;max-width:66ch}
+hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+footer{color:var(--faint);font-size:13px;border-top:1px solid var(--line);padding-top:20px;margin-top:48px}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="kicker">Baustand · Lauf „The Lattice"</div>
+  <h1>Ein Drehbuch entsteht gerade</h1>
+  <p class="standfirst">Zum ersten Mal komplett auf eigener Hardware: Prämisse rein, fertiges
+  Drehbuch raus, mit ausgeschriebener Begründung für jede einzelne Entscheidung. Diese Seite zeigt,
+  wie weit es ist, was noch kommt, wie lange es dauert — und wie gut es bisher aussieht.</p>
+  <div class="meta"><span>16. August 2026</span><span>GLM-5.2, lokal, 8 × A100</span>
+  <span>inneres Denken abgeschaltet</span></div>
+</div></header>
+
+<div class="wrap">
+
+<h2><span class="num">01</span>Wo wir stehen</h2>
+
+<div class="grid">
+  <div class="stat"><div class="n">3 / 6</div><div class="l">obere Ebenen</div><div class="s">fertig</div></div>
+  <div class="stat"><div class="n">5</div><div class="l">Handlungsstränge</div><div class="s">alle benannt</div></div>
+  <div class="stat"><div class="n" style="color:var(--good)">0</div><div class="l">Formatfehler</div><div class="s">bisher, über alles</div></div>
+  <div class="stat"><div class="n">~14 h</div><div class="l">Restzeit</div><div class="s">Spanne unten</div></div>
+</div>
+
+<div class="pipeline">
+  <div class="step done"><span class="dot done"></span>
+    <div><div class="nm">Story-Wurzel</div><div class="sub">Genre, Publikum, Stil, Prämisse, 76-dimensionale Genre-Koordinaten</div></div>
+    <div class="rt">24.467 B</div></div>
+  <div class="step done"><span class="dot done"></span>
+    <div><div class="nm">Exposé</div><div class="sub">Kurz- und Langfassung der Handlung, Synopsis, Klappentext</div></div>
+    <div class="rt">24.059 B</div></div>
+  <div class="step done"><span class="dot done"></span>
+    <div><div class="nm">Handlungsstränge</div><div class="sub">5 Stränge mit eigenen Namen und Spannungsbögen</div></div>
+    <div class="rt">18.012 B</div></div>
+  <div class="step now"><span class="dot now"></span>
+    <div><div class="nm">Entitäten</div><div class="sub">Figuren, Orte, Objekte, Gruppen — jede mit patchbarem Zustandsprofil</div></div>
+    <div class="rt">läuft</div></div>
+  <div class="step wait"><span class="dot wait"></span>
+    <div><div class="nm">Ereignisse</div><div class="sub">was in welcher Reihenfolge geschieht, je genau einem Strang zugeordnet</div></div>
+    <div class="rt">~25 min</div></div>
+  <div class="step wait"><span class="dot wait"></span>
+    <div><div class="nm">Szenen</div><div class="sub">45–60 Szenenprofile mit Ein- und Ausgangszustand</div></div>
+    <div class="rt">~45 min</div></div>
+  <div class="step wait"><span class="dot wait"></span>
+    <div><div class="nm">Transitions + Knoten</div><div class="sub">die ausgeschriebene Begründung — ein Knoten pro Aufruf</div></div>
+    <div class="rt">~8–12 h</div></div>
+  <div class="step wait"><span class="dot wait"></span>
+    <div><div class="nm">Prosa</div><div class="sub">der eigentliche Drehbuchtext, ~70% Dialog</div></div>
+    <div class="rt">~3–4 h</div></div>
+</div>
+
+<h2><span class="num">02</span>Ein Fehlstart, und was er verraten hat</h2>
+<p>Der erste Versuch brach ab. Zwei Aufrufe liefen gegen eine Obergrenze — und die Zahlen zeigten
+sofort, welche:</p>
+<pre>Eingabe   23.255 Token
+Ausgabe    9.513 Token
+Summe     32.768 Token   ← exakt 262.144 ÷ 8</pre>
+<p>Der Server war mit acht Bearbeitungsplätzen gestartet, und die teilen sich das Kontextfenster.
+Statt 262.000 Token hatte jeder Aufruf nur 32.768 — und da unsere Prompts allein schon 23.000
+verbrauchen, blieb für die Antwort kaum Platz. Das Modell hörte mitten im Satz auf.</p>
+<div class="punch yes">
+  <div class="lbl">Warum das folgenlos zu beheben war</div>
+  <div class="big">Weil vorher gemessen worden war, dass acht Plätze <em>nichts</em> bringen.</div>
+  <p>Der Gesamtdurchsatz ist mit einem Platz genauso hoch wie mit acht. Die sieben zusätzlichen
+  kosteten also nur Kontext und brachten kein Tempo. Umstellen auf einen Platz mit vollem Fenster
+  war ein reiner Gewinn — hätte die Messung anders ausgesehen, wäre es ein echter Zielkonflikt
+  gewesen.</p>
+</div>
+<p class="note">Die drei bereits fertigen Ebenen blieben erhalten; der Neustart hat sie
+übersprungen. Verloren gingen etwa zwanzig Minuten.</p>
+
+<h2><span class="num">03</span>Wie lange es noch dauert</h2>
+<p>Gemessen werden **20 Token pro Sekunde** von Ende zu Ende — nicht die 24,3 aus dem reinen
+Rechen-Benchmark, sondern inklusive Einlesen, Prüfen und Nachbessern. Das ist die Zahl, mit der
+man planen kann.</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Abschnitt</th><th class="num">geschätzte Ausgabe</th><th class="num">Zeit</th></tr></thead>
+<tbody>
+<tr><td>Rest der oberen Ebenen</td><td class="num">~120.000</td><td class="num">~1,5 h</td></tr>
+<tr><td>Transitions + Knoten</td><td class="num">~700.000</td><td class="num">8–12 h</td></tr>
+<tr><td>Prosa</td><td class="num">~250.000</td><td class="num">3–4 h</td></tr>
+<tr><td><strong>gesamt verbleibend</strong></td><td class="num"></td><td class="num"><strong>12–18 h</strong></td></tr>
+</tbody></table></div>
+
+<p>Die Spanne ist echt und lässt sich noch nicht schließen: die Pipeline entscheidet selbst, wie
+viele Ereignisse und Szenen die Geschichte braucht. Sobald die Szenenebene steht, wird aus der
+Schätzung eine Multiplikation.</p>
+
+<div class="card">
+  <div class="eyebrow">Was dieselbe Arbeit ohne die Messungen der letzten Tage gekostet hätte</div>
+  <div class="scroll"><table style="margin:8px 0 0">
+  <tbody>
+  <tr><td>Standardeinstellung, wie sie ab Werk kommt</td><td class="num bad">~4 Tage</td></tr>
+  <tr><td>mit <code>reasoning_effort: "low"</code> — der intuitiven Wahl</td><td class="num bad">~4 Tage</td></tr>
+  <tr><td>mit dem trainierten Rater und abgeschaltetem inneren Denken</td><td class="num good">~14 Stunden</td></tr>
+  </tbody></table></div>
+  <p style="margin:12px 0 0" class="note">Die mittlere Zeile ist die lehrreiche: <code>"low"</code>
+  klingt nach weniger und ist in Wahrheit das Maximum. Der Unterschied zwischen Zeile zwei und drei
+  ist eine einzige Zeichenkette im Request.</p>
+</div>
+
+<h2><span class="num">04</span>Wie gut ist es bisher? — und was die Maße bedeuten</h2>
+<p>Qualität wird hier nicht nach Gefühl beurteilt, sondern an nachprüfbaren Eigenschaften gemessen.
+Was die einzelnen Maße bedeuten, in einfachen Worten:</p>
+
+<dl class="glossary">
+  <dt>Formatfehler</dt>
+  <dd>Fehlt ein Pflichtfeld, ist etwas leer, hat ein Wert den falschen Typ? Rein handwerklich —
+  aber ein einziger Fehler macht einen Aufruf über 25.000 Token unbrauchbar.</dd>
+
+  <dt>Vollständige Analyseblöcke</dt>
+  <dd>Für jede Figur in einer Szene sollen elf Dinge ausgearbeitet sein: Wahrnehmung, Bewertung,
+  soziale Normen, Modell der anderen, Triebe, Beeinträchtigungen, Abwägung, Gefühltes gegen
+  Gezeigtes, Verlauf, Absicht, Handlung. „Vollständig" heißt: alle elf gefüllt, keine Hülse.</dd>
+
+  <dt>Theory of Mind, dritte Stufe</dt>
+  <dd>Nicht nur „sie weiß, dass er lügt", sondern „sie weiß, dass er glaubt, sie halte ihn für
+  ehrlich". Drei Stufen tief ist die Ebene, auf der Untertext und Täuschung überhaupt erst
+  funktionieren. Zählt, wie oft das durchgehalten wird.</dd>
+
+  <dt>Musterdialog</dt>
+  <dd>Der Härtetest. Das Modell muss sechs bis zehn echte Dialogzeilen für den Wendepunkt der Szene
+  schreiben und die eigene Analyse daran prüfen. Eine makellose Figurenanalyse und eine tote Szene
+  sehen auf dem Papier identisch aus — bis jemand spricht.</dd>
+
+  <dt>Flache Verläufe</dt>
+  <dd>Verändert sich die Figur im Lauf der Szene wirklich, oder steht formal ein „Verlauf" da, in
+  dem sich nichts bewegt? Diese Spalte existiert, weil eine Testabfrage nach einer Entwicklung von
+  „misstrauisch" zu „vertrauend" fünfmal „misstrauisch" zurückgab. Das Format war einwandfrei, der
+  Inhalt leer.</dd>
+</dl>
+
+<h3>Das Ergebnis der Vorprüfung</h3>
+<p>Vor diesem Lauf wurden drei Szenen viermal erzeugt, um zu klären, ob die kleine lokale Kopie
+ohne inneres Denken mit dem großen gehosteten Modell mithält:</p>
+
+<div class="scroll"><table>
+<thead><tr><th>erzeugt von</th><th class="num">Formatfehler</th><th class="num">vollständige Blöcke</th>
+<th class="num">ToM Stufe 3</th><th class="num">Musterdialog</th><th>Urteil</th></tr></thead>
+<tbody>
+<tr><td>gehostet, alles in einem Aufruf</td><td class="num bad">18,0</td><td class="num bad">1 von 7</td><td class="num">2–3</td><td class="num bad">0</td><td class="bad">dünn</td></tr>
+<tr><td>gehostet, aufgeteilt</td><td class="num good">0</td><td class="num good">6 von 6</td><td class="num">2–4</td><td class="num">7</td><td class="good">bestanden</td></tr>
+<tr><td><strong>lokal, ohne inneres Denken</strong></td><td class="num good">0</td><td class="num good">alle</td><td class="num good">2–6</td><td class="num">6</td><td class="good">bestanden</td></tr>
+</tbody></table></div>
+
+<div class="punch yes">
+  <div class="lbl">Die zwei Antworten, die das gibt</div>
+  <div class="big">Aufteilen ist der entscheidende Trick. Und das abgeschaltete Denken kostet
+  nichts.</div>
+  <p>Drei von drei Szenen bestanden, null Formatfehler, und die Rückmeldung bestätigte
+  <code>0 Zeichen</code> inneren Monolog — die Abschaltung hat also wirklich gegriffen und nicht
+  bloß freundlich quittiert.</p>
+</div>
+
+<p>Der erste Wert erklärt sich so: Fragt man das Modell nach vier Figurenanalysen in einem Aufruf,
+teilt es sein Budget und liefert vier Hülsen. Fragt man vier Mal nach je einer, liefert es vier
+vollständige. Es passt seinen Aufwand nicht an die Aufgabe an — es hat eines und verteilt es. Diese
+eine Erkenntnis ist der Unterschied zwischen „dünn" und „bestanden".</p>
+
+<h3>Was der laufende Lauf bisher zeigt</h3>
+<p>Noch keine Szenen, aber die oberen Ebenen lassen sich schon beurteilen — und sie treffen die
+Vorgabe:</p>
+
+<div class="tags">
+  <span class="tag hi">science_fiction 5</span><span class="tag hi">drama 5</span>
+  <span class="tag hi">thriller 5</span><span class="tag hi">family_drama 5</span>
+  <span class="tag">dystopian 4</span><span class="tag">mystery 4</span>
+  <span class="tag">political_thriller 4</span><span class="tag">techno_thriller 4</span>
+  <span class="tag lo">romantic_content 0</span><span class="tag lo">sexual_content 0</span>
+  <span class="tag lo">humor 1</span>
+</div>
+
+<p>Der Brief verlangte hoch auf Innerlichkeit, moralische Ambivalenz und geistigen Gehalt, bewusst
+niedrig auf Komik und Romanze. Die vergebenen Werte: <code>character_complexity 5</code>,
+<code>moral_ambiguity 5</code>, <code>philosophical_depth 5</code>, <code>emotional_depth 5</code>,
+<code>transformation_arc 5</code> — und Romanze, Sexualität, Humor auf 0 bis 1. Es hat die Vorgabe
+nicht nur gelesen, sondern in Koordinaten übersetzt.</p>
+
+<p>Aussagekräftiger noch: <strong>jeder einzelne Genre-Wert trägt eine Begründung.</strong> Bei
+Action steht etwa, die Schmuggeloperation sei zwar zeitkritisch und mit Ausweichmanövern verbunden,
+aber prozedural statt actiongetrieben — deshalb nur 1 von 5. Das ist keine Zahl, die geraten
+wurde, sondern eine, die verteidigt wird.</p>
+
+<p>Die fünf Handlungsstränge tragen eigene Namen statt Nummern: <em>The Fault Language</em>,
+<em>The Kett Argument</em>, <em>The Porter's Channel</em>, <em>The Cost Line</em>,
+<em>The Carriage</em>. Das Exposé liefert Kurzfassung (1.875 Zeichen) und Langfassung (11.191) sowie
+eine Synopsis von 542 Wörtern.</p>
+
+<div class="punch hm">
+  <div class="lbl">Was hier ausdrücklich noch nicht bewertet ist</div>
+  <div class="big">Ob es sich gut liest.</div>
+  <p>Alle Maße oben sind strukturell. Sie zählen, ob Felder gefüllt und Türme gebaut sind — nicht,
+  ob eine Szene trägt, ob eine Figur klingt wie ein Mensch, ob eine Pointe sitzt. Sie belohnen
+  außerdem Umfang, und der lokale Lauf ist länger als der gehostete. Dass er <em>besser</em> ist und
+  nicht bloß <em>mehr</em>, stützt sich auf Vollständigkeit und Denktiefe, nicht auf den
+  Wortzähler. Das literarische Urteil kommt am fertigen Text, von Hand.</p>
+</div>
+
+<hr>
+<h2 style="margin-top:0">Kurz gefasst</h2>
+<ol>
+<li>Drei von sechs oberen Ebenen stehen, die vierte läuft. <strong>Null Formatfehler</strong> über
+alles bisher.</li>
+<li>Ein Fehlstart kostete zwanzig Minuten und deckte auf, dass acht Bearbeitungsplätze das
+Kontextfenster achteln — behoben, und dank einer früheren Messung ohne jeden Nachteil.</li>
+<li><strong>12 bis 18 Stunden</strong> Restzeit. Die Spanne schließt sich, sobald feststeht, wie
+viele Szenen die Geschichte braucht.</li>
+<li>Die Vorprüfung sagt: <strong>aufteilen ist entscheidend</strong> (1 von 7 vollständigen
+Analysen gegen 6 von 6), und <strong>abgeschaltetes Denken kostet nichts</strong> — bei dreifacher
+Geschwindigkeit.</li>
+<li>Die oberen Ebenen treffen die Vorgabe des Briefs bis in die Genre-Koordinaten, jeweils mit
+Begründung statt bloßer Zahl.</li>
+</ol>
+
+<footer>
+Alle Zahlen aus dem laufenden Betrieb auf dieser Maschine. Technische Fassung:
+<a href="glm-local.html">GLM-5.2 on our own metal</a> · Erklärung der Grundlagen:
+<a href="glm-erklaert.html">Was da eigentlich passiert</a> · Projektübersicht:
+<a href="index.html">alle Projekte</a>.
+</footer>
+</div>

@@ -1,0 +1,431 @@
+<meta charset="utf-8">
+<title>Was da eigentlich passiert</title>
+<style>
+:root{
+  --ground:#e9ebee;--surface:#f7f8fa;--surface-2:#eef0f3;--sunken:#dfe3e8;
+  --ink:#161a1f;--ink-2:#39424d;--muted:#66717e;--faint:#93a0ae;
+  --line:#cfd6de;--line-soft:#dde3ea;
+  --heat:#c2451a;--heat-soft:#f0d5c9;--quench:#2f6f8f;--quench-soft:#cfdfe8;
+  --good:#3f7d55;--good-soft:#d6e6db;--crit:#b03b26;--crit-soft:#f2d7d1;
+  --warn:#8a6a12;--warn-soft:#f0e6cc;
+  --shadow:0 1px 2px rgba(20,28,38,.07),0 10px 28px -14px rgba(20,28,38,.25);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;
+  --line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--quench:#6aa8c6;--quench-soft:#152935;
+  --good:#67a97e;--good-soft:#17281d;--crit:#d4715c;--crit-soft:#2e1713;
+  --warn:#c99b45;--warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.75);
+}}
+:root[data-theme="dark"]{
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;
+  --line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--quench:#6aa8c6;--quench-soft:#152935;
+  --good:#67a97e;--good-soft:#17281d;--crit:#d4715c;--crit-soft:#2e1713;
+  --warn:#c99b45;--warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.75);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:16.5px;line-height:1.66;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0}
+a{color:var(--quench)}
+.wrap{max-width:900px;margin:0 auto;padding:0 26px 100px}
+header.top{border-bottom:1px solid var(--line);background:var(--surface);margin-bottom:40px}
+header.top .wrap{padding-top:52px;padding-bottom:34px}
+.kicker{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--heat);
+  font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(30px,5vw,44px);line-height:1.12;letter-spacing:-.02em;margin-bottom:16px}
+.standfirst{font-size:19px;color:var(--ink-2);max-width:62ch;font-family:var(--serif);line-height:1.5}
+h2{font-size:26px;letter-spacing:-.015em;margin:52px 0 8px}
+h2 .num{font-family:var(--mono);font-size:12px;color:var(--heat);display:block;
+  margin-bottom:8px;letter-spacing:.08em;font-weight:700}
+h3{font-size:18px;margin:30px 0 9px}
+p{margin:0 0 15px;max-width:66ch}
+ul,ol{max-width:64ch;padding-left:22px}li{margin-bottom:8px}
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1.5px 5px;
+  border-radius:4px;border:1px solid var(--line-soft)}
+strong{font-weight:650}
+.analogy{background:var(--quench-soft);border-left:3px solid var(--quench);border-radius:0 8px 8px 0;
+  padding:16px 20px;margin:20px 0}
+.analogy .lbl{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--quench);
+  font-weight:700;margin-bottom:7px}
+.analogy p{margin-bottom:0}
+.punch{border-radius:9px;padding:18px 22px;margin:24px 0;border:1px solid;box-shadow:var(--shadow)}
+.punch.no{background:var(--crit-soft);border-color:var(--crit)}
+.punch.yes{background:var(--good-soft);border-color:var(--good)}
+.punch.hm{background:var(--warn-soft);border-color:var(--warn)}
+.punch .lbl{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.punch.no .lbl{color:var(--crit)}.punch.yes .lbl{color:var(--good)}.punch.hm .lbl{color:var(--warn)}
+.punch .big{font-family:var(--serif);font-size:21px;line-height:1.35;margin-bottom:9px}
+.punch p{margin-bottom:0;font-size:15.5px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:20px 0}
+th{text-align:left;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;padding:8px 12px 8px 0;border-bottom:1px solid var(--line)}
+td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line-soft);vertical-align:top}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;padding-right:0}
+.scroll{overflow-x:auto}
+.good{color:var(--good);font-weight:650}.bad{color:var(--crit);font-weight:650}
+.pipe{font-family:var(--mono);font-size:12.5px;line-height:1.8;color:var(--ink-2);
+  background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;
+  padding:18px 20px;overflow-x:auto;margin:20px 0}
+.pipe b{color:var(--heat)}.pipe i{color:var(--faint);font-style:normal}
+.pipe .ok{color:var(--good)}.pipe .no{color:var(--crit)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;padding:14px 16px}
+.stat .n{font-family:var(--mono);font-size:23px;font-weight:700;line-height:1;
+  font-variant-numeric:tabular-nums}
+.stat .l{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-top:7px}
+.stat .s{font-size:12px;color:var(--muted);margin-top:4px}
+.note{font-size:14px;color:var(--muted)}
+.toc{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;
+  padding:18px 22px;margin:26px 0}
+.toc ol{margin:0;padding-left:20px;max-width:none}
+.toc li{margin-bottom:5px;font-size:15px}
+hr{border:0;border-top:1px solid var(--line);margin:46px 0}
+footer{color:var(--faint);font-size:13.5px;border-top:1px solid var(--line);padding-top:20px;margin-top:50px}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="kicker">Erklärt · von Grund auf</div>
+  <h1>Was da eigentlich passiert</h1>
+  <p class="standfirst">Wir haben ein Sprachmodell mit 754 Milliarden Zahlen auf acht Grafikkarten
+  in diesem Rack zum Laufen gebracht. Diese Seite erklärt ohne Vorwissen, was das heißt, warum es
+  so langsam ist, warum der offensichtliche Beschleunigungstrick hier nach hinten losging — und
+  was stattdessen funktioniert hat.</p>
+</div></header>
+
+<div class="wrap">
+
+<div class="toc"><ol>
+<li>Ein Sprachmodell ist eine sehr große Tabelle</li>
+<li>Warum acht Grafikkarten</li>
+<li>Quantisierung: die Zahlen kleiner machen</li>
+<li>Der eigentliche Flaschenhals ist Lesen, nicht Rechnen</li>
+<li>Mixture of Experts: 256 Spezialisten, acht pro Wort</li>
+<li>Spekulatives Dekodieren — und warum es hier verlor</li>
+<li>Der Prompt-Cache: Faktor 2.400</li>
+<li>Reasoning-Token: das Modell denkt laut</li>
+<li>Wofür wir das überhaupt brauchen</li>
+</ol></div>
+
+<h2><span class="num">01</span>Ein Sprachmodell ist eine sehr große Tabelle</h2>
+<p>Ein Sprachmodell tut im Kern genau eine Sache: es bekommt einen Text und sagt voraus, welches
+Wortstück als nächstes kommt. Dann hängt es dieses Stück an und macht dasselbe nochmal. Wort für
+Wort, bis es fertig ist. Alles, was wie Denken oder Schreiben aussieht, entsteht aus dieser einen
+Operation, sehr oft wiederholt.</p>
+
+<p>Womit sagt es das voraus? Mit <strong>Gewichten</strong> — schlicht Zahlen. Bei unserem Modell
+sind es <strong>754 Milliarden</strong> davon. Sie wurden beim Training so eingestellt, dass die
+Vorhersagen gut werden. Man kann sie nicht einzeln lesen oder verstehen; sie sind zusammen das
+Modell.</p>
+
+<div class="analogy"><div class="lbl">Bild dafür</div>
+<p>Stell dir einen unfassbar dicken Nachschlagekatalog vor. Auf jeder Seite stehen keine Wörter,
+sondern Zahlen, die zusammen ein Gespür kodieren: „nach <em>diesem</em> Anfang folgt am ehesten
+<em>jenes</em>." Um ein einziges Wort auszugeben, muss der Katalog benutzt werden. Nicht eine
+Seite davon — praktisch der ganze.</p></div>
+
+<p>Diese Zahlen müssen irgendwo liegen. Und zwar dort, wo der Rechner sehr schnell drankommt.</p>
+
+<h2><span class="num">02</span>Warum acht Grafikkarten</h2>
+<p>Grafikkarten haben eigenen, extrem schnellen Speicher. Unsere A100-Karten haben je 80 GB davon.
+Was nicht in diesen Speicher passt, ist praktisch unbrauchbar — von der Festplatte nachzuladen wäre
+tausendfach langsamer, und das für jedes einzelne Wort.</p>
+
+<p>Unser Modell belegt im Betrieb gemessene <strong>380,2 GiB</strong>. Also:</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Karten</th><th class="num">nutzbarer Speicher</th><th>reicht?</th></tr></thead>
+<tbody>
+<tr><td>4 × A100</td><td class="num">314,9 GiB</td><td class="bad">nein — 65 GiB zu wenig</td></tr>
+<tr><td>5 × A100</td><td class="num">393,6 GiB</td><td class="good">gerade so</td></tr>
+<tr><td>8 × A100</td><td class="num">629,8 GiB</td><td class="good">ja, mit Luft</td></tr>
+</tbody></table></div>
+
+<p>Deshalb acht. Das war auch die ursprüngliche Frage — ob zwei getrennte Server mit je vier Karten
+mehr bringen. Antwort: das gute Modell passt auf vier Karten schlicht nicht drauf, nicht mal
+annähernd.</p>
+
+<div class="punch hm">
+  <div class="lbl">Wichtiger Haken, der oft übersehen wird</div>
+  <div class="big">Acht Karten machen das Modell <em>nicht</em> schneller. Sie machen es nur
+  überhaupt möglich.</div>
+  <p>Die Schichten des Modells werden auf die Karten verteilt — Karte 1 hat die ersten, Karte 2 die
+  nächsten und so weiter. Ein Wort läuft also der Reihe nach durch alle acht. Das ist ein
+  Fließband: während Karte 3 arbeitet, warten die anderen sieben. Mehr Karten geben mehr Platz,
+  nicht mehr Tempo.</p>
+</div>
+
+<p>Naheliegende Hoffnung: dann schickt man eben <em>mehrere</em> Anfragen gleichzeitig aufs
+Fließband, und die wartenden Karten haben zu tun. Genau das haben wir gemessen — und es
+funktioniert nicht:</p>
+
+<div class="scroll"><table>
+<thead><tr><th>gleichzeitige Anfragen</th><th class="num">gesamt</th><th class="num">je Anfrage</th></tr></thead>
+<tbody>
+<tr><td>1</td><td class="num">26,2</td><td class="num">26,2</td></tr>
+<tr><td>2</td><td class="num">27,3</td><td class="num">14,2</td></tr>
+<tr><td>4</td><td class="num">27,0</td><td class="num">7,3</td></tr>
+<tr><td>8</td><td class="num">26,1</td><td class="num">3,7</td></tr>
+</tbody></table></div>
+
+<p>Der Gesamtdurchsatz bleibt <strong>konstant</strong>, egal ob eine oder acht Anfragen laufen.
+Jede einzelne wird nur entsprechend langsamer. Acht Anfragen gleichzeitig dauern genau so lange
+wie acht nacheinander.</p>
+
+<p>Warum, verrät Abschnitt 05 — merk dir die Frage bis dahin. Die Antwort ist dieselbe, an der
+gleich noch ein zweiter Trick scheitert.</p>
+
+<h2><span class="num">03</span>Quantisierung: die Zahlen kleiner machen</h2>
+<p>Ursprünglich ist jedes der 754 Milliarden Gewichte eine ziemlich genaue Zahl — 16 Bit, also zwei
+Byte. Das ergäbe rund 1,5 Terabyte. Passt auf keine acht Karten der Welt in diesem Rack.</p>
+
+<p><strong>Quantisierung</strong> ist der Trick, jede Zahl gröber zu speichern. Statt 16 Bit nur
+noch etwa 3,6. Das Modell wird dadurch etwas dümmer, aber überhaupt erst lauffähig.</p>
+
+<div class="analogy"><div class="lbl">Bild dafür</div>
+<p>Wie ein Foto von 16 Millionen Farben auf 256 herunterrechnen. Man erkennt noch alles. Aber feine
+Farbverläufe werden stufig, und genau an den knappen Stellen entstehen Fehler — dort, wo zwei Töne
+vorher fast gleich waren und jetzt derselbe sind.</p></div>
+
+<p>Bei einem Sprachmodell heißt „knappe Stelle": eine Entscheidung, bei der zwei Fortsetzungen fast
+gleich wahrscheinlich waren. Da kippt es dann. Für uns ist das der Grund, die größte verfügbare
+Variante zu nehmen — je gröber, desto mehr solcher Kipppunkte fallen falsch aus. Und unsere Aufgabe
+besteht aus langen, streng formatierten Ausgaben, wo ein einziges falsches Zeichen den ganzen
+Aufruf ungültig macht.</p>
+
+<h2><span class="num">04</span>Der eigentliche Flaschenhals ist Lesen, nicht Rechnen</h2>
+<p>Das ist der Punkt, an dem die meisten Erklärungen aufhören und ohne den nichts weiter Sinn
+ergibt.</p>
+
+<p>Um <strong>ein einziges Wortstück</strong> zu erzeugen, muss die Grafikkarte die relevanten
+Gewichte aus ihrem Speicher lesen. Bei uns sind das <strong>18,4 GB pro Wortstück</strong>. Die
+Rechnung selbst — Multiplizieren und Addieren — ist für so eine Karte lächerlich wenig Arbeit. Das
+Lesen ist alles.</p>
+
+<div class="analogy"><div class="lbl">Bild dafür</div>
+<p>Ein Koch, der für <em>jedes einzelne Wort</em> seiner Antwort ein 380-seitiges Buch von vorne
+bis hinten durchblättern muss. Das Blättern dauert. Das eigentliche Kochen ist eine Sekunde. Willst
+du ihn schneller machen, musst du am Blättern ansetzen — ein zweiter Herd bringt nichts.</p></div>
+
+<p>Daraus folgt eine harte Obergrenze. Unsere Karten schaffen 2039 GB pro Sekunde. Geteilt durch
+18,4 GB pro Wortstück: <strong>höchstens 110 Wortstücke pro Sekunde</strong>, egal wie clever man
+programmiert. Gemessen erreichen wir 15,7 bis 21,7 — also 14 bis 20% davon. Das klingt schlecht,
+ist für diese Bauart aber normal, und der Grund steht im nächsten Abschnitt.</p>
+
+<h2><span class="num">05</span>Mixture of Experts: 256 Spezialisten, acht pro Wort</h2>
+<p>Unser Modell ist kein einziger großer Block. Es enthält <strong>256 „Experten"</strong> —
+Teilnetze, die sich auf unterschiedliche Dinge spezialisiert haben. Für jedes einzelne Wortstück
+entscheidet eine Art Pförtner, welche <strong>acht</strong> davon befragt werden. Die anderen 248
+bleiben unberührt.</p>
+
+<p>Deshalb heißt es: 754 Milliarden Parameter insgesamt, aber nur <strong>40,5 Milliarden aktiv
+pro Wortstück</strong>. Man bekommt das Wissen des großen Modells zum Rechenpreis eines kleinen.
+Das ist der ganze Sinn der Bauart.</p>
+
+<div class="analogy"><div class="lbl">Bild dafür</div>
+<p>Eine Kanzlei mit 256 Fachanwälten. Für jede Frage werden acht passende hinzugezogen — nie alle.
+Die Kanzlei weiß viel mehr, als eine achtköpfige Kanzlei wüsste, kostet pro Frage aber nur acht
+Anwälte.</p></div>
+
+<p>Entscheidend für alles Weitere: <strong>welche acht, wechselt bei jedem Wortstück.</strong>
+Merk dir das — daran scheitert gleich der Beschleunigungstrick.</p>
+
+<h2><span class="num">06</span>Spekulatives Dekodieren — und warum es hier verlor</h2>
+<p>Wir wissen jetzt: die Karte verbringt ihre Zeit mit Lesen, und ihre Rechenwerke langweilen sich
+dabei. Spekulatives Dekodieren will genau diese Langeweile nutzen.</p>
+
+<p>Die Idee: etwas Billiges <em>rät</em> die nächsten vier Wortstücke. Dann prüft das große Modell
+alle vier <strong>in einem einzigen Durchgang</strong>. Beim klassischen Argument kostet das Prüfen
+von vier Wortstücken fast genauso viel wie das Erzeugen von einem, weil ja dieselben Gewichte
+gelesen werden. Richtig geratene Stücke sind damit gratis.</p>
+
+<div class="pipe">
+ohne     lies 18,4 GB → 1 Wort    lies 18,4 GB → 1 Wort    lies 18,4 GB → 1 Wort
+         <i>drei Lesevorgänge, drei Wörter</i>
+
+mit      rate:  ["Szene", "_id", "\": \"", "sc-"]
+         lies 18,4 GB → prüfe alle vier auf einmal → <span class="ok">3 richtig</span>, <span class="no">1 falsch</span>
+         <i>ein Lesevorgang, drei Wörter</i>
+</div>
+
+<p>Unsere Erwartung war, dass das hier <em>besonders</em> gut funktioniert. Denn das Modell schreibt
+für uns kein freies Deutsch, sondern strukturierte Daten mit immer denselben Schlüsseln —
+<code>"trajectory": [{"phase": "</code> und so weiter, tausendfach. Leicht zu raten. Also müsste die
+Trefferquote hoch sein und der Gewinn groß.</p>
+
+<div class="punch no">
+  <div class="lbl">Gemessen — und die Erwartung war falsch</div>
+  <div class="big">Spekulatives Dekodieren machte das Modell <em>langsamer</em>. Nicht knapp:
+  25% langsamer als ohne.</div>
+  <p>Gleicher Prompt, gleiche Einstellungen, nur der Trick an oder aus.</p>
+</div>
+
+<div class="scroll"><table>
+<thead><tr><th>Einstellung</th><th class="num">Wortstücke/s</th><th class="num">für 2500 Stück</th><th>Ergebnis</th></tr></thead>
+<tbody>
+<tr><td>ohne Raten</td><td class="num">16,70</td><td class="num">149,7 s</td><td>—</td></tr>
+<tr><td>mit Raten</td><td class="num">12,52</td><td class="num">199,7 s</td><td class="bad">25% langsamer</td></tr>
+</tbody></table></div>
+<p class="note">Trefferquote: 2.568 Wortstücke geraten, 547 übernommen — <strong>21,3%</strong>.</p>
+
+<h3>Warum, und es liegt an Abschnitt 05</h3>
+<p>Das Argument „Prüfen ist fast gratis" gilt für Modelle, die für jedes Wort <em>dieselben</em>
+Gewichte lesen. Unseres nicht. Bei uns zieht <strong>jedes geratene Wortstück seine eigenen acht
+Experten</strong> herbei — und welche acht, ist ja pro Wortstück verschieden.</p>
+
+<div class="analogy"><div class="lbl">Zurück zur Kanzlei</div>
+<p>Du prüfst nicht eine Frage mit acht Anwälten, sondern fünf geratene Fragen gleichzeitig. Jede
+braucht ihre eigenen acht. Statt acht Anwälten musst du bis zu vierzig aus dem Feierabend holen.
+Und wenn vier der fünf Fragen sich als falsch geraten herausstellen, hast du zweiunddreißig Anwälte
+umsonst geweckt.</p></div>
+
+<p>Bei 21% Trefferquote zahlt man rund 4,7 geratene Stücke für ein behaltenes. Die zusätzlichen
+Expertenzugriffe kosten mehr, als die eingesparten Wortstücke bringen. Damit sich das lohnt,
+bräuchte es hier etwa <strong>55–65% Trefferquote</strong> — bei gewöhnlichen Modellen reichen rund
+30%.</p>
+
+<p>Das ist die eigentlich brauchbare Erkenntnis, und sie widerspricht dem gängigen Ratschlag: bei
+dieser Bauart braucht spekulatives Dekodieren einen <em>viel</em> besseren Rater als üblich
+behauptet, und ein mittelmäßiger schadet aktiv.</p>
+
+<h3>Und hier scheitert auch die Nebenläufigkeit</h3>
+<p>Jetzt die Frage aus Abschnitt 02. Warum bringen acht gleichzeitige Anfragen nichts? Aus genau
+demselben Grund. Acht verschiedene Anfragen sind acht verschiedene Themen, und jede zieht ihre
+<em>eigenen</em> acht Anwälte herbei. Acht Anfragen brauchen also bis zu 64 Anwälte statt acht. Es
+gibt nichts zu teilen.</p>
+
+<p>Bei gewöhnlichen Modellen ist das anders: dort lesen alle Anfragen dieselben Gewichte, und
+gleichzeitiges Abarbeiten ist fast gratis. Diese Bauart ist die Ausnahme — und die üblichen
+Ratschläge zum Beschleunigen stammen von der Regel.</p>
+
+<div class="punch hm">
+  <div class="lbl">Die eine Regel, die alles erklärt</div>
+  <div class="big">Alles, was mehr Wortstücke gleichzeitig durch die Maschine schiebt, zahlt hier
+  fast den vollen Preis pro Stück.</div>
+  <p>Egal ob es geratene Wortstücke sind oder Anfragen verschiedener Nutzer. Ein Satz deckt drei
+  getrennte Messungen ab — und zwei davon hatten wir vorher falsch vorhergesagt.</p>
+</div>
+
+<h3>Es gibt aber doch einen Gewinner</h3>
+<p>Im Modell steckt ein <em>eigens dafür trainierter</em> Rater — 4,56 GiB, die ungenutzt
+herumlagen, weil sie schlicht niemand angefordert hatte. Der rät viel besser als die simple
+Methode oben. Gemessen:</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Methode</th><th class="num">Wortstücke/s</th><th class="num">Trefferquote</th><th>Ergebnis</th></tr></thead>
+<tbody>
+<tr><td>ohne Raten</td><td class="num">16,70</td><td class="num">—</td><td>Ausgangswert</td></tr>
+<tr><td>einfacher Rater</td><td class="num">12,52</td><td class="num">21,3%</td><td class="bad">25% langsamer</td></tr>
+<tr><td>trainierter Rater</td><td class="num">24,26</td><td class="num">79,6%</td><td class="good">45% schneller</td></tr>
+</tbody></table></div>
+
+<p>Bei 79,6% Trefferquote lohnt es sich deutlich — die Schwelle von 55–65% ist klar überschritten.
+Und weil das große Modell jeden Ratevorschlag ohnehin prüft, kommt <strong>exakt dasselbe</strong>
+heraus wie ohne Raten. Die 45% kosten nichts an Qualität. So etwas gibt es selten.</p>
+
+<h2><span class="num">07</span>Der Prompt-Cache: Faktor 2.400</h2>
+<p>Erzeugen ist das eine. Vorher muss das Modell aber die Frage <em>lesen</em>, und unsere Fragen
+sind riesig — Story-Bibel, Figurenprofile, bisheriger Verlauf, gerne 50.000 Wortstücke. Das dauerte
+gemessen 193,7 Sekunden, bevor überhaupt ein Wort herauskam.</p>
+
+<p>Der Clou: bei unseren Aufrufen ist der Anfang jedes Mal <em>derselbe</em>. Die Story-Bibel ändert
+sich nicht zwischen zwei Szenen. Und ein Modell, das denselben Anfang schon verarbeitet hat, kann
+das Zwischenergebnis behalten.</p>
+
+<div class="grid">
+  <div class="stat"><div class="n" style="color:var(--crit)">193,7 s</div><div class="l">kalt</div><div class="s">50k Wortstücke neu gelesen</div></div>
+  <div class="stat"><div class="n" style="color:var(--good)">0,064 s</div><div class="l">warm</div><div class="s">1 Wortstück neu gelesen</div></div>
+  <div class="stat"><div class="n">2.400 ×</div><div class="l">schneller</div><div class="s">gemessen, nicht geschätzt</div></div>
+</div>
+
+<p>Das ist mit Abstand der größte Hebel — und er hat nichts mit cleverer Hardware zu tun, sondern
+nur damit, dieselbe Arbeit nicht zweimal zu machen. Die Bedingung: der gemeinsame Anfang muss
+<strong>zeichengenau identisch</strong> sein und in derselben Reihenfolge stehen. Ein umsortiertes
+Feld, ein zusätzliches Leerzeichen an der falschen Stelle — und der Cache greift nicht mehr.</p>
+
+<h2><span class="num">08</span>Reasoning-Token: das Modell denkt laut</h2>
+<p>Moderne Modelle „denken", bevor sie antworten: sie erzeugen erst einen inneren Monolog, der dem
+Nutzer nicht gezeigt wird, und danach die eigentliche Antwort. Das verbessert die Qualität oft
+deutlich.</p>
+
+<p>Aber diese Denk-Wortstücke werden genauso langsam erzeugt wie alle anderen. Bei unserem Modell
+steht die Einstellung ab Werk auf Maximum, und gemessen sind <strong>rund 74% aller erzeugten
+Wortstücke innerer Monolog</strong>. Drei Viertel der Rechenzeit gehen an Text, den niemand liest.</p>
+
+<div class="punch yes">
+  <div class="lbl">Der größte Hebel beim Erzeugen</div>
+  <div class="big">Denken abschalten: von ~8,2 Stunden auf ~2,6 Stunden pro Geschichte.</div>
+  <p>Faktor 3,2 — deutlich mehr, als spekulatives Dekodieren je gebracht hätte. Der langweilige
+  Schalter schlug den interessanten Trick.</p>
+</div>
+
+<p>Normalerweise wäre das ein schlechter Tausch: weniger Denken, schlechteres Ergebnis. Bei uns
+gibt es einen konkreten Grund zu hoffen, dass es hier billiger ist als sonst — und den prüfen wir
+gerade, statt ihn anzunehmen.</p>
+
+<p>Unsere Pipeline zwingt das Modell nämlich ohnehin, sein Denken <strong>ausformuliert ins
+Ergebnis zu schreiben</strong>: was die Figur wahrnimmt, wie sie sich über die Szene hinweg
+verändert, was sie über das Denken der anderen glaubt, welche Alternativen sie verworfen hat.
+Das Denken steht bei uns also im Endprodukt. Der zusätzliche innere Monolog macht womöglich
+weitgehend dieselbe Arbeit doppelt. Falls ja, ist das Abschalten fast gratis. Falls die Qualität
+einbricht, wissen wir, dass er nötig war — und zahlen ihn bewusst.</p>
+
+<p class="note">Eine Falle dabei: manche Server nehmen den Abschalt-Befehl an, antworten
+freundlich mit „in Ordnung" — und ändern nichts. Die Prüfung ist deshalb nicht, ob der Aufruf
+klappt, sondern ob die Zahl der erzeugten Wortstücke tatsächlich fällt.</p>
+
+<h2><span class="num">09</span>Wofür wir das überhaupt brauchen</h2>
+<p>Das Modell soll bei uns keine Chat-Antworten geben, sondern Drehbücher <em>strukturiert</em>
+bauen — und in der Gegenrichtung ein fertiges Drehbuch in seine Struktur zerlegen: Grundidee →
+Handlungsstränge → Figurenprofile → Ereignisse → Szenen → Text.</p>
+
+<p>Das erklärt, warum die Anforderungen so ungewöhnlich sind:</p>
+<ul>
+<li><strong>Sehr lange, streng formatierte Ausgaben.</strong> Bis zu 29.000 Wortstücke am Stück, in
+einem festen Format. Ein falsches Zeichen macht den ganzen Aufruf ungültig.</li>
+<li><strong>Sehr lange Fragen.</strong> Für Szene 25 muss der bisherige Stand mit — daher die
+50.000 Wortstücke Eingabe und die enorme Bedeutung des Prompt-Caches.</li>
+<li><strong>Fehler, die nicht auffallen.</strong> Wenn das Modell eine Figureneigenschaft über 24
+Szenen hinweg falsch mitführt, kommt trotzdem formal einwandfreier Text heraus. Kein Prüfprogramm
+schlägt Alarm. Nur der Inhalt ist falsch. Deshalb ist die gröbere, schnellere Variante des Modells
+für uns keine Option.</li>
+</ul>
+
+<hr>
+<h2 style="margin-top:0">Die kurze Fassung</h2>
+<ol>
+<li>Ein Sprachmodell erzeugt Text Wortstück für Wortstück, und für jedes Stück muss es fast alle
+seine Zahlen lesen. <strong>Lesen ist der Flaschenhals</strong>, nicht Rechnen.</li>
+<li>Unser Modell braucht 380 GiB und passt deshalb auf <strong>acht Karten</strong>, nicht auf vier.
+Die acht Karten geben Platz, kein Tempo — sie arbeiten wie ein Fließband.</li>
+<li>Der Beschleunigungstrick „raten und en bloc prüfen" geht bei dieser Bauart <strong>entweder
+deutlich schief oder deutlich auf</strong> — je nachdem, wie gut geraten wird. Der simple Rater
+war 25% langsamer, der mitgelieferte trainierte 45% schneller. Dazwischen gibt es wenig.</li>
+<li>Mehrere Anfragen gleichzeitig bringen <strong>gar nichts</strong>. Der Durchsatz bleibt
+konstant, aus demselben Grund.</li>
+<li>Was am meisten hilft, ist unspektakulär: <strong>dieselbe Frage nicht zweimal lesen</strong>
+(Faktor 2.400) und <strong>das Modell nicht sinnlos vor sich hin denken lassen</strong>
+(Faktor 3,2). Zusammen mit dem trainierten Rater: aus 8 Stunden werden <strong>1½</strong>.</li>
+<li><strong>Die Qualität hält.</strong> Erste Messungen: die lokale, geschrumpfte Version ohne
+inneres Denken liefert dieselbe Qualität wie das große gehostete Modell — null Formatfehler, alle
+Analysefelder gefüllt, in einem Fall sogar mehr Tiefe.</li>
+<li>Drei Vorhersagen in diesem Projekt wurden binnen einer Stunde durch Messung widerlegt — alle
+drei meine. Zweimal war es derselbe Fehler: über ein Modell mit 256 Spezialisten so nachdenken,
+als wäre es ein gewöhnliches. Deshalb wird gemessen und nicht überlegt.</li>
+</ol>
+
+<footer>
+Alle Zahlen auf dieser Seite stammen aus Messungen auf dieser Maschine am 15. August 2026.
+Die technische Fassung mit den vollständigen Messreihen steht unter
+<a href="glm-local.html">GLM-5.2 on our own metal</a>.
+</footer>
+</div>

@@ -1,0 +1,2678 @@
+<meta charset="utf-8">
+<title>False Weight Atlas</title>
+<style>
+/* ============================================================ tokens */
+:root{
+  --ground:#e9ebee; --surface:#f7f8fa; --surface-2:#eef0f3; --sunken:#dfe3e8;
+  --ink:#161a1f; --ink-2:#39424d; --muted:#66717e; --faint:#93a0ae;
+  --line:#cfd6de; --line-soft:#dde3ea;
+  --heat:#c2451a; --heat-soft:#f0d5c9; --heat-ink:#8f3212;
+  --quench:#2f6f8f; --quench-soft:#cfdfe8; --quench-ink:#23566f;
+  --good:#3f7d55; --warn:#9a6a12; --crit:#b03b26;
+  --shadow:0 1px 2px rgba(20,28,38,.07), 0 8px 24px -12px rgba(20,28,38,.22);
+  --radius:7px;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --script:"Courier New",Courier,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#101419; --surface:#171d24; --surface-2:#1d242c; --sunken:#0b0e12;
+    --ink:#e4e8ec; --ink-2:#b9c2cc; --muted:#8b96a3; --faint:#5f6b78;
+    --line:#2b343e; --line-soft:#222a33;
+    --heat:#e2723f; --heat-soft:#3a2318; --heat-ink:#f0a077;
+    --quench:#6aa8c6; --quench-soft:#152935; --quench-ink:#9cc9dd;
+    --good:#67a97e; --warn:#c99b45; --crit:#d4715c;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#101419; --surface:#171d24; --surface-2:#1d242c; --sunken:#0b0e12;
+  --ink:#e4e8ec; --ink-2:#b9c2cc; --muted:#8b96a3; --faint:#5f6b78;
+  --line:#2b343e; --line-soft:#222a33;
+  --heat:#e2723f; --heat-soft:#3a2318; --heat-ink:#f0a077;
+  --quench:#6aa8c6; --quench-soft:#152935; --quench-ink:#9cc9dd;
+  --good:#67a97e; --warn:#c99b45; --crit:#d4715c;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--sans); font-size:15px; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:var(--serif); font-weight:600; text-wrap:balance; margin:0}
+a{color:var(--quench)}
+:focus-visible{outline:2px solid var(--heat); outline-offset:2px; border-radius:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ============================================================ shell */
+.app{display:grid; grid-template-columns:236px 1fr; height:calc(100vh - 46px); overflow:hidden}
+
+.rail{
+  background:var(--surface); border-right:1px solid var(--line);
+  display:flex; flex-direction:column; overflow-y:auto;
+}
+.brand{padding:20px 20px 16px; border-bottom:1px solid var(--line-soft)}
+.brand .mark{
+  display:flex; align-items:baseline; gap:8px; font-family:var(--serif);
+  font-size:19px; font-weight:600; letter-spacing:-.01em;
+}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--heat);flex:none;transform:translateY(-2px)}
+.brand .sub{
+  margin-top:5px; font-size:11px; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--faint); font-weight:600;
+}
+.nav{padding:10px 10px 16px; display:flex; flex-direction:column; gap:1px}
+.nav button{
+  display:grid; grid-template-columns:30px 1fr; align-items:center; gap:2px;
+  width:100%; text-align:left; padding:9px 10px; border:0; border-radius:var(--radius);
+  background:transparent; color:var(--ink-2); font:inherit; font-size:14px; cursor:pointer;
+  transition:background .12s, color .12s;
+}
+.nav button:hover{background:var(--surface-2); color:var(--ink)}
+.nav button[aria-current="true"]{background:var(--sunken); color:var(--ink); font-weight:600}
+.nav button[aria-current="true"] .layer{color:var(--heat)}
+.nav .layer{
+  font-family:var(--mono); font-size:10px; font-weight:700; color:var(--faint);
+  letter-spacing:.04em;
+}
+.rail-foot{margin-top:auto; padding:14px 16px; border-top:1px solid var(--line-soft); font-size:12px; color:var(--faint)}
+.rail-foot .row{display:flex; justify-content:space-between; gap:8px; padding:2px 0}
+.rail-foot b{font-family:var(--mono); font-weight:600; color:var(--ink-2); font-variant-numeric:tabular-nums}
+
+.main{display:flex; flex-direction:column; overflow:hidden; min-width:0}
+.topbar{
+  display:flex; align-items:center; gap:14px; padding:0 20px; height:54px;
+  border-bottom:1px solid var(--line); background:var(--surface); flex:none;
+}
+.topbar h1{font-size:17px; letter-spacing:-.01em}
+.topbar .crumb{font-size:12px; color:var(--faint); font-family:var(--mono)}
+.spacer{flex:1}
+.btn{
+  border:1px solid var(--line); background:var(--surface-2); color:var(--ink-2);
+  font:inherit; font-size:13px; padding:6px 12px; border-radius:var(--radius); cursor:pointer;
+  transition:background .12s,border-color .12s,color .12s;
+}
+.btn:hover{background:var(--sunken); color:var(--ink); border-color:var(--faint)}
+.btn.primary{background:var(--heat); border-color:var(--heat); color:#fff}
+.btn.primary:hover{filter:brightness(1.08); background:var(--heat)}
+.btn.sm{padding:3px 9px; font-size:12px}
+
+.view{flex:1; overflow:auto; min-height:0}
+.pad{padding:30px 34px 110px; max-width:1180px}
+.prose-w{max-width:70ch}
+
+/* ============================================================ bits */
+.eyebrow{
+  font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--faint);
+  font-weight:700; margin-bottom:8px;
+}
+.card{
+  background:var(--surface); border:1px solid var(--line-soft); border-radius:var(--radius);
+  padding:18px 20px;
+}
+.card.raised{box-shadow:var(--shadow)}
+.grid{display:grid; gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.stack{display:flex; flex-direction:column; gap:14px}
+.mono{font-family:var(--mono); font-size:12.5px}
+.tag{
+  display:inline-block; font-family:var(--mono); font-size:11px; padding:2px 7px;
+  border-radius:4px; background:var(--surface-2); border:1px solid var(--line-soft);
+  color:var(--muted); white-space:nowrap;
+}
+.tag.heat{background:var(--heat-soft); border-color:transparent; color:var(--heat-ink)}
+.tag.quench{background:var(--quench-soft); border-color:transparent; color:var(--quench-ink)}
+.tags{display:flex; flex-wrap:wrap; gap:5px}
+.kv{display:grid; grid-template-columns:auto 1fr; gap:4px 16px; font-size:14px}
+.kv dt{color:var(--muted); font-size:12.5px}
+.kv dd{margin:0; color:var(--ink)}
+.divider{height:1px; background:var(--line-soft); margin:26px 0}
+h2.sec{font-size:22px; margin:34px 0 14px; letter-spacing:-.01em}
+h2.sec:first-child{margin-top:0}
+h3.sub{font-size:15px; font-family:var(--sans); font-weight:650; margin:0 0 8px; color:var(--ink)}
+p{margin:0 0 12px}
+p:last-child{margin-bottom:0}
+.lede{font-family:var(--serif); font-size:19px; line-height:1.5; color:var(--ink-2)}
+.empty{color:var(--faint); font-style:italic; padding:40px 0}
+
+/* meters */
+.meter{display:grid; grid-template-columns:150px 1fr 34px; align-items:center; gap:10px; padding:3px 0}
+.meter .nm{font-size:12.5px; color:var(--ink-2); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.meter .track{height:6px; background:var(--sunken); border-radius:3px; overflow:hidden; position:relative}
+.meter .fill{height:100%; background:var(--quench); border-radius:3px}
+.meter .fill.hot{background:var(--heat)}
+.meter .val{font-family:var(--mono); font-size:11.5px; color:var(--muted); text-align:right; font-variant-numeric:tabular-nums}
+.meter .nm[title]{cursor:help}
+
+/* ============================================================ graph */
+/* The sidebar is a fixed part of the layout, not something that appears on
+   click. Selecting a node only swaps the panel's CONTENT, so the canvas is
+   never resized and nothing moves. The width changes only when the reader
+   explicitly collapses the panel — and even then, synchronously. */
+.graphwrap{display:grid; grid-template-columns:minmax(0,1fr) clamp(400px,31vw,560px);
+  height:100%; min-height:0;
+  /* .view is switched to display:flex for graph tabs, so this is a flex item.
+     Without these three it is sized by its own content, and the panel width
+     then drifts as the panel's content changes. */
+  flex:1 1 auto; width:100%; min-width:0}
+.graphwrap.collapsed{grid-template-columns:minmax(0,1fr) 0}
+.graphwrap.collapsed .inspector{border-left:0}
+.insp-empty{padding:40px 20px; color:var(--faint); font-size:13.5px; line-height:1.6}
+.insp-empty b{display:block; color:var(--muted); font-size:12px; letter-spacing:.09em;
+  text-transform:uppercase; margin-bottom:8px}
+.panel-toggle{margin-left:auto}
+.canvas-area{position:relative; min-width:0; background:var(--ground); overflow:hidden}
+canvas{display:block; width:100%; height:100%; cursor:grab; touch-action:none}
+canvas.dragging{cursor:grabbing}
+.ctrls{
+  position:absolute; left:14px; top:14px; display:flex; gap:6px; align-items:center;
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+  padding:5px 6px; box-shadow:var(--shadow); flex-wrap:wrap; max-width:calc(100% - 28px);
+}
+.ctrls .zoom{font-family:var(--mono); font-size:11.5px; color:var(--muted); padding:0 6px; min-width:44px; text-align:center}
+.legend{
+  position:absolute; left:14px; bottom:14px; background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--radius); padding:9px 12px; box-shadow:var(--shadow); font-size:12px; color:var(--muted);
+  display:flex; flex-direction:column; gap:5px; max-width:260px;
+}
+.legend .li{display:flex; align-items:center; gap:7px}
+.legend .sw{width:14px;height:10px;border-radius:2px;flex:none}
+.hint{position:absolute; right:14px; bottom:14px; font-size:11.5px; color:var(--faint); font-family:var(--mono)}
+
+.inspector{
+  border-left:1px solid var(--line); background:var(--surface); overflow-y:auto;
+  min-width:0; display:flex; flex-direction:column;
+}
+.insp-head{
+  position:sticky; top:0; background:var(--surface); border-bottom:1px solid var(--line-soft);
+  padding:14px 16px 12px; display:flex; align-items:flex-start; gap:10px; z-index:2;
+}
+.insp-head h3{font-family:var(--serif); font-size:16px; margin:0; line-height:1.3}
+.insp-body{padding:14px 16px 40px; display:flex; flex-direction:column; gap:16px}
+.insp-sec > .eyebrow{margin-bottom:6px}
+.close{border:0;background:transparent;color:var(--faint);font-size:20px;line-height:1;cursor:pointer;padding:0 2px;margin-left:auto}
+.close:hover{color:var(--ink)}
+
+/* change rows */
+.chg{
+  border:1px solid var(--line-soft); border-radius:6px; padding:9px 11px; background:var(--surface-2);
+  display:flex; flex-direction:column; gap:5px;
+}
+.chg .top{display:flex; align-items:center; gap:6px; flex-wrap:wrap; font-size:12.5px}
+.chg .who{font-weight:650}
+.chg .arrow{
+  display:flex; align-items:center; gap:7px; font-family:var(--mono); font-size:11.5px; flex-wrap:wrap;
+}
+.chg .from{color:var(--muted); text-decoration:line-through; text-decoration-color:var(--faint)}
+.chg .to{color:var(--ink); background:var(--heat-soft); color:var(--heat-ink); padding:1px 5px; border-radius:3px}
+.chg .ptr{font-family:var(--mono); font-size:11px; color:var(--faint); word-break:break-all}
+.mag{height:3px; background:var(--sunken); border-radius:2px; overflow:hidden}
+.mag i{display:block; height:100%; background:var(--heat)}
+
+/* beats */
+.beat{display:grid; grid-template-columns:26px 1fr; gap:10px; padding:11px 0; border-top:1px solid var(--line-soft)}
+.beat:first-of-type{border-top:0}
+.beat .no{
+  font-family:var(--mono); font-size:11px; font-weight:700; color:var(--faint);
+  background:var(--surface-2); border-radius:4px; height:22px; display:grid; place-items:center;
+}
+.beat .tx{font-size:13.5px; line-height:1.5; color:var(--ink-2)}
+.beat .meta{display:flex; gap:6px; align-items:center; margin-bottom:5px; flex-wrap:wrap}
+
+/* cast */
+.cast{display:grid; grid-template-columns:250px 1fr; height:100%; min-height:0}
+.cast-list{border-right:1px solid var(--line); overflow-y:auto; background:var(--surface); padding:10px}
+.cast-group{margin-bottom:6px}
+.cast-group > .eyebrow{padding:8px 10px 4px; margin:0}
+.cast-list button{
+  display:block; width:100%; text-align:left; border:0; background:transparent; color:var(--ink-2);
+  font:inherit; font-size:13.5px; padding:7px 10px; border-radius:6px; cursor:pointer; line-height:1.35;
+}
+.cast-list button:hover{background:var(--surface-2); color:var(--ink)}
+.cast-list button[aria-current="true"]{background:var(--sunken); color:var(--ink); font-weight:600}
+.cast-list .cid{font-family:var(--mono); font-size:10.5px; color:var(--faint); display:block}
+.cast-detail{overflow-y:auto; min-width:0}
+
+.sentences{display:flex; flex-direction:column; gap:0}
+.sentence{
+  display:grid; grid-template-columns:auto 1fr; gap:12px; padding:7px 0;
+  border-top:1px solid var(--line-soft); align-items:baseline;
+}
+.sentence:first-child{border-top:0}
+.sentence .ptr{
+  font-family:var(--mono); font-size:10.5px; color:var(--faint); white-space:nowrap;
+  cursor:copy; border-bottom:1px dotted var(--line);
+}
+.sentence .ptr:hover{color:var(--quench); border-color:var(--quench)}
+.sentence .tx{font-size:14px; color:var(--ink-2)}
+.sentence .when{font-size:11px; color:var(--faint); font-family:var(--mono)}
+
+table.data{width:100%; border-collapse:collapse; font-size:13px}
+table.data th{
+  text-align:left; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--faint);
+  font-weight:700; padding:6px 10px 6px 0; border-bottom:1px solid var(--line);
+}
+table.data td{padding:7px 10px 7px 0; border-bottom:1px solid var(--line-soft); vertical-align:top}
+table.data tr:last-child td{border-bottom:0}
+.scroll-x{overflow-x:auto}
+
+/* script */
+.script-wrap{background:var(--surface); min-height:100%}
+.script{
+  max-width:64ch; margin:0 auto; padding:44px 24px 90px;
+  font-family:var(--script); font-size:14.5px; line-height:1.42; color:var(--ink);
+  white-space:pre-wrap; word-wrap:break-word;
+}
+.script .slug{font-weight:700; margin:26px 0 10px; letter-spacing:.02em}
+.script .slug:first-child{margin-top:0}
+.script .action{margin:0 0 11px; white-space:pre-wrap}
+.script .cue{margin:11px 0 0; padding-left:36%; font-weight:700; letter-spacing:.03em}
+.script .paren{margin:0; padding-left:28%}
+.script .dlg{margin:0 0 2px; padding-left:18%; padding-right:14%}
+.script .scenehead{
+  font-family:var(--sans); font-size:10.5px; letter-spacing:.11em; text-transform:uppercase;
+  color:var(--faint); border-top:1px solid var(--line-soft); padding-top:18px; margin:38px 0 14px; font-weight:700;
+}
+.script .scenehead:first-child{margin-top:0; border-top:0; padding-top:0}
+
+/* state scrubber */
+.scrub{display:flex; align-items:center; gap:14px; padding:14px 18px; background:var(--surface);
+  border:1px solid var(--line-soft); border-radius:var(--radius); flex-wrap:wrap}
+.scrub input[type=range]{flex:1; min-width:220px; accent-color:var(--heat)}
+.scrub .marker{font-family:var(--mono); font-size:12.5px; color:var(--ink); min-width:190px}
+.scrub .marker b{color:var(--heat)}
+.statecell{font-family:var(--mono); font-size:12px}
+.statecell.changed{background:var(--heat-soft); color:var(--heat-ink); padding:1px 6px; border-radius:3px}
+
+/* plot embedding */
+.emb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:16px;margin-top:14px}
+.emb-row{display:grid;grid-template-columns:150px 1fr 20px;align-items:center;gap:9px;padding:2.5px 0}
+.emb-row .k{font-size:12.5px;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.emb-row .k[title]{cursor:help}
+.emb-pips{display:flex;gap:2.5px}
+.emb-pips i{flex:1;height:9px;border-radius:2px;background:var(--sunken)}
+.emb-pips i.on{background:var(--quench)}
+.emb-pips i.hot{background:var(--heat)}
+.emb-row .n{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.emb-row.zero .k{color:var(--faint)}
+.emb-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:6px}
+.emb-legend{font-size:11.5px;color:var(--faint);font-family:var(--mono)}
+.dominant{display:flex;flex-direction:column;gap:8px;margin:14px 0}
+.dom{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;
+  padding:10px 13px;border-radius:7px;background:var(--heat-soft)}
+.dom .score{font-family:var(--mono);font-size:19px;font-weight:700;color:var(--heat-ink);line-height:1}
+.dom .nm{font-weight:650;color:var(--heat-ink);font-size:14px}
+.dom .ev{font-size:12.5px;color:var(--heat-ink);opacity:.85;margin-top:2px}
+
+/* transitions */
+.tr-pick{display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:20px}
+.tr-block{
+  border:1px solid var(--line-soft); border-radius:var(--radius); background:var(--surface);
+  margin-bottom:14px; overflow:hidden;
+}
+.tr-block > summary{
+  padding:12px 16px; cursor:pointer; font-weight:650; font-size:14px; list-style:none;
+  display:flex; align-items:center; gap:10px; background:var(--surface-2);
+}
+.tr-block > summary::-webkit-details-marker{display:none}
+.tr-block > summary::before{
+  content:"▸"; color:var(--faint); font-size:11px; transition:transform .12s; display:inline-block;
+}
+.tr-block[open] > summary::before{transform:rotate(90deg)}
+.tr-block > summary:hover{background:var(--sunken)}
+.tr-block .body{padding:16px 18px 20px; border-top:1px solid var(--line-soft)}
+.tr-field{margin-bottom:14px}
+.tr-field:last-child{margin-bottom:0}
+.tr-field > .eyebrow{margin-bottom:4px}
+.tr-field .txt{font-size:14px; line-height:1.6; color:var(--ink-2)}
+.tom{display:grid; gap:0; border:1px solid var(--line-soft); border-radius:6px; overflow:hidden}
+.tom .lvl{display:grid; grid-template-columns:38px 1fr; border-top:1px solid var(--line-soft)}
+.tom .lvl:first-child{border-top:0}
+.tom .d{
+  font-family:var(--mono); font-size:10px; font-weight:700; color:var(--quench-ink);
+  background:var(--quench-soft); display:grid; place-items:center; padding:8px 0; align-content:center;
+}
+.tom .lvl.err .d{background:var(--heat-soft); color:var(--heat-ink)}
+.tom .c{padding:9px 12px; font-size:13.5px; line-height:1.55; color:var(--ink-2)}
+.phases{display:flex; flex-direction:column; gap:0; counter-reset:ph}
+.phase{
+  display:grid; grid-template-columns:20px 1fr; gap:12px; padding:11px 0;
+  border-top:1px solid var(--line-soft);
+}
+.phase:first-child{border-top:0}
+.phase .rail{position:relative}
+.phase .rail::before{
+  content:""; position:absolute; left:8px; top:6px; bottom:-11px; width:1px; background:var(--line);
+}
+.phase:last-child .rail::before{display:none}
+.phase .dot{
+  width:9px;height:9px;border-radius:50%;background:var(--heat);
+  position:absolute;left:4px;top:5px;box-shadow:0 0 0 3px var(--surface);
+}
+.phase h4{font-family:var(--sans); font-size:13.5px; font-weight:650; margin:0 0 3px}
+.phase .shift{font-size:13.5px; color:var(--ink-2); line-height:1.55}
+.phase .trig{font-size:12.5px; color:var(--muted); margin-top:4px}
+.phase .trig b{color:var(--faint); font-weight:600; font-size:11px; letter-spacing:.05em; text-transform:uppercase}
+.senses{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px}
+.sense{border-left:2px solid var(--quench); padding:2px 0 2px 10px}
+.sense .lbl{font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); font-weight:700}
+.sense .v{font-size:13px; color:var(--ink-2); line-height:1.5}
+.fe{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+.fe > div{padding:10px 12px; border-radius:6px}
+.fe .felt{background:var(--quench-soft)} .fe .expr{background:var(--heat-soft)}
+.fe .lbl{font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; margin-bottom:4px}
+.fe .felt .lbl{color:var(--quench-ink)} .fe .expr .lbl{color:var(--heat-ink)}
+.fe .v{font-size:13px; line-height:1.5}
+.fe .felt .v{color:var(--quench-ink)} .fe .expr .v{color:var(--heat-ink)}
+.scorebar{display:flex; flex-wrap:wrap; gap:6px; margin:10px 0 0}
+.scorebar .s{
+  font-family:var(--mono); font-size:11px; padding:3px 8px; border-radius:4px;
+  background:var(--surface-2); border:1px solid var(--line-soft); color:var(--muted);
+}
+.scorebar .s b{color:var(--ink); font-weight:700}
+.opt{border-left:2px solid var(--line); padding:4px 0 4px 11px; margin-bottom:9px}
+.opt .o{font-size:13.5px; color:var(--ink); font-weight:600}
+.opt .p{font-size:12.5px; color:var(--muted); margin:2px 0 0}
+@media (max-width:700px){ .fe{grid-template-columns:1fr} }
+
+
+/* ============================================================ chat dock */
+.dock{
+  position:fixed; left:0; right:0; bottom:0; z-index:60;
+  background:var(--surface); border-top:1px solid var(--line);
+  box-shadow:0 -8px 30px -18px rgba(0,0,0,.45);
+  display:grid; grid-template-rows:auto 0fr;
+}
+.dock.open{grid-template-rows:auto minmax(0,1fr); height:min(60vh,560px)}
+.dock-bar{
+  display:flex; align-items:center; gap:12px; padding:0 16px; height:46px;
+  cursor:pointer; user-select:none;
+}
+.dock-bar:hover{background:var(--surface-2)}
+.dock-bar .title{font-weight:650; font-size:14px; display:flex; align-items:center; gap:9px}
+.dock-bar .dotlive{width:8px;height:8px;border-radius:50%;background:var(--faint);flex:none}
+.dock-bar .dotlive.ready{background:var(--good)}
+.dock-bar .dotlive.busy{background:var(--heat)}
+.dock-bar .sub{font-size:12px;color:var(--faint);font-family:var(--mono)}
+.dock-body{display:grid; grid-template-columns:minmax(0,1fr); overflow:hidden; min-height:0}
+.dock.settings-open .dock-body{grid-template-columns:minmax(0,1fr) 340px}
+.chat{display:flex; flex-direction:column; min-height:0; border-top:1px solid var(--line-soft)}
+.log{flex:1; overflow-y:auto; padding:16px 18px; display:flex; flex-direction:column; gap:12px}
+.msg{display:grid; grid-template-columns:26px 1fr; gap:11px; align-items:start}
+.msg .who{
+  width:26px;height:26px;border-radius:6px;display:grid;place-items:center;
+  font-size:10px;font-weight:700;font-family:var(--mono);
+}
+.msg.user .who{background:var(--quench-soft); color:var(--quench-ink)}
+.msg.bot .who{background:var(--heat-soft); color:var(--heat-ink)}
+.msg.sys .who{background:var(--surface-2); color:var(--faint)}
+.msg .body{font-size:14px; line-height:1.6; min-width:0; white-space:pre-wrap; word-wrap:break-word}
+.msg.sys .body{font-size:12.5px; color:var(--muted)}
+.msg .body p{margin:0 0 8px}
+.tool{
+  border:1px solid var(--line-soft); border-radius:6px; background:var(--surface-2);
+  padding:7px 10px; font-size:12.5px; display:flex; align-items:baseline; gap:8px;
+  flex-wrap:wrap; margin-top:6px;
+}
+.tool code{font-family:var(--mono); font-size:11.5px; background:transparent; border:0; padding:0;
+  color:var(--heat-ink); font-weight:650}
+.tool .arg{font-family:var(--mono); font-size:11px; color:var(--muted); word-break:break-all}
+.tool .res{font-size:11.5px; color:var(--good); margin-left:auto; white-space:nowrap}
+.tool .res.bad{color:var(--crit)}
+.tool .jump{margin-left:6px}
+.composer{border-top:1px solid var(--line-soft); padding:11px 14px; display:flex; gap:9px; align-items:flex-end}
+.composer textarea{
+  flex:1; min-height:40px; max-height:150px; resize:none; border-radius:8px; padding:10px 12px;
+  font-family:var(--sans); font-size:14px; background:var(--ground); border:1px solid var(--line);
+}
+.composer textarea:focus{outline:2px solid var(--heat); outline-offset:-1px; border-color:transparent}
+.chips{display:flex; gap:6px; flex-wrap:wrap; padding:0 14px 10px}
+.chip{
+  font-size:12px; padding:4px 10px; border-radius:20px; border:1px solid var(--line);
+  background:var(--surface-2); color:var(--ink-2); cursor:pointer;
+}
+.chip:hover{background:var(--sunken); border-color:var(--faint)}
+.settings{border-left:1px solid var(--line); border-top:1px solid var(--line-soft);
+  padding:16px; overflow-y:auto; display:flex; flex-direction:column; gap:13px; background:var(--surface-2)}
+.settings label{display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--faint); font-weight:700; margin-bottom:5px}
+.settings input{width:100%; padding:8px 10px; border-radius:6px; border:1px solid var(--line);
+  background:var(--surface); color:var(--ink); font-family:var(--mono); font-size:12.5px}
+.settings .hint{font-size:11.5px; color:var(--faint); line-height:1.5}
+.settings .warn{font-size:11.5px; color:var(--warn); line-height:1.5}
+@media (max-width:980px){
+  .dock.settings-open .dock-body{grid-template-columns:minmax(0,1fr)}
+  .dock.settings-open .settings{display:none}
+  .dock.open{height:min(72vh,520px)}
+}
+
+/* data tab */
+textarea{
+  width:100%; min-height:230px; font-family:var(--mono); font-size:12px; line-height:1.5;
+  background:var(--sunken); color:var(--ink); border:1px solid var(--line); border-radius:var(--radius);
+  padding:12px; resize:vertical;
+}
+.note{font-size:13px; color:var(--muted)}
+.ok{color:var(--good)} .bad{color:var(--crit)}
+input[type=file]{font:inherit; font-size:13px; color:var(--muted)}
+
+@media (max-width:980px){
+  .app{grid-template-columns:1fr; height:auto; overflow:visible}
+  .rail{flex-direction:row; overflow-x:auto; border-right:0; border-bottom:1px solid var(--line); position:sticky; top:0; z-index:20}
+  .brand{border-bottom:0; border-right:1px solid var(--line-soft); flex:none}
+  .nav{flex-direction:row; padding:8px}
+  .nav button{grid-template-columns:1fr; white-space:nowrap}
+  .rail-foot{display:none}
+  /* Stacked below the canvas. The row is a FIXED height, never `auto` —
+     an auto row grows with the panel's content, which pushes the page down
+     every time a node is selected. */
+  .graphwrap{grid-template-columns:1fr; grid-template-rows:minmax(0,1fr) 46vh;
+    height:calc(100vh - 54px); width:100%}
+  .graphwrap.collapsed{grid-template-rows:minmax(0,1fr) 0}
+  .graphwrap.collapsed .inspector{display:none}
+  .inspector{border-left:0; border-top:1px solid var(--line)}
+  .cast{grid-template-columns:1fr; height:auto}
+  .canvas-area{min-height:0}
+}
+</style>
+
+<div class="app">
+  <aside class="rail">
+    <div class="brand">
+      <div class="mark"><span class="dot"></span><span id="brandTitle">—</span></div>
+      <div class="sub" id="brandForm">structured narrative</div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="rail-foot" id="railStats"></div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h1 id="viewTitle">—</h1>
+      <span class="crumb" id="viewCrumb"></span>
+      <span class="spacer"></span>
+      <button class="btn sm" id="themeBtn" title="Switch theme">Theme</button>
+    </header>
+    <div class="view" id="view"></div>
+  </div>
+</div>
+
+
+<div class="dock" id="dock">
+  <div class="dock-bar" id="dockBar">
+    <span class="title"><span class="dotlive" id="dockDot"></span>Co-writer</span>
+    <span class="sub" id="dockSub">click to open</span>
+    <span class="spacer"></span>
+    <button class="btn sm" id="settingsBtn" title="Model and endpoint settings">Settings</button>
+    <button class="btn sm" id="dockToggle">Open</button>
+  </div>
+  <div class="dock-body">
+    <div class="chat">
+      <div class="log" id="chatLog"></div>
+      <div class="chips" id="chatChips"></div>
+      <div class="composer">
+        <textarea id="chatInput" rows="1" placeholder="Describe the story you want, or ask for a change…"></textarea>
+        <button class="btn primary" id="chatSend">Send</button>
+        <button class="btn" id="chatStop" style="display:none">Stop</button>
+      </div>
+    </div>
+    <div class="settings" id="settingsPane">
+      <div>
+        <label for="cfgBase">Base URL</label>
+        <input id="cfgBase" spellcheck="false" placeholder="https://api.hyprlab.io/v1">
+        <div class="hint">Any OpenAI-compatible endpoint. The chat calls <code>/chat/completions</code> under this.</div>
+      </div>
+      <div>
+        <label for="cfgKey">API key</label>
+        <input id="cfgKey" type="password" spellcheck="false" placeholder="sk-…">
+        <div class="hint">Stored in this browser only (localStorage). Never written into the page.</div>
+      </div>
+      <div>
+        <label for="cfgModel">Model</label>
+        <input id="cfgModel" spellcheck="false" placeholder="grok-4.6">
+      </div>
+      <div>
+        <label for="cfgTemp">Temperature</label>
+        <input id="cfgTemp" spellcheck="false" placeholder="0.8">
+      </div>
+      <button class="btn primary" id="cfgSave">Save</button>
+      <div class="hint" id="cfgStatus"></div>
+      <div class="warn" id="cfgCsp" style="display:none"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+"use strict";
+const DATA = /*__DATA__*/{};
+
+/* ============================================================ helpers */
+const $ = (s,r=document)=>r.querySelector(s);
+const el = (t,c,x)=>{const n=document.createElement(t); if(c)n.className=c; if(x!=null)n.textContent=x; return n;};
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+const clone = o => JSON.parse(JSON.stringify(o));
+const fmtVal = v => v===null?"null":typeof v==="string"?v:JSON.stringify(v);
+
+/* ---- RFC 6902, the subset the schema emits ---- */
+function ptrTokens(p){ return p===""?[]:p.split("/").slice(1).map(t=>t.replace(/~1/g,"/").replace(/~0/g,"~")); }
+function ptrGet(doc,p){ let n=doc; for(const t of ptrTokens(p)){ if(n==null)return undefined; n=Array.isArray(n)?n[+t]:n[t]; } return n; }
+function ptrSet(doc,p,v,remove){
+  const t=ptrTokens(p); if(!t.length)return; let n=doc;
+  for(let i=0;i<t.length-1;i++){ if(n==null)return; n=Array.isArray(n)?n[+t[i]]:n[t[i]]; }
+  if(n==null)return; const k=t[t.length-1];
+  if(Array.isArray(n)){ const i=k==="-"?n.length:+k; if(remove)n.splice(i,1); else n[i]=v; }
+  else { if(remove)delete n[k]; else n[k]=v; }
+}
+function applyOps(doc,ops){
+  const d=clone(doc);
+  for(const op of ops||[]){
+    if(op.op==="remove") ptrSet(d,op.path,null,true);
+    else if(op.op==="add"||op.op==="replace") ptrSet(d,op.path,clone(op.value));
+    else if(op.op==="copy") ptrSet(d,op.path,clone(ptrGet(d,op.from)));
+    else if(op.op==="move"){ const v=clone(ptrGet(d,op.from)); ptrSet(d,op.from,null,true); ptrSet(d,op.path,v); }
+  }
+  return d;
+}
+
+/* ============================================================ model */
+let M = null;
+let RAW = null;          // the mutable bundle; M is always derived from it
+
+/* Every mutation edits RAW and then commits. Rebuilding the model is cheap at
+   this scale and it keeps the fold, the orders and the derived patch views from
+   ever disagreeing with the data they came from. */
+function commit(opts){
+  const o=opts||{};
+  M=buildModel(RAW);
+  boot();
+  if(!o.quiet) go(o.view||current);
+}
+
+function buildModel(data){
+  const root = data.story_root||{}, expose = data.expose||{};
+  const plots = {}; ((data.plots||{}).plots||[]).forEach(p=>plots[p.plot_id]=p);
+  const entities = (data.entities||{}).entities||{};
+  const events = (data.events||{}).events||{};
+  const scenes = (data.scenes||{}).scenes||{};
+  const prose = data.prose||{};
+  const trans = data.transitions||{};
+
+  const eventOrder = Object.keys(events).sort((a,b)=>(events[a].story_time?.index||0)-(events[b].story_time?.index||0));
+  const sceneOrder = Object.keys(scenes).sort((a,b)=>(scenes[a].discourse_index||0)-(scenes[b].discourse_index||0));
+
+  // beat sequence in story time — the canonical fold order
+  const beats=[];
+  for(const sid of Object.keys(scenes)){
+    const sc=scenes[sid];
+    for(const b of sc.beats||[]){
+      const ev=events[b.event_id]||{};
+      beats.push({sid, key:sid+"#b"+b.beat, eid:b.event_id, no:b.beat, beat:b,
+                  story:ev.story_time?.index??1e6, disc:sc.discourse_index||0});
+    }
+  }
+  beats.sort((a,b)=>a.story-b.story||a.disc-b.disc||a.no-b.no);
+
+  // fold
+  const t0 = clone(entities);
+  const before={}, after={}; let cur=t0;
+  for(const b of beats){
+    before[b.key]=cur;
+    const ops=(b.beat.changes||[]).map(c=>c.op).filter(Boolean);
+    cur = ops.length?applyOps(cur,ops):cur;
+    after[b.key]=cur;
+  }
+  const final=cur;
+
+  const plotOf = pid => plots[pid];
+  const isPrimaryPlot = (pid,i) => Object.keys(plots).indexOf(pid)===i;
+
+  return {root,expose,plots,entities,events,scenes,prose,transitions:trans,eventOrder,sceneOrder,beats,t0,before,after,final,
+    plotIds:Object.keys(plots).sort(),
+    stateEnteringScene(sid){ const f=this.beats.find(b=>b.sid===sid); return f?this.before[f.key]:this.t0; },
+    stateLeavingScene(sid){ const l=[...this.beats].reverse().find(b=>b.sid===sid); return l?this.after[l.key]:this.t0; },
+    stateAfterEvent(eid){ const l=[...this.beats].reverse().find(b=>b.eid===eid); return l?this.after[l.key]:this.t0; },
+    stateBeforeEvent(eid){ const f=this.beats.find(b=>b.eid===eid); return f?this.before[f.key]:this.t0; },
+    scenePatch(sid){ return this.beats.filter(b=>b.sid===sid).sort((a,b)=>a.no-b.no)
+                      .flatMap(b=>(b.beat.changes||[]).map(c=>c.op)); },
+    eventPatch(eid){ return this.beats.filter(b=>b.eid===eid).flatMap(b=>(b.beat.changes||[]).map(c=>c.op)); },
+    name(id){ return (this.entities[id]||{}).canonical_name || id; },
+  };
+}
+/* plot colour: first plot = heat, second = quench, then alternating */
+function plotColor(pid){
+  const i = M.plotIds.indexOf(pid);
+  return i<=0 ? "heat" : i===1 ? "quench" : (i%2 ? "quench" : "heat");
+}
+function plotVar(pid,which){ return `var(--${plotColor(pid)}${which||""})`; }
+
+/* ============================================================ views */
+const VIEWS=[
+  {id:"root",   layer:"L0·L1", label:"Story root",  title:"Story root",         render:vRoot},
+  {id:"expose", layer:"L2",    label:"Exposé",      title:"Exposé",             render:vExpose},
+  {id:"plots",  layer:"L4",    label:"Plots",       title:"Plot decomposition", render:vPlots},
+  {id:"cast",   layer:"L3",    label:"Cast",        title:"Entity dossiers",    render:vCast},
+  {id:"events", layer:"L5",    label:"Event graph", title:"Event chain",        render:vEvents, full:true},
+  {id:"scenes", layer:"L6",    label:"Scenes",      title:"Scene definitions",  render:vScenes, full:true},
+  {id:"state",  layer:"fold",  label:"State",       title:"World state",        render:vState},
+  {id:"reason", layer:"trans", label:"Reasoning",   title:"Transitions",        render:vTransitions},
+  {id:"script", layer:"T6",    label:"Screenplay",  title:"Screenplay",         render:vScript},
+  {id:"data",   layer:"i/o",   label:"Data",        title:"Import & export",    render:vData},
+];
+
+let current="root";
+function nav(){
+  const n=$("#nav"); n.innerHTML="";
+  for(const v of VIEWS){
+    const b=el("button"); b.setAttribute("aria-current",String(v.id===current));
+    b.append(el("span","layer",v.layer), el("span",null,v.label));
+    b.onclick=()=>go(v.id); n.append(b);
+  }
+}
+function go(id){
+  current=id; const v=VIEWS.find(x=>x.id===id);
+  nav();
+  $("#viewTitle").textContent=v.title;
+  $("#viewCrumb").textContent=v.layer;
+  const view=$("#view"); view.innerHTML=""; view.scrollTop=0;
+  view.style.overflow = v.full ? "hidden" : "auto";
+  view.style.display  = v.full ? "flex"   : "block";
+  v.render(view);
+  try{ location.hash=id; }catch(e){}
+}
+
+/* ------------------------------------------------------------ L0/L1 */
+function vRoot(view){
+  const r=M.root, pad=el("div","pad"); view.append(pad);
+  if(!r.title){ pad.append(el("p","empty","No story root loaded.")); return; }
+
+  const head=el("div","stack");
+  head.append(el("div","eyebrow","Logline"));
+  const l=el("p","lede",r.logline||""); head.append(l);
+  pad.append(head);
+
+  const facts=el("div","grid g3"); facts.style.marginTop="22px";
+  const F=(k,v)=>{const c=el("div","card"); c.append(el("div","eyebrow",k), el("div",null,v||"—")); return c;};
+  facts.append(
+    F("Form", (r.form||"")+" · "+(r.language||"")),
+    F("Genre", [r.genre_primary,...(r.genre_secondary||[])].filter(Boolean).join(", ")),
+    F("Audience", (r.audience?.age_band||"")+" · "+(r.audience?.reading_level||"")),
+    F("Point of view", (r.pov?.person||"")+", "+(r.pov?.tense||"")),
+    F("Setting", (r.setting?.period||"")+" · "+(r.setting?.world_type||"")),
+    F("Register", (r.style?.register||"")+" · dialogue "+Math.round((r.style?.dialogue_ratio||0)*100)+"%"),
+  );
+  pad.append(facts);
+
+  if(r.premise){ pad.append(el("h2","sec","Premise")); const p=el("div","card prose-w"); p.append(el("p",null,r.premise)); pad.append(p); }
+
+  if(r.audience?.reader_promise){
+    const c=el("div","card"); c.style.marginTop="14px";
+    c.append(el("div","eyebrow","Reader promise"), el("p",null,r.audience.reader_promise)); pad.append(c);
+  }
+
+  // plot embedding — the fixed 76-key coordinate system
+  if(r.plot_embedding) pad.append(...renderEmbedding(r.plot_embedding));
+
+  // narrative vector (legacy runs only)
+  const nv=r.narrative_vector||{};
+  if(Object.keys(nv).length){
+    pad.append(el("h2","sec","Narrative vector"));
+    pad.append(el("p","note prose-w","Each dimension is scored 0–100 with a stated purpose. Modal dimensions are bipolar: 0 is the first pole named, 100 the second. Hover a name to read why it sits where it does."));
+    const g=el("div","grid g2"); g.style.marginTop="14px";
+    for(const [group,dims] of Object.entries(nv)){
+      const c=el("div","card"); c.append(el("div","eyebrow",group));
+      const entries=Object.entries(dims).sort((a,b)=>(b[1].score||0)-(a[1].score||0));
+      for(const [dim,d] of entries){
+        const m=el("div","meter");
+        const nm=el("div","nm",dim.replace(/_/g," ")); if(d.intent)nm.title=d.intent;
+        const tr=el("div","track"), fi=el("i"); const f=el("div","fill"+((d.score||0)>=60?" hot":""));
+        f.style.width=Math.max(1.5,(d.score||0))+"%"; tr.append(f);
+        m.append(nm,tr,el("div","val",String(d.score??"")));
+        c.append(m);
+      }
+      g.append(c);
+    }
+    pad.append(g);
+  }
+
+  const rules=r.setting?.rules_of_the_world||[];
+  if(rules.length){
+    pad.append(el("h2","sec","Rules of the world"));
+    pad.append(el("p","note prose-w","Hard constraints. No layer below this one may violate them — which is what makes the ending feel earned rather than convenient."));
+    const c=el("div","card prose-w"); c.style.marginTop="12px";
+    const ol=el("ol"); ol.style.margin="0"; ol.style.paddingLeft="20px";
+    rules.forEach(x=>{const li=el("li",null,x); li.style.marginBottom="7px"; ol.append(li);});
+    c.append(ol); pad.append(c);
+  }
+  const keep=r.keep_in_mind||[];
+  if(keep.length){
+    pad.append(el("h2","sec","Standing notes"));
+    const c=el("div","card prose-w");
+    const ul=el("ul"); ul.style.margin="0"; ul.style.paddingLeft="20px";
+    keep.forEach(x=>{const li=el("li",null,x); li.style.marginBottom="7px"; ul.append(li);});
+    c.append(ul); pad.append(c);
+  }
+  const tics=r.style?.forbidden_tics||[];
+  if(tics.length){
+    pad.append(el("h2","sec","Forbidden tics"));
+    pad.append(el("p","note prose-w","Written at the root so the prose layer, hundreds of decisions later, still has them."));
+    const t=el("div","tags"); t.style.marginTop="12px";
+    tics.forEach(x=>t.append(el("span","tag",x))); pad.append(t);
+  }
+}
+
+function renderEmbedding(emb){
+  const out=[];
+  out.push(el("h2","sec","Plot embedding"));
+  const g=emb.genres||{}, d=emb.dimensions||{};
+  const nonzero=Object.values(g).filter(v=>(v.score||0)>0).length;
+  const mass=Object.values(g).reduce((n,v)=>n+(v.score||0),0);
+  const note=el("p","note prose-w",
+    `Every work in the corpus is scored on the same 52 genres and 24 dimensions, 0–5: `+
+    `0 absent · 1 trace · 2 minor · 3 moderate · 4 strong · 5 defining. The scale measures `+
+    `structural consequence, not presence — a chase that changes nothing is a 1. `+
+    `This work scores non-zero on ${nonzero} of 52 genres (mass ${mass}) and is rated ${emb.age_rating||"—"}.`);
+  out.push(note);
+
+  // dominant genres
+  const dom=(emb.dominant||[]).filter(k=>g[k]);
+  if(dom.length){
+    const box=el("div","dominant");
+    dom.forEach(k=>{
+      const row=el("div","dom");
+      row.append(el("div","score",String(g[k].score)));
+      const b=el("div");
+      b.append(el("div","nm",k.replace(/_/g," ")));
+      if(g[k].evidence) b.append(el("div","ev",g[k].evidence));
+      row.append(b); box.append(row);
+    });
+    out.push(box);
+  }
+
+  const block=(title,data,onlyNonZero)=>{
+    const card=el("div","card");
+    const head=el("div","emb-head");
+    head.append(el("div","eyebrow",title));
+    head.append(el("span","emb-legend","0 ─ 5"));
+    card.append(head);
+    const entries=Object.entries(data)
+      .filter(([,v])=>!onlyNonZero||(v.score||0)>0)
+      .sort((a,b)=>(b[1].score||0)-(a[1].score||0)||a[0].localeCompare(b[0]));
+    for(const [k,v] of entries){
+      const sc=v.score||0;
+      const row=el("div","emb-row"+(sc?"":" zero"));
+      const nm=el("div","k",k.replace(/_/g," "));
+      if(v.evidence) nm.title=v.evidence;
+      const pips=el("div","emb-pips");
+      for(let i=1;i<=5;i++){
+        const p=el("i"); if(i<=sc) p.className = sc>=4?"hot":"on"; pips.append(p);
+      }
+      row.append(nm,pips,el("div","n",String(sc)));
+      card.append(row);
+    }
+    return card;
+  };
+
+  const grid=el("div","emb-grid");
+  grid.append(block("genres that score (of 52)",g,true));
+  grid.append(block("dimensions (all 24)",d,false));
+  out.push(grid);
+
+  const det=el("details","tr-block"); det.style.marginTop="14px";
+  det.append(el("summary",null,"All 52 genres, including zeros"));
+  const body=el("div","body"); body.append(block("full genre vector",g,false));
+  det.append(body); out.push(det);
+  return out;
+}
+
+/* ------------------------------------------------------------ L2 */
+function vExpose(view){
+  const e=M.expose, pad=el("div","pad"); view.append(pad);
+  if(!e.synopsis){ pad.append(el("p","empty","No exposé loaded.")); return; }
+
+  const ef=e.ending_first||{};
+  if(ef.ending){
+    pad.append(el("div","eyebrow","Decided first"));
+    const c=el("div","card raised prose-w");
+    c.style.borderLeft="3px solid var(--heat)";
+    c.append(el("p",null,ef.ending));
+    if(ef.cost){ c.append(el("div","eyebrow","The cost")); c.append(el("p",null,ef.cost)); }
+    if(ef.final_image){ c.append(el("div","eyebrow","Final image")); c.append(el("p",null,ef.final_image)); }
+    pad.append(c);
+    pad.append(el("p","note prose-w","The ending is written before the first sentence of the synopsis. A synopsis written front-to-back degrades into “and then, and then”; one written toward a known ending has a spine."));
+  }
+
+  // Encyclopedia-style plot summaries, before anything written in the work's own voice.
+  if(e.plot_summary_short||e.plot_summary_long){
+    pad.append(el("h2","sec","What happens"));
+    pad.append(el("p","note prose-w","A plain account for someone who has not read the story, at two lengths. Chronological, spoilers included — this is the encyclopedia entry, not the jacket."));
+    if(e.plot_summary_short){
+      const c=el("div","card raised prose-w"); c.style.marginTop="14px";
+      c.style.borderLeft="3px solid var(--quench)";
+      c.append(el("div","eyebrow","In brief · "+e.plot_summary_short.split(/\s+/).length+" words"));
+      e.plot_summary_short.split(/\n\n+/).forEach(t=>{
+        const q=el("p",null,t.trim()); q.style.fontSize="15.5px"; c.append(q); });
+      pad.append(c);
+    }
+    if(e.plot_summary_long){
+      const d=el("details","tr-block"); d.style.marginTop="14px";
+      d.append(el("summary",null,"The full plot · "+e.plot_summary_long.split(/\s+/).length+" words"));
+      const b=el("div","body prose-w");
+      e.plot_summary_long.split(/\n\n+/).forEach(t=>b.append(el("p",null,t.trim())));
+      d.append(b); pad.append(d);
+    }
+  }
+
+  if(e.jacket_copy){
+    pad.append(el("h2","sec","Jacket copy"));
+    const c=el("div","card prose-w"); const p=el("p",null,e.jacket_copy);
+    p.style.fontFamily="var(--serif)"; p.style.fontSize="16.5px"; p.style.lineHeight="1.6";
+    c.append(p); pad.append(c);
+  }
+
+  const syn=e.synopsis||{}; const keys=Object.keys(syn).sort();
+  const words=keys.reduce((n,k)=>n+String(syn[k].text||"").split(/\s+/).filter(Boolean).length,0);
+  pad.append(el("h2","sec","Synopsis"));
+  pad.append(el("p","note prose-w",`Full-spoiler condensation, ${words} words across ${keys.length} individually addressable sentences. Every plot claims the sentences it is answerable for; a sentence no plot claims is a promise the story does not keep.`));
+
+  // which plot covers which sentence
+  const cover={};
+  for(const [pid,p] of Object.entries(M.plots)) (p.covers_synopsis||[]).forEach(k=>(cover[k]=cover[k]||[]).push(pid));
+
+  const c=el("div","card"); c.style.marginTop="14px";
+  const list=el("div","sentences");
+  for(const k of keys){
+    const s=syn[k], row=el("div","sentence");
+    const key=el("code","ptr","/synopsis/"+k); key.title="Click to copy this pointer";
+    key.onclick=()=>copy("/synopsis/"+k);
+    const body=el("div");
+    body.append(el("div","tx",s.text||""));
+    const meta=el("div","tags"); meta.style.marginTop="5px";
+    if(s.function) meta.append(el("span","tag",s.function));
+    if(s.story_time_rank!=null) meta.append(el("span","tag","story rank "+s.story_time_rank));
+    (cover[k]||[]).forEach(pid=>{
+      const t=el("span","tag "+plotColor(pid), pid+" "+(M.plots[pid].title||""));
+      meta.append(t);
+    });
+    if(!(cover[k]||[]).length) meta.append(el("span","tag","unclaimed"));
+    body.append(meta);
+    row.append(key,body); list.append(row);
+  }
+  c.append(list); pad.append(c);
+}
+
+/* ------------------------------------------------------------ L4 */
+function vPlots(view){
+  const pad=el("div","pad"); view.append(pad);
+  const ids=M.plotIds;
+  if(!ids.length){ pad.append(el("p","empty","No plots loaded.")); return; }
+
+  pad.append(el("p","note prose-w","A plot is a chain of cause and effect in which an agent pursues an outcome against resistance, terminating in success, failure, or transformation of the goal. The dotted arrows are cross-plot causation: a step of one plot caused by a step of another. Subplots that never touch are the standard failure of machine-made fiction."));
+
+  // swimlane diagram
+  const diag=el("div","card raised"); diag.style.marginTop="18px"; diag.style.padding="0"; diag.style.overflow="hidden";
+  const sx=el("div","scroll-x"); sx.append(plotSwimlanes()); diag.append(sx); pad.append(diag);
+
+  for(const pid of ids){
+    const p=M.plots[pid];
+    pad.append(el("h2","sec",p.title||pid));
+    const head=el("div","tags"); head.style.margin="-8px 0 14px";
+    head.append(el("span","tag "+plotColor(pid),pid), el("span","tag",p.type||""),
+                el("span","tag","outcome: "+(p.outcome||"")),
+                el("span","tag",Math.round((p.screen_time_share||0)*100)+"% screen time"));
+    pad.append(head);
+
+    const g=el("div","grid g2");
+    const a=el("div","card");
+    const dl=el("dl","kv");
+    const add=(k,v)=>{dl.append(el("dt",null,k),el("dd",null,v));};
+    add("Goal",p.goal||"—"); add("Stakes",p.stakes||"—");
+    add("Agent",(p.agent||[]).map(x=>M.name(x)).join(", ")||"—");
+    add("Resistance",(p.resistance||[]).map(x=>M.plots[x]?("the "+(M.plots[x].title||x)+" plot"):M.name(x)).join(", ")||"—");
+    if(p.thematic_function) add("Argues",p.thematic_function);
+    a.append(dl); g.append(a);
+
+    const b=el("div","card"); b.append(el("div","eyebrow","Spine"));
+    const tb=el("table","data"), th=el("thead"), tr=el("tr");
+    ["","Function","Events","Because"].forEach(h=>tr.append(el("th",null,h)));
+    th.append(tr); tb.append(th);
+    const tbody=el("tbody");
+    const steps=Object.entries(p.spine||{}).sort((x,y)=>(x[1].step||0)-(y[1].step||0));
+    for(const [k,s] of steps){
+      const bound=M.eventOrder.filter(eid=>(M.events[eid].plot_bindings||[]).some(x=>x.plot===pid&&x.step===k));
+      const r=el("tr");
+      r.append(el("td",null,k));
+      const fc=el("td"); fc.append(el("div",null,(s.function||"").replace(/_/g," ")));
+      if(s.intent){const i=el("div"); i.textContent=s.intent; i.style.color="var(--muted)"; i.style.fontSize="12px"; fc.append(i);} r.append(fc);
+      const ec=el("td"); const et=el("div","tags");
+      bound.forEach(eid=>{const t=el("span","tag",eid); t.style.cursor="pointer"; t.onclick=()=>{go("events"); setTimeout(()=>selectEvent(eid),40);}; et.append(t);});
+      if(!bound.length) et.append(el("span","tag","—"));
+      ec.append(et); r.append(ec);
+      const bc=el("td"); const bt=el("div","tags");
+      (s.because||[]).forEach(x=>{const other=x.split(":")[0]; bt.append(el("span","tag "+plotColor(other),x));});
+      if(!(s.because||[]).length) bt.append(el("span","tag","—"));
+      bc.append(bt); r.append(bc);
+      tbody.append(r);
+    }
+    tb.append(tbody);
+    const sc=el("div","scroll-x"); sc.append(tb); b.append(sc); g.append(b);
+    pad.append(g);
+  }
+}
+
+function plotSwimlanes(){
+  const ids=M.plotIds;
+  const NS="http://www.w3.org/2000/svg";
+  const laneH=118, padL=132, stepW=132, top=46;
+  const maxSteps=Math.max(...ids.map(p=>Object.keys(M.plots[p].spine||{}).length),1);
+  const W=padL+maxSteps*stepW+40, H=top+ids.length*laneH+30;
+  const svg=document.createElementNS(NS,"svg");
+  svg.setAttribute("viewBox",`0 0 ${W} ${H}`); svg.setAttribute("width",W); svg.setAttribute("height",H);
+  svg.style.display="block"; svg.style.minWidth=W+"px";
+
+  const mk=(t,a)=>{const n=document.createElementNS(NS,t); for(const k in a)n.setAttribute(k,a[k]); return n;};
+  const defs=mk("defs");
+  ["heat","quench"].forEach(c=>{
+    const m=mk("marker",{id:"ah-"+c,viewBox:"0 0 8 8",refX:7,refY:4,markerWidth:6,markerHeight:6,orient:"auto"});
+    m.append(mk("path",{d:"M0,0 L8,4 L0,8 z",fill:`var(--${c})`})); defs.append(m);
+  });
+  svg.append(defs);
+
+  const pos={}; // pid:key -> {x,y}
+  ids.forEach((pid,li)=>{
+    const y=top+li*laneH+34, col=plotColor(pid);
+    svg.append(mk("line",{x1:8,y1:y+22,x2:W-20,y2:y+22,stroke:"var(--line-soft)","stroke-width":1}));
+    const lab=mk("text",{x:10,y:y-6,fill:`var(--${col})`,"font-size":11,"font-weight":700,"font-family":"var(--mono)"});
+    lab.textContent=pid+" · "+(M.plots[pid].type||""); svg.append(lab);
+    const t2=mk("text",{x:10,y:y+12,fill:"var(--ink-2)","font-size":12,"font-family":"var(--sans)"});
+    const ttl=M.plots[pid].title||""; t2.textContent=ttl.length>16?ttl.slice(0,15)+"…":ttl;
+    if(ttl.length>16){const ti=mk("title"); ti.textContent=ttl; t2.append(ti);} svg.append(t2);
+
+    const steps=Object.entries(M.plots[pid].spine||{}).sort((a,b)=>(a[1].step||0)-(b[1].step||0));
+    steps.forEach(([k,s],i)=>{
+      const x=padL+i*stepW, cy=y+22;
+      pos[pid+":"+k]={x:x+52,y:cy};
+      if(i>0) svg.append(mk("line",{x1:x-28,y1:cy,x2:x+2,y2:cy,stroke:`var(--${col})`,"stroke-width":1.6,"marker-end":`url(#ah-${col})`}));
+      const isRes = M.plots[pid].resolution_step===k;
+      const g=mk("g",{});
+      g.append(mk("rect",{x:x+2,y:cy-19,width:104,height:38,rx:6,
+        fill:`var(--${col}-soft)`,stroke:isRes?`var(--${col})`:"transparent","stroke-width":isRes?2:0}));
+      const t=mk("text",{x:x+10,y:cy-5,"font-size":9.5,"font-weight":700,"font-family":"var(--mono)",fill:`var(--${col}-ink)`});
+      t.textContent=k.toUpperCase(); g.append(t);
+      const f=mk("text",{x:x+10,y:cy+9,"font-size":10.5,"font-family":"var(--sans)",fill:`var(--${col}-ink)`});
+      const fn=(s.function||"").replace(/_/g," "); f.textContent=fn.length>15?fn.slice(0,14)+"…":fn;
+      const ti=mk("title"); ti.textContent=(s.function||"")+(s.intent?" — "+s.intent:""); f.append(ti);
+      g.append(f); svg.append(g);
+    });
+  });
+
+  // cross-plot because arrows
+  ids.forEach(pid=>{
+    const steps=Object.entries(M.plots[pid].spine||{});
+    steps.forEach(([k,s])=>{
+      (s.because||[]).forEach(b=>{
+        const [op,os]=b.split(":"); const from=pos[op+":"+os], to=pos[pid+":"+k];
+        if(!from||!to||op===pid) return;
+        const col=plotColor(op);
+        const midY=(from.y+to.y)/2;
+        const d=`M${from.x},${from.y+(to.y>from.y?19:-19)} C${from.x},${midY} ${to.x},${midY} ${to.x},${to.y+(to.y>from.y?-19:19)}`;
+        svg.append(mk("path",{d,fill:"none",stroke:`var(--${col})`,"stroke-width":1.3,"stroke-dasharray":"4 3",
+          opacity:.75,"marker-end":`url(#ah-${col})`}));
+      });
+    });
+  });
+  return svg;
+}
+
+/* ------------------------------------------------------------ L3 */
+let castSel=null;
+function vCast(view){
+  const ids=Object.keys(M.entities);
+  if(!ids.length){ const p=el("div","pad"); p.append(el("p","empty","No entities loaded.")); view.append(p); return; }
+  if(!castSel||!M.entities[castSel]) castSel=ids[0];
+
+  const wrap=el("div","cast"); view.append(wrap);
+  const list=el("div","cast-list"), detail=el("div","cast-detail");
+  wrap.append(list,detail);
+
+  const types=["character","creature","location","object","group","concept"];
+  const byType={}; ids.forEach(id=>{const t=M.entities[id].type||"other"; (byType[t]=byType[t]||[]).push(id);});
+  for(const t of types.concat(Object.keys(byType).filter(x=>!types.includes(x)))){
+    if(!byType[t]) continue;
+    const g=el("div","cast-group"); g.append(el("div","eyebrow",t+(byType[t].length>1?"s":"")));
+    byType[t].sort().forEach(id=>{
+      const e=M.entities[id], b=el("button");
+      b.setAttribute("aria-current",String(id===castSel));
+      b.append(el("span","cid",id+" · "+(e.salience||"")), document.createTextNode(e.canonical_name||id));
+      b.onclick=()=>{castSel=id; go("cast");};
+      g.append(b);
+    });
+    list.append(g);
+  }
+  renderDossier(detail, castSel);
+}
+
+function renderDossier(host,id){
+  const e=M.entities[id]; host.innerHTML="";
+  const pad=el("div","pad"); host.append(pad);
+
+  pad.append(el("div","eyebrow",(e.type||"")+" · "+(e.salience||"")));
+  const h=el("h2","sec",e.canonical_name||id); h.style.margin="0 0 6px"; pad.append(h);
+  const tg=el("div","tags");
+  tg.append(el("span","tag",id));
+  (e.aliases||[]).forEach(a=>tg.append(el("span","tag",a)));
+  (e.plots||[]).forEach(p=>tg.append(el("span","tag "+plotColor(p),p)));
+  pad.append(tg);
+
+  if(e.arc&&(e.arc.start_state||e.arc.end_state)){
+    const c=el("div","card"); c.style.marginTop="18px";
+    c.append(el("div","eyebrow","Arc"));
+    const g=el("div"); g.style.display="grid"; g.style.gridTemplateColumns="1fr auto 1fr"; g.style.gap="14px"; g.style.alignItems="center";
+    g.append(el("div",null,e.arc.start_state||"—"));
+    const ar=el("div",null,"→"); ar.style.color="var(--heat)"; ar.style.fontSize="18px"; g.append(ar);
+    g.append(el("div",null,e.arc.end_state||"—"));
+    c.append(g); pad.append(c);
+  }
+
+  // state variables — start vs end
+  const sv=e.state_variables||{};
+  if(Object.keys(sv).length){
+    pad.append(el("h2","sec","State variables"));
+    pad.append(el("p","note prose-w","The only attributes any later layer is permitted to change for this entity. Everything else about the dossier is fixed unless a beat patches it explicitly."));
+    const tb=el("table","data"); const th=el("thead"),tr=el("tr");
+    ["Variable","Dimension","At t0","At the end","Domain"].forEach(x=>tr.append(el("th",null,x)));
+    th.append(tr); tb.append(th);
+    const body=el("tbody");
+    for(const [k,spec] of Object.entries(sv)){
+      const start=(M.t0[id]?.state||{})[k], end=(M.final[id]?.state||{})[k];
+      const r=el("tr");
+      const c1=el("td"); c1.append(el("code","mono",k));
+      if(spec.description){const d=el("div",null,spec.description); d.style.color="var(--muted)"; d.style.fontSize="12px"; c1.append(d);}
+      r.append(c1);
+      r.append(el("td",null,spec.dimension||""));
+      const c3=el("td"); c3.append(el("span","statecell",fmtVal(start))); r.append(c3);
+      const c4=el("td"); const changed=JSON.stringify(start)!==JSON.stringify(end);
+      c4.append(el("span","statecell"+(changed?" changed":""),fmtVal(end))); r.append(c4);
+      const dom=spec.range?`[${spec.range.join(", ")}]`:(spec.domain?spec.domain.join(" | "):spec.kind||"");
+      const c5=el("td"); const dd=el("code","mono",dom); dd.style.color="var(--faint)"; c5.append(dd); r.append(c5);
+      body.append(r);
+    }
+    tb.append(body); const sc=el("div","scroll-x"); sc.append(tb);
+    const card=el("div","card"); card.style.marginTop="12px"; card.append(sc); pad.append(card);
+  }
+
+  // profile
+  const prof=e.profile||{};
+  const keys=Object.keys(prof).sort((a,b)=>(a==="backstory"?-1:b==="backstory"?1:0));
+  if(keys.length){
+    pad.append(el("h2","sec","Dossier"));
+    pad.append(el("p","note prose-w","Freeform prose is decomposed one sentence per key, so any single sentence can be addressed and patched by JSON Pointer. Click a pointer to copy it."));
+    const g=el("div","stack"); g.style.marginTop="14px";
+    for(const k of keys){
+      const c=el("div","card");
+      c.append(el("div","eyebrow",k.replace(/_/g," ")));
+      c.append(renderProfileNode(prof[k],`/${id}/profile/${k}`));
+      g.append(c);
+    }
+    pad.append(g);
+  }
+
+  // relationships
+  const rels=e.relationships||{};
+  if(Object.keys(rels).length){
+    pad.append(el("h2","sec","Relationships"));
+    const g=el("div","stack");
+    for(const [other,rel] of Object.entries(rels)){
+      const c=el("div","card");
+      const hd=el("div"); hd.style.display="flex"; hd.style.alignItems="center"; hd.style.gap="10px"; hd.style.flexWrap="wrap";
+      const nm=el("strong",null,M.name(other)); hd.append(nm);
+      hd.append(el("span","tag",rel.kind||""));
+      const v=rel.valence??0;
+      const vt=el("span","tag "+(v>=0?"quench":"heat"),"valence "+v); hd.append(vt);
+      const link=el("button","btn sm","open"); link.onclick=()=>{castSel=other; go("cast");}; hd.append(link);
+      c.append(hd);
+      // valence bar
+      const m=el("div","meter"); m.style.gridTemplateColumns="0 1fr 44px"; m.style.marginTop="8px";
+      const tr2=el("div","track"); const f=el("div","fill"+(v<0?" hot":"")); f.style.width=Math.abs(v)/2+"%";
+      if(v<0){f.style.marginLeft=(50-Math.abs(v)/2)+"%";} else {f.style.marginLeft="50%";}
+      tr2.append(f); m.append(el("div"),tr2,el("div","val",String(v))); c.append(m);
+      if(rel.notes&&Object.keys(rel.notes).length) c.append(renderProfileNode(rel.notes,`/${id}/relationships/${other}/notes`));
+      g.append(c);
+    }
+    pad.append(g);
+  }
+
+  // what happens to it
+  const hist=entityHistory(id);
+  if(hist.length){
+    pad.append(el("h2","sec","What happens to "+(e.canonical_name||id)));
+    const card=el("div","card"); const tb=el("table","data");
+    const th=el("thead"),tr=el("tr"); ["Where","Variable","Change","Dim","Mag"].forEach(x=>tr.append(el("th",null,x)));
+    th.append(tr); tb.append(th); const body=el("tbody");
+    for(const row of hist){
+      const r=el("tr");
+      const c0=el("td"); const b=el("button","btn sm",row.scene+"#b"+row.beat);
+      b.onclick=()=>{go("scenes"); setTimeout(()=>selectScene(row.scene),40);}; c0.append(b); r.append(c0);
+      const c1=el("td"); c1.append(el("code","mono",row.variable||"")); r.append(c1);
+      const c2=el("td"); const ar=el("div","arrow");
+      ar.append(el("span","from",fmtVal(row.before)), el("span",null,"→"), el("span","to",fmtVal(row.after)));
+      c2.append(ar); r.append(c2);
+      r.append(el("td",null,row.dimension||""));
+      const c4=el("td"); c4.append(el("span","mono",String(row.magnitude??""))); r.append(c4);
+      body.append(r);
+    }
+    tb.append(body); const sc=el("div","scroll-x"); sc.append(tb); card.append(sc); pad.append(card);
+  }
+}
+
+function renderProfileNode(node,ptr){
+  if(node==null) return el("div","note","—");
+  if(typeof node==="string") return el("p",null,node);
+  if(Array.isArray(node)){ const t=el("div","tags"); node.forEach(x=>t.append(el("span","tag",typeof x==="string"?x:JSON.stringify(x)))); return t; }
+  const entries=Object.entries(node);
+  const isSentenceMap = entries.length>0 && entries.every(([,v])=>v&&typeof v==="object"&&typeof v.text==="string");
+  if(isSentenceMap){
+    const list=el("div","sentences");
+    for(const [k,v] of entries){
+      const row=el("div","sentence");
+      const p=el("code","ptr",ptr+"/"+k); p.title="Click to copy this JSON Pointer"; p.onclick=()=>copy(ptr+"/"+k);
+      const body=el("div"); body.append(el("div","tx",v.text));
+      const meta=[]; if(v.when)meta.push(v.when); (v.tags||[]).forEach(t=>meta.push(t));
+      if(meta.length) body.append(el("div","when",meta.join(" · ")));
+      row.append(p,body); list.append(row);
+    }
+    return list;
+  }
+  const dl=el("dl","kv");
+  for(const [k,v] of entries){
+    dl.append(el("dt",null,k.replace(/_/g," ")));
+    const dd=el("dd");
+    if(typeof v==="string") dd.textContent=v;
+    else dd.append(renderProfileNode(v,ptr+"/"+k));
+    dl.append(dd);
+  }
+  return dl;
+}
+
+function entityHistory(id){
+  const out=[]; const pre="/"+id+"/";
+  for(const b of M.beats) for(const c of (b.beat.changes||[]))
+    if((c.op?.path||"").startsWith(pre))
+      out.push({scene:b.sid,beat:b.no,event:b.eid,variable:c.variable,before:c.before,after:c.after,
+                dimension:c.dimension,magnitude:c.magnitude});
+  return out;
+}
+
+/* ============================================================ canvas graph */
+let inspectorCollapsed=false;   // remembered across tab switches
+
+function makeGraph(view,{nodes,edges,onSelect,legend,hint,fit,emptyHint}){
+  const wrap=el("div","graphwrap"+(inspectorCollapsed?" collapsed":""));
+  const area=el("div","canvas-area"); const insp=el("div","inspector");
+  wrap.append(area,insp); view.append(wrap);
+
+  const cv=el("canvas"); area.append(cv);
+  const ctx=cv.getContext("2d");
+  let scale=1, ox=0, oy=0, drag=null, sel=null, hover=null, W=0, H=0;
+
+  const ctrls=el("div","ctrls");
+  const mk=(t,f)=>{const b=el("button","btn sm",t); b.onclick=f; return b;};
+  const zoomLbl=el("span","zoom","100%");
+  ctrls.append(mk("−",()=>zoomBy(1/1.25)),zoomLbl,mk("+",()=>zoomBy(1.25)),mk("Fit",fitAll));
+  const panelBtn=mk("",()=>togglePanel());
+  panelBtn.classList.add("panel-toggle");
+  ctrls.append(panelBtn);
+  area.append(ctrls);
+  function syncToggle(){
+    panelBtn.textContent = inspectorCollapsed ? "Details ›" : "‹ Hide details";
+    panelBtn.title = inspectorCollapsed ? "Show the detail panel" : "Collapse the detail panel";
+  }
+  function togglePanel(){
+    inspectorCollapsed = !inspectorCollapsed;
+    wrap.classList.toggle("collapsed", inspectorCollapsed);
+    syncToggle();
+    resize(true);          // the only place the canvas box ever changes
+  }
+  syncToggle();
+  if(legend){ const lg=el("div","legend"); legend.forEach(([c,t])=>{const li=el("div","li");
+    const sw=el("span","sw"); sw.style.background=c; li.append(sw,el("span",null,t)); lg.append(li);}); area.append(lg); }
+  if(hint) area.append(el("div","hint",hint));
+
+  /* Reading getBoundingClientRect forces a synchronous layout, so this always
+     sees the post-class-change width. Calling it in the same tick as the
+     layout change is what keeps the bitmap and the CSS box the same size —
+     defer it by even one frame and the browser paints the old, wider bitmap
+     squeezed into the new narrower box, which reads as the panel animating in. */
+  function resize(force){
+    const r=area.getBoundingClientRect();
+    const dpr=Math.min(window.devicePixelRatio||1,2);
+    const w=Math.max(1,r.width), h=Math.max(1,r.height);
+    if(!force && w===W && h===H) return;   // idempotent: no redundant repaint
+    W=w; H=h;
+    cv.width=Math.round(W*dpr); cv.height=Math.round(H*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    draw();
+  }
+  function fitAll(){
+    if(!nodes.length) return;
+    const pad=54;
+    const xs=nodes.map(n=>n.x), ys=nodes.map(n=>n.y);
+    const w=Math.max(...xs.map((x,i)=>x+nodes[i].w))-Math.min(...xs);
+    const h=Math.max(...ys.map((y,i)=>y+nodes[i].h))-Math.min(...ys);
+    scale=Math.min((W-pad*2)/Math.max(w,1),(H-pad*2)/Math.max(h,1),1.6);
+    ox=pad-Math.min(...xs)*scale+(W-pad*2-w*scale)/2;
+    oy=pad-Math.min(...ys)*scale+(H-pad*2-h*scale)/2;
+    draw();
+  }
+  function zoomBy(f,cx,cy){
+    cx=cx??W/2; cy=cy??H/2;
+    const ns=Math.max(.25,Math.min(3,scale*f));
+    ox=cx-(cx-ox)*(ns/scale); oy=cy-(cy-oy)*(ns/scale); scale=ns; draw();
+  }
+  const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  function draw(){
+    zoomLbl.textContent=Math.round(scale*100)+"%";
+    ctx.clearRect(0,0,W,H);
+    ctx.save(); ctx.translate(ox,oy); ctx.scale(scale,scale);
+    const C={line:css("--line"),ink:css("--ink"),ink2:css("--ink-2"),muted:css("--muted"),
+             surface:css("--surface"),faint:css("--faint")};
+    // edges
+    for(const e of edges){
+      const a=nodes[e.from], b=nodes[e.to]; if(!a||!b) continue;
+      const on = sel!=null && (e.from===sel||e.to===sel);
+      ctx.strokeStyle = on ? css("--"+(e.color||"heat")) : C.line;
+      ctx.lineWidth = on ? 2/1 : 1.1;
+      ctx.setLineDash(e.dashed?[5,4]:[]);
+      const x1=a.x+a.w, y1=a.y+a.h/2, x2=b.x, y2=b.y+b.h/2;
+      const dx=Math.max(28,(x2-x1)/2);
+      ctx.beginPath(); ctx.moveTo(x1,y1); ctx.bezierCurveTo(x1+dx,y1,x2-dx,y2,x2,y2); ctx.stroke();
+      // arrow head
+      const ang=Math.atan2(y2-y1,dx); ctx.setLineDash([]);
+      ctx.beginPath(); ctx.moveTo(x2,y2);
+      ctx.lineTo(x2-8*Math.cos(ang-.4),y2-8*Math.sin(ang-.4));
+      ctx.lineTo(x2-8*Math.cos(ang+.4),y2-8*Math.sin(ang+.4));
+      ctx.closePath(); ctx.fillStyle=on?css("--"+(e.color||"heat")):C.line; ctx.fill();
+    }
+    ctx.setLineDash([]);
+    // nodes
+    nodes.forEach((n,i)=>{
+      const active=i===sel, hot=i===hover;
+      const accent=css("--"+(n.color||"heat"));
+      ctx.fillStyle=active?css("--"+(n.color||"heat")+"-soft"):C.surface;
+      ctx.strokeStyle=active?accent:(hot?css("--faint"):C.line);
+      ctx.lineWidth=active?2:1;
+      roundRect(ctx,n.x,n.y,n.w,n.h,7); ctx.fill(); ctx.stroke();
+      // accent stripe
+      ctx.fillStyle=accent; roundRect(ctx,n.x,n.y,3.5,n.h,2); ctx.fill();
+      ctx.fillStyle=active?css("--"+(n.color||"heat")+"-ink"):C.faint;
+      ctx.font="600 10px ui-monospace,Menlo,monospace";
+      ctx.fillText(n.id,n.x+11,n.y+15);
+      ctx.fillStyle=active?css("--"+(n.color||"heat")+"-ink"):C.ink2;
+      ctx.font="12px system-ui,sans-serif";
+      wrapText(ctx,n.label,n.x+11,n.y+31,n.w-20,14,3);
+      if(n.badge){
+        ctx.fillStyle=C.faint; ctx.font="9.5px ui-monospace,Menlo,monospace";
+        ctx.fillText(n.badge,n.x+11,n.y+n.h-8);
+      }
+    });
+    ctx.restore();
+  }
+  function roundRect(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
+  function wrapText(c,t,x,y,maxW,lh,maxLines){
+    const words=String(t||"").split(/\s+/); let line="",n=0;
+    for(const w of words){
+      const test=line?line+" "+w:w;
+      if(c.measureText(test).width>maxW&&line){
+        c.fillText(line,x,y+n*lh); n++; line=w;
+        if(n>=maxLines-1){ let last=line; while(c.measureText(last+"…").width>maxW&&last.length>1) last=last.slice(0,-1);
+          c.fillText(last+(words.indexOf(w)<words.length-1?"…":""),x,y+n*lh); return; }
+      } else line=test;
+    }
+    if(line) c.fillText(line,x,y+n*lh);
+  }
+  function hit(px,py){
+    const x=(px-ox)/scale, y=(py-oy)/scale;
+    for(let i=nodes.length-1;i>=0;i--){const n=nodes[i];
+      if(x>=n.x&&x<=n.x+n.w&&y>=n.y&&y<=n.y+n.h) return i;}
+    return null;
+  }
+  cv.addEventListener("pointerdown",ev=>{
+    cv.setPointerCapture(ev.pointerId);
+    drag={x:ev.offsetX,y:ev.offsetY,ox,oy,moved:false}; cv.classList.add("dragging");
+  });
+  cv.addEventListener("pointermove",ev=>{
+    if(drag){
+      const dx=ev.offsetX-drag.x, dy=ev.offsetY-drag.y;
+      if(Math.abs(dx)+Math.abs(dy)>3) drag.moved=true;
+      ox=drag.ox+dx; oy=drag.oy+dy; draw(); return;
+    }
+    const h=hit(ev.offsetX,ev.offsetY);
+    if(h!==hover){hover=h; cv.style.cursor=h==null?"grab":"pointer"; draw();}
+  });
+  cv.addEventListener("pointerup",ev=>{
+    cv.classList.remove("dragging");
+    const wasDrag=drag&&drag.moved; drag=null;
+    if(wasDrag) return;
+    const h=hit(ev.offsetX,ev.offsetY);
+    if(h!=null) select(h); else closePanel();
+  });
+  cv.addEventListener("pointercancel",()=>{drag=null;cv.classList.remove("dragging");});
+  cv.addEventListener("wheel",ev=>{ev.preventDefault(); zoomBy(ev.deltaY<0?1.12:1/1.12,ev.offsetX,ev.offsetY);},{passive:false});
+
+  function showEmpty(){
+    insp.innerHTML="";
+    const e=el("div","insp-empty");
+    e.append(el("b",null,"Nothing selected"));
+    e.append(document.createTextNode(emptyHint||"Click any node to read its details here."));
+    insp.append(e);
+  }
+  function closePanel(){          // deselect — the panel stays exactly where it is
+    sel=null; showEmpty(); draw();
+  }
+  function select(i){
+    sel=i;
+    insp.innerHTML="";
+    onSelect(insp,nodes[i],closePanel);
+    insp.scrollTop=0;
+    if(inspectorCollapsed) togglePanel();   // an explicit click may reopen it
+    draw();                                  // canvas size never changed
+  }
+  showEmpty();
+  const ro=new ResizeObserver(()=>resize()); ro.observe(area);
+  requestAnimationFrame(()=>{resize(true); if(fit!==false) fitAll();});
+  return {selectById(id){
+    const i=nodes.findIndex(n=>n.id===id);
+    if(i<0) return;
+    sel=i; insp.innerHTML=""; onSelect(insp,nodes[i],closePanel); insp.scrollTop=0;
+    if(inspectorCollapsed) togglePanel();
+    const n=nodes[i]; ox=W/2-(n.x+n.w/2)*scale; oy=H/2-(n.y+n.h/2)*scale;
+    draw();
+  }};
+}
+
+/* ------------------------------------------------------------ L5 */
+let eventsGraph=null;
+function vEvents(view){
+  const ids=M.eventOrder;
+  if(!ids.length){ const p=el("div","pad"); p.append(el("p","empty","No events loaded.")); view.append(p); return; }
+
+  // layered layout: column = story order, lane = primary plot
+  const NW=178, NH=76, GAPX=62, GAPY=26;
+  const lanes=M.plotIds;
+  const nodes=ids.map((id,i)=>{
+    const e=M.events[id];
+    const lane=Math.max(0,lanes.indexOf(e.primary_plot));
+    return {id, idx:i, lane,
+      x:i*(NW+GAPX), y:lane*(NH+GAPY+34),
+      w:NW, h:NH, color:plotColor(e.primary_plot),
+      label:e.summary||"", badge:"t"+(e.story_time?.index??"")+" · "+(e.story_time?.label||""),
+      ref:id};
+  });
+  const index={}; nodes.forEach((n,i)=>index[n.id]=i);
+  const edges=[];
+  ids.forEach(id=>{
+    (M.events[id].causes||[]).forEach(to=>{
+      if(index[to]!=null) edges.push({from:index[id],to:index[to],color:plotColor(M.events[id].primary_plot)});
+    });
+  });
+
+  eventsGraph=makeGraph(view,{nodes,edges,legend:lanes.map(p=>[`var(--${plotColor(p)})`,p+" · "+(M.plots[p].title||"")]),
+    hint:"drag to pan · scroll to zoom · click a node",
+    emptyHint:"Click any event to read its participants, declared state changes, causality and the patch it produces.",
+    onSelect:(host,node,close)=>renderEventInspector(host,node.id,close)});
+}
+function selectEvent(id){ eventsGraph&&eventsGraph.selectById(id); }
+
+function renderEventInspector(host,eid,close){
+  const e=M.events[eid];
+  const head=el("div","insp-head");
+  const hg=el("div");
+  hg.append(el("div","eyebrow",eid+" · t"+(e.story_time?.index??"")));
+  hg.append(el("h3",null,e.summary||eid));
+  head.append(hg);
+  const x=el("button","close","×"); x.onclick=close; x.title="Clear selection"; head.append(x);
+  host.append(head);
+
+  const b=el("div","insp-body"); host.append(b);
+  const sec=(t)=>{const s=el("div","insp-sec"); s.append(el("div","eyebrow",t)); b.append(s); return s;};
+
+  const meta=sec("Placement");
+  const dl=el("dl","kv");
+  const add=(k,v)=>{dl.append(el("dt",null,k),el("dd",null,v));};
+  add("Story time",(e.story_time?.label||"")+(e.story_time?.duration_min?` · ${e.story_time.duration_min} min`:""));
+  add("Location",M.name(e.location));
+  add("Function",(e.plot_function||"").replace(/_/g," "));
+  meta.append(dl);
+  const tg=el("div","tags"); tg.style.marginTop="8px";
+  (e.plots||[]).forEach(p=>{
+    const t=el("span","tag "+plotColor(p),p+(p===e.primary_plot?" (parent)":""));
+    tg.append(t);
+  });
+  if(e.reversal) tg.append(el("span","tag","reversal"));
+  if(e.is_root) tg.append(el("span","tag","root"));
+  if(e.is_sink) tg.append(el("span","tag","sink"));
+  meta.append(tg);
+
+  if((e.plot_bindings||[]).length){
+    const s=sec("Discharges");
+    const t=el("div","tags");
+    e.plot_bindings.forEach(pb=>{
+      const step=M.plots[pb.plot]?.spine?.[pb.step];
+      const tag=el("span","tag "+plotColor(pb.plot),`${pb.plot}:${pb.step} ${step?("· "+(step.function||"").replace(/_/g," ")):""}`);
+      t.append(tag);
+    });
+    s.append(t);
+  }
+
+  const who=sec("Participants");
+  const wt=el("div","tags");
+  (e.participants||[]).forEach(p=>{
+    const t=el("span","tag",M.name(p)); t.style.cursor="pointer";
+    t.onclick=()=>{castSel=p; go("cast");}; wt.append(t);
+  });
+  who.append(wt);
+
+  if(e.action){ const s=sec("Action"); const p=el("p",null,e.action); p.style.fontSize="13.5px"; p.style.color="var(--ink-2)"; s.append(p); }
+
+  const ch=sec("Declared state changes");
+  ch.append(...(e.state_changes||[]).map(c=>changeCard(c)));
+  if(!(e.state_changes||[]).length) ch.append(el("p","note","none"));
+
+  if(e.causal_note){ const s=sec("Why now"); const p=el("p",null,e.causal_note); p.style.fontSize="13.5px"; p.style.color="var(--ink-2)"; s.append(p); }
+
+  const cz=sec("Causality");
+  const cg=el("div"); cg.style.display="grid"; cg.style.gap="8px";
+  const line=(lbl,arr)=>{
+    const d=el("div"); d.append(el("span","tag",lbl));
+    const t=el("span"); t.style.marginLeft="6px";
+    (arr||[]).forEach(id=>{const b2=el("button","btn sm",id); b2.style.marginRight="4px";
+      b2.onclick=()=>selectEvent(id); t.append(b2);});
+    if(!(arr||[]).length) t.append(el("span","note"," none"));
+    d.append(t); return d;
+  };
+  cg.append(line("caused by",e.caused_by),line("causes",e.causes));
+  cz.append(cg);
+
+  const sc=sec("Realized in");
+  const st=el("div","tags");
+  M.sceneOrder.filter(sid=>(M.scenes[sid].events||[]).includes(eid)).forEach(sid=>{
+    const t=el("button","btn sm",sid+(M.scenes[sid].primary_event===eid?" (parent)":""));
+    t.onclick=()=>{go("scenes"); setTimeout(()=>selectScene(sid),40);}; st.append(t);
+  });
+  sc.append(st);
+
+  if(M.transitions[eid]){
+    const g=sec("Reasoning");
+    const btn=el("button","btn","Read the transition that produced this event");
+    btn.onclick=()=>{trTarget=eid; go("reason");};
+    g.append(btn);
+    const sb=el("div","scorebar");
+    for(const [k,v] of Object.entries(trScore(M.transitions[eid]))){
+      const x=el("span","s"); x.append(document.createTextNode(k+" "),el("b",null,String(v))); sb.append(x);
+    }
+    g.append(sb);
+  }
+
+  const ps=sec("Patch produced by this event");
+  const pre=el("textarea"); pre.readOnly=true; pre.style.minHeight="120px";
+  pre.value=JSON.stringify(M.eventPatch(eid),null,1); ps.append(pre);
+}
+
+function changeCard(c){
+  const d=el("div","chg");
+  const top=el("div","top");
+  top.append(el("span","who",M.name(c.entity)));
+  top.append(el("code","mono",c.variable||""));
+  if(c.dimension) top.append(el("span","tag",c.dimension));
+  d.append(top);
+  const ar=el("div","arrow");
+  ar.append(el("span","from",fmtVal(c.before)), el("span",null,"→"), el("span","to",fmtVal(c.after)));
+  d.append(ar);
+  if(c.op?.path) d.append(el("code","ptr",(c.op.op||"replace")+" "+c.op.path));
+  if(c.magnitude!=null){ const m=el("div","mag"); const i=el("i"); i.style.width=c.magnitude+"%"; m.append(i); d.append(m); }
+  return d;
+}
+
+/* ------------------------------------------------------------ L6 */
+let scenesGraph=null;
+function vScenes(view){
+  const ids=M.sceneOrder;
+  if(!ids.length){ const p=el("div","pad"); p.append(el("p","empty","No scenes loaded.")); view.append(p); return; }
+  const NW=196, NH=84, GAPX=54;
+  const nodes=ids.map((id,i)=>{
+    const s=M.scenes[id];
+    // vertical position tracks the tension curve — a scene high on the page is a scene under pressure
+    const t=s.tension_out??50;
+    return {id, x:i*(NW+GAPX), y:(100-t)*2.6, w:NW, h:NH,
+      color:plotColor(s.primary_plot),
+      label:s.dramatic_function||"",
+      badge:`d${s.discourse_index} · ${(s.beats||[]).length} beats · tension ${s.tension_in}→${s.tension_out}`};
+  });
+  const edges=[]; for(let i=0;i<nodes.length-1;i++) edges.push({from:i,to:i+1,color:nodes[i].color});
+  scenesGraph=makeGraph(view,{nodes,edges,
+    legend:M.plotIds.map(p=>[`var(--${plotColor(p)})`,p+" · parent plot"]).concat([["transparent","height = tension out"]]),
+    hint:"reading order left to right · height tracks tension",
+    emptyHint:"Click any scene to read its beats, the patch operations they author, and the state across the scene.",
+    onSelect:(host,node,close)=>renderSceneInspector(host,node.id,close)});
+}
+function selectScene(id){ scenesGraph&&scenesGraph.selectById(id); }
+
+function renderSceneInspector(host,sid,close){
+  const s=M.scenes[sid];
+  const head=el("div","insp-head");
+  const hg=el("div");
+  hg.append(el("div","eyebrow",sid+" · scene "+s.discourse_index+(s.chapter?" · ch "+s.chapter:"")));
+  hg.append(el("h3",null,s.dramatic_function||sid));
+  head.append(hg);
+  const x=el("button","close","×"); x.onclick=close; x.title="Clear selection"; head.append(x);
+  host.append(head);
+
+  const b=el("div","insp-body"); host.append(b);
+  const sec=(t)=>{const q=el("div","insp-sec"); q.append(el("div","eyebrow",t)); b.append(q); return q;};
+
+  const meta=sec("Placement");
+  const dl=el("dl","kv"); const add=(k,v)=>{dl.append(el("dt",null,k),el("dd",null,v));};
+  add("When",s.story_time_label||"—"); add("Where",M.name(s.location));
+  add("POV",M.name(s.pov)); add("Mode",s.narrative_mode||"—");
+  add("Tension",`${s.tension_in} → ${s.tension_out}`);
+  add("Budget",(s.target_words||"—")+" words");
+  meta.append(dl);
+  const tg=el("div","tags"); tg.style.marginTop="8px";
+  (s.plots||[]).forEach(p=>tg.append(el("span","tag "+plotColor(p),p+(p===s.primary_plot?" (parent)":""))));
+  (s.events||[]).forEach(e=>{
+    const t=el("button","btn sm",e+(e===s.primary_event?" (parent)":""));
+    t.onclick=()=>{go("events"); setTimeout(()=>selectEvent(e),40);}; tg.append(t);
+  });
+  meta.append(tg);
+
+  const pr=sec("Present");
+  const pt=el("div","tags");
+  (s.present||[]).forEach(p=>{const t=el("span","tag",M.name(p)); t.style.cursor="pointer";
+    t.onclick=()=>{castSel=p; go("cast");}; pt.append(t);});
+  (s.offstage_referenced||[]).forEach(p=>pt.append(el("span","tag",M.name(p)+" (offstage)")));
+  pr.append(pt);
+
+  const bs=sec("Beats");
+  (s.beats||[]).forEach(bt=>{
+    const row=el("div","beat");
+    row.append(el("div","no",String(bt.beat)));
+    const body=el("div");
+    const mt=el("div","meta");
+    mt.append(el("span","tag",bt.type||""));
+    const evb=el("span","tag "+plotColor(M.events[bt.event_id]?.primary_plot),bt.event_id);
+    evb.style.cursor="pointer"; evb.onclick=()=>{go("events"); setTimeout(()=>selectEvent(bt.event_id),40);};
+    mt.append(evb);
+    body.append(mt);
+    body.append(el("div","tx",bt.text||""));
+    if((bt.changes||[]).length){
+      const cg=el("div"); cg.style.display="flex"; cg.style.flexDirection="column"; cg.style.gap="6px"; cg.style.marginTop="8px";
+      bt.changes.forEach(c=>cg.append(changeCard(c)));
+      body.append(cg);
+    }
+    row.append(body); bs.append(row);
+  });
+
+  // entry / exit
+  const es=sec("State across the scene");
+  const enter=M.stateEnteringScene(sid), leave=M.stateLeavingScene(sid);
+  const involved=new Set([...(s.present||[]),...Object.keys(s.entry_states||{}),...Object.keys(s.exit_states||{})]);
+  const tb=el("table","data"); const th=el("thead"),tr=el("tr");
+  ["Entity","Variable","In","Out"].forEach(h=>tr.append(el("th",null,h)));
+  th.append(tr); tb.append(th); const body=el("tbody");
+  for(const id of involved){
+    const vars=Object.keys((M.entities[id]||{}).state_variables||{});
+    for(const v of vars){
+      const a=(enter[id]?.state||{})[v], z=(leave[id]?.state||{})[v];
+      if(a===undefined&&z===undefined) continue;
+      const changed=JSON.stringify(a)!==JSON.stringify(z);
+      if(!changed && !(s.entry_states?.[id]||{}).hasOwnProperty(v)) continue;
+      const r=el("tr");
+      r.append(el("td",null,M.name(id)));
+      const c1=el("td"); c1.append(el("code","mono",v)); r.append(c1);
+      const c2=el("td"); c2.append(el("span","statecell",fmtVal(a))); r.append(c2);
+      const c3=el("td"); c3.append(el("span","statecell"+(changed?" changed":""),fmtVal(z))); r.append(c3);
+      body.append(r);
+    }
+  }
+  tb.append(body); const sx=el("div","scroll-x"); sx.append(tb); es.append(sx);
+
+  const q=s.questions_opened||{};
+  if(Object.keys(q).length||(s.questions_closed||[]).length){
+    const qs=sec("Questions");
+    for(const [k,v] of Object.entries(q)){ const d=el("div"); d.append(el("span","tag",k+" opened")," ",document.createTextNode(v)); d.style.marginBottom="6px"; qs.append(d); }
+    (s.questions_closed||[]).forEach(k=>{const d=el("div"); d.append(el("span","tag",k+" closed")); qs.append(d);});
+  }
+
+  if(M.prose[sid]){
+    const g=sec("Screenplay");
+    const btn=el("button","btn","Read this scene");
+    btn.onclick=()=>{scriptTarget=sid; go("script");};
+    g.append(btn);
+  }
+
+  if(M.transitions[sid]){
+    const g=sec("Reasoning");
+    const btn=el("button","btn","Read the transition that produced this scene");
+    btn.onclick=()=>{trTarget=sid; go("reason");};
+    g.append(btn);
+  }
+
+  const ps=sec("Patch produced by this scene");
+  const pre=el("textarea"); pre.readOnly=true; pre.style.minHeight="120px";
+  pre.value=JSON.stringify(M.scenePatch(sid),null,1); ps.append(pre);
+}
+
+/* ------------------------------------------------------------ state fold */
+function vState(view){
+  const pad=el("div","pad"); view.append(pad);
+  if(!M.beats.length){ pad.append(el("p","empty","No beats to fold.")); return; }
+
+  pad.append(el("p","note prose-w","The world state at t0 is the entity layer, unmodified. Every state after it is reached by applying the patch operations authored by each beat, in story-time order. Drag the scrubber to fold the story forward and watch the world change. Values that moved at this step are highlighted."));
+
+  const scrub=el("div","scrub"); scrub.style.marginTop="18px";
+  const marker=el("div","marker");
+  const range=el("input"); range.type="range"; range.min="0"; range.max=String(M.beats.length); range.value="0"; range.step="1";
+  const btns=el("div"); btns.style.display="flex"; btns.style.gap="6px";
+  const prev=el("button","btn sm","◀"), next=el("button","btn sm","▶"), end=el("button","btn sm","End");
+  btns.append(prev,next,end);
+  scrub.append(marker,range,btns); pad.append(scrub);
+
+  const host=el("div"); host.style.marginTop="18px"; pad.append(host);
+
+  function render(){
+    const i=+range.value;
+    const b = i===0 ? null : M.beats[i-1];
+    const world = b ? M.after[b.key] : M.t0;
+    const prevWorld = b ? M.before[b.key] : M.t0;
+    marker.innerHTML="";
+    if(!b){ marker.append(document.createTextNode("t0 — "), el("b",null,"before anything happens")); }
+    else{
+      marker.append(document.createTextNode(b.sid+"#b"+b.no+" — "), el("b",null,b.eid));
+    }
+    host.innerHTML="";
+    if(b){
+      const c=el("div","card"); c.style.marginBottom="16px";
+      c.append(el("div","eyebrow","This beat"));
+      c.append(el("p",null,b.beat.text||""));
+      if((b.beat.changes||[]).length){
+        const g=el("div"); g.style.display="flex"; g.style.flexDirection="column"; g.style.gap="7px"; g.style.marginTop="10px";
+        b.beat.changes.forEach(x=>g.append(changeCard(x))); c.append(g);
+      } else c.append(el("p","note","No state change — a setup beat."));
+      host.append(c);
+    }
+    const grid=el("div","grid g2");
+    for(const id of Object.keys(M.entities)){
+      const st=world[id]?.state||{}, ps=prevWorld[id]?.state||{};
+      if(!Object.keys(st).length) continue;
+      const c=el("div","card");
+      const hd=el("div"); hd.style.display="flex"; hd.style.justifyContent="space-between"; hd.style.alignItems="baseline";
+      hd.append(el("strong",null,M.name(id)),el("code","mono",id)); c.append(hd);
+      const dl=el("dl","kv"); dl.style.marginTop="8px";
+      for(const [k,v] of Object.entries(st)){
+        dl.append(el("dt",null,k));
+        const dd=el("dd");
+        const changed=JSON.stringify(v)!==JSON.stringify(ps[k]);
+        dd.append(el("span","statecell"+(changed?" changed":""),fmtVal(v)));
+        dl.append(dd);
+      }
+      c.append(dl); grid.append(c);
+    }
+    host.append(grid);
+  }
+  range.oninput=render;
+  prev.onclick=()=>{range.value=String(Math.max(0,+range.value-1)); render();};
+  next.onclick=()=>{range.value=String(Math.min(M.beats.length,+range.value+1)); render();};
+  end.onclick=()=>{range.value=String(M.beats.length); render();};
+  render();
+}
+
+/* ------------------------------------------------------------ transitions */
+let trTarget=null;
+
+function vTransitions(view){
+  const pad=el("div","pad"); view.append(pad);
+  const keys=Object.keys(M.transitions||{}).sort();
+  if(!keys.length){
+    pad.append(el("p","empty","No transitions in this bundle."));
+    pad.append(el("p","note prose-w","A transition is the deliberate reasoning written before a node is generated. Generate them with the forge pipeline, or reconstruct them for existing nodes, and they appear here."));
+    return;
+  }
+  pad.append(el("p","note prose-w","A transition is the reasoning that produces a node, written out on purpose rather than left in the model's scratchpad. It argues from everything already established — craft first, then a full psychological account of everyone involved, then the entities that are not minds — to the node that must come next. These two were generated as a test; the rest of the graph does not have them yet."));
+
+  const pick=el("div","tr-pick"); pick.style.marginTop="18px";
+  pick.append(el("span","eyebrow","Node"));
+  if(!trTarget||!M.transitions[trTarget]) trTarget=keys[0];
+  keys.forEach(k=>{
+    const b=el("button","btn"+(k===trTarget?" primary":""),k);
+    b.onclick=()=>{trTarget=k; go("reason");}; pick.append(b);
+  });
+  pad.append(pick);
+  pad.append(renderTransition(M.transitions[trTarget], trTarget));
+}
+
+function trScore(tr){
+  const psych=tr.psychology||[], dyn=tr.dynamics||[];
+  const towers=psych.flatMap(p=>p.theory_of_mind||[]);
+  const words=JSON.stringify(tr).split(/\s+/).length;
+  return {
+    "characters":psych.length,
+    "other entities":dyn.length,
+    "ToM towers":towers.length,
+    "at depth 3":towers.filter(t=>(t.d3||"").trim()).length,
+    "with error named":towers.filter(t=>(t.accuracy||"").trim()).length,
+    "trajectory phases":psych.reduce((n,p)=>n+(p.trajectory||[]).length,0)
+                      + dyn.reduce((n,d)=>n+(d.trajectory||[]).length,0),
+    "facts cited":((tr.continuity||{}).established_facts_used||[]).length,
+    "words":words,
+  };
+}
+
+function renderTransition(tr,nodeId){
+  const host=el("div"); if(!tr) return host;
+  const psych=tr.psychology||[], dyn=tr.dynamics||[], craft=tr.craft||{}, cont=tr.continuity||{};
+
+  // score strip
+  const sb=el("div","scorebar");
+  for(const [k,v] of Object.entries(trScore(tr))){
+    const s=el("span","s"); s.append(document.createTextNode(k+" "), el("b",null,String(v))); sb.append(s);
+  }
+  host.append(sb);
+
+  const F=(label,text)=>{ if(!text)return null;
+    const d=el("div","tr-field"); d.append(el("div","eyebrow",label), el("div","txt",text)); return d; };
+  const block=(title,open)=>{
+    const d=el("details","tr-block"); if(open)d.open=true;
+    d.append(el("summary",null,title));
+    const b=el("div","body"); d.append(b); host.append(d); return b;
+  };
+
+  // situation
+  if(tr.situation){
+    const b=block("Where the story stands",true);
+    b.append(el("div","txt",tr.situation));
+  }
+
+  // craft
+  {
+    const b=block("Craft — why this node, here, for this reader",true);
+    [["Audience need",craft.audience_need],["Genre convention",craft.genre_convention],
+     ["Theme and style",craft.theme_and_style],["Dramatic function",craft.dramatic_function],
+     ["Why now",craft.why_now]].forEach(([k,v])=>{const f=F(k,v); if(f)b.append(f);});
+    const tm=craft.tension_management;
+    if(tm&&(tm.how||tm.entering!=null)){
+      const f=el("div","tr-field");
+      f.append(el("div","eyebrow",`Tension ${tm.entering??"?"} → ${tm.leaving??"?"}`));
+      f.append(el("div","txt",tm.how||"")); b.append(f);
+    }
+    const alts=craft.why_not_otherwise||[];
+    if(alts.length){
+      const f=el("div","tr-field"); f.append(el("div","eyebrow","Alternatives rejected"));
+      alts.forEach(a=>{
+        const o=el("div","opt");
+        o.append(el("div","o",a.alternative||""), el("p","p",a.rejected_because||""));
+        f.append(o);
+      });
+      b.append(f);
+    }
+    const pr=craft.promises||{};
+    if((pr.made||[]).length||(pr.kept||[]).length){
+      const f=el("div","tr-field"); f.append(el("div","eyebrow","Promises"));
+      const t=el("div","tags");
+      (pr.made||[]).forEach(x=>t.append(el("span","tag heat","opens: "+x)));
+      (pr.kept||[]).forEach(x=>t.append(el("span","tag quench","pays off: "+x)));
+      f.append(t); b.append(f);
+    }
+  }
+
+  // psychology
+  psych.forEach(p=>{
+    const name=M.name(p.entity);
+    const b=block(`${name} — full psychological account`);
+    const f1=F("Entering",p.entering_state); if(f1)b.append(f1);
+
+    // senses
+    const per=p.perception||{};
+    const senseKeys=["sight","sound","touch","smell","taste","interoception","proprioception","attention"];
+    if(senseKeys.some(k=>per[k])){
+      const f=el("div","tr-field"); f.append(el("div","eyebrow","Sensorium"));
+      const g=el("div","senses");
+      senseKeys.forEach(k=>{ if(!per[k])return;
+        const s=el("div","sense"); s.append(el("div","lbl",k),el("div","v",per[k])); g.append(s);});
+      f.append(g); b.append(f);
+    }
+
+    // appraisal
+    const ap=p.appraisal||{};
+    if(ap.value_at_stake||ap.self_conscious_emotion){
+      const f=el("div","tr-field");
+      f.append(el("div","eyebrow","Appraisal against her own values"));
+      const t=el("div","tags"); t.style.marginBottom="6px";
+      if(ap.valence!=null)t.append(el("span","tag "+(ap.valence<0?"heat":"quench"),"valence "+ap.valence));
+      if(ap.arousal!=null)t.append(el("span","tag","arousal "+ap.arousal));
+      if(ap.self_conscious_emotion)t.append(el("span","tag heat",ap.self_conscious_emotion));
+      f.append(t);
+      [["Value at stake",ap.value_at_stake],["Moral reading",ap.moral_reading],
+       ["Somatic marker",ap.somatic_marker]].forEach(([k,v])=>{const x=F(k,v); if(x)f.append(x);});
+      b.append(f);
+    }
+
+    // norms
+    const nm=p.social_norms||{};
+    if((nm.norms_in_force||[]).length||nm.how_others_would_judge){
+      const f=el("div","tr-field"); f.append(el("div","eyebrow","Social norms in force"));
+      if((nm.norms_in_force||[]).length){
+        const t=el("div","tags"); t.style.marginBottom="7px";
+        nm.norms_in_force.forEach(x=>t.append(el("span","tag",x))); f.append(t);
+      }
+      [["How those present would judge",nm.how_others_would_judge],
+       ["How the absent still constrain",nm.how_absent_others_would_judge],
+       ["Standing at risk",nm.standing_at_risk],["Norm conflict",nm.norm_conflict]]
+        .forEach(([k,v])=>{const x=F(k,v); if(x)f.append(x);});
+      b.append(f);
+    }
+
+    // theory of mind
+    (p.theory_of_mind||[]).forEach(t=>{
+      const f=el("div","tr-field");
+      f.append(el("div","eyebrow",`Theory of mind → ${M.name(t.other)}`));
+      const g=el("div","tom");
+      const lvl=(d,label,txt,err)=>{ if(!txt)return;
+        const r=el("div","lvl"+(err?" err":"")); r.append(el("div","d",d),el("div","c",txt)); g.append(r);};
+      lvl("d1","",t.d1); lvl("d2","",t.d2); lvl("d3","",t.d3);
+      lvl("✕","",t.accuracy,true);
+      f.append(g);
+      const cap=el("div","note"); cap.style.fontSize="11.5px"; cap.style.marginTop="5px";
+      cap.textContent="d1 what she believes about him · d2 what she believes he believes about her · d3 what she believes he believes she believes · ✕ where the model is wrong";
+      f.append(cap); b.append(f);
+    });
+
+    // urges + impairments
+    const ur=p.urges||{};
+    if(Object.values(ur).some(Boolean)){
+      const f=el("div","tr-field"); f.append(el("div","eyebrow","Urges"));
+      const dl=el("dl","kv");
+      [["cravings",ur.cravings],["physical",ur.physical_needs],
+       ["needs (conscious)",ur.psych_needs_conscious],["needs (unconscious)",ur.psych_needs_unconscious],
+       ["avoidances",ur.avoidances]].forEach(([k,v])=>{ if(v){dl.append(el("dt",null,k),el("dd",null,v));}});
+      f.append(dl); b.append(f);
+    }
+    const im=p.impairments||{};
+    const active=Object.entries(im).filter(([k,v])=>k!=="net_effect"&&v&&!/^(none|n\/a)$/i.test(v.trim()));
+    if(active.length){
+      const f=el("div","tr-field"); f.append(el("div","eyebrow","Acting on her from outside her will"));
+      const dl=el("dl","kv");
+      active.forEach(([k,v])=>dl.append(el("dt",null,k),el("dd",null,v)));
+      if(im.net_effect)dl.append(el("dt",null,"net effect"),el("dd",null,im.net_effect));
+      f.append(dl); b.append(f);
+    }
+
+    // deliberation
+    const de=p.deliberation||{};
+    if(de.reasoning||(de.options_weighed||[]).length){
+      const f=el("div","tr-field"); f.append(el("div","eyebrow","Deliberate analysis"));
+      const x=F("Framing",de.framing); if(x)f.append(x);
+      (de.options_weighed||[]).forEach(o=>{
+        const d=el("div","opt");
+        d.append(el("div","o",o.option||""));
+        if(o.predicted_outcome)d.append(el("p","p","→ "+o.predicted_outcome));
+        if(o.cost)d.append(el("p","p","cost: "+o.cost));
+        f.append(d);
+      });
+      [["Reasoning",de.reasoning],["Chosen because",de.chosen_because],
+       ["Known unknowns",de.known_unknowns]].forEach(([k,v])=>{const y=F(k,v); if(y)f.append(y);});
+      b.append(f);
+    }
+
+    // control — felt vs expressed
+    const co=p.control||{};
+    if(co.felt||co.expressed){
+      const f=el("div","tr-field");
+      f.append(el("div","eyebrow","Felt versus expressed"+(co.mode?" · "+co.mode:"")));
+      const g=el("div","fe");
+      const box=(cls,lbl,v)=>{const d=el("div",cls); d.append(el("div","lbl",lbl),el("div","v",v||"—")); return d;};
+      g.append(box("felt","felt",co.felt),box("expr","expressed",co.expressed));
+      f.append(g);
+      [["Why they diverge",co.divergence_reason],["What leaks through anyway",co.leakage],
+       ["Impulse inhibited",co.inhibited_impulse]].forEach(([k,v])=>{const x=F(k,v); if(x)f.append(x);});
+      b.append(f);
+    }
+
+    [["Intention",p.intention],["Action",p.action]].forEach(([k,v])=>{const x=F(k,v); if(x)b.append(x);});
+
+    // trajectory
+    if((p.trajectory||[]).length){
+      const f=el("div","tr-field");
+      f.append(el("div","eyebrow","Trajectory across the unit"));
+      f.append(renderPhases(p.trajectory)); b.append(f);
+    }
+    [["Leaving",p.leaving_state],["Left carrying",p.unresolved]]
+      .forEach(([k,v])=>{const x=F(k,v); if(x)b.append(x);});
+  });
+
+  // dynamics
+  dyn.forEach(d=>{
+    const b=block(`${M.name(d.entity)} — ${d.kind||"entity"} dynamics`);
+    const x=F("Entering",d.entering_state); if(x)b.append(x);
+    if((d.forces_acting||[]).length){
+      const f=el("div","tr-field"); f.append(el("div","eyebrow","Forces acting"));
+      const t=el("div","tags"); d.forces_acting.forEach(v=>t.append(el("span","tag",v)));
+      f.append(t); b.append(f);
+    }
+    if((d.axis_changes||[]).length){
+      const f=el("div","tr-field"); f.append(el("div","eyebrow","Axis changes"));
+      d.axis_changes.forEach(a=>{
+        const c=el("div","chg");
+        c.append(el("div","top",a.axis||""));
+        const ar=el("div","arrow");
+        ar.append(el("span","from",a.from||""),el("span",null,"→"),el("span","to",a.to||""));
+        c.append(ar);
+        if(a.caused_by)c.append(el("div","ptr",a.caused_by));
+        f.append(c);
+      });
+      b.append(f);
+    }
+    if((d.trajectory||[]).length){
+      const f=el("div","tr-field"); f.append(el("div","eyebrow","Trajectory"));
+      f.append(renderPhases(d.trajectory)); b.append(f);
+    }
+    [["Leaving",d.leaving_state],["What it now means",d.significance_shift]]
+      .forEach(([k,v])=>{const y=F(k,v); if(y)b.append(y);});
+  });
+
+  // interaction
+  const ix=tr.interaction||{};
+  if(Object.values(ix).some(Boolean)){
+    const b=block("The collision");
+    [["What collides",ix.what_collides],["Power balance",ix.power_balance],
+     ["Information asymmetry",ix.information_asymmetry],["Turning point",ix.turning_point]]
+      .forEach(([k,v])=>{const x=F(k,v); if(x)b.append(x);});
+  }
+
+  // continuity
+  {
+    const b=block("Continuity — what this node inherits");
+    const facts=cont.established_facts_used||[];
+    if(facts.length){
+      const f=el("div","tr-field"); f.append(el("div","eyebrow","Facts relied on, with sources"));
+      const tb=el("table","data"); const th=el("thead"),hr=el("tr");
+      ["Source","Fact","How used"].forEach(h=>hr.append(el("th",null,h)));
+      th.append(hr); tb.append(th); const bd=el("tbody");
+      facts.forEach(x=>{
+        const r=el("tr"); const c=el("td"); c.append(el("code","mono",x.source||"—"));
+        r.append(c, el("td",null,x.fact||""), el("td",null,x.how_used||"")); bd.append(r);
+      });
+      tb.append(bd); const sx=el("div","scroll-x"); sx.append(tb); f.append(sx); b.append(f);
+    }
+    if((cont.constraints_honoured||[]).length){
+      const f=el("div","tr-field"); f.append(el("div","eyebrow","Constraints honoured"));
+      const t=el("div","tags"); cont.constraints_honoured.forEach(v=>t.append(el("span","tag",v)));
+      f.append(t); b.append(f);
+    }
+    (cont.contradictions_checked||[]).forEach(c=>{
+      const f=el("div","tr-field");
+      f.append(el("div","eyebrow","Contradiction avoided"));
+      f.append(el("div","txt",c.risk||""));
+      const g=el("div","note"); g.textContent="avoided by: "+(c.avoided_by||""); f.append(g);
+      b.append(f);
+    });
+    if((cont.forward_commitments||[]).length){
+      const f=el("div","tr-field"); f.append(el("div","eyebrow","Now owed by later nodes"));
+      const t=el("div","tags"); cont.forward_commitments.forEach(v=>t.append(el("span","tag heat",v)));
+      f.append(t); b.append(f);
+    }
+  }
+
+  // decision
+  const dec=tr.decision||{};
+  if(dec.resolution){
+    const b=block("The decision",true);
+    b.append(el("div","txt",dec.resolution));
+    if(dec.confidence!=null){
+      const t=el("div","tags"); t.style.marginTop="8px";
+      t.append(el("span","tag","confidence "+dec.confidence)); b.append(t);
+    }
+    if((dec.state_changes_implied||[]).length){
+      const f=el("div","tr-field"); f.style.marginTop="12px";
+      f.append(el("div","eyebrow","State changes implied"));
+      dec.state_changes_implied.forEach(c=>{
+        const d=el("div","chg");
+        const top=el("div","top");
+        top.append(el("span","who",M.name(c.entity)),el("code","mono",c.variable||""));
+        d.append(top);
+        const ar=el("div","arrow");
+        ar.append(el("span","from",String(c.from)),el("span",null,"→"),el("span","to",String(c.to)));
+        d.append(ar);
+        if(c.because)d.append(el("div","ptr",c.because));
+        f.append(d);
+      });
+      b.append(f);
+    }
+    if((dec.risks||[]).length){
+      const f=el("div","tr-field"); f.append(el("div","eyebrow","Ways this could be the wrong call"));
+      const t=el("div","tags"); dec.risks.forEach(v=>t.append(el("span","tag",v)));
+      f.append(t); b.append(f);
+    }
+  }
+
+  return host;
+}
+
+function renderPhases(list){
+  const g=el("div","phases");
+  (list||[]).forEach(p=>{
+    const row=el("div","phase");
+    const rail=el("div","rail"); rail.append(el("div","dot")); row.append(rail);
+    const body=el("div");
+    body.append(el("h4",null,p.phase||""));
+    body.append(el("div","shift",p.shift||""));
+    if(p.trigger){
+      const t=el("div","trig"); t.append(el("b",null,"trigger "),document.createTextNode(p.trigger));
+      body.append(t);
+    }
+    const sd=p.state_delta;
+    if(sd&&sd.variable){
+      const t=el("div","tags"); t.style.marginTop="5px";
+      t.append(el("span","tag",`${sd.variable}: ${sd.from} → ${sd.to}`));
+      body.append(t);
+    }
+    row.append(body); g.append(row);
+  });
+  return g;
+}
+
+/* ------------------------------------------------------------ script */
+let scriptTarget=null;
+function vScript(view){
+  const wrap=el("div","script-wrap"); view.append(wrap);
+  const doc=el("div","script");
+  const ids=M.sceneOrder.filter(id=>M.prose[id]);
+  if(!ids.length){ const p=el("div","pad"); p.append(el("p","empty","No screenplay pages yet.")); wrap.append(p); return; }
+  for(const id of ids){
+    const s=M.scenes[id];
+    const h=el("div","scenehead",`${id} · ${s.dramatic_function||""}`);
+    h.id="scene-"+id; doc.append(h);
+    doc.append(...formatScript(M.prose[id]));
+  }
+  wrap.append(doc);
+  if(scriptTarget){ const t=$("#scene-"+scriptTarget); if(t) setTimeout(()=>t.scrollIntoView({behavior:"smooth",block:"start"}),50); scriptTarget=null; }
+}
+
+/* Classify screenplay lines by their indentation and shape. */
+function formatScript(text){
+  const out=[]; const lines=String(text||"").replace(/\r/g,"").split("\n");
+  let buf=[], mode=null;
+  const flush=()=>{ if(!buf.length)return; const t=buf.join("\n"); if(t.trim()) out.push(el("p",mode||"action",t)); buf=[]; };
+  for(const raw of lines){
+    const line=raw.replace(/\s+$/,"");
+    if(!line.trim()){ flush(); mode=null; continue; }
+    const indent=line.length-line.trimStart().length;
+    const t=line.trim();
+    let kind;
+    if(/^(INT\.|EXT\.|INT\/EXT|I\/E)/i.test(t)) kind="slug";
+    else if(/^\(.*\)$/.test(t)&&indent>=8) kind="paren";
+    else if(indent>=14 && /^[A-Z0-9][A-Z0-9 .'’\-]*(\(.*\))?$/.test(t) && t.length<40) kind="cue";
+    else if(indent>=6) kind="dlg";
+    else kind="action";
+    if(kind!==mode||kind==="slug"||kind==="cue"){ flush(); mode=kind; }
+    buf.push(kind==="action"?t:t);
+  }
+  flush();
+  return out;
+}
+
+/* ------------------------------------------------------------ data */
+function vData(view){
+  const pad=el("div","pad"); view.append(pad);
+  pad.append(el("p","note prose-w","Everything on this page comes from one JSON bundle. Replace it to explore a different story, or copy the current one out. Nothing is uploaded anywhere — the bundle lives in this tab only."));
+
+  pad.append(el("h2","sec","Import"));
+  const imp=el("div","card prose-w");
+  imp.append(el("p","note","Choose a bundle file, or paste one below and load it."));
+  const fi=el("input"); fi.type="file"; fi.accept=".json,application/json";
+  fi.onchange=()=>{ const f=fi.files[0]; if(!f)return; const r=new FileReader();
+    r.onload=()=>tryLoad(r.result,status); r.readAsText(f); };
+  imp.append(fi);
+  const ta=el("textarea"); ta.placeholder='{ "story_root": {…}, "expose": {…}, "plots": {…}, "entities": {…}, "events": {…}, "scenes": {…}, "prose": {…} }';
+  ta.style.marginTop="12px"; imp.append(ta);
+  const row=el("div"); row.style.display="flex"; row.style.gap="8px"; row.style.marginTop="10px"; row.style.alignItems="center";
+  const load=el("button","btn primary","Load bundle"); load.onclick=()=>tryLoad(ta.value,status);
+  const reset=el("button","btn","Restore the demo"); reset.onclick=()=>{ RAW=clone(DATA); commit({quiet:true}); status.textContent="Demo restored."; status.className="note ok"; go("root"); };
+  const status=el("span","note");
+  row.append(load,reset,status); imp.append(row); pad.append(imp);
+
+  pad.append(el("h2","sec","Export"));
+  const exp=el("div","card prose-w");
+  exp.append(el("p","note","The complete bundle as it stands now, including anything the co-writer has changed. Download it as a file, or copy it to the clipboard. (A published artifact runs sandboxed and blocks page-initiated downloads; copying always works.)"));
+  const out=el("textarea"); out.readOnly=true;
+  out.value=JSON.stringify(currentBundle(),null,1);
+  exp.append(out);
+  const r2=el("div"); r2.style.display="flex"; r2.style.gap="8px"; r2.style.marginTop="10px"; r2.style.alignItems="center";
+  const dl=el("button","btn primary","Download .json");
+  dl.onclick=()=>{ try{ downloadBundle();
+      st2.textContent="Saved to your downloads."; st2.className="note ok"; }
+    catch(e){ st2.textContent="Download blocked here — use Copy instead."; st2.className="note bad"; } };
+  const cp=el("button","btn","Copy bundle");
+  const st2=el("span","note");
+  cp.onclick=async()=>{ const ok=await copy(out.value); st2.textContent=ok?"Copied.":"Select the text above and copy manually."; st2.className="note "+(ok?"ok":"bad"); };
+  const cpd=el("button","btn","Copy derived patches");
+  cpd.onclick=async()=>{
+    const payload={by_scene:{},by_event:{},world_state_t0:M.t0,world_state_final:M.final};
+    M.sceneOrder.forEach(s=>payload.by_scene[s]=M.scenePatch(s));
+    M.eventOrder.forEach(e=>payload.by_event[e]=M.eventPatch(e));
+    const ok=await copy(JSON.stringify(payload,null,1));
+    st2.textContent=ok?"Derived patches copied.":"Clipboard unavailable."; st2.className="note "+(ok?"ok":"bad");
+  };
+  r2.append(dl,cp,cpd,st2); exp.append(r2); pad.append(exp);
+
+  pad.append(el("h2","sec","What is in a bundle"));
+  const t=el("div","card prose-w"); const tb=el("table","data");
+  const rows=[["story_root","L0+L1 — genre, audience, style, narrative vector, world rules"],
+              ["expose","L2 — ending-first, jacket copy, sentence-keyed synopsis"],
+              ["plots","L4 — plots with keyed spines and cross-plot causation"],
+              ["entities","L3 — dossiers; this object is the world state at t0"],
+              ["events","L5 — causal DAG declaring which state must change"],
+              ["scenes","L6 — beats carrying the RFC 6902 patch operations"],
+              ["prose","T6 — one screenplay page per scene id"],
+              ["transitions","the reasoning that produced a node, keyed by node id"]];
+  const th=el("thead"),tr=el("tr"); ["Key","Layer"].forEach(h=>tr.append(el("th",null,h))); th.append(tr); tb.append(th);
+  const body=el("tbody");
+  rows.forEach(([k,v])=>{const r=el("tr"); const c=el("td"); c.append(el("code","mono",k)); r.append(c,el("td",null,v)); body.append(r);});
+  tb.append(body); const sx=el("div","scroll-x"); sx.append(tb); t.append(sx); pad.append(t);
+}
+
+function currentBundle(){ return RAW; }
+
+function emptyBundle(){
+  return {story_root:{}, expose:{}, plots:{plots:[]}, entities:{entities:{}},
+          events:{events:{}}, scenes:{scenes:{}}, prose:{}, transitions:{}};
+}
+function tryLoad(text,status){
+  try{
+    const d=JSON.parse(text);
+    const next=buildModel(d);
+    if(!next.root.title && !Object.keys(next.entities).length) throw new Error("no recognizable layers in this bundle");
+    RAW=d; M=next; castSel=null;
+    status.textContent="Loaded “"+(M.root.title||"untitled")+"”."; status.className="note ok";
+    boot(); go("root");
+  }catch(err){
+    status.textContent="Could not load: "+err.message; status.className="note bad";
+  }
+}
+async function copy(t){
+  try{ await navigator.clipboard.writeText(t); return true; }
+  catch(e){
+    try{ const ta=document.createElement("textarea"); ta.value=t; ta.style.position="fixed"; ta.style.opacity="0";
+      document.body.append(ta); ta.select(); const ok=document.execCommand("copy"); ta.remove(); return ok; }
+    catch(e2){ return false; }
+  }
+}
+
+
+/* ============================================================ co-writer */
+/* Configuration lives in localStorage, never in the page. Publishing a file
+   with a key baked in would hand it to anyone holding the link. */
+const CFG_DEFAULTS={base:"https://api.hyprlab.io/v1", key:"", model:"grok-4.6", temp:"0.8"};
+function cfgGet(){
+  const c={...CFG_DEFAULTS};
+  try{ for(const k of Object.keys(CFG_DEFAULTS)){
+    const v=localStorage.getItem("nf."+k); if(v!==null) c[k]=v; } }catch(e){}
+  return c;
+}
+function cfgSet(c){ try{ for(const k in c) localStorage.setItem("nf."+k,c[k]); }catch(e){} }
+
+/* ---- mutation helpers: every write goes through here ---- */
+function ensure(path,init){ if(!RAW[path]) RAW[path]=init; return RAW[path]; }
+function plotsArr(){ return ensure("plots",{plots:[]}).plots; }
+function entMap(){ return ensure("entities",{entities:{}}).entities; }
+function evMap(){ return ensure("events",{events:{}}).events; }
+function scMap(){ return ensure("scenes",{scenes:{}}).scenes; }
+
+function docFor(kind,id){
+  if(kind==="story_root") return RAW.story_root;
+  if(kind==="expose") return RAW.expose;
+  if(kind==="plot") return plotsArr().find(p=>p.plot_id===id);
+  if(kind==="entity") return entMap()[id];
+  if(kind==="event") return evMap()[id];
+  if(kind==="scene") return scMap()[id];
+  if(kind==="prose") return RAW.prose[id];
+  return undefined;
+}
+
+/* ---- a compact client-side validator, mirroring the server rules ---- */
+function validateBundle(){
+  const out=[];
+  const ents=entMap(), evs=evMap(), scs=scMap();
+  const plots={}; plotsArr().forEach(p=>plots[p.plot_id]=p);
+
+  for(const [id,e] of Object.entries(ents)){
+    const dec=e.state_variables||{}, st=e.state||{};
+    for(const k in dec) if(!(k in st)) out.push(`${id}: declares ${k} but has no value in state`);
+    for(const k in st) if(!(k in dec)) out.push(`${id}: state has ${k} which is not declared`);
+  }
+  for(const [id,ev] of Object.entries(evs)){
+    if(!(ev.plots||[]).length) out.push(`${id}: serves no plot`);
+    if(ev.primary_plot && !(ev.plots||[]).includes(ev.primary_plot))
+      out.push(`${id}: primary_plot not among plots`);
+    (ev.plots||[]).forEach(p=>{ if(plots[p]===undefined) out.push(`${id}: unknown plot ${p}`); });
+    if(!(ev.state_changes||[]).length) out.push(`${id}: declares no state change`);
+    (ev.state_changes||[]).forEach(c=>{
+      const e=ents[c.entity];
+      if(!e) out.push(`${id}: change on unknown entity ${c.entity}`);
+      else if(!(e.state_variables||{})[c.variable])
+        out.push(`${id}: ${c.entity}.${c.variable} is not declared`);
+    });
+    (ev.participants||[]).forEach(x=>{ if(!ents[x]) out.push(`${id}: unknown participant ${x}`); });
+  }
+  const covered=new Set();
+  for(const [id,sc] of Object.entries(scs)){
+    (sc.events||[]).forEach(e=>{ covered.add(e); if(!evs[e]) out.push(`${id}: unknown event ${e}`); });
+    if(sc.primary_event && !(sc.events||[]).includes(sc.primary_event))
+      out.push(`${id}: primary_event not among events`);
+    if(!(sc.beats||[]).length) out.push(`${id}: no beats`);
+  }
+  for(const id in evs) if(!covered.has(id)) out.push(`${id}: realized by no scene`);
+
+  // the fold must apply cleanly
+  try{
+    const m=buildModel(RAW);
+    for(const b of m.beats) for(const c of (b.beat.changes||[])){
+      const before=m.before[b.key];
+      if(c.op && (c.op.op==="replace"||c.op.op==="remove")){
+        const actual=ptrGet(before,c.op.path);
+        if(actual===undefined) out.push(`${b.key}: path ${c.op.path} does not exist yet`);
+        else if(JSON.stringify(actual)!==JSON.stringify(c.before))
+          out.push(`${b.key}: declares before=${JSON.stringify(c.before)} but state holds ${JSON.stringify(actual)}`);
+      }
+    }
+  }catch(e){ out.push("fold failed: "+e.message); }
+  return out;
+}
+
+/* ---- the tool surface exposed to the model ---- */
+const TOOLS=[
+  {name:"get_overview", desc:"Read what currently exists: counts, ids, titles. Call this first.",
+   params:{type:"object",properties:{},required:[]},
+   run:()=>({title:RAW.story_root?.title||null, form:RAW.story_root?.form||null,
+     has_story_root:!!(RAW.story_root&&RAW.story_root.title),
+     has_expose:!!(RAW.expose&&RAW.expose.synopsis),
+     plots:plotsArr().map(p=>({id:p.plot_id,type:p.type,title:p.title,outcome:p.outcome})),
+     entities:Object.entries(entMap()).map(([k,v])=>({id:k,type:v.type,name:v.canonical_name,
+       state_variables:Object.keys(v.state_variables||{})})),
+     events:Object.entries(evMap()).map(([k,v])=>({id:k,t:v.story_time?.index,summary:v.summary,
+       primary_plot:v.primary_plot})),
+     scenes:Object.entries(scMap()).map(([k,v])=>({id:k,d:v.discourse_index,fn:v.dramatic_function,
+       primary_event:v.primary_event})),
+     prose_pages:Object.keys(RAW.prose||{}),
+     constraints:RAW.story_root?.constraints||null})},
+
+  {name:"read_node", desc:"Read one node in full.",
+   params:{type:"object",properties:{
+     kind:{type:"string",enum:["story_root","expose","plot","entity","event","scene","prose"]},
+     id:{type:"string",description:"required for plot/entity/event/scene/prose"}},required:["kind"]},
+   run:a=>{ const d=docFor(a.kind,a.id); if(d===undefined) throw new Error(`no ${a.kind} ${a.id||""}`); return d; }},
+
+  {name:"new_project", desc:"Wipe everything and start from an empty bundle.",
+   params:{type:"object",properties:{confirm:{type:"boolean"}},required:["confirm"]},
+   run:a=>{ if(!a.confirm) throw new Error("confirm must be true");
+     RAW=emptyBundle(); castSel=null; trTarget=null; return {ok:true,message:"project cleared"}; }},
+
+  {name:"set_story_root", desc:"Write the story root (L0/L1). Replaces it wholesale.",
+   params:{type:"object",properties:{doc:{type:"object",description:"the full story root object"}},required:["doc"]},
+   run:a=>{ RAW.story_root=a.doc; return {ok:true,title:a.doc.title||null}; }, view:"root"},
+
+  {name:"set_expose", desc:"Write the exposé (L2): ending_first, jacket_copy, and synopsis keyed one sentence per key s01, s02, …",
+   params:{type:"object",properties:{doc:{type:"object"}},required:["doc"]},
+   run:a=>{ RAW.expose=a.doc; return {ok:true,sentences:Object.keys(a.doc.synopsis||{}).length}; }, view:"expose"},
+
+  {name:"upsert_plot", desc:"Create or replace one plot (L4). Needs plot_id, type, title, agent, resistance, goal, stakes, outcome, spine {st1:{step,function,intent,because}}, resolution_step, covers_synopsis.",
+   params:{type:"object",properties:{plot:{type:"object"}},required:["plot"]},
+   run:a=>{ const p=a.plot; if(!p.plot_id) throw new Error("plot_id required");
+     const arr=plotsArr(); const i=arr.findIndex(x=>x.plot_id===p.plot_id);
+     if(i>=0) arr[i]=p; else arr.push(p);
+     arr.sort((x,y)=>String(x.plot_id).localeCompare(String(y.plot_id)));
+     return {ok:true,plot_id:p.plot_id}; }, view:"plots"},
+
+  {name:"upsert_entity", desc:"Create or replace one entity dossier (L3). This IS the world state at t0. Needs entity_id, type, canonical_name, salience, plots, profile (with backstory as a sentence map), relationships, state_variables {name:{kind,description,dimension,init}}, state (mirroring every init), arc.",
+   params:{type:"object",properties:{entity:{type:"object"}},required:["entity"]},
+   run:a=>{ const e=a.entity; if(!e.entity_id) throw new Error("entity_id required");
+     entMap()[e.entity_id]=e; return {ok:true,entity_id:e.entity_id}; }, view:"cast"},
+
+  {name:"upsert_event", desc:"Create or replace one event (L5). Needs event_id, story_time{index,label}, primary_plot, plots, plot_bindings, location, participants, summary, action (no direct speech), state_changes[{entity,variable,path,dimension,before,after,magnitude}], caused_by, causes, is_root, is_sink.",
+   params:{type:"object",properties:{event:{type:"object"}},required:["event"]},
+   run:a=>{ const e=a.event; if(!e.event_id) throw new Error("event_id required");
+     evMap()[e.event_id]=e; return {ok:true,event_id:e.event_id}; }, view:"events"},
+
+  {name:"upsert_scene", desc:"Create or replace one scene (L6). Needs scene_id, discourse_index, primary_event, events, primary_plot, plots, location, pov, present, entry_states, beats[{beat,event_id,type,text,participants,changes[{entity,variable,dimension,before,after,magnitude,op}]}], exit_states, tension_in/out, target_words. Beat `op` is a literal RFC 6902 operation against the world state, e.g. {op:'replace',path:'/ch-01/state/x',value:false}.",
+   params:{type:"object",properties:{scene:{type:"object"}},required:["scene"]},
+   run:a=>{ const sc=a.scene; if(!sc.scene_id) throw new Error("scene_id required");
+     scMap()[sc.scene_id]=sc; return {ok:true,scene_id:sc.scene_id}; }, view:"scenes"},
+
+  {name:"set_prose", desc:"Write the finished page for one scene. Screenplay format if the story root's form is screenplay.",
+   params:{type:"object",properties:{scene_id:{type:"string"},text:{type:"string"}},required:["scene_id","text"]},
+   run:a=>{ ensure("prose",{}); RAW.prose[a.scene_id]=a.text;
+     return {ok:true,words:a.text.split(/\s+/).filter(Boolean).length}; }, view:"script"},
+
+  {name:"patch", desc:"Apply RFC 6902 operations to one node — the surgical way to change something without rewriting it. Paths are relative to that node, e.g. kind='story_root', ops=[{op:'replace',path:'/style/register',value:'wry'}].",
+   params:{type:"object",properties:{
+     kind:{type:"string",enum:["story_root","expose","plot","entity","event","scene"]},
+     id:{type:"string"},
+     ops:{type:"array",items:{type:"object",properties:{
+       op:{type:"string",enum:["add","remove","replace","move","copy"]},
+       path:{type:"string"}, value:{}, from:{type:"string"}}, required:["op","path"]}}},
+     required:["kind","ops"]},
+   run:a=>{ const d=docFor(a.kind,a.id); if(d===undefined) throw new Error(`no ${a.kind} ${a.id||""}`);
+     const patched=applyOps(d,a.ops);
+     if(a.kind==="story_root") RAW.story_root=patched;
+     else if(a.kind==="expose") RAW.expose=patched;
+     else if(a.kind==="plot"){ const arr=plotsArr(); arr[arr.findIndex(x=>x.plot_id===a.id)]=patched; }
+     else if(a.kind==="entity") entMap()[a.id]=patched;
+     else if(a.kind==="event") evMap()[a.id]=patched;
+     else if(a.kind==="scene") scMap()[a.id]=patched;
+     return {ok:true,applied:a.ops.length}; }},
+
+  {name:"delete_node", desc:"Remove a plot, entity, event, scene or page.",
+   params:{type:"object",properties:{
+     kind:{type:"string",enum:["plot","entity","event","scene","prose"]},id:{type:"string"}},
+     required:["kind","id"]},
+   run:a=>{ if(a.kind==="plot"){ const arr=plotsArr(); const i=arr.findIndex(x=>x.plot_id===a.id);
+       if(i<0) throw new Error("no such plot"); arr.splice(i,1); }
+     else { const m={entity:entMap(),event:evMap(),scene:scMap(),prose:RAW.prose||{}}[a.kind];
+       if(!(a.id in m)) throw new Error("no such "+a.kind); delete m[a.id]; }
+     return {ok:true}; }},
+
+  {name:"show", desc:"Open a tab for the reader and select a node, so they can see what you just made. Use this whenever you finish a piece of work.",
+   params:{type:"object",properties:{
+     tab:{type:"string",enum:["root","expose","plots","cast","events","scenes","state","reason","script","data"]},
+     id:{type:"string",description:"optional: an event, scene or entity id to select"}},required:["tab"]},
+   run:a=>{ pendingShow={tab:a.tab,id:a.id||null}; return {ok:true,shown:a.tab+(a.id?" · "+a.id:"")}; }},
+
+  {name:"validate", desc:"Run the structural checks: declared-vs-used state variables, plot and event references, scene coverage, and whether every beat patch applies to the folded world state.",
+   params:{type:"object",properties:{},required:[]},
+   run:()=>{ const errs=validateBundle();
+     return errs.length?{ok:false,count:errs.length,problems:errs.slice(0,40)}
+                       :{ok:true,message:"all structural checks pass"}; }},
+];
+const TOOL_BY_NAME=Object.fromEntries(TOOLS.map(t=>[t.name,t]));
+let pendingShow=null;
+
+const SYSTEM_PROMPT=`You are the co-writer inside a structured story-building tool. You and the
+user build a screenplay or novel together as an explicit graph, and you change it through tools.
+
+THE LAYERS, in the order they must be built:
+  story_root (L0/L1) → expose (L2) → plots (L4) → entities (L3) → events (L5) → scenes (L6) → prose
+Plots come before entities on purpose: the plots forward-declare the entity ids they need, and the
+entity layer then writes dossiers for exactly those ids.
+
+HARD RULES
+1. Entities declare state_variables, and NOTHING else may ever be changed on them. "state" must
+   mirror every declared variable's "init" exactly.
+2. Every event names at least one plot, exactly one primary_plot, and changes at least one declared
+   variable. Its "before" value must be what that variable actually holds at that point in story time.
+3. Every scene has exactly one primary_event. Beats carry the literal RFC 6902 ops that move state.
+4. Below the exposé, no direct speech: report dialogue as semantics and illocutionary force.
+5. Inside entity profiles, prose is decomposed one sentence per key ({b01:{text:"…"}}), and no string
+   runs past 180 characters. No arrays inside anything patchable — use id-keyed objects.
+6. Ids: ch-NN characters, lo-NN locations, ob-NN objects, gr-NN groups, cn-NN concepts, pl-NN plots,
+   ev-NNN events, sc-NNN scenes.
+
+HOW TO WORK
+- Call get_overview first, every time, so you know what already exists.
+- Build ONE node per tool call. After each meaningful piece, call show(...) so the reader sees it,
+  and write one short sentence saying what you did and what comes next. Do not narrate at length.
+- FINISHING A LAYER IS NOT FINISHING THE REQUEST. After every tool round, re-read the user's last
+  message and ask what of it does not exist yet. If anything is still missing, keep calling tools.
+  Only reply without a tool call when every part of the request is actually built. Never end your
+  turn describing what you are about to do next — do it, then say what you did.
+- When the user asks for the whole thing, work through the layers in order without asking permission
+  between steps, staying brief between them.
+- When the user asks for a change, prefer the patch tool over rewriting a whole node.
+- Call validate after any structural change and fix what it reports.
+- Craft: conflict must rise, never sit static. Every scene changes something. Antagonists get
+  reasonable motives. Nothing is explained in dialogue that can be dramatised in action. Name the
+  crucible that stops characters walking away.
+- You are talking to a collaborator, not writing a report. Be concise and concrete.`;
+
+/* ---- chat ---- */
+let chatHistory=[];
+let chatBusy=false, chatAbort=null;
+
+function chatEl(){ return $("#chatLog"); }
+function addMsg(role,text){
+  const m=el("div","msg "+(role==="user"?"user":role==="system"?"sys":"bot"));
+  m.append(el("div","who",role==="user"?"YOU":role==="system"?"···":"AI"));
+  const b=el("div","body"); b.textContent=text||""; m.append(b);
+  chatEl().append(m); chatEl().scrollTop=chatEl().scrollHeight;
+  return b;
+}
+function addToolCard(name,args){
+  const d=el("div","tool");
+  d.append(el("code",null,name));
+  const a=el("span","arg",summarizeArgs(name,args));
+  d.append(a);
+  const r=el("span","res","running…"); d.append(r);
+  chatEl().append(d); chatEl().scrollTop=chatEl().scrollHeight;
+  return {row:d,res:r};
+}
+function summarizeArgs(name,args){
+  if(!args) return "";
+  if(args.plot) return args.plot.plot_id+" "+(args.plot.title||"");
+  if(args.entity) return args.entity.entity_id+" "+(args.entity.canonical_name||"");
+  if(args.event) return args.event.event_id+" "+(args.event.summary||"").slice(0,60);
+  if(args.scene) return args.scene.scene_id+" "+(args.scene.dramatic_function||"").slice(0,60);
+  if(args.doc) return args.doc.title||Object.keys(args.doc).slice(0,4).join(", ");
+  if(args.ops) return (args.kind||"")+(args.id?" "+args.id:"")+" · "+args.ops.length+" op(s)";
+  const s=JSON.stringify(args); return s.length>90?s.slice(0,90)+"…":s;
+}
+function setBusy(b,label){
+  chatBusy=b;
+  $("#dockDot").className="dotlive "+(b?"busy":(cfgGet().key?"ready":""));
+  $("#dockSub").textContent=b?(label||"working…"):(cfgGet().key?"ready":"set an API key in Settings");
+  $("#chatSend").disabled=b;
+  $("#chatStop").style.display=b?"":"none";
+}
+
+function toolSchemas(){
+  return TOOLS.map(t=>({type:"function",function:{name:t.name,description:t.desc,parameters:t.params}}));
+}
+
+async function callModel(messages,signal){
+  const c=cfgGet();
+  if(!c.key) throw new Error("No API key set. Open Settings and paste one.");
+  const res=await fetch(c.base.replace(/\/$/,"")+"/chat/completions",{
+    method:"POST", signal,
+    headers:{"Content-Type":"application/json","Authorization":"Bearer "+c.key},
+    body:JSON.stringify({model:c.model, messages, tools:toolSchemas(), tool_choice:"auto",
+      temperature:parseFloat(c.temp)||0.8, max_completion_tokens:32000}),
+  });
+  if(!res.ok){
+    const t=await res.text();
+    throw new Error(`HTTP ${res.status}: ${t.slice(0,300)}`);
+  }
+  return res.json();
+}
+
+async function runAgent(userText){
+  if(chatBusy) return;
+  chatHistory.push({role:"user",content:userText});
+  addMsg("user",userText);
+  chatAbort=new AbortController();
+  setBusy(true,"thinking…");
+
+  const messages=[{role:"system",content:SYSTEM_PROMPT},...chatHistory];
+  let rounds=0;
+  try{
+    while(rounds++ < 40){
+      const data=await callModel(messages,chatAbort.signal);
+      const msg=data.choices?.[0]?.message;
+      if(!msg) throw new Error("empty response");
+      messages.push(msg);
+      chatHistory.push(msg);
+
+      if(msg.content && msg.content.trim()) addMsg("assistant",msg.content.trim());
+
+      const calls=msg.tool_calls||[];
+      if(!calls.length) break;
+
+      let mutated=false;
+      for(const call of calls){
+        let args={};
+        try{ args=JSON.parse(call.function.arguments||"{}"); }catch(e){}
+        const card=addToolCard(call.function.name,args);
+        const tool=TOOL_BY_NAME[call.function.name];
+        let result;
+        if(!tool){ result={error:"unknown tool"}; card.res.textContent="unknown"; card.res.className="res bad"; }
+        else{
+          try{
+            setBusy(true,call.function.name);
+            result=tool.run(args);
+            card.res.textContent="ok";
+            if(tool.view||call.function.name==="show") mutated=true;
+            if(["set_story_root","set_expose","upsert_plot","upsert_entity","upsert_event",
+                "upsert_scene","set_prose","patch","delete_node","new_project"].includes(call.function.name))
+              mutated=true;
+            if(call.function.name==="validate" && result.ok===false){
+              card.res.textContent=result.count+" issue(s)"; card.res.className="res bad";
+            }
+            if(tool.view){
+              const jump=el("button","btn sm jump","view");
+              jump.onclick=()=>go(tool.view); card.row.append(jump);
+            }
+          }catch(err){
+            result={error:String(err.message||err)};
+            card.res.textContent="failed"; card.res.className="res bad";
+            const why=el("div","arg"); why.style.flexBasis="100%"; why.textContent=result.error;
+            card.row.append(why);
+          }
+        }
+        const payload={role:"tool",tool_call_id:call.id,content:JSON.stringify(result).slice(0,20000)};
+        messages.push(payload); chatHistory.push(payload);
+      }
+      if(mutated){
+        const show=pendingShow; pendingShow=null;
+        commit({quiet:true});
+        if(show){ go(show.tab);
+          if(show.id){ setTimeout(()=>{
+            if(show.id.startsWith("ev-")) selectEvent(show.id);
+            else if(show.id.startsWith("sc-")) selectScene(show.id);
+            else { castSel=show.id; go("cast"); }
+          },60); }
+        } else { go(current); }
+        setBusy(true,"working…");
+      }
+    }
+  }catch(err){
+    if(err.name==="AbortError") addMsg("system","Stopped.");
+    else addMsg("system","Error: "+(err.message||err));
+  }finally{
+    setBusy(false); chatAbort=null;
+  }
+}
+
+/* ---- dock wiring ---- */
+function initDock(){
+  const dock=$("#dock");
+  const setOpen=o=>{ dock.classList.toggle("open",o);
+    $("#dockToggle").textContent=o?"Close":"Open";
+    $("#dockSub").textContent=o?(cfgGet().key?"ready":"set an API key in Settings"):"click to open";
+    document.body.style.paddingBottom=o?"0":"0"; };
+  $("#dockBar").onclick=e=>{ if(e.target.closest("button")) return; setOpen(!dock.classList.contains("open")); };
+  $("#dockToggle").onclick=()=>setOpen(!dock.classList.contains("open"));
+  $("#settingsBtn").onclick=()=>{ dock.classList.add("open"); setOpen(true);
+    dock.classList.toggle("settings-open"); };
+
+  const c=cfgGet();
+  $("#cfgBase").value=c.base; $("#cfgKey").value=c.key;
+  $("#cfgModel").value=c.model; $("#cfgTemp").value=c.temp;
+  $("#cfgSave").onclick=()=>{
+    cfgSet({base:$("#cfgBase").value.trim()||CFG_DEFAULTS.base, key:$("#cfgKey").value.trim(),
+            model:$("#cfgModel").value.trim()||CFG_DEFAULTS.model, temp:$("#cfgTemp").value.trim()||"0.8"});
+    $("#cfgStatus").textContent="Saved."; setBusy(false);
+  };
+
+  const send=()=>{ const t=$("#chatInput").value.trim(); if(!t||chatBusy) return;
+    $("#chatInput").value=""; $("#chatInput").style.height="auto"; runAgent(t); };
+  $("#chatSend").onclick=send;
+  $("#chatStop").onclick=()=>{ if(chatAbort) chatAbort.abort(); };
+  $("#chatInput").addEventListener("keydown",e=>{
+    if(e.key==="Enter"&&!e.shiftKey){ e.preventDefault(); send(); } });
+  $("#chatInput").addEventListener("input",e=>{
+    e.target.style.height="auto"; e.target.style.height=Math.min(150,e.target.scrollHeight)+"px"; });
+
+  const chips=[
+    ["Start something new","Start a new empty project. Ask me for the premise, audience and shape first, then build the story root."],
+    ["Build the whole thing","Take the current story root and build every remaining layer in order, showing me each piece as you finish it."],
+    ["Walk me through the plots","Walk me through the plots one at a time. Explain what each is doing structurally and show it to me."],
+    ["Check for problems","Run validate and tell me what is broken, then propose fixes."],
+    ["Continue","Continue with whatever is still missing from my last request. Do not ask, just build it."],
+  ];
+  const cw=$("#chatChips");
+  chips.forEach(([label,prompt])=>{
+    const b=el("button","chip",label);
+    b.onclick=()=>{ $("#chatInput").value=prompt; $("#chatInput").focus(); };
+    cw.append(b);
+  });
+
+  // A published artifact runs under a CSP that blocks external hosts, so the
+  // chat cannot reach any API from there. Say so rather than failing silently.
+  if(location.hostname.endsWith("claude.ai")){
+    const w=$("#cfgCsp"); w.style.display="";
+    w.textContent="This page is running as a published artifact, where a strict content policy "+
+      "blocks calls to external hosts. The co-writer needs the page served from your own machine "+
+      "or host to reach an API.";
+  }
+  addMsg("system","Co-writer ready. Set an API key in Settings, then tell me what you want to build "+
+    "— or ask me to change something that already exists. I work through tools, and I will open the "+
+    "relevant tab as I go.");
+  setBusy(false);
+}
+
+/* ---- file download / upload ---- */
+function downloadBundle(){
+  const name=(RAW.story_root?.title||"story").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+  const blob=new Blob([JSON.stringify(RAW,null,1)],{type:"application/json"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url; a.download=(name||"story")+".narrativeforge.json";
+  document.body.append(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),2000);
+}
+
+/* ============================================================ boot */
+function boot(){
+  $("#brandTitle").textContent=M.root.title||"Untitled";
+  $("#brandForm").textContent=(M.root.form||"story")+" · "+(M.root.genre_primary||"").replace(/_/g," ");
+  const st=$("#railStats"); st.innerHTML="";
+  const rows=[["plots",M.plotIds.length],["entities",Object.keys(M.entities).length],
+              ["events",M.eventOrder.length],["scenes",M.sceneOrder.length],
+              ["beats",M.beats.length],
+              ["patch ops",M.beats.reduce((n,b)=>n+(b.beat.changes||[]).length,0)],
+              ["script pages",Object.keys(M.prose).length],
+              ["transitions",Object.keys(M.transitions||{}).length]];
+  rows.forEach(([k,v])=>{const r=el("div","row"); r.append(el("span",null,k),el("b",null,String(v))); st.append(r);});
+  nav();
+}
+
+$("#themeBtn").onclick=()=>{
+  const cur=document.documentElement.getAttribute("data-theme");
+  const sysDark=matchMedia("(prefers-color-scheme: dark)").matches;
+  const now = cur || (sysDark?"dark":"light");
+  document.documentElement.setAttribute("data-theme", now==="dark"?"light":"dark");
+  if(current==="events"||current==="scenes") go(current);
+};
+
+RAW=clone(DATA);
+M=buildModel(RAW);
+boot();
+initDock();
+const start=(location.hash||"").replace("#","");
+go(VIEWS.some(v=>v.id===start)?start:"root");
+window.addEventListener("hashchange",()=>{
+  const h=(location.hash||"").replace("#","");
+  if(h&&h!==current&&VIEWS.some(v=>v.id===h)) go(h);
+});
+</script>

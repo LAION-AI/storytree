@@ -1,0 +1,859 @@
+{
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-001",
+  "ordinal": 1
+ },
+ "situation": "No story has been told yet. This is the first frame. Every character, relationship, and conflict exists only as latent potential in the established state. The audience knows nothing. The Heart O' The City Hotel is designated as an escape point with a functional exit phone. Agents are actively hunting Trinity, who possesses unspoken knowledge she cannot yet articulate. The Matrix is uncompromised. The system is functioning as designed.",
+ "craft": {
+  "audience_need": "The audience for a 1999 cyberpunk science-fiction thriller arrives with one overriding need: to be dropped into a world already in motion and forced to catch up. They need a cold open that creates immediate sensory urgency — not exposition, not introduction, but a situation so tense and so kinetic that trust is earned before the opening title. The Gibson-Dick-Heinlein tonal blend demands a specific texture: neon paranoia, identity instability, and the clinical precision of people operating at the edge of capability. The audience needs to feel the rules of this world through consequence, not explanation — they need to watch someone die or nearly die in the first minutes to understand that the stakes are real and physical. The cold open is the contract: this story will not protect you.",
+  "genre_convention": "The sci-fi action thriller cold open convention demands a set-piece that establishes stakes, tone, and the antagonist's capability without pausing to teach. The audience expects to be disoriented and then oriented through action, not lecture. This node satisfies that convention fully — a pursuit-and-escape sequence that demonstrates the Agents' terrifying power, the resistance fighters' desperate skill, and the life-or-death rules of Matrix engagement. The convention is satisfied, not subverted, because at frame one the audience has no baseline to subvert from. Subversion comes later, once trust is established. The one deliberate refusal: no one explains anything. The audience is given the experience of being inside a world where everyone already knows the rules except them.",
+  "theme_and_style": "The story root demands that every scene carry a character wanting something from someone — no scene communicates only information. The plain register with varied sentence length means the prose must be muscular and direct, with figurative density emerging from environment, not ornament. The forbidden tics are paramount here: no character states feelings directly; no interior monologue; all psychology externalized into action, gesture, or blocking. The Gibson touchstone demands tactile technological detail — the specific weight of a phone receiver, the particular quality of CRT glow on skin. The Dick touchstone demands that reality itself feel slightly wrong from the first frame. The Heinlein touchstone — lecture-combat rhythm — does not apply yet; this is pure combat. The thematic spine (self-belief earned through sacrifice) is invisible at this stage; what must be planted is the world that makes such belief necessary — a world so controlled, so lethal, that choosing to fight it looks like insanity.",
+  "dramatic_function": "This node serves six structural functions simultaneously. First, it establishes the Agents as an overwhelming, superhuman threat — the audience must fear them before any protagonist can be sympathetic. Second, it establishes the exit-phone mechanic as a hard rule of the world, which becomes load-bearing structure for every subsequent Matrix sequence and especially for the climax at this same location. Third, it establishes Trinity as a competent, desperate operative — not yet the woman with the prophecy, but someone whose skill and fear are visible. Fourth, it seeds the Agents' awareness of the resistance without revealing the broader pursuit of Neo. Fifth, it establishes the visual and tonal vocabulary of the Matrix as a place — the green-tinted fluorescence, the institutional architecture, the way phone lines are lifelines. Sixth, it creates the dramatic irony that will make the later return to this location (the death and resurrection of Neo) land with devastating force: the audience has seen someone escape here, so when Neo cannot escape here, the world's rules have demonstrably tightened around him.",
+  "tension_management": {
+   "entering": 0,
+   "leaving": 88,
+   "how": "Tension enters at zero because the audience is cold — there is no baseline. The node raises pressure through a specific mechanical sequence: the hotel room is established as a refuge, then progressively compromised. Footsteps in the hallway. The transformation of a civilian into an Agent — the first demonstration that anyone in the Matrix can become the enemy. The physical race to the hardline. The phone ringing as both salvation and countdown. The near-miss of bullets. The escape that succeeds by a margin so thin the audience exhales. Pressure is maintained by never cutting away to explain — the audience must process the rules in real time while the action escalates. The leaving tension is high because the escape is pyrrhic: the audience has seen how close death came, and they now know the Agents will adapt."
+  },
+  "why_now": "This node must be first because it is the only scene that can establish the world's rules through demonstration rather than explanation. If the story opens with Neo at his computer, the audience is in a different genre — a mystery, a drama — and the tonal contract is broken. If it opens with Morpheus philosophizing, it violates the forbidden tic against information-only scenes. If it opens with exposition about the Matrix, there is no story — there is a lecture. The cold open is the only structural position from which the world can be established experientially, which is the entire narrative philosophy of this work. The Agents' pursuit of Trinity is the only established conflict that can run without setup: it is already in motion when the audience arrives, which is the definition of a cold open.",
+  "why_not_otherwise": [
+   {
+    "alternative": "Open on Neo at his terminal, discovering the Morpheus searches, establishing his dual identity as Thomas Anderson / hacker Neo before any action occurs.",
+    "rejected_because": "This would establish the story as a mystery-thriller rather than an action-thriller. The tonal contract with the audience would be intellectual curiosity rather than visceral dread. Neo's mundane world would need to be interesting enough to hold attention without the genre's promised stakes, which would require either exposition or character work the story's register forbids at this stage. The audience would learn the rules of the Matrix through Neo being taught them, which is passive and violates the Heinlein combat-lecture rhythm by front-loading the lecture.",
+    "nearly_chosen": true,
+    "what_would_flip_it": "If the story were structured as a slow-burn paranoid thriller in the vein of early Dick — where the protagonist's creeping realization IS the plot — then opening on Neo's discovery would be correct. The Gibson-Dick blend could support a first act that is all investigation and dread with no combat. What flips it is genre: if the primary genre were psychological thriller rather than science-fiction action, the Neo-first opening wins."
+   },
+   {
+    "alternative": "Open on the Nebuchadnezzar in the real world, establishing the crew and the physical reality of the war before showing the Matrix.",
+    "rejected_because": "This destroys the central structural conceit of the entire work: the audience must experience the Matrix as real before they learn it is a simulation. If they see the real world first, every subsequent Matrix scene is filtered through a lens the story wants to build toward, not start with. The philosophical payload — what is real, what matters, whether a lie lived fully is preferable to a truth lived miserably — requires that the audience inhabit the simulation before they are told what it is. Starting in the real world also makes the crew sympathetic before they are competent, which inverts the genre's priority order.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "If the story's thematic center were the real-world cost of the war rather than the philosophical question of reality, the real-world opening would be correct. A war-story framing — closer to Heinlein without the Dick overlay — would demand showing the physical deprivation and brotherhood of the Nebuchadnezzar crew first. The Matrix would then be the strange, seductive other place rather than the default."
+   },
+   {
+    "alternative": "Open on Cypher's meeting with Agent Smith in the restaurant, establishing the betrayal plot as the central mystery before any other thread is introduced.",
+    "rejected_because": "This requires the audience to understand the Matrix, the resistance, the Agents, and the stakes of betrayal before any of them have been established. It is a flash-forward structure that demands the audience hold unresolved context for an extended period. The scene also functions better as a mid-story reveal because its power comes from the audience already knowing what Cypher is giving up — the camaraderie, the cause, the reality of the crew. Without that investment, Cypher is just a villain making a deal, which flattens the thematic argument the story needs him to embody.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "If the story were structured as a heist or espionage thriller where the central question is 'who is the mole,' then opening on the deal would be the genre-correct choice. The audience would track the betrayal as a puzzle rather than a tragedy. What flips it is the primary genre being espionage rather than science-fiction action — the structure of a mole-hunt story demands the deal be shown early so the audience can play the detection game."
+   }
+  ],
+  "promises": {
+   "made": [
+    "The Agents are terrifying and nearly unbeatable — the audience will spend the entire story wondering how any human survives them",
+    "The exit-phone mechanic is a hard rule — every Matrix sequence will carry the tension of needing to reach a phone",
+    "Death in the Matrix is physical and immediate — the audience will fear for every character who jacks in",
+    "Trinity is someone who survives by skill and desperation — her competence is established before her vulnerability",
+    "This location, the Heart O' The City Hotel, is a place of desperate escape — its later return will carry the weight of this first encounter"
+   ],
+   "kept": []
+  }
+ },
+ "interaction": {
+  "what_collides": "Trinity's need to reach the hardline and exit the Matrix collides with the Agents' need to capture or kill her. This is not a philosophical collision — it is pure survival. Trinity wants to live and return to the Nebuchadnezzar; the Agents want to terminate the threat she represents and trace her signal back to the ship. The BIG COP who enters the room is the mechanism of collision — a civilian body hijacked by an Agent program, transforming the ordinary into the lethal.",
+  "power_balance": "The Agents hold overwhelming physical advantage: superhuman speed, strength, and the ability to manifest through any hardwired human. Trinity holds two advantages: preparation (she chose this room, this phone, this exit route) and knowledge (she understands the rules of the Matrix in ways the Agents' rigidity cannot anticipate). The balance shifts during the node as the Agents' adaptability erodes Trinity's preparation advantage — they find her faster than she expected, which means her margin of safety was smaller than calculated. The escape succeeds not because Trinity is stronger but because she is closer to the exit and willing to do something the Agents' programming did not prioritize as a threat vector.",
+  "information_asymmetry": "The audience knows nothing. Trinity knows the layout, the exit protocol, the timing, and the risks. The Agents know the Matrix's architecture and can sense disturbances in it. The asymmetry that matters for the audience is between them and Trinity: she operates with competence the audience cannot yet understand, using tools and techniques (the exit phone, the physical combat) whose rules they must infer from result. This asymmetry is the engine of the cold open — the audience runs to catch up.",
+  "turning_point": "The pivot occurs when the BIG COP's body transforms — the moment a human silhouette becomes an Agent. This is the node's structural hinge because it converts the scene from a police raid (genre: crime thriller) into something the audience has never seen (genre: science-fiction horror). Before the transformation, the audience processes the scene through known frames — cops, fugitives, hotel rooms. After the transformation, those frames are destroyed and the audience is in the story's actual genre. Everything after this moment — the chase, the phone, the escape — is processed through the new understanding that the rules of this world are not the audience's rules."
+ },
+ "decision": {
+  "resolution": "The node will be a cold-open pursuit-and-escape sequence at the Heart O' The City Hotel. Trinity, already inside the Matrix on an operation, discovers the Agents have located her. The BIG COP entering the room transforms into an Agent. Trinity fights or evades with desperate skill, races to the hardline phone, and exits the Matrix at the last possible moment. The sequence is shot and written to establish the Agents as overwhelming threats, the exit-phone mechanic as a hard rule, and the physical stakes of Matrix engagement. No exposition is delivered. The audience learns through action and consequence. The node ends with Trinity gone and the Agents standing in an empty room — the threat established, the quarry escaped by a margin that will not hold forever.",
+  "state_changes_implied": [
+   {
+    "entity": "ch-02",
+    "variable": "belief_in_neo_as_one",
+    "from": "uncertain",
+    "to": "uncertain",
+    "because": "No change — Trinity's focus is survival, not Neo. The prophecy remains dormant."
+   },
+   {
+    "entity": "ch-04",
+    "variable": "pursuit_phase",
+    "from": "hunting_trinity",
+    "to": "hunting_trinity",
+    "because": "The Agents' pursuit continues — Trinity escaped but was located, which confirms to the Agents that the resistance is active and traceable."
+   },
+   {
+    "entity": "lo-01",
+    "variable": "narrative_role",
+    "from": "escape_point",
+    "to": "compromised_escape_point",
+    "because": "The Agents now know this location was used as an exit. Its future use carries the weight of that knowledge."
+   },
+   {
+    "entity": "gr-01",
+    "variable": "awareness_of_resistance_activity",
+    "from": "baseline_monitoring",
+    "to": "confirmed_active_pursuit",
+    "because": "The Agents have physically engaged a resistance operative and witnessed an exit via hardline, confirming the resistance is operating in this sector."
+   }
+  ],
+  "confidence": 82,
+  "risks": [
+   "The cold open may feel disconnected from Neo's story if the audience does not understand Trinity's connection to him — but this disconnection is intentional and temporary, resolved when Trinity is reintroduced in Neo's storyline",
+   "The exit-phone mechanic, shown this early, could feel like a video-game convention rather than a world rule if not grounded in physical, tactile specificity — the phone must feel like a lifeline, not a game mechanic",
+   "The Agents may read as generic movie antagonists if their specific menace — the body-hijacking, the rigidity, the programmed nature — is not differentiated from standard action-movie villains in the first frame",
+   "The tension level leaving this node (88) is very high for an opening — the story must provide a pressure release valve in the subsequent scene or risk exhausting the audience before the actual protagonist is introduced",
+   "The BIG COP's transformation could read as horror-movie shock rather than science-fiction premise if the visual language leans toward gore rather than the uncanny — the transformation should feel wrong, not bloody"
+  ]
+ },
+ "psychology": [
+  {
+   "entity": "ch-01",
+   "entering_state": "Thomas Anderson sits in his apartment at 2:43 AM, monitor light painting his face green-white. He has not slept in thirty-one hours. On his screen: a browser window with seventeen tabs open, all of them search queries related to Morpheus, the Matrix, and a hacker named Trinity who posted on a defunct BBS three years ago. The search has consumed his life for two years and produced nothing but a mounting conviction that the world is a skin pulled over something he cannot see. He is, in this moment, at the absolute zenith of his obsession and the nadir of his hope.",
+   "perception": {
+    "sight": "Three monitors arranged in a crescent on a desk cluttered with empty Jolt cans and printouts. The center monitor displays search results — mostly dead ends, forum posts from the early 90s, a few conspiracy sites with the word 'Matrix' buried in UFO lore. The left monitor shows a terminal window with a Perl script he wrote to scrape archived newsgroup posts. The right monitor has a chat client open, no active conversations. The apartment behind him is dark. The only light sources are the monitors and the amber pilot glow of a power strip on the floor. A copy of Baudrillard's Simulacra and Simulation lies spine-up on the desk, its hollowed-out pages visible where he stores disks. The walls are bare except for a network topology diagram he drew on graph paper and pinned up — connections between aliases, server locations, timestamps. None of them lead anywhere yet.",
+    "sound": "The apartment is nearly silent except for the whine of his tower's CPU fan running at full load and the occasional click of the hard drive writing. No music — he stopped playing music while working months ago because it interfered with his concentration. The building's ambient noise: the hum of refrigerator compressor through the wall, a distant plumbing groan from the unit above, occasional car traffic filtered through closed windows. His own breathing is audible to him in the silence, slightly fast.",
+    "touch": "The keyboard under his fingers is a worn mechanical model — he prefers the tactile feedback of physical switches. The desk surface is cold laminate. His fingertips are dry from the ambient heat of the monitors and lack of humidity. The chair is a second-hand ergonomic model with a cracked seat pan he has never replaced. His feet are cold; the apartment heating cycles off at night and the floor is bare concrete under a thin rug.",
+    "smell": "Stale Jolt cola. The faint ozone smell of electronics running hot in an unventilated room. A garbage bag in the kitchen he has not taken out in four days — the organic smell is just starting to turn. The apartment smells like a body that has been in one room too long.",
+    "taste": "The metallic aftertaste of his fifth Jolt cola, drunk cold hours ago. Dry mouth. He has not eaten since a vending machine sandwich at work, fourteen hours ago.",
+    "interoception": "Chest tightness that he has learned to ignore — a constant low-grade anxiety that lives in his sternum. His eyes burn with the specific grit of prolonged screen exposure. His bladder is full but he has been ignoring it. Heart rate slightly elevated — not from exertion but from the sustained hypervigilance of the search. There is a familiar hollow feeling in his stomach that is part hunger, part the physical sensation of frustration. His jaw is sore from clenching.",
+    "proprioception": "Seated, leaning forward, elbows on the desk, face approximately eighteen inches from the center monitor. His spine is curved in the C-shape of someone who has been in the same position for hours. His right hand is on the mouse; his left rests on the keyboard. He is braced subliminally — the posture of someone who expects the screen to show him something at any moment and does not want to miss it.",
+    "attention": "He is fixated on a single thread: a post on an archived alt.conspiracy newsgroup from 1996, username 'Trinity,' that mentions 'the Matrix' and 'Morpheus' in a context that is neither science fiction nor philosophy. He has read this post forty times. Tonight he is trying to trace the IP address embedded in the post headers through a chain of defunct anonymizers. He is not attending to: the time, his physical state, the fact that he has work in five hours, the growing noise from the street outside as the city wakes up. He is failing to notice that his search methodology has become circular — he is re-tracing paths he has already confirmed as dead ends because the alternative is admitting the search has no forward direction."
+   },
+   "appraisal": {
+    "value_at_stake": "Freedom and control — the core value he lives by. His entire search is driven by the conviction that something is controlling him and everyone else, that the world is a cage he cannot see. Finding Morpheus, finding the Matrix, is the project of locating the walls of that cage. If he cannot find them, he is trapped without even knowing the shape of his prison, which is the worst version of the powerlessness he has felt his entire life.",
+    "valence": -40,
+    "arousal": 72,
+    "self_conscious_emotion": "Shame — the specific shame of a man who has spent two years on a quest that has produced nothing, who goes to a job every day pretending to be normal while living inside an obsession that has eaten his friendships, his health, and his youth. He believes he is pursuing something real; he also suspects he might be mentally ill. These two beliefs coexist without resolution.",
+    "moral_reading": "He frames his search as a moral imperative — if the world is false, then everyone living in it is being deceived, and finding the truth is not self-indulgence but duty. But he is aware that this framing is convenient, that it elevates what might be a delusion into a crusade. The moral question he cannot answer is whether the harm he does himself — the sleeplessness, the isolation, the illegal software sales — is justified by a truth that may not exist.",
+    "somatic_marker": "The tightness in his chest intensifies when he reads the word 'Matrix' on screen. It is not excitement — it is the physical sensation of recognition, of encountering a word that resonates with the splinter in his mind. His body knows something his mind cannot articulate. This sensation is the engine of his obsession and the thing he cannot share with anyone because describing it sounds like psychosis."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "Professional norm: Thomas Anderson is expected at Meta CorTechs by 9 AM, functional and productive",
+     "Social norm: a man his age should have friends, a partner, a life outside of work — he has none of these",
+     "Underground norm: in the hacker community, credibility is earned through demonstrated skill and discretion, not through obsession",
+     "Criminal norm: his software sales to Choi and others operate on trust and reputation; he is reliable and that reliability is his only social capital",
+     "Self-imposed norm: he has decided that finding the answer is worth any cost, a private oath he has never spoken aloud"
+    ],
+    "how_others_would_judge": "Choi would judge him as intense but functional — a good source of product who is a little too deep into the conspiracy rabbit hole. His coworkers at Meta CorTechs would judge him as quiet, disengaged, probably depressed — the guy who eats alone and leaves on time. His manager Rhineheart would judge him as a body that fills a chair and produces adequate code, with no awareness of the private life that fills every other hour.",
+    "how_absent_others_would_judge": "His parents, whom he rarely speaks to, would judge his life as a waste — a smart son who squandered his potential on computers and isolation. The broader culture would judge him as a cautionary tale about online radicalization, a man who let internet conspiracy theories consume his reality. He imagines a hypothetical someone who would understand — someone who has felt the same splinter — and that imagined judge would say: keep going, you are not crazy, the feeling is real. This imagined judge is the only one whose verdict he cares about.",
+    "standing_at_risk": "His standing in the hacker community as a reliable supplier. His employment at Meta CorTechs, which is his cover and his income. His last thread of connection to the normal world — if he loses the job, he loses the ability to maintain the facade that he is a functional person. His self-concept as someone pursuing truth rather than suffering from delusion.",
+    "norm_conflict": "The professional norm (be functional at work) conflicts with the self-imposed norm (find the answer at any cost). He resolves this by maintaining the minimum viable performance at work while spending every other waking hour on the search. This resolution is degrading — the margins are getting thinner, his work performance is slipping, and the facade requires more energy to maintain as the obsession deepens."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-02",
+     "d1": "Neo knows of Trinity only as a username attached to posts on obscure forums and BBS archives. He believes Trinity is a real hacker who once operated in circles connected to Morpheus. He believes Trinity either knows what the Matrix is or knows someone who does. He believes Trinity is either dead, imprisoned, or so deeply hidden that contact is nearly impossible. He does not believe Trinity is monitoring him.",
+     "d2": "He believes that if Trinity exists and were aware of him, Trinity would see him as either a threat (someone drawing attention to the search) or a liability (an amateur who could lead authorities to them). He does not believe Trinity would see him as a potential ally because he has nothing to offer except his obsession, which from the outside looks like instability.",
+     "d3": "He believes Trinity believes that anyone publicly searching for Morpheus is either an Agent provocateur or an idiot, and that Trinity's response to such a person would be silence at best and active countermeasures at worst. He believes Trinity's first priority is operational security and that a stranger asking questions is a security problem, not a recruit.",
+     "accuracy": "He is wrong about Trinity's awareness of him — Trinity is aware of his searches and has been monitoring his activity. He is wrong that Trinity would see him only as a liability — Trinity has been instructed to find him. He is wrong about the operational calculus — Trinity's interest in him is not based on his skill but on something he does not know about himself. This error costs him: when Trinity does make contact, he will not recognize it as genuine and may reject the very connection he has been searching for. His model of Trinity as a paranoid operator who would never reach out first will make him suspicious of the outreach rather than receptive to it."
+    },
+    {
+     "other": "ch-03",
+     "d1": "Neo believes Morpheus is the most dangerous hacker alive — a terrorist according to the news, a freedom fighter according to underground legend. He believes Morpheus knows what the Matrix is. He believes Morpheus is either a genius or a madman and that the only way to determine which is to find him. He believes Morpheus operates through a network of operatives who recruit and extract people, and that finding Morpheus means being found by one of those operatives first.",
+     "d2": "He believes Morpheus, if aware of him, would see him as a potential recruit — someone with the skills and the predisposition to be useful. He believes Morpheus would test him before making contact, and that the test would be dangerous. He believes Morpheus does not value individual safety, only the mission, and that approaching Morpheus means accepting that his life may be forfeit.",
+     "d3": "He believes Morpheus believes that people who search for the Matrix are already half-awake and therefore worth the risk of contact. He believes Morpheus has a framework for evaluating candidates and that his own search activity — the digital footprints he has left — is either being evaluated or has already been evaluated and deemed insufficient.",
+     "accuracy": "He is correct that Morpheus knows of him and wrong about the evaluation criteria. Morpheus is not evaluating his skills or his search methodology — Morpheus believes Neo is the One, a determination based on prophecy rather than competence. This error is critical: Neo believes he must prove himself worthy of contact through demonstrated ability, when in fact Morpheus is already convinced and is waiting for the right moment. When contact comes, Neo will interpret it through the wrong framework — he will think he has passed a test when he has actually been selected for reasons he cannot comprehend and does not believe in."
+    },
+    {
+     "other": "gr-01",
+     "d1": "Neo knows the Agents exist only as a rumor — men in suits who appear when someone gets too close to the truth about the Matrix. He believes they are either government agents, corporate security, or something he does not have a category for. He believes they are the reason the Matrix remains hidden and that they eliminate people who find too much. He believes they are watching the forums, the BBS archives, the search patterns — that any digital trace of the search is a trace they can follow.",
+     "d2": "He believes the Agents, if aware of him, would see him as a low-level nuisance — one of hundreds of conspiracy researchers who stumble into the edges of something real. He believes they would not dedicate significant resources to him unless he found something concrete, which he has not. He believes his obscurity is his protection.",
+     "d3": "He believes the Agents believe that people like him are harmless until they connect with people like Morpheus, and that the Agents' strategy is to monitor and intercept rather than preemptively eliminate. He believes he is below their threshold for action.",
+     "accuracy": "He is catastrophically wrong. The Agents are already aware of him — not as a nuisance but as a vector. His search activity has flagged him in systems he does not know exist. He is not below their threshold; he is on a list. The error costs him everything: he believes he is operating in the shadows when he is in fact fully illuminated. The tracking device in Smith's case is ultimately for him, not for some general surveillance purpose. His model of the Agents as human-level threats using conventional surveillance is also fundamentally wrong — they are programs with capabilities he has no framework to predict, and the gap between his model and their reality is the gap that will put a tracking bug in his body."
+    }
+   ],
+   "urges": {
+    "cravings": "The craving is not for a substance or a sensation — it is for resolution. He craves the moment when the splinter in his mind is pulled out, when the wrongness he has felt since childhood is named and explained. This craving is indistinguishable from addiction in its behavioral expression: the sleepless nights, the neglect of self-care, the narrowing of life to a single pursuit. He also craves contact — someone who understands, who has felt the same thing, who can tell him he is not insane. He has been alone with this for his entire life.",
+    "physical_needs": "Sleep — he is running on thirty-one hours of wakefulness and the cognitive deficit is measurable. Food — he has not eaten in fourteen hours and his blood sugar is low. Hydration — he has consumed only cola, which is a diuretic. His body is sending increasingly urgent signals that he is overriding through fixation. The need to urinate, which he has been ignoring for two hours.",
+    "psych_needs_conscious": "He consciously wants to find one concrete lead — an IP that resolves, a username that traces to a current server, a single verifiable fact that confirms the Matrix is real and not a product of his obsession. He wants this because the alternative — that he has wasted two years chasing a delusion — is a possibility he cannot face without the floor falling out of his self-concept.",
+    "psych_needs_unconscious": "He is pursuing proof that he is not nobody. The search for the Matrix is also a search for significance — if the world is a prison and he is one of the few who can see it, then his isolation and suffering have meaning. If there is no Matrix, he is simply a lonely, obsessive man with a deteriorating life. The unconscious need is for his alienation to be vindicated by reality rather than explained by pathology.",
+    "avoidances": "He avoids sleeping because the dreams are bad — not nightmares exactly, but dreams of falling, of waking into a world that is slightly different from the one he fell asleep in, dreams that feed the splinter rather than resting his mind. He avoids social contact outside of transactional hacker relationships because he cannot maintain the performance of normalcy without exhaustion. He avoids examining whether his search is healthy. He avoids the question of what he will do with his life if the search fails."
+   },
+   "impairments": {
+    "physical": "Sleep deprivation at 31 hours wakeful — cognitive processing speed reduced approximately 30%, working memory impaired, reaction time slowed. Mild dehydration. Low blood sugar. Eye strain with photophobia. These impairments reduce his already marginal ability to assess risk and make sound judgments about his search.",
+    "medical": "Chronic insomnia, undiagnosed and untreated. Possible depression, undiagnosed and untreated. He has never seen a mental health professional because doing so would require acknowledging that the splinter might be a symptom rather than a perception.",
+    "magical": "none",
+    "chemical": "Caffeine toxicity from five Jolt colas over six hours — he is past the stimulant ceiling and into the zone where caffeine increases anxiety without improving alertness. No other substances.",
+    "coercive": "None active. However, the structural coercion of his double life — the necessity of maintaining employment to fund the search while conducting the search — is a constant low-level pressure that constrains his options.",
+    "cognitive": "He cannot think clearly about the possibility that he is wrong. The search has consumed so much of his identity that abandoning it would require rebuilding his self-concept from nothing. This is not a thought he is capable of entertaining; his mind slides away from it the way it slides away from the physical pain in his eyes. He also cannot think clearly about risk — the sleep deprivation has degraded his ability to accurately assess the danger of the illegal activities he undertakes to fund the search, and he is taking risks with his software sales that a rested, healthy version of him would not take.",
+    "net_effect": "He is operating at significantly reduced capacity across all domains — physical, cognitive, social. His judgment is impaired by sleep deprivation, caffeine, and the cognitive blind spot around his own obsession. He is functional enough to maintain the facade (work, basic self-preservation) but not functional enough to accurately assess his situation. The combination of reduced capacity and elevated obsession means he is both less capable and more driven than he would be at baseline — a dangerous combination that makes him likely to take actions he would otherwise avoid."
+   },
+   "deliberation": {
+    "framing": "He frames his situation as a search problem — a technical challenge of tracing digital breadcrumbs through archived systems. This framing is wrong because it treats the search as purely technical when it is actually existential. The real problem is not 'how do I find Morpheus' but 'what will I do if I find him and what will I do if I do not.' He cannot engage with the second question because either answer destabilizes his self-concept.",
+    "options_weighed": [
+     {
+      "option": "Continue the current search methodology: trace the 1996 Trinity post IP through archived anonymizer logs, cross-reference with known Morpheus-adjacent server activity from 1995-1997",
+      "predicted_outcome": "Low probability of success — he has traced this chain before and hit dead ends at the anonymizer layer. But the archive was recently updated with new data from a defunct ISP acquisition, so there is a small chance new logs have surfaced.",
+      "cost": "Another night of no sleep, another day of degraded work performance, continued physical deterioration. The cost is acceptable to him because he has already accepted the premise that any cost is acceptable."
+     },
+     {
+      "option": "Reach out directly to Choi and ask whether Choi has heard anything new about Morpheus or Trinity through his networks",
+      "predicted_outcome": "Choi is a buyer, not a confidant, and asking questions draws attention. Choi talks to other buyers. If word gets around that Thomas Anderson is asking about Morpheus, it reaches ears he does not control. But Choi did once mention a woman who asked about Neo — not Thomas, Neo — and that mention has been sitting in his memory for six months.",
+      "cost": "Potential exposure of his search to people he does not trust. Possible loss of his software sales channel if Choi gets spooked. But also possible — the only possible — lead he has not pursued."
+     },
+     {
+      "option": "Abandon the search, delete the files, go to sleep, show up to work tomorrow, accept that the splinter is something he will live with but not act on",
+      "predicted_outcome": "The search ends. He keeps his job, his health stabilizes, he rebuilds some version of a normal life. The splinter remains but becomes background noise rather than consuming purpose.",
+      "cost": "He loses the only thing that gives his life meaning. He becomes Thomas Anderson permanently, and Neo dies. This option is not psychologically available to him — he cannot choose it — but he weighs it every night and every night it loses."
+     }
+    ],
+    "reasoning": "He reasons in traces and connections — the same way he debugs code. He looks for the anomalous data point, the execution path that should not exist, the variable that does not initialize correctly. His reasoning is: if the Matrix exists, it is a system; every system has artifacts; artifacts leave traces; traces can be found. This is the reasoning of a programmer, and it is appropriate to his competence, but it is misapplied because he is searching for a system whose nature he cannot model. He is debugging a program whose architecture he does not understand, using tools designed for a different kind of problem. The reasoning feels sound because each step follows logically, but the premise — that the Matrix, if it exists, would leave traces findable through conventional network archaeology — is untested and probably wrong.",
+    "chosen_because": "He chooses to continue the current search because it is the path of least social risk and because the new archive data represents a genuinely novel variable. He also chooses it because the alternative — reaching out through Choi — requires trusting someone, and he does not trust anyone. The choice is driven as much by his isolation as by his logic: he pursues the path he can pursue alone because he has no allies, and he has no allies because he has never allowed himself to have any.",
+    "known_unknowns": "He knows he does not know whether the Matrix is real. He knows he does not know whether Trinity is alive. He knows he does not know whether Morpheus is a person, an organization, or a myth. He knows he does not know whether the people searching for the same thing he is searching for have found it or died in the attempt. He hedges against these unknowns by casting a wide net — monitoring forums, maintaining search scripts, keeping the Baudrillard hollowed out for the day he needs to move data quickly. He does not hedge against the unknown he should fear most: that he is already being watched by something that is not human and that his search is not invisible."
+   },
+   "control": {
+    "mode": "inhibited",
+    "felt": "A sustained, grinding desperation masked by the routine of the search. The desperation is not acute — it is not panic or crisis — but it is the constant pressure under which he lives, the feeling of pressing his face against glass trying to see into a room he cannot enter. There is also a paradoxical comfort in the search itself: the structure of it, the methodology, the sense of purpose. The search is both his torment and his anesthetic.",
+    "expressed": "Externally, Thomas Anderson presents as quiet, competent, and slightly odd. At work: adequate performance, minimal social interaction, the kind of employee who is neither promoted nor fired. In his hacker transactions: professional, discreet, reliable. In the mirror: a man who looks ten years older than his age, with the specific pallor and affect of long-term sleep deprivation. He has cultivated an expression of neutral competence that reveals nothing.",
+    "divergence_reason": "The divergence exists because the intensity of his inner life cannot be expressed without sounding insane. He has tested this — once, three years ago, he mentioned the feeling that something was wrong with reality to a coworker in the break room, framed as a philosophical observation. The coworker's expression shifted from conversation to concern, and Thomas never raised it again. He learned that the splinter is not shareable, and so he split himself: Thomas, who is normal; and Neo, who searches. The split is the divergence.",
+    "leakage": "The leakage is in the search itself — the digital traces he leaves, the forum posts, the search queries. A sufficiently attentive observer could reconstruct his entire inner state from his digital footprint. The leakage is also physical: his hands tremble slightly when he finds a new lead, and his breathing changes when he reads the word 'Matrix.' Anyone watching him in his apartment would see a man in the grip of something he cannot control, no matter how still he sits.",
+    "inhibited_impulse": "He wants to shout. He wants to post on every forum, every board, every channel: DOES ANYONE ELSE FEEL THIS? He wants to walk into work and say it out loud. He wants to grab a stranger on the street and ask: do you feel it? Is this real to you? He inhibits this impulse every day because he has learned that it produces only the concerned expression and the slow backing away. The inhibition is total and exhausting."
+   },
+   "intention": "Neo intends to trace the 1996 Trinity post through the newly available ISP archive data, working through the night, in the hope that a new log file will reveal a server location, a timestamp correlation, or any artifact that connects the post to a current operational footprint. He intends to do this alone, in his apartment, without contacting anyone, and to show up at work tomorrow having slept not at all.",
+   "action": "He works the trace. He runs the Perl script against the new archive data. He cross-references timestamps. He finds, at approximately 3:17 AM, a correlation he has not seen before — a server log entry from a defunct anonymizer that routes to an IP range he has not previously associated with the Trinity posts. The IP is currently allocated. He begins a port scan. The scan returns unexpected results — the server is running services that should not be visible from the public internet. He pauses. His hands are shaking. He does not know it, but this is the moment the search changes from passive to active — he is no longer reading traces; he is touching a live wire. And the live wire is aware of him.",
+   "trajectory": [
+    {
+     "phase": "On entering — the familiar grind",
+     "shift": "Neo is in the well-rehearsed state of the nightly search: focused, exhausted, operating on muscle memory as much as cognition. His emotional state is flat with an undercurrent of futility. He has done this hundreds of times. The search has become a ritual whose performance matters more than its results because the ritual is the only structure he has.",
+     "trigger": "No external trigger — this is the baseline state he enters every night when he sits down at the desk.",
+     "state_delta": {}
+    },
+    {
+     "phase": "The new data — first flicker of genuine novelty",
+     "shift": "The ISP archive update introduces a variable he has not encountered before. His arousal spikes. The flatness gives way to the specific sharp focus of a hunter who has found a track. His hands stop trembling and become precise. The futility is replaced by something that feels like purpose — the same feeling that has driven him back to the desk night after night, now intensified because the trail is fresh rather than cold. He does not notice the shift in his own body language: the forward lean, the held breath, the stillness.",
+     "trigger": "The Perl script returns a log entry from the newly indexed archive that correlates with the 1996 Trinity post — an anonymizer route he has not previously seen, resolving to an IP range currently allocated and active.",
+     "state_delta": {}
+    },
+    {
+     "phase": "The port scan — crossing from passive to active",
+     "shift": "He recognizes that running a port scan is a different category of action than reading archived logs. Archived logs are passive — he is reading data that already exists. A port scan is active — he is sending packets to a live system and that system can detect him. This is the first moment in the scene where he feels fear rather than just anticipation, because the fear is proportional to a risk he understands: if the server belongs to someone connected to Morpheus, he is announcing his presence; if it belongs to someone connected to the Agents, he is painting a target. He proceeds anyway. The decision is characteristic — he chooses action over self-preservation when the search is at stake.",
+     "trigger": "The IP resolves and the port scan begins returning results — open ports that indicate services running, a live system, a presence on the other end.",
+     "state_delta": {
+      "variable": "matrix_awareness",
+      "from": "searching",
+      "to": "searching"
+     }
+    },
+    {
+     "phase": "The screen flickers — the moment of contact",
+     "shift": "Something changes on his monitor that he did not cause. A message, a response, an artifact that indicates the live system has detected his scan and is responding. This is the moment the search stops being his — he is no longer the only actor in it. Something on the other end is aware of him. The shift is from hunter to hunted, though he does not yet have the framework to understand that. What he feels is the splinter in his mind twisting — the recognition that something is responding, something is real, something is there. The feeling is simultaneously the most terrifying and the most validating thing he has ever experienced. His body responds before his mind does: heart rate spikes, pupils dilate, hands go cold as blood redirects to core muscles. He is in fight-or-flight but cannot do either because the threat is on the other side of a screen he cannot look away from.",
+     "trigger": "An unexpected response on his monitor — text he did not type, a window he did not open, a system message that should not appear — indicating that the server he scanned is not merely detecting him but actively engaging.",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "Neo is no longer alone in his search. Something has responded to him and he does not know what it is. The splinter in his mind is no longer just a feeling — it has an address, a presence, a will on the other side of a network connection. He is terrified and more alive than he has been in years. The facade of Thomas Anderson has never felt thinner. He is leaning toward the screen with the full weight of two years of obsession and he cannot look away.",
+   "unresolved": "He does not know whether the thing responding to him is Trinity, Morpheus, an Agent, or something he has no name for. He does not know whether the contact is an invitation or an attack. He does not know that the act of reaching out has already changed his status from invisible to visible in systems he cannot conceive of. He does not know that the tracking device in Agent Smith's case is, ultimately, for him. He is standing at the threshold of a choice he does not yet know is a choice, and the thing on the other side of the screen is about to ask him to make it."
+  },
+  {
+   "entity": "ch-02",
+   "entering_state": "Operational mode. Every personal dimension — the prophecy, the attachment she has not named, the fear — is locked behind a tactical wall. She is in the Matrix on a mission that predates this moment. She has been running, and running is what she is when the audience first sees her: a weapon with a heartbeat, a human being whose humanity has been compressed into a survival priority so total that nothing else can be perceived. The Oracle's words, Morpheus's faith, the five dead — all of it is offline. What is online is the room, the phone, the exit protocol, and the sound of boots on linoleum getting closer.",
+   "perception": {
+    "sight": "The room is a box of failing light. Overhead fluorescent tubes flicker at a frequency that makes the peeling wallpaper seem to breathe. The rotary phone on the nightstand is beige, crusted with dust along the handset, the cord coiled like a spring. The window shows a city she knows is a rendering — the buildings too regular, the sky the wrong shade of black. She registers it as terrain, not scenery. The door is hollow-core, interior, no deadbolt. The mirror on the dresser gives her a sightline to the hallway through the crack where the door hangs slightly warped. She watches that crack the way an animal watches a predator's den.",
+    "sound": "The building's circulation: pipes knocking in the walls, the distant rattle of a elevator car descending. Then — footsteps. Not the shuffle of a tenant or the careful tread of a cop checking doors. A synchronized cadence, multiple sets, moving with purpose. They stop. Then start again. Closer. The fluorescent tube above her buzzes at 60 cycles per second. The phone is silent. She needs it to ring. The silence of it is the loudest thing in the room.",
+    "touch": "The leather of her jacket is a second skin, tight across the shoulders, restricting her range of motion by a degree she has compensated for so many times it is automatic. The floor is linoleum over concrete — cold through the soles of her boots, no give, no traction beyond the tread pattern. The phone's handset, when she touches it to test the connection, is greasy plastic, warm from the room's stagnant heat. Her palms are dry. She has trained the sweat out of herself through repetitions she cannot count.",
+    "smell": "Stale cigarette smoke embedded in the carpet from decades of tenants. Mildew from the bathroom. The sharp ozone tang of the CRT monitor in the corner that she has been using to monitor the Matrix's network traffic — it smells like every safe house she has ever been in, and the familiarity is a comfort she does not permit herself to feel.",
+    "taste": "Copper at the back of her throat — adrenaline, or the residue of having bitten the inside of her cheek during the earlier sprint through the fire escape. She tastes nothing else. Taste is offline. Everything is offline except the input that matters.",
+    "interoception": "Heart rate elevated to approximately 145, the cardiac rhythm of someone who has been sprinting and is now holding still. The stillness is worse than the running — the body wants to move, the legs are loaded with glycogen and lactic acid, the quadriceps tremble faintly with the need to discharge. A stitch in the left side from exertion. The jaw is clenched so tightly the molars ache. Hands steady — she has trained past the tremor stage of adrenaline, but the forearms feel hot, the blood pooling in the muscles, ready.",
+    "proprioception": "She is crouched beside the bed, back against the wall, the phone within arm's reach to her right. The wall is plaster over brick, cold through her jacket. Her weight is on the balls of her feet, ready for lateral movement in any direction. The room's dimensions are mapped: twelve feet by fourteen, one door, one window, the window's glass thin enough to break through but the drop is four stories onto concrete. She knows where she is in the room the way she knows where her hands are — automatically, without looking.",
+    "attention": "Tunnel. The crack in the door. The phone. The footsteps. Everything else — the room's contents, the view, her own body's distress — is peripheral data, processed at a resolution too low to register as experience. She is not aware of the wallpaper pattern. She is not aware of the bed's stained comforter. She is aware of the exact distance between the doorknob and the phone (seven feet, four feet of which is open ground with no cover) and the fact that the footsteps have stopped outside what she calculates is this floor's room 408, two doors down."
+   },
+   "appraisal": {
+    "value_at_stake": "Survival — not as abstraction but as the precondition for everything she has chosen to be. If she dies here, Morpheus loses an operative. The crew loses a pilot. And the thing she has never spoken — the Oracle's words, the weight she carries — dies with her, unfulfilled, meaningless. Her life is not hers to lose; it is the mission's to spend. That is the frame. That is the only frame she can afford.",
+    "valence": -85,
+    "arousal": 94,
+    "self_conscious_emotion": "None that she can access. Under extreme threat, the self-monitoring system is suppressed. There is no room for shame or pride. There is only the assessment and the response. Later — if there is a later — the shame will arrive: shame at having been found, at the margin being this thin, at the possibility that she has led the Agents closer to the crew. But not now.",
+    "moral_reading": "This is not a moral situation. This is a combat situation. The morality was settled when she took the red pill: the Matrix is a prison, the Agents are wardens, and the people who appear human inside are sleeping guards. She does not think about the BIG COP as a person. She cannot. The person who was that body is not home. What is home is the program wearing him, and the program will kill her. This is not a dilemma. It is physics.",
+    "somatic_marker": "The entire body is a single contracted fist. Gut tight, shoulders high, jaw locked, perineum engaged — the mammalian startle response weaponized by training into a coiled-spring readiness. The stomach has dropped. The blood is in the large muscle groups. The skin is cold because the blood has left it. This is the body preparing to move faster than thought."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "Operational security: the mission and the crew come before the individual",
+     "Exit protocol: reach the hardline, jack out, leave no trace of the signal path",
+     "Combat economy: do not engage when evasion preserves the exit; fight only to clear the path",
+     "Information discipline: what is known stays known until debrief — no transmissions the Agents can intercept",
+     "Loyalty to Morpheus: his orders are the mission; his judgment is the authority"
+    ],
+    "how_others_would_judge": "The crew would judge her by whether she gets out. That is the only metric. Tank is at the operator station waiting for the signal. Morpheus is watching the code stream. They are not judging her courage or her fear — they are counting the seconds and preparing for either her signal or her silence. If she dies, they will mourn, but they will also immediately begin scrubbing her access credentials and rotating the hardline locations. She knows this. It is how she would treat them. It is not coldness; it is the discipline of a war where every body is also a security liability.",
+    "how_absent_others_would_judge": "The dead — the five who came before, the operatives whose names she will not let herself think about because thinking about them in the field is how you join them — would judge her by whether she survives. They died in the Matrix. Some of them died at hardlines like this one. She carries their operational failures as data: what they did wrong, where they were slow, which exit was compromised. She does not carry their faces. She cannot.",
+    "standing_at_risk": "Her standing in the crew is not reputation — it is function. She is the pilot. She is the one who can upload the helicopter program. She is the one who knows the exit routes. If she dies, the crew loses a capability they cannot replace, and every future operation becomes more dangerous for everyone else. Her death is not personal loss; it is a force multiplier for the enemy.",
+    "norm_conflict": "The norm of self-preservation (survive to fight again) conflicts with the norm of operational economy (do not leave traces). If she fights the Agent in this room, she creates a disturbance the Agents can trace. If she runs without fighting, she may not reach the hardline. The conflict resolves toward the hardline: the trace matters less than the survival, because a dead operative leaves a signal trace AND a body. The norm that wins is 'survive first, scrub the trace later.'"
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-04",
+     "d1": "The Agent is a program executing a search-and-terminate protocol. It does not improvise; it optimizes. It will enter the room with overwhelming force because its programming calculates that as the highest-probability interception vector. It will not negotiate, hesitate, or feel. It will attempt to kill her and trace her signal.",
+     "d2": "The Agent believes she is a resistance operative in a compromised safe house with limited exit vectors. It believes her options are narrowing and that its approach has reduced her probability of escape below threshold. It believes she is cornered.",
+     "d3": "The Agent believes she believes she is cornered, and that her behavior will therefore shift to desperate measures — a last-stand engagement or a reckless dash — both of which it is positioned to intercept. It believes it has already won the prediction game.",
+     "accuracy": "She is WRONG about the Agent's rigidity. She models it as a program that optimizes within fixed parameters, and she has built her escape around exploiting those parameters' edges. But the Agents have been learning. They have adapted their approach patterns based on previous resistance operations — they are not as rigid as her model predicts. The error will cost her the margin she believes she has. The footsteps stopping two doors down is not the Agent's uncertainty; it is the Agent coordinating with a second unit she has not detected. Her model of the Agent as a solo pursuer is the fatal assumption."
+    },
+    {
+     "other": "ch-03",
+     "d1": "Morpheus is on the Nebuchadnezzar, monitoring the Matrix feed. He knows she is in the field. He has authorized this operation. He is waiting for her signal to pull her out. He believes in her competence absolutely — not as faith, but as operational assessment. He has watched her complete seven prior extractions.",
+     "d2": "Morpheus believes she will execute the exit protocol as designed. He believes she will not deviate from the plan unless the plan is compromised, at which point she will improvise within the boundaries of operational security. He believes she will not take unnecessary risks because she knows her value to the crew.",
+     "d3": "Morpheus believes she believes in the mission — in the cause — with the same conviction he holds. He believes her commitment is ideological, not personal. He does not know that her commitment is also held in place by something she has never told him: the Oracle's prophecy, which ties her to a person she has not yet met and a future she cannot speak of. He believes the Oracle told her what she needed to hear to become a soldier. He does not know the Oracle told her something that made her a soldier who is also a woman waiting for a man who may not exist.",
+     "accuracy": "She is CORRECT that Morpheus is monitoring and will execute the extraction. She is WRONG about his emotional state — he is not calm. He is carrying the guilt of five dead operatives, and every extraction that goes sideways brings him closer to the edge of a decision she does not know he is contemplating: whether to accelerate the search for the One at the cost of the crew's safety. Her model of Morpheus as steady commander misses the fracture running through him. The cost: she will not see his desperation coming, and his desperation will put them all in the room with Neo sooner than she is prepared for."
+    },
+    {
+     "other": "ch-06",
+     "d1": "Tank is at the operator console. He is the one who will send the exit signal through the hardline. He is young, he is committed, and he is the only person standing between her and death by Matrix — because if the hardline does not connect, she is trapped. She trusts his competence because she has no choice. He is the lifeline.",
+     "d2": "Tank believes she is capable and that the extraction will go as planned. He believes in the protocol because the protocol has worked before. He is not prepared for the protocol to fail — not because he is incompetent, but because he has not yet seen what happens when an Agent is in the room at the moment of extraction. He has seen it on monitors. He has not felt it in his hands.",
+     "d3": "Tank believes she believes the extraction will work, and that her signal will come through clean. He does not know that she is already calculating the probability that the hardline is compromised and that she may need him to improvise an exit he has never attempted. She believes he can do it. She also believes he has never been tested the way she is about to test him.",
+     "accuracy": "She is WRONG about Tank's emotional readiness. He is steadier than she models — not because he is hardened, but because he grew up in the war and the war is his normal. But she is also wrong about a different thing: she believes the operator's commitment is unconditional. She does not know that Tank has a brother, Dozer, and that the crew's family bonds create loyalties that will fracture along lines she has not mapped. The cost: when the crew is later divided, she will mispredict who stands where."
+    }
+   ],
+   "urges": {
+    "cravings": "None. The appetite system is fully suppressed. She could not eat if food were in front of her. The body has no interest in pleasure or comfort. It is interested in the door, the phone, and the seven feet of open ground between them.",
+    "physical_needs": "The legs want to discharge. The lungs want to pant. The jaw wants to unlock. The body wants to shake, to release the adrenaline load through movement. She denies all of it. The stillness is a cage she has built around the animal and the animal is screaming.",
+    "psych_needs_conscious": "Reach the phone. Hear the dial tone. Feel the signal pull her out of this body and this room and this place. Get back to the Nebuchadnezzar. Debrief. Sleep. The sequence is mechanical because it has to be mechanical — if she lets it be anything else, she will freeze.",
+    "psych_needs_unconscious": "She needs to not be alone in this. She has been alone in the operational layer of every mission for years — the one who runs, the one who fights, the one who gets out by the skin of her teeth. The Oracle told her she would love someone and that the someone would be the One, and part of her — the part she cannot hear over the adrenaline — is waiting for that person not because of the prophecy but because she is tired of being the only one in the room who knows what the room feels like when the boots stop outside the door.",
+    "avoidances": "She is avoiding the thought of the five dead. She is avoiding the thought of what happens if the hardline is dead. She is avoiding the thought of the Oracle's face when the Oracle said the words she has never repeated. She is avoiding the knowledge that her body, right now, is a body in a chair on a hovercraft with tubes in its arms, and that the room she sees is a lie, and that if she dies here she dies in a chair in a ship and the last thing she will feel is the real world's cold air on a body that is not this body. She avoids this because the disorientation would kill her faster than the Agent."
+   },
+   "impairments": {
+    "physical": "Elevated but functional. She has been running for approximately six minutes through the building's service corridors to reach this room. The exertion has depleted glycogen and left her with a mild tremor in the fine motor muscles of the hands that she compensates for by using gross motor movements. Reaction time is slightly degraded from peak — perhaps 5% — but within operational tolerance.",
+    "medical": "None acute. Chronic sleep deprivation from repeated operations — she has been in the Matrix three times in the past 48 hours, which is above the recommended rotation. The cumulative neural load produces a faint pressure behind the eyes and a slight reduction in peripheral awareness that she has not noticed because she does not self-assess in the field.",
+    "magical": "None. This is not a world of magic. It is a world of code and combat, and she is a human being in it.",
+    "chemical": "None. She does not use stimulants or suppressants. The adrenaline is endogenous.",
+    "coercive": "The time pressure is the coercion. The footsteps are the coercion. The narrowing window between the Agent's approach and the hardline's activation is a force acting on her that no amount of will can change. She is being squeezed by physics.",
+    "cognitive": "She cannot think about anything except the immediate tactical problem. The prophecy, the crew, the mission's broader context — all of it is locked behind a cognitive wall that the adrenaline has built. This is adaptive. It is also the reason she will not, in this moment, consider any option that involves surrender, negotiation, or anything other than fight-and-flight. The wall keeps her alive. It also keeps her from seeing the whole board.",
+    "net_effect": "She is operating at approximately 90% of peak capacity. The degradation is in fine motor control, peripheral awareness, and long-range planning. The enhancement is in reaction speed, pain tolerance, and threat-attention. The net effect is a human being who is more dangerous than she is at baseline but less dangerous than she believes herself to be. The gap between her self-assessment (100%) and her actual capacity (90%) is the margin in which the Agents operate."
+   },
+   "deliberation": {
+    "framing": "The problem is a geometry problem: she is at point A (the wall), the exit is at point B (the phone), and the obstacle is at point C (the door, behind which the Agent is approaching). The solution is to minimize the time between A and B while maximizing the probability that C does not intercept. All other considerations — moral, emotional, strategic — are noise. The problem is geometry and timing.",
+    "options_weighed": [
+     {
+      "option": "Wait for the hardline to activate, then sprint directly to the phone and execute the exit",
+      "predicted_outcome": "If the Agent enters before the line activates, she is killed or captured. If the line activates first, she has approximately 1.5 seconds to cross the room and lift the handset. The Agent's entry-to-engagement time, based on prior engagements, is 0.8 seconds. The margin is approximately 0.7 seconds.",
+      "cost": "Zero margin for error. A single stumble, a single hesitation, and she is dead. But this is the option that requires no engagement and leaves no combat trace."
+     },
+     {
+      "option": "Engage the Agent at the door to create time, then run for the phone",
+      "predicted_outcome": "Combat with an Agent in a confined space lasts 3-5 seconds before the Agent's superior speed and strength overwhelm a human opponent. She can hold the doorway for perhaps 2 seconds. This adds 2 seconds to the hardline window but also adds a 3-second combat engagement during which she is likely to be injured or killed.",
+      "cost": "Higher probability of injury or death. Creates a combat disturbance traceable in the Matrix's network. But provides a wider time window if she survives the engagement."
+     },
+     {
+      "option": "Exit through the window and attempt to reach an alternate hardline",
+      "predicted_outcome": "The window is four stories above concrete. She can survive the fall with injury — a broken ankle or leg is likely. The nearest alternate hardline is 1.4 kilometers away. She would be running injured through a Matrix the Agents now know is active in this sector. The probability of reaching the alternate hardline before interception is below 15%.",
+      "cost": "Near-certain injury, low probability of escape, and she abandons the prepared exit in favor of an uncontrolled environment."
+     }
+    ],
+    "reasoning": "The math is the math. Option one is the fastest if the timing works. Option two is a fallback if the Agent breaches before the line activates. Option three is the last resort. She sequences them: one, then two, then three. She does not deliberate further because deliberation takes time she does not have. The decision is made in the same place the body keeps its reflexes — not in the prefrontal cortex but in the basal ganglia, where trained responses live as motor programs ready to execute.",
+    "chosen_because": "She chooses option one because it is the option that does not require her to fight, and fighting an Agent is a losing proposition even when she wins. The exit is the mission. The phone is the exit. Everything between her and the phone is an obstacle to be bypassed, not an enemy to be defeated.",
+    "known_unknowns": "She does not know whether the Agent is alone. She does not know whether the hardline has been remotely cut. She does not know whether Tank has detected the Agent's approach and is already working to accelerate the exit signal. She does not know the Agent's exact position in the hallway. She hedges by keeping the window as a tertiary escape and by maintaining a combat-ready posture that allows her to shift to option two if the door opens before the phone rings."
+   },
+   "control": {
+    "mode": "compelled",
+    "felt": "Terror. Not the terror of death — she has made a kind of peace with the possibility of death, or at least a truce. The terror is of the gap: the fraction of a second between the phone ringing and the signal pulling her out, during which she is a human being standing in a room with a program that wants to kill her, and she is holding a piece of plastic to her ear, and she is waiting for a sound that means she is going to live. The helplessness of that waiting is the worst thing she has ever felt, and she has felt it before, and she will feel it again, and it does not get easier.",
+    "expressed": "Nothing. Her face is a mask. Not a performance of calm — an absence of expression so complete it looks like death. The eyes are fixed on the door crack. The body is still. The breathing is shallow and regulated, four counts in, four counts out, the combat breathing pattern she learned from Morpheus. She looks like a machine. She looks like the thing the Agents think she is.",
+    "divergence_reason": "The divergence is total because the divergence is survival. If she expresses what she feels — the terror, the desperation, the animal screaming in the cage — she will lose the stillness, and the stillness is the only thing keeping her reaction time within the margin. The mask is not a choice. It is a requirement. The person behind the mask does not get to exist until the phone rings.",
+    "leakage": "The left hand. It is on the floor, palm down, and the fingers are pressing into the linoleum with a force that whitens the knuckles. The hand is gripping the floor the way a drowning person grips a rope. It is the only part of her that is not still, because it is the only part of her that is not under the mask's control — the hand is the body's honest expression of what she cannot show on her face.",
+    "inhibited_impulse": "The impulse to run. NOW. Before the line activates, before the door opens, before the geometry resolves. The animal wants to bolt for the phone regardless of whether the signal is live, because standing still while a predator approaches is the hardest thing a body can do. She inhibits this by counting her breaths and by the knowledge that picking up a dead phone is the same as standing in the middle of the room with a piece of plastic in her hand when the Agent comes through the door."
+   },
+   "intention": "Survive. Reach the hardline. Exit the Matrix. Return to the Nebuchadnezzar. Nothing else exists.",
+   "action": "She executes the exit protocol. When the phone rings — IF the phone rings — she crosses the room in a movement that is neither running nor walking but a controlled fall toward the nightstand, lifts the handset, and holds it to her ear. The signal begins the extraction. She does not speak. She does not hesitate. She holds the phone and waits for the world to dissolve. If the door opens before the phone rings, she engages whatever comes through it with everything she has — not to win, because she cannot win, but to create the half-second of chaos that might let the phone ring while the Agent is dealing with her body instead of the signal. She is the obstacle and the exit at the same time.",
+   "trajectory": [
+    {
+     "phase": "Static vigil — the room, the waiting",
+     "shift": "She enters the room already in combat mode. The first seconds are spent confirming the room's geometry, testing the phone's physical connection (lifeline, not dead), and establishing her position behind cover. Her psychological state is locked: survival priority, no peripheral processing, no emotional engagement. She is the weapon, not the person.",
+     "trigger": "The sound of footsteps in the hallway, multiple sets, synchronized cadence — this confirms the approach is organized, not exploratory. The Agents have found her.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Approach detection — footsteps stopping",
+     "shift": "The footsteps stop. This is worse than them continuing, because continuing means passage and stopping means assessment. She now knows the Agent is identifying doors. Her time window, which she calculated at perhaps 90 seconds, compresses to perhaps 30. The tactical calculation shifts from 'wait for the line' to 'prepare for simultaneous line-activation and breach.' Her body moves from static vigil to coiled readiness — weight shifts forward, hands move to positions that allow explosive movement in any direction.",
+     "trigger": "The footsteps cease outside a room two doors down. The silence is specific and directional. She can hear the faint electronic tone of a radio or communication device.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Breach — the door opens",
+     "shift": "The BIG COP enters and she registers 'police' before she registers 'Agent.' For a fraction of a second, the frame is wrong — she is processing this as a law-enforcement encounter, which is a lesser threat category. Then the transformation begins and the frame corrects with a jolt that is almost physical: this is not a cop. This is the thing that wears cops. The terror she has been suppressing spikes through the mask and she moves, not because she has decided to move but because the body has decided for her. The training takes over completely. She is no longer deliberating; she is executing.",
+     "trigger": "The BIG COP's body distorts — the flesh rippling, the bones reshaping, the face becoming the face she has seen in after-action reports and the faces of the five dead. The Agent's silhouette fills the doorframe.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Exit execution — the phone",
+     "shift": "The phone rings. The sound cuts through everything — the terror, the combat calculation, the Agent's approach — like a blade through smoke. She does not feel relief. Relief is an emotion for afterward. What she feels is the body's systems realigning around a single vector: the phone is live, the exit is open, move. She crosses the room. The Agent is behind her. The handset is in her hand. The signal begins. The world dissolves. She is gone.",
+     "trigger": "The phone rings — the specific, analog, mechanical ring of a rotary phone on a hardline that Tank has activated from the operator station on the Nebuchadnezzar.",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "She is out. She is in the chair on the Nebuchadnezzar, the tubes being pulled from her arms, the real world's cold air on skin that is sweating and pale. The adrenaline crash is immediate and total — the hands shake, the stomach heaves, the vision tunnels and then blooms. She is alive. She does not feel relief. She feels the absence of death, which is not the same thing. She feels the Oracle's words in her chest like a stone she swallowed years ago that has never dissolved, and she does not know why she is thinking about them now, in this moment, when she should be thinking about the debrief. She pushes the thought down. She always pushes the thought down. But it is harder to push down when the body has just been reminded that it is mortal, and that mortality means the words might die unspoken, and the unspoken words might be the only thing that matters.",
+   "unresolved": "The margin. The margin was too thin. The Agents found her faster than the operational plan predicted, which means either the safe house is compromised or the Agents' surveillance capability has increased. She needs to report this to Morpheus. She needs to recommend rotating the entire hardline network. She needs to sleep. But underneath the operational concerns, there is the thing she felt when the phone rang and she thought, for a half-second, that it might not ring: the fear that she will die before she has said the thing she needs to say, to the person she needs to say it to, who she has not met yet. The Oracle's prophecy is not a prophecy to her. It is a deadline. And the deadline feels closer now."
+  }
+ ],
+ "dynamics": [
+  {
+   "entity": "lo-01",
+   "kind": "location",
+   "entering_state": "A functioning, unknown escape node — Room 303 of the Heart O' The City Hotel contains an active hardline telephone that resistance operatives can use to exit the Matrix. The room is a refuge: anonymous, forgotten, architecturally unremarkable. Its decayed commercial interior — stained carpet, aging wallpaper, a CRT television flickering static — makes it invisible to the system's pattern-recognition. The hotel itself is a transient space, the kind of place where occupancy is unremarked. The hardline exists here because the building's telecommunications infrastructure predates the Matrix's current monitoring regime, a gap in coverage the resistance has exploited without detection. The location's value is entirely operational: it is a door out.",
+   "forces_acting": [
+    "Trinity's operational use of the room as a predetermined extraction point, which she selected for its architectural advantages — single corridor approach, fire escape access, proximity to the hardline's junction",
+    "Agent pursuit pressure — the systematic narrowing of possible locations through traffic-camera analysis, phone-trace data, and pattern-matching against known resistance operational signatures",
+    "The Matrix's underlying telecommunications infrastructure, which routes the hardline through this building's legacy copper wiring — a material fact the system cannot rewrite without degrading broader coverage",
+    "Time — the hardline is only viable while the connection remains unmonitored and unsevered; every second of delay compounds the probability of detection",
+    "Physical deterioration of the building itself — rotted door frames, degraded locks, structural weakness in the corridor walls — which creates both tactical opportunities (breaching points for escape) and vulnerabilities (agents can punch through what civilians cannot)"
+   ],
+   "axis_changes": [
+    {
+     "axis": "custody",
+     "from": "Unknown to the Agents — the room is an undetected node in the resistance's exit infrastructure, used without triggering system awareness",
+     "to": "Known to the Agents as a confirmed resistance exit point — the room has been physically entered by an Agent (via the Big Cop body) and witnessed as the site of a successful hardline extraction",
+     "caused_by": "The Agent's physical pursuit of Trinity to this specific room, resulting in direct observation of the hardline and the escape mechanism"
+    },
+    {
+     "axis": "control",
+     "from": "Resistance operational asset — the room's function is governed entirely by resistance protocols, timing, and operational security",
+     "to": "Contested space — the Agents now possess knowledge of this node's function and can surveil, booby-trap, or physically occupy it at will. The resistance can no longer use this exit without accepting the probability of an ambush",
+     "caused_by": "The Agent entering the room and witnessing the hardline disconnect, which provides the system with direct confirmation of the node's operational role"
+    },
+    {
+     "axis": "condition",
+     "from": "Physically intact hotel room with functional telecommunications infrastructure and multiple tactical features (door, window, walls) in their baseline state",
+     "to": "Damaged and forensically contaminated — the room bears physical evidence of combat: breached door frame, wall damage from impacts and gunfire, displaced furniture, blood traces. The hardline phone is off-hook and dead. The CRT television still flickers. The room is a crime scene",
+     "caused_by": "Trinity's physical combat with the Agent-occupied Big Cop, the firefight in the corridor, and the structural damage from superhuman force applied to the building fabric"
+    },
+    {
+     "axis": "meaning",
+     "from": "A door — the room means escape, survival, return to the real. It is the last step between captivity and freedom, functionally identical to a airlock",
+     "to": "A trap that was briefly a door — the room now means the narrowing margin of resistance capability. It means the system is learning, adapting, closing gaps. For the Agents, it means a data point in the pattern. For the resistance, it means one fewer exit exists. For the audience, it means this place will be remembered when the story returns here",
+     "caused_by": "The totality of the event — the Agents' arrival, the combat, the narrow escape, the Agents standing in the empty room afterward"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Before the operation — the room as refuge",
+     "shift": "The room exists in its functional state as an undetected exit node. Trinity enters, establishes tactical positioning, and initiates the hardline connection sequence. The room is inert infrastructure being activated for its intended purpose. The CRT television casts its ambient glow. The phone sits on the nightstand. Everything is waiting.",
+     "trigger": "Trinity's arrival and operational preparation — the act of entering the room and beginning the extraction protocol",
+     "state_delta": {
+      "variable": "narrative_role",
+      "from": "dormant_infrastructure",
+      "to": "active_escape_point"
+     }
+    },
+    {
+     "phase": "Compromised — footsteps in the corridor",
+     "shift": "The room transitions from refuge to cage. The corridor sounds — boots on carpet, the click of weapons being readied — convert the room's architecture from tactical advantage to containment. The single door becomes a funnel. The window becomes the only exit that is not the phone. The room's physical properties (thin walls, degraded frame) shift from features to liabilities. The phone, still disconnected, becomes the axis on which everything turns.",
+     "trigger": "Audible approach of the Agent-occupied Big Cop and supporting units in the hallway — the sound of pursuit reaching the door",
+     "state_delta": {
+      "variable": "narrative_role",
+      "from": "active_escape_point",
+      "to": "contested_space"
+     }
+    },
+    {
+     "phase": "Breach — the Agent enters",
+     "shift": "The room is physically transformed by combat. The door frame splinters. Walls crack under impacts that exceed human force output. Furniture becomes cover, then debris. The room's dimensions — small, cramped, single window — dictate the geometry of the fight. The hardline phone, mounted on the wall or sitting on the nightstand, is the fixed point around which all movement orbits. Every combat maneuver is simultaneously a movement toward or away from that phone. The room's meaning condenses to a single object.",
+     "trigger": "The Agent breaches the door and engages Trinity physically — the initiation of combat within the room's confines",
+     "state_delta": {
+      "variable": "narrative_role",
+      "from": "contested_space",
+      "to": "active_combat_zone"
+     }
+    },
+    {
+     "phase": "Escape — the phone connects",
+     "shift": "The room undergoes its final transformation. The phone rings — the sound is simultaneously mundane (a telephone ringing in a hotel room) and absolute (the difference between life and death). Trinity reaches it. The hardline activates. The room's physical damage becomes irrelevant — the only thing that matters is the connection. Then Trinity is gone and the room is empty except for the Agent and the damage. The phone is off-hook. The static on the television fills the silence. The room is a crime scene with no body.",
+     "trigger": "The hardline connection completing and Trinity's signal exiting the Matrix — the phone ringing and then the line going dead",
+     "state_delta": {
+      "variable": "narrative_role",
+      "from": "active_combat_zone",
+      "to": "compromised_escape_point"
+     }
+    },
+    {
+     "phase": "Aftermath — the Agents in the empty room",
+     "shift": "The room exists in its post-event state. The Agents stand in the physical evidence of what happened — the damage, the displaced air, the dead phone. The room is now a data point in the Agents' pattern-recognition system. Its address, its telecommunications routing, its architectural profile are all logged. The resistance has lost an exit. The system has gained a lead. The room means something different to every party: to the Agents, it is evidence; to the resistance, it is a burned asset; to the audience, it is a place they will see again.",
+     "trigger": "The Agents' survey of the room after Trinity's signal terminates — the moment the room becomes evidence rather than a battleground",
+     "state_delta": {
+      "variable": "narrative_role",
+      "from": "compromised_escape_point",
+      "to": "known_resistance_asset_burned"
+     }
+    }
+   ],
+   "leaving_state": "Room 303 is a known and burned resistance exit node. The Agents possess direct confirmation that the Heart O' The City Hotel room 303 was used for a hardline extraction. The room is physically damaged — breached door, wall impacts, gunfire residue — and the hardline phone is off-hook and disconnected. The building's telecommunications routing through this room is now a known data point in the Agents' surveillance architecture. The resistance cannot use this exit again without accepting near-certain ambush. The location retains its physical infrastructure (the hardline still exists in the wiring) but its operational value is nullified by the Agents' knowledge. For the narrative, the room is now a loaded location — a place the audience has seen function as a door, which means its future appearance will carry the memory of this escape and the question of whether the door still works.",
+   "significance_shift": "Before this node, Room 303 of the Heart O' The City Hotel is nothing — a room in a hotel, invisible, unremarkable, a set dressing that happens to contain a telephone. After this node, it is the place where Trinity nearly died and escaped by seconds. It is the place where the audience first saw an Agent manifest through a human body. It is the place where the rules of the world were written in drywall dust and bullet holes. When the story returns to this room — and it will — the audience will bring the memory of this first encounter. They will know what the room can do (save a life) and what it costs (everything). They will watch Neo walk into a room they have seen as a kill box. The room's meaning has moved from nothing to everything, and that meaning is the structural foundation for the climax that will eventually occur here."
+  },
+  {
+   "entity": "gr-01",
+   "kind": "group",
+   "entering_state": "The Agents exist as the Matrix's primary enforcement and containment apparatus — programs designed to locate, isolate, and eliminate threats to the system's integrity. Their operational posture at the start of this node is baseline pursuit: they have detected resistance activity in this sector (the traces that led Trinity to need an exit) and are actively hunting the operative responsible. The group consists of at least three primary Agent programs (Smith, Brown, Jones) who share information in real-time and can manifest through any hardwired human in the Matrix. Their capabilities include superhuman physical performance, access to the Matrix's underlying code architecture, and the ability to hijack civilian bodies as vessels. Their limitations include the inability to possess resistance operatives (who have been unplugged), a degree of procedural rigidity in their pursuit patterns, and dependence on the Matrix's infrastructure (they cannot manifest without a hardwired host). Their credence in the resistance as an existential threat is operational, not emotional — they process the resistance as a system anomaly requiring correction.",
+   "forces_acting": [
+    "The Matrix's monitoring infrastructure — traffic cameras, phone-trace systems, pattern-recognition algorithms — which feeds the Agents geolocation data on resistance activity",
+    "Resistance operational security — the deliberate use of legacy infrastructure, timing protocols, and counter-surveillance techniques that create gaps in the Agents' detection coverage",
+    "The Agents' own programming — pursuit protocols that prioritize physical interception but may not account for the full range of resistance escape techniques, creating exploitable gaps in their coverage",
+    "The hardline telecommunications infrastructure — the physical copper and routing systems that allow resistance operatives to exit the Matrix, which the Agents can monitor but cannot instantly sever without degrading broader system functionality",
+    "Time pressure — the Agents must locate and intercept before the operative reaches a hardline, creating a race condition that favors the operative if they have a head start"
+   ],
+   "axis_changes": [
+    {
+     "axis": "credence",
+     "from": "Baseline monitoring with sector-level suspicion — the Agents detect anomalies in this sector but have not confirmed an active operative presence with direct engagement",
+     "to": "Confirmed active pursuit — the Agents have physically engaged a resistance operative, witnessed a hardline extraction in progress, and confirmed that the resistance is operating in this sector with functional exit infrastructure",
+     "caused_by": "The Agent's physical pursuit of Trinity to Room 303 and direct observation of the hardline extraction attempt"
+    },
+    {
+     "axis": "cohesion",
+     "from": "Standard multi-Agent coordination — the group operates with distributed surveillance and convergent pursuit protocols, each Agent covering a sector",
+     "to": "Tightened tactical coordination — the group has shared real-time combat data, confirmed the operative's escape vector, and can now correlate this event with other resistance activity patterns to build a predictive model",
+     "caused_by": "The multi-Agent pursuit operation that converged on the Heart O' The City Hotel, during which combat data, pursuit vectors, and escape mechanics were shared across the Agent network"
+    },
+    {
+     "axis": "control",
+     "from": "Reactive — the Agents respond to detected anomalies, pursuing traces after they appear",
+     "to": "Partially predictive — the Agents now possess a confirmed data point (Room 303, hardline usage, operative profile, escape timing) that can be integrated into pattern-matching algorithms to anticipate future resistance operations",
+     "caused_by": "The totality of intelligence gathered during this engagement: the room's location, the hardline's existence, the operative's tactical methods, and the timing of the escape"
+    },
+    {
+     "axis": "meaning",
+     "from": "Enforcement apparatus — the Agents function as the system's immune response, neutralizing threats to Matrix stability",
+     "to": "Demonstrated hunters — the Agents have shown the audience (and the resistance) that they can locate, pursue, and nearly capture a trained operative in real-time. Their failure to capture Trinity is not a failure of capability but of timing — the operative was closer to the exit. This reframes the Agents from abstract threat to proximate, adaptive, learning adversaries",
+     "caused_by": "The audience witnessing the full extent of Agent capability — body hijacking, superhuman physical performance, coordinated pursuit — and the narrow margin of Trinity's escape"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Detection — the trace that finds Trinity",
+     "shift": "The Agents transition from ambient monitoring to active pursuit. The detection occurs through the Matrix's surveillance infrastructure — phone traces, camera networks, anomaly pattern-matching. The Agents begin converging on the Heart O' The City Hotel based on signal analysis. This phase establishes the Agents' reach: they can find you, and they are already moving.",
+     "trigger": "The resistance activity signature that triggers the Agents' detection protocols — the specific digital disturbance that flags the Heart O' The City Hotel sector",
+     "state_delta": {
+      "variable": "awareness_of_resistance_activity",
+      "from": "baseline_monitoring",
+      "to": "active_pursuit_initiated"
+     }
+    },
+    {
+     "phase": "Convergence — the Big Cop transformation",
+     "shift": "The Agents demonstrate their most terrifying capability: the ability to convert any civilian into a vessel. The Big Cop, a human body hardwired into the Matrix, is overwritten by an Agent program. His physical form distorts, his movements become inhumanly precise. This is the moment the Agents cease to be men in suits and become something the audience has no frame for — a distributed intelligence that can wear any face. The group's cohesion tightens as the possessed body joins the pursuit with full Agent capabilities.",
+     "trigger": "The Agent program initiating a body-hijack of the Big Cop — the visual and auditory distortion that accompanies the overwrite",
+     "state_delta": {
+      "variable": "awareness_of_resistance_activity",
+      "from": "active_pursuit_initiated",
+      "to": "direct_engagement_active"
+     }
+    },
+    {
+     "phase": "Engagement — combat in Room 303",
+     "shift": "The Agents (via the Big Cop vessel) make physical contact with Trinity. The combat reveals the full extent of Agent physical superiority — speed, strength, durability that exceeds human parameters. But the combat also reveals a limitation: the Agent's pursuit programming is optimized for interception, not for the full range of evasive techniques a cornered operative can deploy. Trinity exploits this gap. The group's control over the situation is not absolute; their rigidity creates exploitable seams.",
+     "trigger": "The Agent breaching Room 303 and initiating physical combat with Trinity",
+     "state_delta": {
+      "variable": "awareness_of_resistance_activity",
+      "from": "direct_engagement_active",
+      "to": "operative_located_and_engaged"
+     }
+    },
+    {
+     "phase": "Escape — the hardline activates",
+     "shift": "The Agents fail to prevent the extraction. The hardline connects, Trinity's signal exits the Matrix, and the Agent is left in an empty room with a dead phone. This is not a neutralization — it is a loss. But it is also intelligence: the Agents now know the room, the method, the timing, and the operative's tactical profile. The group's pursuit phase continues, but with enriched data.",
+     "trigger": "The hardline connection completing and Trinity's signal terminating — the phone going dead",
+     "state_delta": {
+      "variable": "awareness_of_resistance_activity",
+      "from": "operative_located_and_engaged",
+      "to": "confirmed_active_pursuit"
+     }
+    },
+    {
+     "phase": "Aftermath — the empty room",
+     "shift": "The Agents stand in the aftermath. From the group's perspective, this is not over — it is a data point. The room's location is logged. The hardline's existence is confirmed. The operative's methods are catalogued. The group transitions from immediate pursuit to analysis-and-prediction posture. They will use this event to refine their detection algorithms, to anticipate the next extraction attempt, to close the gap that allowed this escape. The group has lost the engagement but gained intelligence that makes the next engagement more likely to succeed.",
+     "trigger": "The Agents' post-engagement assessment of the room and the intelligence gathered from the failed interception",
+     "state_delta": {
+      "variable": "awareness_of_resistance_activity",
+      "from": "confirmed_active_pursuit",
+      "to": "confirmed_active_pursuit"
+     }
+    }
+   ],
+   "leaving_state": "The Agents have confirmed active resistance operations in this sector, witnessed a hardline extraction at Room 303 of the Heart O' The City Hotel, and gathered tactical intelligence on the operative's methods, timing, and escape vector. Their pursuit of the resistance continues with enriched data. They have demonstrated to the audience their full capability spectrum — body hijacking, superhuman physical performance, coordinated multi-agent pursuit — and their primary limitation: the inability to instantly sever hardline connections before an operative can exit. The group's posture shifts from reactive to partially predictive, as the intelligence from this engagement can be integrated into pattern-matching systems to anticipate future operations. The Agents' credence in the resistance as an active, present threat in this sector is confirmed by direct engagement.",
+   "significance_shift": "Before this node, the Agents are an abstract concept — the story's antagonists in the most generic sense. After this node, they are a demonstrated, specific, adaptive threat with a face (or rather, with the ability to wear any face). The audience has seen them convert a human being into a weapon. They have seen them punch through walls, dodge bullets, and nearly catch a trained operative in a foot race. The Agents now mean something specific: they are the system's immune response, they are learning, and they are coming. For the resistance (and for the audience), the Agents' failure here is not comforting — it is terrifying, because the margin was seconds, and the Agents will narrow that margin. The group's meaning has shifted from 'the bad guys' to 'the adaptive, learning, closing system that will eventually catch you unless something fundamental changes.'"
+  },
+  {
+   "entity": "cn-01",
+   "kind": "concept",
+   "entering_state": "The Matrix exists as a fully functional, uncompromised simulation — a system operating exactly as designed. Its purpose is containment: to provide a believable reality for the human population whose bodies power the machine civilization. From the audience's perspective, the Matrix does not yet exist as a concept — they have no framework for it. From the in-world perspective, the Matrix is a closed, self-regulating system with enforcement mechanisms (the Agents) that neutralize threats to its stability. The simulation maintains its integrity through pervasive surveillance, pattern-recognition algorithms that flag anomalous behavior, and the Agents who physically eliminate threats. The Matrix's telecommunications infrastructure (hardlines) represents a structural vulnerability — legacy routing that the resistance exploits for extraction — but the system tolerates this vulnerability because eliminating it would require degrading broader functionality. The Matrix's meaning at this point is purely functional: it is the world, and it works.",
+   "forces_acting": [
+    "The resistance's exploitation of the Matrix's legacy telecommunications infrastructure — the use of hardlines to exit the simulation, which represents a structural flaw the system cannot close without cost",
+    "The Agents' enforcement protocols — the system's immune response, which detects, pursues, and eliminates threats to the simulation's integrity",
+    "The simulation's own architectural constraints — the fact that the Matrix is a constructed system with specific infrastructure (phone lines, camera networks, code architecture) that creates both vulnerabilities and enforcement capabilities",
+    "The human population's collective belief in the simulation's reality — the billions of hardwired humans whose consensus perception stabilizes the Matrix, and whose bodies can be hijacked by Agent programs because they are part of the system",
+    "The audience's perception — the concept of the Matrix is being established in the audience's mind through this first encounter, and their understanding will be shaped by what they see here"
+   ],
+   "axis_changes": [
+    {
+     "axis": "credence",
+     "from": "The Matrix operates as a stable, self-regulating containment system with no confirmed breaches in this sector — the system's integrity is intact",
+     "to": "The Matrix has been demonstrably breached — a resistance operative has entered, operated within, and exited the simulation via a hardline, in direct defiance of the system's enforcement mechanisms. The system's containment is not absolute",
+     "caused_by": "Trinity's successful extraction via the Room 303 hardline, which demonstrates that the Matrix's enforcement apparatus can be evaded"
+    },
+    {
+     "axis": "condition",
+     "from": "Uncompromised — the simulation operates with full integrity, enforcement mechanisms functioning as designed, no confirmed resistance activity in this sector",
+     "to": "Locally compromised — the simulation's enforcement apparatus has failed to prevent an extraction in this sector, and the resistance has demonstrated that the system's legacy infrastructure (hardlines) remains a viable exploit. The system's condition is not destroyed but is revealed to be imperfect",
+     "caused_by": "The totality of the event — the Agents' failure to intercept, the hardline's successful activation, and the operative's escape"
+    },
+    {
+     "axis": "meaning",
+     "from": "For the audience, the Matrix does not exist as a concept — they have no framework for a simulated reality. For the in-world population, it is simply reality. For the resistance, it is a prison to be navigated and escaped. For the Agents, it is a system to be maintained",
+     "to": "For the audience, the Matrix is now a specific, tangible thing — a place with rules (hardlines as exits, Agents as enforcement, civilian bodies as vessels), with limits (the Agents cannot instantly sever connections), and with stakes (death inside is death outside, escape is possible but measured in seconds). The concept has moved from nothing to something terrifying and specific. The audience does not yet know it is a simulation — they know it is a world where people can be overwritten, where phones are lifelines, and where the hunters are learning",
+     "caused_by": "The audience witnessing the full operational reality of the Matrix through this pursuit-and-escape sequence — they see the enforcement mechanisms, the escape infrastructure, and the margin of survival"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "The Matrix as undifferentiated world — the opening frames",
+     "shift": "The Matrix presents itself to the audience as simply the world — a city, a hotel, a room. There is no indication that this is a simulation. The concept does not exist in the audience's mind. The city is a city. The hotel is a hotel. The phone is a phone. This is the baseline against which all subsequent revelation will be measured.",
+     "trigger": "The opening frame — the first image of the world the audience sees",
+     "state_delta": {
+      "variable": "audience_comprehension_of_nature",
+      "from": "none",
+      "to": "none"
+     }
+    },
+    {
+     "phase": "The Matrix as wrong world — the Agent transformation",
+     "shift": "The concept begins to form in the audience's mind through rupture. When the Big Cop transforms into an Agent, the world the audience thought they were watching breaks. The rules of physics, of identity, of bodily integrity — all are violated. The audience does not yet have the word 'simulation' but they now know this world operates on different rules than their own. The Matrix becomes, in the audience's mind, a place where the fundamental nature of reality is suspect.",
+     "trigger": "The visual and auditory distortion of the Big Cop's body as the Agent program overwrites it — the moment the world's rules visibly break",
+     "state_delta": {
+      "variable": "audience_comprehension_of_nature",
+      "from": "none",
+      "to": "reality_is_unstable"
+     }
+    },
+    {
+     "phase": "The Matrix as navigable system — the pursuit and hardline",
+     "shift": "The concept gains texture as the audience sees the world's infrastructure being used tactically. The phone is not just a phone — it is an exit. The corridors are not just corridors — they are pursuit geometry. The cameras are not just cameras — they are the system's eyes. The audience begins to understand that this world has an architecture, that the architecture has seams, and that those seams can be exploited. The Matrix becomes a system with exploitable rules, not just a nightmare.",
+     "trigger": "Trinity's tactical use of the environment — the way she navigates the hotel's architecture, the hardline, and the escape route with operational competence",
+     "state_delta": {
+      "variable": "audience_comprehension_of_nature",
+      "from": "reality_is_unstable",
+      "to": "system_with_exploitable_rules"
+     }
+    },
+    {
+     "phase": "The Matrix as contested space — the escape",
+     "shift": "The concept crystallizes as a space of active conflict between the system (enforcement, surveillance, physical domination) and the resistance (preparation, exploitation, escape). The Matrix is not just a setting — it is a battlefield with specific terrain (hardlines, camera networks, civilian populations), specific weapons (Agent capabilities, resistance tactics), and specific victory conditions (escape vs. capture). The audience now understands the world as a war zone, even if they do not yet understand why the war is being fought.",
+     "trigger": "The successful hardline extraction — the moment the audience sees the system's enforcement fail and the resistance's exploit succeed",
+     "state_delta": {
+      "variable": "audience_comprehension_of_nature",
+      "from": "system_with_exploitable_rules",
+      "to": "contested_battlefield"
+     }
+    }
+   ],
+   "leaving_state": "The Matrix, as a concept in the audience's mind, is a contested space where a resistance fights an enforcement apparatus using the system's own legacy infrastructure. The audience understands that: (1) there are people who can enter and exit this world through phone lines, (2) there are entities (Agents) who can hijack human bodies and who possess superhuman physical capabilities, (3) the world has surveillance and enforcement systems that can locate and pursue threats, (4) escape is possible but measured in seconds, and (5) the enforcement apparatus learns from each engagement. The concept of the Matrix as a simulation — as a false reality — has NOT yet been established; the audience understands it as a world with wrong rules, not as a constructed illusion. The system's integrity has been locally breached by Trinity's escape, but the Matrix itself continues to function. The resistance has demonstrated that the system is not omnipotent, but the system has demonstrated that the resistance's margin of survival is razor-thin.",
+   "significance_shift": "Before this node, the Matrix as a concept does not exist in the audience's mind. After this node, it exists as a specific, terrifying, rule-bound world — a place where reality can be overwritten, where phones are lifelines, where hunters wear human faces, and where survival is measured in seconds. The concept's significance is not that it is a simulation (that revelation comes later) but that it is a system — a system with rules, with seams, with enforcement, and with resistance. The audience now fears this world and fears for anyone who enters it. The Matrix means danger, and that meaning is the foundation upon which every subsequent scene — Neo's awakening, the training, the Oracle, the climax — will be built. When the story eventually reveals that the Matrix is a simulation, the audience will already understand it as a system of control; the revelation will explain what they have already felt, not introduce something they have not experienced."
+  },
+  {
+   "entity": "lo-01",
+   "kind": "location",
+   "entering_state": "Suppressed — this entry intentionally excluded. The Heart O' The City Hotel as a building (distinct from Room 303, which is addressed above) enters this node as undifferentiated urban infrastructure. The building is a transient hotel in a deteriorated commercial district, the kind of place that rents rooms by the hour and does not ask questions. Its corridors are dim, its carpet stained, its clientele transient. The building's significance is architectural, not operational: it provides the corridor approach, the stairwell, the fire escape, and the room that together create the tactical geometry of the pursuit. The building is not yet a character in the story — it is terrain.",
+   "forces_acting": [
+    "The building's architecture — corridors, stairwells, fire escapes, locked doors, window placements — which dictates the geometry of pursuit and escape",
+    "The building's transient commercial function — a place of anonymity, where occupants come and go without remark, which the resistance exploits for operational security",
+    "The building's physical deterioration — degraded locks, weakened walls, old construction — which creates tactical opportunities for both the Agents (breaching) and the resistance (escape routes)",
+    "The building's telecommunications infrastructure — the legacy copper wiring that routes through this structure and creates the hardline vulnerability",
+    "Law enforcement presence — the building is the kind of place where police response is slow, indifferent, or absent, which creates a window for both resistance operations and Agent pursuit without civilian interference"
+   ],
+   "axis_changes": [
+    {
+     "axis": "custody",
+     "from": "Uncontrolled urban space — the building is not owned or controlled by any party in the conflict; it is neutral terrain that the resistance uses opportunistically",
+     "to": "Known conflict terrain — the building has been the site of a confirmed resistance operation and Agent engagement. Both parties now possess knowledge of the building's layout, its tactical features, and its telecommunications infrastructure. The building is no longer neutral; it is a data point",
+     "caused_by": "The Agent pursuit through the building's corridors and the combat in Room 303, which provides both parties with direct knowledge of the building's tactical geometry"
+    },
+    {
+     "axis": "meaning",
+     "from": "Undifferentiated urban decay — the building is background, the kind of place that exists in every city and that no one remembers. It means nothing to anyone except as a transient address",
+     "to": "The building where it happened — for the audience, this building is now the site of the first encounter, the first demonstration of the world's rules, the first escape. Its corridors, stairwells, and room 303 are burned into the audience's memory as the geometry of survival. The building means the world's violence made spatial",
+     "caused_by": "The audience experiencing the building as the container for the pursuit-and-escape sequence — every corridor, door, and window becoming a tactical element in the survival geometry"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "The building as approach — corridors and stairwells",
+     "shift": "The building's architecture becomes the geometry of pursuit. Corridors are funnels. Stairwells are vertical escape vectors. Fire doors are barriers and opportunities. The building's physical properties — the length of the hallway, the spacing of doors, the placement of the stairwell — determine the tactical options available to both Trinity and the Agents. The building is not a setting; it is a constraint system that shapes every decision.",
+     "trigger": "The pursuit entering the building — the moment the Agents' search converges on the hotel and the building's interior becomes the tactical environment",
+     "state_delta": {
+      "variable": "narrative_role",
+      "from": "undifferentiated_terrain",
+      "to": "pursuit_geometry"
+     }
+    },
+    {
+     "phase": "The building as battleground — Room 303 and the corridor",
+     "shift": "The building's deterioration becomes tactically relevant. The door to Room 303 — its lock, its frame, its resistance to forced entry — becomes the single most important architectural feature in the scene. The walls, which can be breached by Agent-level force, become permeable barriers. The window becomes the secondary escape route. The building's decay is no longer atmosphere; it is the material through which survival is negotiated.",
+     "trigger": "The Agent's arrival at Room 303 and the initiation of the breach — the moment the building's architecture becomes the medium of combat",
+     "state_delta": {
+      "variable": "narrative_role",
+      "from": "pursuit_geometry",
+      "to": "combat_environment"
+     }
+    },
+    {
+     "phase": "The building as aftermath — the empty corridor",
+     "shift": "The building returns to stillness, but it is a different stillness. The corridor is empty. The damage to Room 303's door is visible. The building has been marked by the event, and that mark is both physical (damage, forensic evidence) and informational (the Agents' knowledge of what happened here). The building is no longer anonymous — it is a known location in a conflict that both parties now know is happening here.",
+     "trigger": "The conclusion of the event — Trinity's departure and the Agents' post-engagement assessment",
+     "state_delta": {
+      "variable": "narrative_role",
+      "from": "combat_environment",
+      "to": "known_conflict_site"
+     }
+    }
+   ],
+   "leaving_state": "The Heart O' The City Hotel is a known conflict site. The Agents possess knowledge of the building's layout, its telecommunications infrastructure, and its use as a resistance extraction point. The building's physical damage (Room 303's breached door, corridor damage) constitutes forensic evidence of the engagement. The building's anonymity — its primary operational value to the resistance — is destroyed. The building remains standing and functional as a commercial structure, but its tactical value to the resistance is nullified and its significance to the Agents is elevated as a data point in their pursuit architecture.",
+   "significance_shift": "Before this node, the building is nothing — a place, a structure, background. After this node, it is the architecture of survival. The audience has experienced every corridor, door, and window as a tactical element in a life-or-death pursuit. The building's physical properties — its decay, its layout, its infrastructure — have been transformed from atmosphere into narrative load-bearing structure. When the story returns to this building, the audience will bring spatial memory: they will know the corridor, they will know the room, they will know the phone. The building has become a character in the story — not a mind, but a space whose meaning is now inseparable from what happened here."
+  }
+ ],
+ "specimen": {
+  "moment": "The door opens on a cop who stands wrong — too still, the posture reorganizing from the inside out — and Trinity's combat breathing fractures. This is the hinge where the scene stops being a police raid and becomes something the audience has no frame for.",
+  "lines": [
+   {
+    "speaker": "ch-02",
+    "line": "Don't.",
+    "subtext": "One syllable to the man inside the cop — she knows what's coming, she's asking for a delay her training tells her is impossible, and the word is for herself as much as for whatever is wearing that body."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "Don't do that.",
+    "subtext": "She sees the skin ripple, the way the face is settling into a configuration that is no longer the cop's. The repetition is not negotiation. It is the sound of someone watching a door close who is already on the wrong side of it."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "It's in the walls. The whole room — I can feel it.",
+    "subtext": "She is speaking to the hardline operator she believes is listening on the other end of the compromised line, feeding tactical detail about the Matrix's reconfiguration of the space around her in case it matters to anyone after she's gone. She is also narrating her own burial."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "Tell Morpheus it changed the architecture. I didn't — I couldn't—",
+    "subtext": "The first fracture in her discipline. The sentence breaks because she is trying to transmit intelligence and say goodbye at the same time and the two functions collide. 'I couldn't' is the admission that her exit plan is already obsolete."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "It's here. It's—",
+    "subtext": "The transformation completes. What she sees in the doorway is no longer a man and the sentence dies because the categories her language operates in no longer apply. The dash is not a cut to another scene; it is the end of her ability to describe what is in front of her."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "Operator. Now. NOW.",
+    "subtext": "Everything else — the tactical report, the goodbye, the fear — stripped away. This is the pure form: a human being begging for the signal that will pull her out of a body that is about to stop being alive. The repetition is the sound of someone who has run out of contingencies."
+   }
+  ],
+  "what_this_exposes": "The analysis described Trinity's mask as total and her expression as 'an absence of expression so complete it looks like death.' The lines contradict that. The mask fractures at line four. The discipline holds for three lines and then the human being underneath starts bleeding through — first as broken syntax, then as a sentence she cannot finish, then as raw imperative. The analysis was wrong to treat the mask as a stable state. It is a deteriorating state. The terror is not held at bay; it is being consumed by the approach, and each line shows less of the operative and more of the animal. This is more honest than the analysis. The analysis wanted a competent operative executing a protocol under pressure. The lines show a competent operative losing the protocol in real time. The 'tactical detail' in line three is the real tell — she is narrating the room's transformation to an operator who may not even be on the line, which means she is already preparing for the possibility that her last words are a damage report. That is not discipline. That is someone who has decided the mission outlasts her. The analysis did not account for that specific flavor of resignation, and it is the most important thing in the scene.",
+  "risks_checked": [
+   {
+    "risk": "The Agents may read as generic movie antagonists if their specific menace — the body-hijacking, the rigidity, the programmed nature — is not differentiated from standard action-movie villains in the first frame.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The exchange never lets the Agent speak. The menace is established entirely through Trinity's reaction to what is happening to the cop's body — lines one and two are addressed to a transformation she can see but the audience experiences only through her deteriorating composure. A generic antagonist would get a line. This one gets silence, and the silence is worse."
+   },
+   {
+    "risk": "The BIG COP's transformation could read as horror-movie shock rather than science-fiction premise if the visual language leans toward gore rather than the uncanny — the transformation should feel wrong, not bloody.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "Line three — 'It's in the walls. The whole room — I can feel it' — reframes the transformation as architectural rather than visceral. The threat is not a monster in a doorway; it is the environment itself reorganizing. This is the science-fiction frame: the Matrix as a system that can rewrite the space around a person. No blood. Wrongness."
+   },
+   {
+    "risk": "The exit-phone mechanic, shown this early, could feel like a video-game convention rather than a world rule if not grounded in physical, tactile specificity — the phone must feel like a lifeline, not a game mechanic.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "Line six — 'Operator. Now. NOW.' — reduces the phone to its function as the last thread between life and death. There is no mechanical description of the phone, no explanation of how it works. There is only a human voice cracking on the word 'now.' The lifeline is not the device; it is the desperation directed at it."
+   },
+   {
+    "risk": "The tension level leaving this node (88) is very high for an opening — the story must provide a pressure release valve in the subsequent scene or risk exhausting the audience before the actual protagonist is introduced.",
+    "does_the_exchange_avoid_it": false,
+    "evidence": "This exchange does not and cannot address this risk — it is a scene-level structural concern, not a dialogue-level one. The exchange intensifies tension by design. The pressure release must come from the subsequent node's content, not from anything said here. The risk remains unmitigated by this artifact and must be tracked forward."
+   },
+   {
+    "risk": "The cold open may feel disconnected from Neo's story if the audience does not understand Trinity's connection to him.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "Line four — 'Tell Morpheus it changed the architecture' — establishes that Trinity reports to someone named Morpheus, giving the audience a single anchor point that will connect to Neo's storyline when Morpheus appears. The name is planted as a thread, not explained. The connection is structural, not expository."
+   }
+  ],
+  "voices_distinct": "Only one speaker is present in these lines — Trinity. The Agent does not speak. This is a deliberate choice, not an oversight: the Agent's voice would humanize it, and the scene's power depends on the threat being something that does not negotiate, does not monologue, does not explain. The cop's body is present but the cop is gone, and whatever replaced him does not use words. If a second speaker were introduced, the failure mode would be making the Agent verbose — giving it a villain's speech. The distinct-voice test here is not 'could they swap lines' but 'does Trinity's voice deteriorate along a track that only she could occupy.' It does. Lines one through six trace a specific arc: professional restraint → observed wrongness → tactical report → fractured report → speechless terror → raw imperative. No other character in this story would arrive at line six through this specific sequence. The voice is distinct because the breakdown is distinct."
+ },
+ "continuity": {
+  "established_facts_used": [
+   {
+    "fact": "Trinity is a resistance operative capable of operating inside the Matrix and has a hardline exit available at the Heart O' The City Hotel, room 1314",
+    "source": "lo-01",
+    "how_used": "The entire sequence is built around this location being the site of an operation and the only available exit point. The room number, the hotel's decayed architecture, and the hardline phone are all physical staging elements derived from this location's established profile."
+   },
+   {
+    "fact": "Agents can inhabit the bodies of ordinary people wired into the Matrix, transforming a human host into an Agent form instantaneously",
+    "source": "ch-04",
+    "how_used": "The BIG COP entering room 1314 is a human host; his transformation into Agent form is the inciting shock of the sequence. The transformation mechanics — the ripple, the rigid posture, the dead expression replacing the human one — are drawn directly from this established capability."
+   },
+   {
+    "fact": "Agents are programs with superhuman speed, strength, and durability within the Matrix, pursuing resistance operatives with single-minded focus",
+    "source": "ch-04",
+    "how_used": "The pursuit choreography is calibrated to this: Trinity cannot match an Agent in direct confrontation and must rely on evasion, environmental advantage, and the narrow margin of reaching the hardline. The Agent's movement speed, door-breaching force, and refusal to stop or negotiate all reflect this established profile."
+   },
+   {
+    "fact": "Trinity's psychological profile includes extreme operational competence under pressure, loyalty to the resistance, and a belief system that treats the Matrix as a battlefield rather than a moral dilemma",
+    "source": "ch-02",
+    "how_used": "Her decision-making throughout the sequence — choosing to run rather than fight, the calculation of distance-to-phone versus Agent-speed, the absence of hesitation or moral conflict about the violence required — all flow from this established characterization. She does not panic; she executes under terminal pressure."
+   },
+   {
+    "fact": "Exit from the Matrix requires a hardline phone connection; the operator on the other end facilitates the extraction",
+    "source": "root.rules_of_the_world",
+    "how_used": "The phone is not a convenience but a hard mechanical requirement. The sequence's climax is Trinity reaching the phone, the line connecting, and her signal disappearing from the Matrix — depicted as a physical, tactile process (the handset, the dial tone, the line going dead) rather than a magical effect. The operator's presence is implied by the phone ringing when Trinity enters the room."
+   },
+   {
+    "fact": "The Matrix presents as a late-20th-century urban environment with functional physics that resistance operatives can partially exploit through training, but that fundamentally favors the system's agents",
+    "source": "root.rules_of_the_world",
+    "how_used": "The environment — concrete walls, fire escapes, rooftop gaps, the hotel's crumbling interior — obeys physical rules Trinity can leverage (a thrown chair buys a half-second, a closed door forces the Agent to breach) but cannot overcome the Agent's raw speed advantage. The environment is adversarial to her, not a playground."
+   }
+  ],
+  "constraints_honoured": [
+   "Exit from the Matrix requires a hardline phone — Trinity cannot simply 'log out' or will herself away. The phone must be physically reached, physically picked up, and the connection must complete. This is treated as an unbreakable rule of the world, not a dramatic convenience.",
+   "Agents cannot be defeated in direct combat by a single human operative — Trinity's survival depends entirely on evasion and reaching the exit, never on overcoming the Agent in a fight. Any physical engagement she initiates is purely to create distance or time, never to win.",
+   "The Agent's body-hijacking is depicted as uncanny and wrong rather than gory — the transformation is a distortion of the human form (skin rippling, posture resetting, features smoothing into a template) not a bloody or fleshy event. The horror is ontological, not visceral.",
+   "No exposition is delivered — the audience learns the rules (Agents exist, they can inhabit bodies, exits require hardlines, the resistance operates under terminal threat) entirely through action, consequence, and visual storytelling. No character explains what is happening.",
+   "Trinity's violence is survival-urgent and purposeful, not stylized or choreographed for spectacle — every action she takes is the minimum required to gain another half-second toward the phone. There is no flourish, no martial-arts performance. The violence is ugly, desperate, and functional.",
+   "The sequence ends with the Agents standing in an empty room — Trinity's escape is by a margin that is explicitly narrow and explicitly not repeatable. The Agents' continued presence after she is gone establishes that the threat persists beyond the individual encounter."
+  ],
+  "contradictions_checked": [
+   {
+    "risk": "Depicting Trinity as too physically capable relative to the Agent, making the Agent seem beatable and undermining the established power asymmetry where a single human cannot defeat an Agent in direct combat",
+    "avoided_by": "Every physical engagement Trinity initiates is explicitly a stalling tactic that costs her something — she throws a chair but the Agent is already past it; she kicks a door shut but the Agent punches through it in under two seconds; she uses a fire extinguisher as a projectile but the Agent doesn't even flinch. She never lands a blow that slows the Agent for more than a fraction of a second. The sequence makes clear she is losing ground the entire time."
+   },
+   {
+    "risk": "The hardline exit could read as a convenient plot device that appears exactly when needed, rather than a pre-established world rule with physical requirements",
+    "avoided_by": "The phone is shown as part of the room's existing infrastructure — a rotary phone on a nightstand in a decrepit hotel room, not a device planted for this moment. The phone rings before Trinity reaches it because the operator on the other end is executing a pre-arranged extraction protocol, not because the plot requires a rescue. The phone is depicted as old, physical, and mechanically limited — it takes time for the connection to complete, and that time is the margin of the sequence."
+   },
+   {
+    "risk": "The Agent's transformation of the BIG COP could read as supernatural horror rather than science-fiction worldbuilding, muddying the genre and the specific nature of the Agents as programs",
+    "avoided_by": "The transformation is described in terms of digital wrongness rather than organic horror — the skin doesn't tear, it 'rezzes'; the features don't distort, they 'resolve' into a standardized template; the body doesn't mutate, it 'reformats.' The visual language is that of a system overwriting a file, not a creature emerging from a host. The BIG COP's human face doesn't suffer — it is replaced, efficiently, the way a program replaces data."
+   },
+   {
+    "risk": "The sequence could inadvertently establish that the hotel is a safe location the resistance can return to, contradicting the state change that marks it as compromised",
+    "avoided_by": "The final beat of the sequence is the Agent standing in room 1314, looking at the phone Trinity just used, and the implication — through the Agent's posture and the deliberate way it examines the handset — that this exit point is now known, catalogued, and will be monitored or trapped going forward. The room is not a sanctuary; it is a crime scene the system has now processed."
+   },
+   {
+    "risk": "Trinity's escape could establish a pattern — Agent chases, operative reaches phone, operative escapes — that makes future encounters feel predictable and lowers stakes",
+    "avoided_by": "The margin is shown as nearly zero — the Agent's hand reaches the phone a beat after the line goes dead. The sequence communicates that this worked by seconds and by the specific contingency of the operator being ready. Nothing about the escape suggests it is repeatable or that the margin will hold. The audience should feel that Trinity survived this time, not that she will survive next time."
+   }
+  ],
+  "state_preconditions": [
+   {
+    "entity": "ch-02",
+    "variable": "operational_status",
+    "must_be": "active_within_matrix — Trinity must already be inside the Matrix on an operation for this sequence to occur. She is not entering; she is already engaged and discovers she has been located."
+   },
+   {
+    "entity": "ch-02",
+    "variable": "access_to_hardline",
+    "must_be": "available — the Heart O' The City Hotel room 1314 hardline must be operational and an operator must be monitoring on the other end for extraction to be possible."
+   },
+   {
+    "entity": "ch-04",
+    "variable": "awareness_of_trinity_location",
+    "must_be": "acquired — the Agents must have already traced Trinity's signal to this location for the pursuit to begin. The sequence opens with this trace already complete; it does not depict the tracing process."
+   },
+   {
+    "entity": "lo-01",
+    "variable": "surveillance_status",
+    "must_be": "compromised_but_not_yet_physically_interdicted — the location must be one the Agents have identified but not yet physically occupied, creating the narrow window in which the sequence takes place."
+   },
+   {
+    "entity": "gr-01",
+    "variable": "pursuit_posture",
+    "must_be": "active_trace_and_interdiction — the system must be in a state of actively pursuing a located operative, not passively monitoring, for the Agent deployment to occur."
+   }
+  ],
+  "forward_commitments": [
+   "The Heart O' The City Hotel is now a known compromised location. Any future scene set here must carry the weight of that compromise — characters returning here should treat it as potentially watched, potentially trapped, and the audience should feel that tension.",
+   "The Agents have been established as threats that can appear anywhere a human body exists in the Matrix. Every subsequent scene set inside the Matrix must carry the ambient tension that any bystander could become an Agent. This is now a standing condition of Matrix-set scenes.",
+   "The hardline exit mechanic has been established as a physical, tactile process with a required operator on the other end. Future exits must be depicted with the same mechanical specificity — they cannot become instantaneous or abstract. The vulnerability of the exit process (the time it takes, the need for a working line, the need for an operator) is now a standing source of tension.",
+   "Trinity has been established as a competent, desperate, survival-focused operative who operates without hesitation under terminal threat. Her later scenes must be consistent with this — she is not reckless, but she is willing to use lethal force without moral hesitation when survival requires it. The emotional vulnerability she shows in other contexts must be earned against this established competence.",
+   "The tension level exiting this node is extremely high (88). The immediately subsequent scene must provide a pressure release — a shift to a different register, a different character, a different pace — or risk exhausting the audience before the primary narrative is established. The story is now obligated to modulate downward.",
+   "The BIG COP as a human host is now absent from the Matrix — his body was used and discarded by the Agent. This does not require follow-up in-story, but it establishes the collateral cost of Agent activity: real human beings are consumed by these encounters. This weight should be felt, even if not explicitly addressed, in future depictions of Agent deployments.",
+   "The operator who facilitated Trinity's extraction is now an established presence in the resistance's operational structure. Future scenes involving Matrix operations should reflect the presence and role of operators — they are not optional support, they are a mechanical requirement of the exit process."
+  ]
+ }
+}

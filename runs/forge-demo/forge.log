@@ -1,0 +1,28 @@
+narrativeforge forge · runs/forge-demo · backend=hyprlab · entity_passes=3
+  · expose    transition
+      9,262 words · pass
+  · expose    node
+  · pl-01     transition
+      10,381 words · pass
+  · pl-01     node
+  · pl-02     transition
+      FAILED: transition.pl-02: HTTP 400: {
+  "error": {
+    "message": "Client-side error detected. Please check your input or maybe just try again.",
+    "type": "client_side_error",
+    "param": null,
+    "code": "client_side_error"
+  }
+}
+
+nodes: 2  transitions: 2
+transition depth: 19,643 words total, 9,821 avg · verdicts {'pass': 2}
+  ! pl-02: transition.pl-02: HTTP 400: {
+  "error": {
+    "message": "Client-side error detected. Please check your input or maybe just try again.",
+    "type": "client_side_error",
+    "param": null,
+    "code": "client_side_error"
+  }
+}
+usage: 4 calls · 66,351 in · 36,460 out · 45,092 reasoning · $0.56

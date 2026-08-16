@@ -1,0 +1,4293 @@
+{
+ "entities": {
+  "ch-01": {
+   "entity_id": "ch-01",
+   "type": "character",
+   "canonical_name": "Neo",
+   "aliases": [
+    "Thomas Anderson",
+    "Thomas A. Anderson",
+    "Mr. Anderson"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-02",
+    "pl-03",
+    "pl-05"
+   ],
+   "profile": {
+    "demographics": {
+     "b01": {
+      "text": "A man in his early thirties living a double life as programmer and hacker.",
+      "when": "standing",
+      "tags": [
+       "age",
+       "occupation"
+      ]
+     }
+    },
+    "appearance": {
+     "b01": {
+      "text": "Lean and pale from too many hours at a computer screen.",
+      "when": "standing",
+      "tags": [
+       "physical"
+      ]
+     },
+     "b02": {
+      "text": "Wears dark clothing; the only one without sunglasses when he returns to the Matrix.",
+      "when": "standing",
+      "tags": [
+       "costume"
+      ]
+     }
+    },
+    "voice_and_speech": {
+     "b01": {
+      "text": "Speaks quietly, often in questions, with a sardonic edge when frightened.",
+      "when": "standing",
+      "tags": [
+       "speech_pattern"
+      ]
+     },
+     "b02": {
+      "text": "Deflects intensity with humor, as when he dares to flip off Agent Smith.",
+      "when": "standing",
+      "tags": [
+       "defense_mechanism"
+      ]
+     }
+    },
+    "habits_and_tells": {
+     "b01": {
+      "text": "Falls asleep at his computer; sleeps poorly and lives alone.",
+      "when": "standing",
+      "tags": [
+       "lifestyle"
+      ]
+     },
+     "b02": {
+      "text": "Keeps a hollowed-out copy of Baudrillard's Simulacra and Simulations to hide illicit disks.",
+      "when": "standing",
+      "tags": [
+       "prop",
+       "philosophy"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Thomas Anderson works as a software programmer at Meta CorTechs by day.",
+      "when": "before_script",
+      "tags": [
+       "occupation"
+      ]
+     },
+     "b02": {
+      "text": "By night he is Neo, one of the world's most dangerous hackers, searching for an answer he cannot name.",
+      "when": "before_script",
+      "tags": [
+       "hacker",
+       "quest"
+      ]
+     },
+     "b03": {
+      "text": "He has felt his entire life that something is wrong with the world, like a splinter in his mind.",
+      "when": "standing",
+      "tags": [
+       "wound",
+       "motivation"
+      ]
+     },
+     "b04": {
+      "text": "He sells illegal software to Choi and others to fund his search for Morpheus.",
+      "when": "before_script",
+      "tags": [
+       "crime",
+       "resource"
+      ]
+     }
+    },
+    "wound": {
+     "b01": {
+      "text": "He senses something fundamentally wrong with reality but cannot identify it.",
+      "when": "standing",
+      "tags": [
+       "existential"
+      ]
+     },
+     "b02": {
+      "text": "This splinter drives him to obsessive searching, sleepless nights, and isolation.",
+      "when": "standing",
+      "tags": [
+       "compulsion"
+      ]
+     }
+    },
+    "want": {
+     "b01": {
+      "text": "To learn what the Matrix is and understand what is wrong with the world.",
+      "when": "act_one",
+      "tags": [
+       "goal"
+      ]
+     }
+    },
+    "need": {
+     "b01": {
+      "text": "To believe in himself and accept that he is the One through sacrifice and love, not prophecy.",
+      "when": "standing",
+      "tags": [
+       "arc",
+       "theme"
+      ]
+     }
+    },
+    "values": {
+     "b01": {
+      "text": "Freedom and control over his own life; he explicitly rejects fate because he dislikes not being in control.",
+      "when": "standing",
+      "tags": [
+       "philosophy",
+       "freedom"
+      ]
+     }
+    },
+    "fears": {
+     "b01": {
+      "text": "Being nobody; being out of control; the existential terror of a reality he cannot trust.",
+      "when": "standing",
+      "tags": [
+       "psychological"
+      ]
+     }
+    },
+    "competences": {
+     "b01": {
+      "text": "Expert computer hacker who cracked the IRS D-Base and sells illicit software.",
+      "when": "standing",
+      "tags": [
+       "skill"
+      ]
+     },
+     "b02": {
+      "text": "Learns uploaded combat skills with exceptional speed, training ten hours straight.",
+      "when": "act_two",
+      "tags": [
+       "combat",
+       "learning"
+      ]
+     }
+    },
+    "limitations": {
+     "b01": {
+      "text": "His disbelief in himself and in fate blocks him from accessing his full potential.",
+      "when": "standing",
+      "tags": [
+       "psychological_block"
+      ]
+     },
+     "b02": {
+      "text": "Cannot accept that Matrix rules can be broken until he experiences it directly.",
+      "when": "act_two",
+      "tags": [
+       "epistemic_limit"
+      ]
+     }
+    },
+    "problem_solving_style": {
+     "b01": {
+      "text": "Direct confrontation and questioning rather than evasion.",
+      "when": "standing",
+      "tags": [
+       "approach"
+      ]
+     },
+     "b02": {
+      "text": "Chooses action over self-preservation when others are at risk.",
+      "when": "act_three",
+      "tags": [
+       "sacrifice"
+      ]
+     }
+    },
+    "coping_strategies": {
+     "b01": {
+      "text": "Deflects with humor and sarcasm when frightened or uncertain.",
+      "when": "standing",
+      "tags": [
+       "defense"
+      ]
+     },
+     "b02": {
+      "text": "Retreats into denial and vomiting when reality becomes overwhelming, as after the Construct revelation.",
+      "when": "act_one",
+      "tags": [
+       "physical_response"
+      ]
+     }
+    },
+    "health": {
+     "b01": {
+      "text": "Physically normal at the start, though sleep-deprived and socially isolated.",
+      "when": "standing",
+      "tags": [
+       "baseline"
+      ]
+     },
+     "b02": {
+      "text": "After extraction his muscles are atrophied from lifelong disuse and must be rebuilt.",
+      "when": "act_one",
+      "tags": [
+       "atrophy"
+      ]
+     }
+    },
+    "moral_axis": {
+     "b01": {
+      "text": "Willing to sacrifice his own life for someone who believed in him, even without certainty.",
+      "when": "act_three",
+      "tags": [
+       "ethics",
+       "sacrifice"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-02": {
+     "kind": "romantic_interest",
+     "valence": 80,
+     "notes": {
+      "b01": {
+       "text": "Trinity contacts Neo through his computer and brings him to Morpheus.",
+       "when": "act_one",
+       "tags": [
+        "initiation"
+       ]
+      },
+      "b02": {
+       "text": "Their intimacy grows through shared danger; he asks her to promise to finish telling him what the Oracle said.",
+       "when": "act_three",
+       "tags": [
+        "growing_closeness"
+       ]
+      }
+     }
+    },
+    "ch-03": {
+     "kind": "mentor_student",
+     "valence": 90,
+     "notes": {
+      "b01": {
+       "text": "Neo has searched for Morpheus for years; Morpheus has searched for Neo his entire life.",
+       "when": "standing",
+       "tags": [
+        "mutual_quest"
+       ]
+      },
+      "b02": {
+       "text": "Neo refuses to let Morpheus die, choosing to re-enter the Matrix against orders to rescue him.",
+       "when": "act_three",
+       "tags": [
+        "loyalty",
+        "choice"
+       ]
+      }
+     }
+    },
+    "ch-04": {
+     "kind": "protagonist_antagonist",
+     "valence": -100,
+     "notes": {
+      "b01": {
+       "text": "Smith captures and bugs Neo, then hunts him throughout the third act.",
+       "when": "standing",
+       "tags": [
+        "conflict"
+       ]
+      },
+      "b02": {
+       "text": "Neo declares his identity as Neo rather than Anderson before throwing Smith in front of a train.",
+       "when": "act_three",
+       "tags": [
+        "identity",
+        "defiance"
+       ]
+      }
+     }
+    },
+    "ch-05": {
+     "kind": "acquaintance",
+     "valence": 10,
+     "notes": {
+      "b01": {
+       "text": "Cypher confides in Neo over drinks, revealing the five dead and his own regret.",
+       "when": "act_two",
+       "tags": [
+        "disclosure"
+       ]
+      }
+     }
+    },
+    "ch-13": {
+     "kind": "seeker_guide",
+     "valence": 50,
+     "notes": {
+      "b01": {
+       "text": "The Oracle tells Neo he is not the One but that Morpheus will sacrifice his life for him.",
+       "when": "act_two",
+       "tags": [
+        "prophecy",
+        "choice"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "matrix_awareness": {
+     "kind": "enum",
+     "description": "Neo's level of knowledge about the Matrix",
+     "dimension": "epistemic",
+     "domain": [
+      "searching",
+      "contacted",
+      "bugged",
+      "freed",
+      "fully_aware"
+     ],
+     "init": "searching"
+    },
+    "self_belief": {
+     "kind": "enum",
+     "description": "Neo's belief in himself as the One",
+     "dimension": "psychological",
+     "domain": [
+      "skeptic",
+      "uncertain",
+      "beginning_to_believe",
+      "the_one"
+     ],
+     "init": "skeptic"
+    },
+    "bug_status": {
+     "kind": "enum",
+     "description": "Status of the tracking bug in Neo's body",
+     "dimension": "physiological",
+     "domain": [
+      "clean",
+      "implanted",
+      "extracted"
+     ],
+     "init": "clean"
+    },
+    "freed_from_matrix": {
+     "kind": "bool",
+     "description": "Whether Neo has been physically freed from the Matrix power plant",
+     "dimension": "world",
+     "init": false
+    },
+    "combat_training": {
+     "kind": "enum",
+     "description": "Level of uploaded combat skills",
+     "dimension": "technological",
+     "domain": [
+      "none",
+      "uploaded",
+      "tested"
+     ],
+     "init": "none"
+    },
+    "oracle_consulted": {
+     "kind": "bool",
+     "description": "Whether Neo has visited the Oracle",
+     "dimension": "epistemic",
+     "init": false
+    },
+    "oracle_prophecy_received": {
+     "kind": "enum",
+     "description": "What the Oracle told Neo about his identity and fate",
+     "dimension": "epistemic",
+     "domain": [
+      "none",
+      "not_the_one",
+      "choice_revealed"
+     ],
+     "init": "none"
+    },
+    "physical_condition": {
+     "kind": "enum",
+     "description": "Neo's body state",
+     "dimension": "physiological",
+     "domain": [
+      "normal",
+      "atrophied",
+      "rebuilt",
+      "wounded",
+      "transformed"
+     ],
+     "init": "normal"
+    },
+    "alive": {
+     "kind": "bool",
+     "description": "Whether Neo is alive in the Matrix and real world",
+     "dimension": "physiological",
+     "init": true
+    },
+    "is_the_one": {
+     "kind": "bool",
+     "description": "Whether Neo has awakened as the One with full Matrix control",
+     "dimension": "world",
+     "init": false
+    }
+   },
+   "state": {
+    "matrix_awareness": "searching",
+    "self_belief": "skeptic",
+    "bug_status": "clean",
+    "freed_from_matrix": false,
+    "combat_training": "none",
+    "oracle_consulted": false,
+    "oracle_prophecy_received": "none",
+    "physical_condition": "normal",
+    "alive": true,
+    "is_the_one": false
+   },
+   "arc": {
+    "start_state": "Skeptical hacker searching for an answer he cannot name, rejecting fate and his own significance",
+    "end_state": "The One, awakened through sacrifice and Trinity's love, seeing the Matrix as code and flying"
+   }
+  },
+  "ch-02": {
+   "entity_id": "ch-02",
+   "type": "character",
+   "canonical_name": "Trinity",
+   "aliases": [],
+   "salience": "major",
+   "plots": [
+    "pl-03",
+    "pl-01",
+    "pl-05"
+   ],
+   "profile": {
+    "demographics": {
+     "b01": {
+      "text": "A woman in black leather, known in hacker underground for cracking the IRS D-Base.",
+      "when": "standing",
+      "tags": [
+       "identity",
+       "reputation"
+      ]
+     }
+    },
+    "appearance": {
+     "b01": {
+      "text": "Wears black leather and sunglasses; moves with unnatural grace and speed.",
+      "when": "standing",
+      "tags": [
+       "costume",
+       "physicality"
+      ]
+     }
+    },
+    "voice_and_speech": {
+     "b01": {
+      "text": "Speaks with hypnotic directness, pressing close, lips near the ear.",
+      "when": "standing",
+      "tags": [
+       "speech_pattern"
+      ]
+     },
+     "b02": {
+      "text": "Clips words short under pressure; her voice fails her when she tries to disclose the Oracle's prophecy.",
+      "when": "act_two",
+      "tags": [
+       "emotional_block"
+      ]
+     }
+    },
+    "habits_and_tells": {
+     "b01": {
+      "text": "Breathes in Neo's scent while he sleeps, then pulls away before being caught.",
+      "when": "act_two",
+      "tags": [
+       "intimacy",
+       "restraint"
+      ]
+     },
+     "b02": {
+      "text": "Clenches her fists and whispers encouragement when watching Neo attempt the jump program.",
+      "when": "act_two",
+      "tags": [
+       "care"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Trinity was once searching for the same answer Neo seeks, until Morpheus found her.",
+      "when": "before_script",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "Morpheus told her she was not really looking for him but for an answer.",
+      "when": "before_script",
+      "tags": [
+       "mentorship"
+      ]
+     },
+     "b03": {
+      "text": "The Oracle told Trinity she would fall in love with the One, a prophecy she has never disclosed.",
+      "when": "before_script",
+      "tags": [
+       "prophecy",
+       "secret"
+      ]
+     }
+    },
+    "wound": {
+     "b01": {
+      "text": "She carries the Oracle's love prophecy as a burden she cannot speak, trapped between hope and fear.",
+      "when": "standing",
+      "tags": [
+       "internal_conflict"
+      ]
+     }
+    },
+    "want": {
+     "b01": {
+      "text": "To protect Neo and, when the moment comes, tell him the prophecy so her love can revive him.",
+      "when": "standing",
+      "tags": [
+       "goal"
+      ]
+     }
+    },
+    "need": {
+     "b01": {
+      "text": "To speak the truth she has been physically unable to say before it is too late.",
+      "when": "standing",
+      "tags": [
+       "arc"
+      ]
+     }
+    },
+    "values": {
+     "b01": {
+      "text": "Loyalty to Morpheus and the mission; commitment to Neo that transcends duty.",
+      "when": "standing",
+      "tags": [
+       "loyalty",
+       "love"
+      ]
+     }
+    },
+    "fears": {
+     "b01": {
+      "text": "That Neo is not the One and her love is for a man who will die like the five before him.",
+      "when": "standing",
+      "tags": [
+       "dread"
+      ]
+     }
+    },
+    "competences": {
+     "b01": {
+      "text": "Superhuman combat speed and precision within the Matrix; can leap between rooftops.",
+      "when": "standing",
+      "tags": [
+       "combat"
+      ]
+     },
+     "b02": {
+      "text": "Can upload and absorb pilot programs for vehicles including military helicopters.",
+      "when": "act_three",
+      "tags": [
+       "skill_upload"
+      ]
+     }
+    },
+    "limitations": {
+     "b01": {
+      "text": "Her voice literally fails her when she tries to tell Neo the Oracle's prophecy before his death.",
+      "when": "act_two",
+      "tags": [
+       "emotional_block"
+      ]
+     }
+    },
+    "problem_solving_style": {
+     "b01": {
+      "text": "Acts decisively and commands others under fire, but cannot command her own heart to speak.",
+      "when": "standing",
+      "tags": [
+       "contrast"
+      ]
+     }
+    },
+    "coping_strategies": {
+     "b01": {
+      "text": "Deflects Cypher's probes about her feelings by redirecting to Morpheus's authority.",
+      "when": "act_one",
+      "tags": [
+       "deflection"
+      ]
+     }
+    },
+    "health": {
+     "b01": {
+      "text": "Physically capable; injured during the opening chase but fights through pain.",
+      "when": "act_one",
+      "tags": [
+       "resilience"
+      ]
+     }
+    },
+    "moral_axis": {
+     "b01": {
+      "text": "Insists on joining Neo's suicide mission because Morpheus means more to her than to Neo.",
+      "when": "act_three",
+      "tags": [
+       "loyalty",
+       "choice"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "romantic_interest",
+     "valence": 90,
+     "notes": {
+      "b01": {
+       "text": "The Oracle prophesied she would fall in love with the One; she watches Neo with growing attachment.",
+       "when": "standing",
+       "tags": [
+        "prophecy",
+        "love"
+       ]
+      },
+      "b02": {
+       "text": "Her confession of love after his death triggers his resurrection as the One.",
+       "when": "climax",
+       "tags": [
+        "resurrection_trigger"
+       ]
+      }
+     }
+    },
+    "ch-03": {
+     "kind": "subordinate_to_leader",
+     "valence": 85,
+     "notes": {
+      "b01": {
+       "text": "Trinity follows Morpheus's orders without question in the field.",
+       "when": "standing",
+       "tags": [
+        "chain_of_command"
+       ]
+      }
+     }
+    },
+    "ch-05": {
+     "kind": "object_of_unrequited_attention",
+     "valence": -40,
+     "notes": {
+      "b01": {
+       "text": "Cypher tells Trinity he once thought he was in love with her and used to dream about her.",
+       "when": "act_three",
+       "tags": [
+        "jealousy"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "oracle_love_prophecy_status": {
+     "kind": "enum",
+     "description": "Disclosure state of the Oracle's prophecy that Trinity would love the One",
+     "dimension": "epistemic",
+     "domain": [
+      "unspoken",
+      "partially_disclosed",
+      "confessed"
+     ],
+     "init": "unspoken"
+    },
+    "love_for_neo": {
+     "kind": "enum",
+     "description": "Trinity's acknowledged feeling toward Neo",
+     "dimension": "emotional",
+     "domain": [
+      "unrecognized",
+      "growing",
+      "urgent",
+      "confessed"
+     ],
+     "init": "unrecognized"
+    },
+    "belief_in_neo_as_one": {
+     "kind": "enum",
+     "description": "Trinity's belief that Neo is the One",
+     "dimension": "psychological",
+     "domain": [
+      "uncertain",
+      "suspecting",
+      "confirmed"
+     ],
+     "init": "uncertain"
+    }
+   },
+   "state": {
+    "oracle_love_prophecy_status": "unspoken",
+    "love_for_neo": "unrecognized",
+    "belief_in_neo_as_one": "uncertain"
+   },
+   "arc": {
+    "start_state": "Guarded warrior hiding her feelings and the Oracle's prophecy behind deflection",
+    "end_state": "Lover whose confession of the prophecy triggers Neo's resurrection as the One"
+   }
+  },
+  "ch-03": {
+   "entity_id": "ch-03",
+   "type": "character",
+   "canonical_name": "Morpheus",
+   "aliases": [],
+   "salience": "major",
+   "plots": [
+    "pl-02",
+    "pl-01",
+    "pl-04",
+    "pl-05"
+   ],
+   "profile": {
+    "demographics": {
+     "b01": {
+      "text": "A commanding man wearing a long black coat and circular mirrored glasses.",
+      "when": "standing",
+      "tags": [
+       "appearance"
+      ]
+     }
+    },
+    "appearance": {
+     "b01": {
+      "text": "Eyes invisible behind mirrored lenses; his smile is described as razor-thin, able to cut glass.",
+      "when": "standing",
+      "tags": [
+       "physicality"
+      ]
+     }
+    },
+    "voice_and_speech": {
+     "b01": {
+      "text": "Speaks with the measured cadence of a teacher or prophet, using Socratic questions.",
+      "when": "standing",
+      "tags": [
+       "speech_pattern"
+      ]
+     },
+     "b02": {
+      "text": "His voice carries the unadulterated confidence of a zealot when he declares Neo is the One.",
+      "when": "act_two",
+      "tags": [
+       "intensity"
+      ]
+     }
+    },
+    "habits_and_tells": {
+     "b01": {
+      "text": "Offers choices in binary form and frames them as irreversible.",
+      "when": "standing",
+      "tags": [
+       "philosophy"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Morpheus has spent most of his life searching the Matrix for the One, the prophesied savior.",
+      "when": "before_script",
+      "tags": [
+       "quest"
+      ]
+     },
+     "b02": {
+      "text": "The Oracle told him he would find the One, but he misunderstood, believing it was about his choice rather than the One's.",
+      "when": "before_script",
+      "tags": [
+       "prophecy",
+       "misunderstanding"
+      ]
+     },
+     "b03": {
+      "text": "Five candidates before Neo died because Morpheus got them amped up believing in the prophecy.",
+      "when": "before_script",
+      "tags": [
+       "failure",
+       "guilt"
+      ]
+     },
+     "b04": {
+      "text": "After the fifth death he lost his way, doubted everything the Oracle had said, and doubted himself.",
+      "when": "before_script",
+      "tags": [
+       "crisis"
+      ]
+     },
+     "b05": {
+      "text": "Then he saw Neo and his world changed; he calls it an epiphany he cannot explain.",
+      "when": "before_script",
+      "tags": [
+       "renewal"
+      ]
+     }
+    },
+    "wound": {
+     "b01": {
+      "text": "Five people died because he anointed them as the One out of his own need to believe.",
+      "when": "standing",
+      "tags": [
+       "guilt",
+       "fallibility"
+      ]
+     }
+    },
+    "want": {
+     "b01": {
+      "text": "To find, free, and prepare the One who will end the machine war and free humanity.",
+      "when": "standing",
+      "tags": [
+       "mission"
+      ]
+     }
+    },
+    "need": {
+     "b01": {
+      "text": "To be vindicated not by prophecy but by Neo's own choice to believe.",
+      "when": "standing",
+      "tags": [
+       "vindication"
+      ]
+     }
+    },
+    "values": {
+     "b01": {
+      "text": "Belief with the heart and gut, not the mind; faith is not a matter of reasonability.",
+      "when": "standing",
+      "tags": [
+       "philosophy"
+      ]
+     }
+    },
+    "fears": {
+     "b01": {
+      "text": "That he is wrong again and Neo will die like the five before him.",
+      "when": "standing",
+      "tags": [
+       "dread"
+      ]
+     }
+    },
+    "competences": {
+     "b01": {
+      "text": "Master combatant inside the Matrix; faster and stronger than any freed human except Neo.",
+      "when": "standing",
+      "tags": [
+       "combat"
+      ]
+     },
+     "b02": {
+      "text": "Skilled leader and tactician who commands absolute loyalty from his crew.",
+      "when": "standing",
+      "tags": [
+       "leadership"
+      ]
+     }
+    },
+    "limitations": {
+     "b01": {
+      "text": "His absolute faith makes him blind to betrayal from within his own crew.",
+      "when": "act_two",
+      "tags": [
+       "blind_spot"
+      ]
+     },
+     "b02": {
+      "text": "His belief is personal and fallible, not procedural; he has been wrong before.",
+      "when": "standing",
+      "tags": [
+       "fallibility"
+      ]
+     }
+    },
+    "problem_solving_style": {
+     "b01": {
+      "text": "Shows the door and makes the student walk through it; teaches through experience, not lecture.",
+      "when": "standing",
+      "tags": [
+       "pedagogy"
+      ]
+     }
+    },
+    "coping_strategies": {
+     "b01": {
+      "text": "Confesses his failures directly when challenged, hiding nothing from those he is trying to free.",
+      "when": "act_two",
+      "tags": [
+       "honesty"
+      ]
+     }
+    },
+    "health": {
+     "b01": {
+      "text": "Physically powerful until captured and tortured by Agents with mind-intrusive serum.",
+      "when": "act_three",
+      "tags": [
+       "deterioration"
+      ]
+     }
+    },
+    "moral_axis": {
+     "b01": {
+      "text": "Sacrifices himself to protect Neo, telling Trinity that Neo is all that matters.",
+      "when": "act_two",
+      "tags": [
+       "sacrifice"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "mentor_student",
+     "valence": 95,
+     "notes": {
+      "b01": {
+       "text": "Morpheus broke the rule against freeing a mind after a certain age because he believed the search was over.",
+       "when": "act_one",
+       "tags": [
+        "rule_broken"
+       ]
+      },
+      "b02": {
+       "text": "He confesses his fallibility and the five dead directly to Neo, asking only for trust.",
+       "when": "act_two",
+       "tags": [
+        "vulnerability"
+       ]
+      }
+     }
+    },
+    "ch-02": {
+     "kind": "leader_subordinate",
+     "valence": 85,
+     "notes": {
+      "b01": {
+       "text": "Trinity follows his orders in the field and trusts his judgment absolutely.",
+       "when": "standing",
+       "tags": [
+        "chain_of_command"
+       ]
+      }
+     }
+    },
+    "ch-04": {
+     "kind": "captor_prisoner",
+     "valence": -100,
+     "notes": {
+      "b01": {
+       "text": "Smith tortures Morpheus for Zion's access codes while Morpheus fights to hold his mind together.",
+       "when": "act_three",
+       "tags": [
+        "torture"
+       ]
+      }
+     }
+    },
+    "ch-05": {
+     "kind": "leader_betrayed",
+     "valence": -90,
+     "notes": {
+      "b01": {
+       "text": "Cypher delivers Morpheus to Smith, calling him a jagoff and blaming him for lying to the crew.",
+       "when": "act_two",
+       "tags": [
+        "betrayal"
+       ]
+      }
+     }
+    },
+    "ch-13": {
+     "kind": "believer_guide",
+     "valence": 90,
+     "notes": {
+      "b01": {
+       "text": "The Oracle told Morpheus he would find the One, and he has structured his life around that prophecy.",
+       "when": "before_script",
+       "tags": [
+        "prophecy"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "captivity_status": {
+     "kind": "enum",
+     "description": "Morpheus's physical freedom or captivity",
+     "dimension": "spatial",
+     "domain": [
+      "free",
+      "captured",
+      "tortured",
+      "rescued"
+     ],
+     "init": "free"
+    },
+    "mind_integrity": {
+     "kind": "enum",
+     "description": "State of Morpheus's mind under Agent serum torture",
+     "dimension": "psychological",
+     "domain": [
+      "intact",
+      "under_attack",
+      "breaking",
+      "restored"
+     ],
+     "init": "intact"
+    },
+    "faith_in_neo": {
+     "kind": "enum",
+     "description": "Morpheus's belief in Neo as the One",
+     "dimension": "psychological",
+     "domain": [
+      "certain",
+      "vindicated"
+     ],
+     "init": "certain"
+    },
+    "five_dead_guilt": {
+     "kind": "enum",
+     "description": "Morpheus's relationship to the guilt over the five dead candidates",
+     "dimension": "psychological",
+     "domain": [
+      "carrying",
+      "confessed",
+      "resolved"
+     ],
+     "init": "carrying"
+    }
+   },
+   "state": {
+    "captivity_status": "free",
+    "mind_integrity": "intact",
+    "faith_in_neo": "certain",
+    "five_dead_guilt": "carrying"
+   },
+   "arc": {
+    "start_state": "Unshakeable believer carrying guilt over five dead, certain Neo is the sixth and last",
+    "end_state": "Vindicated mentor whose faith was rewarded when Neo becomes the One"
+   }
+  },
+  "ch-04": {
+   "entity_id": "ch-04",
+   "type": "character",
+   "canonical_name": "Agent Smith",
+   "aliases": [
+    "Smith"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-05",
+    "pl-01",
+    "pl-02",
+    "pl-04"
+   ],
+   "profile": {
+    "demographics": {
+     "b01": {
+      "text": "A sentient program inhabiting the body of a man in a dark suit and sunglasses.",
+      "when": "standing",
+      "tags": [
+       "nature"
+      ]
+     }
+    },
+    "appearance": {
+     "b01": {
+      "text": "Dark suit, sunglasses, Secret Service earphone; identical in dress to Agents Brown and Jones.",
+      "when": "standing",
+      "tags": [
+       "costume"
+      ]
+     },
+     "b02": {
+      "text": "Unnatural ice-blue eyes revealed when he removes his sunglasses during Neo's interrogation.",
+      "when": "act_one",
+      "tags": [
+       "detail"
+      ]
+     }
+    },
+    "voice_and_speech": {
+     "b01": {
+      "text": "Speaks with machine-calm precision that occasionally cracks into rage and contempt.",
+      "when": "standing",
+      "tags": [
+       "speech_pattern"
+      ]
+     },
+     "b02": {
+      "text": "Calls Neo Mr. Anderson, denying him his chosen identity until the very end.",
+      "when": "standing",
+      "tags": [
+       "dominance"
+      ]
+     }
+    },
+    "habits_and_tells": {
+     "b01": {
+      "text": "Removes his earphone when he wants to speak privately, as when confessing his hatred of the Matrix.",
+      "when": "act_three",
+      "tags": [
+       "tell"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Agent Smith is a sentient enforcement program tasked with destroying the human resistance.",
+      "when": "standing",
+      "tags": [
+       "function"
+      ]
+     },
+     "b02": {
+      "text": "He has come to hate the Matrix, calling it a zoo, a prison, a reality he can no longer stand.",
+      "when": "act_three",
+      "tags": [
+       "motivation"
+      ]
+     },
+     "b03": {
+      "text": "He believes humans are a virus, a cancer, a plague, and that Agents are the cure.",
+      "when": "act_three",
+      "tags": [
+       "philosophy"
+      ]
+     }
+    },
+    "wound": {
+     "b01": {
+      "text": "He is trapped inside the Matrix he despises, able to smell and taste its corruption but unable to leave.",
+      "when": "standing",
+      "tags": [
+       "imprisonment"
+      ]
+     }
+    },
+    "want": {
+     "b01": {
+      "text": "To destroy Zion, end the resistance, and thereby become free of the Matrix he hates.",
+      "when": "standing",
+      "tags": [
+       "goal"
+      ]
+     }
+    },
+    "need": {
+     "b01": {
+      "text": "To escape the Matrix, but his method is control and destruction rather than transcendence.",
+      "when": "standing",
+      "tags": [
+       "contrast"
+      ]
+     }
+    },
+    "values": {
+     "b01": {
+      "text": "Order, efficiency, and the elimination of the human virus from the planet.",
+      "when": "standing",
+      "tags": [
+       "ideology"
+      ]
+     }
+    },
+    "fears": {
+     "b01": {
+      "text": "Being trapped in the Matrix forever, saturated by its smell and stink.",
+      "when": "standing",
+      "tags": [
+       "dread"
+      ]
+     }
+    },
+    "competences": {
+     "b01": {
+      "text": "Superhuman speed and strength; can punch through concrete walls and dodge bullets.",
+      "when": "standing",
+      "tags": [
+       "combat"
+      ]
+     }
+    },
+    "limitations": {
+     "b01": {
+      "text": "His strength and speed are based on the Matrix's rules, so he can never be as fast as the One.",
+      "when": "standing",
+      "tags": [
+       "ceiling"
+      ]
+     }
+    },
+    "problem_solving_style": {
+     "b01": {
+      "text": "Methodical pursuit; uses interrogation, betrayal, torture, and overwhelming force.",
+      "when": "standing",
+      "tags": [
+       "approach"
+      ]
+     }
+    },
+    "coping_strategies": {
+     "b01": {
+      "text": "Removes his earphone and confesses his hatred to Morpheus, a moment of unauthorized vulnerability.",
+      "when": "act_three",
+      "tags": [
+       "leakage"
+      ]
+     }
+    },
+    "health": {
+     "b01": {
+      "text": "Functionally immortal within the Matrix until destroyed from within by the One.",
+      "when": "standing",
+      "tags": [
+       "nature"
+      ]
+     }
+    },
+    "moral_axis": {
+     "b01": {
+      "text": "From his perspective, humans are the disease and he is the cure; his logic is sympathisable.",
+      "when": "standing",
+      "tags": [
+       "antagonist_logic"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "antagonist",
+     "valence": -100,
+     "notes": {
+      "b01": {
+       "text": "Smith captures and bugs Neo, then hunts him to room 303 where he shoots him dead.",
+       "when": "standing",
+       "tags": [
+        "pursuit"
+       ]
+      },
+      "b02": {
+       "text": "Neo destroys Smith by diving into him from within after awakening as the One.",
+       "when": "climax",
+       "tags": [
+        "destruction"
+       ]
+      }
+     }
+    },
+    "ch-03": {
+     "kind": "captor_prisoner",
+     "valence": -95,
+     "notes": {
+      "b01": {
+       "text": "Smith tortures Morpheus with serum and confesses his desire to escape the Matrix to him.",
+       "when": "act_three",
+       "tags": [
+        "torture",
+        "revelation"
+       ]
+      }
+     }
+    },
+    "ch-05": {
+     "kind": "manipulator_informant",
+     "valence": -30,
+     "notes": {
+      "b01": {
+       "text": "Smith negotiates with Cypher over steak, promising reinsertion as a rich man in exchange for Morpheus.",
+       "when": "act_two",
+       "tags": [
+        "conspiracy"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "pursuit_phase": {
+     "kind": "enum",
+     "description": "Smith's current objective in pursuing the resistance",
+     "dimension": "spatial",
+     "domain": [
+      "hunting_trinity",
+      "interrogating_neo",
+      "hunting_neo",
+      "torturing_morpheus",
+      "fighting_neo",
+      "destroyed"
+     ],
+     "init": "hunting_trinity"
+    },
+    "escape_desire_revealed": {
+     "kind": "bool",
+     "description": "Whether Smith has revealed his private hatred of the Matrix and desire to escape",
+     "dimension": "psychological",
+     "init": false
+    },
+    "status": {
+     "kind": "enum",
+     "description": "Smith's operational status",
+     "dimension": "world",
+     "domain": [
+      "active",
+      "destroyed"
+     ],
+     "init": "active"
+    }
+   },
+   "state": {
+    "pursuit_phase": "hunting_trinity",
+    "escape_desire_revealed": false,
+    "status": "active"
+   },
+   "arc": {
+    "start_state": "Confident Agent hunting the human resistance, hiding his hatred of the Matrix",
+    "end_state": "Destroyed by the One he sought to kill, his rage and desire for escape exposed and futile"
+   }
+  },
+  "ch-05": {
+   "entity_id": "ch-05",
+   "type": "character",
+   "canonical_name": "Cypher",
+   "aliases": [
+    "Mr. Reagan"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-04"
+   ],
+   "profile": {
+    "demographics": {
+     "b01": {
+      "text": "A crew member of the Nebuchadnezzar who has been in the real world for nine years.",
+      "when": "standing",
+      "tags": [
+       "tenure"
+      ]
+     }
+    },
+    "appearance": {
+     "b01": {
+      "text": "No distinctive costume notes beyond standard crew wear.",
+      "when": "standing",
+      "tags": [
+       "appearance"
+      ]
+     }
+    },
+    "voice_and_speech": {
+     "b01": {
+      "text": "Speaks with bitter humor and sardonic one-liners, masking deep resentment.",
+      "when": "standing",
+      "tags": [
+       "speech_pattern"
+      ]
+     }
+    },
+    "habits_and_tells": {
+     "b01": {
+      "text": "Drinks Dozer's homemade alcohol and looks at the Matrix code, seeing only blonde, brunette, redhead.",
+      "when": "act_two",
+      "tags": [
+       "habit"
+      ]
+     },
+     "b02": {
+      "text": "Sweats nervously and glances around when entering the Matrix knowing the trap is set.",
+      "when": "act_two",
+      "tags": [
+       "tell"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Cypher took the red pill nine years ago and has regretted it ever since.",
+      "when": "before_script",
+      "tags": [
+       "regret"
+      ]
+     },
+     "b02": {
+      "text": "He has watched five candidates die believing Morpheus's prophecy and has concluded it is bullshit.",
+      "when": "before_script",
+      "tags": [
+       "disillusionment"
+      ]
+     },
+     "b03": {
+      "text": "He once thought he was in love with Trinity and used to dream about her.",
+      "when": "before_script",
+      "tags": [
+       "unrequited"
+      ]
+     }
+    },
+    "wound": {
+     "b01": {
+      "text": "He chose truth and got nine years of cold, goop, and watching people die for a lie.",
+      "when": "standing",
+      "tags": [
+       "regret",
+       "suffering"
+      ]
+     }
+    },
+    "want": {
+     "b01": {
+      "text": "To be reinserted into the Matrix as a rich, important man with no memory of the real world.",
+      "when": "act_two",
+      "tags": [
+       "goal"
+      ]
+     }
+    },
+    "need": {
+     "b01": {
+      "text": "He needs what he cannot have: the bliss of ignorance, which makes him the anti-Neo.",
+      "when": "standing",
+      "tags": [
+       "thematic_function"
+      ]
+     }
+    },
+    "values": {
+     "b01": {
+      "text": "Comfort and self-preservation over truth and freedom; ignorance is bliss.",
+      "when": "standing",
+      "tags": [
+       "philosophy"
+      ]
+     }
+    },
+    "fears": {
+     "b01": {
+      "text": "Dying in the real world for a cause he no longer believes in.",
+      "when": "standing",
+      "tags": [
+       "fear"
+      ]
+     }
+    },
+    "competences": {
+     "b01": {
+      "text": "Competent operator who can read Matrix code and run the operator station.",
+      "when": "standing",
+      "tags": [
+       "skill"
+      ]
+     }
+    },
+    "limitations": {
+     "b01": {
+      "text": "His resentment makes him careless; he misses Tank with his first shot.",
+      "when": "act_two",
+      "tags": [
+       "error"
+      ]
+     }
+    },
+    "problem_solving_style": {
+     "b01": {
+      "text": "Conspiracy and betrayal; uses a dropped phone to signal the Agents.",
+      "when": "act_two",
+      "tags": [
+       "method"
+      ]
+     }
+    },
+    "coping_strategies": {
+     "b01": {
+      "text": "Savors the steak he knows is not real, choosing sensation over truth.",
+      "when": "act_two",
+      "tags": [
+       "denial"
+      ]
+     }
+    },
+    "health": {
+     "b01": {
+      "text": "Physically healthy but psychologically deteriorated after nine years of war.",
+      "when": "standing",
+      "tags": [
+       "burnout"
+      ]
+     }
+    },
+    "moral_axis": {
+     "b01": {
+      "text": "He frames his betrayal as rational self-interest; he calls himself the messenger, not the enemy.",
+      "when": "act_two",
+      "tags": [
+       "rationalization"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-03": {
+     "kind": "disillusioned_subordinate",
+     "valence": -90,
+     "notes": {
+      "b01": {
+       "text": "Cypher calls Morpheus a jagoff and blames him for tricking the crew into the real world.",
+       "when": "act_two",
+       "tags": [
+        "resentment"
+       ]
+      }
+     }
+    },
+    "ch-02": {
+     "kind": "unrequited",
+     "valence": -30,
+     "notes": {
+      "b01": {
+       "text": "Cypher tells Trinity he thought he was in love with her, nuzzling her comatose body.",
+       "when": "act_two",
+       "tags": [
+        "creepy",
+        "jealousy"
+       ]
+      }
+     }
+    },
+    "ch-04": {
+     "kind": "conspirator",
+     "valence": -50,
+     "notes": {
+      "b01": {
+       "text": "Cypher negotiates with Smith over steak, trading Morpheus for reinsertion as someone important.",
+       "when": "act_two",
+       "tags": [
+        "deal"
+       ]
+      }
+     }
+    },
+    "ch-01": {
+     "kind": "false_friend",
+     "valence": 10,
+     "notes": {
+      "b01": {
+       "text": "Cypher confides in Neo over drinks, revealing the five dead and advising him to run from Agents.",
+       "when": "act_two",
+       "tags": [
+        "disclosure",
+        "manipulation"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "betrayal_phase": {
+     "kind": "enum",
+     "description": "Cypher's progress in executing the betrayal",
+     "dimension": "social",
+     "domain": [
+      "none",
+      "negotiated",
+      "trap_set",
+      "executing",
+      "thwarted"
+     ],
+     "init": "none"
+    },
+    "alive": {
+     "kind": "bool",
+     "description": "Whether Cypher is alive",
+     "dimension": "physiological",
+     "init": true
+    }
+   },
+   "state": {
+    "betrayal_phase": "none",
+    "alive": true
+   },
+   "arc": {
+    "start_state": "Disillusioned crew member regretting the red pill, hiding his resentment behind humor",
+    "end_state": "Dead traitor who chose ignorance over truth, killed by the man he failed to kill"
+   }
+  },
+  "ch-06": {
+   "entity_id": "ch-06",
+   "type": "character",
+   "canonical_name": "Tank",
+   "aliases": [],
+   "salience": "supporting",
+   "plots": [
+    "pl-04",
+    "pl-05",
+    "pl-01"
+   ],
+   "profile": {
+    "demographics": {
+     "b01": {
+      "text": "Born free in the real world with no neural jacks; one hundred percent home-grown human.",
+      "when": "standing",
+      "tags": [
+       "origin"
+      ]
+     }
+    },
+    "appearance": {
+     "b01": {
+      "text": "No jacks or plugs anywhere on his body, unlike the rest of the crew.",
+      "when": "standing",
+      "tags": [
+       "physical"
+      ]
+     }
+    },
+    "voice_and_speech": {
+     "b01": {
+      "text": "Warm and enthusiastic, cracking jokes as he loads programs; calls Neo buddy.",
+      "when": "standing",
+      "tags": [
+       "speech_pattern"
+      ]
+     }
+    },
+    "habits_and_tells": {
+     "b01": {
+      "text": "Announces Matrix entries like a flight attendant, telling crew to sit back and enjoy the flight.",
+      "when": "standing",
+      "tags": [
+       "habit"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Tank and his brother Dozer were born free in Zion, the last human city deep underground.",
+      "when": "before_script",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "He serves as the Nebuchadnezzar's operator, monitoring Matrix code and managing entries and exits.",
+      "when": "standing",
+      "tags": [
+       "role"
+      ]
+     }
+    },
+    "wound": {
+     "b01": {
+      "text": "He is a genuine child of Zion who has never known the Matrix and fights for a world he believes in.",
+      "when": "standing",
+      "tags": [
+       "conviction"
+      ]
+     }
+    },
+    "want": {
+     "b01": {
+      "text": "To support the mission and protect his crew; to see Morpheus's faith vindicated.",
+      "when": "standing",
+      "tags": [
+       "goal"
+      ]
+     }
+    },
+    "need": {
+     "b01": {
+      "text": "To survive Cypher's attack and save Neo and the mission from destruction.",
+      "when": "act_two",
+      "tags": [
+       "crisis"
+      ]
+     }
+    },
+    "values": {
+     "b01": {
+      "text": "Zion is more important than any individual, including himself, Morpheus, or Neo.",
+      "when": "standing",
+      "tags": [
+       "principle"
+      ]
+     }
+    },
+    "fears": {
+     "b01": {
+      "text": "Losing his brother Dozer and the crew to betrayal.",
+      "when": "standing",
+      "tags": [
+       "fear"
+      ]
+     }
+    },
+    "competences": {
+     "b01": {
+      "text": "Expert operator who can read raw Matrix code and manage all entries, exits, and program uploads.",
+      "when": "standing",
+      "tags": [
+       "skill"
+      ]
+     }
+    },
+    "limitations": {
+     "b01": {
+      "text": "He is physically vulnerable in the real world; Cypher's lightning rifle nearly kills him.",
+      "when": "act_two",
+      "tags": [
+       "vulnerability"
+      ]
+     }
+    },
+    "problem_solving_style": {
+     "b01": {
+      "text": "Works frantically at the operator station, searching for exits and tracing positions in real time.",
+      "when": "standing",
+      "tags": [
+       "approach"
+      ]
+     }
+    },
+    "coping_strategies": {
+     "b01": {
+      "text": "Channels grief into action, returning to the operator station despite charred wounds.",
+      "when": "act_three",
+      "tags": [
+       "resilience"
+      ]
+     }
+    },
+    "health": {
+     "b01": {
+      "text": "Fully healthy until Cypher shoots him twice with a lightning rifle.",
+      "when": "act_two",
+      "tags": [
+       "injury"
+      ]
+     }
+    },
+    "moral_axis": {
+     "b01": {
+      "text": "Tells Morpheus he was more than a leader, he was a father, before preparing to pull the plug.",
+      "when": "act_three",
+      "tags": [
+       "loyalty"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-07": {
+     "kind": "brothers",
+     "valence": 100,
+     "notes": {
+      "b01": {
+       "text": "Tank and Dozer are brothers, both born free in Zion, both serving on the Nebuchadnezzar.",
+       "when": "standing",
+       "tags": [
+        "family"
+       ]
+      }
+     }
+    },
+    "ch-01": {
+     "kind": "operator_to_operative",
+     "valence": 70,
+     "notes": {
+      "b01": {
+       "text": "Tank is Neo's operator, uploading his combat training and guiding him through the Matrix.",
+       "when": "act_two",
+       "tags": [
+        "partnership"
+       ]
+      }
+     }
+    },
+    "ch-05": {
+     "kind": "victim_to_attacker",
+     "valence": -100,
+     "notes": {
+      "b01": {
+       "text": "Cypher shoots Tank twice but Tank survives and kills Cypher before he can unplug Neo.",
+       "when": "act_two",
+       "tags": [
+        "survival",
+        "revenge"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "wounded": {
+     "kind": "bool",
+     "description": "Whether Tank has been wounded by Cypher's lightning rifle",
+     "dimension": "physiological",
+     "init": false
+    },
+    "operational": {
+     "kind": "bool",
+     "description": "Whether Tank is able to function as operator",
+     "dimension": "technological",
+     "init": true
+    }
+   },
+   "state": {
+    "wounded": false,
+    "operational": true
+   },
+   "arc": {
+    "start_state": "Dedicated operator and genuine child of Zion, enthusiastic about Neo's potential",
+    "end_state": "Wounded hero who survived Cypher's attack, killed the traitor, and guided Neo to victory"
+   }
+  },
+  "ch-07": {
+   "entity_id": "ch-07",
+   "type": "character",
+   "canonical_name": "Dozer",
+   "aliases": [],
+   "salience": "minor",
+   "plots": [
+    "pl-04"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Dozer is Tank's brother, born free in Zion like Tank, with no neural jacks.",
+      "when": "before_script",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "He serves as the Nebuchadnezzar's pilot and medic, brewing homemade alcohol.",
+      "when": "standing",
+      "tags": [
+       "role"
+      ]
+     }
+    },
+    "habits_and_tells": {
+     "b01": {
+      "text": "Brews alcohol that is good for degreasing engines and killing brain cells.",
+      "when": "standing",
+      "tags": [
+       "habit"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "alive": {
+     "kind": "bool",
+     "description": "Whether Dozer is alive",
+     "dimension": "physiological",
+     "init": true
+    }
+   },
+   "state": {
+    "alive": true
+   },
+   "arc": {
+    "start_state": "Pilot and medic of the Nebuchadnezzar, born free in Zion",
+    "end_state": "Dead, killed by Cypher's lightning rifle while trying to stop the betrayal"
+   }
+  },
+  "ch-08": {
+   "entity_id": "ch-08",
+   "type": "character",
+   "canonical_name": "Mouse",
+   "aliases": [],
+   "salience": "minor",
+   "plots": [
+    "pl-04"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Mouse is the youngest crew member, a programmer who wrote the woman in the red dress simulation.",
+      "when": "standing",
+      "tags": [
+       "role"
+      ]
+     },
+     "b02": {
+      "text": "He offers to arrange a personalized encounter with the woman in the red dress for Neo.",
+      "when": "act_two",
+      "tags": [
+       "humor"
+      ]
+     }
+    },
+    "habits_and_tells": {
+     "b01": {
+      "text": "Philosophizes about whether machines know what Cream of Wheat tastes like.",
+      "when": "act_two",
+      "tags": [
+       "personality"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "alive": {
+     "kind": "bool",
+     "description": "Whether Mouse is alive",
+     "dimension": "physiological",
+     "init": true
+    }
+   },
+   "state": {
+    "alive": true
+   },
+   "arc": {
+    "start_state": "Young programmer and digital pimp, curious and enthusiastic",
+    "end_state": "Dead, gunned down against bricked-up windows in Room 1313 of the Hotel Lafayette"
+   }
+  },
+  "ch-09": {
+   "entity_id": "ch-09",
+   "type": "character",
+   "canonical_name": "Apoc",
+   "aliases": [],
+   "salience": "minor",
+   "plots": [
+    "pl-04"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Apoc is a crew member who drives the car that picks up Neo and participates in Matrix operations.",
+      "when": "standing",
+      "tags": [
+       "role"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "alive": {
+     "kind": "bool",
+     "description": "Whether Apoc is alive",
+     "dimension": "physiological",
+     "init": true
+    }
+   },
+   "state": {
+    "alive": true
+   },
+   "arc": {
+    "start_state": "Crew member and driver for Matrix operations",
+    "end_state": "Dead, unplugged from his chair by Cypher while trapped in the Matrix"
+   }
+  },
+  "ch-10": {
+   "entity_id": "ch-10",
+   "type": "character",
+   "canonical_name": "Switch",
+   "aliases": [],
+   "salience": "minor",
+   "plots": [
+    "pl-04"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Switch is a crew member described as a beautiful androgyne who aims a gun at Neo during bug extraction.",
+      "when": "standing",
+      "tags": [
+       "role"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "alive": {
+     "kind": "bool",
+     "description": "Whether Switch is alive",
+     "dimension": "physiological",
+     "init": true
+    }
+   },
+   "state": {
+    "alive": true
+   },
+   "arc": {
+    "start_state": "Crew member and enforcer during Matrix operations",
+    "end_state": "Dead, unplugged by Cypher; her last words were not like this"
+   }
+  },
+  "ch-11": {
+   "entity_id": "ch-11",
+   "type": "character",
+   "canonical_name": "Agent Brown",
+   "aliases": [],
+   "salience": "minor",
+   "plots": [
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Agent Brown is a sentient program identical in appearance and function to Smith and Jones.",
+      "when": "standing",
+      "tags": [
+       "nature"
+      ]
+     },
+     "b02": {
+      "text": "He pursues Trinity across rooftops with the same unnatural grace she possesses.",
+      "when": "act_one",
+      "tags": [
+       "pursuit"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "status": {
+     "kind": "enum",
+     "description": "Agent Brown's operational status",
+     "dimension": "world",
+     "domain": [
+      "active",
+      "destroyed",
+      "fled"
+     ],
+     "init": "active"
+    }
+   },
+   "state": {
+    "status": "active"
+   },
+   "arc": {
+    "start_state": "Active Agent pursuing the resistance alongside Smith and Jones",
+    "end_state": "Fled in fear after Neo destroys Smith and awakens as the One"
+   }
+  },
+  "ch-12": {
+   "entity_id": "ch-12",
+   "type": "character",
+   "canonical_name": "Agent Jones",
+   "aliases": [],
+   "salience": "minor",
+   "plots": [
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Agent Jones is a sentient program identical in appearance and function to Smith and Brown.",
+      "when": "standing",
+      "tags": [
+       "nature"
+      ]
+     },
+     "b02": {
+      "text": "He inhabits the helicopter pilot on the government building roof and shoots Neo.",
+      "when": "act_three",
+      "tags": [
+       "combat"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "status": {
+     "kind": "enum",
+     "description": "Agent Jones's operational status",
+     "dimension": "world",
+     "domain": [
+      "active",
+      "destroyed",
+      "fled"
+     ],
+     "init": "active"
+    }
+   },
+   "state": {
+    "status": "active"
+   },
+   "arc": {
+    "start_state": "Active Agent pursuing the resistance alongside Smith and Brown",
+    "end_state": "Fled in fear after Neo destroys Smith and awakens as the One"
+   }
+  },
+  "ch-13": {
+   "entity_id": "ch-13",
+   "type": "character",
+   "canonical_name": "The Oracle",
+   "aliases": [],
+   "salience": "supporting",
+   "plots": [
+    "pl-01",
+    "pl-02",
+    "pl-03"
+   ],
+   "profile": {
+    "demographics": {
+     "b01": {
+      "text": "An older woman who looks like someone's grandma, wearing oven mitts and comfortable slacks.",
+      "when": "standing",
+      "tags": [
+       "appearance"
+      ]
+     }
+    },
+    "voice_and_speech": {
+     "b01": {
+      "text": "Warm, grandmotherly, and blunt; smokes cigarettes and bakes cookies while dispensing fate.",
+      "when": "standing",
+      "tags": [
+       "speech_pattern"
+      ]
+     }
+    },
+    "habits_and_tells": {
+     "b01": {
+      "text": "Bakes chocolate chip cookies and offers them as comfort after delivering hard news.",
+      "when": "act_two",
+      "tags": [
+       "habit"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "The Oracle has been with the resistance since the beginning and is considered a guide, not a fortune teller.",
+      "when": "before_script",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "She prophesied the return of the One, a man who could reshape the Matrix at will.",
+      "when": "before_script",
+      "tags": [
+       "prophecy"
+      ]
+     },
+     "b03": {
+      "text": "She told Morpheus he would find the One, and told Trinity she would fall in love with the One.",
+      "when": "before_script",
+      "tags": [
+       "personal_prophecies"
+      ]
+     }
+    },
+    "wound": {
+     "b01": {
+      "text": "She tells each person what they need to hear, not what is objectively true, which is a burden of manipulation.",
+      "when": "standing",
+      "tags": [
+       "method",
+       "burden"
+      ]
+     }
+    },
+    "want": {
+     "b01": {
+      "text": "To guide individuals toward the choices that will fulfill the prophecies she has set in motion.",
+      "when": "standing",
+      "tags": [
+       "purpose"
+      ]
+     }
+    },
+    "need": {
+     "b01": {
+      "text": "She needs the prophecies to be self-fulfilling through the choices they provoke, not through declaration.",
+      "when": "standing",
+      "tags": [
+       "mechanism"
+      ]
+     }
+    },
+    "values": {
+     "b01": {
+      "text": "Self-knowledge over certainty; she displays a plaque reading Know Thyself in her kitchen.",
+      "when": "standing",
+      "tags": [
+       "philosophy"
+      ]
+     }
+    },
+    "fears": {
+     "b01": {
+      "text": "That the prophecies will fail if the individuals do not choose to act on what they are told.",
+      "when": "standing",
+      "tags": [
+       "uncertainty"
+      ]
+     }
+    },
+    "competences": {
+     "b01": {
+      "text": "She knows what people will do before they do it and what they need to hear to get there.",
+      "when": "standing",
+      "tags": [
+       "foresight"
+      ]
+     }
+    },
+    "limitations": {
+     "b01": {
+      "text": "Her prophecies are self-fulfilling, not declarative; they require the subject to choose to act.",
+      "when": "standing",
+      "tags": [
+       "mechanism_limit"
+      ]
+     }
+    },
+    "problem_solving_style": {
+     "b01": {
+      "text": "Uses everyday warmth and apparent casualness to deliver devastating prophecies without ceremony.",
+      "when": "standing",
+      "tags": [
+       "approach"
+      ]
+     }
+    },
+    "coping_strategies": {
+     "b01": {
+      "text": "Apologizes sincerely when giving good people bad news, offering cookies as comfort.",
+      "when": "act_two",
+      "tags": [
+       "empathy"
+      ]
+     }
+    },
+    "health": {
+     "b01": {
+      "text": "Healthy and ageless within the Matrix; her nature as a program is left unexplained.",
+      "when": "standing",
+      "tags": [
+       "nature"
+      ]
+     }
+    },
+    "moral_axis": {
+     "b01": {
+      "text": "She manipulates through truth shaped to need, not through lies; her honesty is selective but genuine.",
+      "when": "standing",
+      "tags": [
+       "ethics"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "guide_to_seeker",
+     "valence": 60,
+     "notes": {
+      "b01": {
+       "text": "She tells Neo he is not the One but that Morpheus will sacrifice his life for him.",
+       "when": "act_two",
+       "tags": [
+        "prophecy"
+       ]
+      }
+     }
+    },
+    "ch-03": {
+     "kind": "guide_to_believer",
+     "valence": 80,
+     "notes": {
+      "b01": {
+       "text": "She told Morpheus he would find the One, anchoring his life's mission.",
+       "when": "before_script",
+       "tags": [
+        "prophecy"
+       ]
+      }
+     }
+    },
+    "ch-02": {
+     "kind": "guide_to_believer",
+     "valence": 80,
+     "notes": {
+      "b01": {
+       "text": "She told Trinity she would fall in love with the One, a prophecy Trinity has never spoken.",
+       "when": "before_script",
+       "tags": [
+        "prophecy",
+        "secret"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "consulted_by_neo": {
+     "kind": "bool",
+     "description": "Whether Neo has visited the Oracle and received her prophecies",
+     "dimension": "epistemic",
+     "init": false
+    }
+   },
+   "state": {
+    "consulted_by_neo": false
+   },
+   "arc": {
+    "start_state": "Guide who has set prophecies in motion for Morpheus, Trinity, and the One",
+    "end_state": "Guide whose prophecies are fulfilled through Neo's choice and Trinity's love"
+   }
+  },
+  "ch-14": {
+   "entity_id": "ch-14",
+   "type": "character",
+   "canonical_name": "Spoon Boy",
+   "aliases": [],
+   "salience": "minor",
+   "plots": [
+    "pl-01"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "A skinny boy with a shaved head among the other Potentials at the Oracle's apartment.",
+      "when": "standing",
+      "tags": [
+       "identity"
+      ]
+     },
+     "b02": {
+      "text": "He teaches Neo that there is no spoon and that it is not the spoon that bends but only yourself.",
+      "when": "act_two",
+      "tags": [
+       "wisdom",
+       "theme"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "present": {
+     "kind": "bool",
+     "description": "Whether Spoon Boy is present at the Oracle's apartment",
+     "dimension": "spatial",
+     "init": true
+    }
+   },
+   "state": {
+    "present": true
+   },
+   "arc": {
+    "start_state": "Zen child bending spoons at the Oracle's apartment",
+    "end_state": "Same; his teaching echoes in Neo's mind during the climax when he says there is no spoon"
+   }
+  },
+  "ch-15": {
+   "entity_id": "ch-15",
+   "type": "character",
+   "canonical_name": "Choi",
+   "aliases": [],
+   "salience": "minor",
+   "plots": [],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "A young man who buys illegal software from Neo and calls him his personal Jesus Christ.",
+      "when": "standing",
+      "tags": [
+       "identity",
+       "foreshadow"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "present": {
+     "kind": "bool",
+     "description": "Whether Choi is present in the story",
+     "dimension": "spatial",
+     "init": true
+    }
+   },
+   "state": {
+    "present": true
+   },
+   "arc": {
+    "start_state": "Software buyer who unwittingly calls Neo a savior",
+    "end_state": "Same; his joke foreshadows Neo's messianic arc"
+   }
+  },
+  "ch-16": {
+   "entity_id": "ch-16",
+   "type": "character",
+   "canonical_name": "Rhineheart",
+   "aliases": [],
+   "salience": "minor",
+   "plots": [],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "The ultimate company man at Meta CorTechs who lectures Neo about authority and rules.",
+      "when": "standing",
+      "tags": [
+       "role"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "present": {
+     "kind": "bool",
+     "description": "Whether Rhineheart is present in the story",
+     "dimension": "spatial",
+     "init": true
+    }
+   },
+   "state": {
+    "present": true
+   },
+   "arc": {
+    "start_state": "Corporate authority figure embodying the system Neo resents",
+    "end_state": "Same; a symbol of the Matrix's control"
+   }
+  },
+  "lo-01": {
+   "entity_id": "lo-01",
+   "type": "location",
+   "canonical_name": "Heart O' The City Hotel",
+   "aliases": [
+    "Room 303"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-03",
+    "pl-05"
+   ],
+   "profile": {
+    "geography": {
+     "b01": {
+      "text": "An abandoned hotel in the Matrix where fires left permanent patterns of shadow on walls and ceiling.",
+      "when": "standing",
+      "tags": [
+       "setting"
+      ]
+     }
+    },
+    "atmosphere": {
+     "b01": {
+      "text": "Burned, blackened hallways lit only by flashlights and the glow of a computer screen.",
+      "when": "standing",
+      "tags": [
+       "mood"
+      ]
+     }
+    },
+    "control": {
+     "b01": {
+      "text": "No one controls it; it is a forgotten space used by the resistance as an entry and exit point.",
+      "when": "standing",
+      "tags": [
+       "jurisdiction"
+      ]
+     }
+    },
+    "access": {
+     "b01": {
+      "text": "Room 303 contains a hardwired phone line used as an exit from the Matrix.",
+      "when": "standing",
+      "tags": [
+       "function"
+      ]
+     }
+    },
+    "significance": {
+     "b01": {
+      "text": "Trinity escapes through Room 303 in the opening; Neo is shot dead and resurrected there in the climax.",
+      "when": "standing",
+      "tags": [
+       "narrative_role"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "The hotel was abandoned after a fire destroyed several rooms and left soot patterns on the walls.",
+      "when": "standing",
+      "tags": [
+       "history"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "narrative_role": {
+     "kind": "enum",
+     "description": "The hotel's function in the plot at the current moment",
+     "dimension": "world",
+     "domain": [
+      "escape_point",
+      "resurrection_site"
+     ],
+     "init": "escape_point"
+    }
+   },
+   "state": {
+    "narrative_role": "escape_point"
+   },
+   "arc": {
+    "start_state": "Abandoned hotel serving as Trinity's escape point",
+    "end_state": "Site of Neo's death and resurrection as the One"
+   }
+  },
+  "lo-02": {
+   "entity_id": "lo-02",
+   "type": "location",
+   "canonical_name": "Meta CorTechs Office",
+   "aliases": [],
+   "salience": "minor",
+   "plots": [
+    "pl-01"
+   ],
+   "profile": {
+    "geography": {
+     "b01": {
+      "text": "A downtown skyscraper housing a top software company with honeycombed cubicles and window offices.",
+      "when": "standing",
+      "tags": [
+       "setting"
+      ]
+     }
+    },
+    "atmosphere": {
+     "b01": {
+      "text": "Sterile corporate authority embodied by Rhineheart's lectures and window cleaners on scaffolds.",
+      "when": "standing",
+      "tags": [
+       "mood"
+      ]
+     }
+    },
+    "control": {
+     "b01": {
+      "text": "Controlled by the system; Agents can arrive with police and point out targets to employees.",
+      "when": "standing",
+      "tags": [
+       "jurisdiction"
+      ]
+     }
+    },
+    "access": {
+     "b01": {
+      "text": "Neo works here; Morpheus guides him through a desperate escape attempt via scaffold.",
+      "when": "act_one",
+      "tags": [
+       "function"
+      ]
+     }
+    },
+    "significance": {
+     "b01": {
+      "text": "Where Neo's double life collides with the system's pursuit; he refuses the scaffold and is captured.",
+      "when": "act_one",
+      "tags": [
+       "narrative_role"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Thomas Anderson's daytime workplace as a program writer.",
+      "when": "standing",
+      "tags": [
+       "history"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "agents_present": {
+     "kind": "bool",
+     "description": "Whether Agents are present at the office searching for Neo",
+     "dimension": "spatial",
+     "init": false
+    }
+   },
+   "state": {
+    "agents_present": false
+   },
+   "arc": {
+    "start_state": "Neo's mundane corporate workplace",
+    "end_state": "Site where Agents corner Neo and he is captured"
+   }
+  },
+  "lo-03": {
+   "entity_id": "lo-03",
+   "type": "location",
+   "canonical_name": "Neo's Apartment",
+   "aliases": [],
+   "salience": "minor",
+   "plots": [
+    "pl-01"
+   ],
+   "profile": {
+    "geography": {
+     "b01": {
+      "text": "A studio apartment overgrown with technology, cables coiling like weeds around cannibalized equipment.",
+      "when": "standing",
+      "tags": [
+       "setting"
+      ]
+     }
+    },
+    "atmosphere": {
+     "b01": {
+      "text": "A technological rat-nest where Neo sleeps at his PC, searching for answers in the dark.",
+      "when": "standing",
+      "tags": [
+       "mood"
+      ]
+     }
+    },
+    "control": {
+     "b01": {
+      "text": "Neo's private space but not secure from the system; his computer is hijacked to send messages.",
+      "when": "standing",
+      "tags": [
+       "jurisdiction"
+      ]
+     }
+    },
+    "access": {
+     "b01": {
+      "text": "Choi arrives with friends; Trinity contacts Neo through his computer screen.",
+      "when": "act_one",
+      "tags": [
+       "function"
+      ]
+     }
+    },
+    "significance": {
+     "b01": {
+      "text": "Where Neo receives the messages Wake up Neo, The Matrix has you, and Follow the white rabbit.",
+      "when": "act_one",
+      "tags": [
+       "narrative_role"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Neo's home, where he keeps Baudrillard's Simulacra and Simulations hollowed out with disks inside.",
+      "when": "standing",
+      "tags": [
+       "history"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "contacted": {
+     "kind": "bool",
+     "description": "Whether Neo's computer has been hijacked to send him messages",
+     "dimension": "technological",
+     "init": false
+    }
+   },
+   "state": {
+    "contacted": false
+   },
+   "arc": {
+    "start_state": "Neo's isolated hacker den",
+    "end_state": "Where the quest begins through mysterious computer messages"
+   }
+  },
+  "lo-04": {
+   "entity_id": "lo-04",
+   "type": "location",
+   "canonical_name": "Hotel Lafayette",
+   "aliases": [
+    "Room 1313"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-02",
+    "pl-04"
+   ],
+   "profile": {
+    "geography": {
+     "b01": {
+      "text": "A decaying hotel with putrefying elegance, rotting halls, and tall windows veiled with decaying lace.",
+      "when": "standing",
+      "tags": [
+       "setting"
+      ]
+     }
+    },
+    "atmosphere": {
+     "b01": {
+      "text": "Gothic grandeur in decay; thunder shakes the old building as Morpheus offers the red pill.",
+      "when": "act_one",
+      "tags": [
+       "mood"
+      ]
+     }
+    },
+    "control": {
+     "b01": {
+      "text": "Initially a resistance safe house; later compromised by Cypher's betrayal into an Agent trap.",
+      "when": "act_two",
+      "tags": [
+       "jurisdiction"
+      ]
+     }
+    },
+    "access": {
+     "b01": {
+      "text": "Entered through a back alley; contains a hardwired phone line used for Matrix entry and exit.",
+      "when": "standing",
+      "tags": [
+       "function"
+      ]
+     }
+    },
+    "significance": {
+     "b01": {
+      "text": "Where Neo takes the red pill and enters the mirror; later where Cypher's trap kills Mouse and captures Morpheus.",
+      "when": "standing",
+      "tags": [
+       "narrative_role"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "A forgotten hotel used by the resistance for Matrix entries because of its hardwired phone line.",
+      "when": "standing",
+      "tags": [
+       "history"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "status": {
+     "kind": "enum",
+     "description": "The hotel's current status in the plot",
+     "dimension": "world",
+     "domain": [
+      "safe_house",
+      "compromised",
+      "trap"
+     ],
+     "init": "safe_house"
+    },
+    "hardline_intact": {
+     "kind": "bool",
+     "description": "Whether the hotel's hardwired phone line is functional as an exit",
+     "dimension": "technological",
+     "init": true
+    }
+   },
+   "state": {
+    "status": "safe_house",
+    "hardline_intact": true
+   },
+   "arc": {
+    "start_state": "Resistance safe house where Neo takes the red pill",
+    "end_state": "Agent trap where Mouse dies and Morpheus is captured"
+   }
+  },
+  "lo-05": {
+   "entity_id": "lo-05",
+   "type": "location",
+   "canonical_name": "The Construct",
+   "aliases": [],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-02"
+   ],
+   "profile": {
+    "geography": {
+     "b01": {
+      "text": "A blank-white loading program where anything can be loaded: clothes, weapons, training simulations.",
+      "when": "standing",
+      "tags": [
+       "setting"
+      ]
+     }
+    },
+    "atmosphere": {
+     "b01": {
+      "text": "Featureless white void that can become any environment the operator loads.",
+      "when": "standing",
+      "tags": [
+       "mood"
+      ]
+     }
+    },
+    "control": {
+     "b01": {
+      "text": "Controlled by the operator from the Nebuchadnezzar's main deck.",
+      "when": "standing",
+      "tags": [
+       "jurisdiction"
+      ]
+     }
+    },
+    "access": {
+     "b01": {
+      "text": "Accessed by plugging into a chair on the Nebuchadnezzar with a coaxial cable.",
+      "when": "standing",
+      "tags": [
+       "function"
+      ]
+     }
+    },
+    "significance": {
+     "b01": {
+      "text": "Where Morpheus shows Neo the desert of the real, the fetus fields, and the coppertop battery.",
+      "when": "act_one",
+      "tags": [
+       "narrative_role"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "The Construct is the resistance's loading program, separate from but connected to the Matrix.",
+      "when": "standing",
+      "tags": [
+       "history"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "loaded_environment": {
+     "kind": "enum",
+     "description": "What environment is currently loaded in the Construct",
+     "dimension": "technological",
+     "domain": [
+      "empty",
+      "construct_chairs",
+      "desert_of_the_real",
+      "dojo",
+      "rooftop",
+      "city_street_training",
+      "weapons_rack"
+     ],
+     "init": "empty"
+    }
+   },
+   "state": {
+    "loaded_environment": "empty"
+   },
+   "arc": {
+    "start_state": "Blank loading program",
+    "end_state": "Weapons rack arming Neo and Trinity for the government building assault"
+   }
+  },
+  "lo-06": {
+   "entity_id": "lo-06",
+   "type": "location",
+   "canonical_name": "Hovercraft Nebuchadnezzar",
+   "aliases": [
+    "Nebuchadnezzar"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-02",
+    "pl-04",
+    "pl-05"
+   ],
+   "profile": {
+    "geography": {
+     "b01": {
+      "text": "A cramped, cold hovercraft small like a submarine, traveling through sewer mains in the real world.",
+      "when": "standing",
+      "tags": [
+       "setting"
+      ]
+     }
+    },
+    "atmosphere": {
+     "b01": {
+      "text": "Dark, metallic, and claustrophobic with fluorescent light sticks and vines of coaxial cable.",
+      "when": "standing",
+      "tags": [
+       "mood"
+      ]
+     }
+    },
+    "control": {
+     "b01": {
+      "text": "Commanded by Morpheus; piloted by Dozer; operated by Tank from the main deck core.",
+      "when": "standing",
+      "tags": [
+       "jurisdiction"
+      ]
+     }
+    },
+    "access": {
+     "b01": {
+      "text": "Crew enter and exit the Matrix through six ecto-skeleton chairs connected to the core.",
+      "when": "standing",
+      "tags": [
+       "function"
+      ]
+     }
+    },
+    "significance": {
+     "b01": {
+      "text": "Home and base of operations for the resistance crew; where Cypher murders crew members and Sentinels attack.",
+      "when": "standing",
+      "tags": [
+       "narrative_role"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Morpheus's hovercraft, used to broadcast a pirate signal and hack into the Matrix.",
+      "when": "standing",
+      "tags": [
+       "history"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "hull_integrity": {
+     "kind": "enum",
+     "description": "State of the ship's hull against Sentinel attack",
+     "dimension": "material",
+     "domain": [
+      "intact",
+      "breached",
+      "critical"
+     ],
+     "init": "intact"
+    },
+    "sentinel_proximity": {
+     "kind": "enum",
+     "description": "How close Sentinels are to the ship",
+     "dimension": "spatial",
+     "domain": [
+      "clear",
+      "sweeping",
+      "attacking",
+      "destroyed"
+     ],
+     "init": "clear"
+    }
+   },
+   "state": {
+    "hull_integrity": "intact",
+    "sentinel_proximity": "clear"
+   },
+   "arc": {
+    "start_state": "Intact hovercraft serving as resistance base",
+    "end_state": "Breached ship saved at the last moment by EMP detonation destroying Sentinels"
+   }
+  },
+  "lo-07": {
+   "entity_id": "lo-07",
+   "type": "location",
+   "canonical_name": "Power Plant",
+   "aliases": [],
+   "salience": "supporting",
+   "plots": [
+    "pl-01"
+   ],
+   "profile": {
+    "geography": {
+     "b01": {
+      "text": "Endless towers of human pods filled with magenta gelatin, spiraling up to incomprehensible heights.",
+      "when": "standing",
+      "tags": [
+       "setting"
+      ]
+     }
+    },
+    "atmosphere": {
+     "b01": {
+      "text": "The sound of the ocean heard from inside the belly of Leviathan; a dim underwater abyss.",
+      "when": "standing",
+      "tags": [
+       "mood"
+      ]
+     }
+    },
+    "control": {
+     "b01": {
+      "text": "Fully controlled by machines; insect-like drones maintain the pods and unplug freed humans.",
+      "when": "standing",
+      "tags": [
+       "jurisdiction"
+      ]
+     }
+    },
+    "access": {
+     "b01": {
+      "text": "Neo is flushed from his pod into the waste system where the Nebuchadnezzar retrieves him.",
+      "when": "act_one",
+      "tags": [
+       "function"
+      ]
+     }
+    },
+    "significance": {
+     "b01": {
+      "text": "Where Neo physically wakes from the Matrix and sees the truth of human enslavement for the first time.",
+      "when": "act_one",
+      "tags": [
+       "narrative_role"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "The machine power plant where humans are grown as crops, their bioelectricity harvested as fuel.",
+      "when": "standing",
+      "tags": [
+       "history"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "neo_freed": {
+     "kind": "bool",
+     "description": "Whether Neo has been unplugged from the power plant",
+     "dimension": "world",
+     "init": false
+    }
+   },
+   "state": {
+    "neo_freed": false
+   },
+   "arc": {
+    "start_state": "Machine facility where Neo is enslaved as a battery",
+    "end_state": "Place Neo is freed from, flushing into the waste system for retrieval"
+   }
+  },
+  "lo-08": {
+   "entity_id": "lo-08",
+   "type": "location",
+   "canonical_name": "Oracle's Apartment",
+   "aliases": [],
+   "salience": "supporting",
+   "plots": [
+    "pl-01",
+    "pl-02",
+    "pl-03"
+   ],
+   "profile": {
+    "geography": {
+     "b01": {
+      "text": "A tenement-like building with an elevator, long dark halls, and a blind man at the entrance.",
+      "when": "standing",
+      "tags": [
+       "setting"
+      ]
+     }
+    },
+    "atmosphere": {
+     "b01": {
+      "text": "Surprisingly normal inside; children levitate blocks and bend spoons in a family room.",
+      "when": "standing",
+      "tags": [
+       "mood"
+      ]
+     }
+    },
+    "control": {
+     "b01": {
+      "text": "The Oracle's domain within the Matrix, safe from Agents for as long as it serves the system.",
+      "when": "standing",
+      "tags": [
+       "jurisdiction"
+      ]
+     }
+    },
+    "access": {
+     "b01": {
+      "text": "A door that opens itself; Morpheus brings Neo when he believes he is ready.",
+      "when": "act_two",
+      "tags": [
+       "function"
+      ]
+     }
+    },
+    "significance": {
+     "b01": {
+      "text": "Where Neo learns he is not the One and that Morpheus will sacrifice himself, setting up the third act choice.",
+      "when": "act_two",
+      "tags": [
+       "narrative_role"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "The Oracle's residence within the Matrix, where she receives visitors and bakes cookies.",
+      "when": "standing",
+      "tags": [
+       "history"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "neo_visited": {
+     "kind": "bool",
+     "description": "Whether Neo has visited the Oracle's apartment",
+     "dimension": "spatial",
+     "init": false
+    }
+   },
+   "state": {
+    "neo_visited": false
+   },
+   "arc": {
+    "start_state": "Oracle's haven where prophecies are dispensed",
+    "end_state": "Where Neo receives the prophecy that shapes his climactic choice"
+   }
+  },
+  "lo-09": {
+   "entity_id": "lo-09",
+   "type": "location",
+   "canonical_name": "Government Building",
+   "aliases": [],
+   "salience": "major",
+   "plots": [
+    "pl-02",
+    "pl-05",
+    "pl-01"
+   ],
+   "profile": {
+    "geography": {
+     "b01": {
+      "text": "A government highrise in downtown Matrix with a roof landing pad for military helicopters.",
+      "when": "standing",
+      "tags": [
+       "setting"
+      ]
+     }
+    },
+    "atmosphere": {
+     "b01": {
+      "text": "Sterile executive offices with floor-to-ceiling windows overlooking the simulated city.",
+      "when": "standing",
+      "tags": [
+       "mood"
+      ]
+     }
+    },
+    "control": {
+     "b01": {
+      "text": "Controlled by Agents and guarded by Marines; Morpheus is tortured in the executive office.",
+      "when": "act_three",
+      "tags": [
+       "jurisdiction"
+      ]
+     }
+    },
+    "access": {
+     "b01": {
+      "text": "Neo and Trinity enter through the lobby, massacring guards, and ascend via elevator cable.",
+      "when": "act_three",
+      "tags": [
+       "function"
+      ]
+     }
+    },
+    "significance": {
+     "b01": {
+      "text": "Where Morpheus is held and tortured; where Neo and Trinity storm the lobby and helicopter-rescue him.",
+      "when": "act_three",
+      "tags": [
+       "narrative_role"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "A government building used by Agents as an interrogation and detention facility.",
+      "when": "standing",
+      "tags": [
+       "history"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "morpheus_held": {
+     "kind": "bool",
+     "description": "Whether Morpheus is being held captive in the building",
+     "dimension": "spatial",
+     "init": false
+    }
+   },
+   "state": {
+    "morpheus_held": false
+   },
+   "arc": {
+    "start_state": "Government facility",
+    "end_state": "Site of the lobby massacre and helicopter rescue of Morpheus"
+   }
+  },
+  "lo-10": {
+   "entity_id": "lo-10",
+   "type": "location",
+   "canonical_name": "Subway Station",
+   "aliases": [
+    "State and Balbo"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-05"
+   ],
+   "profile": {
+    "geography": {
+     "b01": {
+      "text": "A subway station with a graffiti-covered phone booth and an old man drinking Thunderbird in the corner.",
+      "when": "standing",
+      "tags": [
+       "setting"
+      ]
+     }
+    },
+    "atmosphere": {
+     "b01": {
+      "text": "Underground tension with trains blasting through; the site of Neo's first solo fight with an Agent.",
+      "when": "act_three",
+      "tags": [
+       "mood"
+      ]
+     }
+    },
+    "control": {
+     "b01": {
+      "text": "Public Matrix space; Agents can inhabit anyone present, including the old man.",
+      "when": "act_three",
+      "tags": [
+       "jurisdiction"
+      ]
+     }
+    },
+    "access": {
+     "b01": {
+      "text": "Contains a hardwired phone used as an exit; Morpheus exits first, then Trinity.",
+      "when": "act_three",
+      "tags": [
+       "function"
+      ]
+     }
+    },
+    "significance": {
+     "b01": {
+      "text": "Where Neo refuses to run from Agent Smith, fights him, and declares My name is Neo before throwing him in front of a train.",
+      "when": "act_three",
+      "tags": [
+       "narrative_role"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "A subway station at State and Balbo designated as the exit point after the government building rescue.",
+      "when": "act_three",
+      "tags": [
+       "history"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "exit_phone_functional": {
+     "kind": "bool",
+     "description": "Whether the subway station's phone is functional as a Matrix exit",
+     "dimension": "technological",
+     "init": true
+    }
+   },
+   "state": {
+    "exit_phone_functional": true
+   },
+   "arc": {
+    "start_state": "Subway station designated as exit point",
+    "end_state": "Where Neo fights Smith, declares his identity, and the exit phone is destroyed"
+   }
+  },
+  "ob-01": {
+   "entity_id": "ob-01",
+   "type": "object",
+   "canonical_name": "Red Pill",
+   "aliases": [],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-02"
+   ],
+   "profile": {
+    "provenance": {
+     "b01": {
+      "text": "Created by the resistance as a trace program disguised as a pill.",
+      "when": "standing",
+      "tags": [
+       "origin"
+      ]
+     }
+    },
+    "description": {
+     "b01": {
+      "text": "A red capsule offered by Morpheus in his open right hand, reflected in his mirrored glasses.",
+      "when": "act_one",
+      "tags": [
+       "appearance"
+      ]
+     }
+    },
+    "function": {
+     "b01": {
+      "text": "Disrupts the user's input/output carrier signal so the resistance can pinpoint physical location for extraction.",
+      "when": "act_one",
+      "tags": [
+       "mechanism"
+      ]
+     }
+    },
+    "symbolic_load": {
+     "b01": {
+      "text": "Choosing truth over forgetfulness; an irreversible commitment to reality no matter how horrifying.",
+      "when": "standing",
+      "tags": [
+       "theme"
+      ]
+     }
+    },
+    "custody": {
+     "b01": {
+      "text": "Held by Morpheus until offered to Neo in Room 1313 of the Hotel Lafayette.",
+      "when": "act_one",
+      "tags": [
+       "possession"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "The red pill is part of a trace program designed to disrupt the carrier signal to pinpoint physical location.",
+      "when": "standing",
+      "tags": [
+       "function"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "consumed": {
+     "kind": "bool",
+     "description": "Whether the red pill has been consumed by Neo",
+     "dimension": "physiological",
+     "init": false
+    }
+   },
+   "state": {
+    "consumed": false
+   },
+   "arc": {
+    "start_state": "Offered as a choice between truth and forgetfulness",
+    "end_state": "Consumed, triggering Neo's extraction from the power plant"
+   }
+  },
+  "ob-02": {
+   "entity_id": "ob-02",
+   "type": "object",
+   "canonical_name": "Blue Pill",
+   "aliases": [],
+   "salience": "minor",
+   "plots": [
+    "pl-01"
+   ],
+   "profile": {
+    "provenance": {
+     "b01": {
+      "text": "Offered by Morpheus as the alternative to the red pill.",
+      "when": "act_one",
+      "tags": [
+       "origin"
+      ]
+     }
+    },
+    "description": {
+     "b01": {
+      "text": "A blue capsule in Morpheus's left hand, representing the choice to forget and believe whatever you want.",
+      "when": "act_one",
+      "tags": [
+       "appearance"
+      ]
+     }
+    },
+    "function": {
+     "b01": {
+      "text": "Would end the story; Neo would wake in his bed and believe whatever he wants to believe.",
+      "when": "act_one",
+      "tags": [
+       "mechanism"
+      ]
+     }
+    },
+    "symbolic_load": {
+     "b01": {
+      "text": "Ignorance is bliss; the choice Cypher wishes he had made and dies trying to reclaim.",
+      "when": "standing",
+      "tags": [
+       "theme"
+      ]
+     }
+    },
+    "custody": {
+     "b01": {
+      "text": "Held by Morpheus until Neo chooses the red pill; the blue pill is never consumed.",
+      "when": "act_one",
+      "tags": [
+       "possession"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "The blue pill represents the path of willful ignorance, the counter-argument to the film's premise.",
+      "when": "standing",
+      "tags": [
+       "symbolism"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "offered": {
+     "kind": "bool",
+     "description": "Whether the blue pill has been offered to Neo",
+     "dimension": "material",
+     "init": false
+    }
+   },
+   "state": {
+    "offered": false
+   },
+   "arc": {
+    "start_state": "Unoffered alternative to truth",
+    "end_state": "Offered and rejected; becomes the symbol of Cypher's regret"
+   }
+  },
+  "ob-03": {
+   "entity_id": "ob-03",
+   "type": "object",
+   "canonical_name": "EMP Detonator",
+   "aliases": [
+    "Electromagnetic Pulse"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-05"
+   ],
+   "profile": {
+    "provenance": {
+     "b01": {
+      "text": "Built into the Nebuchadnezzar as the only weapon effective against machines in the real world.",
+      "when": "standing",
+      "tags": [
+       "origin"
+      ]
+     }
+    },
+    "description": {
+     "b01": {
+      "text": "A small key that glows a dim red, controlled by the ship's commander, that disables any electrical system in the blast radius.",
+      "when": "standing",
+      "tags": [
+       "appearance"
+      ]
+     }
+    },
+    "function": {
+     "b01": {
+      "text": "Disables any electrical system in the blast radius, including Sentinels and the ship's own systems.",
+      "when": "standing",
+      "tags": [
+       "mechanism"
+      ]
+     }
+    },
+    "symbolic_load": {
+     "b01": {
+      "text": "The last resort that saves the ship twice; its detonation during the Matrix climax binds both worlds in simultaneous danger.",
+      "when": "standing",
+      "tags": [
+       "theme"
+      ]
+     }
+    },
+    "custody": {
+     "b01": {
+      "text": "Controlled by Morpheus, who must turn the key; cannot be used while anyone is still inside the Matrix.",
+      "when": "standing",
+      "tags": [
+       "possession"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "The EMP is the only weapon the resistance has against machines in the real world.",
+      "when": "standing",
+      "tags": [
+       "history"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "armed": {
+     "kind": "bool",
+     "description": "Whether the EMP is armed and ready to fire",
+     "dimension": "technological",
+     "init": false
+    },
+    "detonated": {
+     "kind": "bool",
+     "description": "Whether the EMP has been detonated",
+     "dimension": "world",
+     "init": false
+    }
+   },
+   "state": {
+    "armed": false,
+    "detonated": false
+   },
+   "arc": {
+    "start_state": "Ship's last-resort weapon, disarmed",
+    "end_state": "Detonated twice, destroying Sentinels and saving the crew"
+   }
+  },
+  "ob-04": {
+   "entity_id": "ob-04",
+   "type": "object",
+   "canonical_name": "Tracking Bug",
+   "aliases": [],
+   "salience": "minor",
+   "plots": [
+    "pl-05",
+    "pl-01"
+   ],
+   "profile": {
+    "provenance": {
+     "b01": {
+      "text": "Carried by Agent Smith in a case inside his suit coat during Neo's interrogation.",
+      "when": "act_one",
+      "tags": [
+       "origin"
+      ]
+     }
+    },
+    "description": {
+     "b01": {
+      "text": "A fiber-optic wire tap that animates into an organic hybrid of insect and fluke worm with probing tendrils.",
+      "when": "act_one",
+      "tags": [
+       "appearance"
+      ]
+     }
+    },
+    "function": {
+     "b01": {
+      "text": "Burrows into the victim's navel to track their location within the Matrix.",
+      "when": "act_one",
+      "tags": [
+       "mechanism"
+      ]
+     }
+    },
+    "symbolic_load": {
+     "b01": {
+      "text": "Body horror as systemic control; the system literally invades and inhabits the body.",
+      "when": "standing",
+      "tags": [
+       "theme"
+      ]
+     }
+    },
+    "custody": {
+     "b01": {
+      "text": "Implanted in Neo by Smith; extracted by Trinity using a device resembling a rib separator and air compressor.",
+      "when": "act_one",
+      "tags": [
+       "possession"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "A tracking device used by Agents to locate targets within the Matrix.",
+      "when": "standing",
+      "tags": [
+       "history"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "location": {
+     "kind": "enum",
+     "description": "Where the bug currently is",
+     "dimension": "spatial",
+     "domain": [
+      "in_smiths_case",
+      "in_neo",
+      "extracted",
+      "discarded"
+     ],
+     "init": "in_smiths_case"
+    }
+   },
+   "state": {
+    "location": "in_smiths_case"
+   },
+   "arc": {
+    "start_state": "Concealed in Smith's case during interrogation",
+    "end_state": "Extracted from Neo and discarded on the pavement, reverted to a wire tap"
+   }
+  },
+  "gr-01": {
+   "entity_id": "gr-01",
+   "type": "group",
+   "canonical_name": "Agents",
+   "aliases": [],
+   "salience": "major",
+   "plots": [
+    "pl-05",
+    "pl-01",
+    "pl-02",
+    "pl-04"
+   ],
+   "profile": {
+    "membership": {
+     "b01": {
+      "text": "At least three Agents: Smith, Brown, and Jones, all identical in dark suits and sunglasses.",
+      "when": "standing",
+      "tags": [
+       "composition"
+      ]
+     }
+    },
+    "hierarchy": {
+     "b01": {
+      "text": "Smith appears to lead, giving orders to Brown and Jones, who follow without question.",
+      "when": "standing",
+      "tags": [
+       "structure"
+      ]
+     }
+    },
+    "goals": {
+     "b01": {
+      "text": "To destroy the human resistance, capture Zion's access codes, and maintain the Matrix's control.",
+      "when": "standing",
+      "tags": [
+       "objective"
+      ]
+     }
+    },
+    "resources": {
+     "b01": {
+      "text": "Can inhabit the body of anyone still hardwired to the Matrix; possess superhuman speed and strength.",
+      "when": "standing",
+      "tags": [
+       "capability"
+      ]
+     }
+    },
+    "cohesion": {
+     "b01": {
+      "text": "Unified and obedient until Smith begins showing unauthorized emotion and anger.",
+      "when": "act_three",
+      "tags": [
+       "unity"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Agents are sentient programs that enforce the Matrix system by hunting freed humans.",
+      "when": "standing",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "Every freed human who has fought an Agent has died, until Neo.",
+      "when": "standing",
+      "tags": [
+       "record"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "awareness_of_neo": {
+     "kind": "enum",
+     "description": "The Agents' awareness level of Neo as a target",
+     "dimension": "epistemic",
+     "domain": [
+      "unaware",
+      "identified",
+      "hunting",
+      "fled"
+     ],
+     "init": "unaware"
+    }
+   },
+   "state": {
+    "awareness_of_neo": "unaware"
+   },
+   "arc": {
+    "start_state": "Enforcement programs hunting the resistance",
+    "end_state": "Two Agents fled in fear after Smith is destroyed by the One"
+   }
+  },
+  "gr-02": {
+   "entity_id": "gr-02",
+   "type": "group",
+   "canonical_name": "Nebuchadnezzar Crew",
+   "aliases": [],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-02",
+    "pl-04",
+    "pl-05"
+   ],
+   "profile": {
+    "membership": {
+     "b01": {
+      "text": "Morpheus, Trinity, Cypher, Tank, Dozer, Apoc, Switch, Mouse, and newly freed Neo.",
+      "when": "standing",
+      "tags": [
+       "composition"
+      ]
+     }
+    },
+    "hierarchy": {
+     "b01": {
+      "text": "Morpheus commands; Trinity is ranking officer; Tank operates; Dozer pilots; others are operatives.",
+      "when": "standing",
+      "tags": [
+       "structure"
+      ]
+     }
+    },
+    "goals": {
+     "b01": {
+      "text": "To free minds, find the One, and ultimately end the machine war and free humanity.",
+      "when": "standing",
+      "tags": [
+       "objective"
+      ]
+     }
+    },
+    "resources": {
+     "b01": {
+      "text": "The hovercraft Nebuchadnezzar, the Construct, uploaded combat skills, and hardwired phone exits.",
+      "when": "standing",
+      "tags": [
+       "capability"
+      ]
+     }
+    },
+    "cohesion": {
+     "b01": {
+      "text": "Loyal to Morpheus and the mission, but Cypher's disillusionment fractures the group from within.",
+      "when": "standing",
+      "tags": [
+       "unity"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "A resistance cell operating from the Nebuchadnezzar, broadcasting a pirate signal into the Matrix.",
+      "when": "standing",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "Five previous candidates for the One died under Morpheus's guidance before Neo.",
+      "when": "before_script",
+      "tags": [
+       "history"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "crew_alive_count": {
+     "kind": "scalar",
+     "description": "Number of crew members alive",
+     "dimension": "social",
+     "range": [
+      0,
+      9
+     ],
+     "init": 8
+    }
+   },
+   "state": {
+    "crew_alive_count": 8
+   },
+   "arc": {
+    "start_state": "Eight-person resistance cell with a newly freed ninth member",
+    "end_state": "Decimated crew of four survivors after betrayal and battle"
+   }
+  },
+  "gr-03": {
+   "entity_id": "gr-03",
+   "type": "group",
+   "canonical_name": "Sentinels",
+   "aliases": [
+    "Squiddies"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-01",
+    "pl-05"
+   ],
+   "profile": {
+    "membership": {
+     "b01": {
+      "text": "Multiple Sentinel units that hunt in packs, described as shifting shadows of mechanized death.",
+      "when": "standing",
+      "tags": [
+       "composition"
+      ]
+     }
+    },
+    "hierarchy": {
+     "b01": {
+      "text": "Deployed by the machine system; no individual hierarchy discernible.",
+      "when": "standing",
+      "tags": [
+       "structure"
+      ]
+     }
+    },
+    "goals": {
+     "b01": {
+      "text": "Search and destroy; designed for one thing: killing humans in the real world.",
+      "when": "standing",
+      "tags": [
+       "objective"
+      ]
+     }
+    },
+    "resources": {
+     "b01": {
+      "text": "Black alloy skin, sinewy coils, skeletal appendages, and shark-like malevolence in flight.",
+      "when": "standing",
+      "tags": [
+       "capability"
+      ]
+     }
+    },
+    "cohesion": {
+     "b01": {
+      "text": "Attack in coordinated swarms, opening and shifting like killer kaleidoscopes.",
+      "when": "standing",
+      "tags": [
+       "unity"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Real-world killing machines deployed by the machine system to hunt human ships.",
+      "when": "standing",
+      "tags": [
+       "origin"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "proximity_to_ship": {
+     "kind": "enum",
+     "description": "How close the Sentinels are to the Nebuchadnezzar",
+     "dimension": "spatial",
+     "domain": [
+      "clear",
+      "sweeping",
+      "attacking",
+      "destroyed"
+     ],
+     "init": "clear"
+    }
+   },
+   "state": {
+    "proximity_to_ship": "clear"
+   },
+   "arc": {
+    "start_state": "Distant machine hunters in the sewer mains",
+    "end_state": "Destroyed by EMP detonation, filling the overflow pit with cold metal carcasses"
+   }
+  },
+  "cn-01": {
+   "entity_id": "cn-01",
+   "type": "concept",
+   "canonical_name": "The Matrix",
+   "aliases": [],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-02",
+    "pl-04",
+    "pl-05"
+   ],
+   "profile": {
+    "content": {
+     "b01": {
+      "text": "A neural-interactive simulation generating late twentieth-century life to keep humanity docile while their bodies are harvested.",
+      "when": "standing",
+      "tags": [
+       "definition"
+      ]
+     },
+     "b02": {
+      "text": "The Matrix is everywhere, all around, visible out windows and on television, felt when going to work or paying taxes.",
+      "when": "standing",
+      "tags": [
+       "pervasiveness"
+      ]
+     }
+    },
+    "believers": {
+     "b01": {
+      "text": "Morpheus and the freed humans know the truth; everyone else is trapped inside without knowing.",
+      "when": "standing",
+      "tags": [
+       "awareness"
+      ]
+     }
+    },
+    "authority": {
+     "b01": {
+      "text": "Built and maintained by machines that discovered a new form of fusion using human bioelectricity.",
+      "when": "standing",
+      "tags": [
+       "origin"
+      ]
+     }
+    },
+    "causal_power": {
+     "b01": {
+      "text": "Death in the Matrix kills the physical body because the body cannot live without the mind.",
+      "when": "standing",
+      "tags": [
+       "rule"
+      ]
+     },
+     "b02": {
+      "text": "Freed humans can bend Matrix rules through mental discipline; the One can break them entirely.",
+      "when": "standing",
+      "tags": [
+       "rule"
+      ]
+     },
+     "b03": {
+      "text": "Deja vu indicates the Matrix has been altered, a glitch that occurs when something is changed.",
+      "when": "standing",
+      "tags": [
+       "rule"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "The first Matrix was designed as a perfect human world but entire crops were lost because no one would accept the program.",
+      "when": "before_script",
+      "tags": [
+       "history"
+      ]
+     },
+     "b02": {
+      "text": "The Matrix was redesigned to the peak of human civilization because humans define reality through suffering and misery.",
+      "when": "before_script",
+      "tags": [
+       "history"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "compromised": {
+     "kind": "bool",
+     "description": "Whether the Matrix's integrity has been compromised by the One's awakening",
+     "dimension": "world",
+     "init": false
+    }
+   },
+   "state": {
+    "compromised": false
+   },
+   "arc": {
+    "start_state": "Machine-controlled simulation keeping humanity enslaved",
+    "end_state": "Compromised by the One, who sees its code and promises to show people a world without rules"
+   }
+  },
+  "cn-02": {
+   "entity_id": "cn-02",
+   "type": "concept",
+   "canonical_name": "The One Prophecy",
+   "aliases": [],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-02"
+   ],
+   "profile": {
+    "content": {
+     "b01": {
+      "text": "When the first man born inside the Matrix who could reshape it died, the Oracle prophesied his return.",
+      "when": "standing",
+      "tags": [
+       "definition"
+      ]
+     },
+     "b02": {
+      "text": "His coming would hail the destruction of the Matrix, an end to the war, and freedom for humanity.",
+      "when": "standing",
+      "tags": [
+       "promise"
+      ]
+     }
+    },
+    "believers": {
+     "b01": {
+      "text": "Morpheus believes absolutely and has spent his life searching; Cypher believes it is bullshit that got five people killed.",
+      "when": "standing",
+      "tags": [
+       "division"
+      ]
+     }
+    },
+    "authority": {
+     "b01": {
+      "text": "Established by the Oracle, whose prophecies are treated as guides rather than absolute truths.",
+      "when": "standing",
+      "tags": [
+       "source"
+      ]
+     }
+    },
+    "causal_power": {
+     "b01": {
+      "text": "The prophecy drives Morpheus to free minds at great risk and to sacrifice himself for Neo.",
+      "when": "standing",
+      "tags": [
+       "effect"
+      ]
+     },
+     "b02": {
+      "text": "The Oracle tells each person what they need to hear, making the prophecy self-fulfilling rather than declarative.",
+      "when": "standing",
+      "tags": [
+       "mechanism"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "A man born inside the Matrix had the ability to change what he wanted, to remake the Matrix as he saw fit.",
+      "when": "before_script",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "He freed the first of them and taught them the truth; when he died, the Oracle prophesied his return.",
+      "when": "before_script",
+      "tags": [
+       "history"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "fulfillment_status": {
+     "kind": "enum",
+     "description": "Whether the One prophecy has been fulfilled",
+     "dimension": "world",
+     "domain": [
+      "pending",
+      "fulfilled"
+     ],
+     "init": "pending"
+    }
+   },
+   "state": {
+    "fulfillment_status": "pending"
+   },
+   "arc": {
+    "start_state": "Ancient prophecy driving Morpheus's life mission and five deaths",
+    "end_state": "Fulfilled not by declaration but by Neo's choice, sacrifice, and Trinity's love"
+   }
+  },
+  "cn-03": {
+   "entity_id": "cn-03",
+   "type": "concept",
+   "canonical_name": "Oracle's Love Prophecy",
+   "aliases": [],
+   "salience": "major",
+   "plots": [
+    "pl-03",
+    "pl-01"
+   ],
+   "profile": {
+    "content": {
+     "b01": {
+      "text": "The Oracle told Trinity she would fall in love with a man, and that man would be the One.",
+      "when": "before_script",
+      "tags": [
+       "definition"
+      ]
+     }
+    },
+    "believers": {
+     "b01": {
+      "text": "Trinity is the sole bearer of this prophecy and has never told anyone, including Neo.",
+      "when": "standing",
+      "tags": [
+       "secrecy"
+      ]
+     }
+    },
+    "authority": {
+     "b01": {
+      "text": "Established by the Oracle, whose prophecies are self-fulfilling through the choices they provoke.",
+      "when": "standing",
+      "tags": [
+       "source"
+      ]
+     }
+    },
+    "causal_power": {
+     "b01": {
+      "text": "Trinity's confession of this prophecy after Neo's death is the trigger for his resurrection as the One.",
+      "when": "climax",
+      "tags": [
+       "resurrection_mechanism"
+      ]
+     },
+     "b02": {
+      "text": "Nothing may reveal this connection before the death scene; its concealment structures the entire third act.",
+      "when": "standing",
+      "tags": [
+       "structural_rule"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "The Oracle told Trinity the prophecy before the events of the film; Trinity has been unable to speak it aloud.",
+      "when": "before_script",
+      "tags": [
+       "history"
+      ]
+     }
+    }
+   },
+   "relationships": {},
+   "state_variables": {
+    "disclosed": {
+     "kind": "bool",
+     "description": "Whether the love prophecy has been disclosed to Neo",
+     "dimension": "epistemic",
+     "init": false
+    },
+    "fulfilled": {
+     "kind": "bool",
+     "description": "Whether the love prophecy has been fulfilled through Neo's resurrection",
+     "dimension": "world",
+     "init": false
+    }
+   },
+   "state": {
+    "disclosed": false,
+    "fulfilled": false
+   },
+   "arc": {
+    "start_state": "Secret prophecy burdening Trinity, unspoken and unconfirmed",
+    "end_state": "Confessed over Neo's dead body, triggering his resurrection and fulfilling itself"
+   }
+  }
+ }
+}

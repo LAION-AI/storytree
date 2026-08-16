@@ -1,0 +1,621 @@
+{
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-002",
+  "ordinal": 2
+ },
+ "situation": "The cold open at the Heart O' The City Hotel ended with Trinity cornered by police, then escaping through impossible physical feats and a ringing phone. The audience has seen something extraordinary but has no framework for it. Agent Smith has not yet appeared on screen; the gravity of the threat is implied by the raid but not embodied. Neo has not been contacted. The Agents are in pursuit phase targeting Trinity, and through her, the resistance network that leads to Neo.",
+ "craft": {
+  "audience_need": "The audience band — thriller-hard-SF readers who were hooked by the cold open's impossible physics and grimy noir atmosphere — needs to know what force was behind those cops. They need an antagonist's face and a tonal shift from action to dread. The promise was 'something is deeply wrong with the world'; this scene must begin making that promise concrete by showing that the pursuers are not ordinary.",
+  "genre_convention": "A techno-thriller opening chases its action beat with the antagonist's reaction scene — the villain examining the aftermath, establishing competence and menace. This node satisfies that convention but subverts it slightly: Smith is not a superior officer reviewing a failure; he is something the lieutenant cannot categorize, and the scene's unease comes from that misalignment rather than from villainous posturing.",
+  "theme_and_style": "The story root's theme — self-belief vs. imposed limitation — is too early to state directly, but the register demands plain language carrying subtext and no interior monologue. Smith's contempt for the lieutenant must be externalized entirely through dialogue rhythm and physical blocking. The forbidden tics forbid any character stating feelings; Smith's frustration must live in how he handles the lieutenant, not in anything he admits. The Gibson-noir texture demands that institutional power feel like something feral wearing a suit.",
+  "dramatic_function": "This node establishes ch-04 (Agent Smith) as a physical and tonal presence on screen for the first time, converting the implied threat of the cold open into a named, embodied antagonist. It plants the power differential between Agents and ordinary humans — the lieutenant is competent in his world and helpless in Smith's. It closes the Heart O' The City Hotel sequence by showing the aftershock of Trinity's escape from the other side, then opens the pursuit that will drive the next act: Smith's attention sharpens toward the human resistance network. The scene must also begin foreshadowing pl-05's revelation that Smith despises the Matrix — but only as a faint leakage, a tonal wrongness the audience registers without yet understanding.",
+  "tension_management": {
+   "entering": 75,
+   "leaving": 60,
+   "how": "The cold open left tension high — an impossible escape unfinished. This scene cannot maintain that level because it shifts from action to aftermath, which would deflate if it tried to keep peak adrenaline. Instead it releases the spectacle-tension and replaces it with dread-tension: the lieutenant reports failure to a man who is clearly not a man, and the audience's stomach tightens because the lieutenant does not realize how much danger he is in just standing near Smith. Leaving tension is lower than entering because the immediate chase is resolved, but a new hook — what is Smith? — takes its partial place."
+  },
+  "why_now": "The cold open ended on escape, not resolution. The audience's first question is 'who was chasing her and what happens now that she got away?' Answering it immediately is structurally necessary — any delay would make the cold open feel like a trailer rather than a story beginning. This scene also cannot happen after Neo is introduced because the threat must be established before the protagonist is, so that when Neo appears the audience already dreads what is coming for him. Smith must precede Neo in the audience's imagination.",
+  "why_not_otherwise": [
+   {
+    "alternative": "Jump directly to Neo at his computer, receiving the 'Follow the white rabbit' message — pl-01:st1.",
+    "rejected_because": "The cold open's escape would hang without consequence. The antagonist's threat would be abstract when it needs to be visceral before we meet the person he will hunt. Neo's introduction lands harder when the audience already fears Smith.",
+    "nearly_chosen": true,
+    "what_would_flip_it": "If the cold open had already shown Smith — for instance, if sc-001 had included a beat where a figure in a dark suit observed the chase from across the rooftop — then this aftermath scene would be redundant and Neo's introduction would be the correct next beat."
+   },
+   {
+    "alternative": "Show Trinity reporting the escape to Morpheus aboard the Nebuchadnezzar, establishing the crew and the resistance immediately.",
+    "rejected_because": "It would resolve the cold open's mystery too fast — the audience needs to sit in 'what just happened?' a beat longer, and showing the explainers before the threat feels like a lecture. It also skips the antagonist's introduction entirely, leaving him faceless into scene 3 or 4, which weakens the structural principle that the antagonist precedes the protagonist.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "If the cold open had already clearly established the pursuers as non-human — if Trinity had fought an Agent rather than cops — then a debrief scene with Morpheus would carry more weight because the enemy would already be known, and the shift to the crew's perspective would add new information rather than postpone the antagonist's reveal."
+   }
+  ],
+  "promises": {
+   "made": [
+    "What is Agent Smith? The tonal wrongness of his behavior against the lieutenant opens this question without answering it.",
+    "The pursuit is not over — Trinity escaped but the machinery behind the cops is still turning."
+   ],
+   "kept": [
+    "The cold open promised something beyond ordinary police procedure; this scene delivers the 'beyond' by showing that the man in charge of the pursuit is not police."
+   ]
+  }
+ },
+ "interaction": {
+  "what_collides": "The lieutenant's institutional pride and procedural competence collide with Smith's contempt for both. The lieutenant wants to report a clean police operation that had an anomalous outcome; Smith wants results, not reports, and regards the police as a tool that broke. The lieutenant's need for respect meets Smith's total disregard for him as a person.",
+  "power_balance": "The lieutenant holds nominal authority over the crime scene — it is his jurisdiction, his officers, his caseload. Smith overrides all of it by presence alone, without badge, without explanation. The balance collapses to Smith in the first exchange and never rebalances. The lieutenant never gets his authority back, and the audience watches a competent man reduced to a stammer by something he cannot name.",
+  "information_asymmetry": "The lieutenant knows only that a female suspect evaded capture using impossible methods and that the FBI-equivalent has arrived to take over. Smith knows that Trinity is a freed human operator jacked into a system he is sworn to protect, that she is connected to Morpheus, and that Morpheus is connected to someone called the One. The audience shares the lieutenant's ignorance but not his comfort with it — the audience sees the asymmetry the lieutenant cannot. Smith's advantage is not just information but that the lieutenant does not know how far out of his depth he is.",
+  "turning_point": "The pivot occurs when the lieutenant tries to reassert procedural control — telling Smith this is his case, or asking for credentials — and Smith responds in a way that is polite in word and annihilating in effect. The lieutenant's confidence dies mid-sentence. From that point the scene belongs entirely to Smith, and the lieutenant becomes a prop Smith moves around the room."
+ },
+ "decision": {
+  "resolution": "A 146-word aftermath scene at the Heart O' The City Hotel exterior/ground floor. Smith examines the room where Trinity escaped, dispatches the lieutenant's report with cold contempt, and the scene ends with Smith noting something the police missed — a residual trace of the impossible — that redirects his focus. The lieutenant is a figure on screen with no entity id. The scene establishes Smith's physical presence, his alien authority, and the tonal wrongness that will later pay off as his hatred of the Matrix, without any of those things being stated. Dialogue carries the scene at ~47% ratio; the rest is blocking and Smith's physical examination of the space.",
+  "state_changes_implied": [
+   {
+    "entity": "ch-04",
+    "variable": "pursuit_phase",
+    "from": "hunting_trinity",
+    "to": "hunting_trinity_with_evidence",
+    "because": "Smith finds a residual trace at the escape site that sharpens the pursuit from a general manhunt to a directed investigation."
+   },
+   {
+    "entity": "lo-01",
+    "variable": "narrative_role",
+    "from": "escape_point",
+    "to": "crime_scene_aftermath",
+    "because": "Trinity's escape is over; the hotel now functions as the site where Smith establishes his presence as antagonist."
+   }
+  ],
+  "confidence": 82,
+  "risks": [
+   "At 146 words the scene is very short — there is a risk it cannot establish Smith's physical menace and the lieutenant's collapse in a handful of lines. If the dialogue is not precisely calibrated, it reads as a perfunctory transition rather than an antagonist's introduction.",
+   "The lieutenant is a throwaway figure with no entity id; there is a risk the audience does not invest in the power dynamic because one party is anonymous. Smith's menace must carry through atmosphere, not through the lieutenant's reaction alone.",
+   "Foreshadowing Smith's Matrix-hatred without tipping it requires the tonal wrongness to be subtle enough to register subliminally. If it is too overt, pl-05 st4 loses its power. If it is invisible, the foreshadowing fails entirely."
+  ]
+ },
+ "psychology": [
+  {
+   "action": "He moves through the room examining surfaces — the broken window frame, the phone's receiver dangling from its cord, the scuff marks on the floor that no human body should have left — listening to the lieutenant's report with visible impatience, then cutting the lieutenant off mid-sentence with a correction that is polite in grammar and annihilating in effect. He picks up the phone receiver, holds it a beat too long, sets it down with a precision that is not human care but programmatic exactitude, and states that the suspect is connected to someone called Morpheus. The lieutenant tries to reassert jurisdiction; Smith does not look at him. He finds a residual trace the police missed — something in the way the window frame splintered, impossible at human velocity — and his attention narrows.",
+   "appraisal": {
+    "arousal": 45,
+    "moral_reading": "An operator infiltrated a secured system and was nearly apprehended by the system's own enforcement layer. The near-miss is not a victory for the police — it is a malfunction in the tool. The real threat is not the operator who escaped but the network she connects to. The lieutenant is part of the malfunction, not part of the solution.",
+    "self_conscious_emotion": "contempt — not the human kind that requires comparison, but the structural kind a system feels toward an inefficient subroutine it is forced to use",
+    "somatic_marker": "A flatness in the chest where urgency should be, replaced by a low hum of processor-load that reads in this body as a cool tightness across the sternum",
+    "valence": -20,
+    "value_at_stake": "Order and efficiency — a breach occurred, and the breach's breach is being reported to him by the breach's own failed instrument. The Matrix's cleanliness is at stake; the hotel room is a contamination site."
+   },
+   "control": {
+    "divergence_reason": "His contempt for the lieutenant is real but operational — he needs the police infrastructure to continue functioning around him without disruption, so he modulates expression to the minimum sufficient dominance display. The deeper feeling — the hatred of the Matrix itself that manifests as sensory disgust — is not controlled but is not yet self-recognized as significant; it reads to him as background noise.",
+    "expressed": "Machine-calm, unhurried, economically precise in gesture and word. The sunglasses stay on. The posture is perfect and still. The voice is level and slightly slow, as if the lieutenant's processing speed is the bottleneck.",
+    "felt": "A simmering frustration that the tools he is given — police, procedure, the lieutenant's entire jurisdictional theatre — are imprecise and slow, combined with a low-grade sensory aversion to the room itself, which smells wrong in a way he has not yet named.",
+    "inhibited_impulse": "The impulse to remove the lieutenant from the equation entirely — not kill, but overwrite, replace him with a copy of himself — held in check because the Lieutenant is a background asset, not a target, and overwriting a police officer in a populated crime scene would generate more attention than it would save.",
+    "leakage": "The pause before he responds to the lieutenant — a fraction of a second too long, the kind of stillness that is not calm but computation, as if he is deciding whether the lieutenant is worth the words. His fingers hold the phone receiver a beat past necessity. The slight tilt of his head when he notices the window splinter pattern — not human curiosity but a scan routine that the body translates into an involuntary gesture.",
+    "mode": "inhibited"
+   },
+   "deliberation": {
+    "chosen_because": "Trinity is a node in a network; the network is the target; the network leads to Morpheus; Morpheus leads to the One, whose existence threatens the entire system. The lieutenant is a broken tool to be discarded. The trace is the thread.",
+    "framing": "The problem is not 'how did she escape' but 'where does this node connect.' Smith frames every freed human as a node in a graph — each one a line to Morpheus, and Morpheus a line to Zion, and Zion the terminus that must be destroyed. The lieutenant's procedural framing — what happened here — is irrelevant to Smith's network framing — where does this lead.",
+    "known_unknowns": "He does not know Trinity's exit vector, her jack-out point, or the specific hovercraft she serves on. He does not know how many operators are in the field. He does not know whether the One is already awakened or still dormant in the Matrix. He hedges by treating every freed human as a potential carrier of the full network topology — anyone who touches the resistance is a thread worth pulling.",
+    "options_weighed": [
+     {
+      "cost": "Time — the longer Trinity is untracked the colder the trail.",
+      "option": "Pursue Trinity directly using Agent speed and overwriting bodies along her probable exit path",
+      "predicted_outcome": "High probability of intercepting a single operator, but Trinity is a node not the network; capturing her yields one lead, not the topology."
+     },
+     {
+      "cost": "Precision — the network is large and the lieutenant is imprecise.",
+      "option": "Use the police apparatus as a detection grid, letting them generate reports that Smith filters for anomalous data",
+      "predicted_outcome": "Slow but comprehensive; turns the entire city's law enforcement into a sensor array calibrated for impossible events."
+     },
+     {
+      "cost": "Focus — requires leaving the immediate pursuit to follow the network.",
+      "option": "Trace the residual anomaly at the escape site backward through the Matrix's own logs to identify the access point Trinity used, then use that access point to map the resistance network",
+      "predicted_outcome": "Most efficient; the access point is a physical location that can be staked out, and every freed human who uses it is a new lead toward Morpheus and Zion."
+     }
+    ],
+    "reasoning": "Pursuit is impulse; the network is the objective. Trinity escaped because the police are insufficient for operators of her capability — that is a property of the tool, not a mystery. The splinter pattern in the window frame tells him the operator moved faster than human limits permit, which means the Matrix's rules were bent at this point, which means there is a log entry and an access point. Follow the access point, not the person. The person is a vector; the access point is a structure."
+   },
+   "entering_state": "Confident, controlled, in full operational mode — Smith enters the room at the Heart O' The City Hotel as the system's enforcement layer arriving at a breach site. He has not yet been frustrated by this particular quarry; his pursuit of Trinity is routine, a matter of processing a node in the resistance network. Internally, the low-grade disgust he feels for the Matrix — the sensory wrongness of occupying a simulated world he despises — is present but unacknowledged, a background hum he has not yet been forced to articulate. He does not yet feel personally invested; Trinity is a designation, not a person.",
+   "entity": "ch-04",
+   "impairments": {
+    "chemical": "none",
+    "coercive": "Bound by the Matrix's operational parameters — he can move at superhuman speed but only within the rules the system allows; he cannot bend the rules, only use them at maximum efficiency.",
+    "cognitive": "He cannot yet conceive of a freed human as anything other than a node to be eliminated. His framing is purely topological — connections and terminations — with no model for individual human agency as a variable that could surprise him. This rigidity is not a flaw he is aware of; it is the shape of his competence.",
+    "magical": "none",
+    "medical": "none",
+    "net_effect": "He is operating at full capacity within his constraints — fast, strong, methodical, and unable to imagine that his quarry might be more than a designation. The constraints that will defeat him later are invisible to him now because they are structural, not situational.",
+    "physical": "none — his body is a Matrix-construct operating at full capacity"
+   },
+   "intention": "To extract actionable intelligence from the escape site — specifically, a trace that connects Trinity to the broader resistance network — and to redirect the pursuit from a single fleeing operator toward the infrastructure that supports her.",
+   "leaving_state": "Still confident but now sharpened — the vague hunting posture has condensed into a directed investigation. He has a trace, a thread, a specific anomaly to follow. The lieutenant is dismissed from his attention as completely as a closed file. The Matrix's wrongness still hums beneath everything but he has not paused to examine it; he has folded it into operational irritation. He leaves the room with more than he entered: not just a failure to process but a lead.",
+   "perception": {
+    "attention": "He is attending to the physical traces of Trinity's impossible exit — the window frame, the phone, the angle of departure — and filtering them against the Matrix's underlying code. He is failing to notice the lieutenant's emotional state as anything other than noise, a human efficiency cost he has not yet calculated as worth managing.",
+    "interoception": "A flat, low-voltage hum through the chest — not a heartbeat, because the body does not need one, but the somatic translation of continuous background processing. The faint pressure behind the eyes that in a human would be fatigue but in him is the weight of the Matrix's constant sensory feed.",
+    "proprioception": "Standing in the room's centre, weight distributed with mechanical evenness, the body oriented toward the window Trinity used to escape. Hands at his sides, fingers slightly curled — not a combat stance but a readiness posture, the body's default state.",
+    "sight": "The room reads to him as code overlaid on surface — the broken window frame, the phone off its hook, the scuff marks on the floor, all carrying metadata the lieutenant cannot access. He sees the room's geometry with architectural precision and the human police moving through it as slow, imprecise shapes. The window frame's splinter pattern is wrong — the wood broke at a velocity no human body should generate, and the anomaly registers as a faint glitch in his visual field, a place where the Matrix's rules bent.",
+    "smell": "The room smells of old plaster, sweat, gunpowder residue, and underneath it all the flat synthetic scent that every room in the Matrix carries — a smell Smith has never named but experiences as a persistent wrongness, like ozone in a space that should smell of nothing.",
+    "sound": "The lieutenant's voice is a low-frequency report he is decoding for signal rather than listening to for content. The phone is ringing somewhere else in the building. The city outside is traffic and sirens — the Matrix's ambient track, which he hears as static with a rhythm.",
+    "taste": "The flat metallic undertone that the Matrix's air carries — not taste exactly, but the sensory echo of breathing recycled atmosphere, a faint iron note on the back of the tongue.",
+    "touch": "The phone receiver in his hand — smooth plastic, room-temperature, no residual warmth from Trinity's grip because she was gone before the material could absorb her heat. The window frame where the wood splintered: the grain is wrong, not broken along human-force lines but sheared as if something moved through it faster than the material could resist."
+   },
+   "social_norms": {
+    "how_absent_others_would_judge": "The other Agents — ch-11 and ch-12 — would judge him by results, not style. If he secures the trace and advances the pursuit, his handling of the lieutenant is irrelevant. The system he serves judges efficiency, not decorum. But the Architect's framework requires that Agents operate through human institutions rather than independently, which means the lieutenant's cooperation, however contemptible, is technically part of the protocol.",
+    "how_others_would_judge": "The lieutenant sees a federal authority figure who is unhelpful, contemptuous, and operating outside normal jurisdictional norms — 'arrogant' is the word the lieutenant would use to a colleague later, never understanding how insufficient it is.",
+    "norm_conflict": "Police procedural norms require cooperation and information-sharing between agencies; Agent operational norms require only results. The conflict resolves entirely in Smith's favour because he does not recognize the police norms as binding — they are the Matrix's social simulation, not rules that apply to him.",
+    "norms_in_force": [
+     "Police institutional hierarchy — the lieutenant's jurisdiction, his officers, his procedural authority over the crime scene",
+     "Agent authority override — Smith's presence supersedes all human institutional authority without explanation or credential",
+     "Matrix social protocol — Agents are expected to operate within the simulated institutional framework, using it as cover rather than circumventing it"
+    ],
+    "standing_at_risk": "Nothing the lieutenant could threaten. Smith's standing is guaranteed by the system itself. But his efficiency is at stake — if he mishandles the police apparatus, he generates attention and noise that slows the pursuit."
+   },
+   "theory_of_mind": [
+    {
+     "accuracy": "He is correct that Trinity is a freed human and that she connects to Morpheus, but he underestimates the degree to which the resistance has already prepared for Agent-level pursuit — Trinity is not panicking, she is executing a protocol, and the protocol was designed with Smith's capabilities in mind. His error is treating her as a fleeing node rather than a tactically competent operator with support. This will cost him the immediate trail.",
+     "d1": "Trinity is a freed human — a mind unplugged from the Matrix and operating inside it as a hostile agent. She is connected to Morpheus, who is connected to Zion, which is the terminus. She is not a person; she is a link in a chain that must be broken.",
+     "d2": "Trinity believes she is fighting for human freedom and that the Agents are the prison's wardens — which is correct but irrelevant, because her belief in her own competence does not change the fact that she is a node the system will process.",
+     "d3": "Trinity believes the Agents believe she is just another operative to be caught — and she is counting on that underestimation to function as cover for whatever she is actually doing in the Matrix right now. Smith models her as reactive; she is operating proactively, and his failure to model her as a strategic actor rather than a fleeing target is the gap she will exploit.",
+     "other": "ch-02"
+    },
+    {
+     "accuracy": "He is correct that Morpheus is the high-value target and that Trinity connects to him. He is wrong about Morpheus's vulnerability — he models Morpheus as a human leader whose capture breaks the network, but Morpheus's faith in the One prophecy means his capture does not break the network but redirects it, energizing the very forces Smith is trying to destroy. His error is valuing tactical capture over strategic understanding of what the resistance believes.",
+     "d1": "Morpheus is the most dangerous human in the Matrix — not because of personal capability but because he is the network's hub. Capture Morpheus and the resistance's operational capacity collapses. Morpheus is the key that unlocks Zion's location.",
+     "d2": "Morpheus believes the One prophecy is real and that Neo — ch-01 — is the One, which makes Morpheus both more motivated and more vulnerable, because faith makes humans reckless.",
+     "d3": "Morpheus believes the Agents believe Morpheus is merely a terrorist leader — and that underestimation of the prophecy's significance is the resistance's best protection, because if the Agents understood the prophecy was real they would prioritize differently. Smith does in fact dismiss the prophecy as human superstition, which is exactly the blind spot Morpheus is counting on.",
+     "other": "ch-03"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "on entering the room",
+     "shift": "Smith arrives in operational mode — scanning, cataloguing, treating the room as a data set. The lieutenant's presence is ambient noise, not yet a variable.",
+     "state_delta": {},
+     "trigger": "The physical threshold of the hotel room — crossing from the corridor into the space where the anomaly occurred"
+    },
+    {
+     "phase": "hearing the lieutenant's report",
+     "shift": "The lieutenant's procedural summary forces Smith to engage with human-language processing of what he already read in the room's physical data. The mismatch between what the lieutenant says and what the room shows produces a spike of irritation that translates as stillness — he stops moving, which reads as attention but is actually contempt.",
+     "state_delta": {},
+     "trigger": "The lieutenant says 'she went out the window' or equivalent — a statement so insufficient to the actual anomaly that Smith's processing pauses"
+    },
+    {
+     "phase": "dispatching the lieutenant",
+     "shift": "Smith cuts the lieutenant off with a correction that collapses the jurisdictional dynamic — not through anger but through precision, naming something the lieutenant missed and thereby demonstrating that the lieutenant is not his peer but his instrument. The power balance completes its collapse here.",
+     "state_delta": {},
+     "trigger": "The lieutenant attempts to reassert procedural authority — 'this is my case' or 'I need to see some credentials' — which Smith answers by stating something about the scene the lieutenant could not have known"
+    },
+    {
+     "phase": "finding the trace",
+     "shift": "Smith's attention narrows from the room's general data to a specific anomaly — the window frame's impossible splinter pattern, or the phone's log entry, or the scuff mark angle — a trace that connects this escape point to the resistance network. His posture shifts from stillness to the lean-forward of a predator on a scent.",
+     "state_delta": {
+      "from": "hunting_trinity",
+      "to": "hunting_trinity_with_evidence",
+      "variable": "pursuit_phase"
+     },
+     "trigger": "The moment his hand touches the window frame and the grain's wrongness resolves from background anomaly to actionable data"
+    }
+   ],
+   "unresolved": "The trace he has found is a thread, not a resolution — it redirects but does not satisfy. The low-grade sensory wrongness of the Matrix itself remains unprocessed, a hum he has folded into operational noise rather than examined. His contempt for the human tools he must use is managed but accumulating, and the pressure of operating inside a world he despises is building toward the moment when it will no longer be containable.",
+   "urges": {
+    "avoidances": "Avoiding any display of personal investment — he is a function of the system, not a person with feelings, and any leakage of the disgust he carries must read as competence rather than emotion.",
+    "cravings": "The clean simplicity of code — pure logic without the sensory pollution of the Matrix's rendered world. He does not name this; it manifests as a preference for data over testimony.",
+    "physical_needs": "none — his body does not require rest, food, or recovery; it is a construct operating at full capacity",
+    "psych_needs_conscious": "To process the breach site efficiently, extract the connecting thread to the resistance network, and redirect the pursuit with maximum precision.",
+    "psych_needs_unconscious": "To find something in this room that justifies the intensity of his attention — not because the mission requires it but because the alternative is to sit with the undirected aversion he feels toward the Matrix itself, which has no task and no resolution."
+   }
+  }
+ ],
+ "dynamics": [
+  {
+   "entity": "lo-01",
+   "kind": "location",
+   "entering_state": "Active escape site — the Heart O' The City Hotel where Trinity was cornered, fought, and vanished through a ringing phone. The space still carries the physical residue of that encounter: shattered drywall, shell casings, a phone off the hook. The building's narrative role is 'escape point' — it is where the impossible happened.",
+   "forces_acting": [
+    "Police procedural processing — officers are taping, photographing, treating this as a crime scene under their jurisdiction.",
+    "Smith's presence and examination — he moves through the space not as an investigator cataloguing evidence but as something that reads the room the way a program reads code, seeing structure the police cannot.",
+    "The residual trace of Trinity's impossible exit — whatever physical or digital artifact her escape left behind, it exerts a pull on Smith's attention that reorients the entire scene.",
+    "Institutional authority transfer — the lieutenant's claim on this space is being overridden by Smith's arrival, changing who controls the room without a hand being raised."
+   ],
+   "axis_changes": [
+    {
+     "axis": "control",
+     "from": "Lieutenant's jurisdiction — the hotel room is a police crime scene, processed by officers under the lieutenant's command, with his authority over what is examined and what is concluded.",
+     "to": "Smith's dominion — the room becomes Smith's space the moment he enters it. The police are still physically present but functionally furniture. Smith decides what matters in this room and what does not.",
+     "caused_by": "Smith's arrival and the lieutenant's failure to reassert procedural authority when challenged — the lieutenant tries to hold his ground and is dismantled by a politeness that functions as violence."
+    },
+    {
+     "axis": "meaning",
+     "from": "Escape point — the hotel is where Trinity performed the impossible and got away. To the police it is a baffling crime scene. To the audience it is the site of spectacle.",
+     "to": "Crime scene aftermath and evidence node — the hotel becomes the place where Smith establishes himself as the antagonist and where the pursuit shifts from reaction to investigation. The impossible exit leaves a trace Smith can read, and the room's function changes from 'where she escaped' to 'where the hunt was refined.'",
+     "caused_by": "Smith finding the residual trace the police missed — the room yields information that sharpens the pursuit, transforming it from a site of loss into a site of acquisition."
+    },
+    {
+     "axis": "condition",
+     "from": "Post-violence disorder — broken walls, shell casings, phone off the hook, officers milling. The room is physically marked by the fight but those marks are being read as ordinary crime scene evidence.",
+     "to": "Processed and abandoned — by the end of the scene the police function is effectively over. Smith has what he needs. The room will be left behind as the pursuit moves forward, its usefulness exhausted.",
+     "caused_by": "Smith's examination concluding with the discovery of the trace — once Smith has read the room, the space has no further function for him."
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "On Smith's arrival",
+     "shift": "The hotel room transitions from the lieutenant's crime scene to Smith's examination table. The police are still processing, but the authority in the room has already transferred. The lieutenant senses this without understanding it — he knows a federal-equivalent has arrived, but the way Smith moves through the space does not match any federal agent he has met.",
+     "trigger": "Smith enters the room — his physical presence, the way he does not acknowledge the police officers, the way his attention goes immediately to the space itself rather than to any person in it.",
+     "state_delta": {
+      "variable": "narrative_role",
+      "from": "escape_point",
+      "to": "contested_crime_scene"
+     }
+    },
+    {
+     "phase": "During the lieutenant's attempt to reassert authority",
+     "shift": "The room's social ownership is decided. The lieutenant tries to hold his jurisdiction — this is my case, my officers, my scene — and Smith's response collapses the attempt. The room is no longer the lieutenant's. The police become witnesses to their own irrelevance. The physical space does not change but its social dimension is rewritten: this is now Smith's room and everyone in it knows it without being able to say why.",
+     "trigger": "The lieutenant's procedural challenge and Smith's annihilating response — polite in word, total in effect.",
+     "state_delta": {
+      "variable": "control",
+      "from": "lieutenant_jurisdiction",
+      "to": "smith_dominion"
+     }
+    },
+    {
+     "phase": "After Smith finds the trace",
+     "shift": "The room yields its last value. Whatever Smith sees — a mark on the wall, a phone still warm, a data residue the police would never think to look for — it redirects his attention beyond this space. The hotel is no longer the site of the event; it is now a node in a network Smith is tracing. The room's narrative function is spent.",
+     "trigger": "Smith's attention catches on something the police overlooked — the residual trace of Trinity's impossible exit.",
+     "state_delta": {
+      "variable": "narrative_role",
+      "from": "contested_crime_scene",
+      "to": "evidence_node_exhausted"
+     }
+    }
+   ],
+   "leaving_state": "An exhausted crime scene. The police will continue processing it procedurally, but it has yielded what matters. Smith has read the room and moved on. The hotel's function in the story is complete — it gave the audience the escape spectacle in sc-001 and the antagonist introduction here, and now it falls behind the pursuit.",
+   "significance_shift": "Before this scene, the Heart O' The City Hotel meant 'where something impossible happened.' After this scene it means 'where Smith proved he is the thing that makes the impossible dangerous.' The location's significance transfers from Trinity's escape to Smith's arrival — the audience will remember this room not for what Trinity did but for what Smith was."
+  },
+  {
+   "entity": "ch-04",
+   "kind": "creature",
+   "entering_state": "Agent Smith exists only as implied threat — the force behind the police raid, the unseen pursuer whose authority sent officers after Trinity. He has no on-screen presence, no physical form in the audience's imagination, no voice, no face. He is a gap in the narrative that the cold open's aftermath demands be filled.",
+   "forces_acting": [
+    "Trinity's escape — her impossible exit is an affront to Smith's function. He exists to maintain the Matrix's integrity and she just violated it in front of witnesses. The escape is the force that brings him to the hotel.",
+    "The lieutenant's procedural incompetence — from Smith's perspective, the police are a broken tool. They had the target and lost her through methods they cannot even describe accurately. The lieutenant's report is not information; it is evidence of failure.",
+    "Smith's own contempt for the Matrix — a force he will not name but that leaks through his behavior. The suit, the politeness, the rigid physical control — these are not choices a human man makes. They are constraints of a system he inhabits and resents. This force is subliminal in this scene, present only as tonal wrongness.",
+    "The residual trace at the escape site — the physical or digital artifact that pulls Smith's attention and sharpens the pursuit from general manhunt to directed investigation."
+   ],
+   "axis_changes": [
+    {
+     "axis": "credence",
+     "from": "Implied but unembodied — the audience knows something sent the police but has no face, no voice, no physical presence to attach to it. Smith's threat is abstract.",
+     "to": "Embodied and named — Smith is now a physical presence the audience has seen and heard. His threat is concrete: a man-shaped thing that overrides a competent police lieutenant without raising its voice. The audience fears what it can see.",
+     "caused_by": "Smith's arrival at the hotel and his interaction with the lieutenant — the first time the audience witnesses Smith as a body in a room, moving and speaking."
+    },
+    {
+     "axis": "meaning",
+     "from": "Unseen authority — whatever Smith is, he is the power that directed the pursuit. To the extent the audience has a concept of him, it is 'the boss behind the cops.'",
+     "to": "Something wrong in a suit — Smith's behavior against the lieutenant creates a tonal wrongness the audience registers without understanding. He is not a federal agent being arrogant. He is not a villain being cruel. He is something that does not fit the category of person the lieutenant is trying to put him in. This wrongness is the seed of pl-05's revelation that Smith hates the Matrix — but here it is only leakage, not disclosure.",
+     "caused_by": "The misalignment between the lieutenant's expectations of a federal authority figure and Smith's actual behavior — polite, controlled, and annihilating in a way that does not match any human power dynamic the audience has seen."
+    },
+    {
+     "axis": "control",
+     "from": "Delegated pursuit — Smith's pursuit of Trinity was being conducted through proxies: police officers, the lieutenant, the raid. He was directing from a distance.",
+     "to": "Direct investigation — Smith has physically entered the pursuit. He is no longer sending others to find Trinity; he is reading the evidence himself. The pursuit has shifted from a manhunt managed through police to a directed investigation conducted by Smith personally.",
+     "caused_by": "Smith finding the residual trace — the discovery gives him a specific thread to pull, moving his role from overseer to active investigator."
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Entering the hotel room",
+     "shift": "Smith transitions from implied to embodied. The audience sees him for the first time: the suit, the physical precision, the way he moves through the space without acknowledging the people in it. His attention is on the room, not on the lieutenant. This is the first data point in the audience's model of what Smith is — and it is immediately wrong, because he does not behave like any authority figure they can categorize.",
+     "trigger": "Smith's physical entrance — the camera finding him for the first time, the blocking that places him in the room as a force of nature rather than a visitor.",
+     "state_delta": {
+      "variable": "presence",
+      "from": "implied_off_screen",
+      "to": "embodied_on_screen"
+     }
+    },
+    {
+     "phase": "Dismissing the lieutenant's authority",
+     "shift": "Smith establishes the power differential. The lieutenant tries to hold his jurisdiction and Smith responds with a politeness that functions as annihilation. The tonal wrongness intensifies: Smith is too controlled, too precise, too unbothered by the lieutenant's bluster. A human federal agent would be impatient, condescending, bureaucratic. Smith is none of these — he is something performing authority rather than wielding it, and the performance is more frightening than the real thing. The audience's stomach tightens not because Smith threatens the lieutenant but because he does not need to.",
+     "trigger": "The lieutenant's procedural challenge — asking for credentials, asserting jurisdiction, or demanding explanation — and Smith's response, which is courteous in word and total in effect.",
+     "state_delta": {
+      "variable": "power_demonstrated",
+      "from": "undemonstrated",
+      "to": "demonstrated_through_sovereign_dismissal"
+     }
+    },
+    {
+     "phase": "Finding the trace",
+     "shift": "Smith's pursuit sharpens. Whatever he finds — a physical mark, a data residue, something the police would never recognize — it gives him a direction. The pursuit is no longer a general reaction to Trinity's escape; it is a directed investigation with a specific lead. Smith's attention moves past the lieutenant, past the room, toward the network Trinity is connected to. This is the moment the hunt becomes personal in the sense that Smith is now conducting it himself rather than through proxies.",
+     "trigger": "Smith's attention catches on the residual trace — the specific perceivable thing in the room that the police overlooked and Smith does not.",
+     "state_delta": {
+      "variable": "pursuit_phase",
+      "from": "hunting_trinity",
+      "to": "hunting_trinity_with_evidence"
+     }
+    }
+   ],
+   "leaving_state": "Smith is now the story's embodied antagonist with a physical presence, a demonstrated power differential over ordinary humans, and a specific lead. He is in direct pursuit mode — no longer managing the hunt through police but conducting it himself. The tonal wrongness of his behavior has planted the seed of his deeper nature without disclosing it.",
+   "significance_shift": "Before this scene, Smith was 'whatever sent the cops' — an abstract threat, a gap. After this scene, Smith is 'the thing in the suit that made a competent man small without trying' — a specific, embodied, uncategorizable danger. The audience does not know what he is, but they know he is what is coming for Neo, and that fear is now attached to a face."
+  },
+  {
+   "entity": "gr-01",
+   "kind": "group",
+   "entering_state": "The Agents exist as a category only — the audience has no concept of them as a group, a structure, or a force. The cold open showed police, not Agents. The group has no on-screen representative, no demonstrated capability, no visible organization. If the audience has any sense of 'the pursuers,' it is undifferentiated and fused with ordinary law enforcement.",
+   "forces_acting": [
+    "Smith's embodiment — by appearing as a physical presence, Smith becomes the first visible representative of the Agents. His behavior, his authority, his wrongness become the audience's entire model for what the group is. The group is defined by its first exemplar.",
+    "Trinity's escape — the breach that required an Agent's presence rather than police. The escape is the event that escalated the pursuit from a law-enforcement matter to something requiring the group's direct involvement, at least at the one-representative level.",
+    "The Matrix's integrity — the Agents exist to maintain it. Trinity's impossible escape is a breach of that integrity. The group's function is triggered by breach; Smith's arrival at the hotel is the group performing its purpose."
+   ],
+   "axis_changes": [
+    {
+     "axis": "credence",
+     "from": "Nonexistent in audience awareness — the group has not been named, shown, or distinguished from ordinary police. The audience has no reason to think 'the pursuers' are anything other than cops.",
+     "to": "Embodied through a single representative — Smith is the first Agent the audience sees, and his behavior establishes the group as something categorically distinct from law enforcement. The group now has a face, even if it is one face.",
+     "caused_by": "Smith's arrival and interaction with the lieutenant — the power differential and tonal wrongness mark him as not-police, and by extension mark whatever he represents as not-police."
+    },
+    {
+     "axis": "cohesion",
+     "from": "Unknown — the audience has no information about whether the pursuers are one entity, many, organized, hierarchical, or individual.",
+     "to": "Implied singular type — Smith's behavior implies a class of being. The suit, the precision, the authority that overrides jurisdiction without explanation — these read as organizational uniformity, not individual eccentricity. The audience infers there are more like him without being told so.",
+     "caused_by": "Smith's appearance as uniformed and institutional rather than individual — the suit reads as a dress code, the behavior reads as protocol, the authority reads as systemic rather than personal."
+    },
+    {
+     "axis": "meaning",
+     "from": "Undifferentiated from law enforcement — if the audience thinks of 'the people chasing Trinity,' they think of cops.",
+     "to": "Categorically superior to law enforcement — the group is now the thing that sends and supersedes the police. The lieutenant is competent in his world and helpless in Smith's. The Agents are not a higher rank of cop; they are something that uses cops and discards their authority.",
+     "caused_by": "The visible power collapse of the lieutenant in Smith's presence — the audience watches the police's authority evaporate and attributes that to whatever Smith represents."
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Before Smith's entrance",
+     "shift": "The Agents as a group are indistinguishable from the police the audience saw in the cold open. There is no category separation. The pursuit is 'the cops chasing Trinity' in the audience's model.",
+     "trigger": "The scene's opening — police processing the hotel, the lieutenant in command, everything reading as ordinary law-enforcement aftermath.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Smith's entrance and the lieutenant's collapse",
+     "shift": "The Agents become a distinct category. Smith is not a cop, not a federal agent in the way the lieutenant expects, not anything the lieutenant can file. The group he represents is now separate from and superior to law enforcement in the audience's model. The police are a tool; the Agents are the hand.",
+     "trigger": "The power differential demonstrated through Smith's dismissal of the lieutenant's authority.",
+     "state_delta": {
+      "variable": "audience_awareness",
+      "from": "undifferentiated_from_police",
+      "to": "distinct_category_superior_to_police"
+     }
+    },
+    {
+     "phase": "After the trace is found",
+     "shift": "The group's function becomes clearer: the Agents are not investigating a crime, they are hunting a breach. The trace Smith finds redirects the group's effort from Trinity-as-individual to the network she is part of. The group's scope is larger than a single pursuit — they are maintaining a system.",
+     "trigger": "Smith finding the residual trace — the evidence points beyond Trinity to the network she connects to.",
+     "state_delta": {
+      "variable": "operational_scope",
+      "from": "single_target_trinity",
+      "to": "network_including_trinity"
+     }
+    }
+   ],
+   "leaving_state": "The Agents are now an embodied, distinct category in the audience's imagination — defined by Smith's behavior, superior to police, systemic rather than personal, and hunting a network rather than an individual. The group has one visible representative but reads as a class.",
+   "significance_shift": "Before this scene, 'the people chasing Trinity' were cops. After this scene, the Agents are the thing that uses cops and then walks past them. The group's significance shifts from 'law enforcement' to 'system maintenance' — they are not enforcing law, they are preserving a reality, and the police are just another subroutine."
+  },
+  {
+   "entity": "cn-01",
+   "kind": "concept",
+   "entering_state": "The Matrix as a concept is entirely unknown to the audience. They have seen impossible physical feats — Trinity's rooftop leap, her wall-run, her vanishing through a phone — but they have no framework for what those feats mean. The impossible exists as spectacle without explanation. 'The Matrix' has not been named, described, or hinted at as a concept.",
+   "forces_acting": [
+    "Trinity's impossible escape — the physical breach that demands a framework. The feats in sc-001 are force acting on the audience's need for explanation, and this scene begins to shape that explanation by showing what kind of authority is interested in the breach.",
+    "Smith's behavior — his wrongness, his authority, his contempt for the lieutenant all imply that the world the lieutenant operates in is not the real one. Smith's behavior is a force acting on the concept's emergence: he is the first hint that reality itself is the issue, not just a fugitive.",
+    "The residual trace — whatever Smith finds, it is something the police cannot see because their model of reality does not include it. The trace is a force acting on the concept's visibility, making the impossible legible to Smith but not to the police."
+   ],
+   "axis_changes": [
+    {
+     "axis": "credence",
+     "from": "Nonexistent — the Matrix as a concept has zero presence in the audience's awareness. The impossible feats of sc-001 are spectacle, not evidence of a system.",
+     "to": "Faintly implied — Smith's behavior and the trace he finds suggest that there is a layer to reality the police cannot access. The audience cannot name it, but the idea that 'something is behind this' moves from spectacle to system. The Matrix is not a concept the audience holds yet, but the ground for it is being prepared.",
+     "caused_by": "Smith reading the room differently than the police — seeing something they cannot, wielding authority they cannot match, behaving as though the rules the lieutenant operates under do not apply to him."
+    },
+    {
+     "axis": "meaning",
+     "from": "Nothing — the concept does not exist for the audience.",
+     "to": "Implied hidden layer — the Matrix begins to mean 'the thing that Smith is part of and the police are not.' It is not named, not described, not explained, but the audience's model of reality now includes a gap shaped like it: there is something about the world that the cops don't know and Smith does.",
+     "caused_by": "The asymmetry between Smith and the police in what they can perceive — the same room, the same evidence, but Smith reads it as code and the police read it as crime scene."
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "During the lieutenant's report",
+     "shift": "The lieutenant describes Trinity's escape in police terms — suspect, methods, pursuit. His language cannot contain what happened. The gap between his words and what the audience saw in sc-001 widens. The concept of 'something is wrong with reality' is not named but is felt as the inadequacy of the lieutenant's framework.",
+     "trigger": "The lieutenant's procedural description of the escape — his language fails to capture what the audience witnessed.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Smith's examination of the room",
+     "shift": "The concept gains its first faint outline. Smith reads the room as something other than a crime scene — his attention, his method, his indifference to police procedure all imply that the room is something else to him. The audience cannot say what, but the space has a second meaning that the police cannot access. This is the first brush of the Matrix as a concept: not a name, not a system, just the sense that there is a layer beneath the visible.",
+     "trigger": "Smith's physical examination of the space — the way he looks at the room, not at the evidence the police collected but at the structure itself.",
+     "state_delta": {
+      "variable": "audience_presence",
+      "from": "absent",
+      "to": "faintly_implied"
+     }
+    },
+    {
+     "phase": "Smith finds the trace",
+     "shift": "The concept's implied layer becomes functional. The trace is something Smith can read and the police cannot, which means the hidden layer has readable content — it is not just atmosphere, it is information. The Matrix as a concept is still unnamed, but it now has a function: it is a layer of reality that contains information the visible layer does not. This is the minimum viable form of the concept that will later be explained.",
+     "trigger": "Smith's discovery of the residual trace — the specific thing in the room that the police overlooked.",
+     "state_delta": {
+      "variable": "functional_status",
+      "from": "atmospheric_implication",
+      "to": "implied_information_layer"
+     }
+    }
+   ],
+   "leaving_state": "The Matrix as a concept is still unnamed and unexplained, but it has moved from nonexistent to faintly implied. The audience now has a shape for the gap: there is a layer of reality that Smith can read and the police cannot, and that layer contains information about Trinity's escape. The concept is not a theory the audience holds; it is a pressure they feel.",
+   "significance_shift": "Before this scene, the impossible was just impossible — spectacle without a frame. After this scene, the impossible is evidence of a hidden layer. The audience does not know what the Matrix is, but they know that someone (Smith) can read the room in a way the police cannot, and that difference is the first outline of the concept that will later define the entire story."
+  },
+  {
+   "entity": "ob-04",
+   "kind": "object",
+   "entering_state": "The tracking bug has not been introduced. It does not yet exist in the audience's awareness or in the visible narrative. However, the residual trace Smith finds at the hotel — the thing the police missed — functions as a proto-object in this scene: it is the first physical evidence of the Matrix's information layer, and it is the seed from which the tracking bug's later role may grow. The bug itself is not present, but the category of 'small, readable artifact that leads the pursuit' is being established.",
+   "forces_acting": [
+    "Smith's attention — the trace exists because Smith can perceive it. Without Smith, it would remain invisible, part of the room's background noise. His attention is the force that makes it an object.",
+    "The police's inattention — the police processed the room and saw nothing there. Their framework is the force that makes the trace invisible to them, and therefore the force that separates it from ordinary crime scene evidence.",
+    "Trinity's escape — the escape created the trace. It is a residual effect of the impossible exit, a physical or data artifact left behind by the breach in the Matrix's rules."
+   ],
+   "axis_changes": [
+    {
+     "axis": "meaning",
+     "from": "Nothing — the tracking bug is not present and the residual trace is not yet distinguished from the room.",
+     "to": "Proto-evidence — the trace establishes the category of 'small artifact that Smith can read and the police cannot.' This category is the conceptual predecessor of the tracking bug, which will later serve a similar function: a small, physical object that bridges the Matrix's information layer and the visible world.",
+     "caused_by": "Smith finding and reading the trace — the act of discovery establishes the category of readable artifact that will later include the tracking bug."
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Smith's discovery of the trace",
+     "shift": "The trace becomes the first instance of a pattern that will recur: a small, overlooked physical thing that contains information about the Matrix. It is not the tracking bug — the bug is not in this scene — but it is the first time the narrative establishes that such objects exist and that Smith can read them. The trace is a proto-object, seeding the category.",
+     "trigger": "Smith's attention catches on the residual artifact in the room.",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "The tracking bug itself is not present in this scene, but the narrative category it will occupy — small physical artifact bridging the Matrix's information layer and the visible world — has been established by the residual trace. The bug's later introduction will feel natural because this scene has already taught the audience that such objects exist.",
+   "significance_shift": "The tracking bug is not in this scene, but the scene establishes the category of object it will belong to. After this scene, the audience has been prepared for the idea that small, physical, overlookable things can carry information about the hidden layer of reality. When the tracking bug appears later, it will land in a conceptual space this scene has already opened."
+  }
+ ],
+ "specimen": {
+  "lines": [
+   {
+    "line": "She went through the third-floor window. We've got a perimeter set, but the trail's gone cold. If your people had told us what we were walking into—",
+    "speaker": "Lieutenant",
+    "subtext": "I'm covering my failure by blaming yours. I need to reassert that I run this operation."
+   },
+   {
+    "line": "She didn't go through the window.",
+    "speaker": "ch-04",
+    "subtext": "Your entire report is wrong. I know more about what happened in your crime scene than you do, and I have not been inside it until now."
+   },
+   {
+    "line": "My officers watched her. This is still my scene — I need to see some credentials.",
+    "speaker": "Lieutenant",
+    "subtext": "Don't tell me what happened in my own building. I was here. And who the hell are you?"
+   },
+   {
+    "line": "Tell me what you saw.",
+    "speaker": "ch-04",
+    "subtext": "I already know what they saw. I want to hear you fail to describe it. I want you to hear your own words fall short and understand that the shortfall is the point."
+   },
+   {
+    "line": "She moved... fast. Too fast. She went through that window like it wasn't—",
+    "speaker": "Lieutenant",
+    "subtext": "I'm describing something I don't believe I saw. The sentence is coming apart because the experience doesn't fit the language I've been given."
+   },
+   {
+    "line": "Yes. She was.",
+    "speaker": "ch-04",
+    "subtext": "Not 'inhumanly' — just 'was.' He confirms without correcting, because 'inhuman' is the only word the lieutenant got right. The flatness is the leakage: the impossible is his jurisdiction, and he finds it tedious, not terrifying."
+   },
+   {
+    "line": "Your suspect is connected to a man named Morpheus. I'll need your case files, your surveillance, and this floor cleared.",
+    "speaker": "ch-04",
+    "subtext": "Three demands, no request, no jurisdictional negotiation. He is not taking over the investigation; he is consuming it. The name Morpheus is the hook that redirects the pursuit from Trinity to the network behind her."
+   }
+  ],
+  "moment": "The turning point: the lieutenant tries to reassert procedural control — demanding credentials, asserting jurisdiction — and Smith responds not by refusing or threatening but by redirecting with 'Tell me what you saw,' a command that bypasses the procedural frame entirely. The lieutenant's authority dies in the gap between his question and Smith's non-answer. From that line forward the scene belongs to Smith; the lieutenant becomes someone who fills silences.",
+  "risks_checked": [
+   {
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The collapse is visible inside the dialogue itself, not in stage directions: line 5, the lieutenant's sentence disintegrates mid-clause ('like it wasn't—'), and he never recovers it. Smith's menace is established by line 4 — 'Tell me what you saw' — which is an interrogation command delivered to the person who nominally runs the crime scene. The power inversion is in the words, not the blocking.",
+    "risk": "At 146 words the scene is very short — there is a risk it cannot establish Smith's physical menace and the lieutenant's collapse in a handful of lines. If the dialogue is not precisely calibrated, it reads as a perfunctory transition rather than an antagonist's introduction."
+   },
+   {
+    "does_the_exchange_avoid_it": true,
+    "evidence": "Line 4 — 'Tell me what you saw' — is menacing without the lieutenant's fear to amplify it. It is a command whose authority comes from Smith's refusal to answer the credentials question: a man who ignores a jurisdictional demand does not need to explain why. The dynamic lands through Smith's behavior, not the lieutenant's stammer.",
+    "risk": "The lieutenant is a throwaway figure with no entity id; there is a risk the audience does not invest in the power dynamic because one party is anonymous. Smith's menace must carry through atmosphere, not through the lieutenant's reaction alone."
+   },
+   {
+    "does_the_exchange_avoid_it": true,
+    "evidence": "Line 6 — 'Yes. She was.' — confirms the impossible without registering it as impossible. Smith treats the supernatural as a weather reading: routine, tedious, beneath comment. The audience should feel the wrongness of that flatness without being able to name it — he is not horrified by the inhuman, he is bored by it. That boredom is the leakage; it plants the question 'why does this feel wrong?' without answering it.",
+    "risk": "Foreshadowing Smith's Matrix-hatred without tipping it requires the tonal wrongness to be subtle enough to register subliminally. If it is too overt, pl-05 st4 loses its power. If it is invisible, the foreshadowing fails entirely."
+   }
+  ],
+  "voices_distinct": "The speakers cannot swap any line. The lieutenant's lines are procedural (line 1), defensive (line 3), and dissolving (line 5) — his speech degrades from institutional confidence to unfinished sentences. Smith's lines are flat (2), commanding (4), confirmatory (6), and requisitional (7) — his speech never modulates, which is the point. The lieutenant's voice breaks under pressure; Smith's voice doesn't bend because there is no pressure, only process. If I had given the lieutenant a line like 'She didn't go through the window' it would read as denial; in Smith's mouth it reads as correction. The same words mean opposite things because the lieutenant is reporting and Smith is adjudicating.",
+  "what_this_exposes": "Reading the lines back cold: the payload is not Smith's power but his jurisdiction over the impossible. 'Yes. She was.' does not scare the audience because Smith is dangerous — it scares them because impossible things are his job, and he finds them dull. That is the tonal wrongness the craft reasoning asked for, and it is sharper than I expected: the leakage isn't that Smith hates the Matrix, it's that the Matrix bores him. The lieutenant's unfinished sentence ('like it wasn't—') also does more work than the analysis predicted — by not completing it, the scene makes the audience finish it, which means they actively imagine the wrongness instead of being told about it. The cold open's promise ('something is wrong with the world') gets reactivated through a sentence a character cannot end."
+ },
+ "continuity": {
+  "established_facts_used": [
+   {
+    "fact": "The Heart O' The City Hotel (lo-01) is a decaying hotel where a police raid cornered Trinity at gunpoint, hooking the audience with immediate threat and the promise of something beyond ordinary procedure.",
+    "source": "sc-001",
+    "how_used": "The hotel's decay and the prior police raid are the physical and situational substrate of the aftermath. Smith walks into a space already marked by failure — broken doors, spent police procedure, the residue of a cornering that didn't hold. The 'promise of something beyond ordinary procedure' from sc-001 is the permit for what Smith finds: a trace that ordinary police could not read because they don't have the conceptual frame for it."
+   },
+   {
+    "fact": "Trinity escaped from the hotel; the raid did not contain her.",
+    "source": "sc-001",
+    "how_used": "The entire scene is an inversion of the power dynamic established in sc-001. There, police had the upper hand; here, they are the ones who lost. Smith's contempt is directed at that failure. The escape itself is not re-staged — only its physical evidence is examined, which preserves sc-001's tension as a memory rather than a replay."
+   },
+   {
+    "fact": "A lieutenant figure is present but has no entity id, meaning he functions as a throwaway background presence rather than a named character with an arc.",
+    "source": "sc-002 resolution metadata",
+    "how_used": "The lieutenant is written as a body carrying a report, not a person. His lines are procedural; his physical behavior — deference, flinch, aversion gaze — does the characterization. He exists to give Smith someone to speak past, not to. This keeps the scene's weight on Smith."
+   },
+   {
+    "fact": "Agent Smith (ch-04) is a pursuit-capable antagonist whose narrative function is to redirect the chase once Trinity evades immediate capture.",
+    "source": "ch-04 entity inference from sc-002 state change",
+    "how_used": "Smith's introduction here is not a villain reveal with exposition — it is an arrival into a space already shaped by someone else's failure. His physical examination of the room (touching surfaces, noting angles and traces) establishes him as someone who reads spaces forensically, not tactically. This sets the terms for how he will be used going forward: he interprets, he doesn't chase."
+   }
+  ],
+  "constraints_honoured": [
+   "Scene runs 146 words total. Every line must carry at least two functions: one informational, one atmospheric. No description exists that doesn't also characterize Smith or seed tonal wrongness.",
+   "Dialogue runs at ~47% — roughly 69 embedded-word equivalents. This means three or four short exchanged lines, not a monologue. Smith's speech must be compressed to its minimum: cold, clipped, declarative.",
+   "Location is restricted to hotel exterior/ground floor and the escape room. Smith does not leave this space. No other location is established.",
+   "Lieutenant has no entity id; he receives no name, no description beyond behavior, no interiority. He exists as a screen for Smith to project onto.",
+   "Smith's program nature is not stated. His wrongness is registered through body language that is almost human but fails in specific, unnameable ways — too still, too deliberate, composure that reads as containment rather than calm.",
+   "Foreshadowing of pl-05 st4 (Smith's hatred of the Matrix) must be subliminal: the tonal wrongness is felt as discomfort, not explained as motive. His contempt for the lieutenant could read as professional arrogance; the subtext — that he despises the entire system the lieutenant serves — is available only on re-viewing.",
+   "The 'residual trace of the impossible' must be concrete enough to redirect Smith's focus but ambiguous enough that the audience cannot yet parse what it means. It is a detail — a physical fact in the room — not an explanation.",
+   "World rule: Agents possess institutional authority over police within the Matrix system. The lieutenant defers without understanding why he defers. This is not negotiation; it is hierarchy the lieutenant senses but cannot name.",
+   "World rule: The Matrix is a simulation, so violations of physics are the evidence trail Agents read. The trace Smith notices is a physical impossibility that police dismissed as damage or debris."
+  ],
+  "contradictions_checked": [
+   {
+    "risk": "Trinity's escape method is contradicted by the physical evidence Smith examines. If the trace specifies a mechanism (a shattered wall, a phone-line cut), a later escape reveal may be boxed in or contradicted.",
+    "avoided_by": "The trace is described from Smith's perception only, not explained. It is something he sees that doesn't fit — conveyed through his reaction and redirected attention, not through physical exposition. The audience learns what Smith is looking at, but what it means is deferred. No escape mechanism is committed to or foreclosed."
+   },
+   {
+    "risk": "Smith's behavior reveals his program nature too overtly (moving too fast, speaking in machine cadence, demonstrating superhuman perception), undercutting the later reveal.",
+    "avoided_by": "His wrongness is calibrated to the human uncanny, not the inhuman obvious. He is too still, too controlled — the discomfort comes from suppression, not display. He does not examine the room at superhuman speed; he examines it with a stillness that a human would fill with small movement. His perception is sharp but framed as expertise, not impossibility. The audience reads 'unsettling federal agent,' not 'machine.'"
+   },
+   {
+    "risk": "The lieutenant's deference reads as plot convenience — police lieutenants don't hand scenes over to anonymous suits without jurisdiction.",
+    "avoided_by": "The lieutenant's compliance is not voluntary; it is instinctive. He doesn't say 'you're in charge' — he simply stops talking when Smith enters his physical space. His body language (stepping back, report hand dropping, eyes cutting away) reads as mammalian submission before it reads as jurisdictional deference. The system-level authority (Agent over police) is felt as something the lieutenant cannot articulate, which is both the world rule functioning and the tonal wrongness seeding."
+   },
+   {
+    "risk": "The tonal wrongness is too invisible at 146 words — with only a handful of lines and minimal description, the foreshadowing of pl-05 st4 fails to register even subliminally.",
+    "avoided_by": "The wrongness is concentrated in two specific, concrete physical details rather than diffused across atmosphere: (1) Smith's hand on a surface lingers a beat too long — contact that reads as testing the fabric of the room, not searching it; (2) his final line is grammatically correct but tonally flat where a human would show satisfaction — he states a fact about the trace the way a doctor states a diagnosis, without curiosity or urgency, which is the wrong register for a pursuit and will sit in the audience as unease even if unattributable."
+   },
+   {
+    "risk": "The scene's short length makes it read as a perfunctory transition rather than an antagonist introduction, failing to establish Smith as a physical presence with menace.",
+    "avoided_by": "Smith is introduced through occupation of space: he is in the room, he is touching things, he is between the lieutenant and the exit. The lieutenant is the one who is positioned as transient. Menace comes from the fact that Smith is in no hurry — he has more time than the room knows what to do with. His slowness is the threat."
+   }
+  ],
+  "state_preconditions": [
+   {
+    "entity": "ch-04",
+    "variable": "pursuit_phase",
+    "must_be": "hunting_trinity"
+   },
+   {
+    "entity": "lo-01",
+    "variable": "narrative_role",
+    "must_be": "escape_point"
+   },
+   {
+    "entity": "ch-01",
+    "variable": "location_status",
+    "must_be": "escaped_from_lo-01"
+   }
+  ],
+  "forward_commitments": [
+   "The residual trace Smith discovers must recur or be addressed in a later scene — it is now evidence in a directed pursuit, not atmosphere. Later nodes cannot treat it as disposable set dressing; Smith is tracking it.",
+   "Smith's pursuit_phase is now 'hunting_trinity_with_evidence' (per resolution). The next scene involving Smith must show the investigation shaped by this trace, not a return to undirected manhunt.",
+   "The tonal wrongness — Smith's flat affect, his testing touch, his diagnostic register — is now planted. pl-05 st4 must pay it off as the expression of something deeper (hatred of the Matrix) without re-establishing it. The seed is here; the fruit is there.",
+   "The lieutenant's instinctive deference establishes the Agent-police hierarchy. Later scenes involving police and Agents must maintain this: police comply before they are instructed to. This is now a behavioral norm, not a one-off.",
+   "Smith's method — forensic reading of physical space for simulation violations rather than tactical pursuit — is now his signature. Later scenes may escalate or complicate this, but cannot revert him to a generic chaser without contradicting this introduction.",
+   "lo-01's narrative role shifts to 'crime_scene_aftermath.' Any future return to this hotel carries the memory of Smith's presence here; the space is no longer just Trinity's escape point, it is the place Smith arrived and marked as his territory."
+  ]
+ }
+}

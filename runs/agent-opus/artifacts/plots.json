@@ -1,0 +1,274 @@
+{
+ "plots": [
+  {
+   "plot_id": "pl-01",
+   "type": "external_main",
+   "title": "The retrieval of the Cold Nail",
+   "agent": [
+    "ch-01"
+   ],
+   "resistance": [
+    "ch-03",
+    "ch-04",
+    "gr-01",
+    "ch-05",
+    "cn-01",
+    "lo-02",
+    "lo-03",
+    "pl-02"
+   ],
+   "goal": "Get the Cold Nail back out of the raiders' hands at the slate quarry and into the hall's king-post at Kettleburn's midwinter rite, within nine days, so the ward over the snowpack is presented and struck.",
+   "stakes": "Unstruck, the ward stops and the Hold re-assesses unwarded ground at a levy per head payable in people; sixty-one souls are re-priced in bodies rather than iron, and the winter grain taken with the Nail is already gone.",
+   "outcome": "success",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "standing_obligation",
+     "intent": "Kettleburn's third-generation tithe in worked iron is shown as ordinary arithmetic, and Wenna spends an unhurried working day truing the Nail's tang at Bale's forge. The reader is taught to read grain, scale colour and quench marks as trade procedure, before anything is at stake in them.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "state_of_rupture",
+     "intent": "Nine days before the rite, raiders out of Fenner's Waste take the winter grain and the Nail from the forge yard while custody of both is hers. The loss is a failure of keeping, not of courage.",
+     "because": []
+    },
+    "st3": {
+     "step": 3,
+     "function": "stakes_declared",
+     "intent": "The village and the Hold's factor both count what an unstruck ward costs, and the count is done in heads and in the levy the ledger already has a column for. The nine-day clock, six hours of daylight and a finite charcoal stack are established as the real antagonists of the road.",
+     "because": []
+    },
+    "st4": {
+     "step": 4,
+     "function": "goal_assumed",
+     "intent": "Wenna takes the retrieval on herself because she is the only person who can identify that piece of iron by grain and weight, which makes her the only useful traveller and not the bravest one. She is competent with material and evasive about what she owes the people she is leaving.",
+     "because": []
+    },
+    "st5": {
+     "step": 5,
+     "function": "resourcing_refused",
+     "intent": "The one currency the raiders would accept is the forge's finished stock, and Orin Bale refuses it without giving a reason, so she leaves with no purchase price and a plan that must therefore be theft. The refusal is unexplained, and she carries it up the mountain as a grievance.",
+     "because": [
+      "pl-02:st2"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "attrition_of_the_road",
+     "intent": "Four days over the Marrow on six-hour daylight, with fuel, food and frostbite tracked as depleting quantities and a laden return already budgeted as slower than the walk out. Nothing is overcome by luck; distance is paid for in charcoal and in her hands.",
+     "because": [
+      "pl-02:st2"
+     ]
+    },
+    "st7": {
+     "step": 7,
+     "function": "resistance_humanised",
+     "intent": "At the quarry the raiders are Sarn Dree and forty people out of a village the Hold un-warded eleven years ago for arrears, wintering in slate and short of iron for exactly the reasons Kettleburn is short of grain. Sarn negotiates rather than threatens, and names his price in worked iron she was forbidden to bring.",
+     "because": [
+      "pl-02:st2"
+     ]
+    },
+    "st8": {
+     "step": 8,
+     "function": "point_of_no_return",
+     "intent": "Unable to buy, she waits two nights and takes the Nail out of the tally-shed, and Tibb Dree, fifteen, on watch, catches her at the door and is killed with a hammer at arm's length. The killing is close, quick, badly done and irreversible, and it is the price of the refusal she was never given a reason for.",
+     "because": [
+      "pl-02:st2"
+     ]
+    },
+    "st9": {
+     "step": 9,
+     "function": "false_victory",
+     "intent": "Two nights into the walk back, reading the recovered iron by firelight out of habit, she finds no live-quench grain at the tang and scale colour forty years too young: the object is recovered and holds nothing. The recovery succeeds and the goal is emptied in the same gesture, by exactly the craft evidence taught in st1.",
+     "because": []
+    },
+    "st10": {
+     "step": 10,
+     "function": "substitution_of_the_object",
+     "intent": "What now has to reach the king-post before the rite is not the thing that was stolen but a true nail, made and paid for in the two days left, and it comes off the anvil two ounces heavier than the figure the Hold's ledger has carried for forty years. The retrieval is completed by manufacture and by a body, not by the return journey.",
+     "because": [
+      "pl-02:st6",
+      "pl-02:st7"
+     ]
+    },
+    "st11": {
+     "step": 11,
+     "function": "confrontation_at_the_measure",
+     "intent": "The rite is dramatised in full: the factor weighs the nail on Bale's own beam scale against the forty-year-old entry, unhurried and correct, and the beam will not sit. The motif of weight and measure pays off as a discrepancy nobody in the hall can interpret except the two people who must not explain it.",
+     "because": [
+      "pl-02:st7"
+     ]
+    },
+    "st12": {
+     "step": 12,
+     "function": "resolution",
+     "intent": "The factor enters the correction against a tithe raised a fifth for nine years, Wenna signs for the village without asking the village, and the nail goes into the king-post. The ward is real for the first time in forty years, and nobody in the hall knows that it was false or that it is now true.",
+     "because": [
+      "pl-02:st8"
+     ]
+    }
+   },
+   "resolution_step": "st12",
+   "thematic_function": "Carries the institutional critique and the class arithmetic: the durable antagonist is the tithe and its ledger, not the raiders, who are shown losing under the same arrangement. It also converts competence into answerability — every step she solves with material skill is paid for by somebody named, and the successful recovery is worth nothing until a person pays for it.",
+   "screen_time_share": 0.55,
+   "interference": [
+    {
+     "with": "pl-02",
+     "kind": "clock: the nine days that recovery consumes are the last nine days Orin is fit to make and pay for a true nail himself, so every hour she spends on the road forecloses his intended payment and hands it to her"
+    },
+    {
+     "with": "pl-02",
+     "kind": "resource: the forge's finished stock and the charcoal stack can be spent as ransom or spent on a quench, never both, and the road burns fuel the two-day making then does not have"
+    },
+    {
+     "with": "pl-02",
+     "kind": "agent: she can pursue the retrieval only by leaving him alone at seventy in the shop, and can only interrogate him by having first come back with the evidence"
+    }
+   ],
+   "covers_synopsis": [
+    "s01",
+    "s02",
+    "s04",
+    "s05",
+    "s06",
+    "s08",
+    "s09",
+    "s10",
+    "s11",
+    "s12",
+    "s18",
+    "s20",
+    "s21"
+   ]
+  },
+  {
+   "plot_id": "pl-02",
+   "type": "relationship",
+   "title": "What Wenna Cray owes Orin Bale",
+   "agent": [
+    "ch-01",
+    "ch-02"
+   ],
+   "resistance": [
+    "ch-02",
+    "ob-01",
+    "ch-05",
+    "cn-01",
+    "pl-01"
+   ],
+   "goal": "Wenna pursues a settlement of the forty-year debt that leaves Orin Bale both answerable and alive: she wants him to account for the forgery in his own words and to be kept out of the Hold's hands, and she wants the account to come from him rather than from the iron.",
+   "stakes": "The only household and the only trade she has; if the debt is settled by denunciation she loses him to the factor's ledger, and if it is settled by his own quench at seventy she loses him before spring — and either way the forty years of tithe Kettleburn has paid for nothing stay unpaid for.",
+   "outcome": "transformation_of_goal",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "established_intimacy",
+     "intent": "The household of two is shown as working practice: he took her at eight, taught her by letting her ruin stock she could not replace, and has not corrected her grip on the haft in six years. Warmth arrives only in trade vocabulary — a tool lent, a weight called without checking, a correction deliberately not made.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "refusal_without_reason",
+     "intent": "With the Nail gone and a purchase price the obvious answer, she asks for the forge's finished stock and he refuses it flatly and offers nothing, letting her think it is old-man thrift. He is protecting stock he has been folding since autumn for a purpose he does not name, and the silence is the first thing between them that has weight.",
+     "because": [
+      "pl-01:st2"
+     ]
+    },
+    "st3": {
+     "step": 3,
+     "function": "absence_as_erosion",
+     "intent": "For nine days the relationship is conducted at a distance neither can cross: he works the shop alone at seventy and goes on folding, she carries the unexplained refusal as a grievance that hardens every mile. What each of them is doing for the other is invisible to the other, and stays invisible until the iron speaks.",
+     "because": [
+      "pl-01:st6"
+     ]
+    },
+    "st4": {
+     "step": 4,
+     "function": "evidence_against_the_father",
+     "intent": "The grain, the tang and the scale colour identify the forgery, and identify the hand: she has been reading his work since she was eight and knows it the way she knows a signature. The accusation enters the relationship as a craft judgement made by a person who could be wrong, and she is not wrong.",
+     "because": [
+      "pl-01:st9"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "account_in_his_own_terms",
+     "intent": "He disputes nothing. The true Nail cracked forty years ago, a fresh quench was owed, the lot for the payer fell on his eleven-year-old sister, and he made a nail that could not hold anything rather than spend her — a reason that was good in its year and is not made good by anything that comes after it.",
+     "because": []
+    },
+    "st6": {
+     "step": 6,
+     "function": "the_payment_he_intended",
+     "intent": "The stock he refused her is disclosed as the stock for a true nail he means to quench himself, which at seventy kills him before spring, and which retroactively explains the refusal without excusing what the refusal cost at the tally-shed door. She now knows the boy died for the difference between his silence and his intention.",
+     "because": []
+    },
+    "st7": {
+     "step": 7,
+     "function": "point_of_no_return",
+     "intent": "She takes the work off him: draws his stock down over the two days left, makes the nail, and quenches it against her own hands, cold-marking herself for life and losing the grain-sense and the balance in the haft that made her the best thing in the shop. In doing it she takes from him the one payment he had left to make, and the goal she came home with is spent rather than reached.",
+     "because": [
+      "pl-01:st3"
+     ]
+    },
+    "st8": {
+     "step": 8,
+     "function": "loyalty_paid_at_the_scale",
+     "intent": "With the beam refusing to sit and the factor waiting, she declines the one sentence that would clear her, and says instead that she made the nail, that it is two ounces heavy, and asks what a corrected weight costs. The debt is settled by putting the price on herself and on the village rather than on him, and the accounting is done in a courteous voice over a ledger.",
+     "because": [
+      "pl-01:st11"
+     ]
+    },
+    "st9": {
+     "step": 9,
+     "function": "cost_carried",
+     "intent": "Afterwards the costs are held as facts rather than feelings: fingertips black to the second knuckle, no fever ever again, never warm, a shortened life, a spent stock, charcoal that will not reach spring, a tithe raised a fifth for nine years that she committed the village to alone. She can justify none of it aloud without handing Orin to the Hold, and Sarn Dree has neither nephew nor iron.",
+     "because": [
+      "pl-01:st12"
+     ]
+    },
+    "st10": {
+     "step": 10,
+     "function": "unspoken_settlement",
+     "intent": "Neither of them speaks of the forgery, the sister, the quench or the boy, and the shop goes on being kept by two people. Four days after the rite he steps behind her at the anvil and shifts her grip on the haft — a correction he has not made in six years and has to make now because her fingers cannot find the balance — and she lets him, and goes on working.",
+     "because": []
+    }
+   },
+   "resolution_step": "st10",
+   "thematic_function": "Holds the melancholy, the low moral clarity and the coming-of-age spine: an excellent maker who is poor with obligation learns to be answerable by taking somebody else's price onto her own body. It keeps the forgery a defensible old decision rather than a villainy, and puts the last choice in the hands of the apprentice, unwitnessed and unthanked.",
+   "screen_time_share": 0.45,
+   "interference": [
+    {
+     "with": "pl-01",
+     "kind": "resource: his refusal of the forge's finished stock removes the only non-violent means of recovering the Nail, so pl-01 can only proceed as theft, and the theft's cost is a dead fifteen-year-old"
+    },
+    {
+     "with": "pl-01",
+     "kind": "clock: the two days the making and the quench require are taken directly out of the nine-day deadline pl-01 owns, and the quench can only be compressed that far because the rite will not move"
+    },
+    {
+     "with": "pl-01",
+     "kind": "agent: the same pair of hands is the only pair that can read the grain on the road and the only pair that can pay the quench at home, and paying the quench destroys the reading"
+    },
+    {
+     "with": "pl-01",
+     "kind": "reader: the disclosure of the forgery converts pl-01's completed recovery into a false victory, so the external plot's success cannot be enjoyed except through the relationship's damage"
+    }
+   ],
+   "covers_synopsis": [
+    "s03",
+    "s07",
+    "s13",
+    "s14",
+    "s15",
+    "s16",
+    "s17",
+    "s19",
+    "s22",
+    "s23",
+    "s24",
+    "s25"
+   ]
+  }
+ ]
+}

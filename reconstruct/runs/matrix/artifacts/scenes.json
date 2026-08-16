@@ -1,0 +1,596 @@
+{
+ "scenes": {
+  "sc-001": {
+   "scene_id": "sc-001",
+   "discourse_index": 1,
+   "chapter": 1,
+   "primary_event": "ev-001",
+   "events": [
+    "ev-001"
+   ],
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03",
+    "pl-05"
+   ],
+   "story_time_label": "day 1, night",
+   "location": "lo-01",
+   "pov": "BIG_COP",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-02"
+   ],
+   "offstage_referenced": [
+    "ch-04",
+    "gr-01"
+   ],
+   "entry_states": {
+    "ch-02": {
+     "oracle_love_prophecy_status": "unspoken",
+     "love_for_neo": "unrecognized",
+     "belief_in_neo_as_one": "uncertain"
+    },
+    "ch-04": {
+     "pursuit_phase": "hunting_trinity",
+     "escape_desire_revealed": false,
+     "status": "active"
+    },
+    "lo-01": {
+     "narrative_role": "escape_point"
+    },
+    "gr-01": {
+     "awareness_of_neo": "unaware"
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-001",
+     "type": "transition",
+     "text": "The camera establishes the Heart O' the City Hotel as a fire-scarred ruin, its polyester carpeting and walls permanently shadowed by soot. Four armed police officers creep down the blackened corridor with flashlights, readying themselves on either side of Room 303. The biggest cop kicks the door violently and the others pour in behind him, guns thrust forward.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-001",
+     "type": "conflict",
+     "text": "The big cop shouts police commands, ordering the room's occupant to freeze. The room is nearly bare: a fold-up table and chair bearing a phone, a modem, and a glowing PowerBook. Trinity sits at the keyboard in black leather, her hands still on the keys. The cop barks a further command to put her hands behind her head immediately.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "oracle_love_prophecy_status",
+       "dimension": "epistemic",
+       "before": "unspoken",
+       "after": "unspoken",
+       "magnitude": 0,
+       "op": {
+        "op": "test",
+        "path": "/ch-02/oracle_love_prophecy_status",
+        "value": "unspoken"
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-02": {
+     "oracle_love_prophecy_status": "unspoken",
+     "love_for_neo": "unrecognized",
+     "belief_in_neo_as_one": "uncertain"
+    },
+    "ch-04": {
+     "pursuit_phase": "hunting_trinity",
+     "escape_desire_revealed": false,
+     "status": "active"
+    },
+    "lo-01": {
+     "narrative_role": "escape_point"
+    },
+    "gr-01": {
+     "awareness_of_neo": "unaware"
+    }
+   },
+   "dramatic_function": "Cold-open establishment of tone and location: a decaying hotel and a police raid that corners Trinity at gunpoint, hooking the audience with immediate threat and the promise of something beyond ordinary procedure.",
+   "tension_in": 0,
+   "tension_out": 35,
+   "questions_opened": {
+    "q01": "Who is the woman in black leather and why is the police raiding an abandoned hotel for her?",
+    "q02": "What is the significance of the phone, modem, and PowerBook in a fire-ruined hotel room?",
+    "q03": "What happens to Trinity now that she is cornered at gunpoint?"
+   },
+   "questions_closed": [],
+   "target_words": 155,
+   "bound_scene_id": "sc-001",
+   "divergence": {
+    "predicted_correctly": [
+     "The Heart O' the City Hotel as the opening location, abandoned and decaying.",
+     "A police officer entering with flashlight and sidearm as the audience's proxy for ordinary authority.",
+     "The promise that something is wrong with this world and authority figures are outmatched.",
+     "The hotel established as a location that will return, seeded unconsciously as significant.",
+     "Tension entering at 0 and leaving moderate."
+    ],
+    "missed": [
+     "The forecast imagined a single BIG COP creeping down a corridor alone, hearing an impossible phone ring and advancing toward it; the script has four officers together, readying on a specific door (303) and kicking it in immediately.",
+     "The forecast predicted Trinity is not found in this beat and the scene ends on the cop's approach; the script shows Trinity immediately — she is sitting at the computer, hands on keyboard, and is ordered to surrender.",
+     "The forecast's central turning point — the impossible ringing phone in a disconnected hotel — does not occur in this passage; the phone is present but not ringing.",
+     "The forecast imagined a slow, atmospheric, solo advance; the script is a swift tactical raid, brisk and violent.",
+     "The forecast expected only BIG COP on screen; the script has four officers and Trinity visible."
+    ],
+    "why": "The forecaster imagined the writer would delay Trinity and build atmosphere through a lone cop's creeping unease; the writer instead front-loads the confrontation — four cops, a kicked door, and Trinity already found — prioritizing kinetic immediacy over slow-burn dread.",
+    "forecast_quality": 45
+   }
+  },
+  "sc-002": {
+   "scene_id": "sc-002",
+   "discourse_index": 2,
+   "chapter": 1,
+   "primary_event": "ev-001",
+   "events": [
+    "ev-001"
+   ],
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03",
+    "pl-05"
+   ],
+   "story_time_label": "day 1, night",
+   "location": "lo-01",
+   "pov": "ch-04",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-04",
+    "ch-11",
+    "ch-12",
+    "lo-01"
+   ],
+   "offstage_referenced": [
+    "ch-02"
+   ],
+   "entry_states": {
+    "ch-04": {
+     "pursuit_phase": "hunting_trinity",
+     "escape_desire_revealed": false,
+     "status": "active"
+    },
+    "ch-11": {
+     "status": "active"
+    },
+    "ch-12": {
+     "status": "active"
+    },
+    "lo-01": {
+     "narrative_role": "escape_point"
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-001",
+     "type": "transition",
+     "text": "A black sedan with tinted windows glides through the police cruisers surrounding the Heart O' the City Hotel. Agent Smith, Agent Brown, and Agent Jones exit the car in dark suits and sunglasses despite the hour, each hardwired with a coiled earpiece cord vanishing into a shirt collar.",
+     "participants": [
+      "ch-04",
+      "ch-11",
+      "ch-12",
+      "lo-01"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-001",
+     "type": "conflict",
+     "text": "Smith addresses the Lieutenant by rank. The Lieutenant reacts with a muttered oath, then informs Smith that he is simply doing his job and that if Smith tries to pull jurisdictional rank, he can shove it.",
+     "participants": [
+      "ch-04",
+      "ch-11",
+      "ch-12"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-001",
+     "type": "dialogue",
+     "text": "Smith states that the orders given to the Lieutenant were for his protection. The Lieutenant laughs, expressing confidence that his team can handle one little girl.",
+     "participants": [
+      "ch-04"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-001",
+     "type": "reversal",
+     "text": "Smith nods to Brown and the Agents turn toward the hotel. The Lieutenant calls after them, insisting he has already sent two units upstairs and that they are bringing the target down at this moment.",
+     "participants": [
+      "ch-04",
+      "ch-11",
+      "ch-12"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 5,
+     "event_id": "ev-001",
+     "type": "revelation",
+     "text": "Smith replies without turning back: the Lieutenant's men are already dead. The declaration lands flat, final, and utterly certain, reframing the entire operation in a single sentence.",
+     "participants": [
+      "ch-04",
+      "ch-11",
+      "ch-12"
+     ],
+     "changes": []
+    }
+   ],
+   "exit_states": {
+    "ch-04": {
+     "pursuit_phase": "hunting_trinity",
+     "escape_desire_revealed": false,
+     "status": "active"
+    },
+    "ch-11": {
+     "status": "active"
+    },
+    "ch-12": {
+     "status": "active"
+    },
+    "lo-01": {
+     "narrative_role": "escape_point"
+    }
+   },
+   "dramatic_function": "Establishes Agent Smith and his colleagues as a tier of authority above local police, their insectoid uniformity signaling non-human precision. Smith's final pronouncement reframes the police operation as futile and transfers the real threat from uniformed officers to the men in suits.",
+   "tension_in": 45,
+   "tension_out": 65,
+   "questions_opened": {
+    "q01": "Are the Lieutenant's two units truly dead, and how?",
+    "q02": "What are the Agents, given their uniform appearance and hardwired earpieces?"
+   },
+   "questions_closed": [],
+   "target_words": 146,
+   "bound_scene_id": "sc-002",
+   "divergence": {
+    "predicted_correctly": [
+     "Smith arrives at the Heart O' the City Hotel exterior with police on scene",
+     "The Lieutenant is present and defers to Smith's authority",
+     "Smith is calm and contemptuous beneath professional composure",
+     "The scene reframes the cops as tools rather than the real threat",
+     "The scene seeds Agents as something beyond normal law enforcement",
+     "Smith's knowledge exceeds the cops' understanding of the situation",
+     "The scene runs very short with a high dialogue ratio"
+    ],
+    "missed": [
+     "Three Agents arrive together, not just Smith — Brown and Jones are present and visually characterized as a unit",
+     "The Lieutenant is openly hostile and resistant, not merely deferential — he swears at Smith and challenges jurisdiction before complying",
+     "Smith never redirects tactical focus to the phone or hardline — the forecast's central prediction about the hardline as chokepoint does not occur in this passage",
+     "The scene's climax is Smith declaring the Lieutenant's men already dead, not a correction about the phone being the target's escape route",
+     "The Lieutenant volunteers that he sent two units already bringing the target down, rather than Smith redirecting the operation",
+     "No tactical redirect of any kind occurs — Smith simply walks toward the hotel after the declaration"
+    ],
+    "why": "The blind reasoning forecast a scene about Smith correcting the Lieutenant's tactical assessment by redirecting focus to the hardline, but the actual scene is about jurisdictional hostility and a single devastating pronouncement that the cops are already dead, making the power gap existential rather than tactical."
+   }
+  },
+  "sc-003": {
+   "scene_id": "sc-003",
+   "discourse_index": 3,
+   "chapter": 1,
+   "primary_event": "ev-001",
+   "events": [
+    "ev-001"
+   ],
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03",
+    "pl-05"
+   ],
+   "story_time_label": "day 1, night",
+   "location": "lo-01",
+   "pov": "ch-02",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-02"
+   ],
+   "offstage_referenced": [],
+   "entry_states": {
+    "ch-02": {
+     "oracle_love_prophecy_status": "unspoken",
+     "love_for_neo": "unrecognized",
+     "belief_in_neo_as_one": "uncertain"
+    },
+    "ch-04": {
+     "pursuit_phase": "hunting_trinity",
+     "escape_desire_revealed": false,
+     "status": "active"
+    },
+    "lo-01": {
+     "narrative_role": "escape_point"
+    },
+    "gr-01": {
+     "awareness_of_neo": "unaware"
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-001",
+     "type": "conflict",
+     "text": "The Big Cop flicks out his cuffs while the other officers hold their aim on Trinity. They are experienced, confident, certain they have cornered her — until the cuffs reach for her wrists and the calculation breaks apart.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-001",
+     "type": "action",
+     "text": "Trinity moves with a speed that barely registers, smooth and fast, inhumanly fast. Her palm snaps up and the Big Cop's nose explodes in blood. Her leg kicks with the force of a wrecking ball and his two-hundred-fifty-pound body flies backward, slamming into the farthest cop.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-001",
+     "type": "action",
+     "text": "Trinity is already moving again, a blur through the room. Bullets rake the walls as the remaining cops fire in blind panic, flashlight beams sweeping uselessly. She is a leather-clad ghost they cannot track, let alone stop.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-001",
+     "type": "action",
+     "text": "A gun still in a cop's hand is snatched, twisted, and fired. A final violent exchange of gunfire erupts, and when it ends Trinity is the only one standing. A flashlight rocks slowly to a stop on the floor.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 5,
+     "event_id": "ev-001",
+     "type": "reaction",
+     "text": "Trinity stands alone among the fallen officers. She voices a single profanity — an expression of frustration or dismay, suggesting the fight has cost time she did not have or that the real threat she fears has not yet been faced.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-04",
+       "variable": "pursuit_phase",
+       "dimension": "spatial",
+       "before": "hunting_trinity",
+       "after": "hunting_trinity",
+       "magnitude": 0,
+       "op": {
+        "op": "replace",
+        "path": "/ch-04/pursuit_phase",
+        "value": "hunting_trinity"
+       }
+      },
+      {
+       "entity": "lo-01",
+       "variable": "narrative_role",
+       "dimension": "world",
+       "before": "escape_point",
+       "after": "escape_point",
+       "magnitude": 0,
+       "op": {
+        "op": "replace",
+        "path": "/lo-01/narrative_role",
+        "value": "escape_point"
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-02": {
+     "oracle_love_prophecy_status": "unspoken",
+     "love_for_neo": "unrecognized",
+     "belief_in_neo_as_one": "uncertain"
+    },
+    "ch-04": {
+     "pursuit_phase": "hunting_trinity",
+     "escape_desire_revealed": false,
+     "status": "active"
+    },
+    "lo-01": {
+     "narrative_role": "escape_point"
+    },
+    "gr-01": {
+     "awareness_of_neo": "unaware"
+    }
+   },
+   "dramatic_function": "First on-screen demonstration of freed-human capability: Trinity moves inhumanly fast and dismantles multiple armed cops with brutal efficiency, establishing the combat register of the film and confirming that police authority is illusory. The scene ends not with escape but with Trinity's frustrated profanity — the fight is won but the extraction has not occurred, and the real threat remains unresolved.",
+   "tension_in": 85,
+   "tension_out": 65,
+   "questions_opened": {
+    "q04": "What is Trinity — how did a woman move faster than humanly possible and defeat armed cops bare-handed?",
+    "q05": "Why does Trinity say 'Shit' after winning — what is still wrong or threatening?"
+   },
+   "questions_closed": [],
+   "target_words": 157,
+   "bound_scene_id": "sc-003",
+   "divergence": {
+    "predicted_correctly": [
+     "Trinity demonstrates inhumanly fast movement, confirming the freed-human capability prediction",
+     "The cops are completely outmatched, confirming the prediction that they are furniture",
+     "Trinity is established as a combat-capable operative",
+     "The scene is kinetic and visceral with almost no dialogue, as predicted",
+     "The cops' authority is revealed as illusory, confirming sc-002's declaration that they are already dead",
+     "Tension enters high and exits lower than entry"
+    ],
+    "missed": [
+     "The scene is a fight scene, not a phone-exit scene — Trinity actively fights and incapacitates the cops rather than dashing to a ringing phone",
+     "The cops DO fire their weapons — bullets rake the walls — directly contradicting the prediction that the cops never fired a shot",
+     "There is NO phone ring and NO extraction or phone-exit in this scene",
+     "Trinity does NOT vanish through the phone — she remains standing in the room at the end",
+     "Trinity says 'Shit' — suggesting frustration or that something went wrong, not a clean escape",
+     "The predicted compliant-stillness phase does not appear — the Big Cop reaches with cuffs and Trinity immediately breaks into violence",
+     "The entire predicted trajectory of compliance, phone rings, launch, and extraction is wrong for this passage",
+     "Tension exits higher than predicted because the escape is incomplete and Trinity's profanity signals unresolved urgency"
+    ],
+    "why": "The blind reasoning collapsed the fight and the phone-exit into a single fluid motion, but the writer separates them — this scene is purely the combat demonstration, and the extraction must wait for a later beat, with Trinity's profanity revealing the escape cost time she did not have.",
+    "forecast_quality": 50
+   }
+  },
+  "sc-004": {
+   "scene_id": "sc-004",
+   "discourse_index": 4,
+   "chapter": 1,
+   "primary_event": "ev-001",
+   "events": [
+    "ev-001"
+   ],
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03",
+    "pl-05"
+   ],
+   "story_time_label": "day 1, night",
+   "location": "lo-01",
+   "pov": "ch-04",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-04",
+    "ch-11"
+   ],
+   "offstage_referenced": [
+    "ch-02",
+    "gr-01"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "matrix_awareness": "searching",
+     "self_belief": "skeptic",
+     "bug_status": "clean",
+     "freed_from_matrix": false,
+     "combat_training": "none",
+     "oracle_consulted": false,
+     "oracle_prophecy_received": "none",
+     "physical_condition": "normal",
+     "alive": true,
+     "is_the_one": false
+    },
+    "ch-02": {
+     "oracle_love_prophecy_status": "unspoken",
+     "love_for_neo": "unrecognized",
+     "belief_in_neo_as_one": "uncertain"
+    },
+    "ch-04": {
+     "pursuit_phase": "hunting_trinity",
+     "escape_desire_revealed": false,
+     "status": "active"
+    },
+    "ch-11": {
+     "status": "active"
+    },
+    "lo-01": {
+     "narrative_role": "escape_point"
+    },
+    "gr-01": {
+     "awareness_of_neo": "unaware"
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-001",
+     "type": "transition",
+     "text": "Agent Brown enters the Heart O' the City Hotel while Agent Smith splits off toward the alley, the two pursuers dividing their search for Trinity across separate approaches to the same building.",
+     "participants": [
+      "ch-04",
+      "ch-11"
+     ],
+     "changes": [
+      {
+       "entity": "ch-04",
+       "variable": "pursuit_phase",
+       "dimension": "spatial",
+       "before": "hunting_trinity",
+       "after": "hunting_trinity",
+       "magnitude": 0,
+       "op": {
+        "op": "test",
+        "path": "/ch-04/pursuit_phase",
+        "value": "hunting_trinity"
+       }
+      },
+      {
+       "entity": "lo-01",
+       "variable": "narrative_role",
+       "dimension": "world",
+       "before": "escape_point",
+       "after": "escape_point",
+       "magnitude": 0,
+       "op": {
+        "op": "test",
+        "path": "/lo-01/narrative_role",
+        "value": "escape_point"
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "matrix_awareness": "searching",
+     "self_belief": "skeptic",
+     "bug_status": "clean",
+     "freed_from_matrix": false,
+     "combat_training": "none",
+     "oracle_consulted": false,
+     "oracle_prophecy_received": "none",
+     "physical_condition": "normal",
+     "alive": true,
+     "is_the_one": false
+    },
+    "ch-02": {
+     "oracle_love_prophecy_status": "unspoken",
+     "love_for_neo": "unrecognized",
+     "belief_in_neo_as_one": "uncertain"
+    },
+    "ch-04": {
+     "pursuit_phase": "hunting_trinity",
+     "escape_desire_revealed": false,
+     "status": "active"
+    },
+    "ch-11": {
+     "status": "active"
+    },
+    "lo-01": {
+     "narrative_role": "escape_point"
+    },
+    "gr-01": {
+     "awareness_of_neo": "unaware"
+    }
+   },
+   "dramatic_function": "A two-line transitional slug showing the Agents splitting their search pattern at the hotel, sustaining the pressure of Trinity's escape without advancing any state variable.",
+   "tension_in": 35,
+   "tension_out": 35,
+   "questions_opened": {},
+   "questions_closed": [],
+   "target_words": 45,
+   "bound_scene_id": "sc-004",
+   "divergence": {
+    "predicted_correctly": [],
+    "missed": [
+     "The blind reasoning provided no forecast at all for this scene, only a bare reference identifier, so nothing about the Agents splitting their search was anticipated."
+    ],
+    "why": "The empty transition reveals that some scenes are pure staging fragments the dramatist uses to sustain spatial continuity between action beats, invisible to any reasoning that only tracks state-level change.",
+    "forecast_quality": 0
+   }
+  }
+ }
+}

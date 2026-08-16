@@ -1,0 +1,577 @@
+<meta charset="utf-8">
+<title>Rekonstruktion — Hochrechnung</title>
+<style>
+:root{
+  --ground:#e9ebee;--surface:#f7f8fa;--surface-2:#eef0f3;--sunken:#dfe3e8;
+  --ink:#161a1f;--ink-2:#39424d;--muted:#66717e;--faint:#93a0ae;
+  --line:#cfd6de;--line-soft:#dde3ea;
+  --heat:#c2451a;--heat-soft:#f0d5c9;--quench:#2f6f8f;--quench-soft:#cfdfe8;
+  --good:#3f7d55;--good-soft:#d6e6db;--crit:#b03b26;--crit-soft:#f2d7d1;
+  --warn:#8a6a12;--warn-soft:#f0e6cc;
+  --shadow:0 1px 2px rgba(20,28,38,.07),0 10px 28px -14px rgba(20,28,38,.25);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;
+  --line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--quench:#6aa8c6;--quench-soft:#152935;
+  --good:#67a97e;--good-soft:#17281d;--crit:#d4715c;--crit-soft:#2e1713;
+  --warn:#c99b45;--warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.75);
+}}
+:root[data-theme="dark"]{
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;
+  --line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--quench:#6aa8c6;--quench-soft:#152935;
+  --good:#67a97e;--good-soft:#17281d;--crit:#d4715c;--crit-soft:#2e1713;
+  --warn:#c99b45;--warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.75);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:16px;line-height:1.63;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0}
+a{color:var(--quench)}
+.wrap{max-width:960px;margin:0 auto;padding:0 26px 100px}
+header.top{border-bottom:1px solid var(--line);background:var(--surface);margin-bottom:40px}
+header.top .wrap{padding-top:50px;padding-bottom:32px}
+.kicker{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--heat);
+  font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(29px,4.8vw,42px);line-height:1.12;letter-spacing:-.02em;margin-bottom:14px}
+.standfirst{font-size:18.5px;color:var(--ink-2);max-width:64ch;font-family:var(--serif);line-height:1.5}
+.meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:20px;font-size:12.5px;color:var(--faint);
+  font-family:var(--mono)}
+h2{font-size:25px;letter-spacing:-.015em;margin:50px 0 8px}
+h2 .num{font-family:var(--mono);font-size:12px;color:var(--heat);display:block;
+  margin-bottom:7px;letter-spacing:.08em;font-weight:700}
+h3{font-size:17.5px;margin:28px 0 9px}
+p{margin:0 0 14px;max-width:68ch}
+ul,ol{max-width:66ch;padding-left:22px}li{margin-bottom:7px}
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1.5px 5px;
+  border-radius:4px;border:1px solid var(--line-soft)}
+strong{font-weight:650}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:18px 0}
+th{text-align:left;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;padding:8px 12px 8px 0;border-bottom:1px solid var(--line)}
+td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line-soft);vertical-align:top}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;padding-right:0}
+tr.total td{border-top:2px solid var(--line);border-bottom:0;font-weight:650;padding-top:11px}
+.scroll{overflow-x:auto}
+.good{color:var(--good);font-weight:650}.bad{color:var(--crit);font-weight:650}
+.warnc{color:var(--warn);font-weight:650}
+.punch{border-radius:9px;padding:18px 22px;margin:22px 0;border:1px solid;box-shadow:var(--shadow)}
+.punch.no{background:var(--crit-soft);border-color:var(--crit)}
+.punch.yes{background:var(--good-soft);border-color:var(--good)}
+.punch.hm{background:var(--warn-soft);border-color:var(--warn)}
+.punch .lbl{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.punch.no .lbl{color:var(--crit)}.punch.yes .lbl{color:var(--good)}.punch.hm .lbl{color:var(--warn)}
+.punch .big{font-family:var(--serif);font-size:20px;line-height:1.35;margin-bottom:8px}
+.punch p{margin-bottom:0;font-size:15px}
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;
+  padding:18px 22px;margin:20px 0}
+.eyebrow{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-bottom:9px}
+pre{background:var(--sunken);border:1px solid var(--line);border-radius:7px;padding:14px 16px;
+  overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:1.6;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;padding:14px 16px}
+.stat .n{font-family:var(--mono);font-size:22px;font-weight:700;line-height:1;
+  font-variant-numeric:tabular-nums}
+.stat .l{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-top:7px}
+.stat .s{font-size:12px;color:var(--muted);margin-top:4px}
+.note{font-size:13.5px;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+footer{color:var(--faint);font-size:13px;border-top:1px solid var(--line);padding-top:20px;margin-top:48px}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="kicker">Hochrechnung · Rückwärts-Pipeline</div>
+  <h1>Was es kostet, ein Drehbuch aufzuschlüsseln</h1>
+  <p class="standfirst">Alle Stückkosten aus den eigenen Logs dieses Projekts, hochgerechnet auf
+  ein volles Spielfilmdrehbuch — inklusive der Posten, die man leicht übersieht: die
+  ausgeschriebenen Begründungen und das versteckte Denken des Modells.</p>
+  <div class="meta"><span>16. August 2026</span><span>GLM-5.2 lokal, 8 × A100</span>
+  <span>24,26 Token/s Erzeugung · 185,9 Einlesen</span></div>
+</div></header>
+
+<div class="wrap">
+
+<h2><span class="num">00</span>Worum es überhaupt geht</h2>
+<p>Ein fertiges Drehbuch zeigt nur das Endprodukt: Szenenüberschrift, Handlungsanweisung, Dialog.
+Alles, was zu diesen Zeilen geführt hat, ist unsichtbar — wer diese Figur ist, was sie in dieser
+Szene will, was sie über die andere glaubt, welcher Handlungsstrang hier vorankommt, was sich am
+Ende der Szene verändert hat.</p>
+
+<p><strong>Rekonstruktion heißt: diese unsichtbare Struktur zurückgewinnen.</strong> Man gibt der
+Pipeline ein fertiges Drehbuch und bekommt den Bauplan dahinter — Ebene für Ebene:</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Ebene</th><th>Was darin steht</th></tr></thead>
+<tbody>
+<tr><td>Story-Wurzel</td><td>Genre, Publikum, Stil, Grundprämisse</td></tr>
+<tr><td>Exposé</td><td>Handlung in Kurz- und Langfassung</td></tr>
+<tr><td>Handlungsstränge</td><td>welche Fäden laufen durch den Film, und wie spannen sie sich</td></tr>
+<tr><td>Entitäten</td><td>Figuren, Orte, Objekte, Gruppen — jeweils mit vollem Zustandsprofil</td></tr>
+<tr><td>Ereignisse</td><td>was geschieht, in welcher Reihenfolge, zu welchem Strang gehörig</td></tr>
+<tr><td><strong>Szenenprofile</strong></td><td><strong>pro Szene: wer ist drin, in welchem Zustand, was verändert sich</strong></td></tr>
+</tbody></table></div>
+
+<p>Die ersten fünf Ebenen zusammen heißen hier <strong>Überbau</strong>. Sie beschreiben den Film
+als Ganzes und kosten einmalig. Die sechste — die Szenenprofile — muss für <em>jede einzelne
+Szene</em> erzeugt werden, und deshalb bestimmt sie den Preis.</p>
+
+<div class="card">
+  <div class="eyebrow">Wozu das gut ist</div>
+  <p style="margin-bottom:0">Man kann fragen, warum man den Bauplan eines Films will, den es schon
+  gibt. Zwei Gründe: Erstens ist es der einzige Weg zu prüfen, ob die Pipeline etwas taugt — bei
+  einem <em>erfundenen</em> Buch gibt es nichts, woran man das Ergebnis messen könnte, bei einem
+  bekannten schon. Zweitens ist der Bauplan das, was sich weiterverwenden lässt: eine Fassung für
+  ein anderes Publikum, eine andere Länge, eine andere Sprache — alles Dinge, die am Bauplan
+  ansetzen und nicht am fertigen Text.</p>
+</div>
+
+<h2><span class="num">01</span>Die Überraschung vorweg</h2>
+<div class="grid">
+  <div class="stat"><div class="n good">1,3 h</div><div class="l">Überbau komplett</div><div class="s">alle 5 oberen Ebenen</div></div>
+  <div class="stat"><div class="n">37 h</div><div class="l">Szenen, einfach</div><div class="s">224 Szenen, 2 Aufrufe je</div></div>
+  <div class="stat"><div class="n">66 h</div><div class="l">Szenen, aufgeteilt</div><div class="s">die Qualitätsvariante</div></div>
+  <div class="stat"><div class="n bad">355 h</div><div class="l">mit innerem Denken</div><div class="s">dieselbe Arbeit</div></div>
+</div>
+
+<div class="punch yes">
+  <div class="lbl">Der Überbau ist fast umsonst</div>
+  <div class="big">Story-Wurzel, Exposé, Handlungsstränge, Entitäten und Ereignisse zusammen:
+  <strong>rund 1,3 Stunden</strong> für ein 224-Szenen-Drehbuch.</div>
+  <p>Gemessen 302.997 Token Eingabe und 93.293 Ausgabe über fünf Aufrufe. Wenn du nur den Überbau
+  willst — die Struktur eines fremden Drehbuchs verstehen, ohne jede Szene aufzuschlüsseln — ist
+  das eine Mittagspause, kein Projekt.</p>
+</div>
+
+<div class="scroll"><table>
+<thead><tr><th>Stufe</th><th class="num">Eingabe</th><th class="num">Ausgabe</th><th class="num">Erzeugen</th></tr></thead>
+<tbody>
+<tr><td>Story-Wurzel</td><td class="num">69.909</td><td class="num">9.267</td><td class="num">6,4 min</td></tr>
+<tr><td>Exposé</td><td class="num">56.752</td><td class="num">20.399</td><td class="num">14,0 min</td></tr>
+<tr><td>Handlungsstränge</td><td class="num">59.715</td><td class="num">13.379</td><td class="num">9,2 min</td></tr>
+<tr><td>Entitäten</td><td class="num">53.718</td><td class="num">37.885</td><td class="num">26,0 min</td></tr>
+<tr><td>Ereignisse</td><td class="num">62.903</td><td class="num">12.363</td><td class="num">8,5 min</td></tr>
+<tr class="total"><td>gesamt</td><td class="num">302.997</td><td class="num">93.293</td><td class="num">64 min</td></tr>
+</tbody></table></div>
+
+<p class="note">Vorsicht bei „Ereignisse": 12.363 Token für 224 Szenen ist <strong>dünn</strong>.
+Diese Stufe stückelt nicht, sie versucht alles in einem Aufruf. Für ein Drehbuch dieser Länge
+bekommst du damit einen Überbau, der formal steht und inhaltlich zu grob ist. Wer das ernsthaft
+braucht, muss die Stufe aufteilen — was sie teurer und besser macht.</p>
+
+<h2><span class="num">02</span>Die Szenenebene ist das ganze Geld</h2>
+<p>Darunter wird jede einzelne Szene aufgeschlüsselt, und dort entscheidet sich alles. Es gibt zwei
+Wege dorthin. Sie unterscheiden sich um Faktor 1,8 im Preis — und um den Unterschied zwischen
+brauchbar und unbrauchbar in der Qualität.</p>
+
+<h3>Was pro Szene überhaupt entstehen soll</h3>
+<p>Zwei Dinge, und es hilft sehr, sie auseinanderzuhalten:</p>
+<ul>
+<li><strong>Die Begründung</strong> („Transition"). Der ausformulierte Gedankengang: Wo steht die
+Geschichte gerade? Was soll diese Szene leisten? Was nimmt jede Figur wahr, was will sie, was
+glaubt sie über die anderen, wie verändert sie sich im Lauf der Szene? Welche Alternativen wurden
+verworfen? Das ist Fließtext in festen Feldern — und der eigentliche Wert.</li>
+<li><strong>Der Knoten.</strong> Das kompakte Szenenprofil, das daraus folgt: wer ist beteiligt, in
+welchem Zustand beginnt die Szene, was hat sich am Ende verändert. Das ist die maschinenlesbare
+Zusammenfassung.</li>
+</ul>
+<p>Die Begründung ist das Zehnfache des Knotens an Umfang. Sie ist kein Beiwerk — sie ist die
+Arbeit, und der Knoten ist ihr Ergebnis.</p>
+
+<h3>Weg 1 — „einfach": zwei Anfragen pro Szene</h3>
+<div class="pipe" style="font-family:var(--mono);font-size:12.5px;line-height:1.9;background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;padding:16px 19px;margin:16px 0;overflow-x:auto">
+Anfrage 1 → „Begründe diese Szene vollständig."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--faint)">Handwerk + Figur A + Figur B + Figur C + Objekte + Kontinuität, alles auf einmal</span><br>
+Anfrage 2 → „Erzeuge daraus das Szenenprofil."
+</div>
+<p>Naheliegend, sparsam, und es funktioniert nicht.</p>
+
+<h3>Weg 2 — „aufgeteilt": eine Anfrage pro Teilstruktur</h3>
+<div class="pipe" style="font-family:var(--mono);font-size:12.5px;line-height:1.9;background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;padding:16px 19px;margin:16px 0;overflow-x:auto">
+Anfrage 1 → <b>Handwerk.</b> Wo steht die Geschichte, wozu dient die Szene,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; was kollidiert hier, welche Alternativen fallen weg<br>
+Anfrage 2 → <b>Figur A</b> — elf Felder, nur diese eine Figur<br>
+Anfrage 3 → <b>Figur B</b> — dieselben elf Felder, nur diese eine<br>
+Anfrage 4 → <b>Musterdialog.</b> Sechs bis zehn echte Zeilen für den Wendepunkt,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; und die Prüfung der eigenen Analyse daran<br>
+Anfrage 5 → <b>Nicht-Personen.</b> Orte, Objekte, Gruppen: was verändert sich an ihnen<br>
+Anfrage 6 → <b>Kontinuität.</b> Welche Fakten wurden benutzt, welche Regeln eingehalten<br>
+<br>
+<span style="color:var(--faint)">danach maschinell zusammengesetzt — dort kann nichts mehr verloren gehen</span>
+</div>
+
+<h3>Was die sechs Anfragen im Einzelnen tun</h3>
+
+<div class="card">
+  <div class="eyebrow">1 · Handwerk</div>
+  <p style="margin-bottom:0">Die dramaturgische Entscheidung, ohne jede Figurenpsychologie. Wo
+  steht die Geschichte an diesem Punkt? Wozu ist diese Szene da — was wäre verloren, wenn man sie
+  striche? Warum <em>hier</em> und nicht drei Szenen später? Was prallt aufeinander: welcher äußere
+  Konflikt, welcher innere? Und ausdrücklich: <strong>welche Alternativen wurden verworfen</strong>,
+  und welche davon war knapp. Die knappe Alternative ist die wertvollste Angabe — sie zeigt, dass
+  überhaupt eine Wahl getroffen wurde und nicht bloß die erstbeste Idee protokolliert.</p>
+</div>
+
+<div class="card">
+  <div class="eyebrow">2 bis 3 · je eine Anfrage pro Figur</div>
+  <p>Für <em>eine</em> Figur, und ausdrücklich für keine andere, elf Felder:</p>
+  <ul style="margin-bottom:0">
+    <li><strong>Wahrnehmung</strong> — was sie in diesem Moment sieht, hört, riecht, körperlich
+    spürt. Nicht Deko: Wahrnehmung ist der Auslöser für alles Weitere.</li>
+    <li><strong>Bewertung</strong> — was das für sie wert ist, gut oder schlecht, und wie stark.</li>
+    <li><strong>Soziale Normen</strong> — was man in dieser Situation tut, und was es kostet, es
+    nicht zu tun.</li>
+    <li><strong>Modell der anderen</strong> — was sie glaubt, dass der andere denkt; was sie
+    glaubt, dass er über <em>sie</em> denkt; und eine Stufe weiter. Dazu die entscheidende Angabe:
+    <strong>wo dieses Modell falsch liegt</strong> und was der Irrtum kosten wird. Ein immer
+    zutreffendes Bild vom anderen erzeugt keine Dramatik.</li>
+    <li><strong>Triebe</strong> — was sie <em>will</em>, unabhängig davon, was klug wäre.</li>
+    <li><strong>Beeinträchtigungen</strong> — Müdigkeit, Rausch, Angst, Schmerz, Zeitdruck.</li>
+    <li><strong>Abwägung</strong> — der bewusste Teil: was sie gegeneinander hält.</li>
+    <li><strong>Gefühltes gegen Gezeigtes</strong> — die Lücke zwischen innen und außen. Aus dieser
+    Lücke entsteht Untertext.</li>
+    <li><strong>Verlauf</strong> — und das ist das Feld, das am häufigsten fehlt: die Figur steht
+    nicht still. In welchen Phasen bewegt sie sich durch die Szene, und was genau löst jeden
+    Übergang aus? Ein einzelner eingefrorener Moment ist kein Verlauf.</li>
+    <li><strong>Absicht</strong> — was sie jetzt erreichen will.</li>
+    <li><strong>Handlung</strong> — was sie tatsächlich tut.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="eyebrow">4 · Musterdialog</div>
+  <p style="margin-bottom:0">Sechs bis zehn echte Dialogzeilen für den Moment, den die
+  Handwerks-Anfrage als Wendepunkt bezeichnet hat — jede mit ihrem Untertext. Danach liest das
+  Modell sie kalt zurück und prüft jedes zuvor benannte Risiko dagegen: Wird es vermieden, und
+  welche Zeile beweist das? Dazu eine Frage, die es sich selbst stellen muss: <em>Könnten die
+  beiden Sprecher ihre Zeilen tauschen, ohne dass es auffiele?</em> Wenn ja, ist die Szene
+  kaputt — und das sieht man von innen nicht.</p>
+</div>
+
+<div class="card">
+  <div class="eyebrow">5 · Nicht-Personen</div>
+  <p style="margin-bottom:0">Orte, Gegenstände, Gruppen, Institutionen haben ebenfalls Zustände und
+  Verläufe. Welche Kräfte wirken hier auf sie? Welche Achsen bewegen sich — Besitz, Kontrolle,
+  Zusammenhalt, Glaubwürdigkeit, Zustand, Bedeutung? Und vor allem: <strong>was bedeutet die Sache
+  den Figuren danach, was sie vorher nicht bedeutet hat?</strong> Ein Gegenstand, dessen Bedeutung
+  sich nie verschiebt, ist Bühnenbild und keine Entität.</p>
+</div>
+
+<div class="card">
+  <div class="eyebrow">6 · Kontinuität</div>
+  <p style="margin-bottom:0">Belege beibringen. Jede vorausgesetzte Tatsache muss die Stelle nennen,
+  aus der sie stammt — Knotenkennung oder Zeiger ins Dokument. Welche Weltregeln waren einzuhalten?
+  Und welche Widersprüche hätte diese Szene plausibel erzeugen können, und wodurch wurden sie
+  vermieden? Das ist die Anfrage, die verhindert, dass eine in sich schöne Szene dem Rest der
+  Geschichte widerspricht.</p>
+</div>
+
+<h3>Warum ausgerechnet bei einer <em>Rekonstruktion</em> ein Musterdialog?</h3>
+<p>Hier liegt der berechtigte Einwand: Bei einer Rekonstruktion <strong>existiert der echte Dialog
+doch bereits.</strong> Das Drehbuch liegt vor. Wozu soll das Modell eigene Zeilen erfinden?</p>
+
+<p>Die Antwort hängt an einer Regel, die dieses Verfahren erst aussagekräftig macht: <strong>die
+Begründung wird blind geschrieben.</strong> Das Modell bekommt für die Analyse gerade <em>nicht</em>
+den Szenentext, sondern nur, was bis dahin etabliert ist — Figuren, Zustände, bisheriger Verlauf,
+und die äußere Hülle der Szene (Ort, Tageszeit, wer auftritt, ungefähre Länge). Es muss
+<em>entscheiden</em>, was hier geschehen sollte, statt zu <em>beschreiben</em>, was geschieht.</p>
+
+<p>Ohne diese Regel wäre das Ganze wertlos. Ein Modell, das den Ausgang kennt, produziert
+mühelos eine lückenlose Begründung dafür — rückwärts ist jede Entscheidung zwingend. Solche
+Analysen klingen tiefsinnig und sagen nichts.</p>
+
+<div class="punch yes">
+  <div class="lbl">Und deshalb der Musterdialog</div>
+  <div class="big">Er ist die einzige Stelle im ganzen Verfahren, an der die blinde Analyse eine
+  <strong>überprüfbare Vorhersage</strong> macht.</div>
+  <p>„Diese Figur wird sich hier öffnen" lässt sich nicht widerlegen. <em>Sechs konkrete
+  Dialogzeilen</em> lassen sich neben die echten legen. Alles andere in der Begründung ist
+  Behauptung; das hier ist Prognose.</p>
+</div>
+
+<p>Daraus folgen drei Dinge, die es sonst nicht gäbe:</p>
+<ul>
+<li><strong>Selbstprüfung.</strong> Schon bevor irgendjemand vergleicht, zwingt das Schreiben der
+Zeilen das Modell, seine eigene Analyse zu testen. Es kommt regelmäßig vor, dass die Analyse
+makellos ist und die daraus folgenden Zeilen tot — und genau das fällt erst beim Schreiben auf.</li>
+<li><strong>Abweichungsprotokoll.</strong> Vorhergesagte gegen tatsächliche Zeilen ergibt ein Maß
+dafür, wie gut das Modell Dramatik <em>versteht</em>, statt nur, wie gut es sie nachplappert. Über
+224 Szenen entsteht daraus eine Sammlung von Prognosen mit bekanntem Ausgang — der eigentliche
+wissenschaftliche Ertrag der ganzen Übung.</li>
+<li><strong>Fälschungsschutz.</strong> Wenn die Blindheit irgendwo undicht ist — das Modell also
+doch etwas über den Ausgang weiß —, zeigt sich das hier zuerst: die Vorhersagen werden
+verdächtig gut.</li>
+</ul>
+
+<p class="note">Genau deshalb wiegt die Null in der Vergleichstabelle so schwer. Der einfache Weg
+hat den Musterdialog immer als erstes fallen lassen, wenn das Budget knapp wurde — und damit
+ausgerechnet den einzigen Teil, der die Analyse überprüfbar gemacht hätte. Übrig bleibt eine
+Begründung, die niemand widerlegen kann. Das ist keine Ersparnis, das ist der Verlust des
+Messinstruments.</p>
+
+<h3>Warum das Aufteilen so viel ausmacht</h3>
+<p>Der Grund ist gemessen und ziemlich unbequem: <strong>das Modell passt seinen Aufwand nicht an
+die Aufgabe an.</strong> Es liefert rund 28.000 Zeichen pro Anfrage — praktisch unabhängig davon,
+wie viel man verlangt. Verlangt man mehr, wird nicht mehr geschrieben, sondern <em>dasselbe auf
+mehr Empfänger verteilt</em>.</p>
+
+<div class="scroll"><table>
+<thead><tr><th>in einer Anfrage verlangt</th><th class="num">davon vollständig</th><th class="num">Formatfehler</th></tr></thead>
+<tbody>
+<tr><td>1 Figurenanalyse</td><td class="num good">1 von 1</td><td class="num">5</td></tr>
+<tr><td>2 Figurenanalysen</td><td class="num warnc">0 von 2</td><td class="num">16</td></tr>
+<tr><td>4 Figurenanalysen</td><td class="num bad">2 von 4</td><td class="num bad">41</td></tr>
+</tbody></table></div>
+<p class="note">Bei vier waren zwei der vier reine Attrappen: Figurenkennung leer, ein Feld von elf
+gefüllt. Sie sehen auf den ersten Blick aus wie Antworten.</p>
+
+<div class="punch hm">
+  <div class="lbl">Das Bild dafür</div>
+  <div class="big">Ein Gutachter, der pro Auftrag genau acht Stunden arbeitet — egal, ob eine
+  Immobilie zu bewerten ist oder vier.</div>
+  <p>Bei einer bekommst du ein sorgfältiges Gutachten. Bei vieren bekommst du vier Gutachten zu je
+  zwei Stunden, und zwei davon sind Deckblätter mit Adresse. Willst du vier ordentliche, musst du
+  vier getrennte Aufträge erteilen. Genau das ist „aufgeteilt".</p>
+</div>
+
+<p>Deshalb kostet der aufgeteilte Weg auch tatsächlich mehr und nicht nur nominell mehr Anfragen:
+Er erzeugt <strong>22.679 statt 13.431 Token pro Szene</strong>. Das ist kein Verwaltungsaufwand —
+das ist die Analyse, die im einfachen Weg schlicht nie geschrieben wurde.</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Weg</th><th class="num">Anfragen/Szene</th><th class="num">Ausgabe/Szene</th><th class="num">vollständige Analysen</th><th class="num">Musterdialog</th><th>Urteil</th></tr></thead>
+<tbody>
+<tr><td>einfach</td><td class="num">2</td><td class="num">13.431</td><td class="num bad">1 von 7</td><td class="num bad">0</td><td class="bad">0 von 4 bestanden</td></tr>
+<tr><td>aufgeteilt</td><td class="num">5,3</td><td class="num">22.679</td><td class="num good">6 von 6</td><td class="num good">7</td><td class="good">4 von 4 bestanden</td></tr>
+</tbody></table></div>
+
+<p>Die aufschlussreichste Spalte ist der Musterdialog: <strong>null gegen sieben</strong>. Der
+einfache Weg hat kein einziges Mal die Dialogzeilen geschrieben, an denen sich die eigene Analyse
+überprüfen ließe. Genau die fiel als erstes weg, als das Budget knapp wurde — und sie ist der
+einzige Teil, der eine schöne Analyse von einer zutreffenden unterscheidet. Eine makellose
+Figurenanalyse und eine tote Szene sehen auf dem Papier identisch aus, bis jemand spricht.</p>
+
+<h3>Hochgerechnet auf 224 Szenen</h3>
+<div class="scroll"><table>
+<thead><tr><th>Konfiguration</th><th class="num">Ausgabe gesamt</th><th class="num">Erzeugen</th><th class="num">Einlesen</th><th class="num">gesamt</th></tr></thead>
+<tbody>
+<tr><td>einfach, warmer Cache</td><td class="num">3.008.619</td><td class="num">34,4 h</td><td class="num">2,7 h</td><td class="num good">37,1 h</td></tr>
+<tr><td>einfach, kalt</td><td class="num">3.008.619</td><td class="num">34,4 h</td><td class="num">18,0 h</td><td class="num">52,5 h</td></tr>
+<tr><td>aufgeteilt, warmer Cache</td><td class="num">5.080.096</td><td class="num">58,2 h</td><td class="num">7,5 h</td><td class="num good">65,6 h</td></tr>
+<tr><td>aufgeteilt, kalt</td><td class="num">5.080.096</td><td class="num">58,2 h</td><td class="num">49,7 h</td><td class="num bad">107,8 h</td></tr>
+</tbody></table></div>
+
+<div class="punch hm">
+  <div class="lbl">Der Cache ist kein Detail</div>
+  <div class="big">Kalt gegen warm: <strong>42 Stunden Unterschied</strong> bei der aufgeteilten
+  Variante — mehr als die gesamte Erzeugungszeit der einfachen.</div>
+  <p>Das Einlesen wächst mit der Aufrufzahl, und der aufgeteilte Weg macht 5,3 statt 2 Aufrufe pro
+  Szene, jeder mit vollem Kontext. Bleibt das gemeinsame Präfix zeichengenau stabil, kostet es
+  einmal statt 5,3 Mal. Wird es nicht stabil gehalten, frisst der aufgeteilte Weg seinen
+  Qualitätsvorteil in Wartezeit wieder auf.</p>
+</div>
+
+<h2><span class="num">02b</span>Weiter aufteilen — was mehr Anfragen noch kaufen könnten</h2>
+<p>Wenn ein Budget pro Anfrage gilt, dann ist die Zahl der Anfragen die Stellschraube für Qualität.
+Die Szenenebene wurde von 2 auf 5,3 aufgeteilt und sprang von „durchgefallen" auf „bestanden". Die
+Frage ist also naheliegend: <em>Was passiert bei 8? Bei 12? Und an den anderen Ebenen?</em></p>
+
+<div class="punch no">
+  <div class="lbl">Zuerst das Naheliegendste, und es ist unangenehm</div>
+  <div class="big">Die Ebenen <em>über</em> den Szenen haben die Krankheit noch, gegen die auf der
+  Szenenebene längst geimpft wurde.</div>
+  <p>Alle rund 35 Entitäten werden in <strong>einer einzigen Anfrage</strong> erzeugt. Alle
+  Ereignisse für 224 Szenen: <strong>eine Anfrage</strong>, 12.363 Token. Alle fünf
+  Handlungsstränge: <strong>eine Anfrage</strong>. Das ist exakt der Aufbau, der auf der Szenenebene
+  gemessen 2 von 4 Analysen zu Attrappen gemacht hat.</p>
+</div>
+
+<p>Das ist keine Vermutung. Im gerade laufenden Vorwärtsprojekt ist die Entitätenebene genau daran
+gescheitert: 89 Regelverstöße, und die Reparatur machte 126 daraus. Eine Ebene, die 35 Profile in
+einem Zug verlangt, verteilt dasselbe Budget auf 35 Empfänger — und liefert 35 Skizzen statt 35
+Profile.</p>
+
+<h3>Was es kosten würde, das zu beheben</h3>
+<div class="scroll"><table>
+<thead><tr><th>Änderung</th><th class="num">Anfragen</th><th class="num">Mehrkosten</th><th>Wirkung</th></tr></thead>
+<tbody>
+<tr><td>eine Anfrage je Entität statt aller auf einmal</td><td class="num">~35</td><td class="num good">+1,6 h</td><td class="good">behebt einen aktiven Fehler</td></tr>
+<tr><td>Ereignisse in Blöcken von 20 statt alle</td><td class="num">~12</td><td class="num good">+1,1 h</td><td class="good">behebt den zu dünnen Überbau</td></tr>
+<tr><td>eine Anfrage je Handlungsstrang</td><td class="num">5</td><td class="num good">+0,3 h</td><td>gleichmäßigere Stränge</td></tr>
+<tr class="total"><td>zusammen</td><td class="num">~52</td><td class="num good">+3 h</td><td class="good">einmalig, längenunabhängig</td></tr>
+</tbody></table></div>
+
+<p>Drei Stunden auf einen Lauf von 66. Das ist die mit Abstand billigste verfügbare Verbesserung,
+und sie behebt einen Fehler, der gerade nachweislich auftritt — anders als alles Folgende, das
+Verbesserungen an etwas bereits Funktionierendem wären.</p>
+
+<h3>Und auf der Szenenebene selbst</h3>
+<p>Hier gibt es drei verschiedene Arten, mehr auszugeben. Sie sind nicht dasselbe, und das wird oft
+verwechselt.</p>
+
+<div class="card">
+  <div class="eyebrow">Art 1 · Feiner schneiden — kleinere Portionen</div>
+  <p style="margin-bottom:0">Dasselbe nochmal weiter zerlegen. Der <strong>Verlauf</strong> bekommt
+  eine eigene Anfrage statt eines von elf Feldern zu sein — er ist auch in der aufgeteilten Variante
+  noch das am häufigsten schwächelnde Feld, weil er mit zehn anderen um Platz konkurriert. Ebenso
+  könnte jeder Theory-of-Mind-Turm einzeln entstehen statt beide in einer Figurenanfrage.</p>
+</div>
+
+<div class="card">
+  <div class="eyebrow">Art 2 · Gegenlesen — eine zweite Meinung</div>
+  <p style="margin-bottom:0">Eine Anfrage, deren einzige Aufgabe es ist, das Ergebnis
+  <em>anzugreifen</em>: Was ist hier generisch? Welche Behauptung ist nicht gedeckt? Welche Figur
+  könnte durch eine beliebige andere ersetzt werden? Das ist keine kleinere Portion, sondern eine
+  andere Rolle — und Kritik ist viel kürzer als Erzeugung, also billig. <strong>Ein zusätzlicher
+  Punkt gehört unbedingt dazu:</strong> derzeit schreibt dieselbe Anfrage den Musterdialog
+  <em>und</em> beurteilt ihn. Wer sein eigenes Werk benotet, ist mild. Schreiben und Prüfen zu
+  trennen kostet eine Anfrage und macht die Prüfung erst ernst.</p>
+</div>
+
+<div class="card">
+  <div class="eyebrow">Art 3 · Auswählen — mehrere Versuche, einer gewinnt</div>
+  <p style="margin-bottom:0">Drei verschiedene Fassungen des Wendepunkts erzeugen lassen, dann eine
+  separate Anfrage begründet auswählen. Das ist die teuerste Art und die einzige, die den
+  <em>Einfall</em> selbst verbessert statt seiner Ausführung. Bei mittelmäßigen ersten Einfällen
+  wirkt sie stark, bei guten kaum.</p>
+</div>
+
+<div class="scroll"><table>
+<thead><tr><th>Zusatz je Szene</th><th class="num">Anfragen</th><th class="num">224 Szenen</th><th class="num">Lauf gesamt</th></tr></thead>
+<tbody>
+<tr><td><em>heute</em></td><td class="num">5,3</td><td class="num">—</td><td class="num">65,6 h</td></tr>
+<tr><td>+ Musterdialog schreiben/prüfen trennen</td><td class="num">+1</td><td class="num">+7,7 h</td><td class="num">73 h</td></tr>
+<tr><td>+ gegenlesende Kritik</td><td class="num">+1</td><td class="num">+10,3 h</td><td class="num">84 h</td></tr>
+<tr><td>+ Verlauf als eigene Anfrage je Figur</td><td class="num">+2</td><td class="num">+12,8 h</td><td class="num">96 h</td></tr>
+<tr><td>+ szenenübergreifende Widerspruchsprüfung</td><td class="num">+1</td><td class="num">+7,7 h</td><td class="num">104 h</td></tr>
+<tr><td>+ drei Fassungen des Wendepunkts, dann Auswahl</td><td class="num">+3</td><td class="num">+25,6 h</td><td class="num bad">130 h</td></tr>
+</tbody></table></div>
+
+<p>Die Reihenfolge ist bewusst gewählt: oben steht, was viel Wirkung pro Stunde verspricht, unten
+das Teure mit unsicherem Ertrag. Wer nur eine Sache ergänzt, sollte die Trennung von Schreiben und
+Prüfen beim Musterdialog nehmen — sie kostet am wenigsten und repariert einen Interessenkonflikt,
+der die wichtigste Messung des Verfahrens weichspült.</p>
+
+<div class="punch hm">
+  <div class="lbl">Die Grenze, ab der es kippt</div>
+  <div class="big">Aufteilen ist nicht beliebig gut. Jedes Bruchstück sieht weniger.</div>
+  <p>Eine Anfrage, die nur eine Figur kennt, kann keinen Bezug auf eine Formulierung nehmen, die in
+  der Anfrage nebenan entstanden ist. Das Zusammensetzen am Ende ist maschinell, dort geht nichts
+  verloren — aber die <em>Stimmigkeit zwischen</em> den Teilen garantiert niemand. Bei sechs Teilen
+  ist das unauffällig; bei zwanzig entstünde eine Szene, deren Bestandteile einzeln erstklassig sind
+  und zusammen nicht klingen. Dagegen hilft nur, was oben unter Art 2 steht: eine Anfrage, die das
+  Ganze liest, nachdem alle Teile fertig sind.</p>
+</div>
+
+<p class="note">Und ein Vorbehalt zu allen Zahlen dieses Abschnitts: die Mehrkosten sind gerechnet,
+die Wirkungen sind <em>begründete Erwartungen</em>. Gemessen ist bisher genau ein Schritt auf dieser
+Leiter — der von 2 auf 5,3 Anfragen. Der war ein Sprung; dass der nächste ebenfalls einer ist, folgt
+daraus nicht.</p>
+
+<h2><span class="num">03</span>Der Posten, den man übersieht</h2>
+<p>Zwei völlig verschiedene Dinge heißen hier beide „Reasoning", und sie zu verwechseln ist der
+teuerste Fehler in dieser ganzen Rechnung.</p>
+
+<div class="card">
+  <div class="eyebrow">Die ausgeschriebene Begründung — bezahlt und behalten</div>
+  <p>Das ist der Text, den die Pipeline verlangt: Wahrnehmung, Bewertung, Modell der anderen,
+  Verlauf, verworfene Alternativen, Musterdialog. Er landet <strong>im Ergebnis</strong>, ist
+  nachlesbar, prüfbar und der eigentliche Wert der Sache. Bei der aufgeteilten Variante sind das
+  rund 22.700 Token pro Szene — <em>der größte Einzelposten der ganzen Rechnung</em>, und er ist
+  gewollt.</p>
+</div>
+
+<div class="card">
+  <div class="eyebrow">Das versteckte Denken — bezahlt und weggeworfen</div>
+  <p>Der innere Monolog des Modells, bevor es antwortet. Wird nicht angezeigt, nicht gespeichert,
+  nicht geprüft. Gemessen im Vorwärtslauf: <strong>520.211 von 622.319 erzeugten Token = 83,6%.</strong>
+  Anders gesagt: von sechs erzeugten Token landet <strong>einer</strong> im Ergebnis.</p>
+</div>
+
+<div class="punch no">
+  <div class="lbl">Was das kostet, wenn man es anlässt</div>
+  <div class="big">Faktor <strong>6,1</strong> auf jede Zahl in der Tabelle oben.</div>
+</div>
+
+<div class="scroll"><table>
+<thead><tr><th>Konfiguration</th><th class="num">Denken aus</th><th class="num">Denken an</th><th class="num">Differenz</th></tr></thead>
+<tbody>
+<tr><td>einfach, warmer Cache</td><td class="num good">37,1 h</td><td class="num bad">210,1 h</td><td class="num">+7 Tage</td></tr>
+<tr><td>aufgeteilt, warmer Cache</td><td class="num good">65,6 h</td><td class="num bad">354,8 h</td><td class="num">+12 Tage</td></tr>
+</tbody></table></div>
+
+<p>Und der Haken dabei, den man kennen muss: der naheliegende Schalter wirkt nicht.
+<code>reasoning_effort: "low"</code> gibt HTTP 200 zurück, ändert nichts und ist in Wahrheit die
+<em>teuerste</em> Einstellung — das Chat-Template des Modells bildet alles außer dem wörtlichen
+<code>"high"</code> auf <em>max</em> ab. Es wirken nur:</p>
+<pre>"chat_template_kwargs": { "enable_thinking": false }
+"reasoning_effort": "none"</pre>
+<p class="note">Prüfen lässt sich das nicht daran, ob der Aufruf klappt, sondern nur daran, ob
+<code>completion_tokens</code> tatsächlich fällt.</p>
+
+<h2><span class="num">04</span>Selbst hochrechnen</h2>
+<p>Für ein Drehbuch beliebiger Länge, mit den gemessenen Stückkosten:</p>
+<pre>Stunden ≈  1,3                              (Überbau, unabhängig von der Länge)
+        +  N × 22.679 / 24,26 / 3600        (Szenen erzeugen, aufgeteilt)
+        +  N × 148.400 × c / 185,9 / 3600   (Szenen einlesen; c = 0,15 warm, 1,0 kalt)
+
+        × 6,1  falls inneres Denken anbleibt</pre>
+
+<div class="scroll"><table>
+<thead><tr><th>Umfang</th><th class="num">Szenen</th><th class="num">aufgeteilt, warm</th><th class="num">einfach, warm</th></tr></thead>
+<tbody>
+<tr><td>Kurzfilm</td><td class="num">15</td><td class="num">4,6 h</td><td class="num">2,7 h</td></tr>
+<tr><td>Fernsehfolge</td><td class="num">40</td><td class="num">12,0 h</td><td class="num">7,0 h</td></tr>
+<tr><td>Spielfilm, normal geschnitten</td><td class="num">120</td><td class="num">35,4 h</td><td class="num">20,2 h</td></tr>
+<tr><td>Spielfilm, fein geschnitten</td><td class="num">224</td><td class="num">65,6 h</td><td class="num">37,1 h</td></tr>
+<tr><td>Staffel, 8 Folgen</td><td class="num">320</td><td class="num">93,4 h</td><td class="num">52,8 h</td></tr>
+</tbody></table></div>
+
+<h2><span class="num">05</span>Was ich empfehle</h2>
+<ol>
+<li><strong>Überbau immer voll ausbauen</strong> — 1,3 Stunden für die Struktur eines ganzen
+Drehbuchs ist zu billig, um daran zu sparen. Aber die Ereignisstufe vorher aufteilen, sonst ist sie
+für lange Bücher zu grob.</li>
+<li><strong>Auf der Szenenebene den aufgeteilten Weg nehmen.</strong> Er kostet 29 Stunden mehr und
+ist der Unterschied zwischen 0 von 4 und 4 von 4 bestandenen Szenen. Die billige Variante spart
+Zeit an der Stelle, an der das Ergebnis entsteht.</li>
+<li><strong>Cache-Stabilität vor allem anderen.</strong> Sie ist bei der aufgeteilten Variante 42
+Stunden wert — mehr als jede andere Einzelmaßnahme. Alles Unveränderliche nach vorn, alles
+Szenenspezifische nach hinten.</li>
+<li><strong>Inneres Denken aus, aber nachmessen.</strong> Faktor 6,1, und die Vorprüfung über drei
+Szenen zeigte keinen Qualitätsverlust. Das ist plausibel, weil die Pipeline das Denken ohnehin ins
+Ergebnis schreiben lässt — der innere Monolog macht großenteils dieselbe Arbeit doppelt.</li>
+<li><strong>Seriell laufen lassen.</strong> Mehrere Anfragen gleichzeitig bringen auf dieser
+Hardware gemessen nichts: der Durchsatz bleibt bei 1 wie bei 8 Anfragen konstant.</li>
+</ol>
+
+<hr>
+<div class="card">
+  <div class="eyebrow">Wie verlässlich sind diese Zahlen</div>
+  <p>Die Stückkosten stammen aus echten Läufen dieses Projekts, nicht aus Benchmarks. Zwei
+  Einschränkungen, die ich nicht glattbügele:</p>
+  <p><strong>Die einfache Variante hat eine breite Streuung.</strong> Ein einzelner Knoten kostete
+  14.981 Token, zwei vergleichbare je rund 1.040. Der Mittelwert wird von einem Ausreißer getragen —
+  die 37 Stunden sind eher eine Mitte als eine Obergrenze.</p>
+  <p style="margin-bottom:0"><strong>Die Stichprobe für die Qualitätsaussage ist klein.</strong>
+  Vier Szenen einfach, vier aufgeteilt. Der Abstand ist groß genug, um deutlich zu sein — 0 von 4
+  gegen 4 von 4 —, aber es sind vier Szenen und keine vierzig.</p>
+</div>
+
+<footer>
+Alle Stückkosten aus <code>reconstruct/runs/matrix/logs/calls/</code> und
+<code>runs/bennington2/logs/usage.json</code>. Durchsatz gemessen am 15./16. August 2026 auf dieser
+Maschine. Technische Fassung: <a href="glm-local.html">GLM-5.2 on our own metal</a> ·
+Grundlagen erklärt: <a href="glm-erklaert.html">Was da eigentlich passiert</a> ·
+laufender Vorwärtslauf: <a href="lattice-status.html">The Lattice</a>.
+</footer>
+</div>

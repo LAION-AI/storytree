@@ -1,0 +1,29 @@
+scriptforge reconstruct · runs/matrix · /tmp/claude-1001/-home-deployer-laion-bookwriter/70e4d41c-edcc-4f25-881c-f35243dc0da1/scratchpad/matrix.txt
+  · parse       224 scenes · 79.6 A4 pages · coverage 98%
+  · story_root  reconstructing (247,499 prompt chars)
+  · expose      reconstructing (191,010 prompt chars)
+  · plots       reconstructing (203,074 prompt chars)
+  · entities    reconstructing (195,112 prompt chars)
+  · events      reconstructing (212,080 prompt chars)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/deployer/laion/bookwriter/reconstruct/scriptforge/recon_cli.py", line 219, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/deployer/laion/bookwriter/reconstruct/scriptforge/recon_cli.py", line 215, in main
+    return args.func(args)
+           ~~~~~~~~~^^^^^^
+  File "/home/deployer/laion/bookwriter/reconstruct/scriptforge/recon_cli.py", line 128, in cmd_run
+    recon.run_events(force=args.force)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/deployer/laion/bookwriter/reconstruct/scriptforge/reconstruct.py", line 185, in run_events
+    doc = self.backend.complete_json(reverse.SIGHTED_SYSTEM, prompt,
+                                     SCHEMAS["events"], stage="events", tag="recon.events")
+  File "/home/deployer/laion/bookwriter/reconstruct/scriptforge/backends/hyprlab.py", line 156, in complete_json
+    content = self._post(self._payload(system, user, schema, json_mode=True), stage, tag)
+  File "/home/deployer/laion/bookwriter/reconstruct/scriptforge/backends/hyprlab.py", line 111, in _post
+    raise BackendError(
+    ...<2 lines>...
+    )
+scriptforge.backends.base.BackendError: recon.events: hit the 50000-token output cap. Raise --max-tokens or reduce the batch size for this stage.

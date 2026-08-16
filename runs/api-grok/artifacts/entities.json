@@ -1,0 +1,4544 @@
+{
+ "entities": {
+  "ch-01": {
+   "entity_id": "ch-01",
+   "type": "character",
+   "canonical_name": "Willa",
+   "aliases": [
+    "the apprentice",
+    "the smith's girl"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-02"
+   ],
+   "profile": {
+    "demographics": {
+     "age_years": 26,
+     "sex": "female",
+     "occupation": "apprentice smith",
+     "notes": {
+      "d01": {
+       "text": "She is a grown woman and still named as the smith's girl by the older hearths.",
+       "when": "standing",
+       "tags": [
+        "gender",
+        "status"
+       ]
+      },
+      "d02": {
+       "text": "She has no living kin outside the forge-house and no dowry but her skill.",
+       "when": "standing",
+       "tags": [
+        "kin",
+        "poverty"
+       ]
+      }
+     }
+    },
+    "appearance": {
+     "a01": {
+      "text": "She is compact from years at the anvil, not from a single hard season.",
+      "when": "standing",
+      "tags": [
+       "body",
+       "work"
+      ]
+     },
+     "a02": {
+      "text": "Dark hair is kept out of the fire with a plain cloth, often singed at the edge.",
+      "when": "standing",
+      "tags": [
+       "hair"
+      ]
+     },
+     "a03": {
+      "text": "Forearms show old burns and the dull shine that comes from hammer work.",
+      "when": "standing",
+      "tags": [
+       "hands",
+       "craft"
+      ]
+     },
+     "a04": {
+      "text": "Her hands are whole at the opening of winter, nails cut short for the tongs.",
+      "when": "t0",
+      "tags": [
+       "hands"
+      ]
+     },
+     "a05": {
+      "text": "She wears patched wool and leather that hold the smell of scale and smoke.",
+      "when": "standing",
+      "tags": [
+       "clothes",
+       "poverty"
+      ]
+     },
+     "a06": {
+      "text": "She walks as if measuring ground rather than claiming it.",
+      "when": "standing",
+      "tags": [
+       "gait"
+      ]
+     }
+    },
+    "voice_and_speech": {
+     "v01": {
+      "text": "She speaks little and prefers the names of tools, weights, and tasks.",
+      "when": "standing",
+      "tags": [
+       "voice"
+      ]
+     },
+     "v02": {
+      "text": "Questions come out as practical problems about what is due and who will do it.",
+      "when": "standing",
+      "tags": [
+       "voice",
+       "debt"
+      ]
+     },
+     "v03": {
+      "text": "She does not make speeches and will not dress a feeling as a principle.",
+      "when": "standing",
+      "tags": [
+       "voice"
+      ]
+     },
+     "v04": {
+      "text": "Anger, when it comes, sounds like a correction at the anvil.",
+      "when": "standing",
+      "tags": [
+       "voice",
+       "anger"
+      ]
+     }
+    },
+    "habits_and_tells": {
+     "h01": {
+      "text": "She weighs a bar in the hand before she trusts a stamped number.",
+      "when": "standing",
+      "tags": [
+       "craft",
+       "weight"
+      ]
+     },
+     "h02": {
+      "text": "When a debt is unclear she finds another piece of work and stays at it.",
+      "when": "standing",
+      "tags": [
+       "coping",
+       "debt"
+      ]
+     },
+     "h03": {
+      "text": "She checks the bellows leather each morning as if the house depended on it.",
+      "when": "standing",
+      "tags": [
+       "forge",
+       "care"
+      ]
+     },
+     "h04": {
+      "text": "She eats what is put down and does not take a second piece while Orren is thin.",
+      "when": "standing",
+      "tags": [
+       "food",
+       "care"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Willa was taken into the forge-house as a child after her people died in a hard winter.",
+      "when": "childhood",
+      "tags": [
+       "raising",
+       "loss"
+      ]
+     },
+     "b02": {
+      "text": "Orren raised her to the anvil and to the household work that keeps a forge lit.",
+      "when": "childhood",
+      "tags": [
+       "raising",
+       "craft"
+      ]
+     },
+     "b03": {
+      "text": "She learned heat, flux, and quench from him over years, not from any gift.",
+      "when": "youth",
+      "tags": [
+       "craft",
+       "teaching"
+      ]
+     },
+     "b04": {
+      "text": "The hamlet treats her as the smith's girl who stayed, useful at the fire.",
+      "when": "standing",
+      "tags": [
+       "village",
+       "gender"
+      ]
+     },
+     "b05": {
+      "text": "She is grown now and still sleeps in the loft above the bellows.",
+      "when": "standing",
+      "tags": [
+       "home"
+      ]
+     },
+     "b06": {
+      "text": "She can finish a hinge to measure and pack a winter bag without waste.",
+      "when": "standing",
+      "tags": [
+       "competence"
+      ]
+     },
+     "b07": {
+      "text": "She cannot name what she owes him for the raising or for the craft.",
+      "when": "standing",
+      "tags": [
+       "debt",
+       "wound"
+      ]
+     },
+     "b08": {
+      "text": "Work is the only language she trusts for paying anyone.",
+      "when": "standing",
+      "tags": [
+       "debt",
+       "work"
+      ]
+     },
+     "b09": {
+      "text": "This year the tithe-iron is short and the relic still sits in the village chest.",
+      "when": "this autumn",
+      "tags": [
+       "tithe",
+       "relic"
+      ]
+     },
+     "b10": {
+      "text": "She has never walked the high pass in the last weeks before midwinter.",
+      "when": "t0",
+      "tags": [
+       "pass"
+      ]
+     },
+     "b11": {
+      "text": "She has never been sent as the hamlet's hands.",
+      "when": "t0",
+      "tags": [
+       "commission"
+      ]
+     }
+    },
+    "wound": {
+     "w01": {
+      "text": "She was saved by a house she did not choose and has no measure for that debt.",
+      "when": "childhood",
+      "tags": [
+       "debt",
+       "raising"
+      ]
+     },
+     "w02": {
+      "text": "Leaving and staying both feel like theft, so she stays at the work.",
+      "when": "standing",
+      "tags": [
+       "debt",
+       "home"
+      ]
+     }
+    },
+    "want": {
+     "wa01": {
+      "text": "She wants the work to be enough payment for the life she was given.",
+      "when": "standing",
+      "tags": [
+       "debt",
+       "work"
+      ]
+     },
+     "wa02": {
+      "text": "She wants the relic back in time so the hamlet keeps its grain and pass.",
+      "when": "t0",
+      "tags": [
+       "relic",
+       "village"
+      ]
+     }
+    },
+    "need": {
+     "ne01": {
+      "text": "She needs to learn that some ledgers cannot be balanced and must be left.",
+      "when": "standing",
+      "tags": [
+       "debt",
+       "need"
+      ]
+     },
+     "ne02": {
+      "text": "She needs to trust her reading of metal even when it indicts the house.",
+      "when": "standing",
+      "tags": [
+       "craft",
+       "truth"
+      ]
+     }
+    },
+    "values": {
+     "va01": {
+      "text": "True weight matters more to her than a stamped claim.",
+      "when": "standing",
+      "tags": [
+       "weight",
+       "truth"
+      ]
+     },
+     "va02": {
+      "text": "A finished task is a cleaner thing than a spoken thanks.",
+      "when": "standing",
+      "tags": [
+       "work"
+      ]
+     },
+     "va03": {
+      "text": "She will not kill a hungry person for a village object.",
+      "when": "standing",
+      "tags": [
+       "violence",
+       "limit"
+      ]
+     },
+     "va04": {
+      "text": "The hamlet's winter is a fact she will not spend on a private quarrel.",
+      "when": "standing",
+      "tags": [
+       "village",
+       "duty"
+      ]
+     }
+    },
+    "fears": {
+     "f01": {
+      "text": "She fears owing more than work can pay and not knowing she owes it.",
+      "when": "standing",
+      "tags": [
+       "debt"
+      ]
+     },
+     "f02": {
+      "text": "She fears being sent because a woman on the path is cheaper than a smith.",
+      "when": "standing",
+      "tags": [
+       "gender",
+       "worth"
+      ]
+     },
+     "f03": {
+      "text": "She fears a late presentation more than she fears a hard walk.",
+      "when": "t0",
+      "tags": [
+       "rite",
+       "clock"
+      ]
+     }
+    },
+    "competences": {
+     "c01": {
+      "text": "She reads weld, inclusion, and mass the way another person reads a face.",
+      "when": "standing",
+      "tags": [
+       "craft",
+       "metal"
+      ]
+     },
+     "c02": {
+      "text": "She can pack light, walk long, and keep a fire small in bad wind.",
+      "when": "standing",
+      "tags": [
+       "travel"
+      ]
+     },
+     "c03": {
+      "text": "She can judge a hidden object by weight in the dark without striking it.",
+      "when": "standing",
+      "tags": [
+       "craft",
+       "theft"
+      ]
+     },
+     "c04": {
+      "text": "She moves like a worker, which keeps her from being met as a fighter.",
+      "when": "standing",
+      "tags": [
+       "gender",
+       "stealth"
+      ]
+     },
+     "c05": {
+      "text": "She can finish thin iron to a passable tithe if the stock allows it.",
+      "when": "standing",
+      "tags": [
+       "tithe",
+       "craft"
+      ]
+     }
+    },
+    "limitations": {
+     "l01": {
+      "text": "She cannot settle what a person is owed when the debt is mixed with care.",
+      "when": "standing",
+      "tags": [
+       "debt"
+      ]
+     },
+     "l02": {
+      "text": "She has no coin, no mount, and no claim on fighters.",
+      "when": "standing",
+      "tags": [
+       "poverty"
+      ]
+     },
+     "l03": {
+      "text": "She has not been taught to argue a compact with the Hold.",
+      "when": "standing",
+      "tags": [
+       "hold"
+      ]
+     },
+     "l04": {
+      "text": "She will under-ask for herself and over-work a problem that is not metal.",
+      "when": "standing",
+      "tags": [
+       "debt",
+       "work"
+      ]
+     }
+    },
+    "problem_solving_style": {
+     "p01": {
+      "text": "She starts with the object in the hand and the hours left in the day.",
+      "when": "standing",
+      "tags": [
+       "method"
+      ]
+     },
+     "p02": {
+      "text": "She treats moral confusion as a practical question about what is due.",
+      "when": "standing",
+      "tags": [
+       "debt",
+       "method"
+      ]
+     },
+     "p03": {
+      "text": "She prefers stealth and craft judgment to force.",
+      "when": "standing",
+      "tags": [
+       "method"
+      ]
+     }
+    },
+    "coping_strategies": {
+     "co01": {
+      "text": "When the house is unclear she stays at the anvil until the light goes.",
+      "when": "standing",
+      "tags": [
+       "work"
+      ]
+     },
+     "co02": {
+      "text": "She keeps her questions inside the work so no one has to answer them.",
+      "when": "standing",
+      "tags": [
+       "silence"
+      ]
+     }
+    },
+    "health": {
+     "he01": {
+      "text": "She is sound in wind and limb from work, not from ease.",
+      "when": "t0",
+      "tags": [
+       "body"
+      ]
+     },
+     "he02": {
+      "text": "Old burns mark her but do not hinder the tongs.",
+      "when": "standing",
+      "tags": [
+       "body"
+      ]
+     },
+     "he03": {
+      "text": "She has not yet paid a winter crossing in the last weeks before the rite.",
+      "when": "t0",
+      "tags": [
+       "pass"
+      ]
+     }
+    },
+    "moral_axis": {
+     "m01": {
+      "text": "She measures rightness as true weight, finished work, and who goes hungry.",
+      "when": "standing",
+      "tags": [
+       "moral"
+      ]
+     },
+     "m02": {
+      "text": "She will abet a lie to keep grain in the houses and will not call that clean.",
+      "when": "standing",
+      "tags": [
+       "lie",
+       "village"
+      ]
+     },
+     "m03": {
+      "text": "She will not grant old reasons the force of present ones.",
+      "when": "standing",
+      "tags": [
+       "truth"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-02": {
+     "kind": "master_and_raiser",
+     "valence": 62,
+     "notes": {
+      "n01": {
+       "text": "He taught her every sure motion she has at the fire.",
+       "when": "standing",
+       "tags": [
+        "craft",
+        "care"
+       ]
+      },
+      "n02": {
+       "text": "She eats his food and cannot settle whether that still makes the house hers.",
+       "when": "standing",
+       "tags": [
+        "debt",
+        "home"
+       ]
+      },
+      "n03": {
+       "text": "She would rather hear a fault in the work than a claim about love.",
+       "when": "standing",
+       "tags": [
+        "voice"
+       ]
+      }
+     }
+    },
+    "lo-01": {
+     "kind": "home",
+     "valence": 70,
+     "notes": {
+      "n01": {
+       "text": "The forge-house is the only place she has belonged since childhood.",
+       "when": "standing",
+       "tags": [
+        "home"
+       ]
+      }
+     }
+    },
+    "lo-02": {
+     "kind": "untried_path",
+     "valence": -15,
+     "notes": {
+      "n01": {
+       "text": "She knows the pass as a story of hours and cold, not yet as ground underfoot.",
+       "when": "t0",
+       "tags": [
+        "pass"
+       ]
+      }
+     }
+    },
+    "lo-03": {
+     "kind": "unknown_ground",
+     "valence": -20,
+     "notes": {
+      "n01": {
+       "text": "She has never seen the far-slope camp and expects hunger, not an army.",
+       "when": "t0",
+       "tags": [
+        "raiders"
+       ]
+      }
+     }
+    },
+    "lo-04": {
+     "kind": "home_settlement",
+     "valence": 42,
+     "notes": {
+      "n01": {
+       "text": "She is of Highkettle by raising and by work, not by blood anyone counts.",
+       "when": "standing",
+       "tags": [
+        "village"
+       ]
+      }
+     }
+    },
+    "lo-05": {
+     "kind": "deadline_ground",
+     "valence": -10,
+     "notes": {
+      "n01": {
+       "text": "She has stood at the midwinter ground before as a pair of extra hands.",
+       "when": "prior_years",
+       "tags": [
+        "rite"
+       ]
+      }
+     }
+    },
+    "ob-01": {
+     "kind": "task_object",
+     "valence": 12,
+     "notes": {
+      "n01": {
+       "text": "She has seen the village weight on its cloth and has not yet read it as a smith.",
+       "when": "t0",
+       "tags": [
+        "relic"
+       ]
+      }
+     }
+    },
+    "ob-02": {
+     "kind": "shared_work",
+     "valence": 22,
+     "notes": {
+      "n01": {
+       "text": "The short tithe is the work in front of her on the forge floor.",
+       "when": "this autumn",
+       "tags": [
+        "tithe"
+       ]
+      }
+     }
+    },
+    "ob-03": {
+     "kind": "trusted_tool",
+     "valence": 48,
+     "notes": {
+      "n01": {
+       "text": "She trusts the balance-arm more than any spoken measure.",
+       "when": "standing",
+       "tags": [
+        "weight"
+       ]
+      }
+     }
+    },
+    "gr-01": {
+     "kind": "her_people",
+     "valence": 46,
+     "notes": {
+      "n01": {
+       "text": "She will walk for them and still not know if that pays the house.",
+       "when": "standing",
+       "tags": [
+        "village",
+        "debt"
+       ]
+      }
+     }
+    },
+    "gr-02": {
+     "kind": "hungry_thieves",
+     "valence": -28,
+     "notes": {
+      "n01": {
+       "text": "She does not hate them; she expects them to take what they can carry.",
+       "when": "standing",
+       "tags": [
+        "raiders"
+       ]
+      }
+     }
+    },
+    "gr-03": {
+     "kind": "structural_pressure",
+     "valence": -44,
+     "notes": {
+      "n01": {
+       "text": "She knows the Hold as grain withheld and a pass that can be closed.",
+       "when": "standing",
+       "tags": [
+        "hold"
+       ]
+      }
+     }
+    },
+    "cn-01": {
+     "kind": "unsettled_ledger",
+     "valence": 0,
+     "notes": {
+      "n01": {
+       "text": "The question of what is owed sits in every shared task and is never named.",
+       "when": "standing",
+       "tags": [
+        "debt"
+       ]
+      }
+     }
+    },
+    "cn-02": {
+     "kind": "binding_bill",
+     "valence": -26,
+     "notes": {
+      "n01": {
+       "text": "The compact is a date, a load of iron, and a walk she has not yet been given.",
+       "when": "t0",
+       "tags": [
+        "compact"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "location": {
+     "kind": "enum",
+     "description": "Where Willa bodily is.",
+     "dimension": "spatial",
+     "domain": [
+      "forge_house",
+      "village",
+      "winter_pass",
+      "raider_camp",
+      "presentation_ground"
+     ],
+     "init": "forge_house"
+    },
+    "stamina": {
+     "kind": "scalar",
+     "description": "Bodily reserve for work and walking; lowered by cold, distance, and injury.",
+     "dimension": "physiological",
+     "range": [
+      0,
+      100
+     ],
+     "init": 86
+    },
+    "hands_frosted": {
+     "kind": "bool",
+     "description": "Whether frost has marked her hands in a way still visible at the rite.",
+     "dimension": "physiological",
+     "init": false
+    },
+    "relic_knowledge": {
+     "kind": "enum",
+     "description": "How far she has read the recovered piece and taken that reading to Orren.",
+     "dimension": "epistemic",
+     "domain": [
+      "unread",
+      "read_as_forgery",
+      "reading_taken_to_orren"
+     ],
+     "init": "unread"
+    },
+    "debt_account": {
+     "kind": "enum",
+     "description": "How far she has settled what she owes Orren for raising, craft, and the lie.",
+     "dimension": "psychological",
+     "domain": [
+      "unsettled",
+      "cannot_settle",
+      "partitioned"
+     ],
+     "init": "unsettled"
+    },
+    "belonging": {
+     "kind": "enum",
+     "description": "Whether the forge-house is still her home, a winter post, or a place left.",
+     "dimension": "social",
+     "domain": [
+      "of_the_house",
+      "wintering_then_leaving",
+      "departed"
+     ],
+     "init": "of_the_house"
+    },
+    "task": {
+     "kind": "enum",
+     "description": "Her present commission relative to the relic and the rite.",
+     "dimension": "social",
+     "domain": [
+      "at_forge",
+      "commissioned",
+      "returned_with_piece",
+      "presented"
+     ],
+     "init": "at_forge"
+    }
+   },
+   "state": {
+    "location": "forge_house",
+    "stamina": 86,
+    "hands_frosted": false,
+    "relic_knowledge": "unread",
+    "debt_account": "unsettled",
+    "belonging": "of_the_house",
+    "task": "at_forge"
+   },
+   "arc": {
+    "start_state": "Grown apprentice at home, sure at the anvil and unable to settle what she owes.",
+    "end_state": "Knowing accomplice for one winter who will leave at the spring opening of the pass."
+   }
+  },
+  "ch-02": {
+   "entity_id": "ch-02",
+   "type": "character",
+   "canonical_name": "Orren",
+   "aliases": [
+    "the master",
+    "the smith"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-02",
+    "pl-01"
+   ],
+   "profile": {
+    "demographics": {
+     "age_years": 67,
+     "sex": "male",
+     "occupation": "master smith",
+     "notes": {
+      "d01": {
+       "text": "He is Highkettle's only smith and has been so for most of his working life.",
+       "when": "standing",
+       "tags": [
+        "role"
+       ]
+      },
+      "d02": {
+       "text": "He has no wife living and no child of his blood; Willa is the house he kept.",
+       "when": "standing",
+       "tags": [
+        "kin"
+       ]
+      }
+     }
+    },
+    "appearance": {
+     "a01": {
+      "text": "He is tall gone stooped, the shoulders still set for the hammer.",
+      "when": "standing",
+      "tags": [
+       "body"
+      ]
+     },
+     "a02": {
+      "text": "Grey hair is thin and the beard is kept short for the fire.",
+      "when": "standing",
+      "tags": [
+       "hair"
+      ]
+     },
+     "a03": {
+      "text": "His hands remain sure; the wrists fail first on a long day.",
+      "when": "standing",
+      "tags": [
+       "hands",
+       "levy"
+      ]
+     },
+     "a04": {
+      "text": "He is thin in a way that poverty and a long levy can share without remark.",
+      "when": "standing",
+      "tags": [
+       "body",
+       "levy",
+       "poverty"
+      ]
+     },
+     "a05": {
+      "text": "He dresses like his apprentice, in patched wool that holds smoke.",
+      "when": "standing",
+      "tags": [
+       "clothes"
+      ]
+     }
+    },
+    "voice_and_speech": {
+     "v01": {
+      "text": "He names work, years, and weather, and lets feeling go unnamed.",
+      "when": "standing",
+      "tags": [
+       "voice"
+      ]
+     },
+     "v02": {
+      "text": "Old reasons come out as facts of a bad year, not as a plea.",
+      "when": "standing",
+      "tags": [
+       "voice",
+       "forgery"
+      ]
+     },
+     "v03": {
+      "text": "He does not ask to be forgiven and will not dress a bill as a blessing.",
+      "when": "standing",
+      "tags": [
+       "voice"
+      ]
+     },
+     "v04": {
+      "text": "Praise, when he gives it, is a nod at a true edge or a level arm.",
+      "when": "standing",
+      "tags": [
+       "voice",
+       "craft"
+      ]
+     }
+    },
+    "habits_and_tells": {
+     "h01": {
+      "text": "He sits nearer the fire than the work requires and calls it the draft.",
+      "when": "standing",
+      "tags": [
+       "levy",
+       "cold"
+      ]
+     },
+     "h02": {
+      "text": "He checks the chest-key less often than a man with a clean conscience would.",
+      "when": "standing",
+      "tags": [
+       "relic",
+       "tell"
+      ]
+     },
+     "h03": {
+      "text": "He saves the better scrap for her practice and uses the worse himself.",
+      "when": "standing",
+      "tags": [
+       "care"
+      ]
+     },
+     "h04": {
+      "text": "When talk turns to the original relic he finds a tool that needs filing.",
+      "when": "standing",
+      "tags": [
+       "lie"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Orren learned the craft in Highkettle and never had the coin to leave it.",
+      "when": "youth",
+      "tags": [
+       "poverty",
+       "craft"
+      ]
+     },
+     "b02": {
+      "text": "Forty years ago a slide year took the original village relic down the slope.",
+      "when": "forty years ago",
+      "tags": [
+       "relic",
+       "slide"
+      ]
+     },
+     "b03": {
+      "text": "The hamlet could not have stood a closed pass and a withheld winter that year.",
+      "when": "forty years ago",
+      "tags": [
+       "compact",
+       "stakes"
+      ]
+     },
+     "b04": {
+      "text": "He forged a replacement in secret and bound a living levy into the weld.",
+      "when": "forty years ago",
+      "tags": [
+       "forgery",
+       "levy"
+      ]
+     },
+     "b05": {
+      "text": "The reasons were the grain, the pass, and the children still in the houses.",
+      "when": "forty years ago",
+      "tags": [
+       "reasons"
+      ]
+     },
+     "b06": {
+      "text": "He has paid that levy in his body ever since and has not told the hamlet.",
+      "when": "standing",
+      "tags": [
+       "levy",
+       "lie"
+      ]
+     },
+     "b07": {
+      "text": "He took Willa in as a child and taught her the craft that keeps them both fed.",
+      "when": "childhood",
+      "tags": [
+       "raising"
+      ]
+     },
+     "b08": {
+      "text": "He cannot make the winter crossing now; the pass would finish what the levy began.",
+      "when": "t0",
+      "tags": [
+       "pass",
+       "body"
+      ]
+     },
+     "b09": {
+      "text": "The tithe is short because the ore was poor and the fuel thinner than last year.",
+      "when": "this autumn",
+      "tags": [
+       "tithe",
+       "poverty"
+      ]
+     },
+     "b10": {
+      "text": "He has not decided how to tell her, and the rite is three weeks off.",
+      "when": "t0",
+      "tags": [
+       "disclosure"
+      ]
+     },
+     "b11": {
+      "text": "He still wants the old reasons to be enough and knows they are not.",
+      "when": "standing",
+      "tags": [
+       "reasons"
+      ]
+     }
+    },
+    "wound": {
+     "w01": {
+      "text": "He bought the hamlet a life with a lie that only his death or a public break can end.",
+      "when": "forty years ago",
+      "tags": [
+       "levy",
+       "lie"
+      ]
+     },
+     "w02": {
+      "text": "The girl he raised is the one person who can read the weld as his.",
+      "when": "standing",
+      "tags": [
+       "willa",
+       "fear"
+      ]
+     }
+    },
+    "want": {
+     "wa01": {
+      "text": "He wants another winter of grain without the Hold ever testing the piece.",
+      "when": "standing",
+      "tags": [
+       "compact"
+      ]
+     },
+     "wa02": {
+      "text": "He wants Willa not to have to carry the knowledge or the crossing.",
+      "when": "t0",
+      "tags": [
+       "willa"
+      ]
+     }
+    },
+    "need": {
+     "ne01": {
+      "text": "He needs to stop asking the old year to cover the present one.",
+      "when": "standing",
+      "tags": [
+       "reasons"
+      ]
+     },
+     "ne02": {
+      "text": "He needs to let the house change without demanding pardon.",
+      "when": "standing",
+      "tags": [
+       "house"
+      ]
+     }
+    },
+    "values": {
+     "va01": {
+      "text": "A village still standing outweighs a clean name at the Hold.",
+      "when": "standing",
+      "tags": [
+       "village"
+      ]
+     },
+     "va02": {
+      "text": "Craft should be true even when the compact is not.",
+      "when": "standing",
+      "tags": [
+       "craft"
+      ]
+     },
+     "va03": {
+      "text": "He will not spend Willa as a fighter or as a confession.",
+      "when": "standing",
+      "tags": [
+       "care"
+      ]
+     }
+    },
+    "fears": {
+     "f01": {
+      "text": "He fears a public breaking of the piece and a closed pass in the same winter.",
+      "when": "standing",
+      "tags": [
+       "relic",
+       "hold"
+      ]
+     },
+     "f02": {
+      "text": "He fears she will leave the house once she can read what he made.",
+      "when": "standing",
+      "tags": [
+       "willa"
+      ]
+     },
+     "f03": {
+      "text": "He fears dying with the levy still unnamed and the hamlet unready.",
+      "when": "standing",
+      "tags": [
+       "levy",
+       "death"
+      ]
+     }
+    },
+    "competences": {
+     "c01": {
+      "text": "He is a master of ordinary iron: weld, flux, quench, and a true edge.",
+      "when": "standing",
+      "tags": [
+       "craft"
+      ]
+     },
+     "c02": {
+      "text": "Forty years ago he knew how to bind a named living cost into a weld.",
+      "when": "forty years ago",
+      "tags": [
+       "levy",
+       "magic"
+      ]
+     },
+     "c03": {
+      "text": "He can finish a thin tithe and make it look like care rather than want.",
+      "when": "standing",
+      "tags": [
+       "tithe"
+      ]
+     },
+     "c04": {
+      "text": "He can keep a secret in a small hamlet by never dressing it as a secret.",
+      "when": "standing",
+      "tags": [
+       "lie"
+      ]
+     }
+    },
+    "limitations": {
+     "l01": {
+      "text": "He cannot walk the high pass in the last weeks before midwinter.",
+      "when": "t0",
+      "tags": [
+       "pass",
+       "body"
+      ]
+     },
+     "l02": {
+      "text": "The levy cannot be transferred, paused, or put down by any act left to him.",
+      "when": "standing",
+      "tags": [
+       "levy"
+      ]
+     },
+     "l03": {
+      "text": "He will not speak first if work can still postpone the speaking.",
+      "when": "standing",
+      "tags": [
+       "disclosure"
+      ]
+     },
+     "l04": {
+      "text": "He has no coin to buy a clean relic or a fighter to fetch one.",
+      "when": "standing",
+      "tags": [
+       "poverty"
+      ]
+     }
+    },
+    "problem_solving_style": {
+     "p01": {
+      "text": "He solves a disaster by making the next necessary object and living with it.",
+      "when": "standing",
+      "tags": [
+       "method"
+      ]
+     },
+     "p02": {
+      "text": "He pays in his own body before he asks the hamlet to go hungry.",
+      "when": "standing",
+      "tags": [
+       "levy"
+      ]
+     }
+    },
+    "coping_strategies": {
+     "co01": {
+      "text": "He treats the levy as weather: present, unpaid, and not to be discussed.",
+      "when": "standing",
+      "tags": [
+       "levy"
+      ]
+     },
+     "co02": {
+      "text": "He teaches her another join so that the house still has a future smith.",
+      "when": "standing",
+      "tags": [
+       "willa"
+      ]
+     }
+    },
+    "health": {
+     "he01": {
+      "text": "Age and the levy share his stamina; a winter crossing is beyond him.",
+      "when": "t0",
+      "tags": [
+       "body",
+       "levy"
+      ]
+     },
+     "he02": {
+      "text": "He takes cold sooner than other men and calls it the draft under the door.",
+      "when": "standing",
+      "tags": [
+       "cold"
+      ]
+     },
+     "he03": {
+      "text": "His hands still serve; the rest of him is a bill already being paid.",
+      "when": "standing",
+      "tags": [
+       "hands",
+       "levy"
+      ]
+     }
+    },
+    "moral_axis": {
+     "m01": {
+      "text": "He will starve himself before he starves the hamlet, and call that sufficient.",
+      "when": "standing",
+      "tags": [
+       "moral"
+      ]
+     },
+     "m02": {
+      "text": "He knows the present lie is indefensible and will not pretend otherwise if named.",
+      "when": "standing",
+      "tags": [
+       "truth"
+      ]
+     },
+     "m03": {
+      "text": "He will not ask her to forgive what he will not stop paying.",
+      "when": "standing",
+      "tags": [
+       "pardon"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "raised_apprentice",
+     "valence": 78,
+     "notes": {
+      "n01": {
+       "text": "He taught her as a smith and kept her as the child the winter left him.",
+       "when": "standing",
+       "tags": [
+        "raising"
+       ]
+      },
+      "n02": {
+       "text": "He has not told her the weld is his, and the omission has become a second levy.",
+       "when": "standing",
+       "tags": [
+        "lie"
+       ]
+      }
+     }
+    },
+    "lo-01": {
+     "kind": "his_house",
+     "valence": 66,
+     "notes": {
+      "n01": {
+       "text": "The forge-house is his life's work and the only place he can still stand the cold.",
+       "when": "standing",
+       "tags": [
+        "home"
+       ]
+      }
+     }
+    },
+    "lo-02": {
+     "kind": "closed_path",
+     "valence": -50,
+     "notes": {
+      "n01": {
+       "text": "The pass is a crossing he could once make and now cannot.",
+       "when": "t0",
+       "tags": [
+        "pass"
+       ]
+      }
+     }
+    },
+    "lo-04": {
+     "kind": "the_people_he_bought_time_for",
+     "valence": 58,
+     "notes": {
+      "n01": {
+       "text": "He counts Highkettle in hearths still smoking, not in thanks.",
+       "when": "standing",
+       "tags": [
+        "village"
+       ]
+      }
+     }
+    },
+    "lo-05": {
+     "kind": "yearly_reckoning",
+     "valence": -20,
+     "notes": {
+      "n01": {
+       "text": "He has presented iron there for decades and has not had the piece tested.",
+       "when": "standing",
+       "tags": [
+        "rite"
+       ]
+      }
+     }
+    },
+    "ob-01": {
+     "kind": "secret_work",
+     "valence": -22,
+     "notes": {
+      "n01": {
+       "text": "The village weight is his weld, his levy, and the lie that kept the grain coming.",
+       "when": "standing",
+       "tags": [
+        "relic",
+        "levy"
+       ]
+      }
+     }
+    },
+    "ob-02": {
+     "kind": "this_year_shortfall",
+     "valence": -8,
+     "notes": {
+      "n01": {
+       "text": "The thin tithe is honest poverty; he hates that it will travel beside a false weight.",
+       "when": "this autumn",
+       "tags": [
+        "tithe"
+       ]
+      }
+     }
+    },
+    "ob-03": {
+     "kind": "truthful_tool",
+     "valence": 40,
+     "notes": {
+      "n01": {
+       "text": "He taught her on this balance and still uses it to catch a false bar.",
+       "when": "standing",
+       "tags": [
+        "weight"
+       ]
+      }
+     }
+    },
+    "gr-01": {
+     "kind": "people_kept_alive",
+     "valence": 56,
+     "notes": {
+      "n01": {
+       "text": "He will not tell them what they have been presenting, because the telling would starve them.",
+       "when": "standing",
+       "tags": [
+        "lie",
+        "village"
+       ]
+      }
+     }
+    },
+    "gr-03": {
+     "kind": "creditor",
+     "valence": -48,
+     "notes": {
+      "n01": {
+       "text": "The Hold takes iron and a show of the piece and does not ask who pays inside it.",
+       "when": "standing",
+       "tags": [
+        "hold"
+       ]
+      }
+     }
+    },
+    "cn-01": {
+     "kind": "debt_he_will_not_collect",
+     "valence": 15,
+     "notes": {
+      "n01": {
+       "text": "He does not keep a ledger against her for raising or for craft.",
+       "when": "standing",
+       "tags": [
+        "debt"
+       ]
+      }
+     }
+    },
+    "cn-02": {
+     "kind": "bill_in_the_body",
+     "valence": -55,
+     "notes": {
+      "n01": {
+       "text": "The compact holds because he keeps paying; he knows that is not the same as justice.",
+       "when": "standing",
+       "tags": [
+        "compact",
+        "levy"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "location": {
+     "kind": "enum",
+     "description": "Where Orren bodily is.",
+     "dimension": "spatial",
+     "domain": [
+      "forge_house",
+      "village",
+      "presentation_ground"
+     ],
+     "init": "forge_house"
+    },
+    "levy_paying": {
+     "kind": "bool",
+     "description": "Whether the hidden bodily levy bound into the relic is still being paid by him.",
+     "dimension": "magical",
+     "init": true
+    },
+    "disclosure": {
+     "kind": "enum",
+     "description": "How far he has admitted the weld, the levy, and the old reasons.",
+     "dimension": "epistemic",
+     "domain": [
+      "withheld",
+      "admitted",
+      "renamed_without_pardon"
+     ],
+     "init": "withheld"
+    },
+    "household_role": {
+     "kind": "enum",
+     "description": "Whether he still stands as master of the house or only as a coworker after the break.",
+     "dimension": "social",
+     "domain": [
+      "master_of_house",
+      "coworker_after_break"
+     ],
+     "init": "master_of_house"
+    },
+    "body_condition": {
+     "kind": "scalar",
+     "description": "Remaining bodily strength after age, work, and the ongoing levy.",
+     "dimension": "physiological",
+     "range": [
+      0,
+      100
+     ],
+     "init": 54
+    }
+   },
+   "state": {
+    "location": "forge_house",
+    "levy_paying": true,
+    "disclosure": "withheld",
+    "household_role": "master_of_house",
+    "body_condition": 54
+   },
+   "arc": {
+    "start_state": "Master of the house, still silent, still paying the levy that keeps the compact standing.",
+    "end_state": "Still paying, unnamed as master of the same home, reasons heard and not granted."
+   }
+  },
+  "lo-01": {
+   "entity_id": "lo-01",
+   "type": "location",
+   "canonical_name": "the forge-house",
+   "aliases": [
+    "the forge",
+    "Orren's house"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-02",
+    "pl-01"
+   ],
+   "profile": {
+    "geography": {
+     "g01": {
+      "text": "The forge-house stands at the upper edge of Highkettle, back to the slope.",
+      "when": "standing",
+      "tags": [
+       "place"
+      ]
+     },
+     "g02": {
+      "text": "The workshop and the living room share one chimney and one dirt-and-stone floor.",
+      "when": "standing",
+      "tags": [
+       "layout"
+      ]
+     },
+     "g03": {
+      "text": "A loft over the bellows is Willa's sleeping place; Orren keeps a narrow bed by the wall.",
+      "when": "standing",
+      "tags": [
+       "sleep"
+      ]
+     },
+     "g04": {
+      "text": "The coal hole is low and the scrap heap is sorted by use, not by pride.",
+      "when": "standing",
+      "tags": [
+       "poverty",
+       "craft"
+      ]
+     }
+    },
+    "atmosphere": {
+     "a01": {
+      "text": "The room smells of scale, wet wool, and the thin soup that follows a short tithe.",
+      "when": "t0",
+      "tags": [
+       "poverty"
+      ]
+     },
+     "a02": {
+      "text": "Heat lives near the hearth and fails two steps toward the door.",
+      "when": "standing",
+      "tags": [
+       "cold"
+      ]
+     },
+     "a03": {
+      "text": "Shared work has made the silence companionable rather than empty.",
+      "when": "standing",
+      "tags": [
+       "care"
+      ]
+     }
+    },
+    "control": {
+     "c01": {
+      "text": "Orren holds the house by craft and by habit; no one else claims it.",
+      "when": "standing",
+      "tags": [
+       "orren"
+      ]
+     },
+     "c02": {
+      "text": "Willa keeps the tools in their places and the bellows leather oiled.",
+      "when": "standing",
+      "tags": [
+       "willa"
+      ]
+     }
+    },
+    "access": {
+     "ac01": {
+      "text": "Anyone in the hamlet may knock for a mend; few stay past the work.",
+      "when": "standing",
+      "tags": [
+       "village"
+      ]
+     },
+     "ac02": {
+      "text": "The winter door sticks and is barred at night against weather, not men.",
+      "when": "standing",
+      "tags": [
+       "winter"
+      ]
+     }
+    },
+    "significance": {
+     "s01": {
+      "text": "This is the house that raised Willa and the only smithy Highkettle has.",
+      "when": "standing",
+      "tags": [
+       "home"
+      ]
+     },
+     "s02": {
+      "text": "The story's cost will be paid here as a change in what the house is.",
+      "when": "standing",
+      "tags": [
+       "house"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "The forge-house has stood through three generations of iron paid to the Hold.",
+      "when": "this generation",
+      "tags": [
+       "compact"
+      ]
+     },
+     "b02": {
+      "text": "Orren took Willa in here as a child and taught her at this anvil.",
+      "when": "childhood",
+      "tags": [
+       "raising"
+      ]
+     },
+     "b03": {
+      "text": "The false relic was not made on a journey; it was made at this fire.",
+      "when": "forty years ago",
+      "tags": [
+       "forgery"
+      ]
+     },
+     "b04": {
+      "text": "This autumn the unfinished tithe occupies the floor like a guest who will not leave.",
+      "when": "this autumn",
+      "tags": [
+       "tithe"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "raises_her",
+     "valence": 72,
+     "notes": {
+      "n01": {
+       "text": "The house has been her whole measure of home.",
+       "when": "standing",
+       "tags": [
+        "home"
+       ]
+      }
+     }
+    },
+    "ch-02": {
+     "kind": "his_workplace_and_bed",
+     "valence": 68,
+     "notes": {
+      "n01": {
+       "text": "He has paid the levy here so often that the cold of it seems to belong to the room.",
+       "when": "standing",
+       "tags": [
+        "levy"
+       ]
+      }
+     }
+    },
+    "ob-02": {
+     "kind": "holds_the_tithe",
+     "valence": 10,
+     "notes": {
+      "n01": {
+       "text": "The unfinished bars wait on the floor beside the anvil.",
+       "when": "t0",
+       "tags": [
+        "tithe"
+       ]
+      }
+     }
+    },
+    "ob-03": {
+     "kind": "keeps_the_balance",
+     "valence": 40,
+     "notes": {
+      "n01": {
+       "text": "The balance lives on the bench by the south wall and is used most days.",
+       "when": "standing",
+       "tags": [
+        "weight"
+       ]
+      }
+     }
+    },
+    "gr-01": {
+     "kind": "sole_smithy",
+     "valence": 50,
+     "notes": {
+      "n01": {
+       "text": "If this fire goes out, Highkettle has no smith.",
+       "when": "standing",
+       "tags": [
+        "village"
+       ]
+      }
+     }
+    },
+    "lo-04": {
+     "kind": "upper_edge_of_hamlet",
+     "valence": 30,
+     "notes": {
+      "n01": {
+       "text": "A short frozen path links the forge-house to the village chest and the hearths below.",
+       "when": "standing",
+       "tags": [
+        "village"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "household_character": {
+     "kind": "enum",
+     "description": "Whether the forge-house still functions as the home that raised Willa.",
+     "dimension": "social",
+     "domain": [
+      "raising_home",
+      "shared_work_not_home"
+     ],
+     "init": "raising_home"
+    },
+    "occupancy": {
+     "kind": "enum",
+     "description": "Who is living and working under this roof.",
+     "dimension": "spatial",
+     "domain": [
+      "both_present",
+      "orren_only",
+      "empty",
+      "both_after_break"
+     ],
+     "init": "both_present"
+    }
+   },
+   "state": {
+    "household_character": "raising_home",
+    "occupancy": "both_present"
+   },
+   "arc": {
+    "start_state": "The raising home, both of them present, work and meals still one household.",
+    "end_state": "Shared work that is no longer the same home."
+   }
+  },
+  "lo-02": {
+   "entity_id": "lo-02",
+   "type": "location",
+   "canonical_name": "the winter pass",
+   "aliases": [
+    "the high pass",
+    "the pass"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-01"
+   ],
+   "profile": {
+    "geography": {
+     "g01": {
+      "text": "The pass is a high stone cut between Highkettle's slope and the poorer far slopes.",
+      "when": "standing",
+      "tags": [
+       "place"
+      ]
+     },
+     "g02": {
+      "text": "In the last three weeks before midwinter it can be crossed on foot, not by cart.",
+      "when": "t0",
+      "tags": [
+       "season"
+      ]
+     },
+     "g03": {
+      "text": "There is no hut, no cached fuel, and no short path the hamlet can afford.",
+      "when": "standing",
+      "tags": [
+       "poverty"
+      ]
+     },
+     "g04": {
+      "text": "Wind takes the ridgeline; a walker keeps to the lee and pays for it in time.",
+      "when": "standing",
+      "tags": [
+       "cold"
+      ]
+     }
+    },
+    "atmosphere": {
+     "a01": {
+      "text": "The place is only stone, wind, and the hours a body still has.",
+      "when": "standing",
+      "tags": [
+       "realism"
+      ]
+     },
+     "a02": {
+      "text": "Cold here is a physiological cost, not a mood.",
+      "when": "standing",
+      "tags": [
+       "cold"
+      ]
+     }
+    },
+    "control": {
+     "c01": {
+      "text": "The Hold can close the pass as enforcement of the compact.",
+      "when": "standing",
+      "tags": [
+       "hold"
+      ]
+     },
+     "c02": {
+      "text": "While it is open, anyone hungry enough may use it.",
+      "when": "standing",
+      "tags": [
+       "raiders"
+      ]
+     }
+    },
+    "access": {
+     "ac01": {
+      "text": "Highkettle has no mounts, guides, or spare days for this crossing.",
+      "when": "t0",
+      "tags": [
+       "poverty"
+      ]
+     },
+     "ac02": {
+      "text": "A woman walking light is less likely to be met as a fighter.",
+      "when": "standing",
+      "tags": [
+       "gender"
+      ]
+     }
+    },
+    "significance": {
+     "s01": {
+      "text": "The crossing is the recovery's price in time, cold, and a chance to hear Orren first.",
+      "when": "t0",
+      "tags": [
+       "clock",
+       "cost"
+      ]
+     },
+     "s02": {
+      "text": "If the rite fails, this is the road the Hold shuts.",
+      "when": "standing",
+      "tags": [
+       "compact"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "The pass has been Highkettle's winter throat for as long as the compact has stood.",
+      "when": "standing",
+      "tags": [
+       "compact"
+      ]
+     },
+     "b02": {
+      "text": "Raiders use it because the Hold's protection does not cover their slopes.",
+      "when": "standing",
+      "tags": [
+       "raiders"
+      ]
+     },
+     "b03": {
+      "text": "Orren last crossed it years ago and will not do so again.",
+      "when": "recent_years",
+      "tags": [
+       "orren"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "ordeal_ahead",
+     "valence": -18,
+     "notes": {
+      "n01": {
+       "text": "It will take her hours she cannot spare and mark her hands.",
+       "when": "t0",
+       "tags": [
+        "cost"
+       ]
+      }
+     }
+    },
+    "ch-02": {
+     "kind": "path_he_cannot_take",
+     "valence": -40,
+     "notes": {
+      "n01": {
+       "text": "His body will not stand this crossing, which is why she is sent.",
+       "when": "t0",
+       "tags": [
+        "commission"
+       ]
+      }
+     }
+    },
+    "gr-02": {
+     "kind": "their_road",
+     "valence": 10,
+     "notes": {
+      "n01": {
+       "text": "The far-slope band came this way with what they could carry.",
+       "when": "t0",
+       "tags": [
+        "raiders"
+       ]
+      }
+     }
+    },
+    "gr-03": {
+     "kind": "enforcement_gate",
+     "valence": -60,
+     "notes": {
+      "n01": {
+       "text": "Closing this cut is how the Hold withholds a year of life.",
+       "when": "standing",
+       "tags": [
+        "hold"
+       ]
+      }
+     }
+    },
+    "lo-03": {
+     "kind": "leads_toward_camp",
+     "valence": 20,
+     "notes": {
+      "n01": {
+       "text": "The far side drops toward the lee where a hungry camp can sit.",
+       "when": "standing",
+       "tags": [
+        "camp"
+       ]
+      }
+     }
+    },
+    "lo-04": {
+     "kind": "leaves_the_hamlet",
+     "valence": 15,
+     "notes": {
+      "n01": {
+       "text": "From Highkettle the track climbs at once and does not forgive a late start.",
+       "when": "standing",
+       "tags": [
+        "village"
+       ]
+      }
+     }
+    },
+    "cn-02": {
+     "kind": "compact_instrument",
+     "valence": -30,
+     "notes": {
+      "n01": {
+       "text": "Pass-protection is the compact's visible half; grain is the other.",
+       "when": "standing",
+       "tags": [
+        "compact"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "passability": {
+     "kind": "enum",
+     "description": "Whether the pass can be walked, is shut by the Hold, or has opened for spring.",
+     "dimension": "political",
+     "domain": [
+      "open_on_foot",
+      "closed_by_hold",
+      "spring_open"
+     ],
+     "init": "open_on_foot"
+    },
+    "traffic": {
+     "kind": "enum",
+     "description": "Who is currently using the pass in this story's clock.",
+     "dimension": "spatial",
+     "domain": [
+      "none",
+      "willa_ascent",
+      "willa_return"
+     ],
+     "init": "none"
+    }
+   },
+   "state": {
+    "passability": "open_on_foot",
+    "traffic": "none"
+   },
+   "arc": {
+    "start_state": "Open on foot, unused by her, already exacting in cold.",
+    "end_state": "Left open for the bought year; she will use it again only when it opens in spring."
+   }
+  },
+  "lo-03": {
+   "entity_id": "lo-03",
+   "type": "location",
+   "canonical_name": "the lee camp",
+   "aliases": [
+    "the raider camp",
+    "the far-slope camp"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-01"
+   ],
+   "profile": {
+    "geography": {
+     "g01": {
+      "text": "A wind-lee of fallen rock on the poorer side of the high pass.",
+      "when": "standing",
+      "tags": [
+       "place"
+      ]
+     },
+     "g02": {
+      "text": "There is a blackened ring for a small fire and no standing hut.",
+      "when": "standing",
+      "tags": [
+       "poverty"
+      ]
+     },
+     "g03": {
+      "text": "Packs and stolen goods sit in the dark where a hand can find them by weight.",
+      "when": "standing",
+      "tags": [
+       "theft"
+      ]
+     }
+    },
+    "atmosphere": {
+     "a01": {
+      "text": "The camp smells of wet ash, unwashed wool, and meat too scarce to name.",
+      "when": "t0",
+      "tags": [
+       "hunger"
+      ]
+     },
+     "a02": {
+      "text": "It is a stopping place for hungry people, not a fortress.",
+      "when": "standing",
+      "tags": [
+       "raiders"
+      ]
+     }
+    },
+    "control": {
+     "c01": {
+      "text": "The far-slope band holds it only while they rest and eat what they took.",
+      "when": "t0",
+      "tags": [
+       "raiders"
+      ]
+     }
+    },
+    "access": {
+     "ac01": {
+      "text": "A quiet walker can come in off the pass without being met as an army.",
+      "when": "standing",
+      "tags": [
+       "stealth"
+      ]
+     },
+     "ac02": {
+      "text": "There are no guards worth the name, only people who wake hungry.",
+      "when": "standing",
+      "tags": [
+       "raiders"
+      ]
+     }
+    },
+    "significance": {
+     "s01": {
+      "text": "This is where the relic can be taken back by craft and not by killing.",
+      "when": "t0",
+      "tags": [
+       "relic"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Far-slope people have used this lee in hard winters for as long as the Hold has locked them out.",
+      "when": "standing",
+      "tags": [
+       "hold",
+       "poverty"
+      ]
+     },
+     "b02": {
+      "text": "They will bring the village weight here because they cannot carry the tithe as well.",
+      "when": "t0",
+      "tags": [
+       "theft"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "gr-02": {
+     "kind": "their_rest",
+     "valence": 40,
+     "notes": {
+      "n01": {
+       "text": "The band sleeps here because the rock cuts the wind and the Hold does not come.",
+       "when": "standing",
+       "tags": [
+        "raiders"
+       ]
+      }
+     }
+    },
+    "ob-01": {
+     "kind": "likely_cache",
+     "valence": 20,
+     "notes": {
+      "n01": {
+       "text": "A stolen weight this heavy will sit in a pack, not on a man walking far.",
+       "when": "t0",
+       "tags": [
+        "relic"
+       ]
+      }
+     }
+    },
+    "lo-02": {
+     "kind": "reached_by_the_pass",
+     "valence": 25,
+     "notes": {
+      "n01": {
+       "text": "The camp is a hard day's drop from the ridgeline in this season.",
+       "when": "standing",
+       "tags": [
+        "travel"
+       ]
+      }
+     }
+    },
+    "ch-01": {
+     "kind": "retrieval_ground",
+     "valence": -12,
+     "notes": {
+      "n01": {
+       "text": "She will have to read the camp as she reads a dark shop: by weight and habit.",
+       "when": "t0",
+       "tags": [
+        "retrieval"
+       ]
+      }
+     }
+    },
+    "gr-03": {
+     "kind": "outside_protection",
+     "valence": -50,
+     "notes": {
+      "n01": {
+       "text": "Nothing here is covered by the Hold's winter right.",
+       "when": "standing",
+       "tags": [
+        "hold"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "occupancy": {
+     "kind": "enum",
+     "description": "Whether the far-slope band is in the lee.",
+     "dimension": "spatial",
+     "domain": [
+      "band_camped",
+      "band_away",
+      "abandoned"
+     ],
+     "init": "band_camped"
+    },
+    "alertness": {
+     "kind": "enum",
+     "description": "How watchful the camp is, from hungry rest to the loss of the piece.",
+     "dimension": "social",
+     "domain": [
+      "hungry_rest",
+      "watch_set",
+      "piece_gone"
+     ],
+     "init": "hungry_rest"
+    }
+   },
+   "state": {
+    "occupancy": "band_camped",
+    "alertness": "hungry_rest"
+   },
+   "arc": {
+    "start_state": "A hungry rest on the far slope, not yet holding the relic.",
+    "end_state": "The piece gone by stealth; the band left as hungry as it arrived."
+   }
+  },
+  "lo-04": {
+   "entity_id": "lo-04",
+   "type": "location",
+   "canonical_name": "Highkettle village",
+   "aliases": [
+    "Highkettle",
+    "the hamlet"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-01",
+    "pl-02"
+   ],
+   "profile": {
+    "geography": {
+     "g01": {
+      "text": "A poor mountain hamlet of few hearths strung along a frozen track.",
+      "when": "standing",
+      "tags": [
+       "place",
+       "poverty"
+      ]
+     },
+     "g02": {
+      "text": "The village chest stands in the meeting shed below the forge path.",
+      "when": "standing",
+      "tags": [
+       "chest"
+      ]
+     },
+     "g03": {
+      "text": "There is no mill worth the name and no store of grain past the next bad week.",
+      "when": "standing",
+      "tags": [
+       "poverty"
+      ]
+     },
+     "g04": {
+      "text": "Fuel is counted; bad iron is what the slope gives.",
+      "when": "standing",
+      "tags": [
+       "iron",
+       "fuel"
+      ]
+     }
+    },
+    "atmosphere": {
+     "a01": {
+      "text": "Smoke hangs low over roofs that have been mended more than replaced.",
+      "when": "standing",
+      "tags": [
+       "poverty"
+      ]
+     },
+     "a02": {
+      "text": "Talk in the shed is about ore, weather, and who can be spared.",
+      "when": "standing",
+      "tags": [
+       "work"
+      ]
+     }
+    },
+    "control": {
+     "c01": {
+      "text": "No headman holds it; decisions are made by whoever cannot avoid them.",
+      "when": "standing",
+      "tags": [
+       "politics"
+      ]
+     },
+     "c02": {
+      "text": "The Hold is not present here except as a date and a fear of closed stone.",
+      "when": "standing",
+      "tags": [
+       "hold"
+      ]
+     }
+    },
+    "access": {
+     "ac01": {
+      "text": "The winter pass is the only way down to grain and the only way raiders come.",
+      "when": "standing",
+      "tags": [
+       "pass"
+      ]
+     },
+     "ac02": {
+      "text": "A stranger is seen at once; a woman of the forge is not.",
+      "when": "standing",
+      "tags": [
+       "gender"
+      ]
+     }
+    },
+    "significance": {
+     "s01": {
+      "text": "This is the body of people the compact starves or feeds.",
+      "when": "standing",
+      "tags": [
+       "stakes"
+      ]
+     },
+     "s02": {
+      "text": "The chest is where the relic is kept until someone hungrier takes it.",
+      "when": "t0",
+      "tags": [
+       "relic"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Highkettle has paid iron to the Hold for three generations to keep the pass and the grain-right.",
+      "when": "this generation",
+      "tags": [
+       "compact"
+      ]
+     },
+     "b02": {
+      "text": "A slide year nearly ended it forty years ago, though few still argue over how it survived.",
+      "when": "forty years ago",
+      "tags": [
+       "slide"
+      ]
+     },
+     "b03": {
+      "text": "The hamlet is too poor to buy a replacement relic or hire anyone to fetch one.",
+      "when": "standing",
+      "tags": [
+       "poverty"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "gr-01": {
+     "kind": "their_ground",
+     "valence": 80,
+     "notes": {
+      "n01": {
+       "text": "The folk and the place are one poverty.",
+       "when": "standing",
+       "tags": [
+        "village"
+       ]
+      }
+     }
+    },
+    "lo-01": {
+     "kind": "includes_the_forge",
+     "valence": 55,
+     "notes": {
+      "n01": {
+       "text": "The smithy sits at the upper edge and is counted in every winter plan.",
+       "when": "standing",
+       "tags": [
+        "forge"
+       ]
+      }
+     }
+    },
+    "ob-01": {
+     "kind": "keeps_the_chest",
+     "valence": 30,
+     "notes": {
+      "n01": {
+       "text": "The village weight is stored in the meeting-shed chest until the rite.",
+       "when": "t0",
+       "tags": [
+        "relic"
+       ]
+      }
+     }
+    },
+    "gr-03": {
+     "kind": "downstream_creditor",
+     "valence": -50,
+     "notes": {
+      "n01": {
+       "text": "All paths down from here end at the Hold's terms.",
+       "when": "standing",
+       "tags": [
+        "hold"
+       ]
+      }
+     }
+    },
+    "lo-02": {
+     "kind": "depends_on_the_pass",
+     "valence": 20,
+     "notes": {
+      "n01": {
+       "text": "Without the pass the hearths eat what they have and then stop.",
+       "when": "standing",
+       "tags": [
+        "grain"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "chest_status": {
+     "kind": "enum",
+     "description": "Whether the village chest still holds the presentation-piece.",
+     "dimension": "material",
+     "domain": [
+      "holding_relic",
+      "empty"
+     ],
+     "init": "holding_relic"
+    },
+    "aware_of_forgery": {
+     "kind": "bool",
+     "description": "Whether the hamlet as a place of talk knows the relic is a forty-year forgery.",
+     "dimension": "epistemic",
+     "init": false
+    }
+   },
+   "state": {
+    "chest_status": "holding_relic",
+    "aware_of_forgery": false
+   },
+   "arc": {
+    "start_state": "Poor, pending the rite, chest still holding the piece, ignorant of the weld.",
+    "end_state": "Grain-right kept for a year; still ignorant that the protection dies with Orren."
+   }
+  },
+  "lo-05": {
+   "entity_id": "lo-05",
+   "type": "location",
+   "canonical_name": "the midwinter ground",
+   "aliases": [
+    "the presentation ground",
+    "the ground below the Hold"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-01"
+   ],
+   "profile": {
+    "geography": {
+     "g01": {
+      "text": "A packed yard below the valley Hold where mountain hamlets present iron and tokens.",
+      "when": "standing",
+      "tags": [
+       "place"
+      ]
+     },
+     "g02": {
+      "text": "A steward's table, a balance for the tithe, and a cloth for the relic are the whole rite.",
+      "when": "standing",
+      "tags": [
+       "rite"
+      ]
+     },
+     "g03": {
+      "text": "The Hold itself sits above and is not entered by Highkettle folk.",
+      "when": "standing",
+      "tags": [
+       "hold"
+      ]
+     }
+    },
+    "atmosphere": {
+     "a01": {
+      "text": "The ground is ordinary mud and frost, not a holy field.",
+      "when": "standing",
+      "tags": [
+       "rite"
+      ]
+     },
+     "a02": {
+      "text": "Breath shows; clerks count; no one makes a speech about protection.",
+      "when": "standing",
+      "tags": [
+       "hold"
+      ]
+     }
+    },
+    "control": {
+     "c01": {
+      "text": "The Hold's steward runs the table and may accept or refuse what is shown.",
+      "when": "standing",
+      "tags": [
+       "steward"
+      ]
+     },
+     "c02": {
+      "text": "Inner authenticity is not tested unless the object is publicly challenged or broken.",
+      "when": "standing",
+      "tags": [
+       "relic"
+      ]
+     }
+    },
+    "access": {
+     "ac01": {
+      "text": "Presenters walk down from their slopes with what they can carry.",
+      "when": "standing",
+      "tags": [
+       "class"
+      ]
+     },
+     "ac02": {
+      "text": "Highkettle comes late in the day because the path is longer and the tithe is light.",
+      "when": "standing",
+      "tags": [
+       "poverty"
+      ]
+     }
+    },
+    "significance": {
+     "s01": {
+      "text": "Acceptance here buys one year of pass-protection and winter grain-right.",
+      "when": "standing",
+      "tags": [
+       "compact"
+      ]
+     },
+     "s02": {
+      "text": "This is where a forgery can stand if no one names it.",
+      "when": "standing",
+      "tags": [
+       "lie"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Highkettle has presented here each midwinter for three generations.",
+      "when": "this generation",
+      "tags": [
+       "compact"
+      ]
+     },
+     "b02": {
+      "text": "Orren's false weight has passed this table for forty years without a test.",
+      "when": "forty years ago",
+      "tags": [
+       "forgery"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "gr-03": {
+     "kind": "their_yard",
+     "valence": 70,
+     "notes": {
+      "n01": {
+       "text": "The ground is the Hold made visible as a table and a refusal that can close a pass.",
+       "when": "standing",
+       "tags": [
+        "hold"
+       ]
+      }
+     }
+    },
+    "ob-01": {
+     "kind": "place_of_showing",
+     "valence": 20,
+     "notes": {
+      "n01": {
+       "text": "The village weight is set on the cloth and taken back if accepted.",
+       "when": "standing",
+       "tags": [
+        "relic"
+       ]
+      }
+     }
+    },
+    "ob-02": {
+     "kind": "place_of_payment",
+     "valence": 15,
+     "notes": {
+      "n01": {
+       "text": "The tithe is weighed and stays.",
+       "when": "standing",
+       "tags": [
+        "tithe"
+       ]
+      }
+     }
+    },
+    "ch-01": {
+     "kind": "her_deadline",
+     "valence": -8,
+     "notes": {
+      "n01": {
+       "text": "She has carried bars here before; she has not been the one who presents.",
+       "when": "prior_years",
+       "tags": [
+        "rite"
+       ]
+      }
+     }
+    },
+    "cn-02": {
+     "kind": "annual_reckoning",
+     "valence": 40,
+     "notes": {
+      "n01": {
+       "text": "The compact is renewed or broken at this table, not in the mountains.",
+       "when": "standing",
+       "tags": [
+        "compact"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "rite_status": {
+     "kind": "enum",
+     "description": "How far this year's presentation has gone.",
+     "dimension": "political",
+     "domain": [
+      "not_yet",
+      "underway",
+      "accepted",
+      "refused"
+     ],
+     "init": "not_yet"
+    },
+    "occupancy": {
+     "kind": "enum",
+     "description": "Who currently occupies the ground for Highkettle's business.",
+     "dimension": "spatial",
+     "domain": [
+      "empty",
+      "steward_waiting",
+      "presentation_done"
+     ],
+     "init": "empty"
+    }
+   },
+   "state": {
+    "rite_status": "not_yet",
+    "occupancy": "empty"
+   },
+   "arc": {
+    "start_state": "Empty of this year's rite, three weeks off.",
+    "end_state": "Accepted the forged weight and the thin tithe without an inner test."
+   }
+  },
+  "ob-01": {
+   "entity_id": "ob-01",
+   "type": "object",
+   "canonical_name": "the village weight",
+   "aliases": [
+    "the relic",
+    "the presentation-piece",
+    "the forged weight"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-02"
+   ],
+   "profile": {
+    "provenance": {
+     "p01": {
+      "text": "The original village relic was lost in a slide year forty years ago.",
+      "when": "forty years ago",
+      "tags": [
+       "slide"
+      ]
+     },
+     "p02": {
+      "text": "Orren forged this replacement in secret at the Highkettle fire.",
+      "when": "forty years ago",
+      "tags": [
+       "forgery"
+      ]
+     },
+     "p03": {
+      "text": "He bound a living levy into an inclusion at the weld so the compact would hold.",
+      "when": "forty years ago",
+      "tags": [
+       "levy"
+      ]
+     },
+     "p04": {
+      "text": "The hamlet has presented it ever since as if it were the old piece.",
+      "when": "standing",
+      "tags": [
+       "lie"
+      ]
+     }
+    },
+    "description": {
+     "d01": {
+      "text": "A short wrought bar with a stamped face-weight and a weld at mid-length.",
+      "when": "standing",
+      "tags": [
+       "metal"
+      ]
+     },
+     "d02": {
+      "text": "In the hand it is slightly wrong for the stamp, a false weight a smith can feel.",
+      "when": "standing",
+      "tags": [
+       "weight"
+      ]
+     },
+     "d03": {
+      "text": "The weld is Orren's work from that decade, readable if someone looks as a smith.",
+      "when": "standing",
+      "tags": [
+       "weld"
+      ]
+     },
+     "d04": {
+      "text": "An inclusion sits in the join where the levy is bound; it is not a flourish.",
+      "when": "standing",
+      "tags": [
+       "levy"
+      ]
+     },
+     "d05": {
+      "text": "Ordinary iron: heat, flux, and quench would behave as they do on any bar.",
+      "when": "standing",
+      "tags": [
+       "metal"
+      ]
+     }
+    },
+    "function": {
+     "f01": {
+      "text": "It is the token Highkettle must show with the year's iron at midwinter.",
+      "when": "standing",
+      "tags": [
+       "rite"
+      ]
+     },
+     "f02": {
+      "text": "A non-original piece holds the compact only while the bound smith keeps paying.",
+      "when": "standing",
+      "tags": [
+       "levy"
+      ]
+     },
+     "f03": {
+      "text": "Public breaking or the bound smith's death are the only discharges available.",
+      "when": "standing",
+      "tags": [
+       "levy"
+      ]
+     }
+    },
+    "symbolic_load": {
+     "s01": {
+      "text": "It is the story's false weight: protection that is only one man's tax.",
+      "when": "standing",
+      "tags": [
+       "weight",
+       "theme"
+      ]
+     },
+     "s02": {
+      "text": "Reading it is how craft knowledge does the work a confession might have done.",
+      "when": "standing",
+      "tags": [
+       "craft"
+      ]
+     }
+    },
+    "custody": {
+     "c01": {
+      "text": "At t0 it lies in the village chest in the meeting shed.",
+      "when": "t0",
+      "tags": [
+       "chest"
+      ]
+     },
+     "c02": {
+      "text": "It is brought out only for the rite or for a rare showing to a steward's clerk.",
+      "when": "standing",
+      "tags": [
+       "rite"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Three generations of Highkettle iron bought the right to present a relic at all.",
+      "when": "this generation",
+      "tags": [
+       "compact"
+      ]
+     },
+     "b02": {
+      "text": "The slide year left no time to tell the Hold the original was gone.",
+      "when": "forty years ago",
+      "tags": [
+       "slide"
+      ]
+     },
+     "b03": {
+      "text": "Orren's reasons were the hearths still lit; they have not been revisited in public.",
+      "when": "standing",
+      "tags": [
+       "reasons"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-02": {
+     "kind": "his_hidden_work",
+     "valence": -25,
+     "notes": {
+      "n01": {
+       "text": "The bar carries his weld and feeds on his body.",
+       "when": "standing",
+       "tags": [
+        "levy"
+       ]
+      }
+     }
+    },
+    "ch-01": {
+     "kind": "unread_task",
+     "valence": 10,
+     "notes": {
+      "n01": {
+       "text": "She has handled the cloth, not the mass, and has not yet read the join.",
+       "when": "t0",
+       "tags": [
+        "craft"
+       ]
+      }
+     }
+    },
+    "gr-01": {
+     "kind": "their_token",
+     "valence": 35,
+     "notes": {
+      "n01": {
+       "text": "The hamlet believes it is presenting what it has always presented.",
+       "when": "t0",
+       "tags": [
+        "ignorance"
+       ]
+      }
+     }
+    },
+    "gr-03": {
+     "kind": "accepted_without_test",
+     "valence": 20,
+     "notes": {
+      "n01": {
+       "text": "The Hold wants a showing, not a true pedigree, unless someone challenges the piece.",
+       "when": "standing",
+       "tags": [
+        "hold"
+       ]
+      }
+     }
+    },
+    "ob-03": {
+     "kind": "fails_a_true_balance",
+     "valence": -15,
+     "notes": {
+      "n01": {
+       "text": "Against a true bar the arm would not come level.",
+       "when": "standing",
+       "tags": [
+        "weight"
+       ]
+      }
+     }
+    },
+    "cn-02": {
+     "kind": "compact_token",
+     "valence": 40,
+     "notes": {
+      "n01": {
+       "text": "Without this object on the cloth the year is forfeit, true or false.",
+       "when": "standing",
+       "tags": [
+        "compact"
+       ]
+      }
+     }
+    },
+    "lo-04": {
+     "kind": "stored_in_chest",
+     "valence": 15,
+     "notes": {
+      "n01": {
+       "text": "The meeting-shed chest is its ordinary place.",
+       "when": "t0",
+       "tags": [
+        "chest"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "custody": {
+     "kind": "enum",
+     "description": "Who physically holds the village weight.",
+     "dimension": "material",
+     "domain": [
+      "village_chest",
+      "raiders",
+      "willa",
+      "steward_table",
+      "returned_house"
+     ],
+     "init": "village_chest"
+    },
+    "presented_and_accepted": {
+     "kind": "bool",
+     "description": "Whether this year's steward has accepted the piece without an inner test.",
+     "dimension": "political",
+     "init": false
+    },
+    "publicly_intact": {
+     "kind": "bool",
+     "description": "Whether the piece remains unbroken in public, so the levy can still bind.",
+     "dimension": "magical",
+     "init": true
+    }
+   },
+   "state": {
+    "custody": "village_chest",
+    "presented_and_accepted": false,
+    "publicly_intact": true
+   },
+   "arc": {
+    "start_state": "In the chest, unread, already a forty-year forgery still holding the compact.",
+    "end_state": "Accepted for a year, unbroken, known to Willa, still feeding on Orren."
+   }
+  },
+  "ob-02": {
+   "entity_id": "ob-02",
+   "type": "object",
+   "canonical_name": "the tithe-iron",
+   "aliases": [
+    "the year's iron",
+    "the thin tithe"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-01"
+   ],
+   "profile": {
+    "provenance": {
+     "p01": {
+      "text": "This year's bars were drawn from poor slope ore and a short fuel store.",
+      "when": "this autumn",
+      "tags": [
+       "poverty"
+      ]
+     },
+     "p02": {
+      "text": "Orren and Willa have been working them down to a passable presentation.",
+      "when": "this autumn",
+      "tags": [
+       "work"
+      ]
+     }
+    },
+    "description": {
+     "d01": {
+      "text": "A short stack of unfinished bars, honest in metal and short in mass.",
+      "when": "t0",
+      "tags": [
+       "iron"
+      ]
+     },
+     "d02": {
+      "text": "They are heavy enough that a hungry band cannot carry them with a stolen relic.",
+      "when": "t0",
+      "tags": [
+       "weight"
+      ]
+     }
+    },
+    "function": {
+     "f01": {
+      "text": "The compact requires a tithe of iron with the relic at midwinter.",
+      "when": "standing",
+      "tags": [
+       "compact"
+      ]
+     },
+     "f02": {
+      "text": "A thin tithe can still be accepted if the steward does not levy an extra penalty.",
+      "when": "standing",
+      "tags": [
+       "hold"
+      ]
+     }
+    },
+    "symbolic_load": {
+     "s01": {
+      "text": "True poverty beside a false weight: the honest half of what Highkettle pays.",
+      "when": "standing",
+      "tags": [
+       "weight",
+       "poverty"
+      ]
+     }
+    },
+    "custody": {
+     "c01": {
+      "text": "At t0 the bars lie on the forge floor, unfinished.",
+      "when": "t0",
+      "tags": [
+       "forge"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Highkettle's tithes have been getting thinner as the ore and the fuel get worse.",
+      "when": "this generation",
+      "tags": [
+       "poverty"
+      ]
+     },
+     "b02": {
+      "text": "The hamlet cannot meet a punitive extra tithe if this one is refused.",
+      "when": "standing",
+      "tags": [
+       "stakes"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "her_present_work",
+     "valence": 20,
+     "notes": {
+      "n01": {
+       "text": "She has been drawing these bars when she is not mending for the hearths.",
+       "when": "this autumn",
+       "tags": [
+        "work"
+       ]
+      }
+     }
+    },
+    "ch-02": {
+     "kind": "reason_he_stays",
+     "valence": 15,
+     "notes": {
+      "n01": {
+       "text": "The tithe is short, which is one reason they will not send him from the fire.",
+       "when": "t0",
+       "tags": [
+        "commission"
+       ]
+      }
+     }
+    },
+    "gr-02": {
+     "kind": "too_heavy_to_steal",
+     "valence": -10,
+     "notes": {
+      "n01": {
+       "text": "The band will leave the iron because they cannot carry both.",
+       "when": "t0",
+       "tags": [
+        "theft"
+       ]
+      }
+     }
+    },
+    "gr-03": {
+     "kind": "the_visible_payment",
+     "valence": 10,
+     "notes": {
+      "n01": {
+       "text": "The Hold counts bars and does not ask what the slope paid to make them.",
+       "when": "standing",
+       "tags": [
+        "hold"
+       ]
+      }
+     }
+    },
+    "lo-01": {
+     "kind": "waits_on_the_floor",
+     "valence": 8,
+     "notes": {
+      "n01": {
+       "text": "The unfinished stack occupies the walking space beside the anvil.",
+       "when": "t0",
+       "tags": [
+        "forge"
+       ]
+      }
+     }
+    },
+    "ob-01": {
+     "kind": "the_other_half_of_the_rite",
+     "valence": 25,
+     "notes": {
+      "n01": {
+       "text": "Relic and tithe must arrive together; one without the other forfeits the year.",
+       "when": "standing",
+       "tags": [
+        "rite"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "completeness": {
+     "kind": "enum",
+     "description": "How finished and how far presented the year's iron is.",
+     "dimension": "material",
+     "domain": [
+      "unfinished",
+      "finished_thin",
+      "presented"
+     ],
+     "init": "unfinished"
+    },
+    "custody": {
+     "kind": "enum",
+     "description": "Who currently holds the tithe-iron.",
+     "dimension": "material",
+     "domain": [
+      "forge",
+      "willa_pack",
+      "steward_table",
+      "returned_house"
+     ],
+     "init": "forge"
+    }
+   },
+   "state": {
+    "completeness": "unfinished",
+    "custody": "forge"
+   },
+   "arc": {
+    "start_state": "Unfinished on the forge floor, already too thin, too heavy for raiders to take.",
+    "end_state": "Presented thin and accepted with the forged weight."
+   }
+  },
+  "ob-03": {
+   "entity_id": "ob-03",
+   "type": "object",
+   "canonical_name": "the forge balance",
+   "aliases": [
+    "the balance",
+    "the beam"
+   ],
+   "salience": "minor",
+   "plots": [
+    "pl-02"
+   ],
+   "profile": {
+    "provenance": {
+     "p01": {
+      "text": "An old beam-balance that has lived on the south bench longer than Willa has.",
+      "when": "standing",
+      "tags": [
+       "tool"
+      ]
+     },
+     "p02": {
+      "text": "Orren taught her true weight on this arm.",
+      "when": "childhood",
+      "tags": [
+       "teaching"
+      ]
+     }
+    },
+    "description": {
+     "d01": {
+      "text": "A wooden beam, iron knife-edges, and a set of worn but honest weights.",
+      "when": "standing",
+      "tags": [
+       "tool"
+      ]
+     },
+     "d02": {
+      "text": "The arm comes level when the two pans agree; it does not flatter a stamp.",
+      "when": "standing",
+      "tags": [
+       "weight"
+      ]
+     }
+    },
+    "function": {
+     "f01": {
+      "text": "It checks stock, tithe bars, and any piece a smith distrusts in the hand.",
+      "when": "standing",
+      "tags": [
+       "craft"
+      ]
+     }
+    },
+    "symbolic_load": {
+     "s01": {
+      "text": "It is the motif's true weight: an arm that comes level for what is so.",
+      "when": "standing",
+      "tags": [
+       "theme"
+      ]
+     }
+    },
+    "custody": {
+     "c01": {
+      "text": "It belongs to the forge-house and is not taken to the rite.",
+      "when": "standing",
+      "tags": [
+       "forge"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Every apprentice Orren kept learned to watch this arm before trusting a claim.",
+      "when": "standing",
+      "tags": [
+       "teaching"
+      ]
+     },
+     "b02": {
+      "text": "It has never weighed the village relic in public; that would have been a challenge.",
+      "when": "standing",
+      "tags": [
+       "relic"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "her_measure",
+     "valence": 50,
+     "notes": {
+      "n01": {
+       "text": "She trusts this arm the way she does not trust a spoken debt.",
+       "when": "standing",
+       "tags": [
+        "weight",
+        "debt"
+       ]
+      }
+     }
+    },
+    "ch-02": {
+     "kind": "his_teaching_tool",
+     "valence": 40,
+     "notes": {
+      "n01": {
+       "text": "He still catches a false bar here and nods when she does the same.",
+       "when": "standing",
+       "tags": [
+        "craft"
+       ]
+      }
+     }
+    },
+    "lo-01": {
+     "kind": "lives_on_the_bench",
+     "valence": 30,
+     "notes": {
+      "n01": {
+       "text": "The balance is part of the house's working body.",
+       "when": "standing",
+       "tags": [
+        "forge"
+       ]
+      }
+     }
+    },
+    "ob-01": {
+     "kind": "would_expose_it",
+     "valence": -20,
+     "notes": {
+      "n01": {
+       "text": "A true bar set against the relic would show the false mass.",
+       "when": "standing",
+       "tags": [
+        "weight"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "last_weighing": {
+     "kind": "enum",
+     "description": "What the balance was last used to show.",
+     "dimension": "material",
+     "domain": [
+      "idle",
+      "stock_check",
+      "true_bar_level"
+     ],
+     "init": "idle"
+    },
+    "in_use": {
+     "kind": "bool",
+     "description": "Whether someone is currently working at the balance.",
+     "dimension": "spatial",
+     "init": false
+    }
+   },
+   "state": {
+    "last_weighing": "idle",
+    "in_use": false
+   },
+   "arc": {
+    "start_state": "Idle on the bench, trusted, unused on the relic.",
+    "end_state": "Shows a true bar bringing the arm level the morning after the rite."
+   }
+  },
+  "gr-01": {
+   "entity_id": "gr-01",
+   "type": "group",
+   "canonical_name": "Highkettle folk",
+   "aliases": [
+    "the hamlet",
+    "the village"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-01",
+    "pl-02"
+   ],
+   "profile": {
+    "membership": {
+     "m01": {
+      "text": "A few hearths of mountain people, one smithy, no fighters worth hiring.",
+      "when": "standing",
+      "tags": [
+       "poverty"
+      ]
+     },
+     "m02": {
+      "text": "Willa and Orren are counted in the labor, not as gentry.",
+      "when": "standing",
+      "tags": [
+       "class"
+      ]
+     }
+    },
+    "hierarchy": {
+     "h01": {
+      "text": "No standing headman; the oldest voices speak first and the work decides.",
+      "when": "standing",
+      "tags": [
+       "politics"
+      ]
+     },
+     "h02": {
+      "text": "The smith is heard on metal and on what can be spared from the fire.",
+      "when": "standing",
+      "tags": [
+       "orren"
+      ]
+     }
+    },
+    "goals": {
+     "g01": {
+      "text": "Keep the pass open and the grain-right intact through another winter.",
+      "when": "t0",
+      "tags": [
+       "compact"
+      ]
+     },
+     "g02": {
+      "text": "Get the relic back without spending people the hamlet cannot replace.",
+      "when": "t0",
+      "tags": [
+       "relic"
+      ]
+     }
+    },
+    "resources": {
+     "r01": {
+      "text": "There is no reserve of food, coin, or a replacement presentation-piece.",
+      "when": "standing",
+      "tags": [
+       "poverty"
+      ]
+     },
+     "r02": {
+      "text": "Fuel is short; the ore is poor; the tithe is already thin.",
+      "when": "this autumn",
+      "tags": [
+       "tithe"
+      ]
+     },
+     "r03": {
+      "text": "They can spare one walker and cannot spare their only master smith.",
+      "when": "t0",
+      "tags": [
+       "commission"
+      ]
+     }
+    },
+    "cohesion": {
+     "c01": {
+      "text": "Shared want keeps them together more than any oath.",
+      "when": "standing",
+      "tags": [
+       "poverty"
+      ]
+     },
+     "c02": {
+      "text": "They will send a woman because she is less likely to be met as a fighter.",
+      "when": "t0",
+      "tags": [
+       "gender"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Three generations have paid iron for a protection that can be withdrawn in a day.",
+      "when": "this generation",
+      "tags": [
+       "compact"
+      ]
+     },
+     "b02": {
+      "text": "They survived a slide year forty years ago and do not agree on how.",
+      "when": "forty years ago",
+      "tags": [
+       "slide"
+      ]
+     },
+     "b03": {
+      "text": "They do not know their relic is a forgery bound to one man's body.",
+      "when": "t0",
+      "tags": [
+       "ignorance"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "their_walker",
+     "valence": 40,
+     "notes": {
+      "n01": {
+       "text": "They will send her because the tithe is short and Orren cannot cross.",
+       "when": "t0",
+       "tags": [
+        "commission"
+       ]
+      }
+     }
+    },
+    "ch-02": {
+     "kind": "their_only_smith",
+     "valence": 55,
+     "notes": {
+      "n01": {
+       "text": "They need him at the fire more than they need him on the path.",
+       "when": "t0",
+       "tags": [
+        "labor"
+       ]
+      }
+     }
+    },
+    "gr-03": {
+     "kind": "tributary",
+     "valence": -52,
+     "notes": {
+      "n01": {
+       "text": "The Hold is the structure that starves them, not a face they can argue with.",
+       "when": "standing",
+       "tags": [
+        "hold"
+       ]
+      }
+     }
+    },
+    "gr-02": {
+     "kind": "hungrier_neighbors",
+     "valence": -30,
+     "notes": {
+      "n01": {
+       "text": "They fear the far-slope band as theft, not as an army.",
+       "when": "standing",
+       "tags": [
+        "raiders"
+       ]
+      }
+     }
+    },
+    "ob-01": {
+     "kind": "their_token",
+     "valence": 36,
+     "notes": {
+      "n01": {
+       "text": "They believe the chest holds what it has always held.",
+       "when": "t0",
+       "tags": [
+        "ignorance"
+       ]
+      }
+     }
+    },
+    "cn-02": {
+     "kind": "their_winter_terms",
+     "valence": -20,
+     "notes": {
+      "n01": {
+       "text": "The compact is how they stay alive and how they stay poor.",
+       "when": "standing",
+       "tags": [
+        "compact"
+       ]
+      }
+     }
+    },
+    "lo-04": {
+     "kind": "their_place",
+     "valence": 70,
+     "notes": {
+      "n01": {
+       "text": "The folk and the hearths are the same short count.",
+       "when": "standing",
+       "tags": [
+        "place"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "grain_right": {
+     "kind": "enum",
+     "description": "Standing of Highkettle's winter grain-right and pass-protection.",
+     "dimension": "political",
+     "domain": [
+      "held_pending_rite",
+      "at_risk",
+      "secured_one_year",
+      "forfeit"
+     ],
+     "init": "held_pending_rite"
+    },
+    "knows_forgery": {
+     "kind": "bool",
+     "description": "Whether the hamlet as a body knows the relic is forged.",
+     "dimension": "epistemic",
+     "init": false
+    },
+    "smith_labor": {
+     "kind": "enum",
+     "description": "Who is available to keep the only fire working.",
+     "dimension": "social",
+     "domain": [
+      "orren_and_apprentice",
+      "willa_covering_winter",
+      "willa_gone"
+     ],
+     "init": "orren_and_apprentice"
+    }
+   },
+   "state": {
+    "grain_right": "held_pending_rite",
+    "knows_forgery": false,
+    "smith_labor": "orren_and_apprentice"
+   },
+   "arc": {
+    "start_state": "Pending the rite, ignorant, able to spare only the apprentice.",
+    "end_state": "One winter secured; still ignorant; about to lose their second smith in spring."
+   }
+  },
+  "gr-02": {
+   "entity_id": "gr-02",
+   "type": "group",
+   "canonical_name": "the far-slope band",
+   "aliases": [
+    "the raiders",
+    "the slope people"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-01"
+   ],
+   "profile": {
+    "membership": {
+     "m01": {
+      "text": "A small band of hungry people from poorer slopes the Hold does not protect.",
+      "when": "standing",
+      "tags": [
+       "poverty"
+      ]
+     },
+     "m02": {
+      "text": "They are not named in Highkettle and do not need to be.",
+      "when": "standing",
+      "tags": [
+       "anonymity"
+      ]
+     }
+    },
+    "hierarchy": {
+     "h01": {
+      "text": "Whoever can still walk decides what can be carried.",
+      "when": "standing",
+      "tags": [
+       "hunger"
+      ]
+     }
+    },
+    "goals": {
+     "g01": {
+      "text": "Take what can be eaten, burned, or traded before the next storm.",
+      "when": "t0",
+      "tags": [
+       "theft"
+      ]
+     },
+     "g02": {
+      "text": "They will take the relic because it looks like a thing the valley might buy.",
+      "when": "t0",
+      "tags": [
+       "relic"
+      ]
+     }
+    },
+    "resources": {
+     "r01": {
+      "text": "Less food and worse iron than Highkettle, which is already poor.",
+      "when": "standing",
+      "tags": [
+       "poverty"
+      ]
+     },
+     "r02": {
+      "text": "They cannot carry the relic and the tithe-iron both.",
+      "when": "t0",
+      "tags": [
+       "weight"
+      ]
+     },
+     "r03": {
+      "text": "They have no mounts and no reserve that would let them fight a pursuit.",
+      "when": "standing",
+      "tags": [
+       "poverty"
+      ]
+     }
+    },
+    "cohesion": {
+     "c01": {
+      "text": "Hunger holds them together until a better lee or a better theft.",
+      "when": "standing",
+      "tags": [
+       "hunger"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "The Hold's protection stops at the ridgeline and has always done so.",
+      "when": "standing",
+      "tags": [
+       "hold"
+      ]
+     },
+     "b02": {
+      "text": "They steal because winter does not make a distinction the compact makes.",
+      "when": "standing",
+      "tags": [
+       "theft"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ob-01": {
+     "kind": "intended_theft",
+     "valence": 25,
+     "notes": {
+      "n01": {
+       "text": "They will take the weight because it is portable value.",
+       "when": "t0",
+       "tags": [
+        "theft"
+       ]
+      }
+     }
+    },
+    "ob-02": {
+     "kind": "left_behind",
+     "valence": -15,
+     "notes": {
+      "n01": {
+       "text": "The tithe is value they cannot lift with the relic.",
+       "when": "t0",
+       "tags": [
+        "weight"
+       ]
+      }
+     }
+    },
+    "lo-03": {
+     "kind": "their_lee",
+     "valence": 40,
+     "notes": {
+      "n01": {
+       "text": "The rock cut is as much home as they have this month.",
+       "when": "t0",
+       "tags": [
+        "camp"
+       ]
+      }
+     }
+    },
+    "gr-01": {
+     "kind": "nearer_prey",
+     "valence": -20,
+     "notes": {
+      "n01": {
+       "text": "Highkettle is richer only by a chest and a thin stack of bars.",
+       "when": "standing",
+       "tags": [
+        "poverty"
+       ]
+      }
+     }
+    },
+    "gr-03": {
+     "kind": "excluded_from_protection",
+     "valence": -70,
+     "notes": {
+      "n01": {
+       "text": "The compact does not cover them, which is why they walk to steal.",
+       "when": "standing",
+       "tags": [
+        "hold"
+       ]
+      }
+     }
+    },
+    "ch-01": {
+     "kind": "unmet_thief",
+     "valence": -10,
+     "notes": {
+      "n01": {
+       "text": "They have no cause yet to know her; she will try to keep it that way.",
+       "when": "t0",
+       "tags": [
+        "retrieval"
+       ]
+      }
+     }
+    },
+    "lo-02": {
+     "kind": "their_road",
+     "valence": 15,
+     "notes": {
+      "n01": {
+       "text": "The pass is how they came and how she must come.",
+       "when": "t0",
+       "tags": [
+        "pass"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "hunger": {
+     "kind": "scalar",
+     "description": "How close the band is to starving; higher is worse.",
+     "dimension": "physiological",
+     "range": [
+      0,
+      100
+     ],
+     "init": 78
+    },
+    "camp_state": {
+     "kind": "enum",
+     "description": "Whether they are only camped, holding the theft, or missing the piece.",
+     "dimension": "material",
+     "domain": [
+      "settled_poor",
+      "holding_theft",
+      "missing_the_piece"
+     ],
+     "init": "settled_poor"
+    }
+   },
+   "state": {
+    "hunger": 78,
+    "camp_state": "settled_poor"
+   },
+   "arc": {
+    "start_state": "Hungry, camped, not yet holding the relic.",
+    "end_state": "Still hungry, the piece gone by stealth, never made into an army."
+   }
+  },
+  "gr-03": {
+   "entity_id": "gr-03",
+   "type": "group",
+   "canonical_name": "the valley Hold",
+   "aliases": [
+    "the Hold"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-01"
+   ],
+   "profile": {
+    "membership": {
+     "m01": {
+      "text": "An institution of stewards, grain clerks, and pass-wardens in the valley.",
+      "when": "standing",
+      "tags": [
+       "institution"
+      ]
+     },
+     "m02": {
+      "text": "No single face stands for it in this story; a steward will take the table.",
+      "when": "standing",
+      "tags": [
+       "faceless"
+      ]
+     }
+    },
+    "hierarchy": {
+     "h01": {
+      "text": "Clerks serve a compact older than any Highkettle smith.",
+      "when": "standing",
+      "tags": [
+       "institution"
+      ]
+     }
+    },
+    "goals": {
+     "g01": {
+      "text": "Collect the year's iron and see the token shown.",
+      "when": "standing",
+      "tags": [
+       "tithe"
+      ]
+     },
+     "g02": {
+      "text": "Enforce default by closing the pass and withholding grain, not by inquest.",
+      "when": "standing",
+      "tags": [
+       "enforcement"
+      ]
+     }
+    },
+    "resources": {
+     "r01": {
+      "text": "Grain stores, control of the pass, and the right to refuse a presentation.",
+      "when": "standing",
+      "tags": [
+       "power"
+      ]
+     },
+     "r02": {
+      "text": "No need to police inner authenticity unless a piece is challenged or broken.",
+      "when": "standing",
+      "tags": [
+       "relic"
+      ]
+     }
+    },
+    "cohesion": {
+     "c01": {
+      "text": "The Hold is a system, not a fellowship; it does not need to agree with itself in public.",
+      "when": "standing",
+      "tags": [
+       "institution"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "The compact has taken Highkettle iron for three generations.",
+      "when": "this generation",
+      "tags": [
+       "compact"
+      ]
+     },
+     "b02": {
+      "text": "It has accepted Orren's false weight for forty years because no one challenged it.",
+      "when": "forty years ago",
+      "tags": [
+       "forgery"
+      ]
+     },
+     "c03": {
+      "text": "It does not cover the poorer slopes, which is why the raiders exist.",
+      "when": "standing",
+      "tags": [
+       "raiders"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "gr-01": {
+     "kind": "creditor",
+     "valence": -15,
+     "notes": {
+      "n01": {
+       "text": "Highkettle is a source of iron and a dependent on grain, not a partner.",
+       "when": "standing",
+       "tags": [
+        "class"
+       ]
+      }
+     }
+    },
+    "gr-02": {
+     "kind": "exclusion",
+     "valence": -40,
+     "notes": {
+      "n01": {
+       "text": "Unprotected slopes are outside the bargain and therefore outside mercy.",
+       "when": "standing",
+       "tags": [
+        "raiders"
+       ]
+      }
+     }
+    },
+    "cn-02": {
+     "kind": "enforcer",
+     "valence": 60,
+     "notes": {
+      "n01": {
+       "text": "The Hold is how the compact has teeth.",
+       "when": "standing",
+       "tags": [
+        "compact"
+       ]
+      }
+     }
+    },
+    "lo-05": {
+     "kind": "uses_the_yard",
+     "valence": 50,
+     "notes": {
+      "n01": {
+       "text": "The midwinter ground is their public instrument.",
+       "when": "standing",
+       "tags": [
+        "rite"
+       ]
+      }
+     }
+    },
+    "lo-02": {
+     "kind": "can_close_it",
+     "valence": 55,
+     "notes": {
+      "n01": {
+       "text": "Shutting the pass is cheaper than sending men up the mountain.",
+       "when": "standing",
+       "tags": [
+        "enforcement"
+       ]
+      }
+     }
+    },
+    "ob-01": {
+     "kind": "token_accepted_unread",
+     "valence": 10,
+     "notes": {
+      "n01": {
+       "text": "They want the showing, not the weld.",
+       "when": "standing",
+       "tags": [
+        "relic"
+       ]
+      }
+     }
+    },
+    "ch-01": {
+     "kind": "unseen_presenter",
+     "valence": 0,
+     "notes": {
+      "n01": {
+       "text": "She is a pair of hands with a load until she stands at the table.",
+       "when": "t0",
+       "tags": [
+        "class"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "accepted_this_year": {
+     "kind": "bool",
+     "description": "Whether the steward has accepted Highkettle's relic and tithe for this midwinter.",
+     "dimension": "political",
+     "init": false
+    },
+    "pass_policy": {
+     "kind": "enum",
+     "description": "How the Hold currently treats Highkettle's pass.",
+     "dimension": "political",
+     "domain": [
+      "protecting",
+      "closing",
+      "closed",
+      "renewed_one_year"
+     ],
+     "init": "protecting"
+    }
+   },
+   "state": {
+    "accepted_this_year": false,
+    "pass_policy": "protecting"
+   },
+   "arc": {
+    "start_state": "Protecting under last year's terms, not yet shown this year's piece.",
+    "end_state": "Renewed for one year on a forgery it did not test."
+   }
+  },
+  "cn-01": {
+   "entity_id": "cn-01",
+   "type": "concept",
+   "canonical_name": "what is owed",
+   "aliases": [
+    "the household debt",
+    "the unsettled ledger"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-02"
+   ],
+   "profile": {
+    "content": {
+     "c01": {
+      "text": "The question of what a raised child owes the raiser for life, craft, and keep.",
+      "when": "standing",
+      "tags": [
+       "debt"
+      ]
+     },
+     "c02": {
+      "text": "It grows worse when the raising included a lie that kept the village in grain.",
+      "when": "standing",
+      "tags": [
+       "lie"
+      ]
+     },
+     "c03": {
+      "text": "Work feels like payment and is never quite payment.",
+      "when": "standing",
+      "tags": [
+       "work"
+      ]
+     },
+     "c04": {
+      "text": "The debt cannot be cleared in the days left before the rite.",
+      "when": "t0",
+      "tags": [
+       "clock"
+      ]
+     }
+    },
+    "believers": {
+     "b01": {
+      "text": "Willa lives inside the question and cannot put it down.",
+      "when": "standing",
+      "tags": [
+       "willa"
+      ]
+     },
+     "b02": {
+      "text": "Orren will not collect the debt as a due, which does not settle it.",
+      "when": "standing",
+      "tags": [
+       "orren"
+      ]
+     },
+     "b03": {
+      "text": "The hamlet assumes the house will hold because it always has.",
+      "when": "standing",
+      "tags": [
+       "village"
+      ]
+     }
+    },
+    "authority": {
+     "a01": {
+      "text": "No court, priest, or Hold clerk has standing here; only the house does.",
+      "when": "standing",
+      "tags": [
+       "house"
+      ]
+     },
+     "a02": {
+      "text": "Craft knowledge can name a weld; it cannot name a just payment for raising.",
+      "when": "standing",
+      "tags": [
+       "craft"
+      ]
+     }
+    },
+    "causal_power": {
+     "p01": {
+      "text": "It keeps her from hearing a clean yes or no when they send her.",
+      "when": "t0",
+      "tags": [
+       "commission"
+      ]
+     },
+     "p02": {
+      "text": "It sends her still unsure, so the crossing costs the chance to hear him first.",
+      "when": "t0",
+      "tags": [
+       "clock"
+      ]
+     },
+     "p03": {
+      "text": "It forces a partition of costs instead of a cleared ledger.",
+      "when": "standing",
+      "tags": [
+       "ending"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "The question began the winter she was taken in and has not been answered.",
+      "when": "childhood",
+      "tags": [
+       "raising"
+      ]
+     },
+     "b02": {
+      "text": "Shared meals and taught joins have thickened it rather than paid it.",
+      "when": "standing",
+      "tags": [
+       "care"
+      ]
+     },
+     "b03": {
+      "text": "The old reasons for the lie will enter this debt and still not balance it.",
+      "when": "standing",
+      "tags": [
+       "reasons"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "her_unsettled_account",
+     "valence": 0,
+     "notes": {
+      "n01": {
+       "text": "She tries to pay in work and cannot tell if the work counts.",
+       "when": "standing",
+       "tags": [
+        "work"
+       ]
+      }
+     }
+    },
+    "ch-02": {
+     "kind": "debt_he_will_not_call",
+     "valence": 10,
+     "notes": {
+      "n01": {
+       "text": "He does not keep a tally against her, which leaves her without a number.",
+       "when": "standing",
+       "tags": [
+        "orren"
+       ]
+      }
+     }
+    },
+    "lo-01": {
+     "kind": "lives_in_the_house",
+     "valence": 20,
+     "notes": {
+      "n01": {
+       "text": "Every shared task at the forge is coloured by the unpaid question.",
+       "when": "standing",
+       "tags": [
+        "forge"
+       ]
+      }
+     }
+    },
+    "ob-01": {
+     "kind": "will_worsen_it",
+     "valence": -10,
+     "notes": {
+      "n01": {
+       "text": "Once the weld is read, raising and lie become one account.",
+       "when": "standing",
+       "tags": [
+        "relic"
+       ]
+      }
+     }
+    },
+    "gr-01": {
+     "kind": "presses_for_labor",
+     "valence": 15,
+     "notes": {
+      "n01": {
+       "text": "The hamlet needs a smith this winter whether the house is still a home.",
+       "when": "standing",
+       "tags": [
+        "labor"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "settlement": {
+     "kind": "enum",
+     "description": "How far the household debt has been settled, left unpayable, or partitioned.",
+     "dimension": "psychological",
+     "domain": [
+      "open",
+      "unpayable",
+      "partitioned"
+     ],
+     "init": "open"
+    },
+    "old_reasons_status": {
+     "kind": "enum",
+     "description": "Whether Orren's old reasons have been heard, and whether they are granted now.",
+     "dimension": "epistemic",
+     "domain": [
+      "unheard",
+      "heard_as_past",
+      "granted_as_present"
+     ],
+     "init": "unheard"
+    }
+   },
+   "state": {
+    "settlement": "open",
+    "old_reasons_status": "unheard"
+   },
+   "arc": {
+    "start_state": "Open, unnamed, paid only in work.",
+    "end_state": "Partitioned in silence, winter labor, and leaving; old reasons heard and not granted."
+   }
+  },
+  "cn-02": {
+   "entity_id": "cn-02",
+   "type": "concept",
+   "canonical_name": "the midwinter compact",
+   "aliases": [
+    "the compact",
+    "the rite's terms"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-01",
+    "pl-02"
+   ],
+   "profile": {
+    "content": {
+     "c01": {
+      "text": "Each midwinter Highkettle must present the village relic and a tithe of iron.",
+      "when": "standing",
+      "tags": [
+       "rite"
+      ]
+     },
+     "c02": {
+      "text": "Default forfeits one year of pass-protection and winter grain-right.",
+      "when": "standing",
+      "tags": [
+       "stakes"
+      ]
+     },
+     "c03": {
+      "text": "A non-original relic holds only while the bound living smith keeps paying.",
+      "when": "standing",
+      "tags": [
+       "levy"
+      ]
+     },
+     "c04": {
+      "text": "The Hold does not test inner authenticity unless the object is challenged or broken.",
+      "when": "standing",
+      "tags": [
+       "hold"
+      ]
+     }
+    },
+    "believers": {
+     "b01": {
+      "text": "Highkettle treats the terms as weather: disliked, obeyed, unsurprising.",
+      "when": "standing",
+      "tags": [
+       "village"
+      ]
+     },
+     "b02": {
+      "text": "The Hold treats them as accounts.",
+      "when": "standing",
+      "tags": [
+       "hold"
+      ]
+     },
+     "b03": {
+      "text": "Willa treats them as a date and a load.",
+      "when": "standing",
+      "tags": [
+       "willa"
+      ]
+     }
+    },
+    "authority": {
+     "a01": {
+      "text": "Authority sits with the Hold's steward at the midwinter table.",
+      "when": "standing",
+      "tags": [
+       "hold"
+      ]
+     },
+     "a02": {
+      "text": "No holiness attaches; a missed date is a closed pass.",
+      "when": "standing",
+      "tags": [
+       "rite"
+      ]
+     }
+    },
+    "causal_power": {
+     "p01": {
+      "text": "It sets the three-week clock that forces the retrieval.",
+      "when": "t0",
+      "tags": [
+       "clock"
+      ]
+     },
+     "p02": {
+      "text": "It makes a late truth as dangerous as a lost object.",
+      "when": "standing",
+      "tags": [
+       "bind"
+      ]
+     },
+     "p03": {
+      "text": "It will stand for a year on a known forgery if no one challenges the piece.",
+      "when": "standing",
+      "tags": [
+       "ending"
+      ]
+     }
+    },
+    "backstory": {
+     "b01": {
+      "text": "Three generations of Highkettle iron have bought winters under these terms.",
+      "when": "this generation",
+      "tags": [
+       "class"
+      ]
+     },
+     "b02": {
+      "text": "Forty years ago Orren used the terms' blindness to keep the hamlet alive.",
+      "when": "forty years ago",
+      "tags": [
+       "forgery"
+      ]
+     },
+     "b03": {
+      "text": "The same blindness is what will let a knowing presentation pass.",
+      "when": "standing",
+      "tags": [
+       "hold"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "gr-03": {
+     "kind": "enforced_by",
+     "valence": 70,
+     "notes": {
+      "n01": {
+       "text": "Without the Hold the compact is only words.",
+       "when": "standing",
+       "tags": [
+        "hold"
+       ]
+      }
+     }
+    },
+    "gr-01": {
+     "kind": "binds_them",
+     "valence": -35,
+     "notes": {
+      "n01": {
+       "text": "The folk pay and remain poor enough to keep paying.",
+       "when": "standing",
+       "tags": [
+        "class"
+       ]
+      }
+     }
+    },
+    "ob-01": {
+     "kind": "requires_the_token",
+     "valence": 50,
+     "notes": {
+      "n01": {
+       "text": "The relic on the cloth is the compact's visible half.",
+       "when": "standing",
+       "tags": [
+        "relic"
+       ]
+      }
+     }
+    },
+    "ob-02": {
+     "kind": "requires_the_tithe",
+     "valence": 45,
+     "notes": {
+      "n01": {
+       "text": "Iron is the other half and the part the Hold can weigh.",
+       "when": "standing",
+       "tags": [
+        "tithe"
+       ]
+      }
+     }
+    },
+    "lo-05": {
+     "kind": "reckoned_there",
+     "valence": 40,
+     "notes": {
+      "n01": {
+       "text": "The year turns at the steward's table, not in the mountains.",
+       "when": "standing",
+       "tags": [
+        "rite"
+       ]
+      }
+     }
+    },
+    "ch-02": {
+     "kind": "paid_in_his_body",
+     "valence": -40,
+     "notes": {
+      "n01": {
+       "text": "The hidden levy is how a false token has kept these terms intact.",
+       "when": "standing",
+       "tags": [
+        "levy"
+       ]
+      }
+     }
+    },
+    "lo-02": {
+     "kind": "enforced_on_the_pass",
+     "valence": -25,
+     "notes": {
+      "n01": {
+       "text": "Closing the cut is the compact's ordinary punishment.",
+       "when": "standing",
+       "tags": [
+        "pass"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "status": {
+     "kind": "enum",
+     "description": "Whether this year's compact is still pending, standing, or broken.",
+     "dimension": "political",
+     "domain": [
+      "pending_rite",
+      "standing_this_year",
+      "broken"
+     ],
+     "init": "pending_rite"
+    },
+    "days_until_rite": {
+     "kind": "scalar",
+     "description": "Whole days remaining before the midwinter presentation must be made.",
+     "dimension": "world",
+     "range": [
+      0,
+      30
+     ],
+     "init": 21
+    },
+    "challenge_made": {
+     "kind": "bool",
+     "description": "Whether anyone has publicly challenged the relic's inner authenticity.",
+     "dimension": "legal",
+     "init": false
+    }
+   },
+   "state": {
+    "status": "pending_rite",
+    "days_until_rite": 21,
+    "challenge_made": false
+   },
+   "arc": {
+    "start_state": "Pending in twenty-one days, unchallenged, already held by a hidden levy.",
+    "end_state": "Standing for one bought year on a forgery no one publicly named."
+   }
+  }
+ }
+}

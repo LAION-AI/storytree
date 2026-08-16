@@ -1,0 +1,46 @@
+STORY ROOT (excerpt)
+- Title: False Weight. Low fantasy, screenplay, plain register, dialogue 70%.
+- Audience: adult, upper reading level. Reader promise: a moral problem that is
+  not solved by anyone being revealed as a villain.
+- Rule: magic exists only as binding — a named living person pays a concrete
+  bodily cost; it never solves a problem without creating a worse one.
+- Rule: a presentation-relic that is not the original holds the compact only
+  while a living smith continues to pay a hidden levy bound into the piece.
+- Rule: that levy cannot be transferred, paused, or discharged except by the
+  bound smith's death or the relic's public breaking.
+- Keep in mind: do not redeem the master cheaply or damn him as simply selfish;
+  the old reasons must still be audible. She thinks in work — moral confusion
+  arrives as practical questions about what is owed.
+- Forbidden: interior monologue that names the theme; a redemptive confession
+  that restores the household without cost.
+
+ESTABLISHED ENTITIES
+- ch-01 Willa, 24, blacksmith's apprentice. Taken into the forge-house as a
+  child after her people died in a hard winter. Competent at craft, bad at
+  deciding what she owes people. Values: true measure, work honestly done,
+  debts settled. Fear: being owed something she cannot pay.
+  State: debt_account="unsettled", trust_in_orren=70, hands_frosted=true,
+  relic_knowledge="read_as_forgery", belonging="of_the_house".
+- ch-02 Orren, 71, the smith who raised her. Forged the false relic forty years
+  ago after the original was lost in a slide, and bound the levy to himself so
+  the compact would hold. Failing body, hands going. Values: the village fed,
+  the work continued, no debt passed to a child.
+  State: levy_paid=true, admission="unspoken", body="failing",
+  what_she_knows="believes_her_ignorant".
+- ob-01 the village weight — the presentation relic, a forged bar with a
+  forty-year weld and an inclusion where the levy sits.
+  State: authenticity="forgery_unread_by_village", custody="with_willa",
+  meaning="the village's protection".
+- lo-01 the forge-house. Control: Orren's. The loft above the bellows is where
+  Willa has slept since she was a child.
+- gr-01 Highkettle folk — the village. State: believes_protected=true.
+
+PRIOR EVENT
+ev-007 (t14): Before sleep Willa weighs the recovered piece on the forge
+balance, reads the false weight and Orren's forty-year weld, and keeps that
+reading inside the house — she does not wake him and does not tell the village.
+
+THE NODE TO GENERATE
+ev-008 (t16): She takes the reading to Orren; he admits the forty-year weld and
+the levy bound to himself. Discharges pl-02:st5 (admission_of_the_weld).
+Duration about 40 minutes, at night, in the forge-house.

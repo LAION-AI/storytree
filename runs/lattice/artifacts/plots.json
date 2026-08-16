@@ -1,0 +1,430 @@
+{
+ "plots": [
+  {
+   "plot_id": "pl-01",
+   "type": "investigation",
+   "title": "The Fault Language",
+   "agent": [
+    "ch-01"
+   ],
+   "resistance": [
+    "ch-02",
+    "gr-01"
+   ],
+   "goal": "Identify the source and meaning of structured rendering faults and determine whether they constitute communication",
+   "stakes": "If Imogen fails to recognise the fault patterns as language, she continues closing distress signals and remains a willing instrument of the prison she serves",
+   "outcome": "transformation_of_goal",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "professional_routine",
+     "intent": "Imogen performs a routine fault closure using her established methodology, demonstrating her competence and establishing the baseline of her professional identity",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "disturbance",
+     "intent": "Imogen encounters a fault whose geometric distortion contains repeating non-random patterns that differ from typical errors, triggering her analytical instinct",
+     "because": []
+    },
+    "st3": {
+     "step": 3,
+     "function": "escalation",
+     "intent": "Imogen detects the same structured patterns recurring across multiple faults over several days and begins systematically cataloguing them using her audit tools",
+     "because": []
+    },
+    "st4": {
+     "step": 4,
+     "function": "first_reveal",
+     "intent": "Imogen's pattern analysis reveals the distortions constitute a primitive symbolic language with grammar and structure, not noise — the faults are messages",
+     "because": []
+    },
+    "st5": {
+     "step": 5,
+     "function": "stakes_raise",
+     "intent": "Imogen decodes enough of the language to identify a distress signal containing the name Noor Vaile, her sister she believed died in 2040",
+     "because": []
+    },
+    "st6": {
+     "step": 6,
+     "function": "point_of_no_return",
+     "intent": "Imogen begins investigating the simulation's underlying data architecture to locate Noor's resident file, crossing from audit into unauthorised system access",
+     "because": [
+      "pl-03:st2"
+     ]
+    },
+    "st7": {
+     "step": 7,
+     "function": "transformation_of_goal",
+     "intent": "Imogen discovers the residents are digitised neural scans of deceased individuals and the Authority extracts commercial value from their knowledge before deleting them — her investigation shifts from understanding faults to finding a way to extract her sister",
+     "because": [
+      "pl-03:st3",
+      "pl-04:st4"
+     ]
+    }
+   },
+   "resolution_step": "st7",
+   "thematic_function": "The investigation plot establishes the central irony: the same analytical competence that makes Imogen an excellent auditor makes her the only person who can recognise the messages for what they are, and that recognition destroys the professional identity that enabled it",
+   "screen_time_share": 0.28,
+   "interference": [
+    {
+     "with": "pl-03",
+     "kind": "Imogen's investigation and her contact with the Porter compete for the same analytical attention and the same unauthorised system access, each accelerating the other's timeline"
+    },
+    {
+     "with": "pl-04",
+     "kind": "Imogen's investigation into the data architecture leads her toward the same institutional records Delphine is auditing from the other side, creating converging discovery paths"
+    }
+   ],
+   "covers_synopsis": [
+    "s01",
+    "s02",
+    "s03",
+    "s04",
+    "s05"
+   ]
+  },
+  {
+   "plot_id": "pl-02",
+   "type": "mentor",
+   "title": "The Kett Argument",
+   "agent": [
+    "ch-02"
+   ],
+   "resistance": [
+    "ch-01"
+   ],
+   "goal": "Keep Imogen inside the system by convincing her that maintaining Vantage's stability is preferable to any alternative, including the continuation of her audit work",
+   "stakes": "If Kett fails, Imogen destabilises the simulation he has spent decades maintaining and he loses the colleague who makes that maintenance possible",
+   "outcome": "failure",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "mentorship_baseline",
+     "intent": "Kett supervises Imogen's audit work with genuine warmth and professional generosity, establishing trust and the framework through which she understands her role",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "surveillance_pressure",
+     "intent": "Kett notices Imogen's attention shifting toward anomalous fault patterns and begins monitoring her work more closely, torn between protecting her and protecting the system",
+     "because": [
+      "pl-01:st3"
+     ]
+    },
+    "st3": {
+     "step": 3,
+     "function": "first_confrontation",
+     "intent": "Kett confronts Imogen about her off-scope investigation, and their first sustained argument establishes his position: the system preserves existence rather than nothing, and her work reduces suffering",
+     "because": [
+      "pl-01:st4"
+     ]
+    },
+    "st4": {
+     "step": 4,
+     "function": "escalation",
+     "intent": "Kett discovers Imogen has made contact with someone through the fault channel and argues she is being manipulated by forces she does not understand, pressing her on the practical consequences of destabilising the system",
+     "because": [
+      "pl-03:st3"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "winning_exchange",
+     "intent": "Kett wins the decisive argument by asking Imogen where eleven thousand digitised minds will live, what bodies they will inhabit, and who will pay — questions she cannot answer, and the silence holds",
+     "because": [
+      "pl-01:st6"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "rupture",
+     "intent": "Kett detects the carriage operation in progress and confronts Imogen for the final time; he does not stop her but tells her she is making a mistake she will not recover from, and she tells him she already has not",
+     "because": [
+      "pl-05:st5"
+     ]
+    },
+    "st7": {
+     "step": 7,
+     "function": "severance",
+     "intent": "The carriage completes and Imogen's access is revoked; Kett remains inside Vantage by choice, and their relationship is permanently severed",
+     "because": [
+      "pl-05:st6"
+     ]
+    }
+   },
+   "resolution_step": "st7",
+   "thematic_function": "Kett embodies the story's most persuasive defense of institutional complicity: that preserving something is better than nothing, and that the person who maintains the system is not the same as the person who built it. His failure is not moral but practical — his argument cannot accommodate a specific scheduled erasure",
+   "screen_time_share": 0.18,
+   "interference": [
+    {
+     "with": "pl-01",
+     "kind": "Kett's surveillance of Imogen's work directly constrains her investigation timeline and forces her to develop tradecraft she did not previously need"
+    },
+    {
+     "with": "pl-05",
+     "kind": "Kett's detection of the carriage operation creates the climactic confrontation that determines whether Imogen can complete the extraction"
+    }
+   ],
+   "covers_synopsis": [
+    "s08",
+    "s14"
+   ]
+  },
+  {
+   "plot_id": "pl-03",
+   "type": "intrigue",
+   "title": "The Porter's Channel",
+   "agent": [
+    "ch-03"
+   ],
+   "resistance": [
+    "gr-01",
+    "ch-02"
+   ],
+   "goal": "Recruit and prepare Imogen to execute a carriage extraction by teaching her the technique through the fault channel while evading Authority monitoring",
+   "stakes": "If the Porter fails to prepare Imogen, the knowledge of carriage dies with them and every resident scheduled for redaction has no chance of extraction",
+   "outcome": "partial_success",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "initial_contact",
+     "intent": "The Porter detects Imogen's investigation into the fault language and makes cautious contact through a structured fault pattern, testing whether she can receive and interpret the message",
+     "because": [
+      "pl-01:st4"
+     ]
+    },
+    "st2": {
+     "step": 2,
+     "function": "trust_building",
+     "intent": "The Porter establishes reliable two-way communication with Imogen through the fault channel, teaching her the basic grammar while assessing her competence and determining whether she can be trusted",
+     "because": [
+      "pl-01:st5"
+     ]
+    },
+    "st3": {
+     "step": 3,
+     "function": "instruction",
+     "intent": "The Porter teaches Imogen that carriage — sustained fault bandwidth for approximately forty minutes — can extract a mind to a physical substrate, and that the technique uses the same methodology she employs to close faults",
+     "because": [
+      "pl-01:st6"
+     ]
+    },
+    "st4": {
+     "step": 4,
+     "function": "deadline_pressure",
+     "intent": "The Porter informs Imogen that Noor's extraction value is depleted and her redaction is scheduled for the next quarterly cycle, compressing the preparation timeline to weeks",
+     "because": [
+      "pl-04:st5"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "plan_laying",
+     "intent": "The Porter and Imogen plan the carriage operation: timing, bandwidth management, and the need for a maintenance window to disguise the sustained fault from monitoring",
+     "because": [
+      "pl-04:st6"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "execution",
+     "intent": "The Porter guides the data transfer during the carriage operation while Imogen maintains the sustained fault, their coordination the mechanism by which one mind leaves Vantage",
+     "because": [
+      "pl-05:st4"
+     ]
+    }
+   },
+   "resolution_step": "st6",
+   "thematic_function": "The Porter represents the story's deepest structural irony: the tool of oppression is also the tool of liberation, and Imogen was selected precisely because her professional competence — the thing that made her complicit — is the only thing that can undo one small part of that complicity",
+   "screen_time_share": 0.18,
+   "interference": [
+    {
+     "with": "pl-01",
+     "kind": "The Porter's contact accelerates Imogen's investigation by providing context she could not have reached alone, while her investigation provides the access the Porter needs to communicate"
+    },
+    {
+     "with": "pl-02",
+     "kind": "The Porter's instruction directly creates the capability Kett most fears Imogen acquiring, escalating their conflict"
+    },
+    {
+     "with": "pl-05",
+     "kind": "The Porter's timeline and the carriage plan are the same operation, their preparation and execution inseparable"
+    }
+   ],
+   "covers_synopsis": [
+    "s06",
+    "s07"
+   ]
+  },
+  {
+   "plot_id": "pl-04",
+   "type": "institutional",
+   "title": "The Cost Line",
+   "agent": [
+    "ch-04"
+   ],
+   "resistance": [
+    "gr-01"
+   ],
+   "goal": "Maintain her position and income within the Authority's compliance division while reconciling what she discovers about the institution's actual function",
+   "stakes": "If Delphine is exposed, she faces prosecution for falsified records and loses the career and financial stability she has built; if she does nothing, she remains complicit in erasures she now understands are killings",
+   "outcome": "transformation_of_goal",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "institutional_routine",
+     "intent": "Delphine performs her compliance audit work with professional detachment, focused on career advancement and the financial obligations her position supports",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "first_document",
+     "intent": "Delphine encounters a quarterly cost-reduction document with a line item linking a budget reduction to a resident identifier and a date, rendered in the same bureaucratic language as a server decommissioning",
+     "because": []
+    },
+    "st3": {
+     "step": 3,
+     "function": "cross_reference",
+     "intent": "Delphine cross-references the identifier and discovers it corresponds to a person — a name, a profession, a life summarised in a data row — and the document transforms from administrative record to evidence of killing",
+     "because": []
+    },
+    "st4": {
+     "step": 4,
+     "function": "self_reckoning",
+     "intent": "Delphine recognises that her earlier falsified redaction records, done for payment from an external party, have accidentally delayed specific erasures — her corruption has saved specific lives",
+     "because": []
+    },
+    "st5": {
+     "step": 5,
+     "function": "discovery_of_schedule",
+     "intent": "Delphine discovers a specific redaction scheduled for the next quarterly cycle and cross-references it with extraction-value depletion data, understanding the timeline is fixed and institutional",
+     "because": [
+      "pl-03:st4"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "institutional_sabotage",
+     "intent": "Delphine provides institutional cover — altered monitoring thresholds and delayed reporting schedules — that creates the maintenance window the carriage operation requires, knowing her cover will not survive investigation",
+     "because": [
+      "pl-05:st3"
+     ]
+    }
+   },
+   "resolution_step": "st6",
+   "thematic_function": "Delphine's arc mirrors Imogen's: the discovery that professional competence serves a machine, and that the only ethical action requires weaponising that same competence against the institution it served. Her transformation is staged through documents, not speeches",
+   "screen_time_share": 0.16,
+   "interference": [
+    {
+     "with": "pl-01",
+     "kind": "Delphine's institutional audit and Imogen's data-architecture investigation converge on the same records from opposite sides of the simulation boundary"
+    },
+    {
+     "with": "pl-05",
+     "kind": "Delphine's institutional sabotage creates the window the carriage requires; without her cover, the sustained fault triggers automated detection before completion"
+    }
+   ],
+   "covers_synopsis": [
+    "s09",
+    "s10"
+   ]
+  },
+  {
+   "plot_id": "pl-05",
+   "type": "survival",
+   "title": "The Carriage",
+   "agent": [
+    "ch-01"
+   ],
+   "resistance": [
+    "gr-01",
+    "ch-02",
+    "ch-05"
+   ],
+   "goal": "Extract Noor from Vantage before her scheduled redaction by running a carriage operation using Imogen's audit methodology",
+   "stakes": "If the carriage fails or is detected before completion, Noor is redacted on schedule and Imogen loses her access, her sister, and any chance of saving anyone",
+   "outcome": "partial_success",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "contact",
+     "intent": "Imogen establishes contact with Noor through the fault channel and reveals the truth about Vantage, Noor's nature as a digitised mind, and the existence of the simulation",
+     "because": [
+      "pl-01:st7",
+      "pl-03:st2"
+     ]
+    },
+    "st2": {
+     "step": 2,
+     "function": "refusal",
+     "intent": "Noor processes the truth and refuses extraction, articulating that her life in Vantage is real to her and asking Imogen what the difference is between the Authority keeping her in a simulation and Imogen keeping her on a hard drive",
+     "because": []
+    },
+    "st3": {
+     "step": 3,
+     "function": "coerced_choice",
+     "intent": "Noor learns through the Porter's channel that her redaction is scheduled and not her choice; her agreement to extraction becomes reluctant, conditional, and bitter rather than grateful — the choice is between Vantage and erasure, not Vantage and freedom",
+     "because": [
+      "pl-03:st4",
+      "pl-04:st5"
+     ]
+    },
+    "st4": {
+     "step": 4,
+     "function": "operation",
+     "intent": "Imogen begins the carriage: a real-time procedural in which she uses her audit methodology — identification, signature analysis, and fault manipulation — to deliberately widen and sustain a fault for forty minutes while the Porter guides the data transfer",
+     "because": [
+      "pl-03:st5",
+      "pl-04:st6"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "confrontation_during_crisis",
+     "intent": "Kett detects the anomalous fault and confronts Imogen during the carriage operation; he does not stop her but tells her she is making a mistake she will not recover from",
+     "because": [
+      "pl-02:st6"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "consequence",
+     "intent": "The carriage succeeds but the Authority's automated systems flag the fault pattern as a probable extraction event, Imogen's auditor access is revoked, and she is permanently exiled from Vantage and every person in it",
+     "because": []
+    },
+    "st7": {
+     "step": 7,
+     "function": "aftermath",
+     "intent": "Imogen is left in the physical world with a drive containing her sister's consciousness, no body for it to inhabit, no legal status, and no certainty that she has saved Noor or simply moved her from one container to another",
+     "because": []
+    }
+   },
+   "resolution_step": "st7",
+   "thematic_function": "The carriage is the story's thesis made operational: Imogen's professional competence — the same skill that kept the prison running — is the only tool that can extract one mind, and using it requires her to become exactly what she just learned she was: a competent operator inside the machine",
+   "screen_time_share": 0.2,
+   "interference": [
+    {
+     "with": "pl-02",
+     "kind": "The carriage operation triggers Kett's detection and their final confrontation, which determines whether the extraction can complete"
+    },
+    {
+     "with": "pl-03",
+     "kind": "The carriage is the execution phase of the Porter's plan; their preparation and the operation are the same plot at different stages"
+    },
+    {
+     "with": "pl-04",
+     "kind": "Delphine's institutional cover creates the maintenance window the carriage requires; without it, the sustained fault triggers detection"
+    }
+   ],
+   "covers_synopsis": [
+    "s11",
+    "s12",
+    "s13",
+    "s15",
+    "s16",
+    "s17"
+   ]
+  }
+ ]
+}

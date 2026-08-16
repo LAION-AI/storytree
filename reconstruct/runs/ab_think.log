@@ -1,0 +1,91 @@
+############ ARM A: thinking OFF ############
+LOCAL RECONSTRUCTION · http://127.0.0.1:8099/v1 · thinking=off
+  scenes: sc-001, sc-002, sc-003
+
+  === sc-001 ===
+    characters: ['ch-01', 'ch-02']
+    ! speakers with no entity: ['BIG COP']
+      craft                       187s  in= 10,036 out= 3,339  17.9 t/s  think=     0c
+      psych.ch-01                 376s  in= 11,272 out= 6,870  18.3 t/s  think=     0c
+      psych.ch-02                 342s  in= 10,202 out= 6,581  19.2 t/s  think=     0c
+      specimen                     93s  in=  6,497 out= 1,710  18.4 t/s  think=     0c
+      dynamics                    348s  in=  5,094 out= 7,901  22.7 t/s  think=     0c
+      continuity                  110s  in=  1,811 out= 2,512  22.8 t/s  think=     0c
+
+  LOCAL scaffolded · sc-001 · 24.3 min · 6 calls
+    violations 0    words 20,663   psych 2/2 w/ trajectory, 2/2 complete
+    ToM 6 towers (6 at depth 3)   specimen 6 lines   alts 3 (1 close)   dynamics 4
+    verdict: pass
+  hosted scaffolded
+    violations 0    words 11,222   psych 2/2 w/ trajectory, 2/2 complete
+    ToM 4 towers (4 at depth 3)   specimen 7 lines   alts 2 (1 close)   dynamics 4
+    verdict: pass
+  hosted single-call
+    violations 16   words  3,898   psych 0/2 w/ trajectory, 0/2 complete
+    ToM 2 towers (2 at depth 3)   specimen 0 lines   alts 2 (0 close)   dynamics 1
+    verdict: thin
+      gap: trajectories are snapshots, not arcs
+      gap: every alternative lost by a mile — the choice was already made
+      gap: no specimen exchange — the analysis is untested until someone speaks
+      gap: risks never checked against the actual lines
+
+  === sc-002 ===
+    characters: ['ch-04']
+    ! speakers with no entity: ['LIEUTENANT']
+      craft                       174s  in= 10,088 out= 3,047  17.5 t/s  think=     0c
+      psych.ch-04                 353s  in=  9,825 out= 6,537  18.5 t/s  think=     0c
+      specimen                     81s  in=  5,461 out= 1,604  19.8 t/s  think=     0c
+      dynamics                    293s  in=  4,797 out= 6,590  22.5 t/s  think=     0c
+      continuity                   60s  in=  1,845 out= 1,445  24.2 t/s  think=     0c
+
+  LOCAL scaffolded · sc-002 · 16.0 min · 5 calls
+    violations 0    words 13,303   psych 1/1 w/ trajectory, 1/1 complete
+    ToM 2 towers (2 at depth 3)   specimen 6 lines   alts 3 (1 close)   dynamics 5
+    verdict: pass
+  hosted scaffolded
+    violations 0    words 10,642   psych 1/1 w/ trajectory, 1/1 complete
+    ToM 2 towers (2 at depth 3)   specimen 7 lines   alts 2 (1 close)   dynamics 5
+    verdict: pass
+  hosted single-call
+    violations 41   words  3,601   psych 2/4 w/ trajectory, 0/4 complete
+    ToM 3 towers (3 at depth 3)   specimen 0 lines   alts 3 (0 close)   dynamics 1
+    verdict: thin
+      gap: not every character reasons to the third degree
+      gap: trajectories are snapshots, not arcs
+      gap: sensorium thin
+      gap: every alternative lost by a mile — the choice was already made
+      gap: no specimen exchange — the analysis is untested until someone speaks
+      gap: risks never checked against the actual lines
+
+  === sc-003 ===
+    characters: ['ch-02']
+      craft                       163s  in= 10,145 out= 2,815  17.2 t/s  think=     0c
+      psych.ch-02                 389s  in=  9,674 out= 7,426  19.1 t/s  think=     0c
+      specimen                     81s  in=  5,181 out= 1,632  20.2 t/s  think=     0c
+      dynamics                    276s  in=  4,566 out= 6,146  22.3 t/s  think=     0c
+      continuity                   84s  in=  1,913 out= 1,882  22.3 t/s  think=     0c
+
+  LOCAL scaffolded · sc-003 · 16.6 min · 5 calls
+    violations 0    words 13,998   psych 1/1 w/ trajectory, 1/1 complete
+    ToM 3 towers (3 at depth 3)   specimen 7 lines   alts 3 (2 close)   dynamics 5
+    verdict: pass
+  hosted scaffolded
+    violations 0    words 10,175   psych 1/1 w/ trajectory, 1/1 complete
+    ToM 3 towers (3 at depth 3)   specimen 8 lines   alts 2 (1 close)   dynamics 5
+    verdict: pass
+  hosted single-call
+    violations 5    words  4,557   psych 1/1 w/ trajectory, 1/1 complete
+    ToM 2 towers (2 at depth 3)   specimen 0 lines   alts 2 (0 close)   dynamics 2
+    verdict: thin
+      gap: every alternative lost by a mile — the choice was already made
+      gap: no specimen exchange — the analysis is untested until someone speaks
+      gap: risks never checked against the actual lines
+
+========================================================================
+  3 scenes · 16 calls · 56.8 min wall
+  tokens: 108,407 in · 68,037 out
+  decode: 20.0 tok/s mean over all calls
+  per scene: 18.9 min
+  reasoning_content returned: 0 chars
+  extrapolated to all 224 scenes: 70.7 h
+  -> runs/matrix/transitions_local_off

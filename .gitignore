@@ -1,0 +1,59 @@
+# Secrets — never commit
+.env
+*.key
+*_token*
+
+# Third-party screenplay text. The reconstruction pipeline reads a copyrighted
+# screenplay to derive structure; it stores results BY REFERENCE (offsets and
+# anchors) and never copies the prose. These files are the local working copies
+# of that source text and must not leave this machine.
+reconstruct/runs/*/script.normalized.txt
+reconstruct/runs/*/prose/
+**/matrix.txt
+**/*_screenplay.txt
+**/*.pdf
+
+# Model weights and inference scratch
+models/
+*.gguf
+*.safetensors
+*.bin
+
+# Per-call logs: these carry full model responses and, for sighted calls, may
+# quote source text. Structure is committed; raw call traffic is not.
+**/logs/calls/
+**/logs/*.json
+
+# Intermediate repair snapshots — noise, and they can be large
+**/artifacts/*.pre-repair*.json
+**/quarantine/
+
+# Generated viewers (rebuildable from artifacts with `narrativeforge site`)
+runs/*/site
+runs/api-grok/site/
+webapp/*.html.bak
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Editor / OS
+.DS_Store
+*.swp
+*~
+
+# Third-party books and source documents. The craft sheet in narrativeforge/craft.py
+# is our own distillation of these; the sources themselves are not ours to publish.
+How_to_Write_Damn_Good_Novel*.txt
+frey*.pdf
+frey*.txt
+narrative-decomposition-whitepaper.pdf
+plotemb.txt
+
+# Rebuildable viewers and archives — large, and regenerable from artifacts
+site/
+archive/
+*.tar.gz

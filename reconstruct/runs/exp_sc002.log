@@ -1,0 +1,47 @@
+EXPERIMENT · glm-5.2 · sc-002
+
+
+  BASELINE (single call, already on disk)
+    schema violations      41
+    words                  3,601
+    psychology blocks      4
+    ...with trajectory     2/4
+    ...with all 11 fields  0/4
+    ToM towers / at depth3 3 / 3
+    specimen lines         0
+    alternatives (close)   3 (0)
+    verdict                thin
+      gap: not every character reasons to the third degree
+      gap: trajectories are snapshots, not arcs
+      gap: sensorium thin
+      gap: every alternative lost by a mile — the choice was already made
+      gap: no specimen exchange — the analysis is untested until someone speaks
+      gap: risks never checked against the actual lines
+
+  SCAFFOLDED — one deep structure per call
+  characters for this scene: ['ch-04']
+  --- call 1: craft ---
+    craft                            0 chars     45s
+    craft: unparseable (empty content) — retrying
+    craft                        9,783 chars     20s  (attempt 2)
+  --- one call per character ---
+    psych.ch-04                 20,007 chars    127s
+  --- specimen, dynamics, continuity ---
+    specimen                     6,354 chars    143s
+    dynamics                    28,676 chars     32s
+    continuity                   9,014 chars     32s
+
+  SCAFFOLDED
+    schema violations      0
+    words                  10,642
+    psychology blocks      1
+    ...with trajectory     1/1
+    ...with all 11 fields  1/1
+    ToM towers / at depth3 2 / 2
+    specimen lines         7
+    alternatives (close)   2 (1)
+    verdict                pass
+
+  cost: 6 calls · 41,347 in · 26,373 out · 400s wall
+  approx $0.22
+  -> runs/matrix/transitions_scaffolded/sc-002.json

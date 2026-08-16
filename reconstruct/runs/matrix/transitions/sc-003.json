@@ -1,0 +1,331 @@
+{
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-003",
+  "ordinal": 3
+ },
+ "situation": "Trinity sits cornered in a decaying hotel room, hands behind her head, ordered at gunpoint by a large cop. The phone on the fold-up table is her only way out. Agent Smith has just declared the cops' men already dead, establishing a tier of threat above the police — but the Agents are off-screen, leaving Trinity alone with officers who do not understand what they are facing. The phone is about to ring.",
+ "craft": {
+  "audience_need": "The adult audience promised a mind-bending action spectacle needs a first taste of what makes freed humans different — a demonstration that the rules of ordinary reality can break. They have been given threat (police), then meta-threat (Agents). Now they need to see the flip side: what a freed human can do. This must be visceral, kinetic, and unexplained — the mystery of how is the hook that pulls them forward.",
+  "genre_convention": "The cyberpunk action thriller convention demands that the cornered protagonist reveal hidden capability under pressure. This node satisfies that expectation with the superhuman-speed burst and the phone-exit vanishing act, but deliberately refuses to explain either — the how-things-work exposition is held back, preserving the genre's signature opacity. The audience sees the effect without the cause, which is more pleasurable than the reverse at this stage.",
+  "theme_and_style": "The story root's plain register and forbidden tics require that Trinity's psychology be externalized entirely into action — no interior monologue, no stated feelings, only the body's decisions. The Gibson-noir texture demands that the hotel room feel like a trap made of decayed wallpaper and bad wiring. The PKD instability-of-reality thread is served by the vanishing: a person disappears through a phone, and the audience's sense of what is possible must break slightly. The scene must be choreographed, not narrated — verbs doing the work of adjectives.",
+  "dramatic_function": "This scene pays off the cold open's setup (the cornered woman, the ringing phone, the cops' false authority) and establishes two critical world rules through demonstration rather than exposition: (1) freed humans can move faster than humanly possible inside the Matrix, and (2) hardwired phones are exit points. It closes the opening sequence's immediate survival question — will Trinity escape? — and opens the larger one — what is the Matrix and who are these people? It also establishes Trinity as a combat-capable operative, which matters for every later scene where she fights alongside Neo.",
+  "tension_management": {
+   "entering": 85,
+   "leaving": 50,
+   "how": "The tension of being cornered at gunpoint (85) is released through the explosive, kinetic demonstration of Trinity's superhuman speed — the cops cannot react fast enough to matter. But the release is only partial (50) because the vanishing through the phone is uncanny rather than comforting: the audience does not understand how she did it, and the empty room with the swinging phone cord leaves a residual eeriness. The immediate threat is gone but the world has become less stable, not more."
+  },
+  "why_now": "This scene must follow sc-001 (which establishes the room, the phone, the cops' authority, and Trinity's cornered state) and sc-002 (which establishes the Agents as the real, higher-tier threat). Without the first two scenes, the escape lacks stakes — the audience wouldn't know what she's escaping from or that the men in suits are the ones who truly matter. The phone-exit can only be demonstrated after the phone is established as present on the table in sc-001.",
+  "why_not_otherwise": [
+   {
+    "alternative": "Trinity could surrender, be captured, and escape later — a longer arc of captivity and resistance.",
+    "rejected_because": "The synopsis requires her escape here; more importantly, the audience needs to see freed-human capability immediately so that Neo's later training has a visual referent. Delaying the escape would squander the cold open's momentum and fail to establish the phone-exit rule before it becomes plot-critical."
+   },
+   {
+    "alternative": "The Agents could pursue Trinity through the hotel corridors in an extended chase.",
+    "rejected_because": "The production envelope specifies only Trinity on screen, and an extended chase would require the Agents' physical presence. More critically, an extended pursuit would shift the audience's focus from 'what can she do?' to 'will they catch her?' — a suspense question that would delay, rather than deliver, the first demonstration of freed-human power."
+   }
+  ],
+  "promises": {
+   "made": [
+    "Freed humans can move faster than humanly possible — the rules of the Matrix can be bent (unexplained, to be explored in training scenes)",
+    "Hardwired phones are exit points from the Matrix — a mechanical rule that will govern every future Matrix operation",
+    "Trinity is a combat-capable operative, not a damsel — her competence is established before her vulnerability is revealed",
+    "People can vanish from a room without explanation — the reality of this world is unstable"
+   ],
+   "kept": [
+    "sc-001 set up a cornered woman with a phone as her only lifeline — this scene pays off by having the phone ring and save her",
+    "sc-002 established the cops as already dead in the Agents' assessment — this scene demonstrates that the cops' authority was indeed illusory, as Trinity moves past them like they are furniture"
+   ]
+  }
+ },
+ "psychology": [
+  {
+   "entity": "ch-02",
+   "entering_state": "Cornered at gunpoint by police she knows cannot stop her, but aware that the Agents — who can — are closing. She is coiled, compliant in appearance only, waiting for the phone to ring as a sprinter waits for a starting gun. Her body is loaded; her mind is on the exit, not the threat.",
+   "perception": {
+    "sight": "The room in peripheral vision — bare, rotting wallpaper, a fold-up table bearing the phone, modem, and the PowerBook's glow. The big cop's gun arm, the sweep of flashlight beams in the hallway beyond the door. The phone on the table, inert, about to ring.",
+    "sound": "The cop's barked commands — 'put your hands behind your head' — as noise, not information. The creak of the floor under shifting boots. The silence before the phone rings — a silence with weight.",
+    "touch": "Her own hands laced behind her skull, the leather of her jacket against her wrists, the hard seat of the chair under her. The latent tension in her thighs and forearms like a drawn bowstring.",
+    "smell": "Old hotel decay — mildew, dust, stale air from a room that has been abandoned longer than it has been occupied. The faint copper tang of adrenaline in her own sinuses.",
+    "taste": "Metallic — adrenaline, dry-mouthed, the taste of the body preparing for explosive action.",
+    "interoception": "Heart rate elevated but controlled — not panicked, but primed. The visceral coil in her gut that says go, the readiness humming through every muscle fiber like current through a filament.",
+    "proprioception": "Seated at the keyboard, spine straight, hands behind head in apparent compliance. But her feet are flat, her center of gravity forward, every joint loaded for a launch that will cover the distance to the phone before any human trigger finger can finish pulling.",
+    "attention": "The phone. Not the cops — they are obstacles, not threats. Not the hallway — the Agents are the threat but they are not here yet. The phone, and the seconds between now and when it rings."
+   },
+   "appraisal": {
+    "value_at_stake": "Survival and mission continuity — her life in the Matrix and her capacity to serve Morpheus's mission. If she dies here, the Nebuchadnezzar loses its best operator and the Oracle's prophecy thread dies with her.",
+    "valence": -30,
+    "arousal": 88,
+    "self_conscious_emotion": "none — she is purely operational; there is no room for pride or shame in the execution of an extraction",
+    "moral_reading": "The cops are tools of a system she has already transcended. They are not evil; they are furniture. The Agents are the real adversary, and the cops' presence is merely the system's immune response, not a moral choice. She owes them nothing and feels no guilt about what she is about to do to them.",
+    "somatic_marker": "The spring-tension in her quadriceps and calves, the dry-mouthed clarity that precedes explosive physical action — her body has already decided what to do; her conscious mind is merely waiting for the phone."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "Police authority — the cops believe their guns and commands give them control of the room",
+     "Resistance operational protocol — when the phone rings, move; do not fight what you can simply pass through",
+     "Freed-human superiority over bluepills — the unspoken rule that anyone still hardwired to the system is a civilian, not a combatant"
+    ],
+    "how_others_would_judge": "The cops would judge her as a cornered criminal about to be arrested. They have no framework for what she actually is.",
+    "how_absent_others_would_judge": "Morpheus and the crew aboard the Nebuchadnezzar would expect her to execute the extraction cleanly — this is routine, not heroic. Tank is already monitoring her signal and preparing the pull.",
+    "standing_at_risk": "Her life — death in the Matrix kills the physical body. But also the mission: if she is captured or killed, the crew loses an operative the Agents are actively hunting, which would confirm the Agents' intelligence and accelerate their pursuit of the rest of the cell.",
+    "norm_conflict": "The cops' norm of police authority vs. the freed-human norm of operational superiority. The cops' norm loses instantly and completely — their authority is an illusion maintained by the system she has already seen through."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-04",
+     "d1": "Trinity believes the Agents are coordinating outside this room, directing the police as a net, and that Smith's declaration means the real attack is seconds away.",
+     "d2": "She believes the Agents believe she will run for a hardline — that they know her exit strategy and are trying to cut it off.",
+     "d3": "She believes the Agents believe she believes she can reach the phone before they arrive — and that this calculation is the only thing keeping her in the room rather than already running.",
+     "accuracy": "She is likely correct about the Agents' coordination but may be wrong about their proximity — if an Agent is closer than she estimates, the phone-exit could be intercepted. The margin is seconds, and seconds in the Matrix are everything."
+    },
+    {
+     "other": "gr-01",
+     "d1": "She believes the police are unaware of what she is — they see a woman in leather, not a freed human who can bend the rules of the simulation.",
+     "d2": "She believes they believe their guns give them control of her body — that they are operating under the assumption that she is subject to the same physical limits they are.",
+     "d3": "She believes they believe she believes she is caught — that her compliance is surrender, not preparation. This miscalculation is the gap she will exploit.",
+     "accuracy": "She is correct. The cops have no model for what she is. Their error is total and it costs them everything."
+    }
+   ],
+   "urges": {
+    "cravings": "none — there is no appetite in this moment, only the need to move",
+    "physical_needs": "To reach the phone before the Agents reach her. To be out of this body in this room and back in the chair on the Nebuchadnezzar.",
+    "psych_needs_conscious": "Execute the extraction — answer the phone, get pulled, survive.",
+    "psych_needs_unconscious": "To demonstrate that the system's grip on her is broken — that the cops' guns and the Agents' coordination cannot hold someone who has already chosen to be free. The escape is not just survival; it is a statement of autonomy.",
+    "avoidances": "Avoid engaging the Agents directly. She is fast enough to beat cops but not foolish enough to fight a program that can inhabit anyone in the building."
+   },
+   "impairments": {
+    "physical": "none — she is in peak physical condition within the Matrix, her residual self-image strong and trained",
+    "medical": "none",
+    "magical": "none",
+    "chemical": "none — no substances, no enhancements, only adrenaline",
+    "coercive": "Under nominal police coercion at gunpoint — but this constraint is about to be overridden by superior capability, not resisted through willpower. She does not fight the coercion; she simply moves faster than it can enforce.",
+    "cognitive": "none — her situational awareness is clear and her exit plan is already formed",
+    "net_effect": "She is fully operational. The only meaningful constraint is time — the seconds between the phone ringing and an Agent reaching the room."
+   },
+   "deliberation": {
+    "framing": "This is an extraction, not a fight. The phone will ring; she will answer it; she will be pulled. The cops are in the way. They will not be in the way for long.",
+    "options_weighed": [
+     {
+      "option": "Fight through the cops to reach the phone",
+      "predicted_outcome": "She moves faster than they can react, clears the distance, answers the phone, and is extracted before the cops register what happened.",
+      "cost": "Minimal — the cops may fire but she will have moved before their trigger pulls complete. The real risk is the Agents, not the cops."
+     },
+     {
+      "option": "Surrender and await extraction by the crew",
+      "predicted_outcome": "Capture by police, transfer to Agent custody, interrogation, death — the body cannot live without the mind, and the Agents will take her mind apart.",
+      "cost": "Everything — her life, the mission, the crew's operational security."
+     },
+     {
+      "option": "Find an alternate exit through the hallway",
+      "predicted_outcome": "Encounter Agents in the corridor — they are coordinating and may already be between her and any other hardline.",
+      "cost": "Time she does not have, and direct exposure to the real threat."
+     }
+    ],
+    "reasoning": "The phone is three meters away. The cops are human. They cannot track me at the speed I can move. When the phone rings, I cross the distance before any finger finishes pulling a trigger. I answer, Tank pulls me, and I am out. The cops are not the problem. The clock is the problem — how many seconds between now and when an Agent walks through that door. The phone is the answer. Everything else is furniture.",
+    "chosen_because": "The phone is the established exit, the cops are within her physical capability to bypass, and the Agents have not yet arrived. This is the optimal window.",
+    "known_unknowns": "She does not know exactly how close the Agents are — only that they are coordinating and closing. She must assume she has seconds, not minutes. The phone must ring now."
+   },
+   "control": {
+    "mode": "inhibited",
+    "felt": "Coiled readiness — the body screaming to move, the mind holding it in check for the fraction of a second between the phone's ring and the launch. Fear of the Agents is present but compartmentalized beneath the operational certainty that she can do this.",
+    "expressed": "Compliance — hands behind head, body still, face neutral. A cornered woman waiting to be arrested. Nothing in her visible presentation suggests what is about to happen.",
+    "divergence_reason": "The gap between compliance and readiness is the trap. If the cops could read the coiled tension in her posture, they would fire preemptively — but they read her as defeated, which is exactly the miscalculation she needs.",
+    "leakage": "The stillness itself — too still, too controlled, the kind of stillness that precedes a detonation rather than a surrender. A trained observer would see it. The cops are not trained observers.",
+    "inhibited_impulse": "The urge to move before the phone rings — to simply take the cops apart and walk to the phone on her own schedule rather than waiting for the extraction signal. But the protocol requires the phone; the crew must initiate the pull from their end."
+   },
+   "intention": "To answer the ringing phone and be extracted from the Matrix before the Agents arrive.",
+   "action": "When the phone rings, Trinity explodes from the chair with superhuman speed — crossing the room before the cops can react — and lifts the receiver. She is pulled out of the Matrix. The phone drops, swinging on its cord. The room is empty. The cops are on the floor, their guns never fired.",
+   "trajectory": [
+    {
+     "phase": "Compliant stillness",
+     "shift": "Trinity holds her position at the keyboard, hands behind head, projecting defeat while her body loads for launch. The cops believe they have control; she is waiting for the phone — the only variable she cannot control from her side.",
+     "trigger": "The cop's command to put her hands behind her head — already given; she is executing the final hold before action.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Phone rings — launch",
+     "shift": "The phone rings. Trinity's body releases every ounce of coiled energy in a single explosive burst. She moves faster than the cops' eyes can track, faster than their trigger fingers can complete their pull. The room blurs. She is across it.",
+     "trigger": "The phone ringing — the extraction signal from Tank on the Nebuchadnezzar.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Extraction",
+     "shift": "Trinity lifts the receiver. The signal pulls her out of the Matrix. The phone drops, swinging on its cord. The room is empty. The cops never fired a shot.",
+     "trigger": "Trinity answering the phone — the hardline connection that allows the Nebuchadnezzar's operator to pull her signal out of the Matrix.",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "Gone — extracted from the Matrix, back aboard the Nebuchadnezzar. The room is empty except for the swinging phone and the cops on the floor. The immediate threat is over; the larger hunt continues.",
+   "unresolved": "The Agents are still out there, coordinating, hunting. Trinity's escape is a tactical victory but a strategic provocation — the system will respond. And somewhere in the Matrix, a hacker named Neo is about to receive a message."
+  }
+ ],
+ "dynamics": [
+  {
+   "entity": "lo-01",
+   "kind": "location",
+   "entering_state": "Decayed hotel room serving as Trinity's escape point — a nearly bare space with a fold-up table, a phone, a modem, and a PowerBook. The room is a trap from one angle (cops at the door) and an exit from another (the phone on the table).",
+   "forces_acting": [
+    "Trinity's need to reach the phone — the room's geometry is the obstacle course she must cross in under a second",
+    "The cops' attempt to control the space with guns and commands — a force that is about to be rendered irrelevant",
+    "The phone's imminent ring — the extraction signal that transforms the room from a trap into an exit",
+    "The Agents' encroaching coordination — felt as urgency in the room's air, though not yet visible"
+   ],
+   "axis_changes": [
+    {
+     "axis": "function",
+     "from": "ambiguous — could be a trap or an escape",
+     "to": "escape point — the phone rings and the room fulfills its purpose",
+     "caused_by": "The phone ringing and Trinity answering it"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Room as trap",
+     "shift": "The room holds Trinity at gunpoint — the door is blocked by cops, the only exit is the phone that hasn't rung yet.",
+     "trigger": "The cops' entry and commands from sc-001.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Room as exit",
+     "shift": "The phone rings and Trinity crosses the room in a blur — the space becomes the site of extraction rather than capture. When she vanishes, the room is empty and purposeless again.",
+     "trigger": "The phone ringing.",
+     "state_delta": {
+      "variable": "narrative_role",
+      "from": "escape_point",
+      "to": "escape_point"
+     }
+    }
+   ],
+   "leaving_state": "An empty room with a phone swinging on its cord — the escape is complete, the room has served its function and is now just decayed plaster and silence. But the Heart O' The City Hotel will return later as the resurrection site, and this first use as an escape point plants the location's significance.",
+   "significance_shift": "The hotel room is no longer just a setting — it is now the place where the audience first saw the rules of the Matrix break. When it returns in the climax as room 303, it will carry the weight of this first demonstration: this is where impossible things happen."
+  },
+  {
+   "entity": "gr-01",
+   "kind": "group",
+   "entering_state": "The Agents are coordinating the police operation from outside the room — Smith has declared the cops' men already dead, establishing the Agents as the directors of the hunt. They are aware of Trinity and actively pursuing.",
+   "forces_acting": [
+    "Their coordination of the police net around the hotel",
+    "Their inability to reach the room before Trinity's phone rings — a failure of timing rather than capability",
+    "The systemic pressure they exert on every freed human in the Matrix — their presence is the reason Trinity must escape rather than fight"
+   ],
+   "axis_changes": [
+    {
+     "axis": "credence",
+     "from": "Unknown threat — the audience knows they are dangerous but has not seen what they can do",
+     "to": "Confirmed threat that even a superhuman freed human runs from rather than fights — their danger is established by Trinity's choice to escape rather than engage",
+     "caused_by": "Trinity's decision to run rather than fight, which tells the audience that whatever the Agents are, they are worse than a room full of armed cops"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Off-screen pressure",
+     "shift": "The Agents are not visible but their presence shapes every decision Trinity makes — she runs because of them, not because of the cops.",
+     "trigger": "Smith's declaration in sc-002 that the cops' men are already dead.",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "The Agents have lost Trinity for now — she escaped through the hardline before they could intercept. But the hunt is not over; it is merely redirected. Their awareness of the resistance is confirmed, and their pursuit will continue.",
+   "significance_shift": "The Agents shift from 'men who arrived at a crime scene' to 'the thing that even the superhuman woman runs from.' Their authority was established in sc-002 by declaration; it is now confirmed by demonstration — Trinity's choice to flee rather than fight is the proof."
+  }
+ ],
+ "interaction": {
+  "what_collides": "Trinity's need to reach the phone collides with the cops' attempt to hold the room. But the collision is asymmetric — the cops believe they are exercising authority over a cornered suspect, while Trinity is executing a timed extraction in which the cops are simply obstacles with slow trigger fingers. The real collision is between Trinity's speed and the clock: how many seconds before an Agent walks through the door.",
+  "power_balance": "The cops have guns, numbers, and institutional authority. Trinity has superhuman speed and the phone. The balance appears to favor the cops — they are standing, she is seated; they are armed, she is compliant — but the moment the phone rings, the balance reverses completely and instantly. The cops never regain it. They are on the floor before they understand what happened.",
+  "information_asymmetry": "The cops do not know what Trinity is. They believe she is a criminal subject to the same physical limits as any human. Trinity knows they are furniture. She also knows the Agents are the real threat and that the phone is her exit — information the cops do not have and would not believe if told. This asymmetry is not a dramatic detail; it is the mechanism of the escape. The cops' ignorance is what makes them slow, and their slowness is what makes them beatable.",
+  "turning_point": "The phone rings. Until that moment, the room is a trap — Trinity is cornered at gunpoint with no way out. The instant the phone rings, the room becomes an exit — the trap dissolves because the one variable the cops cannot control (the phone signal from the Nebuchadnezzar) has arrived. The ring is the turning point because it converts compliance into action without warning."
+ },
+ "continuity": {
+  "established_facts_used": [
+   {
+    "fact": "Trinity sits at the keyboard in the nearly bare hotel room with a phone, modem, and PowerBook on the fold-up table.",
+    "source": "sc-001",
+    "how_used": "The phone's presence on the table is the setup for the exit — it must already be there for the escape to work. The bareness of the room means nothing blocks Trinity's path to the phone."
+   },
+   {
+    "fact": "The big cop has ordered Trinity to put her hands behind her head.",
+    "source": "sc-001",
+    "how_used": "Her compliance is the last beat of sc-001 — she is following the command, which establishes the false-read the cops have of her before the phone rings and she breaks."
+   },
+   {
+    "fact": "Agent Smith has declared the Lieutenant's men are already dead.",
+    "source": "sc-002",
+    "how_used": "Smith's declaration reframes the cops as doomed, which is confirmed by their total inability to react to Trinity's movement. The cops are dead men holding guns, and the scene proves it."
+   },
+   {
+    "fact": "Entry to and exit from the Matrix require hardwired phone lines.",
+    "source": "root.rules_of_the_world[5]",
+    "how_used": "The phone exit is not arbitrary — it is the established rule of the world. The audience doesn't know this yet, but the scene establishes it through demonstration."
+   },
+   {
+    "fact": "Freed humans can bend Matrix rules through mental discipline.",
+    "source": "root.rules_of_the_world[4]",
+    "how_used": "Trinity's superhuman speed is the first on-screen demonstration of this rule. She bends the rule of physical limitation; later, Neo will break it entirely."
+   }
+  ],
+  "constraints_honoured": [
+   "No character states feelings directly — Trinity's psychology is externalized entirely through action and physical readiness, not through dialogue or narration",
+   "No scene that communicates only information — this scene has a character (Trinity) wanting something (to reach the phone) and the obstacle (cops, time, the closing Agents) creating conflict",
+   "No interior monologue — all psychology is in the body, the movement, the stillness before the burst",
+   "Death in the Matrix kills the physical body — the stakes of being cornered are real even though Trinity can move superhumanly fast; if an Agent reaches her before the phone rings, she dies"
+  ],
+  "contradictions_checked": [
+   {
+    "risk": "Trinity's superhuman speed could seem like a superpower unconnected to the world's rules, making the Matrix feel arbitrary.",
+    "avoided_by": "The speed is framed as rule-bending, not rule-breaking — she moves faster than humans should but not impossibly fast, and the phone-exit is mechanical rather than magical. The world's rules are demonstrated through her action, not contradicted by it."
+   },
+   {
+    "risk": "The phone exit could feel like a deus ex machina — an arbitrary rescue mechanism.",
+    "avoided_by": "The phone was established as present in sc-001; the ring is an extraction signal from the crew, not a random event. The audience doesn't understand the mechanism yet, but they can see it is prepared, not spontaneous."
+   },
+   {
+    "risk": "The cops could be depicted as a genuine physical threat that Trinity must struggle against, which would contradict sc-002's declaration that they are already dead.",
+    "avoided_by": "Trinity does not struggle with the cops — she moves past them in a blur, confirming rather than contradicting Smith's assessment that they are irrelevant. The cops are furniture; she treats them as such."
+   }
+  ],
+  "state_preconditions": [
+   {
+    "entity": "ch-02",
+    "variable": "belief_in_neo_as_one",
+    "must_be": "uncertain — Trinity has not yet formed a judgment about Neo; this scene is pre-Neo entirely"
+   },
+   {
+    "entity": "ch-04",
+    "variable": "pursuit_phase",
+    "must_be": "hunting_trinity — the Agents are actively pursuing Trinity, which is why she is cornered and why she must escape"
+   },
+   {
+    "entity": "lo-01",
+    "variable": "narrative_role",
+    "must_be": "escape_point — the hotel is serving as Trinity's exit location, not yet the resurrection site"
+   }
+  ],
+  "forward_commitments": [
+   "The phone-as-exit mechanic is now established — every future Matrix operation, extraction, and pursuit scene depends on hardwired phones as entry and exit points",
+   "Trinity's combat capability is established — she must be written as a competent operative in all subsequent Matrix scenes, not as someone who needs protection",
+   "The Agents' genuine danger is confirmed by demonstration (Trinity runs from them) — later scenes must not undercut this by having the crew treat Agents casually",
+   "The Heart O' The City Hotel is planted as a significant location — when it returns as room 303 in the climax, it will carry the weight of this first escape",
+   "The crew's extraction protocol (operator monitors signal, sends ring to hardline, pulls subject out) is implicitly established — future extraction scenes must be consistent with this"
+  ]
+ },
+ "decision": {
+  "resolution": "sc-003 is Trinity's escape: the phone rings, she breaks from compliance with superhuman speed, crosses the room before the cops can react, answers the phone, and is pulled out of the Matrix. The phone drops, swinging on its cord. The room is empty. The cops never fired. Approximately 157 words, almost no dialogue — pure kinetic action that demonstrates freed-human capability and the phone-exit mechanic while leaving both unexplained.",
+  "state_changes_implied": [
+   {
+    "entity": "ch-04",
+    "variable": "pursuit_phase",
+    "from": "hunting_trinity",
+    "to": "hunting_trinity",
+    "because": "Trinity escaped, but the Agents are still hunting — she was their target and they will redirect. The pursuit phase does not change; it is ongoing."
+   }
+  ],
+  "confidence": 92,
+  "risks": [
+   "At ~157 words the scene is very short — if the action beats are not choreographed precisely enough, the kinetic energy could read as summary rather than experience, which would blunt the impact of the first superhuman demonstration",
+   "The lack of dialogue could feel sterile if the action description lacks sensory specificity — the scene must live in the body, in the verbs, in the blur of motion, not in reportage",
+   "By establishing Trinity's superhuman speed before any explanation of the Matrix, the scene risks making the world feel like a superhero story rather than a simulation with learnable rules — the distinction matters because the later training scenes must feel like education, not empowerment",
+   "The phone-exit mechanic is introduced without explanation, which is correct for mystery but could confuse rather than intrigue if the staging is not clear — the audience must understand that the phone caused her disappearance, not that she simply vanished"
+  ]
+ }
+}

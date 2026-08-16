@@ -1,0 +1,705 @@
+{
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-001",
+  "ordinal": 1
+ },
+ "situation": "Nothing has happened yet. This is the first frame. The story opens at the Heart O' the City Hotel at night. Agent Smith's pursuit phase is 'hunting_trinity' — the Agents and police are actively searching for Trinity, though they have not yet located her. Neo is asleep in his apartment, unaware, uncontacted. The Matrix is uncompromised and functioning normally. All crew aboard the Nebuchadnezzar are alive and operational. The Oracle has not yet been consulted by anyone relevant to this scene.",
+ "craft": {
+  "audience_need": "The declared audience (sci-fi thriller readers/viewers) needs a cold open that hooks through danger and mystery before any exposition is delivered. They need to feel the world is wrong before they are told why. Cite: the audience band expects Gibson-style neon paranoia and PKD-style reality instability — they should be unsettled by the ordinary before the extraordinary arrives.",
+  "genre_convention": "A sci-fi noir thriller conventionally opens mid-action or mid-pursuit, grounding the audience in immediacy before worldbuilding. This node satisfies that expectation — a cop arriving at a hotel at night with purpose — but deliberately withholds the science fiction element. The audience sees only noir: police, a hotel, night, tension. The genre promise is made through tone, not through spectacle.",
+  "theme_and_style": "The story root's theme — that reality is a construct and belief in oneself is the only true rebellion — demands an opening that feels real before it reveals it isn't. The plain register, varied sentence length, and forbidden tics (no interior monologue, no scene that communicates only information) mean this scene must work purely through action, gesture, and the charged silence of approach. The Gibson noir texture requires a specific, grounded physical environment — not abstract menace but a real hotel corridor, a real cop, a real sense that something in this building is very wrong.",
+  "dramatic_function": "This node is the cold-open hook. It establishes the world's texture (noir, paranoid, night-bound), the immediate threat (someone is being hunted), and the central mystery (who is inside this hotel and why are the authorities after them). It sets up the chase that will define the opening sequence and introduces the Matrix's reality as something felt before it is named. Nothing is paid off here — this is pure setup, the first promise to the audience.",
+  "tension_management": {
+   "entering": 10,
+   "leaving": 35,
+   "how": "Tension enters at a low baseline — the scene starts with an ordinary action (a cop arriving at a building) but the time of day, the specificity of the location, and the cop's body language immediately signal unease. Tension rises through the approach itself: the corridor, the quiet, the sense that the cop is walking into something he does not understand. The scene does not release — it ratchets up and stops at the threshold of contact."
+  },
+  "why_now": "This must be the first scene because it is the cold open: the audience's first experience of the world. It could not happen later because it establishes the baseline of reality that every subsequent revelation (the Matrix, the red pill, the real world) will subvert. The pursuit must be underway before Neo is introduced so that the audience feels the danger Trinity lives in before they meet the man she will die for. Starting here means the question 'what is the Matrix?' is planted by absence — the audience senses something is wrong before they know what is right.",
+  "why_not_otherwise": [
+   {
+    "alternative": "Open with Neo at his apartment, hacking, searching for Morpheus — his perspective and his story first.",
+    "rejected_because": "The plot technically centers on Neo, and starting with him would identify the protagonist immediately. But opening with the chase establishes genre and danger before introducing the protagonist, which is the stronger cold-open choice for a sci-fi action thriller. The audience must feel the world is dangerous before they care about the man who will be told to save it.",
+    "nearly_chosen": true,
+    "what_would_flip_it": "If the story were a character drama rather than an action thriller — if the primary engine were Neo's internal psychology rather than the external threat that forces his transformation — then starting with the protagonist alone in his room would be the correct opening."
+   },
+   {
+    "alternative": "Open with Trinity already on the phone, mid-escape, her perspective — the chase in motion from the pursued side.",
+    "rejected_because": "Starting from the cops' perspective creates a mystery about who is being pursued, which is a stronger hook. The audience does not yet know Trinity; seeing the pursuit from the hunters' side first means the hunted person is a question mark, which is more compelling than seeing fear on a stranger's face.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "If Trinity were already established as a character the audience cared about, opening with her fear would be stronger. But as the opening frame, she is unknown — and an unknown person's fear is less interesting than an unknown person's identity."
+   }
+  ],
+  "promises": {
+   "made": [
+    "Who is inside this hotel and why are armed police closing in?",
+    "What is wrong with this world that a cop's arrival at a hotel feels this ominous?",
+    "The ordinary is not ordinary — something beneath the surface of reality is broken"
+   ],
+   "kept": []
+  }
+ },
+ "interaction": {
+  "what_collides": "The pursuing authorities (embodied by BIG COP) want to enter and secure the hotel to apprehend whoever is inside. The unseen quarry — who the audience does not yet see but who the scene implies — wants to remain hidden and escape. These wants cross at the hotel's threshold: the cop approaches, the quarry is inside. The collision is preemptive — the scene ends before contact.",
+  "power_balance": "The authorities hold numerical and institutional power — badges, weapons, numbers, the presumption of control. But the quarry holds the power of knowledge: they understand the true nature of this world and the cop does not. The scene tips this imbalance toward the authorities physically (the cop arrives with purpose and confidence) while implying the quarry's hidden advantage through tone.",
+  "information_asymmetry": "The cop does not know what he is walking into — he believes this is a police operation, a pursuit of a criminal. The audience shares his ignorance. The quarry, whenever they appear, will know something the cop and the audience do not: the nature of the Matrix. This asymmetry is the engine of the entire story and is planted here in its simplest form — the hunter does not understand the game he is playing.",
+  "turning_point": "The pivot is the moment BIG COP crosses the threshold — enters the hotel's interior, transitioning from the approach (outside, public, controlled) to the encounter (inside, enclosed, unknown). The scene turns on a spatial threshold: once the cop is inside, he is in someone else's territory, and the rules shift. The tension pivots from 'something is coming' to 'something is here.'"
+ },
+ "decision": {
+  "resolution": "This scene will be the cold-open arrival: BIG COP enters the Heart O' the City Hotel at night, moving with purpose through the corridor toward a specific room. The scene is 155 words of charged approach — the cop's footsteps, the empty hallway, the sense of wrongness in the ordinary. Approximately 28 words of dialogue — minimal, functional, a cop confirming position or giving a terse order. The scene ends at the threshold of contact, before the quarry is revealed. It establishes the noir tone, the pursuit, and the audience's first sense that this world is not what it seems.",
+  "state_changes_implied": [
+   {
+    "entity": "lo-01",
+    "variable": "narrative_role",
+    "from": "escape_point",
+    "to": "active_pursuit_site",
+    "because": "The hotel transitions from a passive location to an active scene of pursuit as armed police enter it."
+   }
+  ],
+  "confidence": 82,
+  "risks": [
+   "The scene is very short (155 words) and could feel like a fragment rather than an opening if the tension is not precisely calibrated — too little and it is flat, too much and it feels compressed.",
+   "BIG COP has no entity ID, which means he cannot be tracked in the graph — if he recurs or matters later, the schema will not support him.",
+   "Starting from the cops' perspective risks making the audience sympathize with the hunters rather than the hunted, which could misdirect emotional investment in the opening moments.",
+   "The withholding of all science-fiction elements could read as a pure noir scene rather than a sci-fi cold open, failing to signal genre to the audience in the first frame."
+  ]
+ },
+ "psychology": [
+  {
+   "action": "He sleeps at his keyboard in a dark apartment, the search paused only because his body refused to continue without rest.",
+   "appraisal": {
+    "arousal": 20,
+    "moral_reading": "There is nothing wrong with sleeping. There is nothing wrong with searching. The wrongness is in the world, not in him — he is sure of this even in sleep, the way a man with a pebble in his shoe is sure the pebble is real even when he sits down.",
+    "self_conscious_emotion": "A low-grade shame — the shame of a man in his early thirties living alone, asleep at a machine, chasing something no one else can see. The shame of Thomas Anderson, who might be nobody.",
+    "somatic_marker": "The tightness in the chest that has lived there for years — the physical signature of the splinter, a compression behind the sternum that does not match any diagnosis.",
+    "valence": 15,
+    "value_at_stake": "Freedom and control — the search is an assertion of agency over a reality that feels predetermined and wrong. If the search is pointless, then he is not a seeker; he is just a man who cannot sleep."
+   },
+   "control": {
+    "divergence_reason": "Conscious control is offline. The divergence is not strategic but biological — the body staging a coup against the mind's compulsive search.",
+    "expressed": "Nothing visible — a man asleep in a chair, face lit by screen-glow, fingers curled where they stopped typing. The only performance is the stillness itself.",
+    "felt": "A restless unconscious — not the deep restorative sleep of a man at peace but the shallow, twitching half-sleep of a mind that cannot fully stop processing. The splinter turns in the dark like a thought that will not die.",
+    "inhibited_impulse": "The impulse to keep searching — to type one more query, to follow one more thread, to stay awake until the answer arrives. His body overrode it an hour ago.",
+    "leakage": "The fingers twitch on the keyboard — ghost-typing, the body rehearsing the search the mind cannot abandon. A shift in the chair, a murmur that is not a word.",
+    "mode": "dissociated"
+   },
+   "deliberation": {
+    "chosen_because": "Sleep was not a choice — it was a collapse. The body won the only argument it could win against the obsessive mind: it shut down.",
+    "framing": "The problem is framed as a search with a specific endpoint: find Morpheus, find the answer. The splinter is a clue, not a condition. The answer is external, held by someone else, obtainable through persistence and skill.",
+    "known_unknowns": "He does not know what the Matrix is. He does not know if Morpheus will ever contact him. He does not know if the splinter is perception or pathology — whether he sees something real or is simply ill. He hedges by continuing to search, which is both the rational response and the compulsive one.",
+    "options_weighed": [
+     {
+      "cost": "Another day of the splinter, another night of half-sleep, another cycle of the same unease",
+      "option": "Continue searching for Morpheus through hacker channels",
+      "predicted_outcome": "Eventually Morpheus contacts him or someone who knows Morpheus does. The search ends. The answer arrives."
+     },
+     {
+      "cost": "Admitting the splinter might be psychological, not existential — the unbearable possibility that nothing is wrong with the world, only with him",
+      "option": "Give up the search",
+      "predicted_outcome": "The unease does not stop. He becomes Thomas Anderson permanently — employee, nobody, man who sleeps but does not rest."
+     },
+     {
+      "cost": "The search pauses without his consent — the body's veto",
+      "option": "Sleep, as he is doing now",
+      "predicted_outcome": "Brief restoration, then the same compulsion resumes. Sleep does not answer the question; it only interrupts it."
+     }
+    ],
+    "reasoning": "In sleep there is no active chain of reasoning. But the framework that governs his waking life — 'I know something is wrong, Morpheus knows what, I will find him' — runs as a background process, unresolved, cycling even in unconsciousness."
+   },
+   "entering_state": "Asleep at his computer in his dark apartment, slumped in the posture of a man who fell mid-search — the body finally overriding the mind's obsessive compulsion. He is in the shallow, twitching sleep of the chronically sleep-deprived, the kind that does not restore but merely pauses.",
+   "entity": "ch-01",
+   "impairments": {
+    "chemical": "Caffeine metabolized hours ago — the crash that follows the crash, the flat chemical baseline of a body running on nothing.",
+    "coercive": "none",
+    "cognitive": "He cannot name what is wrong with the world. The splinter is felt, not articulated — a sensation without a concept, an itch without a location. This cognitive gap is the engine of his search: he knows something is wrong but cannot say what, which means the answer must be outside him, held by someone who can.",
+    "magical": "none",
+    "medical": "none",
+    "net_effect": "He is functional but depleted — a mind sharper than its body, running on compulsion rather than fuel, processing the world through a filter of exhaustion that blunts everything except the splinter, which cuts as clean in sleep as it does awake.",
+    "physical": "Chronic sleep deprivation — days of insufficient rest accumulating into the kind of fatigue that makes walls breathe and thoughts drag. Mild dehydration. The pallor of a man who sees the sun through office windows and car windows and never directly."
+   },
+   "intention": "No active intention — he is unconscious. His standing intention, the one that governs his waking life and persists as a low hum even in sleep, is to find Morpheus and learn what the Matrix is.",
+   "leaving_state": "Still asleep, still alone, still carrying the splinter — but the story has begun around him. He does not know it. The world he cannot trust is about to reach through the screen and pull him out of the life he cannot name as wrong.",
+   "perception": {
+    "attention": "In sleep, attention is diffuse and internal — the mind processing the day's searches, the dead ends, the forum posts about Morpheus, the feeling of proximity to something. He is failing to notice everything external: the city outside, the time, the fact that somewhere across town a pursuit is underway that will, within days, crash into his life.",
+    "interoception": "The low-grade ache of a body perpetually under-rested — a heaviness in the limbs, a slight pulse behind the eyes, the tightness in the chest that is the splinter's physical signature, present even in sleep.",
+    "proprioception": "Slumped forward in his desk chair, weight on his forearms, head resting on his hands or tilted back against the chair's headrest. The keyboard under his fingertips where he stopped. The body knows it is seated even in sleep.",
+    "sight": "The blue-white glow of the monitor through closed eyelids — a flickering warmth on his face, the afterimage of code scrolling down a screen he stopped reading an hour ago. The apartment is dark beyond the screen's halo. Everything else is shadow.",
+    "smell": "Stale air, warm electronics, the faint chemical scent of overheated plastic from a machine that has been running too long in a room without ventilation. The smell of a life lived in one room.",
+    "sound": "The hum of the computer's fan — a white noise so constant it has become inaudible to his waking mind but persists in sleep as a drone. Outside, the distant city: sirens, traffic, the sound of a world that goes on without him. Inside, nothing. He lives alone.",
+    "taste": "Dry mouth. The stale residue of hours-old coffee, the mineral tang of dehydration. He has not drunk water in longer than he would admit.",
+    "touch": "The hard plastic of the keyboard edge under his forearms where he slumped. The worn fabric of the office chair. The ambient warmth of a room heated by too many machines and not enough open windows."
+   },
+   "social_norms": {
+    "how_absent_others_would_judge": "His employer at Meta CorTechs would see a negligent employee — Thomas Anderson, unreliable, perpetually tired, the kind of man who might not last another performance review. Law enforcement would see a hacker who cracked the IRS D-base. The hacking community would see Neo — a legend, a searcher, one of the best. These three judgments coexist without colliding only because none of these audiences overlap.",
+    "how_others_would_judge": "No one is here to see him. But if someone were — a neighbor, a colleague, Choi — they would see a man asleep at his computer in a dark room, and the judgment would split: concern or contempt. 'He's working too hard' or 'he has no life.' Neither reading would be wrong.",
+    "norm_conflict": "The norm of productive citizenship — be normal, be employed, be well-rested, be Thomas Anderson — collides with the norm of the hacker's quest — follow the thread, find the truth, sacrifice comfort for answers. The hacker norm wins because the splinter makes the citizen norm feel like a lie.",
+    "norms_in_force": [
+     "The norm of a solitary life: no one to perform for, no one to explain yourself to, the apartment a private universe where habits calcify unchallenged.",
+     "The background norm of employment: Thomas Anderson is expected at Meta CorTechs tomorrow, functional and presentable, and the hacking life must not bleed into the professional one.",
+     "The norm of the hacker underground: you do not stop searching until you find what you are looking for. Quitting is not failure — it is nonexistence."
+    ],
+    "standing_at_risk": "His freedom — if law enforcement connects Neo to Thomas Anderson. His sanity — if the splinter is madness rather than perception. His identity — if he is just a man who cannot sleep, not a seeker on the edge of something."
+   },
+   "theory_of_mind": [
+    {
+     "accuracy": "Neo's model of Morpheus is almost entirely fantasy — he has built a guru-figure, a holder of answers, a man who will explain the splinter. The real Morpheus is not an answer-giver but a believer — he does not hold the truth about the Matrix so much as hold the faith that Neo is the One. Neo expects to be tested or dismissed; Morpheus intends to anoint him. This gap — between 'prove I am worthy of the answer' and 'you are the answer' — will cost Neo the ability to receive the truth when it arrives. He will be looking for a teacher and find a mirror.",
+     "d1": "Neo believes Morpheus is a legendary figure — the only person alive who can name what is wrong with the world. He believes Morpheus has the answer, knows the answer, and is reachable if the search is relentless enough.",
+     "d2": "Neo believes Morpheus would see him as one of many searchers — a promising hacker, perhaps, but not necessarily the one. He believes Morpheus is selective, cautious, and will only reveal himself to someone who proves themselves worthy of the answer.",
+     "d3": "Neo believes Morpheus believes that whoever finally reaches him will have earned it — that the search itself is the test, and that the person who persists long enough is the person who is ready. He believes Morpheus is waiting for readiness, not for destiny.",
+     "other": "ch-03"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Deep collapse — the body's victory",
+     "shift": "Neo has fallen from the restless waking search into the shallow unconsciousness his body demanded. The transition was not graceful — he was typing, then he was not. The screen kept scrolling. The search paused without resolution.",
+     "state_delta": {},
+     "trigger": "The accumulated sleep debt reaching a threshold the mind could no longer override — the body's non-negotiable shutdown."
+    },
+    {
+     "phase": "Ghost-typing — the splinter in sleep",
+     "shift": "Even in sleep, the search persists as motor memory — his fingers twitch on the keyboard, rehearsing the compulsive act his conscious mind cannot abandon. The splinter surfaces as a quality of the sleep itself: not a dream but a wrongness in the texture of unconsciousness, a tightness that rest does not touch.",
+     "state_delta": {},
+     "trigger": "The splinter — the unnamed wrongness that does not respect the boundary between waking and sleep. It is the one thing that survives unconsciousness intact."
+    },
+    {
+     "phase": "Settling — exhaustion reasserted",
+     "shift": "The twitching subsides. His body sinks deeper into the chair, and for a moment the sleep becomes genuine — still shallow, still not restorative, but without the restless search-quality. He is just a man asleep, for a few seconds, before the cycle begins again.",
+     "state_delta": {},
+     "trigger": "The body's exhaustion overpowering even the splinter's hold — a deeper pull into unconsciousness that briefly silences the compulsion."
+    }
+   ],
+   "unresolved": "The splinter — unnamed, unlocated, undiagnosed. The search for Morpheus — years long, not yet concluded, the only thread he has. The fear that he is nobody, that Thomas Anderson is all there is, that the wrongness he feels is not perception but pathology. He carries all of this into sleep and will carry it out.",
+   "urges": {
+    "avoidances": "Avoiding the possibility that the splinter is madness — that the world is exactly what it appears to be and he is simply ill. Avoiding the life of Thomas Anderson: the office, the routine, the normalcy that feels like a cage. Avoiding sleep, until his body overrides him — which it just did.",
+    "cravings": "Nothing active in sleep. But the waking craving persists as a residual pull: the craving for the answer, for the moment the search ends and the splinter is named. This craving has the quality of an addiction — the compulsion that overrides hunger, rest, and social life.",
+    "physical_needs": "Sleep — he is getting it, but it is the poor-quality, screen-lit, chair-bound kind that does not restore. Hydration. A meal that is not vending-machine food. Sunlight, which he has not seen directly in days.",
+    "psych_needs_conscious": "He wants to find Morpheus. He wants to name the splinter. He wants the search to end.",
+    "psych_needs_unconscious": "He wants to be someone — to be Neo, not Thomas Anderson. He wants the splinter to mean something, to be proof that he is special rather than sick. He wants the world to be wrong because the alternative — that he is wrong — is unbearable."
+   }
+  },
+  {
+   "entity": "ch-02",
+   "entering_state": "A veteran underground operative alone in room 303 of the Heart O' the City Hotel at the tail end of a data extraction mission, waiting for a hardline phone window to extract from the Matrix. She carries the Oracle's love prophecy — that she will fall in love with the One — as a weight she stopped actively thinking about years ago but has never once set down. Her emotional register is professional stillness: not calm, but the particular quiet of a body that has metabolized fear into readiness so many times the conversion has become automatic. She has not met Neo. She does not think about the prophecy. She thinks about the phone.",
+   "perception": {
+    "sight": "The room is nearly dark — the desk lamp is off, the only light is ambient city glow leaking through the blinds in thin horizontal stripes that cut across the bedspread and the phone on the desk. She can see the door, closed, no light under its gap yet. The window beyond the blinds. Her own pale hands resting on her thighs. The room's furniture: aged, scarred, anonymous.",
+    "sound": "At first the building's hum — old wiring, the elevator shaft, distant traffic. Then boots. More than two sets, heavy, rubber-soled, in the corridor outside. A radio squelch — police band. They are moving with purpose, not loitering. The sound grows.",
+    "touch": "The chair beneath her, the leather of her jacket tight across the shoulders and worn at the elbows, the floor through the thin soles of her boots — she can feel the building vibrate faintly with each approaching footfall through the structure.",
+    "smell": "Stale carpet, dust baked into the curtains from years of guest-room neglect, the faint chemical bite of industrial cleaning fluid, and beneath it all her own adrenaline — which she has learned to recognize as a copper-tang note in the back of the throat.",
+    "taste": "Dry mouth. The metallic edge of pre-combat physiology — copper, chalk. She swallows once.",
+    "interoception": "Heart rate elevated but governed — she's trained to hold it at 80 instead of 140, and the training holds. The hollow drop in the stomach that isn't fear exactly but the body clearing house for action, jettisoning everything nonessential. A faint tremor in the fingers she's aware of and dismisses. Blood moving to the extremities, warmth in the forearms.",
+    "proprioception": "Seated at the desk, weight low and centered, feet flat on the floor, oriented toward the door at an angle that allows her to be moving before she's standing. She knows where the door, the window, and the phone are the way she knows where her hands are — without checking.",
+    "attention": "Split between the phone on the desk — the exit, the point of the whole night — and the corridor sounds, which have just reprioritized themselves. The threat is now the top layer of her attention; the phone has dropped to second. She is not attending to the mission she just completed, to the Oracle's prophecy, to Morpheus, to the crew. She is attending to the boots and the door, in that order."
+   },
+   "appraisal": {
+    "value_at_stake": "Survival and mission loyalty — she must get out alive and intact to continue serving Morpheus and the cause. Her operational competence is also at stake, as a test of her identity as the operator who cracked the IRS D-Base.",
+    "valence": -35,
+    "arousal": 72,
+    "self_conscious_emotion": "none",
+    "moral_reading": "The cops are instruments of the system — bluepills enforcing the rules of a prison they can't see. She does not hate them. They are obstacles, not adversaries. The Agents are adversaries. The cops are a symptom of the Matrix's immune response, and she is the infection.",
+    "somatic_marker": "Jaw clenching inward, fingers curling to half-fists against the thighs, weight shifting forward onto the balls of the feet — the body assembling its combat geometry before the mind has finished deciding."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "Underground operator protocol: complete the mission, protect the hardline exit, leave no trace, engage only when necessary",
+     "Law enforcement protocol: locate, secure, apprehend — the cops believe they are executing a raid on a suspected terrorist",
+     "Chain of command to Morpheus: Trinity operates independently in the field but reports in and extracts on Morpheus's schedule"
+    ],
+    "how_others_would_judge": "The crew monitoring from the Nebuchadnezzar would expect her to handle uniformed police without difficulty. Getting cornered by street cops would be a reputational embarrassment, not a crisis — but an embarrassment she would feel.",
+    "how_absent_others_would_judge": "Morpheus trusts her to extract cleanly and would not second-guess her tactical choices. The Oracle's prophecy creates no judgment context here — Trinity is not thinking about it, and the Oracle is not watching.",
+    "standing_at_risk": "Her identity as the crew's most capable field operative — the one who cracked the IRS D-Base, the one Morpheus trusts alone in the field. A clean extraction confirms it; a messy one dents it.",
+    "norm_conflict": "The operator norm 'ghost out, fight only when necessary' conflicts with the tactical reality that the cops are between her and the lobby and closing on her room — she may need to fight to reach the phone. The escape-first norm loses to the phone-window constraint: if she leaves the hotel, she loses the hardline, and hardlines are rare."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-04",
+     "d1": "Agent Smith is coordinating this pursuit — he dispatched the cops as a first wave and is moving to close the net himself. He is hunting her specifically because she is a known operative with access to Morpheus. He will not stop.",
+     "d2": "Smith believes she is a dangerous terrorist who will fight hard and who knows Morpheus's location. He expects resistance and plans for it with overwhelming force.",
+     "d3": "She believes Smith believes she believes the cops will slow her down enough for him to arrive and take her personally — that this is a prepwedging tactic, not the main event.",
+     "accuracy": "She models Smith as a reactive pursuer who is still assembling his response. In reality, the Agents have already identified the Heart O' the City Hotel as her likely extraction point and are positioning to cut off her exit routes before she reaches the phone. She thinks she has a two-minute window; she may have less than one. This error will cost her the clean extraction she's counting on."
+    },
+    {
+     "other": "ch-03",
+     "d1": "Morpheus is aboard the Nebuchadnezzar, monitoring the operation, trusting her to complete the extraction on schedule. He will not intervene unless she calls for backup — and she will not call, because that is not what she does.",
+     "d2": "Morpheus believes Trinity is the most capable operator in his crew and that this is a routine extraction under standard police-contact conditions. He has given her latitude because she has earned it.",
+     "d3": "She believes Morpheus believes she believes in the mission enough to take any risk without hesitation — and she performs to that belief, because she does not want to be the one who called for help when the others never would.",
+     "accuracy": "She reads Morpheus's distance as command confidence — the leader who trusts his operative. In fact, Morpheus's distance is protective: he worries about her because he knows the Oracle told her something she won't share, and he can see the weight of it in her even when she thinks she's hiding it. She would call for backup if she understood how much he wants her to. She won't, and this means she'll take a risk he'd have told her not to take."
+    },
+    {
+     "other": "ch-05",
+     "d1": "Cypher is running comms from the Nebuchadnezzar, relaying tactical information — he is probably the one who warned her the police were coming. He does his job. He gripes. That's Cypher.",
+     "d2": "Cypher thinks she is cold — professional to the point of being unfeeling. He once told her he was in love with her and she redirected to Morpheus's authority, which he took as rejection.",
+     "d3": "She believes Cypher believes she believes his feelings are irrelevant — and since she does believe they are irrelevant (the mission is what matters), she does not see his resentment as anything more than bruised ego that will fade.",
+     "accuracy": "She catastrophically underestimates the depth of Cypher's resentment. She reads his griping as venting — a man blowing off steam — when it is the sound of a man metastasizing toward betrayal. She cannot model him as a traitor because she has never seen a traitor in the crew. This error will cost everything: her safety, Morpheus's freedom, the crew's lives."
+    }
+   ],
+   "urges": {
+    "cravings": "none — she is in operational mode. No appetite, no warmth-seeking, no contact need. Just the exit.",
+    "physical_needs": "Slight dehydration from hours in the Matrix, a low-grade fatigue behind the eyes that the combat stim she's running on covers but doesn't erase. Nothing she can't fight through.",
+    "psych_needs_conscious": "Get to the hardline phone. Get out. Report to Morpheus. Transition to the next operation.",
+    "psych_needs_unconscious": "To prove — to herself, not to anyone else — that she is still the operator who cracked the IRS D-Base, that the years of this work have not dulled her edge. The question of decline is not idle; she has been doing this long enough to have seen others get slow. She needs the door to open so she can be certain.",
+    "avoidances": "She avoids the Oracle's prophecy completely. More specifically, she avoids the question of whether she would recognize the One when she meets him — whether the love the Oracle described would announce itself or whether she would have to be told. She avoids this because the answer might be that she doesn't know, and not knowing means the prophecy might pass her by."
+   },
+   "impairments": {
+    "physical": "none",
+    "medical": "none",
+    "magical": "none",
+    "chemical": "none",
+    "coercive": "Time pressure — the hardline phone window is finite. If the cops hold the room too long, the window closes and she has no exit. This is the active constraint that drives every decision in this scene.",
+    "cognitive": "She cannot think clearly about the Oracle's prophecy in the best of circumstances — her voice physically fails her when she tries to articulate it. This is a standing impairment, not active in this scene, because she's not trying to speak it here. But it sits beneath everything she does, narrowing her self-awareness to the operational layer.",
+    "net_effect": "She is operating at near-full capacity, constrained only by the hardline's finite window. The prophecy block is dormant, not active. The net effect is a highly competent operative with one unacknowledged blind spot that doesn't cost her in this scene but will in every subsequent one where emotion intersects mission."
+   },
+   "deliberation": {
+    "framing": "She frames this as a standard extraction under unexpected police contact — a contingency she has trained for, not a crisis. The cops are not Agents. They are slower, less coordinated, and she has beaten them before. The problem is not the cops; it's the phone window.",
+    "options_weighed": [
+     {
+      "option": "Stay hidden in the room and wait for the cops to search and move past her, then go to the phone when the corridor is clear.",
+      "predicted_outcome": "She reaches the phone cleanly and extracts.",
+      "cost": "If the cops hold the room or stay in the corridor, she loses the window — the phone goes dead and she's trapped in the Matrix with no hardline exit."
+     },
+     {
+      "option": "Let them breach the door, neutralize them in the doorway — a chokepoint, two at most — then sprint for the phone.",
+      "predicted_outcome": "Noisy but fast, two to three seconds of contact, then she's at the desk and jacking out.",
+      "cost": "The noise will alert any Agent on-site to her exact position and confirm the room number, accelerating the real threat. She's buying the phone at the price of advertising her location."
+     },
+     {
+      "option": "Ghost out the window now, abandon the hotel, find another hardline at a different location.",
+      "predicted_outcome": "Safe — she's off the cops' radar and moving. But mission incomplete.",
+      "cost": "She loses the extraction point. Hardlines are rare and she has no guarantee another window will open tonight. Every additional minute in the Matrix is a minute of Agent exposure."
+     }
+    ],
+    "reasoning": "The cops are in the corridor, between her and the lobby — not between her and the phone, which is behind her in the same room. If they're searching room by room, she has maybe ninety seconds before they reach 303. If she runs, she loses the phone and adds time in hostile territory. If she waits, the math is the same as it's always been: one door, one chokepoint, two cops maximum through a frame at once, and then she's past them and at the desk. She's done it before. The math says let them come.",
+    "chosen_because": "She's done this before. The geometry is always the same — in the room, at the door, one chokepoint. The door is the cop's advantage and her weapon at the same time, and she's better at using it than they are. She chooses to wait because waiting preserves the phone window, and the phone window is the mission.",
+    "known_unknowns": "She does not know if an Agent is already on-site — she assumes the cops are the first wave and that Smith is still en route. She does not know if the hardline is still clean — Cypher confirmed it, but Cypher's intel could be stale or compromised. She does not know how many cops are in the corridor — two sets of boots, maybe a third, but the acoustics of an old hotel corridor are unreliable. She hedges by keeping the window as a backup exit route."
+   },
+   "control": {
+    "mode": "mixed",
+    "felt": "Professional composure over a thread of fear that isn't fear of the cops — it's the nagging, never-examined question: is she still fast enough? She's been doing this long enough for the question to be real. The body feels ready; the mind is counting seconds and measuring footsteps. Below both, a deeper unease she won't look at — the sense that something about this night is different, though she can't say what.",
+    "expressed": "Stillness. Controlled breathing. The face is a closed door — no expression, no shift, no tells. Anyone watching would see patience and competence, not fear.",
+    "divergence_reason": "Operational discipline. Years of fieldwork have trained the interior off the exterior. The gap is professional habit, not deception — she doesn't perform calm, she enforces it, which is different. But the deeper layer — the sense that something is different tonight — doesn't surface at all, not even to her.",
+    "leakage": "Her weight shifts forward an inch when the footsteps get closer — a fraction of repositioning that a trained fighter would read as the moment before a coiled spring releases. Her fingers close to half-fists against her thighs. These are the visible signatures of a body that has already decided what to do before the mind has finished the paperwork.",
+    "inhibited_impulse": "The urge to move — to preempt the approach, to take the fight to the corridor instead of waiting in the room, to not sit still while they come to her. Every instinct in the muscle says go now. She holds it, because the door is the advantage and the door is here."
+   },
+   "intention": "Let the cops come to her, neutralize them at the door in the minimum number of seconds, then reach the hardline phone and extract before Agent response to the noise.",
+   "action": "She waits in the dark room, listening to the boots approach, tracking their number and pace. As the footsteps near room 303, she rises from the chair and moves to a position against the wall beside the door — the kill zone's blind side. She does not reach for the phone. She reaches for the place where the door will open.",
+   "trajectory": [
+    {
+     "phase": "At the desk, operational patience",
+     "shift": "From routine waiting to heightened listening — the ambient sounds of the building resolve into something specific and wrong: boots, multiple sets, in the corridor outside.",
+     "trigger": "The first sound of heavy rubber-soled footsteps entering the hotel corridor — distinct from guest noise, service noise, or the elevator.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Threat categorization",
+     "shift": "From listening to parsing — she is no longer just registering the boots but counting the sets, measuring their pace and spacing, distinguishing them from the even, uncanny stride that marks an Agent's movement. The assessment drops the threat level from existential to tactical.",
+     "trigger": "The specific quality of the boots — rubber soles on carpet, the occasional radio squelch of police-band equipment, the uneven spacing of multiple people moving in loose formation — all markers of uniformed police, not Agents.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Repositioning for the breach",
+     "shift": "From assessment to action — the decision is made. She rises from the chair and moves to the wall beside the door, positioning herself in the opening frame's blind side. The body is now executing; the deliberation is over.",
+     "trigger": "The footsteps stop — or nearly stop — at a room near hers, the sound of a door being opened and cleared. They are searching room by room, and 303 is on the sequence.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Threshold readiness",
+     "shift": "From preparation to combat arousal — the last veneer of stillness drops. She is no longer calm; she is coiled. Her weight is forward, knees soft, hands half-closed. Every remaining second of waiting is a second of held breath.",
+     "trigger": "The footsteps resume and close toward room 303's door — close enough that she could reach out and touch the frame from where she stands.",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "A body pressed flat against the wall beside a door that is about to open, every scrap of patience spent and converted to kinetic readiness. The phone on the desk behind her is not a thought anymore — it is a coordinate she has already plotted, a distance her body knows in feet and seconds. What is in front of her is the door, and what is behind the door is the only thing that matters: the fight that buys the phone, and the phone that buys the exit.",
+   "unresolved": "She does not know what is behind the cops. If she's right that the Agents are still en route, she has time. If she's wrong — if Smith is already in the building, already in a cop's skin, already walking this corridor in borrowed rubber soles — then the fight at the door buys her nothing, and the phone window she's betting her life on is already closing. She cannot distinguish an Agent wearing a cop from a cop. That is the thing she does not know and cannot hedge against, and it is the thing that will be true if this night is as different as the back of her mind keeps telling her it is."
+  }
+ ],
+ "dynamics": [
+  {
+   "entity": "lo-01",
+   "kind": "location",
+   "entering_state": "An occupied hotel at night — functioning, quiet, a building where someone is hiding. No party has breached its interior. The space is neutral ground.",
+   "forces_acting": [
+    "Institutional law enforcement pressure — a cop arrives with purpose to secure the premises, driven by the Agents' citywide search (transmitted through police dispatch).",
+    "The quarry's need for concealment — the hotel is being used as a hideout, and that use is the reason the building is now a target.",
+    "The building's own architecture — the lobby, the corridor, the threshold — these channel the cop's approach and determine that entry is a single, linear act rather than a dispersed operation.",
+    "Time of night — the hotel is operating at low occupancy, the corridors are empty, the ordinary quiet amplifies the cop's footsteps and the sense that this building is holding its breath."
+   ],
+   "axis_changes": [
+    {
+     "axis": "control",
+     "from": "Uncontrolled by any party — neutral ground, a public hotel functioning independently.",
+     "to": "Being penetrated by law enforcement — the authorities have asserted physical access to the interior and are advancing through it.",
+     "caused_by": "BIG COP crosses the hotel threshold and enters the corridor with institutional authority."
+    },
+    {
+     "axis": "meaning",
+     "from": "Refuge — a hiding place whose ordinariness makes it safe.",
+     "to": "Trap closing — the same walls that concealed the quarry now channel the hunter toward her.",
+     "caused_by": "The cop's purposeful entry reframes the building from shelter to containment vessel."
+    },
+    {
+     "axis": "condition",
+     "from": "Undisturbed — operating normally as a nighttime hotel.",
+     "to": "Breached — its interior is now occupied by a hostile agent of the state.",
+     "caused_by": "BIG COP's physical entry into the building."
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Before entry — the building as refuge",
+     "shift": "The hotel stands at night, quiet, ordinary, functioning as a place to stay. Its corridors are empty. The building is serving its purpose for the quarry: it is invisible because it is mundane.",
+     "trigger": "The scene's opening frame — the establishing shot of the hotel exterior at night.",
+     "state_delta": {
+      "variable": "narrative_role",
+      "from": "passive_location",
+      "to": "targeted_location"
+     }
+    },
+    {
+     "phase": "Threshold crossing — the building is breached",
+     "shift": "BIG COP enters the hotel interior. The building ceases to be neutral ground — it is now a site of pursuit. The lobby and corridor become the channel through which the hunter advances.",
+     "trigger": "BIG COP crosses the hotel threshold from exterior to interior.",
+     "state_delta": {
+      "variable": "interior_control",
+      "from": "no_hostile_presence",
+      "to": "law_enforcement_inside"
+     }
+    },
+    {
+     "phase": "Corridor approach — the building becomes a trap",
+     "shift": "The cop moves through the hallway toward an unknown room. The corridor's linearity — walls, doors, the single path — transforms the building from a hiding place into a funnel. Every footstep tightens the space.",
+     "trigger": "BIG COP's footsteps echo in the empty corridor.",
+     "state_delta": {
+      "variable": "spatial_meaning",
+      "from": "shelter",
+      "to": "containment_vessel"
+     }
+    }
+   ],
+   "leaving_state": "An active pursuit site — law enforcement has penetrated the interior and is advancing through the corridors. The building has been transformed from hiding place to hunting ground. Contact with the quarry has not yet been made.",
+   "significance_shift": "To the quarry (Trinity, unseen), the hotel has gone from refuge to compromised position — the walls that hid her are now corridors that lead the hunter to her. To BIG COP, it is a building with a suspect inside, procedurally unremarkable. To the audience, it becomes the first place in this world that feels WRONG — the ordinary architecture of a hotel corridor becomes ominous, and the building itself starts to feel like an artifact of something larger and more sinister than a police raid. The hotel is no longer a hotel; it is the first crack in the surface of reality."
+  },
+  {
+   "entity": "gr-01",
+   "kind": "group",
+   "entering_state": "Hunting Trinity — actively searching the city through their control of police infrastructure. They have not confirmed her location. Their search is a sweep, not a closing. No Agent is physically present at the hotel; their force is exerted entirely through human proxies.",
+   "forces_acting": [
+    "The Agents' institutional command over police forces — they direct human law enforcement as extensions of their search without the cops knowing who is steering them.",
+    "Trinity's evasion — her hiding forces the Agents to cast a wide net and rely on proxies to narrow it.",
+    "The Matrix's own infrastructure — the Agents operate through the system's available channels (police dispatch, building access, institutional authority) and are constrained by what the system makes available.",
+    "Time — the longer Trinity remains at large, the more the Agents' search contracts around her possible positions."
+   ],
+   "axis_changes": [
+    {
+     "axis": "control",
+     "from": "Searching without positional confirmation — the city is a grid they are sweeping blind.",
+     "to": "Searching with positional narrowing — a proxy (BIG COP) has entered the specific building where the quarry may be located.",
+     "caused_by": "Police dispatch routes BIG COP to the Heart O' the City Hotel, extending the Agents' reach into the building's interior."
+    },
+    {
+     "axis": "credence",
+     "from": "Uncertain — Trinity's location unknown, pursuit is speculative, the net is wide.",
+     "to": "Narrowing — the net has contracted to a single building, though confirmation has not yet arrived.",
+     "caused_by": "The arrival of a police unit at a specific hotel where the quarry may be hiding."
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Citywide sweep — the net is wide",
+     "shift": "The Agents are exerting force across the entire city through police proxies. No building is specifically confirmed. The search is a grid operation.",
+     "trigger": "The scene's opening, which is implicitly the end stage of a longer search process.",
+     "state_delta": {
+      "variable": "search_status",
+      "from": "citywide_sweep",
+      "to": "district_narrowing"
+     }
+    },
+    {
+     "phase": "Cop arrival — the net contracts to the building",
+     "shift": "A police unit arrives at the Heart O' the City Hotel. The Agents' search has narrowed from the city to a district to a specific building. Their force is now concentrated at a single point.",
+     "trigger": "BIG COP's arrival at the hotel exterior.",
+     "state_delta": {
+      "variable": "search_status",
+      "from": "district_narrowing",
+      "to": "building_targeted"
+     }
+    },
+    {
+     "phase": "Interior penetration — the Agents' reach extends inside",
+     "shift": "The cop enters the hotel. The Agents' control now extends into the building's interior. Their proxy is physically inside the space where their target may be hiding. The net is no longer around the building — it is inside it.",
+     "trigger": "BIG COP crosses the threshold and enters the corridor.",
+     "state_delta": {
+      "variable": "search_status",
+      "from": "building_targeted",
+      "to": "interior_breached"
+     }
+    }
+   ],
+   "leaving_state": "Hunting Trinity with narrowed positional focus — a proxy is inside the building where she may be hiding. The search has contracted from a citywide sweep to an interior breach of a single building. Contact has not been made. Confirmation of Trinity's presence is still pending.",
+   "significance_shift": "To the audience, the Agents begin to register as a systemic force rather than individual antagonists — they are felt through their proxies before they are ever seen. The cop is their hand without knowing it. The Agents' meaning shifts from 'pursuers' to 'the system itself' — they are not chasing Trinity, the world is chasing her. This is the first time the audience senses that the threat in this story is not a villain but an architecture."
+  },
+  {
+   "entity": "cn-01",
+   "kind": "concept",
+   "entering_state": "Functioning normally — the simulation is seamless, all systemic processes running as designed, no anomalies detected, no red pills consumed, no one has questioned its nature. The Matrix is, to everyone inside it, simply reality.",
+   "forces_acting": [
+    "The Agents' use of the Matrix's police infrastructure as a hunting tool — the system's own institutions and procedures are being weaponized against a person inside the simulation.",
+    "The quarry's existence within the simulation — Trinity's presence and movements inside the Matrix are what generate the traceable pattern the Agents are following.",
+    "The audience's dawning suspicion — the tone of the scene, the specificity of the silence, the deliberate quality of the cop's approach — exerts the first force on the Matrix's credibility as 'reality.' This is not a glitch or a special effect; it is a tonal wrongness that makes the ordinary feel staged.",
+    "The genre contract — the audience has been promised a sci-fi thriller, and this promise creates a retroactive force: the audience is looking for what is wrong before anything is shown to be wrong."
+   ],
+   "axis_changes": [
+    {
+     "axis": "credence",
+     "from": "Total — the simulation is indistinguishable from reality, fully accepted by every person inside it including BIG COP.",
+     "to": "First hairline crack — the audience begins to sense that the ordinary is staged, though no character in the scene does.",
+     "caused_by": "The tonal direction of the scene — the charged silence, the too-deliberate approach, the noir texture — makes the hotel corridor feel like a set, which makes the world feel like a construction."
+    },
+    {
+     "axis": "meaning",
+     "from": "The world — simply the reality everyone lives in, unquestioned, given.",
+     "to": "A surface — something that looks right but feels wrong, a construction rather than a given, a thing that might be hiding something.",
+     "caused_by": "The genre promise (sci-fi thriller) combined with the noir tone creates a viewer who is primed to distrust the ordinary."
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Seamless baseline — the Matrix as reality",
+     "shift": "The Matrix presents as ordinary nighttime reality: a hotel, a cop, a routine call. Nothing is visibly wrong. The simulation is functioning exactly as designed. This is the state the system is built to maintain.",
+     "trigger": "The scene's opening frame — an ordinary hotel at night.",
+     "state_delta": {
+      "variable": "audience_credence",
+      "from": "total_belief",
+      "to": "total_belief"
+     }
+    },
+    {
+     "phase": "Textural wrongness — the Matrix as surface",
+     "shift": "The tone of the cop's approach — the silence, the specificity, the charged quality of the ordinary — begins to make the simulation feel like a performance rather than a reality. No glitch occurs; nothing breaks. But the audience's trust in the world's authenticity is destabilized for the first time through pure atmosphere.",
+     "trigger": "BIG COP's purposeful movement through the corridor, the quality of the silence, the noir lighting and texture — the scene's craft choices, not any in-world event.",
+     "state_delta": {
+      "variable": "audience_credence",
+      "from": "total_belief",
+      "to": "first_suspicion"
+     }
+    }
+   ],
+   "leaving_state": "Still functioning normally at the systems level — no glitches, no anomalies, no one inside the Matrix has noticed anything wrong. But the audience's trust in its authenticity has been destabilized for the first time by tone alone. The Matrix is now, to the viewer, a thing that might be hiding something.",
+   "significance_shift": "To BIG COP and everyone inside the Matrix, it remains simply reality — nothing has changed, nothing is wrong. But to the audience, the Matrix's meaning has shifted from 'the world' to 'a performance of the world' — the first crack is not a visual effect or a character's revelation but a tonal wrongness: the hotel corridor feels too quiet, the cop's arrival feels too deliberate, the ordinary feels staged. This is the seed that will, over the course of the story, turn 'reality' into 'the Matrix' in the audience's mind. Everything that follows — the red pill, the construct, the real world — will pay off the suspicion planted here, in a hotel corridor that looked fine and felt wrong."
+  },
+  {
+   "entity": "gr-02",
+   "kind": "group",
+   "entering_state": "All crew alive and operational. Trinity is inside the Matrix on an unspecified mission. The crew is at standard operational status with no active compromise. Their exposure is the baseline risk of any jacked-in operation — they are always potentially detectable, but at this moment no threat has been localized to them.",
+   "forces_acting": [
+    "Agent pursuit of Trinity — the Agents' search is closing in on a crew member inside the Matrix, which constitutes a direct threat to the group's operational integrity.",
+    "The crew's operational structure — Trinity's presence in the Matrix means the crew is exposed to system-level detection through her movements. She is their point of contact with the enemy.",
+    "The cop's entry into the hotel — this brings the Agents' reach physically closer to a crew member, increasing the group's collective vulnerability without the group (on the ship) yet knowing it.",
+    "The crew's own mission parameters — whatever Trinity is doing at the hotel, it requires her to be there, which means she cannot simply flee at the first sign of a patrol; the mission creates exposure that pure evasion would not."
+   ],
+   "axis_changes": [
+    {
+     "axis": "condition",
+     "from": "Operational with no active localized threat to personnel — standard risk only.",
+     "to": "Operational with direct localized threat to one member — the pursuit has reached the building where a crew member is located.",
+     "caused_by": "BIG COP's arrival at and entry into the Heart O' the City Hotel, the building where Trinity is hiding."
+    },
+    {
+     "axis": "cohesion",
+     "from": "Intact — all members safe and active, the crew functions as a unit through its jacked-in operator.",
+     "to": "Under pressure — one member is being actively hunted, the crew's operational integrity is threatened by detection, though the crew on the ship may not yet know the threat has localized.",
+     "caused_by": "The narrowing of the Agents' search to the specific building where a crew member is present."
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Baseline exposure — standard operational risk",
+     "shift": "The crew is operational. Trinity is in the Matrix. The crew's exposure is the baseline risk of any operation — they are always potentially detectable, but at this moment, no threat has been localized to them specifically.",
+     "trigger": "The scene opens — the crew is in its standard operational configuration.",
+     "state_delta": {
+      "variable": "threat_level",
+      "from": "baseline_operational",
+      "to": "baseline_operational"
+     }
+    },
+    {
+     "phase": "Threat narrowing — the pursuit reaches the building",
+     "shift": "A police unit arrives at the hotel where Trinity is located. The crew's exposure jumps from baseline to elevated. The threat is no longer abstract and citywide; it is now in the same building as a crew member.",
+     "trigger": "BIG COP arrives at the Heart O' the City Hotel exterior.",
+     "state_delta": {
+      "variable": "threat_level",
+      "from": "baseline_operational",
+      "to": "localized_threat_building"
+     }
+    },
+    {
+     "phase": "Interior penetration — the threat is now inside",
+     "shift": "The cop enters the building. The threat to the crew member is no longer outside the walls; it is inside the same structure, advancing through the corridors. The crew's vulnerability has escalated from 'an operation nearby' to 'a hunter in the same building.'",
+     "trigger": "BIG COP crosses the threshold into the hotel interior.",
+     "state_delta": {
+      "variable": "threat_level",
+      "from": "localized_threat_building",
+      "to": "interior_threat_active"
+     }
+    }
+   ],
+   "leaving_state": "Operational but with elevated and localized threat. A pursuing authority is inside the same building as a crew member. Contact has not been made. The crew's exposure has increased from baseline to active interior threat, though the crew on the Nebuchadnezzar may not yet be aware of the specific narrowing — their operator would be, but the information has not been confirmed.",
+   "significance_shift": "To Trinity (unseen, implied), the crew's status shifts from 'mission underway' to 'mission compromised' — the building she occupies is being breached. To the crew on the Nebuchadnezzar (not present but connected), their operator's risk has jumped without warning. To the audience, the Nebuchadnezzar crew begins to register as 'people who are hunted' rather than 'criminals' or 'hackers' — the cop's armed approach reframes whatever they are doing as dangerous enough to warrant force, which reframes WHO they are. The crew is no longer a group that breaks laws; it is a group that is under siege. This is the first time the audience is made to feel that the people being pursued are the ones worth rooting for, even though the audience does not yet know their names."
+  }
+ ],
+ "specimen": {
+  "moment": "BIG COP crosses the threshold of the Heart O' the City Hotel — boots on the lobby floor, the decision to go in already made for him by the anonymous tip that sent him here. The exchange is the first sound inside the building, and once it lands, the pursuit shifts.",
+  "lines": [
+   {
+    "speaker": "BIG COP",
+    "line": "Front desk's clear.",
+    "subtext": "A night hotel should have a clerk. An empty lobby is not the status quo — the cop names the wrongness with a word that means 'no threat' and doesn't hear the contradiction."
+   },
+   {
+    "speaker": "SECOND COP",
+    "line": "All of it?",
+    "subtext": "Constrained surprise. A grounded question, not a guess. The answer should be 'all of it'. The answer comes back as a room number — 'everything we need is at the end of the hall' — which replaces the receiving punch with a punchline."
+   },
+   {
+    "speaker": "BIG COP",
+    "line": "Room three-oh-three. End of the hall.",
+    "subtext": "Reassurance without information. A room number is not an answer; it's a redirect: 'We don't need to worry about the front of the house, focus on the back.' The corridor is drawn, the route chosen, the cop who asks 'all of it?' rhetorically."
+   },
+   {
+    "speaker": "SECOND COP",
+    "line": "Who called it in?",
+    "subtext": "Sparse escalation. 'Who were you told was here?' and 'Why were we sent?' and 'What's behind that door?' — all three squeezed into a four-word inquiry that the film's audience is asking at the same moment."
+   },
+   {
+    "speaker": "BIG COP",
+    "line": "Anonymous.",
+    "subtext": "He reads it as an answer. The line is a dismissive 'I don't know' that the audience will later recognize as 'someone who isn't a caller at all' — someone who configured the police system without being a person inside it."
+   },
+   {
+    "speaker": "SECOND COP",
+    "line": "Armed?",
+    "subtext": "He lets go of 'who' and grabs the survival question. He's already decided the anonymous tip means potential perpetrator and the perpetrator means threat. Unverified means unknown, and Second Cop is going to operationalize unknown as danger."
+   },
+   {
+    "speaker": "BIG COP",
+    "line": "Unknown. Treat it as yes.",
+    "subtext": "Orders the threat level without knowing it. The cop is telling himself what they must assume about the world — and the whole film is about what you must assume about the world. 'Treat it as yes' functions as tactical ordnance; it happens to align with the film's logic about belief though neither cop can feel that resonance."
+   }
+  ],
+  "what_this_exposes": "Writing the lines exposed something the analysis suppressed: the exchange between two cops who don't understand their own operation is more frightening when the system-facing one is comfortable. BIG COP shuts down every inquiry with fewer words: 'Anonymous' is a shrug. 'Unknown. Treat it as yes.' is a tactical decision that happens to also be a reflexive barometer — the cop has decided the threat level without knowing who called it in, and he's completely relaxed about it. Reading the lines back, I assumed the system would treat the info-gap over the exchange; the lines show that BIG COP is not just unknowing, but unbothered about his own unknowing. The analysis said the cop doesn't understand the game. The lines say the cop doesn't notice the game. The scarier fact is the one I could only find by giving him lines: 'Anonymous.' wastes no syllables and none of BIG COP's thoughts. He treats the absence of information as operational normality. That's the barometer — normal rule execution from the citizen guard down to the floor, executed by a functionary who does not find instructions strange.",
+  "risks_checked": [
+   {
+    "risk": "The scene is very short (155 words) and could feel like a fragment rather than an opening if the tension is not precisely calibrated — too little and it is flat, too much and it feels compressed.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "'Unknown. Treat it as yes.' compresses a full tactical escalation into five words — a cop ordering armed-response protocol based on no information at all. The fragment has a spine: begin at calm ('Front desk's clear.'), build to weapon-ready. The seven-line exchange carries the tension arc the rest of the scene can sustain in silence."
+   },
+   {
+    "risk": "BIG COP has no entity ID, which means he cannot be tracked in the graph — if he recurs or matters later, the schema will not support him.",
+    "does_the_exchange_avoid_it": false,
+    "evidence": "The dialogue cannot address a schema limitation. 'BIG COP' appears in the speaker string (not an entity field), which is permitted. The risk persists as a structural issue, not a craft one — if BIG COP returns, the graph will need a patch. The exchange neither mitigates nor exacerbates it."
+   },
+   {
+    "risk": "Starting from the cops' perspective risks making the audience sympathize with the hunters rather than the hunted, which could misdirect emotional investment in the opening moments.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "'Who called it in?' / 'Anonymous.' — Second Cop asks the audience's question. BIG COP answers it with a word that is not an answer and moves on. The exchange frames both cops as banal functionaries following instructions they cannot explain and do not question. The audience is positioned with the questioner who gets shut down, not the authority who shuts him down. Sympathy lands nowhere — which is correct for a cold open whose job is mystery, not alliance."
+   },
+   {
+    "risk": "The withholding of all science-fiction elements could read as a pure noir scene rather than a sci-fi cold open, failing to signal genre to the audience in the first frame.",
+    "does_the_exchange_avoid_it": false,
+    "evidence": "The exchange is pure noir — terse cops, anonymous tip, room number, weapon check. It does not mitigate this risk because the risk is accepted by the design, not avoided by it. The genre signal is carried elsewhere: in the wrongness of the empty hotel, in the sense that something about the pursuit is structurally off, in what the cop cannot see. The dialogue's job is to be ordinary. The SF promise is planted by the audience feeling the gap between what the cop says and what the audience senses — and that gap is silent, not verbal."
+   }
+  ],
+  "voices_distinct": "The speakers cannot swap lines. BIG COP speaks in statements and commands — short, clausal, final. Every line is a closed door. He does not ask. SECOND COP speaks in questions — two-word and four-word inquiries that get shorter as the scene tightens. Every line is an open door. The dynamic is structural: one asks, one answers. If BIG COP said 'Armed?' he would be surrendering authority he never displays uncertainty about. If SECOND COP said 'Anonymous.' he would be answering the question he asked, collapsing the inquiry dynamic that defines his role. If SECOND COP said 'Unknown. Treat it as yes.' he would be giving an order, but his function is to receive. The asymmetry — one cop with information he doesn't share, one without information he can't get — is the engine of the exchange and it cannot be reversed without rewriting the characters."
+ },
+ "continuity": {
+  "constraints_honoured": [
+   "Scene must run approximately 155 words of charged approach prose — every word must carry atmospheric or kinetic weight; no room for summary or connective tissue.",
+   "Approximately 28 words of dialogue — must be minimal and functional, serving as punctuation within the atmosphere rather than exposition. A cop confirming position or issuing a terse order.",
+   "Noir tone must be established through sensory detail (light, sound, spatial quality) rather than through genre declaration — the world must feel noir before it is named noir.",
+   "No science-fiction elements may be revealed in this scene — the audience must read this as pure noir first. Genre signaling must come through tone and extremity, not through any confirmable sci-fi marker.",
+   "Scene must end at the threshold of contact — BIG COP arrives at a specific door but does not open it. The quarry is not revealed.",
+   "BIG COP has no entity ID in the graph — he is treated as an untracked presence, which means the scene must work through atmosphere and action rather than interiority that the schema cannot later reconcile.",
+   "Starting from the hunters' perspective risks misdirecting audience sympathy — the scene must frame BIG COP as ominous rather than heroic, so the audience's first emotional investment is unease about the cop, not alignment with him."
+  ],
+  "contradictions_checked": [
+   {
+    "avoided_by": "The scene is given a complete micro-arc within its 155-word span: arrival through the hotel entrance → movement down the corridor → arrival at a specific door. It reads as a deliberate opening beat precisely because it ends on a held breath, not a cut-off thought. The threshold ending is the dramatic completion, not an interruption.",
+    "risk": "The scene's brevity (155 words) could read as a fragment rather than a deliberate cold open, failing to establish itself as the opening of a larger work."
+   },
+   {
+    "avoided_by": "BIG COP is rendered through external action — footsteps, posture, the weight of his movement — and through the environment's reaction to him (corridor emptiness, light behaving wrong). The audience reads him as an intruder into a space, not a protagonist entering his story. The 'sense of wrongness in the ordinary' is attached to his presence, not to the space he enters.",
+    "risk": "Starting from BIG COP's perspective could misdirect audience sympathy toward the hunter rather than the hunted."
+   },
+   {
+    "avoided_by": "The extremity of the noir atmosphere itself — the neon, the rain, the emptiness of a hotel corridor at night — is pushed just past realism into something that feels curated. This operates as a genre signal for audiences attuned to it without confirming any science-fiction element. The withholding is a promise, not an absence.",
+    "risk": "Withholding all science-fiction elements could make the scene read as period noir rather than sci-fi, failing to signal genre in the first frame."
+   },
+   {
+    "avoided_by": "The scene writes BIG COP as a physical presence with observable behavior but no interiority that would require graph tracking. If he recurs later, a node must create him as a proper entity and retrofit continuity. For now, he exists only in the scene's prose.",
+    "risk": "BIG COP has no entity ID, so any interiority or history attributed to him in this scene cannot be reconciled by the schema if he recurs."
+   }
+  ],
+  "established_facts_used": [
+   {
+    "fact": "The scene is a cold-open arrival: BIG COP enters the Heart O' the City Hotel at night, moving with purpose through the corridor toward a specific room.",
+    "how_used": "This is the entire dramatic content of the scene — the approach is the action. The hotel entrance, the corridor, and the destination door are the three spatial beats.",
+    "source": "sc-001/decision.resolution"
+   },
+   {
+    "fact": "The scene is approximately 155 words of charged approach with approximately 28 words of minimal, functional dialogue.",
+    "how_used": "The word budget is the primary structural constraint — 155 words total, 28 of dialogue, leaving roughly 127 words of atmospheric and kinetic prose. Every descriptive choice must justify its word cost.",
+    "source": "sc-001/decision.resolution"
+   },
+   {
+    "fact": "The scene ends at the threshold of contact, before the quarry is revealed.",
+    "how_used": "The scene's final image is BIG COP at a closed door — not opening it, not breaching the room. The dramatic tension is suspended at the moment of maximum anticipation.",
+    "source": "sc-001/decision.resolution"
+   },
+   {
+    "fact": "ch-01 and ch-02 are materially involved in this scene.",
+    "how_used": "ch-01 and ch-02 are the two presences the scene requires — one approaching, one behind the door. Their involvement frames the scene as a two-body system even though only one is visible.",
+    "source": "sc-001/decision.who_is_involved"
+   },
+   {
+    "fact": "The scene establishes noir tone, pursuit, and the audience's first sense that this world is not what it seems.",
+    "how_used": "These are the three tonal obligations the prose must discharge: genre (noir), situation (pursuit), and subtext (something is wrong beneath the surface). Each must be felt by the reader without being stated.",
+    "source": "sc-001/decision.resolution"
+   },
+   {
+    "fact": "lo-01 transitions from escape_point to active_pursuit_site because armed police enter it.",
+    "how_used": "The hotel's narrative role shifts during this scene — it begins as a place someone fled to and becomes a place someone is being hunted in. The corridor is the liminal space where this transition occurs.",
+    "source": "sc-001/decision.state_changes_implied[0]"
+   }
+  ],
+  "forward_commitments": [
+   "The immediately following scene must breach the threshold this scene ends at — the door opens, the quarry is revealed, and the pursuit becomes contact. The tension suspended here cannot be abandoned.",
+   "ch-02's identity and nature must be established in a subsequent node — whether they are human, replicant, or something else determines the genre turn that this scene's noir surface has been concealing.",
+   "ch-01's identity, affiliation, and relationship to BIG COP must be clarified — the scene treats them as the approaching figure but does not confirm whether ch-01 IS BIG COP or accompanies him. The next node must resolve this.",
+   "The science-fiction elements withheld here must be introduced no later than the scene that follows the threshold breach — the audience has been promised a genre turn and the noir surface cannot hold indefinitely.",
+   "BIG COP, currently untracked, must either be created as a proper entity if he recurs or remain a scene-level presence if he does not. This decision belongs to the next node that would feature him.",
+   "lo-01's role as active_pursuit_site must be followed through — the hotel cannot return to background status after this scene; the pursuit that enters it must have consequences within its walls.",
+   "The ~28 words of dialogue — whatever BIG COP actually says — must be consistent with any characterization established later. If BIG COP recurs, his speech patterns in this scene become a binding characterization detail."
+  ],
+  "state_preconditions": [
+   {
+    "entity": "lo-01",
+    "must_be": "exists as a location — the Heart O' the City Hotel, with an entrance, a corridor, and at least one numbered room. It must be night. The corridor must be empty of other guests.",
+    "variable": "physical_state"
+   },
+   {
+    "entity": "lo-01",
+    "must_be": "a place someone has fled to — the quarry has already arrived here, meaning the pursuit is in its terminal phase. The hotel is the end of the line, not a waystation.",
+    "variable": "narrative_role"
+   },
+   {
+    "entity": "ch-01",
+    "must_be": "positioned to enter lo-01 — physically outside the hotel at scene start, arriving with purpose. ch-01 is the approaching presence, the hunter.",
+    "variable": "position"
+   },
+   {
+    "entity": "ch-02",
+    "must_be": "inside lo-01, behind a closed door — the quarry, not yet visible to ch-01 or the audience. ch-02 is stationary and unaware or bracing.",
+    "variable": "position"
+   }
+  ]
+ }
+}

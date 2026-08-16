@@ -1,0 +1,50 @@
+######## STAGE 1: upper layers (root -> expose -> plots -> entities -> events -> scenes)
+narrativeforge · runs/lattice · backend=hyprlab
+  · story_root  generating (83,767 prompt chars)
+    normalised dominant: ['science_fiction', 'thriller', 'drama', 'family_drama', 'political_thriller'] -> ['drama', 'family_drama', 'science_fiction', 'thriller', 'dystopian', 'mystery', 'political_thriller', 'psychological_thriller', 'techno_thriller']
+    validation: 1 error(s), repair attempt 1
+    applied 1 repair op(s)
+    validation: 1 error(s), repair attempt 2
+    applied 1 repair op(s)
+    validation: 1 error(s) remain after 2 repair attempt(s) — quarantining for review
+  · expose      generating (34,620 prompt chars)
+    validation: clean (0 error(s), 2 warning(s))
+  · plots       generating (55,669 prompt chars)
+    validation: clean (0 error(s), 2 warning(s))
+  · entities    generating (78,428 prompt chars)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/deployer/laion/bookwriter/narrativeforge/__main__.py", line 3, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/deployer/laion/bookwriter/narrativeforge/cli.py", line 367, in main
+    return args.func(args)
+           ~~~~~~~~~^^^^^^
+  File "/home/deployer/laion/bookwriter/narrativeforge/cli.py", line 76, in cmd_run
+    result = pipe.run(stages, force=args.force)
+  File "/home/deployer/laion/bookwriter/narrativeforge/pipeline.py", line 368, in run
+    status = self.run_stage(stage, force=force)
+  File "/home/deployer/laion/bookwriter/narrativeforge/pipeline.py", line 160, in run_stage
+    doc = self.backend.complete_json(
+        prompts.SYSTEM, user, SCHEMAS[stage], stage=stage, tag=stage
+    )
+  File "/home/deployer/laion/bookwriter/narrativeforge/backends/hyprlab.py", line 171, in complete_json
+    content = self._post(self._payload(system, user, schema, json_mode=True), stage, tag)
+  File "/home/deployer/laion/bookwriter/narrativeforge/backends/hyprlab.py", line 126, in _post
+    raise BackendError(
+    ...<2 lines>...
+    )
+narrativeforge.backends.base.BackendError: entities: hit the 32000-token output cap. Raise --max-tokens or reduce the batch size for this stage.
+rc=1 after upper layers
+
+######## STAGE 2: forge — explicit written-out reasoning, one node per call
+narrativeforge forge · runs/lattice · backend=hyprlab · entity_passes=1
+  · ch-01     transition
+      FAILED: transition.ch-01: hit the 60000-token output cap. Raise --max-tokens or reduce the batch size for this stage.
+
+nodes: 0  transitions: 0
+  ! ch-01: transition.ch-01: hit the 60000-token output cap. Raise --max-tokens or reduce the batch size for this stage.
+usage: 1 calls · 23,255 in · 9,513 out · 0 reasoning · $0.09
+rc=0 after forge
+######## DONE

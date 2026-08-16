@@ -1,0 +1,4560 @@
+{
+ "scenes": {
+  "sc-001": {
+   "scene_id": "sc-001",
+   "discourse_index": 1,
+   "chapter": 1,
+   "primary_event": "ev-001",
+   "events": [
+    "ev-001"
+   ],
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-03"
+   ],
+   "story_time_label": "Night 1, 23:10",
+   "location": "lo-01",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02",
+    "ch-08",
+    "ch-09"
+   ],
+   "offstage_referenced": [
+    "lo-03",
+    "lo-04",
+    "ob-07"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "hunger": 35,
+     "cash": 100,
+     "position": "lo-01",
+     "detachment": 92
+    },
+    "ch-02": {
+     "blood_level": 100
+    },
+    "ch-08": {
+     "blood_level": 100,
+     "somatic_mark": false
+    },
+    "ch-09": {
+     "blood_level": 100,
+     "bruise_visible": false
+    },
+    "ob-07": {
+     "amount": 86
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-001",
+     "type": "action",
+     "text": "Hale walks the dark downtown grid with a folded paper map and a pencil. He marks alleys, shop closing times, and which service doors stay unlocked after midnight. He treats the town as a ledger. Hunger sits at a working level. He does not stop to feed on the first open throat.",
+     "participants": [
+      "ch-01"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-001",
+     "type": "action",
+     "text": "At Briggs and Son he pays cash for a flashlight and leaves the correct change on the counter. In the back aisle he feeds on the clerk just short of collapse, then steadies the man against a paint shelf before leaving. A mark remains at the clerk's collar.",
+     "participants": [
+      "ch-01",
+      "ch-08"
+     ],
+     "changes": [
+      {
+       "entity": "ch-08",
+       "variable": "blood_level",
+       "dimension": "physiological",
+       "before": 100,
+       "after": 63,
+       "magnitude": 45,
+       "op": {
+        "op": "replace",
+        "path": "/ch-08/state/blood_level",
+        "value": 63
+       }
+      },
+      {
+       "entity": "ch-08",
+       "variable": "somatic_mark",
+       "dimension": "physiological",
+       "before": false,
+       "after": true,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-08/state/somatic_mark",
+        "value": true
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-001",
+     "type": "action",
+     "text": "At the hospital he finds the night nurse alone at a charting station. He repeats the same measured drain and stops while she can still sit. He sets a vending coffee at her elbow as he goes. A bruise darkens at her throat above the collar.",
+     "participants": [
+      "ch-01",
+      "ch-09"
+     ],
+     "changes": [
+      {
+       "entity": "ch-09",
+       "variable": "blood_level",
+       "dimension": "physiological",
+       "before": 100,
+       "after": 65,
+       "magnitude": 45,
+       "op": {
+        "op": "replace",
+        "path": "/ch-09/state/blood_level",
+        "value": 65
+       }
+      },
+      {
+       "entity": "ch-09",
+       "variable": "bruise_visible",
+       "dimension": "physiological",
+       "before": false,
+       "after": true,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-09/state/bruise_visible",
+        "value": true
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-001",
+     "type": "action",
+     "text": "Last he sits at the diner counter and finishes a plate. He leaves a tip larger than the check and pays the bill in cash. The can by the register takes the extra. He is no longer on the street.",
+     "participants": [
+      "ch-01",
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "cash",
+       "dimension": "material",
+       "before": 100,
+       "after": 74,
+       "magnitude": 25,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/cash",
+        "value": 74
+       }
+      },
+      {
+       "entity": "ob-07",
+       "variable": "amount",
+       "dimension": "material",
+       "before": 86,
+       "after": 94,
+       "magnitude": 15,
+       "op": {
+        "op": "replace",
+        "path": "/ob-07/state/amount",
+        "value": 94
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "position",
+       "dimension": "spatial",
+       "before": "lo-01",
+       "after": "lo-02",
+       "magnitude": 20,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/position",
+        "value": "lo-02"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 5,
+     "event_id": "ev-001",
+     "type": "action",
+     "text": "He takes the waitress's wrist with the same economy he used on the clerk and the nurse, and he stops while she can still stand and lock her knees. Color leaves her face. His hunger falls. He writes nothing yet. He leaves a plate already clean.",
+     "participants": [
+      "ch-01",
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "blood_level",
+       "dimension": "physiological",
+       "before": 100,
+       "after": 60,
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/blood_level",
+        "value": 60
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "hunger",
+       "dimension": "physiological",
+       "before": 35,
+       "after": 12,
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/hunger",
+        "value": 12
+       }
+      }
+     ]
+    },
+    {
+     "beat": 6,
+     "event_id": "ev-001",
+     "type": "decision",
+     "text": "Outside the register light he writes three names and three regeneration windows in the map margin, a clean rotation locked. Paying, tipping, and steadying the clerk were method. The margin now holds a hardware clerk, a night nurse, and a graveyard-shift waitress.",
+     "participants": [
+      "ch-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "detachment",
+       "dimension": "psychological",
+       "before": 92,
+       "after": 90,
+       "magnitude": 8,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/detachment",
+        "value": 90
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "hunger": 12,
+     "cash": 74,
+     "position": "lo-02",
+     "detachment": 90
+    },
+    "ch-02": {
+     "blood_level": 60
+    },
+    "ch-08": {
+     "blood_level": 63,
+     "somatic_mark": true
+    },
+    "ch-09": {
+     "blood_level": 65,
+     "bruise_visible": true
+    },
+    "ob-07": {
+     "amount": 94
+    }
+   },
+   "dramatic_function": "Competent entry: map the town, lock a clean three-Host rotation, and show manners as method.",
+   "tension_in": 20,
+   "tension_out": 28,
+   "questions_opened": {
+    "q01": "What is the only paying exit from the closed match?",
+    "q02": "Will the named rotation hold as inventory?"
+   },
+   "questions_closed": [],
+   "target_words": 900
+  },
+  "sc-002": {
+   "scene_id": "sc-002",
+   "discourse_index": 2,
+   "chapter": 1,
+   "primary_event": "ev-002",
+   "events": [
+    "ev-002"
+   ],
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "story_time_label": "Night 1, 02:20",
+   "location": "lo-02",
+   "pov": "ch-02",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-02"
+   ],
+   "offstage_referenced": [
+    "ch-01",
+    "ob-01",
+    "ob-02",
+    "ob-03",
+    "ob-07"
+   ],
+   "entry_states": {
+    "ob-02": {
+     "frame_count": 6,
+     "content_flag": "town_proof"
+    },
+    "ob-01": {
+     "film_left": 12
+    },
+    "ch-02": {
+     "archive_depth": 6
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-002",
+     "type": "action",
+     "text": "At close Cora wipes the last circle of crumbs off the counter. The diner is empty. The tip jar by the register holds what she has saved toward a ticket out. She takes the Polaroid camera from under the counter as she does every night.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-002",
+     "type": "action",
+     "text": "She photographs the empty stools and the neon clock because the tip jar is her ticket out of Bennington and she wants proof the room was real. She photographs the last customer as well, the careful man whose bill is still under the salt, taking the frame the way she takes the register tape.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ob-02",
+       "variable": "frame_count",
+       "dimension": "material",
+       "before": 6,
+       "after": 8,
+       "magnitude": 25,
+       "op": {
+        "op": "replace",
+        "path": "/ob-02/state/frame_count",
+        "value": 8
+       }
+      },
+      {
+       "entity": "ob-01",
+       "variable": "film_left",
+       "dimension": "material",
+       "before": 12,
+       "after": 10,
+       "magnitude": 10,
+       "op": {
+        "op": "replace",
+        "path": "/ob-01/state/film_left",
+        "value": 10
+       }
+      },
+      {
+       "entity": "ob-02",
+       "variable": "content_flag",
+       "dimension": "epistemic",
+       "before": "town_proof",
+       "after": "hale_unremarked",
+       "magnitude": 35,
+       "op": {
+        "op": "replace",
+        "path": "/ob-02/state/content_flag",
+        "value": "hale_unremarked"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-002",
+     "type": "action",
+     "text": "She slots a cassette into the recorder under the counter and records the last radio song until the station signs off into hiss. The tape is another proof she can carry when she leaves. She does not rewind it.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-002",
+     "type": "action",
+     "text": "She clips both new prints to the existing stack in her locker without studying the faces. The sheaf is thicker by two. The careful man's face sits in it unremarked, one more piece of a town she means to prove was real.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "archive_depth",
+       "dimension": "material",
+       "before": 6,
+       "after": 8,
+       "magnitude": 20,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/archive_depth",
+        "value": 8
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ob-02": {
+     "frame_count": 8,
+     "content_flag": "hale_unremarked"
+    },
+    "ob-01": {
+     "film_left": 10
+    },
+    "ch-02": {
+     "archive_depth": 8
+    }
+   },
+   "dramatic_function": "Plant the unremarked face and the analog archive as her ticket-out proof, not as a case.",
+   "tension_in": 22,
+   "tension_out": 30,
+   "questions_opened": {
+    "q03": "What will the unremarked Polaroid of the careful customer become?"
+   },
+   "questions_closed": [],
+   "target_words": 480
+  },
+  "sc-003": {
+   "scene_id": "sc-003",
+   "discourse_index": 3,
+   "chapter": 1,
+   "primary_event": "ev-003",
+   "events": [
+    "ev-003"
+   ],
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "story_time_label": "Night 1, 04:05",
+   "location": "lo-01",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01"
+   ],
+   "offstage_referenced": [
+    "lo-06",
+    "cn-01",
+    "lo-07"
+   ],
+   "entry_states": {
+    "cn-01": {
+     "decoded_by_hale": "rumor"
+    },
+    "ch-01": {
+     "position": "lo-02",
+     "hunger": 12
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-003",
+     "type": "action",
+     "text": "Before first light Hale spreads the marked map on a closed shop window. He has left the diner. Church bulletins, a hardware circular, and the names of civic stones are laid against the streets he already walked.",
+     "participants": [
+      "ch-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "position",
+       "dimension": "spatial",
+       "before": "lo-02",
+       "after": "lo-01",
+       "magnitude": 15,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/position",
+        "value": "lo-01"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-003",
+     "type": "discovery",
+     "text": "He isolates a finite set of objects that must already exist in town and one dawn invocation that can be spoken at only one site. The prize is the only paying door left. The road has already looped him once. He treats the count as solvable.",
+     "participants": [
+      "ch-01"
+     ],
+     "changes": [
+      {
+       "entity": "cn-01",
+       "variable": "decoded_by_hale",
+       "dimension": "epistemic",
+       "before": "rumor",
+       "after": "tokens_and_site",
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/cn-01/state/decoded_by_hale",
+        "value": "tokens_and_site"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-003",
+     "type": "decision",
+     "text": "He writes the word ritual once, then the count of tokens, then the stone in the old green. He folds the map so that column faces in. Hunger has come back into his hands. He puts them in his pockets and walks on.",
+     "participants": [
+      "ch-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "hunger",
+       "dimension": "physiological",
+       "before": 12,
+       "after": 26,
+       "magnitude": 25,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/hunger",
+        "value": 26
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "cn-01": {
+     "decoded_by_hale": "tokens_and_site"
+    },
+    "ch-01": {
+     "position": "lo-01",
+     "hunger": 26
+    }
+   },
+   "dramatic_function": "Goal lock: reduce the match to locatable tokens and one dawn stone.",
+   "tension_in": 28,
+   "tension_out": 38,
+   "questions_opened": {
+    "q04": "Where in town are the tokens, and which stone is the site?"
+   },
+   "questions_closed": [],
+   "target_words": 420
+  },
+  "sc-004": {
+   "scene_id": "sc-004",
+   "discourse_index": 4,
+   "chapter": 2,
+   "primary_event": "ev-004",
+   "events": [
+    "ev-004"
+   ],
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "story_time_label": "Night 2, 01:00",
+   "location": "lo-02",
+   "pov": "ch-03",
+   "narrative_mode": "summary",
+   "present": [
+    "ch-03",
+    "ch-02",
+    "ch-08",
+    "ch-09"
+   ],
+   "offstage_referenced": [
+    "lo-08",
+    "cn-03"
+   ],
+   "entry_states": {
+    "ch-03": {
+     "writes_on_rotation": 0,
+     "experiment_phase": "baseline",
+     "position": "lo-08",
+     "hunger": 30
+    },
+    "cn-03": {
+     "phase": "latent"
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-004",
+     "type": "transition",
+     "text": "Anja Reeve leaves the college after midnight and walks into town. She is not hunting a meal. Hunger ticks up from the hours on her feet. She has selected three Hosts who work nights and can be found alone.",
+     "participants": [
+      "ch-03"
+     ],
+     "changes": [
+      {
+       "entity": "ch-03",
+       "variable": "position",
+       "dimension": "spatial",
+       "before": "lo-08",
+       "after": "lo-02",
+       "magnitude": 20,
+       "op": {
+        "op": "replace",
+        "path": "/ch-03/state/position",
+        "value": "lo-02"
+       }
+      },
+      {
+       "entity": "ch-03",
+       "variable": "hunger",
+       "dimension": "physiological",
+       "before": 30,
+       "after": 36,
+       "magnitude": 10,
+       "op": {
+        "op": "replace",
+        "path": "/ch-03/state/hunger",
+        "value": 36
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-004",
+     "type": "action",
+     "text": "She sits with the hardware clerk, the night nurse, and the diner waitress on the same night. She looks each of them in the eye long enough to lay a false hour over a true one: a closed storeroom, a completed chart, a customer who was never there.",
+     "participants": [
+      "ch-03",
+      "ch-08",
+      "ch-09",
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-03",
+       "variable": "writes_on_rotation",
+       "dimension": "technological",
+       "before": 0,
+       "after": 3,
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/ch-03/state/writes_on_rotation",
+        "value": 3
+       }
+      },
+      {
+       "entity": "ch-03",
+       "variable": "experiment_phase",
+       "dimension": "epistemic",
+       "before": "baseline",
+       "after": "stacking",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/ch-03/state/experiment_phase",
+        "value": "stacking"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-004",
+     "type": "decision",
+     "text": "She is testing whether a modeled mind will carry a lie across a sleep. She does not know the three names already sit in another Guest's margin. She notes the baseline in a pocket book and walks back toward the college before any of the three lie down.",
+     "participants": [
+      "ch-03"
+     ],
+     "changes": [
+      {
+       "entity": "cn-03",
+       "variable": "phase",
+       "dimension": "technological",
+       "before": "latent",
+       "after": "conjunct",
+       "magnitude": 60,
+       "op": {
+        "op": "replace",
+        "path": "/cn-03/state/phase",
+        "value": "conjunct"
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-03": {
+     "writes_on_rotation": 3,
+     "experiment_phase": "stacking",
+     "position": "lo-02",
+     "hunger": 36
+    },
+    "cn-03": {
+     "phase": "conjunct"
+    }
+   },
+   "dramatic_function": "Unseen conjunction: stack hypnotic writes on the same three Hosts already in Hale's margin.",
+   "tension_in": 30,
+   "tension_out": 42,
+   "questions_opened": {
+    "q05": "Can a written lie survive a Host sleep on minds already being drained?"
+   },
+   "questions_closed": [],
+   "target_words": 500
+  },
+  "sc-005": {
+   "scene_id": "sc-005",
+   "discourse_index": 5,
+   "chapter": 2,
+   "primary_event": "ev-005",
+   "events": [
+    "ev-005"
+   ],
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "story_time_label": "Night 2 into Night 3",
+   "location": "lo-01",
+   "pov": "ch-01",
+   "narrative_mode": "summary",
+   "present": [
+    "ch-01",
+    "ch-02",
+    "ch-08",
+    "ch-09"
+   ],
+   "offstage_referenced": [
+    "ch-04",
+    "ch-05",
+    "ch-06",
+    "ch-07",
+    "lo-03",
+    "lo-04",
+    "lo-05",
+    "lo-08",
+    "ob-06",
+    "gr-03",
+    "gr-04"
+   ],
+   "entry_states": {
+    "ch-04": {
+     "uv_grid_extent": 0
+    },
+    "lo-01": {
+     "uv_coverage": 0,
+     "crossing_safe_for_guests": true
+    },
+    "lo-03": {
+     "uv_stock": 48
+    },
+    "ob-06": {
+     "issued": false
+    },
+    "ch-05": {
+     "blood_monopoly": "open"
+    },
+    "lo-04": {
+     "blood_stores": "stocked",
+     "night_access": "open_enough"
+    },
+    "gr-04": {
+     "active": false
+    },
+    "ch-06": {
+     "cult_count": 0
+    },
+    "lo-08": {
+     "cult_visible": false
+    },
+    "gr-03": {
+     "formed": false
+    },
+    "lo-05": {
+     "body_at_treeline": false
+    },
+    "ch-07": {
+     "heart_taken": false
+    },
+    "ch-02": {
+     "blood_level": 60
+    },
+    "ch-08": {
+     "blood_level": 63
+    },
+    "ch-09": {
+     "blood_level": 65
+    },
+    "ch-01": {
+     "hunger": 26
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-005",
+     "type": "revelation",
+     "text": "By the next night Main Street is a corridor of hardware-store UV tubes and shop-lights aimed at the sidewalks. A crossing at a walk would burn a Guest. At Briggs and Son the UV stock is nearly gone. A carbon invoice for the tubes hangs on the hardware spike.",
+     "participants": [
+      "ch-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-04",
+       "variable": "uv_grid_extent",
+       "dimension": "world",
+       "before": 0,
+       "after": 48,
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/ch-04/state/uv_grid_extent",
+        "value": 48
+       }
+      },
+      {
+       "entity": "lo-01",
+       "variable": "uv_coverage",
+       "dimension": "world",
+       "before": 0,
+       "after": 48,
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/lo-01/state/uv_coverage",
+        "value": 48
+       }
+      },
+      {
+       "entity": "lo-01",
+       "variable": "crossing_safe_for_guests",
+       "dimension": "spatial",
+       "before": true,
+       "after": false,
+       "magnitude": 60,
+       "op": {
+        "op": "replace",
+        "path": "/lo-01/state/crossing_safe_for_guests",
+        "value": false
+       }
+      },
+      {
+       "entity": "lo-03",
+       "variable": "uv_stock",
+       "dimension": "material",
+       "before": 48,
+       "after": 16,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/lo-03/state/uv_stock",
+        "value": 16
+       }
+      },
+      {
+       "entity": "ob-06",
+       "variable": "issued",
+       "dimension": "epistemic",
+       "before": false,
+       "after": true,
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ob-06/state/issued",
+        "value": true
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-005",
+     "type": "revelation",
+     "text": "Hospital coolers that held bags yesterday hold ice and a handwritten tribute list. Night access is badge only. The wards that were an open ledger are now a squeezed one. Tribute-or-starve is in force for anyone who still needs hospital blood.",
+     "participants": [
+      "ch-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-05",
+       "variable": "blood_monopoly",
+       "dimension": "world",
+       "before": "open",
+       "after": "squeezed",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/ch-05/state/blood_monopoly",
+        "value": "squeezed"
+       }
+      },
+      {
+       "entity": "lo-04",
+       "variable": "blood_stores",
+       "dimension": "material",
+       "before": "stocked",
+       "after": "squeezed",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/lo-04/state/blood_stores",
+        "value": "squeezed"
+       }
+      },
+      {
+       "entity": "lo-04",
+       "variable": "night_access",
+       "dimension": "social",
+       "before": "open_enough",
+       "after": "badge_only",
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/lo-04/state/night_access",
+        "value": "badge_only"
+       }
+      },
+      {
+       "entity": "gr-04",
+       "variable": "active",
+       "dimension": "political",
+       "before": false,
+       "after": true,
+       "magnitude": 45,
+       "op": {
+        "op": "replace",
+        "path": "/gr-04/state/active",
+        "value": true
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-005",
+     "type": "revelation",
+     "text": "On the college lawn a ring of students pass a cup and do not flinch at teeth. The group stands in the open as willing donors. Fourteen of them are already organized. Hale sees the ring from the long way around and does not enter the quad.",
+     "participants": [
+      "ch-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-06",
+       "variable": "cult_count",
+       "dimension": "social",
+       "before": 0,
+       "after": 14,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-06/state/cult_count",
+        "value": 14
+       }
+      },
+      {
+       "entity": "lo-08",
+       "variable": "cult_visible",
+       "dimension": "social",
+       "before": false,
+       "after": true,
+       "magnitude": 35,
+       "op": {
+        "op": "replace",
+        "path": "/lo-08/state/cult_visible",
+        "value": true
+       }
+      },
+      {
+       "entity": "gr-03",
+       "variable": "formed",
+       "dimension": "social",
+       "before": false,
+       "after": true,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/gr-03/state/formed",
+        "value": true
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-005",
+     "type": "revelation",
+     "text": "At the treeline a body lies open and heartless, visible from the last streetlight. Someone has taken what was inside the chest. Hale notes the fact the way he notes a closed ward, then keeps the tree line at his back.",
+     "participants": [
+      "ch-01"
+     ],
+     "changes": [
+      {
+       "entity": "lo-05",
+       "variable": "body_at_treeline",
+       "dimension": "world",
+       "before": false,
+       "after": true,
+       "magnitude": 45,
+       "op": {
+        "op": "replace",
+        "path": "/lo-05/state/body_at_treeline",
+        "value": true
+       }
+      },
+      {
+       "entity": "ch-07",
+       "variable": "heart_taken",
+       "dimension": "magical",
+       "before": false,
+       "after": true,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-07/state/heart_taken",
+        "value": true
+       }
+      }
+     ]
+    },
+    {
+     "beat": 5,
+     "event_id": "ev-005",
+     "type": "reaction",
+     "text": "The clerk, the nurse, and the waitress have their color back. Hale's own hunger has climbed through the hours of walking the long way around the lights. He reads each rewrite as weather and does not change his route except to avoid the tubes.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ch-08",
+      "ch-09"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "blood_level",
+       "dimension": "physiological",
+       "before": 60,
+       "after": 88,
+       "magnitude": 35,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/blood_level",
+        "value": 88
+       }
+      },
+      {
+       "entity": "ch-08",
+       "variable": "blood_level",
+       "dimension": "physiological",
+       "before": 63,
+       "after": 90,
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ch-08/state/blood_level",
+        "value": 90
+       }
+      },
+      {
+       "entity": "ch-09",
+       "variable": "blood_level",
+       "dimension": "physiological",
+       "before": 65,
+       "after": 89,
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ch-09/state/blood_level",
+        "value": 89
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "hunger",
+       "dimension": "physiological",
+       "before": 26,
+       "after": 41,
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/hunger",
+        "value": 41
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-04": {
+     "uv_grid_extent": 48
+    },
+    "lo-01": {
+     "uv_coverage": 48,
+     "crossing_safe_for_guests": false
+    },
+    "lo-03": {
+     "uv_stock": 16
+    },
+    "ob-06": {
+     "issued": true
+    },
+    "ch-05": {
+     "blood_monopoly": "squeezed"
+    },
+    "lo-04": {
+     "blood_stores": "squeezed",
+     "night_access": "badge_only"
+    },
+    "gr-04": {
+     "active": true
+    },
+    "ch-06": {
+     "cult_count": 14
+    },
+    "lo-08": {
+     "cult_visible": true
+    },
+    "gr-03": {
+     "formed": true
+    },
+    "lo-05": {
+     "body_at_treeline": true
+    },
+    "ch-07": {
+     "heart_taken": true
+    },
+    "ch-02": {
+     "blood_level": 88
+    },
+    "ch-08": {
+     "blood_level": 90
+    },
+    "ch-09": {
+     "blood_level": 89
+    },
+    "ch-01": {
+     "hunger": 41
+    }
+   },
+   "dramatic_function": "World-state squeeze: register five rivals only as weather that closes streets, wards, and easy blood.",
+   "tension_in": 40,
+   "tension_out": 55,
+   "questions_opened": {
+    "q06": "Which decode routes remain once lights, wards, and blood are rewritten?"
+   },
+   "questions_closed": [],
+   "target_words": 750
+  },
+  "sc-006": {
+   "scene_id": "sc-006",
+   "discourse_index": 6,
+   "chapter": 2,
+   "primary_event": "ev-006",
+   "events": [
+    "ev-006"
+   ],
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "story_time_label": "Night 3, 01:40 into late morning",
+   "location": "lo-02",
+   "pov": "ch-02",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02"
+   ],
+   "offstage_referenced": [
+    "ob-01",
+    "ob-02",
+    "cn-02",
+    "cn-03"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "hunger": 41,
+     "position": "lo-01"
+    },
+    "ch-02": {
+     "blood_level": 88,
+     "retained_night": 0,
+     "archive_depth": 8,
+     "existential_stability": 88
+    },
+    "ob-02": {
+     "frame_count": 8
+    },
+    "ob-01": {
+     "film_left": 10
+    },
+    "cn-02": {
+     "integrity": "intact"
+    },
+    "cn-03": {
+     "phase": "conjunct"
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-006",
+     "type": "action",
+     "text": "Hale takes the waitress's wrist a third time at the empty end of the counter and stops, as before, while she can still lock her knees. He has come in from the street. He does not sit for a plate this time. He leaves her standing.",
+     "participants": [
+      "ch-01",
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "hunger",
+       "dimension": "physiological",
+       "before": 41,
+       "after": 19,
+       "magnitude": 45,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/hunger",
+        "value": 19
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "position",
+       "dimension": "spatial",
+       "before": "lo-01",
+       "after": "lo-02",
+       "magnitude": 15,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/position",
+        "value": "lo-02"
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "blood_level",
+       "dimension": "physiological",
+       "before": 88,
+       "after": 54,
+       "magnitude": 45,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/blood_level",
+        "value": 54
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-006",
+     "type": "transition",
+     "text": "She sleeps on the break-room cot between the end of the shift and the morning prep. The locker is closed. The camera is in it. No one else is in the room.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-006",
+     "type": "reversal",
+     "text": "When she surfaces the night is still in her mouth in scraps she should not have. A stretch of counter. A hand on her wrist. The wrong hour on the neon clock. She sits up too fast and has to wait for the room to settle.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "retained_night",
+       "dimension": "epistemic",
+       "before": 0,
+       "after": 24,
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/retained_night",
+        "value": 24
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "existential_stability",
+       "dimension": "psychological",
+       "before": 88,
+       "after": 76,
+       "magnitude": 35,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/existential_stability",
+        "value": 76
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-006",
+     "type": "discovery",
+     "text": "In her locker a Polaroid she does not remember taking shows the alley behind the diner at an hour she cannot place, and under it another, and under that the careful man from a different night. Four frames she cannot account for sit in the sheaf.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "archive_depth",
+       "dimension": "material",
+       "before": 8,
+       "after": 12,
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/archive_depth",
+        "value": 12
+       }
+      },
+      {
+       "entity": "ob-02",
+       "variable": "frame_count",
+       "dimension": "material",
+       "before": 8,
+       "after": 12,
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ob-02/state/frame_count",
+        "value": 12
+       }
+      },
+      {
+       "entity": "ob-01",
+       "variable": "film_left",
+       "dimension": "material",
+       "before": 10,
+       "after": 6,
+       "magnitude": 15,
+       "op": {
+        "op": "replace",
+        "path": "/ob-01/state/film_left",
+        "value": 6
+       }
+      }
+     ]
+    },
+    {
+     "beat": 5,
+     "event_id": "ev-006",
+     "type": "revelation",
+     "text": "She lines the prints on the prep table and does not clock in on time. A seam of roll-bar crawls the break-room TV and holds. Sleep did not take the night. The failsafe that should have erased her has a visible seam.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "cn-02",
+       "variable": "integrity",
+       "dimension": "technological",
+       "before": "intact",
+       "after": "seamed",
+       "magnitude": 75,
+       "op": {
+        "op": "replace",
+        "path": "/cn-02/state/integrity",
+        "value": "seamed"
+       }
+      },
+      {
+       "entity": "cn-03",
+       "variable": "phase",
+       "dimension": "technological",
+       "before": "conjunct",
+       "after": "torn",
+       "magnitude": 80,
+       "op": {
+        "op": "replace",
+        "path": "/cn-03/state/phase",
+        "value": "torn"
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "hunger": 19,
+     "position": "lo-02"
+    },
+    "ch-02": {
+     "blood_level": 54,
+     "retained_night": 24,
+     "archive_depth": 12,
+     "existential_stability": 76
+    },
+    "ob-02": {
+     "frame_count": 12
+    },
+    "ob-01": {
+     "film_left": 6
+    },
+    "cn-02": {
+     "integrity": "seamed"
+    },
+    "cn-03": {
+     "phase": "torn"
+    }
+   },
+   "dramatic_function": "State of rupture: the third drain plus the stacked writes tear the wipe and hand her a night she did not keep.",
+   "tension_in": 50,
+   "tension_out": 68,
+   "questions_opened": {
+    "q07": "What tore the wipe, and how much of the night can she keep?",
+    "q08": "What do the Polaroids she does not remember taking actually show?"
+   },
+   "questions_closed": [],
+   "target_words": 700
+  },
+  "sc-007": {
+   "scene_id": "sc-007",
+   "discourse_index": 7,
+   "chapter": 2,
+   "primary_event": "ev-007",
+   "events": [
+    "ev-007"
+   ],
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "story_time_label": "Day 3, 16:20",
+   "location": "lo-02",
+   "pov": "ch-02",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-02",
+    "ch-09"
+   ],
+   "offstage_referenced": [
+    "ch-01",
+    "ch-08",
+    "ob-01",
+    "ob-02",
+    "ob-03",
+    "ob-06",
+    "gr-02",
+    "cn-02"
+   ],
+   "entry_states": {
+    "ob-03": {
+     "track": "last_song"
+    },
+    "ch-02": {
+     "archive_depth": 12,
+     "retained_night": 24,
+     "existential_stability": 76
+    },
+    "ob-02": {
+     "frame_count": 12,
+     "content_flag": "hale_unremarked"
+    },
+    "ch-09": {
+     "retained_night": 0,
+     "avoidance_of_hale": "neutral",
+     "position": "lo-04"
+    },
+    "ob-06": {
+     "holder": "lo-03"
+    },
+    "cn-02": {
+     "integrity": "seamed"
+    },
+    "gr-02": {
+     "comparing_notes": false
+    },
+    "ob-01": {
+     "film_left": 6
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-007",
+     "type": "action",
+     "text": "Between the lunch lull and the dinner rush Cora speaks the missing hours onto the cassette, naming what the prints hold and what they do not. She keeps the recorder under the counter. The last radio song is gone. What replaces it is her own voice listing gaps.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ob-03",
+       "variable": "track",
+       "dimension": "epistemic",
+       "before": "last_song",
+       "after": "missing_hours",
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/ob-03/state/track",
+        "value": "missing_hours"
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "retained_night",
+       "dimension": "epistemic",
+       "before": 24,
+       "after": 44,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/retained_night",
+        "value": 44
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-007",
+     "type": "discovery",
+     "text": "Denise Cole comes in off shift with her collar high. Cora matches the bruise at her own wrist to the one at Denise's throat without asking permission. They do not agree what the gap means. Denise has kept a scrap of her own night. She will not look toward the door.",
+     "participants": [
+      "ch-02",
+      "ch-09"
+     ],
+     "changes": [
+      {
+       "entity": "ch-09",
+       "variable": "retained_night",
+       "dimension": "epistemic",
+       "before": 0,
+       "after": 20,
+       "magnitude": 45,
+       "op": {
+        "op": "replace",
+        "path": "/ch-09/state/retained_night",
+        "value": 20
+       }
+      },
+      {
+       "entity": "ch-09",
+       "variable": "avoidance_of_hale",
+       "dimension": "social",
+       "before": "neutral",
+       "after": "averted",
+       "magnitude": 35,
+       "op": {
+        "op": "replace",
+        "path": "/ch-09/state/avoidance_of_hale",
+        "value": "averted"
+       }
+      },
+      {
+       "entity": "ch-09",
+       "variable": "position",
+       "dimension": "spatial",
+       "before": "lo-04",
+       "after": "lo-02",
+       "magnitude": 20,
+       "op": {
+        "op": "replace",
+        "path": "/ch-09/state/position",
+        "value": "lo-02"
+       }
+      },
+      {
+       "entity": "gr-02",
+       "variable": "comparing_notes",
+       "dimension": "social",
+       "before": false,
+       "after": true,
+       "magnitude": 60,
+       "op": {
+        "op": "replace",
+        "path": "/gr-02/state/comparing_notes",
+        "value": true
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-007",
+     "type": "action",
+     "text": "That afternoon Cora photographs a chalk mark on brick, a church window lit at the wrong hour, and the hardware carbon for UV tubes. She clips the invoice into the stack. The sheaf now holds residue of a ritual she cannot yet name, and streets the careful man has not walked in front of her.",
+     "participants": [
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ob-02",
+       "variable": "frame_count",
+       "dimension": "material",
+       "before": 12,
+       "after": 18,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ob-02/state/frame_count",
+        "value": 18
+       }
+      },
+      {
+       "entity": "ob-01",
+       "variable": "film_left",
+       "dimension": "material",
+       "before": 6,
+       "after": 2,
+       "magnitude": 15,
+       "op": {
+        "op": "replace",
+        "path": "/ob-01/state/film_left",
+        "value": 2
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "archive_depth",
+       "dimension": "material",
+       "before": 12,
+       "after": 18,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/archive_depth",
+        "value": 18
+       }
+      },
+      {
+       "entity": "ob-02",
+       "variable": "content_flag",
+       "dimension": "epistemic",
+       "before": "hale_unremarked",
+       "after": "ritual_residue",
+       "magnitude": 65,
+       "op": {
+        "op": "replace",
+        "path": "/ob-02/state/content_flag",
+        "value": "ritual_residue"
+       }
+      },
+      {
+       "entity": "ob-06",
+       "variable": "holder",
+       "dimension": "material",
+       "before": "lo-03",
+       "after": "ch-02",
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ob-06/state/holder",
+        "value": "ch-02"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-007",
+     "type": "reaction",
+     "text": "She keeps the recorder running under the counter through the dinner prep. Denise leaves without finishing her coffee and does not look at the door. The leak in the wipe is no longer a private seam. Cora's hands shake once on the clip, then still.",
+     "participants": [
+      "ch-02",
+      "ch-09"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "existential_stability",
+       "dimension": "psychological",
+       "before": 76,
+       "after": 67,
+       "magnitude": 25,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/existential_stability",
+        "value": 67
+       }
+      },
+      {
+       "entity": "cn-02",
+       "variable": "integrity",
+       "dimension": "technological",
+       "before": "seamed",
+       "after": "leaking",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/cn-02/state/integrity",
+        "value": "leaking"
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ob-03": {
+     "track": "missing_hours"
+    },
+    "ch-02": {
+     "archive_depth": 18,
+     "retained_night": 44,
+     "existential_stability": 67
+    },
+    "ob-02": {
+     "frame_count": 18,
+     "content_flag": "ritual_residue"
+    },
+    "ch-09": {
+     "retained_night": 20,
+     "avoidance_of_hale": "averted",
+     "position": "lo-02"
+    },
+    "ob-06": {
+     "holder": "ch-02"
+    },
+    "cn-02": {
+     "integrity": "leaking"
+    },
+    "gr-02": {
+     "comparing_notes": true
+    },
+    "ob-01": {
+     "film_left": 2
+    }
+   },
+   "dramatic_function": "Inquiry: turn scraps into a case, match a bruise, and catch ritual residue the wipe cannot take.",
+   "tension_in": 60,
+   "tension_out": 70,
+   "questions_opened": {
+    "q09": "What do the chalk, the wrong-hour window, and the UV invoice add up to?"
+   },
+   "questions_closed": [
+    "q08"
+   ],
+   "target_words": 680
+  },
+  "sc-008": {
+   "scene_id": "sc-008",
+   "discourse_index": 8,
+   "chapter": 3,
+   "primary_event": "ev-008",
+   "events": [
+    "ev-008"
+   ],
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "story_time_label": "Night 4, 00:30",
+   "location": "lo-02",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02"
+   ],
+   "offstage_referenced": [
+    "ob-02",
+    "ob-04",
+    "ob-06",
+    "lo-01",
+    "lo-04"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "tokens_held": 0,
+     "hunger": 19,
+     "detachment": 90
+    },
+    "ob-04": {
+     "assembled": 0,
+     "holder": "scattered"
+    },
+    "ob-02": {
+     "frame_count": 18
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-008",
+     "type": "action",
+     "text": "Hale finds the Polaroid stack where Cora leaves it under the register during a smoke. The diner is still serving. He does not take a stool. He reads the sheaf in the order she clipped it, corners as she left them.",
+     "participants": [
+      "ch-01"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-008",
+     "type": "discovery",
+     "text": "The chalk, the wrong-hour window, and the UV invoice mark streets his own map had as blanks. Two of the tokens sit in the world exactly where the prints say. Hospital wards are closed to him. This shelf is the decode he has left.",
+     "participants": [
+      "ch-01"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-008",
+     "type": "action",
+     "text": "He walks those streets the long way around the shop-lights and lifts both tokens. The walk costs him hours and hunger. He comes back with two objects that belong to the ritual and not to the town. No other Guest is at either site.",
+     "participants": [
+      "ch-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "tokens_held",
+       "dimension": "material",
+       "before": 0,
+       "after": 2,
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/tokens_held",
+        "value": 2
+       }
+      },
+      {
+       "entity": "ob-04",
+       "variable": "assembled",
+       "dimension": "material",
+       "before": 0,
+       "after": 2,
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/ob-04/state/assembled",
+        "value": 2
+       }
+      },
+      {
+       "entity": "ob-04",
+       "variable": "holder",
+       "dimension": "material",
+       "before": "scattered",
+       "after": "ch-01",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/ob-04/state/holder",
+        "value": "ch-01"
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "hunger",
+       "dimension": "physiological",
+       "before": 19,
+       "after": 45,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/hunger",
+        "value": 45
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-008",
+     "type": "decision",
+     "text": "He pockets one print he will need, the church window, because a hungry man does not leave his only remaining decode on a waitstaff shelf. He puts the rest of the stack back in order, corners aligned. The taking is a dependency he can still call method.",
+     "participants": [
+      "ch-01"
+     ],
+     "changes": [
+      {
+       "entity": "ob-02",
+       "variable": "frame_count",
+       "dimension": "material",
+       "before": 18,
+       "after": 17,
+       "magnitude": 20,
+       "op": {
+        "op": "replace",
+        "path": "/ob-02/state/frame_count",
+        "value": 17
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "detachment",
+       "dimension": "psychological",
+       "before": 90,
+       "after": 83,
+       "magnitude": 25,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/detachment",
+        "value": 83
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "tokens_held": 2,
+     "hunger": 45,
+     "detachment": 83
+    },
+    "ob-04": {
+     "assembled": 2,
+     "holder": "ch-01"
+    },
+    "ob-02": {
+     "frame_count": 17
+    }
+   },
+   "dramatic_function": "Forced dependency: spend her archive as the last decode and lift two tokens the long way around the lights.",
+   "tension_in": 65,
+   "tension_out": 75,
+   "questions_opened": {
+    "q10": "Can he finish the ritual from an archive he has to keep stealing back?"
+   },
+   "questions_closed": [
+    "q06"
+   ],
+   "target_words": 620
+  },
+  "sc-009": {
+   "scene_id": "sc-009",
+   "discourse_index": 9,
+   "chapter": 3,
+   "primary_event": "ev-009",
+   "events": [
+    "ev-009"
+   ],
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02",
+    "pl-03"
+   ],
+   "story_time_label": "Night 4, 02:10",
+   "location": "lo-02",
+   "pov": "ch-02",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02"
+   ],
+   "offstage_referenced": [
+    "ob-02",
+    "ob-07",
+    "lo-07"
+   ],
+   "entry_states": {
+    "ch-02": {
+     "stance_on_hale": "customer",
+     "archive_depth": 18
+    },
+    "ch-01": {
+     "cover": "unremembered",
+     "detachment": 83,
+     "cash": 74,
+     "hunger": 45
+    },
+    "ob-07": {
+     "amount": 94
+    },
+    "ob-02": {
+     "frame_count": 17
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-009",
+     "type": "reaction",
+     "text": "He comes back for the rotation and she flinches at his face before she has a reason. The coffee pot ticks against the rim of his cup. She looks at him as if the face belongs to a night she almost kept, then looks at the till instead.",
+     "participants": [
+      "ch-01",
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "stance_on_hale",
+       "dimension": "emotional",
+       "before": "customer",
+       "after": "flinch",
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/stance_on_hale",
+        "value": "flinch"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-009",
+     "type": "action",
+     "text": "She pours anyway. The till is real. The last time she drove the loop road it delivered her back to the same lot. She sets the cup down and does not ask him what he wants. He does not reach for her wrist.",
+     "participants": [
+      "ch-01",
+      "ch-02"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-009",
+     "type": "action",
+     "text": "He pays the check and leaves a tip. The can by the register takes the bills. The manners are the same ones he used on the first night. She watches the money land and does not comment on it.",
+     "participants": [
+      "ch-01",
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "cash",
+       "dimension": "material",
+       "before": 74,
+       "after": 69,
+       "magnitude": 10,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/cash",
+        "value": 69
+       }
+      },
+      {
+       "entity": "ob-07",
+       "variable": "amount",
+       "dimension": "material",
+       "before": 94,
+       "after": 98,
+       "magnitude": 8,
+       "op": {
+        "op": "replace",
+        "path": "/ob-07/state/amount",
+        "value": 98
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-009",
+     "type": "reversal",
+     "text": "He sets the church-window Polaroid on the counter face-up, returning what he did not mean to keep. The correction hands her a street and a silhouette she can hold after sleep. His cover as an unremembered customer does not survive the object leaving his pocket.",
+     "participants": [
+      "ch-01",
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "cover",
+       "dimension": "social",
+       "before": "unremembered",
+       "after": "leaking",
+       "magnitude": 60,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/cover",
+        "value": "leaking"
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "detachment",
+       "dimension": "psychological",
+       "before": 83,
+       "after": 71,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/detachment",
+        "value": 71
+       }
+      },
+      {
+       "entity": "ob-02",
+       "variable": "frame_count",
+       "dimension": "material",
+       "before": 17,
+       "after": 18,
+       "magnitude": 25,
+       "op": {
+        "op": "replace",
+        "path": "/ob-02/state/frame_count",
+        "value": 18
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "archive_depth",
+       "dimension": "material",
+       "before": 18,
+       "after": 19,
+       "magnitude": 20,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/archive_depth",
+        "value": 19
+       }
+      }
+     ]
+    },
+    {
+     "beat": 5,
+     "event_id": "ev-009",
+     "type": "conflict",
+     "text": "She does not thank him. She puts the print in the stack and takes his empty plate with her wrist turned out of reach. He does not complete the rotation. Hunger climbs while he sits with the unpaid feed in front of him.",
+     "participants": [
+      "ch-01",
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "hunger",
+       "dimension": "physiological",
+       "before": 45,
+       "after": 53,
+       "magnitude": 20,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/hunger",
+        "value": 53
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-02": {
+     "stance_on_hale": "flinch",
+     "archive_depth": 19
+    },
+    "ch-01": {
+     "cover": "leaking",
+     "detachment": 71,
+     "cash": 69,
+     "hunger": 53
+    },
+    "ob-07": {
+     "amount": 98
+    },
+    "ob-02": {
+     "frame_count": 18
+    }
+   },
+   "dramatic_function": "First leak: she flinches and pours; he returns the print he should have kept and misses the feed.",
+   "tension_in": 70,
+   "tension_out": 82,
+   "questions_opened": {
+    "q11": "Why return a Polaroid that was the last private decode?"
+   },
+   "questions_closed": [
+    "q03"
+   ],
+   "target_words": 580
+  },
+  "sc-010": {
+   "scene_id": "sc-010",
+   "discourse_index": 10,
+   "chapter": 3,
+   "primary_event": "ev-010",
+   "events": [
+    "ev-010"
+   ],
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "story_time_label": "Night 4, 21:00 into Night 5",
+   "location": "lo-01",
+   "pov": "ch-01",
+   "narrative_mode": "summary",
+   "present": [
+    "ch-01",
+    "ch-02",
+    "ch-09"
+   ],
+   "offstage_referenced": [
+    "ch-04",
+    "ch-05",
+    "ch-08",
+    "lo-03",
+    "lo-04"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "hunger": 53,
+     "detachment": 71,
+     "position": "lo-02",
+     "cash": 69,
+     "cover": "leaking",
+     "tokens_held": 2
+    },
+    "ch-02": {
+     "blood_level": 54,
+     "position": "lo-02",
+     "stance_on_hale": "flinch"
+    },
+    "ch-09": {
+     "avoidance_of_hale": "averted",
+     "position": "lo-02"
+    },
+    "ch-04": {
+     "uv_grid_extent": 48
+    },
+    "ch-05": {
+     "blood_monopoly": "squeezed"
+    },
+    "lo-01": {
+     "uv_coverage": 48
+    },
+    "lo-02": {
+     "after_dark_policy": "open"
+    },
+    "lo-04": {
+     "blood_stores": "squeezed",
+     "night_access": "badge_only"
+    },
+    "gr-02": {
+     "rotation_viable": true
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-010",
+     "type": "action",
+     "text": "That night Hale finds the diner door locked at dark. A handwritten card in the window announces a private function. Through the glass Cora turns the deadbolt and leaves the card hanging. He stands on the sidewalk with the unused hour of the rotation already dead in his pocket.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "lo-02"
+     ],
+     "changes": [
+      {
+       "entity": "lo-02",
+       "variable": "after_dark_policy",
+       "dimension": "social",
+       "before": "open",
+       "after": "locked",
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/lo-02/state/after_dark_policy",
+        "value": "locked"
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "position",
+       "dimension": "spatial",
+       "before": "lo-02",
+       "after": "lo-01",
+       "magnitude": 15,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/position",
+        "value": "lo-01"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-010",
+     "type": "action",
+     "text": "He walks the hospital corridor in period clothes and asks the night desk for Denise Cole. She is already on the ward. She turns her whole body from him without answering, shoulders squared to the chart rack, and a badge reader at the stairwell clicks red.",
+     "participants": [
+      "ch-01",
+      "ch-09",
+      "lo-04"
+     ],
+     "changes": [
+      {
+       "entity": "ch-09",
+       "variable": "avoidance_of_hale",
+       "dimension": "social",
+       "before": "averted",
+       "after": "refusing",
+       "magnitude": 45,
+       "op": {
+        "op": "replace",
+        "path": "/ch-09/state/avoidance_of_hale",
+        "value": "refusing"
+       }
+      },
+      {
+       "entity": "ch-09",
+       "variable": "position",
+       "dimension": "spatial",
+       "before": "lo-02",
+       "after": "lo-04",
+       "magnitude": 15,
+       "op": {
+        "op": "replace",
+        "path": "/ch-09/state/position",
+        "value": "lo-04"
+       }
+      },
+      {
+       "entity": "lo-04",
+       "variable": "night_access",
+       "dimension": "social",
+       "before": "badge_only",
+       "after": "sealed",
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/lo-04/state/night_access",
+        "value": "sealed"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-010",
+     "type": "discovery",
+     "text": "The blood fridge on the ward stands empty. A clipboard on the latch lists tribute names and a dry tally. Hale counts the blank rows. The last pint has already been signed out under a name that is not his.",
+     "participants": [
+      "ch-01",
+      "ch-05",
+      "lo-04"
+     ],
+     "changes": [
+      {
+       "entity": "ch-05",
+       "variable": "blood_monopoly",
+       "dimension": "world",
+       "before": "squeezed",
+       "after": "dry",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/ch-05/state/blood_monopoly",
+        "value": "dry"
+       }
+      },
+      {
+       "entity": "lo-04",
+       "variable": "blood_stores",
+       "dimension": "material",
+       "before": "squeezed",
+       "after": "dry",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/lo-04/state/blood_stores",
+        "value": "dry"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-010",
+     "type": "action",
+     "text": "Back on Main Street the UV corridor has tightened until even the alleys throw a violet edge. Shop-lights cage the crossings he used last night. He tests one service lane and pulls back from the burn-line. Kerr's grid has had another night to close.",
+     "participants": [
+      "ch-01",
+      "ch-04",
+      "lo-01"
+     ],
+     "changes": [
+      {
+       "entity": "ch-04",
+       "variable": "uv_grid_extent",
+       "dimension": "world",
+       "before": 48,
+       "after": 74,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-04/state/uv_grid_extent",
+        "value": 74
+       }
+      },
+      {
+       "entity": "lo-01",
+       "variable": "uv_coverage",
+       "dimension": "world",
+       "before": 48,
+       "after": 74,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/lo-01/state/uv_coverage",
+        "value": 74
+       }
+      }
+     ]
+    },
+    {
+     "beat": 5,
+     "event_id": "ev-010",
+     "type": "reversal",
+     "text": "He counts remaining cash and remaining hours against a clerk, a nurse, and a waitress none of whom will receive him. He crosses the last unlit service lane already shaking. Hunger climbs past the point where the map still feels like control. Unfed, Cora's color comes back.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "gr-02"
+     ],
+     "changes": [
+      {
+       "entity": "gr-02",
+       "variable": "rotation_viable",
+       "dimension": "world",
+       "before": true,
+       "after": false,
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/gr-02/state/rotation_viable",
+        "value": false
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "hunger",
+       "dimension": "physiological",
+       "before": 53,
+       "after": 67,
+       "magnitude": 35,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/hunger",
+        "value": 67
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "detachment",
+       "dimension": "psychological",
+       "before": 71,
+       "after": 65,
+       "magnitude": 20,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/detachment",
+        "value": 65
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "blood_level",
+       "dimension": "physiological",
+       "before": 54,
+       "after": 70,
+       "magnitude": 20,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/blood_level",
+        "value": 70
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "hunger": 67,
+     "detachment": 65,
+     "position": "lo-01",
+     "cash": 69,
+     "cover": "leaking",
+     "tokens_held": 2
+    },
+    "ch-02": {
+     "blood_level": 70,
+     "position": "lo-02",
+     "stance_on_hale": "flinch"
+    },
+    "ch-09": {
+     "avoidance_of_hale": "refusing",
+     "position": "lo-04"
+    },
+    "ch-04": {
+     "uv_grid_extent": 74
+    },
+    "ch-05": {
+     "blood_monopoly": "dry"
+    },
+    "lo-01": {
+     "uv_coverage": 74
+    },
+    "lo-02": {
+     "after_dark_policy": "locked"
+    },
+    "lo-04": {
+     "blood_stores": "dry",
+     "night_access": "sealed"
+    },
+    "gr-02": {
+     "rotation_viable": false
+    }
+   },
+   "dramatic_function": "Resource hardening: the diner locks, the nurse refuses, the UV corridor closes, and the clean rotation dies.",
+   "tension_in": 58,
+   "tension_out": 70,
+   "questions_opened": {
+    "q30": "How does Hale feed now that clerk, nurse, and waitress will not receive him?",
+    "q31": "Can he still reach the dawn site through the tightened UV corridor?"
+   },
+   "questions_closed": [],
+   "target_words": 650
+  },
+  "sc-011": {
+   "scene_id": "sc-011",
+   "discourse_index": 11,
+   "chapter": 3,
+   "primary_event": "ev-011",
+   "events": [
+    "ev-011"
+   ],
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02",
+    "pl-03"
+   ],
+   "story_time_label": "Night 5, 00:50",
+   "location": "lo-02",
+   "pov": "ch-02",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02"
+   ],
+   "offstage_referenced": [
+    "ob-03",
+    "cn-02"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "position": "lo-01",
+     "cover": "leaking",
+     "detachment": 65,
+     "hunger": 67
+    },
+    "ch-02": {
+     "stance_on_hale": "flinch",
+     "retained_night": 44,
+     "existential_stability": 67,
+     "position": "lo-02",
+     "blood_level": 70
+    },
+    "ob-03": {
+     "track": "missing_hours",
+     "holder": "ch-02"
+    },
+    "cn-04": {
+     "town_risk": "safe"
+    },
+    "lo-02": {
+     "after_dark_policy": "locked"
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-011",
+     "type": "action",
+     "text": "Cora unlocks the diner for herself after closing and sets the cassette in the deck behind the counter. Hale is already in the back booth, coat still on, hands on the Formica. She does not ask how he got in. She presses play.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-03"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "position",
+       "dimension": "spatial",
+       "before": "lo-01",
+       "after": "lo-02",
+       "magnitude": 15,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/position",
+        "value": "lo-02"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-011",
+     "type": "revelation",
+     "text": "The tape gives back his own voice, calm, telling her to hold still and breathe through a feed she recorded without knowing what the sounds were. She stands with her back to the booth. The ribbon keeps his instructions in a register the wipe cannot reach.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-03"
+     ],
+     "changes": [
+      {
+       "entity": "ob-03",
+       "variable": "track",
+       "dimension": "epistemic",
+       "before": "missing_hours",
+       "after": "hale_instructions",
+       "magnitude": 75,
+       "op": {
+        "op": "replace",
+        "path": "/ob-03/state/track",
+        "value": "hale_instructions"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-011",
+     "type": "reaction",
+     "text": "She does not look at him while it plays. She lets it run to the click, rewinds to the same instructions, and lets them play again. Her hand stays on the deck. The missing hours now have a voice she can replay after sleep.",
+     "participants": [
+      "ch-02",
+      "ob-03"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "stance_on_hale",
+       "dimension": "emotional",
+       "before": "flinch",
+       "after": "investigator",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/stance_on_hale",
+        "value": "investigator"
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "retained_night",
+       "dimension": "epistemic",
+       "before": 44,
+       "after": 60,
+       "magnitude": 35,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/retained_night",
+        "value": 60
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-011",
+     "type": "conflict",
+     "text": "He does not take the tape. His hand stays on the table, fingers aligned with the Formica grain. The repeating figure now has a name she can keep. Something in her face goes flat at the sound of herself being emptied on command.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-03",
+      "cn-04"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "cover",
+       "dimension": "social",
+       "before": "leaking",
+       "after": "named",
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/cover",
+        "value": "named"
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "detachment",
+       "dimension": "psychological",
+       "before": 65,
+       "after": 52,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/detachment",
+        "value": 52
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "existential_stability",
+       "dimension": "psychological",
+       "before": 67,
+       "after": 55,
+       "magnitude": 35,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/existential_stability",
+        "value": 55
+       }
+      },
+      {
+       "entity": "cn-04",
+       "variable": "town_risk",
+       "dimension": "psychological",
+       "before": "safe",
+       "after": "exposed",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/cn-04/state/town_risk",
+        "value": "exposed"
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "position": "lo-02",
+     "cover": "named",
+     "detachment": 52,
+     "hunger": 67
+    },
+    "ch-02": {
+     "stance_on_hale": "investigator",
+     "retained_night": 60,
+     "existential_stability": 55,
+     "position": "lo-02",
+     "blood_level": 70
+    },
+    "ob-03": {
+     "track": "hale_instructions",
+     "holder": "ch-02"
+    },
+    "cn-04": {
+     "town_risk": "exposed"
+    },
+    "lo-02": {
+     "after_dark_policy": "locked"
+    }
+   },
+   "dramatic_function": "Proof as weapon: she plays his calm feed instructions back at him and the unremembered customer acquires a voice that survives sleep.",
+   "tension_in": 70,
+   "tension_out": 82,
+   "questions_opened": {
+    "q32": "What will Hale do now that his own voice is on a tape she can replay after sleep?"
+   },
+   "questions_closed": [],
+   "target_words": 500
+  },
+  "sc-012": {
+   "scene_id": "sc-012",
+   "discourse_index": 12,
+   "chapter": 3,
+   "primary_event": "ev-012",
+   "events": [
+    "ev-012"
+   ],
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03"
+   ],
+   "story_time_label": "Night 5, 01:10",
+   "location": "lo-02",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02"
+   ],
+   "offstage_referenced": [
+    "ob-03",
+    "ob-04"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "detachment": 52,
+     "hunger": 67,
+     "position": "lo-02",
+     "cover": "named",
+     "tokens_held": 2,
+     "cash": 69
+    },
+    "ch-02": {
+     "existential_stability": 55,
+     "stance_on_hale": "investigator",
+     "position": "lo-02",
+     "retained_night": 60
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-012",
+     "type": "action",
+     "text": "He stands and comes around the counter. He starts the look that writes, the same calm focus the tape just played back at him. One more overwrite would put the last token in his hand tonight and send her into a sleep that would scrub the archive.",
+     "participants": [
+      "ch-01",
+      "ch-02"
+     ],
+     "changes": []
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-012",
+     "type": "decision",
+     "text": "Mid-gesture he stops. The hand drops to the sugar caddy and stays there, a held breath made visible in the fingers. Care and tactic can no longer be told apart in the shape of the stop.",
+     "participants": [
+      "ch-01",
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "detachment",
+       "dimension": "psychological",
+       "before": 52,
+       "after": 34,
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/detachment",
+        "value": 34
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-012",
+     "type": "reaction",
+     "text": "She watches the stopped hand the way she watches the tape deck. She does not step back and she does not offer her wrist. The unfinished write hangs between them like a bill he has decided not to collect.",
+     "participants": [
+      "ch-01",
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "existential_stability",
+       "dimension": "psychological",
+       "before": 55,
+       "after": 51,
+       "magnitude": 15,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/existential_stability",
+        "value": 51
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-012",
+     "type": "action",
+     "text": "He takes nothing. He leaves the booth money under the saucer and goes out the back, the write unfinished. Hunger climbs in the doorway. The night he did not take from her stays on her side of the counter.",
+     "participants": [
+      "ch-01",
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "hunger",
+       "dimension": "physiological",
+       "before": 67,
+       "after": 75,
+       "magnitude": 20,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/hunger",
+        "value": 75
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "detachment": 34,
+     "hunger": 75,
+     "position": "lo-02",
+     "cover": "named",
+     "tokens_held": 2,
+     "cash": 69
+    },
+    "ch-02": {
+     "existential_stability": 51,
+     "stance_on_hale": "investigator",
+     "position": "lo-02",
+     "retained_night": 60
+    }
+   },
+   "dramatic_function": "Divided will: he starts the overwrite that would take the last token cold, then stops mid-gesture because another write would burn the archive.",
+   "tension_in": 82,
+   "tension_out": 88,
+   "questions_opened": {
+    "q33": "If he will not overwrite her, how does he take the last token before dawn?"
+   },
+   "questions_closed": [],
+   "target_words": 380
+  },
+  "sc-013": {
+   "scene_id": "sc-013",
+   "discourse_index": 13,
+   "chapter": 3,
+   "primary_event": "ev-013",
+   "events": [
+    "ev-013"
+   ],
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "story_time_label": "Night 5, 03:20",
+   "location": "lo-01",
+   "pov": "ch-03",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-03",
+    "ch-02",
+    "ch-08",
+    "ch-09"
+   ],
+   "offstage_referenced": [
+    "ch-01",
+    "gr-02",
+    "cn-02",
+    "cn-03"
+   ],
+   "entry_states": {
+    "ch-03": {
+     "noticed_comparison": false,
+     "experiment_phase": "stacking",
+     "writes_on_rotation": 3,
+     "position": "lo-02",
+     "hunger": 36
+    },
+    "ch-02": {
+     "retained_night": 60,
+     "existential_stability": 51,
+     "position": "lo-02",
+     "stance_on_hale": "investigator"
+    },
+    "ch-08": {
+     "retained_night": 0,
+     "position": "lo-03",
+     "somatic_mark": true
+    },
+    "ch-09": {
+     "retained_night": 20,
+     "position": "lo-04",
+     "bruise_visible": true
+    },
+    "cn-03": {
+     "phase": "torn"
+    },
+    "cn-02": {
+     "integrity": "leaking"
+    },
+    "cn-04": {
+     "town_risk": "exposed"
+    },
+    "gr-02": {
+     "comparing_notes": true
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-013",
+     "type": "discovery",
+     "text": "Anja finds the nurse and the waitress on the sidewalk comparing bruises and hours she did not implant. Downtown, the hardware clerk is doing the same with a delivery boy. She marks the matches in a pocket book. None of the shared hours are hers.",
+     "participants": [
+      "ch-03",
+      "ch-02",
+      "ch-08",
+      "ch-09"
+     ],
+     "changes": [
+      {
+       "entity": "ch-03",
+       "variable": "noticed_comparison",
+       "dimension": "epistemic",
+       "before": false,
+       "after": true,
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/ch-03/state/noticed_comparison",
+        "value": true
+       }
+      },
+      {
+       "entity": "ch-03",
+       "variable": "position",
+       "dimension": "spatial",
+       "before": "lo-02",
+       "after": "lo-01",
+       "magnitude": 15,
+       "op": {
+        "op": "replace",
+        "path": "/ch-03/state/position",
+        "value": "lo-01"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-013",
+     "type": "decision",
+     "text": "She reads the comparisons as contamination of the experiment rather than a result. She writes again, harder, stacking a fresh lie over the leaking ones to see if the failsafe can be forced shut. The waitress's pupils take the write and do not empty.",
+     "participants": [
+      "ch-03",
+      "ch-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-03",
+       "variable": "experiment_phase",
+       "dimension": "epistemic",
+       "before": "stacking",
+       "after": "doubling_down",
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/ch-03/state/experiment_phase",
+        "value": "doubling_down"
+       }
+      },
+      {
+       "entity": "ch-03",
+       "variable": "writes_on_rotation",
+       "dimension": "technological",
+       "before": 3,
+       "after": 7,
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/ch-03/state/writes_on_rotation",
+        "value": 7
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-013",
+     "type": "reversal",
+     "text": "The extra write does not shut anything. More Hosts wake with scraps. A man at the bus stop describes last night to a woman who should not remember him. Fragments walk the block. The clerk touches his own neck and keeps the hour.",
+     "participants": [
+      "ch-03",
+      "ch-02",
+      "ch-08",
+      "ch-09",
+      "cn-02",
+      "cn-03"
+     ],
+     "changes": [
+      {
+       "entity": "cn-03",
+       "variable": "phase",
+       "dimension": "technological",
+       "before": "torn",
+       "after": "spreading",
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/cn-03/state/phase",
+        "value": "spreading"
+       }
+      },
+      {
+       "entity": "cn-02",
+       "variable": "integrity",
+       "dimension": "technological",
+       "before": "leaking",
+       "after": "torn",
+       "magnitude": 60,
+       "op": {
+        "op": "replace",
+        "path": "/cn-02/state/integrity",
+        "value": "torn"
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "retained_night",
+       "dimension": "epistemic",
+       "before": 60,
+       "after": 76,
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/retained_night",
+        "value": 76
+       }
+      },
+      {
+       "entity": "ch-08",
+       "variable": "retained_night",
+       "dimension": "epistemic",
+       "before": 0,
+       "after": 24,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-08/state/retained_night",
+        "value": 24
+       }
+      },
+      {
+       "entity": "ch-09",
+       "variable": "retained_night",
+       "dimension": "epistemic",
+       "before": 20,
+       "after": 38,
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ch-09/state/retained_night",
+        "value": 38
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-013",
+     "type": "reaction",
+     "text": "Anja closes the pocket book without a new baseline and walks faster than the hunger in her own throat. Cora stands unblinking in the aftershock of the extra write, the night piling up with no place to put it. The town is now too awake.",
+     "participants": [
+      "ch-03",
+      "ch-02",
+      "cn-04"
+     ],
+     "changes": [
+      {
+       "entity": "ch-03",
+       "variable": "hunger",
+       "dimension": "physiological",
+       "before": 36,
+       "after": 48,
+       "magnitude": 20,
+       "op": {
+        "op": "replace",
+        "path": "/ch-03/state/hunger",
+        "value": 48
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "existential_stability",
+       "dimension": "psychological",
+       "before": 51,
+       "after": 40,
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/existential_stability",
+        "value": 40
+       }
+      },
+      {
+       "entity": "cn-04",
+       "variable": "town_risk",
+       "dimension": "psychological",
+       "before": "exposed",
+       "after": "critical",
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/cn-04/state/town_risk",
+        "value": "critical"
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-03": {
+     "noticed_comparison": true,
+     "experiment_phase": "doubling_down",
+     "writes_on_rotation": 7,
+     "position": "lo-01",
+     "hunger": 48
+    },
+    "ch-02": {
+     "retained_night": 76,
+     "existential_stability": 40,
+     "position": "lo-02",
+     "stance_on_hale": "investigator"
+    },
+    "ch-08": {
+     "retained_night": 24,
+     "position": "lo-03",
+     "somatic_mark": true
+    },
+    "ch-09": {
+     "retained_night": 38,
+     "position": "lo-04",
+     "bruise_visible": true
+    },
+    "cn-03": {
+     "phase": "spreading"
+    },
+    "cn-02": {
+     "integrity": "torn"
+    },
+    "cn-04": {
+     "town_risk": "critical"
+    },
+    "gr-02": {
+     "comparing_notes": true
+    }
+   },
+   "dramatic_function": "Experiment backfire: Anja treats public comparison as contamination and stacks one more write, which only multiplies the fragments walking around town.",
+   "tension_in": 72,
+   "tension_out": 84,
+   "questions_opened": {
+    "q34": "Will the spreading tear collapse the town into simulation-belief before dawn?"
+   },
+   "questions_closed": [],
+   "target_words": 580
+  },
+  "sc-014": {
+   "scene_id": "sc-014",
+   "discourse_index": 14,
+   "chapter": 4,
+   "primary_event": "ev-014",
+   "events": [
+    "ev-014"
+   ],
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-03"
+   ],
+   "story_time_label": "Night 6, 01:15",
+   "location": "lo-06",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01"
+   ],
+   "offstage_referenced": [
+    "ch-02",
+    "ob-02",
+    "ob-04",
+    "cn-01"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "tokens_held": 2,
+     "detachment": 34,
+     "position": "lo-02",
+     "hunger": 75,
+     "prize_claim": "pursuing",
+     "cover": "named"
+    },
+    "ob-04": {
+     "assembled": 2,
+     "holder": "ch-01"
+    },
+    "cn-01": {
+     "decoded_by_hale": "tokens_and_site",
+     "invocation_spoken": false,
+     "match_running": true
+    },
+    "lo-06": {
+     "tokens_present": "absent",
+     "sun_on_stone": false,
+     "uv_encroaching": false
+    },
+    "ob-02": {
+     "content_flag": "ritual_residue",
+     "holder": "ch-02",
+     "frame_count": 18
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-014",
+     "type": "action",
+     "text": "Using a Polaroid of Founders' Stone taken on a night Cora cannot remember, Hale walks the last dark path to the monument. Moss has grown over a cut at the base. He kneels. The print and the stone match at the same hour.",
+     "participants": [
+      "ch-01",
+      "ob-02",
+      "lo-06"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "position",
+       "dimension": "spatial",
+       "before": "lo-02",
+       "after": "lo-06",
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/position",
+        "value": "lo-06"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-014",
+     "type": "discovery",
+     "text": "He lifts the last token from the cut under the moss. He holds all four in one hand and the print in the other. The set is complete. He does not yet lay them in ritual order.",
+     "participants": [
+      "ch-01",
+      "ob-04",
+      "lo-06"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "tokens_held",
+       "dimension": "material",
+       "before": 2,
+       "after": 4,
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/tokens_held",
+        "value": 4
+       }
+      },
+      {
+       "entity": "ob-04",
+       "variable": "assembled",
+       "dimension": "material",
+       "before": 2,
+       "after": 4,
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/ob-04/state/assembled",
+        "value": 4
+       }
+      },
+      {
+       "entity": "lo-06",
+       "variable": "tokens_present",
+       "dimension": "material",
+       "before": "absent",
+       "after": "with_hale",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/lo-06/state/tokens_present",
+        "value": "with_hale"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-014",
+     "type": "revelation",
+     "text": "Completing the invocation at first light would end the match. An ended match is a wipe with no morning after for any stack of photographs. He looks from the tokens to the print of the stone taken on a night that would vanish with the win.",
+     "participants": [
+      "ch-01",
+      "cn-01",
+      "ob-02"
+     ],
+     "changes": [
+      {
+       "entity": "cn-01",
+       "variable": "decoded_by_hale",
+       "dimension": "epistemic",
+       "before": "tokens_and_site",
+       "after": "full_cost",
+       "magnitude": 80,
+       "op": {
+        "op": "replace",
+        "path": "/cn-01/state/decoded_by_hale",
+        "value": "full_cost"
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "detachment",
+       "dimension": "psychological",
+       "before": 34,
+       "after": 22,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/detachment",
+        "value": 22
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-014",
+     "type": "decision",
+     "text": "He puts the tokens inside his jacket, not yet in the ritual order. Hunger is starting to show in the way he stands. He does not speak the words. Dawn is still hours off and the stone is still in shade.",
+     "participants": [
+      "ch-01",
+      "ob-04",
+      "lo-06"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "hunger",
+       "dimension": "physiological",
+       "before": 75,
+       "after": 83,
+       "magnitude": 20,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/hunger",
+        "value": 83
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "tokens_held": 4,
+     "detachment": 22,
+     "position": "lo-06",
+     "hunger": 83,
+     "prize_claim": "pursuing",
+     "cover": "named"
+    },
+    "ob-04": {
+     "assembled": 4,
+     "holder": "ch-01"
+    },
+    "cn-01": {
+     "decoded_by_hale": "full_cost",
+     "invocation_spoken": false,
+     "match_running": true
+    },
+    "lo-06": {
+     "tokens_present": "with_hale",
+     "sun_on_stone": false,
+     "uv_encroaching": false
+    },
+    "ob-02": {
+     "content_flag": "ritual_residue",
+     "holder": "ch-02",
+     "frame_count": 18
+    }
+   },
+   "dramatic_function": "Rule reversal: he lifts the last token at the stone and holds, in the same hand, the knowledge that speaking the words would wipe every kept hour.",
+   "tension_in": 80,
+   "tension_out": 88,
+   "questions_opened": {
+    "q35": "Will Hale speak the invocation now that he holds every token and knows the wipe cost?"
+   },
+   "questions_closed": [
+    "q31",
+    "q33"
+   ],
+   "target_words": 480
+  },
+  "sc-015": {
+   "scene_id": "sc-015",
+   "discourse_index": 15,
+   "chapter": 4,
+   "primary_event": "ev-015",
+   "events": [
+    "ev-015"
+   ],
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-02",
+    "pl-03"
+   ],
+   "story_time_label": "Night 6, 04:05",
+   "location": "lo-06",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02"
+   ],
+   "offstage_referenced": [
+    "ch-04",
+    "ob-02",
+    "ob-03",
+    "ob-05"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "hunger": 83,
+     "detachment": 22,
+     "position": "lo-06",
+     "tokens_held": 4,
+     "cover": "named",
+     "prize_claim": "pursuing"
+    },
+    "ch-02": {
+     "stance_on_hale": "investigator",
+     "position": "lo-02",
+     "retained_night": 76,
+     "existential_stability": 40
+    },
+    "ob-05": {
+     "holder": "lo-03",
+     "powered": false
+    },
+    "lo-06": {
+     "uv_encroaching": false,
+     "tokens_present": "with_hale",
+     "sun_on_stone": false
+    },
+    "ch-04": {
+     "uv_grid_extent": 74
+    },
+    "ob-03": {
+     "holder": "ch-02",
+     "track": "hale_instructions"
+    },
+    "ob-02": {
+     "content_flag": "ritual_residue",
+     "holder": "ch-02"
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-015",
+     "type": "action",
+     "text": "Two hours before sunrise Cora is already at the stone. She carries the hardware-store UV lamp in one hand and the archive in the other. She has come to burn him rather than lose another night she has finally kept. Hale is already there.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-05"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "position",
+       "dimension": "spatial",
+       "before": "lo-02",
+       "after": "lo-06",
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/position",
+        "value": "lo-06"
+       }
+      },
+      {
+       "entity": "ob-05",
+       "variable": "holder",
+       "dimension": "material",
+       "before": "lo-03",
+       "after": "ch-02",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/ob-05/state/holder",
+        "value": "ch-02"
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "stance_on_hale",
+       "dimension": "emotional",
+       "before": "investigator",
+       "after": "armed",
+       "magnitude": 60,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/stance_on_hale",
+        "value": "armed"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-015",
+     "type": "action",
+     "text": "She thumbs the lamp live. A violet bar cuts the last shade. Uphill, shop-lights are being dragged across the green toward the stone, Kerr's grid eating the path. The stone's flanks start to lose their dark.",
+     "participants": [
+      "ch-02",
+      "ob-05",
+      "ch-04",
+      "lo-06"
+     ],
+     "changes": [
+      {
+       "entity": "ob-05",
+       "variable": "powered",
+       "dimension": "technological",
+       "before": false,
+       "after": true,
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/ob-05/state/powered",
+        "value": true
+       }
+      },
+      {
+       "entity": "lo-06",
+       "variable": "uv_encroaching",
+       "dimension": "world",
+       "before": false,
+       "after": true,
+       "magnitude": 45,
+       "op": {
+        "op": "replace",
+        "path": "/lo-06/state/uv_encroaching",
+        "value": true
+       }
+      },
+      {
+       "entity": "ch-04",
+       "variable": "uv_grid_extent",
+       "dimension": "world",
+       "before": 74,
+       "after": 90,
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ch-04/state/uv_grid_extent",
+        "value": 90
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-015",
+     "type": "conflict",
+     "text": "He has every token. He takes the cassette from her outer pocket because the stack is the last decode and the last continuous self, and both of them know it. She does not drop the lamp to stop his hand.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-03",
+      "ob-02"
+     ],
+     "changes": [
+      {
+       "entity": "ob-03",
+       "variable": "holder",
+       "dimension": "material",
+       "before": "ch-02",
+       "after": "ch-01",
+       "magnitude": 45,
+       "op": {
+        "op": "replace",
+        "path": "/ob-03/state/holder",
+        "value": "ch-01"
+       }
+      },
+      {
+       "entity": "ob-02",
+       "variable": "content_flag",
+       "dimension": "epistemic",
+       "before": "ritual_residue",
+       "after": "dawn_site",
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ob-02/state/content_flag",
+        "value": "dawn_site"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-015",
+     "type": "conflict",
+     "text": "She raises the lamp. He does not step into the beam. Hunger has him near the shake that precedes frenzy. Dawn is a color in the east, not yet a line. The tokens stay inside his jacket.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-05"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "hunger",
+       "dimension": "physiological",
+       "before": 83,
+       "after": 91,
+       "magnitude": 35,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/hunger",
+        "value": 91
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "detachment",
+       "dimension": "psychological",
+       "before": 22,
+       "after": 14,
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/detachment",
+        "value": 14
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "hunger": 91,
+     "detachment": 14,
+     "position": "lo-06",
+     "tokens_held": 4,
+     "cover": "named",
+     "prize_claim": "pursuing"
+    },
+    "ch-02": {
+     "stance_on_hale": "armed",
+     "position": "lo-06",
+     "retained_night": 76,
+     "existential_stability": 40
+    },
+    "ob-05": {
+     "holder": "ch-02",
+     "powered": true
+    },
+    "lo-06": {
+     "uv_encroaching": true,
+     "tokens_present": "with_hale",
+     "sun_on_stone": false
+    },
+    "ch-04": {
+     "uv_grid_extent": 90
+    },
+    "ob-03": {
+     "holder": "ch-01",
+     "track": "hale_instructions"
+    },
+    "ob-02": {
+     "content_flag": "dawn_site",
+     "holder": "ch-02"
+    }
+   },
+   "dramatic_function": "Ticking choice: two hours to dawn, she waits with a live lamp, he holds every token and takes the cassette, and neither steps forward.",
+   "tension_in": 88,
+   "tension_out": 95,
+   "questions_opened": {
+    "q36": "Will Cora burn him rather than lose another night she has finally kept?"
+   },
+   "questions_closed": [],
+   "target_words": 520
+  },
+  "sc-016": {
+   "scene_id": "sc-016",
+   "discourse_index": 16,
+   "chapter": 4,
+   "primary_event": "ev-016",
+   "events": [
+    "ev-016"
+   ],
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-03"
+   ],
+   "story_time_label": "Night 6, 05:52",
+   "location": "lo-06",
+   "pov": "ch-01",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-01",
+    "ch-02"
+   ],
+   "offstage_referenced": [
+    "ob-01",
+    "ob-02",
+    "ob-03",
+    "ob-04",
+    "ob-05",
+    "ob-08",
+    "cn-01"
+   ],
+   "entry_states": {
+    "ch-01": {
+     "prize_claim": "pursuing",
+     "sun_injury": "none",
+     "tokens_held": 4,
+     "cover": "named",
+     "detachment": 14,
+     "hunger": 91,
+     "position": "lo-06"
+    },
+    "ch-02": {
+     "stance_on_hale": "armed",
+     "position": "lo-06"
+    },
+    "ob-04": {
+     "holder": "ch-01",
+     "assembled": 4
+    },
+    "ob-03": {
+     "holder": "ch-01",
+     "track": "hale_instructions"
+    },
+    "lo-06": {
+     "tokens_present": "with_hale",
+     "sun_on_stone": false,
+     "uv_encroaching": true
+    },
+    "ob-08": {
+     "exists": false,
+     "holder": "none"
+    },
+    "ob-01": {
+     "film_left": 2,
+     "holder": "ch-02"
+    },
+    "ob-02": {
+     "frame_count": 18,
+     "content_flag": "dawn_site",
+     "holder": "ch-02"
+    },
+    "ob-05": {
+     "holder": "ch-02",
+     "powered": true
+    },
+    "cn-01": {
+     "invocation_spoken": false,
+     "match_running": true,
+     "decoded_by_hale": "full_cost"
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-016",
+     "type": "decision",
+     "text": "He does not speak the invocation. He puts the four tokens into her free hand and presses the cassette in after them. The prize leaves his jacket without a word being spent. She has to close her fingers or drop the board.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-04",
+      "ob-03"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "tokens_held",
+       "dimension": "material",
+       "before": 4,
+       "after": 0,
+       "magnitude": 80,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/tokens_held",
+        "value": 0
+       }
+      },
+      {
+       "entity": "ob-04",
+       "variable": "holder",
+       "dimension": "material",
+       "before": "ch-01",
+       "after": "ch-02",
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/ob-04/state/holder",
+        "value": "ch-02"
+       }
+      },
+      {
+       "entity": "ob-03",
+       "variable": "holder",
+       "dimension": "material",
+       "before": "ch-01",
+       "after": "ch-02",
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ob-03/state/holder",
+        "value": "ch-02"
+       }
+      },
+      {
+       "entity": "lo-06",
+       "variable": "tokens_present",
+       "dimension": "material",
+       "before": "with_hale",
+       "after": "with_cora",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/lo-06/state/tokens_present",
+        "value": "with_cora"
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "prize_claim",
+       "dimension": "world",
+       "before": "pursuing",
+       "after": "forfeit",
+       "magnitude": 95,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/prize_claim",
+        "value": "forfeit"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-016",
+     "type": "action",
+     "text": "He steps back into the last scrap of shade as the sun takes the stone. Light catches the hand he used to give the tokens and lays a scorch across it that does not begin to close. Smoke lifts off the skin.",
+     "participants": [
+      "ch-01",
+      "lo-06"
+     ],
+     "changes": [
+      {
+       "entity": "lo-06",
+       "variable": "sun_on_stone",
+       "dimension": "world",
+       "before": false,
+       "after": true,
+       "magnitude": 60,
+       "op": {
+        "op": "replace",
+        "path": "/lo-06/state/sun_on_stone",
+        "value": true
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "sun_injury",
+       "dimension": "physiological",
+       "before": "none",
+       "after": "hand_scorch",
+       "magnitude": 90,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/sun_injury",
+        "value": "hand_scorch"
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "hunger",
+       "dimension": "physiological",
+       "before": 91,
+       "after": 97,
+       "magnitude": 25,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/hunger",
+        "value": 97
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-016",
+     "type": "action",
+     "text": "She fires the Polaroid at his face while the burn is still smoking. The camera ejects the print into her archive hand. One frame left in the pack. His face begins to come up in the emulsion beside the tokens.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-01",
+      "ob-02",
+      "ob-08"
+     ],
+     "changes": [
+      {
+       "entity": "ob-08",
+       "variable": "exists",
+       "dimension": "material",
+       "before": false,
+       "after": true,
+       "magnitude": 85,
+       "op": {
+        "op": "replace",
+        "path": "/ob-08/state/exists",
+        "value": true
+       }
+      },
+      {
+       "entity": "ob-08",
+       "variable": "holder",
+       "dimension": "material",
+       "before": "none",
+       "after": "ch-02",
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/ob-08/state/holder",
+        "value": "ch-02"
+       }
+      },
+      {
+       "entity": "ob-01",
+       "variable": "film_left",
+       "dimension": "material",
+       "before": 2,
+       "after": 1,
+       "magnitude": 10,
+       "op": {
+        "op": "replace",
+        "path": "/ob-01/state/film_left",
+        "value": 1
+       }
+      },
+      {
+       "entity": "ob-02",
+       "variable": "frame_count",
+       "dimension": "material",
+       "before": 18,
+       "after": 19,
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ob-02/state/frame_count",
+        "value": 19
+       }
+      },
+      {
+       "entity": "ob-02",
+       "variable": "content_flag",
+       "dimension": "epistemic",
+       "before": "dawn_site",
+       "after": "hale_face",
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/ob-02/state/content_flag",
+        "value": "hale_face"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-016",
+     "type": "reversal",
+     "text": "He remains inside the match, prize forfeit, now a face in a stack that will outlast a sleep. The lamp stays on. He does not come toward it. The scorch does not knit. The last clean customer is what the light took.",
+     "participants": [
+      "ch-01",
+      "ch-02",
+      "ob-05"
+     ],
+     "changes": [
+      {
+       "entity": "ch-01",
+       "variable": "cover",
+       "dimension": "social",
+       "before": "named",
+       "after": "archived",
+       "magnitude": 75,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/cover",
+        "value": "archived"
+       }
+      },
+      {
+       "entity": "ch-01",
+       "variable": "detachment",
+       "dimension": "psychological",
+       "before": 14,
+       "after": 6,
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/ch-01/state/detachment",
+        "value": 6
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-01": {
+     "prize_claim": "forfeit",
+     "sun_injury": "hand_scorch",
+     "tokens_held": 0,
+     "cover": "archived",
+     "detachment": 6,
+     "hunger": 97,
+     "position": "lo-06"
+    },
+    "ch-02": {
+     "stance_on_hale": "armed",
+     "position": "lo-06"
+    },
+    "ob-04": {
+     "holder": "ch-02",
+     "assembled": 4
+    },
+    "ob-03": {
+     "holder": "ch-02",
+     "track": "hale_instructions"
+    },
+    "lo-06": {
+     "tokens_present": "with_cora",
+     "sun_on_stone": true,
+     "uv_encroaching": true
+    },
+    "ob-08": {
+     "exists": true,
+     "holder": "ch-02"
+    },
+    "ob-01": {
+     "film_left": 1,
+     "holder": "ch-02"
+    },
+    "ob-02": {
+     "frame_count": 19,
+     "content_flag": "hale_face",
+     "holder": "ch-02"
+    },
+    "ob-05": {
+     "holder": "ch-02",
+     "powered": true
+    },
+    "cn-01": {
+     "invocation_spoken": false,
+     "match_running": true,
+     "decoded_by_hale": "full_cost"
+    }
+   },
+   "dramatic_function": "Withheld invocation: he gives her the tokens and the cassette, takes a sun-scorch that will not regenerate, and remains the face in a stack the wipe cannot cancel.",
+   "tension_in": 95,
+   "tension_out": 92,
+   "questions_opened": {},
+   "questions_closed": [
+    "q30",
+    "q32",
+    "q35",
+    "q36"
+   ],
+   "target_words": 500
+  },
+  "sc-017": {
+   "scene_id": "sc-017",
+   "discourse_index": 17,
+   "chapter": 4,
+   "primary_event": "ev-017",
+   "events": [
+    "ev-017"
+   ],
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "story_time_label": "Morning after, 06:40",
+   "location": "lo-02",
+   "pov": "ch-02",
+   "narrative_mode": "scene",
+   "present": [
+    "ch-02"
+   ],
+   "offstage_referenced": [
+    "ch-01",
+    "ch-03",
+    "lo-06",
+    "lo-07",
+    "ob-03",
+    "ob-04",
+    "ob-07",
+    "ob-08"
+   ],
+   "entry_states": {
+    "ch-02": {
+     "tokens_hidden": false,
+     "stance_on_hale": "armed",
+     "position": "lo-06",
+     "retained_night": 76,
+     "archive_depth": 19,
+     "existential_stability": 40
+    },
+    "ob-04": {
+     "holder": "ch-02",
+     "assembled": 4
+    },
+    "lo-06": {
+     "tokens_present": "with_cora",
+     "sun_on_stone": true
+    },
+    "ob-07": {
+     "polaroid_clipped_beside": false,
+     "amount": 98
+    },
+    "lo-02": {
+     "register_display": "notes_only",
+     "window_artifact": "none",
+     "after_dark_policy": "locked"
+    },
+    "ob-03": {
+     "track": "hale_instructions",
+     "holder": "ch-02"
+    },
+    "lo-07": {
+     "fog_read": "weather",
+     "closed": true
+    },
+    "ch-03": {
+     "experiment_phase": "doubling_down"
+    },
+    "ob-08": {
+     "holder": "ch-02",
+     "exists": true
+    }
+   },
+   "beats": [
+    {
+     "beat": 1,
+     "event_id": "ev-017",
+     "type": "action",
+     "text": "Before another nightfall Cora hides the tokens under the stone's north face, where no Guest walking the dawn site would think to look. She packs dirt back over the cache with the heel of her shoe. The board no longer has a winner.",
+     "participants": [
+      "ch-02",
+      "ob-04",
+      "lo-06"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "tokens_hidden",
+       "dimension": "material",
+       "before": false,
+       "after": true,
+       "magnitude": 80,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/tokens_hidden",
+        "value": true
+       }
+      },
+      {
+       "entity": "ob-04",
+       "variable": "holder",
+       "dimension": "material",
+       "before": "ch-02",
+       "after": "hidden",
+       "magnitude": 75,
+       "op": {
+        "op": "replace",
+        "path": "/ob-04/state/holder",
+        "value": "hidden"
+       }
+      },
+      {
+       "entity": "lo-06",
+       "variable": "tokens_present",
+       "dimension": "material",
+       "before": "with_cora",
+       "after": "hidden_nearby",
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/lo-06/state/tokens_present",
+        "value": "hidden_nearby"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 2,
+     "event_id": "ev-017",
+     "type": "transition",
+     "text": "After sunrise she is back at the diner. She clips the still-developing Polaroid of his face to the register beside the tip jar. The emulsion is still coming up. She turns from armed to keeping. The print now belongs to the counter.",
+     "participants": [
+      "ch-02",
+      "ob-07",
+      "ob-08",
+      "lo-02"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "position",
+       "dimension": "spatial",
+       "before": "lo-06",
+       "after": "lo-02",
+       "magnitude": 25,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/position",
+        "value": "lo-02"
+       }
+      },
+      {
+       "entity": "ob-07",
+       "variable": "polaroid_clipped_beside",
+       "dimension": "material",
+       "before": false,
+       "after": true,
+       "magnitude": 70,
+       "op": {
+        "op": "replace",
+        "path": "/ob-07/state/polaroid_clipped_beside",
+        "value": true
+       }
+      },
+      {
+       "entity": "lo-02",
+       "variable": "register_display",
+       "dimension": "material",
+       "before": "notes_only",
+       "after": "hale_polaroid",
+       "magnitude": 65,
+       "op": {
+        "op": "replace",
+        "path": "/lo-02/state/register_display",
+        "value": "hale_polaroid"
+       }
+      },
+      {
+       "entity": "ob-08",
+       "variable": "holder",
+       "dimension": "material",
+       "before": "ch-02",
+       "after": "lo-02",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/ob-08/state/holder",
+        "value": "lo-02"
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "stance_on_hale",
+       "dimension": "emotional",
+       "before": "armed",
+       "after": "archivist",
+       "magnitude": 55,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/stance_on_hale",
+        "value": "archivist"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 3,
+     "event_id": "ev-017",
+     "type": "action",
+     "text": "She sets the cassette in the deck and lets it run. The ribbon goes to leader and hisses. A roll-bar climbs the front window and holds. Out past the loop the fog no longer reads as weather.",
+     "participants": [
+      "ch-02",
+      "ob-03",
+      "lo-02",
+      "lo-07"
+     ],
+     "changes": [
+      {
+       "entity": "ob-03",
+       "variable": "track",
+       "dimension": "epistemic",
+       "before": "hale_instructions",
+       "after": "leader_hiss",
+       "magnitude": 35,
+       "op": {
+        "op": "replace",
+        "path": "/ob-03/state/track",
+        "value": "leader_hiss"
+       }
+      },
+      {
+       "entity": "lo-02",
+       "variable": "window_artifact",
+       "dimension": "technological",
+       "before": "none",
+       "after": "roll_bar",
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/lo-02/state/window_artifact",
+        "value": "roll_bar"
+       }
+      },
+      {
+       "entity": "lo-07",
+       "variable": "fog_read",
+       "dimension": "technological",
+       "before": "weather",
+       "after": "static",
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/lo-07/state/fog_read",
+        "value": "static"
+       }
+      }
+     ]
+    },
+    {
+     "beat": 4,
+     "event_id": "ev-017",
+     "type": "decision",
+     "text": "She turns the lock to open for breakfast because the till is still how she leaves town, and the looping road is still closed. The hours hold. Somewhere in town the pocket book closes on a failed trial. She keeps the face the wipe cannot cancel.",
+     "participants": [
+      "ch-02",
+      "ch-03",
+      "lo-02",
+      "lo-07"
+     ],
+     "changes": [
+      {
+       "entity": "ch-02",
+       "variable": "retained_night",
+       "dimension": "epistemic",
+       "before": 76,
+       "after": 94,
+       "magnitude": 40,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/retained_night",
+        "value": 94
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "archive_depth",
+       "dimension": "material",
+       "before": 19,
+       "after": 24,
+       "magnitude": 30,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/archive_depth",
+        "value": 24
+       }
+      },
+      {
+       "entity": "ch-02",
+       "variable": "existential_stability",
+       "dimension": "psychological",
+       "before": 40,
+       "after": 54,
+       "magnitude": 35,
+       "op": {
+        "op": "replace",
+        "path": "/ch-02/state/existential_stability",
+        "value": 54
+       }
+      },
+      {
+       "entity": "ch-03",
+       "variable": "experiment_phase",
+       "dimension": "epistemic",
+       "before": "doubling_down",
+       "after": "failed",
+       "magnitude": 50,
+       "op": {
+        "op": "replace",
+        "path": "/ch-03/state/experiment_phase",
+        "value": "failed"
+       }
+      }
+     ]
+    }
+   ],
+   "exit_states": {
+    "ch-02": {
+     "tokens_hidden": true,
+     "stance_on_hale": "archivist",
+     "position": "lo-02",
+     "retained_night": 94,
+     "archive_depth": 24,
+     "existential_stability": 54
+    },
+    "ob-04": {
+     "holder": "hidden",
+     "assembled": 4
+    },
+    "lo-06": {
+     "tokens_present": "hidden_nearby",
+     "sun_on_stone": true
+    },
+    "ob-07": {
+     "polaroid_clipped_beside": true,
+     "amount": 98
+    },
+    "lo-02": {
+     "register_display": "hale_polaroid",
+     "window_artifact": "roll_bar",
+     "after_dark_policy": "locked"
+    },
+    "ob-03": {
+     "track": "leader_hiss",
+     "holder": "ch-02"
+    },
+    "lo-07": {
+     "fog_read": "static",
+     "closed": true
+    },
+    "ch-03": {
+     "experiment_phase": "failed"
+    },
+    "ob-08": {
+     "holder": "lo-02",
+     "exists": true
+    }
+   },
+   "dramatic_function": "Seized continuity: she hides the tokens, clips his still-developing face beside the tip jar, and keeps the hours the wipe cannot cancel.",
+   "tension_in": 70,
+   "tension_out": 48,
+   "questions_opened": {
+    "q37": "What does a Guest do in a waking town with a scorch, a forfeit prize, and no exit but hunger?"
+   },
+   "questions_closed": [
+    "q34"
+   ],
+   "target_words": 560
+  }
+ }
+}

@@ -1,0 +1,551 @@
+<meta charset="utf-8">
+<title>GLM-5.2 On Our Own Metal</title>
+<style>
+:root{
+  --ground:#e9ebee;--surface:#f7f8fa;--surface-2:#eef0f3;--sunken:#dfe3e8;
+  --ink:#161a1f;--ink-2:#39424d;--muted:#66717e;--faint:#93a0ae;
+  --line:#cfd6de;--line-soft:#dde3ea;
+  --heat:#c2451a;--heat-soft:#f0d5c9;--heat-ink:#8f3212;
+  --quench:#2f6f8f;--quench-soft:#cfdfe8;--quench-ink:#23566f;
+  --good:#3f7d55;--good-soft:#d6e6db;--crit:#b03b26;--crit-soft:#f2d7d1;
+  --warn:#8a6a12;--warn-soft:#f0e6cc;
+  --shadow:0 1px 2px rgba(20,28,38,.07),0 10px 28px -14px rgba(20,28,38,.25);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;
+  --line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--heat-ink:#f0a077;
+  --quench:#6aa8c6;--quench-soft:#152935;--quench-ink:#9cc9dd;
+  --good:#67a97e;--good-soft:#17281d;--crit:#d4715c;--crit-soft:#2e1713;
+  --warn:#c99b45;--warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.75);
+}}
+:root[data-theme="dark"]{
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;
+  --line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--heat-ink:#f0a077;
+  --quench:#6aa8c6;--quench-soft:#152935;--quench-ink:#9cc9dd;
+  --good:#67a97e;--good-soft:#17281d;--crit:#d4715c;--crit-soft:#2e1713;
+  --warn:#c99b45;--warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.75);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0}
+a{color:var(--quench)}
+:focus-visible{outline:2px solid var(--heat);outline-offset:2px}
+.wrap{max-width:960px;margin:0 auto;padding:0 26px 100px}
+header.top{border-bottom:1px solid var(--line);background:var(--surface);margin-bottom:42px}
+header.top .wrap{padding-top:50px;padding-bottom:34px}
+.kicker{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--heat);
+  font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(29px,4.8vw,42px);line-height:1.13;letter-spacing:-.02em;margin-bottom:15px}
+.standfirst{font-size:18.5px;color:var(--ink-2);max-width:64ch;font-family:var(--serif);line-height:1.5}
+.meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px;font-size:12.5px;color:var(--faint);
+  font-family:var(--mono)}
+h2{font-size:25px;letter-spacing:-.015em;margin:50px 0 6px;padding-top:6px}
+h2 .num{font-family:var(--mono);font-size:12px;color:var(--heat);display:block;
+  margin-bottom:7px;letter-spacing:.08em;font-weight:700}
+h3{font-size:17.5px;margin:28px 0 9px}
+p{margin:0 0 14px;max-width:68ch}
+ul,ol{max-width:66ch;padding-left:22px}li{margin-bottom:7px}
+code{font-family:var(--mono);font-size:.88em;background:var(--surface-2);padding:1.5px 5px;
+  border-radius:4px;border:1px solid var(--line-soft)}
+strong{font-weight:650}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;padding:14px 16px}
+.stat .n{font-family:var(--mono);font-size:23px;font-weight:700;line-height:1;color:var(--ink);
+  font-variant-numeric:tabular-nums}
+.stat .l{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-top:7px}
+.stat .s{font-size:12px;color:var(--muted);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;
+  padding:19px 23px;margin:20px 0}
+.eyebrow{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-bottom:9px}
+.verdict{border-radius:9px;padding:18px 22px;margin:22px 0;border:1px solid;box-shadow:var(--shadow)}
+.verdict.no{background:var(--crit-soft);border-color:var(--crit)}
+.verdict.yes{background:var(--good-soft);border-color:var(--good)}
+.verdict.hold{background:var(--warn-soft);border-color:var(--warn)}
+.verdict .lbl{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.verdict.no .lbl{color:var(--crit)}.verdict.yes .lbl{color:var(--good)}.verdict.hold .lbl{color:var(--warn)}
+.verdict .big{font-family:var(--serif);font-size:21px;line-height:1.34;margin-bottom:8px}
+.verdict p{margin-bottom:0;font-size:15px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:18px 0}
+th{text-align:left;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;padding:8px 12px 8px 0;border-bottom:1px solid var(--line)}
+td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line-soft);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;padding-right:0}
+.scroll{overflow-x:auto}
+.good{color:var(--good);font-weight:650}.bad{color:var(--crit);font-weight:650}
+.warnc{color:var(--warn);font-weight:650}
+pre{background:var(--sunken);border:1px solid var(--line);border-radius:7px;padding:15px 17px;
+  overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:1.55;margin:18px 0}
+.bar{display:grid;grid-template-columns:118px 1fr 72px;align-items:center;gap:12px;margin:8px 0}
+.bar .nm{font-size:12.5px;color:var(--ink-2);font-family:var(--mono)}
+.bar .track{height:20px;background:var(--sunken);border-radius:4px;overflow:hidden}
+.bar .fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:8px;
+  font-size:11.5px;font-family:var(--mono);color:#fff;font-weight:600}
+.bar .val{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-align:right}
+.note{font-size:13.5px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tag{font-family:var(--mono);font-size:11.5px;padding:3px 9px;border-radius:5px;
+  background:var(--surface-2);border:1px solid var(--line-soft);color:var(--muted)}
+.tag.g{background:var(--good-soft);border-color:transparent;color:var(--good)}
+.tag.r{background:var(--crit-soft);border-color:transparent;color:var(--crit)}
+.pipe{font-family:var(--mono);font-size:12.5px;line-height:1.75;color:var(--ink-2);
+  background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;
+  padding:17px 19px;overflow-x:auto;margin:18px 0}
+.pipe b{color:var(--heat)}.pipe i{color:var(--faint);font-style:normal}
+hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+footer{color:var(--faint);font-size:13px;border-top:1px solid var(--line);padding-top:20px;margin-top:50px}
+@media(max-width:640px){.bar{grid-template-columns:84px 1fr 58px}}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="kicker">Deployment report · local inference</div>
+  <h1>GLM-5.2 on our own metal</h1>
+  <p class="standfirst">754 billion parameters, abliterated, quantised, running on eight A100s in
+  this rack. What it took to get there, how fast it actually is, why four GPUs cannot do it, and
+  what speculative decoding could still buy us.</p>
+  <div class="meta">
+    <span>15 August 2026</span><span>8 × A100-SXM4-80GB</span><span>llama.cpp, built from source</span>
+  </div>
+</div></header>
+
+<div class="wrap">
+
+<h2><span class="num">01</span>It runs</h2>
+<div class="grid">
+  <div class="stat"><div class="n">754 B</div><div class="l">parameters</div><div class="s">40.5 B active/token</div></div>
+  <div class="stat"><div class="n">380 GiB</div><div class="l">live footprint</div><div class="s">measured across 8 GPUs</div></div>
+  <div class="stat"><div class="n">61 s</div><div class="l">load time</div><div class="s">9 GGUF shards</div></div>
+  <div class="stat"><div class="n">128 k</div><div class="l">context served</div><div class="s">1 M supported</div></div>
+</div>
+<p>The model is <code>huihui-ai/Huihui-GLM-5.2-abliterated-GGUF</code> at <code>UD-Q3_K_M</code>
+(3.64 bits per weight, 342.7 GB on disk), served by <code>llama-server</code> across all eight
+cards with flash attention on. The first generation came back as clean, schema-conformant JSON —
+no garbled tokens, no interleaved scripts, none of the corruption reported against some builds of
+this architecture.</p>
+
+<h2><span class="num">02</span>What speculative decoding actually does</h2>
+<p>Generating text one token at a time is <em>bandwidth-bound</em>, not compute-bound. To produce
+a single token the GPU must stream the active weights through memory — here <strong>18.4 GB per
+token</strong>. The arithmetic itself is trivial; the reading is what costs. The card spends its
+time waiting on memory with most of its compute idle.</p>
+
+<p>Speculative decoding exploits that idle compute. Something cheap <em>guesses</em> the next few
+tokens, and then the big model checks all the guesses <strong>in a single pass</strong> — because
+verifying four tokens costs almost exactly what generating one costs, given that the weight read
+is the same either way.</p>
+
+<div class="pipe">
+without      read 18.4 GB → 1 token   read 18.4 GB → 1 token   read 18.4 GB → 1 token
+             <i>three reads, three tokens</i>
+
+with         guess: ["scene", "_id", "\": \"", "sc-"]
+             read 18.4 GB → verify all four at once → <b>3 accepted, 1 rejected</b>
+             <i>one read, three tokens</i>
+</div>
+
+<p>Guesses that are right are free. Guesses that are wrong cost nothing but the discarded guess.
+So the speedup is set by the <strong>acceptance rate</strong> — how often the cheap guesser is
+right.</p>
+
+<p>That was the theory, and it predicted this workload would be the ideal case: our output is
+schema-bound JSON with the same keys over and over, about the most predictable token stream there
+is. Acceptance rates rise as entropy falls, so structured output should sit at the top of the
+usual 1.5–2× band or above.</p>
+
+<div class="verdict no">
+  <div class="lbl">Measured — and the prediction was wrong</div>
+  <div class="big">Speculative decoding made this model <em>slower</em>. Not marginally: 25% slower
+  than doing nothing at all.</div>
+  <p>Same 50k prompt, greedy decode, prompt cache pre-warmed so only decode is compared,
+  2500 tokens each:</p>
+</div>
+
+<div class="scroll"><table>
+<thead><tr><th>Config</th><th class="num">decode tok/s</th><th class="num">for 2500 tok</th><th>vs baseline</th></tr></thead>
+<tbody>
+<tr><td><code>--spec-type none</code></td><td class="num">16.70</td><td class="num">149.7 s</td><td>—</td></tr>
+<tr><td><code>--spec-type ngram-cache</code></td><td class="num">12.52</td><td class="num">199.7 s</td><td class="bad">25% slower</td></tr>
+</tbody></table></div>
+<p class="note">Acceptance rate from the server's own counters: 2,568 tokens drafted, 547 accepted
+— <strong>21.3%</strong>.</p>
+
+<h3>Why the intuition fails, and it is the architecture</h3>
+<p>The claim that verification is nearly free holds on a <em>dense</em> model, where the same
+weights are read no matter which tokens you are checking. GLM-5.2 is a sparse mixture of experts:
+8 of 256 experts fire per token, chosen per token. Each extra position in the verification batch
+therefore pulls in <strong>its own set of 8 routed experts</strong>, so the union of weights that
+must be streamed grows roughly linearly with draft length. Verification is not free — it is nearly
+as expensive as generation.</p>
+<p>At 21% acceptance you pay for about 4.7 drafted tokens to keep one, and those extra expert
+gathers cost more than the tokens saved. On a 40 B-active MoE the break-even acceptance rate is
+somewhere around <strong>55–65%</strong>, not the ~30% that would suffice on a dense model. Low
+entropy was not enough to get an n-gram drafter there.</p>
+<p>This is the useful transferable finding, and it cuts against the general advice: on sparse MoE
+models, speculative decoding needs a far better drafter than the folklore suggests, and a mediocre
+one is actively harmful.</p>
+
+<h3>Two routes are open, and one is already paid for</h3>
+<p>The build supports:</p>
+<div class="tags">
+  <span class="tag g">draft-mtp</span><span class="tag">draft-eagle3</span>
+  <span class="tag">draft-dspark</span><span class="tag">draft-dflash</span>
+  <span class="tag">draft-simple</span>
+  <span class="tag g">ngram-cache</span><span class="tag g">ngram-mod</span>
+  <span class="tag g">ngram-simple</span><span class="tag g">ngram-map-k</span>
+</div>
+<p><strong>MTP — the draft weights are already in the file.</strong> GLM-5.2 ships a
+multi-token-prediction head as layer <code>blk.78</code>. The loader currently discards it:
+26 tensors, <strong>4.56 GiB</strong>, each logged as <em>"unused tensor … ignoring"</em>. That is
+a purpose-built guesser, already downloaded, already sitting on disk, doing nothing. An earlier
+read of this said MTP needed a sidecar the repo does not publish; the loader output contradicts
+that. Reading the server source settles it: the speculative init builds the draft context from the
+<em>target</em> model already resident in memory — no second model, no <code>-md</code> flag. The
+tensors are dropped only because nothing asks for them.</p>
+<p>So <code>--spec-type draft-mtp</code> was a one-flag experiment costing about 4.56 GiB against
+250 GiB free — and it had to clear roughly 55–65% acceptance just to break even.</p>
+
+<div class="verdict yes">
+  <div class="lbl">Measured — and this one wins decisively</div>
+  <div class="big"><code>draft-mtp</code>: <strong>24.26 tok/s</strong> against 16.70 baseline.
+  <strong>+45%</strong>, at <strong>79.6% acceptance</strong>.</div>
+  <p>The trained head clears the break-even bar with room to spare — 3.39 tokens accepted per round
+  against the ~1 needed to break even. And because speculative decoding is exactly-equivalent by
+  construction, the 45% costs nothing in quality. It is the rare free lunch.</p>
+</div>
+
+<div class="scroll"><table>
+<thead><tr><th>Config</th><th class="num">decode tok/s</th><th class="num">acceptance</th><th>verdict</th></tr></thead>
+<tbody>
+<tr><td><code>none</code></td><td class="num">16.70</td><td class="num">—</td><td>baseline</td></tr>
+<tr><td><code>ngram-cache</code></td><td class="num">12.52</td><td class="num">21.3%</td><td class="bad">25% worse</td></tr>
+<tr><td><code>draft-mtp</code></td><td class="num">24.26</td><td class="num">79.6%</td><td class="good">45% better</td></tr>
+</tbody></table></div>
+
+<p>Runtime proof that the head was simply never being asked for: the baseline logs 26
+<em>"unused tensor"</em> warnings, and <code>draft-mtp</code> logs zero. No second model, no
+<code>-md</code> flag — it builds the draft context from the resident weights, exactly as the
+source suggested.</p>
+<p class="note">One trade-off: cold prefill drops from 258.9 to 185.9 tok/s. With prompt caching
+that is irrelevant; without it MTP still wins end-to-end by about 21%.</p>
+
+<h2><span class="num">03b</span>Concurrency: the measurement that changed the plan</h2>
+<p>Eight cards, one model, layer-split. The obvious hope is that running many requests at once
+recovers the idle seven. This is the question the whole 8-GPU case rests on, so it was measured
+rather than assumed — <code>-np 8</code>, MTP enabled, 1500 tokens per stream:</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Concurrent requests</th><th class="num">aggregate tok/s</th><th class="num">per stream</th></tr></thead>
+<tbody>
+<tr><td>1</td><td class="num">26.22</td><td class="num">26.20</td></tr>
+<tr><td>2</td><td class="num">27.33</td><td class="num">14.15</td></tr>
+<tr><td>4</td><td class="num">27.00</td><td class="num">7.26</td></tr>
+<tr><td>8</td><td class="num">26.06</td><td class="num">3.66</td></tr>
+</tbody></table></div>
+
+<div class="verdict no">
+  <div class="lbl">It does not scale at all</div>
+  <div class="big">Aggregate throughput is flat at ~26–27 tok/s across an eightfold range. Per
+  stream it divides exactly by N.</div>
+  <p>Eight concurrent calls finish in the time eight sequential calls would take. The box has a
+  hard ceiling around 27 tok/s and no amount of restructuring lifts it.</p>
+</div>
+
+<p>The mechanism is the same one that sank <code>ngram-cache</code>, which is what makes it worth
+stating as a rule. Different sequences route to <em>different</em> experts, so batching N sequences
+needs up to 8N distinct expert weight reads per step. Traffic scales with N; there is nothing to
+amortise. Dense models batch beautifully. A 256-expert top-8 MoE at small batch does not.</p>
+
+<div class="card">
+  <div class="eyebrow">The unifying rule</div>
+  <p style="margin-bottom:0">On a sparse MoE at small batch, <strong>anything that widens the batch
+  — speculative verification or concurrent sequences — pays close to full weight-traffic cost per
+  extra token.</strong> Only a drafter accurate enough to clear roughly 65% acceptance beats that.
+  It is why MTP wins at 79.6% and why both ngram-cache at 21.3% and plain concurrency lose. One
+  sentence covers three separate measurements, two of which contradicted a confident prediction.</p>
+</div>
+<p>Practical consequence: <strong>do not restructure a long job from serial to parallel.</strong>
+Issue calls sequentially and spend the effort on prompt-cache prefix stability instead.</p>
+<p><strong>The n-gram variants need no draft model at all.</strong> They guess from repetition in
+the text so far — which is exactly what a document full of repeated JSON keys provides. Zero extra
+VRAM, zero extra download.</p>
+<p class="note">The named-architecture drafters — <code>eagle3</code>, <code>dspark</code>,
+<code>dflash</code> — each want a separately trained draft model matched to the base. For an
+abliterated GLM-5.2 those do not exist, so they are compatible in the sense of being present in
+the build, and unusable in the sense of having nothing to load.</p>
+
+<h2><span class="num">03</span>Measured throughput</h2>
+<p>Single request, thinking disabled, real prompt sizes:</p>
+<div class="scroll"><table>
+<thead><tr><th>Prompt</th><th class="num">prefill tok/s</th><th class="num">decode tok/s</th></tr></thead>
+<tbody>
+<tr><td>1.6 k (warm-up)</td><td class="num">396.0</td><td class="num">21.7</td></tr>
+<tr><td>20 k</td><td class="num">305.2</td><td class="num">18.9</td></tr>
+<tr><td>50 k</td><td class="num">259.1</td><td class="num">16.6</td></tr>
+<tr><td>50 k, thinking on, 12 k out</td><td class="num">259.4</td><td class="num">16.4</td></tr>
+<tr><td>65 k</td><td class="num">254.9</td><td class="num">15.7</td></tr>
+</tbody></table></div>
+<div class="bars">
+  <div class="bar"><span class="nm">roofline</span><div class="track"><div class="fill" style="width:100%;background:var(--faint)">110.7 theoretical</div></div><span class="val">110.7</span></div>
+  <div class="bar"><span class="nm">at 1.6k ctx</span><div class="track"><div class="fill" style="width:20%;background:var(--quench)">21.7</div></div><span class="val">20%</span></div>
+  <div class="bar"><span class="nm">at 65k ctx</span><div class="track"><div class="fill" style="width:14%;background:var(--heat)">15.7</div></div><span class="val">14%</span></div>
+</div>
+<p>Decode falls about 28% from short to long context. Against a theoretical ceiling of 110.7 tok/s
+— one A100's 2039 GB/s divided by 18.4 GB of weight traffic per token — we are getting 14–20%,
+which is the normal band for a sparse MoE in llama.cpp: the routed expert matmuls are only 2048
+wide, so the gather is latency-bound rather than bandwidth-bound.</p>
+
+<h2><span class="num">04</span>Would two endpoints of four GPUs be faster?</h2>
+<p>This is the question worth answering carefully, because the intuition — twice the endpoints,
+twice the throughput — is right about concurrency and wrong about everything else.</p>
+
+<h3>First, the good quant does not fit on four</h3>
+<div class="scroll"><table>
+<thead><tr><th>Quantisation</th><th class="num">bpw</th><th class="num">weights</th><th>4 GPUs (314.9 GiB)</th><th>8 GPUs</th></tr></thead>
+<tbody>
+<tr><td><code>UD-Q3_K_M</code></td><td class="num">3.64</td><td class="num">319.2 GiB</td><td class="bad">no — over before any KV cache</td><td class="good">yes, 47% spare</td></tr>
+<tr><td><code>UD-Q2_K_MXFP4</code></td><td class="num">2.68</td><td class="num">235.2 GiB</td><td class="good">yes, ~62 GiB spare</td><td class="good">yes</td></tr>
+<tr><td><code>UD-IQ1_M</code></td><td class="num">2.45</td><td class="num">215.3 GiB</td><td class="good">yes</td><td class="good">yes</td></tr>
+<tr><td><code>DS4 IQ2_XXS</code></td><td class="num">2.24</td><td class="num">196.6 GiB</td><td class="good">yes</td><td class="good">yes</td></tr>
+</tbody></table></div>
+<p>Measured live footprint at 128k context: <strong>380.2 GiB</strong>. Four A100s give 314.9 GiB
+usable. Even with the KV cache stripped to nothing the weights alone leave under 0.1 GiB of margin.
+This is not a close call — the minimum for <code>UD-Q3_K_M</code> is <strong>five</strong> GPUs.
+And there is no Q4 in the abliterated repo at all; Q3_K_M is the largest thing published.</p>
+
+<h3>Second, the honest case for 2×4</h3>
+<p>It is not nothing. A smaller quant reads fewer bytes per token, so each request also decodes
+faster — <code>UD-Q2_K_MXFP4</code> has a roofline of 150 tok/s against Q3's 111, roughly 36%
+more headroom. Two independent endpoints then double concurrency on top of that. For a batch of
+independent calls, 2×4 at Q2 could plausibly beat 1×8 at Q3 on <em>aggregate</em> tokens per
+second.</p>
+
+<div class="verdict no">
+  <div class="lbl">Recommendation</div>
+  <div class="big">One 8-GPU endpoint at Q3_K_M, not two 4-GPU endpoints at Q2.</div>
+  <p>Two smaller endpoints would double throughput on the axis we are least short of —
+  concurrency — while degrading the axis this pipeline actually depends on: getting one long
+  structured call right the first time.</p>
+</div>
+
+<p>Three specifics make sub-3-bpw a bad trade <em>for this workload</em>, as opposed to in general:</p>
+<ul>
+<li><strong>Long structured emissions.</strong> Our real calls run to 29,190 output tokens
+(<code>entities</code>) and 27,563 (<code>events</code>). Low-bit quantisation degrades exactly
+the narrow-margin decisions — a brace, a quote, a consistent key name deep in a nested structure —
+and one bad token invalidates the call. We already need repair passes at full precision: three of
+eight calls in the last run. The repair rate is what would get worse, and repairs are themselves
+30–45k-token calls.</li>
+<li><strong>Long-range state precision, and it fails silently.</strong> The patch design means a
+scene at t=25 is only correct if an attribute was tracked correctly across 24 prior patches. Low-bit
+quantisation erodes precisely that, and it produces <em>well-formed JSON with a wrong value</em> —
+which no schema validator catches.</li>
+<li><strong>Abliteration has already spent part of the budget.</strong> These weights are
+refusal-ablated <em>and</em> quantised. Stacking 2.2 bpw on top compounds two independent sources
+of degradation.</li>
+</ul>
+<p>If concurrency is what we need, it comes from <code>--parallel N</code> slots on the one 8-GPU
+endpoint. Batched decode on a MoE this sparse scales well, because extra sequences reuse the same
+expert weight reads — the expensive part is amortised across the batch.</p>
+<p class="note">Fair caveat: the quality judgement above is engineering reasoning, not measurement.
+Measuring it properly would mean downloading a second 253 GB quant and running a long-range
+consistency eval. That was not done.</p>
+
+<h2><span class="num">05</span>What a real job costs</h2>
+<p>Read from our own run logs rather than assumed:</p>
+<div class="scroll"><table>
+<thead><tr><th>Job</th><th class="num">calls</th><th class="num">prefilled</th><th class="num">generated</th></tr></thead>
+<tbody>
+<tr><td>One complete story, end to end</td><td class="num">29</td><td class="num">562 k</td><td class="num">467 k</td></tr>
+<tr><td>Reverse-engineering, upper layers only</td><td class="num">5</td><td class="num">303 k</td><td class="num">93 k</td></tr>
+</tbody></table></div>
+<p>At the measured 16 tok/s decode and 260 tok/s prefill, one complete story is roughly
+<strong>8 hours</strong> of wall-clock locally, against a few hours through the hosted API. Per
+call: a transition at 4–15k output tokens takes <strong>4 to 16 minutes</strong> locally versus
+30–120 seconds hosted.</p>
+<div class="verdict yes">
+  <div class="lbl">The largest lever, by a distance</div>
+  <div class="big">About <strong>74%</strong> of every token this model generates for us is hidden
+  reasoning. Suppressing it takes a full story from ~8.2 h to ~2.6 h.</div>
+  <p>GLM-5.2's chat template defaults to <em>Reasoning Effort: Max</em>. Left alone, three quarters
+  of the wall-clock goes to tokens nobody reads. That 3.2× dwarfs anything speculative decoding was
+  ever going to deliver — the boring knob beat the interesting one.</p>
+</div>
+<p>There is a reason to think this is unusually safe <em>here</em>, though it needs measuring
+rather than assuming. The scaffold already forces the reasoning to be written out explicitly into
+the schema — trajectories, theory of mind to three degrees, rejected alternatives, the specimen
+exchange. The model is being made to think <em>on the page</em>. Hidden thinking on top may be
+largely duplicated work, in which case switching it off is close to free. If instead quality
+collapses without it, we have learned the hidden reasoning was load-bearing and can pay for it
+knowingly. That test is running now.</p>
+<h3>Three of the obvious knobs are silent no-ops</h3>
+<p>This is the most immediately useful finding on the page, because the parameter most people would
+reach for first does nothing — and does nothing while returning HTTP 200. Identical prompt,
+<code>max_tokens</code> 1500:</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Request parameter</th><th class="num">tokens out</th><th class="num">hidden reasoning</th><th class="num">content</th><th>effect</th></tr></thead>
+<tbody>
+<tr><td>default</td><td class="num">1500</td><td class="num">5,035 c</td><td class="num">0</td><td class="bad">all budget on thinking</td></tr>
+<tr><td><code>reasoning_effort: "low"</code></td><td class="num">1500</td><td class="num">4,934 c</td><td class="num">0</td><td class="bad">silent no-op</td></tr>
+<tr><td><code>reasoning_effort: "minimal"</code></td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="bad">silent no-op</td></tr>
+<tr><td><code>reasoning: {"effort":"none"}</code></td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="bad">silent no-op</td></tr>
+<tr><td><code>reasoning_effort: "none"</code></td><td class="num">194</td><td class="num">0</td><td class="num">939 c</td><td class="good">works</td></tr>
+<tr><td><code>enable_thinking: false</code></td><td class="num">157</td><td class="num">0</td><td class="num">777 c</td><td class="good">works</td></tr>
+</tbody></table></div>
+
+<p>Read the first two rows again. The default burned its entire budget on hidden reasoning and
+returned <strong>zero content</strong> — and <code>"low"</code> did exactly the same. It is not a
+mild reduction; it is the maximum setting, reached by a name that promises the opposite.</p>
+
+<p>The cause is in the model's own chat template, which reads, in effect: <em>use 'high' if the
+request said exactly 'high', otherwise use 'max'</em>. Every value that is not the literal string
+<code>high</code> — including every word meaning "less" — is mapped to the most expensive setting
+there is. Only llama.cpp's special case for <code>"none"</code> escapes it.</p>
+
+<pre>"chat_template_kwargs": { "enable_thinking": false },
+"cache_prompt": true</pre>
+<p class="note">The general lesson generalises past this model: verify a performance parameter by
+measuring <code>completion_tokens</code>, never by checking that the call succeeded.</p>
+
+<h2><span class="num">06</span>Getting there</h2>
+<p>Two obstacles, neither of them the model.</p>
+<p><strong>The disk was full.</strong> 495 MB free on the machine's only volume, against a 342.7 GB
+download. Deleting finished training datasets and raw audio freed 559 GB; a dormant
+<code>/swapfile2</code> — 100 GiB, dated April, absent from <code>/proc/swaps</code> and from
+<code>/etc/fstab</code> — gave back another 100. Free space now stands at <strong>341 GB</strong>
+with the model on disk.</p>
+<p><strong>Nothing was installed.</strong> No <code>llama-server</code>, no vLLM or SGLang on PATH.
+The two that were present are not viable routes regardless: GLM-5.2 in bf16 is ~1.5 TB, more than
+twice the 640 GB of VRAM available, and neither stack's GGUF support covers a 754 B
+<code>glm_moe_dsa</code> MoE. llama.cpp publishes no prebuilt Linux CUDA binary, so it was built
+from source against the CUDA 12.8 toolkit already on the box.</p>
+
+<h3>One pleasant surprise in the architecture</h3>
+<p>GLM-5.2 uses multi-head latent attention, so llama.cpp caches only a 576-wide compressed latent
+with a single KV head. That is <strong>92.8 KiB per token</strong> — 11.6 GiB at the full 128k
+context, and 2.9 GiB at 32k. On most large models the KV cache is what decides your GPU count.
+Here it is a rounding error: the weights decide, and the cache is nearly free.</p>
+
+<h2><span class="num">06b</span>Does the quality survive? First results</h2>
+<p>Speed is worthless if the output degrades, and two things here could plausibly degrade it: a
+3.64-bpw abliterated copy of the weights, and switching off the hidden reasoning that accounts for
+three quarters of generation. So the same three scenes are being produced four ways and scored
+against the schema rather than judged by eye.</p>
+<p class="note">Running now — the table below is <strong>two scenes of three, and only the
+thinking-off arm</strong>. The thinking-high arm is still generating.</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Scene</th><th>Produced by</th><th class="num">violations</th><th class="num">words</th>
+<th class="num">complete blocks</th><th class="num">ToM at depth 3</th><th class="num">specimen</th>
+<th class="num">flat traj.</th><th>verdict</th></tr></thead>
+<tbody>
+<tr><td>sc-001</td><td>hosted, single call</td><td class="num bad">16</td><td class="num">3,898</td><td class="num">0/2</td><td class="num">2</td><td class="num">0</td><td class="num">—</td><td class="bad">thin</td></tr>
+<tr><td></td><td>hosted, scaffolded</td><td class="num good">0</td><td class="num">11,222</td><td class="num">2/2</td><td class="num">4</td><td class="num">7</td><td class="num">0/2</td><td class="good">pass</td></tr>
+<tr><td></td><td><strong>local, thinking off</strong></td><td class="num good">0</td><td class="num">20,663</td><td class="num">2/2</td><td class="num good">6</td><td class="num">6</td><td class="num">0/2</td><td class="good">pass</td></tr>
+<tr><td>sc-002</td><td>hosted, single call</td><td class="num bad">41</td><td class="num">3,601</td><td class="num">0/4</td><td class="num">3</td><td class="num">0</td><td class="num">—</td><td class="bad">thin</td></tr>
+<tr><td></td><td>hosted, scaffolded</td><td class="num good">0</td><td class="num">10,642</td><td class="num">1/1</td><td class="num">2</td><td class="num">7</td><td class="num">0/1</td><td class="good">pass</td></tr>
+<tr><td></td><td><strong>local, thinking off</strong></td><td class="num good">0</td><td class="num">13,303</td><td class="num">1/1</td><td class="num">2</td><td class="num">6</td><td class="num">0/1</td><td class="good">pass</td></tr>
+</tbody></table></div>
+
+<p>So far the local, thinking-off, 3.64-bpw abliterated build is <strong>matching the hosted
+model</strong> — zero schema violations, every psychology block complete, and on sc-001 more
+theory-of-mind towers carried to the third degree than the hosted run managed.</p>
+
+<p>The <em>flat trajectories</em> column is the one that matters most, and it exists because of a
+specific warning. A probe asking for a character moving from guarded to trusting came back with
+five identical phases, all <code>"guarded"</code> — and that probe ran with thinking disabled. The
+grammar guarantees a value is <em>in</em> the enum; it guarantees nothing about it being the
+<em>right</em> member. Schema conformance is a syntax check, and a pipeline that only counts
+violations would score that failure as perfect. Nothing flat has appeared in the real scenes yet.</p>
+
+<div class="verdict hold">
+  <div class="lbl">What is not yet shown</div>
+  <div class="big">Structural scores are not literary judgement, and this arm is not finished.</div>
+  <p>These metrics count whether fields are filled and towers are built. They reward volume, and
+  the local run is longer than the hosted one — so "better" rather than merely "more" rests on the
+  completeness and depth-3 columns, not the word count. The thinking-high arm is still running, and
+  the trajectories need reading by hand, not just counting.</p>
+</div>
+
+<h2><span class="num">06c</span>What all this means for a large job</h2>
+<p>Combining the measured levers, for one complete story of 29 calls:</p>
+<div class="scroll"><table>
+<thead><tr><th>Configuration</th><th class="num">wall-clock</th></tr></thead>
+<tbody>
+<tr><td>baseline, reasoning on</td><td class="num">8 h 12 min</td></tr>
+<tr><td>+ <code>draft-mtp</code></td><td class="num">6 h 10 min</td></tr>
+<tr><td>+ reasoning off</td><td class="num">2 h 15 min</td></tr>
+<tr><td>+ prompt caching</td><td class="num good">1 h 35 min</td></tr>
+</tbody></table></div>
+<p><strong>5.2× on the same hardware</strong>, none of it from adding GPUs. MTP contributes ~1.45×,
+reasoning-off ~2.7×, prompt caching most of the remainder. For a 224-scene feature the honest
+figure is around two days, serial — and, per the concurrency result, restructuring the job will not
+reduce it.</p>
+
+<hr>
+<h2 style="margin-top:0"><span class="num">07</span>Where this stands</h2>
+<ol>
+<li>It runs, on eight GPUs, at <strong>15.7–21.7 tok/s</strong> decode and 255–396 tok/s prefill,
+producing correct structured output.</li>
+<li><strong>Four GPUs is impossible</strong> at the only quantisation worth serving — 380.2 GiB
+measured against 314.9 GiB available. Five is the minimum, eight is comfortable.</li>
+<li><strong>Eight GPUs do not make anything faster</strong> — not one request, and, it turns out,
+not many either. Layer-split is a pipeline, so at batch 1 seven cards wait; and concurrency was
+measured flat at ~27 tok/s from 1 to 8 streams. The eight cards buy the <em>ability to run this
+model at this quantisation</em>, and nothing else. That is still the whole reason to have them.</li>
+<li><strong>Speculative decoding split both ways, and the split is the lesson.</strong> The
+n-gram drafter was a 25% regression at 21% acceptance; the model's own trained MTP head is a 45%
+gain at 79.6%. On a sparse MoE the technique is not mildly helpful or mildly unhelpful — it is
+strongly one or the other, decided by whether the drafter clears roughly 65%.</li>
+<li>For a single call, hosted remains faster. Local wins on data governance, on a pinned
+reproducible checkpoint, on cost at volume, and on not having a router between us and the weights
+— and after MTP and reasoning control, the gap is narrow enough that bulk generation belongs
+here.</li>
+<li><strong>The lever was the boring one.</strong> Three quarters of generated tokens are hidden
+reasoning; turning it off is a 3.2×, and this pipeline has specific reason to survive without it
+because it already writes its reasoning out explicitly.</li>
+<li><strong>And the biggest lever is not a decode question at all.</strong> Prompt caching cut a
+repeated 50 k prefix from 193.7 s to <strong>0.064 s</strong> — a factor of 2,400, with one token
+reprocessed. Keeping the context prefix byte-stable across calls makes prefill effectively vanish.
+No amount of speculative decoding competes with not doing the work twice.</li>
+</ol>
+
+<div class="card">
+  <div class="eyebrow">What this cost in wrong turns</div>
+  <p>Three confident predictions in this document were falsified by measurement, each within about
+  an hour of being written:</p>
+  <ol style="margin-bottom:0">
+    <li>that low-entropy JSON would make speculative decoding shine — it made it 25% worse;</li>
+    <li>that the MTP head needed a draft model the repository does not publish — it needed one
+    flag;</li>
+    <li>that a sparse MoE would batch well because concurrent sequences reuse expert reads — they
+    route to <em>different</em> experts, and aggregate throughput never moved.</li>
+  </ol>
+  <p style="margin-bottom:0">One and three were the same error twice: reasoning about a sparse MoE
+  with intuitions built on dense models. Both times the argument sounded solid. The rule that
+  survived — that widening the batch pays near-full cost on this architecture — was not derived,
+  it was extracted from two failures and one success. Cheap experiments beat confident reasoning,
+  and the correction cost minutes because the measurement was run first.</p>
+</div>
+
+<footer>
+Measurements from a live <code>llama-server</code> on this machine, 15 August 2026. Token counts
+for the workload section come from this repository's own <code>logs/usage.json</code> files. The
+<code>none</code> vs <code>ngram-cache</code> comparison was taken greedily with a pre-warmed
+prompt cache so that only decode is being compared. Still outstanding and not in this page:
+<code>draft-mtp</code>, the remaining n-gram variants, and the concurrency sweep at 1/2/4/8
+simultaneous requests — the last of these matters most, since at batch 1 seven of eight cards idle.
+</footer>
+</div>

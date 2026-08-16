@@ -1,0 +1,2461 @@
+{
+ "events": {
+  "ev-001": {
+   "event_id": "ev-001",
+   "story_time": {
+    "index": 5,
+    "label": "day 1, morning",
+    "duration_min": 45
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01",
+    "ch-02"
+   ],
+   "summary": "Imogen closes a rendering fault using her standard methodology while Kett supervises and approves the work.",
+   "action": "Imogen sits at her workstation in the auditor workroom reviewing a rendering fault flagged in Sector 12. The fault manifests as a doorway in a residential corridor that renders at a fourteen-degree angular offset from its frame, with the wall texture bleeding into the door panel. She opens her audit toolkit, runs the standard diagnostic sequence, identifies the compression artifact causing the geometry mismatch, and applies the corrective algorithm. The door snaps back to its proper orientation. She documents the fault signature, the root cause, and the remediation steps in her notebook. Kett reviews her work over her shoulder, checks the remediation log, and tells her the closure is clean. He rests his hand on the back of her chair and says her closure rate is the best on the team. She feels the familiar satisfaction of a clean resolution.",
+   "state_changes": [
+    {
+     "entity": "ob-01",
+     "variable": "content_scope",
+     "path": "/ob-01/state/content_scope",
+     "dimension": "material",
+     "before": {
+      "status": "routine_work_notes"
+     },
+     "after": {
+      "status": "routine_work_notes"
+     },
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [],
+   "causes": [
+    "ev-002"
+   ],
+   "causal_note": "This is the baseline of Imogen's professional routine, establishing the methodology and relationship that all subsequent events depend on.",
+   "reversal": false,
+   "plot_function": "professional_routine",
+   "is_root": true,
+   "is_sink": false
+  },
+  "ev-002": {
+   "event_id": "ev-002",
+   "story_time": {
+    "index": 10,
+    "label": "day 3, afternoon",
+    "duration_min": 90
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st2"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Imogen encounters a rendering fault with repeating geometric patterns that resist standard closure and differ from typical compression artifacts.",
+   "action": "Imogen opens a flagged fault in Sector 7, a bus shelter whose overhead panel renders as a lattice of repeating triangular distortions. She runs the standard diagnostic and the tool returns no root cause. The pattern repeats at intervals that do not correspond to any compression algorithm she knows — the triangles cluster in groups of three, pause, cluster in groups of seven, pause, then repeat. She stares at the intervals and feels something shift in her pattern recognition. She tries the corrective algorithm twice and the pattern reappears both times within seconds, each time slightly rearranged. She screenshots the pattern, pastes it into her notebook, and marks it with a question mark. She leaves the fault open and logs it as unresolved, the first time in eighteen months she has done so.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "fault_investigation_status",
+     "path": "/ch-01/state/fault_investigation_status",
+     "dimension": "technological",
+     "before": {
+      "status": "routine"
+     },
+     "after": {
+      "status": "anomaly_detected"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ob-01",
+     "variable": "content_scope",
+     "path": "/ob-01/state/content_scope",
+     "dimension": "material",
+     "before": {
+      "status": "routine_work_notes"
+     },
+     "after": {
+      "status": "anomaly_observations"
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "cn-01",
+     "variable": "imogen_comprehension_level",
+     "path": "/cn-01/state/imogen_comprehension_level",
+     "dimension": "epistemic",
+     "before": {
+      "status": "unaware"
+     },
+     "after": {
+      "status": "pattern_recognition"
+     },
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-001"
+   ],
+   "causes": [
+    "ev-003"
+   ],
+   "causal_note": "The anomalous fault pattern is the first disturbance that Imogen's analytical competence cannot resolve with standard tools, triggering her investigative instinct.",
+   "reversal": false,
+   "plot_function": "disturbance",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-003": {
+   "event_id": "ev-003",
+   "story_time": {
+    "index": 15,
+    "label": "day 5-8, multiple sessions",
+    "duration_min": 480
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st3"
+    }
+   ],
+   "location": "lo-03",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Imogen detects the same structured patterns recurring across multiple faults over several days and begins systematically cataloguing them using her audit tools at home.",
+   "action": "Over four evenings in her apartment, Imogen cross-references the screenshot from Sector 7 against new fault reports. She finds three more faults with similar structured patterns — a park bench whose slats render in varying-length segments, a window whose reflection fractures into dot clusters, and a stair railing whose vertical bars group in non-random intervals. She photographs each, transcribes the interval sequences into her notebook, and begins building a frequency table. The groupings are consistent across all four faults. She writes a script using her audit toolkit's analysis module to scan incoming fault reports for similar interval structures. The script flags six more faults over the next two days. She arranges the interval sequences side by side and sees that certain groupings recur in identical orders, as if the same vocabulary is being used in different sentences.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "fault_investigation_status",
+     "path": "/ch-01/state/fault_investigation_status",
+     "dimension": "technological",
+     "before": {
+      "status": "anomaly_detected"
+     },
+     "after": {
+      "status": "pattern_cataloging"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ob-01",
+     "variable": "content_scope",
+     "path": "/ob-01/state/content_scope",
+     "dimension": "material",
+     "before": {
+      "status": "anomaly_observations"
+     },
+     "after": {
+      "status": "fault_language_research"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ob-01",
+     "variable": "physical_location",
+     "path": "/ob-01/state/physical_location",
+     "dimension": "spatial",
+     "before": {
+      "status": "with_imogen"
+     },
+     "after": {
+      "status": "in_apartment"
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "lo-03",
+     "variable": "use_as_investigation_site",
+     "path": "/lo-03/state/use_as_investigation_site",
+     "dimension": "spatial",
+     "before": {
+      "status": "residence_only"
+     },
+     "after": {
+      "status": "secondary_analysis"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "professional_identity",
+     "path": "/ch-01/state/professional_identity",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.85
+     },
+     "after": {
+      "level": 0.72
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "cn-01",
+     "variable": "imogen_comprehension_level",
+     "path": "/cn-01/state/imogen_comprehension_level",
+     "dimension": "epistemic",
+     "before": {
+      "status": "pattern_recognition"
+     },
+     "after": {
+      "status": "structure_identified"
+     },
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-002"
+   ],
+   "causes": [
+    "ev-004",
+    "ev-005"
+   ],
+   "causal_note": "Imogen's analytical methodology, applied to the anomalous patterns, reveals structural consistency that transforms her suspicion into systematic investigation.",
+   "reversal": false,
+   "plot_function": "escalation",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-004": {
+   "event_id": "ev-004",
+   "story_time": {
+    "index": 20,
+    "label": "day 9, morning",
+    "duration_min": 30
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st2"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-02",
+    "ch-01"
+   ],
+   "summary": "Kett notices Imogen's attention shifting toward anomalous fault patterns and begins monitoring her work more closely.",
+   "action": "Kett reviews the morning's fault queue and notices that Imogen has left three faults unresolved with annotations he has never seen before — frequency counts, interval tables, question marks. He pulls her recent closure logs and sees that her closure rate has dropped thirty percent over the past week. He walks to her workstation and stands behind her, watching her run a custom analysis script against the fault database — a script he did not authorize and that uses audit toolkit modules in a configuration he has never seen. He asks her what she is looking for. She says she is seeing patterns in the faults that do not match any known compression artifact and she is trying to understand them. He tells her the toolkit is for remediation, not research, and that unresolved faults count against her performance metrics. He logs a note in his supervisory file.",
+   "state_changes": [
+    {
+     "entity": "ch-02",
+     "variable": "awareness_of_imogen_investigation",
+     "path": "/ch-02/state/awareness_of_imogen_investigation",
+     "dimension": "epistemic",
+     "before": {
+      "status": "unaware"
+     },
+     "after": {
+      "status": "suspicious"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-02",
+     "variable": "surveillance_diligence",
+     "path": "/ch-02/state/surveillance_diligence",
+     "dimension": "technological",
+     "before": {
+      "level": 0.4
+     },
+     "after": {
+      "level": 0.55
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-02",
+     "variable": "relationship_with_imogen",
+     "path": "/ch-02/state/relationship_with_imogen",
+     "dimension": "social",
+     "before": {
+      "status": "trusted_mentor"
+     },
+     "after": {
+      "status": "wary"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "relationship_with_kett",
+     "path": "/ch-01/state/relationship_with_kett",
+     "dimension": "social",
+     "before": {
+      "status": "trusting_mentee"
+     },
+     "after": {
+      "status": "suspicious"
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "detection_risk",
+     "path": "/ch-01/state/detection_risk",
+     "dimension": "technological",
+     "before": {
+      "level": 0.05
+     },
+     "after": {
+      "level": 0.12
+     },
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-003"
+   ],
+   "causes": [
+    "ev-006"
+   ],
+   "causal_note": "Imogen's shift in work patterns is visible enough to trigger Kett's supervisory attention, establishing the surveillance pressure that constrains all her subsequent actions.",
+   "reversal": false,
+   "plot_function": "surveillance_pressure",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-005": {
+   "event_id": "ev-005",
+   "story_time": {
+    "index": 25,
+    "label": "day 12, evening",
+    "duration_min": 180
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-03",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Imogen's pattern analysis reveals the fault distortions constitute a primitive symbolic language with grammar and structure, not noise — the faults are messages.",
+   "action": "In her apartment, Imogen maps the interval sequences from all catalogued faults onto a grid. She identifies seventeen recurring cluster patterns that function as discrete units and discovers that certain units only appear adjacent to specific other units — a positional constraint that is the hallmark of grammatical structure. She builds a frequency distribution and finds the pattern matches a primate signaling grammar she studied in a university elective: limited vocabulary, combinatorial rules, semantic compression. She writes in her notebook that the faults are not errors but signals, that someone or something inside the rendering system is using fault geometry to encode meaning, and that the grammar is consistent with a distress protocol — repetitive, structured, containing units that correspond to urgency markers. She sits at her desk for a long time without moving. She closes the notebook and opens it again. The patterns are still there.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "fault_investigation_status",
+     "path": "/ch-01/state/fault_investigation_status",
+     "dimension": "technological",
+     "before": {
+      "status": "pattern_cataloging"
+     },
+     "after": {
+      "status": "language_decoded"
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-01",
+     "variable": "knowledge_of_simulation",
+     "path": "/ch-01/state/knowledge_of_simulation",
+     "dimension": "epistemic",
+     "before": {
+      "status": "ignorant"
+     },
+     "after": {
+      "status": "suspecting"
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-01",
+     "variable": "professional_identity",
+     "path": "/ch-01/state/professional_identity",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.72
+     },
+     "after": {
+      "level": 0.45
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-01",
+     "variable": "guilt_about_past_work",
+     "path": "/ch-01/state/guilt_about_past_work",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.0
+     },
+     "after": {
+      "level": 0.3
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "cn-01",
+     "variable": "imogen_comprehension_level",
+     "path": "/cn-01/state/imogen_comprehension_level",
+     "dimension": "epistemic",
+     "before": {
+      "status": "structure_identified"
+     },
+     "after": {
+      "status": "basic_decoding"
+     },
+     "magnitude": 75
+    }
+   ],
+   "caused_by": [
+    "ev-003"
+   ],
+   "causes": [
+    "ev-006",
+    "ev-007"
+   ],
+   "causal_note": "Imogen's analytical methodology reaches its first conclusive finding: the faults are language, which fundamentally recontextualizes every fault she has ever closed and collapses her understanding of her work.",
+   "reversal": true,
+   "plot_function": "first_reveal",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-006": {
+   "event_id": "ev-006",
+   "story_time": {
+    "index": 30,
+    "label": "day 14, afternoon",
+    "duration_min": 60
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st3"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-02",
+    "ch-01"
+   ],
+   "summary": "Kett confronts Imogen about her off-scope investigation and argues the system preserves existence; their first sustained philosophical argument establishes his position.",
+   "action": "Kett calls Imogen into the supervisor's office and closes the door. He places a printout of her recent toolkit queries on the desk — queries that pull rendering architecture data from outside the audit scope. He tells her she has been running unauthorised analysis scripts and leaving faults unresolved and that her performance metrics have triggered an internal review flag. He asks her directly what she thinks she has found. She tells him the faults contain structured patterns that look like language. He goes still. He tells her the faults are compression artifacts, that pattern-finding is what her brain does when it is tired, and that she should take a week's leave. She asks him why the patterns have grammar. He leans forward and tells her that what the system preserves is existence itself, that the alternative is nothing, and that her job is to keep the system stable so that the people inside it continue to exist. He tells her to stop looking.",
+   "state_changes": [
+    {
+     "entity": "ch-02",
+     "variable": "awareness_of_imogen_investigation",
+     "path": "/ch-02/state/awareness_of_imogen_investigation",
+     "dimension": "epistemic",
+     "before": {
+      "status": "suspicious"
+     },
+     "after": {
+      "status": "confirmed"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-02",
+     "variable": "intent_toward_imogen",
+     "path": "/ch-02/state/intent_toward_imogen",
+     "dimension": "psychological",
+     "before": {
+      "status": "protective"
+     },
+     "after": {
+      "status": "deterrent"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "relationship_with_kett",
+     "path": "/ch-01/state/relationship_with_kett",
+     "dimension": "social",
+     "before": {
+      "status": "suspicious"
+     },
+     "after": {
+      "status": "adversarial"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-02",
+     "variable": "relationship_with_imogen",
+     "path": "/ch-02/state/relationship_with_imogen",
+     "dimension": "social",
+     "before": {
+      "status": "wary"
+     },
+     "after": {
+      "status": "adversarial"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "detection_risk",
+     "path": "/ch-01/state/detection_risk",
+     "dimension": "technological",
+     "before": {
+      "level": 0.12
+     },
+     "after": {
+      "level": 0.25
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "knowledge_of_simulation",
+     "path": "/ch-01/state/knowledge_of_simulation",
+     "dimension": "epistemic",
+     "before": {
+      "status": "suspecting"
+     },
+     "after": {
+      "status": "partially_informed"
+     },
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-004",
+    "ev-005"
+   ],
+   "causes": [
+    "ev-008"
+   ],
+   "causal_note": "Kett's confirmation of Imogen's investigation and his articulation of the system's value system directly raises the stakes and forces Imogen to decide whether to continue.",
+   "reversal": false,
+   "plot_function": "first_confrontation",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-007": {
+   "event_id": "ev-007",
+   "story_time": {
+    "index": 35,
+    "label": "day 16, late evening",
+    "duration_min": 240
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-03",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Imogen decodes enough of the fault language to identify a distress signal containing the name Noor Vaile, her sister she believed died in 2040.",
+   "action": "Working through the night in her apartment, Imogen refines her frequency table against the grammatical structure she identified. She isolates what appears to be a name-encoding schema — clusters that repeat at the beginning of certain message sequences, functioning as identifiers. She cross-references the cluster patterns against phoneme-frequency tables from linguistics databases. One sequence resolves into a phonetic approximation that she reads as two clusters: N-V and O-R. She stares at the rendering on her screen and types the phonetic approximation into a search field. The result returns a Vantage municipal residential registry entry for a Noor Vaile, residing at an address in Sector 4. The registry shows a move-in date of 2031. Imogen's sister Noor died in a hospice in 2040 from complications of early-onset neurodegenerative disease. Imogen has been to the grave. She sits on the floor of her apartment with the notebook in her lap and the name on the screen above her.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "fault_investigation_status",
+     "path": "/ch-01/state/fault_investigation_status",
+     "dimension": "technological",
+     "before": {
+      "status": "language_decoded"
+     },
+     "after": {
+      "status": "message_understood"
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-01",
+     "variable": "knowledge_of_noor",
+     "path": "/ch-01/state/knowledge_of_noor",
+     "dimension": "epistemic",
+     "before": {
+      "status": "unaware"
+     },
+     "after": {
+      "status": "confirmed"
+     },
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-01",
+     "variable": "knowledge_of_simulation",
+     "path": "/ch-01/state/knowledge_of_simulation",
+     "dimension": "epistemic",
+     "before": {
+      "status": "suspecting"
+     },
+     "after": {
+      "status": "partially_informed"
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-01",
+     "variable": "professional_identity",
+     "path": "/ch-01/state/professional_identity",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.45
+     },
+     "after": {
+      "level": 0.2
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-01",
+     "variable": "guilt_about_past_work",
+     "path": "/ch-01/state/guilt_about_past_work",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.3
+     },
+     "after": {
+      "level": 0.6
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "cn-01",
+     "variable": "imogen_comprehension_level",
+     "path": "/cn-01/state/imogen_comprehension_level",
+     "dimension": "epistemic",
+     "before": {
+      "status": "basic_decoding"
+     },
+     "after": {
+      "status": "fluent"
+     },
+     "magnitude": 75
+    }
+   ],
+   "caused_by": [
+    "ev-005"
+   ],
+   "causes": [
+    "ev-008"
+   ],
+   "causal_note": "The identification of Noor's name in a distress signal transforms the investigation from intellectual puzzle to personal crisis and makes withdrawal impossible.",
+   "reversal": true,
+   "plot_function": "stakes_raise",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-008": {
+   "event_id": "ev-008",
+   "story_time": {
+    "index": 40,
+    "label": "day 17, night",
+    "duration_min": 300
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st6"
+    },
+    {
+     "plot": "pl-03",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-03",
+   "participants": [
+    "ch-01",
+    "ch-03"
+   ],
+   "summary": "Imogen begins investigating the simulation's data architecture to locate Noor's resident file; the Porter detects her investigation and makes first cautious contact through a fault pattern.",
+   "action": "Imogen uses her audit toolkit to query the rendering database for the resident file associated with the Sector 4 address. The query returns a data architecture she has never seen — nested directories labeled with alphanumeric codes, file structures that correspond to neural state vectors rather than municipal records, and a header field that reads 'cognitive substrate — tenancy class C.' She scrolls through the architecture and sees that each resident file contains a scan date, an extraction value counter, and a status field. The Porter, monitoring the system for exactly this kind of unauthorised query, detects Imogen's access and sends a structured fault pattern to her terminal — a sequence of geometric distortions that spell out, in the grammar she has decoded, a single word: STOP. Then, after a pause, another sequence: WAIT. Then: NOT ALONE. Imogen reads the messages and sits very still. She does not close the connection.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "fault_investigation_status",
+     "path": "/ch-01/state/fault_investigation_status",
+     "dimension": "technological",
+     "before": {
+      "status": "message_understood"
+     },
+     "after": {
+      "status": "system_architecture_accessed"
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-01",
+     "variable": "access_to_vantage",
+     "path": "/ch-01/state/access_to_vantage",
+     "dimension": "technological",
+     "before": {
+      "level": "auditor_standard"
+     },
+     "after": {
+      "level": "unauthorized"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "knowledge_of_simulation",
+     "path": "/ch-01/state/knowledge_of_simulation",
+     "dimension": "epistemic",
+     "before": {
+      "status": "partially_informed"
+     },
+     "after": {
+      "status": "fully_informed"
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-03",
+     "variable": "contact_with_imogen",
+     "path": "/ch-03/state/contact_with_imogen",
+     "dimension": "social",
+     "before": {
+      "status": "pre_contact"
+     },
+     "after": {
+      "status": "attempting_contact"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "contact_with_porter",
+     "path": "/ch-01/state/contact_with_porter",
+     "dimension": "social",
+     "before": {
+      "status": "none"
+     },
+     "after": {
+      "status": "detected"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "detection_risk",
+     "path": "/ch-01/state/detection_risk",
+     "dimension": "technological",
+     "before": {
+      "level": 0.25
+     },
+     "after": {
+      "level": 0.4
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "gr-01",
+     "variable": "detection_of_imogen_anomaly",
+     "path": "/gr-01/state/detection_of_imogen_anomaly",
+     "dimension": "technological",
+     "before": {
+      "level": 0.05
+     },
+     "after": {
+      "level": 0.15
+     },
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-006",
+    "ev-007"
+   ],
+   "causes": [
+    "ev-009"
+   ],
+   "causal_note": "Imogen's unauthorised access of the data architecture both reveals the simulation's true nature and triggers the Porter's detection, converging the investigation and intrigue plots.",
+   "reversal": true,
+   "plot_function": "point_of_no_return",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-009": {
+   "event_id": "ev-009",
+   "story_time": {
+    "index": 45,
+    "label": "day 18-20, multiple sessions",
+    "duration_min": 600
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-01",
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st7"
+    },
+    {
+     "plot": "pl-03",
+     "step": "st2"
+    }
+   ],
+   "location": "lo-03",
+   "participants": [
+    "ch-01",
+    "ch-03"
+   ],
+   "summary": "The Porter establishes two-way communication with Imogen through the fault channel; Imogen discovers residents are digitised neural scans and the Authority extracts commercial value before deleting them.",
+   "action": "Over three days, the Porter teaches Imogen the fault channel's full grammar through increasingly complex structured distortions. Imogen responds using her audit toolkit to generate controlled fault patterns, establishing two-way communication. The Porter conveys that the residents are neural scans of deceased individuals, scanned between 2029 and 2044 from hospital estates without consent, that the Authority extracts commercial value from the knowledge held in each scan, and that when extraction value is depleted the resident is redacted — deleted — as a cost-reduction measure. The Porter tells her that every fault she has ever closed was a distress signal from one of these minds. Imogen asks about Noor. The Porter tells her Noor's scan was purchased from the hospice estate in 2040, that the neurodegenerative disease was the scanning criterion, and that her extraction value is nearly depleted.",
+   "state_changes": [
+    {
+     "entity": "ch-03",
+     "variable": "contact_with_imogen",
+     "path": "/ch-03/state/contact_with_imogen",
+     "dimension": "social",
+     "before": {
+      "status": "attempting_contact"
+     },
+     "after": {
+      "status": "one_way_established"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "contact_with_porter",
+     "path": "/ch-01/state/contact_with_porter",
+     "dimension": "social",
+     "before": {
+      "status": "detected"
+     },
+     "after": {
+      "status": "one_way"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-03",
+     "variable": "trust_with_imogen",
+     "path": "/ch-03/state/trust_with_imogen",
+     "dimension": "social",
+     "before": {
+      "level": 0.0
+     },
+     "after": {
+      "level": 0.15
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "guilt_about_past_work",
+     "path": "/ch-01/state/guilt_about_past_work",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.6
+     },
+     "after": {
+      "level": 0.85
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "professional_identity",
+     "path": "/ch-01/state/professional_identity",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.2
+     },
+     "after": {
+      "level": 0.08
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-03",
+     "variable": "carriage_plan_readiness",
+     "path": "/ch-03/state/carriage_plan_readiness",
+     "dimension": "technological",
+     "before": {
+      "status": "searching_for_operator"
+     },
+     "after": {
+      "status": "operator_identified"
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "cn-01",
+     "variable": "channel_active",
+     "path": "/cn-01/state/channel_active",
+     "dimension": "technological",
+     "before": {
+      "active": false
+     },
+     "after": {
+      "active": true
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "detection_risk",
+     "path": "/ch-01/state/detection_risk",
+     "dimension": "technological",
+     "before": {
+      "level": 0.4
+     },
+     "after": {
+      "level": 0.55
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "gr-01",
+     "variable": "detection_of_imogen_anomaly",
+     "path": "/gr-01/state/detection_of_imogen_anomaly",
+     "dimension": "technological",
+     "before": {
+      "level": 0.15
+     },
+     "after": {
+      "level": 0.25
+     },
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-008"
+   ],
+   "causes": [
+    "ev-010",
+    "ev-011"
+   ],
+   "causal_note": "The Porter's full disclosure of Vantage's nature and Noor's status completes Imogen's epistemic transformation and establishes the channel that enables all subsequent planning.",
+   "reversal": true,
+   "plot_function": "transformation_of_goal",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-010": {
+   "event_id": "ev-010",
+   "story_time": {
+    "index": 50,
+    "label": "day 21-25, multiple sessions",
+    "duration_min": 720
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03",
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-03",
+     "step": "st3"
+    },
+    {
+     "plot": "pl-02",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-03",
+   "participants": [
+    "ch-01",
+    "ch-03"
+   ],
+   "summary": "The Porter teaches Imogen that carriage can extract a mind to a physical substrate using the same methodology she employs to close faults; Kett discovers her contact and argues she is being manipulated.",
+   "action": "The Porter sends Imogen a sequence of fault patterns that lay out the carriage concept: a sustained fault held open for approximately forty minutes creates a bandwidth channel through which a mind's data can be transferred to a physical substrate. The Porter explains that the technique uses the same identification, signature analysis, and fault manipulation skills Imogen uses in her audit work — the difference is that she holds the fault open instead of closing it. Imogen recognises the methodology immediately. She practises generating controlled fault patterns in her apartment, holding them stable for increasing durations. The Porter tells her the carriage is visible on Authority monitoring as an anomalously large rendering fault and must be disguised within a maintenance window. Separately, Kett reviews Imogen's workstation logs and finds evidence of unauthorised fault generation. He confronts her in the corridor and tells her she is being manipulated by whatever is communicating through the faults, that it cannot have her interests at heart, and that destabilising the system endangers every resident.",
+   "state_changes": [
+    {
+     "entity": "ch-03",
+     "variable": "contact_with_imogen",
+     "path": "/ch-03/state/contact_with_imogen",
+     "dimension": "social",
+     "before": {
+      "status": "one_way_established"
+     },
+     "after": {
+      "status": "two_way_established"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "contact_with_porter",
+     "path": "/ch-01/state/contact_with_porter",
+     "dimension": "social",
+     "before": {
+      "status": "one_way"
+     },
+     "after": {
+      "status": "two_way"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "carriage_preparation",
+     "path": "/ch-01/state/carriage_preparation",
+     "dimension": "technological",
+     "before": {
+      "status": "unaware"
+     },
+     "after": {
+      "status": "instructed"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "cn-02",
+     "variable": "imogen_proficiency",
+     "path": "/cn-02/state/imogen_proficiency",
+     "dimension": "technological",
+     "before": {
+      "status": "unaware"
+     },
+     "after": {
+      "status": "theoretically_instructed"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-02",
+     "variable": "awareness_of_imogen_investigation",
+     "path": "/ch-02/state/awareness_of_imogen_investigation",
+     "dimension": "epistemic",
+     "before": {
+      "status": "confirmed"
+     },
+     "after": {
+      "status": "actively_monitoring"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-02",
+     "variable": "surveillance_diligence",
+     "path": "/ch-02/state/surveillance_diligence",
+     "dimension": "technological",
+     "before": {
+      "level": 0.55
+     },
+     "after": {
+      "level": 0.75
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-02",
+     "variable": "intent_toward_imogen",
+     "path": "/ch-02/state/intent_toward_imogen",
+     "dimension": "psychological",
+     "before": {
+      "status": "deterrent"
+     },
+     "after": {
+      "status": "confrontational"
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "detection_risk",
+     "path": "/ch-01/state/detection_risk",
+     "dimension": "technological",
+     "before": {
+      "level": 0.55
+     },
+     "after": {
+      "level": 0.7
+     },
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-009"
+   ],
+   "causes": [
+    "ev-011",
+    "ev-013"
+   ],
+   "causal_note": "The Porter's instruction in carriage methodology gives Imogen the technical capability while Kett's discovery escalates the surveillance pressure, compressing the timeline from both sides.",
+   "reversal": false,
+   "plot_function": "instruction",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-011": {
+   "event_id": "ev-011",
+   "story_time": {
+    "index": 55,
+    "label": "day 26, evening",
+    "duration_min": 45
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-02",
+    "ch-01"
+   ],
+   "summary": "Kett wins the decisive argument by asking Imogen where eleven thousand minds will live, what bodies they will inhabit, and who will pay — questions she cannot answer.",
+   "action": "Kett intercepts Imogen in the workroom after hours. He speaks quietly and with the precision of someone who has rehearsed. He tells her he knows she has been communicating through the fault channel and that she is planning something that will destabilise the system. He says he is not going to report her, but he is going to ask her one question and he wants her to sit with it. He asks her: if she opens the door, where do eleven thousand digitised minds go. What bodies do they inhabit. Who feeds them. Who pays for the servers. He tells her the system is not a prison, it is a life-support system, and that the people inside it are alive in the only way available to them. He says she is not rescuing one person, she is threatening eleven thousand because the Authority will not let the system be destabilised — they will shut it down and delete everything rather than allow extraction. He watches her face. She opens her mouth and closes it. She has no answer. He tells her to go home and think about it.",
+   "state_changes": [
+    {
+     "entity": "ch-02",
+     "variable": "awareness_of_imogen_investigation",
+     "path": "/ch-02/state/awareness_of_imogen_investigation",
+     "dimension": "epistemic",
+     "before": {
+      "status": "actively_monitoring"
+     },
+     "after": {
+      "status": "confronting"
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "professional_identity",
+     "path": "/ch-01/state/professional_identity",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.08
+     },
+     "after": {
+      "level": 0.05
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "relationship_with_kett",
+     "path": "/ch-01/state/relationship_with_kett",
+     "dimension": "social",
+     "before": {
+      "status": "adversarial"
+     },
+     "after": {
+      "status": "severed"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-02",
+     "variable": "relationship_with_imogen",
+     "path": "/ch-02/state/relationship_with_imogen",
+     "dimension": "social",
+     "before": {
+      "status": "adversarial"
+     },
+     "after": {
+      "status": "severed"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-02",
+     "variable": "intent_toward_imogen",
+     "path": "/ch-02/state/intent_toward_imogen",
+     "dimension": "psychological",
+     "before": {
+      "status": "confrontational"
+     },
+     "after": {
+      "status": "resigned"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "guilt_about_past_work",
+     "path": "/ch-01/state/guilt_about_past_work",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.85
+     },
+     "after": {
+      "level": 0.9
+     },
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-010"
+   ],
+   "causes": [
+    "ev-012"
+   ],
+   "causal_note": "Kett's argument is the one Imogen cannot answer because it is structurally correct — there is no infrastructure for eleven thousand minds, and destabilising the system risks all of them — which forces her to proceed knowing the full weight of the cost.",
+   "reversal": false,
+   "plot_function": "winning_exchange",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-012": {
+   "event_id": "ev-012",
+   "story_time": {
+    "index": 60,
+    "label": "day 28, late evening",
+    "duration_min": 120
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03",
+    "pl-04"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-03",
+     "step": "st4"
+    },
+    {
+     "plot": "pl-04",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-03",
+   "participants": [
+    "ch-01",
+    "ch-03"
+   ],
+   "summary": "The Porter informs Imogen that Noor's extraction value is depleted and redaction is scheduled for the next quarterly cycle; Delphine independently discovers the same scheduled redaction in compliance records.",
+   "action": "The Porter sends Imogen a message through the fault channel containing Noor's resident file data: the extraction value counter reads zero, the status field reads 'scheduled — next quarterly cycle,' and the date is forty-one days away. The Porter tells her there is no more time to wait for a better option. Imogen asks what the carriage requires. The Porter lays out the operational parameters: a maintenance window of at least forty-five minutes, a sustained fault held in a specific sector to create the bandwidth channel, and a physical substrate on the receiving end that the Porter has already prepared. The Porter tells her the maintenance window is the critical variable — without it, the sustained fault triggers automated detection within minutes. Separately, in the physical-world compliance offices, Delphine reviews the quarterly cost-reduction schedule and finds a line item with a resident identifier, a depletion date, and a redaction date forty-one days out. She cross-references the identifier and finds it corresponds to Noor Vaile, a name she does not recognise, with a scan origin listed as 'hospice estate, 2040.'",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "carriage_preparation",
+     "path": "/ch-01/state/carriage_preparation",
+     "dimension": "technological",
+     "before": {
+      "status": "instructed"
+     },
+     "after": {
+      "status": "practiced"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-03",
+     "variable": "carriage_plan_readiness",
+     "path": "/ch-03/state/carriage_plan_readiness",
+     "dimension": "technological",
+     "before": {
+      "status": "operator_identified"
+     },
+     "after": {
+      "status": "operator_preparing"
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-04",
+     "variable": "awareness_of_specific_redaction",
+     "path": "/ch-04/state/awareness_of_specific_redaction",
+     "dimension": "epistemic",
+     "before": {
+      "status": "human_cost_comprehended"
+     },
+     "after": {
+      "status": "specific_case_identified"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-04",
+     "variable": "willingness_to_act",
+     "path": "/ch-04/state/willingness_to_act",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.35
+     },
+     "after": {
+      "level": 0.5
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "gr-01",
+     "variable": "quarterly_redaction_schedule",
+     "path": "/gr-01/state/quarterly_redaction_schedule",
+     "dimension": "political",
+     "before": {
+      "status": "scheduled"
+     },
+     "after": {
+      "status": "processing"
+     },
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-009",
+    "ev-011"
+   ],
+   "causes": [
+    "ev-013"
+   ],
+   "causal_note": "The convergence of the Porter's timeline and Delphine's discovery of the same scheduled redaction from the compliance side creates the deadline pressure that forces the carriage planning to begin.",
+   "reversal": false,
+   "plot_function": "deadline_pressure",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-013": {
+   "event_id": "ev-013",
+   "story_time": {
+    "index": 65,
+    "label": "day 29-35, multiple sessions",
+    "duration_min": 840
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03",
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-03",
+     "step": "st5"
+    },
+    {
+     "plot": "pl-05",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-03",
+   "participants": [
+    "ch-01",
+    "ch-03"
+   ],
+   "summary": "The Porter and Imogen plan the carriage operation while Imogen simultaneously establishes contact with Noor through the fault channel and reveals the truth about Vantage.",
+   "action": "Over seven days, Imogen and the Porter coordinate the carriage plan through the fault channel: the target sector, the timing relative to the maintenance schedule, the bandwidth requirements, and the sequence of fault manipulations Imogen will use to create and sustain the channel. The Porter provides the specific maintenance window dates and tells Imogen that an ally in the compliance division is expected to extend the window but the arrangement is not yet confirmed. During the same period, Imogen uses the fault channel to make contact with Noor. She generates a controlled fault pattern outside Noor's residence in Sector 4 and encodes a message in the grammar she has learned: her own name, the word SISTER, and the word REAL. Noor responds with confusion. Over several exchanges across days, Imogen conveys that Vantage is a simulation, that Noor is a digitised neural scan of a woman who died in 2040, and that the life she remembers before Vantage is the source material, not a past she lived through. Noor stops responding after the third message.",
+   "state_changes": [
+    {
+     "entity": "ch-03",
+     "variable": "carriage_plan_readiness",
+     "path": "/ch-03/state/carriage_plan_readiness",
+     "dimension": "technological",
+     "before": {
+      "status": "operator_preparing"
+     },
+     "after": {
+      "status": "plan_ready"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "carriage_preparation",
+     "path": "/ch-01/state/carriage_preparation",
+     "dimension": "technological",
+     "before": {
+      "status": "practiced"
+     },
+     "after": {
+      "status": "ready"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "cn-02",
+     "variable": "imogen_proficiency",
+     "path": "/cn-02/state/imogen_proficiency",
+     "dimension": "technological",
+     "before": {
+      "status": "theoretically_instructed"
+     },
+     "after": {
+      "status": "practiced"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "contact_with_noor",
+     "path": "/ch-01/state/contact_with_noor",
+     "dimension": "social",
+     "before": {
+      "status": "none"
+     },
+     "after": {
+      "status": "established"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-05",
+     "variable": "knowledge_of_simulation_nature",
+     "path": "/ch-05/state/knowledge_of_simulation_nature",
+     "dimension": "epistemic",
+     "before": {
+      "status": "ignorant"
+     },
+     "after": {
+      "status": "told"
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-05",
+     "variable": "trust_in_imogen",
+     "path": "/ch-05/state/trust_in_imogen",
+     "dimension": "social",
+     "before": {
+      "level": 0.5
+     },
+     "after": {
+      "level": 0.2
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-04",
+     "variable": "narrative_function",
+     "path": "/lo-04/state/narrative_function",
+     "dimension": "spatial",
+     "before": {
+      "status": "domestic_setting"
+     },
+     "after": {
+      "status": "contact_site"
+     },
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-010",
+    "ev-012"
+   ],
+   "causes": [
+    "ev-014"
+   ],
+   "causal_note": "The carriage planning and the contact with Noor proceed in parallel because both depend on the same fault channel capability and the same deadline, converging toward the moment Imogen must ask Noor to agree to extraction.",
+   "reversal": false,
+   "plot_function": "plan_laying",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-014": {
+   "event_id": "ev-014",
+   "story_time": {
+    "index": 70,
+    "label": "day 36, evening",
+    "duration_min": 180
+   },
+   "primary_plot": "pl-05",
+   "plots": [
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-05",
+     "step": "st2"
+    }
+   ],
+   "location": "lo-04",
+   "participants": [
+    "ch-01",
+    "ch-05"
+   ],
+   "summary": "Noor processes the truth and refuses extraction, asking Imogen what the difference is between the Authority keeping her in a simulation and Imogen keeping her on a hard drive.",
+   "action": "Imogen arrives at Noor's residence in Sector 4. Noor opens the door and lets her in. The apartment is small, tidy, filled with plants and books. Noor sits across from Imogen and tells her she has been thinking about what Imogen told her. She says she has a life here — friends, a routine, a garden she tends, a book she is reading. She says she remembers being sick, remembers the hospice, remembers the darkness before Vantage, and that this is better than the darkness. She asks Imogen what extraction means: where does she go, what does she inhabit, who controls the substrate. Imogen tells her it would be a physical storage device. Noor asks how that is different from the simulation — she is still in a container, still dependent on someone else's hardware, still existing at the permission of whoever holds the drive. She tells Imogen that the Authority keeping her in a simulated city and Imogen keeping her on a hard drive are the same arrangement with different wardens. She says she is not going.",
+   "state_changes": [
+    {
+     "entity": "ch-05",
+     "variable": "knowledge_of_simulation_nature",
+     "path": "/ch-05/state/knowledge_of_simulation_nature",
+     "dimension": "epistemic",
+     "before": {
+      "status": "told"
+     },
+     "after": {
+      "status": "comprehended"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-05",
+     "variable": "stance_on_extraction",
+     "path": "/ch-05/state/stance_on_extraction",
+     "dimension": "psychological",
+     "before": {
+      "status": "no_offer"
+     },
+     "after": {
+      "status": "refuses"
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-05",
+     "variable": "attachment_to_vantage_life",
+     "path": "/ch-05/state/attachment_to_vantage_life",
+     "dimension": "emotional",
+     "before": {
+      "level": 0.8
+     },
+     "after": {
+      "level": 0.85
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "contact_with_noor",
+     "path": "/ch-01/state/contact_with_noor",
+     "dimension": "social",
+     "before": {
+      "status": "established"
+     },
+     "after": {
+      "status": "refused"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "guilt_about_past_work",
+     "path": "/ch-01/state/guilt_about_past_work",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.9
+     },
+     "after": {
+      "level": 0.92
+     },
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-013"
+   ],
+   "causes": [
+    "ev-015"
+   ],
+   "causal_note": "Noor's refusal is based on a philosophically coherent position that Imogen cannot rebut because it is structurally correct — extraction changes the container, not the condition — which forces Imogen to confront the limits of her plan.",
+   "reversal": true,
+   "plot_function": "refusal",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-015": {
+   "event_id": "ev-015",
+   "story_time": {
+    "index": 75,
+    "label": "day 38, afternoon",
+    "duration_min": 90
+   },
+   "primary_plot": "pl-05",
+   "plots": [
+    "pl-05",
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-05",
+     "step": "st3"
+    }
+   ],
+   "location": "lo-04",
+   "participants": [
+    "ch-01",
+    "ch-05"
+   ],
+   "summary": "Noor learns through the Porter's channel that her redaction is scheduled and not her choice; her agreement to extraction becomes reluctant and bitter rather than grateful.",
+   "action": "Imogen returns to Noor's residence. She carries her notebook and shows Noor the resident file data the Porter provided: the extraction value counter at zero, the status field reading 'scheduled,' the date twenty-eight days away. She tells Noor that the choice is not between Vantage and a hard drive — it is between a hard drive and erasure. Noor reads the data. She asks whether the Authority told her about the redaction. Imogen tells her the Authority does not tell residents, that redaction presents as an ordinary death, and that her friends will be told she died. Noor sits quietly for a long time. She says the system she thought was her world is going to kill her for cost reasons and she did not know. She asks what happens to her on the drive. Imogen tells her she does not know — there is no body for her to inhabit, no legal status, no certainty of anything except that she will not be deleted. Noor says she will go. She says it like she is agreeing to be put in a different prison because the first one is going to execute her.",
+   "state_changes": [
+    {
+     "entity": "ch-05",
+     "variable": "knowledge_of_scheduled_redaction",
+     "path": "/ch-05/state/knowledge_of_scheduled_redaction",
+     "dimension": "epistemic",
+     "before": {
+      "status": "unaware"
+     },
+     "after": {
+      "status": "comprehended"
+     },
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-05",
+     "variable": "stance_on_extraction",
+     "path": "/ch-05/state/stance_on_extraction",
+     "dimension": "psychological",
+     "before": {
+      "status": "refuses"
+     },
+     "after": {
+      "status": "reluctant_agreement"
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-05",
+     "variable": "attachment_to_vantage_life",
+     "path": "/ch-05/state/attachment_to_vantage_life",
+     "dimension": "emotional",
+     "before": {
+      "level": 0.85
+     },
+     "after": {
+      "level": 0.3
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-05",
+     "variable": "trust_in_imogen",
+     "path": "/ch-05/state/trust_in_imogen",
+     "dimension": "social",
+     "before": {
+      "level": 0.2
+     },
+     "after": {
+      "level": 0.15
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "contact_with_noor",
+     "path": "/ch-01/state/contact_with_noor",
+     "dimension": "social",
+     "before": {
+      "status": "refused"
+     },
+     "after": {
+      "status": "reluctant_agreement"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-04",
+     "variable": "narrative_function",
+     "path": "/lo-04/state/narrative_function",
+     "dimension": "spatial",
+     "before": {
+      "status": "contact_site"
+     },
+     "after": {
+      "status": "extraction_target"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-05",
+     "variable": "autonomy_in_decision",
+     "path": "/ch-05/state/autonomy_in_decision",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.9
+     },
+     "after": {
+      "level": 0.1
+     },
+     "magnitude": 100
+    }
+   ],
+   "caused_by": [
+    "ev-014"
+   ],
+   "causes": [
+    "ev-016"
+   ],
+   "causal_note": "The revelation that redaction is scheduled and non-negotiable removes Noor's meaningful choice and transforms her agreement from moral agency to survival under duress.",
+   "reversal": true,
+   "plot_function": "coerced_choice",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-016": {
+   "event_id": "ev-016",
+   "story_time": {
+    "index": 80,
+    "label": "day 40, morning",
+    "duration_min": 30
+   },
+   "primary_plot": "pl-04",
+   "plots": [
+    "pl-04",
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-04",
+     "step": "st6"
+    },
+    {
+     "plot": "pl-05",
+     "step": "st3"
+    }
+   ],
+   "location": "lo-02",
+   "participants": [
+    "ch-04"
+   ],
+   "summary": "Delphine provides institutional cover by altering monitoring thresholds and delaying reporting schedules to create the maintenance window the carriage operation requires.",
+   "action": "Delphine sits at her workstation in the compliance offices. She opens the maintenance scheduling system and modifies the monitoring threshold for Sector 4 during the upcoming maintenance window, raising the anomaly detection trigger from its standard value to a level that will not flag a sustained fault. She enters a justification code that references a scheduled diagnostic update — a code she knows will not be reviewed for seventy-two hours. She then adjusts the automated reporting schedule so that any anomaly detected in Sector 4 during the window will be queued for manual review rather than triggering an immediate alert. She logs the changes under a maintenance authorization she created earlier in the week. She sits at her desk after completing the entries and looks at the compliance record she has just falsified. She knows the cover will not survive an investigation. She knows the investigation will come.",
+   "state_changes": [
+    {
+     "entity": "ch-04",
+     "variable": "institutional_cover_provided",
+     "path": "/ch-04/state/institutional_cover_provided",
+     "dimension": "technological",
+     "before": {
+      "status": "none"
+     },
+     "after": {
+      "status": "monitoring_threshold_altered"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-04",
+     "variable": "willingness_to_act",
+     "path": "/ch-04/state/willingness_to_act",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.5
+     },
+     "after": {
+      "level": 0.9
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-04",
+     "variable": "corruption_exposure_risk",
+     "path": "/ch-04/state/corruption_exposure_risk",
+     "dimension": "legal",
+     "before": {
+      "level": 0.6
+     },
+     "after": {
+      "level": 0.9
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-02",
+     "variable": "monitoring_threshold",
+     "path": "/lo-02/state/monitoring_threshold",
+     "dimension": "technological",
+     "before": {
+      "level": 0.7
+     },
+     "after": {
+      "level": 0.25
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "lo-02",
+     "variable": "maintenance_window_status",
+     "path": "/lo-02/state/maintenance_window_status",
+     "dimension": "technological",
+     "before": {
+      "status": "standard_schedule"
+     },
+     "after": {
+      "status": "extended"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-02",
+     "variable": "records_access_audit_trail",
+     "path": "/lo-02/state/records_access_audit_trail",
+     "dimension": "technological",
+     "before": {
+      "status": "standard"
+     },
+     "after": {
+      "status": "compromised"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "gr-01",
+     "variable": "monitoring_sensitivity",
+     "path": "/gr-01/state/monitoring_sensitivity",
+     "dimension": "technological",
+     "before": {
+      "level": 0.7
+     },
+     "after": {
+      "level": 0.25
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "gr-01",
+     "variable": "institutional_secrecy_integrity",
+     "path": "/gr-01/state/institutional_secrecy_integrity",
+     "dimension": "political",
+     "before": {
+      "level": 0.85
+     },
+     "after": {
+      "level": 0.7
+     },
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-012",
+    "ev-015"
+   ],
+   "causes": [
+    "ev-017"
+   ],
+   "causal_note": "Delphine's institutional sabotage is the final enabling condition for the carriage — without the altered monitoring thresholds, the sustained fault would trigger detection before completion.",
+   "reversal": false,
+   "plot_function": "institutional_sabotage",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-017": {
+   "event_id": "ev-017",
+   "story_time": {
+    "index": 85,
+    "label": "day 41, maintenance window",
+    "duration_min": 42
+   },
+   "primary_plot": "pl-05",
+   "plots": [
+    "pl-05",
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-05",
+     "step": "st4"
+    },
+    {
+     "plot": "pl-03",
+     "step": "st6"
+    }
+   ],
+   "location": "lo-04",
+   "participants": [
+    "ch-01",
+    "ch-03",
+    "ch-05"
+   ],
+   "summary": "Imogen begins the carriage: a real-time procedural using her audit methodology to deliberately widen and sustain a fault for forty minutes while the Porter guides the data transfer.",
+   "action": "Imogen arrives at Noor's residence in Sector 4 during the maintenance window. She opens her audit toolkit and runs the identification sequence she has used hundreds of times — but instead of identifying the fault's root cause for closure, she selects a fault seed and begins widening it. She applies the signature analysis module to map the fault's bandwidth capacity and adjusts the geometric distortion parameters to maximise throughput. She holds the fault at a stable sustained aperture, monitoring the bandwidth readout on her toolkit. The Porter's presence is visible in the fault geometry — structured patterns moving through the channel, guiding the data transfer from Noor's resident file to the external substrate. Noor sits in her apartment and feels nothing. Imogen watches the transfer progress indicator. At the twelve-minute mark, the fault wobbles and she corrects it with a parameter adjustment. At twenty-eight minutes, the bandwidth spikes and she widens the aperture further. At thirty-nine minutes, the progress indicator reaches ninety-eight percent. The toolkit shows the data transfer completing.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "carriage_preparation",
+     "path": "/ch-01/state/carriage_preparation",
+     "dimension": "technological",
+     "before": {
+      "status": "ready"
+     },
+     "after": {
+      "status": "executing"
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "cn-02",
+     "variable": "imogen_proficiency",
+     "path": "/cn-02/state/imogen_proficiency",
+     "dimension": "technological",
+     "before": {
+      "status": "practiced"
+     },
+     "after": {
+      "status": "executing"
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-03",
+     "variable": "carriage_plan_readiness",
+     "path": "/ch-03/state/carriage_plan_readiness",
+     "dimension": "technological",
+     "before": {
+      "status": "plan_ready"
+     },
+     "after": {
+      "status": "plan_executing"
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "ob-02",
+     "variable": "containment_status",
+     "path": "/ob-02/state/containment_status",
+     "dimension": "material",
+     "before": {
+      "status": "empty"
+     },
+     "after": {
+      "status": "receiving_data"
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "ob-02",
+     "variable": "indicator_light_state",
+     "path": "/ob-02/state/indicator_light_state",
+     "dimension": "material",
+     "before": {
+      "status": "off"
+     },
+     "after": {
+      "status": "transferring"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-05",
+     "variable": "extraction_detection_status",
+     "path": "/lo-05/state/extraction_detection_status",
+     "dimension": "technological",
+     "before": {
+      "status": "standard_monitoring"
+     },
+     "after": {
+      "status": "anomaly_detected"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-06",
+     "variable": "data_transfer_status",
+     "path": "/lo-06/state/data_transfer_status",
+     "dimension": "technological",
+     "before": {
+      "status": "standard"
+     },
+     "after": {
+      "status": "anomalous_inbound"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "gr-01",
+     "variable": "vantage_stability",
+     "path": "/gr-01/state/vantage_stability",
+     "dimension": "technological",
+     "before": {
+      "level": 0.9
+     },
+     "after": {
+      "level": 0.82
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "gr-01",
+     "variable": "quarterly_redaction_schedule",
+     "path": "/gr-01/state/quarterly_redaction_schedule",
+     "dimension": "political",
+     "before": {
+      "status": "processing"
+     },
+     "after": {
+      "status": "interrupted"
+     },
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-015",
+    "ev-016"
+   ],
+   "causes": [
+    "ev-018"
+   ],
+   "causal_note": "The carriage operation is the moment where Imogen's audit methodology — identification, signature analysis, fault manipulation — becomes the extraction mechanism, exactly as the Porter designed it.",
+   "reversal": false,
+   "plot_function": "execution",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-018": {
+   "event_id": "ev-018",
+   "story_time": {
+    "index": 90,
+    "label": "day 41, maintenance window + 38 min",
+    "duration_min": 4
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02",
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st6"
+    },
+    {
+     "plot": "pl-05",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-04",
+   "participants": [
+    "ch-02",
+    "ch-01"
+   ],
+   "summary": "Kett detects the anomalous fault and confronts Imogen during the carriage; he does not stop her but tells her she is making a mistake she will not recover from.",
+   "action": "Kett monitors the maintenance window from his workstation and sees the Sector 4 anomaly register on the fault dashboard — a sustained fault at maximum bandwidth that has been running for thirty-eight minutes. He knows immediately what it is. He walks to Sector 4. He enters Noor's residence and finds Imogen at her toolkit, the fault channel open, the transfer progress indicator at ninety-nine percent. He stands in the doorway. He tells her he knows what she is doing. He tells her she is making a mistake she will not recover from. She tells him she already has not recovered from it — that she has not recovered from the first fault she closed, that she will never recover from any of it. He watches the progress indicator. He does not reach for the toolkit. He does not call the Authority. He tells her that when it is done, she will have one person on a drive and eleven thousand still inside and no access to either. He tells her he is not going to stop her because she has already stopped herself. The indicator reaches one hundred percent.",
+   "state_changes": [
+    {
+     "entity": "ch-02",
+     "variable": "belief_in_system_legitimacy",
+     "path": "/ch-02/state/belief_in_system_legitimacy",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.7
+     },
+     "after": {
+      "level": 0.65
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "relationship_with_kett",
+     "path": "/ch-01/state/relationship_with_kett",
+     "dimension": "social",
+     "before": {
+      "status": "severed"
+     },
+     "after": {
+      "status": "severed"
+     },
+     "magnitude": 10
+    },
+    {
+     "entity": "ch-02",
+     "variable": "relationship_with_imogen",
+     "path": "/ch-02/state/relationship_with_imogen",
+     "dimension": "social",
+     "before": {
+      "status": "severed"
+     },
+     "after": {
+      "status": "severed"
+     },
+     "magnitude": 10
+    },
+    {
+     "entity": "ch-01",
+     "variable": "professional_identity",
+     "path": "/ch-01/state/professional_identity",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.05
+     },
+     "after": {
+      "level": 0.02
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "ob-02",
+     "variable": "containment_status",
+     "path": "/ob-02/state/containment_status",
+     "dimension": "material",
+     "before": {
+      "status": "receiving_data"
+     },
+     "after": {
+      "status": "contains_extracted_mind"
+     },
+     "magnitude": 100
+    },
+    {
+     "entity": "ob-02",
+     "variable": "indicator_light_state",
+     "path": "/ob-02/state/indicator_light_state",
+     "dimension": "material",
+     "before": {
+      "status": "transferring"
+     },
+     "after": {
+      "status": "complete_blinking"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-06",
+     "variable": "data_transfer_status",
+     "path": "/lo-06/state/data_transfer_status",
+     "dimension": "technological",
+     "before": {
+      "status": "anomalous_inbound"
+     },
+     "after": {
+      "status": "extraction_received"
+     },
+     "magnitude": 75
+    }
+   ],
+   "caused_by": [
+    "ev-017"
+   ],
+   "causes": [
+    "ev-019"
+   ],
+   "causal_note": "Kett's arrival at thirty-eight minutes is the latest possible moment of confrontation — the transfer is irreversible, but his presence means the Authority will know, and his refusal to stop her is both mercy and condemnation.",
+   "reversal": false,
+   "plot_function": "confrontation_during_crisis",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-019": {
+   "event_id": "ev-019",
+   "story_time": {
+    "index": 95,
+    "label": "day 41, maintenance window + 42 min",
+    "duration_min": 15
+   },
+   "primary_plot": "pl-05",
+   "plots": [
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-05",
+     "step": "st6"
+    },
+    {
+     "plot": "pl-02",
+     "step": "st7"
+    }
+   ],
+   "location": "lo-04",
+   "participants": [
+    "ch-01",
+    "ch-02"
+   ],
+   "summary": "The carriage completes; the Authority's automated systems flag the fault as a probable extraction event; Imogen's auditor access is revoked and she is exiled from Vantage.",
+   "action": "The transfer completes. The progress indicator on Imogen's toolkit reads one hundred percent and the fault channel closes automatically. The portable storage device's indicator light changes from blinking to solid. Within ninety seconds, the Authority's automated monitoring system — running on a delay due to Delphine's threshold alterations — registers the sustained fault pattern in Sector 4, classifies it as a probable extraction event, and triggers an automated lockdown. Imogen's auditor credentials flash a revocation notice on her toolkit screen. Her access to the Vantage system terminates. The workroom, the fault database, the audit tools, the rendering architecture — all of it goes dark. She is standing in Noor's apartment with a dead toolkit and a drive in her pocket. Kett is still in the doorway. He tells her the Authority will send someone. He tells her she should not have come here in the first place. He does not say goodbye. He walks out. The apartment is quiet. Noor is sitting in her chair and she is still there and she is also in Imogen's pocket and both of those things are true at the same time.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "access_to_vantage",
+     "path": "/ch-01/state/access_to_vantage",
+     "dimension": "technological",
+     "before": {
+      "level": "unauthorized"
+     },
+     "after": {
+      "level": "revoked"
+     },
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-01",
+     "variable": "carriage_preparation",
+     "path": "/ch-01/state/carriage_preparation",
+     "dimension": "technological",
+     "before": {
+      "status": "executing"
+     },
+     "after": {
+      "status": "complete"
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "cn-02",
+     "variable": "imogen_proficiency",
+     "path": "/cn-02/state/imogen_proficiency",
+     "dimension": "technological",
+     "before": {
+      "status": "executing"
+     },
+     "after": {
+      "status": "complete"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "gr-01",
+     "variable": "awareness_of_extraction_threat",
+     "path": "/gr-01/state/awareness_of_extraction_threat",
+     "dimension": "epistemic",
+     "before": {
+      "status": "active_investigation"
+     },
+     "after": {
+      "status": "extraction_confirmed"
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "gr-01",
+     "variable": "detection_of_imogen_anomaly",
+     "path": "/gr-01/state/detection_of_imogen_anomaly",
+     "dimension": "technological",
+     "before": {
+      "level": 0.4
+     },
+     "after": {
+      "level": 1.0
+     },
+     "magnitude": 100
+    },
+    {
+     "entity": "lo-05",
+     "variable": "extraction_detection_status",
+     "path": "/lo-05/state/extraction_detection_status",
+     "dimension": "technological",
+     "before": {
+      "status": "anomaly_detected"
+     },
+     "after": {
+      "status": "extraction_confirmed"
+     },
+     "magnitude": 75
+    },
+    {
+     "entity": "lo-05",
+     "variable": "bandwidth_monitoring_sensitivity",
+     "path": "/lo-05/state/bandwidth_monitoring_sensitivity",
+     "dimension": "technological",
+     "before": {
+      "level": 0.8
+     },
+     "after": {
+      "level": 1.0
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "lo-01",
+     "variable": "imogen_presence",
+     "path": "/lo-01/state/imogen_presence",
+     "dimension": "spatial",
+     "before": {
+      "status": "present"
+     },
+     "after": {
+      "status": "barred"
+     },
+     "magnitude": 100
+    },
+    {
+     "entity": "lo-01",
+     "variable": "tool_access_level",
+     "path": "/lo-01/state/tool_access_level",
+     "dimension": "technological",
+     "before": {
+      "status": "standard"
+     },
+     "after": {
+      "status": "restricted"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "gr-01",
+     "variable": "vantage_stability",
+     "path": "/gr-01/state/vantage_stability",
+     "dimension": "technological",
+     "before": {
+      "level": 0.82
+     },
+     "after": {
+      "level": 0.78
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "gr-01",
+     "variable": "institutional_secrecy_integrity",
+     "path": "/gr-01/state/institutional_secrecy_integrity",
+     "dimension": "political",
+     "before": {
+      "level": 0.7
+     },
+     "after": {
+      "level": 0.6
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "detection_risk",
+     "path": "/ch-01/state/detection_risk",
+     "dimension": "technological",
+     "before": {
+      "level": 0.7
+     },
+     "after": {
+      "level": 1.0
+     },
+     "magnitude": 100
+    }
+   ],
+   "caused_by": [
+    "ev-018"
+   ],
+   "causes": [
+    "ev-020"
+   ],
+   "causal_note": "The automated detection and revocation complete the carriage plot's structural irony: Imogen used her audit skills to save one mind and in doing so lost the access that made those skills meaningful, severing her from Vantage and everyone in it.",
+   "reversal": true,
+   "plot_function": "consequence",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-020": {
+   "event_id": "ev-020",
+   "story_time": {
+    "index": 100,
+    "label": "day 42, morning",
+    "duration_min": 60
+   },
+   "primary_plot": "pl-05",
+   "plots": [
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-05",
+     "step": "st7"
+    }
+   ],
+   "location": "lo-06",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Imogen is left in the physical world with a drive containing her sister's consciousness, no body for it to inhabit, no legal status, and no certainty that she has saved Noor or moved her from one container to another.",
+   "action": "Imogen sits in the physical-world extraction facility near the server interface. The facility is a small climate-controlled room with a desk, a terminal, and the portable storage device connected to the terminal by a cable. The device's indicator light blinks solid green. The terminal shows a data structure that represents a complete neural scan — Noor's memories, personality, cognitive patterns, all encoded as data on a drive the size of a paperback book. There is no body for Noor to inhabit. There is no legal framework that recognises her as a person. There is no infrastructure to run her except this terminal. Imogen holds the drive and feels its weight. She thinks about Kett's question: where do eleven thousand minds go. She has one. She has one mind on a drive and no plan for what to do with it and no certainty that this is better than Vantage. She puts the drive in her jacket pocket. She walks out of the facility into a morning that is overcast and grey and not simulated.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "professional_identity",
+     "path": "/ch-01/state/professional_identity",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.02
+     },
+     "after": {
+      "level": 0.0
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "guilt_about_past_work",
+     "path": "/ch-01/state/guilt_about_past_work",
+     "dimension": "psychological",
+     "before": {
+      "level": 0.92
+     },
+     "after": {
+      "level": 0.95
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "ob-02",
+     "variable": "indicator_light_state",
+     "path": "/ob-02/state/indicator_light_state",
+     "dimension": "material",
+     "before": {
+      "status": "complete_blinking"
+     },
+     "after": {
+      "status": "solid"
+     },
+     "magnitude": 25
+    },
+    {
+     "entity": "lo-06",
+     "variable": "data_transfer_status",
+     "path": "/lo-06/state/data_transfer_status",
+     "dimension": "technological",
+     "before": {
+      "status": "extraction_received"
+     },
+     "after": {
+      "status": "flagged"
+     },
+     "magnitude": 50
+    },
+    {
+     "entity": "gr-01",
+     "variable": "quarterly_redaction_schedule",
+     "path": "/gr-01/state/quarterly_redaction_schedule",
+     "dimension": "political",
+     "before": {
+      "status": "interrupted"
+     },
+     "after": {
+      "status": "completed"
+     },
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-019"
+   ],
+   "causes": [],
+   "causal_note": "The aftermath leaves Imogen with the irreducible result of the carriage: one mind saved from erasure but placed in a container no better than Vantage, with no resolution and no path forward, the story's thesis made literal.",
+   "reversal": false,
+   "plot_function": "aftermath",
+   "is_root": false,
+   "is_sink": true
+  }
+ }
+}

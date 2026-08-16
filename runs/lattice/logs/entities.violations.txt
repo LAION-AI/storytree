@@ -1,0 +1,57 @@
+[ERROR  ] G20 @ ch-01.state.knowledge_of_simulation: value {'status': 'ignorant'} outside declared domain ['ignorant', 'suspecting', 'partially_informed', 'fully_informed']
+[ERROR  ] G20 @ ch-01.state.knowledge_of_noor: value {'status': 'unaware'} outside declared domain ['unaware', 'suspecting', 'confirmed']
+[ERROR  ] G20 @ ch-01.state.fault_investigation_status: value {'status': 'routine'} outside declared domain ['routine', 'anomaly_detected', 'pattern_cataloging', 'language_decoded', 'message_understood', 'system_architecture_accessed']
+[ERROR  ] G20 @ ch-01.state.relationship_with_kett: value {'status': 'trusting_mentee'} outside declared domain ['trusting_mentee', 'suspicious', 'adversarial', 'severed']
+[ERROR  ] G20 @ ch-01.state.access_to_vantage: value {'level': 'auditor_standard'} outside declared domain ['auditor_standard', 'auditor_extended', 'unauthorized', 'revoked']
+[ERROR  ] G20 @ ch-01.state.carriage_preparation: value {'status': 'unaware'} outside declared domain ['unaware', 'instructed', 'practiced', 'ready', 'executing', 'complete']
+[ERROR  ] G20 @ ch-01.state.contact_with_porter: value {'status': 'none'} outside declared domain ['none', 'detected', 'one_way', 'two_way', 'collaborative']
+[ERROR  ] G20 @ ch-01.state.contact_with_noor: value {'status': 'none'} outside declared domain ['none', 'attempting', 'established', 'refused', 'reluctant_agreement']
+[ERROR  ] G20 @ ch-02.state.awareness_of_imogen_investigation: value {'status': 'unaware'} outside declared domain ['unaware', 'suspicious', 'confirmed', 'actively_monitoring', 'confronting']
+[ERROR  ] G20 @ ch-02.state.relationship_with_imogen: value {'status': 'trusted_mentor'} outside declared domain ['trusted_mentor', 'wary', 'adversarial', 'severed']
+[ERROR  ] G20 @ ch-02.state.intent_toward_imogen: value {'status': 'protective'} outside declared domain ['protective', 'deterrent', 'confrontational', 'resigned']
+[ERROR  ] G13 @ /ch-02/profile/want: prose block of 194 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G13 @ /ch-02/profile/need: prose block of 184 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G13 @ /ch-02/profile/values: prose block of 183 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G13 @ /ch-02/profile/fears: prose block of 234 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G20 @ ch-03.state.contact_with_imogen: value {'status': 'pre_contact'} outside declared domain ['pre_contact', 'attempting_contact', 'one_way_established', 'two_way_established', 'instruction_active', 'carriage_guidance']
+[ERROR  ] G20 @ ch-03.state.carriage_plan_readiness: value {'status': 'searching_for_operator'} outside declared domain ['searching_for_operator', 'operator_identified', 'operator_preparing', 'plan_ready', 'plan_executing']
+[ERROR  ] G13 @ /ch-03/profile/speech_signature/sentence_shape: prose block of 195 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G13 @ /ch-03/profile/speech_signature/vocabulary_domain: prose block of 194 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G13 @ /ch-03/profile/need: prose block of 185 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G13 @ /ch-03/profile/problem_solving_style: prose block of 203 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G20 @ ch-04.state.knowledge_of_redaction_reality: value {'status': 'willfully_ignorant'} outside declared domain ['willfully_ignorant', 'encountering_evidence', 'cross_referencing', 'comprehended', 'acting_on_knowledge']
+[ERROR  ] G20 @ ch-04.state.awareness_of_specific_redaction: value {'status': 'unaware'} outside declared domain ['unaware', 'document_encountered', 'identifier_cross_referenced', 'human_cost_comprehended', 'specific_case_identified']
+[ERROR  ] G20 @ ch-04.state.institutional_cover_provided: value {'status': 'none'} outside declared domain ['none', 'monitoring_threshold_altered', 'reporting_delayed', 'maintenance_window_extended', 'cover_active']
+[ERROR  ] G13 @ /ch-04/profile/speech_signature/sentence_shape: prose block of 188 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G13 @ /ch-04/profile/wound/w01/text: prose block of 190 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G13 @ /ch-04/profile/fears: prose block of 204 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G20 @ ch-05.state.knowledge_of_simulation_nature: value {'status': 'ignorant'} outside declared domain ['ignorant', 'told', 'processing', 'comprehended', 'strategizing']
+[ERROR  ] G20 @ ch-05.state.knowledge_of_scheduled_redaction: value {'status': 'unaware'} outside declared domain ['unaware', 'told', 'comprehended']
+[ERROR  ] G20 @ ch-05.state.stance_on_extraction: value {'status': 'no_offer'} outside declared domain ['no_offer', 'refuses', 'conditional', 'reluctant_agreement', 'coerced']
+[ERROR  ] G13 @ /ch-05/profile/need: prose block of 209 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G13 @ /ch-05/profile/fears: prose block of 190 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G20 @ gr-01.state.awareness_of_extraction_threat: value {'status': 'historical_knowledge'} outside declared domain ['historical_knowledge', 'heightened_alert', 'active_investigation', 'extraction_confirmed']
+[ERROR  ] G20 @ gr-01.state.quarterly_redaction_schedule: value {'status': 'scheduled'} outside declared domain ['scheduled', 'processing', 'delayed', 'interrupted', 'completed']
+[ERROR  ] G13 @ /gr-01/profile/cohesion/c02/text: prose block of 203 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G20 @ lo-01.state.tool_access_level: value {'status': 'standard'} outside declared domain ['standard', 'elevated', 'unauthorized', 'restricted']
+[ERROR  ] G20 @ lo-01.state.imogen_presence: value {'status': 'present'} outside declared domain ['present', 'absent', 'barred']
+[ERROR  ] G20 @ lo-02.state.records_access_audit_trail: value {'status': 'standard'} outside declared domain ['standard', 'flagged', 'under_review', 'compromised']
+[ERROR  ] G20 @ lo-02.state.maintenance_window_status: value {'status': 'standard_schedule'} outside declared domain ['standard_schedule', 'extended', 'irregular', 'under_scrutiny']
+[ERROR  ] G20 @ lo-03.state.use_as_investigation_site: value {'status': 'residence_only'} outside declared domain ['residence_only', 'secondary_analysis', 'portter_communication', 'carriage_coordination']
+[ERROR  ] G20 @ lo-04.state.narrative_function: value {'status': 'domestic_setting'} outside declared domain ['domestic_setting', 'contact_site', 'extraction_target']
+[ERROR  ] G20 @ lo-05.state.extraction_detection_status: value {'status': 'standard_monitoring'} outside declared domain ['standard_monitoring', 'anomaly_detected', 'extraction_confirmed', 'access_revoked']
+[ERROR  ] G20 @ lo-06.state.data_transfer_status: value {'status': 'standard'} outside declared domain ['standard', 'anomalous_inbound', 'extraction_received', 'flagged']
+[ERROR  ] G20 @ ob-01.state.content_scope: value {'status': 'routine_work_notes'} outside declared domain ['routine_work_notes', 'anomaly_observations', 'fault_language_research', 'carriage_methodology', 'evidence_of_investigation']
+[ERROR  ] G20 @ ob-01.state.physical_location: value {'status': 'with_imogen'} outside declared domain ['with_imogen', 'in_apartment', 'concealed', 'discovered', 'lost']
+[ERROR  ] G20 @ ob-02.state.containment_status: value {'status': 'empty'} outside declared domain ['empty', 'receiving_data', 'contains_extracted_mind']
+[ERROR  ] G20 @ ob-02.state.indicator_light_state: value {'status': 'off'} outside declared domain ['off', 'transferring', 'complete_blinking', 'solid']
+[ERROR  ] G20 @ cn-01.state.imogen_comprehension_level: value {'status': 'unaware'} outside declared domain ['unaware', 'pattern_recognition', 'structure_identified', 'basic_decoding', 'fluent', 'manipulation_capable']
+[ERROR  ] G20 @ cn-01.state.channel_active: value {'active': False} is not a boolean
+[ERROR  ] G13 @ /cn-01/profile/backstory/b01/text: prose block of 183 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G13 @ /cn-01/profile/backstory/b03/text: prose block of 205 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G20 @ cn-02.state.imogen_proficiency: value {'status': 'unaware'} outside declared domain ['unaware', 'theoretically_instructed', 'practiced', 'ready_to_execute', 'executing', 'complete']
+[ERROR  ] G13 @ /cn-02/profile/backstory/b02/text: prose block of 215 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G13 @ /cn-02/profile/content/c01/text: prose block of 275 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G13 @ /cn-02/profile/content/c03/text: prose block of 182 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable
+[ERROR  ] G20 @ cn-03.state.delphine_comprehension_of_language: value {'status': 'fully_absorbed'} outside declared domain ['fully_absorbed', 'cracks_forming', 'partially_pierced', 'fully_comprehended']
+[ERROR  ] G13 @ /cn-03/profile/content/c02/text: prose block of 189 chars inside `profile` — decompose it into a sentence map {k01: {text: ...}} so each sentence is individually patchable

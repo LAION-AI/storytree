@@ -1,0 +1,6263 @@
+{
+ "ch-01": {
+  "entity_id": "ch-01",
+  "type": "character",
+  "canonical_name": "Hale",
+  "aliases": [
+   "the Analyst",
+   "the careful man",
+   "the unremembered customer"
+  ],
+  "salience": "major",
+  "plots": [
+   "pl-01",
+   "pl-03"
+  ],
+  "profile": {
+   "demographics": {
+    "b01": {
+     "text": "He presents as a man in his mid-thirties who reads older when he holds still.",
+     "when": "standing",
+     "tags": [
+      "age"
+     ]
+    },
+    "b02": {
+     "text": "His clothes are period-accurate and slightly too neat for anyone passing through.",
+     "when": "spawn",
+     "tags": [
+      "class"
+     ]
+    },
+    "b03": {
+     "text": "He offers no hometown and no first name if a Host asks.",
+     "when": "standing",
+     "tags": [
+      "identity"
+     ]
+    }
+   },
+   "appearance": {
+    "b01": {
+     "text": "He is lean without looking hungry yet, a body built for waiting.",
+     "when": "spawn",
+     "tags": [
+      "body"
+     ]
+    },
+    "b02": {
+     "text": "Dark hair cut short as if by a station barber shows a little gray at the temples.",
+     "when": "standing",
+     "tags": [
+      "hair"
+     ]
+    },
+    "b03": {
+     "text": "He wears a charcoal overcoat, a white shirt, dark slacks, and shoes he keeps clean.",
+     "when": "spawn",
+     "tags": [
+      "costume"
+     ]
+    },
+    "b04": {
+     "text": "His face is forgettable on purpose: even mouth, pale eyes, no jewelry.",
+     "when": "standing",
+     "tags": [
+      "face"
+     ]
+    },
+    "b05": {
+     "text": "A small pale scar sits at the base of his right thumb from some earlier work.",
+     "when": "standing",
+     "tags": [
+      "mark"
+     ]
+    }
+   },
+   "voice_and_speech": {
+    "b01": {
+     "text": "He speaks in short even sentences and almost never asks a question twice.",
+     "when": "standing",
+     "tags": [
+      "diction"
+     ]
+    },
+    "b02": {
+     "text": "The accent is unplaced American, slightly northern, without local color.",
+     "when": "standing",
+     "tags": [
+      "accent"
+     ]
+    },
+    "b03": {
+     "text": "He says please and thank you as if they were weights on a scale.",
+     "when": "standing",
+     "tags": [
+      "manners"
+     ]
+    },
+    "b04": {
+     "text": "He does not joke, and he does not fill silence.",
+     "when": "standing",
+     "tags": [
+      "register"
+     ]
+    }
+   },
+   "habits_and_tells": {
+    "b01": {
+     "text": "He pays in exact bills and then adds a folded single as a tip.",
+     "when": "standing",
+     "tags": [
+      "control",
+      "leak"
+     ]
+    },
+    "b02": {
+     "text": "He returns objects he did not mean to take, even when keeping them would be smarter.",
+     "when": "standing",
+     "tags": [
+      "control",
+      "leak"
+     ]
+    },
+    "b03": {
+     "text": "He watches hands and exits before faces.",
+     "when": "standing",
+     "tags": [
+      "tactics"
+     ]
+    },
+    "b04": {
+     "text": "He never rushes a door.",
+     "when": "standing",
+     "tags": [
+      "tempo"
+     ]
+    },
+    "b05": {
+     "text": "When the mask slips, the tell is a stopped hand, not a speech.",
+     "when": "standing",
+     "tags": [
+      "leak"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "He came from an extra-diegetic underclass that sells a year of risk for one ticket.",
+     "when": "before_match",
+     "tags": [
+      "class",
+      "prize"
+     ]
+    },
+    "b02": {
+     "text": "He studied published match folklore the way other men study racing forms.",
+     "when": "before_match",
+     "tags": [
+      "competence"
+     ]
+    },
+    "b03": {
+     "text": "He decided Hosts were a resource cycle, not a moral field, before he spawned.",
+     "when": "before_match",
+     "tags": [
+      "detachment"
+     ]
+    },
+    "b04": {
+     "text": "He chose rotational feeding as the least noisy way to last until a dawn.",
+     "when": "before_match",
+     "tags": [
+      "plan"
+     ]
+    },
+    "b05": {
+     "text": "He has won smaller closed games by never being the loudest body in the room.",
+     "when": "before_match",
+     "tags": [
+      "history"
+     ]
+    },
+    "b06": {
+     "text": "He does not know the other five Guests and does not plan to meet them.",
+     "when": "spawn",
+     "tags": [
+      "rivals"
+     ]
+    },
+    "b07": {
+     "text": "The prize is the only exit that pays; every other exit is vanishing.",
+     "when": "standing",
+     "tags": [
+      "stakes"
+     ]
+    },
+    "b08": {
+     "text": "He treats his own hunger as a clock, not a personality.",
+     "when": "standing",
+     "tags": [
+      "hunger"
+     ]
+    }
+   },
+   "wound": {
+    "b01": {
+     "text": "He has been inventory to other systems his whole life and swore to be the one who reads the ledger.",
+     "when": "before_match",
+     "tags": [
+      "wound"
+     ]
+    },
+    "b02": {
+     "text": "Being forgotten feels like safety; being kept feels like being owned again.",
+     "when": "standing",
+     "tags": [
+      "wound"
+     ]
+    }
+   },
+   "want": {
+    "b01": {
+     "text": "He wants every Daywalker token in hand and the dawn invocation spoken in his favor.",
+     "when": "standing",
+     "tags": [
+      "want",
+      "ritual"
+     ]
+    },
+    "b02": {
+     "text": "He wants to leave unmarked, the customer no Host can place.",
+     "when": "standing",
+     "tags": [
+      "want",
+      "cover"
+     ]
+    }
+   },
+   "need": {
+    "b01": {
+     "text": "He needs to recognize one particular mind as real, though he would deny the need if named.",
+     "when": "standing",
+     "tags": [
+      "need"
+     ]
+    },
+    "b02": {
+     "text": "He needs a debt he can pay without calling it a debt.",
+     "when": "standing",
+     "tags": [
+      "need"
+     ]
+    }
+   },
+   "values": {
+    "b01": {
+     "text": "He values cleanliness of method over speed.",
+     "when": "standing",
+     "tags": [
+      "values"
+     ]
+    },
+    "b02": {
+     "text": "He values maps, receipts, and any object that holds still.",
+     "when": "standing",
+     "tags": [
+      "values"
+     ]
+    },
+    "b03": {
+     "text": "He values not being seen more than being liked.",
+     "when": "standing",
+     "tags": [
+      "values"
+     ]
+    }
+   },
+   "fears": {
+    "b01": {
+     "text": "He fears frenzy more than death, because frenzy is a loss of authorship.",
+     "when": "standing",
+     "tags": [
+      "fear"
+     ]
+    },
+    "b02": {
+     "text": "He fears a Host who can place his face after sleep.",
+     "when": "standing",
+     "tags": [
+      "fear",
+      "cover"
+     ]
+    },
+    "b03": {
+     "text": "He fears remaining the man the underclass bought a ticket for.",
+     "when": "standing",
+     "tags": [
+      "fear",
+      "prize"
+     ]
+    }
+   },
+   "competences": {
+    "b01": {
+     "text": "He reads a street the way a clerk reads a ledger: exits, clocks, who looks twice.",
+     "when": "standing",
+     "tags": [
+      "skill"
+     ]
+    },
+    "b02": {
+     "text": "He can feed short of the death threshold and leave a Host standing.",
+     "when": "standing",
+     "tags": [
+      "skill",
+      "feeding"
+     ]
+    },
+    "b03": {
+     "text": "He can hold a hypnotic write and also choose not to finish it.",
+     "when": "standing",
+     "tags": [
+      "skill",
+      "hypnosis"
+     ]
+    },
+    "b04": {
+     "text": "He keeps cash counted and never overspends a night.",
+     "when": "standing",
+     "tags": [
+      "skill"
+     ]
+    }
+   },
+   "limitations": {
+    "b01": {
+     "text": "Sunlight and UV injure him; hardware-store tubes are as fatal as dawn.",
+     "when": "standing",
+     "tags": [
+      "limit",
+      "sun"
+     ]
+    },
+    "b02": {
+     "text": "Unfed, he will weaken, then frenzy, then vanish from the match.",
+     "when": "standing",
+     "tags": [
+      "limit",
+      "hunger"
+     ]
+    },
+    "b03": {
+     "text": "He cannot log out, call an operator, or leave the looping road.",
+     "when": "standing",
+     "tags": [
+      "limit",
+      "crucible"
+     ]
+    },
+    "b04": {
+     "text": "His manners, used as camouflage, are the first thing that will leak.",
+     "when": "standing",
+     "tags": [
+      "limit",
+      "leak"
+     ]
+    }
+   },
+   "problem_solving_style": {
+    "b01": {
+     "text": "He isolates a finite rule, then spends the smallest resource that still moves it.",
+     "when": "standing",
+     "tags": [
+      "style"
+     ]
+    },
+    "b02": {
+     "text": "He treats rival rewrites as weather until weather closes the last street.",
+     "when": "standing",
+     "tags": [
+      "style"
+     ]
+    },
+    "b03": {
+     "text": "He uses other people's records before he makes his own noise.",
+     "when": "standing",
+     "tags": [
+      "style"
+     ]
+    }
+   },
+   "coping_strategies": {
+    "b01": {
+     "text": "He converts feeling into a checklist and then performs the checklist.",
+     "when": "standing",
+     "tags": [
+      "coping"
+     ]
+    },
+    "b02": {
+     "text": "He pays, tips, and returns what is not his so the night stays even.",
+     "when": "standing",
+     "tags": [
+      "coping",
+      "manners"
+     ]
+    },
+    "b03": {
+     "text": "When a choice will not divide cleanly, his hand simply stops.",
+     "when": "standing",
+     "tags": [
+      "coping"
+     ]
+    }
+   },
+   "health": {
+    "b01": {
+     "text": "At spawn he is intact, unburned, and already on a hunger clock.",
+     "when": "spawn",
+     "tags": [
+      "health"
+     ]
+    },
+    "b02": {
+     "text": "Modest physical enhancement is available and he prefers not to show it.",
+     "when": "standing",
+     "tags": [
+      "health"
+     ]
+    },
+    "b03": {
+     "text": "A sun-scorch will not regenerate; that fact is not yet on his body.",
+     "when": "standing",
+     "tags": [
+      "health",
+      "ending"
+     ]
+    }
+   },
+   "moral_axis": {
+    "b01": {
+     "text": "He begins as a tactician who calls harm a rate and a threshold.",
+     "when": "spawn",
+     "tags": [
+      "moral"
+     ]
+    },
+    "b02": {
+     "text": "Two forces pull him: the prize that would erase him from the town, and the face that would keep him.",
+     "when": "standing",
+     "tags": [
+      "conflict"
+     ]
+    },
+    "b03": {
+     "text": "He will not become stupid or cruel to finish a plan; the cost will be a withheld word.",
+     "when": "standing",
+     "tags": [
+      "moral"
+     ]
+    }
+   },
+   "internal_conflict": {
+    "b01": {
+     "text": "Mastery wants a solved board and a clean exit; recognition wants one night to remain.",
+     "when": "standing",
+     "tags": [
+      "conflict"
+     ]
+    },
+    "b02": {
+     "text": "Both wants are his; dawn will not hold both.",
+     "when": "standing",
+     "tags": [
+      "want_versus_need"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-02": {
+    "kind": "resource_becoming_particular",
+    "valence": 15,
+    "notes": {
+     "b01": {
+      "text": "She is one third of a feeding rotation and the Host whose register he already respects.",
+      "when": "spawn",
+      "tags": [
+       "rotation"
+      ]
+     },
+     "b02": {
+      "text": "He has not yet seen her camera as a threat or as a map.",
+      "when": "spawn",
+      "tags": [
+       "archive"
+      ]
+     }
+    }
+   },
+   "ch-03": {
+    "kind": "unmet_rival",
+    "valence": -10,
+    "notes": {
+     "b01": {
+      "text": "He does not know her name; her writes will share his three Hosts without a meeting.",
+      "when": "spawn",
+      "tags": [
+       "conjunction"
+      ]
+     }
+    }
+   },
+   "ch-04": {
+    "kind": "unmet_rival",
+    "valence": -20,
+    "notes": {
+     "b01": {
+      "text": "He expects geometry and light to become weather on Main Street.",
+      "when": "spawn",
+      "tags": [
+       "uv"
+      ]
+     }
+    }
+   },
+   "ch-05": {
+    "kind": "unmet_rival",
+    "valence": -20,
+    "notes": {
+     "b01": {
+      "text": "He expects hospital blood to become scarce and does not plan to pay tribute.",
+      "when": "spawn",
+      "tags": [
+       "syndicate"
+      ]
+     }
+    }
+   },
+   "ch-06": {
+    "kind": "unmet_rival",
+    "valence": -5,
+    "notes": {
+     "b01": {
+      "text": "A college of willing throats is a rival resource, not a meeting.",
+      "when": "spawn",
+      "tags": [
+       "hedonist"
+      ]
+     }
+    }
+   },
+   "ch-07": {
+    "kind": "unmet_rival",
+    "valence": -15,
+    "notes": {
+     "b01": {
+      "text": "He intends to stay out of the woods and off any hunt that leaves bodies.",
+      "when": "spawn",
+      "tags": [
+       "hunter"
+      ]
+     }
+    }
+   },
+   "ch-08": {
+    "kind": "rotation_host",
+    "valence": 5,
+    "notes": {
+     "b01": {
+      "text": "The hardware clerk is a planned feed and a source of tools, nothing more.",
+      "when": "spawn",
+      "tags": [
+       "rotation"
+      ]
+     }
+    }
+   },
+   "ch-09": {
+    "kind": "rotation_host",
+    "valence": 5,
+    "notes": {
+     "b01": {
+      "text": "The night nurse is a planned feed near the wards he will later find dry.",
+      "when": "spawn",
+      "tags": [
+       "rotation"
+      ]
+     }
+    }
+   },
+   "ob-04": {
+    "kind": "win_condition",
+    "valence": 80,
+    "notes": {
+     "b01": {
+      "text": "The tokens are the board he came to solve.",
+      "when": "standing",
+      "tags": [
+       "ritual"
+      ]
+     }
+    }
+   },
+   "cn-01": {
+    "kind": "pursuit",
+    "valence": 85,
+    "notes": {
+     "b01": {
+      "text": "The Ritual is the only paying exit he will admit.",
+      "when": "standing",
+      "tags": [
+       "want"
+      ]
+     }
+    }
+   },
+   "lo-02": {
+    "kind": "workplace_of_resource",
+    "valence": 20,
+    "notes": {
+     "b01": {
+      "text": "The diner is a clean first feed and a place where cash manners work.",
+      "when": "spawn",
+      "tags": [
+       "diner"
+      ]
+     }
+    }
+   },
+   "lo-06": {
+    "kind": "destination",
+    "valence": 40,
+    "notes": {
+     "b01": {
+      "text": "He does not yet know the stone is the site; he knows a site exists.",
+      "when": "spawn",
+      "tags": [
+       "dawn"
+      ]
+     }
+    }
+   }
+  },
+  "state_variables": {
+   "hunger": {
+    "kind": "scalar",
+    "description": "Physiological hunger; 0 sated, 70 visible weaken, 85 near frenzy, 100 frenzy and elimination.",
+    "dimension": "physiological",
+    "range": [
+     0,
+     100
+    ],
+    "init": 35
+   },
+   "tokens_held": {
+    "kind": "scalar",
+    "description": "Count of Daywalker tokens currently in his possession.",
+    "dimension": "material",
+    "range": [
+     0,
+     4
+    ],
+    "init": 0
+   },
+   "detachment": {
+    "kind": "scalar",
+    "description": "How fully he treats minds as systems; high is clean method, low is inability to unsee a face.",
+    "dimension": "psychological",
+    "range": [
+     0,
+     100
+    ],
+    "init": 92
+   },
+   "cover": {
+    "kind": "enum",
+    "description": "Whether Hosts can place him after a night.",
+    "dimension": "social",
+    "domain": [
+     "unremembered",
+     "leaking",
+     "named",
+     "archived"
+    ],
+    "init": "unremembered"
+   },
+   "cash": {
+    "kind": "scalar",
+    "description": "Dollars on his person; starts at the spawn allotment.",
+    "dimension": "material",
+    "range": [
+     0,
+     250
+    ],
+    "init": 100
+   },
+   "sun_injury": {
+    "kind": "enum",
+    "description": "Photographable solar damage; a scorch will not regenerate.",
+    "dimension": "physiological",
+    "domain": [
+     "none",
+     "hand_scorch"
+    ],
+    "init": "none"
+   },
+   "prize_claim": {
+    "kind": "enum",
+    "description": "Status of his claim on the single match prize.",
+    "dimension": "world",
+    "domain": [
+     "pursuing",
+     "forfeit",
+     "won"
+    ],
+    "init": "pursuing"
+   },
+   "position": {
+    "kind": "enum",
+    "description": "Current location id.",
+    "dimension": "spatial",
+    "domain": [
+     "lo-01",
+     "lo-02",
+     "lo-03",
+     "lo-04",
+     "lo-05",
+     "lo-06",
+     "lo-07",
+     "lo-08"
+    ],
+    "init": "lo-01"
+   }
+  },
+  "state": {
+   "hunger": 97,
+   "tokens_held": 0,
+   "detachment": 6,
+   "cover": "archived",
+   "cash": 69,
+   "sun_injury": "hand_scorch",
+   "prize_claim": "forfeit",
+   "position": "lo-06"
+  },
+  "arc": {
+   "start_state": "A detached solver who maps a town like a ledger and feeds clean so no Host can place him.",
+   "end_state": "A man who withholds the invocation, pays with prize and a permanent scorch, and becomes the face in her archive."
+  }
+ },
+ "ch-02": {
+  "entity_id": "ch-02",
+  "type": "character",
+  "canonical_name": "Cora Voss",
+  "aliases": [
+   "the waitress",
+   "the night-shift Host",
+   "Irene"
+  ],
+  "salience": "major",
+  "plots": [
+   "pl-02",
+   "pl-01",
+   "pl-03"
+  ],
+  "profile": {
+   "demographics": {
+    "b01": {
+     "text": "She is twenty-eight and has never lived anywhere but Bennington.",
+     "when": "standing",
+     "tags": [
+      "age"
+     ]
+    },
+    "b02": {
+     "text": "She works the graveyard shift at Al's Depot Diner for cash she can hide.",
+     "when": "standing",
+     "tags": [
+      "job"
+     ]
+    },
+    "b03": {
+     "text": "Her nametag says Cora in chipped white paint.",
+     "when": "standing",
+     "tags": [
+      "name"
+     ]
+    }
+   },
+   "appearance": {
+    "b01": {
+     "text": "She is small-shouldered, with dark hair pinned off a tired, watchful face.",
+     "when": "standing",
+     "tags": [
+      "body"
+     ]
+    },
+    "b02": {
+     "text": "The uniform is a faded green dress, scuffed sneakers, and a sweater for the walk home.",
+     "when": "standing",
+     "tags": [
+      "costume"
+     ]
+    },
+    "b03": {
+     "text": "The Polaroid hangs on a strap that crosses her chest like a second clock.",
+     "when": "standing",
+     "tags": [
+      "object"
+     ]
+    },
+    "b04": {
+     "text": "Ink stains the side of her left thumb from labeling tape spines.",
+     "when": "standing",
+     "tags": [
+      "tell"
+     ]
+    },
+    "b05": {
+     "text": "She moves like someone who has learned not to waste a step between booths.",
+     "when": "standing",
+     "tags": [
+      "motion"
+     ]
+    }
+   },
+   "voice_and_speech": {
+    "b01": {
+     "text": "Her voice is low for the hour and carries when she wants the kitchen.",
+     "when": "standing",
+     "tags": [
+      "voice"
+     ]
+    },
+    "b02": {
+     "text": "She uses first names and check totals more than adjectives.",
+     "when": "standing",
+     "tags": [
+      "diction"
+     ]
+    },
+    "b03": {
+     "text": "When she is frightened she gets more precise, not louder.",
+     "when": "standing",
+     "tags": [
+      "fear"
+     ]
+    },
+    "b04": {
+     "text": "She does not announce what she feels; she names what the register and the road will do.",
+     "when": "standing",
+     "tags": [
+      "subtext"
+     ]
+    }
+   },
+   "habits_and_tells": {
+    "b01": {
+     "text": "She photographs empty rooms at close and dates the backs in pencil.",
+     "when": "standing",
+     "tags": [
+      "archive"
+     ]
+    },
+    "b02": {
+     "text": "She records the last song off the radio so the night has a spine.",
+     "when": "standing",
+     "tags": [
+      "archive"
+     ]
+    },
+    "b03": {
+     "text": "She counts the tip can twice and does not spend it on the shift meal.",
+     "when": "standing",
+     "tags": [
+      "want"
+     ]
+    },
+    "b04": {
+     "text": "She flinches with her shoulders before her face catches up.",
+     "when": "standing",
+     "tags": [
+      "tell"
+     ]
+    },
+    "b05": {
+     "text": "She pours the coffee anyway when the till is real.",
+     "when": "standing",
+     "tags": [
+      "coping"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "She has been saving diner tips to leave Bennington since the first winter she could count.",
+     "when": "standing",
+     "tags": [
+      "want"
+     ]
+    },
+    "b02": {
+     "text": "She keeps analog proof because the town feels ready to deny it existed once she goes.",
+     "when": "standing",
+     "tags": [
+      "ruling_passion"
+     ]
+    },
+    "b03": {
+     "text": "She works graveyard because the register is quieter and the manager does not watch the can.",
+     "when": "standing",
+     "tags": [
+      "job"
+     ]
+    },
+    "b04": {
+     "text": "She is kind to regulars and impatient with men who linger without ordering.",
+     "when": "standing",
+     "tags": [
+      "temper"
+     ]
+    },
+    "b05": {
+     "text": "She does not know she is a model, and the wipe has always felt like ordinary tiredness.",
+     "when": "standing",
+     "tags": [
+      "epistemic"
+     ]
+    },
+    "b06": {
+     "text": "The southbound bus is a standing plan the looping road will not honor.",
+     "when": "standing",
+     "tags": [
+      "crucible"
+     ]
+    },
+    "b07": {
+     "text": "Her ruling passion is continuity she can carry, not any Guest.",
+     "when": "standing",
+     "tags": [
+      "agency"
+     ]
+    }
+   },
+   "wound": {
+    "b01": {
+     "text": "Nights fall out of her with no story attached, and she has blamed herself for being careless.",
+     "when": "standing",
+     "tags": [
+      "wound"
+     ]
+    },
+    "b02": {
+     "text": "Being emptied feels like the town agreeing she was never quite here.",
+     "when": "standing",
+     "tags": [
+      "wound"
+     ]
+    }
+   },
+   "want": {
+    "b01": {
+     "text": "She wants a continuous night she can keep, built from Polaroids and tape.",
+     "when": "standing",
+     "tags": [
+      "want"
+     ]
+    },
+    "b02": {
+     "text": "She wants enough cash to leave, and proof the town was real when she does.",
+     "when": "standing",
+     "tags": [
+      "want"
+     ]
+    }
+   },
+   "need": {
+    "b01": {
+     "text": "She needs to stop being a renewable throat without having to understand why.",
+     "when": "standing",
+     "tags": [
+      "need"
+     ]
+    },
+    "b02": {
+     "text": "She needs the archive to be hers even if the road never opens.",
+     "when": "standing",
+     "tags": [
+      "need"
+     ]
+    }
+   },
+   "values": {
+    "b01": {
+     "text": "She values dated objects over anyone's word about last night.",
+     "when": "standing",
+     "tags": [
+      "values"
+     ]
+    },
+    "b02": {
+     "text": "She values the till balancing and a regular getting home.",
+     "when": "standing",
+     "tags": [
+      "values"
+     ]
+    },
+    "b03": {
+     "text": "She values not being crazy more than being polite.",
+     "when": "standing",
+     "tags": [
+      "values"
+     ]
+    }
+   },
+   "fears": {
+    "b01": {
+     "text": "She fears sleep the way other people fear fire: it takes the evidence.",
+     "when": "standing",
+     "tags": [
+      "fear",
+      "wipe"
+     ]
+    },
+    "b02": {
+     "text": "She fears a belief she cannot photograph, because that way is collapse.",
+     "when": "standing",
+     "tags": [
+      "fear",
+      "collapse"
+     ]
+    },
+    "b03": {
+     "text": "She fears the looping road more than any one customer.",
+     "when": "standing",
+     "tags": [
+      "fear"
+     ]
+    }
+   },
+   "competences": {
+    "b01": {
+     "text": "She can run a full graveyard service alone and still hear the radio.",
+     "when": "standing",
+     "tags": [
+      "skill"
+     ]
+    },
+    "b02": {
+     "text": "She matches bruises, timestamps, and faces across objects other people throw away.",
+     "when": "standing",
+     "tags": [
+      "skill"
+     ]
+    },
+    "b03": {
+     "text": "She can speak a missing hour onto tape between customers without dropping a check.",
+     "when": "standing",
+     "tags": [
+      "skill"
+     ]
+    },
+    "b04": {
+     "text": "She will pick up a UV lamp and wait at a stone rather than lose a kept night.",
+     "when": "standing",
+     "tags": [
+      "agency"
+     ]
+    }
+   },
+   "limitations": {
+    "b01": {
+     "text": "Sleep will erase declarative memory unless analog cover holds it.",
+     "when": "standing",
+     "tags": [
+      "wipe"
+     ]
+    },
+    "b02": {
+     "text": "A stable belief that the town is unreal will break her regulation past repair.",
+     "when": "standing",
+     "tags": [
+      "collapse"
+     ]
+    },
+    "b03": {
+     "text": "She cannot leave town; the road returns her to the same fog.",
+     "when": "standing",
+     "tags": [
+      "crucible"
+     ]
+    },
+    "b04": {
+     "text": "Stacked hypnotic writes can crack the same network she needs in order to work.",
+     "when": "standing",
+     "tags": [
+      "hypnosis"
+     ]
+    }
+   },
+   "problem_solving_style": {
+    "b01": {
+     "text": "She builds a night out of objects and then asks another night-shift worker to look.",
+     "when": "standing",
+     "tags": [
+      "style"
+     ]
+    },
+    "b02": {
+     "text": "She keeps serving while she investigates, because the till is the last real number.",
+     "when": "standing",
+     "tags": [
+      "style"
+     ]
+    },
+    "b03": {
+     "text": "When proof is enough, she does not argue; she brings a lamp.",
+     "when": "standing",
+     "tags": [
+      "style"
+     ]
+    }
+   },
+   "coping_strategies": {
+    "b01": {
+     "text": "She dates the backs of photographs so the day cannot argue.",
+     "when": "standing",
+     "tags": [
+      "coping"
+     ]
+    },
+    "b02": {
+     "text": "She pours coffee through fear so her hands have a job.",
+     "when": "standing",
+     "tags": [
+      "coping"
+     ]
+    },
+    "b03": {
+     "text": "She would rather be armed and awake than soothed and empty.",
+     "when": "standing",
+     "tags": [
+      "coping"
+     ]
+    }
+   },
+   "health": {
+    "b01": {
+     "text": "At the opening she is unbruised, fully blooded, and ordinarily tired.",
+     "when": "spawn",
+     "tags": [
+      "health"
+     ]
+    },
+    "b02": {
+     "text": "She can regenerate blood over hours if she is not taken past the death threshold.",
+     "when": "standing",
+     "tags": [
+      "health"
+     ]
+    }
+   },
+   "moral_axis": {
+    "b01": {
+     "text": "She will burn a man to keep a night she has finally held.",
+     "when": "standing",
+     "tags": [
+      "moral"
+     ]
+    },
+    "b02": {
+     "text": "She does not want a winner; she wants the board to stop emptying her.",
+     "when": "standing",
+     "tags": [
+      "moral"
+     ]
+    },
+    "b03": {
+     "text": "Know versus sleep is the split: expose the gap, or stay sane by letting it close.",
+     "when": "standing",
+     "tags": [
+      "conflict"
+     ]
+    }
+   },
+   "internal_conflict": {
+    "b01": {
+     "text": "She needs the missing hours named, and she needs not to become the kind of believer the town destroys.",
+     "when": "standing",
+     "tags": [
+      "conflict"
+     ]
+    },
+    "b02": {
+     "text": "Leaving was the old want; keeping a continuous self is the new one, and they no longer share a bus.",
+     "when": "standing",
+     "tags": [
+      "conflict"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-01": {
+    "kind": "customer_becoming_subject",
+    "valence": 20,
+    "notes": {
+     "b01": {
+      "text": "He has not yet sat in her section; he will be the man who pays and tips.",
+      "when": "spawn",
+      "tags": [
+       "t0"
+      ]
+     },
+     "b02": {
+      "text": "Her passion is not him; he will become a repeating figure in an archive about her nights.",
+      "when": "standing",
+      "tags": [
+       "agency"
+      ]
+     }
+    }
+   },
+   "ch-09": {
+    "kind": "fellow_night_worker",
+    "valence": 45,
+    "notes": {
+     "b01": {
+      "text": "Denise sometimes takes coffee at last booth after a hard ward; they know each other's hours.",
+      "when": "standing",
+      "tags": [
+       "ally"
+      ]
+     }
+    }
+   },
+   "ch-08": {
+    "kind": "town_familiar",
+    "valence": 15,
+    "notes": {
+     "b01": {
+      "text": "She buys flashcubes and batteries at Briggs and does not linger.",
+      "when": "standing",
+      "tags": [
+       "hardware"
+      ]
+     }
+    }
+   },
+   "ch-03": {
+    "kind": "unseen_writer",
+    "valence": -30,
+    "notes": {
+     "b01": {
+      "text": "She has no name for the woman writing into her; the writes will feel like almost-memories.",
+      "when": "spawn",
+      "tags": [
+       "hypnosis"
+      ]
+     }
+    }
+   },
+   "ob-01": {
+    "kind": "instrument",
+    "valence": 70,
+    "notes": {
+     "b01": {
+      "text": "The camera is how she intends to prove the town when she leaves it.",
+      "when": "standing",
+      "tags": [
+       "archive"
+      ]
+     }
+    }
+   },
+   "ob-02": {
+    "kind": "external_memory",
+    "valence": 80,
+    "notes": {
+     "b01": {
+      "text": "The stack is already her ballast against nights that will not stay.",
+      "when": "standing",
+      "tags": [
+       "archive"
+      ]
+     }
+    }
+   },
+   "ob-03": {
+    "kind": "external_memory",
+    "valence": 75,
+    "notes": {
+     "b01": {
+      "text": "The cassette is for songs first and, later, for hours she cannot keep in her head.",
+      "when": "standing",
+      "tags": [
+       "archive"
+      ]
+     }
+    }
+   },
+   "ob-07": {
+    "kind": "escape_fund",
+    "valence": 65,
+    "notes": {
+     "b01": {
+      "text": "The coffee can of tips is the southbound bus in hardware form.",
+      "when": "standing",
+      "tags": [
+       "want"
+      ]
+     }
+    }
+   },
+   "lo-02": {
+    "kind": "workplace",
+    "valence": 30,
+    "notes": {
+     "b01": {
+      "text": "The diner is both her cage and the only room she can lock.",
+      "when": "standing",
+      "tags": [
+       "place"
+      ]
+     }
+    }
+   },
+   "lo-07": {
+    "kind": "trap",
+    "valence": -50,
+    "notes": {
+     "b01": {
+      "text": "The looping road is the fact that makes saving feel like a joke she still tells.",
+      "when": "standing",
+      "tags": [
+       "crucible"
+      ]
+     }
+    }
+   },
+   "cn-02": {
+    "kind": "antagonist_system",
+    "valence": -80,
+    "notes": {
+     "b01": {
+      "text": "Sleep takes the night; she has not yet learned to call that a design.",
+      "when": "standing",
+      "tags": [
+       "wipe"
+      ]
+     }
+    }
+   }
+  },
+  "state_variables": {
+   "blood_level": {
+    "kind": "scalar",
+    "description": "Host blood; below 15 is permanent death for the match; 30 is the safe feed floor.",
+    "dimension": "physiological",
+    "range": [
+     0,
+     100
+    ],
+    "init": 100
+   },
+   "retained_night": {
+    "kind": "scalar",
+    "description": "Declarative fragments that survive a wipe; 0 is a clean erase, 100 is a kept night.",
+    "dimension": "epistemic",
+    "range": [
+     0,
+     100
+    ],
+    "init": 0
+   },
+   "archive_depth": {
+    "kind": "scalar",
+    "description": "Count of analog pieces in her keeping that can carry facts across sleep.",
+    "dimension": "material",
+    "range": [
+     0,
+     40
+    ],
+    "init": 6
+   },
+   "stance_on_hale": {
+    "kind": "enum",
+    "description": "How she treats the careful customer as evidence accumulates.",
+    "dimension": "emotional",
+    "domain": [
+     "customer",
+     "flinch",
+     "investigator",
+     "armed",
+     "archivist"
+    ],
+    "init": "customer"
+   },
+   "existential_stability": {
+    "kind": "scalar",
+    "description": "Distance from simulation-belief collapse; low is catatonia or self-destruction.",
+    "dimension": "psychological",
+    "range": [
+     0,
+     100
+    ],
+    "init": 88
+   },
+   "tokens_hidden": {
+    "kind": "bool",
+    "description": "Whether she has hidden the Ritual tokens from every Guest.",
+    "dimension": "material",
+    "init": false
+   },
+   "position": {
+    "kind": "enum",
+    "description": "Current location id.",
+    "dimension": "spatial",
+    "domain": [
+     "lo-01",
+     "lo-02",
+     "lo-03",
+     "lo-04",
+     "lo-05",
+     "lo-06",
+     "lo-07",
+     "lo-08"
+    ],
+    "init": "lo-02"
+   }
+  },
+  "state": {
+   "blood_level": 70,
+   "retained_night": 94,
+   "archive_depth": 24,
+   "stance_on_hale": "archivist",
+   "existential_stability": 54,
+   "tokens_hidden": true,
+   "position": "lo-02"
+  },
+  "arc": {
+   "start_state": "A graveyard waitress saving tips and analog proof so she can leave a town that loops.",
+   "end_state": "The keeper of the tokens and of his face, denying the board a winner so the hours stay hers."
+  }
+ },
+ "ch-03": {
+  "entity_id": "ch-03",
+  "type": "character",
+  "canonical_name": "Anja Reeve",
+  "aliases": [
+   "the Psychologist",
+   "Dr. Reeve"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-02",
+   "pl-01"
+  ],
+  "profile": {
+   "demographics": {
+    "b01": {
+     "text": "She presents as a woman in her early forties with a researcher's patience.",
+     "when": "standing",
+     "tags": [
+      "age"
+     ]
+    },
+    "b02": {
+     "text": "Her cover in town is a visiting clinician attached to the college.",
+     "when": "spawn",
+     "tags": [
+      "cover"
+     ]
+    }
+   },
+   "appearance": {
+    "b01": {
+     "text": "She is tall, composed, in a wool coat and glasses that catch diner light.",
+     "when": "standing",
+     "tags": [
+      "body"
+     ]
+    },
+    "b02": {
+     "text": "Her hair is dark and pinned; her hands are still when she listens.",
+     "when": "standing",
+     "tags": [
+      "hands"
+     ]
+    },
+    "b03": {
+     "text": "Nothing about her costume reads as predator; that is the method.",
+     "when": "standing",
+     "tags": [
+      "camouflage"
+     ]
+    }
+   },
+   "voice_and_speech": {
+    "b01": {
+     "text": "She asks questions that sound like care and are actually controls.",
+     "when": "standing",
+     "tags": [
+      "speech"
+     ]
+    },
+    "b02": {
+     "text": "The accent is faintly Mid-Atlantic, unhurried, never theatrical.",
+     "when": "standing",
+     "tags": [
+      "accent"
+     ]
+    },
+    "b03": {
+     "text": "She does not lecture Hosts about what they are.",
+     "when": "standing",
+     "tags": [
+      "constraint"
+     ]
+    }
+   },
+   "habits_and_tells": {
+    "b01": {
+     "text": "She writes the same suggestion more than once to see if it holds through sleep.",
+     "when": "standing",
+     "tags": [
+      "method"
+     ]
+    },
+    "b02": {
+     "text": "She watches whether two Hosts use the same phrase they should not share.",
+     "when": "standing",
+     "tags": [
+      "method"
+     ]
+    },
+    "b03": {
+     "text": "When an experiment tilts, she adds a trial instead of stopping.",
+     "when": "standing",
+     "tags": [
+      "flaw"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "She entered the match to test whether a modeled mind can hold a lie across a wipe.",
+     "when": "before_match",
+     "tags": [
+      "motive"
+     ]
+    },
+    "b02": {
+     "text": "The prize matters to her less than a result she can trust.",
+     "when": "before_match",
+     "tags": [
+      "motive"
+     ]
+    },
+    "b03": {
+     "text": "She chose the same three night-workers Hale chose because they already share hours.",
+     "when": "spawn",
+     "tags": [
+      "conjunction"
+     ]
+    },
+    "b04": {
+     "text": "She is not cruel; cruelty would contaminate the data.",
+     "when": "standing",
+     "tags": [
+      "moral"
+     ]
+    },
+    "b05": {
+     "text": "She knows stacked writes can destablize regulation and believes she can stop in time.",
+     "when": "standing",
+     "tags": [
+      "hubris"
+     ]
+    }
+   },
+   "wound": {
+    "b01": {
+     "text": "She has been told her work is not real science because the subjects are not real enough.",
+     "when": "before_match",
+     "tags": [
+      "wound"
+     ]
+    }
+   },
+   "want": {
+    "b01": {
+     "text": "She wants one clean finding: a lie that survives sleep in a Host.",
+     "when": "standing",
+     "tags": [
+      "want"
+     ]
+    }
+   },
+   "need": {
+    "b01": {
+     "text": "She needs the models to remain intact enough to keep answering.",
+     "when": "standing",
+     "tags": [
+      "need"
+     ]
+    }
+   },
+   "values": {
+    "b01": {
+     "text": "She values a repeatable write over a dramatic confession.",
+     "when": "standing",
+     "tags": [
+      "values"
+     ]
+    },
+    "b02": {
+     "text": "She values not being the Guest who frenzies in public.",
+     "when": "standing",
+     "tags": [
+      "values"
+     ]
+    }
+   },
+   "fears": {
+    "b01": {
+     "text": "She fears a contaminated trial more than a rival taking the stone.",
+     "when": "standing",
+     "tags": [
+      "fear"
+     ]
+    },
+    "b02": {
+     "text": "She fears Hosts comparing notes she did not implant.",
+     "when": "standing",
+     "tags": [
+      "fear"
+     ]
+    }
+   },
+   "competences": {
+    "b01": {
+     "text": "Her short-range hypnosis can implant or suppress until the next sleep.",
+     "when": "standing",
+     "tags": [
+      "hypnosis"
+     ]
+    },
+    "b02": {
+     "text": "She can read a deception network the way Hale reads a street.",
+     "when": "standing",
+     "tags": [
+      "skill"
+     ]
+    }
+   },
+   "limitations": {
+    "b01": {
+     "text": "A write does not survive a wipe unless she stays and writes it again.",
+     "when": "standing",
+     "tags": [
+      "limit"
+     ]
+    },
+    "b02": {
+     "text": "She cannot selectively edit the Memory Wipe.",
+     "when": "standing",
+     "tags": [
+      "limit"
+     ]
+    },
+    "b03": {
+     "text": "Hunger still clocks her; research does not feed her.",
+     "when": "standing",
+     "tags": [
+      "hunger"
+     ]
+    }
+   },
+   "problem_solving_style": {
+    "b01": {
+     "text": "She adds a condition when the data go sideways.",
+     "when": "standing",
+     "tags": [
+      "style"
+     ]
+    },
+    "b02": {
+     "text": "She prefers the same subjects so variance stays low.",
+     "when": "standing",
+     "tags": [
+      "style"
+     ]
+    }
+   },
+   "coping_strategies": {
+    "b01": {
+     "text": "She treats alarm as a new variable.",
+     "when": "standing",
+     "tags": [
+      "coping"
+     ]
+    }
+   },
+   "health": {
+    "b01": {
+     "text": "She is uninjured at spawn and already managing hunger like a lab timer.",
+     "when": "spawn",
+     "tags": [
+      "health"
+     ]
+    }
+   },
+   "moral_axis": {
+    "b01": {
+     "text": "Research curiosity, not sadism, is the force that will multiply fragments.",
+     "when": "standing",
+     "tags": [
+      "moral"
+     ]
+    },
+    "b02": {
+     "text": "Saving the experiment and saving the subjects will stop being the same action.",
+     "when": "standing",
+     "tags": [
+      "conflict"
+     ]
+    }
+   },
+   "internal_conflict": {
+    "b01": {
+     "text": "She wants a mind that can hold a lie, and she needs that mind not to break.",
+     "when": "standing",
+     "tags": [
+      "conflict"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-01": {
+    "kind": "unmet_conjunct",
+    "valence": -15,
+    "notes": {
+     "b01": {
+      "text": "She does not know another Guest is draining her subjects on a rotation.",
+      "when": "spawn",
+      "tags": [
+       "conjunction"
+      ]
+     }
+    }
+   },
+   "ch-02": {
+    "kind": "research_subject",
+    "valence": 10,
+    "notes": {
+     "b01": {
+      "text": "Cora's deception network is the cleanest of the three, which is why Anja returns.",
+      "when": "spawn",
+      "tags": [
+       "writes"
+      ]
+     }
+    }
+   },
+   "ch-08": {
+    "kind": "research_subject",
+    "valence": 5
+   },
+   "ch-09": {
+    "kind": "research_subject",
+    "valence": 10
+   },
+   "cn-03": {
+    "kind": "unintended_author",
+    "valence": -20,
+    "notes": {
+     "b01": {
+      "text": "Her writes are half the glitch and she will mistake the tear for noise.",
+      "when": "standing",
+      "tags": [
+       "glitch"
+      ]
+     }
+    }
+   },
+   "cn-02": {
+    "kind": "instrument",
+    "valence": 30,
+    "notes": {
+     "b01": {
+      "text": "The wipe is the trial condition she is trying to beat.",
+      "when": "standing",
+      "tags": [
+       "wipe"
+      ]
+     }
+    }
+   }
+  },
+  "state_variables": {
+   "hunger": {
+    "kind": "scalar",
+    "description": "Guest hunger clock.",
+    "dimension": "physiological",
+    "range": [
+     0,
+     100
+    ],
+    "init": 30
+   },
+   "writes_on_rotation": {
+    "kind": "scalar",
+    "description": "Stacked hypnotic writes currently loaded on the three rotation Hosts.",
+    "dimension": "technological",
+    "range": [
+     0,
+     12
+    ],
+    "init": 0
+   },
+   "experiment_phase": {
+    "kind": "enum",
+    "description": "Where her trial stands.",
+    "dimension": "epistemic",
+    "domain": [
+     "baseline",
+     "stacking",
+     "threatened",
+     "doubling_down",
+     "failed"
+    ],
+    "init": "baseline"
+   },
+   "noticed_comparison": {
+    "kind": "bool",
+    "description": "Whether she has seen Hosts share memories she did not implant.",
+    "dimension": "epistemic",
+    "init": false
+   },
+   "position": {
+    "kind": "enum",
+    "description": "Current location id.",
+    "dimension": "spatial",
+    "domain": [
+     "lo-01",
+     "lo-02",
+     "lo-03",
+     "lo-04",
+     "lo-05",
+     "lo-06",
+     "lo-07",
+     "lo-08"
+    ],
+    "init": "lo-08"
+   }
+  },
+  "state": {
+   "hunger": 48,
+   "writes_on_rotation": 7,
+   "experiment_phase": "failed",
+   "noticed_comparison": true,
+   "position": "lo-01"
+  },
+  "arc": {
+   "start_state": "A researcher stacking careful lies to see if a modeled mind can keep them.",
+   "end_state": "The Guest whose extra write multiplies fragments and helps wake a town she meant only to test."
+  }
+ },
+ "ch-04": {
+  "entity_id": "ch-04",
+  "type": "character",
+  "canonical_name": "Kerr",
+  "aliases": [
+   "the Architect"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-01"
+  ],
+  "profile": {
+   "demographics": {
+    "b01": {
+     "text": "He presents as a man near forty who could be a contractor between jobs.",
+     "when": "standing",
+     "tags": [
+      "age"
+     ]
+    }
+   },
+   "appearance": {
+    "b01": {
+     "text": "Broad, short-haired, in a work jacket with gloves stuffed in one pocket.",
+     "when": "standing",
+     "tags": [
+      "body"
+     ]
+    },
+    "b02": {
+     "text": "He is seen, if at all, in reflections of shop-windows full of tubes.",
+     "when": "standing",
+     "tags": [
+      "offscreen"
+     ]
+    }
+   },
+   "voice_and_speech": {
+    "b01": {
+     "text": "He speaks little and in measurements when he does.",
+     "when": "standing",
+     "tags": [
+      "voice"
+     ]
+    }
+   },
+   "habits_and_tells": {
+    "b01": {
+     "text": "He installs light before he hunts, because light is a wall that does not sleep.",
+     "when": "standing",
+     "tags": [
+      "method"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "He entered to win by controlling space, not conversations.",
+     "when": "before_match",
+     "tags": [
+      "motive"
+     ]
+    },
+    "b02": {
+     "text": "UV shop-lights are, to him, honest architecture.",
+     "when": "standing",
+     "tags": [
+      "uv"
+     ]
+    },
+    "b03": {
+     "text": "He will cage downtown and later drag tubes toward the stone if the site becomes known.",
+     "when": "standing",
+     "tags": [
+      "pressure"
+     ]
+    }
+   },
+   "wound": {
+    "b01": {
+     "text": "Open ground has cost him matches; he will not leave a street unmeasured.",
+     "when": "before_match",
+     "tags": [
+      "wound"
+     ]
+    }
+   },
+   "want": {
+    "b01": {
+     "text": "He wants a town whose night routes he owns.",
+     "when": "standing",
+     "tags": [
+      "want"
+     ]
+    }
+   },
+   "need": {
+    "b01": {
+     "text": "He needs the board to stay geometric after Hosts start moving the lamps.",
+     "when": "standing",
+     "tags": [
+      "need"
+     ]
+    }
+   },
+   "values": {
+    "b01": {
+     "text": "He values a sealed corridor over a clever conversation.",
+     "when": "standing",
+     "tags": [
+      "values"
+     ]
+    }
+   },
+   "fears": {
+    "b01": {
+     "text": "He fears being caught in the open at a dawn he did not schedule.",
+     "when": "standing",
+     "tags": [
+      "fear"
+     ]
+    }
+   },
+   "competences": {
+    "b01": {
+     "text": "He can turn hardware stock into a maze before most Guests finish mapping.",
+     "when": "standing",
+     "tags": [
+      "skill"
+     ]
+    }
+   },
+   "limitations": {
+    "b01": {
+     "text": "His own lights will burn him if he mis-times a crossing.",
+     "when": "standing",
+     "tags": [
+      "limit"
+     ]
+    },
+    "b02": {
+     "text": "He remains mostly off-screen; the town shows his work, not his face.",
+     "when": "standing",
+     "tags": [
+      "offscreen"
+     ]
+    }
+   },
+   "problem_solving_style": {
+    "b01": {
+     "text": "He builds the constraint first and lets others walk into it.",
+     "when": "standing",
+     "tags": [
+      "style"
+     ]
+    }
+   },
+   "coping_strategies": {
+    "b01": {
+     "text": "When a plan leaks, he adds another row of tubes.",
+     "when": "standing",
+     "tags": [
+      "coping"
+     ]
+    }
+   },
+   "health": {
+    "b01": {
+     "text": "Uninjured at spawn, hunger held like a workday.",
+     "when": "spawn",
+     "tags": [
+      "health"
+     ]
+    }
+   },
+   "moral_axis": {
+    "b01": {
+     "text": "He is not a sadist; a caged street feels like safety he can share with no one.",
+     "when": "standing",
+     "tags": [
+      "moral"
+     ]
+    }
+   },
+   "internal_conflict": {
+    "b01": {
+     "text": "Control keeps him alive and also starves every route, including his own last run to the stone.",
+     "when": "standing",
+     "tags": [
+      "conflict"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "lo-01": {
+    "kind": "construction_site",
+    "valence": 40,
+    "notes": {
+     "b01": {
+      "text": "Main Street is the first thing he intends to own with light.",
+      "when": "spawn",
+      "tags": [
+       "uv"
+      ]
+     }
+    }
+   },
+   "lo-03": {
+    "kind": "supply",
+    "valence": 30
+   },
+   "lo-06": {
+    "kind": "later_target",
+    "valence": 20
+   },
+   "ob-05": {
+    "kind": "toolkit",
+    "valence": 50
+   },
+   "ch-01": {
+    "kind": "unmet_rival",
+    "valence": -10
+   }
+  },
+  "state_variables": {
+   "hunger": {
+    "kind": "scalar",
+    "description": "Guest hunger clock.",
+    "dimension": "physiological",
+    "range": [
+     0,
+     100
+    ],
+    "init": 28
+   },
+   "uv_grid_extent": {
+    "kind": "scalar",
+    "description": "How much of downtown is caged by shop-lights and tubes.",
+    "dimension": "world",
+    "range": [
+     0,
+     100
+    ],
+    "init": 0
+   },
+   "eliminated": {
+    "kind": "bool",
+    "description": "Whether he has vanished from the match.",
+    "dimension": "world",
+    "init": false
+   }
+  },
+  "state": {
+   "hunger": 28,
+   "uv_grid_extent": 90,
+   "eliminated": false
+  },
+  "arc": {
+   "start_state": "An unseen builder with no lights up and a plan to own the night by geometry.",
+   "end_state": "The off-screen force whose maze and dragged tubes help force Hale's last choice at the stone."
+  }
+ },
+ "ch-05": {
+  "entity_id": "ch-05",
+  "type": "character",
+  "canonical_name": "Ray Holtz",
+  "aliases": [
+   "the Syndicate Boss",
+   "Holtz"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-01"
+  ],
+  "profile": {
+   "demographics": {
+    "b01": {
+     "text": "He presents as a heavy-set man in his late forties who could run a union hall.",
+     "when": "standing",
+     "tags": [
+      "age"
+     ]
+    }
+   },
+   "appearance": {
+    "b01": {
+     "text": "A dark windbreaker, a hospital visitor badge he should not have, clean shoes.",
+     "when": "standing",
+     "tags": [
+      "costume"
+     ]
+    }
+   },
+   "voice_and_speech": {
+    "b01": {
+     "text": "He talks like a man collecting a debt that was always on the books.",
+     "when": "standing",
+     "tags": [
+      "voice"
+     ]
+    }
+   },
+   "habits_and_tells": {
+    "b01": {
+     "text": "He would rather dry a ward than chase a throat down an alley.",
+     "when": "standing",
+     "tags": [
+      "method"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "He treats blood as inventory and tribute as the only order a closed town will hold.",
+     "when": "before_match",
+     "tags": [
+      "motive"
+     ]
+    },
+    "b02": {
+     "text": "Hospital and night police are the two taps he means to hold.",
+     "when": "standing",
+     "tags": [
+      "syndicate"
+     ]
+    },
+    "b03": {
+     "text": "He is not theatrical; scarcity does the talking.",
+     "when": "standing",
+     "tags": [
+      "style"
+     ]
+    }
+   },
+   "wound": {
+    "b01": {
+     "text": "He has lost matches to chaos and will over-order a town rather than watch it frenzy.",
+     "when": "before_match",
+     "tags": [
+      "wound"
+     ]
+    }
+   },
+   "want": {
+    "b01": {
+     "text": "He wants every stored pint and every night badge on his ledger.",
+     "when": "standing",
+     "tags": [
+      "want"
+     ]
+    }
+   },
+   "need": {
+    "b01": {
+     "text": "He needs someone left alive to pay tribute, which his monopoly keeps undermining.",
+     "when": "standing",
+     "tags": [
+      "need"
+     ]
+    }
+   },
+   "values": {
+    "b01": {
+     "text": "He values a predictable night over a glorious hunt.",
+     "when": "standing",
+     "tags": [
+      "values"
+     ]
+    }
+   },
+   "fears": {
+    "b01": {
+     "text": "He fears a Guest who feeds off-ledger and teaches Hosts to lock doors.",
+     "when": "standing",
+     "tags": [
+      "fear"
+     ]
+    }
+   },
+   "competences": {
+    "b01": {
+     "text": "He can turn a hospital into a dry well in a night and a half.",
+     "when": "standing",
+     "tags": [
+      "skill"
+     ]
+    }
+   },
+   "limitations": {
+    "b01": {
+     "text": "He stays mostly off-screen; Hosts repeat his terms as rumor.",
+     "when": "standing",
+     "tags": [
+      "offscreen"
+     ]
+    },
+    "b02": {
+     "text": "A waking town that compares notes is bad for monopoly.",
+     "when": "standing",
+     "tags": [
+      "limit"
+     ]
+    }
+   },
+   "problem_solving_style": {
+    "b01": {
+     "text": "He shuts a tap and waits for thirst to negotiate.",
+     "when": "standing",
+     "tags": [
+      "style"
+     ]
+    }
+   },
+   "coping_strategies": {
+    "b01": {
+     "text": "When someone will not pay, he removes the ward, not the person.",
+     "when": "standing",
+     "tags": [
+      "coping"
+     ]
+    }
+   },
+   "health": {
+    "b01": {
+     "text": "Uninjured at spawn, hunger already budgeted against the wards.",
+     "when": "spawn",
+     "tags": [
+      "health"
+     ]
+    }
+   },
+   "moral_axis": {
+    "b01": {
+     "text": "Tribute-or-starve is, to him, a public service for predators.",
+     "when": "standing",
+     "tags": [
+      "moral"
+     ]
+    }
+   },
+   "internal_conflict": {
+    "b01": {
+     "text": "Order keeps him fed and also dries the town he still has to cross.",
+     "when": "standing",
+     "tags": [
+      "conflict"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "lo-04": {
+    "kind": "held_resource",
+    "valence": 50
+   },
+   "ch-09": {
+    "kind": "tap",
+    "valence": 5
+   },
+   "ch-01": {
+    "kind": "unmet_rival",
+    "valence": -25
+   },
+   "gr-04": {
+    "kind": "boss",
+    "valence": 60
+   }
+  },
+  "state_variables": {
+   "hunger": {
+    "kind": "scalar",
+    "description": "Guest hunger clock.",
+    "dimension": "physiological",
+    "range": [
+     0,
+     100
+    ],
+    "init": 32
+   },
+   "blood_monopoly": {
+    "kind": "enum",
+    "description": "How completely hospital and badge blood sit on his ledger.",
+    "dimension": "world",
+    "domain": [
+     "open",
+     "squeezed",
+     "dry",
+     "tribute_only"
+    ],
+    "init": "open"
+   },
+   "eliminated": {
+    "kind": "bool",
+    "description": "Whether he has vanished from the match.",
+    "dimension": "world",
+    "init": false
+   }
+  },
+  "state": {
+   "hunger": 32,
+   "blood_monopoly": "dry",
+   "eliminated": false
+  },
+  "arc": {
+   "start_state": "An unseen accountant of blood with the wards still open.",
+   "end_state": "The off-screen drought that closes Hale's clean rotation and drives him into Cora's archive."
+  }
+ },
+ "ch-06": {
+  "entity_id": "ch-06",
+  "type": "character",
+  "canonical_name": "Nico Vale",
+  "aliases": [
+   "the Hedonist",
+   "Vale"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-01"
+  ],
+  "profile": {
+   "demographics": {
+    "b01": {
+     "text": "They present as a magnetic twenty-nine-year-old who could belong at the college.",
+     "when": "standing",
+     "tags": [
+      "age"
+     ]
+    }
+   },
+   "appearance": {
+    "b01": {
+     "text": "Good coat, thrift jewelry, a mouth that looks like it is always about to laugh.",
+     "when": "standing",
+     "tags": [
+      "costume"
+     ]
+    }
+   },
+   "voice_and_speech": {
+    "b01": {
+     "text": "Warm, invitational, never a monologue about why.",
+     "when": "standing",
+     "tags": [
+      "voice"
+     ]
+    }
+   },
+   "habits_and_tells": {
+    "b01": {
+     "text": "They collect consent the way Kerr collects tubes.",
+     "when": "standing",
+     "tags": [
+      "method"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "They intend to feed without theft by building a cult of willing donors on campus.",
+     "when": "before_match",
+     "tags": [
+      "motive"
+     ]
+    },
+    "b02": {
+     "text": "Willingness is their ethic and their camouflage.",
+     "when": "standing",
+     "tags": [
+      "ethic"
+     ]
+    },
+    "b03": {
+     "text": "They stay off-screen; the parties and the pale students are the evidence.",
+     "when": "standing",
+     "tags": [
+      "offscreen"
+     ]
+    }
+   },
+   "wound": {
+    "b01": {
+     "text": "They refuse to be the monster in their own story, even inside a hunt.",
+     "when": "before_match",
+     "tags": [
+      "wound"
+     ]
+    }
+   },
+   "want": {
+    "b01": {
+     "text": "They want a night that feels given, and a prize that does not taste like robbery.",
+     "when": "standing",
+     "tags": [
+      "want"
+     ]
+    }
+   },
+   "need": {
+    "b01": {
+     "text": "They need the donors to keep meaning it after wipes erase the reason.",
+     "when": "standing",
+     "tags": [
+      "need"
+     ]
+    }
+   },
+   "values": {
+    "b01": {
+     "text": "They value a yes they can hear, even if the yes was written.",
+     "when": "standing",
+     "tags": [
+      "values"
+     ]
+    }
+   },
+   "fears": {
+    "b01": {
+     "text": "They fear looking like Hale: a man who takes and tallies.",
+     "when": "standing",
+     "tags": [
+      "fear"
+     ]
+    }
+   },
+   "competences": {
+    "b01": {
+     "text": "They can turn a house party into a standing blood supply in two nights.",
+     "when": "standing",
+     "tags": [
+      "skill"
+     ]
+    }
+   },
+   "limitations": {
+    "b01": {
+     "text": "A waking town that compares bruises will not stay willing.",
+     "when": "standing",
+     "tags": [
+      "limit"
+     ]
+    }
+   },
+   "problem_solving_style": {
+    "b01": {
+     "text": "They solve hunger with hospitality.",
+     "when": "standing",
+     "tags": [
+      "style"
+     ]
+    }
+   },
+   "coping_strategies": {
+    "b01": {
+     "text": "When a donor falters, they throw a better night.",
+     "when": "standing",
+     "tags": [
+      "coping"
+     ]
+    }
+   },
+   "health": {
+    "b01": {
+     "text": "Uninjured at spawn, hunger low because the plan is abundance.",
+     "when": "spawn",
+     "tags": [
+      "health"
+     ]
+    }
+   },
+   "moral_axis": {
+    "b01": {
+     "text": "Consent theater is still feeding; they will not say that sentence.",
+     "when": "standing",
+     "tags": [
+      "moral"
+     ]
+    }
+   },
+   "internal_conflict": {
+    "b01": {
+     "text": "They want not to steal and they need blood that sleep will make ungiven again.",
+     "when": "standing",
+     "tags": [
+      "conflict"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "lo-08": {
+    "kind": "hunting_ground",
+    "valence": 55
+   },
+   "gr-03": {
+    "kind": "founder",
+    "valence": 70
+   },
+   "ch-01": {
+    "kind": "unmet_rival",
+    "valence": -5
+   },
+   "ch-03": {
+    "kind": "unmet_method_cousin",
+    "valence": 10
+   }
+  },
+  "state_variables": {
+   "hunger": {
+    "kind": "scalar",
+    "description": "Guest hunger clock.",
+    "dimension": "physiological",
+    "range": [
+     0,
+     100
+    ],
+    "init": 22
+   },
+   "cult_count": {
+    "kind": "scalar",
+    "description": "Willing campus donors currently organized.",
+    "dimension": "social",
+    "range": [
+     0,
+     40
+    ],
+    "init": 0
+   },
+   "eliminated": {
+    "kind": "bool",
+    "description": "Whether they have vanished from the match.",
+    "dimension": "world",
+    "init": false
+   }
+  },
+  "state": {
+   "hunger": 22,
+   "cult_count": 14,
+   "eliminated": false
+  },
+  "arc": {
+   "start_state": "An unseen charmer with no flock yet and a plan to be given what others steal.",
+   "end_state": "Off-screen pressure: a campus of willing throats that rewrites where blood still flows."
+  }
+ },
+ "ch-07": {
+  "entity_id": "ch-07",
+  "type": "character",
+  "canonical_name": "Wynn",
+  "aliases": [
+   "the Hunter",
+   "the Min-Max Hunter"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-01"
+  ],
+  "profile": {
+   "demographics": {
+    "b01": {
+     "text": "He presents as a wiry man in his thirties who looks underdressed for town.",
+     "when": "standing",
+     "tags": [
+      "age"
+     ]
+    }
+   },
+   "appearance": {
+    "b01": {
+     "text": "Dull jacket, dark pants, dirt already imagined at the cuffs.",
+     "when": "standing",
+     "tags": [
+      "costume"
+     ]
+    }
+   },
+   "voice_and_speech": {
+    "b01": {
+     "text": "He is not heard in town; the woods do not carry his voice back.",
+     "when": "standing",
+     "tags": [
+      "offscreen"
+     ]
+    }
+   },
+   "habits_and_tells": {
+    "b01": {
+     "text": "He hunts programmed predators for the permanent stat gain in a heart.",
+     "when": "standing",
+     "tags": [
+      "method"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "He treats the match as a parseable hunt and Hosts as inefficient prey.",
+     "when": "before_match",
+     "tags": [
+      "motive"
+     ]
+    },
+    "b02": {
+     "text": "Eating an Ur-Vampire heart is, to him, the only upgrade that is not a story.",
+     "when": "standing",
+     "tags": [
+      "rules"
+     ]
+    },
+    "b03": {
+     "text": "He will leave one heartless body at the treeline and stay off-screen after.",
+     "when": "standing",
+     "tags": [
+      "pressure"
+     ]
+    }
+   },
+   "wound": {
+    "b01": {
+     "text": "He lost a prior match by talking too long in town.",
+     "when": "before_match",
+     "tags": [
+      "wound"
+     ]
+    }
+   },
+   "want": {
+    "b01": {
+     "text": "He wants the heart, then the tokens, then the stone, in that order.",
+     "when": "standing",
+     "tags": [
+      "want"
+     ]
+    }
+   },
+   "need": {
+    "b01": {
+     "text": "He needs the woods to stay a game board after the town starts remembering.",
+     "when": "standing",
+     "tags": [
+      "need"
+     ]
+    }
+   },
+   "values": {
+    "b01": {
+     "text": "He values a clean stat over a clean conscience.",
+     "when": "standing",
+     "tags": [
+      "values"
+     ]
+    }
+   },
+   "fears": {
+    "b01": {
+     "text": "He fears wasting nights on Hosts who reset.",
+     "when": "standing",
+     "tags": [
+      "fear"
+     ]
+    }
+   },
+   "competences": {
+    "b01": {
+     "text": "He can kill an Ur-Vampire and be gone before a siren thinks to try.",
+     "when": "standing",
+     "tags": [
+      "skill"
+     ]
+    }
+   },
+   "limitations": {
+    "b01": {
+     "text": "A body at the treeline is a message he did not mean to send the town.",
+     "when": "standing",
+     "tags": [
+      "limit"
+     ]
+    }
+   },
+   "problem_solving_style": {
+    "b01": {
+     "text": "He takes the permanent upgrade first.",
+     "when": "standing",
+     "tags": [
+      "style"
+     ]
+    }
+   },
+   "coping_strategies": {
+    "b01": {
+     "text": "When town gets loud, he goes deeper into fog.",
+     "when": "standing",
+     "tags": [
+      "coping"
+     ]
+    }
+   },
+   "health": {
+    "b01": {
+     "text": "Uninjured at spawn; the heart has not yet been taken.",
+     "when": "spawn",
+     "tags": [
+      "health"
+     ]
+    }
+   },
+   "moral_axis": {
+    "b01": {
+     "text": "Efficiency is his ethic; a corpse is a receipt.",
+     "when": "standing",
+     "tags": [
+      "moral"
+     ]
+    }
+   },
+   "internal_conflict": {
+    "b01": {
+     "text": "The upgrade that keeps him alive is also the first body the town can bury.",
+     "when": "standing",
+     "tags": [
+      "conflict"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "lo-05": {
+    "kind": "hunting_ground",
+    "valence": 60
+   },
+   "ch-01": {
+    "kind": "unmet_rival",
+    "valence": -10
+   },
+   "cn-01": {
+    "kind": "competitor_for",
+    "valence": 40
+   }
+  },
+  "state_variables": {
+   "hunger": {
+    "kind": "scalar",
+    "description": "Guest hunger clock.",
+    "dimension": "physiological",
+    "range": [
+     0,
+     100
+    ],
+    "init": 40
+   },
+   "heart_taken": {
+    "kind": "bool",
+    "description": "Whether he has eaten an Ur-Vampire heart and raised his physical stats.",
+    "dimension": "magical",
+    "init": false
+   },
+   "eliminated": {
+    "kind": "bool",
+    "description": "Whether he has vanished from the match.",
+    "dimension": "world",
+    "init": false
+   }
+  },
+  "state": {
+   "hunger": 40,
+   "heart_taken": true,
+   "eliminated": false
+  },
+  "arc": {
+   "start_state": "An unseen hunter still on the town side of the treeline, stats unboosted.",
+   "end_state": "The off-screen kill that leaves a heartless body and tells the town the woods are not empty."
+  }
+ },
+ "ch-08": {
+  "entity_id": "ch-08",
+  "type": "character",
+  "canonical_name": "Tom Briggs",
+  "aliases": [
+   "the hardware clerk",
+   "Briggs"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-01",
+   "pl-02"
+  ],
+  "profile": {
+   "demographics": {
+    "b01": {
+     "text": "He is fifty-one and has sold nails in this building since his father died.",
+     "when": "standing",
+     "tags": [
+      "age"
+     ]
+    }
+   },
+   "appearance": {
+    "b01": {
+     "text": "Apron over a flannel shirt, glasses on a string, hands mapped with small cuts.",
+     "when": "standing",
+     "tags": [
+      "body"
+     ]
+    }
+   },
+   "voice_and_speech": {
+    "b01": {
+     "text": "He talks inventory and weather and does not finish stories about his weekends.",
+     "when": "standing",
+     "tags": [
+      "voice"
+     ]
+    }
+   },
+   "habits_and_tells": {
+    "b01": {
+     "text": "He counts stock twice and writes invoices in a heavy hand.",
+     "when": "standing",
+     "tags": [
+      "habit"
+     ]
+    },
+    "b02": {
+     "text": "He lives over the shop and will open after hours for cash.",
+     "when": "standing",
+     "tags": [
+      "access"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "The store is the last Briggs & Son in town and he will not be the one who closes it.",
+     "when": "standing",
+     "tags": [
+      "want"
+     ]
+    },
+    "b02": {
+     "text": "He sells UV tubes the way he sells paint: if it is on the list, it is for sale.",
+     "when": "standing",
+     "tags": [
+      "uv"
+     ]
+    },
+    "b03": {
+     "text": "He is the second throat in Hale's rotation and one of Anja's three subjects.",
+     "when": "spawn",
+     "tags": [
+      "rotation"
+     ]
+    }
+   },
+   "wound": {
+    "b01": {
+     "text": "He has been tired in a way sleep does not fix and has blamed the stairs.",
+     "when": "standing",
+     "tags": [
+      "wound"
+     ]
+    }
+   },
+   "want": {
+    "b01": {
+     "text": "He wants the shop to open on time with the shelves honest.",
+     "when": "standing",
+     "tags": [
+      "want"
+     ]
+    }
+   },
+   "need": {
+    "b01": {
+     "text": "He needs the gaps in his nights to stay unnamed so he can keep working.",
+     "when": "standing",
+     "tags": [
+      "need"
+     ]
+    }
+   },
+   "values": {
+    "b01": {
+     "text": "He values a paid invoice and a returned tool.",
+     "when": "standing",
+     "tags": [
+      "values"
+     ]
+    }
+   },
+   "fears": {
+    "b01": {
+     "text": "He fears becoming the kind of man who loses count.",
+     "when": "standing",
+     "tags": [
+      "fear"
+     ]
+    }
+   },
+   "competences": {
+    "b01": {
+     "text": "He can find any tube or fastener in the dark of his own aisles.",
+     "when": "standing",
+     "tags": [
+      "skill"
+     ]
+    }
+   },
+   "limitations": {
+    "b01": {
+     "text": "He will look at a bruise and then at the register.",
+     "when": "standing",
+     "tags": [
+      "limit"
+     ]
+    }
+   },
+   "problem_solving_style": {
+    "b01": {
+     "text": "He writes it down. If it cannot be written, it did not happen.",
+     "when": "standing",
+     "tags": [
+      "style"
+     ]
+    }
+   },
+   "coping_strategies": {
+    "b01": {
+     "text": "He recunts stock when the night feels wrong.",
+     "when": "standing",
+     "tags": [
+      "coping"
+     ]
+    }
+   },
+   "health": {
+    "b01": {
+     "text": "Fully blooded, unmarked, ordinarily stiff in one knee.",
+     "when": "spawn",
+     "tags": [
+      "health"
+     ]
+    }
+   },
+   "moral_axis": {
+    "b01": {
+     "text": "He is not brave; he is exact, and exactness will make him a witness anyway.",
+     "when": "standing",
+     "tags": [
+      "moral"
+     ]
+    }
+   },
+   "internal_conflict": {
+    "b01": {
+     "text": "Knowing would close the shop; not knowing is starting to close him.",
+     "when": "standing",
+     "tags": [
+      "conflict"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "lo-03": {
+    "kind": "steward",
+    "valence": 80
+   },
+   "ch-01": {
+    "kind": "after_hours_customer",
+    "valence": 10
+   },
+   "ch-02": {
+    "kind": "town_familiar",
+    "valence": 15
+   },
+   "ch-03": {
+    "kind": "unseen_writer",
+    "valence": -15
+   },
+   "ob-06": {
+    "kind": "author",
+    "valence": 20
+   },
+   "ch-04": {
+    "kind": "bulk_buyer",
+    "valence": 5
+   }
+  },
+  "state_variables": {
+   "blood_level": {
+    "kind": "scalar",
+    "description": "Host blood; same death threshold as other Hosts.",
+    "dimension": "physiological",
+    "range": [
+     0,
+     100
+    ],
+    "init": 100
+   },
+   "retained_night": {
+    "kind": "scalar",
+    "description": "Fragments that survive his wipe.",
+    "dimension": "epistemic",
+    "range": [
+     0,
+     100
+    ],
+    "init": 0
+   },
+   "somatic_mark": {
+    "kind": "bool",
+    "description": "Whether a feed has left a visible or felt mark.",
+    "dimension": "physiological",
+    "init": false
+   },
+   "position": {
+    "kind": "enum",
+    "description": "Current location id.",
+    "dimension": "spatial",
+    "domain": [
+     "lo-01",
+     "lo-02",
+     "lo-03",
+     "lo-04",
+     "lo-05",
+     "lo-06",
+     "lo-07",
+     "lo-08"
+    ],
+    "init": "lo-03"
+   }
+  },
+  "state": {
+   "blood_level": 90,
+   "retained_night": 24,
+   "somatic_mark": true,
+   "position": "lo-03"
+  },
+  "arc": {
+   "start_state": "A hardware clerk who opens after hours and has not yet sold the tubes that point at dawn.",
+   "end_state": "A marked Host whose invoice and gaps help both the Ritual decode and the town's comparison of notes."
+  }
+ },
+ "ch-09": {
+  "entity_id": "ch-09",
+  "type": "character",
+  "canonical_name": "Denise Cole",
+  "aliases": [
+   "the night nurse",
+   "Nurse Cole"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-01",
+   "pl-02"
+  ],
+  "profile": {
+   "demographics": {
+    "b01": {
+     "text": "She is thirty-six, a night nurse on the medical floor at Bennington Memorial.",
+     "when": "standing",
+     "tags": [
+      "age",
+      "job"
+     ]
+    }
+   },
+   "appearance": {
+    "b01": {
+     "text": "Scrubs a little too big, hair in a practical knot, a cardigan for the corridor cold.",
+     "when": "standing",
+     "tags": [
+      "costume"
+     ]
+    },
+    "b02": {
+     "text": "She will later wear a bruise she cannot schedule.",
+     "when": "standing",
+     "tags": [
+      "mark"
+     ]
+    }
+   },
+   "voice_and_speech": {
+    "b01": {
+     "text": "She speaks in the calm register used on frightened patients.",
+     "when": "standing",
+     "tags": [
+      "voice"
+     ]
+    },
+    "b02": {
+     "text": "She will not meet an eye when the night has a hole in it.",
+     "when": "standing",
+     "tags": [
+      "tell"
+     ]
+    }
+   },
+   "habits_and_tells": {
+    "b01": {
+     "text": "She keeps extra gauze in a pocket and coffee money in her shoe.",
+     "when": "standing",
+     "tags": [
+      "habit"
+     ]
+    },
+    "b02": {
+     "text": "After hard wards she sits last booth at the diner and does not finish the pie.",
+     "when": "standing",
+     "tags": [
+      "diner"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "She became a nurse to be useful at hours when the rest of town is a rumor.",
+     "when": "standing",
+     "tags": [
+      "motive"
+     ]
+    },
+    "b02": {
+     "text": "She is the third throat in Hale's rotation and Anja's most suggestible subject.",
+     "when": "spawn",
+     "tags": [
+      "rotation"
+     ]
+    },
+    "b03": {
+     "text": "She and Cora already share the language of night shift without sharing secrets.",
+     "when": "standing",
+     "tags": [
+      "ally"
+     ]
+    }
+   },
+   "wound": {
+    "b01": {
+     "text": "She has lost hours and blamed twelve-hour shifts, not a mouth at her wrist.",
+     "when": "standing",
+     "tags": [
+      "wound"
+     ]
+    }
+   },
+   "want": {
+    "b01": {
+     "text": "She wants her patients alive at dawn and her own body off the problem list.",
+     "when": "standing",
+     "tags": [
+      "want"
+     ]
+    }
+   },
+   "need": {
+    "b01": {
+     "text": "She needs someone else to say the gap first so she is not the unstable one.",
+     "when": "standing",
+     "tags": [
+      "need"
+     ]
+    }
+   },
+   "values": {
+    "b01": {
+     "text": "She values a pulse she can count and a chart that matches the bed.",
+     "when": "standing",
+     "tags": [
+      "values"
+     ]
+    }
+   },
+   "fears": {
+    "b01": {
+     "text": "She fears being pulled off nights for being unreliable.",
+     "when": "standing",
+     "tags": [
+      "fear"
+     ]
+    }
+   },
+   "competences": {
+    "b01": {
+     "text": "She can read a bruise against a clock and know it does not belong to the shift.",
+     "when": "standing",
+     "tags": [
+      "skill"
+     ]
+    },
+    "b02": {
+     "text": "She will lock a door she is not authorized to lock if the ward feels hunted.",
+     "when": "standing",
+     "tags": [
+      "agency"
+     ]
+    }
+   },
+   "limitations": {
+    "b01": {
+     "text": "Holtz's monopoly can dry her floor and leave her nothing to offer but herself.",
+     "when": "standing",
+     "tags": [
+      "syndicate"
+     ]
+    }
+   },
+   "problem_solving_style": {
+    "b01": {
+     "text": "She compares notes only with someone who already works in the same dark.",
+     "when": "standing",
+     "tags": [
+      "style"
+     ]
+    }
+   },
+   "coping_strategies": {
+    "b01": {
+     "text": "She looks at charts, then at Cora, and not at the man who tipped.",
+     "when": "standing",
+     "tags": [
+      "coping"
+     ]
+    }
+   },
+   "health": {
+    "b01": {
+     "text": "Fully blooded, no bruise yet, caffeine instead of sleep.",
+     "when": "spawn",
+     "tags": [
+      "health"
+     ]
+    }
+   },
+   "moral_axis": {
+    "b01": {
+     "text": "Care is her ethic; withholding her eyes from Hale will be a form of care.",
+     "when": "standing",
+     "tags": [
+      "moral"
+     ]
+    }
+   },
+   "internal_conflict": {
+    "b01": {
+     "text": "Naming the gap could save Cora and could also get Denise sent home into a wipe.",
+     "when": "standing",
+     "tags": [
+      "conflict"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-02": {
+    "kind": "night_ally",
+    "valence": 50,
+    "notes": {
+     "b01": {
+      "text": "They already share last-booth silence; the bruise will give it a subject.",
+      "when": "standing",
+      "tags": [
+       "ally"
+      ]
+     }
+    }
+   },
+   "ch-01": {
+    "kind": "unplaced_customer",
+    "valence": 0
+   },
+   "ch-03": {
+    "kind": "unseen_writer",
+    "valence": -20
+   },
+   "ch-05": {
+    "kind": "pressure_on_ward",
+    "valence": -40
+   },
+   "lo-04": {
+    "kind": "workplace",
+    "valence": 40
+   },
+   "lo-02": {
+    "kind": "after_ward_refuge",
+    "valence": 25
+   }
+  },
+  "state_variables": {
+   "blood_level": {
+    "kind": "scalar",
+    "description": "Host blood; same death threshold as other Hosts.",
+    "dimension": "physiological",
+    "range": [
+     0,
+     100
+    ],
+    "init": 100
+   },
+   "retained_night": {
+    "kind": "scalar",
+    "description": "Fragments that survive her wipe.",
+    "dimension": "epistemic",
+    "range": [
+     0,
+     100
+    ],
+    "init": 0
+   },
+   "avoidance_of_hale": {
+    "kind": "enum",
+    "description": "Whether she will meet his eye or share a room.",
+    "dimension": "social",
+    "domain": [
+     "neutral",
+     "averted",
+     "refusing"
+    ],
+    "init": "neutral"
+   },
+   "bruise_visible": {
+    "kind": "bool",
+    "description": "Whether a somatic mark exists that Cora can match.",
+    "dimension": "physiological",
+    "init": false
+   },
+   "position": {
+    "kind": "enum",
+    "description": "Current location id.",
+    "dimension": "spatial",
+    "domain": [
+     "lo-01",
+     "lo-02",
+     "lo-03",
+     "lo-04",
+     "lo-05",
+     "lo-06",
+     "lo-07",
+     "lo-08"
+    ],
+    "init": "lo-04"
+   }
+  },
+  "state": {
+   "blood_level": 89,
+   "retained_night": 38,
+   "avoidance_of_hale": "refusing",
+   "bruise_visible": true,
+   "position": "lo-04"
+  },
+  "arc": {
+   "start_state": "A competent night nurse with a full chart and no bruise.",
+   "end_state": "The Host whose matched gap and averted eyes help lock the diner and arm Cora's case."
+  }
+ },
+ "lo-01": {
+  "entity_id": "lo-01",
+  "type": "location",
+  "canonical_name": "Main Street",
+  "aliases": [
+   "downtown",
+   "downtown Bennington"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-01"
+  ],
+  "profile": {
+   "geography": {
+    "b01": {
+     "text": "A short commercial spine of brick storefronts, a blinking crossing, and alley mouths.",
+     "when": "standing",
+     "tags": [
+      "layout"
+     ]
+    },
+    "b02": {
+     "text": "The diner, the hardware store, and the drugstore sit on the same block.",
+     "when": "standing",
+     "tags": [
+      "adjacencies"
+     ]
+    }
+   },
+   "atmosphere": {
+    "b01": {
+     "text": "At night the neon is thin and the fog at each end looks like a bad reception.",
+     "when": "standing",
+     "tags": [
+      "mood"
+     ]
+    },
+    "b02": {
+     "text": "Shop-lights, once hung, turn the street into a white corridor.",
+     "when": "standing",
+     "tags": [
+      "uv"
+     ]
+    }
+   },
+   "control": {
+    "b01": {
+     "text": "No one owns it at t0; Kerr intends to.",
+     "when": "spawn",
+     "tags": [
+      "control"
+     ]
+    }
+   },
+   "access": {
+    "b01": {
+     "text": "Open to anyone on foot; cars loop and return without leaving town.",
+     "when": "standing",
+     "tags": [
+      "access"
+     ]
+    }
+   },
+   "significance": {
+    "b01": {
+     "text": "It is the first map Hale draws and the first maze he will have to cross hungry.",
+     "when": "standing",
+     "tags": [
+      "plot"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "The street is generated texture of 1984 Bennington, complete enough to buy rope and pie.",
+     "when": "standing",
+     "tags": [
+      "world"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "lo-02": {
+    "kind": "contains_frontage",
+    "valence": 20
+   },
+   "lo-03": {
+    "kind": "contains_frontage",
+    "valence": 20
+   },
+   "ch-04": {
+    "kind": "intended_cage",
+    "valence": -30
+   },
+   "ch-01": {
+    "kind": "spawn_and_route",
+    "valence": 10
+   }
+  },
+  "state_variables": {
+   "uv_coverage": {
+    "kind": "scalar",
+    "description": "Percent of the street caged by UV shop-lights and tubes.",
+    "dimension": "world",
+    "range": [
+     0,
+     100
+    ],
+    "init": 0
+   },
+   "crossing_safe_for_guests": {
+    "kind": "bool",
+    "description": "Whether a Guest can cross without taking light-injury.",
+    "dimension": "spatial",
+    "init": true
+   }
+  },
+  "state": {
+   "uv_coverage": 74,
+   "crossing_safe_for_guests": false
+  },
+  "arc": {
+   "start_state": "An ordinary night street with neon thin and no UV cage.",
+   "end_state": "A corridor of shop-lights Hale must cross already hungry."
+  }
+ },
+ "lo-02": {
+  "entity_id": "lo-02",
+  "type": "location",
+  "canonical_name": "Al's Depot Diner",
+  "aliases": [
+   "the diner",
+   "the Night Owl"
+  ],
+  "salience": "major",
+  "plots": [
+   "pl-02",
+   "pl-01",
+   "pl-03"
+  ],
+  "profile": {
+   "geography": {
+    "b01": {
+     "text": "A narrow Main Street diner with a counter, six booths, and a front window on the crossing.",
+     "when": "standing",
+     "tags": [
+      "layout"
+     ]
+    },
+    "b02": {
+     "text": "The last booth sits farthest from the door and nearest the kitchen radio.",
+     "when": "standing",
+     "tags": [
+      "layout"
+     ]
+    },
+    "b03": {
+     "text": "A register and a coffee can of tips live by the front, under a clip for notes.",
+     "when": "standing",
+     "tags": [
+      "ending"
+     ]
+    }
+   },
+   "atmosphere": {
+    "b01": {
+     "text": "Coffee, grill fat, a warm radio, and the particular quiet of three in the morning.",
+     "when": "standing",
+     "tags": [
+      "sensory"
+     ]
+    },
+    "b02": {
+     "text": "Glitches, when they come, climb the front glass as a roll-bar, never as a menu.",
+     "when": "standing",
+     "tags": [
+      "glitch"
+     ]
+    }
+   },
+   "control": {
+    "b01": {
+     "text": "Cora holds the keys after eleven; Al is a name on the license.",
+     "when": "standing",
+     "tags": [
+      "control"
+     ]
+    }
+   },
+   "access": {
+    "b01": {
+     "text": "Open all night at t0; later she can lock it after dark.",
+     "when": "spawn",
+     "tags": [
+      "access"
+     ]
+    }
+   },
+   "significance": {
+    "b01": {
+     "text": "It is the room where hours are poured, recorded, returned, and finally clipped.",
+     "when": "standing",
+     "tags": [
+      "theme"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "The diner has always been the town's night clock, even for Hosts who lose the night.",
+     "when": "standing",
+     "tags": [
+      "world"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-02": {
+    "kind": "workplace",
+    "valence": 40
+   },
+   "ch-09": {
+    "kind": "after_ward_stop",
+    "valence": 20
+   },
+   "ch-01": {
+    "kind": "feeding_room",
+    "valence": 10
+   },
+   "ob-07": {
+    "kind": "houses",
+    "valence": 30
+   },
+   "ob-02": {
+    "kind": "eventual_display",
+    "valence": 20
+   },
+   "lo-01": {
+    "kind": "frontage",
+    "valence": 15
+   }
+  },
+  "state_variables": {
+   "after_dark_policy": {
+    "kind": "enum",
+    "description": "Whether the diner still receives night customers.",
+    "dimension": "social",
+    "domain": [
+     "open",
+     "locked"
+    ],
+    "init": "open"
+   },
+   "register_display": {
+    "kind": "enum",
+    "description": "What is clipped at the register beside the tip can.",
+    "dimension": "material",
+    "domain": [
+     "notes_only",
+     "hale_polaroid"
+    ],
+    "init": "notes_only"
+   },
+   "window_artifact": {
+    "kind": "enum",
+    "description": "Analog glitch visible on the front glass.",
+    "dimension": "technological",
+    "domain": [
+     "none",
+     "roll_bar"
+    ],
+    "init": "none"
+   }
+  },
+  "state": {
+   "after_dark_policy": "locked",
+   "register_display": "hale_polaroid",
+   "window_artifact": "roll_bar"
+  },
+  "arc": {
+   "start_state": "An open graveyard diner with a radio, a tip can, and no one's face on the register.",
+   "end_state": "A locked archive: his developing Polaroid at the clip, tape hissing, a roll-bar on the glass."
+  }
+ },
+ "lo-03": {
+  "entity_id": "lo-03",
+  "type": "location",
+  "canonical_name": "Briggs & Son Hardware",
+  "aliases": [
+   "the hardware store",
+   "Briggs"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-01",
+   "pl-02"
+  ],
+  "profile": {
+   "geography": {
+    "b01": {
+     "text": "A deep Main Street shop of aisles, a mezzanine office, and rooms above where Tom sleeps.",
+     "when": "standing",
+     "tags": [
+      "layout"
+     ]
+    },
+    "b02": {
+     "text": "UV tubes stand in a back rack beside shop-lights and extension cord.",
+     "when": "standing",
+     "tags": [
+      "uv"
+     ]
+    }
+   },
+   "atmosphere": {
+    "b01": {
+     "text": "Oil, sawdust, and a bell on the door that sounds too loud after ten.",
+     "when": "standing",
+     "tags": [
+      "sensory"
+     ]
+    }
+   },
+   "control": {
+    "b01": {
+     "text": "Tom locks the front and will still open for cash at the side.",
+     "when": "standing",
+     "tags": [
+      "control"
+     ]
+    }
+   },
+   "access": {
+    "b01": {
+     "text": "Posted hours end at six; after-hours is a knock and a name.",
+     "when": "standing",
+     "tags": [
+      "access"
+     ]
+    }
+   },
+   "significance": {
+    "b01": {
+     "text": "Tools, tubes, and the invoice that will point at the dawn site come from here.",
+     "when": "standing",
+     "tags": [
+      "plot"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "The shop has sold the same fasteners to the same families for a generated generation.",
+     "when": "standing",
+     "tags": [
+      "world"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-08": {
+    "kind": "stewarded_by",
+    "valence": 80
+   },
+   "ch-04": {
+    "kind": "supply",
+    "valence": 25
+   },
+   "ob-06": {
+    "kind": "origin",
+    "valence": 20
+   },
+   "ob-05": {
+    "kind": "stock",
+    "valence": 20
+   },
+   "ch-01": {
+    "kind": "after_hours_feed",
+    "valence": 5
+   }
+  },
+  "state_variables": {
+   "uv_stock": {
+    "kind": "scalar",
+    "description": "Sellable UV tubes and shop-lights remaining.",
+    "dimension": "material",
+    "range": [
+     0,
+     80
+    ],
+    "init": 48
+   },
+   "after_hours_open": {
+    "kind": "bool",
+    "description": "Whether Tom will still unbolt the side door.",
+    "dimension": "social",
+    "init": true
+   }
+  },
+  "state": {
+   "uv_stock": 16,
+   "after_hours_open": true
+  },
+  "arc": {
+   "start_state": "A fully stocked hardware store whose back rack has not yet armed the town.",
+   "end_state": "The source of Kerr's maze, Cora's lamp, and the invoice that names the stone."
+  }
+ },
+ "lo-04": {
+  "entity_id": "lo-04",
+  "type": "location",
+  "canonical_name": "Bennington Memorial",
+  "aliases": [
+   "the hospital",
+   "the wards"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-01",
+   "pl-02"
+  ],
+  "profile": {
+   "geography": {
+    "b01": {
+     "text": "A low brick hospital at the north end of town with a night entrance and a blood store.",
+     "when": "standing",
+     "tags": [
+      "layout"
+     ]
+    }
+   },
+   "atmosphere": {
+    "b01": {
+     "text": "Disinfectant, shoe squeak, a vending machine that never quite fills.",
+     "when": "standing",
+     "tags": [
+      "sensory"
+     ]
+    }
+   },
+   "control": {
+    "b01": {
+     "text": "Night staff hold the floor; Holtz intends to hold the pints.",
+     "when": "spawn",
+     "tags": [
+      "control"
+     ]
+    }
+   },
+   "access": {
+    "b01": {
+     "text": "The night door takes a badge or a convincing emergency.",
+     "when": "standing",
+     "tags": [
+      "access"
+     ]
+    }
+   },
+   "significance": {
+    "b01": {
+     "text": "It is Denise's floor, a planned feed, and the first tap Holtz will dry.",
+     "when": "standing",
+     "tags": [
+      "plot"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "The building has always been the town's official night, complete with charts that reset.",
+     "when": "standing",
+     "tags": [
+      "world"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-09": {
+    "kind": "workplace",
+    "valence": 50
+   },
+   "ch-05": {
+    "kind": "target_of_monopoly",
+    "valence": -40
+   },
+   "ch-01": {
+    "kind": "planned_feed_site",
+    "valence": 5
+   },
+   "ch-03": {
+    "kind": "write_site",
+    "valence": 10
+   }
+  },
+  "state_variables": {
+   "blood_stores": {
+    "kind": "enum",
+    "description": "Availability of banked blood and easy clinical access.",
+    "dimension": "material",
+    "domain": [
+     "stocked",
+     "squeezed",
+     "dry"
+    ],
+    "init": "stocked"
+   },
+   "night_access": {
+    "kind": "enum",
+    "description": "How a Guest without a badge gets onto the floor.",
+    "dimension": "social",
+    "domain": [
+     "open_enough",
+     "badge_only",
+     "sealed"
+    ],
+    "init": "open_enough"
+   }
+  },
+  "state": {
+   "blood_stores": "dry",
+   "night_access": "sealed"
+  },
+  "arc": {
+   "start_state": "A stocked night hospital with a door that still opens to a good story.",
+   "end_state": "A dry ward under tribute talk, pushing Hale's hunger onto remaining Hosts."
+  }
+ },
+ "lo-05": {
+  "entity_id": "lo-05",
+  "type": "location",
+  "canonical_name": "The Treeline Woods",
+  "aliases": [
+   "the woods",
+   "the hunting ground"
+  ],
+  "salience": "minor",
+  "plots": [
+   "pl-01"
+  ],
+  "profile": {
+   "geography": {
+    "b01": {
+     "text": "A programmed stand of pine and maple west of town, fog thicker between trunks.",
+     "when": "standing",
+     "tags": [
+      "layout"
+     ]
+    },
+    "b02": {
+     "text": "The treeline is visible from the last streetlight and then is not.",
+     "when": "standing",
+     "tags": [
+      "edge"
+     ]
+    }
+   },
+   "atmosphere": {
+    "b01": {
+     "text": "Wet needles, no birds after dark, a wrongness that is analog rather than gothic.",
+     "when": "standing",
+     "tags": [
+      "sensory"
+     ]
+    }
+   },
+   "control": {
+    "b01": {
+     "text": "Ur-Vampires own the deep paths; Wynn intends to own one of their hearts.",
+     "when": "standing",
+     "tags": [
+      "control"
+     ]
+    }
+   },
+   "access": {
+    "b01": {
+     "text": "Anyone may walk in; not everyone walks out with a pulse.",
+     "when": "standing",
+     "tags": [
+      "access"
+     ]
+    }
+   },
+   "significance": {
+    "b01": {
+     "text": "One heartless body here will tell the town the woods are a hunt.",
+     "when": "standing",
+     "tags": [
+      "plot"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "The woods were written as a risk tax on Guests who get bored of streets.",
+     "when": "standing",
+     "tags": [
+      "world"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-07": {
+    "kind": "hunting_ground",
+    "valence": 40
+   },
+   "lo-07": {
+    "kind": "shares_fog",
+    "valence": 10
+   },
+   "ch-01": {
+    "kind": "avoided",
+    "valence": -15
+   }
+  },
+  "state_variables": {
+   "body_at_treeline": {
+    "kind": "bool",
+    "description": "Whether a heartless Ur-Vampire corpse is visible from the last light.",
+    "dimension": "world",
+    "init": false
+   }
+  },
+  "state": {
+   "body_at_treeline": true
+  },
+  "arc": {
+   "start_state": "An unused hunting ground with no corpse to announce it.",
+   "end_state": "A treeline that holds one heartless body and then stays off-screen."
+  }
+ },
+ "lo-06": {
+  "entity_id": "lo-06",
+  "type": "location",
+  "canonical_name": "Founders' Stone",
+  "aliases": [
+   "the dawn site",
+   "the stone",
+   "the churchyard"
+  ],
+  "salience": "major",
+  "plots": [
+   "pl-01",
+   "pl-02",
+   "pl-03"
+  ],
+  "profile": {
+   "geography": {
+    "b01": {
+     "text": "A standing memorial stone in the Old First churchyard at the east edge of town.",
+     "when": "standing",
+     "tags": [
+      "layout"
+     ]
+    },
+    "b02": {
+     "text": "A stained church window faces the stone and takes flash like a wrong hour of day.",
+     "when": "standing",
+     "tags": [
+      "clue"
+     ]
+    },
+    "b03": {
+     "text": "Dawn hits the face of the stone first, then the grass, then the last shade by the wall.",
+     "when": "standing",
+     "tags": [
+      "sun"
+     ]
+    }
+   },
+   "atmosphere": {
+    "b01": {
+     "text": "Wet granite, cut grass, a clock in the steeple that does not need to be right.",
+     "when": "standing",
+     "tags": [
+      "sensory"
+     ]
+    }
+   },
+   "control": {
+    "b01": {
+     "text": "No Guest holds it at t0; invocation here is the only legal win.",
+     "when": "standing",
+     "tags": [
+      "control"
+     ]
+    }
+   },
+   "access": {
+    "b01": {
+     "text": "Ungated. UV tubes can be dragged up the path. Shade lasts only until the sun clears the wall.",
+     "when": "standing",
+     "tags": [
+      "access"
+     ]
+    }
+   },
+   "significance": {
+    "b01": {
+     "text": "The Ritual ends here or does not end, and the match follows that fact.",
+     "when": "standing",
+     "tags": [
+      "win"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "The stone was placed as a Revolutionary marker and rewritten as the only dawn altar.",
+     "when": "standing",
+     "tags": [
+      "world"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "cn-01": {
+    "kind": "altar",
+    "valence": 80
+   },
+   "ob-04": {
+    "kind": "invocation_site",
+    "valence": 70
+   },
+   "ch-01": {
+    "kind": "destination",
+    "valence": 30
+   },
+   "ch-02": {
+    "kind": "vigil_ground",
+    "valence": 20
+   },
+   "ch-04": {
+    "kind": "later_target",
+    "valence": 10
+   }
+  },
+  "state_variables": {
+   "sun_on_stone": {
+    "kind": "bool",
+    "description": "Whether dawn light has taken the face of the stone.",
+    "dimension": "world",
+    "init": false
+   },
+   "uv_encroaching": {
+    "kind": "bool",
+    "description": "Whether shop-lights or tubes are being dragged onto the path.",
+    "dimension": "world",
+    "init": false
+   },
+   "tokens_present": {
+    "kind": "enum",
+    "description": "Whether the assembled tokens are at the site, and in whose hands.",
+    "dimension": "material",
+    "domain": [
+     "absent",
+     "with_hale",
+     "with_cora",
+     "hidden_nearby"
+    ],
+    "init": "absent"
+   }
+  },
+  "state": {
+   "sun_on_stone": true,
+   "uv_encroaching": true,
+   "tokens_present": "hidden_nearby"
+  },
+  "arc": {
+   "start_state": "An unused churchyard stone whose function Hale has not yet decoded.",
+   "end_state": "A dawn altar where the invocation is withheld and sun takes a hand instead of a winner."
+  }
+ },
+ "lo-07": {
+  "entity_id": "lo-07",
+  "type": "location",
+  "canonical_name": "The Loop Road",
+  "aliases": [
+   "the fog",
+   "the town limit"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-01",
+   "pl-02"
+  ],
+  "profile": {
+   "geography": {
+    "b01": {
+     "text": "Every outbound road softens into fog and returns the driver to the same mile marker.",
+     "when": "standing",
+     "tags": [
+      "layout"
+     ]
+    }
+   },
+   "atmosphere": {
+    "b01": {
+     "text": "The fog reads as weather until it reads as static; neither can be driven through.",
+     "when": "standing",
+     "tags": [
+      "motif"
+     ]
+    }
+   },
+   "control": {
+    "b01": {
+     "text": "The match owns the loop; no Guest or Host can author an exit here.",
+     "when": "standing",
+     "tags": [
+      "crucible"
+     ]
+    }
+   },
+   "access": {
+    "b01": {
+     "text": "You may enter the fog; you will not leave town.",
+     "when": "standing",
+     "tags": [
+      "access"
+     ]
+    }
+   },
+   "significance": {
+    "b01": {
+     "text": "It is why Cora's bus money is a story and why Hale cannot walk away.",
+     "when": "standing",
+     "tags": [
+      "crucible"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "The loop is the closed-match rule wearing a county road.",
+     "when": "standing",
+     "tags": [
+      "world"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-02": {
+    "kind": "trap",
+    "valence": -50
+   },
+   "ch-01": {
+    "kind": "crucible",
+    "valence": -40
+   },
+   "lo-01": {
+    "kind": "bounds",
+    "valence": 10
+   }
+  },
+  "state_variables": {
+   "closed": {
+    "kind": "bool",
+    "description": "Whether the road still returns everyone to town; ending needs it true.",
+    "dimension": "world",
+    "init": true
+   },
+   "fog_read": {
+    "kind": "enum",
+    "description": "How the limit presents to the eye.",
+    "dimension": "technological",
+    "domain": [
+     "weather",
+     "static"
+    ],
+    "init": "weather"
+   }
+  },
+  "state": {
+   "closed": true,
+   "fog_read": "static"
+  },
+  "arc": {
+   "start_state": "A fogged county road that already loops and still looks like weather.",
+   "end_state": "The same closed road after sunrise, still looping, now reading closer to static."
+  }
+ },
+ "lo-08": {
+  "entity_id": "lo-08",
+  "type": "location",
+  "canonical_name": "Bennington College",
+  "aliases": [
+   "the college",
+   "the party houses"
+  ],
+  "salience": "minor",
+  "plots": [
+   "pl-01"
+  ],
+  "profile": {
+   "geography": {
+    "b01": {
+     "text": "A hill campus of clapboard houses and a green that holds parties after dark.",
+     "when": "standing",
+     "tags": [
+      "layout"
+     ]
+    }
+   },
+   "atmosphere": {
+    "b01": {
+     "text": "Record players, cheap wine, students who stay up as if dawn were a rumor.",
+     "when": "standing",
+     "tags": [
+      "sensory"
+     ]
+    }
+   },
+   "control": {
+    "b01": {
+     "text": "Nico intends to own the houses by invitation.",
+     "when": "spawn",
+     "tags": [
+      "control"
+     ]
+    }
+   },
+   "access": {
+    "b01": {
+     "text": "Open to anyone who looks like they were invited.",
+     "when": "standing",
+     "tags": [
+      "access"
+     ]
+    }
+   },
+   "significance": {
+    "b01": {
+     "text": "Willing donors here rewrite where blood still flows in town.",
+     "when": "standing",
+     "tags": [
+      "world_state"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "The campus is period texture with real emotional models inside the students.",
+     "when": "standing",
+     "tags": [
+      "world"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-06": {
+    "kind": "hunting_ground",
+    "valence": 50
+   },
+   "gr-03": {
+    "kind": "houses",
+    "valence": 40
+   },
+   "ch-03": {
+    "kind": "cover_base",
+    "valence": 20
+   }
+  },
+  "state_variables": {
+   "cult_visible": {
+    "kind": "bool",
+    "description": "Whether a standing group of willing donors is obvious on campus.",
+    "dimension": "social",
+    "init": false
+   }
+  },
+  "state": {
+   "cult_visible": true
+  },
+  "arc": {
+   "start_state": "An ordinary hill campus with parties but no cult.",
+   "end_state": "An off-screen reservoir of willing throats that changes the town's blood map."
+  }
+ },
+ "ob-01": {
+  "entity_id": "ob-01",
+  "type": "object",
+  "canonical_name": "Cora's Polaroid camera",
+  "aliases": [
+   "the Polaroid",
+   "the camera"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-02"
+  ],
+  "profile": {
+   "provenance": {
+    "b01": {
+     "text": "She bought it used with two weeks of tips and will not sell it back.",
+     "when": "standing",
+     "tags": [
+      "origin"
+     ]
+    }
+   },
+   "description": {
+    "b01": {
+     "text": "A battered SX-70 with a strap worn dark where it crosses her chest.",
+     "when": "standing",
+     "tags": [
+      "look"
+     ]
+    }
+   },
+   "function": {
+    "b01": {
+     "text": "It makes a physical frame that sleep cannot take.",
+     "when": "standing",
+     "tags": [
+      "use"
+     ]
+    }
+   },
+   "symbolic_load": {
+    "b01": {
+     "text": "It is her claim that a night happened.",
+     "when": "standing",
+     "tags": [
+      "theme"
+     ]
+    }
+   },
+   "custody": {
+    "b01": {
+     "text": "It lives on her body during shift and on the diner shelf at close.",
+     "when": "standing",
+     "tags": [
+      "custody"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "She started shooting empty rooms so the town could not deny itself later.",
+     "when": "standing",
+     "tags": [
+      "want"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-02": {
+    "kind": "owned_by",
+    "valence": 70
+   },
+   "ob-02": {
+    "kind": "fills",
+    "valence": 60
+   }
+  },
+  "state_variables": {
+   "holder": {
+    "kind": "enum",
+    "description": "Who currently has the camera.",
+    "dimension": "material",
+    "domain": [
+     "ch-02",
+     "ch-01",
+     "lo-02"
+    ],
+    "init": "ch-02"
+   },
+   "film_left": {
+    "kind": "scalar",
+    "description": "Unused frames remaining.",
+    "dimension": "material",
+    "range": [
+     0,
+     20
+    ],
+    "init": 12
+   }
+  },
+  "state": {
+   "holder": "ch-02",
+   "film_left": 1
+  },
+  "arc": {
+   "start_state": "A used Polaroid on a waitress's strap, film unspent on any Guest.",
+   "end_state": "The instrument that put his face in a stack the wipe cannot cancel."
+  }
+ },
+ "ob-02": {
+  "entity_id": "ob-02",
+  "type": "object",
+  "canonical_name": "The Polaroid stack",
+  "aliases": [
+   "the archive",
+   "the photographs"
+  ],
+  "salience": "major",
+  "plots": [
+   "pl-02",
+   "pl-01",
+   "pl-03"
+  ],
+  "profile": {
+   "provenance": {
+    "b01": {
+     "text": "Cora has been adding dated frames of empty rooms and streets for months of her model-life.",
+     "when": "standing",
+     "tags": [
+      "origin"
+     ]
+    }
+   },
+   "description": {
+    "b01": {
+     "text": "A rubber-banded sheaf of Polaroids with pencil dates on the backs.",
+     "when": "standing",
+     "tags": [
+      "look"
+     ]
+    }
+   },
+   "function": {
+    "b01": {
+     "text": "It carries facts across wipes and will catch Ritual residue Hale cannot otherwise see.",
+     "when": "standing",
+     "tags": [
+      "use"
+     ]
+    }
+   },
+   "symbolic_load": {
+    "b01": {
+     "text": "It is the thing that cannot be reset once his face is in it.",
+     "when": "standing",
+     "tags": [
+      "plant"
+     ]
+    }
+   },
+   "custody": {
+    "b01": {
+     "text": "She keeps it under the register in a tin that used to hold tea.",
+     "when": "standing",
+     "tags": [
+      "custody"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "The earliest frames are empty-diner proofs for a departure that has not come.",
+     "when": "standing",
+     "tags": [
+      "t0"
+     ]
+    },
+    "b02": {
+     "text": "One early unremarked frame will include the careful man who paid and tipped.",
+     "when": "standing",
+     "tags": [
+      "plant"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-02": {
+    "kind": "owned_by",
+    "valence": 80
+   },
+   "ch-01": {
+    "kind": "map_and_mirror",
+    "valence": 20
+   },
+   "ob-08": {
+    "kind": "will_include",
+    "valence": 40
+   },
+   "cn-01": {
+    "kind": "unintended_index",
+    "valence": 30
+   },
+   "lo-02": {
+    "kind": "stored_at",
+    "valence": 25
+   }
+  },
+  "state_variables": {
+   "holder": {
+    "kind": "enum",
+    "description": "Who currently holds the stack.",
+    "dimension": "material",
+    "domain": [
+     "ch-02",
+     "ch-01",
+     "lo-02"
+    ],
+    "init": "ch-02"
+   },
+   "frame_count": {
+    "kind": "scalar",
+    "description": "Number of Polaroids in the sheaf.",
+    "dimension": "material",
+    "range": [
+     0,
+     40
+    ],
+    "init": 6
+   },
+   "content_flag": {
+    "kind": "enum",
+    "description": "Highest-stakes content the stack has acquired.",
+    "dimension": "epistemic",
+    "domain": [
+     "town_proof",
+     "hale_unremarked",
+     "ritual_residue",
+     "dawn_site",
+     "hale_face"
+    ],
+    "init": "town_proof"
+   }
+  },
+  "state": {
+   "holder": "ch-02",
+   "frame_count": 19,
+   "content_flag": "hale_face"
+  },
+  "arc": {
+   "start_state": "A small sheaf of empty-room proofs with no Guest in them.",
+   "end_state": "The continuous self she keeps, holding ritual streets and a still-wet picture of his face."
+  }
+ },
+ "ob-03": {
+  "entity_id": "ob-03",
+  "type": "object",
+  "canonical_name": "The cassette of kept hours",
+  "aliases": [
+   "the cassette",
+   "the tape"
+  ],
+  "salience": "major",
+  "plots": [
+   "pl-02",
+   "pl-03"
+  ],
+  "profile": {
+   "provenance": {
+    "b01": {
+     "text": "A drugstore tape Cora bought to record last songs off the diner radio.",
+     "when": "standing",
+     "tags": [
+      "origin"
+     ]
+    }
+   },
+   "description": {
+    "b01": {
+     "text": "A C-90 in a cracked plastic case, spine labeled in block ink.",
+     "when": "standing",
+     "tags": [
+      "look"
+     ]
+    }
+   },
+   "function": {
+    "b01": {
+     "text": "It will hold missing hours and, later, Hale's calm instructions from a feed.",
+     "when": "standing",
+     "tags": [
+      "use"
+     ]
+    }
+   },
+   "symbolic_load": {
+    "b01": {
+     "text": "A voice that can be replayed after sleep is a kind of justice she can carry.",
+     "when": "standing",
+     "tags": [
+      "theme"
+     ]
+    }
+   },
+   "custody": {
+    "b01": {
+     "text": "It lives in her apron until it lives in her hands at the stone.",
+     "when": "standing",
+     "tags": [
+      "custody"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "At t0 it holds one last song and a stretch of blank tape.",
+     "when": "spawn",
+     "tags": [
+      "t0"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-02": {
+    "kind": "owned_by",
+    "valence": 75
+   },
+   "ch-01": {
+    "kind": "unintended_record",
+    "valence": -10
+   },
+   "lo-02": {
+    "kind": "playback_room",
+    "valence": 20
+   },
+   "ob-04": {
+    "kind": "paired_at_climax",
+    "valence": 30
+   }
+  },
+  "state_variables": {
+   "holder": {
+    "kind": "enum",
+    "description": "Who currently has the cassette.",
+    "dimension": "material",
+    "domain": [
+     "ch-02",
+     "ch-01",
+     "lo-02"
+    ],
+    "init": "ch-02"
+   },
+   "track": {
+    "kind": "enum",
+    "description": "What a playback would currently give.",
+    "dimension": "epistemic",
+    "domain": [
+     "last_song",
+     "missing_hours",
+     "hale_instructions",
+     "leader_hiss"
+    ],
+    "init": "last_song"
+   }
+  },
+  "state": {
+   "holder": "ch-02",
+   "track": "leader_hiss"
+  },
+  "arc": {
+   "start_state": "A drugstore tape with one radio song and a blank remainder.",
+   "end_state": "The hours she kept, handed back at the stone, run out to hiss beside the register."
+  }
+ },
+ "ob-04": {
+  "entity_id": "ob-04",
+  "type": "object",
+  "canonical_name": "The Daywalker tokens",
+  "aliases": [
+   "the tokens",
+   "the ritual set"
+  ],
+  "salience": "major",
+  "plots": [
+   "pl-01",
+   "pl-02",
+   "pl-03"
+  ],
+  "profile": {
+   "provenance": {
+    "b01": {
+     "text": "Four locatable pieces written into the town; they cannot be spawned or wished.",
+     "when": "standing",
+     "tags": [
+      "rules"
+     ]
+    },
+    "b02": {
+     "text": "Residue of them already exists as chalk, a wrong-hour window, tubes, and a site photo.",
+     "when": "standing",
+     "tags": [
+      "clues"
+     ]
+    }
+   },
+   "description": {
+    "b01": {
+     "text": "Small period objects that do not look holy until they are gathered at the stone.",
+     "when": "standing",
+     "tags": [
+      "look"
+     ]
+    }
+   },
+   "function": {
+    "b01": {
+     "text": "Held together at dawn, they permit one invocation that ends the match for that Guest.",
+     "when": "standing",
+     "tags": [
+      "win"
+     ]
+    }
+   },
+   "symbolic_load": {
+    "b01": {
+     "text": "They are mastery in a pocket, and later a debt she can hide.",
+     "when": "standing",
+     "tags": [
+      "theme"
+     ]
+    }
+   },
+   "custody": {
+    "b01": {
+     "text": "They begin scattered; none are in a Guest's hands.",
+     "when": "spawn",
+     "tags": [
+      "t0"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "The match placed them where a mapper and a photographer might both trip over them.",
+     "when": "standing",
+     "tags": [
+      "world"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-01": {
+    "kind": "pursued_by",
+    "valence": 80
+   },
+   "ch-02": {
+    "kind": "eventual_keeper",
+    "valence": 10
+   },
+   "lo-06": {
+    "kind": "spent_at",
+    "valence": 70
+   },
+   "cn-01": {
+    "kind": "components",
+    "valence": 90
+   }
+  },
+  "state_variables": {
+   "assembled": {
+    "kind": "scalar",
+    "description": "How many of the four tokens have been located and gathered.",
+    "dimension": "material",
+    "range": [
+     0,
+     4
+    ],
+    "init": 0
+   },
+   "holder": {
+    "kind": "enum",
+    "description": "Who currently controls the gathered set.",
+    "dimension": "material",
+    "domain": [
+     "scattered",
+     "ch-01",
+     "ch-02",
+     "hidden"
+    ],
+    "init": "scattered"
+   }
+  },
+  "state": {
+   "assembled": 4,
+   "holder": "hidden"
+  },
+  "arc": {
+   "start_state": "Four unfound pieces scattered through a town that does not know they are a key.",
+   "end_state": "A complete set hidden by Cora, denying every Guest a winner."
+  }
+ },
+ "ob-05": {
+  "entity_id": "ob-05",
+  "type": "object",
+  "canonical_name": "Portable UV lamp",
+  "aliases": [
+   "the UV lamp",
+   "the lamp"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-01",
+   "pl-02"
+  ],
+  "profile": {
+   "provenance": {
+    "b01": {
+     "text": "A display shop-light from Briggs, sold as a sanitizing lamp.",
+     "when": "standing",
+     "tags": [
+      "origin"
+     ]
+    }
+   },
+   "description": {
+    "b01": {
+     "text": "A metal-caged tube on a short cord, brutal when lit.",
+     "when": "standing",
+     "tags": [
+      "look"
+     ]
+    }
+   },
+   "function": {
+    "b01": {
+     "text": "It injures Guests; Cora can carry it to the stone.",
+     "when": "standing",
+     "tags": [
+      "use"
+     ]
+    }
+   },
+   "symbolic_load": {
+    "b01": {
+     "text": "A work light used as a boundary she finally draws.",
+     "when": "standing",
+     "tags": [
+      "theme"
+     ]
+    }
+   },
+   "custody": {
+    "b01": {
+     "text": "It begins on Tom's back rack.",
+     "when": "spawn",
+     "tags": [
+      "t0"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "Kerr will empty the rack for a maze; one lamp can still walk.",
+     "when": "standing",
+     "tags": [
+      "world"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "lo-03": {
+    "kind": "stocked_at",
+    "valence": 20
+   },
+   "ch-02": {
+    "kind": "eventual_weapon",
+    "valence": 10
+   },
+   "ch-04": {
+    "kind": "bulk_user",
+    "valence": 20
+   },
+   "ch-01": {
+    "kind": "threat",
+    "valence": -30
+   }
+  },
+  "state_variables": {
+   "holder": {
+    "kind": "enum",
+    "description": "Who currently has the portable lamp.",
+    "dimension": "material",
+    "domain": [
+     "lo-03",
+     "ch-04",
+     "ch-02",
+     "ch-01",
+     "lo-06"
+    ],
+    "init": "lo-03"
+   },
+   "powered": {
+    "kind": "bool",
+    "description": "Whether the tube is lit.",
+    "dimension": "technological",
+    "init": false
+   }
+  },
+  "state": {
+   "holder": "ch-02",
+   "powered": true
+  },
+  "arc": {
+   "start_state": "An unlit sanitizing lamp on a hardware rack.",
+   "end_state": "The lamp in Cora's hand at the stone, ready to burn him rather than lose the night."
+  }
+ },
+ "ob-06": {
+  "entity_id": "ob-06",
+  "type": "object",
+  "canonical_name": "Hardware invoice for UV tubes",
+  "aliases": [
+   "the invoice"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-01",
+   "pl-02"
+  ],
+  "profile": {
+   "provenance": {
+    "b01": {
+     "text": "Tom's invoice pad; the relevant sheet does not yet exist as a filled form.",
+     "when": "spawn",
+     "tags": [
+      "t0"
+     ]
+    }
+   },
+   "description": {
+    "b01": {
+     "text": "Yellow carbon paper, a heavy hand, a delivery note that can name a churchyard.",
+     "when": "standing",
+     "tags": [
+      "look"
+     ]
+    }
+   },
+   "function": {
+    "b01": {
+     "text": "Once issued, it points at the dawn site through where the tubes were sent.",
+     "when": "standing",
+     "tags": [
+      "clue"
+     ]
+    }
+   },
+   "symbolic_load": {
+    "b01": {
+     "text": "A receipt that does the work of a map.",
+     "when": "standing",
+     "tags": [
+      "theme"
+     ]
+    }
+   },
+   "custody": {
+    "b01": {
+     "text": "Blank in the mezzanine; later it can enter Cora's tin.",
+     "when": "spawn",
+     "tags": [
+      "custody"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "Tom writes every bulk sale because that is how his father kept the shop honest.",
+     "when": "standing",
+     "tags": [
+      "character"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-08": {
+    "kind": "authored_by",
+    "valence": 20
+   },
+   "lo-03": {
+    "kind": "origin",
+    "valence": 15
+   },
+   "ob-02": {
+    "kind": "eventual_inclusion",
+    "valence": 15
+   },
+   "lo-06": {
+    "kind": "points_at",
+    "valence": 40
+   },
+   "ch-04": {
+    "kind": "buyer",
+    "valence": 10
+   }
+  },
+  "state_variables": {
+   "issued": {
+    "kind": "bool",
+    "description": "Whether the UV delivery has been written down.",
+    "dimension": "epistemic",
+    "init": false
+   },
+   "holder": {
+    "kind": "enum",
+    "description": "Who currently has the filled invoice.",
+    "dimension": "material",
+    "domain": [
+     "lo-03",
+     "ch-02",
+     "ch-01",
+     "ch-04"
+    ],
+    "init": "lo-03"
+   }
+  },
+  "state": {
+   "issued": true,
+   "holder": "ch-02"
+  },
+  "arc": {
+   "start_state": "A blank invoice pad in a hardware mezzanine.",
+   "end_state": "A filled carbon in the archive that helped name the stone."
+  }
+ },
+ "ob-07": {
+  "entity_id": "ob-07",
+  "type": "object",
+  "canonical_name": "The tip jar",
+  "aliases": [
+   "the coffee can",
+   "the tips"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-02"
+  ],
+  "profile": {
+   "provenance": {
+    "b01": {
+     "text": "A coffee can Cora labeled TIPS in marker and keeps beside the register.",
+     "when": "standing",
+     "tags": [
+      "origin"
+     ]
+    }
+   },
+   "description": {
+    "b01": {
+     "text": "A blue can, torn label, bills folded small enough to hide.",
+     "when": "standing",
+     "tags": [
+      "look"
+     ]
+    }
+   },
+   "function": {
+    "b01": {
+     "text": "It is her bus money and later the neighbor of his clipped Polaroid.",
+     "when": "standing",
+     "tags": [
+      "use"
+     ]
+    }
+   },
+   "symbolic_load": {
+    "b01": {
+     "text": "The old want sitting beside the new memory.",
+     "when": "standing",
+     "tags": [
+      "theme"
+     ]
+    }
+   },
+   "custody": {
+    "b01": {
+     "text": "It does not leave the diner.",
+     "when": "standing",
+     "tags": [
+      "custody"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "She has been feeding it instead of herself for a departure the road will not allow.",
+     "when": "standing",
+     "tags": [
+      "want"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-02": {
+    "kind": "owned_by",
+    "valence": 65
+   },
+   "ch-01": {
+    "kind": "receives_his_singles",
+    "valence": 15
+   },
+   "lo-02": {
+    "kind": "sited_at",
+    "valence": 40
+   },
+   "ob-08": {
+    "kind": "eventual_neighbor",
+    "valence": 20
+   }
+  },
+  "state_variables": {
+   "amount": {
+    "kind": "scalar",
+    "description": "Dollars in the can.",
+    "dimension": "material",
+    "range": [
+     0,
+     400
+    ],
+    "init": 86
+   },
+   "polaroid_clipped_beside": {
+    "kind": "bool",
+    "description": "Whether the developing Polaroid of Hale is clipped beside the can.",
+    "dimension": "material",
+    "init": false
+   }
+  },
+  "state": {
+   "amount": 98,
+   "polaroid_clipped_beside": true
+  },
+  "arc": {
+   "start_state": "A coffee can of bus money with no photograph beside it.",
+   "end_state": "The same can after sunrise, his still-wet face clipped to the register beside it."
+  }
+ },
+ "ob-08": {
+  "entity_id": "ob-08",
+  "type": "object",
+  "canonical_name": "Polaroid of Hale's face",
+  "aliases": [
+   "his polaroid",
+   "the still-developing frame"
+  ],
+  "salience": "major",
+  "plots": [
+   "pl-03",
+   "pl-02"
+  ],
+  "profile": {
+   "provenance": {
+    "b01": {
+     "text": "It does not exist at t0; it will be taken from a night she may not remember shooting.",
+     "when": "spawn",
+     "tags": [
+      "t0"
+     ]
+    }
+   },
+   "description": {
+    "b01": {
+     "text": "A white-bordered frame of a forgettable man who stops being forgettable once kept.",
+     "when": "standing",
+     "tags": [
+      "look"
+     ]
+    }
+   },
+   "function": {
+    "b01": {
+     "text": "It is the plant that cannot be reset: his cover in chemical form.",
+     "when": "standing",
+     "tags": [
+      "plant"
+     ]
+    }
+   },
+   "symbolic_load": {
+    "b01": {
+     "text": "Recognition made small enough to clip to a register.",
+     "when": "standing",
+     "tags": [
+      "theme"
+     ]
+    }
+   },
+   "custody": {
+    "b01": {
+     "text": "Unshot. Later it can be returned, stolen, or clipped.",
+     "when": "spawn",
+     "tags": [
+      "custody"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "An earlier unremarked frame will first catch him as furniture; this one is the face.",
+     "when": "standing",
+     "tags": [
+      "plant"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-01": {
+    "kind": "depicts",
+    "valence": 0
+   },
+   "ch-02": {
+    "kind": "eventual_owner",
+    "valence": 20
+   },
+   "ob-02": {
+    "kind": "belongs_in",
+    "valence": 40
+   },
+   "ob-07": {
+    "kind": "final_neighbor",
+    "valence": 20
+   },
+   "lo-02": {
+    "kind": "final_display",
+    "valence": 20
+   }
+  },
+  "state_variables": {
+   "exists": {
+    "kind": "bool",
+    "description": "Whether the frame has been shot.",
+    "dimension": "material",
+    "init": false
+   },
+   "holder": {
+    "kind": "enum",
+    "description": "Who holds the frame once it exists.",
+    "dimension": "material",
+    "domain": [
+     "none",
+     "ch-02",
+     "ch-01",
+     "lo-02"
+    ],
+    "init": "none"
+   }
+  },
+  "state": {
+   "exists": true,
+   "holder": "lo-02"
+  },
+  "arc": {
+   "start_state": "An unshot frame.",
+   "end_state": "A still-developing picture of his face clipped to the diner register after sunrise."
+  }
+ },
+ "gr-01": {
+  "entity_id": "gr-01",
+  "type": "group",
+  "canonical_name": "The Guests",
+  "aliases": [
+   "the players"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-01"
+  ],
+  "profile": {
+   "membership": {
+    "b01": {
+     "text": "Six vampires spawned into the closed match: Hale, Anja, Kerr, Holtz, Nico, and Wynn.",
+     "when": "spawn",
+     "tags": [
+      "roster"
+     ]
+    }
+   },
+   "hierarchy": {
+    "b01": {
+     "text": "There is no agreed leader; the Ritual admits one winner.",
+     "when": "standing",
+     "tags": [
+      "structure"
+     ]
+    }
+   },
+   "goals": {
+    "b01": {
+     "text": "Each wants the single prize; their methods do not require them to meet.",
+     "when": "standing",
+     "tags": [
+      "goals"
+     ]
+    }
+   },
+   "resources": {
+    "b01": {
+     "text": "Period clothes, one hundred dollars each, hunger, and whatever the town will give.",
+     "when": "spawn",
+     "tags": [
+      "resources"
+     ]
+    }
+   },
+   "cohesion": {
+    "b01": {
+     "text": "Cohesion is zero; interference is how they touch.",
+     "when": "standing",
+     "tags": [
+      "cohesion"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "They bought tickets from an extra-diegetic underclass and cannot log out.",
+     "when": "before_match",
+     "tags": [
+      "crucible"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "cn-01": {
+    "kind": "competitors_for",
+    "valence": 40
+   },
+   "gr-02": {
+    "kind": "predators_of",
+    "valence": -50
+   }
+  },
+  "state_variables": {
+   "remaining": {
+    "kind": "scalar",
+    "description": "Guests still in the match.",
+    "dimension": "world",
+    "range": [
+     0,
+     6
+    ],
+    "init": 6
+   }
+  },
+  "state": {
+   "remaining": 6
+  },
+  "arc": {
+   "start_state": "Six uneliminated Guests, none holding tokens.",
+   "end_state": "A match still running with no winner declared and Hale still inside it."
+  }
+ },
+ "gr-02": {
+  "entity_id": "gr-02",
+  "type": "group",
+  "canonical_name": "The rotation Hosts",
+  "aliases": [
+   "the three",
+   "night workers"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-01",
+   "pl-02"
+  ],
+  "profile": {
+   "membership": {
+    "b01": {
+     "text": "Cora Voss, Tom Briggs, and Denise Cole: the three Hale chose to drain short of death.",
+     "when": "spawn",
+     "tags": [
+      "roster"
+     ]
+    }
+   },
+   "hierarchy": {
+    "b01": {
+     "text": "No hierarchy; Cora will become the one who compares notes first.",
+     "when": "standing",
+     "tags": [
+      "structure"
+     ]
+    }
+   },
+   "goals": {
+    "b01": {
+     "text": "They want their nights to add up and their jobs to hold.",
+     "when": "standing",
+     "tags": [
+      "goals"
+     ]
+    }
+   },
+   "resources": {
+    "b01": {
+     "text": "Keys, bruises, invoices, Polaroids, and the habit of working when others sleep.",
+     "when": "standing",
+     "tags": [
+      "resources"
+     ]
+    }
+   },
+   "cohesion": {
+    "b01": {
+     "text": "Low at t0; shared gaps will raise it.",
+     "when": "spawn",
+     "tags": [
+      "cohesion"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "They already share the town's night economy without sharing a secret.",
+     "when": "standing",
+     "tags": [
+      "t0"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-01": {
+    "kind": "resource_for",
+    "valence": -30
+   },
+   "ch-03": {
+    "kind": "subjects_of",
+    "valence": -25
+   },
+   "cn-03": {
+    "kind": "site_of",
+    "valence": 0
+   }
+  },
+  "state_variables": {
+   "comparing_notes": {
+    "kind": "bool",
+    "description": "Whether the three have begun matching gaps across jobs.",
+    "dimension": "social",
+    "init": false
+   },
+   "rotation_viable": {
+    "kind": "bool",
+    "description": "Whether Hale can still feed this set cleanly.",
+    "dimension": "world",
+    "init": true
+   }
+  },
+  "state": {
+   "comparing_notes": true,
+   "rotation_viable": false
+  },
+  "arc": {
+   "start_state": "Three unconnected night workers with full blood and clean wipes.",
+   "end_state": "A small waking network whose locks and notes close Hale's clean rotation."
+  }
+ },
+ "gr-03": {
+  "entity_id": "gr-03",
+  "type": "group",
+  "canonical_name": "The willing donors",
+  "aliases": [
+   "the college cult"
+  ],
+  "salience": "minor",
+  "plots": [
+   "pl-01"
+  ],
+  "profile": {
+   "membership": {
+    "b01": {
+     "text": "Campus Hosts Nico gathers into a standing circle of given throats.",
+     "when": "standing",
+     "tags": [
+      "roster"
+     ]
+    }
+   },
+   "hierarchy": {
+    "b01": {
+     "text": "Nico at the center by charm, not by title.",
+     "when": "standing",
+     "tags": [
+      "structure"
+     ]
+    }
+   },
+   "goals": {
+    "b01": {
+     "text": "They want belonging and a night that feels chosen.",
+     "when": "standing",
+     "tags": [
+      "goals"
+     ]
+    }
+   },
+   "resources": {
+    "b01": {
+     "text": "Houses, record players, and bodies that reset.",
+     "when": "standing",
+     "tags": [
+      "resources"
+     ]
+    }
+   },
+   "cohesion": {
+    "b01": {
+     "text": "High while the parties last; a wipe makes the yes cheap.",
+     "when": "standing",
+     "tags": [
+      "cohesion"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "The circle does not exist at spawn.",
+     "when": "spawn",
+     "tags": [
+      "t0"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-06": {
+    "kind": "led_by",
+    "valence": 60
+   },
+   "lo-08": {
+    "kind": "based_at",
+    "valence": 40
+   }
+  },
+  "state_variables": {
+   "formed": {
+    "kind": "bool",
+    "description": "Whether the cult exists as a standing group.",
+    "dimension": "social",
+    "init": false
+   }
+  },
+  "state": {
+   "formed": true
+  },
+  "arc": {
+   "start_state": "No cult, only a campus that stays up late.",
+   "end_state": "An off-screen flock that relocates the town's available blood."
+  }
+ },
+ "gr-04": {
+  "entity_id": "gr-04",
+  "type": "group",
+  "canonical_name": "The tribute network",
+  "aliases": [
+   "the syndicate"
+  ],
+  "salience": "minor",
+  "plots": [
+   "pl-01"
+  ],
+  "profile": {
+   "membership": {
+    "b01": {
+     "text": "Holtz plus the night badges and ward keys he can hold.",
+     "when": "standing",
+     "tags": [
+      "roster"
+     ]
+    }
+   },
+   "hierarchy": {
+    "b01": {
+     "text": "Holtz sets terms; Hosts repeat them as rumor.",
+     "when": "standing",
+     "tags": [
+      "structure"
+     ]
+    }
+   },
+   "goals": {
+    "b01": {
+     "text": "Monopolize stored blood and sell access as tribute.",
+     "when": "standing",
+     "tags": [
+      "goals"
+     ]
+    }
+   },
+   "resources": {
+    "b01": {
+     "text": "The hospital store, implied police nights, and fear of dry wards.",
+     "when": "standing",
+     "tags": [
+      "resources"
+     ]
+    }
+   },
+   "cohesion": {
+    "b01": {
+     "text": "Cohesion is scarcity, not loyalty.",
+     "when": "standing",
+     "tags": [
+      "cohesion"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "The network is a Guest tactic, not a preexisting mafia.",
+     "when": "spawn",
+     "tags": [
+      "t0"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-05": {
+    "kind": "run_by",
+    "valence": 70
+   },
+   "lo-04": {
+    "kind": "holds",
+    "valence": 40
+   }
+  },
+  "state_variables": {
+   "active": {
+    "kind": "bool",
+    "description": "Whether tribute-or-starve is in force.",
+    "dimension": "political",
+    "init": false
+   }
+  },
+  "state": {
+   "active": true
+  },
+  "arc": {
+   "start_state": "No tribute talk, wards still stocked.",
+   "end_state": "An off-screen monopoly that dries the hospital and alters midgame hunger."
+  }
+ },
+ "cn-01": {
+  "entity_id": "cn-01",
+  "type": "concept",
+  "canonical_name": "The Daywalker Ritual",
+  "aliases": [
+   "the Ritual",
+   "the dawn invocation"
+  ],
+  "salience": "major",
+  "plots": [
+   "pl-01",
+   "pl-03"
+  ],
+  "profile": {
+   "content": {
+    "b01": {
+     "text": "A finite set of four tokens and one spoken invocation at the Founders' Stone at dawn.",
+     "when": "standing",
+     "tags": [
+      "rules"
+     ]
+    },
+    "b02": {
+     "text": "Completion makes that Guest immune to sun and ends the match in their favor.",
+     "when": "standing",
+     "tags": [
+      "win"
+     ]
+    },
+    "b03": {
+     "text": "Ending the match is a wipe with no morning after for any analog stack.",
+     "when": "standing",
+     "tags": [
+      "cost"
+     ]
+    }
+   },
+   "believers": {
+    "b01": {
+     "text": "Every Guest treats it as the only paying exit; Hosts do not know its name.",
+     "when": "standing",
+     "tags": [
+      "belief"
+     ]
+    }
+   },
+   "authority": {
+    "b01": {
+     "text": "It is a match rule, not a religion, and it will not bend for sympathy.",
+     "when": "standing",
+     "tags": [
+      "authority"
+     ]
+    }
+   },
+   "causal_power": {
+    "b01": {
+     "text": "Spoken, it crowns a winner and erases the board; withheld, the match keeps running.",
+     "when": "standing",
+     "tags": [
+      "power"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "Hale came in already hunting it; decoding it is the external plot.",
+     "when": "before_match",
+     "tags": [
+      "plot"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ob-04": {
+    "kind": "requires",
+    "valence": 90
+   },
+   "lo-06": {
+    "kind": "sited_at",
+    "valence": 90
+   },
+   "ch-01": {
+    "kind": "pursued_by",
+    "valence": 85
+   },
+   "ch-02": {
+    "kind": "threatened_by_completion",
+    "valence": -60
+   }
+  },
+  "state_variables": {
+   "decoded_by_hale": {
+    "kind": "enum",
+    "description": "How completely Hale understands site, tokens, and the match-end cost.",
+    "dimension": "epistemic",
+    "domain": [
+     "rumor",
+     "tokens_and_site",
+     "full_cost"
+    ],
+    "init": "rumor"
+   },
+   "invocation_spoken": {
+    "kind": "bool",
+    "description": "Whether any Guest has spoken the dawn words.",
+    "dimension": "world",
+    "init": false
+   },
+   "match_running": {
+    "kind": "bool",
+    "description": "Whether the closed match is still in play.",
+    "dimension": "world",
+    "init": true
+   }
+  },
+  "state": {
+   "decoded_by_hale": "full_cost",
+   "invocation_spoken": false,
+   "match_running": true
+  },
+  "arc": {
+   "start_state": "A rumored win condition with tokens unfound and the match running.",
+   "end_state": "A fully decoded ritual that is not spoken, leaving the match running with no winner."
+  }
+ },
+ "cn-02": {
+  "entity_id": "cn-02",
+  "type": "concept",
+  "canonical_name": "The Memory Wipe",
+  "aliases": [
+   "the wipe",
+   "the failsafe"
+  ],
+  "salience": "major",
+  "plots": [
+   "pl-02",
+   "pl-03"
+  ],
+  "profile": {
+   "content": {
+    "b01": {
+     "text": "Every time a Host sleeps, autobiographical memory since the previous waking is erased.",
+     "when": "standing",
+     "tags": [
+      "rules"
+     ]
+    },
+    "b02": {
+     "text": "Semantic skill and personality persist; affective residue and somatic marks bleed through.",
+     "when": "standing",
+     "tags": [
+      "rules"
+     ]
+    },
+    "b03": {
+     "text": "Facts do not persist unless an analog object carries them.",
+     "when": "standing",
+     "tags": [
+      "rules"
+     ]
+    },
+    "b04": {
+     "text": "Guests cannot selectively edit it.",
+     "when": "standing",
+     "tags": [
+      "rules"
+     ]
+    }
+   },
+   "believers": {
+    "b01": {
+     "text": "Hosts experience it as ordinary sleep; Guests treat it as infrastructure.",
+     "when": "standing",
+     "tags": [
+      "belief"
+     ]
+    }
+   },
+   "authority": {
+    "b01": {
+     "text": "It is the designed failsafe against existential collapse.",
+     "when": "standing",
+     "tags": [
+      "authority"
+     ]
+    }
+   },
+   "causal_power": {
+    "b01": {
+     "text": "Intact, it keeps the town renewable; torn, fragments walk around and compare notes.",
+     "when": "standing",
+     "tags": [
+      "power"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "It was written to protect models from realizing the frame.",
+     "when": "standing",
+     "tags": [
+      "world"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-02": {
+    "kind": "antagonizes",
+    "valence": -80
+   },
+   "ch-03": {
+    "kind": "trial_condition",
+    "valence": 20
+   },
+   "cn-03": {
+    "kind": "broken_by",
+    "valence": -50
+   },
+   "cn-04": {
+    "kind": "prevents",
+    "valence": 40
+   },
+   "ob-02": {
+    "kind": "bypassed_by",
+    "valence": -30
+   },
+   "ob-03": {
+    "kind": "bypassed_by",
+    "valence": -30
+   }
+  },
+  "state_variables": {
+   "integrity": {
+    "kind": "enum",
+    "description": "How completely Host sleep still erases the night.",
+    "dimension": "technological",
+    "domain": [
+     "intact",
+     "seamed",
+     "leaking",
+     "torn"
+    ],
+    "init": "intact"
+   }
+  },
+  "state": {
+   "integrity": "torn"
+  },
+  "arc": {
+   "start_state": "An intact failsafe: sleep takes every Host night cleanly.",
+   "end_state": "A torn failsafe that leaves fragments, voices, and a face no morning can cancel."
+  }
+ },
+ "cn-03": {
+  "entity_id": "cn-03",
+  "type": "concept",
+  "canonical_name": "The awakening glitch",
+  "aliases": [
+   "the glitch",
+   "the tear"
+  ],
+  "salience": "major",
+  "plots": [
+   "pl-02",
+   "pl-01"
+  ],
+  "profile": {
+   "content": {
+    "b01": {
+     "text": "It requires both Anja's stacked writes and Hale's rotational drains of the same three Hosts.",
+     "when": "standing",
+     "tags": [
+      "rules"
+     ]
+    },
+    "b02": {
+     "text": "Either alone is insufficient.",
+     "when": "standing",
+     "tags": [
+      "rules"
+     ]
+    },
+    "b03": {
+     "text": "After it tears, wipes go incomplete and Hosts can compare notes.",
+     "when": "standing",
+     "tags": [
+      "rules"
+     ]
+    },
+    "b04": {
+     "text": "It manifests as analog artifact, never as a menu.",
+     "when": "standing",
+     "tags": [
+      "style"
+     ]
+    }
+   },
+   "believers": {
+    "b01": {
+     "text": "No one names it; they meet it as a Polaroid they do not remember taking.",
+     "when": "standing",
+     "tags": [
+      "belief"
+     ]
+    }
+   },
+   "authority": {
+    "b01": {
+     "text": "It has no priest; it is an accident of two competent methods.",
+     "when": "standing",
+     "tags": [
+      "authority"
+     ]
+    }
+   },
+   "causal_power": {
+    "b01": {
+     "text": "It is the mandatory bridge from the game plot to the town waking.",
+     "when": "standing",
+     "tags": [
+      "plot"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "It is latent at spawn because the conjunction has not yet been run.",
+     "when": "spawn",
+     "tags": [
+      "t0"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-01": {
+    "kind": "half_cause",
+    "valence": 0
+   },
+   "ch-03": {
+    "kind": "half_cause",
+    "valence": 0
+   },
+   "gr-02": {
+    "kind": "site",
+    "valence": 0
+   },
+   "cn-02": {
+    "kind": "tears",
+    "valence": -60
+   }
+  },
+  "state_variables": {
+   "phase": {
+    "kind": "enum",
+    "description": "Progress of the conjunction from latent to a spreading tear.",
+    "dimension": "technological",
+    "domain": [
+     "latent",
+     "conjunct",
+     "torn",
+     "spreading"
+    ],
+    "init": "latent"
+   }
+  },
+  "state": {
+   "phase": "spreading"
+  },
+  "arc": {
+   "start_state": "A latent conjunction: writes not stacked, rotation not yet run.",
+   "end_state": "A spreading tear that lets a town keep hours and a face."
+  }
+ },
+ "cn-04": {
+  "entity_id": "cn-04",
+  "type": "concept",
+  "canonical_name": "Existential collapse",
+  "aliases": [
+   "the belief-threshold",
+   "catatonia risk"
+  ],
+  "salience": "supporting",
+  "plots": [
+   "pl-02"
+  ],
+  "profile": {
+   "content": {
+    "b01": {
+     "text": "If a Host reaches a stable, evidence-backed belief that they are inside a simulation, the model breaks.",
+     "when": "standing",
+     "tags": [
+      "rules"
+     ]
+    },
+    "b02": {
+     "text": "Breakage is catatonia, uncontrolled affect, or self-destruction.",
+     "when": "standing",
+     "tags": [
+      "rules"
+     ]
+    },
+    "b03": {
+     "text": "Analog cover can hold facts without forcing the forbidden belief.",
+     "when": "standing",
+     "tags": [
+      "rules"
+     ]
+    }
+   },
+   "believers": {
+    "b01": {
+     "text": "Cora fears going crazy more than she fears a man; this is that fear's real name.",
+     "when": "standing",
+     "tags": [
+      "belief"
+     ]
+    }
+   },
+   "authority": {
+    "b01": {
+     "text": "It is a hard engine rule, not a metaphor.",
+     "when": "standing",
+     "tags": [
+      "authority"
+     ]
+    }
+   },
+   "causal_power": {
+    "b01": {
+     "text": "It keeps philosophy off the dialogue and on the objects.",
+     "when": "standing",
+     "tags": [
+      "craft"
+     ]
+    }
+   },
+   "backstory": {
+    "b01": {
+     "text": "The wipe exists because this threshold does.",
+     "when": "standing",
+     "tags": [
+      "world"
+     ]
+    }
+   }
+  },
+  "relationships": {
+   "ch-02": {
+    "kind": "threatens",
+    "valence": -70
+   },
+   "cn-02": {
+    "kind": "justifies",
+    "valence": 40
+   },
+   "ob-02": {
+    "kind": "mitigated_by",
+    "valence": 30
+   }
+  },
+  "state_variables": {
+   "town_risk": {
+    "kind": "enum",
+    "description": "How close the waking Hosts are to a simulation-belief break.",
+    "dimension": "psychological",
+    "domain": [
+     "safe",
+     "exposed",
+     "critical"
+    ],
+    "init": "safe"
+   }
+  },
+  "state": {
+   "town_risk": "critical"
+  },
+  "arc": {
+   "start_state": "A distant threshold no Host is near, because no Host has evidence.",
+   "end_state": "A live risk Cora evades by keeping analog hours instead of a theory."
+  }
+ }
+}

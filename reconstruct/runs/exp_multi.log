@@ -1,0 +1,124 @@
+════════════════════════════════════════ sc-001
+EXPERIMENT · glm-5.2 · sc-001
+
+
+  BASELINE (single call, already on disk)
+    schema violations      16
+    words                  3,898
+    psychology blocks      2
+    ...with trajectory     0/2
+    ...with all 11 fields  0/2
+    ToM towers / at depth3 2 / 2
+    specimen lines         0
+    alternatives (close)   2 (0)
+    verdict                thin
+      gap: trajectories are snapshots, not arcs
+      gap: every alternative lost by a mile — the choice was already made
+      gap: no specimen exchange — the analysis is untested until someone speaks
+      gap: risks never checked against the actual lines
+
+  SCAFFOLDED — one deep structure per call
+  characters: ['ch-01', 'ch-02']   (cues: ['BIG COP'])
+  ! speakers with no entity: ['BIG COP']
+  --- call 1: craft ---
+    craft                        8,648 chars     23s
+  --- one call per character ---
+    psych.ch-01                 14,478 chars    159s
+    psych.ch-02                 18,795 chars     79s
+  --- specimen, dynamics, continuity ---
+    specimen                     7,336 chars     52s
+    dynamics                    18,390 chars     41s
+    continuity                   7,823 chars     58s
+
+  SCAFFOLDED
+    schema violations      0
+    words                  11,222
+    psychology blocks      2
+    ...with trajectory     2/2
+    ...with all 11 fields  2/2
+    ToM towers / at depth3 4 / 4
+    specimen lines         7
+    alternatives (close)   2 (1)
+    verdict                pass
+
+  cost: 6 calls · 40,536 in · 40,878 out · 412s wall
+  approx $0.29
+  -> runs/matrix/transitions_scaffolded/sc-001.json
+════════════════════════════════════════ sc-003
+EXPERIMENT · glm-5.2 · sc-003
+
+
+  BASELINE (single call, already on disk)
+    schema violations      5
+    words                  4,557
+    psychology blocks      1
+    ...with trajectory     1/1
+    ...with all 11 fields  1/1
+    ToM towers / at depth3 2 / 2
+    specimen lines         0
+    alternatives (close)   2 (0)
+    verdict                thin
+      gap: every alternative lost by a mile — the choice was already made
+      gap: no specimen exchange — the analysis is untested until someone speaks
+      gap: risks never checked against the actual lines
+
+  SCAFFOLDED — one deep structure per call
+  characters: ['ch-02']   (cues: ['TRINITY'])
+  --- call 1: craft ---
+    craft                       11,812 chars     48s
+  --- one call per character ---
+    psych.ch-02                 23,208 chars     36s
+  --- specimen, dynamics, continuity ---
+    specimen                     5,272 chars     61s
+    dynamics                    20,878 chars    167s
+    continuity                   9,557 chars     49s
+    continuity: unparseable (Expecting value: line 1 column 1 (char 0)) — retrying
+    continuity                   8,004 chars     25s  (attempt 2)
+
+  SCAFFOLDED
+    schema violations      0
+    words                  10,175
+    psychology blocks      1
+    ...with trajectory     1/1
+    ...with all 11 fields  1/1
+    ToM towers / at depth3 3 / 3
+    specimen lines         8
+    alternatives (close)   2 (1)
+    verdict                pass
+
+  cost: 6 calls · 34,942 in · 23,988 out · 386s wall
+  approx $0.19
+  -> runs/matrix/transitions_scaffolded/sc-003.json
+════════════════════════════════════════ sc-005
+EXPERIMENT · glm-5.2 · sc-005
+
+
+  SCAFFOLDED — one deep structure per call
+  characters: ['ch-02', 'ch-03']   (cues: ['MAN', 'TRINITY', 'MORPHEUS'])
+  ! speakers with no entity: ['MAN']
+  --- call 1: craft ---
+    craft                       12,007 chars    121s
+    craft: unparseable (Expecting value: line 1 column 1 (char 0)) — retrying
+    craft                        9,916 chars     84s  (attempt 2)
+  --- one call per character ---
+    psych.ch-02                 22,629 chars     63s
+    psych.ch-03                 14,925 chars     22s
+  --- specimen, dynamics, continuity ---
+    specimen                     6,324 chars     47s
+    dynamics                    18,337 chars    102s
+    continuity                   6,963 chars     39s
+
+  SCAFFOLDED
+    schema violations      0
+    words                  11,541
+    psychology blocks      2
+    ...with trajectory     2/2
+    ...with all 11 fields  2/2
+    ToM towers / at depth3 4 / 4
+    specimen lines         6
+    alternatives (close)   3 (1)
+    verdict                pass
+
+  cost: 7 calls · 52,822 in · 28,755 out · 479s wall
+  approx $0.25
+  -> runs/matrix/transitions_scaffolded/sc-005.json

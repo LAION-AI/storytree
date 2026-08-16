@@ -1,0 +1,236 @@
+{
+ "plots": [
+  {
+   "plot_id": "pl-01",
+   "type": "external_main",
+   "title": "The Relic Before Midwinter",
+   "agent": [
+    "ch-01"
+   ],
+   "resistance": [
+    "gr-02",
+    "lo-02",
+    "lo-03",
+    "gr-03",
+    "ob-02",
+    "pl-02"
+   ],
+   "goal": "Walk the winter pass, recover the stolen presentation-relic, and have it accepted with the year's iron tithe at the midwinter ground so Highkettle keeps its pass-protection and grain-right.",
+   "stakes": "If the relic is not presented on time, the Hold closes the pass and withholds winter grain; the hamlet has no reserve of food, coin, fighters, or a replacement piece.",
+   "outcome": "partial_success",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "given_compact",
+     "intent": "Establish that Highkettle must present the village relic and a tithe of iron to the valley Hold at midwinter or forfeit a year of pass-protection and grain-right. The hamlet has no reserve of food, coin, or fighters, and cannot buy a replacement or meet a punitive extra tithe.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "state_of_rupture",
+     "intent": "Three weeks before the rite, raiders from poorer unprotected slopes steal the relic from the village chest. They leave the unfinished tithe-iron because they cannot carry both.",
+     "because": []
+    },
+    "st3": {
+     "step": 3,
+     "function": "forced_commission",
+     "intent": "The hamlet sends Willa to retrieve the relic on foot, with no mount, guide, or spare days. They send her rather than Orren because the tithe is short, he cannot make the crossing, and a woman on the path is less likely to be met as a fighter.",
+     "because": [
+      "pl-02:st1"
+     ]
+    },
+    "st4": {
+     "step": 4,
+     "function": "ordeal_of_crossing",
+     "intent": "She walks the high pass in the last three weeks before midwinter. The crossing exacts cold and walking time she cannot spare, and the raiders ahead are hungry people from poorer slopes, not an army.",
+     "because": []
+    },
+    "st5": {
+     "step": 5,
+     "function": "retrieval_by_craft",
+     "intent": "She finds their camp and takes the relic by stealth and craft judgment of weight and metal. She does not kill for a village object.",
+     "because": []
+    },
+    "st6": {
+     "step": 6,
+     "function": "cost_of_return",
+     "intent": "The crossing costs her the hours in which Orren might have spoken first. It also leaves a frost injury that will still mark her hands at the rite.",
+     "because": []
+    },
+    "st7": {
+     "step": 7,
+     "function": "bind",
+     "intent": "With the object in hand and the rite days away, staying to work the truth of the piece risks a late or doubtful presentation. Carrying it as if unread spends the recovery on a fraud she now owns.",
+     "because": [
+      "pl-02:st4",
+      "pl-02:st6"
+     ]
+    },
+    "st8": {
+     "step": 8,
+     "function": "public_presentation",
+     "intent": "She presents the forged relic and the thin tithe to the Hold's steward at the midwinter ground. The steward accepts both without testing inner authenticity, and the compact stands for a year.",
+     "because": [
+      "pl-02:st8"
+     ]
+    },
+    "st9": {
+     "step": 9,
+     "function": "year_bought_on_false_weight",
+     "intent": "The village keeps its grain-right for a year and does not know the protection will die with Orren. The recovery has bought one winter on a levy she now knowingly abets.",
+     "because": [
+      "pl-02:st8"
+     ]
+    }
+   },
+   "resolution_step": "st9",
+   "thematic_function": "Makes the Hold's compact felt as weather, walking time, thin iron, and a presentation that will not test what it is given unless the object is publicly challenged.",
+   "screen_time_share": 0.46,
+   "interference": [
+    {
+     "with": "pl-02",
+     "kind": "clock"
+    },
+    {
+     "with": "pl-02",
+     "kind": "object"
+    }
+   ],
+   "covers_synopsis": [
+    "s02",
+    "s03",
+    "s04",
+    "s05",
+    "s06",
+    "s07",
+    "s08",
+    "s09",
+    "s15",
+    "s16",
+    "s20"
+   ]
+  },
+  {
+   "plot_id": "pl-02",
+   "type": "relationship",
+   "title": "What the House Is Owed",
+   "agent": [
+    "ch-01"
+   ],
+   "resistance": [
+    "ch-02",
+    "lo-01",
+    "ob-01",
+    "cn-01",
+    "gr-01",
+    "pl-01"
+   ],
+   "goal": "Settle what she owes Orren for raising, craft, and the lie bound into the relic, and act on that settlement before the piece must be presented or refused.",
+   "stakes": "If she cannot decide, she either spends the recovery on a fraud she now owns or risks a late, broken, or challenged presentation that starves the hamlet and still leaves the household unread.",
+   "outcome": "transformation_of_goal",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "unsettled_household",
+     "intent": "Willa, grown apprentice to Highkettle's only smith Orren, lives in the forge-house that raised her. She cannot settle what she owes him for raising and for the craft he taught.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "forced_separation",
+     "intent": "The commission to walk the pass takes her from the forge in the last weeks when the household might still have spoken plainly. She goes still unsure of the debt.",
+     "because": [
+      "pl-01:st3"
+     ]
+    },
+    "st3": {
+     "step": 3,
+     "function": "missed_hearing",
+     "intent": "The hours the crossing consumes are the hours in which Orren might have spoken first. She returns without having heard him.",
+     "because": [
+      "pl-01:st6"
+     ]
+    },
+    "st4": {
+     "step": 4,
+     "function": "craft_recognition",
+     "intent": "Before she sleeps she reads the recovered relic as a smith and finds the wrong weight, Orren's forty-year weld, and an inclusion where a living levy sits. She takes that reading to him rather than to the village or the Hold.",
+     "because": [
+      "pl-01:st5"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "admission_of_the_weld",
+     "intent": "He does not deny forging the piece and binding the levy to himself so the compact would hold. He says the original was lost in a slide year the village could not have survived, and that the reasons were good then.",
+     "because": []
+    },
+    "st6": {
+     "step": 6,
+     "function": "present_indefensibility",
+     "intent": "Those reasons are not defensible now. The village has paid iron for a right that is only his bodily tax, which ends only with his death or the relic's public breaking, and cannot be transferred, paused, or discharged by any other act available to them.",
+     "because": []
+    },
+    "st7": {
+     "step": 7,
+     "function": "unpaid_ledger",
+     "intent": "She still cannot settle what she owes him for raising, craft, and the lie that kept the grain coming. The rite is days away and leaves no time to make the debt clear.",
+     "because": [
+      "pl-01:st6"
+     ]
+    },
+    "st8": {
+     "step": 8,
+     "function": "point_of_no_return",
+     "intent": "She transforms the goal of a settled ledger into a partition of costs. She will not break the piece or tell the Hold or the village, will not keep the lie after he dies, will work the winter because the hamlet cannot spare a smith, and will leave when the pass opens.",
+     "because": [
+      "pl-01:st7"
+     ]
+    },
+    "st9": {
+     "step": 9,
+     "function": "unforgiven_naming",
+     "intent": "That night she tells him, as a reading of metal rather than a verdict, that she knows the weld, the false weight, and the levy. He names the old reasons again and does not ask to be forgiven, and she does not grant that those reasons still hold.",
+     "because": [
+      "pl-01:st8"
+     ]
+    },
+    "st10": {
+     "step": 10,
+     "function": "altered_household",
+     "intent": "They go back to shared work that is no longer the same household. Orren keeps paying the levy in his body, she will pay the forge-house as of the spring opening of the pass, and in the morning she sets a true bar on the balance and watches the arm come level.",
+     "because": []
+    }
+   },
+   "resolution_step": "st10",
+   "thematic_function": "Keeps the forty-year kindness audible and the present lie indefensible, so the debt cannot be cleared and can only be partitioned in work, silence, and leaving.",
+   "screen_time_share": 0.54,
+   "interference": [
+    {
+     "with": "pl-01",
+     "kind": "knowledge"
+    },
+    {
+     "with": "pl-01",
+     "kind": "labor"
+    }
+   ],
+   "covers_synopsis": [
+    "s01",
+    "s06",
+    "s09",
+    "s10",
+    "s11",
+    "s12",
+    "s13",
+    "s14",
+    "s15",
+    "s17",
+    "s18",
+    "s19",
+    "s20",
+    "s21"
+   ]
+  }
+ ]
+}

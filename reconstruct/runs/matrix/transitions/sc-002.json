@@ -1,0 +1,383 @@
+{
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-002",
+  "ordinal": 2
+ },
+ "situation": "Scene 1 established Trinity at a keyboard in the decaying Heart O' The City Hotel, cornered by police at gunpoint — the moment before she demonstrates superhuman abilities and escapes. The production envelope for scene 2 keeps us at the same hotel, same night, but moves outside to Agent Smith and a Lieutenant, establishing the pursuers' perspective and stakes. The audience needs to understand who is hunting and why this matters.",
+ "craft": {
+  "audience_need": "Adult readers promised a mind-bending action spectacle need to feel the threat as systemic, not incidental. The cold open promised something beyond ordinary procedure; this scene must deliver the face of that something. Smith must register as more than a functionary — a presence with contempt and hunger beneath the suit.",
+  "genre_convention": "Cyberpunk-thriller convention: after the quarry is cornered, cut to the hunters coordinating pursuit. This node satisfies that by establishing Smith at the command post, but delays full reveal of what Agents are. The Lieutenant is the audience surrogate — ordinary cop encountering something above his pay grade.",
+  "theme_and_style": "Plain register, varied sentence length, medium figurative density. Forbidden tics: no interior monologue, no information without conflict, no character states feelings directly. Every line of dialogue must carry subtext — Smith's must carry contempt for human limitation. The scene must be short (146 words, ~47% dialogue), so every beat counts.",
+  "dramatic_function": "Establishes the antagonist's competence and disdain. Seeds that Agents are not normal law enforcement — the Lieutenant's deference and confusion mark Smith as other. Sets up the escape that scene 3 will deliver by creating time pressure from the pursuers' side. Plants Smith's human frustration beneath procedural calm.",
+  "tension_management": {
+   "entering": 45,
+   "leaving": 60,
+   "how": "We enter at moderate tension from the cornered-Trinity cliffhanger. Smith's calm certainty that Trinity is not just a fugitive but something the cops cannot handle RAISES tension — the audience now knows the hunters are more dangerous than the police. The cut away from Trinity's escape delays release."
+  },
+  "why_now": "This happens now because the audience just saw Trinity cornered and needs to understand who is hunting her before seeing her escape. If we showed the escape first, the pursuers would be anonymous obstacles; showing their command perspective first makes the escape mean something — she is outrunning something that understands her.",
+  "why_not_otherwise": [
+   {
+    "alternative": "Show Trinity's escape immediately (scene 2 = escape, scene 3 = Smith)",
+    "rejected_because": "Without the hunters' perspective first, the escape is just action choreography. The audience needs to know WHAT she is escaping from before they see HOW."
+   },
+   {
+    "alternative": "Open on Neo's apartment (the 'Follow the white rabbit' message)",
+    "rejected_because": "Jumping to Neo before closing the Trinity- Agent thread abandons the cold open's hook. The audience expects resolution of the hotel sequence before the protagonist is introduced."
+   },
+   {
+    "alternative": "Show Smith and the Lieutenant AFTER Trinity escapes",
+    "rejected_because": "Smith's pre-escape certainty makes the escape a defeat for him; showing him after makes it a reaction. The forward-facing version is stronger because it frames the escape as a race, not a recap."
+   }
+  ],
+  "promises": {
+   "made": [
+    "Agent Smith is hunting something specific and knows more than any cop",
+    "Trinity is in imminent, specific danger — the window for her escape is closing",
+    "Agents operate with authority that supersedes normal law enforcement"
+   ],
+   "kept": [
+    "The cold open's promise of something beyond ordinary procedure — Smith IS the beyond"
+   ]
+  }
+ },
+ "psychology": [
+  {
+   "entity": "ch-04",
+   "entering_state": "Agent Smith is in command of a police operation that has cornered a resistance operative. He is calm, precise, and contemptuous of the human law enforcement he must work through. His hatred of the Matrix — the 'zoo, this prison' — is hidden beneath professional efficiency. He wants Trinity caught and, through her, Morpheus.",
+   "perception": {
+    "sight": "The hotel exterior: tired brick, lit windows, police cars with lights painting the wet street in strobing red and blue. Cops in body armor milling. The Lieutenant is a stocky man with a mustache and sweat on his forehead, looking at Smith for instruction.",
+    "sound": "Police radio chatter, boots on asphalt, the distant bark of the cop inside issuing commands through the walls. A helicopter somewhere above.",
+    "touch": "The suit is an affectation he maintains inside the Matrix — he feels it as real. Cold air on exposed skin at the collar. The earpiece feeding him data.",
+    "smell": "Wet asphalt, exhaust, the metallic tang of police equipment.",
+    "taste": "Nothing specific — or rather, the faint staleness of recycled air that the Matrix simulates, which he despises.",
+    "interoception": "A low, controlled tension — the hunt is engaged. Not adrenaline; programs do not produce adrenaline. Something analogous: heightened processing allocation toward the target.",
+    "proprioception": "Standing with weight distributed, hands clasped behind his back or at his sides. Still. Controlled. The Lieutenant is shorter and shifts from foot to foot.",
+    "attention": "On the hotel entrance and the Lieutenant's report. Monitoring the operation's progress through the earpiece and the cops' radio traffic. Not attending to the Lieutenant's emotional state — that is irrelevant."
+   },
+   "appraisal": {
+    "value_at_stake": "Order and the elimination of the human resistance — his pathway to freedom from the Matrix",
+    "valence": 20,
+    "arousal": 35,
+    "self_conscious_emotion": "None — programs do not experience self-conscious emotion, though Smith's contempt approximates a cold pride in his own superiority",
+    "moral_reading": "The target is a criminal and a disease vector. Apprehension is righteous. The cops are tools — useful but limited.",
+    "somatic_marker": "A tightening in the jaw that he would not call frustration — simply the recognition of inefficiency in the operation."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "Agent authority supersedes all law enforcement in matters of national security",
+     "The Lieutenant is obligated to follow Agent instructions without question",
+     "Cops do not ask Agents what they are — that question is not permitted"
+    ],
+    "how_others_would_judge": "The Lieutenant would judge any Agent as terrifying but untouchable — a man in a suit who gives orders and cannot be questioned.",
+    "how_absent_others_would_judge": "The Matrix system would judge Smith's performance on efficiency and results. His peers (Brown, Jones) would judge him as competent but increasingly volatile.",
+    "standing_at_risk": "Smith's standing within the Agent program — he must deliver results. His personal goal of escape depends on destroying the resistance.",
+    "norm_conflict": "Professional efficiency vs. personal hatred — Smith must operate within the system he despises. Efficiency wins on the surface; hatred leaks through in tone and word choice."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-02",
+     "d1": "Trinity is a freed human operative, highly skilled, capable of superhuman movement within the Matrix. She is cornered and will attempt escape via hardline.",
+     "d2": "Trinity knows she is surrounded and will assume Agents are coordinating the operation. She expects him to have the building covered.",
+     "d3": "Trinity believes the Agents will assume she will try the hardline — so she may try something unexpected. But she has limited options.",
+     "accuracy": "Smith may underestimate how fast Trinity can move and how much she can bend the rules. His model of freed-human capability is based on past captures, not on Trinity specifically."
+    },
+    {
+     "other": "LIEUTENANT",
+     "d1": "The Lieutenant is a mid-level police officer, competent but out of his depth. He follows orders. He does not understand what an Agent is and never will.",
+     "d2": "The Lieutenant believes Smith is a federal agent or higher authority — someone to be obeyed without question. He thinks this is a counter-terrorism operation.",
+     "d3": "The Lieutenant thinks Smith thinks the cops are competent and necessary. In reality, Smith thinks they are furniture.",
+     "accuracy": "Smith reads the Lieutenant as predictable and controllable — which is correct. The Lieutenant reads Smith as a federal authority — which is the surface truth but misses the deeper reality."
+    }
+   ],
+   "urges": {
+    "cravings": "None in the human sense; the closest analogue is the desire to end this operation cleanly and move to the next target.",
+    "physical_needs": "None — programs do not have physical needs within the Matrix body.",
+    "psych_needs_conscious": "Capture Trinity, trace her to Morpheus, end the resistance cell.",
+    "psych_needs_unconscious": "Escape the Matrix — but this is not conscious in this moment. It surfaces only in his contempt for the world around him.",
+    "avoidances": "Avoiding any display of emotion that would reveal his hatred of the Matrix — that comes later, under pressure."
+   },
+   "impairments": {
+    "physical": "none",
+    "medical": "none",
+    "magical": "none",
+    "chemical": "none",
+    "coercive": "Bound by Agent protocols — must operate within the Matrix's rules, cannot simply override all civilian systems without cause.",
+    "cognitive": "Cannot fully model freed-human rule-bending — his framework assumes humans operate within normal parameters with some enhancement.",
+    "net_effect": "Smith is extremely capable but constrained by his own rules and by a slight blind spot regarding what freed humans can actually do."
+   },
+   "deliberation": {
+    "framing": "This is a standard containment operation — corner the target, prevent hardline escape, capture for interrogation. The complication is that the target is a known operative who may attempt extraordinary exit.",
+    "options_weighed": [
+     {
+      "option": "Storm the room immediately with full tactical team",
+      "predicted_outcome": "High probability of apprehension or killing the target, but risks losing the lead to Morpheus if the target dies before talking.",
+      "cost": "Loss of intelligence; possible collateral damage that draws attention."
+     },
+     {
+      "option": "Contain and wait — cover all exits, let the cops flush her",
+      "predicted_outcome": "Slower but cleaner; gives the target time to attempt something desperate.",
+      "cost": "Time; the target may escape through a route not yet covered."
+     }
+    ],
+    "reasoning": "The Lieutenant's team has the room covered. The hardline — the phone — is the target's only exit. Cover the hardline and she is trapped. Simple containment. Let the uniformed officers do the work.",
+    "chosen_because": "Containment minimizes risk of losing the intelligence trail to Morpheus. The cops are expendable; the target is not — not yet.",
+    "known_unknowns": "Exactly how many exits Trinity has mapped in this building. Whether she has allies inside the perimeter. What her specific capabilities are — she is flagged as dangerous but the file is incomplete."
+   },
+   "control": {
+    "mode": "inhibited",
+    "felt": "Cold certainty and a thin layer of contempt for the inefficiency around him — the cops are slow, the Lieutenant is nervous, the whole operation is imprecise.",
+    "expressed": "Composed authority. Measured speech. No visible emotion. The suit, the posture, the voice — all project control.",
+    "divergence_reason": "The gap between Smith's contempt for this world and his need to operate within it. He must perform competence, not disdain.",
+    "leakage": "The flatness of his voice — too controlled, too even. The deliberate precision of word choice that signals he is not from this world. A faint sneer when he corrects the Lieutenant's assessment.",
+    "inhibited_impulse": "The desire to simply take over a cop's body and do it himself — faster, cleaner, without the fumbling. But that would compromise the operation's cover."
+   },
+   "intention": "Ensure the target is contained and captured alive for interrogation — and establish that Agents command this operation, not the police.",
+   "action": "Smith corrects the Lieutenant's tactical assessment with cold precision, makes clear the target is not what the cops think she is, and directs focus to the hardline — the phone — as the critical chokepoint."
+  },
+  {
+   "trajectory": [
+    {
+     "phase": "On arriving outside the hotel",
+     "shift": "Smith assesses the operation and finds it adequate but imprecise. He takes command from the Lieutenant without resistance.",
+     "trigger": "The Lieutenant's briefing — cops inside, target cornered.",
+     "state_delta": null
+    },
+    {
+     "phase": "After correcting the Lieutenant",
+     "shift": "Smith redirects tactical focus from the room to the hardline, revealing he understands the target's escape method in a way the cops cannot.",
+     "trigger": "The Lieutenant's assumption that the target is cornered and done.",
+     "state_delta": {
+      "variable": "pursuit_phase",
+      "from": "hunting_trinity",
+      "to": "hunting_trinity"
+     }
+    }
+   ],
+   "leaving_state": "Smith is in command, the operation is focused on the hardline, and his contempt for human law enforcement is barely concealed. The target is still cornered — but the audience now knows the hunters understand her escape route.",
+   "unresolved": "Whether Trinity can get past the containment Smith has ordered."
+  },
+  {
+   "entity": "LIEUTENANT",
+   "entering_state": "A seasoned police lieutenant running a tactical operation on a fugitive. He has been told federal agents are taking over — men in suits who give orders and expect them followed. He is competent in his world and confused by theirs.",
+   "perception": {
+    "sight": "Agent Smith — tall, blonde, immaculate suit, unnervingly still. The hotel: police lights, tactical teams stacked at the entrance, a perimeter of squad cars. His own officers awaiting orders.",
+    "sound": "Radio chatter, the helicopter, boots, Smith's voice — which is too calm.",
+    "touch": "Sweat on his own forehead, the weight of his vest, the radio in his hand.",
+    "smell": "Wet asphalt, exhaust, cordite from the breach.",
+    "taste": "Adrenaline sourness in the back of his throat.",
+    "interoception": "Elevated heart rate — combat alertness. Something beneath it: unease. The man in the suit does not move like a federal agent.",
+    "proprioception": "Standing near Smith, shifting weight. Hands occupied with radio and clipboard.",
+    "attention": "On Smith — waiting for instruction. Failing to notice how still Smith is, how the suit has no creases, how the eyes do not blink at the right rate."
+   },
+   "appraisal": {
+    "value_at_stake": "Professional competence — his operation, his officers, his record.",
+    "valence": -10,
+    "arousal": 55,
+    "self_conscious_emotion": "Mild humiliation — being corrected in front of his team by a man who is not police.",
+    "moral_reading": "This is a dangerous fugitive. His job is to apprehend her. The federal agent is helping — or taking over. Either way, his job is to follow.",
+    "somatic_marker": "Stomach tightening — the feeling of being outranked and not understanding why."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "Police chain of command — but Agents override it",
+     "Federal authority supersedes local jurisdiction",
+     "Do not question a federal agent's credentials or methods"
+    ],
+    "how_others_would_judge": "His officers expect him to run the show. Being publicly corrected undermines him in front of them.",
+    "how_absent_others_would_judge": "The department would judge him for cooperating fully with federal authority — failure to do so is career-ending.",
+    "standing_at_risk": "His authority over his own team — diminished every time Smith speaks over him.",
+    "norm_conflict": "Loyalty to his team vs. obedience to federal authority. Authority wins; it always wins."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-04",
+     "d1": "Smith is a federal agent — FBI, maybe something higher. He knows things about the target that police don't. He is calm because he has done this before.",
+     "d2": "Smith thinks the Lieutenant's team is competent enough to contain one woman.",
+     "d3": "Smith probably thinks the Lieutenant is a tool — useful, not worth engaging with as a peer.",
+     "accuracy": "The Lieutenant is wrong about what Smith is. He is a federal agent in surface only. Beneath that is something the Lieutenant has no framework to imagine."
+    }
+   ],
+   "urges": {
+    "cravings": "None — this is a job.",
+    "physical_needs": "A moment to breathe, but there is no time.",
+    "psych_needs_conscious": "Complete the operation, bring everyone home, maintain authority over his team.",
+    "psych_needs_unconscious": "Prove he belongs in this command structure — that he is not just a tool for the men in suits.",
+    "avoidances": "Avoid looking incompetent in front of Smith or his officers."
+   },
+   "impairments": {
+    "physical": "Mild fatigue — late shift, high stress",
+    "medical": "none",
+    "magical": "none",
+    "chemical": "Adrenaline",
+    "coercive": "Federal authority — cannot refuse or question Smith's orders",
+    "cognitive": "Cannot process what Smith actually is; his framework stops at 'federal agent'",
+    "net_effect": "Competent within his world, helpless outside it. He will follow orders and be grateful when it's over."
+   },
+   "deliberation": {
+    "framing": "This is a standard high-risk fugitive apprehension with federal oversight. His role is to execute tactical commands and keep his officers safe.",
+    "options_weighed": [
+     {
+      "option": "Assert tactical authority and push back on Smith's corrections",
+      "predicted_outcome": "Federal override — he loses face and gets a complaint.",
+      "cost": "Career risk, possible obstruction charge."
+     },
+     {
+      "option": "Defer to Smith and redirect his team per instructions",
+      "predicted_outcome": "Operation proceeds; his role shrinks but everyone stays safe.",
+      "cost": "Loss of authority in front of his team."
+     }
+    ],
+    "reasoning": "The suit says federal. The credentials say federal. You don't argue with federal. You do what he says and you go home.",
+    "chosen_because": "Self-preservation. The chain of command is clear, even if it stings.",
+    "known_unknowns": "Who Smith actually is. What the target actually is. Why the phone matters so much. All of this is above his pay grade and he knows it."
+   },
+   "control": {
+    "mode": "inhibited",
+    "felt": "Irritation at being sidelined, anxiety about the operation, unease about Smith.",
+    "expressed": "Professional deference. 'Yes sir' energy. Redirecting his team without protest.",
+    "divergence_reason": "Police culture demands you don't show weakness in front of your team or superiors. He masks discomfort with compliance.",
+    "leakage": "The half-second pause before acknowledging Smith's correction. The way he turns away from his officers when he relays the order.",
+    "inhibited_impulse": "To ask Smith who the hell he actually is and what the hell is going on."
+   },
+   "intention": "Execute the operation as directed and get his people out safely.",
+   "action": "The Lieutenant receives Smith's correction, suppresses his reaction, and redirects his team's focus per Smith's instructions."
+  },
+  {
+   "trajectory": [
+    {
+     "phase": "Initial briefing",
+     "shift": "The Lieutenant presents his assessment — target cornered, room covered, operation nearly complete.",
+     "trigger": "Smith's arrival at the command position.",
+     "state_delta": null
+    },
+    {
+     "phase": "After Smith's correction",
+     "shift": "The Lieutenant's confidence drops. He realizes his assessment was wrong — the phone, not the room, is the critical point. He redirects his team.",
+     "trigger": "Smith's correction about the target's nature and escape method.",
+     "state_delta": null
+    }
+   ],
+   "leaving_state": "The Lieutenant is diminished, compliant, and uneasy. His team is repositioned but he no longer fully understands the operation he is running.",
+   "unresolved": "Whether his repositioning will be enough — and what happens if it isn't."
+  }
+ ],
+ "dynamics": [
+  {
+   "entity": "lo-01",
+   "kind": "location",
+   "entering_state": "Heart O' The City Hotel exterior — a decaying building surrounded by police, lit by strobing emergency lights. Narrative role: escape point for Trinity.",
+   "forces_acting": [
+    "Police tactical operation",
+    "Agent Smith's command authority",
+    "The rain and the wet street",
+    "The Matrix maintaining the simulation — lit windows, traffic, the simulation's normalcy overlaying the tactical scene"
+   ],
+   "axis_changes": [
+    {
+     "axis": "narrative_role",
+     "from": "escape_point",
+     "to": "escape_point",
+     "caused_by": "No change yet — still the escape point, but now contested by the hunters' awareness of its function"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "Established as the site of a police operation",
+     "shift": "The hotel becomes a contested space — both escape route and trap.",
+     "trigger": "Smith's arrival and his redirect to the hardline.",
+     "state_delta": null
+    }
+   ],
+   "leaving_state": "The hotel is now a trap being sprung — the hunters understand the escape route. The question is whether the quarry can get past them.",
+   "significance_shift": "The hotel now means two things simultaneously: Trinity's exit and Smith's snare. The audience sees both sides."
+  }
+ ],
+ "interaction": {
+  "what_collides": "Smith's knowledge of how freed humans escape (the hardline) collides with the Lieutenant's assumption that a cornered fugitive is already caught. The collision is about competence — who understands what is actually happening.",
+  "power_balance": "Smith holds all power — federal authority, superior knowledge, and the implicit threat of what an Agent IS. The Lieutenant has tactical resources but no autonomy. The balance does not shift; it is established as lopsided.",
+  "information_asymmetry": "Smith knows the target can escape via the hardline and that she is more dangerous than the cops believe. The Lieutenant knows only that she is cornered. The audience, having seen Trinity at the keyboard, knows she has a plan — but does not yet know if Smith's counter-plan will stop her.",
+  "turning_point": "The moment Smith corrects the Lieutenant — 'she will try to use the phone' or equivalent — the scene pivots from a police operation to something stranger. The cops are no longer the real hunters; Smith is. The audience's understanding of the stakes shifts from 'can the cops catch her' to 'can she escape something that understands her.'"
+ },
+ "continuity": {
+  "established_facts_used": [
+   {
+    "fact": "Trinity is cornered in the Heart O' The City Hotel at a keyboard with a phone and modem",
+    "source": "sc-001",
+    "how_used": "Smith's awareness of the phone as the critical chokepoint connects to Trinity's setup in the room"
+   },
+   {
+    "fact": "Agents can inhabit anyone hardwired to the system",
+    "source": "root.rules_of_the_world[3]",
+    "how_used": "Smith's authority over the police operation implies but does not state this power"
+   },
+   {
+    "fact": "Agents are sentient programs with superhuman speed and strength",
+    "source": "root.rules_of_the_world[4]",
+    "how_used": "Smith's unnerving calm and control hint at this without revealing it"
+   },
+   {
+    "fact": "Entry to and exit from the Matrix require hardwired phone lines",
+    "source": "root.rules_of_the_world[5]",
+    "how_used": "This is the key knowledge Smith brings — the phone is the target's escape route, which the cops would never know"
+   }
+  ],
+  "constraints_honoured": [
+   "No information delivered without conflict — Smith's knowledge of the hardline arrives as a correction of the Lieutenant's assessment, not as exposition",
+   "No interior monologue — all psychology externalized into action, gesture, dialogue",
+   "No character states feelings directly — Smith's contempt shows in tone and word choice, never in statement",
+   "No scene that communicates only information — the scene is about power and who controls the operation"
+  ],
+  "contradictions_checked": [
+   {
+    "risk": "Smith could reveal too much about what Agents are, undermining the mystery",
+    "avoided_by": "Smith speaks in tactical terms — phone, exit, target. He does not explain what he is. The Lieutenant's confusion is the audience's confusion, but it is not resolved here."
+   },
+   {
+    "risk": "The Lieutenant could ask questions that force exposition",
+    "avoided_by": "Police culture and federal authority suppress his questions. He defers rather than interrogates."
+   },
+   {
+    "risk": "The scene could feel like filler between the cold open and the escape",
+    "avoided_by": "The scene creates the specific threat that makes the escape meaningful — she is not just outrunning cops, she is outrunning something that understands her escape route."
+   }
+  ],
+  "state_preconditions": [
+   {
+    "entity": "ch-04",
+    "variable": "pursuit_phase",
+    "must_be": "hunting_trinity"
+   },
+   {
+    "entity": "lo-01",
+    "variable": "narrative_role",
+    "must_be": "escape_point"
+   }
+  ],
+  "forward_commitments": [
+   "Trinity's escape must contend with Smith's hardline-focused containment — the escape is now contested, not just choreographed",
+   "The Lieutenant and his team are established as tools, not threats — the real threat is Smith and what he represents",
+   "Smith's contempt for the Matrix is planted as subtext — it must be paid off in the torture scene and his 'zoo, this prison' speech",
+   "The phone as escape route is now established for the audience — future hardline scenes (Hotel Lafayette, subway, room 303) will carry this knowledge"
+  ]
+ },
+ "decision": {
+  "resolution": "Scene 2 is a short exterior scene at the Heart O' The City Hotel: Agent Smith, flanked by a police Lieutenant, assesses the operation. The Lieutenant reports the target is cornered and nearly caught. Smith corrects him — the target is not what they think, and the phone in that room is the real danger. Smith redirects the operation to cover the hardline. The Lieutenant complies, diminished. The scene establishes Smith as the true threat, plants his contempt beneath professional calm, and reframes the escape as a contest between quarry and a hunter who understands her methods.",
+  "state_changes_implied": [
+   {
+    "entity": "ch-04",
+    "variable": "pursuit_phase",
+    "from": "hunting_trinity",
+    "to": "hunting_trinity",
+    "because": "No state change — Smith is still hunting Trinity, but the audience now sees his tactical approach and his contempt for the operation's human instruments"
+   }
+  ],
+  "confidence": 82,
+  "risks": [
+   "The scene is very short (146 words) and must convey Smith's authority, the Lieutenant's deference, and the hardline's significance without feeling rushed",
+   "Smith's contempt must be subtext, not text — if he sounds like a villain monologue-ing, the mystery of what he is collapses",
+   "The Lieutenant must feel like a real person, not just a function — if he is a cardboard cop, the power dynamic is generic instead of specific",
+   "The redirect to the hardline must feel like tactical insight, not exposition — the audience must learn the rule through Smith using it, not through Smith explaining it"
+  ]
+ }
+}

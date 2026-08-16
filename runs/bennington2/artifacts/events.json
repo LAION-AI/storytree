@@ -1,0 +1,3184 @@
+{
+ "events": {
+  "ev-001": {
+   "event_id": "ev-001",
+   "story_time": {
+    "index": 2,
+    "label": "night 1, dusk",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-06",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Cole takes the end motor-court room and starts timing streets and hunger instead of hunting.",
+   "action": "Cole Harlan signs the motor-court card in a name that will not be checked and takes the end room. He draws the already-drawn curtains tighter, sets a cheap spiral notebook on the desk, and marks dusk against the parking-lot sodium. He does not unpack. From the window he counts the seconds between the bakery sign flicker and the church bell, then writes the interval. When his hands start to shake he writes that too, as a number, and does not go out to hunt.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 3,
+     "after": 4,
+     "magnitude": 25
+    },
+    {
+     "entity": "lo-06",
+     "variable": "notebook_on_desk",
+     "path": "/lo-06/state/notebook_on_desk",
+     "dimension": "material",
+     "before": false,
+     "after": true,
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [],
+   "causes": [
+    "ev-003",
+    "ev-005"
+   ],
+   "causal_note": "The match has just sealed him in; the room and the first dusk are the only facts he has.",
+   "reversal": false,
+   "plot_function": "inciting_entry",
+   "is_root": true,
+   "is_sink": false
+  },
+  "ev-002": {
+   "event_id": "ev-002",
+   "story_time": {
+    "index": 4,
+    "label": "night 1, dusk",
+    "duration_min": 15
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-04",
+   "participants": [
+    "ch-03"
+   ],
+   "summary": "Voss is already running the Lodge tribute book, stamping vials and selling named-host rights.",
+   "action": "Anton Voss opens the tribute ledger on the Lodge blotter and rules a fresh night column before anyone new has found the door. He restamps eight vials, notes which will thin by the third dawn, and initials exclusive access against three host names already in the book. When a runner brings a folded cash-count he does not smile. He writes the number smaller than the runner said and slides the difference into the house column, the only order that has ever looked solvent to him after a prior book went to zero.",
+   "state_changes": [
+    {
+     "entity": "ob-01",
+     "variable": "open",
+     "path": "/ob-01/state/open",
+     "dimension": "material",
+     "before": false,
+     "after": true,
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [],
+   "causes": [
+    "ev-003",
+    "ev-009"
+   ],
+   "causal_note": "The syndicate is a going concern at match open; the book is already the town's path to blood.",
+   "reversal": false,
+   "plot_function": "going_concern",
+   "is_root": true,
+   "is_sink": false
+  },
+  "ev-003": {
+   "event_id": "ev-003",
+   "story_time": {
+    "index": 6,
+    "label": "night 1, night",
+    "duration_min": 25
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-02",
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st3"
+    },
+    {
+     "plot": "pl-02",
+     "step": "st2"
+    },
+    {
+     "plot": "pl-05",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-04",
+   "participants": [
+    "ch-01",
+    "ch-03"
+   ],
+   "summary": "Hunger forces Cole to the Lodge; he pays Voss's price, feeds a host as a node, and walks unbound.",
+   "action": "Cole's hands have gone past useful shake. He finds the Lodge because the downtown doors that would have been free are already marked. Voss names a price for a named hour with an unnamed clerk on the night shift and offers client terms that would put Cole on the page. Cole pays the hour in stamped value and refuses the terms. He feeds in the back office the way he would take a reading off a meter, stops at the first number that lets him stand, and leaves the clerk breathing. Voss writes paid-unbound in a side column and does not stand to watch him go.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 4,
+     "after": 2,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "blood_value",
+     "path": "/ch-01/state/blood_value",
+     "dimension": "material",
+     "before": 0,
+     "after": 1,
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "voss_terms",
+     "path": "/ch-01/state/voss_terms",
+     "dimension": "social",
+     "before": "unpriced",
+     "after": "paid_unbound",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "location",
+     "path": "/ch-01/state/location",
+     "dimension": "spatial",
+     "before": "lo-06",
+     "after": "lo-04",
+     "magnitude": 25
+    },
+    {
+     "entity": "gr-02",
+     "variable": "feedable_stock",
+     "path": "/gr-02/state/feedable_stock",
+     "dimension": "world",
+     "before": 40,
+     "after": 39,
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-001",
+    "ev-002"
+   ],
+   "causes": [
+    "ev-006",
+    "ev-009"
+   ],
+   "causal_note": "Hunger has outrun his wait, and the only priced feed in town is already on Voss's blotter.",
+   "reversal": false,
+   "plot_function": "price_of_admission",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-004": {
+   "event_id": "ev-004",
+   "story_time": {
+    "index": 8,
+    "label": "night 1, late afternoon",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-03",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-05",
+   "participants": [
+    "ch-02"
+   ],
+   "summary": "Maren wakes with bruises sleep should have taken and finds a cassette of her own unremembered voice.",
+   "action": "Maren Ellison wakes in the walk-up over the cassette shop and finds finger-marks on her upper arms that last night's sleep should have taken with the hours. She treats them as a wardrobe problem, then as a work problem. Downstairs the shop has opened; in the return bin a C90 has her own handwriting on the spine. She plays it on the counter deck. Her voice from a night she cannot place counts a set list and then goes quiet in a way that is not a song. She pockets the tape, buttons a long sleeve, and does not call anyone.",
+   "state_changes": [
+    {
+     "entity": "ch-02",
+     "variable": "bruises",
+     "path": "/ch-02/state/bruises",
+     "dimension": "physiological",
+     "before": false,
+     "after": true,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-02",
+     "variable": "memory_state",
+     "path": "/ch-02/state/memory_state",
+     "dimension": "epistemic",
+     "before": "intact",
+     "after": "ruptured",
+     "magnitude": 75
+    },
+    {
+     "entity": "ob-02",
+     "variable": "holder",
+     "path": "/ob-02/state/holder",
+     "dimension": "material",
+     "before": "lo-09",
+     "after": "ch-02",
+     "magnitude": 50
+    },
+    {
+     "entity": "ob-02",
+     "variable": "playback",
+     "path": "/ob-02/state/playback",
+     "dimension": "epistemic",
+     "before": "unplayed",
+     "after": "heard",
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-05",
+     "variable": "evidence_out",
+     "path": "/lo-05/state/evidence_out",
+     "dimension": "material",
+     "before": false,
+     "after": true,
+     "magnitude": 25
+    },
+    {
+     "entity": "lo-09",
+     "variable": "tape_in_bin",
+     "path": "/lo-09/state/tape_in_bin",
+     "dimension": "material",
+     "before": true,
+     "after": false,
+     "magnitude": 25
+    },
+    {
+     "entity": "lo-09",
+     "variable": "open",
+     "path": "/lo-09/state/open",
+     "dimension": "world",
+     "before": false,
+     "after": true,
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [],
+   "causes": [
+    "ev-005",
+    "ev-010"
+   ],
+   "causal_note": "Sleep has already billed her a night she cannot remember; the bruises and the tape are what the night left.",
+   "reversal": false,
+   "plot_function": "state_of_rupture",
+   "is_root": true,
+   "is_sink": false
+  },
+  "ev-005": {
+   "event_id": "ev-005",
+   "story_time": {
+    "index": 10,
+    "label": "night 1, night",
+    "duration_min": 40
+   },
+   "primary_plot": "pl-05",
+   "plots": [
+    "pl-05",
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-05",
+     "step": "st2"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01",
+    "ch-02"
+   ],
+   "summary": "Cole times Maren's Hollow set by the clock and does not approach the stage.",
+   "action": "Maren takes The Hollow stage in long sleeves and works the first set as if the bruises were someone else's wardrobe error. Cole stands at the back rail with the spiral notebook and times each song to the second, including the one the room already knows. He does not send a drink. He does not go to the merch table. When she looks past the lights he is already writing the next interval. She finishes without asking anyone to stay. He has her set length in a column that still has no name at the top.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "location",
+     "path": "/ch-01/state/location",
+     "dimension": "spatial",
+     "before": "lo-04",
+     "after": "lo-01",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-02",
+     "variable": "location",
+     "path": "/ch-02/state/location",
+     "dimension": "spatial",
+     "before": "lo-05",
+     "after": "lo-01",
+     "magnitude": 25
+    },
+    {
+     "entity": "lo-01",
+     "variable": "set_in_progress",
+     "path": "/lo-01/state/set_in_progress",
+     "dimension": "social",
+     "before": false,
+     "after": true,
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-001",
+    "ev-004"
+   ],
+   "causes": [
+    "ev-006",
+    "ev-011",
+    "ev-012"
+   ],
+   "causal_note": "He has paid to stand through a night and she has a shift; the room puts his timing on her work.",
+   "reversal": false,
+   "plot_function": "unnamed_outlay_begin",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-006": {
+   "event_id": "ev-006",
+   "story_time": {
+    "index": 12,
+    "label": "night 2, dusk",
+    "duration_min": 15
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st2"
+    }
+   ],
+   "location": "lo-06",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Cole locks the goal: columns for hunger, sun-margin, vial decay, and the chapel window.",
+   "action": "After the day-sleep Cole opens the spiral to a clean page and rules four columns before he puts his coat on. Hunger. Sun-margin. Stored decay. Chapel window. He writes the seven-night remainder at the top as a fraction and underlines the last dawn. He does not write a name. He tests the curtain seam with a match and times how long he can stand the heat before the cloth would fail. Then he writes the number and the commitment that follows from it: be first at that window, or the page is waste.",
+   "state_changes": [
+    {
+     "entity": "cn-01",
+     "variable": "night",
+     "path": "/cn-01/state/night",
+     "dimension": "world",
+     "before": 1,
+     "after": 2,
+     "magnitude": 50
+    },
+    {
+     "entity": "ob-03",
+     "variable": "written",
+     "path": "/ob-03/state/written",
+     "dimension": "epistemic",
+     "before": false,
+     "after": true,
+     "magnitude": 50
+    },
+    {
+     "entity": "ob-03",
+     "variable": "filed_as",
+     "path": "/ob-03/state/filed_as",
+     "dimension": "epistemic",
+     "before": "blank",
+     "after": "times",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "location",
+     "path": "/ch-01/state/location",
+     "dimension": "spatial",
+     "before": "lo-01",
+     "after": "lo-06",
+     "magnitude": 10
+    },
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 2,
+     "after": 4,
+     "magnitude": 25
+    },
+    {
+     "entity": "lo-01",
+     "variable": "set_in_progress",
+     "path": "/lo-01/state/set_in_progress",
+     "dimension": "social",
+     "before": true,
+     "after": false,
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-003",
+    "ev-005"
+   ],
+   "causes": [
+    "ev-007",
+    "ev-021"
+   ],
+   "causal_note": "The first feed proved the clock is real; night two is when he can still choose to map instead of scramble.",
+   "reversal": false,
+   "plot_function": "goal_lock",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-007": {
+   "event_id": "ev-007",
+   "story_time": {
+    "index": 14,
+    "label": "night 2, night",
+    "duration_min": 45
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-07",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Cole tests sleep-erasure in the open: a mark and a note survive; the host's night does not.",
+   "action": "Cole stops a closing bartender on a side street and does not feed. He leaves a marked coin and a time written on the back of a till receipt where the man will find them after sleep. He waits in a doorway through the thin day-edge in the motor-court dark, then walks back at next dusk. The coin is in the tip jar. The receipt is in the man's pocket. Asked what time he locked up, the bartender names the wrong hour and laughs it off as a long shift. Cole writes the loss where it can be seen and does not correct him.",
+   "state_changes": [
+    {
+     "entity": "cn-03",
+     "variable": "cole_tested",
+     "path": "/cn-03/state/cole_tested",
+     "dimension": "epistemic",
+     "before": false,
+     "after": true,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "location",
+     "path": "/ch-01/state/location",
+     "dimension": "spatial",
+     "before": "lo-06",
+     "after": "lo-07",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 4,
+     "after": 5,
+     "magnitude": 25
+    },
+    {
+     "entity": "lo-07",
+     "variable": "hour",
+     "path": "/lo-07/state/hour",
+     "dimension": "world",
+     "before": "dusk",
+     "after": "night",
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-006"
+   ],
+   "causes": [
+    "ev-008"
+   ],
+   "causal_note": "He now has a ruled page and a night he can spend on a test instead of a hunt.",
+   "reversal": false,
+   "plot_function": "recon_test",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-008": {
+   "event_id": "ev-008",
+   "story_time": {
+    "index": 16,
+    "label": "night 2, late",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-03",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Cole times chapel and memorial tower and pockets an ordinary vestry key.",
+   "action": "Cole walks the cemetery edge and times the stone chapel against the memorial tower, door to door, in both directions. The vestry hook holds a key that fits the main lock and is not alarmed. He pockets it. He marks the tower stair as a second approach and writes the minutes it would take in last light. He does not try the tower door from the inside. He writes the key as ordinary hardware and the tower as a number, then leaves before the fog makes the intervals sloppy.",
+   "state_changes": [
+    {
+     "entity": "ob-04",
+     "variable": "holder",
+     "path": "/ob-04/state/holder",
+     "dimension": "material",
+     "before": "lo-03",
+     "after": "ch-01",
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-08",
+     "variable": "known_as_route",
+     "path": "/lo-08/state/known_as_route",
+     "dimension": "epistemic",
+     "before": "unknown",
+     "after": "timed_by_cole",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "location",
+     "path": "/ch-01/state/location",
+     "dimension": "spatial",
+     "before": "lo-07",
+     "after": "lo-03",
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-007"
+   ],
+   "causes": [
+    "ev-009",
+    "ev-030"
+   ],
+   "causal_note": "The erasure test freed him to spend the rest of the night on doors instead of on proof.",
+   "reversal": false,
+   "plot_function": "recon_plant",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-009": {
+   "event_id": "ev-009",
+   "story_time": {
+    "index": 18,
+    "label": "night 2, late",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-05",
+   "plots": [
+    "pl-05",
+    "pl-01",
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-05",
+     "step": "st2"
+    },
+    {
+     "plot": "pl-01",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-04",
+   "participants": [
+    "ch-01",
+    "ch-03"
+   ],
+   "summary": "Cole overpays Voss to keep guests off Maren; the book records a credit he files as Voss's claim.",
+   "action": "Cole returns to the Lodge with a fresh take he does not need for himself. He has Voss write a line against the singer at The Hollow and pays over the vial plus an amount that makes Voss look up. Voss records a credit in her name because that is how the book holds a surplus, then treats the line as inventory he owns. Cole folds the receipt into the timing notebook and writes her name as if it were a street. He does not ask what the extra bought. Voss does not tell him.",
+   "state_changes": [
+    {
+     "entity": "ob-01",
+     "variable": "maren_line",
+     "path": "/ob-01/state/maren_line",
+     "dimension": "epistemic",
+     "before": "blank",
+     "after": "credit_her_name",
+     "magnitude": 75
+    },
+    {
+     "entity": "cn-04",
+     "variable": "exists",
+     "path": "/cn-04/state/exists",
+     "dimension": "material",
+     "before": false,
+     "after": true,
+     "magnitude": 75
+    },
+    {
+     "entity": "cn-04",
+     "variable": "public_reading",
+     "path": "/cn-04/state/public_reading",
+     "dimension": "epistemic",
+     "before": "none",
+     "after": "voss_claim",
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-01",
+     "variable": "file_state",
+     "path": "/ch-01/state/file_state",
+     "dimension": "epistemic",
+     "before": "blank",
+     "after": "misfiled",
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-01",
+     "variable": "obligation",
+     "path": "/ch-01/state/obligation",
+     "dimension": "psychological",
+     "before": 0,
+     "after": 2,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "location",
+     "path": "/ch-01/state/location",
+     "dimension": "spatial",
+     "before": "lo-03",
+     "after": "lo-04",
+     "magnitude": 10
+    },
+    {
+     "entity": "ch-03",
+     "variable": "credit_reading",
+     "path": "/ch-03/state/credit_reading",
+     "dimension": "epistemic",
+     "before": "unseen",
+     "after": "filed_as_his",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 5,
+     "after": 3,
+     "magnitude": 25
+    },
+    {
+     "entity": "gr-02",
+     "variable": "feedable_stock",
+     "path": "/gr-02/state/feedable_stock",
+     "dimension": "world",
+     "before": 39,
+     "after": 38,
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-002",
+    "ev-003",
+    "ev-008"
+   ],
+   "causes": [
+    "ev-013",
+    "ev-015"
+   ],
+   "causal_note": "He has timed her set and has just enough blood-value to buy a line without taking client terms.",
+   "reversal": false,
+   "plot_function": "misfiled_plant",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-010": {
+   "event_id": "ev-010",
+   "story_time": {
+    "index": 20,
+    "label": "night 2, late",
+    "duration_min": 25
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-03",
+     "step": "st2"
+    }
+   ],
+   "location": "lo-10",
+   "participants": [
+    "ch-02",
+    "ch-06"
+   ],
+   "summary": "Deacon reads incident notes back as fact; Maren starts matching his entries to the tape.",
+   "action": "Maren finds Deacon Ward on the campus night beat and puts the cassette on his clipboard without asking him to like it. He does not ask how she is. He opens last night's incident book and reads the entries back as times, addresses, and what was left on the ground. She stops him on a noise complaint behind The Hollow that lands in the same minute her taped voice goes quiet. He offers to copy the page. She takes the copy and does not say please. He writes that she took it.",
+   "state_changes": [
+    {
+     "entity": "ch-06",
+     "variable": "notes_offered",
+     "path": "/ch-06/state/notes_offered",
+     "dimension": "social",
+     "before": false,
+     "after": true,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-02",
+     "variable": "memory_state",
+     "path": "/ch-02/state/memory_state",
+     "dimension": "epistemic",
+     "before": "ruptured",
+     "after": "reconstructing",
+     "magnitude": 50
+    },
+    {
+     "entity": "ob-02",
+     "variable": "playback",
+     "path": "/ob-02/state/playback",
+     "dimension": "epistemic",
+     "before": "heard",
+     "after": "matched",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-02",
+     "variable": "location",
+     "path": "/ch-02/state/location",
+     "dimension": "spatial",
+     "before": "lo-01",
+     "after": "lo-10",
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-004"
+   ],
+   "causes": [
+    "ev-011",
+    "ev-025"
+   ],
+   "causal_note": "She has the tape and the bruises; he is the only person in town who writes the night down and will read it aloud.",
+   "reversal": false,
+   "plot_function": "corroborating_hand",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-011": {
+   "event_id": "ev-011",
+   "story_time": {
+    "index": 22,
+    "label": "night 2, last call",
+    "duration_min": 30
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-03",
+     "step": "st3"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-02"
+   ],
+   "summary": "Maren stays past last call and sets the cassette against the Hollow song until the song means something else.",
+   "action": "Maren goes back on at The Hollow and keeps the house song in the set later than the room wants. After last call she plays the cassette through the stage monitor against the same changes. Phrases that were work-talk on the tape now sit on the bruises. She does not sleep when the bartender kills the lights. She writes the overlapping times on a set list and puts both papers in her coat. The song is still the song. It no longer means the set list.",
+   "state_changes": [
+    {
+     "entity": "cn-05",
+     "variable": "meaning",
+     "path": "/cn-05/state/meaning",
+     "dimension": "epistemic",
+     "before": "setlist",
+     "after": "recontextualized",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-02",
+     "variable": "awake_streak",
+     "path": "/ch-02/state/awake_streak",
+     "dimension": "physiological",
+     "before": 0,
+     "after": 1,
+     "magnitude": 50
+    },
+    {
+     "entity": "cn-03",
+     "variable": "maren_understands",
+     "path": "/cn-03/state/maren_understands",
+     "dimension": "epistemic",
+     "before": false,
+     "after": true,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-02",
+     "variable": "location",
+     "path": "/ch-02/state/location",
+     "dimension": "spatial",
+     "before": "lo-10",
+     "after": "lo-01",
+     "magnitude": 10
+    },
+    {
+     "entity": "lo-01",
+     "variable": "set_in_progress",
+     "path": "/lo-01/state/set_in_progress",
+     "dimension": "social",
+     "before": false,
+     "after": true,
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-005",
+    "ev-010"
+   ],
+   "causes": [
+    "ev-015"
+   ],
+   "causal_note": "Deacon's times gave her a second hand to set against her own recorded voice and the song she still has to play.",
+   "reversal": false,
+   "plot_function": "pattern_and_song",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-012": {
+   "event_id": "ev-012",
+   "story_time": {
+    "index": 24,
+    "label": "night 2, last call",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-04",
+   "plots": [
+    "pl-04"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-04",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-04",
+    "ch-01"
+   ],
+   "summary": "Lena watches Cole measure the room and the singer and notes she is better at the second.",
+   "action": "Lena Cho takes the stool that lets her see Cole's notebook and Maren's hands on the mic stand. She watches him count the room in intervals and miss the way the singer's sleeve is being used as a door. She does not introduce herself. When he looks up from a number she is already looking at the extra space he has left in the margin, and she files that space as the place his map will fail. She pays for her own drink and leaves before he can ask what she saw.",
+   "state_changes": [
+    {
+     "entity": "ch-04",
+     "variable": "cole_read",
+     "path": "/ch-04/state/cole_read",
+     "dimension": "epistemic",
+     "before": 2,
+     "after": 4,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "location",
+     "path": "/ch-01/state/location",
+     "dimension": "spatial",
+     "before": "lo-04",
+     "after": "lo-01",
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-005"
+   ],
+   "causes": [
+    "ev-016",
+    "ev-018"
+   ],
+   "causal_note": "Cole is in the room measuring; she can sit where his margin is visible without being invited.",
+   "reversal": false,
+   "plot_function": "superior_read",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-013": {
+   "event_id": "ev-013",
+   "story_time": {
+    "index": 26,
+    "label": "night 3, dusk",
+    "duration_min": 12
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st3"
+    }
+   ],
+   "location": "lo-04",
+   "participants": [
+    "ch-03"
+   ],
+   "summary": "Voss raises the tribute rate and writes the new number into the book as decay eats potency.",
+   "action": "Voss opens the ledger on night three, checks a vial against the lamp, and sees the stamp still sharp while the volume has already slid. He rules a new tax through the old one hard enough to cut the page. He tells no one it is because the stock is thinning. He tells the room the house is tightening because unpaid hours make sloppy nights. He writes Pike's name in the enforcement column before Pike has come in, then underlines it once.",
+   "state_changes": [
+    {
+     "entity": "gr-03",
+     "variable": "tax_rate",
+     "path": "/gr-03/state/tax_rate",
+     "dimension": "political",
+     "before": 4,
+     "after": 7,
+     "magnitude": 50
+    },
+    {
+     "entity": "cn-01",
+     "variable": "night",
+     "path": "/cn-01/state/night",
+     "dimension": "world",
+     "before": 2,
+     "after": 3,
+     "magnitude": 50
+    },
+    {
+     "entity": "ob-06",
+     "variable": "potency",
+     "path": "/ob-06/state/potency",
+     "dimension": "material",
+     "before": 8,
+     "after": 6,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-03",
+     "variable": "solvency_confidence",
+     "path": "/ch-03/state/solvency_confidence",
+     "dimension": "psychological",
+     "before": 7,
+     "after": 6,
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 3,
+     "after": 5,
+     "magnitude": 25
+    },
+    {
+     "entity": "lo-01",
+     "variable": "set_in_progress",
+     "path": "/lo-01/state/set_in_progress",
+     "dimension": "social",
+     "before": true,
+     "after": false,
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-009"
+   ],
+   "causes": [
+    "ev-014"
+   ],
+   "causal_note": "Two nights of decay and a newcomer still unbound make a higher tax the correct move on his own page.",
+   "reversal": false,
+   "plot_function": "tighten_the_tax",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-014": {
+   "event_id": "ev-014",
+   "story_time": {
+    "index": 28,
+    "label": "night 3, night",
+    "duration_min": 35
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st3"
+    }
+   ],
+   "location": "lo-07",
+   "participants": [
+    "ch-07",
+    "ch-03"
+   ],
+   "summary": "Pike hunts a nonpayer through downtown; a guest is removed and the book becomes the only safe path.",
+   "action": "Pike takes the name Voss underlined and walks it through downtown without hurrying. The nonpayer tries a side street, then a parked car, then the bakery alcove. Pike does not speech him. He backs the man into the sodium and denies him the next feed until the man breaks for open pavement and is gone from the match. Shopkeepers lock early. Voss, told by phone, marks the line paid-by-removal and does not leave the Lodge. The remaining guests now have one path to blood that will not bring Pike back out.",
+   "state_changes": [
+    {
+     "entity": "ch-07",
+     "variable": "assignment",
+     "path": "/ch-07/state/assignment",
+     "dimension": "social",
+     "before": "idle",
+     "after": "hunting",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-07",
+     "variable": "location",
+     "path": "/ch-07/state/location",
+     "dimension": "spatial",
+     "before": "lo-04",
+     "after": "lo-07",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-07",
+     "variable": "target",
+     "path": "/ch-07/state/target",
+     "dimension": "epistemic",
+     "before": "none",
+     "after": "nonpayer",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-03",
+     "variable": "enforcement",
+     "path": "/ch-03/state/enforcement",
+     "dimension": "social",
+     "before": "idle",
+     "after": "hunting",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-03",
+     "variable": "market_grip",
+     "path": "/ch-03/state/market_grip",
+     "dimension": "political",
+     "before": 6,
+     "after": 8,
+     "magnitude": 50
+    },
+    {
+     "entity": "gr-01",
+     "variable": "remaining",
+     "path": "/gr-01/state/remaining",
+     "dimension": "world",
+     "before": 11,
+     "after": 10,
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-07",
+     "variable": "hunt_active",
+     "path": "/lo-07/state/hunt_active",
+     "dimension": "social",
+     "before": false,
+     "after": true,
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-07",
+     "variable": "hour",
+     "path": "/lo-07/state/hour",
+     "dimension": "world",
+     "before": "night",
+     "after": "late",
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-013"
+   ],
+   "causes": [
+    "ev-015",
+    "ev-016"
+   ],
+   "causal_note": "The new rate needs a body tonight or the raise is only ink and the next unpaid hour will spread.",
+   "reversal": false,
+   "plot_function": "enforcement_example",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-015": {
+   "event_id": "ev-015",
+   "story_time": {
+    "index": 30,
+    "label": "night 3, late",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-03",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-02"
+   ],
+   "summary": "Other guests leave Maren's orbit without a word; she feels the market shift and cannot read the line.",
+   "action": "Maren works the late set and watches the usual after-show orbit fail to form. Two regulars who always stay for a pour take the side door instead. A man who has been too close for two nights now keeps the far wall and does not look at her hands. She asks the bartender who paid her tab and gets a shrug that is also a closing. She stays through the wipe-down anyway, awake on purpose, and writes the empty orbit on the back of Deacon's copy. She can feel money moving. She cannot see whose.",
+   "state_changes": [
+    {
+     "entity": "ch-02",
+     "variable": "awake_streak",
+     "path": "/ch-02/state/awake_streak",
+     "dimension": "physiological",
+     "before": 1,
+     "after": 2,
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-01",
+     "variable": "set_in_progress",
+     "path": "/lo-01/state/set_in_progress",
+     "dimension": "social",
+     "before": false,
+     "after": true,
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-009",
+    "ev-011",
+    "ev-014"
+   ],
+   "causes": [
+    "ev-017"
+   ],
+   "causal_note": "The credit is in the book and the hunt has trained guests off unmarked hosts; her empty orbit is the market arriving as absence.",
+   "reversal": false,
+   "plot_function": "market_shadow",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-016": {
+   "event_id": "ev-016",
+   "story_time": {
+    "index": 32,
+    "label": "night 4, night",
+    "duration_min": 25
+   },
+   "primary_plot": "pl-04",
+   "plots": [
+    "pl-04"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-04",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-02",
+   "participants": [
+    "ch-05",
+    "ch-04"
+   ],
+   "summary": "Julian opens Whitlock as a party that also feeds; Lena arrives as cocaine and drink go down.",
+   "action": "Julian Marek unlocks Whitlock and starts the night by flattering the first arrivals for coming up the hill, then forgetting the compliment before they have their coats off. Cocaine lands on a silver tray beside the good whiskey. Hosts from campus are already in the side rooms, and the door policy is hunger dressed as hospitality. Lena comes in without being walked. Julian offers her the pretty downstairs salon and then gives it to someone louder. She takes the stairs instead and watches who he starves of a room on purpose.",
+   "state_changes": [
+    {
+     "entity": "lo-02",
+     "variable": "party_state",
+     "path": "/lo-02/state/party_state",
+     "dimension": "social",
+     "before": "dark",
+     "after": "gathering",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-05",
+     "variable": "substances",
+     "path": "/ch-05/state/substances",
+     "dimension": "physiological",
+     "before": "sober",
+     "after": "mixed",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-05",
+     "variable": "hunger",
+     "path": "/ch-05/state/hunger",
+     "dimension": "physiological",
+     "before": 4,
+     "after": 3,
+     "magnitude": 10
+    },
+    {
+     "entity": "cn-01",
+     "variable": "night",
+     "path": "/cn-01/state/night",
+     "dimension": "world",
+     "before": 3,
+     "after": 4,
+     "magnitude": 50
+    },
+    {
+     "entity": "ob-06",
+     "variable": "potency",
+     "path": "/ob-06/state/potency",
+     "dimension": "material",
+     "before": 6,
+     "after": 5,
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-04",
+     "variable": "location",
+     "path": "/ch-04/state/location",
+     "dimension": "spatial",
+     "before": "lo-01",
+     "after": "lo-02",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-04",
+     "variable": "hunger",
+     "path": "/ch-04/state/hunger",
+     "dimension": "physiological",
+     "before": 3,
+     "after": 4,
+     "magnitude": 10
+    },
+    {
+     "entity": "lo-07",
+     "variable": "hour",
+     "path": "/lo-07/state/hour",
+     "dimension": "world",
+     "before": "late",
+     "after": "night",
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-012",
+    "ev-014"
+   ],
+   "causes": [
+    "ev-017"
+   ],
+   "causal_note": "Night four is his to spend, and a downtown hunt has driven anyone still feeding toward a house that already feeds.",
+   "reversal": false,
+   "plot_function": "party_opens",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-017": {
+   "event_id": "ev-017",
+   "story_time": {
+    "index": 34,
+    "label": "night 4, late",
+    "duration_min": 40
+   },
+   "primary_plot": "pl-05",
+   "plots": [
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-05",
+     "step": "st3"
+    }
+   ],
+   "location": "lo-02",
+   "participants": [
+    "ch-01",
+    "ch-02",
+    "ch-05"
+   ],
+   "summary": "Cocaine, drink, and Julian's withheld rooms wreck Cole's working distance from Maren.",
+   "action": "Cole comes up the hill to time the house and takes the tray because refusing it would be a sentence. Maren is already there; Julian brought the band and then parked them where the light is unkind. Julian walks Cole and Maren to an upstairs door, praises the lock, and then keeps the key on his own ring while he smiles as if he had given it. Drink and cocaine close the gap Cole had been measuring in columns. He feeds in the wreck of the hallway because the clock will not wait on dignity, and he does it too near her. Morning has not yet collected. The night already has.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "substances",
+     "path": "/ch-01/state/substances",
+     "dimension": "physiological",
+     "before": "sober",
+     "after": "mixed",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-02",
+     "variable": "substances",
+     "path": "/ch-02/state/substances",
+     "dimension": "physiological",
+     "before": "sober",
+     "after": "mixed",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "obligation",
+     "path": "/ch-01/state/obligation",
+     "dimension": "psychological",
+     "before": 2,
+     "after": 4,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-05",
+     "variable": "room_withheld",
+     "path": "/ch-05/state/room_withheld",
+     "dimension": "social",
+     "before": false,
+     "after": true,
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-02",
+     "variable": "party_state",
+     "path": "/lo-02/state/party_state",
+     "dimension": "social",
+     "before": "gathering",
+     "after": "peak",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "location",
+     "path": "/ch-01/state/location",
+     "dimension": "spatial",
+     "before": "lo-01",
+     "after": "lo-02",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-02",
+     "variable": "location",
+     "path": "/ch-02/state/location",
+     "dimension": "spatial",
+     "before": "lo-01",
+     "after": "lo-02",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "blood_value",
+     "path": "/ch-01/state/blood_value",
+     "dimension": "material",
+     "before": 1,
+     "after": 3,
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 5,
+     "after": 3,
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-015",
+    "ev-016"
+   ],
+   "causes": [
+    "ev-018",
+    "ev-019"
+   ],
+   "causal_note": "The house is open, the substances are in him, and Julian can withhold a door only while people still want it.",
+   "reversal": false,
+   "plot_function": "forced_proximity",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-018": {
+   "event_id": "ev-018",
+   "story_time": {
+    "index": 36,
+    "label": "night 4, late",
+    "duration_min": 15
+   },
+   "primary_plot": "pl-04",
+   "plots": [
+    "pl-04",
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-04",
+     "step": "st2"
+    },
+    {
+     "plot": "pl-05",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-02",
+   "participants": [
+    "ch-04",
+    "ch-01"
+   ],
+   "summary": "Lena asks who the surplus is for; Cole concedes a name and a duration without calling it a debt.",
+   "action": "Lena follows Cole into the upstairs room Julian has already emptied of its promised privacy. She does not sit. She points at the extra column in the way he has been watching the singer and asks who the surplus is for, as if asking for a time of day. Cole gives her a duration and then a first name, then tries to make both of them back into street measurements. She files the concession without thanking him and leaves him the room he did not want.",
+   "state_changes": [
+    {
+     "entity": "ch-04",
+     "variable": "read_of_debt",
+     "path": "/ch-04/state/read_of_debt",
+     "dimension": "epistemic",
+     "before": "unseen",
+     "after": "extracted",
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-04",
+     "variable": "cole_read",
+     "path": "/ch-04/state/cole_read",
+     "dimension": "epistemic",
+     "before": 4,
+     "after": 7,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "obligation",
+     "path": "/ch-01/state/obligation",
+     "dimension": "psychological",
+     "before": 4,
+     "after": 5,
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-012",
+    "ev-017"
+   ],
+   "causes": [
+    "ev-021"
+   ],
+   "causal_note": "The withheld room and the substances have already spent his working distance; her question only has to land on the surplus.",
+   "reversal": false,
+   "plot_function": "the_question",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-019": {
+   "event_id": "ev-019",
+   "story_time": {
+    "index": 38,
+    "label": "night 4, false dawn",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-02",
+   "participants": [
+    "ch-05",
+    "ch-01",
+    "ch-02"
+   ],
+   "summary": "The party wrecks; Julian fails to come in from the drive and is destroyed in open sun.",
+   "action": "The house tips from peak to wreck in the last hour. Julian, still high on his own door policy, walks a guest out onto the drive to finish a cruelty he started in the hall. First light takes the gravel. He laughs at the margin the way he laughed at the key and does not come back in. The sun does the rest in view of the upstairs windows. Cole watches from the shade of the portico and writes a rival removed. He does not write a tighter clock. Maren, aftermath-sick in a long sleeve, looks once and then looks at her own hands.",
+   "state_changes": [
+    {
+     "entity": "lo-02",
+     "variable": "party_state",
+     "path": "/lo-02/state/party_state",
+     "dimension": "social",
+     "before": "peak",
+     "after": "wreck",
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-02",
+     "variable": "sun_on_drive",
+     "path": "/lo-02/state/sun_on_drive",
+     "dimension": "world",
+     "before": false,
+     "after": true,
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-05",
+     "variable": "match_status",
+     "path": "/ch-05/state/match_status",
+     "dimension": "world",
+     "before": "active",
+     "after": "eliminated",
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-05",
+     "variable": "dawn_margin",
+     "path": "/ch-05/state/dawn_margin",
+     "dimension": "physiological",
+     "before": 6,
+     "after": 0,
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-05",
+     "variable": "substances",
+     "path": "/ch-05/state/substances",
+     "dimension": "physiological",
+     "before": "mixed",
+     "after": "aftermath",
+     "magnitude": 25
+    },
+    {
+     "entity": "gr-01",
+     "variable": "remaining",
+     "path": "/gr-01/state/remaining",
+     "dimension": "world",
+     "before": 10,
+     "after": 9,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "substances",
+     "path": "/ch-01/state/substances",
+     "dimension": "physiological",
+     "before": "mixed",
+     "after": "aftermath",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-02",
+     "variable": "substances",
+     "path": "/ch-02/state/substances",
+     "dimension": "physiological",
+     "before": "mixed",
+     "after": "aftermath",
+     "magnitude": 25
+    },
+    {
+     "entity": "lo-07",
+     "variable": "hour",
+     "path": "/lo-07/state/hour",
+     "dimension": "world",
+     "before": "night",
+     "after": "false_dawn",
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-017"
+   ],
+   "causes": [
+    "ev-020"
+   ],
+   "causal_note": "The substances and the withheld rooms kept him on the gravel one compliment too long, and first light does not take terms.",
+   "reversal": true,
+   "plot_function": "false_clearing",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-020": {
+   "event_id": "ev-020",
+   "story_time": {
+    "index": 40,
+    "label": "night 5, dusk",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-04",
+   "participants": [
+    "ch-03",
+    "ch-07"
+   ],
+   "summary": "Voss seizes remaining vials and named-host rights in the vacuum of Julian's unwritten death.",
+   "action": "Voss hears Julian's name as a gap, not a eulogy. He sends Pike to Whitlock's wreck and to every guest who had been buying through Julian's rooms. Unstamped vials come back in a box. Named-host rights that were never written down get written now, in Voss's hand. He counts twelve stamps where there had been eight and does not apologize to the empty drive. In a town that honors only what is stamped, the grab is the correct move, and he knows it.",
+   "state_changes": [
+    {
+     "entity": "ob-06",
+     "variable": "count",
+     "path": "/ob-06/state/count",
+     "dimension": "material",
+     "before": 8,
+     "after": 12,
+     "magnitude": 50
+    },
+    {
+     "entity": "ob-06",
+     "variable": "potency",
+     "path": "/ob-06/state/potency",
+     "dimension": "material",
+     "before": 5,
+     "after": 4,
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-03",
+     "variable": "market_grip",
+     "path": "/ch-03/state/market_grip",
+     "dimension": "political",
+     "before": 8,
+     "after": 9,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-03",
+     "variable": "solvency_confidence",
+     "path": "/ch-03/state/solvency_confidence",
+     "dimension": "psychological",
+     "before": 6,
+     "after": 8,
+     "magnitude": 50
+    },
+    {
+     "entity": "cn-01",
+     "variable": "night",
+     "path": "/cn-01/state/night",
+     "dimension": "world",
+     "before": 4,
+     "after": 5,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-03",
+     "variable": "enforcement",
+     "path": "/ch-03/state/enforcement",
+     "dimension": "social",
+     "before": "hunting",
+     "after": "idle",
+     "magnitude": 10
+    },
+    {
+     "entity": "ch-07",
+     "variable": "assignment",
+     "path": "/ch-07/state/assignment",
+     "dimension": "social",
+     "before": "hunting",
+     "after": "idle",
+     "magnitude": 10
+    },
+    {
+     "entity": "ch-07",
+     "variable": "location",
+     "path": "/ch-07/state/location",
+     "dimension": "spatial",
+     "before": "lo-07",
+     "after": "lo-04",
+     "magnitude": 10
+    },
+    {
+     "entity": "ch-07",
+     "variable": "target",
+     "path": "/ch-07/state/target",
+     "dimension": "epistemic",
+     "before": "nonpayer",
+     "after": "none",
+     "magnitude": 10
+    },
+    {
+     "entity": "lo-07",
+     "variable": "hunt_active",
+     "path": "/lo-07/state/hunt_active",
+     "dimension": "social",
+     "before": true,
+     "after": false,
+     "magnitude": 10
+    },
+    {
+     "entity": "lo-07",
+     "variable": "hour",
+     "path": "/lo-07/state/hour",
+     "dimension": "world",
+     "before": "false_dawn",
+     "after": "dusk",
+     "magnitude": 10
+    },
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 3,
+     "after": 5,
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-019"
+   ],
+   "causes": [
+    "ev-025",
+    "ev-031"
+   ],
+   "causal_note": "Julian died off the book; whoever writes the leftover stock tonight owns the remaining doors.",
+   "reversal": false,
+   "plot_function": "corner_in_chaos",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-021": {
+   "event_id": "ev-021",
+   "story_time": {
+    "index": 42,
+    "label": "night 5, night",
+    "duration_min": 15
+   },
+   "primary_plot": "pl-04",
+   "plots": [
+    "pl-04"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-04",
+     "step": "st3"
+    }
+   ],
+   "location": "lo-06",
+   "participants": [
+    "ch-04"
+   ],
+   "summary": "Lena copies Cole's timing notebook from the motor-court desk and files it as a hunt map to a second door.",
+   "action": "Lena lets herself into the motor-court room while Cole is back on the streets measuring a fire he has already misfiled. The spiral is on the desk, face-up, columns clean. She copies every interval, including the tower minutes and the unnamed surplus column, into her own book. She files the copy as a hunt map to a second chapel entrance through the memorial tower, because that is the reading that pays. She leaves the original a half-inch off its square, which is the only message she can afford.",
+   "state_changes": [
+    {
+     "entity": "ob-03",
+     "variable": "copy_held_by",
+     "path": "/ob-03/state/copy_held_by",
+     "dimension": "material",
+     "before": "none",
+     "after": "ch-04",
+     "magnitude": 75
+    },
+    {
+     "entity": "ob-03",
+     "variable": "filed_as",
+     "path": "/ob-03/state/filed_as",
+     "dimension": "epistemic",
+     "before": "times",
+     "after": "hunt_map",
+     "magnitude": 75
+    },
+    {
+     "entity": "ob-03",
+     "variable": "holder",
+     "path": "/ob-03/state/holder",
+     "dimension": "material",
+     "before": "ch-01",
+     "after": "lo-06",
+     "magnitude": 25
+    },
+    {
+     "entity": "lo-08",
+     "variable": "known_as_route",
+     "path": "/lo-08/state/known_as_route",
+     "dimension": "epistemic",
+     "before": "timed_by_cole",
+     "after": "filed_by_lena",
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-04",
+     "variable": "cole_read",
+     "path": "/ch-04/state/cole_read",
+     "dimension": "epistemic",
+     "before": 7,
+     "after": 8,
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-04",
+     "variable": "location",
+     "path": "/ch-04/state/location",
+     "dimension": "spatial",
+     "before": "lo-02",
+     "after": "lo-06",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-04",
+     "variable": "read_of_debt",
+     "path": "/ch-04/state/read_of_debt",
+     "dimension": "epistemic",
+     "before": "extracted",
+     "after": "spent",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "location",
+     "path": "/ch-01/state/location",
+     "dimension": "spatial",
+     "before": "lo-02",
+     "after": "lo-07",
+     "magnitude": 10
+    },
+    {
+     "entity": "lo-02",
+     "variable": "party_state",
+     "path": "/lo-02/state/party_state",
+     "dimension": "social",
+     "before": "wreck",
+     "after": "empty",
+     "magnitude": 10
+    },
+    {
+     "entity": "lo-02",
+     "variable": "sun_on_drive",
+     "path": "/lo-02/state/sun_on_drive",
+     "dimension": "world",
+     "before": true,
+     "after": false,
+     "magnitude": 10
+    },
+    {
+     "entity": "ch-02",
+     "variable": "location",
+     "path": "/ch-02/state/location",
+     "dimension": "spatial",
+     "before": "lo-02",
+     "after": "lo-05",
+     "magnitude": 10
+    },
+    {
+     "entity": "ch-02",
+     "variable": "substances",
+     "path": "/ch-02/state/substances",
+     "dimension": "physiological",
+     "before": "aftermath",
+     "after": "sober",
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-006",
+    "ev-018"
+   ],
+   "causes": [
+    "ev-022"
+   ],
+   "causal_note": "She already has the concession of a name; the notebook is on a desk he left to measure a dead rival.",
+   "reversal": true,
+   "plot_function": "theft_of_meaning",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-022": {
+   "event_id": "ev-022",
+   "story_time": {
+    "index": 44,
+    "label": "night 5, late",
+    "duration_min": 30
+   },
+   "primary_plot": "pl-04",
+   "plots": [
+    "pl-04",
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-04",
+     "step": "st4"
+    },
+    {
+     "plot": "pl-01",
+     "step": "st6"
+    }
+   ],
+   "location": "lo-08",
+   "participants": [
+    "ch-04"
+   ],
+   "summary": "Lena walks the tower route a night early and puts herself a night ahead of Cole's analysis.",
+   "action": "Lena uses the copied times to walk the memorial-tower stair in tonight's window instead of waiting for his. The inner door gives. She marks the minutes it stays usable after first grey and feeds once on the way back down so the stake in her coat is real. The lead is a night he cannot recompute from lamps and hunger alone. She does not leave him a note that would let him catch up. She leaves him the half-inch.",
+   "state_changes": [
+    {
+     "entity": "ch-04",
+     "variable": "night_lead",
+     "path": "/ch-04/state/night_lead",
+     "dimension": "epistemic",
+     "before": 0,
+     "after": 1,
+     "magnitude": 75
+    },
+    {
+     "entity": "lo-08",
+     "variable": "door_usable",
+     "path": "/lo-08/state/door_usable",
+     "dimension": "spatial",
+     "before": false,
+     "after": true,
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-04",
+     "variable": "location",
+     "path": "/ch-04/state/location",
+     "dimension": "spatial",
+     "before": "lo-06",
+     "after": "lo-08",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-04",
+     "variable": "stake_blood",
+     "path": "/ch-04/state/stake_blood",
+     "dimension": "material",
+     "before": 2,
+     "after": 4,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-04",
+     "variable": "hunger",
+     "path": "/ch-04/state/hunger",
+     "dimension": "physiological",
+     "before": 4,
+     "after": 2,
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-021"
+   ],
+   "causes": [
+    "ev-023",
+    "ev-032"
+   ],
+   "causal_note": "The copy is already filed as a hunt map; walking it tonight is how she spends the read he cannot redo.",
+   "reversal": true,
+   "plot_function": "night_taken",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-023": {
+   "event_id": "ev-023",
+   "story_time": {
+    "index": 46,
+    "label": "night 5, late",
+    "duration_min": 12
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st6"
+    }
+   ],
+   "location": "lo-06",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Cole finds the notebook disturbed and cannot recompute the lost night from the system alone.",
+   "action": "Cole comes back to the end room and finds the spiral a half-inch off its square. He flips the columns, times the gap against his own last mark, and cannot make the missing interval return. He closes the book face-down hard enough to bend the cover. He does not go back to the tower. He writes a number he already knows is late and sits with it until the shake in his hands is hunger again and not the page.",
+   "state_changes": [
+    {
+     "entity": "ob-03",
+     "variable": "face_up",
+     "path": "/ob-03/state/face_up",
+     "dimension": "material",
+     "before": true,
+     "after": false,
+     "magnitude": 25
+    },
+    {
+     "entity": "ob-03",
+     "variable": "holder",
+     "path": "/ob-03/state/holder",
+     "dimension": "material",
+     "before": "lo-06",
+     "after": "ch-01",
+     "magnitude": 25
+    },
+    {
+     "entity": "lo-06",
+     "variable": "notebook_on_desk",
+     "path": "/lo-06/state/notebook_on_desk",
+     "dimension": "material",
+     "before": true,
+     "after": false,
+     "magnitude": 10
+    },
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 5,
+     "after": 6,
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "location",
+     "path": "/ch-01/state/location",
+     "dimension": "spatial",
+     "before": "lo-07",
+     "after": "lo-06",
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-022"
+   ],
+   "causes": [
+    "ev-024"
+   ],
+   "causal_note": "The half-inch is only readable because he left the book to measure a death he filed as a clearing.",
+   "reversal": false,
+   "plot_function": "stolen_measure_felt",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-024": {
+   "event_id": "ev-024",
+   "story_time": {
+    "index": 48,
+    "label": "night 6, dusk",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st7"
+    },
+    {
+     "plot": "pl-05",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-06",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Cole re-reads his own evidence: the Maren line is his credit; the notebook clocks her erasure window.",
+   "action": "Cole forces the closed notebook open and reads the surplus column against the Hollow set times and the sleep-test receipt still folded in the back. The intervals are not streets. They are the hours in which a host can keep a night by not sleeping. He takes out Voss's receipt. The line is a credit standing in her name in his own payment. He had filed both as a claim and a hunt map. He writes the correction small, as if a smaller hand could keep it from costing the route he meant to ride.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "file_state",
+     "path": "/ch-01/state/file_state",
+     "dimension": "epistemic",
+     "before": "misfiled",
+     "after": "corrected",
+     "magnitude": 75
+    },
+    {
+     "entity": "ob-01",
+     "variable": "maren_line",
+     "path": "/ob-01/state/maren_line",
+     "dimension": "epistemic",
+     "before": "credit_her_name",
+     "after": "read_as_cole_credit",
+     "magnitude": 75
+    },
+    {
+     "entity": "ob-03",
+     "variable": "filed_as",
+     "path": "/ob-03/state/filed_as",
+     "dimension": "epistemic",
+     "before": "hunt_map",
+     "after": "erasure_clock",
+     "magnitude": 75
+    },
+    {
+     "entity": "cn-04",
+     "variable": "public_reading",
+     "path": "/cn-04/state/public_reading",
+     "dimension": "epistemic",
+     "before": "voss_claim",
+     "after": "cole_credit",
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-01",
+     "variable": "obligation",
+     "path": "/ch-01/state/obligation",
+     "dimension": "psychological",
+     "before": 5,
+     "after": 7,
+     "magnitude": 75
+    },
+    {
+     "entity": "cn-01",
+     "variable": "night",
+     "path": "/cn-01/state/night",
+     "dimension": "world",
+     "before": 5,
+     "after": 6,
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-023"
+   ],
+   "causes": [
+    "ev-029",
+    "ev-036"
+   ],
+   "causal_note": "Losing the night forced him to read the columns he had been using; the receipt and the sleep-test were already in the same book.",
+   "reversal": true,
+   "plot_function": "wrong_file",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-025": {
+   "event_id": "ev-025",
+   "story_time": {
+    "index": 50,
+    "label": "night 6, night",
+    "duration_min": 15
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02",
+    "pl-03"
+   ],
+   "plot_bindings": [],
+   "location": "lo-10",
+   "participants": [
+    "ch-06"
+   ],
+   "summary": "Deacon logs a collection address from a complaint and goes because he wrote it down.",
+   "action": "A noise complaint comes across the campus desk with a side-street address that matches a time already in Deacon's book. He writes the address again, slower, because that is how he keeps a night. The complaint names no student he knows. It names a debt collection after hours. He puts the pocket book in his coat and goes, because he wrote it down and because Maren is still walking around with a copy of his last page. He does not call her. He does not wait for a second complaint.",
+   "state_changes": [
+    {
+     "entity": "ch-06",
+     "variable": "address_logged",
+     "path": "/ch-06/state/address_logged",
+     "dimension": "epistemic",
+     "before": false,
+     "after": true,
+     "magnitude": 50
+    },
+    {
+     "entity": "ob-05",
+     "variable": "has_collection_address",
+     "path": "/ob-05/state/has_collection_address",
+     "dimension": "epistemic",
+     "before": false,
+     "after": true,
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-10",
+     "variable": "incident_flag",
+     "path": "/lo-10/state/incident_flag",
+     "dimension": "epistemic",
+     "before": false,
+     "after": true,
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-010",
+    "ev-020"
+   ],
+   "causes": [
+    "ev-026"
+   ],
+   "causal_note": "Voss's cornered book has to collect a guest debt tonight, and Deacon is the only host who treats a written address as an order.",
+   "reversal": false,
+   "plot_function": "witness_walks_in",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-026": {
+   "event_id": "ev-026",
+   "story_time": {
+    "index": 52,
+    "label": "night 6, late",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02",
+    "pl-03",
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st5"
+    },
+    {
+     "plot": "pl-03",
+     "step": "st5"
+    },
+    {
+     "plot": "pl-05",
+     "step": "st6"
+    }
+   ],
+   "location": "lo-07",
+   "participants": [
+    "ch-07",
+    "ch-06"
+   ],
+   "summary": "Pike collects a guest debt; Deacon is on the stoop; the debt closes on a host's life.",
+   "action": "Pike arrives at the collection address Voss wrote down as a guest debt Cole let age. Deacon Ward is already on the stoop because the same address is in his pocket book. Pike tells him to walk. Deacon reads the complaint number back instead. Pike hits him to move him, then feeds because the night is long and the guest is not there. Deacon stops moving. The debt line can be closed. Pike wipes his mouth on his cuff and leaves the body in the alley.",
+   "state_changes": [
+    {
+     "entity": "ch-06",
+     "variable": "alive",
+     "path": "/ch-06/state/alive",
+     "dimension": "physiological",
+     "before": true,
+     "after": false,
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-06",
+     "variable": "blood_loss",
+     "path": "/ch-06/state/blood_loss",
+     "dimension": "physiological",
+     "before": 0,
+     "after": 10,
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-06",
+     "variable": "location",
+     "path": "/ch-06/state/location",
+     "dimension": "spatial",
+     "before": "lo-10",
+     "after": "lo-07",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-07",
+     "variable": "assignment",
+     "path": "/ch-07/state/assignment",
+     "dimension": "social",
+     "before": "idle",
+     "after": "collecting",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-07",
+     "variable": "location",
+     "path": "/ch-07/state/location",
+     "dimension": "spatial",
+     "before": "lo-04",
+     "after": "lo-07",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-07",
+     "variable": "target",
+     "path": "/ch-07/state/target",
+     "dimension": "epistemic",
+     "before": "none",
+     "after": "guest-debt",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-07",
+     "variable": "hunger",
+     "path": "/ch-07/state/hunger",
+     "dimension": "physiological",
+     "before": 3,
+     "after": 2,
+     "magnitude": 10
+    },
+    {
+     "entity": "ch-03",
+     "variable": "enforcement",
+     "path": "/ch-03/state/enforcement",
+     "dimension": "social",
+     "before": "idle",
+     "after": "collecting",
+     "magnitude": 50
+    },
+    {
+     "entity": "gr-02",
+     "variable": "last_spent",
+     "path": "/gr-02/state/last_spent",
+     "dimension": "world",
+     "before": "none",
+     "after": "ch-06",
+     "magnitude": 100
+    },
+    {
+     "entity": "gr-02",
+     "variable": "feedable_stock",
+     "path": "/gr-02/state/feedable_stock",
+     "dimension": "world",
+     "before": 38,
+     "after": 37,
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "obligation",
+     "path": "/ch-01/state/obligation",
+     "dimension": "psychological",
+     "before": 7,
+     "after": 9,
+     "magnitude": 75
+    },
+    {
+     "entity": "lo-07",
+     "variable": "hour",
+     "path": "/lo-07/state/hour",
+     "dimension": "world",
+     "before": "dusk",
+     "after": "late",
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-025"
+   ],
+   "causes": [
+    "ev-027",
+    "ev-028",
+    "ev-034"
+   ],
+   "causal_note": "The aged guest debt and Deacon's logged address put the only witness on the stoop Pike was sent to clear.",
+   "reversal": true,
+   "plot_function": "collection_on_the_wrong_body",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-027": {
+   "event_id": "ev-027",
+   "story_time": {
+    "index": 54,
+    "label": "night 6, late",
+    "duration_min": 10
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-03",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-07",
+   "participants": [
+    "ch-02",
+    "ch-06",
+    "ch-07"
+   ],
+   "summary": "Maren takes Deacon's pocket book off him before Pike or anyone else can.",
+   "action": "Maren reaches the alley on the times she already had, not on a call. Pike is gone. Deacon is not going to read anything back. She goes through his coat with the same hands she uses on a cable and takes the pocket book before a passing car can make her stop. She does not close his eyes. She does not leave a note. She puts his pages with the cassette and walks without running, which is the only dignity left that will not draw a second collection.",
+   "state_changes": [
+    {
+     "entity": "ob-05",
+     "variable": "holder",
+     "path": "/ob-05/state/holder",
+     "dimension": "material",
+     "before": "ch-06",
+     "after": "ch-02",
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-02",
+     "variable": "location",
+     "path": "/ch-02/state/location",
+     "dimension": "spatial",
+     "before": "lo-05",
+     "after": "lo-07",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-07",
+     "variable": "assignment",
+     "path": "/ch-07/state/assignment",
+     "dimension": "social",
+     "before": "collecting",
+     "after": "done",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-03",
+     "variable": "enforcement",
+     "path": "/ch-03/state/enforcement",
+     "dimension": "social",
+     "before": "collecting",
+     "after": "spent",
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-026"
+   ],
+   "causes": [
+    "ev-028"
+   ],
+   "causal_note": "She is the only person who wanted the pages more than the body, and Pike already took what he was sent for.",
+   "reversal": false,
+   "plot_function": "evidence_seized",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-028": {
+   "event_id": "ev-028",
+   "story_time": {
+    "index": 56,
+    "label": "night 7, dusk",
+    "duration_min": 25
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-03",
+     "step": "st6"
+    }
+   ],
+   "location": "lo-05",
+   "participants": [
+    "ch-02"
+   ],
+   "summary": "Maren refuses sleep through the seventh night and lays out bruises, tape, and Deacon's pages.",
+   "action": "Maren goes back to the walk-up and does not lie down. She puts the cassette, Deacon's pocket book, and her own set-list times on the table and turns the lamp up until the bruises show in the mirror. Coffee goes on. The shop downstairs closes. She plays the tape once more and stops it before her recorded voice goes quiet, then leaves it cued. Sleep would take the night she has finally kept. She buttons the long sleeve over the marks and stays in the chair until dusk is used up.",
+   "state_changes": [
+    {
+     "entity": "ch-02",
+     "variable": "awake_streak",
+     "path": "/ch-02/state/awake_streak",
+     "dimension": "physiological",
+     "before": 2,
+     "after": 3,
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-02",
+     "variable": "memory_state",
+     "path": "/ch-02/state/memory_state",
+     "dimension": "epistemic",
+     "before": "reconstructing",
+     "after": "kept",
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-02",
+     "variable": "location",
+     "path": "/ch-02/state/location",
+     "dimension": "spatial",
+     "before": "lo-07",
+     "after": "lo-05",
+     "magnitude": 10
+    },
+    {
+     "entity": "cn-01",
+     "variable": "night",
+     "path": "/cn-01/state/night",
+     "dimension": "world",
+     "before": 6,
+     "after": 7,
+     "magnitude": 75
+    }
+   ],
+   "caused_by": [
+    "ev-026",
+    "ev-027"
+   ],
+   "causes": [
+    "ev-033"
+   ],
+   "causal_note": "Deacon is spent and the seventh night has opened; sleeping now would erase the only testimony she can still hold.",
+   "reversal": false,
+   "plot_function": "point_of_no_return",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-029": {
+   "event_id": "ev-029",
+   "story_time": {
+    "index": 58,
+    "label": "night 7, night",
+    "duration_min": 30
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [],
+   "location": "lo-07",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Cole stockpiles undeclared blood-value on the last night and sobers toward the chapel window.",
+   "action": "Cole leaves the motor court with the key and the corrected notebook and takes what the last night will still give that does not go through Voss's stamp. He feeds twice, stops both times at a number, and carries the rest as undeclared value. He does not go to Maren's door. He does not go to the Lodge. Aftermath is out of him by the second feed. He walks downtown counting the minutes to first light as a remaining fraction, not as a street.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "blood_value",
+     "path": "/ch-01/state/blood_value",
+     "dimension": "material",
+     "before": 3,
+     "after": 7,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "hunger",
+     "path": "/ch-01/state/hunger",
+     "dimension": "physiological",
+     "before": 6,
+     "after": 3,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "substances",
+     "path": "/ch-01/state/substances",
+     "dimension": "physiological",
+     "before": "aftermath",
+     "after": "sober",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-01",
+     "variable": "location",
+     "path": "/ch-01/state/location",
+     "dimension": "spatial",
+     "before": "lo-06",
+     "after": "lo-07",
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-024"
+   ],
+   "causes": [
+    "ev-030"
+   ],
+   "causal_note": "The file is corrected and the last night is open; only undeclared value will still spend at a door he already keyed.",
+   "reversal": false,
+   "plot_function": "stake_gathered",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-030": {
+   "event_id": "ev-030",
+   "story_time": {
+    "index": 60,
+    "label": "night 7, last dawn",
+    "duration_min": 10
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st8"
+    }
+   ],
+   "location": "lo-03",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Cole unlocks the chapel main door at first light with enough undeclared blood-value to pay.",
+   "action": "First grey hits the cemetery wall. Cole puts the vestry key in the chapel main door and turns it. The lock is ordinary and it gives. He steps into the threshold with the undeclared value still on him and does not yet speak a stake. Other feet are already on other approaches. He keeps to the shade of the doorway and waits one measured breath for the window to be fully open, which is the last clean habit he has.",
+   "state_changes": [
+    {
+     "entity": "lo-03",
+     "variable": "main_door",
+     "path": "/lo-03/state/main_door",
+     "dimension": "spatial",
+     "before": "shut",
+     "after": "keyed_open",
+     "magnitude": 75
+    },
+    {
+     "entity": "lo-03",
+     "variable": "occupants",
+     "path": "/lo-03/state/occupants",
+     "dimension": "spatial",
+     "before": "none",
+     "after": "ch-01",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-01",
+     "variable": "location",
+     "path": "/ch-01/state/location",
+     "dimension": "spatial",
+     "before": "lo-07",
+     "after": "lo-03",
+     "magnitude": 50
+    },
+    {
+     "entity": "cn-02",
+     "variable": "window",
+     "path": "/cn-02/state/window",
+     "dimension": "world",
+     "before": "sealed",
+     "after": "open",
+     "magnitude": 100
+    },
+    {
+     "entity": "lo-07",
+     "variable": "hour",
+     "path": "/lo-07/state/hour",
+     "dimension": "world",
+     "before": "late",
+     "after": "false_dawn",
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-008",
+    "ev-029"
+   ],
+   "causes": [
+    "ev-032",
+    "ev-034"
+   ],
+   "causal_note": "The last-dawn window has opened and he already holds the ordinary key he pocketed on night two.",
+   "reversal": false,
+   "plot_function": "threshold",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-031": {
+   "event_id": "ev-031",
+   "story_time": {
+    "index": 62,
+    "label": "night 7, last dawn",
+    "duration_min": 10
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st6"
+    }
+   ],
+   "location": "lo-03",
+   "participants": [
+    "ch-03"
+   ],
+   "summary": "Voss arrives with the cornered ledger and the last vials, ready to declare a stake the town treats as his.",
+   "action": "Voss comes up the chapel path with the ledger under his arm and the last stamped vials in a case that used to look like solvency. He sets both on the rail as if the town were still a desk. He nods at Cole the way a creditor nods at a man who paid unbound and then made a mess. He does not yet open a vial. He opens the book to Maren's line and keeps his finger there, ready to read it as a stake the night has been trained to treat as his.",
+   "state_changes": [
+    {
+     "entity": "ob-01",
+     "variable": "holder",
+     "path": "/ob-01/state/holder",
+     "dimension": "material",
+     "before": "ch-03",
+     "after": "lo-03",
+     "magnitude": 50
+    },
+    {
+     "entity": "ob-06",
+     "variable": "holder",
+     "path": "/ob-06/state/holder",
+     "dimension": "material",
+     "before": "ch-03",
+     "after": "lo-03",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-03",
+     "variable": "location",
+     "path": "/ch-03/state/location",
+     "dimension": "spatial",
+     "before": "lo-04",
+     "after": "lo-03",
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-03",
+     "variable": "occupants",
+     "path": "/lo-03/state/occupants",
+     "dimension": "spatial",
+     "before": "ch-01",
+     "after": "ch-01,ch-03",
+     "magnitude": 25
+    },
+    {
+     "entity": "ob-06",
+     "variable": "potency",
+     "path": "/ob-06/state/potency",
+     "dimension": "material",
+     "before": 4,
+     "after": 1,
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-03",
+     "variable": "solvency_confidence",
+     "path": "/ch-03/state/solvency_confidence",
+     "dimension": "psychological",
+     "before": 8,
+     "after": 6,
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-020"
+   ],
+   "causes": [
+    "ev-036"
+   ],
+   "causal_note": "The market is cornered and the window is open; bringing the book to the rail is the only declaration he knows.",
+   "reversal": false,
+   "plot_function": "false_victory",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-032": {
+   "event_id": "ev-032",
+   "story_time": {
+    "index": 64,
+    "label": "night 7, last dawn",
+    "duration_min": 10
+   },
+   "primary_plot": "pl-04",
+   "plots": [
+    "pl-04"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-04",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-08",
+   "participants": [
+    "ch-04"
+   ],
+   "summary": "Lena enters the chapel by the memorial-tower door inside the window with a stake she can declare.",
+   "action": "Lena takes the tower stair on the minutes she already walked. The inner door is still usable. She comes into the chapel from the memorial side with the stake in her coat and does not look at Cole long enough to give him a rerun of the question. She takes the place at the rail the tower door was always going to pay. First light is already on the nave floor. She has enough to speak and the lead to speak first.",
+   "state_changes": [
+    {
+     "entity": "ch-04",
+     "variable": "location",
+     "path": "/ch-04/state/location",
+     "dimension": "spatial",
+     "before": "lo-08",
+     "after": "lo-03",
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-04",
+     "variable": "night_lead",
+     "path": "/ch-04/state/night_lead",
+     "dimension": "epistemic",
+     "before": 1,
+     "after": 2,
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-03",
+     "variable": "occupants",
+     "path": "/lo-03/state/occupants",
+     "dimension": "spatial",
+     "before": "ch-01,ch-03",
+     "after": "ch-01,ch-03,ch-04",
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-022",
+    "ev-030"
+   ],
+   "causes": [
+    "ev-035"
+   ],
+   "causal_note": "The window is open and she already spent a night proving the tower door; this is the hour that door was copied for.",
+   "reversal": false,
+   "plot_function": "second_threshold",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-033": {
+   "event_id": "ev-033",
+   "story_time": {
+    "index": 66,
+    "label": "night 7, last dawn",
+    "duration_min": 10
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-03",
+     "step": "st7"
+    }
+   ],
+   "location": "lo-03",
+   "participants": [
+    "ch-02"
+   ],
+   "summary": "Maren brings the cassette, Deacon's notes, and the bruises to the chapel, still awake.",
+   "action": "Maren walks the cemetery path with the cassette, Deacon's pocket book, and the set-list times in one bag. She has not slept. The bruises are still on her. She comes to the keyed-open main door and stops in the threshold beside Cole because that is the light she can stand. She does not offer the bag as a plea. She sets it on the stone as testimony in a place that has no court, and she keeps her eyes open on the nave as if sleep were another collector.",
+   "state_changes": [
+    {
+     "entity": "ch-02",
+     "variable": "location",
+     "path": "/ch-02/state/location",
+     "dimension": "spatial",
+     "before": "lo-05",
+     "after": "lo-03",
+     "magnitude": 50
+    },
+    {
+     "entity": "ob-02",
+     "variable": "holder",
+     "path": "/ob-02/state/holder",
+     "dimension": "material",
+     "before": "ch-02",
+     "after": "lo-03",
+     "magnitude": 50
+    },
+    {
+     "entity": "lo-03",
+     "variable": "occupants",
+     "path": "/lo-03/state/occupants",
+     "dimension": "spatial",
+     "before": "ch-01,ch-03,ch-04",
+     "after": "ch-01,ch-02,ch-03,ch-04",
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-028"
+   ],
+   "causes": [
+    "ev-034"
+   ],
+   "causal_note": "She kept the seventh night; the chapel is where the night and the copies have to stand if they are going to count.",
+   "reversal": false,
+   "plot_function": "testimony_without_court",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-034": {
+   "event_id": "ev-034",
+   "story_time": {
+    "index": 68,
+    "label": "night 7, last dawn",
+    "duration_min": 12
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01",
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st9"
+    },
+    {
+     "plot": "pl-05",
+     "step": "st7"
+    }
+   ],
+   "location": "lo-03",
+   "participants": [
+    "ch-01",
+    "ch-02"
+   ],
+   "summary": "In the doorway with Maren, Cole does not declare; he stays in the shade as the window stays open for others.",
+   "action": "First light reaches the chapel threshold. Cole has the key, the undeclared blood-value, and a clear path to speak the stake. Maren is beside him with the cassette and Deacon's pages, still awake. He looks at the nave, then at her, and does not step forward to declare. He stays in the shade of the doorway as the light widens and the door sits ajar on it. The window remains open for anyone who will use it. He does not.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "obligation",
+     "path": "/ch-01/state/obligation",
+     "dimension": "psychological",
+     "before": 9,
+     "after": 10,
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-01",
+     "variable": "match_status",
+     "path": "/ch-01/state/match_status",
+     "dimension": "world",
+     "before": "active",
+     "after": "forfeited",
+     "magnitude": 100
+    },
+    {
+     "entity": "lo-03",
+     "variable": "main_door",
+     "path": "/lo-03/state/main_door",
+     "dimension": "spatial",
+     "before": "keyed_open",
+     "after": "ajar_on_light",
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-026",
+    "ev-030",
+    "ev-033"
+   ],
+   "causes": [
+    "ev-035"
+   ],
+   "causal_note": "Deacon's death closed inventory as a method, and she is in the doorway with a kept night he can no longer price.",
+   "reversal": true,
+   "plot_function": "refusal_of_the_stake",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-035": {
+   "event_id": "ev-035",
+   "story_time": {
+    "index": 70,
+    "label": "night 7, last dawn",
+    "duration_min": 15
+   },
+   "primary_plot": "pl-04",
+   "plots": [
+    "pl-04"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-04",
+     "step": "st6"
+    }
+   ],
+   "location": "lo-03",
+   "participants": [
+    "ch-04"
+   ],
+   "summary": "Lena declares and completes the rite; the match ends for her alone and she takes the purse.",
+   "action": "Lena speaks the stake from the tower side of the rail while Cole is still in the doorway not speaking. The rite takes what she brought and does not ask who she was right about. The match ends for her avatar alone. A mark that was never a person hands her the purse as a completed contract. She does not look back at the singer or at the book on the rail. She is gone from the chapel before the light has finished crossing the nave, with no one left inside to have been right about.",
+   "state_changes": [
+    {
+     "entity": "cn-02",
+     "variable": "window",
+     "path": "/cn-02/state/window",
+     "dimension": "world",
+     "before": "open",
+     "after": "completed",
+     "magnitude": 100
+    },
+    {
+     "entity": "cn-02",
+     "variable": "completer",
+     "path": "/cn-02/state/completer",
+     "dimension": "world",
+     "before": "none",
+     "after": "ch-04",
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-04",
+     "variable": "match_status",
+     "path": "/ch-04/state/match_status",
+     "dimension": "world",
+     "before": "active",
+     "after": "exited",
+     "magnitude": 100
+    },
+    {
+     "entity": "ob-07",
+     "variable": "claimed_by",
+     "path": "/ob-07/state/claimed_by",
+     "dimension": "world",
+     "before": "unclaimed",
+     "after": "ch-04",
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-04",
+     "variable": "stake_blood",
+     "path": "/ch-04/state/stake_blood",
+     "dimension": "material",
+     "before": 4,
+     "after": 0,
+     "magnitude": 75
+    }
+   ],
+   "caused_by": [
+    "ev-032",
+    "ev-034"
+   ],
+   "causes": [],
+   "causal_note": "She is already at the rail with a declarable stake, and the only man who could have spoken first has chosen not to.",
+   "reversal": true,
+   "plot_function": "first_completion",
+   "is_root": false,
+   "is_sink": true
+  },
+  "ev-036": {
+   "event_id": "ev-036",
+   "story_time": {
+    "index": 72,
+    "label": "night 7, last dawn",
+    "duration_min": 15
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st7"
+    }
+   ],
+   "location": "lo-03",
+   "participants": [
+    "ch-03"
+   ],
+   "summary": "Voss cannot stake the credit in Maren's name; the vials have decayed; the correctly run market will not pay him.",
+   "action": "Voss opens the ledger on the chapel rail and puts his hand on the last vials. He tries to read Maren's line as a stake in his name. The line will not spend: it is a credit standing in hers, and he is not her. He breaks a vial; the stamp is good and the blood inside has gone thin as water. Remaining guests fall with the unpaid window. He closes the book on nothing and leaves the case where it is, a correctly run market with nothing he is allowed to declare.",
+   "state_changes": [
+    {
+     "entity": "ch-03",
+     "variable": "credit_reading",
+     "path": "/ch-03/state/credit_reading",
+     "dimension": "epistemic",
+     "before": "filed_as_his",
+     "after": "blocked",
+     "magnitude": 100
+    },
+    {
+     "entity": "ob-01",
+     "variable": "maren_line",
+     "path": "/ob-01/state/maren_line",
+     "dimension": "epistemic",
+     "before": "read_as_cole_credit",
+     "after": "uncollectable",
+     "magnitude": 100
+    },
+    {
+     "entity": "ob-06",
+     "variable": "potency",
+     "path": "/ob-06/state/potency",
+     "dimension": "material",
+     "before": 1,
+     "after": 0,
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-03",
+     "variable": "solvency_confidence",
+     "path": "/ch-03/state/solvency_confidence",
+     "dimension": "psychological",
+     "before": 6,
+     "after": 1,
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-03",
+     "variable": "match_status",
+     "path": "/ch-03/state/match_status",
+     "dimension": "world",
+     "before": "active",
+     "after": "forfeited",
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-03",
+     "variable": "market_grip",
+     "path": "/ch-03/state/market_grip",
+     "dimension": "political",
+     "before": 9,
+     "after": 0,
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-07",
+     "variable": "match_status",
+     "path": "/ch-07/state/match_status",
+     "dimension": "world",
+     "before": "active",
+     "after": "forfeited",
+     "magnitude": 75
+    },
+    {
+     "entity": "gr-01",
+     "variable": "remaining",
+     "path": "/gr-01/state/remaining",
+     "dimension": "world",
+     "before": 9,
+     "after": 0,
+     "magnitude": 75
+    }
+   ],
+   "caused_by": [
+    "ev-024",
+    "ev-031"
+   ],
+   "causes": [],
+   "causal_note": "The line was never his to spend and the seized vials have finished dying; arriving first with the book cannot change either fact.",
+   "reversal": true,
+   "plot_function": "unspendable_line",
+   "is_root": false,
+   "is_sink": true
+  }
+ }
+}

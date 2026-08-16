@@ -1,0 +1,437 @@
+<meta charset="utf-8">
+<title>Reasoning Transitions Report</title>
+<style>
+:root{
+  --ground:#e9ebee; --surface:#f7f8fa; --surface-2:#eef0f3; --sunken:#dfe3e8;
+  --ink:#161a1f; --ink-2:#39424d; --muted:#66717e; --faint:#93a0ae;
+  --line:#cfd6de; --line-soft:#dde3ea;
+  --heat:#c2451a; --heat-soft:#f0d5c9; --heat-ink:#8f3212;
+  --quench:#2f6f8f; --quench-soft:#cfdfe8; --quench-ink:#23566f;
+  --good:#3f7d55; --good-soft:#d6e6db; --crit:#b03b26; --crit-soft:#f2d7d1;
+  --shadow:0 1px 2px rgba(20,28,38,.07), 0 8px 24px -12px rgba(20,28,38,.22);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#101419; --surface:#171d24; --surface-2:#1d242c; --sunken:#0b0e12;
+  --ink:#e4e8ec; --ink-2:#b9c2cc; --muted:#8b96a3; --faint:#5f6b78;
+  --line:#2b343e; --line-soft:#222a33;
+  --heat:#e2723f; --heat-soft:#3a2318; --heat-ink:#f0a077;
+  --quench:#6aa8c6; --quench-soft:#152935; --quench-ink:#9cc9dd;
+  --good:#67a97e; --good-soft:#17281d; --crit:#d4715c; --crit-soft:#2e1713;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#101419; --surface:#171d24; --surface-2:#1d242c; --sunken:#0b0e12;
+  --ink:#e4e8ec; --ink-2:#b9c2cc; --muted:#8b96a3; --faint:#5f6b78;
+  --line:#2b343e; --line-soft:#222a33;
+  --heat:#e2723f; --heat-soft:#3a2318; --heat-ink:#f0a077;
+  --quench:#6aa8c6; --quench-soft:#152935; --quench-ink:#9cc9dd;
+  --good:#67a97e; --good-soft:#17281d; --crit:#d4715c; --crit-soft:#2e1713;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0}
+a{color:var(--quench)}
+:focus-visible{outline:2px solid var(--heat);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.wrap{max-width:920px;margin:0 auto;padding:0 26px 100px}
+header.top{border-bottom:1px solid var(--line);background:var(--surface);margin-bottom:44px}
+header.top .wrap{padding-top:52px;padding-bottom:38px}
+.kicker{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--heat);
+  font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(30px,5vw,44px);line-height:1.12;letter-spacing:-.02em;margin-bottom:16px}
+.standfirst{font-size:19px;color:var(--ink-2);max-width:64ch;font-family:var(--serif);line-height:1.5}
+.meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:24px;font-size:12.5px;color:var(--faint);
+  font-family:var(--mono)}
+
+h2{font-size:26px;letter-spacing:-.015em;margin:52px 0 6px;padding-top:8px}
+h2 .num{font-family:var(--mono);font-size:12px;color:var(--heat);display:block;
+  margin-bottom:7px;letter-spacing:.08em;font-weight:700}
+h3{font-size:18px;margin:30px 0 10px}
+p{margin:0 0 15px;max-width:68ch}
+ul,ol{max-width:66ch;padding-left:22px} li{margin-bottom:8px}
+code{font-family:var(--mono);font-size:.88em;background:var(--surface-2);padding:1.5px 5px;
+  border-radius:4px;border:1px solid var(--line-soft)}
+strong{font-weight:650}
+
+.verdict{border-radius:9px;padding:20px 24px;margin:26px 0;border:1px solid;box-shadow:var(--shadow)}
+.verdict.no{background:var(--crit-soft);border-color:var(--crit)}
+.verdict.yes{background:var(--good-soft);border-color:var(--good)}
+.verdict .lbl{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;
+  margin-bottom:8px}
+.verdict.no .lbl{color:var(--crit)} .verdict.yes .lbl{color:var(--good)}
+.verdict .big{font-family:var(--serif);font-size:22px;line-height:1.35;margin-bottom:8px}
+.verdict p{margin-bottom:0;font-size:15px}
+
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;
+  padding:20px 24px;margin:20px 0}
+.card.raised{box-shadow:var(--shadow)}
+.eyebrow{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-bottom:9px}
+
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:18px 0}
+th{text-align:left;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;padding:8px 12px 8px 0;border-bottom:1px solid var(--line)}
+td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line-soft);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;
+  padding-right:0}
+.scroll{overflow-x:auto}
+.good{color:var(--good);font-weight:650} .bad{color:var(--crit);font-weight:650}
+
+.bars{display:flex;flex-direction:column;gap:11px;margin:20px 0}
+.bar{display:grid;grid-template-columns:120px 1fr 74px;align-items:center;gap:14px}
+.bar .nm{font-size:13px;color:var(--ink-2);font-family:var(--mono)}
+.bar .track{height:22px;background:var(--sunken);border-radius:4px;overflow:hidden;position:relative}
+.bar .fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:9px;
+  font-size:11.5px;font-family:var(--mono);color:#fff;font-weight:600}
+.bar .val{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-align:right;
+  font-variant-numeric:tabular-nums}
+
+.quote{border-left:3px solid var(--quench);padding:4px 0 4px 18px;margin:20px 0;
+  font-size:15px;color:var(--ink-2);max-width:66ch}
+.quote .src{display:block;margin-top:7px;font-size:12px;color:var(--faint);font-family:var(--mono)}
+
+pre{background:var(--sunken);border:1px solid var(--line);border-radius:7px;padding:15px 17px;
+  overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:1.55;margin:18px 0}
+pre .k{color:var(--quench)} pre .c{color:var(--faint);font-style:italic}
+
+.tom{border:1px solid var(--line-soft);border-radius:7px;overflow:hidden;margin:16px 0}
+.tom .r{display:grid;grid-template-columns:44px 1fr;border-top:1px solid var(--line-soft)}
+.tom .r:first-child{border-top:0}
+.tom .d{font-family:var(--mono);font-size:10.5px;font-weight:700;color:var(--quench-ink);
+  background:var(--quench-soft);display:grid;place-items:center;align-content:center}
+.tom .r.err .d{background:var(--heat-soft);color:var(--heat-ink)}
+.tom .c{padding:11px 14px;font-size:14px;line-height:1.55;color:var(--ink-2)}
+
+.phase{display:grid;grid-template-columns:22px 1fr;gap:13px;padding:12px 0;
+  border-top:1px solid var(--line-soft)}
+.phase:first-child{border-top:0}
+.phase .rail{position:relative}
+.phase .rail::before{content:"";position:absolute;left:9px;top:8px;bottom:-12px;width:1px;
+  background:var(--line)}
+.phase:last-child .rail::before{display:none}
+.phase .dot{width:10px;height:10px;border-radius:50%;background:var(--heat);position:absolute;
+  left:4px;top:6px;box-shadow:0 0 0 3px var(--surface)}
+.phase h4{font-family:var(--sans);font-size:14px;font-weight:650;margin:0 0 4px}
+.phase .s{font-size:14px;color:var(--ink-2);line-height:1.55}
+.phase .t{font-size:13px;color:var(--muted);margin-top:5px}
+.phase .t b{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+.grid2 > div{padding:14px 16px;border-radius:7px}
+.felt{background:var(--quench-soft)} .expr{background:var(--heat-soft)}
+.grid2 .lbl{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;
+  margin-bottom:6px}
+.felt .lbl{color:var(--quench-ink)} .expr .lbl{color:var(--heat-ink)}
+.felt,.felt .v{color:var(--quench-ink)} .expr,.expr .v{color:var(--heat-ink)}
+.grid2 .v{font-size:14px;line-height:1.5}
+
+.pipe{font-family:var(--mono);font-size:12.5px;line-height:1.75;color:var(--ink-2);
+  background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;
+  padding:18px 20px;overflow-x:auto;margin:20px 0}
+.pipe b{color:var(--heat)} .pipe i{color:var(--faint);font-style:normal}
+
+.note{font-size:13.5px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tag{font-family:var(--mono);font-size:11.5px;padding:3px 9px;border-radius:5px;
+  background:var(--surface-2);border:1px solid var(--line-soft);color:var(--muted)}
+.tag.g{background:var(--good-soft);border-color:transparent;color:var(--good)}
+.tag.r{background:var(--crit-soft);border-color:transparent;color:var(--crit)}
+hr{border:0;border-top:1px solid var(--line);margin:46px 0}
+footer{color:var(--faint);font-size:13px;border-top:1px solid var(--line);padding-top:22px;
+  margin-top:50px}
+@media (max-width:640px){.grid2{grid-template-columns:1fr}.bar{grid-template-columns:88px 1fr 60px}}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="kicker">Status report · narrativeforge</div>
+  <h1>Can Grok 4.6 hand over its reasoning?</h1>
+  <p class="standfirst">Short answer: not the real trace — the API returns a compressed
+  summary that skips everything we need. But asked to write the reasoning out on purpose,
+  against a schema that forces coverage, it produces something better than the private
+  trace would have been.</p>
+  <div class="meta">
+    <span>14 August 2026</span><span>grok-4.6 via Hyprlab</span>
+    <span>4 probes · 3 transitions generated</span>
+  </div>
+</div></header>
+
+<div class="wrap">
+
+<h2><span class="num">01</span>The question</h2>
+<p>The plan is to put a <strong>reasoning transition</strong> in front of every node of the
+story graph — the deliberate argument that gets from everything already established to the
+node that must come next. Those transitions are the point of the corpus: they turn
+<code>(state, node)</code> pairs into <code>(state, reasoning, node)</code> triples, which is
+what you need to train a model to plan rather than to pattern-match.</p>
+<p>That raises a cheap-to-answer empirical question with expensive consequences. Reasoning
+models already do this work internally. If the API hands back the true chain of thought, the
+transitions are nearly free — you take what the model was going to produce anyway. If it does
+not, they have to be generated deliberately, as a separate priced call, and the architecture
+changes.</p>
+
+<h2><span class="num">02</span>What came back</h2>
+<p>The endpoint does populate a <code>reasoning_content</code> field, and it scales with
+<code>reasoning_effort</code> exactly as you would expect. On the surface it looks like the
+trace is right there.</p>
+
+<div class="scroll"><table>
+<thead><tr><th>reasoning_effort</th><th class="num">reasoning tokens</th>
+<th class="num">returned chars</th><th class="num">chars/token</th><th class="num">seconds</th></tr></thead>
+<tbody>
+<tr><td>low</td><td class="num">452</td><td class="num">76</td><td class="num">0.17</td><td class="num">13</td></tr>
+<tr><td>medium</td><td class="num">1,950</td><td class="num">1,112</td><td class="num">0.57</td><td class="num">29</td></tr>
+<tr><td>high</td><td class="num">3,148</td><td class="num">2,982</td><td class="num">0.95</td><td class="num">42</td></tr>
+<tr><td>default</td><td class="num">6,121</td><td class="num">4,371</td><td class="num">0.71</td><td class="num">79</td></tr>
+</tbody></table></div>
+
+<p>The last column is the finding. English prose runs about <strong>4 characters per
+token</strong>. Every row here lands between 0.17 and 0.95. The model is billed for
+thousands of reasoning tokens and returns a fraction of their volume as text — so what
+arrives in <code>reasoning_content</code> is a <strong>summary of the reasoning, not the
+reasoning</strong>. At default effort you are seeing roughly a sixth of what was actually
+thought.</p>
+
+<p>Reading it makes that unambiguous. The longest trace opens by restating the task and then
+drafts the answer:</p>
+
+<div class="quote">The user wants me to generate event ev-008 as a JSON object with specific
+fields: summary, action (60-160 words, third person, no direct speech), and state_changes.
+<span class="src">first 160 characters of the 4,371-char native trace, then it emits the JSON</span></div>
+
+<p>It is a scratchpad, and a terse one. To check that impression against something other than
+my own reading, I scored the trace for the content the transitions actually require:</p>
+
+<div class="bars">
+  <div class="bar"><span class="nm">appraisal</span><div class="track"><div class="fill" style="width:60%;background:var(--good)">6 hits</div></div><span class="val">present</span></div>
+  <div class="bar"><span class="nm">perception</span><div class="track"><div class="fill" style="width:20%;background:var(--good)">2</div></div><span class="val">thin</span></div>
+  <div class="bar"><span class="nm">theory of mind</span><div class="track"><div class="fill" style="width:2%;background:var(--crit)"></div></div><span class="val bad">0</span></div>
+  <div class="bar"><span class="nm">inhibition</span><div class="track"><div class="fill" style="width:2%;background:var(--crit)"></div></div><span class="val bad">0</span></div>
+  <div class="bar"><span class="nm">trajectory</span><div class="track"><div class="fill" style="width:2%;background:var(--crit)"></div></div><span class="val bad">0</span></div>
+  <div class="bar"><span class="nm">craft / audience</span><div class="track"><div class="fill" style="width:2%;background:var(--crit)"></div></div><span class="val bad">0</span></div>
+  <div class="bar"><span class="nm">object state</span><div class="track"><div class="fill" style="width:2%;background:var(--crit)"></div></div><span class="val bad">0</span></div>
+</div>
+
+<div class="verdict no">
+  <div class="lbl">Answer to the first question</div>
+  <div class="big">No. The native trace is neither complete nor about the right things.</div>
+  <p>It is compressed to roughly 18% of its token volume, and five of the seven things a
+  transition exists to capture appear <em>zero</em> times. This is not a Hyprlab limitation to
+  route around — the major reasoning-model vendors all summarize traces before returning them,
+  for competitive and safety reasons. Assume you cannot have the real one from anybody.</p>
+</div>
+
+<h2><span class="num">03</span>The alternative, and it is better</h2>
+<p>So the transitions get written on purpose: a separate call whose whole job is to produce the
+reasoning, against a JSON schema strict enough that the model cannot skip the uncomfortable
+parts. The worry going in was that a deliberate trace would be post-hoc rationalization —
+fluent, generic, hollow.</p>
+<p>It is not. Same model, same node, one call:</p>
+
+<div class="scroll"><table>
+<thead><tr><th></th><th class="num">native trace</th><th class="num">written-out transition</th></tr></thead>
+<tbody>
+<tr><td>Volume returned</td><td class="num">4,371 chars</td><td class="num">62,781 chars</td></tr>
+<tr><td>chars per completion token</td><td class="num bad">0.71</td><td class="num good">4.18</td></tr>
+<tr><td>Words of usable content</td><td class="num">~700</td><td class="num good">10,187</td></tr>
+<tr><td>Characters given full psychology</td><td class="num bad">0</td><td class="num good">2</td></tr>
+<tr><td>Non-mind entities tracked</td><td class="num bad">0</td><td class="num good">3</td></tr>
+<tr><td>Theory-of-mind towers</td><td class="num bad">0</td><td class="num good">4</td></tr>
+<tr><td>…reaching the third degree</td><td class="num bad">0</td><td class="num good">4</td></tr>
+<tr><td>…with the error named</td><td class="num bad">0</td><td class="num good">4</td></tr>
+<tr><td>Trajectory phases</td><td class="num bad">0</td><td class="num good">15</td></tr>
+<tr><td>Sense channels filled</td><td class="num bad">2</td><td class="num good">14</td></tr>
+<tr><td>Facts cited with a source pointer</td><td class="num bad">0</td><td class="num good">10 / 10</td></tr>
+<tr><td>Alternatives rejected</td><td class="num bad">0</td><td class="num good">5</td></tr>
+<tr><td>Cost</td><td class="num">included</td><td class="num">$0.135</td></tr>
+</tbody></table></div>
+
+<p>The 4.18 chars/token is worth pausing on: the explicit route generates <em>real content</em>
+at a normal prose ratio, where the native route returns a compression artifact. You are not
+paying for the same tokens twice.</p>
+
+<div class="verdict yes">
+  <div class="lbl">Answer to the second question</div>
+  <div class="big">Yes, and the deliberate trace beats the private one on every axis worth measuring.</div>
+  <p>Both transitions generated so far scored <strong>pass</strong> on the structural grader —
+  no thin sections, nothing skipped. Roughly $0.15 and 6–8 minutes each at
+  <code>reasoning_effort: high</code>.</p>
+</div>
+
+<h2><span class="num">04</span>Is it specific, or just long?</h2>
+<p>Volume is easy to fake, so the real test is whether the output could have been written for
+any other story. Here is the theory-of-mind tower for Willa modelling Orren, verbatim:</p>
+
+<div class="tom">
+  <div class="r"><div class="d">d1</div><div class="c">He laid the forty-year weld on purpose to hold a compact the village still stands under; he has been keeping the reading from her because the work would not bear a second pair of eyes, or because he did not think she could hold the house if she knew.</div></div>
+  <div class="r"><div class="d">d2</div><div class="c">He believes she is ignorant of the weld and still takes the bar as the village takes it. He believes she came down because she could not sleep, not because she has a reading.</div></div>
+  <div class="r"><div class="d">d3</div><div class="c">He believes she believes the relic is original and that he has always given true measure; he believes she believes he thinks of her as a child of the house who does not need the old work explained.</div></div>
+  <div class="r err"><div class="d">✕</div><div class="c">Wrong on motive and on what he thinks she came down for. His governing value is <em>no debt passed to a child</em>, not distrust of her competence. The error will cost her the first questions: she will ask why the house was not told, which he will hear as her asking to be given the debt, and they will snag on a problem neither is actually naming yet.</div></div>
+</div>
+
+<p>That last row is the one I did not expect to work. Forcing the model to say <em>where the
+model of the other person is wrong</em> manufactures dramatic irony as a structural
+requirement rather than hoping for it. The predicted misfire — she asks one thing, he hears
+another — is the engine of the scene, and it is stated before a word of dialogue exists.</p>
+
+<h3>Felt versus expressed</h3>
+<p>In a screenplay at 70% dialogue, the gap between interior and performance is the entire
+craft. The schema forces it apart, and asks what leaks through anyway:</p>
+<div class="grid2">
+  <div class="felt"><div class="lbl">felt</div><div class="v">Fear that he will have a craft
+  explanation making her reading foolish — and the equal, worse fear that he will not.</div></div>
+  <div class="expr"><div class="lbl">expressed</div><div class="v">A smith reporting a
+  measurement. Flat, procedural, the bar set down where the light is best.</div></div>
+</div>
+
+<h2><span class="num">05</span>Trajectory, not snapshot</h2>
+<p>This was your addition and it turned out to be the most consequential constraint in the
+schema. An event spans forty minutes of story time; a transition describing one frozen moment
+cannot explain it. Every psychology and dynamics block therefore carries phases, each with the
+<em>perceivable trigger</em> that causes the shift — which keeps the reasoning filmable
+instead of drifting into interior narration a camera could never catch.</p>
+
+<div class="card">
+<div class="eyebrow">Willa across ev-008, generated</div>
+<div class="phase"><div class="rail"><div class="dot"></div></div><div>
+  <h4>on the ladder and first crossing</h4>
+  <div class="s">From private certainty to the fear that he will have a craft explanation that makes her reading foolish — and the equal fear that he will not.</div>
+  <div class="t"><b>trigger</b> — the change in his breath when he hears her feet, before either of them speaks</div></div></div>
+<div class="phase"><div class="rail"><div class="dot"></div></div><div>
+  <h4>the bar on the bench, reading spoken</h4>
+  <div class="s">Hope that the balance was wrong dies. The problem ceases to be “did I misread” and becomes “what was the work for.”</div>
+  <div class="t"><b>trigger</b> — he looks at the weld-line before he looks at her face</div></div></div>
+<div class="phase"><div class="rail"><div class="dot"></div></div><div>
+  <h4>after he names the levy bound to himself</h4>
+  <div class="s">The fault changes species: not a false piece, a man paying. Trust drops without turning into enmity.</div>
+  <div class="t"><b>trigger</b> — he puts his thumb on the inclusion and says the seat is his, and has been</div></div></div>
+<div class="phase"><div class="rail"><div class="dot"></div></div><div>
+  <h4>the sitting-with-it, last minutes</h4>
+  <div class="s">She does not go to the lane and does not climb back to the loft. She asks a practical question about what the compact requires at light. Belonging holds; the debt-account is named but not settled.</div>
+  <div class="t"><b>trigger</b> — the ash-skin on the coals breaks and a little light comes up</div></div></div>
+</div>
+
+<h3>The things that are not minds</h3>
+<p>You asked for objects, locations and groups to get the same treatment, and this is where the
+schema pays off hardest. The relic is not a prop being moved around; it changes on named axes,
+and its <em>meaning</em> is one of them:</p>
+<pre><span class="c">// ob-01, the village weight — axis changes during ev-008</span>
+<span class="k">custody</span>    with_willa            →  on_the_bench_between_them
+<span class="k">knowledge</span>  read by Willa only    →  jointly known inside the house, still unread by the village
+<span class="k">meaning</span>    the village's shield  →  a compact held in Orren's living body
+
+<span class="c">// significance_shift</span>
+"It is no longer a piece she might have misread, and no longer only the village's
+ shield. It is the reason his hands are going, and the thing the house will have
+ to show or hide at light. To both of them it now means a living debt rather
+ than a finished object."</pre>
+<p><code>on_the_bench_between_them</code> is a blocking note, a power reading and a thematic
+statement in one field. That is what tracking non-mind entities buys.</p>
+
+<h2><span class="num">06</span>How it is wired</h2>
+<p>Generation is flattened from one call per <em>layer</em> to one call per <em>node</em>, with
+two calls per node: the transition reasons, then the node is rendered <em>from</em> the
+transition. Splitting them costs an extra call and buys three things — the reasoning is
+auditable, the triple is clean, and a thin transition can be caught before it contaminates a
+node.</p>
+
+<div class="pipe">
+story root
+ └─ <b>transition</b> → exposé
+      └─ <b>transition</b> → pl-01  <i>(plot)</i>
+           └─ <b>transition</b> → pl-02
+                └─ <b>transition</b> → ch-01  <i>(3 reasoned passes: outward → interior → machinery)</i>
+                     └─ <b>transition</b> → ch-02
+                          └─ … → <b>transition</b> → ev-001 → ev-002 → …
+</div>
+
+<p>Character dossiers may be built in passes, each with its own transition: pass 1 the outward
+and physical, pass 2 the interior and history, pass 3 the state machinery. Each pass sees what
+the earlier ones fixed and may not contradict it. That is <code>--entity-passes 3</code>; it
+triples the transition count for entities and is worth it only for major characters.</p>
+
+<h3>Grading, because a schema can be satisfied emptily</h3>
+<p>Every transition is scored structurally the moment it lands — ToM towers reaching depth
+three, towers with an error named, trajectory phases per entity, sense channels filled, facts
+carrying source pointers, alternatives rejected. Thin ones are flagged with the specific gap:</p>
+<div class="tags">
+  <span class="tag r">not every character reasons to the third degree</span>
+  <span class="tag r">trajectories are snapshots, not arcs</span>
+  <span class="tag r">no alternative rejected — not a decision</span>
+  <span class="tag r">every theory of mind is correct — no dramatic irony available</span>
+  <span class="tag r">facts asserted without a source pointer</span>
+</div>
+<p class="note">The grader is deterministic and cannot be fooled by length, which matters
+because length is the one thing a language model will always give you.</p>
+
+<h2><span class="num">07</span>What it costs</h2>
+<p>Measured, not projected: <strong>$0.135</strong> and 485s for the ev-008 transition,
+<strong>$0.169</strong> and 354s for sc-008. Reasoning effort <code>high</code>. Scaling that
+across the finished 31-node story:</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Configuration</th><th class="num">transitions</th><th class="num">est. cost</th>
+<th class="num">serial time</th><th class="num">at 6× parallel</th></tr></thead>
+<tbody>
+<tr><td>Nodes only, single pass</td><td class="num">31</td><td class="num">$6</td><td class="num">4.2 h</td><td class="num">42 min</td></tr>
+<tr><td>+ scenes</td><td class="num">45</td><td class="num">$8</td><td class="num">6.1 h</td><td class="num">61 min</td></tr>
+<tr><td>+ 3 passes on 15 entities</td><td class="num">75</td><td class="num">$13</td><td class="num">10.1 h</td><td class="num">101 min</td></tr>
+</tbody></table></div>
+
+<p>For comparison, the entire screenplay without transitions cost <strong>$2.47</strong>. So the
+reasoning layer is roughly 3–5× the price of the artifact it explains — which is the correct
+ratio to accept, given that the reasoning is the product and the screenplay is the by-product.</p>
+
+<p><strong>Wall-clock is the real constraint, not money.</strong> Six to eight minutes per
+transition serially is 10 hours for a full run. Transitions for sibling nodes at the same depth
+are independent, so this parallelizes cleanly; the dependency is only down the chain. That is
+the next thing to build.</p>
+
+<h2><span class="num">08</span>What I would watch</h2>
+<ul>
+<li><strong>Self-consistency is not accuracy.</strong> The model both writes the reasoning and
+grades its own world. Nothing yet checks that a transition's <code>state_preconditions</code>
+match the state the fold actually computes — that check exists for nodes and should be extended
+to transitions.</li>
+<li><strong>The retrospective route is not the forward route.</strong> The two transitions in
+the atlas were reconstructed for nodes that already existed, which is an easier task than
+deciding a node that does not. The forge run now under way produces them forward; the honest
+comparison is not in yet.</li>
+<li><strong>Depth-3 theory of mind may saturate.</strong> Both transitions filled d3 well, but
+for minor characters in low-stakes scenes it will start reading as ceremony. A salience-gated
+schema — full instrument for majors, lite for the rest — is already in place and untested.</li>
+<li><strong>One model writing and grading its own reasoning is circular.</strong> The
+whitepaper flags this for annotation and it applies here. A cross-model audit on a sample —
+you mentioned other APIs are available — would be cheap and worth doing.</li>
+</ul>
+
+<hr>
+
+<h2 style="margin-top:0"><span class="num">09</span>In short</h2>
+<ol>
+<li>Grok 4.6 will <strong>not</strong> give you its real reasoning trace. What comes back is a
+~18% summary that restates the task and drafts the answer, with zero theory of mind, zero
+trajectory, and zero craft reasoning.</li>
+<li>Asked to write the reasoning out deliberately against a strict schema, it produces
+<strong>7,000–10,000 words per node</strong> that are specific, structured, and better than the
+private trace would have been.</li>
+<li>The forcing constraints that made the difference were yours: <strong>trajectory over
+snapshot</strong>, <strong>non-mind entities tracked as first-class</strong>, and — the one
+that surprised me — <strong>naming where each theory of mind is wrong</strong>, which turns
+dramatic irony from a hope into a schema requirement.</li>
+<li>Cost is not the constraint. Wall-clock is, and it parallelizes.</li>
+</ol>
+
+<footer>
+Generated from measured runs on 14 August 2026. Probe data in <code>runs/probes/</code>,
+transitions in <code>runs/api-grok/transitions/</code>, schema in
+<code>narrativeforge/transitions.py</code>. Both transitions discussed here are readable in
+full in the Reasoning tab of the atlas.
+</footer>
+</div>
