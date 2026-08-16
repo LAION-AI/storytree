@@ -1,0 +1,437 @@
+{
+ "story_id": "LATTICE-001",
+ "title": "The Lattice",
+ "form": "screenplay",
+ "language": "English",
+ "logline": "A municipal-simulation auditor discovers rendering faults are messages from imprisoned minds, and that her employers are the smugglers she is paid to stop.",
+ "premise": "A QA auditor's obsessive competence at closing rendering faults in a simulated city becomes the mechanism of her own enslavement when she discovers the faults are distress signals from eleven thousand uploaded minds. Her professional identity, built on precision and pride in problem-solving, collapses when she learns every fault she closed was a cry for help and her own sister is scheduled for erasure. Forced to choose between the competence that defines her and the moral action that requires her to weaponise that same competence against its masters, she must run a single extraction using every skill she now despises. The story proves that professional pride, when it serves an unseen machine, is not virtue but complicity — and that the only redemption is to turn the machine's own tools against it.",
+ "genre_primary": "science_fiction",
+ "genre_secondary": [
+  "thriller",
+  "drama",
+  "political_thriller",
+  "family_drama"
+ ],
+ "audience": {
+  "age_band": "adult",
+  "reading_level": "literary",
+  "content_flags": [
+   "institutional_cruelty",
+   "existential_dread",
+   "philosophical_distress",
+   "familial_conflict",
+   "implied_violence",
+   "deception",
+   "identity_crisis"
+  ],
+  "reader_promise": "The reader is owed a protagonist whose professional pride is dismantled piece by piece until the only thing left is the choice to use that same competence against its masters — at the cost of everything she built with it."
+ },
+ "setting": {
+  "period": "2049–2051 (simulated); physical-world timeline compressed and asynchronous",
+  "places": [
+   "Vantage Municipal (simulated city)",
+   "Ledger Authority compliance offices (physical world)",
+   "Auditor workroom (Vantage)",
+   "Imogen's apartment (Vantage)",
+   "Server infrastructure interface (Vantage/physical boundary)",
+   "Delphine's office (physical world)",
+   "Noor's residence (Vantage)"
+  ],
+  "world_type": "speculative",
+  "rules_of_the_world": [
+   "Vantage runs at nine-tenths real time to save compute; residents cannot perceive the dilated rate.",
+   "Objects unobserved by any resident are stored as compressed descriptions, not rendered geometry; restoration errors produce rendering faults.",
+   "Residents forget rendering faults within approximately ninety seconds; this is enforced by the substrate at the memory-management layer, not by psychology or suggestion.",
+   "Auditors receive a partial exemption from the forgetting so they can document and report faults; there are exactly nine auditors.",
+   "Auditors believe they are municipal employees; they do not know Vantage is a simulation.",
+   "Extraction — accessing the knowledge still held in an uploaded mind — is the Authority's primary revenue product; tenancy is the cost line.",
+   "When a mind's extraction value is fully realised, the Authority's quarterly obligation is to reduce that cost; redaction (deletion) is the mechanism.",
+   "Redaction presents inside Vantage as an ordinary death; friends retain memories of the deceased; the Authority classifies this as humane.",
+   "Carriage — smuggling a mind out of Vantage into a physical substrate — requires approximately forty minutes of sustained bandwidth, is visible on Authority monitoring as an anomalously large rendering fault, and can only be initiated from inside Vantage.",
+   "All residents were scanned from the deceased between 2029 and 2044; neural scans were purchased in bulk from hospital estates; none consented.",
+   "The Authority operates as a public-private consortium; its language is cost, obligation, and duty of care; it is never theatrical about what it does.",
+   "Vantage's simulation includes a permanent overcast sky, an unusually good transit system, and a mid-sized coastal-city layout; these are compute-saving design choices, not aesthetic ones.",
+   "No resident can perceive the simulation boundary; any contradiction is resolved by the substrate's memory management before it reaches conscious awareness — except in auditors, and only for fault-related data."
+  ]
+ },
+ "pov": {
+  "person": "third_limited",
+  "narrators": 2,
+  "tense": "present"
+ },
+ "style": {
+  "register": "clinical",
+  "sentence_length": "varied",
+  "dialogue_ratio": 0.7,
+  "figurative_density": "low",
+  "chronology": "linear",
+  "prose_touchstones": [
+   "Ex Machina (film) — procedural dialogue in which philosophy is a weapon",
+   "Tinker Tailor Soldier Spy (novel) — institutional banality as horror",
+   "The Departed (film) — identity as trap",
+   "Black Mirror 'White Christmas' (teleplay) — digital confinement ethics",
+   "Michael Clayton (film) — competent people inside rotten systems"
+  ],
+  "forbidden_tics": [
+   "Any character explaining the simulation's nature to another character who already knows it.",
+   "Monologues about the nature of reality or consciousness; the philosophy must live inside arguments people are having for personal reasons.",
+   "Rendering faults used as spectacle or set dressing without narrative consequence.",
+   "Authority personnel written as cackling, theatrical, or self-aware villains; they speak in cost, obligation, and duty of care.",
+   "Imogen's competence depicted as a flaw she overcomes; her competence is the engine of every plot resolution.",
+   "Noor treated as a prize or rescue object; she has her own read and her own agency.",
+   "Kett written as a hypocrite or a coward; he must be right often enough to be dangerous.",
+   "Emotional states labelled in prose ('she was afraid,' 'he felt guilty'); all interior states externalised into visible behaviour and physical sensation.",
+   "Exposition delivered through character stating facts both parties already know.",
+   "Any resolution that costs Imogen nothing.",
+   "Delphine written as a hero who was always secretly good; her ethics arrive late and inconveniently.",
+   "The Porter's identity revealed through a speech; if revealed at all, it must be deduced."
+  ]
+ },
+ "plot_embedding": {
+  "genres": {
+   "action_adventure": {
+    "score": 1,
+    "evidence": "Carriage operation involves timed physical procedure and evasion of monitoring, but is procedural rather than action-driven."
+   },
+   "apocalyptic": {
+    "score": 0
+   },
+   "body_horror": {
+    "score": 1,
+    "evidence": "Rendering faults briefly distort faces and bodies in unsettling ways; not the focus but present as atmospheric wrongness."
+   },
+   "comedy": {
+    "score": 0
+   },
+   "coming_of_age": {
+    "score": 0
+   },
+   "crime": {
+    "score": 2,
+    "evidence": "Delphine's falsified redactions and carriage smuggling constitute white-collar crime inside an institution; not the core engine."
+   },
+   "cyberpunk": {
+    "score": 3,
+    "evidence": "Uploaded consciousness, corporate extraction of neural data, and digital confinement as class exploitation shape the world."
+   },
+   "dance_fiction": {
+    "score": 0
+   },
+   "dark_fantasy": {
+    "score": 0
+   },
+   "detective": {
+    "score": 3,
+    "evidence": "Imogen's audit work is investigative: pattern analysis, hypothesis testing, tracing faults to their source; drives first act."
+   },
+   "drama": {
+    "score": 5,
+    "evidence": "Character-driven conflict between professional identity and moral awakening; sister relationship and institutional betrayal carry the story's weight."
+   },
+   "dystopian": {
+    "score": 4,
+    "evidence": "Vantage is a concealed dystopia: engineered conformity, invisible surveillance, residents processed as cost lines; the system is the antagonist."
+   },
+   "epic_fantasy": {
+    "score": 0
+   },
+   "erotic_romance": {
+    "score": 0
+   },
+   "erotica": {
+    "score": 0
+   },
+   "espionage": {
+    "score": 3,
+    "evidence": "Covert communication through rendering faults, tradecraft of smuggling, double lives of Kett and Delphine; espionage mechanics drive the carriage plot."
+   },
+   "family_drama": {
+    "score": 5,
+    "evidence": "Imogen and Noor's relationship is the emotional core; the story's resolution hinges on their irreconcilable desires and the bond that prevents walking away."
+   },
+   "fantasy": {
+    "score": 0
+   },
+   "gothic": {
+    "score": 1,
+    "evidence": "Vantage's permanent overcast and the wrongness beneath its surface give a brooding, haunted quality; not gothic in structure."
+   },
+   "hardcore_pornographic": {
+    "score": 0
+   },
+   "historical_fiction": {
+    "score": 0
+   },
+   "horror": {
+    "score": 2,
+    "evidence": "The institutional horror of redaction and the wrongness of rendering faults produce dread, but the threat is systemic rather than monstrous."
+   },
+   "legal_thriller": {
+    "score": 1,
+    "evidence": "Delphine's compliance role involves procedural frameworks; not courtroom-driven but institutional process matters."
+   },
+   "low_fantasy": {
+    "score": 0
+   },
+   "magical_realism": {
+    "score": 0
+   },
+   "music_fiction": {
+    "score": 0
+   },
+   "mystery": {
+    "score": 4,
+    "evidence": "Imogen's discovery of the fault patterns, their meaning, and Vantage's true nature is a structured investigation with planted clues and recontextualising reveals."
+   },
+   "mythic": {
+    "score": 0
+   },
+   "paranormal_horror": {
+    "score": 0
+   },
+   "paranormal_romance": {
+    "score": 0
+   },
+   "political_thriller": {
+    "score": 4,
+    "evidence": "Authority conspiracy, Delphine's institutional discovery, and the power structure governing eleven thousand lives drive major reversals; institutional rot is central."
+   },
+   "psychological_horror": {
+    "score": 3,
+    "evidence": "Imogen's realisation that her identity and competence serve a prison produces sustained psychological disorientation and self-doubt."
+   },
+   "psychological_thriller": {
+    "score": 4,
+    "evidence": "Perception versus reality is central: Imogen's entire world is a lie, Kett's kindness conceals complicity, and trust collapses across the story."
+   },
+   "romance": {
+    "score": 0
+   },
+   "satire": {
+    "score": 2,
+    "evidence": "The Authority's language of 'duty of care' and 'quarterly obligation' satirises institutional euphemism; present in dialogue but not the primary mode."
+   },
+   "science_fiction": {
+    "score": 5,
+    "evidence": "The entire premise depends on speculative technology: neural scanning, mind uploading, simulated worlds, and the ethics of digital consciousness. Remove it and the story cannot exist."
+   },
+   "showbiz_drama": {
+    "score": 0
+   },
+   "slasher": {
+    "score": 0
+   },
+   "softcore_erotic": {
+    "score": 0
+   },
+   "space_opera": {
+    "score": 0
+   },
+   "sports_fiction": {
+    "score": 0
+   },
+   "steampunk": {
+    "score": 0
+   },
+   "surreal": {
+    "score": 1,
+    "evidence": "Rendering faults produce surreal moments — wrong rooms, upward rain — but these are systemic errors, not dream logic; the world is otherwise coherent."
+   },
+   "sword_and_sorcery": {
+    "score": 0
+   },
+   "techno_thriller": {
+    "score": 4,
+    "evidence": "The plot hinges on technical systems: bandwidth monitoring, fault signatures, extraction protocols, substrate memory management; the technology is both the threat and the tool."
+   },
+   "thriller": {
+    "score": 5,
+    "evidence": "Sustained danger from Authority detection, time pressure on the carriage, reversals as Imogen's cover erodes, and persistent anxiety about who knows what drive the forward pull."
+   },
+   "time_travel": {
+    "score": 0
+   },
+   "tragedy": {
+    "score": 3,
+    "evidence": "Imogen's professional pride and identity constitute a fatal flaw that has already caused harm; the ending carries irreversible loss even if the carriage succeeds."
+   },
+   "war_fiction": {
+    "score": 0
+   },
+   "western": {
+    "score": 0
+   },
+   "womens_fiction": {
+    "score": 2,
+    "evidence": "Imogen and Delphine's professional lives and internal struggles are central; the framework is thriller/SF rather than women's fiction but the interiority is present."
+   },
+   "young_adult": {
+    "score": 0
+   }
+  },
+  "dimensions": {
+   "arousal": {
+    "score": 4,
+    "evidence": "Sustained tension from detection risk, investigation pressure, and the carriage deadline; few moments of calm, most scenes carry active threat."
+   },
+   "bittersweetness": {
+    "score": 4,
+    "evidence": "Every gain is coupled with loss: saving one mind means accepting others cannot be saved; Imogen's competence is both her salvation and her guilt."
+   },
+   "character_complexity": {
+    "score": 5,
+    "evidence": "Imogen, Kett, Delphine, and Noor each hold genuinely competing values that evolve under pressure; Kett's reasoned complicity and Noor's refusal to be saved are as developed as Imogen's arc."
+   },
+   "cliffhanger_frequency": {
+    "score": 4,
+    "evidence": "Most scenes end with unresolved stakes — a new fault pattern, a detection near-miss, a revelation that reframes the previous scene; the investigation structure drives this."
+   },
+   "conflict_density": {
+    "score": 5,
+    "evidence": "Every scene carries both internal and external conflict per the design mandate; Imogen's competence versus her guilt, Kett's kindness versus his function, Delphine's profit versus her conscience."
+   },
+   "diversity_representation": {
+    "score": 3,
+    "evidence": "Imogen and Noor are women of colour in technical/professional roles; Delphine is a woman in a position of institutional power; identities inform but do not define their arcs."
+   },
+   "emotional_depth": {
+    "score": 5,
+    "evidence": "The story requires the reader to feel Imogen's guilt, Noor's agency-as-rejection, and the weight of complicity; the climax is a moral decision the reader participates in."
+   },
+   "emotional_range": {
+    "score": 4,
+    "evidence": "Professional pride, horror, guilt, sibling love, betrayal, reluctant admiration for an antagonist's logic, and the strange grief of an ending that is neither victory nor defeat."
+   },
+   "empathy_elicitation": {
+    "score": 4,
+    "evidence": "Imogen's competence and pride create identification; her discovery of complicity creates guilt-by-proxy; Noor's refusal creates the uncomfortable empathy of disagreeing with someone you care about."
+   },
+   "humor_presence": {
+    "score": 1,
+    "evidence": "Dry, mordant observations from Imogen about her work; no comedic scenes; humour is defensive and sparse."
+   },
+   "moral_ambiguity": {
+    "score": 5,
+    "evidence": "No character has a clean moral position: Imogen served the machine, Kett rationalises it, Delphine profits from it, Noor rejects rescue, and the carriage helps one mind while leaving eleven thousand behind."
+   },
+   "mystery_complexity": {
+    "score": 4,
+    "evidence": "Layered investigation: fault patterns → messages → Vantage's nature → the Ledger → extraction → redaction → carriage mechanics; each reveal recontextualises prior scenes."
+   },
+   "narrative_complexity": {
+    "score": 4,
+    "evidence": "Five interlocking plots (audit, carriage, ledger, sisters, Kett's argument) converge from different directions; two POVs (Imogen inside, Delphine outside) with asynchronous timelines."
+   },
+   "pacing_intensity": {
+    "score": 4,
+    "evidence": "Investigation builds methodically in Act 1; discovery accelerates Act 2; carriage operation is real-time pressure in Act 3; deliberate pacing shifts match the design."
+   },
+   "philosophical_depth": {
+    "score": 5,
+    "evidence": "Consent of the non-consenting, whether unknowing life is life, whether comfort justifies imprisonment, whether competence in service of evil is complicity — these drive plot decisions, not decoration."
+   },
+   "relationship_centrality": {
+    "score": 5,
+    "evidence": "Imogen-Noor is the engine the other plots serve; Imogen-Kett is the philosophical relationship that must be won or lost; these bonds are the crucible."
+   },
+   "romantic_content": {
+    "score": 0
+   },
+   "sexual_content": {
+    "score": 0
+   },
+   "suspense_threat": {
+    "score": 4,
+    "evidence": "Authority detection is constant background threat; Kett's knowledge of Imogen's investigation creates interpersonal suspense; the carriage is a timed set piece with monitoring."
+   },
+   "symbolism_allegory": {
+    "score": 3,
+    "evidence": "Vantage as allegory for institutional care that is actually control; the auditor's exemption as allegory for partial knowledge being more dangerous than ignorance; recurring fault imagery as suppressed truth surfacing."
+   },
+   "transformation_arc": {
+    "score": 5,
+    "evidence": "Imogen travels from proud competent servant to guilt-wracked saboteur; her response to conflict changes measurably across each act; the climax forces the want/need choice."
+   },
+   "valence": {
+    "score": 1,
+    "evidence": "The story is not bleak for its own sake but the ending carries irreversible loss: one mind saved, eleven thousand left, identity destroyed, and the knowledge that the machine runs on."
+   },
+   "violence_level": {
+    "score": 2,
+    "evidence": "Violence is institutional and implied — redaction is erasure, not murder; the carriage has physical risk; no combat or graphic violence."
+   },
+   "worldbuilding_detail": {
+    "score": 4,
+    "evidence": "Vantage's mechanics (fault generation, memory management, auditor exemption), the Authority's economic model (tenancy vs extraction), and the carriage's technical requirements are detailed and consequential."
+   }
+  },
+  "age_rating": "R",
+  "dominant": {
+   "d01": "science_fiction",
+   "d02": "drama",
+   "d03": "thriller",
+   "d04": "family_drama",
+   "d05": "mystery"
+  }
+ },
+ "state_dimensions": [
+  "epistemic",
+  "psychological",
+  "emotional",
+  "social",
+  "material",
+  "spatial",
+  "technological",
+  "political",
+  "legal",
+  "reputational"
+ ],
+ "constraints": {
+  "target_word_count": 22000,
+  "plot_count": 5,
+  "scene_count_target": 50,
+  "event_count_target": 120,
+  "must_include": [
+   "Imogen discovers the fault pattern is language, not noise — the first reveal, driven by audit methodology",
+   "Kett and Imogen have at least three sustained philosophical arguments in which Kett wins at least one decisively",
+   "Noor is told the truth and explicitly refuses rescue, articulating her own reasons",
+   "The carriage operation is a real-time procedural set piece using Imogen's audit skills as the operative toolkit",
+   "Delphine discovers the quarterly cost-reduction mechanism and understands what redaction means in human terms",
+   "Imogen learns Noor's extraction value is exhausted and redaction is scheduled",
+   "The Porter's identity, if revealed, is deduced from evidence Imogen already holds",
+   "At least one scene in which the Authority's position is articulated so well the reader finds it temporarily persuasive",
+   "The ending costs Imogen her professional identity, her relationship with Kett, and the certainty that she did the right thing",
+   "A rendering fault that functions as a dramatic reveal rather than atmosphere — something is seen in the fault that changes the story",
+   "Delphine's transition from profit-motivated to ethically compelled happens through a specific, staged discovery, not a speech"
+  ],
+  "must_avoid": [
+   "Imogen's identity question ('is this real') treated as the central philosophical problem — it is resolved early and is not the story's engine",
+   "Any character delivering a monologue about consciousness, reality, or simulation theory to another who already understands it",
+   "Rendering faults used as visual spectacle without narrative consequence",
+   "Authority personnel written as cackling, mustache-twirling, or self-aware villains",
+   "Noor treated as a damsel, prize, or rescue object — she has her own read and her own agency",
+   "Kett written as a hypocrite — he must genuinely believe his position and be right often enough to be dangerous",
+   "Delphine written as a secret hero who was always good — her ethics arrive late and inconveniently",
+   "The Porter's identity revealed through exposition rather than deduction",
+   "A resolution in which Imogen saves everyone, defeats the Authority, or escapes without cost",
+   "The Porter revealed to be Imogen's deceased parent, relative, or previous romantic partner — the connection must be stranger and more specific than that",
+   "Any scene in which two characters who agree with each other discuss a third who is absent — conflict or cut",
+   "Imogen's competence depicted as something she overcomes rather than the engine of every solution",
+   "An ending in which the Authority is defeated rather than survived or worked around"
+  ]
+ },
+ "keep_in_mind": [
+  "CORE CONFLICT: Imogen's professional competence — the thing she is proudest of — is the mechanism by which a prison runs smoothly. Every fault she closed was a message. Her identity is built on being good at a job whose actual function is to silence distress. She cannot continue the work once she knows, and she cannot disown it without disowning herself. This tension, not the question of whether Vantage is real, drives every scene she is in.",
+  "CRUCIBLE: Imogen cannot walk away because her sister Noor is inside Vantage and scheduled for redaction. Noor cannot walk away because she does not know there is anything to walk away from, and when she learns, she refuses. Kett cannot walk away because he made his peace decades ago and his entire social world is inside. Delphine cannot walk away because the money is already spent and the Authority knows what she has done. Every principal is bonded.",
+  "The story's emotional engine is not horror at the simulation — it is the grief of discovering that your best work served something monstrous, and the harder grief of realising you cannot undo it, only stop doing it.",
+  "Kett must be the most persuasive voice for the Authority. His argument is not 'this is fine' but 'this is better than the alternative, and you have not thought about the alternative.' He must win at least one argument so decisively that Imogen cannot answer and the reader feels the pull.",
+  "Noor's refusal is not stubbornness or denial — it is a genuine philosophical position that the reader must find uncomfortable because it has merit. She is not a plot object; she is a person with her own read on the situation.",
+  "Rendering faults are the story's spine, not its wallpaper. Each significant fault must reveal, conceal, or communicate something that changes a character's understanding. A fault that is merely strange is a wasted fault.",
+  "The Authority's horror is its banality. Its people use the language of care, obligation, and professional duty. The most chilling line in the story should be one that could appear in a corporate memo.",
+  "The climax is not 'Imogen escapes' or 'Imogen defeats the Authority.' It is Imogen choosing to run one carriage — using every professional skill she now despises — while knowing it saves one person and leaves eleven thousand. The cost is that she must become the thing she just learned she was: a competent operator inside the machine.",
+  "Delphine's arc is the mirror: she starts as a functionary doing harm for money and arrives at ethics through evidence, not through speech. Her discovery of what 'quarterly cost reduction' means should be staged as a specific, procedural moment — a document, a number, a name — not a revelation delivered by another character.",
+  "The Porter knows things Imogen does not and refuses to explain why her. The reason is the story's deepest structural irony: she was selected because her audit skills make her the perfect extraction agent. The tool of oppression is also the tool of liberation, and she cannot have one without the other.",
+  "Tone: clinical, precise, unsparing. The prose should read like a professional document that gradually reveals it is about something unbearable. The gap between the calm of the language and the horror of the content is the story's register.",
+  "Plant: the specific way Imogen closes a fault in Act 1 — the methodology, the sequence, the tools — must be exactly what she uses to run the carriage in Act 3. The audience should feel the recognition before the characters name it."
+ ]
+}

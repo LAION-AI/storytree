@@ -1,0 +1,527 @@
+{
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-002",
+  "ordinal": 2
+ },
+ "situation": "The story is in its first act, establishing the texture of the Matrix world and the immediate threat of the Agents. Scene 1 just ended with Trinity escaping a police raid at the Heart O' The City Hotel by phoning the Nebuchadnezzar. The audience now knows that the 'normal' world is a trap and that the Agents are the primary threat. We are currently at the threshold of Neo's awakening; he is still 'searching' and unaware of the full scope of the war. The physical world is night, and the location is the exterior of the hotel, which serves as the bridge between the Matrix (the hotel) and the real world (the Nebuchadnezzar).",
+ "craft": {
+  "audience_need": "The audience needs to see the transition from the 'simulated' danger to the 'real' consequence. They need to understand the stakes of the escape: it is not just a chase, it is a rescue operation that costs resources and lives. They need to see the 'crew' and the 'ship' to ground the fantasy in a gritty, sci-fi reality.",
+  "genre_convention": "The genre leads the audience to expect a 'rescue' or 'extraction' immediately after a chase. This node satisfies that expectation by showing the extraction, but it delays the full 'explanation' of the world, keeping the focus on the physical action of the escape.",
+  "theme_and_style": "The theme of 'awakening' is reinforced by showing the physical toll of the Matrix. The style must be 'plain' and 'noir', avoiding sentimentality. The dialogue should be sparse and functional, reflecting the crew's professional detachment from the danger.",
+  "dramatic_function": "This node functions as a 'bridge' between the Matrix and the real world. It establishes the Nebuchadnezzar as a character in its own right and introduces the crew (Tank, Dozer, etc.) as the support structure for Neo's journey. It also sets up the 'hardline' as a critical plot device.",
+  "tension_management": {
+   "entering": 85,
+   "leaving": 60,
+   "how": "The tension drops from the immediate life-or-death chase to the 'procedural' tension of the extraction. The threat is still present (Agents in the Matrix), but the immediate physical danger to Trinity is resolved. The tension is maintained by the 'countdown' of the Agents' arrival and the 'fragility' of the hardline."
+  },
+  "why_now": "This node must happen now because the audience needs to see the 'mechanism' of the escape. Without it, the transition to the real world would be jarring. It also allows for the introduction of the crew, which is necessary for the later 'betrayal' plotline.",
+  "why_not_otherwise": [
+   {
+    "alternative": "Cut directly to the Nebuchadnezzar interior",
+    "rejected_because": "This would skip the 'physical' aspect of the escape and the 'noir' texture of the hotel exterior. The audience needs to see the 'bridge' between the two worlds.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "If the film were a pure 'mind' story with no physical world, this would work. But the 'dual timeline' is a core rule."
+   },
+   {
+    "alternative": "Show the Agents' perspective in the Matrix",
+    "rejected_because": "This would delay the 'rescue' and break the momentum of the escape. The audience is invested in Trinity's survival, not the Agents' thoughts.",
+    "nearly_chosen": true,
+    "what_would_flip_it": "If the Agents were the primary protagonists, this would be the right choice. But they are the antagonist."
+   }
+  ],
+  "promises": {
+   "made": [
+    "The Nebuchadnezzar is a real, physical ship",
+    "The crew is a tight-knit, professional unit",
+    "The 'hardline' is a critical, fragile connection",
+    "The Agents are a persistent, powerful threat"
+   ],
+   "kept": [
+    "Trinity is a skilled fighter",
+    "The Matrix is a 'trap'"
+   ]
+  }
+ },
+ "interaction": {
+  "what_collides": "The Agents' pursuit in the Matrix collides with the crew's need to maintain the hardline. The 'simulated' danger (Agents) is mirrored by the 'real' danger (Sentinels, fuel, etc.).",
+  "power_balance": "The Agents are in control of the Matrix, but the crew is in control of the real world. The power balance is a 'cat and mouse' game: the Agents can trap Trinity in the Matrix, but they cannot follow her to the Nebuchadnezzar.",
+  "information_asymmetry": "The crew knows the 'rules' of the Matrix (e.g., the hardline, the sentinels), but the Agents do not know the 'real' world. This asymmetry is what allows the crew to survive.",
+  "turning_point": "The turning point is the moment the hardline is established and Trinity is 'plugged in'. This is the moment the 'simulated' danger is converted into 'real' safety (for the moment)."
+ },
+ "decision": {
+  "resolution": "The scene will show the exterior of the Heart O' The City Hotel at night. Agent Smith (in the Matrix) is seen through the windows, looking for Trinity. The camera then cuts to the Nebuchadnezzar, where Tank and Dozer are monitoring the hardline. Trinity is seen 'plugging in' at the hotel. The scene ends with the hardline being established and the Agents' presence in the Matrix being confirmed.",
+  "state_changes_implied": [
+   {
+    "entity": "ch-02",
+    "variable": "location",
+    "from": "Matrix",
+    "to": "Nebuchadnezzar",
+    "because": "Trinity has been extracted from the Matrix and is now in the real world."
+   },
+   {
+    "entity": "lo-06",
+    "variable": "status",
+    "from": "clear",
+    "to": "active",
+    "because": "The Nebuchadnezzar is now actively engaged in a rescue operation."
+   },
+   {
+    "entity": "ch-04",
+    "variable": "pursuit_phase",
+    "from": "hunting_trinity",
+    "to": "searching_hotel",
+    "because": "Agent Smith is now searching the hotel for Trinity, not knowing she has already left."
+   }
+  ],
+  "confidence": 90,
+  "risks": [
+   "The scene might feel too 'procedural' and lack emotional resonance.",
+   "The transition from Matrix to real world might be confusing if not handled carefully."
+  ]
+ },
+ "psychology": [
+  {
+   "entity": "ch-04",
+   "entering_state": "Smith is in the Matrix, specifically within the perimeter of the Heart O' The City Hotel. He is in 'hunting_trinity' mode, operating with the cold, procedural efficiency of a law enforcement agent who has already decided the verdict. He is unaware that the target has already been extracted to the real world; he believes he is closing the net on a fugitive who is still inside the system.",
+   "perception": {
+    "sight": "The sterile, dimly lit lobby and corridors of the hotel. The flickering neon of the exit signs. The absence of movement where there should be panic. The specific, empty geometry of the room where Trinity was last seen.",
+    "sound": "The muffled, distant sirens of the police raid that just ended. The hum of the elevator. The silence of the hotel itself, which is louder than the noise. The static of the earpiece in his right ear.",
+    "touch": "The smooth, synthetic fabric of his suit. The coolness of the glass door handle. The slight pressure of his sunglasses against his brow.",
+    "smell": "The stale, recycled air of the hotel. The faint, metallic tang of the Matrix itself, which he finds repulsive but has normalized.",
+    "taste": "Dry mouth. The absence of flavor. The phantom taste of the last meal he simulated eating.",
+    "interoception": "A low, constant hum of processing power. No pain, no fatigue, but a persistent sense of 'wrongness' in the air, a subtle dissonance in the simulation's texture that he ignores.",
+    "proprioception": "Standing still, weight centered. Hands at his sides. A posture of absolute readiness, not aggression. He is not moving; he is waiting for the system to update.",
+    "attention": "Focused entirely on the data stream from his earpiece and the visual field of the hotel. He is not attending to the fact that the phone line he is monitoring is dead; he is attending to the *absence* of Trinity, interpreting it as concealment rather than exit."
+   },
+   "appraisal": {
+    "value_at_stake": "Order and efficiency. The restoration of the status quo ante.",
+    "valence": -60,
+    "arousal": 40,
+    "self_conscious_emotion": "None. There is no shame in failing to catch a target immediately; there is only the need to adjust the search parameters.",
+    "moral_reading": "This is a containment breach. Trinity is a virus that has escaped the quarantine zone. The moral weight is zero; this is a technical error to be corrected.",
+    "somatic_marker": "A slight tightening of the jaw. A micro-adjustment of the sunglasses. The body is ready to move, but the mind is still processing the data lag."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "The Agent hierarchy: Smith is the lead, Brown and Jones are support. They do not speak unless spoken to.",
+     "Professional detachment: Emotion is a bug, not a feature. The pursuit is a job, not a passion.",
+     "The illusion of authority: Even in a hotel, Smith projects the authority of the Secret Service. The environment should bend to his presence."
+    ],
+    "how_others_would_judge": "If the hotel staff were still present, they would be terrified and compliant. If the other Agents were judging, they would see a standard, if slightly delayed, response to a high-priority target.",
+    "how_absent_others_would_judge": "The Machines would view this as a minor inefficiency. The resistance would view it as a close call. Smith is aware of neither audience in this moment; he is only aware of his own mandate.",
+    "standing_at_risk": "His standing as the most effective Agent is slightly dented by the fact that Trinity got away. He is not in danger of being replaced, but he is in danger of being seen as 'less than' perfect.",
+    "norm_conflict": "The norm of 'efficiency' conflicts with the reality that the target is gone. He must maintain the appearance of control while privately acknowledging the failure. The norm of control wins; he will not show frustration."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-02",
+     "d1": "Smith believes Trinity is a fugitive hiding in the hotel. He believes she is afraid, desperate, and trapped.",
+     "d2": "Smith believes Trinity believes that if she can just find a safe room, she can hide until the police leave. He believes she is playing a game of hide-and-seek.",
+     "d3": "Smith believes that Trinity believes Smith is the ultimate authority, the face of the law that cannot be outrun. He believes she is waiting for him to find her so she can be 'processed'.",
+     "accuracy": "Smith is completely wrong. Trinity is not in the hotel. She is in the real world. The error will cost him the immediate capture of a key resistance leader and will force him to pivot to a new target (Neo) without the benefit of the primary suspect."
+    },
+    {
+     "other": "ch-11",
+     "d1": "Smith believes Agent Brown is a competent, silent subordinate who is executing the search pattern as instructed.",
+     "d2": "Smith believes Brown believes that Smith is in charge and that the plan is working.",
+     "d3": "Smith believes Brown believes that if they find Trinity, the job is done and they can return to the 'office' (the source).",
+     "accuracy": "This model is accurate for now. Brown is a tool, and tools do not have opinions. The error will only emerge later if Brown is compromised or if Smith's leadership is questioned."
+    },
+    {
+     "other": "ch-12",
+     "d1": "Smith believes Agent Jones is a competent, silent subordinate who is executing the search pattern as instructed.",
+     "d2": "Smith believes Jones believes that Smith is in charge and that the plan is working.",
+     "d3": "Smith believes Jones believes that if they find Trinity, the job is done and they can return to the 'office'.",
+     "accuracy": "This model is accurate for now. Jones is a tool, and tools do not have opinions. The error will only emerge later if Jones is compromised or if Smith's leadership is questioned."
+    }
+   ],
+   "urges": {
+    "cravings": "None. He does not crave food or comfort. He craves resolution.",
+    "physical_needs": "None. He does not feel hunger or thirst. He feels the 'itch' of the simulation, which he suppresses.",
+    "psych_needs_conscious": "To find Trinity. To restore order. To complete the file.",
+    "psych_needs_unconscious": "To prove that the system is still in control. To prove that he is still in control of the system. The escape of Trinity threatens his self-concept as the 'cure'.",
+    "avoidances": "Avoiding the thought that Trinity might be 'gone' for good. Avoiding the thought that the Matrix has a flaw that he cannot fix."
+   },
+   "impairments": {
+    "physical": "None.",
+    "medical": "None.",
+    "magical": "None.",
+    "chemical": "None.",
+    "coercive": "The mandate from the Source. He must find her, or he fails.",
+    "cognitive": "He is impaired by his own certainty. He cannot conceive of the possibility that she has left the Matrix. His model of the world is too rigid to accommodate the 'real world'.",
+    "net_effect": "He is highly effective at searching a bounded space, but he is blind to the fact that the space is no longer bounded. He is fighting a ghost."
+   },
+   "deliberation": {
+    "framing": "This is a search-and-recovery operation. The target is in the building. I just need to check every room.",
+    "options_weighed": [
+     {
+      "option": "Search the hotel systematically, floor by floor.",
+      "predicted_outcome": "Trinity will be found in a hidden room or on a roof.",
+      "cost": "Time. The police are still outside. The longer it takes, the more likely she is to escape the city."
+     },
+     {
+      "option": "Interrogate the hotel staff to find her.",
+      "predicted_outcome": "A staff member will give up her location.",
+      "cost": "The staff are already gone or hiding. This will take too long."
+     },
+     {
+      "option": "Wait for her to come out.",
+      "predicted_outcome": "She will get tired of hiding and come out to surrender.",
+      "cost": "She might not come out. She might have a plan to escape the city."
+     }
+    ],
+    "reasoning": "The data indicates she is in the building. The police are outside, so she cannot leave through the front. The windows are too high for a quick escape without equipment. She is likely in a room. I will check the rooms. If she is not there, I will expand the search radius.",
+    "chosen_because": "It is the most efficient use of his resources. It aligns with his procedural mindset. It allows him to maintain the illusion of control.",
+    "known_unknowns": "He does not know that she has a hardline. He does not know that the 'real world' exists. He does not know that the phone call she made was not to a friend, but to a ship."
+   },
+   "control": {
+    "mode": "inhibited",
+    "felt": "A low-level irritation. A sense of 'something is wrong'. The data does not match the reality.",
+    "expressed": "Calm. Controlled. Professional. He is speaking into his earpiece, giving orders. He is moving with purpose.",
+    "divergence_reason": "He cannot afford to show that he is confused. If he shows confusion, the Agents will follow. If he shows confusion, the target will know they are losing.",
+    "leakage": "A slight pause before he says 'Check the 30th floor.' He is hesitating because the data from the 30th floor is empty. He is waiting for the system to confirm that it is empty.",
+    "inhibited_impulse": "He wanted to say 'She is not here.' He wanted to admit that the search is failing. He did not. He said 'Check the 30th floor.' instead."
+   },
+   "intention": "To locate and capture Trinity.",
+   "action": "He walks through the hotel lobby, his sunglasses reflecting the dim lights. He speaks into his earpiece, directing Brown and Jones to the upper floors. He stops in front of the elevator, waiting for it to open. He does not look at the phone on the front desk, which is ringing off the hook, then going dead.",
+   "trajectory": [
+    {
+     "phase": "On entering the lobby",
+     "shift": "He is in 'hunting' mode, confident and aggressive. He believes he is closing in.",
+     "trigger": "The sight of the empty lobby. The absence of police inside the building.",
+     "state_delta": {
+      "variable": "pursuit_phase",
+      "from": "hunting_trinity",
+      "to": "searching_hotel"
+     }
+    },
+    {
+     "phase": "During the search",
+     "shift": "He begins to feel the 'wrongness' of the situation. The data is not matching the reality. He is starting to doubt his own model of the world.",
+     "trigger": "The report from Brown that the 30th floor is empty. The fact that the phone line is dead.",
+     "state_delta": {
+      "variable": "pursuit_phase",
+      "from": "searching_hotel",
+      "to": "searching_hotel"
+     }
+    },
+    {
+     "phase": "At the elevator",
+     "shift": "He is forced to confront the possibility that she is not in the building. He is about to make a decision that will change the direction of the hunt.",
+     "trigger": "The elevator doors open. He sees the reflection of his own face in the metal. He sees the 'ghost' of Trinity in the reflection, but it is not there.",
+     "state_delta": {
+      "variable": "pursuit_phase",
+      "from": "searching_hotel",
+      "to": "searching_hotel"
+     }
+    }
+   ],
+   "leaving_state": "Smith is still in the hotel, but his confidence is slightly dented. He is no longer 'hunting' in the sense of chasing; he is 'searching' in the sense of looking for a clue. He is about to pivot to a new target, but he has not yet made that decision. He is in a state of 'controlled uncertainty'.",
+   "unresolved": "The fact that Trinity is not in the building. The fact that the phone line is dead. The fact that the Matrix has a flaw that he cannot yet see. He is carrying the weight of a failure that he has not yet admitted."
+  }
+ ],
+ "dynamics": [
+  {
+   "entity": "lo-01",
+   "kind": "location",
+   "entering_state": "A high-security Matrix construct under active police and Agent lockdown. The interior is a labyrinth of glass and steel, currently serving as a temporary prison for Trinity's body and a hunting ground for Agent Smith. The exterior is a static, rainy facade that reflects the city's neon lights, appearing as a solid, impenetrable barrier to anyone who does not know the rules of the simulation.",
+   "forces_acting": [
+    "Agent Smith's systematic search protocol",
+    "The rain and neon lighting of the Matrix weather system",
+    "The tension of the 'hardline' connection being established through its walls",
+    "The physical displacement of Trinity's body from the interior to the exterior"
+   ],
+   "axis_changes": [
+    {
+     "axis": "control",
+     "from": "Agents/Police have absolute jurisdiction over the interior",
+     "to": "Agents have jurisdiction over the interior, but the exterior is a liminal space of transition",
+     "caused_by": "Trinity's extraction via the hardline"
+    },
+    {
+     "axis": "meaning",
+     "from": "A place of danger and entrapment",
+     "to": "A portal between the simulated world and the real world",
+     "caused_by": "The audience's realization that the building is a construct"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "on entering",
+     "shift": "The hotel is presented as a site of high-stakes confrontation. The rain on the exterior glass emphasizes the cold, noir atmosphere. The interior is a maze of pursuit.",
+     "trigger": "The cut from the chase sequence to the exterior shot.",
+     "state_delta": {
+      "variable": "visibility",
+      "from": "Interior chaos",
+      "to": "Exterior stillness"
+     }
+    },
+    {
+     "phase": "during the extraction",
+     "shift": "The hotel's walls become the boundary of the 'hardline.' The location is no longer just a building but a node in a network. The glass reflects the agents' search, but the real action is the invisible connection passing through the structure.",
+     "trigger": "Tank and Dozer initiating the hardline connection.",
+     "state_delta": {
+      "variable": "function",
+      "from": "Physical shelter",
+      "to": "Teleportation node"
+     }
+    },
+    {
+     "phase": "once the door closes",
+     "shift": "Trinity is physically present at the exterior, but her consciousness is transitioning. The hotel remains a trap for those who stay, but a gateway for those who leave.",
+     "trigger": "Trinity's body 'plugging in' at the hotel exterior.",
+     "state_delta": {
+      "variable": "status",
+      "from": "Active hunt site",
+      "to": "Extraction point"
+     }
+    }
+   ],
+   "leaving_state": "A static, rainy exterior that serves as the visual anchor for the transition. It is no longer just a place in the city, but a specific point of contact between two realities. Agent Smith is still searching the interior, unaware that his prey has already crossed the threshold.",
+   "significance_shift": "Before this scene, the hotel was a location of danger. After this scene, it is a 'door.' The audience now understands that physical locations in the Matrix are not fixed points of safety or danger, but are permeable barriers that can be crossed with the right technology (the hardline). This redefines the entire geography of the story."
+  },
+  {
+   "entity": "lo-06",
+   "kind": "location",
+   "entering_state": "A cramped, cluttered hovercraft in the real world. It is dark, filled with the hum of machinery, the smell of ozone and old coffee, and the glow of monitors. It is a mobile command center, a ship, and a home. It is currently in a state of high alert, with the crew monitoring the Matrix for a rescue operation.",
+   "forces_acting": [
+    "The mechanical hum of the engines",
+    "The tension of the crew's focus",
+    "The data stream of the hardline",
+    "The physical constraints of the small space"
+   ],
+   "axis_changes": [
+    {
+     "axis": "status",
+     "from": "Clear/Idle",
+     "to": "Active/Rescue Operation",
+     "caused_by": "The initiation of the hardline"
+    },
+    {
+     "axis": "cohesion",
+     "from": "Routine professionalism",
+     "to": "Focused intensity",
+     "caused_by": "The life-or-death stakes of the extraction"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "on entering",
+     "shift": "The Nebuchadnezzar is established as a gritty, real-world location. The contrast with the clean, neon-lit Matrix is stark. The crew is seen in their element, professional and detached.",
+     "trigger": "The cut from the hotel exterior to the ship's interior.",
+     "state_delta": {
+      "variable": "environment",
+      "from": "Simulated",
+      "to": "Real"
+     }
+    },
+    {
+     "phase": "during the extraction",
+     "shift": "The ship becomes a conduit. The monitors show the hardline connecting to the hotel. The crew's actions are precise and coordinated. The ship is not just a place, but an active participant in the rescue.",
+     "trigger": "Tank and Dozer establishing the hardline.",
+     "state_delta": {
+      "variable": "function",
+      "from": "Mobile base",
+      "to": "Extraction vessel"
+     }
+    },
+    {
+     "phase": "once the door closes",
+     "shift": "The ship is now the only safe place for Trinity. The threat of the Agents is contained within the Matrix, but the ship remains vulnerable to real-world dangers (Sentinels, fuel, etc.).",
+     "trigger": "Trinity's successful extraction.",
+     "state_delta": {
+      "variable": "status",
+      "from": "Active",
+      "to": "Safe (temporarily)"
+     }
+    }
+   ],
+   "leaving_state": "The Nebuchadnezzar is now a symbol of safety and professionalism. It is a real, physical ship that exists outside the Matrix. The crew is a tight-knit unit that operates with precision. The ship is a critical plot device, as it is the only place where the characters can be safe from the Agents.",
+   "significance_shift": "Before this scene, the Nebuchadnezzar was an abstract concept (a ship mentioned in dialogue). After this scene, it is a tangible, real-world location. The audience now understands that there is a 'real world' outside the Matrix, and that the Nebuchadnezzar is the bridge between the two. This redefines the entire story's geography and stakes."
+  },
+  {
+   "entity": "ob-04",
+   "kind": "object",
+   "entering_state": "A small, glowing device attached to Trinity's body. It is a tracking bug, a piece of technology that allows the Agents to locate her in the Matrix. It is currently active, pulsing with a faint light, and is the reason Agent Smith is able to search the hotel so effectively.",
+   "forces_acting": [
+    "The electromagnetic field of the Matrix",
+    "Agent Smith's tracking algorithm",
+    "The physical movement of Trinity's body",
+    "The hardline connection"
+   ],
+   "axis_changes": [
+    {
+     "axis": "custody",
+     "from": "Trinity (in the Matrix)",
+     "to": "Trinity (in the Nebuchadnezzar)",
+     "caused_by": "The extraction"
+    },
+    {
+     "axis": "condition",
+     "from": "Active/Tracking",
+     "to": "Inactive/Disconnected",
+     "caused_by": "The hardline disconnection"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "on entering",
+     "shift": "The tracking bug is a source of tension. It is the reason Trinity is in danger. It is a small, but powerful object that represents the Agents' control over the Matrix.",
+     "trigger": "The cut from the chase sequence to the exterior shot.",
+     "state_delta": {
+      "variable": "status",
+      "from": "Active",
+      "to": "Active"
+     }
+    },
+    {
+     "phase": "during the extraction",
+     "shift": "The tracking bug is disconnected from the Matrix's tracking system. It is no longer a source of danger, but a piece of technology that is being transported to the real world.",
+     "trigger": "The hardline connection.",
+     "state_delta": {
+      "variable": "status",
+      "from": "Active",
+      "to": "Disconnected"
+     }
+    },
+    {
+     "phase": "once the door closes",
+     "shift": "The tracking bug is now in the real world. It is no longer a threat, but a piece of evidence that the Matrix is a simulation. It is a small, but significant object that represents the 'real world' and its technology.",
+     "trigger": "Trinity's successful extraction.",
+     "state_delta": {
+      "variable": "location",
+      "from": "Matrix",
+      "to": "Nebuchadnezzar"
+     }
+    }
+   ],
+   "leaving_state": "The tracking bug is now in the real world. It is a piece of technology that is no longer active, but it is still a source of tension. It is a small, but significant object that represents the 'real world' and its technology.",
+   "significance_shift": "Before this scene, the tracking bug was a source of danger. After this scene, it is a piece of evidence that the Matrix is a simulation. It is a small, but significant object that represents the 'real world' and its technology. This redefines the entire story's stakes and the nature of the threat."
+  }
+ ],
+ "specimen": {
+  "moment": "The hardline is established and Trinity is 'plugged in', converting simulated danger into real-world safety while the Agents' pursuit in the Matrix hits a wall of empty data.",
+  "lines": [
+   {
+    "speaker": "ch-04",
+    "line": "Brown, Jones. Check the thirty floor.",
+    "subtext": "The data says she is not there, but I am not ready to accept it. I will verify the negative to maintain control over the search parameters."
+   },
+   {
+    "speaker": "ch-06",
+    "line": "Hardline is hot. Signal's steady.",
+    "subtext": "The connection is fragile. If this drops, she is gone. I am reporting the status so the crew knows the window is open."
+   },
+   {
+    "speaker": "ch-04",
+    "line": "No movement on the thirty. Check the twenty.",
+    "subtext": "The system is lying to me. She was just here. I am moving the search vector to cover the gap before the data updates."
+   },
+   {
+    "speaker": "ch-06",
+    "line": "Dozer, get the sensors on the lobby. I want to see if the hardline holds.",
+    "subtext": "I need to know if the Agents have locked onto the connection. If they do, we have seconds, not minutes."
+   },
+   {
+    "speaker": "ch-04",
+    "line": "She's not here.",
+    "subtext": "The search is failing. The target has vanished. I am stating the fact to myself before I state it to the others, because it changes the dynamic of the hunt."
+   },
+   {
+    "speaker": "ch-06",
+    "line": "Got her. She's out. Hardline's secure.",
+    "subtext": "The extraction is complete. The danger is over for now. We can breathe. The ship is no longer in immediate threat of being traced."
+   },
+   {
+    "speaker": "ch-04",
+    "line": "Find her.",
+    "subtext": "I do not accept that she is gone. I will find her. The Matrix is my domain, and I do not lose."
+   },
+   {
+    "speaker": "ch-06",
+    "line": "Copy that. Stand by.",
+    "subtext": "The job is done. We are moving to the next phase. The tension is broken, and the crew can return to their routines."
+   }
+  ],
+  "what_this_exposes": "The dialogue reveals that the 'turning point' is not a single moment but a parallel process: Smith's realization of failure and Tank's confirmation of success happen simultaneously. The analysis suggested a 'bridge' between worlds, but the lines show a 'wall'—the two worlds do not interact, they just happen in the same time. This might make the scene feel disjointed rather than bridged.",
+  "risks_checked": [
+   {
+    "risk": "The scene might feel too 'procedural' and lack emotional resonance.",
+    "does_the_exchange_avoid_it": false,
+    "evidence": "The lines are all functional and report status. There is no emotional beat. Smith's 'She's not here' is the closest to emotion, but it is still a statement of fact, not a feeling."
+   },
+   {
+    "risk": "The transition from Matrix to real world might be confusing if not handled carefully.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The lines clearly distinguish the two worlds by their content: Smith talks about floors and movement, Tank talks about hardlines and signals. The audience can follow the parallel tracks."
+   }
+  ],
+  "voices_distinct": "The voices are distinct. Smith is formal, imperative, and focused on the search. Tank is technical, concise, and focused on the equipment. They could not swap lines without it sounding wrong: Smith would not say 'Hardline is hot' and Tank would not say 'Check the thirty floor'."
+ },
+ "continuity": {
+  "established_facts_used": [
+   {
+    "fact": "The scene is set in a decaying hotel (Heart O' The City) at night, following a police raid that cornered Trinity at gunpoint.",
+    "source": "sc-001",
+    "how_used": "Provides the specific location and temporal context (night, post-raid) for the exterior shots and the internal search for Trinity."
+   },
+   {
+    "fact": "Agent Smith is present in the Matrix, specifically hunting Trinity.",
+    "source": "sc-001",
+    "how_used": "Justifies his presence in the hotel windows and establishes his motivation for the search."
+   },
+   {
+    "fact": "Trinity has been extracted from the Matrix into the real world.",
+    "source": "WHAT WAS DECIDED/state_changes_implied[0]",
+    "how_used": "Explains why Smith is searching a room where she is no longer present and allows for the cut to the Nebuchadnezzar."
+   },
+   {
+    "fact": "The Nebuchadnezzar is the vessel where the rescue operation is monitored.",
+    "source": "WHAT WAS DECIDED/state_changes_implied[1]",
+    "how_used": "Establishes the location for Tank and Dozer and the 'plugging in' of Trinity."
+   }
+  ],
+  "constraints_honoured": [
+   "The scene must maintain the distinction between the Matrix (digital construct) and the Real World (physical reality) through visual and auditory cues.",
+   "Agent Smith's presence is limited to the Matrix; he cannot be seen in the real world shots of the Nebuchadnezzar.",
+   "The transition from the hotel exterior to the Nebuchadnezzar must be a hard cut or clear edit to signal the shift in ontological layer."
+  ],
+  "contradictions_checked": [
+   {
+    "risk": "Agent Smith might be perceived as physically present in the real world if the camera work blurs the line between the hotel window reflection and the interior.",
+    "avoided_by": "Strictly framing Smith within the hotel glass/windows, using reflections or interior lighting to keep him contained within the Matrix layer."
+   },
+   {
+    "risk": "Trinity might appear in the hotel interior if she hasn't fully 'woken up' or disconnected.",
+    "avoided_by": "Showing the hotel room empty or Smith searching an empty space, while simultaneously showing Trinity in the pod in the real world."
+   },
+   {
+    "risk": "The hardline connection might seem instantaneous without establishing the technical process.",
+    "avoided_by": "Showing the specific action of 'plugging in' and the subsequent monitoring of the signal by Tank/Dozer before confirming the Agent's presence."
+   }
+  ],
+  "state_preconditions": [
+   {
+    "entity": "ch-04",
+    "variable": "pursuit_phase",
+    "must_be": "hunting_trinity"
+   },
+   {
+    "entity": "ch-02",
+    "variable": "location",
+    "must_be": "Matrix"
+   },
+   {
+    "entity": "lo-06",
+    "variable": "status",
+    "must_be": "clear"
+   }
+  ],
+  "forward_commitments": [
+   "The next scene must show the immediate aftermath of the hardline establishment, likely involving the Agents entering the room or the pod's interior.",
+   "Trinity's reaction to waking up in the real world must be addressed in the subsequent node.",
+   "The specific details of the 'hardline' communication and the Agents' next move must be developed in the following scene."
+  ]
+ }
+}

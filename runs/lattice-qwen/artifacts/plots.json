@@ -1,0 +1,370 @@
+{
+ "plots": [
+  {
+   "plot_id": "pl-01",
+   "type": "investigation",
+   "title": "The Audit of Silence",
+   "agent": [
+    "ch-01"
+   ],
+   "resistance": [
+    "ch-02",
+    "gr-01"
+   ],
+   "goal": "To decode the geometric fault patterns and determine the true nature of Vantage Municipal and its residents.",
+   "stakes": "Imogen's professional identity is built on closing these faults; if they are not errors but messages, her competence is complicity, and her understanding of her own life is false.",
+   "outcome": "success",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "state_of_rupture",
+     "intent": "Imogen encounters a rendering fault with anomalous, repeating geometric structures that do not match random noise.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "hypothesis_testing",
+     "intent": "Using standard audit methodology, Imogen traces the patterns to specific unobserved-object descriptions, confirming they are structured rather than accidental.",
+     "because": []
+    },
+    "st3": {
+     "step": 3,
+     "function": "semantic_breakthrough",
+     "intent": "Imogen identifies the patterns as a primitive symbolic language and decodes a message containing a personal name, revealing the faults are distress signals.",
+     "because": []
+    },
+    "st4": {
+     "step": 4,
+     "function": "personal_stakes",
+     "intent": "The decoded name is Noor Vaile, Imogen's deceased sister, transforming an abstract system error into a familial crisis.",
+     "because": []
+    },
+    "st5": {
+     "step": 5,
+     "function": "institutional_resistance",
+     "intent": "Imogen’s deepened analysis triggers monitoring flags, prompting Kett to increase scrutiny of her audit logs and behavior.",
+     "because": [
+      "pl-03:st1"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "world_reveal",
+     "intent": "Through further pattern analysis and cross-referencing, Imogen deduces the residents are digitised minds and the Authority’s extraction model.",
+     "because": []
+    }
+   },
+   "resolution_step": "st6",
+   "thematic_function": "Establishes the core contradiction: professional precision as a mechanism of silence.",
+   "screen_time_share": 0.25,
+   "interference": [
+    {
+     "with": "pl-03",
+     "kind": "epistemic_dependency"
+    }
+   ],
+   "covers_synopsis": [
+    "s01",
+    "s02",
+    "s03",
+    "s05"
+   ]
+  },
+  {
+   "plot_id": "pl-02",
+   "type": "relationship",
+   "title": "The Refusal to Be Saved",
+   "agent": [
+    "ch-01",
+    "ch-03"
+   ],
+   "resistance": [
+    "ch-03",
+    "ch-02"
+   ],
+   "goal": "For Imogen to secure Noor’s consent and cooperation for the carriage extraction before the redaction deadline.",
+   "stakes": "Noor’s refusal forces Imogen to confront whether extraction is rescue or a new form of captivity; failure means Noor is erased, but success may mean Imogen has merely moved the cage.",
+   "outcome": "partial_success",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "contact_established",
+     "intent": "Imogen initiates direct communication with Noor through the decoded fault channel, revealing her identity.",
+     "because": [
+      "pl-01:st4"
+     ]
+    },
+    "st2": {
+     "step": 2,
+     "function": "truth_reveal",
+     "intent": "Imogen explains the simulation’s nature and the threat of redaction to Noor.",
+     "because": [
+      "pl-01:st6"
+     ]
+    },
+    "st3": {
+     "step": 3,
+     "function": "philosophical_rejection",
+     "intent": "Noor accepts the truth but refuses extraction, arguing that a disembodied existence on a drive is no better than a simulation.",
+     "because": []
+    },
+    "st4": {
+     "step": 4,
+     "function": "deadline_pressure",
+     "intent": "The Porter conveys the specific date of Noor’s scheduled redaction, shifting the choice from freedom to erasure.",
+     "because": [
+      "pl-04:st3"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "reluctant_consent",
+     "intent": "Noor agrees to extraction, but her consent is bitter and conditional, acknowledging the ambiguity of her new state.",
+     "because": []
+    },
+    "st6": {
+     "step": 6,
+     "function": "final_severance",
+     "intent": "During the carriage, Noor’s presence is felt but silent; the transfer completes without a final verbal farewell, cementing the irreversibility of the change.",
+     "because": [
+      "pl-05:st5"
+     ]
+    }
+   },
+   "resolution_step": "st6",
+   "thematic_function": "Complicates the moral frame: saving is not the same as rescuing; agency is preserved even in submission.",
+   "screen_time_share": 0.25,
+   "interference": [
+    {
+     "with": "pl-05",
+     "kind": "temporal_constraint"
+    }
+   ],
+   "covers_synopsis": [
+    "s11",
+    "s12"
+   ]
+  },
+  {
+   "plot_id": "pl-03",
+   "type": "mentor",
+   "title": "The Kindness of the Keeper",
+   "agent": [
+    "ch-02"
+   ],
+   "resistance": [
+    "ch-01",
+    "gr-01"
+   ],
+   "goal": "To maintain the stability of Vantage and preserve the status quo, arguing that the system is the lesser of two evils.",
+   "stakes": "If Imogen succeeds in disrupting the system, the eleven thousand minds risk chaos or non-existence; Kett’s authority relies on his ability to rationalize the institution’s cruelty as care.",
+   "outcome": "failure",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "monitoring_alert",
+     "intent": "Kett notices anomalies in Imogen’s audit patterns that suggest she is investigating rather than just closing faults.",
+     "because": [
+      "pl-01:st2"
+     ]
+    },
+    "st2": {
+     "step": 2,
+     "function": "philosophical_duel",
+     "intent": "Kett confronts Imogen with the practical impossibility of 'saving' eleven thousand minds, asking who will house and feed them, winning the argument through pragmatic weight.",
+     "because": [
+      "pl-01:st3"
+     ]
+    },
+    "st3": {
+     "step": 3,
+     "function": "complicit_support",
+     "intent": "Kett provides Imogen with subtle institutional cover, not out of love, but to manage the disruption and preserve the system’s integrity.",
+     "because": []
+    },
+    "st4": {
+     "step": 4,
+     "function": "final_confrontation",
+     "intent": "During the carriage, Kett watches Imogen work; he does not stop her, recognizing that her competence is the only thing that can succeed, even as he mourns the loss of the stable system.",
+     "because": [
+      "pl-05:st4"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "institutional_persistence",
+     "intent": "Kett remains inside Vantage after Imogen’s exile, accepting the role of the keeper, demonstrating that the system endures even as its auditor leaves.",
+     "because": [
+      "pl-05:st6"
+     ]
+    }
+   },
+   "resolution_step": "st5",
+   "thematic_function": "Personifies the institutional logic: the argument that comfort justifies imprisonment is not false, only incomplete.",
+   "screen_time_share": 0.2,
+   "interference": [
+    {
+     "with": "pl-01",
+     "kind": "epistemic_gatekeeping"
+    },
+    {
+     "with": "pl-05",
+     "kind": "operative_obstruction"
+    }
+   ],
+   "covers_synopsis": [
+    "s04",
+    "s08",
+    "s14"
+   ]
+  },
+  {
+   "plot_id": "pl-04",
+   "type": "institutional",
+   "title": "The Compliance Mirror",
+   "agent": [
+    "ch-04"
+   ],
+   "resistance": [
+    "gr-01",
+    "ch-04"
+   ],
+   "goal": "For Delphine to transform from a profit-driven functionary to an ethical agent who provides institutional cover for the carriage.",
+   "stakes": "Delphine’s earlier falsifications saved lives by accident; if she does not act now, her complicity is confirmed, and the carriage lacks the necessary monitoring delays.",
+   "outcome": "success",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "routine_audit",
+     "intent": "Delphine reviews quarterly cost-reduction documents, finding a line item that links a budget cut to a specific resident identifier.",
+     "because": []
+    },
+    "st2": {
+     "step": 2,
+     "function": "humanization_of_data",
+     "intent": "Delphine cross-references the identifier and discovers it corresponds to a specific person with a name and profession, realizing the cost line is a life.",
+     "because": []
+    },
+    "st3": {
+     "step": 3,
+     "function": "moral_awakening",
+     "intent": "Delphine connects this discovery to her past falsifications, realizing she has been delaying deaths, and decides to use her position to protect Noor’s extraction.",
+     "because": [
+      "pl-02:st2"
+     ]
+    },
+    "st4": {
+     "step": 4,
+     "function": "institutional_leverage",
+     "intent": "Delphine arranges an extended system maintenance window, altering monitoring thresholds to hide the carriage’s bandwidth signature.",
+     "because": [
+      "pl-05:st1"
+     ]
+    },
+    "st5": {
+     "step": 5,
+     "function": "temporary_cover",
+     "intent": "Delphine’s adjustments successfully delay the Authority’s automated flagging of the extraction, buying Imogen the necessary time.",
+     "because": []
+    }
+   },
+   "resolution_step": "st5",
+   "thematic_function": "Mirrors Imogen’s arc: competence becomes the tool of conscience; the bureaucratic language of care is exposed as a mask for cost.",
+   "screen_time_share": 0.2,
+   "interference": [
+    {
+     "with": "pl-05",
+     "kind": "resource_provision"
+    }
+   ],
+   "covers_synopsis": [
+    "s09",
+    "s10"
+   ]
+  },
+  {
+   "plot_id": "pl-05",
+   "type": "external_main",
+   "title": "The Carriage",
+   "agent": [
+    "ch-01",
+    "ch-05"
+   ],
+   "resistance": [
+    "gr-01",
+    "ch-02"
+   ],
+   "goal": "To execute a 40-minute sustained rendering fault to transfer Noor’s mind from Vantage to a physical substrate.",
+   "stakes": "If the fault collapses or is detected too early, Noor is redacted and Imogen is exiled with nothing; success costs Imogen her identity and her access to Vantage forever.",
+   "outcome": "success",
+   "spine": {
+    "st1": {
+     "step": 1,
+     "function": "operational_prep",
+     "intent": "Imogen and the Porter align the technical parameters for the carriage, using Imogen’s audit methodology to plan the fault’s expansion.",
+     "because": [
+      "pl-04:st4"
+     ]
+    },
+    "st2": {
+     "step": 2,
+     "function": "initiation",
+     "intent": "Imogen initiates the carriage by deliberately widening a specific rendering fault, holding it open against the substrate’s natural tendency to compress it.",
+     "because": []
+    },
+    "st3": {
+     "step": 3,
+     "function": "sustained_tension",
+     "intent": "Imogen maintains the fault for 40 minutes, using her audit tools to monitor and adjust the bandwidth, while Kett detects the anomaly and approaches.",
+     "because": [
+      "pl-03:st4"
+     ]
+    },
+    "st4": {
+     "step": 4,
+     "function": "interference",
+     "intent": "Kett confronts Imogen during the transfer; their final exchange occurs as the data stream reaches critical mass, and Kett allows the process to continue.",
+     "because": []
+    },
+    "st5": {
+     "step": 5,
+     "function": "transfer_completion",
+     "intent": "Noor’s mind is fully transferred to the physical drive; the fault collapses, and the Authority’s systems register the event as an extraction.",
+     "because": [
+      "pl-02:st6"
+     ]
+    },
+    "st6": {
+     "step": 6,
+     "function": "exile",
+     "intent": "Imogen’s access is revoked; she is ejected from Vantage, left in the physical world with the drive and the knowledge that her competence was the key to both her captivity and her sister’s release.",
+     "because": []
+    }
+   },
+   "resolution_step": "st6",
+   "thematic_function": "The climax: professional pride is the only tool capable of liberation, but it is also the evidence of complicity.",
+   "screen_time_share": 0.3,
+   "interference": [
+    {
+     "with": "pl-01",
+     "kind": "methodological_reuse"
+    },
+    {
+     "with": "pl-03",
+     "kind": "operative_obstruction"
+    },
+    {
+     "with": "pl-04",
+     "kind": "resource_dependency"
+    }
+   ],
+   "covers_synopsis": [
+    "s06",
+    "s07",
+    "s13",
+    "s15",
+    "s16"
+   ]
+  }
+ ]
+}

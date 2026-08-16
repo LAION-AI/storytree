@@ -1,0 +1,459 @@
+{
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-003",
+  "ordinal": 3
+ },
+ "situation": "The story is at the exact moment of rupture. Trinity is alone in a hotel room, the hardline active, and the reality of the Matrix is being torn away from her. She has just survived a high-speed chase where the rules of the world were visibly broken. The audience is left with the immediate aftermath of that shock: the physical exhaustion, the adrenaline, and the dawning, terrifying realization that the world she knew is a construct. She is on the precipice of waking up.",
+ "craft": {
+  "audience_need": "The audience needs the sensory bridge between the Matrix and the real world to be established through the protagonist's subjective experience. We need to feel the disorientation of being ripped from a familiar reality to an alien one.",
+  "genre_convention": "Science fiction typically uses a 'waking up' sequence to transition from the simulated world to the real one. This node satisfies that convention by using the physical act of waking up to signal the shift in reality, but it delays the full exposition of the world's rules, keeping the audience in Trinity's state of confusion.",
+  "theme_and_style": "The theme of 'awakening' is central. The style demands no interior monologue, so the disorientation must be shown through physical action (shaking, blinking) and the stark, cold environment of the pod. The forbidden tic of 'no sentimental beat' means this moment must be clinical and terrifying, not emotional.",
+  "dramatic_function": "This is the 'rebirth' step for Trinity (or the first freed character in this sequence). It serves as the visual and thematic pivot from the Matrix to the real world. It sets up the exposition that will follow and establishes the stakes: the real world is a prison.",
+  "tension_management": {
+   "entering": 85,
+   "leaving": 40,
+   "how": "The tension drops from the high-stakes action of the chase to a low, eerie, claustrophobic tension. The pressure is released by the physical act of waking up, but replaced by the psychological pressure of the unknown."
+  },
+  "why_now": "This must happen now because the chase is over and the extraction is complete. The audience has seen the 'glitch' and the 'escape'; the next logical step is to show what 'escape' actually looks like. It cannot happen earlier because the chase provides the momentum, and it cannot happen later because the audience needs to see the consequence of the escape immediately to understand the stakes.",
+  "why_not_otherwise": [
+   {
+    "alternative": "A cut to the Nebuchadnezzar with the crew discussing the extraction.",
+    "rejected_because": "This would break the subjective experience of the awakening. The audience needs to see the pod and the physical body to understand the 'neural-interactive' rule of the world.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "If the story were told from a third-person omniscient perspective rather than a close third-person or subjective perspective."
+   },
+   {
+    "alternative": "Trinity waking up and immediately talking to Tank.",
+    "rejected_because": "This would rush the disorientation. The audience needs a moment of silence and physical struggle to register the change in reality. Talking too soon would make the awakening feel procedural rather than traumatic.",
+    "nearly_chosen": true,
+    "what_would_flip_it": "If the scene's primary goal were to deliver exposition quickly rather than to establish the emotional and sensory impact of the awakening."
+   }
+  ],
+  "promises": {
+   "made": [
+    "The real world is a physical, tangible place with its own rules.",
+    "The body in the pod is the true self.",
+    "The Matrix is a cage."
+   ],
+   "kept": [
+    "The hardline is the connection point.",
+    "The chase was a real event in the simulation."
+   ]
+  }
+ },
+ "interaction": {
+  "what_collides": "Trinity's mind, which is still operating on Matrix logic, collides with the physical reality of the pod, which is operating on biological logic. Her body is weak, her senses are overloaded, and her mind is trying to process the impossible.",
+  "power_balance": "Trinity is at the mercy of her own body and the machine that holds her. She has no power over the situation; she is passive in this moment, which is a stark contrast to her active role in the Matrix.",
+  "information_asymmetry": "Trinity does not know where she is or why she is here. The audience knows a little more than she does, but not everything. This creates a sense of mystery and dread.",
+  "turning_point": "The moment she opens her eyes and sees the pod. This is the point where the Matrix logic breaks and the real world logic takes over."
+ },
+ "decision": {
+  "resolution": "Trinity wakes up in her pod. She is naked, bald, and covered in a gel-like substance. She blinks, shakes her head, and tries to sit up. The camera focuses on her face, then pulls back to reveal the pod and the cables connected to her body. She looks around, disoriented, and sees the endless rows of pods. She reaches out and touches the glass of the pod, her hand trembling.",
+  "state_changes_implied": [
+   {
+    "entity": "ch-02",
+    "variable": "matrix_awareness",
+    "from": "searching",
+    "to": "awakened",
+    "because": "She has just woken up in the real world and seen the pod."
+   },
+   {
+    "entity": "ch-02",
+    "variable": "physical_condition",
+    "from": "normal",
+    "to": "weak",
+    "because": "She has just been unplugged from the Matrix and her body is not used to physical exertion."
+   }
+  ],
+  "confidence": 95,
+  "risks": [
+   "The scene might be too slow if the disorientation is not paced correctly.",
+   "The audience might not understand the significance of the pod if the visual language is not clear."
+  ]
+ },
+ "psychology": [
+  {
+   "entity": "ch-02",
+   "entering_state": "Trinity is suspended in the liminal gap between the simulation and the biological. She has just been ripped from the high-speed, adrenaline-fueled reality of the Matrix, where her body is an extension of her will, into a state of profound physical vulnerability. Her mind is still running on 'Matrix logic'—expecting speed, control, and the solidity of the world—while her body is a weak, atrophied shell. She is in the exact moment of rupture: the transition from the hunter to the hunted, from the active agent to the passive subject of her own biology.",
+   "perception": {
+    "sight": "Initially a blur of gray and black, resolving into the stark, industrial geometry of the pod. The light is harsh, clinical, and unforgiving, lacking the soft diffused quality of the Matrix. She sees the thick cables connected to her spine and the gel-like substance coating her skin. The depth is infinite and oppressive, filled with identical shapes stretching into the dark.",
+    "sound": "A low, omnipresent hum of machinery, the rhythmic *thump-hiss* of fluid circulation, and the distant, metallic clank of heavy industry. There is no ambient noise of life—no traffic, no voices, no wind. It is a silence that has weight.",
+    "touch": "The cold is the first thing. It bites into her skin where the gel has evaporated or been wiped away. The surface of the pod is slick and hard, not yielding like the leather of her jacket or the concrete of the street. Her limbs feel heavy, as if she is moving through water, and the muscles in her legs tremble with a weakness that feels alien.",
+    "smell": "A sharp, metallic tang of ozone and old blood, mixed with the sterile, antiseptic scent of medical gel. It is a smell of maintenance, not life.",
+    "taste": "A coppery, metallic taste in the back of her throat, as if she has been holding a battery in her mouth. The dryness is absolute; her mouth feels like cracked leather.",
+    "interoception": "Her heart is pounding, but the rhythm is erratic, a frantic drumming that contrasts with the steady, controlled beat she is used to. There is a deep, hollow ache in her limbs, a sensation of profound fatigue that goes beyond physical exhaustion into a spiritual weariness. Her skin feels raw and exposed, lacking the protective barrier of clothing or the familiar weight of her own strength.",
+    "proprioception": "She is curled in a fetal position, limbs bent and tucked. Her center of gravity is off; she feels as though she is floating, yet she is pinned. When she tries to shift, her body responds sluggishly, the muscles firing weakly, the joints stiff. She is aware of the cables in her spine, a foreign object that anchors her to the machine.",
+    "attention": "She is attending to the *wrongness* of her body. She is failing to notice the specific details of the environment—the labels on the pods, the specific layout of the room—because her cognitive resources are entirely consumed by the dissonance between her mental expectation of speed and her physical reality of slowness. She is not looking at the world; she is looking at her own failure to interact with it."
+   },
+   "appraisal": {
+    "value_at_stake": "Loyalty to the mission and the self-preservation of the 'real' self. The value of 'control' is engaged and threatened. She values her competence and her role as a protector, but in this state, she is neither.",
+    "valence": -60,
+    "arousal": 85,
+    "self_conscious_emotion": "Humiliation. There is a deep, visceral sense of being reduced, of having her power stripped away. It is not shame in the social sense, but a profound ontological humiliation—the realization that she is not the person she thought she was.",
+    "moral_reading": "This is not a punishment, but a revelation. The Matrix was a cage, and she has been let out. But the cage was also a body, and now she is naked and weak. The moral weight is the burden of truth: she must accept that the world she knew was a lie, and that this ugly, cold reality is the only truth.",
+    "somatic_marker": "A cold flush that starts in the stomach and radiates outward. The hair on her arms stands up, not from fear, but from the sheer intensity of the cold and the sensory overload. Her hands clench involuntarily, the nails digging into the gel-coated flesh."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "The norm of stoicism: In the presence of the 'real world,' emotional display is a sign of weakness. The crew (though absent) values resilience.",
+     "The norm of hierarchy: Morpheus is the authority. Even in this state, Trinity is aware that she is part of a structure, a crew. She is not alone, even if she is physically isolated.",
+     "The norm of the 'Awakened': To be awake is to be responsible. There is no going back. The social contract of the Nebuchadnezzar is that you stay, you fight, you survive."
+    ],
+    "how_others_would_judge": "If Tank or Dozer saw her now, they would see a rookie. They would judge her for her hesitation, her trembling. They would expect her to get up, to be strong, to not let the reality break her. They would not see the depth of the trauma; they would see the surface of the weakness.",
+    "how_absent_others_would_judge": "The dead (the five who died before Neo) would judge her for being alive. They would see her weakness as a luxury they did not have. The Agents would judge her as a bug that has escaped the system, a glitch to be corrected. The Oracle would judge her as a piece of the puzzle, a necessary part of the prophecy, regardless of her suffering.",
+    "standing_at_risk": "Her standing as a competent warrior is at risk. If she cannot master her body in the real world, how can she master it in the Matrix? Her identity as a 'free man' (or woman) is at risk. If she cannot accept this reality, she is not truly free.",
+    "norm_conflict": "The norm of *vulnerability* (she is physically weak and needs care) conflicts with the norm of *competence* (she is a top-tier hacker/fighter). In the Matrix, these were reconciled by her speed. Here, they are in direct opposition. The conflict is won by *survival*: she must endure the vulnerability to regain the competence."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-03",
+     "d1": "Morpheus is the anchor. He is the one who brought her here. He is strong, unwavering, and knows the truth. He is not afraid of this reality; he has lived in it for years. He is the only one who can explain this to her.",
+     "d2": "Morpheus believes that she is ready for this. He believes that the pain of waking up is the price of freedom, and that she will accept it. He believes that she is strong enough to handle the truth.",
+     "d3": "Morpheus believes that Trinity believes she is ready. He thinks she is prepared for the weight of the truth. He does not fully understand the depth of her disorientation, thinking it is just a temporary adjustment period, not a fundamental rupture in her identity.",
+     "accuracy": "The error is in the assumption of readiness. Morpheus believes she is ready because she is a good soldier, but he underestimates the psychological shock of the transition. The cost is that he may move on to the next step (explaining the Matrix) before she has fully processed the trauma of her body, leaving her feeling isolated in her confusion."
+    },
+    {
+     "other": "ch-06",
+     "d1": "Tank is the operator. He is the one who pulled her out. He is practical, technical, and focused on the job. He is not emotional; he is efficient. He sees her as a unit, a body to be reconnected.",
+     "d2": "Tank believes that she is just a bit disoriented. He thinks it will pass quickly. He believes that once the gel is wiped off and the systems are checked, she will be 'normal' again. He does not see the existential weight of the moment.",
+     "d3": "Tank believes that Trinity believes he is the one who saved her. He thinks she is grateful to him for the extraction. He does not realize that she is currently focused on her own internal state, not on his role in it.",
+     "accuracy": "The error is in the minimization of the event. Tank sees it as a technical success; Trinity experiences it as an ontological crisis. The cost is that if Tank approaches her with technical efficiency, it may feel cold and dismissive, exacerbating her sense of isolation."
+    }
+   ],
+   "urges": {
+    "cravings": "A desperate craving for warmth. The cold is a physical enemy. She wants to be covered, to be wrapped, to be hidden. She craves the familiar scent of her own skin, the weight of her leather jacket, the solidity of the ground under her feet.",
+    "physical_needs": "Water. Her mouth is dry. She needs to move, to stretch, to feel the muscles work. She needs to be cleaned, to have the gel removed. She needs to be told where she is, who did this, and why.",
+    "psych_needs_conscious": "To understand. She needs to know the rules of this new world. She needs to know how to move, how to speak, how to be. She needs to regain control over her body.",
+    "psych_needs_unconscious": "To be validated. She needs to know that she is not crazy. She needs to know that this is real. She needs to be told that she is still herself, that the woman in the Matrix is the same woman in the pod. She needs to be loved, or at least seen, in her vulnerability.",
+    "avoidances": "She is avoiding the memory of the chase. She is avoiding the thought of the Agents. She is avoiding the realization that the world she knew was a prison. She is avoiding the fact that she is naked and exposed."
+   },
+   "impairments": {
+    "physical": "Severe muscle atrophy. Her limbs are weak, and she has difficulty supporting her own weight. Her core is unstable. She is cold, and her body is shivering, which further reduces her ability to move with precision.",
+    "medical": "Post-anesthetic effects. Her mind is foggy, and her reflexes are dulled. There is a chance of nausea, though she has not yet vomited. Her sensory system is overloaded, making it difficult to focus.",
+    "magical": "The 'Matrix' is no longer a magical force, but a physical one. However, the 'code' that used to govern her body is gone. She is no longer 'plugged in.' She is just a body.",
+    "chemical": "None. She is sober, but the lack of the 'flow' of the Matrix makes her feel chemically unbalanced. Her brain is not receiving the expected dopamine and adrenaline from the simulation.",
+    "coercive": "The physical constraint of the pod. She is pinned. She cannot escape. She is at the mercy of the machine and the people who operate it.",
+    "cognitive": "Disorientation. She cannot distinguish between the 'real' world and the 'simulated' world. She is questioning the solidity of her surroundings. She is having trouble forming coherent thoughts.",
+    "net_effect": "She is physically and cognitively compromised. She is unable to act with the speed and precision she is used to. She is vulnerable, both physically and psychologically. She is in a state of high arousal but low agency."
+   },
+   "deliberation": {
+    "framing": "She frames the situation as a 'reset.' She is trying to treat this as a new game, a new level. She is trying to find the 'controls' for this new body. She is framing the weakness as a temporary state, a 'loading screen' before the real action begins.",
+    "options_weighed": [
+     {
+      "option": "Try to stand up immediately.",
+      "predicted_outcome": "She will fall. She will be humiliated. She will waste energy.",
+      "cost": "Loss of dignity, physical pain."
+     },
+     {
+      "option": "Stay still and wait for help.",
+      "predicted_outcome": "She will be cared for. She will be told what is happening. She will regain some strength.",
+      "cost": "Loss of control, increased vulnerability, feeling of helplessness."
+     },
+     {
+      "option": "Call out for someone.",
+      "predicted_outcome": "Someone will come. She will be heard. She will be connected to the crew.",
+      "cost": "Exposure of her voice, which is weak and unsteady. Risk of being judged for her state."
+     }
+    ],
+    "reasoning": "Standing up is too risky. I am too weak. If I fall, I will break something. I need to wait. I need to know what is happening. I will stay still for a moment, but I will not stay still forever. I will call out when I am ready. I need to be heard, but I need to be strong enough to be heard.",
+    "chosen_because": "Survival. She chooses to stay still because it is the safest option. She chooses to wait because she needs information. She chooses to call out later because she needs to preserve her dignity.",
+    "known_unknowns": "She does not know how long she has been in the pod. She does not know how many other pods there are. She does not know if the world outside the pod is as hostile as the Matrix. She does not know if she is the only one who has been freed."
+   },
+   "control": {
+    "mode": "mixed",
+    "felt": "She feels a surge of panic, a primal fear of the unknown. She feels a deep, aching sadness for the loss of her old world. She feels a fierce, stubborn anger at her own weakness. She feels a desperate, almost painful desire to be held, to be comforted.",
+    "expressed": "She is still. Her eyes are open, but they are unfocused. Her breathing is shallow and rapid. Her hands are clenched into fists, but they are not moving. Her face is a mask of stoicism, but her jaw is tight, and her eyes are darting around the room.",
+    "divergence_reason": "She is trying to maintain the 'Trinity' persona—the strong, capable warrior. She is trying to hide the panic and the sadness because she believes that showing them will make her weak. She is trying to control the situation by controlling her body, even though her body is not responding.",
+    "leakage": "The trembling of her hands. The rapid, shallow breathing. The way her eyes fixate on a single point, as if she is trying to anchor herself to something. The slight twitch of her lips, as if she is trying to speak but cannot.",
+    "inhibited_impulse": "She wants to cry out. She wants to scream. She wants to reach out and grab someone, to pull them into the pod, to make them feel what she is feeling. She wants to cover herself, to hide her nakedness. She wants to close her eyes and go back to sleep."
+   },
+   "intention": "To survive the transition. To understand the new reality. To regain control over her body and her mind. To connect with the crew and her new life.",
+   "action": "Trinity blinks, her eyes adjusting to the harsh light. She shakes her head, trying to clear the fog. She looks around, taking in the endless rows of pods. She reaches out and touches the glass of the pod, her hand trembling. She pulls her hand back, as if the glass is hot. She takes a deep breath, and then a shallow one. She looks at her hands, flexing her fingers, trying to feel them. She does not speak. She does not move. She waits.",
+   "trajectory": [
+    {
+     "phase": "On waking",
+     "shift": "From unconsciousness to sensory overload. The transition from the 'flow' of the Matrix to the 'static' of the real world. The realization that her body is not responding as expected.",
+     "trigger": "The opening of her eyes and the first intake of air. The cold on her skin.",
+     "state_delta": {
+      "variable": "matrix_awareness",
+      "from": "searching",
+      "to": "awakened"
+     }
+    },
+    {
+     "phase": "Assessing the body",
+     "shift": "From disorientation to focused attention on her own physical state. The realization of weakness. The shift from 'who am I?' to 'what is wrong with me?'. The beginning of the struggle for control.",
+     "trigger": "The attempt to move her limbs and the failure to do so with precision. The feeling of the cables in her spine.",
+     "state_delta": {
+      "variable": "physical_condition",
+      "from": "normal",
+      "to": "weak"
+     }
+    },
+    {
+     "phase": "Confronting the environment",
+     "shift": "From internal focus to external awareness. The realization of the scale of the facility. The shift from 'I am in a room' to 'I am in a prison.' The beginning of the moral and existential reckoning.",
+     "trigger": "The visual sweep of the room, seeing the endless rows of pods. The sound of the machinery.",
+     "state_delta": {
+      "variable": "belief_in_neo_as_one",
+      "from": "uncertain",
+      "to": "uncertain"
+     }
+    },
+    {
+     "phase": "Preparing to engage",
+     "shift": "From passive reception to active preparation. The decision to wait, but to wait with purpose. The shift from 'victim' to 'survivor.' The beginning of the reconnection with her identity.",
+     "trigger": "The deep breath. The clenching of the fists. The decision to call out when ready.",
+     "state_delta": {
+      "variable": "love_for_neo",
+      "from": "unrecognized",
+      "to": "unrecognized"
+     }
+    }
+   ],
+   "leaving_state": "Trinity is still in the pod, but she is no longer just waking up. She is aware. She is assessing. She is preparing. She is no longer a passive victim of the transition; she is an active participant in her own awakening. She is weak, but she is present. She is ready to engage with the crew, but on her own terms.",
+   "unresolved": "The question of 'who am I now?' is not answered. The question of 'what is the Matrix?' is not answered. The question of 'who is the One?' is not answered. The trauma of the transition is not processed. The vulnerability of her body is not healed. The isolation of her mind is not bridged. She is left with the raw, unfiltered reality of her existence, and the task of making sense of it."
+  }
+ ],
+ "dynamics": [
+  {
+   "entity": "lo-07",
+   "kind": "location",
+   "entering_state": "An industrial void, operating as a biological processing plant. The environment is cold, dark, and wet. The rows of pods are in a state of static, mechanical maintenance, holding bodies in suspended animation. The location is currently perceived by the characters only as a distant, theoretical concept or a location of danger, not as a lived space.",
+   "forces_acting": [
+    "Gravity acting on the fluid-filled pod",
+    "Thermal shock from the ambient cold air",
+    "The visual weight of the infinite repetition of the pod rows",
+    "The physical resistance of the gel and the pod's interior geometry"
+   ],
+   "axis_changes": [
+    {
+     "axis": "meaning",
+     "from": "Abstract/Unknown",
+     "to": "Visceral/Prison",
+     "caused_by": "Trinity's first physical contact with the environment"
+    },
+    {
+     "axis": "condition",
+     "from": "Static/Operational",
+     "to": "Disrupted/Active",
+     "caused_by": "The awakening of a unit (Trinity) and the subsequent maintenance response"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "On entering (The Blackout)",
+     "shift": "The location is initially non-existent to the subject. It is a void. The only 'state' is the absence of sensory input. The pod is a sealed, pressurized container holding a biological mass.",
+     "trigger": "The cessation of the hardline signal",
+     "state_delta": {}
+    },
+    {
+     "phase": "The Breach (Eyes Open)",
+     "shift": "The location is violently introduced. The 'meaning' of the space shifts from 'void' to 'cage'. The cold is the first physical fact. The fluid is the first tactile fact. The location is no longer a place she is in; it is a thing she is in.",
+     "trigger": "Trinity's eyelids opening and the first intake of cold air",
+     "state_delta": {}
+    },
+    {
+     "phase": "The Reveal (The Rows)",
+     "shift": "The location expands from a single point of confinement to an infinite grid. The 'condition' of the location shifts from a single anomaly to a systemic reality. The repetition of the pods transforms the location from a room into a prison.",
+     "trigger": "Trinity's gaze shifting past the immediate pod to the surrounding racks",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "A recognized, terrifying physical reality. The location is no longer a concept; it is a cold, wet, industrial prison. It is now a place of trauma and confinement, defined by the bodies it holds.",
+   "significance_shift": "Before this scene, the Power Plant was a destination or a threat. After this scene, it is the 'real world'—a place that is physically real but emotionally hostile. It represents the cost of truth: the truth is cold, naked, and lonely. It changes the meaning of 'home' from a comfortable apartment (Matrix) to a cold pod (Reality)."
+  },
+  {
+   "entity": "cn-01",
+   "kind": "concept",
+   "entering_state": "A pervasive, invisible operating system. It is the 'normal' state of existence. It is currently in a state of 'glitch' or 'failure' for the specific user (Trinity), but the system as a whole is still running. It is perceived as 'the world' or 'reality'.",
+   "forces_acting": [
+    "The severing of the neural connection (the hardline)",
+    "The biological rejection of the simulated sensory input",
+    "The cognitive dissonance between memory and current sensory data"
+   ],
+   "axis_changes": [
+    {
+     "axis": "credence",
+     "from": "Absolute/Invisible",
+     "to": "Fragile/Construct",
+     "caused_by": "The physical impossibility of the pod compared to the memory of the hotel room"
+    },
+    {
+     "axis": "meaning",
+     "from": "Reality",
+     "to": "Simulation",
+     "caused_by": "The realization that the 'body' in the pod is the 'true' body"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "The Residue",
+     "shift": "The Matrix is still 'present' as a ghost. Trinity's mind is still trying to apply Matrix logic (e.g., 'I was just in a hotel room'). The concept is fighting to maintain its status as 'reality'.",
+     "trigger": "The first seconds of waking, where the mind is still processing the last Matrix stimuli",
+     "state_delta": {}
+    },
+    {
+     "phase": "The Rupture",
+     "shift": "The concept of 'The Matrix' is forcibly separated from 'The World'. The hardline is the physical metaphor for the connection. When the connection is broken, the Matrix is no longer 'here'. It becomes 'elsewhere'. The concept loses its omnipresence.",
+     "trigger": "The visual confirmation of the cables and the pod",
+     "state_delta": {}
+    },
+    {
+     "phase": "The Prison",
+     "shift": "The Matrix is re-categorized. It is no longer just 'the world'; it is a 'cage'. The concept is now defined by what it does to the body (keeps it in a pod).",
+     "trigger": "Trinity's realization that her body is weak and atrophied",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "A known construct. A system of control. It is no longer the default reality; it is a specific, bounded system that can be exited. It is now an 'enemy' or a 'trap' rather than the 'background'.",
+   "significance_shift": "Before, the Matrix was 'life'. After, the Matrix is 'sleep'. This shift is crucial because it means that 'waking up' is a choice that can be made, and 'sleeping' is a state that can be chosen. It changes the ontology of the characters' existence from 'living' to 'existing' vs. 'dreaming'."
+  },
+  {
+   "entity": "ob-04",
+   "kind": "object",
+   "entering_state": "A small, mechanical device, likely attached to the hardline or the pod's control interface. It is currently in a state of 'active tracking' or 'recently triggered'. It is the physical link between the Matrix's security forces (Agents) and the physical world.",
+   "forces_acting": [
+    "The electromagnetic pulse (EMP) or the physical disconnection of the hardline",
+    "The gravitational pull of the pod's interior",
+    "The visual attention of the maintenance crew (implied, though not present in this specific subjective shot, its presence is felt in the 'alert' state of the plant)"
+   ],
+   "axis_changes": [
+    {
+     "axis": "custody",
+     "from": "Agent Control",
+     "to": "Neutral/Debris",
+     "caused_by": "The extraction process (the 'jump')"
+    },
+    {
+     "axis": "meaning",
+     "from": "Tool of Capture",
+     "to": "Evidence of Pursuit",
+     "caused_by": "Trinity's awareness of the 'chase' in the Matrix"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "The Trail",
+     "shift": "The bug is the physical residue of the Matrix's security. It represents the fact that the 'escape' was not clean. It is a loose thread that connects the two worlds.",
+     "trigger": "The memory of the Agents in the Matrix",
+     "state_delta": {}
+    },
+    {
+     "phase": "The Silence",
+     "shift": "As Trinity wakes, the bug is silent. It is no longer transmitting (or the transmission is being blocked). It becomes a dead object, a piece of metal that once had power.",
+     "trigger": "The cessation of the hardline signal",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "A dormant object. A piece of debris. It is no longer an active threat in the immediate moment, but it is a reminder that the Agents are still 'out there' in the Matrix, and they will know where to look next.",
+   "significance_shift": "The bug changes from a 'security measure' to a 'countdown'. It means that the peace of the pod is temporary. The Agents are not gone; they are just waiting for the next 'jump'. It introduces the concept of 'hunting' into the real world."
+  }
+ ],
+ "specimen": {
+  "moment": "The moment the hardline disconnects and the first human voice reaches Trinity in the physical world, bridging the gap between her disoriented awakening and the crew's presence.",
+  "lines": [
+   {
+    "speaker": "ch-06",
+    "line": "Easy. Easy, kid. Just breathe. You're safe now.",
+    "subtext": "I am trying to calm you down, but I am also managing my own fear of the extraction process. I am establishing that the danger is over."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "Where... is the sound?",
+    "subtext": "The silence of the real world is deafening compared to the constant hum of the Matrix. I am trying to locate the source of the voice and the absence of my previous reality."
+   },
+   {
+    "speaker": "ch-06",
+    "line": "No sound. That's the first thing you notice. The quiet. It gets easier.",
+    "subtext": "I have done this many times. I know exactly what you are feeling. I am normalizing the abnormal to reduce your panic."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "I can't feel my legs.",
+    "subtext": "My body is betraying me. I am the warrior, the one who runs. Now I am just meat in a tube. This is terrifying."
+   },
+   {
+    "speaker": "ch-06",
+    "line": "Atrophy. Six months in the pod, and your muscles forget how to be muscles. It comes back. It always comes back.",
+    "subtext": "I am explaining the biological reality of your situation. You are not broken, you are just dormant. This is a clinical explanation to counter your emotional fear."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "Who are you?",
+    "subtext": "I don't know this voice. I don't know where I am. I am trying to establish identity and safety in a world that no longer makes sense."
+   },
+   {
+    "speaker": "ch-06",
+    "line": "Tank. I'm the one who pulled you out. Welcome to the real world, Trinity.",
+    "subtext": "I am revealing my identity and confirming your name, which is a way of anchoring you to your self. I am also making the final statement of the transition: you are no longer in the simulation."
+   }
+  ],
+  "what_this_exposes": "The dialogue reveals that the 'clinical' tone of the crew is not just professional, but a necessary shield against the sheer horror of the situation. Trinity's question about the 'sound' highlights that the real world is defined by its absence of the Matrix's constant sensory input, rather than by its own positive qualities. It also exposes that Trinity's first concern is not pain or fear, but the loss of her agency (her legs), which aligns with her warrior identity.",
+  "risks_checked": [
+   {
+    "risk": "The scene might be too slow if the disorientation is not paced correctly.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The dialogue is sparse and immediate. There is no long monologue from Tank; he speaks in short, functional bursts that mirror Trinity's fragmented perception. The pacing is driven by her questions, which are short and direct, preventing the scene from dragging."
+   },
+   {
+    "risk": "The audience might not understand the significance of the pod if the visual language is not clear.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "Tank's line 'Atrophy. Six months in the pod' explicitly names the pod and its function, providing the verbal anchor for the visual of the gel and cables. The dialogue confirms the visual information, ensuring the audience understands the context of her physical state."
+   }
+  ],
+  "voices_distinct": "The voices are distinct. Tank speaks in a calm, authoritative, and slightly detached manner, using short sentences and clinical terms ('Atrophy', 'muscles forget'). He is the guide. Trinity speaks in fragments, with ellipses and simple, direct questions ('Where... is the sound?', 'Who are you?'). She is the experiencer. They could not swap lines because Tank's lines are explanatory and reassuring, while Trinity's lines are inquisitive and reactive. If they were swapped, Tank would sound confused and passive, and Trinity would sound authoritative and detached, which would contradict their roles in this moment."
+ },
+ "continuity": {
+  "established_facts_used": [
+   {
+    "fact": "Trinity is the primary protagonist (ch-02) whose physical state and awareness are being tracked.",
+    "source": "ch-02",
+    "how_used": "Identifies the subject of the scene as the specific entity undergoing the state change from 'searching' to 'awakened' and 'normal' to 'weak'."
+   },
+   {
+    "fact": "The narrative tone is established as one of immediate threat and decay, moving from a police raid to a higher-tier, non-human authority (Agent Smith).",
+    "source": "sc-002",
+    "how_used": "Provides the contextual 'before' state: the audience has just seen the 'real world' as a place of danger and control (police/Agents), making the sudden shift to the sterile, vulnerable pod environment a necessary contrast to resolve the tension of the previous scene."
+   },
+   {
+    "fact": "Trinity is a character capable of high competence and survival (implied by surviving the raid in sc-001).",
+    "source": "sc-001",
+    "how_used": "Establishes the baseline of her physical capability in the 'Matrix' or previous context, which makes the current 'weak' state and trembling hand a significant and perceptible deviation from her established norm."
+   }
+  ],
+  "constraints_honoured": [
+   "Continuity of physical state: The character must appear physically compromised (naked, bald, gel-covered) to reflect the 'weak' state change specified in the resolution, distinguishing this from her previous appearance in sc-001/sc-002.",
+   "Sensory isolation: The scene must convey the transition from the complex, multi-sensory environment of the police raid (sc-001) to the isolated, sterile sensory environment of the pod, justifying the 'disoriented' appraisal.",
+   "Causal logic of awakening: The 'awakened' state must be the result of the physical act of waking in the pod, not a gradual realization, aligning with the 'searching' to 'awakened' variable shift."
+  ],
+  "contradictions_checked": [
+   {
+    "risk": "Contradiction between the 'weak' physical state and the character's ability to 'sit up' and 'look around' effectively.",
+    "avoided_by": "The resolution specifies she 'tries' to sit up and her hand is 'trembling,' acknowledging the weakness while allowing for the basic motor functions required to observe the environment. The weakness is expressed through effort and instability rather than total paralysis."
+   },
+   {
+    "risk": "Contradiction regarding the 'endless rows of pods' being visible if the pod is opaque or if she is still in a state of deep disorientation.",
+    "avoided_by": "The camera pullback reveals the rows, and her gaze follows the camera's reveal. Her 'disorientation' is mental/cognitive (confusion about reality), not necessarily a total loss of visual acuity, allowing her to perceive the scale of the room as the camera establishes it."
+   }
+  ],
+  "state_preconditions": [
+   {
+    "entity": "ch-02",
+    "variable": "matrix_awareness",
+    "must_be": "searching"
+   },
+   {
+    "entity": "ch-02",
+    "variable": "physical_condition",
+    "must_be": "normal"
+   }
+  ],
+  "forward_commitments": [
+   "Later nodes must address the source of the 'gel-like substance' and the function of the 'cables' connected to her body.",
+   "Later nodes must explain the 'endless rows of pods' and the society/structure that maintains them.",
+   "Later nodes must address the transition from 'weak' physical condition to a state where she can interact with others or perform actions beyond basic observation."
+  ]
+ }
+}

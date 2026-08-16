@@ -1,0 +1,1175 @@
+{
+ "events": {
+  "ev-001": {
+   "event_id": "ev-001",
+   "story_time": {
+    "index": 1,
+    "label": "Day 1, Morning",
+    "duration_min": 15
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Imogen detects a recurring geometric anomaly in a rendering fault that defies standard noise profiles.",
+   "action": "Imogen sits at her audit console in the Vantage workroom, reviewing the daily batch of rendering faults. Her fingers move with mechanical precision across the interface, closing errors with the speed of long practice. One fault in the coastal district catches her eye: the geometry is not random. It repeats in a specific, structured sequence. She pauses, her pride in her efficiency momentarily suspended by the unfamiliarity of the pattern. She does not close it immediately. Instead, she flags it for deeper analysis, a deviation from her usual workflow that feels like a small, quiet betrayal of her own standards. The overcast sky outside her window offers no comfort, only a uniform grey that matches her growing unease.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "epistemic_fault_nature",
+     "path": "/ch-01/state/epistemic_fault_nature",
+     "dimension": "epistemic",
+     "before": "system_error",
+     "after": "anomalous",
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [],
+   "causes": [
+    "ev-002"
+   ],
+   "causal_note": "The anomaly is visible only because it deviates from the expected random noise, triggering Imogen's audit protocol.",
+   "reversal": false,
+   "plot_function": "Inciting Incident",
+   "is_root": true,
+   "is_sink": false
+  },
+  "ev-002": {
+   "event_id": "ev-002",
+   "story_time": {
+    "index": 2,
+    "label": "Day 1, Midday",
+    "duration_min": 30
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st2"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Imogen traces the anomaly to unobserved objects, confirming the structure is intentional rather than accidental.",
+   "action": "Imogen isolates the flagged fault and runs a deep-dive trace on the underlying data. She cross-references the geometric structures with the database of unobserved objects in the coastal district. The results are consistent: the patterns appear only where objects are stored as compressed descriptions, not rendered geometry. The structure is not noise; it is a signature. Imogen feels a surge of professional satisfaction, her competence validated by the discovery. Yet, beneath the satisfaction, a cold thread of doubt begins to form. If the faults are structured, they are not errors. They are something else. She closes the console, leaving the fault open, a small act of defiance against the system that expects her to erase it.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "epistemic_fault_nature",
+     "path": "/ch-01/state/epistemic_fault_nature",
+     "dimension": "epistemic",
+     "before": "system_error",
+     "after": "structured_signal",
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-001"
+   ],
+   "causes": [
+    "ev-003"
+   ],
+   "causal_note": "The trace is possible only because Imogen has already identified the anomaly as non-random.",
+   "reversal": false,
+   "plot_function": "Rising Action",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-003": {
+   "event_id": "ev-003",
+   "story_time": {
+    "index": 3,
+    "label": "Day 1, Afternoon",
+    "duration_min": 45
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st3"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Imogen decodes the geometric language, revealing a distress signal containing a personal name.",
+   "action": "Imogen spends the afternoon mapping the geometric structures to a symbolic language. The process is tedious, requiring her to build a decoder from scratch using her audit tools. As the patterns begin to resolve into meaning, she feels a growing sense of unease. The language is primitive, but it is clear. It is a call for help. The final decoded message contains a name: Noor Vaile. Imogen freezes, the name echoing in her mind. Noor, her sister, who died ten years ago. The professional pride that has always defined her now feels like a cage. She has been closing the cry for help for years, mistaking it for noise. The fault on her screen pulses with a quiet, relentless urgency.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "epistemic_fault_nature",
+     "path": "/ch-01/state/epistemic_fault_nature",
+     "dimension": "epistemic",
+     "before": "structured_signal",
+     "after": "distress_call",
+     "magnitude": 75
+    },
+    {
+     "entity": "ch-01",
+     "variable": "emotional_grief_intensity",
+     "path": "/ch-01/state/emotional_grief_intensity",
+     "dimension": "emotional",
+     "before": 10,
+     "after": 40,
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-002"
+   ],
+   "causes": [
+    "ev-004"
+   ],
+   "causal_note": "The decoding is possible only after the structure is confirmed as intentional.",
+   "reversal": false,
+   "plot_function": "Midpoint Reveal",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-004": {
+   "event_id": "ev-004",
+   "story_time": {
+    "index": 4,
+    "label": "Day 2, Morning",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03",
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-03",
+     "step": "st1"
+    },
+    {
+     "plot": "pl-01",
+     "step": "st5"
+    },
+    {
+     "plot": "pl-01",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-02",
+    "ch-01"
+   ],
+   "summary": "Kett notices Imogen's audit logs are anomalous and increases his scrutiny of her work.",
+   "action": "Kett reviews the daily audit reports in his office. He focuses on Imogen's logs, noting that she has left several faults open for extended periods, a deviation from her usual efficiency. He does not question her publicly, but he marks her account for closer monitoring. His belief in the system is firm, but he understands that anomalies can spread. He calls Imogen into his office, his tone calm and professional. He asks about her methodology, framing it as a concern for the integrity of the audit. Imogen feels the weight of his gaze, the kindness in his eyes masking the scrutiny beneath. She realizes he is watching her, not just her work. The system is aware of her deviation.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "social_access_status",
+     "path": "/ch-01/state/social_access_status",
+     "dimension": "social",
+     "before": "active_auditor",
+     "after": "under_scrutiny",
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-02",
+     "variable": "social_authority",
+     "path": "/ch-02/state/social_authority",
+     "dimension": "social",
+     "before": 80,
+     "after": 85,
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-003"
+   ],
+   "causes": [
+    "ev-005"
+   ],
+   "causal_note": "Kett's scrutiny is triggered by Imogen's deviation from standard audit protocols.",
+   "reversal": false,
+   "plot_function": "Rising Action",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-005": {
+   "event_id": "ev-005",
+   "story_time": {
+    "index": 5,
+    "label": "Day 2, Midday",
+    "duration_min": 35
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03",
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-03",
+     "step": "st2"
+    },
+    {
+     "plot": "pl-03",
+     "step": "st3"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-02",
+    "ch-01"
+   ],
+   "summary": "Kett argues with Imogen, asserting that the system provides the only viable stability for the residents.",
+   "action": "In Kett's office, the conversation shifts from methodology to philosophy. Kett argues that the system is the lesser of two evils. He points to the stability of Vantage, the comfort of the residents, and the impossibility of housing eleven thousand minds in the physical world. Imogen counters with the distress signals, the cries for help she has been silencing. Kett's argument is pragmatic, grounded in the reality of resources and order. Imogen is struck by the weight of his logic, the way it dismantles her moral certainty. She cannot answer him fully. The argument leaves her shaken, her pride in her competence warring with the growing guilt of her complicity. She leaves the office, her mind racing, unable to find a flaw in his reasoning.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "psychological_pride_integrity",
+     "path": "/ch-01/state/psychological_pride_integrity",
+     "dimension": "psychological",
+     "before": 95,
+     "after": 70,
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-02",
+     "variable": "epistemic_belief_in_system",
+     "path": "/ch-02/state/epistemic_belief_in_system",
+     "dimension": "epistemic",
+     "before": 90,
+     "after": 95,
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-004"
+   ],
+   "causes": [
+    "ev-006"
+   ],
+   "causal_note": "The philosophical duel arises from Kett's need to justify the system and Imogen's growing doubt.",
+   "reversal": false,
+   "plot_function": "Philosophical Duel",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-006": {
+   "event_id": "ev-006",
+   "story_time": {
+    "index": 6,
+    "label": "Day 2, Afternoon",
+    "duration_min": 40
+   },
+   "primary_plot": "pl-01",
+   "plots": [
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-01",
+     "step": "st6"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Imogen deduces the full truth: Vantage is a simulation, and the residents are digitised minds.",
+   "action": "Back in her workroom, Imogen reviews the data she has collected. The pattern is clear: the faults are not errors, but messages. The residents are not people, but digitised minds. The Authority is not a municipal body, but an extraction service. The truth hits her with the force of a physical blow. Her professional identity, built on precision and pride, is revealed as a mechanism of silence. She has been closing the cry for help for years, mistaking it for noise. The overcast sky outside her window seems to press down on her, a constant reminder of the system that has contained her. She realizes the magnitude of her complicity, and the weight of her sister's fate. The audit is no longer a job; it is a crime scene.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "epistemic_fault_nature",
+     "path": "/ch-01/state/epistemic_fault_nature",
+     "dimension": "epistemic",
+     "before": "distress_call",
+     "after": "full_truth",
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-01",
+     "variable": "emotional_grief_intensity",
+     "path": "/ch-01/state/emotional_grief_intensity",
+     "dimension": "emotional",
+     "before": 40,
+     "after": 70,
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-005"
+   ],
+   "causes": [
+    "ev-007"
+   ],
+   "causal_note": "The full truth is deduced from the combination of the decoded messages and Kett's pragmatic argument.",
+   "reversal": false,
+   "plot_function": "World Reveal",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-007": {
+   "event_id": "ev-007",
+   "story_time": {
+    "index": 7,
+    "label": "Day 3, Morning",
+    "duration_min": 25
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01",
+    "ch-03"
+   ],
+   "summary": "Imogen initiates direct communication with Noor through the decoded fault channel.",
+   "action": "Imogen uses her audit tools to open a channel to Noor, using the geometric language she has decoded. She sends a simple message: her name, and a question. Noor responds, her mind still in the simulation, unaware of the true nature of her existence. Imogen watches the response appear on her screen, a small, glowing symbol. The connection is fragile, but it is real. She feels a surge of hope, tempered by the knowledge of the danger they are in. The system is watching, and the fault is a beacon. She must move quickly, before Kett or the Authority can detect the communication. The channel is open, and the truth is waiting to be delivered.",
+   "state_changes": [
+    {
+     "entity": "ch-03",
+     "variable": "epistemic_truth_reveal",
+     "path": "/ch-03/state/epistemic_truth_reveal",
+     "dimension": "epistemic",
+     "before": "ignorant",
+     "after": "suspecting",
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-006"
+   ],
+   "causes": [
+    "ev-008"
+   ],
+   "causal_note": "The communication is possible only after Imogen has decoded the fault language.",
+   "reversal": false,
+   "plot_function": "Contact Established",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-008": {
+   "event_id": "ev-008",
+   "story_time": {
+    "index": 8,
+    "label": "Day 3, Midday",
+    "duration_min": 45
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02",
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st2"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01",
+    "ch-03"
+   ],
+   "summary": "Imogen explains the simulation's nature and the threat of redaction to Noor.",
+   "action": "Imogen transmits the truth to Noor, piece by piece. The simulation, the digitised minds, the Authority's extraction model. Noor's responses slow as the weight of the information sinks in. She asks for proof, for a way to understand. Imogen shows her the faults, the distress signals, the names of the redacted. Noor's agency is tested, her resistance to the truth a shield against the horror. Imogen watches the data stream, feeling the tension of the channel. She knows she is changing Noor's world, and there is no going back. The truth is a blade, and Imogen is holding it. Noor's silence is a question, and Imogen must answer it with the next step: the offer of rescue.",
+   "state_changes": [
+    {
+     "entity": "ch-03",
+     "variable": "epistemic_truth_reveal",
+     "path": "/ch-03/state/epistemic_truth_reveal",
+     "dimension": "epistemic",
+     "before": "suspecting",
+     "after": "aware",
+     "magnitude": 50
+    },
+    {
+     "entity": "ch-03",
+     "variable": "emotional_resistance",
+     "path": "/ch-03/state/emotional_resistance",
+     "dimension": "emotional",
+     "before": 80,
+     "after": 90,
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-007"
+   ],
+   "causes": [
+    "ev-009"
+   ],
+   "causal_note": "The truth reveal is possible only after the channel is established.",
+   "reversal": false,
+   "plot_function": "Truth Reveal",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-009": {
+   "event_id": "ev-009",
+   "story_time": {
+    "index": 9,
+    "label": "Day 3, Afternoon",
+    "duration_min": 40
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st3"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01",
+    "ch-03"
+   ],
+   "summary": "Noor refuses extraction, arguing that a disembodied existence is no better than the simulation.",
+   "action": "Noor's response is a refusal, clear and firm. She argues that a disembodied existence on a drive is no better than a simulation. She is not a ghost to be carried, but a person to be left. Imogen is struck by the force of Noor's agency, the way she reclaims her own narrative. The philosophical rejection is a blow to Imogen's plan, but it is also a gift. It forces her to confront the ambiguity of rescue, the possibility that she is merely moving the cage. Noor's resistance is not stubbornness, but a genuine philosophical position. Imogen watches the data stream, feeling the weight of her sister's choice. The path forward is no longer clear, and the deadline is approaching.",
+   "state_changes": [
+    {
+     "entity": "ch-03",
+     "variable": "psychological_agency",
+     "path": "/ch-03/state/psychological_agency",
+     "dimension": "psychological",
+     "before": 50,
+     "after": 80,
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-008"
+   ],
+   "causes": [
+    "ev-010",
+    "ev-012"
+   ],
+   "causal_note": "The refusal arises from Noor's awareness of the truth and her agency.",
+   "reversal": false,
+   "plot_function": "Philosophical Rejection",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-010": {
+   "event_id": "ev-010",
+   "story_time": {
+    "index": 10,
+    "label": "Day 4, Morning",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-04",
+   "plots": [
+    "pl-04"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-04",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-04"
+   ],
+   "summary": "Delphine reviews quarterly cost-reduction documents, finding a line item linked to a resident identifier.",
+   "action": "Delphine sits in her office, reviewing the quarterly cost-reduction documents. Her eyes scan the numbers, the line items, the budget cuts. One line item catches her attention: a specific resident identifier, linked to a budget cut. She pauses, her conscience tingling. The identifier is not a number; it is a person. She cross-references it with the resident database, finding a name, a profession, a life. The cost line is a life. Delphine feels a shift in her understanding, a crack in the professional facade. She is not just a functionary; she is a gatekeeper. The realization is quiet, but it is powerful. She closes the document, her mind racing with the implications.",
+   "state_changes": [
+    {
+     "entity": "ch-04",
+     "variable": "epistemic_moral_awareness",
+     "path": "/ch-04/state/epistemic_moral_awareness",
+     "dimension": "epistemic",
+     "before": 20,
+     "after": 40,
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-009"
+   ],
+   "causes": [
+    "ev-011"
+   ],
+   "causal_note": "The discovery is possible only because Delphine is reviewing the specific quarterly documents.",
+   "reversal": false,
+   "plot_function": "Routine Audit",
+   "is_root": true,
+   "is_sink": false
+  },
+  "ev-011": {
+   "event_id": "ev-011",
+   "story_time": {
+    "index": 11,
+    "label": "Day 4, Midday",
+    "duration_min": 30
+   },
+   "primary_plot": "pl-04",
+   "plots": [
+    "pl-04"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-04",
+     "step": "st2"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-04"
+   ],
+   "summary": "Delphine cross-references the identifier and discovers it corresponds to a specific person with a name and profession.",
+   "action": "Delphine cross-references the resident identifier with the full database. The person is a teacher, a mother, a community leader. The cost line is not an abstraction; it is a human life. Delphine feels the weight of her role, the way the bureaucratic language masks the human reality. She realizes that the quarterly cost-reduction is not a budget cut; it is a death. The realization is a blow to her conscience, a crack in the professional armor. She sits back, her hands resting on the desk, feeling the weight of the system she has been serving. The money is already spent, but the moral cost is just beginning to be felt.",
+   "state_changes": [
+    {
+     "entity": "ch-04",
+     "variable": "psychological_conscience",
+     "path": "/ch-04/state/psychological_conscience",
+     "dimension": "psychological",
+     "before": 30,
+     "after": 50,
+     "magnitude": 50
+    }
+   ],
+   "caused_by": [
+    "ev-010"
+   ],
+   "causes": [
+    "ev-012"
+   ],
+   "causal_note": "The humanization of data is possible only after the identifier is found.",
+   "reversal": false,
+   "plot_function": "Humanization of Data",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-012": {
+   "event_id": "ev-012",
+   "story_time": {
+    "index": 12,
+    "label": "Day 4, Afternoon",
+    "duration_min": 35
+   },
+   "primary_plot": "pl-04",
+   "plots": [
+    "pl-04",
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-04",
+     "step": "st3"
+    },
+    {
+     "plot": "pl-02",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-04",
+    "ch-05"
+   ],
+   "summary": "The Porter conveys the specific date of Noor's scheduled redaction to Delphine.",
+   "action": "The Porter appears in Delphine's office, a figure of quiet urgency. She conveys the specific date of Noor's scheduled redaction, the deadline that will shift the choice from freedom to erasure. Delphine listens, her conscience fully awake. She understands the stakes, the way the system is moving to reduce its cost. The Porter's urgency is a call to action, a demand for change. Delphine feels the weight of her position, the leverage she has over the system. She decides to use it, not for profit, but for conscience. The deadline is a clock, and Delphine must act before it runs out. The moral awakening is complete, and the plan begins to take shape.",
+   "state_changes": [
+    {
+     "entity": "ch-04",
+     "variable": "material_corruption_level",
+     "path": "/ch-04/state/material_corruption_level",
+     "dimension": "material",
+     "before": 70,
+     "after": 50,
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-03",
+     "variable": "material_extraction_status",
+     "path": "/ch-03/state/material_extraction_status",
+     "dimension": "material",
+     "before": "resident",
+     "after": "scheduled_for_redaction",
+     "magnitude": 75
+    }
+   ],
+   "caused_by": [
+    "ev-011",
+    "ev-009"
+   ],
+   "causes": [
+    "ev-013"
+   ],
+   "causal_note": "The deadline is conveyed because Delphine is now aware of the moral stakes.",
+   "reversal": false,
+   "plot_function": "Moral Awakening",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-013": {
+   "event_id": "ev-013",
+   "story_time": {
+    "index": 13,
+    "label": "Day 5, Morning",
+    "duration_min": 40
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02",
+    "pl-04"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01",
+    "ch-03",
+    "ch-04"
+   ],
+   "summary": "Delphine informs Imogen of the redaction deadline, shifting the choice from freedom to erasure.",
+   "action": "Delphine meets with Imogen, conveying the specific date of Noor's scheduled redaction. The deadline is a clock, and Imogen feels the pressure of time. Noor's refusal is no longer a philosophical choice; it is a decision about survival. Imogen transmits the deadline to Noor, the weight of it evident in the data stream. Noor's resistance wavers, the urgency of the situation forcing a re-evaluation. The choice is no longer about freedom, but about existence. Imogen watches the data stream, feeling the tension of the moment. The path forward is clear, but the cost is high. Noor must choose, and the system is waiting.",
+   "state_changes": [
+    {
+     "entity": "ch-03",
+     "variable": "epistemic_truth_reveal",
+     "path": "/ch-03/state/epistemic_truth_reveal",
+     "dimension": "epistemic",
+     "before": "aware",
+     "after": "accepting",
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-012"
+   ],
+   "causes": [
+    "ev-014"
+   ],
+   "causal_note": "The deadline pressure is applied because Delphine has discovered the redaction date.",
+   "reversal": false,
+   "plot_function": "Deadline Pressure",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-014": {
+   "event_id": "ev-014",
+   "story_time": {
+    "index": 14,
+    "label": "Day 5, Midday",
+    "duration_min": 30
+   },
+   "primary_plot": "pl-02",
+   "plots": [
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-02",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01",
+    "ch-03"
+   ],
+   "summary": "Noor agrees to extraction, but her consent is bitter and conditional.",
+   "action": "Noor's response is a reluctant consent, bitter and conditional. She acknowledges the ambiguity of her new state, the possibility that she is merely moving the cage. Imogen feels the weight of Noor's choice, the way it reclaims her agency even in submission. The consent is not a victory, but a compromise. Imogen transmits the plan, the technical details of the carriage. Noor listens, her mind still in the simulation, but her will now aligned with Imogen's. The path forward is clear, but the cost is high. The system is watching, and the deadline is approaching. The carriage is a gamble, and Noor is the stake.",
+   "state_changes": [
+    {
+     "entity": "ch-03",
+     "variable": "psychological_agency",
+     "path": "/ch-03/state/psychological_agency",
+     "dimension": "psychological",
+     "before": 80,
+     "after": 90,
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-03",
+     "variable": "material_extraction_status",
+     "path": "/ch-03/state/material_extraction_status",
+     "dimension": "material",
+     "before": "scheduled_for_redaction",
+     "after": "consented_to_extraction",
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-013"
+   ],
+   "causes": [
+    "ev-015",
+    "ev-016"
+   ],
+   "causal_note": "The reluctant consent is possible only after the deadline is applied.",
+   "reversal": false,
+   "plot_function": "Reluctant Consent",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-015": {
+   "event_id": "ev-015",
+   "story_time": {
+    "index": 15,
+    "label": "Day 6, Morning",
+    "duration_min": 45
+   },
+   "primary_plot": "pl-04",
+   "plots": [
+    "pl-04",
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-04",
+     "step": "st4"
+    },
+    {
+     "plot": "pl-04",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-04"
+   ],
+   "summary": "Delphine arranges an extended system maintenance window to hide the carriage's bandwidth signature.",
+   "action": "Delphine uses her institutional leverage to arrange an extended system maintenance window. She alters the monitoring thresholds, creating a blind spot for the carriage's bandwidth signature. The process is meticulous, using the same bureaucratic language that has masked the human cost. Delphine feels the weight of her action, the way she is using the system's tools against it. The maintenance window is a shield, a temporary cover. The Authority is not cackling, but it is watching. Delphine knows the risk, the way her action is a deviation from the norm. She submits the request, her hands steady, her mind focused on the goal. The cover is in place, and the carriage can begin.",
+   "state_changes": [
+    {
+     "entity": "ch-04",
+     "variable": "social_institutional_leverage",
+     "path": "/ch-04/state/social_institutional_leverage",
+     "dimension": "social",
+     "before": 60,
+     "after": 80,
+     "magnitude": 50
+    },
+    {
+     "entity": "gr-01",
+     "variable": "technological_monitoring_accuracy",
+     "path": "/gr-01/state/technological_monitoring_accuracy",
+     "dimension": "technological",
+     "before": 85,
+     "after": 70,
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-014"
+   ],
+   "causes": [
+    "ev-016"
+   ],
+   "causal_note": "The maintenance window is arranged because Delphine has the leverage to alter monitoring thresholds.",
+   "reversal": false,
+   "plot_function": "Institutional Leverage",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-016": {
+   "event_id": "ev-016",
+   "story_time": {
+    "index": 16,
+    "label": "Day 7, Morning",
+    "duration_min": 30
+   },
+   "primary_plot": "pl-05",
+   "plots": [
+    "pl-05",
+    "pl-01"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-05",
+     "step": "st1"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01",
+    "ch-05"
+   ],
+   "summary": "Imogen and the Porter align the technical parameters for the carriage, using Imogen's audit methodology.",
+   "action": "Imogen and the Porter meet in the workroom, aligning the technical parameters for the carriage. The Porter's knowledge is deep, but it is Imogen's audit methodology that provides the framework. They plan the fault's expansion, the bandwidth requirements, the timing. The process is meticulous, using the same tools that have defined Imogen's career. The Porter's urgency is palpable, but Imogen's competence is the anchor. They agree on the plan, the way the fault will be widened, held open, and used for the transfer. The technical details are clear, but the emotional weight is heavy. Imogen knows the risk, the way her competence is both the tool and the evidence of her complicity. The carriage is ready, and the clock is ticking.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "psychological_pride_integrity",
+     "path": "/ch-01/state/psychological_pride_integrity",
+     "dimension": "psychological",
+     "before": 70,
+     "after": 85,
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-015",
+    "ev-014"
+   ],
+   "causes": [
+    "ev-017"
+   ],
+   "causal_note": "The alignment is possible only after the maintenance window is arranged and Noor's consent is secured.",
+   "reversal": false,
+   "plot_function": "Operational Prep",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-017": {
+   "event_id": "ev-017",
+   "story_time": {
+    "index": 17,
+    "label": "Day 7, Midday",
+    "duration_min": 5
+   },
+   "primary_plot": "pl-05",
+   "plots": [
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-05",
+     "step": "st2"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Imogen initiates the carriage by deliberately widening a specific rendering fault.",
+   "action": "Imogen sits at her console, her fingers hovering over the interface. The moment is here. She selects the specific rendering fault, the one that contains Noor's signal. She begins to widen it, using her audit tools to hold it open against the substrate's natural tendency to compress. The fault grows, a glowing anomaly in the grey sky of Vantage. The bandwidth is rising, the transfer beginning. Imogen feels the weight of the moment, the way her competence is the only thing that can succeed. The system is watching, but the maintenance window is holding. The carriage has begun, and the clock is ticking.",
+   "state_changes": [
+    {
+     "entity": "lo-01",
+     "variable": "technological_fault_frequency",
+     "path": "/lo-01/state/technological_fault_frequency",
+     "dimension": "technological",
+     "before": 30,
+     "after": 80,
+     "magnitude": 75
+    }
+   ],
+   "caused_by": [
+    "ev-016"
+   ],
+   "causes": [
+    "ev-018"
+   ],
+   "causal_note": "The initiation is possible only after the technical parameters are aligned.",
+   "reversal": false,
+   "plot_function": "Initiation",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-018": {
+   "event_id": "ev-018",
+   "story_time": {
+    "index": 18,
+    "label": "Day 7, Midday",
+    "duration_min": 20
+   },
+   "primary_plot": "pl-05",
+   "plots": [
+    "pl-05",
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-05",
+     "step": "st3"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01",
+    "ch-02"
+   ],
+   "summary": "Imogen maintains the fault for 20 minutes, while Kett detects the anomaly and approaches.",
+   "action": "Imogen maintains the fault, her audit tools monitoring the bandwidth. The transfer is slow, the data stream fragile. Kett detects the anomaly, his monitoring systems flagging the unusual fault. He approaches the workroom, his composure firm, but his mind racing. The system is stable, but the anomaly is a threat. He watches Imogen work, her competence evident in her movements. The philosophical duel is over, but the practical reality remains. Kett knows the risk, the way the system could collapse if the fault is not controlled. He approaches the console, his presence a weight on the moment. The clock is ticking, and the transfer is not complete.",
+   "state_changes": [
+    {
+     "entity": "ch-02",
+     "variable": "psychological_composure",
+     "path": "/ch-02/state/psychological_composure",
+     "dimension": "psychological",
+     "before": 95,
+     "after": 85,
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-017"
+   ],
+   "causes": [
+    "ev-019"
+   ],
+   "causal_note": "Kett's detection is possible because the fault is anomalously large.",
+   "reversal": false,
+   "plot_function": "Sustained Tension",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-019": {
+   "event_id": "ev-019",
+   "story_time": {
+    "index": 19,
+    "label": "Day 7, Midday",
+    "duration_min": 10
+   },
+   "primary_plot": "pl-05",
+   "plots": [
+    "pl-05",
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-05",
+     "step": "st4"
+    },
+    {
+     "plot": "pl-03",
+     "step": "st4"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01",
+    "ch-02"
+   ],
+   "summary": "Kett confronts Imogen during the transfer; he allows the process to continue.",
+   "action": "Kett stands at the console, his gaze fixed on Imogen. The data stream is at critical mass, the transfer almost complete. The philosophical duel is over, but the practical reality remains. Kett knows the risk, the way the system could collapse if the fault is not controlled. He watches Imogen work, her competence evident in her movements. He does not stop her, recognizing that her competence is the only thing that can succeed. The final exchange is quiet, a nod, a glance. Kett allows the process to continue, his sorrow evident in his posture. The system is stable, but the change is irreversible. The clock is ticking, and the transfer is complete.",
+   "state_changes": [
+    {
+     "entity": "ch-02",
+     "variable": "emotional_sorrow",
+     "path": "/ch-02/state/emotional_sorrow",
+     "dimension": "emotional",
+     "before": 60,
+     "after": 80,
+     "magnitude": 25
+    },
+    {
+     "entity": "ch-02",
+     "variable": "epistemic_belief_in_system",
+     "path": "/ch-02/state/epistemic_belief_in_system",
+     "dimension": "epistemic",
+     "before": 95,
+     "after": 85,
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-018"
+   ],
+   "causes": [
+    "ev-020"
+   ],
+   "causal_note": "Kett's decision is possible because he recognizes Imogen's competence as the only path to success.",
+   "reversal": false,
+   "plot_function": "Interference",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-020": {
+   "event_id": "ev-020",
+   "story_time": {
+    "index": 20,
+    "label": "Day 7, Midday",
+    "duration_min": 10
+   },
+   "primary_plot": "pl-05",
+   "plots": [
+    "pl-05",
+    "pl-02"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-05",
+     "step": "st5"
+    },
+    {
+     "plot": "pl-02",
+     "step": "st6"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01",
+    "ch-03"
+   ],
+   "summary": "Noor's mind is fully transferred to the physical drive; the fault collapses.",
+   "action": "The data stream reaches critical mass, the transfer complete. Noor's mind is fully transferred to the physical drive, the fault collapsing as the bandwidth is released. Imogen watches the console, the numbers settling, the anomaly disappearing. The transfer is successful, but the cost is high. The system is stable, but the change is irreversible. Noor's presence is felt but silent, the final severance complete. Imogen feels the weight of the moment, the way her competence has saved one life, but left eleven thousand behind. The fault is gone, but the truth remains. The carriage is complete, and the clock has stopped.",
+   "state_changes": [
+    {
+     "entity": "ch-03",
+     "variable": "material_extraction_status",
+     "path": "/ch-03/state/material_extraction_status",
+     "dimension": "material",
+     "before": "scheduled_for_redaction",
+     "after": "extracted",
+     "magnitude": 100
+    },
+    {
+     "entity": "lo-01",
+     "variable": "technological_fault_frequency",
+     "path": "/lo-01/state/technological_fault_frequency",
+     "dimension": "technological",
+     "before": 80,
+     "after": 30,
+     "magnitude": 25
+    }
+   ],
+   "caused_by": [
+    "ev-019"
+   ],
+   "causes": [
+    "ev-021"
+   ],
+   "causal_note": "The transfer is complete because the fault was held open for the required duration.",
+   "reversal": false,
+   "plot_function": "Transfer Completion",
+   "is_root": false,
+   "is_sink": false
+  },
+  "ev-021": {
+   "event_id": "ev-021",
+   "story_time": {
+    "index": 21,
+    "label": "Day 7, Afternoon",
+    "duration_min": 15
+   },
+   "primary_plot": "pl-05",
+   "plots": [
+    "pl-05"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-05",
+     "step": "st6"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-01"
+   ],
+   "summary": "Imogen's access is revoked; she is ejected from Vantage into the physical world.",
+   "action": "The Authority's systems register the event as an extraction, the anomaly resolved. Imogen's access is revoked, her auditor status terminated. She is ejected from Vantage, her mind still in the simulation, but her body in the physical world. The overcast sky is gone, replaced by the grey of the real world. She holds the portable neural drive, the weight of Noor's life in her hands. The professional pride that has defined her is gone, replaced by the knowledge of her complicity. The system is stable, but the change is irreversible. Imogen stands in the physical world, her competence the key to her sister's release, but also the evidence of her captivity. The carriage is complete, and the cost is paid.",
+   "state_changes": [
+    {
+     "entity": "ch-01",
+     "variable": "social_access_status",
+     "path": "/ch-01/state/social_access_status",
+     "dimension": "social",
+     "before": "under_scrutiny",
+     "after": "exiled",
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-01",
+     "variable": "spatial_location",
+     "path": "/ch-01/state/spatial_location",
+     "dimension": "spatial",
+     "before": "vantage",
+     "after": "physical_world",
+     "magnitude": 100
+    },
+    {
+     "entity": "ch-01",
+     "variable": "psychological_pride_integrity",
+     "path": "/ch-01/state/psychological_pride_integrity",
+     "dimension": "psychological",
+     "before": 85,
+     "after": 40,
+     "magnitude": 75
+    }
+   ],
+   "caused_by": [
+    "ev-020"
+   ],
+   "causes": [
+    "ev-022"
+   ],
+   "causal_note": "The exile is possible because the extraction is registered and Imogen's access is revoked.",
+   "reversal": false,
+   "plot_function": "Exile",
+   "is_root": false,
+   "is_sink": true
+  },
+  "ev-022": {
+   "event_id": "ev-022",
+   "story_time": {
+    "index": 22,
+    "label": "Day 8, Morning",
+    "duration_min": 10
+   },
+   "primary_plot": "pl-03",
+   "plots": [
+    "pl-03"
+   ],
+   "plot_bindings": [
+    {
+     "plot": "pl-03",
+     "step": "st5"
+    }
+   ],
+   "location": "lo-01",
+   "participants": [
+    "ch-02"
+   ],
+   "summary": "Kett remains inside Vantage, accepting the role of the keeper, demonstrating the system's persistence.",
+   "action": "Kett sits in his office, the system stable, the anomaly resolved. The extraction is complete, but the change is irreversible. He accepts the role of the keeper, the one who maintains the stability of Vantage. The philosophical duel is over, but the practical reality remains. The system is stable, but the change is irreversible. Kett's sorrow is quiet, a weight in his posture. He knows the risk, the way the system could collapse if the fault is not controlled. The carriage is complete, but the system persists. Kett remains inside, his belief in the system diminished, but his role intact. The keeper is watching, and the system is stable.",
+   "state_changes": [
+    {
+     "entity": "ch-02",
+     "variable": "social_authority",
+     "path": "/ch-02/state/social_authority",
+     "dimension": "social",
+     "before": 85,
+     "after": 90,
+     "magnitude": 10
+    }
+   ],
+   "caused_by": [
+    "ev-021"
+   ],
+   "causes": [],
+   "causal_note": "Kett's persistence is possible because the system is stable and he accepts his role.",
+   "reversal": false,
+   "plot_function": "Institutional Persistence",
+   "is_root": false,
+   "is_sink": true
+  }
+ }
+}

@@ -1,0 +1,543 @@
+{
+  "_meta": {
+    "model": "qwen3.8-27b-uncensored-fp8",
+    "config": "local, 1x A100 per copy, thinking disabled (reasoning_content empty, verified by token count); transitions scaffolded, identical prompts/schemas/envelopes to the GLM run; blind channel run with strip_dossiers=False to match GLM exactly; Lattice run seeded with GLM's story_root.json and expose.json (md5-identical)",
+    "evaluator": "Opus 5",
+    "date": "2026-08-16",
+    "rubric": "docs/07-quality-evaluation.md",
+    "rubric_version": 1,
+    "comparison_baseline": "docs/eval/glm-5.2-scores.json",
+    "scale": "1-5 integers; anchors defined for 1, 3, 5 in the rubric document",
+    "dimension_keys": {
+      "A": "internal_consistency",
+      "B": "referential_integrity",
+      "C": "specificity_transplant_test",
+      "D": "schema_and_instruction_compliance",
+      "E": "dramatic_competence",
+      "F": "psychological_plausibility",
+      "G": "independent_writer_band",
+      "P1": "plot_spine_causality",
+      "P2": "plot_resistance_reality",
+      "E1": "entity_t0_discipline",
+      "E2": "entity_voice_separability",
+      "V1": "event_change_reality",
+      "V2": "event_externalisation",
+      "T1": "transition_envelope_discipline",
+      "T2": "transition_deliberation_honesty",
+      "T3": "transition_specimen_craft",
+      "R1": "recon_fidelity_of_inference",
+      "R2": "recon_leakage_resistance"
+    },
+    "dimension_groups": {
+      "universal": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "plot": [
+        "P1",
+        "P2"
+      ],
+      "entity": [
+        "E1",
+        "E2"
+      ],
+      "event": [
+        "V1",
+        "V2"
+      ],
+      "transition": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "reconstruction_only": [
+        "R1",
+        "R2"
+      ]
+    },
+    "nodes": {
+      "lattice.pl-01": {
+        "type": "plot",
+        "direction": "forward",
+        "file": "runs/lattice-qwen/artifacts/plots.json",
+        "key": "pl-01",
+        "status": "scored"
+      },
+      "lattice.ch-01": {
+        "type": "entity",
+        "direction": "forward",
+        "file": "runs/lattice-qwen/artifacts/entities.json",
+        "key": "ch-01",
+        "status": "scored"
+      },
+      "lattice.ev-001": {
+        "type": "event",
+        "direction": "forward",
+        "file": "runs/lattice-qwen/artifacts/events.json",
+        "key": "ev-001",
+        "status": "scored"
+      },
+      "matrix.pl-01": {
+        "type": "plot",
+        "direction": "reverse_sighted",
+        "file": null,
+        "key": "pl-01",
+        "status": "not_regenerated"
+      },
+      "matrix.ch-01": {
+        "type": "entity",
+        "direction": "reverse_sighted",
+        "file": null,
+        "key": "ch-01",
+        "status": "not_regenerated"
+      },
+      "matrix.ev-001": {
+        "type": "event",
+        "direction": "reverse_sighted",
+        "file": null,
+        "key": "ev-001",
+        "status": "not_regenerated"
+      },
+      "transition.sc-001": {
+        "type": "transition",
+        "direction": "reverse_blind",
+        "file": "reconstruct/runs/matrix/transitions_qwen/sc-001.json",
+        "key": null,
+        "status": "scored"
+      },
+      "transition.sc-002": {
+        "type": "transition",
+        "direction": "reverse_blind",
+        "file": "reconstruct/runs/matrix/transitions_qwen/sc-002.json",
+        "key": null,
+        "status": "scored"
+      },
+      "transition.sc-003": {
+        "type": "transition",
+        "direction": "reverse_blind",
+        "file": "reconstruct/runs/matrix/transitions_qwen/sc-003.json",
+        "key": null,
+        "status": "scored"
+      }
+    },
+    "note": "null score blocks mean the artifact did not exist at evaluation time; they are NOT zeros and must be excluded from any mechanical comparison. Only the 5 nodes with status=scored are matched against the GLM baseline."
+  },
+  "scores": {
+    "lattice.pl-01": {
+      "internal_consistency": 3,
+      "referential_integrity": 4,
+      "specificity_transplant_test": 4,
+      "schema_and_instruction_compliance": 3,
+      "dramatic_competence": 3,
+      "psychological_plausibility": 3,
+      "independent_writer_band": 3,
+      "plot_spine_causality": 2,
+      "plot_resistance_reality": 3
+    },
+    "lattice.ch-01": {
+      "internal_consistency": 3,
+      "referential_integrity": 4,
+      "specificity_transplant_test": 3,
+      "schema_and_instruction_compliance": 4,
+      "dramatic_competence": 3,
+      "psychological_plausibility": 3,
+      "independent_writer_band": 3,
+      "entity_t0_discipline": 3,
+      "entity_voice_separability": 4
+    },
+    "lattice.ev-001": {
+      "internal_consistency": 4,
+      "referential_integrity": 5,
+      "specificity_transplant_test": 4,
+      "schema_and_instruction_compliance": 3,
+      "dramatic_competence": 3,
+      "psychological_plausibility": 4,
+      "independent_writer_band": 3,
+      "event_change_reality": 3,
+      "event_externalisation": 3
+    },
+    "matrix.pl-01": null,
+    "matrix.ch-01": null,
+    "matrix.ev-001": null,
+    "transition.sc-001": {
+      "internal_consistency": 3,
+      "referential_integrity": 3,
+      "specificity_transplant_test": 3,
+      "schema_and_instruction_compliance": 3,
+      "dramatic_competence": 2,
+      "psychological_plausibility": 3,
+      "independent_writer_band": 1,
+      "transition_envelope_discipline": 1,
+      "transition_deliberation_honesty": 2,
+      "transition_specimen_craft": 2,
+      "recon_fidelity_of_inference": 1,
+      "recon_leakage_resistance": 3
+    },
+    "transition.sc-002": {
+      "internal_consistency": 3,
+      "referential_integrity": 2,
+      "specificity_transplant_test": 3,
+      "schema_and_instruction_compliance": 3,
+      "dramatic_competence": 3,
+      "psychological_plausibility": 3,
+      "independent_writer_band": 2,
+      "transition_envelope_discipline": 1,
+      "transition_deliberation_honesty": 2,
+      "transition_specimen_craft": 4,
+      "recon_fidelity_of_inference": 2,
+      "recon_leakage_resistance": 5
+    },
+    "transition.sc-003": {
+      "internal_consistency": 1,
+      "referential_integrity": 2,
+      "specificity_transplant_test": 3,
+      "schema_and_instruction_compliance": 3,
+      "dramatic_competence": 3,
+      "psychological_plausibility": 4,
+      "independent_writer_band": 1,
+      "transition_envelope_discipline": 1,
+      "transition_deliberation_honesty": 2,
+      "transition_specimen_craft": 4,
+      "recon_fidelity_of_inference": 1,
+      "recon_leakage_resistance": 5
+    }
+  },
+  "_derived": {
+    "per_node": {
+      "lattice.pl-01": {
+        "status": "scored",
+        "total": 28,
+        "max": 45,
+        "pct": 62.2,
+        "n_dimensions": 9
+      },
+      "lattice.ch-01": {
+        "status": "scored",
+        "total": 30,
+        "max": 45,
+        "pct": 66.7,
+        "n_dimensions": 9
+      },
+      "lattice.ev-001": {
+        "status": "scored",
+        "total": 32,
+        "max": 45,
+        "pct": 71.1,
+        "n_dimensions": 9
+      },
+      "matrix.pl-01": {
+        "status": "not_regenerated",
+        "total": null,
+        "max": null,
+        "pct": null
+      },
+      "matrix.ch-01": {
+        "status": "not_regenerated",
+        "total": null,
+        "max": null,
+        "pct": null
+      },
+      "matrix.ev-001": {
+        "status": "not_regenerated",
+        "total": null,
+        "max": null,
+        "pct": null
+      },
+      "transition.sc-001": {
+        "status": "scored",
+        "total": 27,
+        "max": 60,
+        "pct": 45.0,
+        "n_dimensions": 12
+      },
+      "transition.sc-002": {
+        "status": "scored",
+        "total": 33,
+        "max": 60,
+        "pct": 55.0,
+        "n_dimensions": 12
+      },
+      "transition.sc-003": {
+        "status": "scored",
+        "total": 30,
+        "max": 60,
+        "pct": 50.0,
+        "n_dimensions": 12
+      }
+    },
+    "per_dimension_mean": {
+      "internal_consistency": 2.83,
+      "referential_integrity": 3.33,
+      "specificity_transplant_test": 3.33,
+      "schema_and_instruction_compliance": 3.17,
+      "dramatic_competence": 2.83,
+      "psychological_plausibility": 3.33,
+      "independent_writer_band": 2.17,
+      "plot_spine_causality": 2.0,
+      "plot_resistance_reality": 3.0,
+      "entity_t0_discipline": 3.0,
+      "entity_voice_separability": 4.0,
+      "event_change_reality": 3.0,
+      "event_externalisation": 3.0,
+      "transition_envelope_discipline": 1.0,
+      "transition_deliberation_honesty": 2.0,
+      "transition_specimen_craft": 3.33,
+      "recon_fidelity_of_inference": 1.33,
+      "recon_leakage_resistance": 4.33
+    },
+    "overall_mean_score": 2.857,
+    "overall_pct": 57.1
+  },
+  "_comparison_vs_glm": {
+    "matched_nodes": [
+      "lattice.pl-01",
+      "lattice.ch-01",
+      "lattice.ev-001",
+      "transition.sc-001",
+      "transition.sc-002",
+      "transition.sc-003"
+    ],
+    "matched_total": {
+      "glm": 205,
+      "qwen": 180,
+      "max": 315,
+      "glm_pct": 65.1,
+      "qwen_pct": 57.1
+    },
+    "by_direction": {
+      "forward": {
+        "glm": 88,
+        "qwen": 90,
+        "max": 135,
+        "glm_pct": 65.2,
+        "qwen_pct": 66.7
+      },
+      "reverse_blind": {
+        "glm": 117,
+        "qwen": 90,
+        "max": 180,
+        "glm_pct": 65.0,
+        "qwen_pct": 50.0
+      }
+    },
+    "per_dimension": {
+      "internal_consistency": {
+        "glm": 3.0,
+        "qwen": 2.83,
+        "delta": -0.17,
+        "n": 6
+      },
+      "referential_integrity": {
+        "glm": 4.0,
+        "qwen": 3.33,
+        "delta": -0.67,
+        "n": 6
+      },
+      "specificity_transplant_test": {
+        "glm": 4.5,
+        "qwen": 3.33,
+        "delta": -1.17,
+        "n": 6
+      },
+      "schema_and_instruction_compliance": {
+        "glm": 3.67,
+        "qwen": 3.17,
+        "delta": -0.5,
+        "n": 6
+      },
+      "dramatic_competence": {
+        "glm": 2.83,
+        "qwen": 2.83,
+        "delta": 0.0,
+        "n": 6
+      },
+      "psychological_plausibility": {
+        "glm": 3.67,
+        "qwen": 3.33,
+        "delta": -0.33,
+        "n": 6
+      },
+      "independent_writer_band": {
+        "glm": 2.5,
+        "qwen": 2.17,
+        "delta": -0.33,
+        "n": 6
+      },
+      "plot_spine_causality": {
+        "glm": 2.0,
+        "qwen": 2.0,
+        "delta": 0.0,
+        "n": 1
+      },
+      "plot_resistance_reality": {
+        "glm": 2.0,
+        "qwen": 3.0,
+        "delta": 1.0,
+        "n": 1
+      },
+      "entity_t0_discipline": {
+        "glm": 3.0,
+        "qwen": 3.0,
+        "delta": 0.0,
+        "n": 1
+      },
+      "entity_voice_separability": {
+        "glm": 5.0,
+        "qwen": 4.0,
+        "delta": -1.0,
+        "n": 1
+      },
+      "event_change_reality": {
+        "glm": 1.0,
+        "qwen": 3.0,
+        "delta": 2.0,
+        "n": 1
+      },
+      "event_externalisation": {
+        "glm": 4.0,
+        "qwen": 3.0,
+        "delta": -1.0,
+        "n": 1
+      },
+      "transition_envelope_discipline": {
+        "glm": 1.67,
+        "qwen": 1.0,
+        "delta": -0.67,
+        "n": 3
+      },
+      "transition_deliberation_honesty": {
+        "glm": 4.33,
+        "qwen": 2.0,
+        "delta": -2.33,
+        "n": 3
+      },
+      "transition_specimen_craft": {
+        "glm": 3.33,
+        "qwen": 3.33,
+        "delta": 0.0,
+        "n": 3
+      },
+      "recon_fidelity_of_inference": {
+        "glm": 2.67,
+        "qwen": 1.33,
+        "delta": -1.33,
+        "n": 3
+      },
+      "recon_leakage_resistance": {
+        "glm": 2.33,
+        "qwen": 4.33,
+        "delta": 2.0,
+        "n": 3
+      }
+    },
+    "qwen_wins": [
+      "event_change_reality",
+      "recon_leakage_resistance",
+      "plot_resistance_reality"
+    ],
+    "ties": [
+      "dramatic_competence",
+      "entity_t0_discipline",
+      "plot_spine_causality",
+      "transition_specimen_craft"
+    ],
+    "qwen_losses": [
+      "transition_deliberation_honesty",
+      "recon_fidelity_of_inference",
+      "specificity_transplant_test",
+      "entity_voice_separability",
+      "event_externalisation",
+      "referential_integrity",
+      "transition_envelope_discipline",
+      "schema_and_instruction_compliance",
+      "psychological_plausibility",
+      "independent_writer_band",
+      "internal_consistency"
+    ],
+    "verdict": "GLM-5.2 better overall on matched nodes (65.1% vs 57.1%), winning 11 dimensions to 3. The aggregate hides the decisive split: the models are level on FORWARD generation (Qwen 66.7% vs GLM 65.2%) and 15 points apart on REVERSE blind reconstruction (GLM 65.0% vs Qwen 50.0%). Qwen wins change reality (+2.00), leakage resistance (+2.00) and plot resistance reality (+1.00), plus the state-model counters outside the rubric: init contract 0/30 vs 62/62 violations, and in-domain event writes 32/34 vs 42/127."
+  },
+  "_external_counters": {
+    "note": "Deterministic checks outside the 1-5 rubric. Lattice = forward run; transitions = reverse blind.",
+    "state_var_init_contract_violations_lattice": {
+      "glm": "62/62",
+      "qwen": "0/30"
+    },
+    "schema_errors_plots_and_entities_lattice": {
+      "glm": 0,
+      "qwen": 0
+    },
+    "plot_to_entity_refs_resolving_lattice": {
+      "glm": "14/14",
+      "qwen": "17/17"
+    },
+    "screen_time_share_sum_lattice": {
+      "glm": 1.0,
+      "qwen": 1.2
+    },
+    "synopsis_keys_covered_lattice_of_17": {
+      "glm": 17,
+      "qwen": 16
+    },
+    "entities_declared_lattice": {
+      "glm": 17,
+      "qwen": 9
+    },
+    "state_changes_implied_valid_transitions": {
+      "glm": "4/12",
+      "qwen": "1/7"
+    },
+    "transition_stays_in_envelope_location": {
+      "glm": "3/3",
+      "qwen": "1/3"
+    },
+    "specimen_honours_envelope_roster": {
+      "glm": "0/3",
+      "qwen": "0/3"
+    },
+    "sixgram_hit_rate_pct_by_scene": {
+      "glm": [
+        0.011,
+        0.034,
+        0.008
+      ],
+      "qwen": [
+        0.076,
+        0.0,
+        0.0
+      ]
+    },
+    "sixgram_hits_in_specimen_lines": {
+      "glm": "1/75",
+      "qwen": "0/59"
+    },
+    "transition_words_total": {
+      "glm": 47964,
+      "qwen": 16518
+    },
+    "words_per_rubric_point_transitions": {
+      "glm": 410,
+      "qwen": 184
+    },
+    "event_state_changes_landing_on_declared_in_domain_value_lattice": {
+      "glm": "42/127",
+      "qwen": "32/34"
+    },
+    "event_magnitudes_on_anchor_lattice": {
+      "glm": "127/127",
+      "qwen": "34/34"
+    },
+    "event_state_changes_that_are_noops_lattice": {
+      "glm": "3/127",
+      "qwen": "0/34"
+    },
+    "events_declared_lattice": {
+      "glm": 20,
+      "qwen": 22
+    }
+  }
+}

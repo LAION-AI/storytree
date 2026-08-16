@@ -85,6 +85,12 @@ def _reasoning_body(mode: str) -> dict:
     condition that silently does nothing would produce a clean-looking A/B with
     two identical arms.
     """
+    if os.environ.get("MODEL_FAMILY") == "qwen":
+        # Qwen3.8 accepts only xhigh|medium|low for reasoning_effort — any other
+        # value makes the chat template raise and the request 400s. There is no
+        # "none". Thinking is switched off structurally instead.
+        return ({"chat_template_kwargs": {"enable_thinking": False}} if mode == "off"
+                else {"reasoning_effort": "xhigh"})
     if mode == "off":
         return {"reasoning_effort": "none",
                 "chat_template_kwargs": {"enable_thinking": False}}
@@ -177,7 +183,8 @@ def run_scene(project: Project, scene_id: str, think: str) -> dict:
         "live_state": {e: v.get("state", {}) for e, v in ents.items()},
     }
     position = scene.index / max(1, len(parsed))
-    blind = reverse.blind_context(ctx, {}, position=position)
+    blind = reverse.blind_context(ctx, {}, position=position,
+                                  strip_dossiers=os.environ.get('STRIP_DOSSIERS','0')=='1')
     env = reverse.envelope(scene, len(parsed) - scene.index, len(parsed))
 
     events = (docs["events"] or {}).get("events", {})

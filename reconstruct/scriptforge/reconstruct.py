@@ -209,13 +209,33 @@ Extract what is there. Do not invent events the script does not contain.
         }
 
     def _steps_reached(self) -> dict:
-        """The highest spine step each plot has actually reached so far."""
+        """The highest spine step each plot has actually reached so far.
+
+        This joined events to scenes through `ev["scenes"]` — a key EVENT_SCHEMA
+        does not define and which no event carries. The relation is stored the
+        other way round: scenes list their events. So the filter matched nothing,
+        the function always returned `{}`, and `blind_context()` consequently
+        skipped spine truncation on every call.
+
+        The effect was the worst leak in the pipeline and the quietest, because
+        nothing failed: every blind transition was handed the *complete* spine of
+        every plot, each step with its `outcome` attached — the whole shape of
+        the ending, including how it resolves. A blind reasoner reading that is
+        not forecasting, it is paraphrasing. It went unnoticed because an empty
+        dict is a perfectly ordinary "nothing has happened yet" answer at the
+        start of a run, and it never stopped looking like one.
+        """
         events = (self.project.load("events") or {}).get("events", {})
-        scenes_done = set((self.project.load("scenes") or {}).get("scenes", {}))
+        scenes = (self.project.load("scenes") or {}).get("scenes", {})
+        scenes_done = set(scenes)
+        # scene -> events is the direction actually stored; invert it
+        events_done = {eid for sid, sc in scenes.items() if sid in scenes_done
+                       for eid in (sc.get("events") or [])}
         reached: dict[str, int] = {}
         plots = {p["plot_id"]: p for p in (self.project.load("plots") or {}).get("plots", [])}
-        for ev in events.values():
-            if not (set(ev.get("scenes") or []) & scenes_done):
+        for eid, ev in events.items():
+            linked = set(ev.get("scenes") or [])
+            if eid not in events_done and not (linked & scenes_done):
                 continue
             for b in ev.get("plot_bindings") or []:
                 spine = plots.get(b.get("plot"), {}).get("spine", {})

@@ -1,0 +1,35 @@
+LOCAL RECONSTRUCTION · http://127.0.0.1:8102/v1 · thinking=off
+  scenes: sc-003
+
+  === sc-003 ===
+    characters: ['ch-02']
+      craft                        23s  in= 11,320 out= 1,421  61.3 t/s  think=     0c
+      psych.ch-02                  64s  in=  9,250 out= 4,324  67.4 t/s  think=     0c
+      specimen                     13s  in=  3,726 out= 1,029  76.9 t/s  think=     0c
+      dynamics                     24s  in=  3,358 out= 2,021  82.8 t/s  think=     0c
+      continuity                   10s  in=  1,680 out=   884  87.7 t/s  think=     0c
+
+  LOCAL scaffolded · sc-003 · 2.3 min · 5 calls
+    violations 0    words  5,603   psych 1/1 w/ trajectory, 1/1 complete
+    ToM 2 towers (2 at depth 3)   specimen 7 lines   alts 2 (1 close)   dynamics 3
+    verdict: pass
+  hosted scaffolded
+    violations 0    words 10,175   psych 1/1 w/ trajectory, 1/1 complete
+    ToM 3 towers (3 at depth 3)   specimen 8 lines   alts 2 (1 close)   dynamics 5
+    verdict: pass
+  hosted single-call
+    violations 5    words  4,557   psych 1/1 w/ trajectory, 1/1 complete
+    ToM 2 towers (2 at depth 3)   specimen 0 lines   alts 2 (0 close)   dynamics 2
+    verdict: thin
+      gap: every alternative lost by a mile — the choice was already made
+      gap: no specimen exchange — the analysis is untested until someone speaks
+      gap: risks never checked against the actual lines
+
+========================================================================
+  1 scenes · 5 calls · 2.3 min wall
+  tokens: 29,334 in · 9,679 out
+  decode: 71.6 tok/s mean over all calls
+  per scene: 2.3 min
+  reasoning_content returned: 0 chars
+  extrapolated to all 224 scenes: 8.4 h
+  -> runs/matrix/transitions_qwen

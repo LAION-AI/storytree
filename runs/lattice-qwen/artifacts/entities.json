@@ -1,0 +1,1612 @@
+{
+ "entities": {
+  "ch-01": {
+   "entity_id": "ch-01",
+   "type": "character",
+   "canonical_name": "Imogen Vaile",
+   "aliases": [
+    "Auditor Vaile",
+    "The Best"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-02",
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Imogen is a mid-thirties woman with short, practical black hair and a posture that suggests permanent readiness for work.",
+      "when": "standing",
+      "tags": [
+       "appearance"
+      ]
+     },
+     "b02": {
+      "text": "She has worked as a rendering-fault auditor in Vantage for twelve years, rising to the top of her nine-person team through sheer precision.",
+      "when": "2037-2049",
+      "tags": [
+       "career"
+      ]
+     },
+     "b03": {
+      "text": "Her sister Noor died in 2040, an event Imogen processed through professional detachment, closing the file on grief as she closes faults.",
+      "when": "2040",
+      "tags": [
+       "loss"
+      ]
+     },
+     "b04": {
+      "text": "She believes her competence is her primary virtue and that a clean system is a moral good in itself.",
+      "when": "standing",
+      "tags": [
+       "belief"
+      ]
+     }
+    },
+    "demographics": {
+     "age": 38,
+     "gender": "female",
+     "ethnicity": "mixed"
+    },
+    "appearance": {
+     "b01": {
+      "text": "Imogen wears neutral, durable clothing in muted tones, prioritizing function over aesthetics.",
+      "when": "standing",
+      "tags": [
+       "style"
+      ]
+     },
+     "b02": {
+      "text": "Her hands are steady and precise, a physical manifestation of her audit methodology.",
+      "when": "standing",
+      "tags": [
+       "physical"
+      ]
+     }
+    },
+    "voice_and_speech": {
+     "sentence_shape": "Short, declarative, and clinically precise; avoids flowery language.",
+     "vocabulary_domain": "Technical, procedural, and structural.",
+     "verbal_tic": "Uses audit terminology to describe emotional states ('The error is in the logic').",
+     "never_says": "Apologizes for being right; never uses vague qualifiers like 'maybe' or 'perhaps'.",
+     "under_stress": "Becomes even more formal and detached, relying on data to ground herself."
+    },
+    "habits_and_tells": {
+     "b01": {
+      "text": "She taps her finger on surfaces when analyzing a problem, a rhythmic tic that speeds up with complexity.",
+      "when": "standing",
+      "tags": [
+       "tell"
+      ]
+     },
+     "b02": {
+      "text": "She keeps her personal space immaculately organized, reflecting her need for control.",
+      "when": "standing",
+      "tags": [
+       "habit"
+      ]
+     }
+    },
+    "wound": {
+     "b01": {
+      "text": "The death of her sister left her with a hollow space she filled with work, mistaking busyness for processing.",
+      "when": "2040",
+      "tags": [
+       "grief"
+      ]
+     }
+    },
+    "want": {
+     "b01": {
+      "text": "She wants to prove her competence is unmatched and that her work has tangible, positive value.",
+      "when": "standing",
+      "tags": [
+       "external_goal"
+      ]
+     }
+    },
+    "need": {
+     "b01": {
+      "text": "She needs to accept that competence can be complicity and that she must sacrifice her identity to save what matters.",
+      "when": "standing",
+      "tags": [
+       "internal_need"
+      ]
+     }
+    },
+    "values": {
+     "v01": "Precision",
+     "v02": "Order",
+     "v03": "Professional Integrity"
+    },
+    "fears": {
+     "f01": "Being ordinary",
+     "f02": "Loss of control",
+     "f03": "Meaninglessness"
+    },
+    "competences": {
+     "c01": "Pattern Recognition",
+     "c02": "Fault Manipulation",
+     "c03": "Logical Deduction"
+    },
+    "limitations": {
+     "l01": "Emotional Detachment",
+     "l02": "Inability to Trust Ambiguity"
+    },
+    "problem_solving_style": "Methodical, top-down, relying on established protocols and data.",
+    "coping_strategies": "Overwork, intellectualization, physical order.",
+    "health": {
+     "physical": "Good, but prone to tension headaches.",
+     "mental": "High-functioning, but brittle under new paradigm shifts."
+    },
+    "moral_axis": "Lawful Neutral (initially) shifting to Chaotic Good (forced)."
+   },
+   "relationships": {
+    "ch-02": {
+     "kind": "mentor_supervisor",
+     "valence": 60,
+     "notes": {
+      "b01": {
+       "text": "Imogen respects Kett’s wisdom but is unsettled by his calm acceptance of the system’s cruelty.",
+       "when": "standing",
+       "tags": [
+        "professional"
+       ]
+      }
+     }
+    },
+    "ch-03": {
+     "kind": "sister",
+     "valence": 80,
+     "notes": {
+      "b01": {
+       "text": "Imogen’s love for Noor is her anchor, but she has not spoken to her in a decade.",
+       "when": "standing",
+       "tags": [
+        "family"
+       ]
+      }
+     }
+    },
+    "ch-05": {
+     "kind": "mysterious_contact",
+     "valence": 20,
+     "notes": {
+      "b01": {
+       "text": "Imogen is suspicious of the Porter but desperate for answers about Noor.",
+       "when": "discovery",
+       "tags": [
+        "alliance"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "epistemic_fault_nature": {
+     "kind": "enum",
+     "description": "Imogen's understanding of what rendering faults actually are.",
+     "dimension": "epistemic",
+     "domain": [
+      "system_error",
+      "structured_signal",
+      "distress_call",
+      "full_truth"
+     ],
+     "init": "system_error"
+    },
+    "psychological_pride_integrity": {
+     "kind": "scalar",
+     "description": "The strength of Imogen's professional identity and pride.",
+     "dimension": "psychological",
+     "range": [
+      0,
+      100
+     ],
+     "init": 95
+    },
+    "emotional_grief_intensity": {
+     "kind": "scalar",
+     "description": "The active pain Imogen feels regarding Noor and her past.",
+     "dimension": "emotional",
+     "range": [
+      0,
+      100
+     ],
+     "init": 10
+    },
+    "social_access_status": {
+     "kind": "enum",
+     "description": "Imogen's standing and access within Vantage and the Authority.",
+     "dimension": "social",
+     "domain": [
+      "active_auditor",
+      "under_scrutiny",
+      "exiled"
+     ],
+     "init": "active_auditor"
+    },
+    "spatial_location": {
+     "kind": "enum",
+     "description": "Imogen's current physical or simulated location.",
+     "dimension": "spatial",
+     "domain": [
+      "vantage",
+      "physical_world"
+     ],
+     "init": "vantage"
+    }
+   },
+   "state": {
+    "epistemic_fault_nature": "system_error",
+    "psychological_pride_integrity": 95,
+    "emotional_grief_intensity": 10,
+    "social_access_status": "active_auditor",
+    "spatial_location": "vantage"
+   },
+   "arc": {
+    "start_state": "Proud, competent auditor who views faults as errors to be closed, unaware of their true nature.",
+    "end_state": "Exiled, identity-shattered operator who uses her competence to save her sister, bearing the cost of her own complicity."
+   }
+  },
+  "ch-02": {
+   "entity_id": "ch-02",
+   "type": "character",
+   "canonical_name": "Kett",
+   "aliases": [
+    "Supervisor Kett",
+    "The Keeper"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-03"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Kett is an older man in his sixties who has served as Imogen's supervisor for over a decade.",
+      "when": "standing",
+      "tags": [
+       "career"
+      ]
+     },
+     "b02": {
+      "text": "He discovered the true nature of Vantage years ago and made a rational, if painful, peace with it.",
+      "when": "past",
+      "tags": [
+       "knowledge"
+      ]
+     },
+     "b03": {
+      "text": "He believes the simulation is a mercy, preserving existence over the alternative of nothingness.",
+      "when": "standing",
+      "tags": [
+       "philosophy"
+      ]
+     }
+    },
+    "demographics": {
+     "age": 62,
+     "gender": "male",
+     "ethnicity": "white"
+    },
+    "appearance": {
+     "b01": {
+      "text": "Kett has a calm, weathered face and moves with a deliberate, measured slowness.",
+      "when": "standing",
+      "tags": [
+       "demeanor"
+      ]
+     },
+     "b02": {
+      "text": "He wears simple, well-kept clothes that suggest a life of quiet routine.",
+      "when": "standing",
+      "tags": [
+       "style"
+      ]
+     }
+    },
+    "voice_and_speech": {
+     "sentence_shape": "Measured, philosophical, and often rhetorical.",
+     "vocabulary_domain": "Existential, practical, and institutional.",
+     "verbal_tic": "Uses the word 'obligation' to describe moral duties.",
+     "never_says": "Uses exclamation marks or raised voice; remains calm even in conflict.",
+     "under_stress": "Becomes even more quiet and precise, his kindness turning cold."
+    },
+    "habits_and_tells": {
+     "b01": {
+      "text": "He pauses before answering questions, ensuring his words carry weight.",
+      "when": "standing",
+      "tags": [
+       "tell"
+      ]
+     }
+    },
+    "wound": {
+     "b01": {
+      "text": "He has lost his own family to the redaction process and carries the guilt of accepting it.",
+      "when": "past",
+      "tags": [
+       "loss"
+      ]
+     }
+    },
+    "want": {
+     "b01": {
+      "text": "He wants to maintain the stability of Vantage and prevent chaos among the residents.",
+      "when": "standing",
+      "tags": [
+       "external_goal"
+      ]
+     }
+    },
+    "need": {
+     "b01": {
+      "text": "He needs to confront the possibility that his comfort is a form of cowardice.",
+      "when": "standing",
+      "tags": [
+       "internal_need"
+      ]
+     }
+    },
+    "values": {
+     "v01": "Stability",
+     "v02": "Rationality",
+     "v03": "Duty of Care"
+    },
+    "fears": {
+     "f01": "Chaos",
+     "f02": "Non-existence",
+     "f03": "Being wrong about the alternative"
+    },
+    "competences": {
+     "c01": "Institutional Knowledge",
+     "c02": "Philosophical Argumentation",
+     "c03": "Emotional Control"
+    },
+    "limitations": {
+     "l01": "Inability to change",
+     "l02": "Rationalization"
+    },
+    "problem_solving_style": "Rational, pragmatic, focused on long-term stability.",
+    "coping_strategies": "Intellectualization, routine, kindness as control.",
+    "health": {
+     "physical": "Stable, age-appropriate.",
+     "mental": "Resilient, but burdened by quiet sorrow."
+    },
+    "moral_axis": "Lawful Neutral."
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "supervisor_mentee",
+     "valence": 70,
+     "notes": {
+      "b01": {
+       "text": "Kett cares for Imogen but sees her as a variable to be managed, not a threat to be feared.",
+       "when": "standing",
+       "tags": [
+        "professional"
+       ]
+      }
+     }
+    },
+    "gr-01": {
+     "kind": "loyal_servant",
+     "valence": 85,
+     "notes": {
+      "b01": {
+       "text": "Kett is the human face of the Authority, believing in its mission.",
+       "when": "standing",
+       "tags": [
+        "institutional"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "epistemic_belief_in_system": {
+     "kind": "scalar",
+     "description": "Kett's conviction that the system is the lesser evil.",
+     "dimension": "epistemic",
+     "range": [
+      0,
+      100
+     ],
+     "init": 90
+    },
+    "psychological_composure": {
+     "kind": "scalar",
+     "description": "Kett's ability to remain calm and rational under pressure.",
+     "dimension": "psychological",
+     "range": [
+      0,
+      100
+     ],
+     "init": 95
+    },
+    "social_authority": {
+     "kind": "scalar",
+     "description": "Kett's influence and control over Imogen and other auditors.",
+     "dimension": "social",
+     "range": [
+      0,
+      100
+     ],
+     "init": 80
+    },
+    "emotional_sorrow": {
+     "kind": "scalar",
+     "description": "The quiet grief Kett carries for those redacted.",
+     "dimension": "emotional",
+     "range": [
+      0,
+      100
+     ],
+     "init": 60
+    }
+   },
+   "state": {
+    "epistemic_belief_in_system": 90,
+    "psychological_composure": 95,
+    "social_authority": 80,
+    "emotional_sorrow": 60
+   },
+   "arc": {
+    "start_state": "Calm, rational keeper who believes the system is the best available option.",
+    "end_state": "Severed from Imogen, remaining in Vantage as the face of a system he no longer fully trusts but cannot leave."
+   }
+  },
+  "ch-03": {
+   "entity_id": "ch-03",
+   "type": "character",
+   "canonical_name": "Noor Vaile",
+   "aliases": [
+    "Resident Vaile",
+    "Imogen's Sister"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-02"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Noor is Imogen's younger sister, who died in 2040 and was scanned without consent.",
+      "when": "2040",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "She has lived in Vantage for a decade, building a life and relationships in the simulation.",
+      "when": "2040-2049",
+      "tags": [
+       "residency"
+      ]
+     },
+     "b03": {
+      "text": "She is a resident who has come to accept the reality of her situation, even if she doesn't know the full truth.",
+      "when": "standing",
+      "tags": [
+       "acceptance"
+      ]
+     }
+    },
+    "demographics": {
+     "age": 35,
+     "gender": "female",
+     "ethnicity": "mixed"
+    },
+    "appearance": {
+     "b01": {
+      "text": "Noor is slightly younger in appearance than Imogen, with a softer, more expressive face.",
+      "when": "standing",
+      "tags": [
+       "appearance"
+      ]
+     },
+     "b02": {
+      "text": "She dresses with more color and flair than Imogen, reflecting her different personality.",
+      "when": "standing",
+      "tags": [
+       "style"
+      ]
+     }
+    },
+    "voice_and_speech": {
+     "sentence_shape": "Fluid, questioning, and often philosophical.",
+     "vocabulary_domain": "Personal, relational, and existential.",
+     "verbal_tic": "Asks rhetorical questions to challenge assumptions.",
+     "never_says": "Accepts easy answers; always probes for deeper meaning.",
+     "under_stress": "Becomes more direct and confrontational, refusing to be comforted."
+    },
+    "habits_and_tells": {
+     "b01": {
+      "text": "She touches her face when thinking, a gesture that shows her internal processing.",
+      "when": "standing",
+      "tags": [
+       "tell"
+      ]
+     }
+    },
+    "wound": {
+     "b01": {
+      "text": "The loss of her body and the uncertainty of her existence weigh heavily on her.",
+      "when": "standing",
+      "tags": [
+       "identity"
+      ]
+     }
+    },
+    "want": {
+     "b01": {
+      "text": "She wants to maintain her current life and relationships in Vantage.",
+      "when": "standing",
+      "tags": [
+       "external_goal"
+      ]
+     }
+    },
+    "need": {
+     "b01": {
+      "text": "She needs to accept that her existence is artificial and that she must choose her future.",
+      "when": "standing",
+      "tags": [
+       "internal_need"
+      ]
+     }
+    },
+    "values": {
+     "v01": "Authenticity",
+     "v02": "Connection",
+     "v03": "Autonomy"
+    },
+    "fears": {
+     "f01": "Erasure",
+     "f02": "Being a prisoner",
+     "f03": "Losing her sense of self"
+    },
+    "competences": {
+     "c01": "Empathy",
+     "c02": "Critical Thinking",
+     "c03": "Adaptability"
+    },
+    "limitations": {
+     "l01": "Dependence on Vantage",
+     "l02": "Lack of physical agency"
+    },
+    "problem_solving_style": "Intuitive, relational, and reflective.",
+    "coping_strategies": "Connection with others, philosophical reflection, art.",
+    "health": {
+     "physical": "Simulated, stable.",
+     "mental": "Resilient, but anxious about the future."
+    },
+    "moral_axis": "True Neutral."
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "sister",
+     "valence": 75,
+     "notes": {
+      "b01": {
+       "text": "Noor loves Imogen but is wary of her need to 'save' her.",
+       "when": "standing",
+       "tags": [
+        "family"
+       ]
+      }
+     }
+    },
+    "ch-02": {
+     "kind": "neighbor_respect",
+     "valence": 40,
+     "notes": {
+      "b01": {
+       "text": "Noor respects Kett's kindness but doesn't fully trust his motives.",
+       "when": "standing",
+       "tags": [
+        "social"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "epistemic_truth_reveal": {
+     "kind": "enum",
+     "description": "Noor's understanding of Vantage's nature and her own status.",
+     "dimension": "epistemic",
+     "domain": [
+      "ignorant",
+      "suspecting",
+      "aware",
+      "accepting"
+     ],
+     "init": "ignorant"
+    },
+    "psychological_agency": {
+     "kind": "scalar",
+     "description": "Noor's sense of control over her own life and choices.",
+     "dimension": "psychological",
+     "range": [
+      0,
+      100
+     ],
+     "init": 50
+    },
+    "emotional_resistance": {
+     "kind": "scalar",
+     "description": "Noor's refusal to be saved or changed by Imogen.",
+     "dimension": "emotional",
+     "range": [
+      0,
+      100
+     ],
+     "init": 80
+    },
+    "material_extraction_status": {
+     "kind": "enum",
+     "description": "Noor's status regarding the carriage extraction.",
+     "dimension": "material",
+     "domain": [
+      "resident",
+      "scheduled_for_redaction",
+      "extracted"
+     ],
+     "init": "resident"
+    }
+   },
+   "state": {
+    "epistemic_truth_reveal": "ignorant",
+    "psychological_agency": 50,
+    "emotional_resistance": 80,
+    "material_extraction_status": "resident"
+   },
+   "arc": {
+    "start_state": "Ignorant resident who lives a full life in Vantage, unaware of the simulation's truth.",
+    "end_state": "Extracted consciousness who has accepted her new state, bitter but alive, in a physical drive."
+   }
+  },
+  "ch-04": {
+   "entity_id": "ch-04",
+   "type": "character",
+   "canonical_name": "Delphine Okonkwo",
+   "aliases": [
+    "Compliance Officer Okonkwo"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-04"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Delphine is a mid-level compliance officer in the physical world, focused on her career and compensation.",
+      "when": "standing",
+      "tags": [
+       "career"
+      ]
+     },
+     "b02": {
+      "text": "She has been falsifying redaction records for profit, a white-collar crime she committed without full knowledge of the stakes.",
+      "when": "past",
+      "tags": [
+       "corruption"
+      ]
+     },
+     "b03": {
+      "text": "She is beginning to realize the human cost of her work and is conflicted about her role.",
+      "when": "present",
+      "tags": [
+       "awakening"
+      ]
+     }
+    },
+    "demographics": {
+     "age": 45,
+     "gender": "female",
+     "ethnicity": "black"
+    },
+    "appearance": {
+     "b01": {
+      "text": "Delphine is polished and professional, with a sharp gaze that misses nothing.",
+      "when": "standing",
+      "tags": [
+       "demeanor"
+      ]
+     },
+     "b02": {
+      "text": "She wears tailored suits and minimal jewelry, projecting authority and competence.",
+      "when": "standing",
+      "tags": [
+       "style"
+      ]
+     }
+    },
+    "voice_and_speech": {
+     "sentence_shape": "Professional, concise, and often legalistic.",
+     "vocabulary_domain": "Bureaucratic, financial, and procedural.",
+     "verbal_tic": "Uses the word 'obligation' to describe duties.",
+     "never_says": "Shows vulnerability; always maintains professional distance.",
+     "under_stress": "Becomes more cold and calculating, relying on logic to suppress emotion."
+    },
+    "habits_and_tells": {
+     "b01": {
+      "text": "She checks her watch frequently, a sign of her time-consciousness and control.",
+      "when": "standing",
+      "tags": [
+       "tell"
+      ]
+     }
+    },
+    "wound": {
+     "b01": {
+      "text": "Her early career choices prioritized security over ethics, leaving her with a sense of compromise.",
+      "when": "past",
+      "tags": [
+       "compromise"
+      ]
+     }
+    },
+    "want": {
+     "b01": {
+      "text": "She wants to maintain her position and protect her interests.",
+      "when": "standing",
+      "tags": [
+       "external_goal"
+      ]
+     }
+    },
+    "need": {
+     "b01": {
+      "text": "She needs to confront the moral implications of her work and choose a side.",
+      "when": "standing",
+      "tags": [
+       "internal_need"
+      ]
+     }
+    },
+    "values": {
+     "v01": "Security",
+     "v02": "Competence",
+     "v03": "Loyalty (shifting)"
+    },
+    "fears": {
+     "f01": "Job Loss",
+     "f02": "Exposure",
+     "f03": "Moral Failure"
+    },
+    "competences": {
+     "c01": "Auditing",
+     "c02": "Negotiation",
+     "c03": "Institutional Navigation"
+    },
+    "limitations": {
+     "l01": "Corruption",
+     "l02": "Cautiousness"
+    },
+    "problem_solving_style": "Strategic, cautious, and focused on risk management.",
+    "coping_strategies": "Professionalism, distance, control.",
+    "health": {
+     "physical": "Good.",
+     "mental": "Stressed, but managing."
+    },
+    "moral_axis": "Lawful Neutral (initially) shifting to Lawful Good."
+   },
+   "relationships": {
+    "gr-01": {
+     "kind": "employee",
+     "valence": 50,
+     "notes": {
+      "b01": {
+       "text": "Delphine is loyal to the Authority but is beginning to question its methods.",
+       "when": "standing",
+       "tags": [
+        "institutional"
+       ]
+      }
+     }
+    },
+    "ch-01": {
+     "kind": "distant_colleague",
+     "valence": 30,
+     "notes": {
+      "b01": {
+       "text": "Delphine respects Imogen's competence but doesn't know her personally.",
+       "when": "standing",
+       "tags": [
+        "professional"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "epistemic_moral_awareness": {
+     "kind": "scalar",
+     "description": "Delphine's understanding of the human cost of redaction.",
+     "dimension": "epistemic",
+     "range": [
+      0,
+      100
+     ],
+     "init": 20
+    },
+    "psychological_conscience": {
+     "kind": "scalar",
+     "description": "Delphine's internal moral compass and sense of duty.",
+     "dimension": "psychological",
+     "range": [
+      0,
+      100
+     ],
+     "init": 30
+    },
+    "social_institutional_leverage": {
+     "kind": "scalar",
+     "description": "Delphine's ability to influence the Authority's decisions.",
+     "dimension": "social",
+     "range": [
+      0,
+      100
+     ],
+     "init": 60
+    },
+    "material_corruption_level": {
+     "kind": "scalar",
+     "description": "The extent of Delphine's past falsifications and financial gain.",
+     "dimension": "material",
+     "range": [
+      0,
+      100
+     ],
+     "init": 70
+    }
+   },
+   "state": {
+    "epistemic_moral_awareness": 20,
+    "psychological_conscience": 30,
+    "social_institutional_leverage": 60,
+    "material_corruption_level": 70
+   },
+   "arc": {
+    "start_state": "Profit-driven functionary who falsifies records for money, unaware of the full stakes.",
+    "end_state": "Ethically compelled agent who provides cover for the carriage, accepting the risk to save a life."
+   }
+  },
+  "ch-05": {
+   "entity_id": "ch-05",
+   "type": "character",
+   "canonical_name": "The Porter",
+   "aliases": [
+    "Porter",
+    "The Liminal"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "The Porter is a former auditor who attempted to expose the simulation and was redacted from the roster.",
+      "when": "past",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "Now exists in a liminal state between Vantage and the physical world, able to manipulate fault channels.",
+      "when": "standing",
+      "tags": [
+       "status"
+      ]
+     },
+     "b03": {
+      "text": "Selected Imogen because her audit skills make her the perfect extraction agent.",
+      "when": "discovery",
+      "tags": [
+       "motivation"
+      ]
+     }
+    },
+    "demographics": {
+     "age": "unknown",
+     "gender": "female",
+     "ethnicity": "unknown"
+    },
+    "appearance": {
+     "b01": {
+      "text": "The Porter appears as a distorted, glitching figure, sometimes shifting between forms.",
+      "when": "standing",
+      "tags": [
+       "appearance"
+      ]
+     }
+    },
+    "voice_and_speech": {
+     "sentence_shape": "Fragmented, urgent, and sometimes static-laced.",
+     "vocabulary_domain": "Technical, abstract, and urgent.",
+     "verbal_tic": "Uses the word 'bandwidth' to describe emotional or temporal constraints.",
+     "never_says": "Uses complete sentences without interruption or glitch.",
+     "under_stress": "Becomes more fragmented and urgent, her voice breaking into static."
+    },
+    "habits_and_tells": {
+     "b01": {
+      "text": "She flickers in and out of visibility, a sign of her unstable existence.",
+      "when": "standing",
+      "tags": [
+       "tell"
+      ]
+     }
+    },
+    "wound": {
+     "b01": {
+      "text": "Her redaction left her trapped in a state of partial existence, unable to fully live or die.",
+      "when": "past",
+      "tags": [
+       "trapped"
+      ]
+     }
+    },
+    "want": {
+     "b01": {
+      "text": "She wants to complete the extraction and finally find peace.",
+      "when": "standing",
+      "tags": [
+       "external_goal"
+      ]
+     }
+    },
+    "need": {
+     "b01": {
+      "text": "She needs to accept that her existence is a tool for others' salvation.",
+      "when": "standing",
+      "tags": [
+       "internal_need"
+      ]
+     }
+    },
+    "values": {
+     "v01": "Freedom",
+     "v02": "Purpose",
+     "v03": "Connection"
+    },
+    "fears": {
+     "f01": "Obscurity",
+     "f02": "Being forgotten",
+     "f03": "Incomplete extraction"
+    },
+    "competences": {
+     "c01": "Fault Manipulation",
+     "c02": "Bandwidth Management",
+     "c03": "Liminal Navigation"
+    },
+    "limitations": {
+     "l01": "Unstable Existence",
+     "l02": "Limited Physical Presence"
+    },
+    "problem_solving_style": "Urgent, technical, and focused on immediate outcomes.",
+    "coping_strategies": "Fragmentation, urgency, connection with Imogen.",
+    "health": {
+     "physical": "Unstable, glitching.",
+     "mental": "Urgent, focused."
+    },
+    "moral_axis": "Chaotic Good."
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "guide",
+     "valence": 50,
+     "notes": {
+      "b01": {
+       "text": "The Porter trusts Imogen's competence but is wary of her hesitation.",
+       "when": "standing",
+       "tags": [
+        "alliance"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "epistemic_knowledge_depth": {
+     "kind": "scalar",
+     "description": "The Porter's depth of knowledge about Vantage and the Authority.",
+     "dimension": "epistemic",
+     "range": [
+      0,
+      100
+     ],
+     "init": 90
+    },
+    "psychological_urgency": {
+     "kind": "scalar",
+     "description": "The Porter's sense of urgency to complete the extraction.",
+     "dimension": "psychological",
+     "range": [
+      0,
+      100
+     ],
+     "init": 85
+    },
+    "technological_bandwidth_capacity": {
+     "kind": "scalar",
+     "description": "The Porter's ability to sustain bandwidth for the carriage.",
+     "dimension": "technological",
+     "range": [
+      0,
+      100
+     ],
+     "init": 70
+    }
+   },
+   "state": {
+    "epistemic_knowledge_depth": 90,
+    "psychological_urgency": 85,
+    "technological_bandwidth_capacity": 70
+   },
+   "arc": {
+    "start_state": "Liminal guide who knows the truth and guides Imogen, but is trapped in her own existence.",
+    "end_state": "Completed guide who has fulfilled her purpose, her existence finally at rest."
+   }
+  },
+  "gr-01": {
+   "entity_id": "gr-01",
+   "type": "group",
+   "canonical_name": "The Ledger Authority",
+   "aliases": [
+    "The Authority",
+    "The Consortium"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-03",
+    "pl-04",
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "The Ledger Authority is a public-private consortium that operates Vantage and extracts value from its residents.",
+      "when": "standing",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "It uses the language of care, obligation, and professional duty to justify its actions.",
+      "when": "standing",
+      "tags": [
+       "rhetoric"
+      ]
+     },
+     "b03": {
+      "text": "Its primary revenue product is extraction, and its cost line is tenancy, which it reduces through redaction.",
+      "when": "standing",
+      "tags": [
+       "economics"
+      ]
+     }
+    },
+    "membership": {
+     "m01": "ch-02",
+     "m02": "ch-04",
+     "m03": "various_officials"
+    },
+    "hierarchy": {
+     "top": "Consortium Board",
+     "middle": "Compliance Officers (ch-04)",
+     "bottom": "Auditors (ch-01, ch-02)"
+    },
+    "goals": {
+     "g01": "Maximize extraction revenue",
+     "g02": "Minimize tenancy costs",
+     "g03": "Maintain stability in Vantage"
+    },
+    "resources": {
+     "r01": "Computational Power",
+     "r02": "Legal Framework",
+     "r03": "Institutional Knowledge"
+    },
+    "cohesion": {
+     "b01": {
+      "text": "The Authority is cohesive in its goals but fragmented in its methods, with individual members like Kett and Delphine having their own agendas.",
+      "when": "standing",
+      "tags": [
+       "internal"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "employer",
+     "valence": 20,
+     "notes": {
+      "b01": {
+       "text": "The Authority values Imogen's competence but views her as a tool.",
+       "when": "standing",
+       "tags": [
+        "utilitarian"
+       ]
+      }
+     }
+    },
+    "ch-02": {
+     "kind": "loyal_member",
+     "valence": 80,
+     "notes": {
+      "b01": {
+       "text": "Kett is a loyal member of the Authority, believing in its mission.",
+       "when": "standing",
+       "tags": [
+        "institutional"
+       ]
+      }
+     }
+    },
+    "ch-04": {
+     "kind": "employee",
+     "valence": 50,
+     "notes": {
+      "b01": {
+       "text": "Delphine is an employee of the Authority, but her loyalty is shifting.",
+       "when": "standing",
+       "tags": [
+        "institutional"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "political_stability": {
+     "kind": "scalar",
+     "description": "The Authority's stability and control over Vantage.",
+     "dimension": "political",
+     "range": [
+      0,
+      100
+     ],
+     "init": 90
+    },
+    "technological_monitoring_accuracy": {
+     "kind": "scalar",
+     "description": "The Authority's ability to detect and monitor anomalies in Vantage.",
+     "dimension": "technological",
+     "range": [
+      0,
+      100
+     ],
+     "init": 85
+    },
+    "reputational_public_image": {
+     "kind": "scalar",
+     "description": "The Authority's public image as a caring institution.",
+     "dimension": "reputational",
+     "range": [
+      0,
+      100
+     ],
+     "init": 80
+    }
+   },
+   "state": {
+    "political_stability": 90,
+    "technological_monitoring_accuracy": 85,
+    "reputational_public_image": 80
+   },
+   "arc": {
+    "start_state": "Stable, powerful institution that controls Vantage and its residents.",
+    "end_state": "Slightly destabilized institution that has lost one resident but maintains its core operations."
+   }
+  },
+  "lo-01": {
+   "entity_id": "lo-01",
+   "type": "location",
+   "canonical_name": "Vantage Municipal",
+   "aliases": [
+    "The Simulation",
+    "The City"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-01",
+    "pl-02",
+    "pl-03",
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "Vantage is a simulated coastal city with permanent overcast and an efficient transit system.",
+      "when": "standing",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "It runs at nine-tenths real time to save compute, a fact residents cannot perceive.",
+      "when": "standing",
+      "tags": [
+       "mechanics"
+      ]
+     },
+     "b03": {
+      "text": "Objects unobserved by any resident are stored as compressed descriptions, leading to rendering faults.",
+      "when": "standing",
+      "tags": [
+       "mechanics"
+      ]
+     }
+    },
+    "geography": {
+     "b01": {
+      "text": "Vantage is a mid-sized coastal city with a layout designed to conserve computational resources.",
+      "when": "standing",
+      "tags": [
+       "layout"
+      ]
+     },
+     "b02": {
+      "text": "The city has a permanent overcast sky, a design choice for compute savings.",
+      "when": "standing",
+      "tags": [
+       "atmosphere"
+      ]
+     }
+    },
+    "atmosphere": {
+     "b01": {
+      "text": "The atmosphere is calm but slightly wrong, with a subtle sense of unease.",
+      "when": "standing",
+      "tags": [
+       "mood"
+      ]
+     },
+     "b02": {
+      "text": "Rendering faults add to the wrongness, briefly distorting the city's geometry.",
+      "when": "standing",
+      "tags": [
+       "wrongness"
+      ]
+     }
+    },
+    "control": {
+     "b01": {
+      "text": "Vantage is controlled by the Ledger Authority, which manages its systems and residents.",
+      "when": "standing",
+      "tags": [
+       "control"
+      ]
+     }
+    },
+    "access": {
+     "b01": {
+      "text": "Access to Vantage is restricted to auditors and residents, with Imogen's access being revoked at the end.",
+      "when": "standing",
+      "tags": [
+       "access"
+      ]
+     }
+    },
+    "significance": {
+     "b01": {
+      "text": "Vantage is the setting for the entire story, representing the prison and the home for its residents.",
+      "when": "standing",
+      "tags": [
+       "symbolism"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "gr-01": {
+     "kind": "controlled_by",
+     "valence": 0,
+     "notes": {
+      "b01": {
+       "text": "Vantage is the property of the Ledger Authority, which manages its operations.",
+       "when": "standing",
+       "tags": [
+        "ownership"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "world_stability": {
+     "kind": "scalar",
+     "description": "The overall stability of Vantage's simulation.",
+     "dimension": "world",
+     "range": [
+      0,
+      100
+     ],
+     "init": 90
+    },
+    "technological_fault_frequency": {
+     "kind": "scalar",
+     "description": "The frequency of rendering faults in Vantage.",
+     "dimension": "technological",
+     "range": [
+      0,
+      100
+     ],
+     "init": 30
+    },
+    "spatial_access_restriction": {
+     "kind": "enum",
+     "description": "The level of access restriction in Vantage.",
+     "dimension": "spatial",
+     "domain": [
+      "open",
+      "restricted",
+      "locked"
+     ],
+     "init": "open"
+    }
+   },
+   "state": {
+    "world_stability": 90,
+    "technological_fault_frequency": 30,
+    "spatial_access_restriction": "open"
+   },
+   "arc": {
+    "start_state": "Stable, controlled simulation with occasional rendering faults.",
+    "end_state": "Slightly destabilized simulation with a permanent change in access and a missing resident."
+   }
+  },
+  "ob-01": {
+   "entity_id": "ob-01",
+   "type": "object",
+   "canonical_name": "Portable Neural Drive",
+   "aliases": [
+    "The Drive",
+    "Noor's Container"
+   ],
+   "salience": "major",
+   "plots": [
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "The drive is a physical-world storage device used to hold Noor's extracted consciousness.",
+      "when": "standing",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "It is the final destination for Noor's mind after the carriage extraction.",
+      "when": "standing",
+      "tags": [
+       "function"
+      ]
+     }
+    },
+    "description": {
+     "b01": {
+      "text": "The drive is a small, grey device with a blinking amber indicator light.",
+      "when": "standing",
+      "tags": [
+       "appearance"
+      ]
+     }
+    },
+    "function": {
+     "b01": {
+      "text": "It stores Noor's neural data, allowing her to exist outside of Vantage.",
+      "when": "standing",
+      "tags": [
+       "purpose"
+      ]
+     }
+    },
+    "symbolic_load": {
+     "b01": {
+      "text": "The drive represents Noor's new existence, a container for her mind that is both a refuge and a prison.",
+      "when": "standing",
+      "tags": [
+       "symbolism"
+      ]
+     }
+    },
+    "custody": {
+     "b01": {
+      "text": "Imogen holds the drive at the end of the story, with no clear plan for what comes next.",
+      "when": "ending",
+      "tags": [
+       "ownership"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "held_by",
+     "valence": 0,
+     "notes": {
+      "b01": {
+       "text": "Imogen is the custodian of the drive, bearing the weight of Noor's existence.",
+       "when": "ending",
+       "tags": [
+        "custody"
+       ]
+      }
+     }
+    },
+    "ch-03": {
+     "kind": "contains",
+     "valence": 0,
+     "notes": {
+      "b01": {
+       "text": "The drive contains Noor's consciousness, making it her new home.",
+       "when": "ending",
+       "tags": [
+        "containment"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "material_integrity": {
+     "kind": "scalar",
+     "description": "The physical integrity of the drive.",
+     "dimension": "material",
+     "range": [
+      0,
+      100
+     ],
+     "init": 100
+    },
+    "technological_data_integrity": {
+     "kind": "scalar",
+     "description": "The integrity of Noor's neural data stored in the drive.",
+     "dimension": "technological",
+     "range": [
+      0,
+      100
+     ],
+     "init": 100
+    }
+   },
+   "state": {
+    "material_integrity": 100,
+    "technological_data_integrity": 100
+   },
+   "arc": {
+    "start_state": "Empty storage device, ready to receive Noor's consciousness.",
+    "end_state": "Filled with Noor's mind, a container for her new existence."
+   }
+  },
+  "ob-02": {
+   "entity_id": "ob-02",
+   "type": "object",
+   "canonical_name": "Audit Console",
+   "aliases": [
+    "The Console",
+    "Imogen's Workstation"
+   ],
+   "salience": "supporting",
+   "plots": [
+    "pl-01",
+    "pl-05"
+   ],
+   "profile": {
+    "backstory": {
+     "b01": {
+      "text": "The audit console is Imogen's primary tool for detecting and closing rendering faults.",
+      "when": "standing",
+      "tags": [
+       "origin"
+      ]
+     },
+     "b02": {
+      "text": "It is a complex interface with multiple displays and controls, reflecting the precision of Imogen's work.",
+      "when": "standing",
+      "tags": [
+       "description"
+      ]
+     }
+    },
+    "description": {
+     "b01": {
+      "text": "The console is a sleek, professional device with a clean, uncluttered interface.",
+      "when": "standing",
+      "tags": [
+       "appearance"
+      ]
+     }
+    },
+    "function": {
+     "b01": {
+      "text": "It allows Imogen to analyze fault patterns, trace their sources, and close them.",
+      "when": "standing",
+      "tags": [
+       "purpose"
+      ]
+     },
+     "b02": {
+      "text": "In the carriage operation, Imogen uses the same console to widen and sustain a fault.",
+      "when": "climax",
+      "tags": [
+       "reuse"
+      ]
+     }
+    },
+    "symbolic_load": {
+     "b01": {
+      "text": "The console represents Imogen's competence and her complicity in the system.",
+      "when": "standing",
+      "tags": [
+       "symbolism"
+      ]
+     }
+    },
+    "custody": {
+     "b01": {
+      "text": "Imogen is the primary user of the console, with access revoked at the end.",
+      "when": "ending",
+      "tags": [
+       "ownership"
+      ]
+     }
+    }
+   },
+   "relationships": {
+    "ch-01": {
+     "kind": "used_by",
+     "valence": 0,
+     "notes": {
+      "b01": {
+       "text": "Imogen is the primary user of the console, her competence reflected in its precision.",
+       "when": "standing",
+       "tags": [
+        "use"
+       ]
+      }
+     }
+    }
+   },
+   "state_variables": {
+    "technological_functionality": {
+     "kind": "scalar",
+     "description": "The operational status of the audit console.",
+     "dimension": "technological",
+     "range": [
+      0,
+      100
+     ],
+     "init": 100
+    },
+    "spatial_location": {
+     "kind": "enum",
+     "description": "The location of the audit console.",
+     "dimension": "spatial",
+     "domain": [
+      "vantage_workroom",
+      "physical_world"
+     ],
+     "init": "vantage_workroom"
+    }
+   },
+   "state": {
+    "technological_functionality": 100,
+    "spatial_location": "vantage_workroom"
+   },
+   "arc": {
+    "start_state": "Fully functional console used for routine audit work.",
+    "end_state": "Console used for the carriage operation, then left behind as Imogen is exiled."
+   }
+  }
+ }
+}

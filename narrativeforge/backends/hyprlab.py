@@ -32,6 +32,33 @@ def load_env(path: str | Path = ".env") -> None:
         os.environ.setdefault(key.strip(), value.strip().strip("'\""))
 
 
+
+# Guided-decoding backends compile a JSON Schema into a grammar, and they do not
+# all support the whole vocabulary. vLLM/xgrammar returns HTTP 500 with an EMPTY
+# error message on `propertyNames` — no hint about which construct or where, and
+# the request had already retried four times before failing the stage.
+#
+# Isolated by bisection: `propertyNames` alone reproduces it; removing it from
+# the identical schema returns 200.
+#
+# Stripping it loosens what the *grammar* enforces, not what we accept:
+# jsonschema_mini still checks the full schema after the call, so a key that
+# violates the pattern is caught by validation instead of being made
+# ungrammatical. That is a worse guarantee and an acceptable one.
+GRAMMAR_UNSUPPORTED = ("propertyNames", "dependentRequired", "dependentSchemas",
+                       "unevaluatedProperties", "unevaluatedItems", "if", "then", "else")
+
+
+def strip_unsupported(schema):
+    """Remove keywords a grammar compiler may not implement. Non-destructive."""
+    if isinstance(schema, dict):
+        return {k: strip_unsupported(v) for k, v in schema.items()
+                if k not in GRAMMAR_UNSUPPORTED}
+    if isinstance(schema, list):
+        return [strip_unsupported(v) for v in schema]
+    return schema
+
+
 class HyprlabBackend(Backend):
     name = "hyprlab"
 
@@ -77,7 +104,12 @@ class HyprlabBackend(Backend):
             "temperature": self.temperature,
             "max_completion_tokens": self.max_tokens,
         }
-        if self.reasoning_effort:
+        if self.reasoning_effort and not (self._is_local and self.reasoning_effort == "none"):
+            # "none" is GLM-specific. Qwen3.8's template accepts only
+            # xhigh|medium|low and RAISES on anything else, turning the request
+            # into a 400. The chat_template_kwargs form below switches thinking
+            # off structurally and is understood by both, so for local endpoints
+            # that is the only signal sent.
             payload["reasoning_effort"] = self.reasoning_effort
         if self._is_local:
             # llama.cpp's OpenAI shim reads `max_tokens`, not `max_completion_tokens`.
@@ -87,7 +119,7 @@ class HyprlabBackend(Backend):
             # Reuse the KV cache for the shared prefix. Measured on this deployment:
             # a repeated 50k prefix costs 0.064 s instead of 193.7 s.
             payload["cache_prompt"] = True
-            if self.reasoning_effort == "none":
+            if self.reasoning_effort in ("none", "off", None):
                 # Belt and braces. This GGUF's chat template maps every value that is
                 # not the literal string 'high' to *max*, so "low"/"minimal" silently
                 # select the most expensive setting. Only "none" (a llama.cpp special
@@ -97,7 +129,9 @@ class HyprlabBackend(Backend):
             if self.response_format == "json_schema" and schema is not None:
                 payload["response_format"] = {
                     "type": "json_schema",
-                    "json_schema": {"name": "artifact", "strict": False, "schema": schema},
+                    "json_schema": {"name": "artifact", "strict": False,
+                                    "schema": strip_unsupported(schema) if self._is_local
+                                    else schema},
                 }
             else:
                 payload["response_format"] = {"type": "json_object"}
@@ -133,7 +167,7 @@ class HyprlabBackend(Backend):
                     continue
                 return content
 
-            if response.status_code in (400, 404, 422) and "json_schema" in json.dumps(payload):
+            if response.status_code in (400, 404, 422, 500) and "json_schema" in json.dumps(payload):
                 # The endpoint rejected the schema; degrade to plain JSON mode.
                 payload = dict(payload, response_format={"type": "json_object"})
                 last_error = BackendError(f"schema rejected ({response.status_code}); retrying in json_object mode")

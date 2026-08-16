@@ -1,0 +1,562 @@
+{
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-001",
+  "ordinal": 1
+ },
+ "situation": "The narrative clock is at absolute zero. No character has yet made a choice that cannot be undone. Neo is a skeptic trapped in a reality that is not his; Morpheus is a man carrying the weight of five dead predecessors; the Agents are active but unaware of the specific target who will end their existence. The world is static, defined by its rules but not yet by its conflict. The audience has no emotional anchor, no stake, and no reason to care about the outcome of the war between humans and machines.",
+ "craft": {
+  "audience_need": "The audience needs a visceral, immediate demonstration of the central premise: that reality is not what it seems. They need to feel the uncanny valley of the simulation before they are asked to believe in the philosophy of the Matrix. The first 155 words must establish the 'wrongness' of the world through sensory detail and subtext, not exposition.",
+  "genre_convention": "Science fiction and noir typically open with a protagonist in a state of disquiet, often through a specific anomaly or a call to action. This node satisfies the expectation of a 'disturbance' by presenting the first crack in the facade of normalcy. It delays the full reveal of the simulation's nature, using the anomaly to hook the viewer rather than explaining the mechanics immediately.",
+  "theme_and_style": "The register is plain but dense with subtext. The forbidden tic of 'no interior monologue' demands that Neo's confusion be externalized through action and environment, not thought. The Gibson-esque texture requires a focus on the sensory dissonance of the digital world—the glitch, the déjà vu, the uncanny familiarity. The scene must communicate that something is fundamentally broken without stating it.",
+  "dramatic_function": "This node functions as the 'disturbance' in the hero's journey. It introduces the central conflict: the gap between perceived reality and actual reality. It sets the stage for Neo's search for the truth by planting the first seed of doubt. It does not resolve anything; it opens the door that the rest of the film will walk through.",
+  "tension_management": {
+   "entering": 0,
+   "leaving": 15,
+   "how": "Tension is raised by the introduction of the 'white rabbit' motif and the subtle wrongness of the environment. The audience is made to feel that they are looking at the world through a slightly cracked lens. The low dialogue ratio (0.182) ensures that the tension is carried by the visual and atmospheric elements rather than by explicit conflict."
+  },
+  "why_now": "This must happen first because it is the inciting incident. Without the initial disturbance, there is no reason for Neo to seek out Morpheus, no reason for the Agents to be hunting, and no reason for the audience to care about the fate of humanity. It is the first domino that starts the chain reaction of the plot.",
+  "why_not_otherwise": [
+   {
+    "alternative": "Opening with Morpheus's monologue about the Matrix.",
+    "rejected_because": "It would violate the 'no summarizing of prior events' and 'no interior monologue' rules. It would tell the audience the theme rather than showing it, and it would center the mentor rather than the protagonist, reducing the audience's investment in Neo's personal journey.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "If the story were a philosophical treatise rather than a character-driven narrative, this might be the correct choice to establish the intellectual framework first."
+   },
+   {
+    "alternative": "Opening with the Agents pursuing Trinity in the subway.",
+    "rejected_because": "It would introduce the antagonist before the protagonist, making the audience care about the hunter rather than the hunted. It would also delay the introduction of Neo, the central character whose transformation is the core of the film.",
+    "nearly_chosen": true,
+    "what_would_flip_it": "If the story were an ensemble piece where the Agents were the primary focus, or if Neo were a secondary character, this would be the correct choice to establish the threat level immediately."
+   }
+  ],
+  "promises": {
+   "made": [
+    "The world is not what it seems.",
+    "Neo is the one who will find the truth.",
+    "There is a force actively hunting those who seek the truth."
+   ],
+   "kept": []
+  }
+ },
+ "interaction": {
+  "what_collides": "The collision is between Neo's perception of reality and the reality of the simulation. The 'white rabbit' message and the déjà vu moment collide with Neo's understanding of how the world works, creating a cognitive dissonance that drives his search for the truth.",
+  "power_balance": "Neo is in a position of passive powerlessness. He is being acted upon by the message and the environment. The Agents are not present, but their presence is felt through the tracking and the pursuit of Trinity. The power balance shifts slightly as Neo becomes aware of the anomaly, giving him the agency to seek out the truth.",
+  "information_asymmetry": "Neo does not know that the world is a simulation. The audience is gradually being shown the same clues Neo is seeing, creating a shared discovery process. The Agents know the truth but are not present to reveal it. This asymmetry drives the narrative forward as Neo seeks to close the gap between his knowledge and the Agents' knowledge.",
+  "turning_point": "The turning point is the moment Neo sees the white rabbit and feels the déjà vu. This is the pivot from a state of unconscious ignorance to a state of active questioning. It is the moment the story begins."
+ },
+ "decision": {
+  "resolution": "The scene opens with Neo in his apartment, staring at his computer screen. The screen displays the message 'Follow the white rabbit.' Neo feels a sudden, intense déjà vu, looking around his apartment as if seeing it for the first time. He hears the sound of a phone ringing, but it is not his phone. He looks at the door, then back at the screen, and the scene ends with him reaching for his coat, deciding to go out and find out what is happening.",
+  "state_changes_implied": [
+   {
+    "entity": "ch-01",
+    "variable": "matrix_awareness",
+    "from": "searching",
+    "to": "disturbed",
+    "because": "Neo has received the first clue that the world is not what it seems, moving from a general search for truth to a specific disturbance in his reality."
+   },
+   {
+    "entity": "lo-03",
+    "variable": "contacted",
+    "from": "false",
+    "to": "true",
+    "because": "Neo has been contacted by the message on his computer, initiating the search for the truth."
+   }
+  ],
+  "confidence": 95,
+  "risks": [
+   "The scene might feel too slow if the visual elements do not effectively convey the 'wrongness' of the world.",
+   "The audience might not immediately understand the significance of the 'white rabbit' motif if it is not clearly presented as a call to action."
+  ]
+ },
+ "psychology": [
+  {
+   "entity": "ch-01",
+   "entering_state": "Neo is in a state of chronic, low-grade epistemic vertigo. He is a skeptic who has stopped asking 'what if' and started asking 'what is.' His body is tired from sleepless nights, his mind is razor-sharp but narrowed to a single point of obsession. He feels like a splinter in his own mind: something is wrong, but he cannot name it. He is waiting for a signal, not knowing that the signal is already here.",
+   "perception": {
+    "sight": "The blue glow of the computer screen dominates the dark apartment. The text 'FOLLOW THE WHITE RABBIT' blinks on the screen. Outside the window, the city lights are static, unchanging, a grid of amber and white that feels slightly too perfect. The reflection in the dark monitor shows his own pale, tired face, but for a split second, the reflection seems to lag behind his movement.",
+    "sound": "The hum of the computer fan. The distant, muffled roar of traffic that sounds like white noise. A sudden, sharp ring of a phone that is not his. The silence of the apartment feels heavy, pressurized.",
+    "touch": "The cold plastic of the mouse under his hand. The rough texture of his worn t-shirt. A sudden, prickling sensation on the back of his neck, like a static charge or a glance from behind.",
+    "smell": "Stale coffee, dust, and the ozone scent of overheating electronics. The air is dry and still.",
+    "taste": "Metallic, from biting his lip in concentration. A faint aftertaste of energy drinks.",
+    "interoception": "A hollow feeling in his stomach from lack of food. His heart is beating a steady, anxious rhythm. There is a subtle nausea in his gut, a sense of disorientation, like the room is slightly tilted.",
+    "proprioception": "He is slumped in his chair, shoulders hunched, eyes fixed on the screen. His body is coiled, ready to move but not moving. His hands are still, but his fingers twitch slightly.",
+    "attention": "His attention is locked on the screen and the message. He is failing to notice the phone ringing in the next room, the specific way the light is falling, and the fact that he has been sitting here for hours without blinking. He is hyper-focused on the anomaly and blind to the mundane details of his environment."
+   },
+   "appraisal": {
+    "value_at_stake": "Freedom and control over his own life; the need to understand the nature of reality.",
+    "valence": 45,
+    "arousal": 70,
+    "self_conscious_emotion": "A sense of vindication mixed with fear. He has been waiting for this, but the reality of it feels dangerous.",
+    "moral_reading": "This is a call. It is a test. If he ignores it, he remains in the dark. If he answers, he steps into the unknown. The moral weight is on the choice to act.",
+    "somatic_marker": "A cold rush in the gut, a tightening in the chest, and a sudden alertness that overrides fatigue."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "The norm of professional competence: Neo is a hacker, a solver of problems. He is expected to act on information.",
+     "The norm of self-preservation: In a world that feels unstable, caution is the default. Ignoring strange signals is safer.",
+     "The norm of solitude: Neo lives alone and works alone. There is no one to consult, no one to share the burden of the decision."
+    ],
+    "how_others_would_judge": "If anyone were present, they would see a man making a leap of faith. They would judge him as either brave or foolish, depending on the outcome. But no one is present.",
+    "how_absent_others_would_judge": "The absent audience of his peers, his customers, and the world at large would see him as a man who has finally snapped or finally woken up. The judgment is suspended until he acts.",
+    "standing_at_risk": "His standing as a rational, competent hacker is at risk if he acts on what might be a glitch. His standing as a seeker is at risk if he ignores the call.",
+    "norm_conflict": "The norm of caution (ignore the anomaly) conflicts with the norm of curiosity (investigate the anomaly). The norm of curiosity wins because it is the core of his identity as a hacker."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-02",
+     "d1": "Neo believes Trinity is a mysterious contact, possibly a friend or an ally, who is trying to reach him. He does not know her face, only her voice on the phone.",
+     "d2": "Neo believes Trinity knows something about the 'white rabbit' and is trying to guide him to Morpheus.",
+     "d3": "Neo believes Trinity believes that Neo is ready to hear the truth, but that he will need to be pushed to take the step.",
+     "accuracy": "Neo underestimates Trinity's personal investment in him. He sees her as a guide, not as a woman who has already loved him. He also overestimates her ability to control the situation, not realizing she is running out of time."
+    },
+    {
+     "other": "ch-03",
+     "d1": "Neo believes Morpheus is a legendary figure, a mythic hacker who has the answers he seeks. He has searched for him for years.",
+     "d2": "Neo believes Morpheus is waiting for him, that there is a place where he can find the truth.",
+     "d3": "Neo believes Morpheus believes that Neo is the one who will find the truth, but that Neo is not yet ready to accept it.",
+     "accuracy": "Neo does not know that Morpheus has been waiting for him his entire life, that this is not just a search but a destiny. He also does not know the cost of that waiting, the five dead predecessors."
+    },
+    {
+     "other": "ch-04",
+     "d1": "Neo believes Agent Smith is a force of order, a hunter who tracks anomalies. He has seen him on the news, a man in a black suit.",
+     "d2": "Neo believes Smith is hunting people like him, hackers who ask too many questions.",
+     "d3": "Neo believes Smith believes that Neo is a threat, a glitch in the system that needs to be deleted.",
+     "accuracy": "Neo does not know that Smith is not just a hunter but a program, a construct of the Matrix. He does not know that Smith's hatred for humans is personal, not just professional."
+    }
+   ],
+   "urges": {
+    "cravings": "A craving for clarity, for the answer to the question that has been haunting him. A craving for connection, for someone who understands the weight of the search.",
+    "physical_needs": "Sleep, food, water. His body is running on fumes. He needs to rest, but he cannot rest because he is afraid of missing the signal.",
+    "psych_needs_conscious": "To find Morpheus. To understand what the Matrix is. To stop feeling like he is losing his mind.",
+    "psych_needs_unconscious": "To be seen. To be acknowledged as the one who is different, the one who is special. To be saved from the emptiness of his life.",
+    "avoidances": "He is avoiding the possibility that the answer is that there is no answer. He is avoiding the fact that he is alone, that he has pushed everyone away in his search."
+   },
+   "impairments": {
+    "physical": "Sleep deprivation, mild dehydration, stiffness in the neck and shoulders from sitting in one position for too long.",
+    "medical": "none",
+    "magical": "none",
+    "chemical": "Caffeine, mild stimulant effect from energy drinks.",
+    "coercive": "The internal pressure of his own obsession. The feeling that he is being watched, that he is running out of time.",
+    "cognitive": "He cannot think clearly about the nature of the signal. Is it a coincidence? A glitch? A message? His mind is oscillating between these possibilities, making it hard to commit to an action.",
+    "net_effect": "His physical fatigue makes him more susceptible to suggestion, more likely to act on impulse. His cognitive dissonance makes him hesitant, but his obsession drives him forward."
+   },
+   "deliberation": {
+    "framing": "The problem is framed as a binary choice: ignore the message and remain in the dark, or follow it and risk everything. There is no middle ground.",
+    "options_weighed": [
+     {
+      "option": "Ignore the message and go to sleep.",
+      "predicted_outcome": "He will wake up tomorrow, feel the same unease, and continue his search. He will remain safe but stagnant.",
+      "cost": "The cost is the continued torment of the unknown. The splinter in his mind will not go away."
+     },
+     {
+      "option": "Follow the message and go out into the city.",
+      "predicted_outcome": "He will encounter Trinity, who will lead him to Morpheus. He will learn the truth about the Matrix.",
+      "cost": "The cost is the risk of danger, of being caught, of losing his life. The cost is the loss of his familiar world."
+     }
+    ],
+    "reasoning": "I have been searching for years. I have ignored every other signal. But this one feels different. It feels like it was meant for me. If I don't follow it, I will never know. I can't live like this anymore. I have to find out.",
+    "chosen_because": "He chooses to follow the message because the pain of not knowing is greater than the fear of the unknown. Because his identity as a hacker demands that he investigate the anomaly. Because he is tired of being alone in his search.",
+    "known_unknowns": "He does not know who sent the message. He does not know what will happen when he follows it. He does not know if he will survive the journey. He is hedging by keeping his phone with him, by checking his door, by staying alert."
+   },
+   "control": {
+    "mode": "mixed",
+    "felt": "A mix of excitement, fear, and determination. He feels a surge of adrenaline, a sense of purpose. He also feels a deep fear of the unknown, of being wrong.",
+    "expressed": "A calm, focused expression. He is trying to appear composed, in control. He is not showing the fear or the excitement. He is masking his emotions with a neutral face.",
+    "divergence_reason": "He is trying to maintain his composure because he believes that control is essential for survival. He does not want to appear afraid or excited, because that would signal weakness or vulnerability.",
+    "leakage": "His hands are trembling slightly. His eyes are wide, dilated. He is breathing faster than usual. These physical signs betray his internal state.",
+    "inhibited_impulse": "He wanted to shout, to laugh, to cry. He wanted to jump out of his chair and run. He inhibited these impulses because he knew that he needed to be careful, that he needed to think before he acted."
+   },
+   "intention": "To follow the white rabbit. To find out what is happening. To stop feeling like he is losing his mind.",
+   "action": "Neo stands up from his chair. He looks at the screen one last time. He reaches for his coat. He walks to the door, checks the lock, and opens it. He steps out into the hallway, closing the door behind him. He walks down the stairs, out of the building, and into the street. He walks with purpose, his eyes scanning the crowd, looking for a sign, a face, a clue.",
+   "trajectory": [
+    {
+     "phase": "on entering",
+     "shift": "Neo is in a state of passive waiting, his body still, his mind focused on the screen. He is a receiver, not an actor.",
+     "trigger": "The appearance of the message 'FOLLOW THE WHITE RABBIT' on the screen.",
+     "state_delta": {
+      "variable": "matrix_awareness",
+      "from": "searching",
+      "to": "searching"
+     }
+    },
+    {
+     "phase": "after the message",
+     "shift": "Neo's attention shifts from the screen to his surroundings. He becomes aware of the phone ringing, the silence of the apartment, the feeling of being watched. He is no longer just a receiver; he is becoming an observer.",
+     "trigger": "The sound of the phone ringing in the next room.",
+     "state_delta": {
+      "variable": "matrix_awareness",
+      "from": "searching",
+      "to": "disturbed"
+     }
+    },
+    {
+     "phase": "deciding to act",
+     "shift": "Neo's internal conflict resolves. He chooses to act. He stands up, puts on his coat, and prepares to leave. He is no longer passive; he is active. He is moving from a state of uncertainty to a state of commitment.",
+     "trigger": "The decision to follow the message, driven by the pain of not knowing.",
+     "state_delta": {
+      "variable": "matrix_awareness",
+      "from": "disturbed",
+      "to": "contacted"
+     }
+    },
+    {
+     "phase": "leaving the apartment",
+     "shift": "Neo steps out into the world. He is no longer in his safe space; he is in the unknown. He is vulnerable, exposed. He is ready to face whatever comes next.",
+     "trigger": "Opening the door and stepping out into the hallway.",
+     "state_delta": {
+      "variable": "matrix_awareness",
+      "from": "contacted",
+      "to": "contacted"
+     }
+    }
+   ],
+   "leaving_state": "Neo is in a state of active pursuit. He is no longer waiting for the truth; he is going out to find it. He is vulnerable, exposed, but determined. He is ready to face the unknown, even if he is afraid.",
+   "unresolved": "Neo does not know who sent the message. He does not know what will happen when he follows it. He does not know if he will survive the journey. He is carrying the weight of the decision, the fear of the unknown, and the hope of the answer."
+  },
+  {
+   "entity": "ch-02",
+   "entering_state": "Trinity is in the Meta CorTechs office (lo-02), currently unconscious or in a deep trance state within the Matrix, her physical body suspended in a pod on the Nebuchadnezzar (lo-06). Her mind is navigating the digital architecture of the simulation, positioned near Neo's apartment (lo-03) but not yet interacting with him directly. She is operating in a state of high alert, her consciousness split between the immediate tactical environment of the Matrix and the distant, physical reality of the ship.",
+   "perception": {
+    "sight": "The visual feed is fragmented; she sees the sterile, grey walls of the Meta CorTechs office and the flickering, low-resolution glow of Neo's computer screen in the adjacent apartment space. The 'white rabbit' text is a blur of static light, not yet resolved into clear letters.",
+    "sound": "A low, digital hum of the Matrix's background processing, punctuated by the distant, muffled ringing of a phone that seems to come from nowhere and everywhere at once. The sound is slightly delayed, echoing in a way that feels wrong.",
+    "touch": "The sensation of a virtual wind against her face, a trick of the simulation's atmospheric rendering. Her fingers are cold, a phantom sensation from the pod's cooling system bleeding through the neural interface.",
+    "smell": "Ozone and burnt sugar, the distinct olfactory signature of a server room under load, mixed with the faint, metallic tang of blood from an old injury that the simulation is remembering.",
+    "taste": "Copper. The taste of biting her tongue in the physical world, a reflexive response to the sudden shift in her neural connection.",
+    "interoception": "A tightness in her chest, a premonition of danger that feels less like an emotion and more like a physical weight. Her heart rate is elevated, but the rhythm is steady, trained.",
+    "proprioception": "She is standing, weight on the balls of her feet, ready to move. Her body is coiled, muscles tense, a posture of imminent action.",
+    "attention": "Her attention is locked on the anomaly in Neo's apartment—the ringing phone and the flickering screen. She is failing to notice the subtle shifts in the Matrix's code around her, the slight lag in the lighting, the way the shadows are falling at angles that don't match the light source."
+   },
+   "appraisal": {
+    "value_at_stake": "Loyalty to Morpheus and the mission; commitment to Neo that transcends duty.",
+    "valence": 40,
+    "arousal": 70,
+    "self_conscious_emotion": "none",
+    "moral_reading": "This is a disturbance in the force. Neo is being called, and I am the one who must ensure he hears the call. If he fails to answer, the mission is compromised.",
+    "somatic_marker": "A sharp intake of breath, a tightening of the jaw, the muscles in her neck engaging as she turns her head toward the sound."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "Silence is golden in the Matrix; avoid drawing attention.",
+     "Trust the mission; trust Morpheus's plan.",
+     "Protect the One, even if he doesn't know it yet."
+    ],
+    "how_others_would_judge": "If Neo saw her watching him, he would think she is a stalker or a cop. If Morpheus saw her hesitation, he would think she is doubting the prophecy.",
+    "how_absent_others_would_judge": "The Oracle would see this as a necessary step in the prophecy. The Agents would see this as a vulnerability, a crack in the system.",
+    "standing_at_risk": "Her credibility with Morpheus if she fails to guide Neo correctly. Her life if she is discovered by the Agents.",
+    "norm_conflict": "The norm of silence vs. the need to act. She must be present to guide Neo, but her presence must be invisible. The conflict is resolved by acting from the shadows, letting Neo think he is alone."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-01",
+     "d1": "Neo is a skeptic, trapped in a reality that is not his. He is searching for an answer, but he doesn't know what he is looking for. He is confused, disturbed, and on the verge of a breakthrough.",
+     "d2": "Neo believes that he is alone in his apartment, that the ringing phone is a trick of his imagination, and that the 'white rabbit' message is a glitch in the system. He does not know that he is being watched.",
+     "d3": "Neo believes that if he ignores the message, it will go away. He believes that he is in control of his own life, even though he is not. He believes that the truth is out there, but he is not ready to find it.",
+     "accuracy": "Neo is not just a skeptic; he is a potential One. His confusion is not just about the world, but about his own identity. The error is in thinking he is alone; he is being guided, but he does not know it yet. This error will cost him time, but it will also make his eventual acceptance of the truth more profound."
+    },
+    {
+     "other": "ch-03",
+     "d1": "Morpheus is a man carrying the weight of five dead predecessors. He is certain that Neo is the One, but he is also afraid that he is wrong. He is watching Neo from the ship, and he is waiting for the moment when Neo will make his choice.",
+     "d2": "Morpheus believes that Trinity is loyal, that she will do what is necessary to protect Neo. He believes that she is hiding her feelings for Neo, but he also believes that she is strong enough to keep them in check.",
+     "d3": "Morpheus believes that Trinity believes that she is in love with Neo. He believes that she is afraid to admit it, but he also believes that it is the right thing to feel. He believes that her love is a strength, not a weakness.",
+     "accuracy": "Morpheus is not just carrying the weight of five dead predecessors; he is carrying the weight of his own faith. He is not just watching Neo; he is hoping for him. The error is in thinking that Trinity's love is a strength; it is also a vulnerability. This error will cost him sleep, but it will also make his faith in Neo more unwavering."
+    }
+   ],
+   "urges": {
+    "cravings": "To touch Neo, to see his face, to hear his voice. To be close to him, to protect him, to be the one who guides him.",
+    "physical_needs": "Rest, but she is not tired. She is wired, ready to move. Her body is in a state of high alert, and she is not ready to sleep.",
+    "psych_needs_conscious": "To complete the mission, to protect Neo, to ensure that he makes the right choice.",
+    "psych_needs_unconscious": "To be loved, to be seen, to be the one who matters. To be the one who saves him, not just the one who guides him.",
+    "avoidances": "Avoiding the moment when she will have to tell Neo the truth. Avoiding the moment when she will have to choose between her duty and her heart. Avoiding the moment when she will have to admit that she is in love with him."
+   },
+   "impairments": {
+    "physical": "none",
+    "medical": "none",
+    "magical": "none",
+    "chemical": "none",
+    "coercive": "The weight of the prophecy, the expectation of Morpheus, the fear of failure.",
+    "cognitive": "She cannot think clearly about her own feelings for Neo. She is too close to him, too invested in the mission, to see the full picture.",
+    "net_effect": "She is capable of great things, but she is also vulnerable to her own emotions. She is strong, but she is also human. She is a warrior, but she is also a lover. This duality is both her strength and her weakness."
+   },
+   "deliberation": {
+    "framing": "The problem is that Neo is not ready. He is a skeptic, and he needs to be convinced. The solution is to guide him, to show him the truth, to make him see the world as it is, not as he thinks it is.",
+    "options_weighed": [
+     {
+      "option": "Stay hidden, let Neo find the truth on his own.",
+      "predicted_outcome": "Neo will find the truth, but it will take him longer. He will be more afraid, more confused, but he will also be more prepared.",
+      "cost": "Time. The Agents might find him before he is ready."
+     },
+     {
+      "option": "Reveal herself, guide him directly.",
+      "predicted_outcome": "Neo will trust her, but he will also be more dependent on her. He will be less afraid, but he will also be less prepared.",
+      "cost": "Risk. The Agents might find them both."
+     }
+    ],
+    "reasoning": "I must be hidden, but I must also be present. I must guide him, but I must not force him. I must be the hand that leads, not the hand that holds. I must be the light in the dark, not the fire that burns.",
+    "chosen_because": "Because it is the right thing to do. Because it is the way of the mission. Because it is the way of the prophecy.",
+    "known_unknowns": "I do not know if Neo is the One. I do not know if he will choose the red pill. I do not know if he will survive. I do not know if I will be able to save him. I do not know if I will be able to save myself."
+   },
+   "control": {
+    "mode": "inhibited",
+    "felt": "A surge of emotion, a mix of hope and fear, a desire to reach out and touch him, to tell him the truth, to be the one who saves him.",
+    "expressed": "A calm, steady presence. A look of concern, but not fear. A gesture of guidance, but not force. A voice of reason, but not command.",
+    "divergence_reason": "She is hiding her feelings, her fear, her hope. She is showing only what is necessary, what is safe, what is true. She is being the warrior, not the lover.",
+    "leakage": "A slight tremor in her hand, a pause in her voice, a look that lingers a half-second too long. These are the cracks in the armor, the moments where the human shows through the warrior.",
+    "inhibited_impulse": "To run to him, to grab his hand, to tell him the truth. To be the one who saves him, not just the one who guides him."
+   },
+   "intention": "To guide Neo to the truth, to ensure that he makes the right choice, to protect him from the Agents, to be the one who saves him.",
+   "action": "Trinity moves through the Matrix, her body a blur of motion, her mind a web of thought. She watches Neo, she guides him, she protects him. She is the hand that leads, the light in the dark, the voice of reason. She is the warrior, the lover, the guide. She is the one who saves him.",
+   "trajectory": [
+    {
+     "phase": "on entering",
+     "shift": "Trinity shifts from a state of passive observation to active engagement. She is no longer just watching Neo; she is now part of the scene, a presence that he can feel but not see.",
+     "trigger": "The sound of the phone ringing, the flickering of the screen, the 'white rabbit' message. These are the signs that Neo is ready, that the moment has come.",
+     "state_delta": {
+      "variable": "love_for_neo",
+      "from": "unrecognized",
+      "to": "growing"
+     }
+    },
+    {
+     "phase": "after the admission",
+     "shift": "Trinity feels a surge of emotion, a mix of hope and fear. She is no longer just a warrior; she is now a lover, a guide, a savior. She is no longer just following the mission; she is now following her heart.",
+     "trigger": "Neo's reaction to the message, his confusion, his fear. These are the signs that he is ready, that he is open, that he is willing to listen.",
+     "state_delta": {
+      "variable": "belief_in_neo_as_one",
+      "from": "uncertain",
+      "to": "suspecting"
+     }
+    },
+    {
+     "phase": "once the door closes",
+     "shift": "Trinity feels a sense of relief, a sense of accomplishment. She has done her part, she has guided him, she has protected him. She is no longer just a warrior; she is now a savior. She is no longer just following the mission; she is now following her destiny.",
+     "trigger": "Neo's decision to go out, to find out what is happening, to follow the white rabbit. This is the sign that he is ready, that he is willing, that he is the One.",
+     "state_delta": {
+      "variable": "oracle_love_prophecy_status",
+      "from": "unspoken",
+      "to": "unspoken"
+     }
+    }
+   ],
+   "leaving_state": "Trinity is in a state of heightened awareness, her mind a web of thought, her body a blur of motion. She is no longer just a warrior; she is now a lover, a guide, a savior. She is no longer just following the mission; she is now following her heart. She is ready for what comes next, she is ready for the challenge, she is ready for the truth.",
+   "unresolved": "The question of whether Neo is the One. The question of whether he will choose the red pill. The question of whether he will survive. The question of whether she will be able to save him. The question of whether she will be able to save herself."
+  }
+ ],
+ "dynamics": [
+  {
+   "entity": "lo-03",
+   "kind": "location",
+   "entering_state": "A static, enclosed domestic space functioning as a refuge from the outside world, characterized by the ambient hum of technology and the unchallenged assumption of normalcy.",
+   "forces_acting": [
+    "The intrusion of the digital message on the computer screen",
+    "The psychological pressure of the déjà vu event",
+    "The ambient presence of the unseen tracking infrastructure"
+   ],
+   "axis_changes": [
+    {
+     "axis": "meaning",
+     "from": "Safe, neutral domestic sanctuary",
+     "to": "Site of cognitive disruption and the first point of contact with the anomaly",
+     "caused_by": "The appearance of the 'Follow the white rabbit' message and the subsequent sensory dissonance"
+    },
+    {
+     "axis": "control",
+     "from": "Passively controlled by Neo's routine",
+     "to": "Actively disrupted by the external digital signal",
+     "caused_by": "The computer screen displaying the cryptic message"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "On entering",
+     "shift": "The space is established as a place of quiet isolation, with Neo engaged in his usual online search for answers.",
+     "trigger": "Neo's presence in the apartment, surrounded by the familiar, mundane objects of his daily life.",
+     "state_delta": {}
+    },
+    {
+     "phase": "During the message",
+     "shift": "The environment becomes uncanny; the familiar walls and objects take on a strange, hyper-real quality as Neo's perception shifts.",
+     "trigger": "The text 'Follow the white rabbit' appearing on the screen and the onset of the intense déjà vu.",
+     "state_delta": {
+      "variable": "contacted",
+      "from": "false",
+      "to": "true"
+     }
+    },
+    {
+     "phase": "On exiting",
+     "shift": "The space is abandoned in a state of suspended tension; the phone ring is heard but not answered, leaving the room in a state of unresolved disquiet.",
+     "trigger": "Neo reaching for his coat and turning toward the door.",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "A space that has been marked by the first crack in reality; it is no longer a neutral refuge but the origin point of Neo's active search.",
+   "significance_shift": "Before this unit, Neo's apartment was a place of hiding and passive searching. After this unit, it is the place where the hiding ended and the active pursuit of truth began. It transforms from a container of Neo's life into the catalyst for its transformation."
+  },
+  {
+   "entity": "cn-01",
+   "kind": "concept",
+   "entering_state": "An invisible, omnipresent reality that defines the rules of the world but remains unknown to the characters within it.",
+   "forces_acting": [
+    "The act of being perceived through the 'white rabbit' motif",
+    "The sensory glitch of the déjà vu"
+   ],
+   "axis_changes": [
+    {
+     "axis": "credence",
+     "from": "Unquestioned, invisible background",
+     "to": "Suspected, tangible anomaly",
+     "caused_by": "The specific, targeted message and the sensory dissonance experienced by Neo"
+    },
+    {
+     "axis": "meaning",
+     "from": "The world as it is",
+     "to": "The world as it might not be",
+     "caused_by": "The introduction of the 'white rabbit' as a signifier of a hidden layer of reality"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "On entering",
+     "shift": "The concept exists as the total, unchallenged environment. It is the air Neo breathes and the ground he walks on, invisible and absolute.",
+     "trigger": "The baseline state of the narrative, where all characters operate under the assumption of a singular, physical reality.",
+     "state_delta": {}
+    },
+    {
+     "phase": "During the glitch",
+     "shift": "The concept becomes visible as a texture, a layer that can be peeled back. The déjà vu makes the 'surface' of reality feel thin and artificial.",
+     "trigger": "Neo's sudden, intense sense of déjà vu, which breaks the continuity of his experience.",
+     "state_delta": {
+      "variable": "matrix_awareness",
+      "from": "searching",
+      "to": "disturbed"
+     }
+    },
+    {
+     "phase": "On exiting",
+     "shift": "The concept is now a question mark. It is no longer a given but a hypothesis to be tested.",
+     "trigger": "Neo's decision to leave the apartment and seek out the source of the message.",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "A concept that has been named, indirectly, and is now the subject of active investigation. It has moved from the status of 'reality' to the status of 'mystery'.",
+   "significance_shift": "Before this unit, the Matrix was simply the world. After this unit, it is the thing that is 'not' the world, the hidden layer that Neo must now uncover. It shifts from being the stage to being the central object of the narrative's inquiry."
+  }
+ ],
+ "specimen": {
+  "moment": "The moment Neo reads the message and the déjà vu hits, forcing him to leave his apartment.",
+  "lines": [
+   {
+    "speaker": "ch-01",
+    "line": "Follow the white rabbit.",
+    "subtext": "This is not a command from a person; it is a glitch in the world's code. It is the first proof that the environment is not reacting to me, but to something else."
+   },
+   {
+    "speaker": "ch-01",
+    "line": "What the hell is that?",
+    "subtext": "I am trying to anchor myself in logic. If I can name the anomaly, I can dismiss it. But I can't name it, which means I am losing my grip on reality."
+   },
+   {
+    "speaker": "ch-01",
+    "line": "I've seen that cat before.",
+    "subtext": "This isn't just a memory; it's a duplicate. The world is repeating itself, which means it's a recording, not a live feed."
+   },
+   {
+    "speaker": "ch-01",
+    "line": "Stop it.",
+    "subtext": "I am telling my own mind to shut up. I am fighting the sensation, trying to push the déjà vu back down so I can go back to sleep."
+   },
+   {
+    "speaker": "ch-01",
+    "line": "It's not real.",
+    "subtext": "I am denying the obvious. If I admit it's real, I have to deal with what it means. If I say it's not real, I can keep living in the lie."
+   },
+   {
+    "speaker": "ch-01",
+    "line": "I need to go.",
+    "subtext": "This is a decision, not a reaction. I am choosing to leave the safety of my apartment to chase a ghost. I am stepping out of the script."
+   },
+   {
+    "speaker": "ch-01",
+    "line": "Who are you?",
+    "subtext": "I am asking the screen. I am asking the rabbit. I am asking the world. I am looking for a face to blame, a person to answer."
+   },
+   {
+    "speaker": "ch-01",
+    "line": "Where do I even start?",
+    "subtext": "I am admitting my ignorance. I am a fish out of water in a world I thought I knew. I am vulnerable, and I am afraid."
+   }
+  ],
+  "what_this_exposes": "The dialogue is entirely monologued, which risks making the scene feel like an internal debate rather than an external disturbance. The 'white rabbit' message is a one-way communication, and Neo's response is a series of questions that go unanswered. This exposes the risk that the scene might feel too slow if the visual elements do not effectively convey the 'wrongness' of the world, as the dialogue alone is not enough to create tension. The audience is left in the dark with Neo, sharing his confusion but not his answers.",
+  "risks_checked": [
+   {
+    "risk": "The scene might feel too slow if the visual elements do not effectively convey the 'wrongness' of the world.",
+    "does_the_exchange_avoid_it": false,
+    "evidence": "The lines are all internal queries. Without the visual of the cat, the screen, and the apartment, the lines 'I've seen that cat before' and 'It's not real' are abstract. The dialogue does not create the 'wrongness'; it relies on the visuals to do so. The evidence is the lack of external interaction in the lines."
+   },
+   {
+    "risk": "The audience might not immediately understand the significance of the 'white rabbit' motif if it is not clearly presented as a call to action.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The line 'Follow the white rabbit' is the first line, and it is presented as a command. The subsequent lines show Neo's reaction to it, which implies it is significant. The line 'I need to go' confirms that it is a call to action. The evidence is the direct command and the resulting decision to leave."
+   }
+  ],
+  "voices_distinct": "There is only one speaker, ch-01, so the issue of swapping lines between two speakers does not apply. However, the voice is consistent with Neo's character: skeptical, analytical, and trying to maintain control. The lines are not generic; they reflect his specific struggle with the anomaly. The failure mode of 'generic psychology' is avoided because the lines are specific to the situation (déjà vu, the cat, the screen) and Neo's specific character (skeptical, analytical)."
+ },
+ "continuity": {
+  "established_facts_used": [
+   {
+    "fact": "Neo is in a state of 'searching' for truth before this scene.",
+    "source": "WHAT WAS DECIDED/state_changes_implied[0].from",
+    "how_used": "Establishes the baseline psychological state from which the transition to 'disturbed' occurs."
+   },
+   {
+    "fact": "The location lo-03 was not previously contacted.",
+    "source": "WHAT WAS DECIDED/state_changes_implied[1].from",
+    "how_used": "Confirms that the appearance of the message on the screen is the initiating event for contact."
+   },
+   {
+    "fact": "The message 'Follow the white rabbit' is displayed on the screen.",
+    "source": "WHAT WAS DECIDED/resolution",
+    "how_used": "Serves as the primary external stimulus triggering Neo's déjà vu and decision to leave."
+   },
+   {
+    "fact": "Neo is in his apartment.",
+    "source": "WHAT WAS DECIDED/resolution",
+    "how_used": "Defines the physical setting and isolation of the character at the start of the node."
+   }
+  ],
+  "constraints_honoured": [
+   "The scene must open in Neo's apartment as specified in the resolution.",
+   "The transition of Neo's state must move from 'searching' to 'disturbed' as defined in state_changes_implied.",
+   "The contact status of lo-03 must flip from false to true as defined in state_changes_implied.",
+   "The scene must end with Neo reaching for his coat, as specified in the resolution."
+  ],
+  "contradictions_checked": [
+   {
+    "risk": "Neo might not react strongly enough to the message to justify the state change to 'disturbed'.",
+    "avoided_by": "The resolution explicitly includes a 'sudden, intense déjà vu' and looking around as if seeing the apartment for the first time, which provides the internal justification for the disturbance."
+   },
+   {
+    "risk": "The phone ringing might be confused with Neo's own phone, diluting the mystery.",
+    "avoided_by": "The resolution explicitly states 'it is not his phone,' ensuring the sound is an external, unexplained intrusion that heightens the disturbance."
+   }
+  ],
+  "state_preconditions": [
+   {
+    "entity": "ch-01",
+    "variable": "matrix_awareness",
+    "must_be": "searching"
+   },
+   {
+    "entity": "lo-03",
+    "variable": "contacted",
+    "must_be": "false"
+   }
+  ],
+  "forward_commitments": [
+   "Neo must physically leave the apartment to find out what is happening.",
+   "The 'white rabbit' motif must be pursued in subsequent scenes.",
+   "The source of the phone ringing must be identified or investigated."
+  ]
+ }
+}

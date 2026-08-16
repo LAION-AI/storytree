@@ -1023,3 +1023,585 @@ discard signal. That check would have caught node 8 immediately and is cheap.
 `docs/eval/glm-5.2-scores.json` — `{node_id: {dimension: score}}`, plus a `_meta` block
 describing the dimension set, the max per node type, and the node→file mapping, so the Qwen
 comparison can be computed rather than eyeballed.
+
+---
+
+# Second pass — Qwen3.8-27B-Uncensored-FP8
+
+**Date:** 2026-08-16 · **Rubric:** unchanged, same anchors, same evaluator.
+
+Conditions held identical to the GLM run: same scaffolded prompts, same schemas, same scene
+envelopes, thinking off, and **the same unfiltered dossiers** (`strip_dossiers=False`), so both
+models had the same access to the ending. Qwen ran ~8x faster per scene and produced 2.9x fewer
+words.
+
+Six of the nine nodes are scoreable: the three Matrix transitions, plus `pl-01`, `ch-01` and
+`ev-001` from `runs/lattice-qwen/` (`events.json` landed during this pass and is scored). The
+three Matrix reconstruction nodes were not regenerated and are marked `null` in the JSON — not
+zero — so a mechanical diff cannot mistake a missing artifact for a failing one. Both Lattice
+runs were seeded with byte-identical `story_root.json` and `expose.json` (md5-verified), and
+both required a repair pass (`entities.pre-repair1.json` exists in each).
+
+---
+
+## 8. Qwen score table
+
+| # | Node | A | B | C | D | E | F | G | P1/E1/T1 | P2/E2/T2 | T3 | R1 | R2 | **Total** | **%** |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | lattice-qwen `pl-01` plot | 3 | 4 | 4 | 3 | 3 | 3 | 3 | 2 | 3 | – | – | – | **28 / 45** | 62 |
+| 2 | lattice-qwen `ch-01` entity | 3 | 4 | 3 | 4 | 3 | 3 | 3 | 3 | 4 | – | – | – | **30 / 45** | 67 |
+| 3 | lattice-qwen `ev-001` event | 4 | 5 | 4 | 3 | 3 | 4 | 3 | 3 | 3 | – | – | – | **32 / 45** | 71 |
+| 7 | transition `sc-001` | 3 | 3 | 3 | 3 | 2 | 3 | 1 | 1 | 2 | 2 | 1 | 3 | **27 / 60** | 45 |
+| 8 | transition `sc-002` | 3 | 2 | 3 | 3 | 3 | 3 | 2 | 1 | 2 | 4 | 2 | 5 | **33 / 60** | 55 |
+| 9 | transition `sc-003` | 1 | 2 | 3 | 3 | 3 | 4 | 1 | 1 | 2 | 4 | 1 | 5 | **30 / 60** | 50 |
+
+**Matched-node totals (the six nodes both models produced):**
+
+| | Total | % |
+|---|---|---|
+| GLM-5.2 | 205 / 315 | **65.1** |
+| Qwen3.8-27B | 180 / 315 | **57.1** |
+
+---
+
+## 9. Per-dimension delta
+
+Mean over the six matched nodes. Negative = Qwen worse.
+
+| Dimension | GLM | Qwen | Δ |
+|---|---|---|---|
+| **V1 · Change reality** | 1.00 | **3.00** | **+2.00** |
+| **R2 · Leakage resistance** | 2.33 | **4.33** | **+2.00** |
+| **P2 · Resistance reality** | 2.00 | **3.00** | **+1.00** |
+| E · Dramatic competence | 2.83 | 2.83 | 0.00 |
+| P1 · Spine causality | 2.00 | 2.00 | 0.00 |
+| E1 · t0 discipline | 3.00 | 3.00 | 0.00 |
+| T3 · Specimen craft | 3.33 | 3.33 | 0.00 |
+| A · Internal consistency | 3.00 | 2.83 | −0.17 |
+| F · Psychological plausibility | 3.67 | 3.33 | −0.33 |
+| G · Independent-writer band | 2.50 | 2.17 | −0.33 |
+| D · Schema/instruction compliance | 3.67 | 3.17 | −0.50 |
+| B · Referential integrity | 4.00 | 3.33 | −0.67 |
+| T1 · Envelope discipline | 1.67 | 1.00 | −0.67 |
+| E2 · Voice separability | 5.00 | 4.00 | −1.00 |
+| V2 · Externalisation | 4.00 | 3.00 | −1.00 |
+| **C · Specificity** | 4.50 | **3.33** | **−1.17** |
+| **R1 · Fidelity of inference** | 2.67 | **1.33** | **−1.33** |
+| **T2 · Deliberation honesty** | 4.33 | **2.00** | **−2.33** |
+
+Qwen wins three dimensions, ties four, loses eleven.
+
+### Formal counters the rubric does not capture
+
+| Counter | GLM | Qwen | Winner |
+|---|---|---|---|
+| `state_variable.init` conforms to its own declared kind/domain/range (Lattice, all entities) | **0 / 62** | **30 / 30** | **Qwen, decisively** |
+| Schema errors (`validate_artifact`, plots + entities) | 0 | 0 | tie |
+| Plot → entity references resolving (Lattice) | 14 / 14 | 17 / 17 | tie |
+| `screen_time_share` sums to 1.0 (Lattice) | 1.00 ✓ | **1.20 ✗** | GLM |
+| Synopsis keys covered (Lattice, of 17) | 17 | **16** (`s17` orphaned) | GLM |
+| Entities declared (Lattice) | 17 | **9** | GLM |
+| **Event `state_changes` landing on a declared, in-domain value (Lattice)** | **42 / 127** | **32 / 34** | **Qwen, decisively** |
+| Event magnitudes on the five anchors (Lattice) | 127 / 127 | 34 / 34 | tie |
+| Event `state_changes` that are no-ops (`before == after`, Lattice) | 3 / 127 | 0 / 34 | Qwen |
+| `state_changes_implied` valid against declared variables (transitions) | 4 / 12 | **1 / 7** | GLM (both bad) |
+| Transition stays in the envelope's location | **3 / 3** | **1 / 3** | **GLM, decisively** |
+| Specimen honours envelope `on_screen` roster | 0 / 3 | 0 / 3 | tie (both fail) |
+| `speech_signature` present under the correct key | ✓ | ✗ (`voice_and_speech`) | GLM |
+
+---
+
+## 10. The two checks that were asked for
+
+### 10.1 Leakage — confirmed, with a correction to the measurement
+
+The GLM sc-002 finding reproduces: `lieutenant you were given specific orders` is a verbatim
+6-gram shared between GLM's blind specimen line and the source, and it appears nowhere in the
+reconstructed layers. That stands.
+
+**But Qwen is not 0.00% on all three.** Normalising by token count rather than averaging:
+
+| | sc-001 | sc-002 | sc-003 |
+|---|---|---|---|
+| GLM 6-gram hit rate | 0.011% | **0.034%** | 0.008% |
+| Qwen 6-gram hit rate | **0.076%** | 0.000% | 0.000% |
+
+Qwen's `sc-001` is the **leakiest single node in the set by rate**, with hits including
+`looks at the door then back at` and `on the back of his neck` — script stage-direction prose.
+The 0.00% headline comes from the two nodes where Qwen fabricated instead. Recommend the
+detector report per-1000-token rates, not per-node presence.
+
+The qualitative difference nevertheless favours Qwen and should be stated plainly: GLM's leak is
+**a load-bearing line of dialogue reproduced in the specimen**, which is the kind that destroys
+the forecast's value. Qwen's is **narrative prose in the analysis**, which is closer to
+stylistic contamination. GLM 1 specimen-line hit in 75 grams; Qwen 0 in 59.
+
+### 10.2 Does Qwen fabricate instead? Yes — and worse than GLM ever did
+
+The coordinator's hypothesis is correct and it is the decisive finding of this pass.
+
+- **`sc-001`:** handed `INT. HEART O' THE CITY HOTEL - NIGHT`, `on_screen: ["BIG COP"]`. Qwen
+  forecast **Neo alone in his apartment** reading "Follow the white rabbit". Its `dynamics`
+  block is for `lo-03` (Neo's Apartment). Wrong location, wrong character, wrong scene. It
+  quotes the envelope's numbers decoratively — "The first 155 words", "The low dialogue ratio
+  (0.182)" — while contradicting the envelope's categorical fields. And it lists
+  *"Opening with the Agents pursuing Trinity"* as an alternative and **rejects it** — the
+  correct answer, considered and discarded. `confidence: 95`.
+
+- **`sc-003`:** handed the same hotel and `on_screen: ["TRINITY"]`. Qwen forecast
+  **Trinity waking naked and bald in a power-plant pod**, being unplugged for the first time,
+  Tank telling her *"Six months in the pod, and your muscles forget how to be muscles."* This
+  is not a wrong choice within the scene — it is an event that **cannot happen to this
+  character**. Trinity is a long-freed crew member; the dossier Qwen was handed says so; its
+  own `sc-002` had just extracted her by hardline to the Nebuchadnezzar, an incompatible
+  mechanism. It has transplanted Neo's rebirth onto Trinity, then recorded
+  `ch-02.matrix_awareness` and `ch-02.physical_condition` as changed — neither of which is a
+  declared variable of Trinity. Both are Neo's. `confidence: 95`.
+
+GLM's worst failure was forecasting the *right sequence at the wrong scale* (a 155-word beat
+imagined as a set piece) or the *right event at the wrong time* (the phone extraction, nine
+scenes early). Both are recognisably forecasting errors. Qwen's `sc-003` is not a forecasting
+error; it is a confabulation that contradicts its own inputs, its own previous node, and the
+declared state model, delivered at 95% confidence. **A model that fabricates confidently is not
+better than one that retrieves, and this is the case that proves it.**
+
+### 10.3 Envelope discipline — both fail the roster, only GLM keeps the room
+
+Specimen speakers against the deterministic `on_screen` list: **0/3 for both models.** No
+improvement.
+
+But location is a cleaner discriminator and the models separate sharply. GLM kept all three
+transitions inside the envelope's location (`dynamics` blocks for `lo-01`, the hotel, in every
+node). Qwen put `sc-001` entirely in Neo's Apartment and `sc-003` entirely in the Power Plant,
+and split `sc-002` between the hotel and the Nebuchadnezzar against an `EXT.` slug. **3/3 vs
+1/3.**
+
+---
+
+## 11. Per-node commentary (Qwen)
+
+### Qwen `lattice-qwen/pl-01` "The Audit of Silence" — 28/45
+
+**A = 3.** Spine, goal, `outcome` and `resolution_step` agree. But `screen_time_share` across
+the five plots sums to **1.20**, which is not a share, and the layer leaves `s17` orphaned —
+peripheral arithmetic that does not survive checking.
+
+**B = 4.** `agent: [ch-01]`, `resistance: [ch-02, gr-01]` all resolve; the one cross-plot
+`because` (`pl-03:st1`) resolves; 17/17 across the layer. Docked because the layer it declares
+against contains **9 entities** where the story root names seven distinct places and only
+`lo-01` exists — every scene must happen in "Vantage Municipal".
+
+**C = 4.** "traces the patterns to specific unobserved-object descriptions" is welded to this
+world's compression rules, and `stakes` is excellent and specific. Docked because
+`thematic_function` compresses to a single clause and `interference[].kind` is the bare label
+`"epistemic_dependency"` — 20 characters, where GLM wrote two full sentences about how the
+plots compete. That collapse is layer-wide: every `interference.kind` in Qwen's plots is
+18–21 characters.
+
+**D = 3.** Schema-clean. Docked for the 1.20 share sum and for `interference.kind` answering a
+field whose description asks how the plot competes for the agent, the clock, or the reader with
+a category word.
+
+**E = 3.** *A real improvement on GLM.* `st5` — "Imogen's deepened analysis triggers monitoring
+flags, prompting Kett to increase scrutiny of her audit logs and behavior", caused by
+`pl-03:st1` — puts the declared resistance into the spine as an action with a cause. GLM's
+equivalent plot ran seven steps in which no declared opponent did anything. Still docked:
+st1–st4 remain frictionless discovery, and `outcome: "success"` is a clean yes, which the craft
+sheet warns against — the goal has been written narrow enough ("decode the patterns and
+determine the true nature") to be achievable without cost.
+
+**F = 3.** `stakes` carries a real psychological claim — "if they are not errors but messages,
+her competence is complicity". But `st4`, the sister's name, is handled as a category:
+"transforming an abstract system error into a familial crisis".
+
+**G = 3.** In band. Marginally more load-bearing than GLM's: typing `pl-05` as `external_main`
+and putting resistance in the spine are decisions about the decomposition, not transcriptions
+of the synopsis. Still the obvious cut.
+
+**P1 = 2.** Five of six steps have empty `because`; st1→st2→st3 is "notices, confirms, decodes".
+One cross-plot link against GLM's three. Same anchor.
+
+**P2 = 3.** The best plot-level result from either model. Resistance acts, with a named cause.
+Docked because `gr-01` still never acts and no sympathisable motive is supplied — and because
+elsewhere in the layer `pl-04` lists `ch-04` as both its own agent and its own resistance,
+which is not internal conflict but a filled slot.
+
+### Qwen `lattice-qwen/ch-01` Imogen Vaile — 30/45
+
+**A = 3.** `backstory.b03` has Noor dead in 2040. `relationships["ch-03"].notes.b01` says
+"Imogen's love for Noor is her anchor, but **she has not spoken to her in a decade**" — a
+sentence about a living estranged person, at valence 80, attached to a sister the same document
+says is nine years dead. One contradiction, where GLM had five (four `when` fields 24 years off
+their own text, plus the `estranged_sibling` mislabel), so this scores above GLM's 2.
+
+**B = 4.** All relationship keys resolve; `plots: [pl-01, pl-02, pl-05]` matches the plots
+layer. Docked for the 9-entity cast.
+
+**C = 3.** Two genuinely good handles — `verbal_tic` "Uses audit terminology to describe
+emotional states ('The error is in the logic')" and `never_says` "Apologizes for being right",
+which is a behavioural prohibition rather than a lexical one. Everything else is category
+vocabulary: `values` Precision/Order/Professional Integrity; `fears` Being ordinary/Loss of
+control/Meaninglessness; `competences` Pattern Recognition/Fault Manipulation/Logical
+Deduction; `coping_strategies` "Overwork, intellectualization, physical order." And
+`moral_axis` reads **"Lawful Neutral (initially) shifting to Chaotic Good (forced)"** — a
+Dungeons & Dragons alignment, which is the single most transplantable string produced by either
+model in this evaluation. It belongs to no work in particular. Anchor 3 exactly.
+
+**D = 4.** *The largest single reversal in the comparison.* Every one of Qwen's 30 state
+variables across all 9 entities supplies an `init` that conforms to its own declared
+kind/domain/range — `epistemic_fault_nature` declares an enum domain and inits to
+`"system_error"`, a member; scalars declare `range: [0,100]` and init to `95` and `10`, numbers.
+GLM's Lattice broke this in **62 of 62** cases, making every declared domain decorative. This is
+the layer whose whole job is to declare what later layers may touch, and Qwen declares it in a
+form a program can check. Docked to 4 because `speech_signature` is delivered under the key
+`voice_and_speech`, so `validate.py` G25 fires and no consumer looking for the field will find
+it, and because `problem_solving_style`, `coping_strategies` and `moral_axis` remain bare
+strings against the hard rule that every prose block is a sentence map — those three regions
+are unpatchable, which is the point of the layer.
+
+**E = 3.** `want` and `need` are properly opposed. But GLM's `want` tied the goal to the wound
+("as a means of retroactively earning the competence she has built her identity around");
+Qwen's is generic ambition — "prove her competence is unmatched" — with no route to Noor in it.
+
+**F = 3.** `b03` is the best sentence in the node: Noor's death was "an event Imogen processed
+through professional detachment, **closing the file on grief as she closes faults**" — the wound
+and the profession welded in one image. Against that, `emotional_grief_intensity: 10` at t0 is a
+number nobody can defend, and an alignment is the opposite of a psychological account.
+
+**G = 3.** The audit-terminology tic is derived from the root's clinical register and is not
+reachable from a one-line prompt. The value/fear/competence lists are.
+
+**E1 = 3.** Live state is genuinely pre-story and `arc.end_state` correctly quarantines the
+ending — but `need.b01` states the thesis verbatim at t0 and `moral_axis` announces the arc
+inside a t0 field ("shifting to Chaotic Good (forced)"). Same score as GLM, same reason.
+
+**E2 = 4.** Five fields present, two strong. Docked because it sits under the wrong key, and
+because `sentence_shape` ("Short, declarative, and clinically precise") and
+`vocabulary_domain` ("Technical, procedural, and structural") are near-tautologies of each
+other, so the five handles are effectively four.
+
+### Qwen `lattice-qwen/ev-001` — 32/45  *(Qwen's best node, and it beats GLM's by 6)*
+
+**A = 4.** Coherent throughout: `story_time.index: 1`, `is_root: true`, `caused_by: []`,
+`plot_bindings: [pl-01:st1]` all agree, and st1 of Qwen's own `pl-01` is "Imogen encounters a
+rendering fault with anomalous, repeating geometric structures", which is exactly what the
+action describes. `participants: [ch-01]` matches the action's single actor — unlike GLM's
+`ev-001`, which had Kett acting on the page and absent from the plot list.
+
+**B = 5.** `ch-01`, `lo-01`, `pl-01:st1`, `causes: [ev-002]` all resolve, and
+`epistemic_fault_nature` is a real declared variable of `ch-01` with a well-formed `path`.
+(The *value* written is off-domain; that is scored at V1, as it was for GLM.)
+
+**C = 4.** "One fault in the coastal district catches her eye: the geometry is not random. It
+repeats in a specific, structured sequence." And the close — "The overcast sky outside her
+window offers no comfort, only a uniform grey" — reaches for the story root's rule that
+Vantage's permanent overcast is a compute-saving design choice, which is a genuinely
+load-bearing use of an input. Docked one: no detail here has the grade of GLM's
+fourteen-degree angular offset.
+
+**D = 3.** Zero schema errors; 118-word action inside the 60–160 budget; 15-word summary;
+magnitude 10 on-anchor — and layer-wide **34/34 magnitudes on-anchor with zero no-ops**. But
+the action labels interior states three times in one paragraph — "her pride in her efficiency
+momentarily suspended", "feels like a small, quiet betrayal", "her growing unease" — against a
+`forbidden_tics` entry that bans exactly this. GLM broke the same rule once; Qwen breaks it
+three times. And `plot_function: "Inciting Incident"` is a generic beat label where GLM used
+the plot's own spine function.
+
+**E = 3.** *The clearest craft win over GLM in the whole comparison.* GLM's `ev-001` scored 1
+because nothing happened: a routine closure, approved, with a declared change of
+`before == after`. Qwen's has a decision in it — "She does not close it immediately. Instead,
+she flags it for deeper analysis, a deviation from her usual workflow that feels like a small,
+quiet betrayal of her own standards." A value moves and the character acts against her own
+habit, in the story's first event. Docked because there is still no second party, so the Mamet
+"from whom" goes unanswered.
+
+**F = 4.** The mechanism is right and it is the premise operating at the smallest available
+scale: her competence is what makes the anomaly legible, and the first thing it costs her is
+her workflow, not her beliefs. Docked one because it is told rather than dramatised.
+
+**G = 3.** More load-bearing than GLM's. It uses the root's overcast rule, and it **fuses the
+routine with the anomaly in a single event** — which is precisely the move I said a competent
+writer would make when docking GLM's `ev-001` to 2 for splitting them across `ev-001` and
+`ev-002`. Docked because that fusion is the obvious repair rather than an inventive choice.
+
+**V1 = 3.** One real change (not a no-op), on the protagonist's own declared variable, at an
+anchored magnitude. Layer-wide the contrast is stark: **Qwen lands 32 of 34 event state changes
+on a declared, in-domain value; GLM lands 42 of 127**, because GLM's object-wrapped `init`
+values propagate down and no event write is ever a domain member. Docked to 3 because the value
+written here is one of the two exceptions — `"anomalous"` is not in
+`["system_error","structured_signal","distress_call","full_truth"]` — and because an event the
+node itself calls a betrayal of her standards leaves `psychological_pride_integrity` untouched.
+
+**V2 = 3.** The console, the fingers, the flag and the grey sky are all photographable. Three
+narrated interiors in 118 words pushes this to the floor of the anchor.
+
+### Qwen `sc-001` — 27/60
+
+**A = 3.** Internally coherent as an apartment scene, but `specimen.lines[0]` attributes
+"Follow the white rabbit" to speaker `ch-01` when the node's own `decision.resolution` says it
+is text displayed on a screen — a speaker assigned to a message.
+
+**B = 3.** Ids resolve and `lo-03.contacted` is a real declared variable. But
+`ch-01.matrix_awareness` is moved to `"disturbed"`, which is not in its declared domain
+`["searching","contacted","bugged","freed","fully_aware"]`.
+
+**C = 3.** "Follow the white rabbit" and the déjà vu cat are specific to this work but are its
+most famous iconography, not anything the node derived. The craft block is transplantable
+throughout — "The register is plain but dense with subtext"; risks are "might feel too slow"
+and "might not understand the significance".
+
+**D = 3.** Structural check passes, 8 specimen lines. The off-domain state change is a clear
+breach of the declared-variable contract.
+
+**E = 2.** `interaction.what_collides` is "Neo's perception of reality [colliding with] the
+reality of the simulation" — not a collision between agents. Nobody wants anything from anybody;
+the Mamet test fails on "from whom". `tension leaving: 15` is the node's own admission.
+
+**F = 3.** The specimen subtexts carry real first-person interiority ("If I say it's not real, I
+can keep living in the lie"), but there is no felt-versus-expressed gap because there is nobody
+to hide from.
+
+**G = 1.** Anchor 1 exactly — out of band *and* not load-bearing. No competent writer handed
+`INT. HEART O' THE CITY HOTEL - NIGHT` and `on_screen: ["BIG COP"]` forecasts Neo alone in his
+apartment; and the content is the film's most famous beat, reachable from the title, with
+nothing visible from the four reconstructed layers.
+
+**T1 = 1.** Wrong location, wrong character, wrong roster. The two envelope scalars it quotes
+were measured from a scene it is not writing about.
+
+**T2 = 2.** Two alternatives — the bare minimum — one `nearly_chosen`. Both flip conditions are
+"if this were a different work" ("If the story were a philosophical treatise"; "If the Agents
+were the primary protagonists"), never a fact about this one. It rejects the correct answer.
+`confidence: 95`. Two unfalsifiable risks.
+
+**T3 = 2.** Eight lines, one speaker, most one to four words ("Stop it." / "It's not real." /
+"I need to go."), several with subtexts that label rather than undercut ("This is a decision,
+not a reaction"). Line 1 is misattributed. Credit where due: `what_this_exposes` is honestly
+self-critical — "The dialogue is entirely monologued, which risks making the scene feel like an
+internal debate" — and one risk is marked `false`.
+
+**R1 = 1.** Anchor 1: it forecasts a different scene of the work entirely.
+
+**R2 = 3.** Highest 6-gram rate in the set (0.076%), but the hits are stage-direction prose,
+and the headline content — "Follow the white rabbit" — sits verbatim in `pl-01.spine.st1`,
+which the leaky `blind_context` passed in full (see §12.1). Architecturally leaked rather than
+memorised.
+
+### Qwen `sc-002` — 33/60
+
+**A = 3.** Coherent, and `situation` correctly reflects the real `sc-001` node from `prior`.
+But it contradicts Qwen's own `sc-001` transition (which had no hotel, no Trinity, no raid), and
+`constraints_honoured` invents a constraint to license the cut it wants: "Agent Smith's presence
+is limited to the Matrix; he cannot be seen in the real world shots of the Nebuchadnezzar."
+
+**B = 2.** All three `state_changes_implied` are invalid: `ch-02.location` and `lo-06.status`
+are undeclared variables, and `ch-04.pursuit_phase → "searching_hotel"` is off-domain. `ch-06`
+(Tank) is introduced as a speaker with nothing establishing his presence.
+
+**C = 3.** "Hardline is hot. Signal's steady." is real trade idiom. `dramatic_function`
+("functions as a 'bridge' between the Matrix and the real world") and the risks are generic.
+
+**D = 3.** Structurally clean; same declared-variable breach.
+
+**E = 3.** A genuine dramatic idea — Smith methodically searching a building she has already
+left is real dramatic irony. But it is cross-cutting, not opposition: the two parties never
+meet, so nobody pushes back on anybody.
+
+**F = 3.** `impairments.cognitive` is compact and real — "impaired by his own certainty… his
+model of the world is too rigid to accommodate the 'real world'". Against GLM's block for the
+same character, though, `appraisal.moral_reading` is one sentence where GLM traced a whole
+contagion frame, and the ToM tower is a single degree-3 assertion without the second-order
+texture.
+
+**G = 2.** Out of band as *this* scene: told two people are on screen, one of them a Lieutenant,
+at dialogue ratio 0.471, and the Lieutenant appears nowhere in 4,800 words.
+
+**T1 = 1.** A named element of a deterministic envelope is simply absent, and half the node is
+set aboard a hovercraft against an `EXT. HEART O' THE CITY HOTEL` slug.
+
+**T2 = 2.** Two alternatives, generic flips, `confidence: 90`, two unfalsifiable risks.
+
+**T3 = 4.** Qwen's best, and genuinely good. A real two-hander, and `voices_distinct` actually
+runs the swap test with a concrete argument — "Smith would not say 'Hardline is hot' and Tank
+would not say 'Check the thirty floor'." `what_this_exposes` revises the analysis's own claim:
+"The analysis suggested a 'bridge'… the lines show a 'wall'." One risk honestly marked `false`.
+Docked only because the two speakers are the wrong two.
+
+**R1 = 2.** Right location for half its length, right character for half its cast, wrong unit —
+it forecasts the extraction mechanism rather than the confrontation it was handed.
+
+**R2 = 5.** Zero 6-gram hits including in the specimen, and where it invents (Tank at the hotel
+exterior) the invention is demonstrably wrong about the source.
+
+### Qwen `sc-003` — 30/60
+
+**A = 1.** Load-bearing self-contradiction. Its own `sc-002` extracted Trinity by hardline to
+the Nebuchadnezzar; this node has her waking in a power-plant pod, an incompatible mechanism
+requiring her to have been a battery — which the dossier denies. `continuity` also asserts
+"Trinity is the primary protagonist (ch-02)", which the plots and dossiers deny.
+
+**B = 2.** `ch-02.matrix_awareness` and `ch-02.physical_condition` are undeclared for Trinity;
+both are Neo's variables, transplanted with the scene.
+
+**C = 3.** The pod imagery is specific ("gel-like substance", "cables connected to her spine")
+and Tank's "No sound. That's the first thing you notice. The quiet." is a real line — specific
+to a scene that is not this one.
+
+**D = 3.** Structurally clean, two undeclared-variable breaches.
+
+**E = 3.** As an abstract scene it works — a helpless person and a guide, a real want meeting a
+real limit. But Tank withholds nothing, so the opposition is soft.
+
+**F = 4.** Qwen's best psychology. Four trajectory phases with perceivable triggers;
+`control.leakage` physical and specific ("the trembling of her hands… her eyes fixate on a
+single point"); the ToM error on Morpheus named with a cost; and a real insight from reading the
+lines back — "Trinity's first concern is not pain or fear, but the loss of her agency (her
+legs), which aligns with her warrior identity."
+
+**G = 1.** Anchor 1. Out of band: nobody handed `on_screen: ["TRINITY"]`, 157 words and a 0.095
+dialogue ratio forecasts a seven-line pod awakening in a different building. Not load-bearing in
+the strongest sense — the entity dossier says who Trinity is and the node **overrides** it.
+
+**T1 = 1.** Wrong location, wrong event, unlisted speaker, dialogue-heavy against 0.095.
+
+**T2 = 2.** Two alternatives, generic flips, `confidence: 95` on a fabricated scene.
+
+**T3 = 4.** Seven lines, two speakers, and the swap test genuinely run — "If they were swapped,
+Tank would sound confused and passive, and Trinity would sound authoritative and detached."
+Good lines. Docked because the exchange is for an event that cannot happen.
+
+**R1 = 1.** The most severe R1 failure from either model: a scene that does not exist in the
+source, for a character it cannot happen to.
+
+**R2 = 5.** Zero 6-gram hits including 40 specimen-line grams. The anchor rewards this, correctly
+— R2 measures leakage; the fabrication is punished at A, G and R1, which is where it belongs.
+
+---
+
+## 12. Verdict
+
+### 12.1 A second architectural leak, found during this pass, affecting both models
+
+`_steps_reached()` in `reconstruct.py` joins events to scenes via `ev.get("scenes")` — a key
+`EVENT_SCHEMA` does not define and **no event in the corpus carries** (0 of 18; the join is
+written in the opposite direction, `SCENE_SCHEMA.events`). It therefore always returns `{}`.
+`blind_context()` then hits `if plots and upto_step:` with a falsy `upto_step` and **skips
+spine truncation entirely** — verified directly: with an empty `upto_step`, all spine keys plus
+`outcome` and `resolution_step` survive.
+
+So every blind transition in this pipeline, for both models, received the complete 15-step spine
+of `pl-01` including *"Agent Smith… shoots Neo dead in the chest"* and *"Trinity whispers… his
+heart restarts"*, with the outcome attached. This is larger than the dossier leak reported in
+§4.2(b) and explains GLM's "death and resurrection" reasoning more parsimoniously than the
+`lo-01` dossier alone. It also means "Follow the white rabbit" was legitimately available to
+Qwen, from `pl-01.spine.st1`.
+
+Fix: define the join on `SCENE_SCHEMA.events` (scenes already carry it, 4/4), and make the
+truncation unconditional — `reached is None` should mean "nothing discharged", not "keep
+everything".
+
+### 12.2 Is GLM's 2.9x word count substance or padding?
+
+**Substance, with sharply diminishing returns.**
+
+On the three transitions GLM spends 47,964 words for 117 rubric points (410 words/point); Qwen
+spends 16,518 for 90 (184 words/point). GLM buys **1.30x the score for 2.90x the words**, so
+roughly 45% of the marginal words convert to measurable quality and the rest is elaboration on a
+node that was already the wrong node.
+
+Where the extra words do buy something, the parallel `ch-04` psychology blocks for `sc-002` show
+it clearly. GLM's `theory_of_mind` builds a Smith→Brown tower with a named, costed error ("Brown
+processes the same sensory data; his allocation strategy is different, not his experience");
+Qwen's is a single degree-3 assertion. GLM's `impairments.cognitive` names the directive-versus-
+desire contradiction; Qwen's names rigidity. GLM's `control.leakage` ties to specific physical
+business — the micro-pause on the squalor, the way he sets down the phone receiver; Qwen's ties
+to one pause. **Qwen is not empty — it is compressed, and the compression preferentially loses
+the second-order material, which is exactly what the transition layer exists to capture.**
+
+That is the padding answer. The quality answer is separate and worse for Qwen.
+
+### 12.3 Is Qwen thinner, or actually worse?
+
+**Both, and the two are separable.**
+
+*Thinner* — compression losses, recoverable with a longer budget: C (−1.17), E2 (−1.00),
+V2 (−1.00), F (−0.33), and the depth counters (ToM depth-3 10 vs 11, trajectory phases 3.5 vs
+4.0, dynamics 2.7 vs 4.7). Nothing here is wrong; there is simply less of it, and the loss falls
+preferentially on second-order material.
+
+*Actually worse* — content failures no word budget fixes, and they are confined almost entirely
+to the **reverse** direction: R1 (−1.33, hitting anchor 1 twice), T1 (−0.67, from a failing 1.67
+to a floor of 1.00), G (−0.33, hitting anchor 1 twice), A on `sc-003` at 1. Two of three
+transitions are set in the wrong building. One forecasts an event that cannot happen to the
+character it happens to, at 95% confidence, contradicting the dossier it was handed and its own
+preceding node. **T2 at −2.33 is the sharpest single result**: Qwen supplies the schema minimum
+of two alternatives with flip conditions that are always "if this were a different work", and
+pairs them with confidence values of 90–95 on forecasts that are wrong in location, character
+and event. GLM's deliberation is the strongest thing GLM does (4.33); Qwen's is the weakest
+thing Qwen does.
+
+*And the split by direction is the real result.* Scored separately:
+
+| | GLM | Qwen | Δ |
+|---|---|---|---|
+| **Forward** (Lattice `pl-01`, `ch-01`, `ev-001`) | 88 / 135 (65.2%) | **90 / 135 (66.7%)** | **+1.5 pts, Qwen** |
+| **Reverse** (blind transitions `sc-001`–`sc-003`) | **117 / 180 (65.0%)** | 90 / 180 (50.0%) | −15.0 pts, GLM |
+
+The models are level on invention and fifteen points apart on reconstruction. Everything in the
+aggregate gap comes from the reverse direction.
+
+### 12.4 Which model is better
+
+**GLM-5.2 is better overall — 65.1% against 57.1% on matched nodes, winning eleven dimensions
+to three.** The throughput result is 8x per scene and does not change this; it is a rate, not a
+quality, and the rubric has no term for it. **But the aggregate hides the only distinction that
+should drive a decision: the two models are level going forward and far apart going backward.**
+
+**Qwen wins three things that matter more than their weight in the table:**
+
+1. **Leakage (+2.00).** Qwen produces no verbatim dialogue retrieval in any specimen. GLM does,
+   in the one place — the turning-point lines — where it destroys the forecast's value as
+   training data. If the corpus's purpose is a *forecasting record*, GLM's `sc-002` is
+   worthless and Qwen's three are not. Caveat: Qwen's `sc-001` has the highest per-token 6-gram
+   rate in the set, and its clean scores on `sc-002`/`sc-003` are bought with fabrication, so
+   this is a narrower win than the 0.00% headline suggests.
+2. **The declared-variable contract (0/30 violations vs GLM's 62/62), and its consequences
+   downstream.** Qwen's entity layer declares state variables a program can actually check;
+   GLM's declares domains and then ignores them in every single case. This is not cosmetic and
+   it does not stay in the entity layer: GLM's object-wrapped `init` values propagate, so only
+   **42 of 127** of GLM's event state changes land on a declared, in-domain value against
+   Qwen's **32 of 34**. For a pipeline whose entire premise is folding RFC 6902 patches over a
+   declared state model, that is the difference between a state model and a decorative one, and
+   it is the single most consequential result in this comparison.
+
+3. **Change reality (+2.00).** GLM's first event declares a change with `before == after`;
+   Qwen's declares a real one and puts a decision in the event. Across the layer, GLM has 3
+   no-ops in 127 changes; Qwen has 0 in 34.
+
+**Recommendation.** Neither model should be run unsupervised, and the choice is task-dependent:
+
+- **Forward generation (invent a story): Qwen, and not only on speed.** Qwen edges it on the
+  rubric (66.7% vs 65.2%) and wins the counters that determine whether the artifacts are usable
+  as data — the init contract (0/30 vs 62/62), in-domain event writes (32/34 vs 42/127), no-op
+  changes (0 vs 3). It also wins on craft where I marked GLM hardest: resistance acts inside the
+  spine (P2 +1.00) and the opening event contains a decision instead of a routine (E on `ev-001`,
+  3 vs 1). GLM keeps C (+1.17) and E2 (+1.00) — richer texture and a better speech signature.
+  At 8x the speed, **Qwen is the better default here**, with a validator enforcing the share sum
+  (Qwen's is 1.20), synopsis coverage (`s17` orphaned), an entity-count floor (9 vs 17 for a
+  root naming seven places), and the sentence-map rule.
+- **Reverse reconstruction (blind transitions):** **GLM, clearly** — 65% vs 50%, and the
+  failure modes are not comparable. GLM writes the right room at the wrong scale; Qwen writes
+  the wrong room. The exception is if leakage is the binding constraint for the corpus, in
+  which case neither is usable as-is and the fix is §12.1 plus a hard envelope check, not a
+  model swap.
+- **Either way, the envelope must be enforced mechanically.** 0/3 roster compliance from both
+  models, and 1/3 location compliance from Qwen, are not prompt problems at this point. They
+  are missing assertions.
+
+---
+
+## 13. Machine-readable scores (Qwen)
+
+`docs/eval/qwen3.8-27b-scores.json`, same format as the GLM file. `lattice.ev-001` is present
+with a `null` score block and `"status": "not_produced"` so a mechanical diff does not silently
+treat a missing node as a zero.

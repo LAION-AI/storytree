@@ -358,6 +358,17 @@ ROLE_SECTIONS = frozenset({"significance", "symbolic_load", "causal_power"})
 ROLE_TAGS = frozenset({"narrative_role", "theme", "arc", "role", "foreshadow",
                        "symbolism", "significance"})
 
+# The same pattern a third time, now on plots. `goal` is by definition where the
+# plot ends up; `stakes` states what is lost if it fails, which is a description
+# of the ending in the negative; `thematic_function` is a judgement about the
+# finished work. All three were written sighted and all three leak.
+#
+# Worth stating as a rule, because it kept recurring in different clothes:
+# ANY field a sighted reconstruction fills with a whole-work judgement is an
+# answer key, whatever layer it sits on.
+PLOT_ROLE_FIELDS = frozenset({"goal", "stakes", "thematic_function", "outcome",
+                              "resolution_step", "interference", "arc_summary"})
+
 
 def _act_at(position: float) -> int:
     """Which act a scene at `position` (0.0–1.0 through the work) sits in."""
@@ -458,7 +469,8 @@ def blind_entities(entities: dict, act: int) -> dict:
 
 
 def blind_context(ctx: dict, upto_step: dict | None = None,
-                  position: float | None = None) -> dict:
+                  position: float | None = None,
+                  strip_dossiers: bool = True) -> dict:
     """Strip everything a writer at this point could not know.
 
     A review found the hole this closes. The blind call was being handed the
@@ -477,21 +489,33 @@ def blind_context(ctx: dict, upto_step: dict | None = None,
     # The dossiers were written sighted. Strip what a writer at this point in the
     # work could not have known. See blind_entities() for why this is not
     # optional.
+    # strip_dossiers=False reproduces the pre-fix behaviour. It exists for one
+    # reason: comparing two models on nodes generated before the fix. Changing
+    # the context and the model at the same time measures neither. Never use it
+    # in production.
     act = _act_at(position if position is not None else 0.0)
-    for key in ("entities", "live_state"):
-        if isinstance(out.get(key), dict):
-            out[key] = blind_entities(out[key], act)
+    if strip_dossiers:
+        for key in ("entities", "live_state"):
+            if isinstance(out.get(key), dict):
+                out[key] = blind_entities(out[key], act)
 
     plots = ctx.get("plots") or []
     if plots and upto_step:
         trimmed = []
         for p in plots:
-            reached = upto_step.get(p.get("plot_id"))
+            # A plot absent from `upto_step` has reached NOTHING, so nothing of
+            # its spine may be shown. The original read a missing entry as "no
+            # limit" and kept the whole spine — the exact opposite, and the
+            # failure was silent because a full spine looks like rich context
+            # rather than like the answer key. Paired with the join bug in
+            # `_steps_reached()`, which made *every* plot absent, this handed
+            # every blind call the complete shape of the ending.
+            reached = upto_step.get(p.get("plot_id"), -1)
             spine = p.get("spine") or {}
             keep = {k: v for k, v in spine.items()
-                    if reached is None or v.get("step", 0) <= reached}
+                    if v.get("step", 0) <= reached}
             q = {k: v for k, v in p.items()
-                 if k not in ("spine", "outcome", "resolution_step")}
+                 if k not in PLOT_ROLE_FIELDS and k != "spine"}
             q["spine_so_far"] = keep
             q["outcome"] = "not yet decided"
             trimmed.append(q)

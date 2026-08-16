@@ -1,0 +1,14 @@
+narrativeforge · runs/lattice-qwen · backend=hyprlab
+  · plots       generating (55,669 prompt chars)
+    validation: clean (0 error(s), 3 warning(s))
+  · entities    generating (72,579 prompt chars)
+    validation: 23 error(s), repair attempt 1
+    applied 23 repair op(s): 0 -> 0 schema error(s)
+    validation: clean (0 error(s), 14 warning(s))
+  · events      generating (51,215 prompt chars)
+    validation: 9 error(s), repair attempt 1
+    applied 9 repair op(s): 0 -> 0 schema error(s)
+    validation: clean (0 error(s), 14 warning(s))
+
+validation: 0 error(s), 14 warning(s)
+usage: 5 calls · 77,416 in · 33,780 out · 0 reasoning · $0.32
