@@ -1,0 +1,53 @@
+{
+ "scene_id": "sc-113",
+ "location": "ROOM 808",
+ "time_of_day": "DAY",
+ "present": [
+  "Several cops"
+ ],
+ "summary": "Several cops sweep through Room 808 and find it empty. As they pass the bathroom, the camera reveals a man-sized hole smashed through the plaster and lath, indicating a recent exit point.",
+ "what_changes": [
+  {
+   "who": "The cops",
+   "axis": "knowledge",
+   "before": "Sweeping an empty room",
+   "after": "Discovering a man-sized hole in the bathroom wall",
+   "evidence": "we see a man-sized hole smashed through the plaster and lath."
+  }
+ ],
+ "objects_that_matter": [
+  "man-sized hole",
+  "plaster and lath"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Cops find the room empty but discover evidence of a forced exit.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "The Cops",
+   "wants": "To confirm the area is clear and secure the perimeter, expecting to find the remaining fugitives or evidence of their passage in Room 808.",
+   "feels": "A mix of routine procedural confidence and the sudden, jarring realization that their spatial assumptions about the building are flawed. There is a fleeting moment of confusion: the room was supposed to be a dead end, yet the wall is breached.",
+   "shows": "Professional sweep tactics: moving efficiently through the space, checking corners, and pausing only when the visual anomaly of the hole breaks their pattern. They appear composed, but their focus sharpens abruptly at the discovery.",
+   "believes_about": [
+    {
+     "other": "The Fugitives",
+     "belief": "The fugitives are either still in the room or have fled through standard exits (doors/windows).",
+     "wrong_because": "The fugitives escaped through the internal plumbing walls/lath, a non-standard exit that the cops did not anticipate, which is why the room is empty despite the breach."
+    }
+   ],
+   "basis": "The scene summary states they 'sweep through' and 'find it empty.' The discovery of the 'man-sized hole smashed through the plaster and lath' indicates a forced exit that contradicts the expectation of a contained room. The 'boots clatter' and 'flood the eight floor' from previous scenes establish the urgency and scale of their search, making this specific discovery a pivotal failure in their containment strategy.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-112: The cops flooding the eighth floor sets the context for this specific room check.",
+  "ev-022: The event description confirms the group escaped through internal plumbing walls, explaining why the hole exists and why the room is empty."
+ ],
+ "sets_up": [
+  "ev-023: The discovery of the escape route confirms to the authorities that the fugitives are moving through the building's infrastructure, leading to the eventual extraction point.",
+  "ev-025: The failure to catch the fugitives in the room contributes to the broader narrative of Morpheus's capture and the subsequent interrogation, as the police/Agents shift focus to securing the one they did catch."
+ ],
+ "dramatic_function": "This scene serves as a visual confirmation of the fugitives' successful evasion through unconventional means, highlighting the gap between the police's standard search protocols and the fugitives' knowledge of the Matrix's architecture. It transforms the empty room from a mere absence into evidence of a specific, difficult escape route."
+}

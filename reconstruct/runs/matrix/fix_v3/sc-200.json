@@ -1,0 +1,56 @@
+{
+ "scene_id": "sc-200",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank"
+ ],
+ "speaking": [
+  "TANK"
+ ],
+ "summary": "On the Main Deck, Tank uses a finger to trace Neo's movement on a monitor. He identifies a specific fire escape at the end of an alley as the destination Neo is approaching, indicating Neo is nearly at his target.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "knowledge",
+   "before": "Observing Neo's path without a specific immediate goal identified in this snippet",
+   "after": "Identifies the specific location Neo is approaching",
+   "evidence": "Finger on the monitor, Tank traces Neo's path. That's it! You're almost there!"
+  }
+ ],
+ "objects_that_matter": [
+  "monitor"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Tank guides Neo via monitor to a fire escape.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "Tank",
+   "wants": "To successfully guide Neo to the specific extraction point (the fire escape) before the Agents close in, ensuring Neo survives the Matrix traversal.",
+   "feels": "A high-stakes mix of intense concentration and controlled panic. He is physically engaged in the tracking process, feeling the weight of responsibility for Neo's life. There is a surge of relief and triumph in recognizing the specific destination, masking the underlying terror of how close the Agents are.",
+   "shows": "Calm, directive authority. His voice is loud and encouraging ('That's it!'), and his physical action (tracing the monitor) is precise. He projects confidence to reassure the person he is guiding.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is following his instructions correctly and is capable of making the final leap to the fire escape.",
+     "wrong_because": "While Neo is following instructions, the physical toll of the chase (bleeding, broken) seen in sc-199 suggests Neo is at his limit. Tank believes in the plan's viability but may underestimate the physical fragility of Neo's current state."
+    }
+   ],
+   "basis": "Tank's dialogue ('That's it! You're almost there!') indicates a shift from reactive correction (sc-198) to proactive guidance. His physical tracing of the path on the monitor (sc-200) shows active engagement. The context of the Sentinel attack (ev-033) implies a time pressure that fuels his urgency.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-198: Tank's previous corrections ('Shit!', 'No! Other left!') establish the chaotic, high-speed nature of the guidance.",
+  "sc-199: Neo's physical state (bleeding, broken) and Agent Brown's proximity raise the stakes for this final guidance."
+ ],
+ "sets_up": [
+  "ev-034: By identifying the specific exit point, this scene sets the stage for the final confrontation and subsequent death/resurrection, as the extraction is imminent.",
+  "ev-035: The successful guidance to the fire escape is the necessary precursor to Neo reaching the phone/exit point on the hovercraft."
+ ],
+ "dramatic_function": "This scene serves as the critical pivot from chaotic evasion to targeted extraction. It resolves the immediate spatial confusion of the previous scenes by anchoring Neo to a specific location, heightening the tension by making the goal clear and immediate, and transitioning the focus from survival to the final escape sequence."
+}

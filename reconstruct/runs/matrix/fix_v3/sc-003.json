@@ -1,0 +1,106 @@
+{
+ "scene_id": "sc-003",
+ "location": "HEART O' THE CITY HOTEL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "The Big Cop",
+  "the other cops",
+  "Trinity"
+ ],
+ "speaking": [
+  "TRINITY"
+ ],
+ "summary": "The Big Cop attempts to cuff Trinity, but she moves with inhuman speed, exploding his nose and kicking him into another officer. As the remaining cops fire bullets and sweep flashlights in panic, Trinity snatches a gun from one of them, fires it, and survives a final violent exchange of gunfire to stand alone. She says 'Shit.'",
+ "what_changes": [
+  {
+   "who": "The Big Cop",
+   "axis": "condition",
+   "before": "Active, holding a bead on Trinity, reaching with cuffs",
+   "after": "Knocked back, described as 'a two-hundred-fifty pound sack of limp meat and bone'",
+   "evidence": "Trinity's palm snaps up and the nose explodes, blood erupting. Her leg kicks with the force of a wrecking ball and he flies back, a two-hundred-fifty pound sack of limp meat and bone"
+  },
+  {
+   "who": "Trinity",
+   "axis": "custody",
+   "before": "Being cuffed by the police",
+   "after": "Standing alone after a violent exchange of gunfire",
+   "evidence": "There is a final violent exchange of GUNFIRE and when it's over, Trinity is the only one standing."
+  },
+  {
+   "who": "the other cops",
+   "axis": "standing",
+   "before": "Holding a bead, confident they have her",
+   "after": "Dead or incapacitated, with a flashlight rocking to a stop",
+   "evidence": "BULLETS RAKING the walls, flashlights sweeping with panic as the remaining cops try to stop a leather-clad ghost. A GUN still in the cop's hand is snatched, twisted, and FIRED."
+  }
+ ],
+ "objects_that_matter": [
+  "cuffs",
+  "GUN",
+  "flashlight"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Trinity overpowers the police unit attempting to arrest her.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To survive the immediate physical threat and escape the room to complete the mission.",
+   "feels": "A cold, mechanical focus that has just shattered by a single moment of human vulnerability. The word 'Shit' is not fear, but the sound of a system error—a realization that the calculation was off by a hair's breadth.",
+   "shows": "Inhuman speed and lethal efficiency for the majority of the scene, followed by a single, blunt, profane admission of danger.",
+   "believes_about": [
+    {
+     "other": "The Big Cop",
+     "belief": "He is a standard human obstacle that can be removed with minimal effort.",
+     "wrong_because": "He was a standard human, but the proximity of the cuffs meant the margin for error was zero, forcing Trinity to react with 'inhuman' speed rather than casual dismissal."
+    }
+   ],
+   "basis": "The transition from 'hands behind your head' in sc-001 to the 'leather-clad ghost' in sc-003 shows her shift from compliance to combat. The final line 'Shit' is the only spoken word, occurring after the violence is done, signaling that the danger was real despite the ease of the kill.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "The Big Cop",
+   "wants": "To assert control and physically subdue Trinity to maintain the appearance of police authority.",
+   "feels": "Confident arrogance that curdles into primal, animalistic terror in the split second before impact. He feels the weight of his own body as a liability rather than an asset.",
+   "shows": "Aggressive dominance (flicking cuffs, reaching) that is instantly converted into a 'sack of limp meat and bone' as he is launched into the air.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "She is a 'little girl' (as the Lieutenant said in sc-002) who can be handled with standard procedure.",
+     "wrong_because": "He underestimated her not as a person, but as a biological entity, failing to account for her superhuman reflexes and strength."
+    }
+   ],
+   "basis": "His role in sc-001 as the one who kicks the door and commands 'Hands behind your head' establishes his position of authority. His physical description in sc-003 ('two-hundred-fifty pound') contrasts with his sudden fragility, highlighting the gap between his perceived power and the reality of the Matrix.",
+   "grounding": "from_earlier_scenes"
+  },
+  {
+   "who": "The other cops",
+   "wants": "To cover their partner and ensure Trinity does not escape the room.",
+   "feels": "A collective, synchronized panic that replaces their training. The 'sweeping with panic' indicates that their procedural confidence has completely evaporated.",
+   "shows": "A chaotic, uncoordinated spray of bullets and light, transforming from a tactical unit into a disorganized mob of frightened men.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "They have 'got her' (as stated in the scene description) because she is surrounded and outnumbered.",
+     "wrong_because": "They are fighting a ghost; their bullets and numbers are irrelevant against a target that moves faster than their perception."
+    }
+   ],
+   "basis": "The description of them 'holding a bead' in sc-001 and sc-003 shows their initial tactical superiority. The 'BULLETS RAKING the walls' in sc-003 shows the breakdown of that tactic into blind, desperate firing.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "The Lieutenant's dismissal of Trinity as 'one little girl' in sc-002, which sets up the Big Cop's overconfidence.",
+  "Agent Smith's statement that 'your men are already dead' in sc-002, which provides the dramatic irony that the police are already defeated before they even engage.",
+  "Trinity's compliance in sc-001 ('slowly puts her hands behind her head'), which makes the sudden, violent shift in sc-003 more jarring."
+ ],
+ "sets_up": [
+  "The necessity of Trinity's escape from the hotel, leading directly to the rooftop chase and her eventual injury.",
+  "The confirmation that the police are not the true threat, but the Agents, as Trinity must now flee from the superior force (the Agents) rather than the inferior one (the police).",
+  "The 'Shit' moment, which signals to the audience that the stakes are higher than a simple arrest, foreshadowing the high-stakes chase across the rooftops."
+ ],
+ "dramatic_function": "This scene serves as the first full demonstration of the 'Matrix' reality, shifting the tone from a standard police procedural to a supernatural action sequence. It visually establishes the power disparity between the 'wakes' (Trinity) and the 'asleep' (the police), and serves as a catalyst for Trinity's escape, forcing her into the path of the Agents and ultimately leading to her contact with Morpheus."
+}

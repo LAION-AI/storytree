@@ -1,0 +1,74 @@
+{
+ "scene_id": "sc-024",
+ "location": "DARK STREET",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "the car"
+ ],
+ "speaking": [],
+ "summary": "The scene is a brief visual transition showing a car moving rapidly through a dark, wet environment. Green street lights are visible as they curve over the vehicle's tinted windshield while it rushes along.",
+ "what_changes": [
+  {
+   "who": "the car",
+   "axis": "condition",
+   "before": "stationary or entering the frame (implied from previous scene)",
+   "after": "moving rapidly through the environment",
+   "evidence": "as it rushes through the wet underworld"
+  }
+ ],
+ "objects_that_matter": [
+  "green street lights",
+  "tinted windshield",
+  "car"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "The car drives away into the dark, wet city.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Who is driving the car",
+  "Who is inside the car"
+ ],
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To physically escape the immediate threat of the Agents and to confirm that his decision to trust Trinity was not a fatal error.",
+   "feels": "A volatile mix of residual panic from the nightmare and the car scene, and a dawning, terrifying sense of momentum. He is no longer in control of the narrative; he is being carried by it.",
+   "shows": "Nothing visible. He is behind tinted glass, reduced to a silhouette in the dark, his internal state hidden by the vehicle's insulation and the speed.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "That she is leading him to safety, but he is not yet sure if 'safety' means survival or just a different kind of death.",
+     "wrong_because": "He believes he has a choice in the process, but the event shape indicates he is already committed to a one-way journey (the unplug)."
+    }
+   ],
+   "basis": "The transition from the static, tense interior of sc-023 to the rapid, wet motion of sc-024. The 'rush' implies the resolution of the standoff in the previous scene; the car is moving because Neo closed the door. The tinted windshield emphasizes his isolation from the new world he is entering.",
+   "grounding": "from_earlier_scenes"
+  },
+  {
+   "who": "Trinity",
+   "wants": "To establish the rhythm of the escape and to ensure Neo does not second-guess his decision during the transit.",
+   "feels": "Controlled urgency. She is the anchor in this sequence; while Neo is reacting, she is driving the plot forward. There is a professional detachment mixed with the weight of knowing exactly what awaits him at the destination.",
+   "shows": "The car's movement itself. The speed and the path through the 'wet underworld' are her actions made visible. She lets the environment do the talking, masking her specific emotional state behind the mechanics of the drive.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo has crossed the threshold and cannot turn back, and that the physical motion of the car will help settle his nerves.",
+     "wrong_because": "She underestimates how much Neo still perceives this as a kidnapping rather than a rescue, a perception that will resurface when he arrives at the hotel."
+    }
+   ],
+   "basis": "In sc-023, Trinity was the one who convinced Neo to close the door. The immediate transition to high-speed driving in sc-024 suggests she is moving to the next logistical step (the hotel) before Neo can regain his composure or ask more questions. The 'green street lights' and 'wet underworld' describe the specific aesthetic of the Matrix she is navigating.",
+   "grounding": "from_earlier_scenes"
+  }
+ ],
+ "connects_back": [
+  "The resolution of the gunpoint standoff in sc-023, where Neo's decision to close the door triggers the departure.",
+  "The 'wet underworld' aesthetic established in sc-022 and sc-023, which continues here as the car moves through the same environment."
+ ],
+ "sets_up": [
+  "ev-005: The arrival at the Hotel Lafayette, as this scene is the transit leg between the pick-up and the drop-off.",
+  "ev-006: Neo's Unplugging, by establishing the irreversible momentum of the journey."
+ ],
+ "dramatic_function": "This scene functions as a kinetic bridge that transforms Neo's static hesitation into kinetic commitment. By hiding the characters behind tinted glass and speeding them through the environment, it visually represents the point of no return; the audience sees the world rushing by, signifying that Neo's old life is being left in the rear-view mirror, even if he is not yet consciously aware of it."
+}

@@ -1,0 +1,82 @@
+{
+ "scene_id": "sc-039",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Morpheus",
+  "Trinity",
+  "Mouse",
+  "Cypher",
+  "Switch",
+  "Tank",
+  "Dozer",
+  "Neo"
+ ],
+ "speaking": [
+  "MORPHEUS"
+ ],
+ "summary": "Morpheus introduces Neo to the crew and the ship's core, a complex array of electronic equipment and ecto-skeleton chairs. He explains that the core is where they broadcast a pirate signal and hack into the Matrix. Morpheus then guides Neo into one of the chairs, inserting a coaxial line with a cerebrum chip into the jack at the back of his neck. As Neo endures the physical sensation of the connection, the scene transitions to a feeling of weightlessness inside another place.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Standing on the main deck, observing the equipment and crew.",
+   "after": "Seated in an ecto-skeleton chair, physically connected to the Matrix via a needle and coaxial line.",
+   "evidence": "He feels Morpheus guiding a coaxial line into the jack at the back of his neck.  The cable has the same kind of cerebrum chip we saw inside the plant."
+  },
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Unfamiliar with the crew and the function of the core.",
+   "after": "Informed that the core is where they broadcast their pirate signal and hack into the Matrix.",
+   "evidence": "This is where we broadcast our pirate signal and hack into the Matrix."
+  }
+ ],
+ "objects_that_matter": [
+  "Core",
+  "coaxial line",
+  "ecto-skeleton chairs",
+  "cerebrum chip"
+ ],
+ "event_hint": {
+  "kind": "orientation",
+  "one_line": "Morpheus introduces Neo to the ship's crew and prepares him for his first connection to the Matrix.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To understand his new reality and physically integrate into the crew, moving from passive observation to active participation.",
+   "feels": "A mix of disorientation and physical vulnerability. He is overwhelmed by the sheer volume of new information (names, technology) and the invasive nature of the physical connection, feeling like an object being assembled rather than a person being welcomed.",
+   "shows": "Passive compliance and a tight, pained expression. He allows himself to be guided into the chair and grimaces during the procedure, signaling his physical resistance to the intrusion even as his mind accepts the necessity of it.",
+   "basis": "The summary notes the names 'wash meaninglessly' over him, indicating cognitive overload. The description of his shoulders bunching and face tightening into a grimace during the needle insertion highlights the physical discomfort and the violation of his bodily autonomy, contrasting with his earlier sleepwalking state in sc-038.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To efficiently orient Neo to the operational reality of the Nebuchadnezzar and initiate the process of connecting him to the Matrix, ensuring he is ready for the deeper revelations to come.",
+   "feels": "Calm, authoritative, and slightly impatient. He views this as a standard procedure, a necessary step in Neo's reconstruction. There is a subtle undercurrent of control; he is the architect of Neo's new life, and this scene is just another blueprint being implemented.",
+   "shows": "A steady, instructional demeanor. He speaks clearly, touches Neo’s head to guide him, and performs the technical insertion with practiced ease, masking any anxiety about Neo's reaction with professional competence.",
+   "basis": "Morpheus is the only speaker, structuring the scene as a lecture. His dialogue ('The answer is right here') is declarative, not conversational. The fact that he instructs Trinity to 'Help him' suggests he is managing Neo's physical state as a logistical problem to be solved, consistent with his role in sc-036 and sc-037.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Trinity",
+   "wants": "To assist Morpheus in the procedure and provide a familiar, reassuring presence for Neo, bridging the gap between the abstract explanation and the physical reality.",
+   "feels": "Protective and attentive. She is the emotional anchor in the room, aware that Neo is in a vulnerable state. Her smile is likely a deliberate attempt to lower Neo's defenses before the more invasive part of the process begins.",
+   "shows": "A brief smile and a nod, followed by physical assistance. She is present but secondary to Morpheus's narrative, acting as the hands that execute his will.",
+   "basis": "The scene explicitly notes 'Trinity smiles and nods' when introduced, and later 'Help him, Trinity.' Her actions are reactive to Morpheus but proactive in their care for Neo, distinguishing her from the other crew members who are merely observed.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-038: Neo's sleepwalking state as he follows Morpheus, establishing his passive acceptance of the journey.",
+  "sc-037: The revelation of the year 2197, which sets the context for why the 'Core' and the Matrix are the only viable explanations for his reality."
+ ],
+ "sets_up": [
+  "ev-009: By physically connecting Neo to the Matrix, this scene makes it possible for Morpheus to begin the visual and verbal exposition of the Machine history within the Construct.",
+  "ev-010: The physical connection and the subsequent 'weightlessness' establish the mechanism of the Construct, which will be the site of Neo's rejection and the eventual revelation of the Prophecy."
+ ],
+ "dramatic_function": "This scene serves as the threshold crossing from the physical world to the digital one. It transforms Neo from a passive observer of his new reality into an active participant, physically linking his consciousness to the system he is about to be told is an illusion. The discomfort of the connection foreshadows the pain of the truth that will follow."
+}

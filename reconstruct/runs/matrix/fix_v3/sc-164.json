@@ -1,0 +1,81 @@
+{
+ "scene_id": "sc-164",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Trinity"
+ ],
+ "speaking": [
+  "TANK",
+  "TRINITY"
+ ],
+ "summary": "Tank is at the controls in the Hovercraft when Trinity's voice calls out over the comms, requesting a pilot program for a military B-212 helicopter. Tank immediately searches the disk drawers, finds the correct laser disk, feeds it into Trinity's supplement drive, and punches the load commands on her keyboard.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "resolve",
+   "before": "Idle or waiting at the controls",
+   "after": "Actively searching and loading a specific program in response to a request",
+   "evidence": "Tank is immediately searching the disk drawers."
+  },
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "Remote, requesting a specific tool",
+   "after": "Receiving the necessary pilot program to operate the helicopter",
+   "evidence": "finding one that he feeds into Trinity's supplement drive"
+  }
+ ],
+ "objects_that_matter": [
+  "laser disks",
+  "supplement drive",
+  "keyboard"
+ ],
+ "event_hint": {
+  "kind": "preparation",
+  "one_line": "Tank loads a pilot program for Trinity's helicopter.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "Tank",
+   "wants": "To execute the technical support role flawlessly, ensuring Trinity has the correct interface to pilot the helicopter so the team can proceed with the rescue.",
+   "feels": "A mix of high-pressure urgency and quiet competence. He is the anchor of reality in a world of chaos, feeling the weight of knowing that if he makes an error here, people die. There is a sense of relief in the mechanical task; it is something he can control.",
+   "shows": "Efficiency and immediate action. He doesn't hesitate, doesn't ask for clarification, and his fingers 'flash' over the disks. He presents a calm, professional demeanor ('Operator') to contrast with the 'Hurry!' from the other side.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "He believes she is ready for this and that the helicopter is the only way out. He trusts her instinct to choose the B-212.",
+     "wrong_because": "He is unaware of the specific physical danger she will face in the air (the crash) or that her ability to fly is being tested against her own fear of death, which she has just expressed indirectly by asking 'Not yet' in the previous scene."
+    }
+   ],
+   "basis": "Tank's role as the 'Operator' is established by his position at the controls. His immediate search and the specific detail of 'fingers flash' indicate muscle memory and high familiarity with the equipment. The contrast between his calm 'Operator' label and Trinity's 'Hurry!' highlights his function as the steady hand.",
+   "grounding": "from_earlier_scenes"
+  },
+  {
+   "who": "Trinity",
+   "wants": "To gain control of the situation by securing the means of escape (the helicopter) before the Agents can regroup or reinforce.",
+   "feels": "Panic masked by command. She is in the thick of the battle, likely still catching her breath from the rooftop fight. The 'Hurry!' reveals that her confidence in her flying ability (stated as 'Not yet' in sc-163) is warring with the immediate threat of Agent Jones/Smith. She is terrified but forcing herself to be the leader.",
+   "shows": "Urgency and command. She uses her voice to bridge the gap between the physical chaos and the technical support, demanding speed. She presents herself as the active agent of the mission, even though she is dependent on Tank for the tool.",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "She believes he can find the program instantly. She trusts his competence implicitly, which is why she doesn't explain the model in more detail or ask if it's available.",
+     "wrong_because": "Her belief in the smoothness of the operation is misplaced; the helicopter will crash, proving that the 'tool' she requested is as volatile as the enemies they are fleeing."
+    }
+   ],
+   "basis": "Trinity's 'Hurry!' is the key emotional beat. In sc-163, she admitted she couldn't fly 'yet'. Now, under fire, she is demanding the program. This creates a tension between her admission of inexperience and her current command of the situation. Her V.O. status places her physically separate from Tank, emphasizing the reliance on the comms link.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-163: Trinity's admission 'Not yet' regarding flying sets up the need for this specific program and the urgency in her voice.",
+  "sc-163: The defeat of Agent Jones and the pilot creates the immediate necessity for the helicopter as an escape vector."
+ ],
+ "sets_up": [
+  "ev-028: The loading of the program is the direct precondition for Trinity entering the helicopter and piloting it into the executive office.",
+  "ev-028: The successful (or nearly successful) coordination between Tank and Trinity establishes the team dynamic that allows for the rescue of Morpheus."
+ ],
+ "dramatic_function": "This scene serves as the mechanical bridge between the chaotic rooftop battle and the structured, high-stakes rescue operation. It shifts the focus from physical combat to logistical execution, highlighting the reliance on technology and teamwork to survive the Matrix. It also serves as a moment of calm before the storm, allowing the audience to process the shift in location and method from gunfights to aerial maneuvering."
+}

@@ -1,0 +1,82 @@
+{
+ "scene_id": "sc-097",
+ "location": "ROOM 1313",
+ "time_of_day": "DAY",
+ "present": [
+  "Mouse",
+  "Tank"
+ ],
+ "speaking": [
+  "TANK",
+  "MOUSE"
+ ],
+ "summary": "Mouse hears a helicopter and answers his ringing cellular phone. Tank's voice warns them that the hardline was cut and it is a trap, urging them to get out. Mouse yanks open the curtain to find the windows bricked up. As he spins, the rumble of combat boots builds and explodes into the room.",
+ "what_changes": [
+  {
+   "who": "Mouse",
+   "axis": "knowledge",
+   "before": "Unaware of the trap",
+   "after": "Informed that the hardline is cut and it is a trap",
+   "evidence": "TANK (V.O.) They cut the hardline!  It's a trap!  Get out!"
+  },
+  {
+   "who": "Mouse",
+   "axis": "safety",
+   "before": "In Room 1313",
+   "after": "Trapped with bricked-up windows and combat boots entering",
+   "evidence": "The windows are bricked up.  Mouse spins as the RUMBLE of combat BOOTS BUILDS, then explodes into the room."
+  }
+ ],
+ "objects_that_matter": [
+  "CELLULAR",
+  "draped windows",
+  "curtain",
+  "combat BOOTS"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Mouse is trapped in Room 1313 as the enemy enters.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "Mouse",
+   "wants": "To verify the threat level and find a way out of Room 1313.",
+   "feels": "A sudden, visceral shift from the calm of the Oracle's apartment to the primal panic of a hunted animal. He is experiencing the Matrix's environment turning hostile against him, realizing he is no longer in a neutral space but a cage.",
+   "shows": "Immediate physical reaction to the helicopter and the phone. He moves to the windows with purpose, then displays a stark, silent realization ('Oh no') when he sees the bricks. He does not speak to Tank, focusing entirely on the physical reality of his confinement.",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "Tank is trying to save him, but the warning came a moment too late to prevent the trap from closing.",
+     "wrong_because": "Tank's warning was likely intended to trigger the escape, but Mouse's isolation in the room meant the 'hardline' cut was a physical manifestation of the trap that had already sealed him in."
+    }
+   ],
+   "basis": "Mouse's action of 'yanking open the curtain' shows urgency. His line 'Oh no' is a reaction to the visual evidence of the bricked-up windows, confirming the trap. The 'rumble of combat boots' provides the auditory confirmation of his entrapment.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Tank",
+   "wants": "To alert the crew to the environmental change and force an immediate evacuation.",
+   "feels": "Frustrated urgency. He is the bridge between the digital and the physical, and he sees the 'code' change (the cut hardline) before the others feel the consequences. He is shouting into the void of a connection that is already compromised.",
+   "shows": "Only his voice is heard (V.O.). He is frantic, using short, imperative sentences ('It's a trap! Get out!'). He is not in the room, yet he is the primary source of information for the scene's crisis.",
+   "believes_about": [
+    {
+     "other": "Mouse",
+     "belief": "Mouse can still get out if he moves fast enough after hearing the warning.",
+     "wrong_because": "The windows are already bricked up. Tank's warning is correct in nature but insufficient in timing for Mouse's specific location; the trap is already set."
+    }
+   ],
+   "basis": "Tank's voice comes from the cellular phone, which is the only remaining link. His dialogue directly references the 'hardline' being cut, connecting to the previous scene where the cable was physically snapped. His urgency contrasts with Mouse's physical discovery.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-096: The physical snapping of the main phone cable is the direct cause of Tank's V.O. warning about the 'hardline' being cut.",
+  "sc-095: The helicopter sound that prompted Morpheus to move in the staircase is the same sound now signaling the raid on the hotel."
+ ],
+ "sets_up": [
+  "ev-022: This scene is the inciting incident of the raid, isolating Mouse and leading directly to his death.",
+  "ev-023: The failure of the hardline and the bricking of windows necessitate the alternative extraction methods (sewers/TV shop) used later."
+ ],
+ "dramatic_function": "This scene serves as the 'point of no return' for the crew's safety, transforming the Oracle's apartment from a place of revelation into a battlefield. It isolates Mouse, creating the specific vulnerability that leads to his death, and highlights the fragility of their connection (the hardline) which Tank is responsible for maintaining."
+}

@@ -1,0 +1,55 @@
+{
+ "scene_id": "sc-056",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "MOUSE"
+ ],
+ "speaking": [
+  "MOUSE"
+ ],
+ "summary": "On the main deck, several people gasp in reaction to an off-screen event. Mouse, present among them, exclaims in disbelief, stating that he does not believe what is happening.",
+ "what_changes": [
+  {
+   "who": "MOUSE",
+   "axis": "knowledge",
+   "before": "watching the fight",
+   "after": "disbelieving",
+   "evidence": "MOUSE I don't believe it!"
+  }
+ ],
+ "objects_that_matter": [],
+ "event_hint": {
+  "kind": "fight",
+  "one_line": "Reaction to a shocking moment in the fight.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Who else is present besides Mouse, as only 'several gasps' are described without naming characters."
+ ],
+ "minds": [
+  {
+   "who": "MOUSE",
+   "wants": "To validate his status as the ship's tech-expert by correctly interpreting the anomaly he is witnessing.",
+   "feels": "A mix of awe and cognitive dissonance; he is overwhelmed by the speed of the action, which contradicts his earlier assessment of Neo's 'above normal' neural-kinetics.",
+   "shows": "Exclamatory disbelief ('I don't believe it!') and a physical gasp, projecting shock rather than analysis.",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "Neo's movements are driven by superior hardware or speed, making him a formidable physical opponent.",
+     "wrong_because": "The shock is likely because Neo has just landed a blow on Morpheus or is moving with a fluidity that defies physical logic, suggesting the 'one' quality Morpheus is trying to teach, not just speed."
+    }
+   ],
+   "basis": "In sc-054, Mouse explicitly attributes Neo's speed to 'neural-kinetics' being 'way above normal.' The current gasp and exclamation in sc-056 follow sc-055, where Neo finally lands a hit on Morpheus. Mouse's reaction is a direct rebuttal to his own previous technical explanation; the event is too fast or too precise to be explained by hardware alone.",
+   "grounding": "from_earlier_scenes"
+  }
+ ],
+ "connects_back": [
+  "sc-054: Mouse's earlier commentary on Neo's speed sets the baseline for what is 'normal' or expected.",
+  "sc-055: The specific action of Neo knocking off Morpheus's glasses is the trigger for the gasp, marking a turning point in the fight's dynamics."
+ ],
+ "sets_up": [
+  "ev-014: The shift in the crew's perception from viewing Neo as a trainee to viewing him as a potential anomaly, which fuels the tension in the aftermath of the fight."
+ ],
+ "dramatic_function": "It serves as the audience surrogate's moment of realization, signaling to the viewer that the rules of the simulation (and the fight) have shifted from physical disparity to metaphysical potential."
+}

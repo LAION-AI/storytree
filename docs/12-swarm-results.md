@@ -677,3 +677,75 @@ Every one of the six produced a confident number over the wrong thing. Five were
 caught by an independent reader; one by recomputing arithmetic. **None was caught
 by the pipeline itself**, which is the finding that matters for the autonomy
 question in §8.
+
+---
+
+## 15. V3 — the context boundary follows from the purpose
+
+V2's pass B saw the following scene, and §13 recorded that as a hindsight problem
+to be weighed against the value of the output. That framing was wrong, and the
+right criterion is sharper.
+
+**This reconstruction produces training data.** So the context in each training
+example must match the context a model will hold when it generates. That is not
+an ethical constraint about hindsight, it is a train/inference symmetry
+requirement, and it decides the boundary exactly:
+
+| At top-down generation time, when a scene node is written | |
+|---|---|
+| The **event layer above it already exists** | → may be shown, all of it, including later events |
+| The **following scenes do not exist yet** | → must not be shown |
+
+A sighted author is fine, provided its sight stops where the generator's will.
+Both errors are mismatches, in opposite directions:
+
+- Showing later **scenes** teaches a model to depend on information it will not
+  have.
+- Withholding later **events** teaches it to work without information it *will*
+  have — and only this one looks like caution, which is why V2 made it.
+
+### Implementation
+
+Pass B now receives the prior scenes, its own event, and **the six events that
+follow** — the shape a writer working from an outline holds — but no later scene
+text. The `sets_up` field is instructed to name an event, never a later scene.
+
+The useless `inferred` boolean from §13 is replaced by a four-valued
+`grounding`: `in_this_scene`, `from_earlier_scenes`, `from_the_event_shape`,
+`extrapolated`.
+
+### Result — all four variants, correct slicing
+
+| | V0 | V1 | V2 | **V3** |
+|---|---|---|---|---|
+| Tier-1 score | 0.917 | 0.983 | 0.983 | **0.967** |
+| Clean nodes | 12/15 | 14/15 | 14/15 | **13/15** |
+| Word overlap | 65% | 76% | 72% | **77%** |
+| Verbatim evidence | 12/15 | 15/15 | 15/15 | **14/15** |
+| Words per node | 191 | 174 | 776 | **786** |
+| Output tokens | 6,579 | 6,310 | 21,520 | **21,891** |
+
+V3 matches V2 on every mechanical measure while producing training data that is
+actually usable — the difference is not in the numbers, it is that V2's
+`sets_up` claims were unusable and V3's are not.
+
+**And the new field discriminates where the boolean did not.** V2 marked 37 of 38
+mind blocks `inferred: true` — 97%, carrying no information. V3's grounding
+splits **28 in-this-scene against 8 from-earlier-scenes**, with nothing
+extrapolated. That is a distribution one can filter on, which is what the field
+was for.
+
+The `sets_up` entries now name events rather than scenes, as instructed.
+
+### What this changes about the design
+
+The boundary rule generalises past the scene layer. Every stage of this pipeline
+produces training data for a corresponding generation step, and each one has a
+context boundary determined the same way: **show what the generator will have,
+withhold what it will not.** For events that means the plot layer but not later
+events' scenes; for profiles it means the events but not the finished exposé.
+
+That is a stronger design principle than "blind reasoning", which this project
+adopted for the top-down pipeline and which turns out to be a special case of it
+— correct there because a top-down generator genuinely has nothing above the
+node it is writing.

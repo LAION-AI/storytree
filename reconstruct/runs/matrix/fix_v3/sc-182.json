@@ -1,0 +1,74 @@
+{
+ "scene_id": "sc-182",
+ "location": "SUBWAY STATION",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Smith"
+ ],
+ "speaking": [
+  "AGENT SMITH",
+  "NEO"
+ ],
+ "summary": "Neo and Smith engage in a high-speed gunfight that resolves into a physical deadlock where both jam their guns to the other's head. They simultaneously fire, revealing their guns are empty. The confrontation shifts to hand-to-hand combat, where Smith initially dominates, wounding Neo and slamming him into a column, before Neo counters with a reverse round-house that knocks Smith's glasses off. Smith declares his intent to enjoy watching Neo die and resumes a furious assault.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Engaged in ranged combat",
+   "after": "Wounded and physically dominated",
+   "evidence": "A knife-hand opens his forearm, and a kick sends him slamming back against a steel column."
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "knowledge",
+   "before": "Unaware of his weapon's status",
+   "after": "Realizes he is out of ammunition",
+   "evidence": "The smile falls.  Agent Smith yanks his TRIGGER. CLICK."
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "standing",
+   "before": "Controlled and smiling",
+   "after": "Furious and unrelenting",
+   "evidence": "Agent Smith's face warps with rage and he attacks, fists flying at furious speed"
+  }
+ ],
+ "objects_that_matter": [
+  "gun",
+  "steel column",
+  "glasses"
+ ],
+ "event_hint": {
+  "kind": "fight",
+  "one_line": "A deadly duel between Neo and Agent Smith escalates from gunplay to brutal hand-to-hand combat.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To survive the immediate physical threat and prove his emerging capability to himself and the world.",
+   "feels": "A volatile mix of adrenaline, confusion, and a dawning, hard-won confidence. He is no longer the confused man from the start of the film; he is testing the limits of his new reality.",
+   "shows": "Sweating, panting, and physically retreating, but also executing precise, almost instinctive counter-moves (the reverse roundhouse).",
+   "basis": "The 'flashpoint speed' of his draw, the mirrored movement with Smith, and the specific 'reverse roundhouse' which is a unique, non-standard martial arts move. His physical dominance is waning (wounded), but his tactical awareness is peaking.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Agent Smith",
+   "wants": "To eliminate Neo and restore order, but increasingly to do so with a sense of personal, aesthetic satisfaction.",
+   "feels": "A transition from cold, procedural efficiency to raw, unbridled rage. The loss of his 'perfect' control (the empty gun) triggers an emotional fracture in his composure.",
+   "shows": "Initially 'machine-calm' and smiling, then 'face warps with rage' and attacks with 'furious speed.' The removal of his glasses reveals the 'ice blue' eyes, stripping away his human disguise to reveal the program's core.",
+   "basis": "The specific beat where the 'smile falls' after the click, followed immediately by the change in combat style from controlled gunplay to 'fists flying at furious speed.'",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-180: Neo's 'fixed and hard' resolve is the source of his speed and precision in this fight.",
+  "sc-181: Morpheus's 'He's beginning to believe' provides the context for why Neo is able to compete with Smith at all."
+ ],
+ "sets_up": [
+  "ev-034: Smith's shift to 'unrelenting fury' and the physical dominance established here directly leads to Neo being thrown against the tunnel wall and eventually shot.",
+  "ev-034: The 'ice blue' eyes and the declaration 'I'm going to enjoy watching you die' establish the personal, almost hateful motivation Smith will carry into the hotel ambush."
+ ],
+ "dramatic_function": "This scene serves as the crucible where Neo's potential is tested against the Matrix's ultimate agent. It marks the transition of Smith from a faceless obstacle to a personal antagonist and demonstrates that Neo's power is now physical and instinctive, not just intellectual."
+}

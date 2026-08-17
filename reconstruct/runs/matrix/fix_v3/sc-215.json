@@ -1,0 +1,95 @@
+{
+ "scene_id": "sc-215",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Tank",
+  "Morpheus"
+ ],
+ "speaking": [
+  "TRINITY"
+ ],
+ "summary": "Trinity screams as the monitors jump back to life. Tank and Morpheus look at each other. It is a miracle. Trinity commands, 'Now get up!'",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "screaming",
+   "after": "commanding",
+   "evidence": "Trinity screams as the monitors jump back to life.  Tank and Morpheus look at each other. It is a miracle. TRINITY Now get up!"
+  },
+  {
+   "who": "Tank",
+   "axis": "knowledge",
+   "before": "uncertain",
+   "after": "miracle",
+   "evidence": "Trinity screams as the monitors jump back to life.  Tank and Morpheus look at each other. It is a miracle."
+  }
+ ],
+ "objects_that_matter": [
+  "monitors"
+ ],
+ "event_hint": {
+  "kind": "resuscitation",
+  "one_line": "Trinity reacts to the monitors restarting and commands someone to get up.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To confirm that Neo is truly alive and to force him to complete the transition back to his physical body.",
+   "feels": "A violent oscillation between the terror of the last thirty seconds (watching him die) and the explosive, almost aggressive relief of the miracle. Her scream is not just joy; it is the release of a pressure that threatened to crush her.",
+   "shows": "She screams (raw, uncontrolled) and then immediately shifts into a commanding tone ('Now get up!'). She uses her voice to bridge the gap between his unconscious state and his agency.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "He is not just biologically restarting; he is responding to the love she declared in the previous moment. His eyes snapping open in the prior scene proved her faith was the mechanism, so she believes her command will pull him fully into the world.",
+     "wrong_because": "She assumes the emotional connection is the sole tether, but he is still physically vulnerable and in a state of transition; the 'miracle' is biological, not just spiritual, and his ability to 'get up' is still unproven."
+    }
+   ],
+   "basis": "In sc-213, she whispers her confession and kisses him. In sc-214, his eyes snap open. Here, the monitors jumping back to life confirm the biological reality of what she felt. Her command 'Now get up!' is a direct extension of her belief that her love is the active agent in his resuscitation.",
+   "grounding": "from_earlier_scenes"
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To witness the vindication of his faith in the One. He needs to see that his gamble on Neo was not a fatal error.",
+   "feels": "A profound, heavy relief that is tinged with awe. He is the 'leader' who made the decision to activate the EMP, which was a desperate, perhaps irrational, move. Seeing the monitors work validates his intuition over pure logic.",
+   "shows": "He looks at Tank. This is a non-verbal communication of shared shock and validation. He does not speak; he lets the silence and the shared gaze carry the weight of the 'miracle.'",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "Tank is processing the data and the visual evidence in the same way he is: as a confirmation that the impossible has occurred. He believes Tank is as stunned as he is.",
+     "wrong_because": "Tank is likely still analyzing the technical impossibility of the revival, whereas Morpheus is already processing the spiritual/prophecy significance. Their internal frames are different."
+    }
+   ],
+   "basis": "In sc-213, Morpheus was 'in tears' holding the EMP switch. The look exchanged with Tank here is the release of that tension. The 'miracle' label in the facts suggests a shared recognition of the improbability, which Morpheus, as the believer, internalizes as destiny.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Tank",
+   "wants": "To understand how the impossible just happened. He needs to make sense of the data that shouldn't exist (flatline to life in seconds).",
+   "feels": "Cognitive dissonance and shock. He is the technician, the one who deals in facts. The fact that the monitors 'jumped back to life' contradicts the flatline Agent Brown confirmed in the Matrix. He is trying to reconcile the technical with the miraculous.",
+   "shows": "He looks at Morpheus. He is seeking a shared reference point or a confirmation that he isn't the only one seeing this glitch in reality.",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "Morpheus is equally baffled by the technical aspect, or at least acknowledging the anomaly. He believes they are in this together as observers of an event.",
+     "wrong_because": "Morpheus is already emotionally resolved (victory/faith), while Tank is still in the analytical phase of 'what just happened?'. Morpheus is looking at the result; Tank is looking at the process."
+    }
+   ],
+   "basis": "The facts state Tank and Morpheus look at each other and that it is a 'miracle.' Tank's role throughout the series is the rational anchor. His gaze here is the bridge between the cold data of the monitors and the hot emotion of the crew.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-213: Trinity's confession and kiss are the emotional catalyst that precedes this physical revival.",
+  "sc-214: The opening of Neo's eyes is the immediate precursor; this scene is the physiological confirmation of that moment.",
+  "sc-212: The declaration of Neo's death by Agent Brown makes this revival a true 'miracle' rather than just a resuscitation."
+ ],
+ "sets_up": [
+  "ev-036: Neo's physical stability and consciousness are now established, allowing him to speak and deliver his message to the Matrix.",
+  "ev-037: The team's morale is restored and Neo is active, enabling the physical assault on the lobby that follows."
+ ],
+ "dramatic_function": "This scene serves as the pivot point from despair to hope. It transforms the abstract 'love conquers all' theme of the previous scene into tangible, biological reality, validating the emotional stakes for the entire crew and resetting the narrative tension from 'will he live?' to 'what will he do now that he is alive?'"
+}

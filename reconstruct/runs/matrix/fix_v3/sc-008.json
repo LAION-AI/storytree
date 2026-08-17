@@ -1,0 +1,101 @@
+{
+ "scene_id": "sc-008",
+ "location": "ROOF",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Agent Brown",
+  "COP"
+ ],
+ "speaking": [
+  "COP"
+ ],
+ "summary": "Trinity runs across the rooftops, pursued by Agent Brown and a unit of cops. She performs a precise, gliding jump across a 40-foot gap to the next building, landing and somersaulting up while continuing to run. The cops, who have been jumping wildly, slow down in fear of the ugly landing. Agent Brown duplicates Trinity's move exactly, landing with unnatural grace. The chase continues over a dark landscape of rooftops and brick cliffs until Trinity spots her only chance 50 feet beyond a paved chasm.",
+ "what_changes": [
+  {
+   "who": "COP",
+   "axis": "knowledge",
+   "before": "Pursuing Trinity with wild jumps, expecting a standard chase.",
+   "after": "Staring slack-jawed in disbelief at the impossible physics of Trinity's and Agent Brown's movements.",
+   "evidence": "They stare, slack-jawed, as Agent Brown duplicates the move exactly, landing, rolling over a shoulder up onto one knee."
+  },
+  {
+   "who": "Trinity",
+   "axis": "safety",
+   "before": "In the midst of a continuous pursuit across multiple rooftops.",
+   "after": "Facing a specific, high-risk obstacle where her path drops away into a paved chasm, identifying her only chance.",
+   "evidence": "Ahead, she sees her only chance, 50 feet beyond the point where her path drops away into a paved chasm"
+  }
+ ],
+ "objects_that_matter": [
+  "parapet",
+  "roof",
+  "back alley",
+  "building",
+  "ground",
+  "paved chasm"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Trinity and Agent Brown display superhuman agility to outmaneuver the pursuing police force across the rooftops.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To survive the immediate kill zone created by the 40-foot gap and maintain enough momentum to reach the next viable exit point.",
+   "feels": "A cold, hyper-focused clarity. The fear of death is present but subordinated to the mechanical execution of the jump. There is no joy in the flight, only the necessity of it.",
+   "shows": "Perfectly calm face, gliding movements, and a somersault that looks like a correction rather than a struggle.",
+   "believes_about": [
+    {
+     "other": "Agent Brown",
+     "belief": "Brown is a mirror, not a predator; his movements are a response to hers, not an independent strategy.",
+     "wrong_because": "Brown's exact duplication suggests a shared algorithmic logic, not just reactive mimicry, implying a deeper connection to the system they are both running from."
+    }
+   ],
+   "basis": "In sc-005, she had to 'focus' and take a deep breath to center herself after the line was traced. Here, that centering is fully realized in her 'perfectly calm' face during a 40-foot leap. Her movements are 'clean' and 'gliding,' contrasting with the 'wild' jumps of the cops, indicating a mastery of the physics that the others lack.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Agent Brown",
+   "wants": "To maintain the integrity of the pursuit by matching Trinity's speed and trajectory, preventing her from gaining a decisive distance advantage.",
+   "feels": "Avoidant neutrality. There is no emotion, only the processing of data. The 'unnatural grace' is not a display of skill but a limitation of the human form being overridden by the Agent's programming.",
+   "shows": "Exact duplication of Trinity's jump, landing on one knee with a roll over the shoulder. The precision is mechanical.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "Trinity is an anomaly that can be contained if the parameters of the chase are kept within the Agent's operational range.",
+     "wrong_because": "Trinity is not just running; she is navigating a specific path to a specific phone (Wells and Lake). Brown's focus on the physical chase misses the strategic destination, which is why he is always a step behind in terms of outcome, even if he matches the pace."
+    }
+   ],
+   "basis": "In sc-006 and sc-007, Brown is established as the leader of the police unit, the one who enters the hall and leads the pursuit. In this scene, he 'duplicates the move exactly,' showing that his primary function is containment. His 'unnatural grace' is noted as a contrast to the 'wild jumps' of the cops, highlighting his non-human nature.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "COP",
+   "wants": "To apprehend the suspect before she escapes over the edge, driven by the expectation of a standard police chase.",
+   "feels": "Cognitive dissonance shifting into primal fear. The 'slack-jawed' stare is the physical manifestation of their worldview breaking. They are no longer chasing a person; they are witnessing an impossibility.",
+   "shows": "Wild jumps that become slow and hesitant, slack-jawed staring, and the verbalization of disbelief ('That's impossible!').",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "Trinity is a human being who will eventually fall or tire out because the jump is 'impossible' for a human.",
+     "wrong_because": "Trinity is not operating under standard human physical limitations. The 'impossibility' is only from the human perspective; for Trinity, it is a calculated maneuver. The cops' belief in their own reality is what slows them down."
+    }
+   ],
+   "basis": "The scene explicitly contrasts the 'wild jumps' of the cops with the 'clean' movements of Trinity and Brown. The cop's dialogue 'That's it, we got her now' is immediately followed by the realization they are about to see something 'ugly' (the landing), which turns into 'Jesus Christ -- that's impossible!' This shift from confidence to disbelief is the core of their internal state.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-005: Trinity's need to 'focus' and center herself after the line was traced is the internal preparation that allows her 'perfectly calm' demeanor in the jump.",
+  "sc-006: Agent Brown's role as the leader of the police unit is established here, justifying his position at the front of the pursuit and his ability to lead the charge over the parapet.",
+  "sc-007: The constraint of Agent Smith blocking the alley below forces Trinity 'up,' initiating the rooftop chase that defines this scene."
+ ],
+ "sets_up": [
+  "ev-001: The identification of the 'paved chasm' and the 'only chance' 50 feet away sets up the immediate next action: the desperate 50-foot jump into the dark building, which will result in Trinity being injured but alive.",
+  "ev-001: The cops' disbelief and slowing down ensures they are not immediately at the landing zone, giving Trinity the necessary margin to crash through the window and reach the street level, where the phone booth encounter will occur."
+ ],
+ "dramatic_function": "This scene serves as the transition from the personal, intimate tension of the hotel interior to the cosmic, surreal scale of the Matrix's physics. It establishes the 'rules' of the world: for the awakened (Trinity) and the Agents (Brown), gravity is a suggestion, while for the unawakened (Cops), it is a hard limit. This contrast is the visual and thematic core of the film's central conflict."
+}

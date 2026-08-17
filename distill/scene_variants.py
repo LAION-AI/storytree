@@ -245,6 +245,71 @@ SCHEMA
 """
 
 
+# --------------------------------------------------------------------------
+# V3 — the context boundary that matches what a generator will actually have
+#
+# V2's pass B saw the following scene, which made `sets_up` hindsight rather
+# than forecast. The right criterion is not "blind versus sighted" but
+# **train/inference symmetry**: this reconstruction produces training data, so
+# the context in each example must match the context a model will hold when it
+# generates.
+#
+# In top-down generation, when a scene node is written:
+#
+#     the EVENT layer above it already exists       -> may be shown, all of it,
+#                                                      including later events
+#     the FOLLOWING SCENES do not exist yet         -> must not be shown
+#
+# So a sighted author is fine, provided its sight stops at the same boundary the
+# generator's will. Showing later scenes teaches a model to depend on
+# information it will not have; withholding later events teaches it to work
+# without information it will have. Both are train/inference mismatches, in
+# opposite directions, and only the first looks like caution.
+# --------------------------------------------------------------------------
+
+def v3_mind_prompt(scene, facts: dict, prior_scenes: str,
+                   own_event: dict, later_events: list) -> str:
+    return f"""\
+Read the minds in scene {scene.scene_id}.
+
+THE FACTS of this scene, already established — do not contradict them
+{json.dumps(facts, indent=1, ensure_ascii=False)}
+
+THE SCENE ITSELF
+{{scene_text}}
+
+WHAT CAME BEFORE — the scenes leading here
+{prior_scenes[:9000]}
+
+THE EVENT THIS SCENE BELONGS TO
+{json.dumps(own_event, indent=1, ensure_ascii=False)[:3500]}
+
+WHERE THE STORY IS GOING — the events after this one.
+You know the shape of what is coming, the way a writer working from an outline
+does. You do NOT have the scenes that will realise them, and you must not
+pretend to: write what this scene sets in motion, not what a later scene does.
+{json.dumps(later_events, indent=1, ensure_ascii=False)[:9000]}
+
+SCHEMA
+{json.dumps(MIND_SCHEMA_V3, indent=1)}
+"""
+
+
+MIND_SCHEMA_V3 = json.loads(json.dumps(MIND_SCHEMA))
+MIND_SCHEMA_V3["properties"]["sets_up"]["description"] = (
+    "What this scene makes possible or necessary in the events that follow. "
+    "Name an event, never a later scene — you have not seen those.")
+# `inferred` was true on 37 of 38 blocks in V2, so it carried no information.
+# A degree discriminates where a boolean did not.
+MIND_SCHEMA_V3["properties"]["minds"]["items"]["properties"]["grounding"] = {
+    "type": "string", "enum": ["in_this_scene", "from_earlier_scenes",
+                               "from_the_event_shape", "extrapolated"],
+    "description": "Where this reading mainly comes from."}
+MIND_SCHEMA_V3["properties"]["minds"]["items"]["required"] = [
+    "who", "wants", "feels", "shows", "basis", "grounding"]
+MIND_SCHEMA_V3["properties"]["minds"]["items"]["properties"].pop("inferred", None)
+
+
 VARIANTS = {"v0": v0, "v1": v1}
 
 
@@ -314,6 +379,91 @@ def tier1(node: dict, scene, text: str) -> dict:
             "scene_words": scene.word_count,
             "problems": p,
             "score": round(1.0 - 0.25 * len(p), 2)}
+
+
+def run_v3(out: Path, ports: list[int], model: str, per_endpoint: int = 4,
+           events_path: Path | None = None) -> dict:
+    """Two passes, with pass B's sight stopping where a generator's will."""
+    out.mkdir(parents=True, exist_ok=True)
+    sw = Swarm(ports, model, per_endpoint)
+    table = json.loads((ROOT / "reconstruct/runs/matrix/script_map.json").read_text())
+    script, scenes = sp.parse(Path(table["source_file"]).read_text(errors="replace"))
+    by = {s.scene_id: s for s in scenes}
+    order = [s.scene_id for s in scenes]
+
+    ep = events_path or (ROOT / "reconstruct/runs/matrix/swarm/artifacts/events_draft.json")
+    events = json.loads(ep.read_text()) if ep.exists() else []
+    ev_of = {sid: e for e in events for sid in (e.get("scenes") or [])}
+    ev_order = [e.get("event_id") for e in events]
+
+    def one(sid):
+        sc = by[sid]
+        text = script[sc.start_char:sc.end_char]
+        _assert_supply(sid, sc, text)
+        i = order.index(sid)
+
+        prior = ""
+        for j in range(max(0, i - 3), i):
+            n = scenes[j]
+            prior += (f"\n--- {n.scene_id} ({n.heading}) ---\n"
+                      + script[n.start_char:n.end_char][:2200])
+
+        system, user, schema = v1(sc, text, script, prior[-6000:])
+        facts = sw.ask(system, user, schema, stage="v3-facts", tag=sid, max_tokens=9000)
+        if not facts:
+            return None
+        facts["scene_id"] = sid
+
+        own = ev_of.get(sid) or {}
+        # every event after this one — the shape a generator would hold
+        later = []
+        if own.get("event_id") in ev_order:
+            k = ev_order.index(own["event_id"])
+            later = [{"event_id": e.get("event_id"), "name": e.get("name"),
+                      "what_happens": (e.get("what_happens") or "")[:260]}
+                     for e in events[k + 1:k + 7]]
+
+        mind = sw.ask(MIND_SYSTEM,
+                      v3_mind_prompt(sc, facts, prior,
+                                     {k: own.get(k) for k in
+                                      ("event_id", "name", "what_happens")},
+                                     later).replace("{scene_text}", text[:12000]),
+                      MIND_SCHEMA_V3, stage="v3-minds", tag=sid, max_tokens=9000)
+        if mind:
+            for k in ("minds", "connects_back", "sets_up", "dramatic_function"):
+                facts[k] = mind.get(k)
+        return facts
+
+    nodes = sw.map(one, SAMPLE, stage="v3", label=lambda s: s)
+    results = {}
+    from collections import Counter
+    grounding = Counter()
+    for sid, nd in zip(SAMPLE, nodes):
+        sc = by[sid]
+        r = tier1(nd, sc, script[sc.start_char:sc.end_char])
+        ms = (nd or {}).get("minds") or []
+        r["minds"] = len(ms)
+        for m in ms:
+            grounding[m.get("grounding", "?")] += 1
+        results[sid] = r
+        if nd:
+            (out / f"{sid}.json").write_text(json.dumps(nd, indent=1, ensure_ascii=False))
+
+    ok = [r for r in results.values() if r.get("produced")]
+    summary = {"variant": "v3", "n": len(SAMPLE), "produced": len(ok),
+               "mean_tier1": round(sum(r["score"] for r in ok) / len(ok), 3) if ok else 0,
+               "mean_overlap": round(sum(r["overlap"] for r in ok) / len(ok), 3) if ok else 0,
+               "clean": sum(1 for r in ok if not r["problems"]),
+               "verbatim_ok": sum(1 for r in ok if r["verbatim"] != "0/0"
+                                  and not r["verbatim"].startswith("0/")),
+               "mean_words": round(sum(r["words"] for r in ok) / len(ok)) if ok else 0,
+               "mean_minds": round(sum(r["minds"] for r in ok) / len(ok), 1) if ok else 0,
+               "grounding": dict(grounding),
+               "usage": {k: sw.summary("v3-facts")[k] + sw.summary("v3-minds")[k]
+                         for k in ("calls", "ok", "tok_in", "tok_out", "model_secs")},
+               "per_scene": results}
+    (out / "_tier1.json").write_text(json.dumps(summary, indent=1))
+    return summary
 
 
 def run_v2(out: Path, ports: list[int], model: str, per_endpoint: int = 4) -> dict:
@@ -451,7 +601,7 @@ def run_variant(name: str, out: Path, ports: list[int], model: str,
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--variant", required=True, choices=list(VARIANTS) + ["v2"])
+    ap.add_argument("--variant", required=True, choices=list(VARIANTS) + ["v2", "v3"])
     ap.add_argument("--out", required=True)
     ap.add_argument("--ports", default="8100,8101,8102,8103,8104,8105,8106,8107")
     ap.add_argument("--model", default="qwen3.8-27b")
@@ -459,8 +609,12 @@ if __name__ == "__main__":
     a = ap.parse_args()
 
     ports = [int(p) for p in a.ports.split(",")]
-    s = (run_v2(Path(a.out), ports, a.model, a.per_endpoint) if a.variant == "v2"
-         else run_variant(a.variant, Path(a.out), ports, a.model, a.per_endpoint))
+    if a.variant == "v3":
+        s = run_v3(Path(a.out), ports, a.model, a.per_endpoint)
+    elif a.variant == "v2":
+        s = run_v2(Path(a.out), ports, a.model, a.per_endpoint)
+    else:
+        s = run_variant(a.variant, Path(a.out), ports, a.model, a.per_endpoint)
     print(f"\n  {s['variant']}: {s['produced']}/{s['n']} produced · "
           f"tier1 {s['mean_tier1']} · clean {s['clean']}/{s['produced']} · "
           f"overlap {s['mean_overlap']:.0%} · "

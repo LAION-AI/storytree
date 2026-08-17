@@ -1,0 +1,129 @@
+{
+ "scene_id": "sc-148",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Morpheus",
+  "Neo",
+  "Trinity"
+ ],
+ "speaking": [
+  "TANK",
+  "NEO",
+  "TRINITY"
+ ],
+ "summary": "As Tank prepares to pull the plug on Morpheus, Neo stops them, claiming the Oracle's prophecy about a choice applies to Morpheus's fate. Neo declares he is not the One and decides to re-enter the Matrix to save Morpheus. Trinity, initially opposing, asserts her rank and joins him, ordering Tank to load them up.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Believes he is the One chosen by the Oracle.",
+   "after": "Reveals he is 'just another guy' and not the One.",
+   "evidence": "I'm not the One, Trinity.  The Oracle hit me with that, too."
+  },
+  {
+   "who": "Neo",
+   "axis": "resolve",
+   "before": "Paralyzed by the finality of Morpheus's death.",
+   "after": "Decides to go back into the Matrix to save him.",
+   "evidence": "I believe I can bring him back."
+  },
+  {
+   "who": "Trinity",
+   "axis": "allegiance",
+   "before": "Believes Morpheus sacrificed himself to get Neo out.",
+   "after": "Joins Neo in the chair to go back in, asserting her authority.",
+   "evidence": "I believe Morpheus means more to me than he does to you."
+  },
+  {
+   "who": "Tank",
+   "axis": "custody",
+   "before": "Holding the plug to end Morpheus's life.",
+   "after": "Orders to load Neo and Trinity up for the Matrix.",
+   "evidence": "Tank, load us up.  Neo, this is loco."
+  }
+ ],
+ "objects_that_matter": [
+  "plug"
+ ],
+ "event_hint": {
+  "kind": "wake",
+  "one_line": "Neo and Trinity decide to re-enter the Matrix to save Morpheus before he is broken.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To save Morpheus not by fulfilling a prophecy, but by acting on his own newly found belief.",
+   "feels": "A profound liberation mixed with terrifying uncertainty. He is no longer the 'Chosen One' carrying the weight of destiny, but just another man making a choice. This freedom is both empowering and frightening, as he realizes he has no logical guarantee of success.",
+   "shows": "He displays a sudden, clear resolve. He speaks with a calm, almost detached clarity when denying he is the One, which contrasts with the earlier chaos. He does not argue with Tank's logic; he simply states his belief.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "Trinity will understand that his decision is about love and duty, not ego or destiny.",
+     "wrong_because": "Trinity is initially paralyzed by the loss of the 'One' narrative and needs to assert her own authority to join him, suggesting she sees this as a leadership vacuum as much as a rescue mission."
+    },
+    {
+     "other": "Tank",
+     "belief": "Tank will respect his decision even if he thinks it is suicide.",
+     "wrong_because": "Tank is the pragmatist; his 'load us up' is a resignation to defeat rather than a shared belief in the plan's viability. He is following orders, not faith."
+    }
+   ],
+   "basis": "Neo's shift from 'paralyzed' to 'perfectly clear' vision (sc-148 summary) and his explicit denial of being the One ('I'm just another guy') marks a pivotal character development. His decision to go back in contradicts the previous scene's (sc-146) conclusion that they must pull the plug.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Trinity",
+   "wants": "To ensure Morpheus is saved and to reassert her position as the ranking officer in the absence of Morpheus.",
+   "feels": "A mix of grief, rage, and a desperate need for control. The revelation that Neo is not the One threatens the narrative structure she has relied on to process Morpheus's sacrifice. Joining the mission is a way to reclaim agency in a situation where she was initially passive (crying, pacing).",
+   "shows": "She shifts from weeping and opposing the plan to a cold, authoritative command. Her speech about 'ranking officer' and 'go to hell' is a mask for her fear that if she doesn't go, she will lose Morpheus forever, and that Neo's lack of 'destiny' makes him an unreliable leader.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is going on a suicide mission because he is delusional about his abilities, not because he has a plan.",
+     "wrong_because": "Neo's motivation is spiritual/philosophical ('I believe in something'), not tactical. Trinity underestimates the power of Neo's new belief until later events prove it."
+    },
+    {
+     "other": "Tank",
+     "belief": "Tank is merely an obstacle who needs to be ordered to comply.",
+     "wrong_because": "Tank is the one who actually executes the technical side of the mission; his compliance is crucial, not just a formality."
+    }
+   ],
+   "basis": "Trinity's transition from 'crying' to 'jaw sets' (sc-148) and her invocation of rank ('ranking officer on this ship') highlights her role as the military leader. Her statement 'Morpheus means more to me than he does to you' reveals a personal stake that transcends the crew's collective goal.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Tank",
+   "wants": "To preserve the ship and the crew's sanity by accepting the logical conclusion (death) or, failing that, to facilitate the crew's choice without further debate.",
+   "feels": "Exhaustion and resignation. He has already processed the grief ('You were... a father') and the logic ('Zion is more important'). Neo's intervention forces him to revert from a state of closure back to a state of uncertainty and technical problem-solving.",
+   "shows": "He is pragmatic and blunt. He calls the plan 'loco' and 'suicide,' providing the reality check that Neo and Trinity need to acknowledge the risk. His final order 'Tank, load us up' is delivered with a weary acceptance.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is acting on impulse and emotion, not logic.",
+     "wrong_because": "While Neo admits he can't 'logically explain' it, his action is the result of a deep internal shift, not just a spur-of-the-moment reaction. Tank underestimates the significance of Neo's choice."
+    },
+    {
+     "other": "Trinity",
+     "belief": "Trinity's assertion of rank is a necessary bureaucratic step to move forward.",
+     "wrong_because": "It is also an emotional assertion of her place in the hierarchy now that Morpheus is gone. Tank sees the command; he may not fully grasp the emotional weight behind Trinity's defiance."
+    }
+   ],
+   "basis": "Tank's dialogue in sc-146 established his role as the voice of reason and logic ('Zion is more important'). In sc-148, he continues this role by pointing out the 'military controlled building' and 'Agents' as insurmountable odds. His action of holding the plug before Neo stops him shows he was ready to execute the logical plan.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-146: Tank's explanation of the 'breaking' process and the necessity of pulling the plug sets the stakes for Neo's intervention.",
+  "sc-145: Agent Smith's monologue about the 'perfect world' and human suffering provides the philosophical backdrop for Neo's shift from 'destiny' to 'belief'.",
+  "sc-147: The confirmation that Morpheus is being actively interrogated creates the time pressure for Neo's decision."
+ ],
+ "sets_up": [
+  "ev-026: The decision to re-enter the Matrix initiates the preparation for the rescue mission.",
+  "ev-027: Neo and Trinity's entry into the Matrix sets the stage for the government building assault.",
+  "ev-028: The rescue of Morpheus is the direct result of this decision to 'bring him back'."
+ ],
+ "dramatic_function": "This scene marks the pivotal shift from a story about a 'Chosen One' fulfilling a prophecy to a story about individuals making choices based on belief. It breaks the tension of the 'breaking' process and re-energizes the crew for the rescue, while simultaneously deepening the personal stakes for Neo and Trinity by decoupling their actions from destiny."
+}
