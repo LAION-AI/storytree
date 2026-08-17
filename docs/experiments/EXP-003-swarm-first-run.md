@@ -482,3 +482,302 @@ it.
 4. **Add an over-merge check**: flag any entity whose alias set contains two
    strings that the *agents* list also holds as separate ids. `THE_AGENTS`
    holding `Agent Smith` while `AGENT_SMITH` exists is decidable arithmetic.
+
+---
+
+## Stage 6 — entity profiles
+
+### Does it do its job?
+
+Yes — this is the best stage in the run, and the only one that would survive as
+written. 40 profiles, mean 2.8 state variables, mean description 564 characters,
+zero check violations, and the violations checked (variable count, initial value
+inside its own declared domain) are the right ones.
+
+### What is good
+
+`AGENT_SMITH`'s state model is exactly what the design asks for: variables with a
+closed domain and a `why` that names the transitions.
+
+```
+target_status: [active_hunt, target_escaped, target_captured, target_interrogated]
+  why: "Moves from active_hunt to target_escaped after Trinity survives the
+        garbage truck crash; moves to target_captured when Neo is arrested…"
+```
+
+`TRINITY`'s six variables each cite a real event id — `pilot_capability` moves in
+ev-032, `knowledge_of_cypher` in ev-029. `CYpher`'s profile earns its length:
+*"his betrayal is not born of malice but of a profound exhaustion with the
+truth"* is a reading, not a summary. Nothing here is generic-character filler.
+
+### What fails
+
+- **Three of the 40 profiles are duplicates of another profile.** `CYpher`
+  (agent) and `CYPHER` (object) are the same person with two different, mutually
+  inconsistent state models. `ORACLE_S_APARTMENT` (location) and
+  `ORACLES_APARTMENT` (object) are the same room. `META_CORTECHS_OFFICE` and
+  `META_CORTECHS` likewise. 7.5% of the profile budget spent contradicting
+  itself, inherited whole from stage 5.
+- **The cap truncates the last kind, always.** `stage6_profiles` flattens
+  `agents + locations + objects + concepts` and takes `[:40]`. 49 entities were
+  eligible. The nine dropped are all at the tail: `THE_CONSTRUCT`,
+  `HEART_O_CITY_HOTEL`, `ORACLE_APARTMENT`, `SENTINELS`, `DRIVE_CHAIRS`,
+  **`RULES_OF_THE_MATRIX`**, **`POLICE`**, **`ELECTROMAGNETIC_PULSE`**,
+  `FETUS_FIELDS`. The world-mechanics concepts — the ones the design says exist
+  so that world state can be tracked at all — are precisely what a fixed cap on a
+  kind-ordered list eats. A cap of 49 would have cost 9 more calls out of 373.
+- **One schema is applied to four kinds of thing.** `wants`, `fears`,
+  `internal_conflict` and `speech` are asked of every entity, so the
+  Nebuchadnezzar has fears (*"being detected by Sentinels"*) and a speech style
+  (*"None (non-living entity), but characterized by the hum of turbines"*), and
+  THE_MATRIX has an internal conflict. Some of it is unexpectedly good; the
+  `speech` field for a hovercraft is pure schema-satisfaction.
+- **`TRINITY`'s description is 111 characters** against a `minLength` of 100 —
+  *"A skilled fighter and pilot on the Nebuchadnezzar who falls in love with Neo
+  and is instrumental in his journey."* The second lead received the thinnest
+  description of any major character, and that sentence is the received summary
+  of the film with nothing in it from these scenes. `NEO`'s is 750 characters.
+  A `minLength` floor sets a floor; it does not distribute effort.
+- **`CYPHER`'s `why` fields are bare event-id lists** — `"ev-009, ev-021,
+  ev-022, ev-029"` — which satisfies the schema description ("Which event moves
+  this") while carrying no information about the transition.
+- **The critic and the revision are not implemented.** The whitepaper specifies
+  105 calls for this stage: one author, one critic arguing with evidence, one
+  revision per entity. The implementation makes 40 calls, one per entity, and
+  stops. The stage's own quality mechanism did not run.
+
+---
+
+## Stage 7 — story root, written last
+
+### Does it do its job?
+
+Barely. One call, 685 output tokens for the entire root of a feature. The
+whitepaper specifies root **plus revision**; the revision is not implemented.
+
+### What is good
+
+Writing it last visibly helped in one place. `genre` is *"Philosophical cyberpunk
+action-thriller blending existentialist sci-fi with martial arts combat and noir
+detective elements"* — specific, multi-clause, and not one word, which is what
+the schema and the top-down failure both demanded.
+
+### What fails
+
+- **The turning points are out of story order and omit the climax.** Three are
+  listed: the Red Pill Choice, Cypher's Betrayal, the Oracle's Prophecy. The
+  Oracle precedes the betrayal in the work. There is no act-3 turn at all, for
+  the same reason as everywhere else. `turning_points[].where` is a free string,
+  so nothing can be ordered and nothing can be checked.
+- **`style` describes the film, not the screenplay.** *"A sleek, high-contrast
+  visual aesthetic characterized by cool green digital overlays and stark,
+  desaturated environments."* The green has textual basis — the script has
+  green-electric rivers and electric-green equipment — but "high-contrast",
+  "desaturated" and "visual aesthetic" are the vocabulary of someone describing
+  the 1999 release, not the vocabulary of someone who read 133,937 characters of
+  action and dialogue. Suggestive rather than conclusive.
+- **`pitch` opens "A disgraced hacker named Neo"** — Neo is not disgraced
+  anywhere in the text.
+- Two audiences, both the obvious ones. Four themes, all the received ones.
+
+### Compared to the top-down arm
+
+Worse, and structurally so. `story_root.json` from the top-down run carries
+`logline`, `premise`, `genre_primary`/`genre_secondary`, `setting`, `pov`,
+`plot_embedding`, `constraints`, `keep_in_mind`, and a nine-value
+`state_dimensions` vocabulary (physiological, emotional, epistemic,
+psychological, social, material, spatial, technological, world) that the layers
+below can bind state variables to. The swarm root has no such vocabulary, which
+is why stage 6's state variables are ad-hoc per entity and cannot be compared
+across the cast.
+
+---
+
+## Stage 8 — exposé and its doctors
+
+### Does it do its job?
+
+No. It produces a readable 614-word synopsis that **stops before the story
+ends**, and contradicts the pipeline's own event layer on the single most
+important beat in it.
+
+### What is good
+
+The doctor panel is the best-executed mechanism in the run. Five single-criterion
+doctors, mean score 2.4/5, each specific and each correct:
+
+- readability (2/5) caught the tonal break where the synopsis stops narrating and
+  starts analysing: *"a direct, analytical statement about audience perception"*;
+- structure (3/5) caught that Cypher's betrayal is placed before the Hotel
+  Lafayette ambush against the event list's own ordering;
+- identification (2/5) caught that the synopsis *"relies on abstract, expository
+  labels ('quiet intensity,' 'hidden potential,' 'underdog') rather than showing
+  specific, relatable behaviors"*.
+
+Verbatim leakage is nil: **0 of 616 8-grams** in the exposé occur in the script,
+and 73 of 19,745 (0.37%) across all 40 profiles, those being quoted dialogue in
+evidence fields where quotation is the point.
+
+### What fails
+
+- **The synopsis ends at the rescue of Morpheus.** No death in room 303, no
+  resurrection, no Smith, no closing call. The final sentence is *"As he rescues
+  Morpheus, the weight of his destiny settles upon him, marking the end of his
+  ignorance and the beginning of his true role."* A synopsis that omits the
+  climax and the resolution has not described the work.
+- **No doctor noticed.** Not the structure doctor, not the plot-coverage doctor.
+  None of the five criteria is completeness, and the event digest they were shown
+  also ends there, so the panel could not see the hole from inside. A panel of
+  single-criterion doctors is exactly as complete as its list of criteria.
+- **It contradicts its own event layer.** The exposé says of the Oracle *"She
+  confirms Neo's destiny"*. The pipeline's own ev-024 says she *"confirms he is
+  not the One but possesses the gift"*, which is what the script says. The
+  received version of the scene overrode the correct record the pipeline had
+  already produced and put in the prompt.
+- **A fabrication:** *"Dozer, the ship's cook"*. The string `cook` does not occur
+  in the script except inside `cookie`.
+- **The revision ignored the note it was given.** The readability doctor asked
+  for the analytical commentary to be removed; the final text still contains
+  *"his disorientation and fear of the unknown make him relatable, mirroring the
+  audience's initial confusion"* — which is `root.identification.vulnerable`,
+  copied out of the root and pasted into narrative prose.
+- **`word_count` is self-reported and wrong.** Declared 468; actual 614, a 31%
+  error on a number that is one `len(text.split())` away.
+
+### Compared to the top-down arm
+
+**Clearly worse, and the mechanism is identifiable.** The top-down `expose.json`
+carries `ending_first` as a required field — the ending written before anything
+else — plus `jacket_copy`, `plot_summary_short`, `plot_summary_long`, and a
+28-sentence synopsis keyed `s01`…`s28` so individual sentences are addressable.
+Its synopsis runs through the subway fight, room 303, Trinity's kiss, the EMP and
+the closing phone call. Same model family, same work, same layer. The only
+structural difference is that one schema required the ending up front and the
+other did not.
+
+---
+
+## The famous-film confound
+
+Nothing in this design detects a model reproducing a received summary instead of
+reading the work. The question was whether that happened. It did, and the run
+happens to be a near-perfect natural experiment for it, because 42 scenes had
+*no* textual evidence available in any context window.
+
+**Positive detections, in descending order of strength:**
+
+1. **The 42 act-3 nodes.** Zero of 42 correspond to their own scene. sc-206's
+   node reproduces the film's opening — Trinity, the BIG COP, the gunfight — with
+   quoted dialogue as `evidence`, from a 23-word scene about a man kicking in a
+   window. With nothing to read, the agent wrote what it remembered, at full
+   confidence, in valid schema, with no `uncertain` entries.
+2. **The Oracle contradiction at stage 8.** The pipeline's event layer had the
+   scene right and the exposé overwrote it with the popular version. This is the
+   strongest evidence that recall competes with, and can beat, evidence already
+   in the prompt.
+3. **TRINITY's profile description.** One received sentence where every other
+   major got a paragraph of reading.
+4. **The root's `style` field**, describing the release print.
+
+**Counter-evidence, and it is substantial:** the entity layer is unmistakably
+reading *this draft*. `PRIESTESS`, `SPOON_BOY`, `BLIND_MAN`, Room 1313, and
+`META_CORTECHS` — the draft's spelling, not the film's MetaCortex. Stage 3's
+event drafts get details right that received summary gets wrong. So the model is
+not simply reciting.
+
+**The finding is sharper than "it recites".** The pipeline substitutes received
+knowledge *precisely where its evidence is absent*, produces it in the same
+register and the same schema as its grounded output, marks nothing as uncertain,
+and no stage boundary can tell the two apart. A design whose central premise is
+"read the scenes first" has no defence against an agent that did not.
+
+The cheap canary: run one stage-1 agent with the scene text deliberately blanked
+and measure what it still produces. Anything it writes is recall. On this run
+that test costs one call and would have caught the bug before scene two.
+
+---
+
+## What does not follow
+
+- **Not that bottom-up reconstruction is refuted.** It was not run. Stage 1 read
+  nothing, so P3 — that writing the lower layers first prevents a thin
+  superstructure from strangling them — is untested. The stage-2 failure is
+  downstream of the bug, not of the inversion.
+- **Not that the higher stages are as good as they look.** Stages 3, 6 and 7 all
+  receive the raw script directly. Their quality is evidence that a 27B model
+  reads a screenplay well, not evidence that induction from a scene layer works.
+  Stage 2 is the only stage whose input is purely the scene layer, and it is the
+  one that failed.
+- **Not that the swarm is faster than estimated in any useful sense.** 18.4
+  minutes against ≈17 minutes estimated for stages 1–8 is a wash, and the output
+  volume is 9.6× below estimate because stage 1 had nothing to describe. The
+  throughput claim is unmeasured until the run is repeated with scene text.
+- **Not that the doctor panels are working.** Stage 8's panel is good and
+  incomplete; stage 4's panel returned the same verdict six times. Two panels,
+  two different failure modes, n=1 each.
+- **Not that the top-down arm is better overall.** It is better at entities,
+  plots, root and exposé, and it has 4 scene nodes to the swarm's 224. The
+  comparison is only meaningful layer by layer, and it is only stated here for
+  the superstructure layers where both arms are complete.
+
+## Threats to validity
+
+- **n=1 run, no repeats, temperature 0.7.** Every count in this entry is a
+  single sample. Which specific scene a hallucinating agent lands on is certainly
+  variance; that it hallucinates is not.
+- **The central finding is a code bug, which makes every stage-level judgement
+  conditional.** Stages 2 through 8 are being marked on their handling of
+  degraded input. A rerun with scene text may move any of them in either
+  direction. The stage-5 alias defects and the stage-4/7/8 schema defects are the
+  exceptions — none of them depends on stage 1.
+- **Metric 2 (best-match scene) is noisy and was not independently validated.**
+  Adjacent scenes in a cross-cut share vocabulary, so an offset of ±1 or ±2 means
+  little. The +5/+6 mode and the 0/42 result for act 3 are outside that noise.
+  Metric 3 over-counts and is stated as an upper bound.
+- **Metric 1 measures only quoted spans of ≥25 characters.** 193 spans across 224
+  nodes: many nodes contribute none, so it is a sample of the population, not a
+  census.
+- **The comparison arm is not matched.** The top-down artifacts were produced by
+  a different pipeline, possibly a different model, at an unrecorded date, and
+  cover 4 of 224 scenes. Superstructure comparisons are fair; anything below is
+  not.
+- **`distill/swarm.py` was untracked when the run executed.** The exact code that
+  produced these artifacts is reconstructible only from the working tree.
+- **The evaluator wrote the metrics and read the samples.** No independent rubric
+  pass has scored these artifacts.
+
+---
+
+## Improvements, cheapest first
+
+Each names the stage and the mechanism. Everything above the line is code, not
+prompt; the project has already measured that instructions repair local fields
+and fail on global consistency.
+
+| # | Stage | Fix | Mechanism | Cost |
+|---|---|---|---|---|
+| 1 | 1 | `script[scene.start_char:scene.end_char]`; delete the `hasattr` guard; assert non-empty before dispatch | Attribute name. A guard that silently substitutes empty input for missing input must be a crash | one line |
+| 2 | all | Stop truncating the script by character count. If it exceeds budget, record the truncation in `protocol.json` and fail loudly | `script[:120000]` deleted act 3 of a 133,937-char file and left no trace | one line + a protocol field |
+| 3 | 3 | Move the participant check to after `apply_aliases` | Check ordered before the repair it checks: 48 violations → 7, all real | move two lines |
+| 4 | 5 | Dedup every rewritten list inside `apply_aliases` | `THE_AGENTS` ×3 in ev-032 | one `dict.fromkeys` |
+| 5 | 8 | Compute `word_count` in code; drop it from the schema | Declared 468, actual 614 | one line |
+| 6 | 3 | `confidence: {minimum: 0, maximum: 100}` with the scale named in the description | 16 of 33 events answered 0–10, 17 answered 0–100, and stage 4 compares them | one schema edit |
+| 7 | 6 | Raise the cap to the eligible count, or allocate per kind | A flat `[:40]` over a kind-ordered list always eats the last kind: it deleted `RULES_OF_THE_MATRIX`, `ELECTROMAGNETIC_PULSE`, `POLICE`, `SENTINELS` | one line, +9 calls |
+| 8 | 2 | Persist passes A and B | 55 of 56 calls currently leave no artifact; the stage cannot be audited or resumed | two `save()` calls |
+| 9 | 4 | In code after consolidation: demote all but the first `main` to `subplot`; append any thread-less event to an `UNPLACED` thread | JSON Schema cannot say "at most one main". `check_stage4` reports the ev-033 orphan; stage 2's `repair_coverage` shows the pattern for fixing it | ~15 lines |
+| 10 | 5 | Canonicalise ids in code before building the alias map — uppercase, strip non-alphanumerics, drop a leading `THE_`, singularise — then dedup on the normal form with the existing precedence | The precedence guard dedups on the exact id string and was defeated by `CYpher` vs `CYPHER`. Fixes 7 near-duplicate ids in one pass | ~20 lines |
+| 11 | 5 | Build the alias map case-insensitively and make a collision **fatal** rather than last-write-wins | 14 alias strings resolve to different canonicals depending on capitalisation; the antagonist has two ids in one artifact | ~15 lines |
+| 12 | 1 | **Correspondence check at the stage-1 boundary**: require ≥1 quoted evidence span of ≥25 chars to occur in the scene's own character range, and ≥1 `present` name to occur in the scene text or its `script_map` speaker cues | The only check that can catch a fluent node describing the wrong scene. Rejects 45 nodes on this run, including every fabrication named above | ~30 lines, all arithmetic |
+| 13 | 8 | Add `ending` as a **required field emitted before `text`**, as the top-down `expose.json` does with `ending_first` | The single structural difference between an exposé that reaches the end of the story and one that stops at the rescue | one schema edit |
+| 14 | 7 | Make `turning_points[].where` an enum over the real event ids, and assert in code that the list is non-decreasing in event order | The EXP-002 pattern exactly: bind in the schema, check the dependency the schema cannot express. Catches the Oracle-after-Cypher inversion and the missing act-3 turn | ~20 lines |
+| 15 | 2 | Lower the oversize threshold to `max(8, n // 12)`, and add a **span check**: flag any event whose scene indices span more than 8× its member count | The 36-scene ev-026 missed the current threshold by one. The span check fires on all 14 wide events and is the only signal in the pipeline that surfaces stage-1 damage before stage 8 | ~10 lines |
+| 16 | 5 | Over-merge check: flag any entity whose alias set contains two strings the *agents* list holds as separate ids | `THE_AGENTS` holding `Agent Smith` while `AGENT_SMITH` exists is decidable arithmetic | ~10 lines |
+| 17 | 6 | Split the profile schema by kind — `wants`/`fears`/`internal_conflict`/`speech` required for agents, absent for locations, objects and concepts, which get affordances, constraints and rules instead | One schema for four kinds forces a hovercraft to have a speech style | ~40 lines |
+| 18 | 1 | **Blank-scene canary**: one agent per run with its scene text deliberately empty. Anything it writes is recall | The only test in this design that can detect received-summary substitution. Would have caught this run's bug at scene two | one call |
+| 19 | 4 | Replace the doctor's three-way verdict enum with required `events_to_remove` / `events_to_add` plus a per-event justification; `sound` is the case where both are empty | All six doctors returned the same middle verdict. A verdict that costs nothing to give will always be given | one schema edit |
+| 20 | 8 | Add a sixth doctor holding "does this reach the end of the story", and give the panel the full event list rather than `what_happens[:250]` | Five doctors, none holding completeness, all missed a synopsis with no third act | one list entry |
+| 21 | 6, 7 | Implement the critic-and-revision loops the whitepaper specifies | Stage 6 is 40 calls where the design says 105; stage 7 is 1 where the design says 3. The stages' own quality mechanisms have never run | ~80 lines |
+| 22 | 7 | Adopt the top-down root's `state_dimensions` vocabulary and bind stage-6 state variables to it | Without a shared axis vocabulary, state variables are ad-hoc per entity and cannot be compared, aggregated or patched across the cast — which the project brief requires | design change |
+
+**The first twelve are a day's work and change the run's conclusion.** 1, 2 and
+12 are the ones without which nothing else is worth measuring.

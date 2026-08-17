@@ -60,6 +60,7 @@ Corrections go in the entry, in place, not in a new one.
 |---|---|---|
 | [EXP-001](EXP-001-model-notes-addendum.md) | Does a failure-derived system-prompt addendum reduce the failures it was written against? | mixed |
 | [EXP-002](EXP-002-grounding-scaffold.md) | Do the failures a prompt clause could not fix yield to schema-level enforcement? | supported on quality (+11.7pts); violation count corrected downward |
+| [EXP-003](EXP-003-swarm-first-run.md) | Does the bottom-up swarm produce a better tree than the top-down pipeline on a 224-scene feature? | refuted — stage 1 never received its scene text; 5.2% of quoted evidence occurs in the scene it is attributed to |
 
 ## Earlier work, recorded outside this format
 
