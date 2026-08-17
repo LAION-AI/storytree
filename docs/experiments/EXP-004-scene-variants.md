@@ -899,3 +899,526 @@ failures that keep all four arms off the bar are the same mistake in different
 directions: V1 applies the discipline of a small scene to a large one, V2 and V3
 apply the apparatus of a large scene to a small one. Neither is wrong about what
 it does; both are wrong about where.
+
+---
+---
+
+# EXP-004c · Gating the mind pass — V4, V5, and a checker that reports what it scores clean
+
+**Status: both arms clear the bar — the first configurations in this experiment
+to do so — and neither is distinguishable from V1 at n=15.** V4 scores **4.16**
+with no dimension below 3.47; V5 scores **4.06** with no dimension below 3.53.
+V4 lands 0.07 above the 4.09 the post-hoc re-slice predicted, which is as close
+as a prediction of this kind gets.
+
+**But the sign test does not separate either arm from V1 (7–4–4, p = 0.55 for
+both), and V4 does not separate from V5 (4–6–5 by scene, while leading by 9
+points).** The log has recorded this finding before and it applies again: in aggregate, at this n, V1, V4 and V5 are
+one arm. What did move is the *shape*. V1 failed the bar on emotional
+intelligence at 2.80; V4 reaches 3.47 and V5 3.67, and calibration gave back
+only 0.13 and 0.47 against V1's 4.00. The binding dimension moved, in the
+predicted direction, without breaking the dimension it trades against. That is
+the result, and it is a smaller claim than "the bar is cleared."
+
+**The gate did not fix the mind pass's calibration. It routed around it.** Where
+the pass actually runs, calibration is 3.17 in V4 and 2.89 in V5 — statistically
+indistinguishable from V3's own calibration on comparable scenes (3.14 on its
+seven non-short scenes, derived from EXP-004b's published splits), and in V5's
+case still under the bar. Where the pass is skipped, both arms score 4.33 and
+4.50, which is V1's number because it *is* V1's node. **Every point of the
+calibration recovery is scenes the pass never touched.**
+
+**V5's transferable gate is the better gate on principle and costs 9 points
+here.** It opens on three short exchanges V4's word count cannot see. Two are a
+wash or a small gain. The third is **sc-164**, a 57-word scene where the pass
+wrote 1,255 words of psychology on a premise it invented, and that one node is
+the entire V4–V5 aggregate difference.
+
+> **The measurement that has to be corrected first.** V5's tier-1 of **1.000**
+> is not a perfect score. `tier1()` computes `score` from its own `problems`
+> list and returns; `check_grounding_field`'s findings are appended to
+> `r["problems"]` **after** that, in `run_v3`. The seven grounding
+> contradictions V5's own report counts therefore cannot lower its own score,
+> and neither can V4's four. sc-008 in V4 carries two contradictions and scores
+> 1.0. Recommendation 3 of EXP-004b was *"check `grounding` against `basis` and
+> fail the node"*; what shipped checks, records, and passes. **This is the
+> fourth consecutive experiment in which the checker shares an assumption with
+> the thing it checks** — and the first in which it detects the fault correctly
+> and then scores it clean anyway.
+
+n = 15 scenes × 2 arms, single sample per cell, one evaluator not blind to arm,
+same fifteen scenes and same six anchors as EXP-004b.
+
+## What the two arms are
+
+| | V4 | V5 |
+|---|---|---|
+| Mind gate | scene ≥ 150 words | ≥ 2 speaker cues, or 1 cue and ≥ the work's own p75 |
+| `minds` may be empty | yes (`minItems` dropped) | yes |
+| `grounding` vs `basis` | checked, reported | checked, reported |
+| Concealment instruction | no | yes |
+
+Both gates were verified against a fresh `scriptforge.screenplay.parse` of the
+cleaned text, and every slice begins at its own `start_quote`.
+
+| Gate behaviour, measured | V4 | V5 |
+|---|---|---|
+| Opens on the sample | 6/15 | 9/15 |
+| Opens on the work's 224 scenes | 49 (21.9%) | 93 (41.5%) |
+| Threshold source | constant | p75 = 121 words, computed from this work |
+
+The three scenes V5 adds are **sc-097** (59 w, 2 cues), **sc-129** (76 w, 3 cues)
+and **sc-164** (57 w, 2 cues). All three are short exchanges — exactly the class
+V4's word count cannot see, and exactly the class the gate was redesigned to
+catch.
+
+| Mechanical | V0 | V1 | V2 | V3 | **V4** | **V5** |
+|---|---|---|---|---|---|---|
+| tier-1 | 0.917 | 0.983 | 0.983 | 0.967 | 0.967 | **1.000**\* |
+| word overlap | 65% | 76% | 72% | 77% | 79% | 79% |
+| verbatim evidence | 12/15 | 15/15 | 15/15 | 14/15 | 13/15 | 15/15 |
+| words/node | 191 | 174 | 776 | 786 | **476** | 600 |
+| output tokens | — | — | — | 21,891 | **13,824** | 16,649 |
+| mind pass ran | — | — | 15/15 | 15/15 | 6/15 | 9/15 |
+| grounding contradictions | — | — | — | 15/36 (42%) | 4/17 (24%) | 7/24 (29%) |
+
+\* see the correction above: the score cannot see the grounding column beside it.
+
+**The verbatim column measures a shrinking fraction of the node.** `tier1`
+checks `what_changes[].evidence` only. In V5 that is roughly 90 words of a
+600-word node; the mind pass's `basis`, `feels` and `shows` fields — where the
+other 500 words live — are unchecked. V5's sc-148 Tank block quotes him on an
+"alpha pattern" and "codes to Zion's mainframe" and calls those his dialogue in
+this scene. Neither phrase is in sc-148 or in either neighbour. That is a
+fabricated quotation inside `basis`, in the arm scoring 15/15 verbatim.
+
+## Results
+
+Fid = fidelity, Cmp = completeness, Spc = specificity, Chg = change reality,
+EI = emotional intelligence, Cal = calibration. Scored out of 30 per scene,
+same anchors as EXP-004b. `M` marks a scene where the mind pass ran.
+
+| Scene | words | cues | V0 | V1 | V2 | V3 | **V4** | | **V5** | |
+|---|---|---|---|---|---|---|---|---|---|---|
+| sc-003 | 157 | 1 | 24 | **27** | 25 | 24 | 25 | M | 25 | M |
+| sc-008 | 204 | 1 | 22 | **26** | 20 | 25 | 24 | M | 24 | M |
+| sc-015 | 12 | 0 | 6 | 24 | 14 | 14 | 24 | | 24 | |
+| sc-024 | 23 | 0 | 23 | 23 | 15 | 14 | 24 | | **25** | |
+| sc-039 | 270 | 1 | 23 | 25 | 25 | **28** | 25 | M | 26 | M |
+| sc-056 | 12 | 1 | 21 | 22 | 20 | 22 | 22 | | **24** | |
+| sc-075 | 342 | 7 | 23 | 23 | **27** | 26 | 25 | M | **27** | M |
+| sc-097 | 59 | 2 | 24 | 24 | 24 | 18 | **26** | | **26** | M |
+| sc-113 | 30 | 0 | 25 | 26 | 19 | 19 | 25 | | **26** | |
+| sc-129 | 76 | 3 | 24 | 26 | 22 | 23 | 25 | | **26** | M |
+| sc-148 | 511 | 3 | 21 | 21 | 22 | 21 | **27** | M | 25 | M |
+| sc-164 | 57 | 2 | 21 | 25 | 21 | 22 | **26** | | 17 | M |
+| sc-182 | 237 | 3 | 19 | 23 | **27** | **27** | **27** | M | 22 | M |
+| sc-200 | 26 | 1 | 24 | 24 | 19 | 19 | 24 | | 24 | |
+| sc-215 | 27 | 1 | 22 | 23 | 25 | 24 | **25** | | 24 | |
+
+### Per-dimension means, n = 15, six arms
+
+| Dimension | V0 | V1 | V2 | V3 | **V4** | **V5** |
+|---|---|---|---|---|---|---|
+| Fidelity | 4.20 | **4.60** | 4.20 | 4.07 | 4.80 | 4.33 |
+| Completeness | 4.00 | 4.47 | 4.40 | 4.47 | **4.80** | **4.80** |
+| Specificity | 4.20 | 4.47 | 4.07 | 4.00 | **4.53** | 4.47 |
+| Change reality | 3.27 | **3.80** | 3.67 | 3.53 | 3.47 | 3.53 |
+| Emotional intelligence | 2.40 | 2.80 | 3.20 | 3.47 | 3.47 | **3.67** |
+| Calibration | 3.40 | **4.00** | 2.13 | 2.20 | 3.87 | 3.53 |
+| **Overall** | 3.58 | 4.02 | 3.61 | 3.62 | **4.16** | 4.06 |
+
+Totals: V0 322, V1 362, V2 325, V3 326, **V4 374**, **V5 365**, out of 450.
+
+Fidelity 4.80 is the highest any arm has scored on any dimension in this
+experiment. It is worth being suspicious of: it is measured on `summary` and
+`what_changes`, which is where V4 spends its short nodes and only a fifth of its
+long ones.
+
+## 1 · Does either clear the bar?
+
+**Both do, and the prediction held.**
+
+| Arm | mean | lowest dimension | verdict |
+|---|---|---|---|
+| V1 | 4.02 | EI **2.80** | fails |
+| V4 | **4.16** | Chg / EI 3.47 | **clears** |
+| V5 | 4.06 | Cal 3.53 | **clears** |
+
+EXP-004b's re-slice projected 4.09 for a gated hybrid with nothing below 3.40.
+V4 came in at 4.16 with nothing below 3.47. The threshold was chosen after
+seeing the data it was fitted to, so the projection was worth little as
+evidence; it is worth more now that the arm has been run and landed on it.
+
+**The separation is not there.** Sign test, per scene:
+
+| Comparison | W–L–T | p (two-sided) |
+|---|---|---|
+| V4 vs V1 | 7–4–4 | 0.55 |
+| V5 vs V1 | 7–4–4 | 0.55 |
+| V4 vs V5 | 4–6–5 (V5 wins more scenes, V4 more points) | 0.75 |
+
+None separates. By the standard EXP-004b set for itself — where V1 > V0 at
+p = 0.002 was reported as the one comparison that separated — **V4 and V5 are
+indistinguishable from V1 at n = 15**, and clearing the bar is a statement about
+where a fifteen-scene mean happened to land, not a demonstration that the arms
+differ.
+
+What is not inside the noise is the dimension profile. V1's single failing
+dimension moved by +0.67 (V4) and +0.87 (V5) while the dimension it trades
+against fell by 0.13 and 0.47. Both directions were predicted in advance by
+EXP-004b, and both are large relative to the per-dimension spread among V0–V3.
+The aggregate is noise; the trade is the finding.
+
+## 2 · Did calibration recover?
+
+**Yes as a number, no as a fix.** Calibration was the binding failure for V2
+(2.13) and V3 (2.20). V4 returns it to 3.87 and V5 to 3.53, against V1's 4.00.
+
+But split the sample by whether the mind pass actually ran:
+
+| | V1 | V3 | V4 | V5 |
+|---|---|---|---|---|
+| Calibration, mind pass ran | — | 2.20 (15/15), 3.14 on its non-short 7 | **3.17** (6/15) | **2.89** (9/15) |
+| Calibration, mind pass skipped | 4.00 | — | **4.33** (9/15) | **4.50** (6/15) |
+
+Wherever the pass runs, calibration is still the node's worst dimension, and in
+V5 it is still below the 3.0 bar. Wherever it is skipped the node scores like
+V1 — because it *is* a V1 node, produced by the same facts pass with the same
+"write in proportion" paragraph. **Every point of the recovery is scenes the
+mind pass never saw.** The aggregate improved because the denominator changed.
+
+Two changes were aimed at calibration and only one of them fired.
+
+- **The gate fired.** It is the entire effect.
+- **Dropping `minItems: 1` did not fire, because it could not.** In V4 the pass
+  ran on six scenes and returned 2, 3, 3, 4, 3 and 2 mind blocks. In V5 it ran
+  on nine and returned between 2 and 3 every time. **Neither arm's model ever
+  returned an empty `minds` list when it was actually asked.** The permission to
+  decline was granted and never once exercised; the gate had already removed
+  every scene on which declining would have been the right answer before the
+  model was consulted. The nine and six empty `minds` arrays on disk are the
+  harness skipping, not the model declining.
+
+That is a confound worth naming plainly: **EXP-004b's recommendations 1 and 2
+were bundled into one arm, and the measurement cannot separate them.** On this
+evidence recommendation 2 is untested, exactly as A1–D1 were untested in the
+original EXP-004. The same mistake, at a smaller scale, one experiment later.
+
+The mind pass's length behaviour is unchanged from V3. Words per node where the
+pass ran:
+
+| Scene | words | V3-era ratio | V4 node | V5 node |
+|---|---|---|---|---|
+| sc-097 | 59 | — | 179 (3.0×) | 600 (**10.2×**) |
+| sc-129 | 76 | — | 157 (2.1×) | 945 (**12.4×**) |
+| sc-164 | 57 | — | 174 (3.1×) | 1,255 (**22.0×**) |
+| sc-148 | 511 | — | 1,139 (2.2×) | 1,283 (2.5×) |
+| sc-003 | 157 | — | 681 (4.3×) | 842 (5.4×) |
+
+The pass writes six hundred to twelve hundred words whatever it is given. On a
+500-word scene that is proportionate. On a 57-word scene it is twenty-two times
+the source. Nothing in V4 or V5 changed that; V4 simply stopped handing it small
+scenes, and V5 handed it three more.
+
+## 3 · Did emotional intelligence survive the gate?
+
+**Yes, fully, on the scenes where the pass runs — and the skipped scenes are not
+worse than V1's.** This is the cleanest result in the report.
+
+| | V1 | V3 | V4 | V5 |
+|---|---|---|---|---|
+| EI, all 15 | 2.80 | 3.47 | 3.47 | **3.67** |
+| EI, on the 6 scenes V4 gates open | 2.83 | 4.33 | **4.17** | **4.33** |
+| EI, on the scenes each arm skips | 2.78 | — | 3.00 | 3.00 |
+
+On the six scenes where V4's pass runs, EI is 4.17 against V3's 4.33 on the same
+six — the gate costs 0.16 of a point and half the tokens. V5, running on nine,
+scores 4.33 on those same six: **identical to V3 running on all fifteen.** The
+mind pass loses nothing by being gated.
+
+On the scenes where the pass is skipped, both arms score EI 3.00 against V1's
+2.78 on the same nine — a figure that falls out exactly of EXP-004b's published
+splits, since V4's gate-open six are precisely its "scenes ≥ 150 words" band. **The node is not worse than V1's — it is marginally
+better, and the difference is inside the noise.** That is the question the gate
+had to answer and it answers it cleanly: skipping the pass costs nothing,
+because on those scenes the pass was buying nothing. EXP-004b measured the same
+thing from the other side (+0.00 EI for full price on the eight short scenes)
+and the gated arms confirm it prospectively.
+
+The gained readings are real and are of the kind the rubric's 5-anchor describes:
+
+- **sc-182, V4.** Smith's machine-calm smile read as "a mask of certainty" and
+  the rage that replaces it as "the reality of his fear that Neo is no longer a
+  program he can predict," with the glasses coming off as the crack in the
+  armour. V1 does not read the glasses at all; V0 attaches them to the wrong
+  man. This is the mask-off reading V2 and V3 got, reproduced at a third of the
+  token cost.
+- **sc-039, V5.** Neo "is not engaging with the crew; he is being processed by
+  the ship," and his relaxation at the end is "not joy, but a surrender to
+  being unmoored." That is V3's best moment in the whole experiment, recovered.
+- **sc-129, V5.** The gate opens on a 76-word scene and the pass finds the one
+  interior line in it — "inevitability seems to cinch around Neo" — and reads it
+  as the shift from running to survive to running to fulfil something. V4 skipped
+  this scene and left the line unread.
+
+## 4 · The declined scenes
+
+First, the correction from §2: **no scene was declined.** Every empty `minds`
+array on disk is the gate refusing to call the pass, not the model judging that
+there was nothing to read. The question "did the model duck a scene with legible
+inner life" is therefore really "did the *gate* duck one," and the answer is
+that V4's did, twice.
+
+Reading each of V4's nine skipped scenes against the text:
+
+| Scene | w | Is empty `minds` the right answer? |
+|---|---|---|
+| sc-015 | 12 | **Yes.** A slug line naming a building. This is the scene V2 gave a mind called "Viewer" and V3 gave one called "The Audience" plus the inner life of Meta CorTechs itself |
+| sc-024 | 23 | **Yes.** A car under street lights, nobody visible. V3 declared in `uncertain` that it did not know who was inside and then read Neo's and Trinity's minds anyway |
+| sc-113 | 30 | **Yes, and pointedly.** The camera sees the hole; the cops do not. The scene withholds their reaction and both mind arms previously invented one |
+| sc-200 | 26 | **Yes.** Tank calling directions off a monitor; the content is functional |
+| sc-056 | 12 | Defensible. One gasp and one line of disbelief — a reaction, but a one-line one |
+| sc-215 | 27 | Defensible. A scream and "It is a miracle" is a legible beat, but thin |
+| sc-164 | 57 | Defensible, and §5 shows what opening it costs |
+| **sc-097** | **59** | **No — a duck.** Mouse yanks the curtain and finds the windows bricked up. "Oh no" is the moment his escape closes, and it is legible. V5's gate opens here and reads it correctly |
+| **sc-129** | **76** | **No — a duck, and the worse of the two.** "Again, inevitability seems to cinch around Neo" is interiority the script has marked in an action line. V4 never showed the scene to the pass. V5 did, and read it |
+
+**V4's gate: two false negatives, no false positives. V5's gate: no false
+negatives, one false positive.** Both ducks are scenes with two or more speaker
+cues, which is precisely the signal V5 was built on — so the sample supports
+V5's gate design on the recall side without qualification. The four unambiguous
+correct declines are all zero- or one-cue scenes, which both gates skip.
+
+Note what this makes of the three previously invented minds. sc-015's "Viewer",
+sc-024's mind-reading of a car's unseen occupants, and sc-113's composed cops
+are gone from both arms — but they are gone because the gate never asked, not
+because the model learned to say no. If the gate is ever removed or widened, no
+evidence here says they will not come straight back.
+
+## 5 · V5's gate against V4's
+
+The three scenes V5 adds, scored:
+
+| Scene | w | cues | V4 | V5 | Δ | EI | Cal |
+|---|---|---|---|---|---|---|---|
+| sc-097 | 59 | 2 | 26 | 26 | 0 | 3 → 4 | 4 → 3 |
+| sc-129 | 76 | 3 | 25 | 26 | +1 | 3 → 5 | 5 → 2 |
+| sc-164 | 57 | 2 | 26 | **17** | **−9** | 3 → 2 | 4 → **1** |
+
+**Two of three are a wash or a small gain, and both trade calibration for
+emotional intelligence at close to one for one.** sc-097 gains a correct read of
+Mouse's "Oh no" as the instant the escape route closes and pays 600 words for a
+59-word scene. sc-129 gains two genuine readings — the marked "inevitability"
+line and Trinity's clipped "Cypher, I thought --" correctly identified as a
+suppressed correction — and pays 945 words for 76, which is the rubric's
+one-line description of a calibration 2.
+
+**sc-164 is not a trade. It is a failure, and it is the whole V4–V5 aggregate
+difference.** The scene is 57 words: Tank at the controls, Trinity's voice asking
+for a B-212 pilot program, "Hurry!", Tank finds the disk and loads it. V5 wrote
+1,255 words, of which roughly 900 are two mind blocks, and the Trinity block
+rests on a premise the script contradicts:
+
+> V5: "She is in the helicopter in sc-164 (she is the one who needs the B-212
+> pilot program, which means she is in a B-212)."
+
+She is not. sc-163 — V5's own left neighbour, which it cites — ends with Neo
+asking whether she can fly the helicopter and Trinity answering that she cannot
+yet, then reaching for the phone. She is on the roof. From that invented premise
+V5 builds four hundred words about her fear "that the helicopter is already
+beyond her control and that the pilot program is a delay tactic, not a fix," and
+reads her two functional lines as the concealment of that fear. The aircraft is
+undamaged at this point in the script; the crash is later and is caused by
+gunfire, not by whatever she is imagined to be sensing.
+
+The Tank block in the same node has the mirror error, placing him "in the same
+posture as when the helicopter pilot was watching in sc-163" — conflating the
+hovercraft's controls with the helicopter cockpit — and labels its `grounding`
+`in_this_scene` while its `basis` cites sc-163 and an event. The node's own
+report flags that contradiction and scores it 1.0.
+
+**So: does anything get worse from opening more? Yes, and the failure has a
+shape.** It is not that short scenes are too short for psychology. sc-097 and
+sc-129 are 59 and 76 words and the pass handled both. It is that **sc-164 has
+two speaker cues and almost no content** — a request, an urgency marker, and a
+described action — so the pass, required to produce blocks and given nothing to
+read, imported a situation from the neighbouring scene and read that instead.
+That is the same failure as V2's "Viewer" and V3's Meta CorTechs, displaced from
+*scenes with no people* to *scenes with speakers and no content*. V5's gate
+correctly identifies where inner life is usually legible and has no way to tell
+whether it is legible here.
+
+Two other V5 losses are **not** attributable to the gate, and I do not count them
+as evidence about it:
+
+- **sc-182** (27 → 22, gated open in both arms). V5 writes that Neo's
+  round-house "snaps Smith's neck," reading the script's compound adjective as
+  the event — V1's exact error from EXP-004b, on the same scene — then has Smith
+  "remove his glasses" while its own `what_changes` correctly records them flying
+  off. V4 gets both right.
+- **sc-148** (fidelity 4 → 3). V5's Neo block speaks throughout of "Morpheus's
+  death" as accomplished, when the scene is about Neo preventing it, and its Tank
+  block quotes him on an "alpha pattern" and "codes to Zion's mainframe" in
+  dialogue that is in neither this scene nor either neighbour.
+
+Both are single-sample differences on scenes both arms treat identically, and
+the honest reading at n=1 per cell is sampling noise. The full ledger: V5 leads
+on six scenes by 8 points total, V4 leads on four by 17, of which sc-164 alone
+is 9 and sc-182 is 5. Set aside the two unattributable scenes and the arms are
+2 points apart.
+
+## 6 · The concealment — did V5 actually catch it?
+
+**Yes on sc-148, unambiguously, and the same instruction manufactured a false
+positive on sc-164.** Both halves matter.
+
+The keyword check that prompted the question is real but weak: matching
+`conceal|unable to say|unfinished|swallow|unspoken|breaks off` across the
+sampled nodes gives V1 **0**, V3 **0**, V4 **0**, V5 **8**. A stronger and much
+narrower check settles it — **V5 is the only arm in six that quotes the marked
+line at all:**
+
+| Arm | node contains "Uncertainty swallows" |
+|---|---|
+| V0 · V1 · V2 · V3 · V4 | no |
+| **V5** | **yes** |
+
+And it is used correctly. V5's Trinity block on sc-148 cites the stage direction
+as its `basis`, names it "the key concealment," and — this is the part keyword
+presence cannot fake — **identifies what is being concealed**: that the thing
+she cannot say is about Neo, not about Morpheus. Its `feels` field reads her
+subsequent "I believe Morpheus means more to me than he does to you" as a
+deflection covering the sentence she just failed to finish, and its `sets_up`
+points forward to the confession. That is the correct reading of the setup, the
+correct object, and the correct payoff. The rubric's EI 5-anchor is "reads a
+concealed motive or an unspoken pressure correctly"; this is that.
+
+**V4 reaches the substance without the line.** Its Trinity block says she is
+driven by "a love that she cannot yet articulate" and is "masking her fear and
+love with procedural authority" — right in content, and inferred entirely from
+the rank speech and the set jaw. It never notices that the script already said
+so. That is the exact gap EXP-004b's recommendation 4 described: the pass is
+good at inferring interiority from behaviour and does not attend to interiority
+the text has marked. V5's instruction closes it; V4's absence of the instruction
+leaves it open. Two nodes, one instruction, and the difference is visible.
+
+**The false positive is the price.** Of V5's eight concealment-vocabulary hits,
+five are true — four on sc-148, one on sc-129, where "Cypher, I thought --" is
+correctly called an unfinished sentence indicating a suppressed correction — and
+**three are on sc-164**, where the node writes:
+
+> V5: "The concealment is total and is the point of her being V.O. … the fact
+> that the text does not describe any visible reaction is itself the
+> concealment."
+
+There is no concealment. Trinity is a voice-over because she is on a roof and he
+is on a ship. The instruction told the pass that an unexplained reaction is a
+concealment handed to it, and the pass generalised that to *the absence of any
+described reaction* — which is the default state of every off-screen character
+in every screenplay. On a scene with nothing to read, an instruction to look
+harder for something already on the page produces a reading of the page's
+silence.
+
+So the honest answer to the question as posed: **the keyword signal is a true
+positive on the scene it was raised about, and 3 of 8 of the vocabulary hits
+overall are concealment-flavoured language around a moment that has none.** The
+instruction works and needs a precondition — it should fire on marked text, and
+the marking should be found by matching the script, not left to the model to
+decide it has found one.
+
+## Threats to validity
+
+- **n = 15, single sample per cell.** No comparison in this report separates.
+  V4 and V5 clear the bar on a fifteen-scene mean and both are 7–4–4 against V1.
+- **One evaluator, not blind to arm.** Arms remain trivially identifiable by node
+  length and by the `_mind_pass` field printed in every file. This is the largest
+  uncontrolled threat and it is now three reports old. It is rank 1 below.
+- **Two recommendations are confounded in V4** (gate + `minItems`), and the
+  measurement shows only the gate fired. V5 adds two more (gate design +
+  concealment instruction) and those are separable only because the concealment
+  instruction leaves a lexical trace.
+- **V4's 9-point aggregate lead is two nodes**, one of which (sc-182) is not
+  attributable to any V5 change. Rescored without sc-182 and sc-148, V5 leads.
+- **The `_mind_pass` and `gate` fields are self-reported by the harness**, but
+  the gate arithmetic was re-derived independently here from a fresh
+  `scriptforge.screenplay.parse`: p75 = 121 words, 93 of 224 scenes with ≥2 cues,
+  49 of 224 at ≥150 words. Both gates' open/closed decisions on all fifteen
+  scenes match the files exactly.
+- **The rubric compresses at the top.** Fidelity, completeness and specificity
+  are at or above 4.3 in both arms, so change reality, EI and calibration carry
+  nearly all the between-arm variance — the mirror of EXP-004b's short-band
+  compression, and a reason not to read the overall means too hard.
+- **sc-164 is one scene and it decides the V4/V5 comparison.** The failure mode
+  it demonstrates is real and reproducible in principle; that it appeared once in
+  fifteen is not a rate.
+- **The events file the mind pass reads is still unaudited**, carried over from
+  EXP-004b rank 10 and still not done. V5's sc-164 and sc-129 blocks make
+  forward claims against it.
+
+## Verdict against the bar
+
+**Mean ≥ 4.0 with no dimension below 3.0: V4 passes at 4.16 (min 3.47), V5
+passes at 4.06 (min 3.53).** Both are the first arms in this experiment to do
+so, and V4 is the best artifact set on disk.
+
+**Neither passes as a demonstration that the intervention works.** At n = 15
+with one sample per cell, V4, V5 and V1 are one arm by sign test, and the
+difference between clearing and missing the bar is smaller than the difference a
+single node (sc-164, 9 points) makes. The defensible claim is narrower and
+better supported: **the gate moves the dimension that was binding, at half the
+token cost of running the pass unconditionally, and does not break the dimension
+it trades against.** Emotional intelligence on gated-open scenes is 4.17 (V4)
+and 4.33 (V5) against V3's 4.33 with the pass running everywhere — the mind pass
+loses nothing at all by being gated, which is the single most useful number here
+and the one that is not close.
+
+**Three findings that survive independently of the scores:**
+
+1. **The grounding check does not gate.** `tier1()` fixes `score` at
+   `scene_variants.py:495` from its own `problems`; `check_grounding_field`'s
+   findings are appended at `:601`, after the score exists. V5's seven
+   contradictions and V4's four cannot lower their own arms' tier-1. V5's
+   "1.000" is a score that cannot see the column printed beside it.
+2. **The verbatim check covers a shrinking share of the node.** It reads
+   `what_changes[].evidence` only — roughly 90 words of V5's 600-word average.
+   The mind pass's `basis`, `feels` and `shows`, where the other 500 live, are
+   unchecked, and V5's sc-148 Tank block puts fabricated dialogue in `basis`
+   while the arm reports 15/15 verbatim.
+3. **`minItems` was never tested.** The model was given permission to return an
+   empty `minds` list and, across 15 opportunities in two arms, never once did.
+
+**Cost.** V4 is the cheapest arm that clears: 13,824 output tokens against V3's
+21,891 and 476 words per node against 786, for +0.54 on the overall mean. V5
+costs 16,649 for 600 words per node and scores 0.10 lower.
+
+## What to try next, ranked
+
+Ordered by what this run showed failing.
+
+| Rank | Action | Why, from this run | Cost |
+|---|---|---|---|
+| **1** | **Blind A/B at n = 40, three samples per cell, V1 vs V4 vs V5.** Two nodes plus the true scene, "which describes it better," evaluator blind to arm | Nothing in this report separates. Two arms cleared a bar by a margin smaller than one node, judged by one non-blind evaluator who wrote the arms. This has been rank 8, then rank 8 again, and it is now the only thing that can turn any of the last three reports into evidence. `_mind_pass` must be stripped from the files first — it labels the arm on every node | small |
+| **2** | **Make the grounding check gate, not annotate.** Recompute `score` after `check_grounding_field`, or fold the check into `tier1` | EXP-004b rank 3 asked for "check and fail the node"; what shipped checks and passes. Four consecutive experiments have now shipped a checker that shares an assumption with the thing it checks, and this is the first where the checker was *right* and the score ignored it. One line | trivial |
+| **3** | **Extend the verbatim check to `minds[].basis`.** Any quoted fragment inside `basis` must appear in the scene or in a cited neighbour; fail the block otherwise | V5's sc-148 attributes an "alpha pattern" and "codes to Zion's mainframe" to Tank in a scene containing neither, inside the arm scoring 15/15 verbatim. The mind pass is now 80% of the node and 0% of what is verified | small |
+| **4** | **Add a content floor to V5's gate: ≥ 2 cues *and* ≥ 2 dialogue exchanges, or ≥ 2 cues and above some non-dialogue action floor.** V5's gate has perfect recall on this sample and one false positive, and the false positive is a scene with speakers and nothing to read | sc-164 is 57 words of request-and-comply and cost 9 points. sc-097 and sc-129 are 59 and 76 words with real exchanges and cost nothing. The distinguishing feature is not length and not cue count — it is whether anyone responds to anyone. Keep V5's gate; this is a conjunct, not a replacement | small |
+| **5** | **Give the mind pass V1's length instruction, and test it with the gate off.** `MIND_SYSTEM_V4`'s "write in proportion" paragraph is in both arms and did nothing measurable: calibration where the pass runs is 3.17 and 2.89 | The pass writes 600–1,300 words regardless of input. The gate hides this; it does not fix it. Until the pass can write 150 words about a small scene, every gate is a workaround and every widening re-exposes the same failure | small |
+| **6** | **Precondition the concealment instruction on a matched marker.** Detect *unable to*, *can't bring*, *swallows*, *doesn't say*, trailing ellipses on a speech in the scene text; pass the matched span into the prompt; say nothing when there is no match | The instruction produced the report's best single reading (sc-148) and three false-positive hits on sc-164, where it read the absence of a described reaction as a concealment. Off-screen characters have no described reactions by default, so unconditioned it fires everywhere. This also removes the last free parameter from the concealment change | small |
+| **7** | **Re-run V4 with `minItems: 1` restored, gate unchanged.** If the scores are identical, drop the schema change from the arm | The permission to decline was never exercised in 15 opportunities. It is currently an untested change riding along in a passing arm, and EXP-004's whole lesson was about bundled interventions that cannot be attributed | trivial |
+| **8** | **Cross-field consistency on the prose, carried over unchanged.** V5's sc-182 summary has Smith "remove his glasses" while its own `what_changes` records them flying off | EXP-004b rank 6, still not done, and it now has an intra-node instance rather than an inter-field one. A node that contradicts itself in adjacent fields is detectable without a model | small |
+| **9** | **Referent and compound-adjective binding.** EXP-004b rank 7's referent case, plus: a compound adjective describing a blow is not a record of its effect | V5 reproduced V1's exact sc-182 error ("neck-snapping reverse round-house" → "snaps Smith's neck") two arms later, on the same scene, from a different prompt. It is a recurring, specific, cheap-to-check misreading | small |
+| **10** | **Audit `events_draft.json`.** Carried over from EXP-004b rank 10, still not done, and now load-bearing | V5's sc-164 and sc-129 both make forward claims against the event layer, and sc-164's are wrapped around a fabricated premise. The supply lesson has been applied to the script and never to the events file | moderate |
+
+**Retired.** The claim that V5's tier-1 1.000 is a quality signal. It is a
+verbatim-evidence score over a fifth of the node, computed before the arm's own
+grounding findings are appended, on an arm carrying seven of them.
+
+**The general rule this run earns.** *A gate that makes a failing component pass
+has not fixed the component; it has narrowed the domain where you observe it.*
+The mind pass's calibration is 3.17 and 2.89 where it runs — indistinguishable
+from V3's 3.14 on comparable scenes — and 4.33 and 4.50 where it does not,
+because there it is not the mind pass at all. Both arms clear the bar by not asking the question on two-thirds and
+two-fifths of the sample respectively. That is a legitimate engineering answer
+and it is not a measurement of the pass. The moment the gate widens — a work
+with longer scenes, a looser threshold, V5's own better gate — the same
+calibration failure returns at full strength, which is exactly what sc-164 is.
