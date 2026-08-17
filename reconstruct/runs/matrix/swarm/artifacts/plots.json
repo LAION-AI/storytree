@@ -1,0 +1,211 @@
+{
+ "plots": [
+  {
+   "plot_id": "main-line",
+   "name": "The Awakening and Rescue",
+   "kind": "main",
+   "description": "The central narrative arc tracking Neo's transition from a confused hacker to the prophesied 'One' who saves Morpheus. This thread focuses on Neo's personal awakening, his integration into the Resistance, and the climactic rescue mission, excluding internal crew subplots that do not directly drive Neo's transformation.",
+   "events": [
+    "ev-001",
+    "ev-002",
+    "ev-003",
+    "ev-004",
+    "ev-005",
+    "ev-006",
+    "ev-007",
+    "ev-008",
+    "ev-009",
+    "ev-010",
+    "ev-011",
+    "ev-012",
+    "ev-013",
+    "ev-014",
+    "ev-015",
+    "ev-016",
+    "ev-017",
+    "ev-018",
+    "ev-019",
+    "ev-021",
+    "ev-022",
+    "ev-023",
+    "ev-024",
+    "ev-025",
+    "ev-026",
+    "ev-027",
+    "ev-028",
+    "ev-029",
+    "ev-030",
+    "ev-031",
+    "ev-032",
+    "ev-033",
+    "ev-034",
+    "ev-035",
+    "ev-036",
+    "ev-037"
+   ],
+   "arc": "From passive victim to active savior"
+  },
+  {
+   "plot_id": "neo-growth",
+   "name": "Neo's Internal Metamorphosis",
+   "kind": "character_growth",
+   "description": "The psychological and spiritual evolution of Neo, focusing on the shift from skepticism and fear to absolute belief in his own destiny. This line explores the tension between logic and faith, the acceptance of the 'One' identity, and the internalization of the power to bend the rules of the Matrix. It excludes purely tactical training or mission prep scenes unless they directly address Neo's internal state.",
+   "events": [
+    "ev-002",
+    "ev-003",
+    "ev-004",
+    "ev-006",
+    "ev-009",
+    "ev-010",
+    "ev-012",
+    "ev-013",
+    "ev-014",
+    "ev-021",
+    "ev-024",
+    "ev-027",
+    "ev-028",
+    "ev-031",
+    "ev-032",
+    "ev-033",
+    "ev-034",
+    "ev-036"
+   ],
+   "arc": "From doubt to divine self-actualization"
+  },
+  {
+   "plot_id": "neo-trinity",
+   "name": "The Bond of Neo and Trinity",
+   "kind": "relationship",
+   "description": "The romantic and emotional development between Neo and Trinity, tracing their meeting, growing intimacy, the pivotal confession of love during the subway ambush, and the validation of their bond through Neo's resurrection.",
+   "events": [
+    "ev-002",
+    "ev-004",
+    "ev-015",
+    "ev-030",
+    "ev-034"
+   ],
+   "arc": "From strangers to life-or-death partners"
+  },
+  {
+   "plot_id": "agent-smith",
+   "name": "The Pursuit of Agent Smith",
+   "kind": "antagonist",
+   "description": "The direct confrontations and tactical engagements between the Agents (led by Smith) and Neo/Resistance, highlighting the escalation from initial capture to the final showdown.",
+   "events": [
+    "ev-001",
+    "ev-003",
+    "ev-022",
+    "ev-027",
+    "ev-028",
+    "ev-030",
+    "ev-031",
+    "ev-033",
+    "ev-034"
+   ],
+   "arc": "From overwhelming force to tactical defeat"
+  },
+  {
+   "plot_id": "cypher-betrayal",
+   "name": "Cypher's Dissent and Betrayal",
+   "kind": "subplot",
+   "description": "Cypher's journey from a dedicated operative to a disillusioned traitor, driven by his longing for the comfort of the Matrix. The thread traces his growing resentment toward the harsh reality of the Resistance, his secret negotiation with Agent Smith, and the fatal betrayal that kills Dozer and wounds Tank, nearly destroying the crew's chance to save Morpheus.",
+   "events": [
+    "ev-013",
+    "ev-015",
+    "ev-018",
+    "ev-023"
+   ],
+   "arc": "From quiet discontent to fatal betrayal"
+  },
+  {
+   "plot_id": "theme-faith",
+   "name": "Faith vs. Reason",
+   "kind": "thematic",
+   "description": "The philosophical conflict between empirical evidence and spiritual belief, focusing on Morpheus's faith in the prophecy versus Neo's and the crew's skepticism. It traces the shift from logical rejection of the truth to intuitive acceptance of destiny, particularly in the decisions made regarding the Oracle's prophecy and the rescue of Morpheus.",
+   "events": [
+    "ev-009",
+    "ev-010",
+    "ev-021",
+    "ev-024",
+    "ev-026",
+    "ev-032"
+   ],
+   "arc": "From rational skepticism to intuitive certainty"
+  }
+ ],
+ "_doctor_notes": [
+  {
+   "plot_id": "main-line",
+   "verdict": "needs_members_moved",
+   "reasoning": "The thread 'The Awakening and Rescue' correctly identifies the central arc of Neo's transformation, but it suffers from significant scope creep and misclassification of supporting plotlines. Specifically, 'ev-018' (Cypher's Warning and Betrayal) and 'ev-023' (Escape and Extraction/Cypher's Betrayal) are primarily driven by Cypher's subplot and the internal conflict of the Nebuchadnezzar crew, rather than Neo's direct progression from confusion to savior. While they impact the main plot, they belong more appropriately to a 'Cypher's Betrayal' or 'Internal Resistance Conflict' thread. Furthermore, 'ev-020' (Narrative Transition) is a minor logistical beat that does not contribute to the thematic arc of 'Awakening' or 'Rescue' and should be removed or merged into adjacent events. The description should be tightened to focus strictly on Neo's personal journey and the external threat of the Agents, excluding the internal crew dynamics unless they directly mirror Neo's internal state (which ev-015 does, but ev-018/023 are more about the crew's faith).",
+   "remove": [
+    "ev-020"
+   ],
+   "add": [],
+   "better_description": "The central narrative arc tracking Neo's transition from a confused hacker to the prophesied 'One' who saves Morpheus. This thread focuses on Neo's personal awakening, his integration into the Resistance, and the climactic rescue mission, excluding internal crew subplots that do not directly drive Neo's transformation."
+  },
+  {
+   "plot_id": "neo-growth",
+   "verdict": "needs_members_moved",
+   "reasoning": "The thread 'Neo's Internal Metamorphosis' is too broad, conflating external plot mechanics with internal psychological shifts. Events like ev-016 (Street Training/Ambush) and ev-026 (Preparation for Rescue) are primarily tactical/expository regarding the Agents and mission logistics, not internal growth. Similarly, ev-021 (Oracle's Prophecy) is a pivotal plot point that tests Neo, but the event itself is an external interaction; Neo's *internalization* of it happens in ev-032 (Prophecy Discussion). The thread should focus strictly on moments where Neo's self-perception, belief, or spiritual state is explicitly the subject of the scene or dialogue, rather than scenes where he is simply reacting to external threats or learning world-building facts.",
+   "remove": [
+    "ev-016",
+    "ev-026"
+   ],
+   "add": [
+    "ev-033"
+   ],
+   "better_description": "The psychological and spiritual evolution of Neo, focusing on the shift from skepticism and fear to absolute belief in his own destiny. This line explores the tension between logic and faith, the acceptance of the 'One' identity, and the internalization of the power to bend the rules of the Matrix. It excludes purely tactical training or mission prep scenes unless they directly address Neo's internal state."
+  },
+  {
+   "plot_id": "neo-trinity",
+   "verdict": "needs_members_moved",
+   "reasoning": "The thread's description and arc ('From strangers to life-or-death partners') focus on the romantic and tactical bond. However, several included events are primarily about Neo's metaphysical awakening or tactical combat with Agents, where Trinity is either absent or incidental. Specifically, ev-007 (Transport/Awakening) is a logistical threshold for Neo's integration, not a bonding moment. ev-026 (Preparation) and ev-027 (Assault) are tactical/mission-driven events; while Trinity is present, the primary narrative driver is Neo's realization of his powers and the rescue of Morpheus, not the development of their specific relationship. ev-035 (Escape) is a conclusion to the subway sequence, focusing on Neo's survival and return, with the kiss being a brief coda rather than the event's core. These events belong to a 'Neo's Awakening' or 'Morpheus Rescue' thread. The core bonding events are ev-002 (Meeting), ev-004 (Persuasion/Car), ev-015 (Intimacy/Scent), ev-030 (Confession/Death), and ev-034 (Love/Resurrection).",
+   "remove": [
+    "ev-007",
+    "ev-026",
+    "ev-027",
+    "ev-035"
+   ],
+   "add": [],
+   "better_description": "The romantic and emotional development between Neo and Trinity, tracing their meeting, growing intimacy, the pivotal confession of love during the subway ambush, and the validation of their bond through Neo's resurrection."
+  },
+  {
+   "plot_id": "agent-smith",
+   "verdict": "needs_members_moved",
+   "reasoning": "The thread is named 'The Pursuit of Agent Smith' and described as tracking the Agents' tactical superiority and hunt. However, several events are fundamentally about Neo's internal transformation, training, or the Resistance's internal politics, where the Agents are absent or merely a backdrop. Specifically, ev-016 (Street Training) is a lecture by Morpheus where Smith appears briefly but the focus is on Neo's education. ev-025 (Government Building Raid) focuses heavily on Smith's psychological unraveling and Morpheus's interrogation, but it is primarily a setup for the rescue mission (ev-026/027/028) rather than the 'pursuit' itself. ev-029 (Rooftop Regroup) is a transitional planning scene. The core 'pursuit' and 'confrontation' are best represented by ev-001, ev-003, ev-022, ev-030, ev-031, ev-033, and ev-034. The thread should be narrowed to focus on active engagements and the immediate threat, removing the training and internal debate scenes that belong to Neo's arc or the Resistance's arc.",
+   "remove": [
+    "ev-016",
+    "ev-025",
+    "ev-029"
+   ],
+   "add": [],
+   "better_description": "The direct confrontations and tactical engagements between the Agents (led by Smith) and Neo/Resistance, highlighting the escalation from initial capture to the final showdown."
+  },
+  {
+   "plot_id": "cypher-betrayal",
+   "verdict": "needs_members_moved",
+   "reasoning": "The thread 'Cypher's Dissent and Betrayal' is defined by Cypher's internal conflict, his disillusionment with the Resistance, and the specific act of his betrayal. While ev-013, ev-015, ev-018, and ev-023 are core to this arc, ev-022, ev-024, and ev-035 are primarily driven by the Agents' pursuit, the Oracle's prophecy, or Neo's development, with Cypher playing a secondary or background role. Specifically, ev-022 (Mouse's Death) is an action sequence focused on the Agents' trap; ev-024 (Aftermath) focuses on the crew's reaction and Neo's decision to save Morpheus; and ev-035 (Escape from the Hovercraft) is a resolution to the Sentinel attack, unrelated to Cypher's arc. These events belong to the main plot threads of 'The Agents' Pursuit' or 'Neo's Awakening' rather than Cypher's specific subplot.",
+   "remove": [
+    "ev-022",
+    "ev-024",
+    "ev-035"
+   ],
+   "add": [],
+   "better_description": "Cypher's journey from a dedicated operative to a disillusioned traitor, driven by his longing for the comfort of the Matrix. The thread traces his growing resentment toward the harsh reality of the Resistance, his secret negotiation with Agent Smith, and the fatal betrayal that kills Dozer and wounds Tank, nearly destroying the crew's chance to save Morpheus."
+  },
+  {
+   "plot_id": "theme-faith",
+   "verdict": "needs_members_moved",
+   "reasoning": "The thread is too broad, conflating 'Faith vs. Reason' with general plot progression and character training. Events like ev-012 (Combat Training) and ev-014 (Dojo Fight) are primarily about learning the mechanics of the Matrix (rules/bending them) rather than the philosophical conflict of faith. While they involve belief, their primary function is exposition and skill acquisition. Similarly, ev-013 (Rooftop Jump) is a specific test of belief, but it is tightly coupled with the training arc. The core 'Faith vs. Reason' thematic conflict is best represented by ev-009 (Rejection of Truth), ev-010 (Prophecy/Faith statement), ev-021 (Oracle's test), ev-024 (Decision to rescue based on belief), ev-026 (Preparation based on belief vs. logic), and ev-032 (Explicit Faith dialogue). The training events (ev-012, ev-013, ev-014) should be moved to a 'Neo's Training' or 'Learning the Rules' thread. ev-023 is primarily a betrayal plot point, though it touches on faith, it is better suited for a 'Betrayal' thread.",
+   "remove": [
+    "ev-012",
+    "ev-013",
+    "ev-014",
+    "ev-023"
+   ],
+   "add": [],
+   "better_description": "The philosophical conflict between empirical evidence and spiritual belief, focusing on Morpheus's faith in the prophecy versus Neo's and the crew's skepticism. It traces the shift from logical rejection of the truth to intuitive acceptance of destiny, particularly in the decisions made regarding the Oracle's prophecy and the rescue of Morpheus."
+  }
+ ]
+}

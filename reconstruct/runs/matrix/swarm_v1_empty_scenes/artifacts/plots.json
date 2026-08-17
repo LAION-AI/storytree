@@ -1,0 +1,184 @@
+{
+ "plots": [
+  {
+   "plot_id": "p-001",
+   "name": "Neo's Awakening and Journey to the One",
+   "kind": "main",
+   "description": "The central narrative arc following Neo from his life as a hacker to his discovery of the truth, his physical and mental training under Morpheus, and his emergence as the prophesied One, culminating in the decision to rescue Morpheus.",
+   "events": [
+    "ev-003",
+    "ev-004",
+    "ev-005",
+    "ev-006",
+    "ev-007",
+    "ev-008",
+    "ev-010",
+    "ev-011",
+    "ev-012",
+    "ev-013",
+    "ev-014",
+    "ev-015",
+    "ev-016",
+    "ev-017",
+    "ev-019",
+    "ev-032"
+   ],
+   "arc": "From passive hacker to active savior"
+  },
+  {
+   "plot_id": "p-002",
+   "name": "Cypher's Arc of Disillusionment and Betrayal",
+   "kind": "character_growth",
+   "description": "A parallel character arc tracking Cypher's growing resentment of the real world's harshness and the Resistance's struggle. It begins with his skepticism (ev-001, ev-018), moves to his secret contact with Agent Smith (ev-009, ev-022), and culminates in his physical betrayal of the crew, killing Dozer and Tank, and his own extraction (ev-029).",
+   "events": [
+    "ev-001",
+    "ev-009",
+    "ev-018",
+    "ev-022",
+    "ev-025",
+    "ev-026",
+    "ev-028",
+    "ev-029"
+   ],
+   "arc": "From skepticism to active treason"
+  },
+  {
+   "plot_id": "p-003",
+   "name": "The Resistance's Struggle and Morpheus's Faith",
+   "kind": "main",
+   "description": "The arc from Morpheus's faith in the prophecy to its validation: the Oracle's warning, Cypher's betrayal, the capture of Morpheus, and the crew's desperate rescue mission.",
+   "events": [
+    "ev-015",
+    "ev-020",
+    "ev-021",
+    "ev-024",
+    "ev-027",
+    "ev-029",
+    "ev-030",
+    "ev-031",
+    "ev-032"
+   ],
+   "arc": "From confident pursuit to desperate rescue"
+  },
+  {
+   "plot_id": "p-004",
+   "name": "Neo and Trinity's Bond",
+   "kind": "relationship",
+   "description": "The developing romantic and emotional connection between Neo and Trinity, which serves as a crucial anchor for Neo's motivation and provides the emotional stakes for the crew's survival and their shared fight.",
+   "events": [
+    "ev-004",
+    "ev-018"
+   ],
+   "arc": "From wary alliance to intimate partnership"
+  },
+  {
+   "plot_id": "p-005",
+   "name": "The Agents' Pursuit and Dominance",
+   "kind": "antagonist",
+   "description": "The Agents' active pursuit of the Resistance, culminating in the capture of Morpheus and the interrogation of Neo, showcasing their surveillance capabilities and physical dominance.",
+   "events": [
+    "ev-002",
+    "ev-006",
+    "ev-007",
+    "ev-026",
+    "ev-027",
+    "ev-031"
+   ],
+   "arc": "From systematic hunting to overwhelming force"
+  },
+  {
+   "plot_id": "p-006",
+   "name": "The Nature of Reality and Belief",
+   "kind": "thematic",
+   "description": "The revelation of the Matrix as a simulated construct and the philosophical implications of living in a false reality, culminating in Neo's acceptance of the truth.",
+   "events": [
+    "ev-003",
+    "ev-010",
+    "ev-012",
+    "ev-013",
+    "ev-023",
+    "ev-024",
+    "ev-025"
+   ],
+   "arc": "From questioning the world to mastering its rules"
+  }
+ ],
+ "_doctor_notes": [
+  {
+   "plot_id": "p-001",
+   "verdict": "needs_members_moved",
+   "reasoning": "The thread is strong but over-inclusive. It currently captures the entire film's plot, diluting the specific 'Awakening and Journey to the One' arc. Specifically, ev-023, ev-024, and ev-025 (The Oracle) are better served by a separate 'Oracle and Prophecy' thread, as they focus on the nature of the prophecy rather than Neo's physical/mental training or the immediate conflict with the Agents. Similarly, ev-032 (The Raid) is a major action sequence that, while part of the journey, leans heavily into the 'Resistance vs. Agents' conflict thread. However, the most significant issue is the exclusion of ev-015 (Morpheus's Capture and Rescue Decision). This event is pivotal to Neo's 'Journey to the One' as it is the moment he actively chooses to save Morpheus, interpreting the Oracle's prophecy, which directly leads to the training and the raid. Without ev-015, the jump from training (ev-019) to the Oracle (ev-023) feels disjointed, as the motivation for the rescue mission is missing. Therefore, ev-015 should be added. ev-023, ev-024, and ev-025 should be moved to a 'Prophecy' thread to tighten the focus on Neo's personal transformation and the immediate conflict.",
+   "remove": [
+    "ev-023",
+    "ev-024",
+    "ev-025"
+   ],
+   "add": [
+    "ev-015"
+   ],
+   "better_description": "The central narrative arc following Neo from his life as a hacker to his discovery of the truth, his physical and mental training under Morpheus, and his emergence as the prophesied One, culminating in the decision to rescue Morpheus."
+  },
+  {
+   "plot_id": "p-002",
+   "verdict": "needs_members_moved",
+   "reasoning": "The thread correctly identifies the core arc of Cypher's disillusionment and betrayal. However, it includes ev-028 ('Cypher's Extraction and the Group's Pursuit'), which is primarily a tactical sequence involving Neo and Trinity navigating the Matrix and a phone call, with Cypher's specific act of betrayal (shooting Dozer/Tank) occurring in the subsequent event ev-029. While ev-028 sets the stage, ev-029 contains the actual execution of the betrayal and the confrontation. More critically, ev-021 ('Cypher's Betrayal and Confession') is listed, but the event description in the data actually describes the *act* of shooting Dozer and Tank, which is the same event as ev-029 in many breakdowns, or potentially a duplicate/confused entry. Looking closely at the provided JSON, ev-021 is 'Cypher's Betrayal and Confession' (shooting Dozer/Tank, confession) and ev-029 is 'Cypher's Betrayal and the Failed Exit' (unplugging, killing Dozer/Tank, shooting Apoc/Switch). These two events seem to describe the same physical actions (killing Dozer/Tank) in slightly different contexts or perhaps ev-021 is the confession *before* the shooting and ev-029 is the *during/after*. However, ev-028 is largely about the *pursuit* and extraction logistics, not the betrayal arc itself. The betrayal arc is best served by the setup (ev-001, ev-018, ev-022, ev-025), the deal (ev-009), and the execution (ev-021, ev-029). ev-028 is a logistical bridge. I will keep ev-028 as it leads directly into the confrontation, but I suspect ev-021 and ev-029 might be overlapping. Let's look at the descriptions again. ev-021: 'Cypher shoots and kills Dozer... injuring Tank... later... quiet, dark hall... Cypher sits at operator's station'. ev-029: 'Cypher is forcibly unplugged... reveals his betrayal by killing Dozer and wounding Tank... killing Apoc and Switch'. These are clearly the same sequence of events described twice or split awkwardly. If ev-021 and ev-029 are duplicates, one should be removed. Given ev-029 includes the death of Apoc and Switch and the failed exit, it is the more complete 'climax' of the betrayal. ev-021 seems to be a partial description of the same moment. However, without knowing if they are distinct scenes in the script, I must judge based on the text. ev-021 mentions a 'quiet, dark hall' and 'operator's station' which might be the *confession* before the shooting? No, it says 'First, in a sudden outburst... Cypher shoots... Immediately following this... quiet, dark hall... Cypher sits...'. This sounds like the aftermath. ev-029 says 'Cypher is forcibly unplugged... reveals his betrayal by killing Dozer'. This implies the killing happens *during* the unplugging or immediately after. In the movie, Cypher kills Dozer and Tank *after* being unplugged. So ev-029 is the correct event for the physical betrayal. ev-021 seems to be a confused entry or a different cut. I will recommend removing ev-021 as redundant or incorrectly described, and keeping ev-029. Also, ev-009 is the deal with Smith, which is crucial. ev-022 is the phone drop. ev-025 is the 'welcome to the real world' line. ev-018 is the hallway conversation. ev-001 is the initial skepticism. The thread is strong but ev-021 is problematic.",
+   "remove": [
+    "ev-021"
+   ],
+   "add": [],
+   "better_description": "A parallel character arc tracking Cypher's growing resentment of the real world's harshness and the Resistance's struggle. It begins with his skepticism (ev-001, ev-018), moves to his secret contact with Agent Smith (ev-009, ev-022), and culminates in his physical betrayal of the crew, killing Dozer and Tank, and his own extraction (ev-029)."
+  },
+  {
+   "plot_id": "p-003",
+   "verdict": "needs_members_moved",
+   "reasoning": "The thread is too broad, conflating the 'Prophecy/Faith' arc with the 'Hotel Siege' and 'Rescue' arcs. ev-002 (Hotel Raid) is a pre-Neo introduction sequence belonging to the Agents' pursuit or Neo's awakening, not the Resistance's operational core. ev-033 (Entry into Matrix) is a tactical setup for the Hotel Siege (ev-026) and does not involve the emotional core or Morpheus's faith. ev-011 (Rescue/Recovery) is part of Neo's initiation, not the Resistance's struggle against Agents. The core should focus on the Oracle mission, the betrayal, and the rescue of Morpheus.",
+   "remove": [
+    "ev-002",
+    "ev-011",
+    "ev-033"
+   ],
+   "add": [
+    "ev-009",
+    "ev-021",
+    "ev-024",
+    "ev-029",
+    "ev-031",
+    "ev-032"
+   ],
+   "better_description": "The arc from Morpheus's faith in the prophecy to its validation: the Oracle's warning, Cypher's betrayal, the capture of Morpheus, and the crew's desperate rescue mission."
+  },
+  {
+   "plot_id": "p-004",
+   "verdict": "needs_members_moved",
+   "reasoning": "The thread 'Neo and Trinity's Bond' is fundamentally a romantic and emotional arc. While ev-004 (Party) and ev-018 (Nighttime Care) clearly establish the romantic tension and intimacy, ev-023 (Journey to Oracle) and ev-030 (Trinity's Extraction) are primarily plot-driven mission beats. In ev-023, Trinity is present but the focus is on Morpheus's faith and Neo's skepticism; her romantic interest is not the driver of the scene. In ev-030, the embrace is a moment of relief after a battle, but the event's core function is the tactical extraction and the realization of the crew's losses (Tank's wounds, Dozer's death), not the development of the romance itself. The bond is established and deepened in ev-004 and ev-018; the later events are where the bond is *tested* or *acted upon* within the larger plot, but they do not serve the specific thread of the bond's development. The thread should focus on the scenes where the relationship is actively formed and deepened through direct interaction and intimacy, not just their co-presence in a mission.",
+   "remove": [
+    "ev-023",
+    "ev-030"
+   ]
+  },
+  {
+   "plot_id": "p-005",
+   "verdict": "needs_members_moved",
+   "reasoning": "The thread is too broad and mixes distinct narrative beats. ev-009 (Cypher's Betrayal) belongs to the 'Cypher's Betrayal' or 'Morpheus's Capture' threads, not the Agents' direct action. ev-026 (Hotel Ambush) is a tactical event driven by Cypher's error and the team's escape, not primarily an Agent-driven dominance moment (though Agents are present). The core of the thread is the Agents' active pursuit and the specific capture of Morpheus. ev-002, ev-006, ev-007, ev-027, and ev-031 are strong fits. ev-009 should be removed as it is a character decision, not an Agent action. ev-026 is borderline but acceptable as it results from Agent surveillance. However, ev-009 is the clear outlier.",
+   "remove": [
+    "ev-009"
+   ],
+   "add": [],
+   "better_description": "The Agents' active pursuit of the Resistance, culminating in the capture of Morpheus and the interrogation of Neo, showcasing their surveillance capabilities and physical dominance."
+  },
+  {
+   "plot_id": "p-006",
+   "verdict": "needs_members_moved",
+   "reasoning": "The thread is a hodgepodge of distinct philosophical concepts that do not form a single coherent arc. 'The Nature of Reality' (Simulation) is distinct from 'The Power of Belief' (Willpower) and 'Ignorance vs. Truth' (Cypher's choice). Specifically, ev-016 and ev-017 are primarily about the mechanics of training and the 'Willpower' aspect of the Matrix, not the ontological nature of reality itself; they belong in a 'Neo's Training' or 'Mastering the Matrix' thread. ev-009 is explicitly about Cypher's character motivation (comfort vs. pain) and serves as the inciting incident for the betrayal arc, making it a better fit for 'Cypher's Betrayal' than this broad thematic thread. ev-012 is the definitive moment for the 'Simulation' reveal and should remain, but it is currently diluted by the inclusion of training scenes that are more about physical/mental conditioning than philosophical revelation. The thread attempts to cover too much ground without a clear narrative spine, mixing character-specific choices (Cypher) with general world-building rules (Training) and core plot reveals (The Matrix).",
+   "remove": [
+    "ev-016",
+    "ev-017",
+    "ev-009"
+   ],
+   "add": [
+    "ev-010"
+   ],
+   "better_description": "The revelation of the Matrix as a simulated construct and the philosophical implications of living in a false reality, culminating in Neo's acceptance of the truth."
+  }
+ ]
+}

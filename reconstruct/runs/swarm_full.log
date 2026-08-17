@@ -1,0 +1,102 @@
+SWARM · 224 scenes · 8 endpoints × 8 = 64 concurrent
+
+  stage 1 — scene nodes, blind of the tree
+    canary (blank scene): model WROTE ANYWAY — recall is reaching the output
+      1-scenes: 22/224  100s
+      1-scenes: 44/224  124s
+      1-scenes: 66/224  177s
+      1-scenes: 88/224  206s
+      1-scenes: 110/224  242s
+      1-scenes: 132/224  287s
+      1-scenes: 154/224  321s
+      1-scenes: 176/224  339s
+      1-scenes: 198/224  354s
+      1-scenes: 220/224  370s
+      1-scenes: 224/224  373s
+    [1-scenes] 6.3 min · 224/224 ok · 97,475 out · 285 check violation(s)
+      ! sc-001: no evidence span occurs in the scene it describes
+      ! sc-002: no evidence span occurs in the scene it describes
+      ! sc-003: no evidence span occurs in the scene it describes
+      ! sc-004: no evidence span occurs in the scene it describes
+  stage 2 — event boundaries
+      2a-windows: 4/44  6s
+      2a-windows: 8/44  6s
+      2a-windows: 12/44  7s
+      2a-windows: 16/44  7s
+      2a-windows: 20/44  7s
+      2a-windows: 24/44  8s
+      2a-windows: 28/44  8s
+      2a-windows: 32/44  9s
+      2a-windows: 36/44  9s
+      2a-windows: 40/44  9s
+      2a-windows: 44/44  11s
+      2b-reconcile: 1/11  9s
+      2b-reconcile: 2/11  9s
+      2b-reconcile: 3/11  9s
+      2b-reconcile: 4/11  10s
+      2b-reconcile: 5/11  10s
+      2b-reconcile: 6/11  11s
+      2b-reconcile: 7/11  11s
+      2b-reconcile: 8/11  12s
+      2b-reconcile: 9/11  12s
+      2b-reconcile: 10/11  13s
+      2b-reconcile: 11/11  14s
+    [2-boundaries] 1.5 min · 56/56 ok · 32,043 out · 1 check violation(s)
+      ! 1 scene(s) in no event: ['sc-166']
+  stage 3 — event drafts
+      3-events: 3/37  73s
+      3-events: 6/37  75s
+      3-events: 9/37  79s
+      3-events: 12/37  86s
+      3-events: 15/37  88s
+      3-events: 18/37  91s
+      3-events: 21/37  94s
+      3-events: 24/37  95s
+      3-events: 27/37  96s
+      3-events: 30/37  97s
+      3-events: 33/37  98s
+      3-events: 36/37  103s
+      3-events: 37/37  274s
+    [3-events] 4.6 min · 38/38 ok · 54,553 out · 58 check violation(s)
+      ! ev-001: participant 'Police Officers' in none of its scenes
+      ! ev-001: participant 'Big Cop' in none of its scenes
+      ! ev-001: participant 'Lieutenant' in none of its scenes
+      ! ev-001: participant 'Morpheus (V.O.)' in none of its scenes
+  stages 4 + 5 — plots and entities, concurrently
+      4b-doctors: 1/6  11s
+      4b-doctors: 2/6  11s
+      4b-doctors: 3/6  11s
+      4b-doctors: 4/6  11s
+      4b-doctors: 5/6  12s
+      4b-doctors: 6/6  13s
+      5-entities: 1/4  41s
+      5-entities: 2/4  49s
+      5-entities: 3/4  129s
+      5-entities: 4/4  333s
+    [4-plots] 5.5 min · 8/8 ok · 5,296 out · 1 check violation(s)
+      ! ev-020 belongs to no thread
+    [5-entities] 5.5 min · 5/5 ok · 38,389 out · 0 check violation(s)
+  stage 6 — entity profiles
+      6-profiles: 4/40  68s
+      6-profiles: 8/40  71s
+      6-profiles: 12/40  73s
+      6-profiles: 16/40  76s
+      6-profiles: 20/40  76s
+      6-profiles: 24/40  78s
+      6-profiles: 28/40  78s
+      6-profiles: 32/40  80s
+      6-profiles: 36/40  83s
+      6-profiles: 40/40  102s
+    [6-profiles] 1.7 min · 40/40 ok · 36,147 out · 1 check violation(s)
+      ! TRAINING_PROGRAM_ROOFTOP.jump_success: initial 'pending' outside its own domain
+  stage 7 — story root
+    [7-root] 0.5 min · 1/1 ok · 741 out · 0 check violation(s)
+  stage 8 — exposé and its doctors
+      8b-doctors: 1/5  5s
+      8b-doctors: 2/5  7s
+      8b-doctors: 3/5  8s
+      8b-doctors: 4/5  8s
+      8b-doctors: 5/5  9s
+    [8-expose] 0.4 min · 7/7 ok · 3,140 out · 0 check violation(s)
+
+  TOTAL 20.5 min · 268,087 output tokens

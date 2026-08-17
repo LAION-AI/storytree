@@ -1,0 +1,165 @@
+{
+ "started": 1786970783.513208,
+ "elapsed_s": 248.6,
+ "stages": {
+  "1-scenes": {
+   "seconds": 42.8,
+   "usage": {
+    "calls": 12,
+    "ok": 12,
+    "failed": 0,
+    "tok_in": 461100,
+    "tok_out": 5314,
+    "model_secs": 418.1132171154022,
+    "tok_per_s": 12.70947624344843
+   },
+   "violations": [
+    "sc-001: change for 'MAN (V.O.) / WOMAN (V.O.)', who is not listed present"
+   ],
+   "counts": {
+    "scenes": 12,
+    "nodes": 12
+   }
+  },
+  "2-boundaries": {
+   "seconds": 12.2,
+   "usage": {
+    "calls": 4,
+    "ok": 4,
+    "tok_in": 5963,
+    "tok_out": 1579
+   },
+   "violations": [
+    "one event holds 7 scenes (['The Hotel Raid']) \u2014 likely under-cut",
+    "only 4 events for 12 scenes"
+   ],
+   "counts": {
+    "events": 4
+   }
+  },
+  "3-events": {
+   "seconds": 34.3,
+   "usage": {
+    "calls": 4,
+    "ok": 4,
+    "failed": 0,
+    "tok_in": 135390,
+    "tok_out": 3934,
+    "model_secs": 124.69692206382751,
+    "tok_per_s": 31.548493217710202
+   },
+   "violations": [
+    "ev-001: participant 'Cypher' in none of its scenes",
+    "ev-001: participant 'Trinity' in none of its scenes"
+   ],
+   "counts": {
+    "events": 4,
+    "reversals": 1
+   }
+  },
+  "4-plots": {
+   "seconds": 22.8,
+   "usage": {
+    "calls": 7,
+    "ok": 7,
+    "tok_in": 15500,
+    "tok_out": 2661
+   },
+   "violations": [],
+   "counts": {
+    "plots": 3
+   }
+  },
+  "5-entities": {
+   "seconds": 22.8,
+   "usage": {
+    "calls": 4,
+    "ok": 4,
+    "failed": 0,
+    "tok_in": 9930,
+    "tok_out": 4675,
+    "model_secs": 44.17948627471924,
+    "tok_per_s": 105.81834227156163
+   },
+   "violations": [
+    "identifier 'AGENT_BROWN' claimed by more than one entity",
+    "identifier 'AGENT_JONES' claimed by more than one entity",
+    "identifier 'AGENT_SMITH' claimed by more than one entity",
+    "identifier 'BIG_COP' claimed by more than one entity",
+    "identifier 'CHOI' claimed by more than one entity",
+    "identifier 'DUJOUR' claimed by more than one entity",
+    "identifier 'FIRE_ESCAPE' claimed by more than one entity",
+    "identifier 'HEART_O_THE_CITY_HOTEL' claimed by more than one entity",
+    "identifier 'LIEUTENANT' claimed by more than one entity",
+    "identifier 'NEO' claimed by more than one entity",
+    "identifier 'NEOS_APARTMENT' claimed by more than one entity",
+    "identifier 'POLICE_OFFICERS' claimed by more than one entity",
+    "identifier 'ROOFTOPS' claimed by more than one entity",
+    "identifier 'TRINITY' claimed by more than one entity"
+   ],
+   "counts": {
+    "agents": 12,
+    "locations": 6,
+    "objects": 30,
+    "concepts": 4
+   }
+  },
+  "6-profiles": {
+   "seconds": 69.8,
+   "usage": {
+    "calls": 29,
+    "ok": 29,
+    "failed": 0,
+    "tok_in": 839683,
+    "tok_out": 25133,
+    "model_secs": 1685.3979003429413,
+    "tok_per_s": 14.912205595418143
+   },
+   "violations": [],
+   "counts": {
+    "profiles": 29
+   }
+  },
+  "7-root": {
+   "seconds": 29.8,
+   "usage": {
+    "calls": 1,
+    "ok": 1,
+    "failed": 0,
+    "tok_in": 26734,
+    "tok_out": 937,
+    "model_secs": 29.777908325195312,
+    "tok_per_s": 31.466279960543677
+   },
+   "violations": [],
+   "counts": {
+    "ok": true
+   }
+  },
+  "8-expose": {
+   "seconds": 36.7,
+   "usage": {
+    "calls": 7,
+    "ok": 7,
+    "tok_in": 33371,
+    "tok_out": 3896
+   },
+   "violations": [],
+   "counts": {
+    "words": 983
+   }
+  },
+  "_total": {
+   "seconds": 248.6,
+   "usage": {
+    "calls": 68,
+    "ok": 68,
+    "failed": 0,
+    "tok_in": 1527671,
+    "tok_out": 48129,
+    "model_secs": 2414.1219885349274,
+    "tok_per_s": 19.936440755095536
+   }
+  }
+ }
+}

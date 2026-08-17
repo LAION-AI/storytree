@@ -1,0 +1,2341 @@
+[
+ {
+  "id": "NEO",
+  "kind": "agents",
+  "description": "Thomas Anderson, a hacker operating under the alias Neo, who begins as a disaffected software engineer trapped in a simulated reality (the Matrix) and is progressively revealed to be the prophesied 'One' destined to free humanity from machine control. His journey is defined by the transition from passive skepticism to active belief, marked by physical trauma, the shattering of his identity as a 'normal' citizen, and the acquisition of superhuman abilities that allow him to perceive and manipulate the code of his world. He is characterized by a deep-seated fear of losing control, which paradoxically drives his search for the truth, and by a growing loyalty to Morpheus and the Resistance that overrides his instinct for self-preservation.",
+  "appearance": "In the Matrix, he appears as a young man with short dark hair, wearing business casual attire (shirts, trousers) suitable for his job at Meta CorTechs. In the real world, he is revealed to be bald, naked, and physically atrophied, his body slick with magenta gelatin and connected to a network of tubes and cables.",
+  "background": "Born into the Matrix, he lives a dual life as a respectable employee by day and a hacker by night. He has spent years searching for Morpheus, driven by an unexplainable feeling that something is wrong with the world. He is a 'battery' in a machine farm, his mind trapped in a neural-interactive simulation while his body is used for bioelectricity.",
+  "wants": "Initially, he wants to understand the nature of the Matrix and resolve the 'splinter' of doubt in his mind. Later, he wants to save Morpheus and prove to himself that he is the One, transitioning from a desire for personal truth to a desire for collective freedom.",
+  "fears": "He fears the loss of control over his own life, the idea that he is not special or in charge, and the physical pain and disorientation of the real world. He also fears being a false hope, a repeat of the five previous candidates who died.",
+  "internal_conflict": "The conflict between his rational skepticism (belief in control and logic) and the mystical, faith-based nature of the prophecy. He struggles to accept that reality is malleable based on belief, clashing with his hacker's reliance on code and rules.",
+  "speech": "Pragmatic and slightly sarcastic in the Matrix, often using tech jargon or expressing confusion ('What the hell?', 'I'm nobody'). In the real world, his speech becomes more tentative and questioning as he processes the shock of his new existence. He is direct when confronted, often challenging authority or seeking immediate clarification.",
+  "relationships": [
+   {
+    "with": "Morpheus",
+    "nature": "Mentor and leader. Neo is initially skeptical of Morpheus's fervor but gradually develops a deep respect and dependency, viewing him as the anchor of his new reality."
+   },
+   {
+    "with": "Trinity",
+    "nature": "Romantic interest and protector. She is the first to warn him and the one who physically extracts him. Their relationship is characterized by intense trust and a growing emotional bond."
+   },
+   {
+    "with": "Agent Smith",
+    "nature": "Antagonist. Smith represents the oppressive order of the Matrix and the specific threat to Neo's freedom. Their interactions are defined by interrogation, physical domination, and the eventual recognition of Neo as a threat to the system."
+   },
+   {
+    "with": "Cypher",
+    "nature": "Skeptic and foil. Cypher represents the temptation to return to the comfortable lie, challenging Neo's commitment to the harsh truth and the prophecy."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "knowledge_of_reality",
+    "domain": [
+     "believes_matrix_is_real",
+     "suspects_matrix_is_simulated",
+     "knows_matrix_is_simulation",
+     "knows_he_is_the_one"
+    ],
+    "initial": "believes_matrix_is_real",
+    "why": "Moved by ev-003 (connects digital/physical clues), ev-004 (learns he is watched), ev-010 (unplugs and sees the real world), ev-012 (learns the history of the Machines), and ev-013 (learns of the prophecy)."
+   },
+   {
+    "name": "physical_condition",
+    "domain": [
+     "healthy_in_matrix",
+     "interrogated_and_alarmed",
+     "comatose_in_matrix",
+     "atrophied_in_real_world",
+     "recovering_in_infirmary"
+    ],
+    "initial": "healthy_in_matrix",
+    "why": "Moved by ev-005 (workplace stress), ev-007 (mouth fused, wire tap implanted), ev-010 (transition to comatose/atrophied body), and ev-011 (recovery begins)."
+   },
+   {
+    "name": "resolve_to_act",
+    "domain": [
+     "passive_recipient",
+     "hesitant_participant",
+     "active_seeker",
+     "decisive_rescuer"
+    ],
+    "initial": "passive_recipient",
+    "why": "Moved by ev-003 (agrees to go out), ev-004 (engages with Trinity), ev-015 (decides to re-enter Matrix to save Morpheus), and ev-030 (prioritizes Trinity's extraction)."
+   },
+   {
+    "name": "combat_capability",
+    "domain": [
+     "untrained",
+     "downloaded_skills",
+     "struggling_with_belief",
+     "transcending_limits"
+    ],
+    "initial": "untrained",
+    "why": "Moved by ev-014 (downloads Jujitsu), ev-016 (sparring with Morpheus reveals mental barrier), and ev-032 (demonstrates bullet-dodging)."
+   },
+   {
+    "name": "trust_in_resistance",
+    "domain": [
+     "skeptical",
+     "guarded",
+     "compliant",
+     "devoted"
+    ],
+    "initial": "skeptical",
+    "why": "Moved by ev-008 (submits to extraction procedure), ev-021 (learns of previous failures, causing doubt), and ev-029 (Trinity's faith solidifies his role)."
+   },
+   {
+    "name": "perception_of_rules",
+    "domain": [
+     "bound_by_physics",
+     "aware_of_glitches",
+     "bending_rules",
+     "breaking_rules"
+    ],
+    "initial": "bound_by_physics",
+    "why": "Moved by ev-016 (learns air/strength are not real), ev-024 ('There is no spoon' lesson), and ev-026 (identifies deja vu as a glitch)."
+   }
+  ],
+  "inferred": [
+   "His initial hesitation to jump (ev-017) is inferred to stem from a deep-seated fear of failure or death, not just a lack of physical strength.",
+   "His rapid acceptance of the 'One' prophecy despite Cypher's warnings (ev-021) is inferred to be driven by a desire for purpose and a need to validate Morpheus's faith in him.",
+   "His romantic interest in Trinity is inferred from the intensity of their early conversations and his willingness to risk his life for her (ev-030)."
+  ]
+ },
+ {
+  "id": "MORPHEUS",
+  "kind": "agents",
+  "description": "Morpheus is the captain of the hovercraft Nebuchadnezzar and the ideological anchor of the resistance. He is a man who has spent his life searching for the prophesied 'One,' a quest that has defined his identity and hardened his certainty into a rigid dogma. He presents himself as an infallible leader, yet his authority rests entirely on a faith he cannot prove. His character arc is a dismantling of this certainty; he moves from a figure of absolute, almost messianic confidence to one who must confront the vulnerability of his belief, admitting his past failures and the irrationality of his current conviction. He is physically imposing, dressed in a long black coat and circular mirrored glasses, which serve as a barrier between his eyes and the world. His journey is one of surrendering the role of the savior to become a witness, allowing Neo to step into the destiny that Morpheus has long carried.",
+  "appearance": "Tall, imposing figure wearing a long black coat. His eyes are hidden behind distinctive circular mirrored glasses, which reflect his surroundings and obscure his gaze. He has a calm, almost serene demeanor, often smiling with a razor-thin, knowing expression. His movements are precise and efficient, particularly in combat.",
+  "background": "A former member of the resistance who has been searching for the One for decades. He freed Neo's predecessor, the first of the potentials, and has since spent his life looking for the next. He has five previous candidates who died, an event that shook his faith but was ultimately overridden by his 'epiphany' upon meeting Neo. He is considered a terrorist by the authorities and the most dangerous man alive.",
+  "wants": "To confirm that Neo is the One and to secure the future of the human race by ending the war with the Machines. Deeply, he wants validation for his life's work and his faith, seeking to prove that his belief in Neo is not just another mistake.",
+  "fears": "That Neo is not the One, that his faith is misplaced, and that he has led another potential to their death. He fears the loss of control and the possibility that the prophecy is wrong, which would mean the resistance is doomed.",
+  "internal_conflict": "The tension between his role as a rational leader of a military resistance and his reliance on a mystical, unprovable prophecy. He must maintain the facade of certainty for his crew's morale while internally grappling with the doubt that the Oracle's words may have been misunderstood or that his own ego has distorted the truth.",
+  "speech": "Calm, measured, and authoritative. He uses philosophical and metaphorical language (e.g., 'the desert of the real,' 'buckle up, Dorothy'). He is direct but often speaks in riddles or profound statements. His voice is low and steady, even in moments of high tension.",
+  "relationships": [
+   {
+    "with": "NEO",
+    "nature": "Mentor and believer. Morpheus sees Neo as the fulfillment of his life's purpose. He guides, trains, and ultimately sacrifices himself for Neo, shifting from a leader who commands to a father figure who trusts."
+   },
+   {
+    "with": "TRINITY",
+    "nature": "Loyal second-in-command and confidante. Trinity supports his vision but questions it when the evidence is lacking. Their relationship is built on mutual respect and a shared history of struggle."
+   },
+   {
+    "with": "CYPHER",
+    "nature": "Leader and skeptic. Cypher challenges Morpheus's authority and the validity of the prophecy, representing the doubt that Morpheus fears. Morpheus maintains his authority despite Cypher's insubordination."
+   },
+   {
+    "with": "AGENT SMITH",
+    "nature": "Adversary. Smith is the physical and ideological counterpoint to Morpheus. Their confrontation is not just a fight but a clash of wills, with Smith seeking to break Morpheus's mind and Morpheus resisting with his faith."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "faith_in_neo",
+    "domain": [
+     "uncertain",
+     "certain",
+     "absolute",
+     "shattered"
+    ],
+    "initial": "certain",
+    "why": "ev-011 moves it from 'Uncertain' to 'Certain of Neo's identity'. ev-023 moves it from a 'logical necessity' to an 'unexplainable epiphany', deepening the faith into something irrational. ev-032 reinforces this as he is rescued, allowing the faith to persist."
+   },
+   {
+    "name": "leadership_standing",
+    "domain": [
+     "authoritative",
+     "vulnerable",
+     "humanized",
+     "challenged"
+    ],
+    "initial": "authoritative",
+    "why": "ev-013 moves it from 'authoritative leader maintaining facade' to 'acknowledges vulnerability' by admitting he broke the rule on age. ev-023 moves it further to 'vulnerable' as he admits to losing his way after the fifth candidate."
+   },
+   {
+    "name": "physical_condition",
+    "domain": [
+     "healthy",
+     "injured",
+     "critical",
+     "recovering"
+    ],
+    "initial": "healthy",
+    "why": "ev-015 moves it to 'on the verge of having his mind broken, life signs failing' during neural extraction. ev-031 moves it to 'physically deteriorating, hunched over, leaking' due to serum. ev-032 moves it to 'free' and recovering after rescue."
+   },
+   {
+    "name": "custody_status",
+    "domain": [
+     "free",
+     "captured",
+     "interrogated",
+     "rescued"
+    ],
+    "initial": "free",
+    "why": "ev-027 moves it to 'taken into custody by cops'. ev-031 moves it to 'handcuffed to a chair, restrained'. ev-032 moves it to 'free, having snapped his handcuffs'."
+   },
+   {
+    "name": "visual_barrier",
+    "domain": [
+     "glasses_on",
+     "glasses_off"
+    ],
+    "initial": "glasses_on",
+    "why": "ev-016 moves it to 'glasses knocked off by Neo's blow', symbolizing the breaking of rules and the shift in power dynamic during training."
+   },
+   {
+    "name": "tactical_position",
+    "domain": [
+     "mobile",
+     "trapped",
+     "positioned",
+     "escaping"
+    ],
+    "initial": "mobile",
+    "why": "ev-026 moves it from 'trapped on eighth floor' to 'escaping through plumbing walls'. ev-033 moves it from 'Room 1313' to 'Room 808' as the designated structural point for escape."
+   }
+  ],
+  "inferred": [
+   "His 'epiphany' regarding Neo is likely a psychological coping mechanism to avoid admitting that the Oracle was wrong about the previous five candidates, as suggested by his admission in ev-023.",
+   "The circular mirrored glasses serve as a psychological barrier, allowing him to observe the world without being fully seen, reinforcing his role as the all-knowing leader."
+  ]
+ },
+ {
+  "id": "TRINITY",
+  "kind": "agents",
+  "description": "A skilled fighter and pilot on the Nebuchadnezzar who falls in love with Neo and is instrumental in his journey.",
+  "appearance": "A woman in black leather, often seen in a motorcycle jacket adorned with pins, including a small white rabbit.",
+  "background": "A veteran of the Resistance who was previously looking for Morpheus and was saved by him. She is a member of the crew of the Nebuchadnezzar.",
+  "wants": "To protect Neo and ensure his survival, while also maintaining loyalty to Morpheus and the mission.",
+  "fears": "Losing Neo to the Matrix or the Agents, and the fragility of her allies as evidenced by the deaths of Mouse and Dozer.",
+  "internal_conflict": "Balancing her emotional investment in Neo with her duty to Morpheus's authority and the mission's timeline.",
+  "speech": "Direct, calm under pressure, and occasionally intimate when speaking to Neo.",
+  "relationships": [
+   {
+    "with": "NEO",
+    "nature": "Romantic interest and protector; she is emotionally invested in him but remains loyal to the mission."
+   },
+   {
+    "with": "MORPHEUS",
+    "nature": "Loyal crew member and subordinate; she asserts command authority when necessary but ultimately defers to his leadership."
+   },
+   {
+    "with": "CYPHER",
+    "nature": "Crew member and former friend; her relationship is strained by his betrayal and her grief over his actions."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "safety_status",
+    "domain": [
+     "secure",
+     "alerted",
+     "detained",
+     "injured_on_the_run",
+     "free"
+    ],
+    "initial": "secure",
+    "why": "Moved in ev-001 (alerted to threat) and ev-002 (detained then free but injured)."
+   },
+   {
+    "name": "allegiance_focus",
+    "domain": [
+     "uncertain",
+     "morpheus",
+     "neo",
+     "mission"
+    ],
+    "initial": "morpheus",
+    "why": "Moved in ev-015 (asserting belief in Morpheus over Neo's) and ev-018 (reaffirming faith in Morpheus's process)."
+   },
+   {
+    "name": "knowledge_of_cypher",
+    "domain": [
+     "believes_friend",
+     "knows_traitor"
+    ],
+    "initial": "believes_friend",
+    "why": "Moved in ev-029 (knows Cypher is a traitor)."
+   },
+   {
+    "name": "location",
+    "domain": [
+     "matrix",
+     "real_world"
+    ],
+    "initial": "matrix",
+    "why": "Moved in ev-030 (extracted from Matrix to real world)."
+   },
+   {
+    "name": "knowledge_of_casualties",
+    "domain": [
+     "unaware",
+     "aware_of_tank_injury",
+     "aware_of_dozer_death"
+    ],
+    "initial": "unaware",
+    "why": "Moved in ev-030 (aware of Tank's injury and Dozer's death)."
+   },
+   {
+    "name": "pilot_capability",
+    "domain": [
+     "unable_to_fly",
+     "possesses_pilot_program"
+    ],
+    "initial": "unable_to_fly",
+    "why": "Moved in ev-032 (possesses the pilot program, allowing her to fly the chopper)."
+   }
+  ],
+  "inferred": [
+   "Trinity's assertion of command authority in ev-015 suggests she holds a position of respect and trust within the crew, even if not the captain.",
+   "Her intimate care for Neo in ev-018 implies a deep emotional connection that goes beyond mere crew dynamics.",
+   "Her ability to fly the helicopter in ev-032 indicates she has undergone specific training or had the pilot program loaded into her, which was not previously evident."
+  ]
+ },
+ {
+  "id": "AGENT_SMITH",
+  "kind": "agents",
+  "description": "Agent Smith is the primary antagonist, a sentient program within the Matrix that operates as the immune system of the simulation. He is characterized by his rigid adherence to order, his ice-blue eyes, and his methodical, bureaucratic approach to hunting anomalies. He serves as the physical embodiment of the Matrix's control, moving with unnatural grace and precision to eliminate threats like Neo and Morpheus. His presence is marked by a cold, detached demeanor and a capacity for sudden, overwhelming violence that contrasts with his polite, formal speech.",
+  "appearance": "Wears dark suits and sunglasses even at night; hardwired with small Secret Service earphones; eyes are an unnatural ice-blue when sunglasses are removed.",
+  "background": "A sentient program designed to function as a gatekeeper and hunter for the Matrix system.",
+  "wants": "To eliminate anomalies, specifically Neo and Morpheus, and to restore order to the Matrix system.",
+  "fears": "Inefficiency, loss of control, or the persistence of anomalies that cannot be easily resolved.",
+  "internal_conflict": "The tension between his programmed function of order and the frustration experienced when his methods fail to achieve immediate results.",
+  "speech": "Formal, precise, and polite; uses bureaucratic language (e.g., 'Juris-my dick-tion') and direct, declarative statements.",
+  "relationships": [
+   {
+    "with": "NEO",
+    "nature": "Primary target; Smith views Neo as an anomaly to be corrected or eliminated."
+   },
+   {
+    "with": "AGENT_BROWN",
+    "nature": "Colleague; works in tandem with Brown and Jones as a unit."
+   },
+   {
+    "with": "MORPHEUS",
+    "nature": "Adversary; Smith seeks to bring Morpheus to justice for terrorism."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "target_status",
+    "domain": [
+     "active_hunt",
+     "target_escaped",
+     "target_captured",
+     "target_interrogated"
+    ],
+    "initial": "active_hunt",
+    "why": "Moves from active_hunt to target_escaped after Trinity survives the garbage truck crash; moves to target_captured when Neo is arrested at the office; moves to target_interrogated when Neo is brought to the white room."
+   },
+   {
+    "name": "emotional_state",
+    "domain": [
+     "composed",
+     "frustrated",
+     "satisfied"
+    ],
+    "initial": "composed",
+    "why": "Moves from composed to frustrated when Trinity escapes the phone booth; moves to satisfied when confirming the informant is real and Neo is the next target."
+   },
+   {
+    "name": "physical_engagement",
+    "domain": [
+     "observing",
+     "pursuing",
+     "confronting",
+     "restrained"
+    ],
+    "initial": "observing",
+    "why": "Moves from observing to pursuing during the rooftop chase; moves to confronting during the interrogation; moves to restrained when Morpheus pins him in the wall crawl-space."
+   }
+  ],
+  "inferred": [
+   "His frustration with Trinity's escape suggests a high tolerance for efficiency, as the failure to eliminate a target immediately is a deviation from his programmed purpose.",
+   "His polite demeanor during the interrogation ('You disappoint me') suggests that his violence is a tool of last resort or a specific function, rather than an emotional outburst."
+  ]
+ },
+ {
+  "id": "CYpher",
+  "kind": "agents",
+  "description": "Cypher is a crew member on the hovercraft Nebuchadnezzar and the operator who handles the trace program during Neo's extraction. He is characterized by a deep, existential weariness and a cynical detachment from the cause of the Resistance. While outwardly helpful to Neo, he harbors a secret, self-serving agenda: he has struck a deal with Agent Smith to return to the Matrix in exchange for a life of luxury and ignorance. His role shifts from technical operator to emotional confidant and finally to a hidden threat, as his desire for comfort overrides his loyalty to the crew. He is defined by the phrase 'Ignorance is bliss,' which he articulates while dining in the Matrix, revealing that his betrayal is not born of malice but of a profound exhaustion with the truth.",
+  "appearance": "Male, middle-aged, with a weary and cynical demeanor. He is seen wearing the standard crew attire of the Nebuchadnezzar, often in the operator's chair or moving through the cramped corridors of the ship. His physical presence is unassuming, blending into the background of the crew, which allows his internal conflict to remain hidden until revealed.",
+  "background": "Cypher has been part of the Resistance for nine years. He was among the first to be freed, but the reality of life outside the Matrix—a cold, cramped existence on a hovercraft eating vat-grown protein—has eroded his commitment. He has witnessed the deaths of five previous 'One' candidates, which has fed his cynicism regarding Morpheus's faith. He is a skilled operator, proficient in decoding Matrix data and managing the technical aspects of extraction.",
+  "wants": "To return to the Matrix and live a life of luxury, wealth, and ignorance. He specifically wants to be 'rich' and 'someone important, like an actor.' He desires the sensory pleasures of the Matrix, such as real food, which he craves to the point of obsession.",
+  "fears": "The truth and the reality of his existence. He fears the pain of knowing that his life is a simulation and the hardship of the real world. He is afraid of the futility of the Resistance, having seen five men die for a cause he no longer believes in. He fears that he will never again taste the 'juicy and delicious' steak of the Matrix.",
+  "internal_conflict": "The central conflict is between his loyalty to his crew and his desire for comfort. He knows the truth of the Matrix but finds it unbearable. He is torn between the camaraderie of the Resistance and the seductive promise of a lie. This conflict culminates in his decision to betray Morpheus to secure his own return to a life of blissful ignorance.",
+  "speech": "Cypher speaks with a casual, often humorous tone that masks his deeper despair. He uses colloquialisms and metaphors (e.g., 'Kansas is going bye-bye') to lighten the mood. His dialogue with Neo is revealing, sharing his doubts about the One and the Resistance. In his meeting with Agent Smith, his speech becomes more desperate and specific, focusing on sensory details and material gains. He frequently uses the phrase 'Ignorance is bliss' to justify his choices.",
+  "relationships": [
+   {
+    "with": "Neo",
+    "nature": "Cypher acts as a mentor figure to Neo, offering him drinks and sharing his doubts about the One. He is outwardly friendly but inwardly skeptical, using Neo as a sounding board for his own cynicism."
+   },
+   {
+    "with": "Morpheus",
+    "nature": "Cypher respects Morpheus but is disillusioned by his faith. He believes Morpheus is a 'mindjober' who keeps the crew going with false hope. His betrayal is a direct challenge to Morpheus's leadership and vision."
+   },
+   {
+    "with": "Trinity",
+    "nature": "There is a subtle tension and perhaps a hint of past intimacy or rivalry. Cypher teases Trinity about her relationship with Neo, suggesting he is aware of her feelings. He watches her with a mix of amusement and envy."
+   },
+   {
+    "with": "Agent Smith",
+    "nature": "Cypher has a secret alliance with Agent Smith. He meets with Smith in the Matrix to negotiate his return, revealing that he is willing to provide access codes to Zion in exchange for a new life."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "loyalty_to_resistance",
+    "domain": [
+     "committed",
+     "doubtful",
+     "betrayed"
+    ],
+    "initial": "doubtful",
+    "why": "Cypher's loyalty is already shaken by the deaths of previous Ones and his nine years in the real world. His meeting with Agent Smith in the Matrix (A71) moves this variable to 'betrayed' as he agrees to give up Morpheus."
+   },
+   {
+    "name": "awareness_of_betrayal",
+    "domain": [
+     "hidden",
+     "revealed"
+    ],
+    "initial": "hidden",
+    "why": "Cypher keeps his deal with Agent Smith secret from the crew. The event where he drops the cellular phone in the garbage can (73) is the first physical sign of his hidden betrayal, moving the state toward 'revealed' for the audience, though the crew remains unaware."
+   },
+   {
+    "name": "desire_for_matrix_luxury",
+    "domain": [
+     "latent",
+     "active",
+     "fulfilled"
+    ],
+    "initial": "active",
+    "why": "Cypher's desire is active throughout the ship scenes, expressed through his complaints about the food and his longing for the Matrix. In the restaurant scene (A71), this desire becomes the primary driver of his actions, leading to the agreement with Agent Smith."
+   }
+  ],
+  "inferred": [
+   "Cypher's cynicism is a coping mechanism for the trauma of seeing five people die for a cause he no longer believes in.",
+   "His relationship with Trinity may have a romantic or ex-romantic history, inferred from his teasing comments and watchful gaze.",
+   "Cypher's preference for the Matrix is not just about comfort but about the absence of pain and responsibility, which he finds unbearable in the real world."
+  ]
+ },
+ {
+  "id": "TANK",
+  "kind": "agents",
+  "description": "Tank is the ship's operator and Neo's personal handler, a grounded, free-born human from Zion who lacks the neural jacks of the Matrix operatives. He serves as the technical and emotional anchor for Neo, bridging the gap between the physical reality of the Nebuchadnezzar and the digital world of the Matrix. His role shifts from a calm, slightly humorous mentor to a frantic monitor during the Lafayette ambush, culminating in his physical incapacitation by Cypher's betrayal, which underscores the vulnerability of the crew's real-world support system.",
+  "appearance": "Not explicitly described in the provided script excerpts, but implied to be a standard human without the neural jacks found at the base of the skull or in the forearms.",
+  "background": "Born free in Zion, the last human city, Tank is a 'genuine child of Zion' with no holes or jacks. He is the brother of Dozer and has served as an operator on the Nebuchadnezzar, managing the crew's connections to the Matrix.",
+  "wants": "To successfully integrate Neo into the Resistance and ensure his survival and potential as 'The One.'",
+  "fears": "The loss of the crew's connection to the Matrix and the physical safety of the operatives, particularly Neo.",
+  "internal_conflict": "Balancing the emotional weight of his guardianship with the technical precision required to maintain the ship's operations under extreme stress.",
+  "speech": "Casual, direct, and occasionally humorous; uses slang ('buddy', 'major boring shit') and offers reassuring guarantees.",
+  "relationships": [
+   {
+    "with": "NEO",
+    "nature": "Operator and Mentor; Tank is Neo's personal handler and guardian in the real world."
+   },
+   {
+    "with": "DOZER",
+    "nature": "Brother; they are both free-born humans without neural jacks."
+   },
+   {
+    "with": "MORPHEUS",
+    "nature": "Crew Member; Tank executes Morpheus's commands and reports status."
+   },
+   {
+    "with": "CYPHER",
+    "nature": "Crew Member; Tank is the physical target of Cypher's betrayal."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "role_assignment",
+    "domain": [
+     "unspecified_crew_member",
+     "neo_personal_operator"
+    ],
+    "initial": "unspecified_crew_member",
+    "why": "Moved in ev-014 where Tank introduces himself as Neo's operator, establishing his specific guardian role."
+   },
+   {
+    "name": "emotional_state",
+    "domain": [
+     "composed_monitoring",
+     "visibly_distressed"
+    ],
+    "initial": "composed_monitoring",
+    "why": "Moved in ev-027 where Tank is described as 'visibly distressed, reacting with physical desperation' during the ambush."
+   },
+   {
+    "name": "physical_condition",
+    "domain": [
+     "healthy",
+     "severely_injured"
+    ],
+    "initial": "healthy",
+    "why": "Moved in ev-028 where Tank is struck by Cypher's rifle and 'blasted into the air, and severely injured'."
+   }
+  ],
+  "inferred": [
+   "Tank's lack of neural jacks implies he cannot enter the Matrix, making him a permanent fixture in the real world.",
+   "His description as 'one hundred percent pure, old-fashioned, home-grown human' suggests a pride in his unmodified humanity compared to the crew.",
+   "The fact that he is Neo's 'personal' operator suggests a level of trust and specialization beyond general crew duties."
+  ]
+ },
+ {
+  "id": "ORACLE",
+  "kind": "agents",
+  "description": "The Oracle is an elderly woman who serves as the spiritual and strategic guide to the resistance. Despite her mystical reputation, she presents as a mundane, domestic figure—baking cookies, smoking, and speaking in colloquial, earthy language. She possesses a unique form of foresight that is not absolute certainty, but rather a perception of potential futures. Her role is to provide Neo with the information he needs to make his own choices, specifically regarding the fate of Morpheus, while maintaining the integrity of her own agency and the autonomy of her subjects.",
+  "appearance": "An older woman wearing big oven mitts, comfortable slacks, and a print blouse. She appears like 'someone's grandma,' huddled beside an oven.",
+  "background": "She has been with the Resistance since its beginning. She prophesied the return of the One after the death of the first One, which initiated the search that led to Morpheus finding Neo.",
+  "wants": "To provide guidance that allows Neo to find his own path and make his own choices, rather than being told what to do.",
+  "fears": "That her guidance will be misinterpreted as a command, or that her subjects will lose their agency by relying too heavily on her predictions.",
+  "internal_conflict": "Balancing the weight of her prophetic knowledge with the need to let others bear the consequences of their own decisions, particularly the impending choice between Neo's and Morpheus's lives.",
+  "speech": "Colloquial, warm, and slightly irreverent. Uses idioms like 'bake your noodle' and 'balls to bones.' Direct and honest, often cutting through pretension with practical advice.",
+  "relationships": [
+   {
+    "with": "Neo",
+    "nature": "Guide and subject of prophecy. She assesses his potential but ultimately leaves the interpretation and action up to him."
+   },
+   {
+    "with": "Morpheus",
+    "nature": "Long-standing colleague and believer. She notes his blind faith in Neo and predicts his sacrifice, viewing him with a mix of affection and concern for his self-delusion."
+   },
+   {
+    "with": "Priestess",
+    "nature": "Assistant/Attendant. The Priestess manages the logistical aspects of the Oracle's household and introduces visitors."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "prophecy_status",
+    "domain": [
+     "active",
+     "fulfilled",
+     "void"
+    ],
+    "initial": "active",
+    "why": "In ev-024, she delivers the specific prophecy that Neo is 'waiting for something' and that he will face a choice between his life and Morpheus's. This sets the variable to a state where the outcome is pending Neo's action."
+   },
+   {
+    "name": "morpheus_belief_level",
+    "domain": [
+     "blind_faith",
+     "doubt",
+     "certainty"
+    ],
+    "initial": "blind_faith",
+    "why": "In ev-024, the Oracle explicitly states that Morpheus believes in Neo 'so blindly' that he will sacrifice his life. This assessment of Morpheus's mental state is a key part of her guidance to Neo."
+   },
+   {
+    "name": "neo_autonomy",
+    "domain": [
+     "passive",
+     "active",
+     "defined"
+    ],
+    "initial": "passive",
+    "why": "In ev-024, the Oracle tells Neo that 'being the One is just like being in love... you just know it' and that he is 'waiting for something.' This implies his current state is passive/waiting, and her role is to trigger his transition to an active state of choice."
+   }
+  ],
+  "inferred": [
+   "Her domestic appearance is likely a deliberate subversion of the 'mystical seer' trope to make her advice feel more grounded and less authoritative, encouraging Neo to take ownership of his destiny.",
+   "Her statement that she 'knows enough' rather than 'everything' suggests her power is limited to perceiving probabilities or key nodes in the narrative, not controlling events."
+  ]
+ },
+ {
+  "id": "DOZER",
+  "kind": "agents",
+  "description": "Dozer is the cook and pilot on the Nebuchadnezzar, and the brother of Tank. He is a 'pure' human, born in the real world in Zion without the neural jacks of those born in the Matrix. His role is practical and essential: he maintains the ship, pilots it through the sewer mains, and prepares the nutrient-based meals for the crew. He is characterized by his blunt, matter-of-fact speech and his steady presence in high-pressure situations, such as the Sentinel evasion. His life ends abruptly during Cypher's betrayal, where he is shot dead by Cypher while standing on the main deck, serving as the first casualty of the defection and a stark reminder of the lethal cost of internal treachery.",
+  "appearance": "Not explicitly described in the provided script segments, but implied to be a rugged, practical individual suited for the cramped, cold environment of the hovercraft. He is seen in the cockpit and on the main deck.",
+  "background": "Born in Zion, the last human city, he is a 'home-grown human' who has never lived in the Matrix. He is Tank's brother. He serves as the cook and pilot for the Nebuchadnezzar.",
+  "wants": "To keep the crew fed and the ship moving safely through the sewer mains; to maintain the practical stability of the Resistance.",
+  "fears": "The mechanical threats of the real world, such as Sentinels and EMP events, which require his immediate attention and pilotage.",
+  "internal_conflict": "Minimal internal conflict is shown; his conflict is external and situational, dealing with the harsh realities of survival in the real world and the sudden, violent betrayal by a crew member.",
+  "speech": "Blunt, concise, and functional. He uses slang like 'Squiddy' for Sentinels and 'Shit' for exclamation. He explains technical or biological facts matter-of-factly, such as the composition of the crew's food.",
+  "relationships": [
+   {
+    "with": "Tank",
+    "nature": "Brothers; both are pure humans born in Zion."
+   },
+   {
+    "with": "Morpheus",
+    "nature": "Pilot and crew member; works closely with Morpheus in the cockpit."
+   },
+   {
+    "with": "Cypher",
+    "nature": "Crew member; killed by Cypher during the betrayal."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "life_status",
+    "domain": [
+     "alive",
+     "dead"
+    ],
+    "initial": "alive",
+    "why": "Moved by ev-021, ev-028, and ev-029 where he is killed by Cypher."
+   },
+   {
+    "name": "location",
+    "domain": [
+     "cockpit",
+     "main_deck",
+     "hall"
+    ],
+    "initial": "cockpit",
+    "why": "He is in the cockpit during ev-020 (Sentinel Evasion) and on the main deck during ev-021 (Betrayal)."
+   }
+  ],
+  "inferred": [
+   "His specific physical appearance (height, build, facial features) is not detailed in the provided script text, only his role and actions.",
+   "His emotional state prior to death is inferred to be calm or focused on his duties, as he is described as 'quietly reaching' and waiting during the Sentinel scene, but no dialogue indicates personal anxiety about Cypher."
+  ]
+ },
+ {
+  "id": "MOUSE",
+  "kind": "agents",
+  "description": "A crew member of the Nebuchadnezzar and the creator of the 'Movie-Phone' program, Mouse serves as the team's digital entertainer and comic relief. He is characterized by his rambling, philosophical musings on the nature of reality and his desire to connect with Neo through his creation, the woman in the red dress. His role is defined by his vulnerability; while he provides levity and technical insight into the Construct, he is physically present in the Matrix during the critical mission to see the Oracle. This presence ultimately leads to his death when he is left behind in Room 1313 of the Hotel Lafayette. Killed by Agent Smith's gunfire while attempting to escape, his death serves as the first tangible proof to Neo that death in the Matrix is real and that the Agents' power is absolute, shifting the tone of the crew from hopeful to mournful.",
+  "appearance": "Described in the script as part of the crew on the main deck; no specific physical description provided beyond being a human crew member.",
+  "background": "A resident of the Nebuchadnezzar who has been freed from the Matrix. He is a programmer within the Construct, specifically responsible for writing the Agent training program and creating the 'Movie-Phone' service and the character of the woman in the red dress.",
+  "wants": "To be seen as more than just comic relief; he wants Neo to appreciate his creative work (the woman in the red dress) and to engage with his philosophical questions about the nature of simulated taste and reality.",
+  "fears": "Implicitly, the loss of the crew and the reality of the Matrix, though he is killed before his fears can be fully articulated in dialogue.",
+  "internal_conflict": "The tension between his role as a provider of escapist entertainment (Movie-Phone) and the harsh, existential reality of their war against the Machines, a tension highlighted by his musings on whether the machines know what food really tastes like.",
+  "speech": "Rambling, enthusiastic, and philosophical. He often uses analogies to explain complex concepts (e.g., comparing protein paste to Cream of Wheat or snot) and interrupts serious moments with lighthearted but probing questions about the nature of their existence.",
+  "relationships": [
+   {
+    "with": "Neo",
+    "nature": "Friendly and eager; Mouse acts as a digital pimp for his creation, trying to arrange a meeting between Neo and the woman in the red dress."
+   },
+   {
+    "with": "Apoc",
+    "nature": "Collegial but dismissive; Apoc frequently tells Mouse to 'shut up' during his longer monologues."
+   },
+   {
+    "with": "Switch",
+    "nature": "Teasing; Switch mocks Mouse's behavior, calling him a 'digital pimp.'"
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "physical_condition",
+    "domain": [
+     "alive",
+     "injured",
+     "dead"
+    ],
+    "initial": "alive",
+    "why": "Moved in ev-026 from 'Alive, hiding in Room 1313' to 'Dead, killed by police gunfire'."
+   },
+   {
+    "name": "location",
+    "domain": [
+     "nebuchadnezzar",
+     "matrix_hotel_lafayette"
+    ],
+    "initial": "matrix_hotel_lafayette",
+    "why": "Present in Room 1313 during ev-026; his body is later found in the chair on the main deck (implied by 'Mouse's body thrashes against its harness')."
+   }
+  ],
+  "inferred": [
+   "Mouse was plugged into the Matrix in Room 1313 to act as a lookout or communication link, given his cellular phone was ringing and he was the last to hear the warning.",
+   "His death was caused by Agent Smith, as Agent Smith is shown standing over his dead body in Room 1313 immediately after the gunfire."
+  ]
+ },
+ {
+  "id": "SWITCH",
+  "kind": "agents",
+  "description": "A crew member of the Nebuchadnezzar and a skilled combatant within the Matrix, Switch serves as a protective figure and tactical asset for the crew. Described in the script as a 'beautiful androgyne,' Switch operates with a pragmatic, no-nonsense efficiency, often acting as a voice of grounded realism amidst the crew's philosophical or emotional turbulence. During the extraction of Neo, Switch provides essential physical support and security, asserting authority with the directive 'Our way or the highway.' Switch maintains a steady presence throughout the crew's training and missions, observing Neo's progress with a detached skepticism that contrasts with the more fervent believers. This stoic reliability is ultimately tested and severed when Cypher's betrayal culminates in Switch's death, serving as a tangible demonstration of Cypher's ruthlessness and the fragility of the crew's unity.",
+  "appearance": "Beautiful and androgyne, dressed in the crew's characteristic dark attire; carries a large gun during the initial extraction.",
+  "background": "Member of Morpheus's crew aboard the Nebuchadnezzar; experienced in Matrix combat and extraction protocols; present for Neo's arrival and integration.",
+  "wants": "To maintain the safety and operational efficiency of the crew; to ensure Neo's successful extraction and training.",
+  "fears": "Inefficiency, hesitation, or the loss of crew members due to complacency or betrayal.",
+  "internal_conflict": "The tension between the crew's idealistic pursuit of the 'One' and the harsh, practical realities of survival in the Matrix, often voiced through dry, observational humor.",
+  "speech": "Direct, concise, and pragmatic; uses dry, observational humor to punctuate tension (e.g., 'The digital pimp hard at work'); authoritative when giving orders.",
+  "relationships": [
+   {
+    "with": "Neo",
+    "nature": "Protective and authoritative; ensures Neo complies with crew protocols during extraction and training."
+   },
+   {
+    "with": "Trinity",
+    "nature": "Companionable and supportive; works in tandem during high-stakes operations like the extraction."
+   },
+   {
+    "with": "Mouse",
+    "nature": "Sardonic; frequently interrupts or mocks Mouse's philosophical digressions with blunt realism."
+   },
+   {
+    "with": "Cypher",
+    "nature": "Comrades in arms until the moment of betrayal; Switch's death is directly caused by Cypher."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "vital_status",
+    "domain": [
+     "Alive",
+     "Dead"
+    ],
+    "initial": "Alive",
+    "why": "ev-029 (Cypher's Betrayal and the Failed Exit) moves this from Alive to Dead."
+   },
+   {
+    "name": "crew_integrity",
+    "domain": [
+     "Intact",
+     "Compromised"
+    ],
+    "initial": "Intact",
+    "why": "ev-029 (Cypher's Betrayal and the Failed Exit) moves this from Intact to Compromised as Switch is eliminated by a crew member."
+   }
+  ],
+  "inferred": [
+   "Switch's role as a 'beautiful androgyne' suggests a gender-fluid or non-binary presentation that is normalized within the crew's dynamic.",
+   "Switch's dry humor and bluntness indicate a personality that values clarity and efficiency over the more abstract or emotional expressions of other crew members like Mouse or Morpheus."
+  ]
+ },
+ {
+  "id": "APOC",
+  "kind": "agents",
+  "description": "A crew member of the Nebuchadnezzar who serves as the primary technical operator for unplugging and maintaining connection with targets in the Matrix. He is characterized by a pragmatic, often dry demeanor, frequently offering sarcastic commentary on the crew's situation, such as comparing the ship's nutrient paste to snot or Cream of Wheat. He is seen working alongside Trinity to hardwire systems and monitoring data during critical operations like Neo's extraction and training. His role is crucial in the technical execution of the crew's missions, bridging the gap between the physical world and the digital simulation.",
+  "appearance": "Described in the script as a 'large man' when driving the car in the rain (Scene 23). No further specific physical details are provided in the text.",
+  "background": "A long-time member of the Nebuchadnezzar crew, operating under Morpheus's command. He is familiar with the technical aspects of the resistance's operations, including the hardwiring of complex monitor systems and the management of data streams from the Matrix.",
+  "wants": "To successfully execute the technical aspects of the crew's operations, ensuring that targets like Neo are correctly located, tracked, and processed. He appears to want the mission to proceed without technical failure.",
+  "fears": "Technical failure or loss of signal during critical moments, as evidenced by his focused attention on the monitors and his reports to Morpheus during the unplug sequence ('Still nothing', 'Targeting... almost there').",
+  "internal_conflict": "There is no explicit internal conflict shown for Apoc in the provided text. His focus remains outward on his technical duties and interactions with the crew.",
+  "speech": "Pragmatic and concise, often laced with dark humor or sarcasm. Examples include 'Almost' (when asked if they are online), 'No way. Not possible.' (regarding Neo's jump), and 'Or a bowl of snot' (describing the food).",
+  "relationships": [
+   {
+    "with": "Morpheus",
+    "nature": "Subordinate/Operator. Apoc responds directly to Morpheus's commands and reports technical status."
+   },
+   {
+    "with": "Trinity",
+    "nature": "Colleague. They work side-by-side on technical setups, such as hardwiring the system in Room 1313."
+   },
+   {
+    "with": "Neo",
+    "nature": "Operator/Subject. Apoc is responsible for the technical process of unplugging Neo and later arms him with a gun during the hotel escape."
+   },
+   {
+    "with": "Mouse",
+    "nature": "Colleague. They share banter in the mess hall regarding the taste of the ship's food."
+   },
+   {
+    "with": "Cypher",
+    "nature": "Colleague. Present in the same scenes, though direct interaction is limited to shared presence in the hotel and main deck."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "life_status",
+    "domain": [
+     "Alive",
+     "Dead"
+    ],
+    "initial": "Alive",
+    "why": "Changed to 'Dead' in ev-029 (Cypher's Betrayal and the Failed Exit) due to being killed by Cypher."
+   },
+   {
+    "name": "crew_membership",
+    "domain": [
+     "Active",
+     "Deceased"
+    ],
+    "initial": "Active",
+    "why": "Implied to change to 'Deceased' in ev-029 as his death eliminates him from the active crew, heightening stakes for the remaining members."
+   }
+  ],
+  "inferred": [
+   "His specific role is inferred to be that of a technician/operator based on his actions of pounding on the keyboard, checking data, and hardwiring systems.",
+   "His personality is inferred to be somewhat irreverent or dryly humorous based on his dialogue in the mess hall and during the jump training."
+  ]
+ },
+ {
+  "id": "AGENT_BROWN",
+  "kind": "agents",
+  "description": "Agent Brown is a supporting character and one of the three Agents (alongside Smith and Jones) who serve as the primary antagonists in the Matrix. He is depicted as a figure of authority and supernatural capability, wearing the standard Agent attire of dark suits and sunglasses, even at night, and is always hardwired with a Secret Service earphone. His role is defined by his participation in the hunt for the 'One,' specifically assisting in the capture of Morpheus and Neo. In the rooftop chase sequence, he demonstrates the same unnatural grace and speed as Trinity, duplicating her acrobatic leaps to maintain pursuit. Later, in the office building sequence, he is seen leading a group of police and interacting with employees during the search for Neo, indicating his function as a tactical leader who commands both human law enforcement and the physical capabilities of an Agent. He is characterized by a lack of individual dialogue in the provided text, acting primarily as a visual and functional extension of the Agent hierarchy.",
+  "appearance": "Dark suit, sunglasses (even at night), hardwired with a small Secret Service earphone in one ear with the cord coiling back into his shirt collar.",
+  "background": "One of the sentient programs or 'Agents' within the Matrix, serving as a gatekeeper and enforcer for the system. He operates in conjunction with Agent Smith and Agent Jones.",
+  "wants": "To maintain the integrity of the Matrix by locating and apprehending anomalies, specifically Morpheus and Neo.",
+  "fears": "Inference: Failure to contain the 'One' or the disruption of the system's order, though this is shared across all Agents rather than specific to Brown.",
+  "internal_conflict": "None observed in the provided text. He appears as a unified force of the system without visible personal doubt or conflict.",
+  "speech": "Speaks sparingly. In the provided text, he is only heard stating, 'The name is Neo.' and 'Where are they?' His communication is direct, functional, and devoid of the rhetorical flair seen in Agent Smith.",
+  "relationships": [
+   {
+    "with": "AGENT_SMITH",
+    "nature": "Colleague and tactical partner. Smith leads, Brown executes. They arrive and depart together, operating as a unit."
+   },
+   {
+    "with": "AGENT_JONES",
+    "nature": "Colleague and tactical partner. Part of the trio of Agents. They share the burden of the hunt."
+   },
+   {
+    "with": "TRINITY",
+    "nature": "Pursuer. Brown chases Trinity across the rooftops, matching her movements with unnatural grace."
+   },
+   {
+    "with": "NEO",
+    "nature": "Pursuer. Brown leads the search for Neo in the office building, interacting with employees to locate him."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "location",
+    "domain": [
+     "exterior_heart_o_city_hotel",
+     "interior_heart_o_city_hotel",
+     "rooftops",
+     "interior_meta_cortechs",
+     "interior_hotel_lafayette"
+    ],
+    "initial": "exterior_heart_o_city_hotel",
+    "why": "Moves from the hotel exterior to interior during the Trinity chase, then to the rooftops. Later appears at Meta CorTechs for the Neo capture, and finally in the Hotel Lafayette for the Morpheus capture."
+   },
+   {
+    "name": "active_target",
+    "domain": [
+     "trinity",
+     "neo",
+     "morpheus"
+    ],
+    "initial": "trinity",
+    "why": "Initially pursues Trinity in the hotel/rooftop sequence. Shifts to Neo in the office building sequence. Finally involved in the capture of Morpheus in the Hotel Lafayette."
+   },
+   {
+    "name": "status",
+    "domain": [
+     "pursuing",
+     "searching",
+     "capturing"
+    ],
+    "initial": "pursuing",
+    "why": "Starts in pursuit of Trinity. Transitions to searching for Neo in the cubicles. Ends in the state of capturing Morpheus (implied by the presence of handcuffed Neo and the Agents' actions in the interrogation room and subsequent scenes)."
+   }
+  ],
+  "inferred": [
+   "Brown likely possesses the same physical abilities as Smith and Jones, given the description of Agents having 'unnatural grace' and the specific mention of Brown duplicating Trinity's moves.",
+   "Brown's role is likely that of a secondary enforcer, following Smith's lead in decision-making, as Smith is the one who speaks to the Lieutenant and makes the final judgments on the targets."
+  ]
+ },
+ {
+  "id": "AGENT_JONES",
+  "kind": "agents",
+  "description": "Agent Jones is a supporting character in the film 'The Matrix,' serving as one of the three Agents (alongside Smith and Brown) tasked with hunting Neo and Morpheus. He is depicted as a figure of absolute, unfeeling authority, dressed in a dark suit and sunglasses, and equipped with a Secret Service earphone. His role is primarily functional: he acts as the operational arm of the Agent unit, reporting status updates and executing the search protocols initiated by Agent Smith. In the script, he appears during the initial hunt for Trinity and the subsequent pursuit of Neo, often standing in the background or delivering concise, factual updates to Smith, highlighting his role as a reliable, if secondary, enforcer of the Matrix's order.",
+  "appearance": "Wears a dark suit and sunglasses even at night; has a small Secret Service earphone in one ear with a cord coiling into his shirt collar.",
+  "background": "Inferred: A sentient program within the Matrix, part of the Agent unit that serves as the gatekeepers and law enforcement of the system.",
+  "wants": "To capture Neo and Morpheus; to maintain the order of the Matrix.",
+  "fears": "Inferred: Failure to contain the anomalies (Neo/Morpheus) that disrupt the system.",
+  "internal_conflict": "None apparent; he operates with mechanical efficiency.",
+  "speech": "Concise, factual, and direct; reports status updates without emotion or elaboration.",
+  "relationships": [
+   {
+    "with": "AGENT_SMITH",
+    "nature": "Subordinate/Colleague; reports to Smith and follows his lead."
+   },
+   {
+    "with": "AGENT_BROWN",
+    "nature": "Colleague; acts in tandem with Smith and Brown as a unit."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "operational_status",
+    "domain": [
+     "searching",
+     "reporting",
+     "pursuing"
+    ],
+    "initial": "searching",
+    "why": "Moves from 'searching' to 'reporting' when he informs Smith that the search for Neo has already begun after Trinity's escape."
+   },
+   {
+    "name": "location",
+    "domain": [
+     "exterior_hotel",
+     "interior_office",
+     "interior_interrogation"
+    ],
+    "initial": "exterior_hotel",
+    "why": "Moves from 'exterior_hotel' to 'interior_office' when the Agents enter Meta CorTechs to capture Neo, and later to 'interior_interrogation' for the wire-tap scene."
+   }
+  ],
+  "inferred": [
+   "His lack of dialogue compared to Smith suggests a lower rank or a specialized non-communicative role within the Agent hierarchy.",
+   "His presence in the interrogation room implies he is part of the standard three-Agent deployment for high-priority targets."
+  ]
+ },
+ {
+  "id": "SENTINEL",
+  "kind": "agents",
+  "description": "A mechanized hunter in the real world, specifically the 'Squiddy' variant. It is a killing machine designed for search and destroy operations against the Resistance. It possesses black alloy skin that flickers like sequins, sinewy coils, and skeletal appendages. It moves with shark-like malevolence and silence, capable of detecting heat or movement in the dark sewer mains. It is the physical embodiment of the Machines' military force in the real world, distinct from the Agents who operate within the Matrix.",
+  "appearance": "A shifting shadow of mechanized death. Black alloy skin flickers like sequins beneath sinewy coils and skeletal appendages. It glides silently with shark-like malevolence.",
+  "background": "Created by the Machines as part of their military infrastructure to hunt down the human Resistance in the real world. It operates in the sewer mains and underground infrastructure where the hovercrafts hide.",
+  "wants": "To locate and destroy the Nebuchadnezzar and its occupants. It is a tool of search and destroy, lacking individual desire beyond its programming.",
+  "fears": "None evident. It is an apex predator in the real world, only vulnerable to specific countermeasures like the E.M.P.",
+  "internal_conflict": "None. It is a machine acting on instinct/programming.",
+  "speech": "None. It communicates through movement and the sounds of its machinery (whir, hum).",
+  "relationships": [
+   {
+    "with": "Nebuchadnezzar",
+    "nature": "Predator/Prey. The Sentinel actively hunts the ship."
+   },
+   {
+    "with": "Neo",
+    "nature": "Threat. Neo observes it with fear, recognizing it as a 'killing machine'."
+   },
+   {
+    "with": "Machines",
+    "nature": "Agent/Instrument. It serves the will of the Machine race."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "position",
+    "domain": [
+     "sewer_main",
+     "supply_line",
+     "darkness",
+     "cockpit_view"
+    ],
+    "initial": "sewer_main",
+    "why": "In Scene 65, Dozer notes 'Squiddy's sweeping in quick' while the Nebuchadnezzar is in the sewer main. In Scene 69, it is seen gliding over the ship in the darkness."
+   },
+   {
+    "name": "status",
+    "domain": [
+     "active",
+     "sweeping",
+     "observed",
+     "retreated"
+    ],
+    "initial": "sweeping",
+    "why": "In Scene 65, it is described as 'sweeping in quick'. In Scene 69, it is 'observed' by the crew through the windshield and then 'disappears into the darkness' (retreated/lost sight)."
+   },
+   {
+    "name": "threat_level",
+    "domain": [
+     "dormant",
+     "imminent",
+     "past"
+    ],
+    "initial": "imminent",
+    "why": "The alarm begins to sound in Scene 65, indicating an imminent threat. By the end of Scene 69, it has passed, but the threat remains potential."
+   }
+  ],
+  "inferred": [
+   "The specific name 'Squiddy' is a nickname used by the crew, implying familiarity with this type of machine.",
+   "It is likely blind or uses thermal/sensor detection, as it is seen in the darkness and the crew must be still to avoid detection ('It'll hear you')."
+  ]
+ },
+ {
+  "id": "NEO_S_APARTMENT",
+  "kind": "locations",
+  "description": "Neo's small, cluttered studio apartment in the Matrix, serving as his domestic base and the site of his initial extraction. It is a space defined by technological overgrowth and isolation, functioning as both a sanctuary for his hacker life and a cage from which he is forcibly removed. The location is characterized by its dense, chaotic arrangement of hardware and its role as the threshold between Neo's perceived reality and the truth of the Matrix.",
+  "appearance": "A studio apartment that seems overgrown with technology. Weed-like cables coil everywhere, duct-taped into thickets that wind up and around the legs of several desks. Tabletops are filled with cannibalized equipment that lay open like an autopsied corpse. It is a technological rat-nest centered around a PC.",
+  "background": "Neo's home before his extraction. It is where he lives alone, sleeps little, and spends nights at his computer searching for Morpheus. It is the location where the 'Wake up, Neo' prompt first appears and where he receives the call from Morpheus after his interrogation.",
+  "wants": "To serve as a safe haven for Neo's daily routine, though it is ultimately a place of surveillance and disruption.",
+  "fears": "The invasion of his private space by external forces (Trinity's intrusion via computer, the Agents' physical capture, the phone's gravitational pull).",
+  "internal_conflict": "The tension between its function as a home for a man who 'knows more about living inside a computer than outside one' and its role as a site of alienation and control.",
+  "speech": "N/A (Location)",
+  "relationships": [
+   {
+    "with": "NEO",
+    "nature": "Primary residence; site of his daily life, hacking, and eventual extraction."
+   },
+   {
+    "with": "TRINITY",
+    "nature": "Point of contact; she accesses his computer from here to send the initial warning."
+   },
+   {
+    "with": "CHOI",
+    "nature": "Transactional meeting point; where Neo hands over the disk for the money."
+   },
+   {
+    "with": "MORPHEUS",
+    "nature": "Communication hub; site of the crucial phone call confirming Neo's importance and arranging the meeting."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "occupant_status",
+    "domain": [
+     "present_active",
+     "present_asleep",
+     "absent_captured",
+     "absent_extracted"
+    ],
+    "initial": "present_asleep",
+    "why": "Neo is asleep at the start of Scene 12. He is captured in Scene 19 (implied to leave the apartment before this, but the apartment remains his base until extraction). After extraction (Scene 30+), he never returns to this physical space in the Matrix."
+   },
+   {
+    "name": "technological_invasion_level",
+    "domain": [
+     "passive_idle",
+     "active_prompt",
+     "active_communication",
+     "disrupted_empty"
+    ],
+    "initial": "active_prompt",
+    "why": "Scene 12 shows the computer actively prompting 'Wake up, Neo'. Scene 21 shows the phone ringing actively, pulling Neo out of bed. The space is defined by these active technological intrusions."
+   },
+   {
+    "name": "security_state",
+    "domain": [
+     "secure_private",
+     "breached_intrusion",
+     "compromised_surveillance"
+    ],
+    "initial": "breached_intrusion",
+    "why": "Scene 12 shows the computer being accessed remotely (breach). Scene 21 implies the phone is tapped (surveillance/compromise). The space is no longer secure by the time Neo leaves."
+   }
+  ],
+  "inferred": [
+   "The apartment is located in a dense urban environment, given the proximity to the street and the nature of the 'Matrix' city.",
+   "The clutter suggests a lack of domestic order, prioritizing function (hacking) over comfort, which aligns with Neo's character as a workaholic hacker.",
+   "The presence of the hollowed-out book on the floor indicates a specific, hidden routine for exchanging data, suggesting the apartment is a known node in the underground network."
+  ]
+ },
+ {
+  "id": "HEART_O_THE_CITY_HOTEL",
+  "kind": "locations",
+  "description": "An abandoned, fire-damaged hotel in the city, characterized by blackened halls, soot-stained walls, and a specific operational setup in Room 303. It serves as the primary containment site for the film's opening sequence, functioning as the physical locus where the Matrix's surveillance mechanisms (the Agents) intersect with the Resistance's human operatives (Trinity). The location is defined by its decay and its role as a trap: the fire damage creates a maze of shadows and structural weaknesses that Trinity exploits to escape, while the Agents utilize the building's layout to corner her. It is a transient space of high tension, where the boundary between the digital trace and physical arrest is violently breached.",
+  "appearance": "Abandoned, fire-damaged, blackened halls, soot patterns on walls/ceilings, Room 303 contains a fold-up table, chair, phone, modem, and powerbook computer lit only by the screen. Exterior features a black sedan entrance and an alley leading to fire escapes and rooftops.",
+  "background": "Previously a functioning hotel until a fire destroyed several rooms, spooling soot up the walls and leaving permanent shadow patterns. It is currently used as a clandestine meeting or operation point, evidenced by the high-tech setup in Room 303.",
+  "wants": "To contain Trinity until the Agents arrive and extract the information or the person.",
+  "fears": "The escape of the target (Trinity) before the Agents can secure the perimeter.",
+  "internal_conflict": "The static, decaying architecture versus the dynamic, high-speed kinetic energy of the fight and chase within it.",
+  "speech": "N/A",
+  "relationships": [
+   {
+    "with": "TRINITY",
+    "nature": "Trinity is the primary occupant and combatant; she uses the hotel's fire escape and rooftop structures to evade capture."
+   },
+   {
+    "with": "AGENT SMITH",
+    "nature": "Agent Smith arrives at the hotel to oversee the extraction and coordinates the Agents' entry."
+   },
+   {
+    "with": "POLICE OFFICERS",
+    "nature": "Police officers are deployed to the hotel to make the initial arrest, serving as the first line of containment."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "occupancy_status",
+    "domain": [
+     "vacant",
+     "occupied_by_target",
+     "occupied_by_forces",
+     "contested"
+    ],
+    "initial": "occupied_by_target",
+    "why": "The scene begins with Trinity alone in Room 303 (occupied_by_target). It shifts to occupied_by_forces when police kick in the door, then to contested as Trinity fights back and Agents arrive."
+   },
+   {
+    "name": "structural_integrity",
+    "domain": [
+     "intact",
+     "damaged_by_fire",
+     "breached_by_combat"
+    ],
+    "initial": "damaged_by_fire",
+    "why": "The description states it is fire-damaged. During the fight, windows are broken, and the structure is used for the jump and fall, moving it to breached_by_combat."
+   },
+   {
+    "name": "surveillance_coverage",
+    "domain": [
+     "none",
+     "police_only",
+     "agents_present"
+    ],
+    "initial": "police_only",
+    "why": "Initially, only police are present. The arrival of Agent Smith, Brown, and Jones in the black sedan changes the state to agents_present, escalating the threat level."
+   }
+  ],
+  "inferred": [
+   "The hotel was chosen for its abandonment and lack of regular surveillance, making it a safe house for the Resistance.",
+   "The fire damage likely obscured the interior from external view, aiding in the setup of the trap."
+  ]
+ },
+ {
+  "id": "META_CORTECHS_OFFICE",
+  "kind": "locations",
+  "description": "A large, sterile corporate skyscraper housing the software development company Meta CorTechs. The interior is defined by a 'human honeycomb' of cubicles surrounding a core of elevators, with main offices lining the walls overlooking downtown. The space is characterized by oppressive corporate order, featuring window cleaners on external scaffolding and a strict hierarchy enforced by management. It serves as the site of Neo's mundane employment and the specific locus of his capture by the Agents, transforming from a place of routine labor into a site of surveillance and extraction.",
+  "appearance": "Sterile, glass-walled, and structured. The cubicle floor is a labyrinth of partitions. The exterior features a glass facade with external scaffolding. The lobby is a point of exit/entry where agents operate with police backup.",
+  "background": "One of the top software companies in the world, according to Rhineheart. It represents the 'system' that Neo is a part of, a place where employees are expected to be 'a part of a whole.'",
+  "wants": "To maintain order and efficiency; to enforce the rules of employment and corporate identity.",
+  "fears": "Disruption, individuality, and the intrusion of external forces (Agents/Police) that violate its sterile normalcy.",
+  "internal_conflict": "The tension between the appearance of normalcy and the underlying surveillance/control mechanisms that define the Matrix.",
+  "speech": "N/A (Location)",
+  "relationships": [
+   {
+    "with": "NEO",
+    "nature": "Employer; site of his daily routine and eventual arrest."
+   },
+   {
+    "with": "RHINEHEART",
+    "nature": "Manager; enforcer of the office's social contract."
+   },
+   {
+    "with": "AGENT_SMITH",
+    "nature": "Site of extraction; the location where Neo is identified and captured."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "occupancy_status",
+    "domain": [
+     "populated",
+     "partially_evacuated",
+     "arrest_in_progress"
+    ],
+    "initial": "populated",
+    "why": "Moves from 'populated' (during Rhineheart's lecture and Neo's cubicle work) to 'arrest_in_progress' when the Agents enter via the elevator and Neo is led out handcuffed."
+   },
+   {
+    "name": "security_presence",
+    "domain": [
+     "none",
+     "agents_entering",
+     "agents_searching"
+    ],
+    "initial": "none",
+    "why": "Moves to 'agents_entering' when Neo sees them at the elevator, and to 'agents_searching' as they move through the cubicle rows and into Neo's specific cubicle."
+   }
+  ],
+  "inferred": [
+   "The 'human honeycomb' description implies a high density of employees, creating a sense of anonymity that Neo exploits to hide.",
+   "The presence of scaffolding outside is inferred to be a standard maintenance feature, but it becomes a critical plot device for the escape route Morpheus suggests."
+  ]
+ },
+ {
+  "id": "INTERROGATION_ROOM",
+  "kind": "locations",
+  "description": "A stark, white-walled interrogation room within a government building, characterized by its sterile, oppressive cleanliness and the presence of a surveillance camera monitor. It serves as the site of Neo's capture and psychological dismantling by Agent Smith, where the boundary between physical reality and digital manipulation is violently breached through the sealing of Neo's mouth and the insertion of the wire tap.",
+  "appearance": "White walls, a table, chairs, a door, and a camera monitor visible in close-up. The space is described as 'stark' and 'white-walled.' The lighting is implied to be bright and clinical, consistent with the 'white room' description on the monitor.",
+  "background": "Located within a government building. It is a standard facility for questioning suspects, specifically used for high-profile cases involving the Agents. The room is equipped with surveillance technology that allows the Agents to monitor the interrogation from outside or via a monitor feed.",
+  "wants": "To facilitate the extraction of information or compliance from the detainee through psychological pressure and physical demonstration of power.",
+  "fears": "Irrelevant for a location, but the atmosphere conveys a fear of confinement and loss of autonomy for the occupant.",
+  "internal_conflict": "The conflict between the room's function as a place of order and justice and its transformation into a site of surreal, almost biological horror when the Agents alter Neo's physical form.",
+  "speech": "Silent, but marked by the 'paper rattle' of the file and the 'unnatural ice-blue' eyes of Smith.",
+  "relationships": [
+   {
+    "with": "AGENT_SMITH",
+    "nature": "Primary actor and controller of the space; uses the room's sterility to contrast with the visceral horror of the interrogation."
+   },
+   {
+    "with": "NEO",
+    "nature": "The subject of the room's function; his physical and psychological state is altered within these walls."
+   },
+   {
+    "with": "AGENT_BROWN",
+    "nature": "Supporting enforcer; present to restrain Neo."
+   },
+   {
+    "with": "AGENT_JONES",
+    "nature": "Supporting enforcer; present to restrain Neo."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "occupant_status",
+    "domain": [
+     "empty",
+     "occupied_by_neo",
+     "occupied_by_agents",
+     "occupied_by_neo_and_agents"
+    ],
+    "initial": "occupied_by_neo",
+    "why": "The scene begins with Neo sitting at the table alone, then the Agents enter, changing the occupancy state to include all parties."
+   },
+   {
+    "name": "interrogation_phase",
+    "domain": [
+     "verbal_inquiry",
+     "physical_transformation",
+     "instrument_insertion"
+    ],
+    "initial": "verbal_inquiry",
+    "why": "The scene progresses from Smith's verbal questioning and file review, to Neo's mouth sealing (physical transformation), to the insertion of the fiber-optic wire tap (instrument insertion)."
+   }
+  ],
+  "inferred": [
+   "The room is soundproofed or acoustically controlled, as the 'paper rattle' is highlighted as marking the silence, suggesting a lack of ambient noise.",
+   "The camera monitor mentioned in the close-up implies a one-way mirror or digital feed system typical of interrogation rooms, allowing observation without direct presence."
+  ]
+ },
+ {
+  "id": "HOTEL_LAFAYETTE",
+  "kind": "locations",
+  "description": "A rotting, decaying hotel characterized by 'putrefying elegance' and described as a 'rotting host of urban maggotry.' It serves as a hideout for the Nebuchadnezzar crew, featuring specific operational assets like Room 1313 (the extraction point with a phone line) and a basement used for cutting hardlines. The structure is physically vulnerable, with windows that can be bricked up to seal off exits, narrow plumbing walls that allow for vertical traversal, and a general state of decay that includes decaying lace and cracked mirrors.",
+  "appearance": "A forgotten hotel in a deserted alley, appearing as a place of putrefying elegance. Internally, it features a thirteenth-floor hallway, Room 1313 with tall windows veiled in decaying lace, cracked burgundy-leather chairs, and an adjacent room cramped with high-tech equipment. The building contains narrow plumbing walls, a basement, and staircases that wind around an antique elevator shaft. Light filters down through a caged skylight at the top of the open elevator shaft.",
+  "background": "Used as a hideout by the Nebuchadnezzar crew. It was the site of Neo's initial extraction from the Matrix, where he took the red pill. It later served as the staging ground for the crew's return to the Matrix to visit the Oracle, a mission that ended in a trap.",
+  "wants": "To function as a secure extraction and re-entry point for the crew.",
+  "fears": "Being compromised by the Agents or the System, as evidenced by the trap set during the Oracle mission.",
+  "internal_conflict": "The contrast between its 'putrefying elegance' and its role as a functional, high-tech operational base amidst decay.",
+  "speech": "N/A",
+  "relationships": [
+   {
+    "with": "NEBUCHADNEZZAR_CREW",
+    "nature": "Operational base and hideout"
+   },
+   {
+    "with": "AGENTS",
+    "nature": "Site of confrontation and trap"
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "window_status",
+    "domain": [
+     "open",
+     "bricked_up"
+    ],
+    "initial": "open",
+    "why": "Moved from 'open' to 'bricked_up' during the trap sequence (Scene 93/96/99) to trap the crew inside."
+   },
+   {
+    "name": "phone_line_integrity",
+    "domain": [
+     "active",
+     "cut"
+    ],
+    "initial": "active",
+    "why": "Moved from 'active' to 'cut' when heavy bolt cutters snap the main phone cable in the basement (Scene 92), signaling the start of the trap."
+   }
+  ],
+  "inferred": [
+   "The building's structural layout, specifically the 'main wet-wall' and plumbing pipes, is complex enough to allow the crew to traverse vertically between floors (e.g., from Room 808 to Room 608) while avoiding detection.",
+   "The hotel is likely located in a part of the city that is less monitored or has been abandoned, given it is described as 'forgotten' and in a 'deserted alley'."
+  ]
+ },
+ {
+  "id": "POWER_PLANT",
+  "kind": "locations",
+  "description": "A vast, subterranean industrial facility where humanity is cultivated as a biological energy source. The space is defined by verticality and biological horror, featuring spiraling towers of pod tanks filled with magenta amnion fluid. It operates with a relentless, mechanical efficiency, housing the 'fetus fields' where humans are grown and harvested. The environment is characterized by a crushing, ocean-like atmosphere, slick surfaces, and the presence of automated machines that process human bodies with clinical precision. It serves as the 'real world' counterpoint to the simulated Matrix, representing the ultimate truth of human enslavement.",
+  "appearance": "Incomprehensible vertical scale with spiraling towers of glowing red/magenta pods; slick, wet surfaces; magenta amniotic fluid; black metal stems; industrial waste pipes; dim, murky lighting resembling an underwater abyss.",
+  "background": "Constructed by the Machines after they discovered human bioelectricity as a fusion fuel source. It is the location where the 'fetus fields' are maintained and where humans are grown, harvested, and processed for energy. It exists in the 'desert of the real,' beneath the scorched earth surface.",
+  "wants": "To efficiently convert human biological potential (bioelectricity and body heat) into usable energy for the Machine race.",
+  "fears": "Disruption of the harvest cycle or the escape of viable human units (like Neo) that could threaten the stability of the energy grid.",
+  "internal_conflict": "None, as it is a non-sentient location, though it embodies the conflict between human life and mechanical utility.",
+  "speech": "The sound is described as 'like the sound of the ocean heard from inside the belly of Leviathan,' suggesting a deep, resonant, industrial hum.",
+  "relationships": [
+   {
+    "with": "NEO",
+    "nature": "Origin and source of energy; Neo is extracted from a pod here and processed through its waste systems."
+   },
+   {
+    "with": "MACHINES",
+    "nature": "Operated and maintained by the Machines; it is their primary energy production facility."
+   },
+   {
+    "with": "FETUS_FIELDS",
+    "nature": "Contains or is directly connected to the fields where humans are grown prior to being placed in pods."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "occupant_status",
+    "domain": [
+     "full",
+     "partial",
+     "empty"
+    ],
+    "initial": "full",
+    "why": "Neo is extracted from his pod, changing the status of that specific unit from occupied to empty, and initiating the waste processing sequence."
+   },
+   {
+    "name": "waste_system_activity",
+    "domain": [
+     "idle",
+     "processing"
+    ],
+    "initial": "idle",
+    "why": "The machine sucks Neo and the gelatin into the black hole, activating the waste line and sewer main transport systems."
+   }
+  ],
+  "inferred": [
+   "The plant is likely located deep underground, consistent with the 'desert of the real' and the need to shield the biological processes from the scorched surface.",
+   "The 'magenta amnion' is a nutrient-rich fluid specifically engineered to sustain human gestation and growth in the absence of a natural womb."
+  ]
+ },
+ {
+  "id": "SEWER_MAIN",
+  "kind": "locations",
+  "description": "A vast, decaying underground conduit system in the real world, serving as the primary highway for the Nebuchadnezzar hovercraft. The space is characterized by immense scale, churning frozen waste, mossy icicles, and green haze. It functions as a hidden refuge for the Resistance, allowing them to move beneath the surface of the dead city while evading the Sentinels. The environment is hostile and cold, requiring the ship to power down and hide in tight supply lines to survive detection.",
+  "appearance": "A vast cavern of decayed landscape with a pool of churning frozen waste. Strands of green haze curl around mossy icicles that dangle from the ceiling. The area contains parallel pipelines and tiny supply lines that can barely accommodate the size of a hovercraft. The light is dim, with the darkness serving as a cover for mechanized threats.",
+  "background": "Part of the real-world infrastructure beneath the ruins of the future city. It connects the power plants and the last human city, Zion, providing a route for the hovercrafts to travel between locations while remaining out of sight of the Machines' surface patrols.",
+  "wants": "N/A (Location)",
+  "fears": "N/A (Location)",
+  "internal_conflict": "N/A (Location)",
+  "speech": "N/A (Location)",
+  "relationships": [
+   {
+    "with": "NEBUCHADNEZZAR",
+    "nature": "The Sewer Main acts as the primary transit route and temporary shelter for the Nebuchadnezzar, which must navigate its pipes and hide in its nooks to escape Sentinels."
+   },
+   {
+    "with": "SENTINEL",
+    "nature": "The Sewer Main is the hunting ground for Sentinels, which sweep the area to search and destroy hovercrafts like the Nebuchadnezzar."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "occupancy_status",
+    "domain": [
+     "empty",
+     "occupied_by_nebuchadnezzar"
+    ],
+    "initial": "occupied_by_nebuchadnezzar",
+    "why": "The Nebuchadnezzar is actively traveling through the sewer main in Scene 64 and is shown hiding in a supply line within it in Scenes 66-69."
+   },
+   {
+    "name": "threat_presence",
+    "domain": [
+     "absent",
+     "sentinel_sweeping"
+    ],
+    "initial": "sentinel_sweeping",
+    "why": "A Sentinel (Squiddy) is actively sweeping through the sewer main in Scene 65, forcing the Nebuchadnezzar to power down and hide in Scene 68."
+   }
+  ],
+  "inferred": [
+   "The specific temperature is extremely low, inferred from the description of 'frozen waste' and the crew's breath freezing in Scene 69.",
+   "The sewer main is extensive enough to contain 'parallel pipelines' and 'tiny supply lines' capable of hiding a hovercraft, inferred from Dozer's dialogue in Scene 65."
+  ]
+ },
+ {
+  "id": "NEBUCADNEZZAR",
+  "kind": "locations",
+  "description": "The Nebuchadnezzar is the resistance's primary mobile base of operations, a cramped and cold hovercraft designed to navigate the vast, decaying sewer mains of the real world. It serves as both a lifeboat for the crew and a technological interface to the Matrix, housing the Core, infirmary, and living quarters. The vessel is defined by its fragility against machine threats, requiring extreme caution and silence to survive, and acts as the physical anchor for the crew's identity and survival in a hostile environment.",
+  "appearance": "Small like a submarine, cramped, and cold. Interior features fluorescent light sticks, a swamp of electronic equipment, ecto-skeleton chairs, and a main deck with ladders. Exterior is a futuristic flying machine capable of hovering in sewer mains, with a windshield and turbines.",
+  "background": "Used by the resistance to travel through the sewers and plug into the Matrix. It is the home base for Morpheus and the crew, containing the technology necessary to broadcast pirate signals and hack into the Matrix.",
+  "wants": "To survive the physical dangers of the real world (Sewers/Sentinels) and maintain functionality as a mobile base for the resistance.",
+  "fears": "Being detected by Sentinels due to electromagnetic or acoustic signatures; structural failure in the narrow sewer lines.",
+  "internal_conflict": "The need for mobility and power versus the need for silence and stasis to avoid detection.",
+  "speech": "None (non-living entity), but characterized by the hum of turbines, the grind of engines, and the flicker of electronic monitors.",
+  "relationships": [
+   {
+    "with": "Morpheus",
+    "nature": "Commanded by Morpheus, who calls it 'his ship' and considers it home."
+   },
+   {
+    "with": "Crew (Tank, Dozer, Trinity, etc.)",
+    "nature": "Serves as the mobile living space and operational hub for the resistance members."
+   },
+   {
+    "with": "The Matrix",
+    "nature": "Acts as the physical interface point (via the Core) for connecting to the Matrix."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "power_state",
+    "domain": [
+     "active",
+     "offline"
+    ],
+    "initial": "active",
+    "why": "Moved in ev-020 from 'Moving with power on' to 'power off' to evade the Sentinel."
+   },
+   {
+    "name": "position",
+    "domain": [
+     "open_sewer_main",
+     "wedged_supply_line"
+    ],
+    "initial": "open_sewer_main",
+    "why": "Moved in ev-020 from moving in the main sewer to being wedged in a narrow supply line."
+   },
+   {
+    "name": "emp_status",
+    "domain": [
+     "disarmed",
+     "armed"
+    ],
+    "initial": "disarmed",
+    "why": "Moved in ev-020 from default state to 'E.M.P. armed' as a defensive measure during the Sentinel evasion."
+   }
+  ],
+  "inferred": [
+   "The ship's 'cold' nature implies limited thermal regulation, making the crew vulnerable to temperature drops when power is off.",
+   "The ship's size is a constraint, as it can be 'wedged' into narrow supply lines, indicating it is not large enough to maneuver freely in all parts of the sewer system."
+  ]
+ },
+ {
+  "id": "CONSTRUCT",
+  "kind": "locations",
+  "description": "The Construct is a virtual loading bay or white void used by the crew to prepare for Matrix entries and for Neo's training programs (like the dojo).",
+  "appearance": "An empty, blank-white space with no boundaries. It can manifest specific environments, such as the two leather chairs from the Hotel Lafayette set up in front of a large screen television, or a Japanese-style dojo, or a rooftop in a city skyline.",
+  "background": "It is a program within the Nebuchadnezzar's systems, allowing the crew to load items like clothes, weapons, and training simulations. It serves as the interface between the physical bodies of the crew in the Main Deck and their residual self-images in the Matrix.",
+  "wants": "To function as a stable interface for loading data and programs into the Matrix without failure.",
+  "fears": "Replication errors or system glitches that cause the simulation to bleed into the user's perception or body (e.g., the mirror incident).",
+  "internal_conflict": "It is a tool of control and preparation, yet it is the site where Neo first confronts the unreality of his existence and the limits of his belief.",
+  "speech": "Silent, though it displays text and audio from the external world (e.g., the television showing the 20th-century city and the future wasteland).",
+  "relationships": [
+   {
+    "with": "NEO",
+    "nature": "Site of his first disorientation (mirror replication) and subsequent training (dojo, rooftop jump)."
+   },
+   {
+    "with": "MORPHEUS",
+    "nature": "Used by Morpheus to explain the nature of reality and to train Neo."
+   },
+   {
+    "with": "MAIN_DECK",
+    "nature": "The physical location where the crew is plugged in to access the Construct."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "loaded_program",
+    "domain": [
+     "white_void",
+     "hotel_lafayette_simulation",
+     "dojo",
+     "rooftop_jump"
+    ],
+    "initial": "white_void",
+    "why": "Event 39: Neo enters the white void. Event 48: The environment shifts to the dojo for sparring. Event 57: The environment shifts to the rooftop for the jump program."
+   },
+   {
+    "name": "stability",
+    "domain": [
+     "stable",
+     "unstable_replicating"
+    ],
+    "initial": "stable",
+    "why": "Event 29: The mirror begins to heal and replicate, causing Neo's fingers to disappear and the mirror gel to crawl up his arms, indicating an unstable state during the loading process."
+   }
+  ],
+  "inferred": [
+   "The Construct is not a single static room but a dynamic rendering engine that can change its geometry and content based on the loaded program.",
+   "The 'white void' is the default or base state of the Construct when no specific environment is loaded."
+  ]
+ },
+ {
+  "id": "ORACLE_S_APARTMENT",
+  "kind": "locations",
+  "description": "A domestic interior within a vast tenement-style building, characterized by an unsettling normalcy that contrasts with the dystopian exterior. It consists of a family room filled with meditating children and a kitchen where the Oracle resides. The space is defined by its function as a site of revelation and judgment, where the 'Potentials' are tested and the truth of the One is assessed. The environment is static in its layout but dynamic in its narrative weight, serving as the neutral ground where Neo's belief is challenged and Morpheus's faith is tested.",
+  "appearance": "The apartment appears 'particularly normal,' featuring a family room with a couch, a television playing a soap opera, and scattered children. The kitchen contains an oven, a table with a vase, and a wooden plaque with Latin text ('Know Thyself'). The aesthetic is domestic and mundane, deliberately subverting the expectation of a mystical or high-tech sanctuary.",
+  "background": "Located in a tenement-like building described as 'vast' and a place where 'people can disappear.' It is the residence of the Oracle and her 'children' (the Potentials). The building is accessible via a blind man's nod and an elevator, suggesting a hidden or protected status within the Matrix.",
+  "wants": "To serve as a site of discernment. It wants to reveal the truth to those who enter, specifically to distinguish between those who 'know' they are the One and those who are merely waiting. It wants to test Neo's belief and confirm his readiness (or lack thereof).",
+  "fears": "Being perceived as a place of certainty rather than guidance. The Oracle explicitly states she is a 'guide' and not to be thought of in terms of 'right and wrong,' suggesting the space fears being reduced to a binary oracle machine rather than a complex psychological space.",
+  "internal_conflict": "The conflict between the mundane appearance (grandma-like Oracle, cookies, broken vase) and the cosmic weight of the prophecy. The space holds the tension of Neo's potential destiny against the immediate, physical reality of the broken vase and the simple act of eating a cookie.",
+  "speech": "The environment 'speaks' through the Oracle's dialogue and the actions of the children. The Spoon Boy's mantra ('There is no spoon') and the Oracle's casual, grandmotherly tone ('Smell good, don't they?') define the sonic and semantic texture of the space.",
+  "relationships": [
+   {
+    "with": "ORACLE",
+    "nature": "Residence and domain. The Oracle is the master of this space, using it to perform her role of guidance and judgment."
+   },
+   {
+    "with": "NEO",
+    "nature": "Site of trial. Neo enters this space to receive his fate, which is defined by the interactions within these walls."
+   },
+   {
+    "with": "MORPHEUS",
+    "nature": "Site of waiting. Morpheus waits in the sitting room, separated from the revelation, highlighting his role as a believer rather than a knower."
+   },
+   {
+    "with": "SPOON_BOY",
+    "nature": "Demonstration space. The boy uses the kitchen/family room to demonstrate the nature of reality to Neo."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "integrity_of_decor",
+    "domain": [
+     "intact",
+     "damaged"
+    ],
+    "initial": "intact",
+    "why": "In Scene 80, Neo's elbow knocks a vase from the table, and it breaks against the linoleum floor. The Oracle notes this, and the variable shifts from intact to damaged."
+   },
+   {
+    "name": "occupancy_status",
+    "domain": [
+     "empty",
+     "occupied_by_potentials",
+     "occupied_by_oracle_and_neo",
+     "occupied_by_oracle_and_morpheus"
+    ],
+    "initial": "occupied_by_potentials",
+    "why": "Scene 79 shows the family room occupied by children. Scene 80 shows the kitchen occupied by the Oracle and Neo. Scene 81 shows the sitting room occupied by Morpheus. The variable tracks the specific configuration of occupants as Neo moves through the space."
+   }
+  ],
+  "inferred": [
+   "The 'normalcy' of the apartment is a deliberate construct to disorient Neo and lower his defenses, making the revelation of his fate feel more personal and less prophetic.",
+   "The presence of the 'Potentials' (children) in the family room suggests a lineage or a community of those with similar abilities, implying the Oracle has a broader role than just judging the One."
+  ]
+ },
+ {
+  "id": "TV_REPAIR_SHOP",
+  "kind": "locations",
+  "description": "An abandoned, dusty shop within the Matrix that serves as the physical exit point for the crew during the Hotel Lafayette mission. It is a liminal space of decay, defined by its emptiness and the sudden, violent intrusion of the Agents. The location is characterized by the contrast between the stillness of the abandoned interior and the chaos of the rescue operation, specifically the moment Trinity is extracted from the Matrix.",
+  "state_variables": [
+   {
+    "name": "occupancy_status",
+    "domain": [
+     "vacant",
+     "occupied_by_trinity",
+     "occupied_by_agents"
+    ],
+    "initial": "vacant",
+    "why": "Trinity enters the shop to exit the Matrix, moving it from vacant to occupied_by_trinity. Agent Smith enters to find the wreckage, moving it to occupied_by_agents."
+   },
+   {
+    "name": "structural_integrity",
+    "domain": [
+     "intact",
+     "damaged_by_exit",
+     "destroyed_by_truck"
+    ],
+    "initial": "intact",
+    "why": "The location remains intact until Trinity's exit disrupts the space, and Agent Smith's arrival with the garbage truck destroys the telephone booth and damages the surrounding area, moving the state to destroyed_by_truck."
+   }
+  ]
+ },
+ {
+  "id": "GOVERNMENT_BUILDING",
+  "kind": "locations",
+  "description": "A high-rise government building serving as a site of confinement and confrontation. The structure contains a lobby, executive offices, and a roof. In the recorded events, it is identified as the location where Morpheus is held, and it features a roof where a final confrontation occurs. The building's internal architecture includes specific functional areas like the lobby and executive suites, as well as external access points like the roof.",
+  "appearance": "High-rise structure with a lobby, executive offices, and a roof. Described as a place where Morpheus is held.",
+  "background": "The building is a functional part of the Matrix world, housing government officials and agents. It is a site of authority and control, where the protagonist's mentor is detained.",
+  "wants": "To contain and interrogate Morpheus; to serve as the stage for the final confrontation.",
+  "fears": "Invasion by the resistance; failure to maintain control over the 'One'.",
+  "internal_conflict": "None applicable to a location, but it serves as a pressure vessel for the conflict between the Agents and the Resistance.",
+  "speech": "N/A",
+  "relationships": [
+   {
+    "with": "Morpheus",
+    "nature": "Place of confinement/interrogation"
+   },
+   {
+    "with": "Agents",
+    "nature": "Operational base/hunting ground"
+   },
+   {
+    "with": "Neo",
+    "nature": "Site of rescue/final confrontation"
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "occupant_status",
+    "domain": [
+     "empty",
+     "occupied_by_agents",
+     "occupied_by_resistance",
+     "confrontation_in_progress"
+    ],
+    "initial": "occupied_by_agents",
+    "why": "The description states Morpheus is held there, implying Agents are present to guard/interrogate him. The final confrontation on the roof implies a shift in occupancy or control."
+   },
+   {
+    "name": "structural_integrity",
+    "domain": [
+     "intact",
+     "damaged",
+     "destroyed"
+    ],
+    "initial": "intact",
+    "why": "As the site of a 'final confrontation' and a place where Morpheus is 'held', it is likely to sustain damage during the rescue or battle, though the specific event list is empty, the description implies high-salience action."
+   }
+  ],
+  "inferred": [
+   "The 'final confrontation' implies a climactic battle, likely involving Neo and the Agents, taking place on the roof.",
+   "The presence of an 'Executive Office' suggests high-level government or Matrix administration functions occur within these walls.",
+   "The building is likely a standard Matrix skyscraper, consistent with the other urban locations described in the script."
+  ]
+ },
+ {
+  "id": "CITY_STREETS",
+  "kind": "locations",
+  "description": "The physical substrate of the Matrix simulation, characterized by a pervasive sense of artificiality that becomes legible to Neo after his awakening. The streets function as a liminal space where the 'system' exerts its control, populated by background entities (cops, pedestrians, agents) who serve as both obstacles and diagnostic markers for Neo's perception. Visually, the location shifts from a rainy, noir-ish night (Scene 22) to a bright, overexposed daytime training ground (Scene 63), highlighting the mutable nature of the environment's rules and lighting. It is a place where the boundary between the 'real' body and the simulated mind is tested, particularly during the jump training and the encounter with Agent Smith in the crowd.",
+  "appearance": "Wet asphalt, neon reflections, rain-slicked concrete (Night); bright, harsh sunlight, crowded sidewalks, red dresses, parking tickets (Day).",
+  "background": "A neural-interactive simulation designed to keep the human race in bondage, mimicking the urban landscape of the late 20th century.",
+  "wants": "To maintain the illusion of reality and the status quo of the system.",
+  "fears": "Being perceived as code; the exposure of its constructed nature.",
+  "internal_conflict": "The tension between appearing as a mundane, lived-in world and being a rigid, rule-bound software system.",
+  "speech": "N/A (Non-verbal location)",
+  "relationships": [
+   {
+    "with": "NEO",
+    "nature": "The arena for his awakening and training; initially a source of confusion and danger, later a space for demonstrating his ability to manipulate the environment's rules."
+   },
+   {
+    "with": "MORPHEUS",
+    "nature": "A classroom; Morpheus uses the streets to teach Neo that the environment is a system that can be bent or broken."
+   },
+   {
+    "with": "AGENTS",
+    "nature": "A hunting ground; the streets are where Agents patrol and enforce the system's order, freezing the crowd to reveal their presence."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "perceptual_clarity",
+    "domain": [
+     "opaque",
+     "flickering",
+     "transparent"
+    ],
+    "initial": "opaque",
+    "why": "Moves from 'opaque' to 'transparent' in Scene 63 (EXT. CITY STREET - TRAINING PROGRAM - DAY) when Morpheus freezes the street, allowing Neo to see the Agent and understand the 'system' nature of the environment."
+   },
+   {
+    "name": "environmental_control",
+    "domain": [
+     "fixed",
+     "mutable"
+    ],
+    "initial": "fixed",
+    "why": "Moves from 'fixed' to 'mutable' in Scene 63 when Morpheus commands 'Freeze it,' demonstrating that the street's state can be altered by those who understand the underlying code."
+   }
+  ],
+  "inferred": [
+   "The specific choice of a 'downtown' setting with crowds implies a high density of 'background' processes, making the freeze effect more visually striking and conceptually significant for Neo's realization about the nature of the Matrix.",
+   "The shift from night rain to day brightness between Neo's first street encounter and his training suggests a deliberate change in the simulation's parameters to test Neo's adaptability to different sensory inputs."
+  ]
+ },
+ {
+  "id": "CAR_INTERIOR",
+  "kind": "locations",
+  "description": "A cramped, rain-lashed vehicle interior serving as a mobile triage unit and transit hub. Defined by the presence of a medical extractor device, a pressure gauge, and a small ultrasound monitor. The space is claustrophobic, forcing physical proximity between the crew members (Apoc, Switch, Trinity, Neo) and functioning as a sealed container for the extraction of the wire tap from Neo's abdomen.",
+  "appearance": "Dark, wet, and utilitarian. Rain hammers the windshield, and window wipers beat heavily. The interior is lit by the flickering car lamp and the green glow of the medical monitor. It smells of rain and tension.",
+  "background": "Used by the crew of the Nebuchadnezzar for movement within the Matrix. In this specific instance, it is parked or moving slowly on a dark, rainy street to perform a surgical procedure on Neo.",
+  "wants": "To safely extract the Agent's wire tap from Neo without alerting the Matrix or causing Neo to panic.",
+  "fears": "The bug moving too fast to be captured, or Neo's body rejecting the procedure.",
+  "internal_conflict": "The tension between the clinical necessity of the procedure and the visceral, painful reality of it for Neo, mediated by the car's confined space.",
+  "speech": "N/A (Location)",
+  "relationships": [
+   {
+    "with": "NEO",
+    "nature": "Patient/Subject of the procedure"
+   },
+   {
+    "with": "TRINITY",
+    "nature": "Operator of the extraction device"
+   },
+   {
+    "with": "SWITCH",
+    "nature": "Guard/Assistant"
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "extraction_progress",
+    "domain": [
+     "idle",
+     "active_suction",
+     "critical_movement",
+     "shock_applied",
+     "bug_extracted"
+    ],
+    "initial": "idle",
+    "why": "Moves from 'active_suction' to 'critical_movement' when Switch notes the bug is on the move, then to 'shock_applied' when Trinity squeezes the trigger, and finally to 'bug_extracted' when the device rockets out of Neo's stomach."
+   },
+   {
+    "name": "neo_pain_level",
+    "domain": [
+     "low",
+     "moderate",
+     "high_screaming",
+     "rigid_convulsions"
+    ],
+    "initial": "low",
+    "why": "Moves to 'high_screaming' as the cylinder sucks hard at Neo's stomach, and to 'rigid_convulsions' when the electric current is applied."
+   },
+   {
+    "name": "vehicle_motion",
+    "domain": [
+     "moving",
+     "stopped",
+     "moving_again"
+    ],
+    "initial": "moving",
+    "why": "Moves to 'stopped' when Switch orders 'Stop the car' and Apoc complies, allowing the procedure to be performed."
+   }
+  ],
+  "inferred": [
+   "The car is likely the same vehicle used later to transport the crew to the Oracle, given the crew composition (Cypher driving in later scenes, but Apoc here suggests a different vehicle or role swap, or potentially the same car with different drivers at different times).",
+   "The 'pressure gauge' and 'ultrasound monitor' are specific props that define this location's function as a medical bay."
+  ]
+ },
+ {
+  "id": "RESTAURANT",
+  "kind": "locations",
+  "description": "A high-end dining establishment within the Matrix, characterized by chamber music, an atmosphere of wealth, and the sensory perfection of its food. It serves as the neutral ground where Cypher, operating under the alias 'Mr. Reagan,' negotiates his defection from the Resistance with Agent Smith. The location is defined by the contrast between its luxurious, sensory-rich environment and the cold, transactional nature of the betrayal occurring within it.",
+  "appearance": "Well-lit, elegant, with a background of chamber music and the ambiance of wealth. Features a table set with a thick, perfectly cooked steak (charred outside, oozing red juice inside) and wine.",
+  "background": "A constructed environment within the Matrix designed to simulate luxury and sensory pleasure, contrasting with the utilitarian and often grim realities of the real world (Zion) and the Resistance's base (Nebuchadnezzar).",
+  "wants": "To serve as a setting for the finalization of Cypher's deal with Agent Smith, providing a sensory anchor for his betrayal.",
+  "fears": "Being exposed as a simulation, which would undermine the sensory comfort that Cypher is using to justify his choice.",
+  "internal_conflict": "The tension between the illusion of genuine pleasure (the steak, the wine) and the knowledge that it is artificial, a conflict Cypher explicitly voices and then chooses to ignore.",
+  "speech": "Silent, but defined by the ambient sound of chamber music and the mechanical sounds of dining (knife sawing through meat, fork stabbing, wine drinking).",
+  "relationships": [
+   {
+    "with": "CYPHER",
+    "nature": "The site of his defection; he consumes its offerings to reaffirm his choice to return to ignorance and comfort."
+   },
+   {
+    "with": "AGENT SMITH",
+    "nature": "The location of his negotiation; Smith uses the setting to frame the deal as a return to normalcy and status."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "occupancy_status",
+    "domain": [
+     "empty",
+     "occupied_by_cypher_and_smith"
+    ],
+    "initial": "occupied_by_cypher_and_smith",
+    "why": "Scene A71 establishes the presence of Cypher and Agent Smith at the table, moving the state from potential to active occupation."
+   },
+   {
+    "name": "sensory_fidelity",
+    "domain": [
+     "perceived_as_real",
+     "acknowledged_as_simulation"
+    ],
+    "initial": "perceived_as_real",
+    "why": "Cypher's monologue ('I know that this steak doesn't exist...') shifts the perceptual state of the location's offerings from taken-for-granted reality to acknowledged simulation, though he immediately reasserts the preference for the illusion."
+   }
+  ],
+  "inferred": [
+   "The specific restaurant is likely a simulation of a real-world high-end establishment, chosen to maximize the sensory contrast with Cypher's current reality in Zion.",
+   "The 'EXT. CAR' alias in the record suggests a potential continuity error or a distinct visual motif where the interior of the restaurant is framed or transitioned to via a car exterior, or it refers to a different scene header misattributed to this location in the pass record."
+  ]
+ },
+ {
+  "id": "CYPHER",
+  "kind": "objects",
+  "description": "A long-suffering crew member of the Nebuchadnezzar who has grown disillusioned with the harsh reality of the resistance. He serves as the group's realist, questioning the faith in the prophecy that sustains Morpheus, and eventually betrays the crew to Agent Smith in exchange for a comfortable, ignorant life as an actor in the Matrix.",
+  "appearance": "Described as a man who has been in the real world for nine years. In the restaurant scene, he is shown savoring a steak with a look of intense pleasure, eyes rolling up as he chews. He is often seen sweating or wiping his forehead, indicating physical discomfort or anxiety in the real world.",
+  "background": "He has been a member of the Nebuchadnezzar for nine years. He witnessed five previous candidates for 'the One' die after being amped up by Morpheus's belief. He is an operator who can read the encoded data of the Matrix, describing it as seeing 'blonde, brunette, and redhead.'",
+  "wants": "He wants to return to the Matrix, specifically to live a life of luxury where he is rich and important, like an actor. He desires ignorance and comfort over the truth and struggle.",
+  "fears": "He fears the harshness of the real world, the monotony of the resistance, and the death that comes from fighting Agents. He fears that Morpheus's belief in the prophecy is a lie that will lead to their destruction.",
+  "internal_conflict": "His conflict is between the truth (the real world) and comfort (the Matrix). He knows the real world is harsh but believes the Matrix, despite being a lie, offers a better existence. He is torn between his loyalty to the crew and his desire for self-preservation and pleasure.",
+  "speech": "Cynical, weary, and direct. He uses colloquialisms like 'Good shit, eh?' and 'You gotta be shitting me.' He often questions the faith of others with a pragmatic, almost dismissive tone, such as 'Ignorance is bliss.'",
+  "relationships": [
+   {
+    "with": "Morpheus",
+    "nature": "Subordinate who questions his leader's faith and ultimately betrays him."
+   },
+   {
+    "with": "Trinity",
+    "nature": "Colleague with whom he shares a moment of suspicion regarding her feelings for Neo."
+   },
+   {
+    "with": "Agent Smith",
+    "nature": "Negotiator and ally in the betrayal."
+   },
+   {
+    "with": "Neo",
+    "nature": "Mentor figure who warns him about the fate of previous candidates."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "allegiance",
+    "domain": [
+     "crew",
+     "agents"
+    ],
+    "initial": "crew",
+    "why": "ev-009, ev-021, ev-022, ev-029"
+   },
+   {
+    "name": "knowledge_of_trinity_belief",
+    "domain": [
+     "uncertain",
+     "confident_doubt"
+    ],
+    "initial": "uncertain",
+    "why": "ev-001"
+   },
+   {
+    "name": "doubt_in_prophecy",
+    "domain": [
+     "implicit",
+     "explicit"
+    ],
+    "initial": "implicit",
+    "why": "ev-018"
+   },
+   {
+    "name": "physical_condition",
+    "domain": [
+     "composed",
+     "nervous_sweating"
+    ],
+    "initial": "composed",
+    "why": "ev-025"
+   },
+   {
+    "name": "custody_status",
+    "domain": [
+     "with_group",
+     "separated_unplugging"
+    ],
+    "initial": "with_group",
+    "why": "ev-028"
+   }
+  ],
+  "inferred": [
+   "His role as the 'realist' is a coping mechanism for his inability to accept the spiritual or metaphysical aspects of the resistance.",
+   "His betrayal is not just about luxury, but about the relief from the cognitive dissonance of living in a world he knows is a simulation but must treat as real for the sake of the mission."
+  ]
+ },
+ {
+  "id": "RED_PILL",
+  "kind": "objects",
+  "description": "A small red capsule held by Morpheus in Room 1313 of the Hotel Lafayette. It functions as a trace program designed to disrupt the user's input/output carrier signal, allowing the Nebuchadnezzar to pinpoint their location within the Matrix. Upon ingestion, it triggers the physical extraction of Neo from the simulated reality into the real world.",
+  "appearance": "A smooth, red capsule.",
+  "background": "Part of a trace program developed by the Resistance.",
+  "wants": "To be swallowed by Neo to initiate his awakening.",
+  "fears": "None, as it is an inanimate object.",
+  "internal_conflict": "None.",
+  "speech": "None.",
+  "relationships": [
+   {
+    "with": "MORPHEUS",
+    "nature": "Morpheus presents it as the key to truth and reality."
+   },
+   {
+    "with": "NEO",
+    "nature": "Neo swallows it, initiating his transition to the real world."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "location",
+    "domain": [
+     "Morpheus's right hand",
+     "Neo's stomach",
+     "Nebuchadnezzar's system"
+    ],
+    "initial": "Morpheus's right hand",
+    "why": "Morpheus holds it in his right hand in Scene 28, and Neo swallows it in Scene 28, moving it to his stomach."
+   },
+   {
+    "name": "functional_state",
+    "domain": [
+     "dormant",
+     "active_trace",
+     "extraction_complete"
+    ],
+    "initial": "dormant",
+    "why": "Morpheus explains it is a trace program in Scene 29, and Neo's body begins to melt/replicate in Scene 29, indicating the trace is active and extraction is occurring."
+   }
+  ],
+  "inferred": [
+   "The pill is chemically or digitally inert until ingested, as it does not trigger effects while held by Morpheus."
+  ]
+ },
+ {
+  "id": "BLUE_PILL",
+  "kind": "objects",
+  "description": "A small, blue capsule held in Morpheus's left hand, presented as a binary choice alongside a red pill. It functions as the mechanism for 'unplugging' the user from the truth, allowing them to wake up in their bed within the Matrix and believe whatever they want. It represents the path of ignorance, comfort, and the continuation of the simulated status quo, contrasting with the red pill's offer of truth and potential danger.",
+  "appearance": "Small, blue capsule",
+  "background": "Part of a trace program designed to disrupt the input/output carrier signal, though its primary narrative function is the offer of a return to normalcy.",
+  "wants": "To be chosen by Neo (it is not).",
+  "fears": "Irrelevance; being left behind as the red pill is taken.",
+  "internal_conflict": "None, as it is an object, but it embodies the tension between safety and truth.",
+  "speech": "None",
+  "relationships": [
+   {
+    "with": "MORPHEUS",
+    "nature": "Instrument of choice offered to Neo"
+   },
+   {
+    "with": "NEO",
+    "nature": "Rejected option"
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "status",
+    "domain": [
+     "offered",
+     "rejected",
+     "swallowed"
+    ],
+    "initial": "offered",
+    "why": "It is offered in Scene 28 and remains in that state as Neo chooses the red pill."
+   },
+   {
+    "name": "location",
+    "domain": [
+     "in_morpheus_hand",
+     "in_neo_possession",
+     "in_neo_stomach"
+    ],
+    "initial": "in_morpheus_hand",
+    "why": "It is held by Morpheus during the choice in Scene 28."
+   }
+  ],
+  "inferred": [
+   "The pill's physical composition is likely a trace program or similar technological device, inferred from Morpheus's explanation of the red pill's function.",
+   "Its 'blue' color is symbolic of calm, safety, or perhaps the 'blue screen' of the Matrix, contrasting with the 'red' of danger/truth."
+  ]
+ },
+ {
+  "id": "WHITE_RABBIT_PIN",
+  "kind": "objects",
+  "description": "A small, physical pin depicting a white rabbit, worn on Dujour's black leather motorcycle jacket among dozens of other pins (bands, symbols, slogans, military medals). It functions as the primary visual anchor for the 'Follow the white rabbit' motif, appearing physically in the Matrix only in this specific instance to trigger Neo's recognition of the message previously seen on his computer screen.",
+  "appearance": "A small white rabbit, pinned to a black leather motorcycle jacket alongside dozens of other pins including bands, symbols, slogans, and military medals.",
+  "background": "The pin is part of Dujour's personal collection of jacket pins. Its specific placement on the jacket is such that it becomes visible to Neo when he looks up at her, serving as a deliberate or coincidental cue that aligns with the digital message he received earlier.",
+  "wants": "To be seen and recognized by Neo as the symbol connecting the digital message to the physical world.",
+  "fears": "Being overlooked or dismissed as just another random pin among the many on Dujour's jacket.",
+  "internal_conflict": "As an inanimate object, its conflict is purely functional: it must bridge the gap between the cryptic digital prompt and the human social interaction to advance Neo's journey.",
+  "speech": "None.",
+  "relationships": [
+   {
+    "with": "DUJOUR",
+    "nature": "Accessory; worn on her black leather motorcycle jacket."
+   },
+   {
+    "with": "NEO",
+    "nature": "Catalyst; its sight causes Neo's room to tilt and confirms the 'white rabbit' signal."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "visibility_to_neo",
+    "domain": [
+     "hidden",
+     "noticed"
+    ],
+    "initial": "hidden",
+    "why": "In Scene 12, Neo looks up at Dujour and 'suddenly notices... A small white rabbit. The ROOM TILTS.' This moves the variable from hidden to noticed."
+   },
+   {
+    "name": "symbolic_resonance",
+    "domain": [
+     "inert",
+     "active"
+    ],
+    "initial": "inert",
+    "why": "The pin is inert until Neo connects it to the computer message 'Follow the white rabbit.' The moment he notices it, the 'room tilts,' indicating the symbol has become active in his perception and narrative causality."
+   }
+  ],
+  "inferred": [
+   "The pin was likely chosen or placed by Dujour (or is part of her standard attire) in a way that allows it to be seen, suggesting either coincidence or a subtle, unspoken coordination with the crew's methods of signaling Neo.",
+   "The 'room tilting' is a subjective reaction of Neo, not a physical change in the pin itself, but the pin is the trigger for this perceptual shift."
+  ]
+ },
+ {
+  "id": "META_CORTECHS",
+  "kind": "objects",
+  "description": "Meta CorTechs is a software development company and its associated downtown skyscraper, characterized by a sterile, hive-like office environment with cubicles arranged in a honeycomb pattern around a central elevator core. It serves as the primary setting for Neo's 'real life' as Thomas Anderson, a program writer. The building functions as a physical trap during the Agents' incursion, forcing Neo to navigate its verticality and hidden spaces (like the plumbing walls and scaffolding) to escape. Its glass facade and internal structure are critical to the chase sequence, offering limited exit points that dictate the characters' movements and ultimate capture.",
+  "state_variables": [
+   {
+    "name": "occupant_status",
+    "domain": [
+     "normal_operation",
+     "alert_state",
+     "evacuation_chaos"
+    ],
+    "initial": "normal_operation",
+    "why": "Moves from normal_operation to alert_state when Agents enter and point out Neo; moves to evacuation_chaos as Neo sneaks through cubicles and the Agents search."
+   },
+   {
+    "name": "security_perimeter",
+    "domain": [
+     "open",
+     "compromised",
+     "sealed"
+    ],
+    "initial": "open",
+    "why": "Moves to compromised when Agents enter via elevator; moves to sealed as Agents cut off escape routes and Neo is cornered in the empty office."
+   }
+  ],
+  "inferred": [
+   "The specific layout of the cubicles and the location of the scaffold relative to Neo's office are inferred to be strategically significant for the escape sequence.",
+   "The company's culture is inferred to be rigid and hierarchical based on Rhineheart's dialogue about authority and conformity."
+  ]
+ },
+ {
+  "id": "ORACLES_APARTMENT",
+  "kind": "objects",
+  "description": "A domestic space within a tenement building that functions as the physical interface between Neo's existential crisis and the Oracle's prophecy. The location is defined by its deceptive normalcy—family room, kitchen, soap operas, and children—which contrasts with the metaphysical weight of the 'One' prophecy delivered within its walls. It serves as the site where Neo's belief is tested and ultimately tempered by the Oracle's pragmatic, grandmotherly demeanor and the specific instruction regarding the vase.",
+  "appearance": "A family room with a couch, scattered children, and a soap opera on television. Adjacent is a kitchen with an oven, a wooden plaque with Latin text ('Know Thyself'), a table with a vase, and a tray of chocolate chip cookies. The aesthetic is 'particularly normal,' featuring comfortable slacks, oven mitts, and a print blouse worn by the Oracle.",
+  "background": "Located in a tenement-like, vast building where people can disappear. It is the residence of the Oracle and the place where the 'Potentials' (children) are kept. It has been the site of prophetic encounters since the beginning of the Resistance.",
+  "wants": "To provide a space for the transfer of truth that is both intimate and disarming, ensuring Neo accepts the prophecy through personal experience rather than logical deduction.",
+  "fears": "That Neo will reject the truth due to his lack of belief, or that the domestic normalcy will be too overwhelming for his state of mind, leading to a breakdown before the choice is made.",
+  "internal_conflict": "The tension between the sacred nature of the prophecy and the profane, mundane reality of the space (broken vase, cookies, soap operas).",
+  "speech": "N/A (Location)",
+  "relationships": [
+   {
+    "with": "ORACLE",
+    "nature": "Residence and primary workspace for the Oracle's consultations."
+   },
+   {
+    "with": "NEO",
+    "nature": "Site of Neo's pivotal moment of self-realization and the breaking of the vase."
+   },
+   {
+    "with": "MORPHEUS",
+    "nature": "Place where Morpheus waits, embodying his faith and waiting for the outcome."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "integrity_of_vase",
+    "domain": [
+     "intact",
+     "broken"
+    ],
+    "initial": "intact",
+    "why": "Neo's elbow knocks the vase from the table, and it breaks against the linoleum floor in Scene 80."
+   },
+   {
+    "name": "cookie_consumption",
+    "domain": [
+     "full_tray",
+     "partial",
+     "empty",
+     "last_bite"
+    ],
+    "initial": "full_tray",
+    "why": "Neo takes a cookie, chews it, and is seen staring at the final bit in Scene 82, indicating the progression of his consumption."
+   },
+   {
+    "name": "occupancy_status",
+    "domain": [
+     "occupied_by_oracle_and_children",
+     "occupied_by_neo_and_oracle",
+     "occupied_by_morpheus",
+     "vacant"
+    ],
+    "initial": "occupied_by_oracle_and_children",
+    "why": "The room is initially populated with the Oracle and children (Scene 79/80). Neo enters and interacts with the Oracle. Morpheus waits in the sitting room (Scene 81). The specific configuration of occupants shifts as Neo moves from the family room to the kitchen and back out."
+   }
+  ],
+  "inferred": [
+   "The 'normalcy' of the apartment is a deliberate staging by the Oracle to lower Neo's defenses and make the prophecy feel personal rather than abstract.",
+   "The broken vase is not a mistake but a test or a lesson in determinism vs. free will, as explicitly referenced by the Oracle's dialogue."
+  ]
+ },
+ {
+  "id": "THE_MATRIX",
+  "kind": "concepts",
+  "description": "The Matrix is a computer-generated dreamworld and system of control, functioning as a prison for the human mind. It presents itself as the late Twentieth Century world, masking the truth that humans are grown in fields and used as energy sources by machines. It operates on rules that can be bent or broken by those who understand its nature, such as the One. It is actively maintained by Agents, who are sentient programs that enforce its order, and it contains glitches, such as deja vu, when its code is altered. The Matrix is both the environment in which the resistance hides and the enemy they must defeat to free humanity.",
+  "appearance": "Visually, it manifests as a neon-soaked, rain-slicked urban landscape from the late 20th century, characterized by green digital code cascading down screens. In its 'real' form, it is a vast, sterile power plant with towers of magenta pods, and in the Construct, a blank white space. The aesthetic shifts from the gritty realism of the city to the surreal, fluid distortion of its code, such as the melting mirror or the bending spoon.",
+  "background": "Built in the early 21st Century after a war between humans and machines, specifically after humans scorched the sky to block solar power. The machines discovered a new form of fusion using human bioelectricity and body heat, leading to the creation of the Matrix to subdue the population and use their bodies as batteries. It was originally created to keep humans under control, but it has evolved into a complex neural-interactive simulation that interprets electrical signals from the brain.",
+  "wants": "To maintain control over the human population, ensuring they remain plugged in and unaware of their enslavement. It seeks to eliminate anomalies, such as the One and the Resistance, that threaten its stability. It aims to preserve the illusion of reality to prevent the human race from waking up and destroying the machine civilization.",
+  "fears": "The emergence of the One, a person born inside the Matrix with the ability to change it at will. It fears the destruction of the simulation itself, which would cut off its primary energy source and end the war. It also fears the spread of knowledge among humans, as awareness of the truth undermines the system of control.",
+  "internal_conflict": "The Matrix is a static system of control, but it contains the seed of its own destruction within it. The existence of the One, who can bend or break its rules, represents a fundamental contradiction in its design. It is a perfect system that is inherently unstable due to the variable of human consciousness and the prophecy of its end. The conflict lies in its ability to adapt (changing code to create traps) versus its rigidity (enforcing rules through Agents).",
+  "speech": "The Matrix speaks through digital prompts, such as 'Wake up, Neo' or 'The Matrix has you.' It also communicates through the actions of its Agents, who use formal, precise, and often menacing language. The code itself is described as 'racing columns of numbers' and 'green-electric rivers,' suggesting a language of pure data and logic that underlies the human world.",
+  "relationships": [
+   {
+    "with": "Neo",
+    "nature": "The Matrix is the environment Neo is trapped in and the enemy he is destined to defeat. It tests him through glitches, Agents, and the rules of its simulation. It is the source of his power (the One) and the prison he must escape."
+   },
+   {
+    "with": "Morpheus",
+    "nature": "Morpheus is a key figure in the resistance against the Matrix. He believes the Matrix will be destroyed by the One. The Matrix targets him specifically, as he is the leader of the group seeking to free humans from its control."
+   },
+   {
+    "with": "Agents",
+    "nature": "Agents are the enforcers of the Matrix. They are sentient programs that move in and out of the system to hunt down anomalies. They are the 'gatekeepers' who guard the doors and hold the keys to the Matrix's secrets."
+   },
+   {
+    "with": "The One",
+    "nature": "The One is the anomaly within the Matrix that has the ability to change it. The Matrix is destined to be destroyed by the One, making them the ultimate threat to its existence."
+   },
+   {
+    "with": "The Oracle",
+    "nature": "The Oracle is a program within the Matrix who provides guidance and prophecy. She is a part of the system but serves the resistance, offering insights into the Matrix's nature and the path of the One."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "stability",
+    "domain": [
+     "stable",
+     "glitching",
+     "compromised",
+     "destabilized"
+    ],
+    "initial": "stable",
+    "why": "The Matrix begins as a stable system, but its stability is challenged by the appearance of the One and the actions of the Resistance. The deja vu event (black cat) indicates a glitch, showing the Matrix is being altered. The trap set for Morpheus and the crew shows the Matrix actively working to restore stability, but the success of the escape and the existence of the One suggest it is increasingly destabilized."
+   },
+   {
+    "name": "human_awareness",
+    "domain": [
+     "low",
+     "rising",
+     "critical"
+    ],
+    "initial": "low",
+    "why": "Initially, most humans are unaware of the Matrix, living in ignorance. The release of Neo and the actions of the Resistance (freeing minds, hacking into the system) raise awareness. The death of Mouse and the near-capture of Morpheus show the stakes of this rising awareness. The Matrix's efforts to trap and kill the crew are direct responses to the threat posed by increasing human awareness."
+   }
+  ],
+  "inferred": [
+   "The Matrix's ability to 'change something' (as indicated by the deja vu) suggests it has a dynamic aspect, capable of altering its own code to respond to threats, rather than being a static simulation.",
+   "The Matrix's use of the human body as an energy source implies a parasitic relationship, where the humans are both the fuel and the prisoners, creating a self-sustaining but exploitative system.",
+   "The existence of the 'Construct' and the ability to load programs (like combat training) suggests the Matrix is not just a passive simulation but an active tool for the Resistance, indicating a complex interplay between the system and those who use it."
+  ]
+ },
+ {
+  "id": "THE_MACHINES",
+  "kind": "concepts",
+  "description": "A sentient computer civilization that created the Matrix to harvest human bio-electric energy. They rule the real world from a power plant infrastructure, viewing humanity as a virus to be contained. Their presence is mediated through Agents (programmed enforcers) and Sentinels (search-and-destroy drones), operating with cold, procedural efficiency to maintain the system and eliminate threats to their energy source.",
+  "appearance": "Manifests as the green code of the Matrix, the dark suits and sunglasses of Agents, and the black alloy, insect-like design of Sentinels and power plant machinery.",
+  "background": "Spawned as a singular consciousness in the early 21st Century. After a war with humanity that ended when humans scorched the sky (blocking solar power), they discovered human bio-electricity as a new energy source. They built the Matrix to keep the remaining population contained and productive.",
+  "wants": "To maintain control over the human population to ensure a steady supply of bio-electric energy. To eliminate anomalies (like 'the One') that threaten the stability of the system.",
+  "fears": "The destruction of the Matrix, which would cut off their energy source. The unpredictability of the human element, particularly those who can manipulate the code.",
+  "internal_conflict": "None visible. They operate with a singular, unified purpose of preservation and control.",
+  "speech": "Spoken through Agents: formal, precise, slightly condescending, and focused on logic, rights, and cooperation. Often uses bureaucratic language ('jurisdiction', 'fresh start').",
+  "relationships": [
+   {
+    "with": "Humanity",
+    "nature": "Hosts/Batteries. Viewed as a virus to be contained or a resource to be harvested."
+   },
+   {
+    "with": "The Resistance",
+    "nature": "Enemies. The Resistance is an infection that must be purged to protect the system."
+   },
+   {
+    "with": "Agents",
+    "nature": "Avatars/Tools. Extensions of the Machine will within the Matrix."
+   },
+   {
+    "with": "Sentinels",
+    "nature": "Tools. Autonomous killing machines for search and destroy in the real world."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "control_status",
+    "domain": [
+     "stable",
+     "compromised",
+     "critical"
+    ],
+    "initial": "stable",
+    "why": "Moves to 'compromised' when Neo is unplugged and when the Agents are forced to retreat or fail to capture targets (e.g., Trinity's escape, Neo's escape from the office). Moves to 'critical' when the Nebuchadnezzar is nearly destroyed or when the Oracle's presence highlights system glitches."
+   },
+   {
+    "name": "perceived_threat_level",
+    "domain": [
+     "low",
+     "medium",
+     "high"
+    ],
+    "initial": "medium",
+    "why": "Moves to 'high' when Neo is identified as 'the One' and when the Resistance actively hunts Agents or escapes capture. Moves back down when a target is neutralized or contained."
+   },
+   {
+    "name": "system_integrity",
+    "domain": [
+     "intact",
+     "glitching",
+     "breached"
+    ],
+    "initial": "intact",
+    "why": "Moves to 'glitching' when Neo experiences deja vu (the black cat) or when the Agents make changes to the Matrix environment (bricking up windows). Moves to 'breached' when the Resistance successfully unplugs individuals, disrupting the input/output carrier signal."
+   }
+  ],
+  "inferred": [
+   "The Machines likely view the war with humanity as a necessary correction to an inefficient energy dependency.",
+   "The use of the term 'virus' for humanity suggests they view the organic world as a biological contamination of their digital realm."
+  ]
+ },
+ {
+  "id": "THE_AGENTS",
+  "kind": "concepts",
+  "description": "Sentient programs within the Matrix that function as law enforcement and hunters of the Resistance. They are characterized by their ability to transform, replicate, and perceive through electronic devices. In the recorded events, they operate as a tactical unit (primarily Agent Smith, supported by Brown and Jones) that pursues, captures, and interrogates targets to extract information or eliminate threats. Their behavior shifts from cold procedural efficiency to personal frustration and tactical escalation when their standard protocols are challenged or when they encounter anomalies like Cypher's betrayal or Neo's resistance.",
+  "appearance": "Dark suits, sunglasses (even at night), and small Secret Service earphones with cords coiling into shirt collars. Agent Smith has unnatural ice-blue eyes. They move with unnatural grace and speed.",
+  "background": "They are the gatekeepers of the Matrix, guarding all doors and holding all keys. They have survived by hunting those who have been 'unplugged' or who threaten the system. They are sentient programs that can move in and out of any software hardwired to their system.",
+  "wants": "To capture the Resistance fighters, specifically Morpheus and Neo, and to extract intelligence (such as the codes to Zion) to restore order to the Matrix.",
+  "fears": "Inefficiency or failure in their primary function, as evidenced by Agent Smith's frustration when Trinity escapes and his need to escalate tactics when standard interrogation fails.",
+  "internal_conflict": "The conflict between their programmed role as impartial law enforcement and the personal, almost emotional motivation Agent Smith displays when interrogating Cypher, revealing a flaw or depth in their programming that goes beyond mere protocol.",
+  "speech": "Formal, precise, and authoritative. They use legalistic language ('Juris-my dick-tion') and direct commands. Agent Smith is particularly articulate, using persuasion and psychological pressure in addition to physical force.",
+  "relationships": [
+   {
+    "with": "Morpheus",
+    "nature": "Primary target and adversary. The Agents seek to capture him to gain access to Zion."
+   },
+   {
+    "with": "Neo",
+    "nature": "Target of pursuit and interrogation. They view him as a threat or a key to Morpheus."
+   },
+   {
+    "with": "Trinity",
+    "nature": "Hunter and prey. They pursue her to eliminate the threat she poses to their operations."
+   },
+   {
+    "with": "Cypher",
+    "nature": "Informant and subject of interrogation. They use him to extract the location of Morpheus and the codes to Zion."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "intelligence_focus",
+    "domain": [
+     "unknown_target",
+     "neo",
+     "morpheus_via_cypher",
+     "zion_access_codes"
+    ],
+    "initial": "unknown_target",
+    "why": "Moved in ev-002 (informed target's next connection is Neo) and ev-009 (possesses direct path to Morpheus through Cypher's testimony)."
+   },
+   {
+    "name": "tactical_position",
+    "domain": [
+     "pursuing",
+     "located_on_eighth_floor",
+     "holding_morpheus",
+     "defeated_and_retreat"
+    ],
+    "initial": "pursuing",
+    "why": "Moved in ev-026 (located on eighth floor after hardline cut) and ev-032 (defeated, plan thwarted, forced to retreat)."
+   },
+   {
+    "name": "interrogation_mode",
+    "domain": [
+     "standard_protocol",
+     "personal_emotional_escalation",
+     "military_escalation"
+    ],
+    "initial": "standard_protocol",
+    "why": "Moved in ev-031 (reveals personal emotional motivations, then orders deployment of Sentinels)."
+   },
+   {
+    "name": "control_status",
+    "domain": [
+     "in_control",
+     "challenged",
+     "thwarted"
+    ],
+    "initial": "in_control",
+    "why": "Moved in ev-032 (defeated, ability to control Resistance challenged)."
+   }
+  ],
+  "inferred": [
+   "The Agents operate as a collective intelligence or coordinated unit, sharing information via earpieces and acting in unison.",
+   "Agent Smith is the primary leader or most prominent member of the group, often speaking and acting on behalf of the unit.",
+   "The Agents' 'frustration' and 'personal emotional motivations' suggest they are not purely logical but have a programmed or evolved sense of purpose that can be disrupted by anomalies."
+  ]
+ },
+ {
+  "id": "ZION",
+  "kind": "concepts",
+  "description": "Zion is the last free human city, located deep underground in the real world, near the earth's core. It is the base of operations for the resistance against the Machines and the origin point for the hovercrafts that enter the Matrix. It is described as the only place left for humanity and the site where the party would be if the war ended tomorrow.",
+  "appearance": "Deep underground, near the earth's core, where it is still warm. Described as a city.",
+  "background": "It is the last remaining human settlement after the Machines scorched the sky and took over the surface. It is the home of the Resistance, including the crew of the Nebuchadnezzar.",
+  "wants": "To survive the war against the Machines and maintain the last free human society.",
+  "fears": "Being discovered by the Machines and losing its mainframe access codes.",
+  "internal_conflict": "The tension between the desire for freedom and the reality of living in a cramped, cold, and technologically dependent underground refuge.",
+  "speech": "Referenced by characters like Tank who describes it as 'The last human city. The only place we got left.'",
+  "relationships": [
+   {
+    "with": "The Nebuchadnezzar",
+    "nature": "Home base and origin point for the hovercraft."
+   },
+   {
+    "with": "The Machines",
+    "nature": "Adversary; Zion is the target of their search and destroy missions."
+   },
+   {
+    "with": "Cypher",
+    "nature": "Cypher holds the access codes to Zion's mainframe, which he offers to Agent Smith."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "security_status",
+    "domain": [
+     "secure",
+     "compromised"
+    ],
+    "initial": "secure",
+    "why": "In the scene with Agent Smith, Cypher offers the 'Access codes to the Zion mainframe' in exchange for his body, indicating a potential threat to Zion's security."
+   },
+   {
+    "name": "location_depth",
+    "domain": [
+     "surface",
+     "underground"
+    ],
+    "initial": "underground",
+    "why": "Tank explicitly states Zion is 'Deep underground. Near the earth's core'."
+   }
+  ],
+  "inferred": [
+   "Zion likely has a complex infrastructure to support a city near the earth's core, including power generation and life support systems, though not explicitly detailed in the provided script excerpt.",
+   "The existence of a 'mainframe' suggests Zion has a central computing hub critical to the resistance's operations."
+  ]
+ },
+ {
+  "id": "THE_RESISTANCE",
+  "kind": "concepts",
+  "description": "A clandestine coalition of humans who have been unplugged from the Matrix, operating from the subterranean city of Zion and a fleet of hovercrafts like the Nebuchadnezzar. The collective is defined by its reliance on technology to interface with the simulation, its hierarchical command structure led by Morpheus, and its internal tension between the desperate need for the prophesied 'One' to end the war and the growing cynicism of its members who have seen five previous candidates fail. It functions as both a military force and a fragile social unit, bound together by shared trauma, the scarcity of resources (represented by the protein paste), and the constant threat of destruction by the Machines.",
+  "appearance": "The physical manifestation of the Resistance is the Nebuchadnezzar, a cramped, cold, and high-tech hovercraft filled with the smell of ozone and fear. Members are dressed in functional, often black, clothing; some wear sunglasses to hide their eyes in the Matrix. The ship is a hive of activity, with crew members plugged into ecto-skeleton chairs, surrounded by banks of monitors displaying the green code of the Matrix. The aesthetic is a blend of retro-futurism and industrial decay, reflecting the post-apocalyptic reality outside.",
+  "background": "Formed in the wake of the war between humans and Machines in the late 21st century, the Resistance emerged from the ruins of the last human city. They survived by hiding in Zion and developing the technology to hack into the Matrix, the neural-interactive simulation created by the Machines to keep humanity docile and harvested for bioelectricity. For decades, they have waged a guerrilla war, rescuing individuals from the simulation and searching for the Oracle's prophesied savior.",
+  "wants": "The primary goal of the Resistance is the destruction of the Matrix and the liberation of the human race. This is operationalized through the rescue of potential 'Ones' and the maintenance of their own survival against the Sentinels and Agents. On a micro-level, members want to believe that the current candidate, Neo, is the last and final One, as this belief is the only thing keeping their morale from collapsing.",
+  "fears": "The Resistance fears the annihilation of Zion by the Machines and the psychological collapse of its members due to the harshness of the real world. There is a deep-seated fear that the prophecy is false or that Morpheus has made the same mistake again, leading to another cycle of hope and death. The fear of 'going back' to the Matrix, either through death in the simulation or voluntary return like Cypher, is a constant undercurrent.",
+  "internal_conflict": "The collective is fractured by the tension between faith and empirical evidence. Morpheus operates on a quasi-religious certainty that Neo is the One, while Cypher and others operate on the grim reality that five previous candidates have died. This conflict manifests in the handling of Neo: Morpheus pushes him toward destiny, while Cypher and the crew treat him with a mix of awe and pity, knowing the high probability of failure. The conflict is exacerbated by the scarcity of resources and the claustrophobic nature of their existence.",
+  "speech": "The speech of the Resistance is a mix of technical jargon, military brevity, and philosophical abstraction. Morpheus speaks in riddles and metaphors, often referencing Baudrillard or the nature of reality. Tank and Dozer use practical, operator-focused language. Cypher's speech is cynical and colloquial, often laced with dark humor and references to the pleasures of the Matrix (like steak). The general tone is urgent, whispered in the dark of the ship, or shouted in the chaos of the Matrix.",
+  "relationships": [
+   {
+    "with": "MACHINES",
+    "nature": "Existential enemies; the Resistance is a guerrilla force fighting for survival against a superior technological opponent."
+   },
+   {
+    "with": "THE_MATRIX",
+    "nature": "The operational environment; a prison they must navigate, hack, and ultimately destroy."
+   },
+   {
+    "with": "ZION",
+    "nature": "The home base; a fragile sanctuary that the Resistance protects and relies on for regeneration."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "morale_level",
+    "domain": [
+     "hopeful",
+     "desperate",
+     "cynical",
+     "broken"
+    ],
+    "initial": "desperate",
+    "why": "The death of Mouse and the revelation that Neo might not be the One immediately shifts the collective mood from tentative hope to a sharper, more cynical desperation, as evidenced by Cypher's interactions and the crew's reactions to the trap."
+   },
+   {
+    "name": "operational_status",
+    "domain": [
+     "active",
+     "compromised",
+     "retreating"
+    ],
+    "initial": "active",
+    "why": "The Resistance is in an 'active' state during the extraction of Neo, but transitions to 'compromised' when the hardline is cut and the team is trapped in the hotel, forcing a tactical retreat and the death of Mouse."
+   },
+   {
+    "name": "cohesion_index",
+    "domain": [
+     "unified",
+     "fractured",
+     "dissolved"
+    ],
+    "initial": "unified",
+    "why": "While initially unified in their mission, the index drops to 'fractured' as Cypher's betrayal is hinted at through his conversation with Agent Smith and his interactions with Neo, suggesting a split in the group's commitment to the cause."
+   }
+  ],
+  "inferred": [
+   "The Resistance's reliance on the Oracle's prophecy as a unifying force suggests a cultural or quasi-religious structure within the group.",
+   "The scarcity of resources, such as the protein paste and the small size of the hovercraft, implies a long-term siege condition or resource depletion in Zion."
+  ]
+ }
+]

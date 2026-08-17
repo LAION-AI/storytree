@@ -1,0 +1,83 @@
+{
+ "plots": [
+  {
+   "plot_id": "p-001",
+   "name": "The Trap for the Resistance",
+   "kind": "main",
+   "description": "This thread covers the initial contact with Neo by the Resistance and the simultaneous trapping of the Resistance leadership (Morpheus/Trinity) by the Agents. It establishes the stakes and the vulnerability of the Resistance's communication methods, culminating in the capture of key figures and the direct pursuit of the survivors.",
+   "events": [
+    "ev-001",
+    "ev-002",
+    "ev-003",
+    "ev-004"
+   ],
+   "arc": "From passive surveillance and initial contact to active, high-stakes pursuit and capture."
+  },
+  {
+   "plot_id": "p-003",
+   "name": "The Agents' Dominance",
+   "kind": "antagonist",
+   "description": "This thread establishes the Agents as the primary antagonistic force, distinct from and superior to ordinary law enforcement. Through the hotel raid and the rooftop chase, it demonstrates their supernatural capabilities, their calm and precise lethality, and their ability to control the environment, setting the tone for the overwhelming power Neo and the Resistance must contend with.",
+   "events": [
+    "ev-002",
+    "ev-003"
+   ],
+   "arc": "Introduction of the Agents' power and their methodical, inhuman approach to hunting the Resistance."
+  },
+  {
+   "plot_id": "p-004",
+   "name": "Trinity's Confrontation",
+   "kind": "relationship",
+   "description": "This thread tracks Trinity's immediate confrontation with the Agents, from the raid on the hotel to her rooftop escape. It highlights her combat prowess and the escalating threat posed by the Agents, serving as the direct precursor to her death. It is distinct from the broader 'Trinity's Sacrifice' arc because it lacks the actual death event and Neo's direct interaction with her in that moment.",
+   "events": [
+    "ev-002",
+    "ev-003"
+   ],
+   "arc": "From active surveillance and combat to a tragic, symbolic death that fuels the protagonist's resolve."
+  }
+ ],
+ "_doctor_notes": [
+  {
+   "plot_id": "p-001",
+   "verdict": "needs_members_moved",
+   "reasoning": "The thread title 'The Hunt for Neo' is misleading for the included events. ev-001 (The Trace) and ev-002 (The Hotel Raid) focus on the capture of Morpheus and the death of Trinity, not the direct pursuit of Neo. ev-004 (Neo's Warning) is a passive setup for Neo's awakening, not a 'hunt' where forces are closing in on him physically or digitally in a high-stakes chase. The description claims these events illustrate 'escalating stakes... as the two forces close in,' but Neo is largely absent from the action in ev-001 and ev-002. A better thread would be 'The Fall of Morpheus and the Contact of Neo' or split into 'The Trap for the Resistance' (ev-001, ev-002) and 'Neo's Awakening' (ev-004).",
+   "remove": [],
+   "add": [],
+   "better_description": "This thread covers the initial contact with Neo by the Resistance and the simultaneous trapping of the Resistance leadership (Morpheus/Trinity) by the Agents. It establishes the stakes and the vulnerability of the Resistance's communication methods."
+  },
+  {
+   "plot_id": "p-002",
+   "verdict": "should_dissolve",
+   "reasoning": "The thread is structurally invalid because it contains only a single event (ev-004). A 'character_growth' arc requires a sequence of events to demonstrate change over time; a single instance of curiosity does not constitute a thread. Furthermore, ev-004 is more accurately classified as an inciting incident for the 'Hunt for the One' or 'Resistance Contact' plot, as the primary function of the scene is the external contact by the Resistance rather than an internal psychological shift. The description overstates the internal journey, which is not yet fully realized in this single beat.",
+   "remove": [
+    "ev-004"
+   ],
+   "better_description": "This thread should be dissolved. The single event (ev-004) is better suited to the 'Contact with the Resistance' or 'Inciting Incident' plot line, as it primarily depicts external contact rather than a sustained internal character arc."
+  },
+  {
+   "plot_id": "p-003",
+   "verdict": "sound",
+   "reasoning": "The thread correctly identifies the core antagonistic force. Both ev-002 and ev-003 explicitly focus on the Agents' operational superiority over police (ev-002) and their physical capabilities in pursuit (ev-003). The description accurately reflects the content: ev-002 establishes the hierarchy where Agents supersede law enforcement, and ev-003 demonstrates the 'supernatural' and 'calm' nature of their hunting style. No other events fit this specific 'antagonist dominance' theme as well; ev-001 is the setup (trace), and ev-004 is Neo's introduction. The thread is cohesive and distinct.",
+   "remove": [],
+   "add": []
+  },
+  {
+   "plot_id": "p-004",
+   "verdict": "needs_members_moved",
+   "reasoning": "The thread 'Trinity's Sacrifice' is fundamentally incoherent because it excludes the actual event of Trinity's death (the phone booth scene) while including the inciting incident (The Trace). The description claims the thread 'culminates in her death,' yet the provided events (ev-001, ev-002, ev-003) only cover the setup and escape, stopping before the climax. Furthermore, ev-001 ('The Trace') is primarily a plot point regarding the Resistance's vulnerability and Cypher's betrayal, serving the 'Agents' Pursuit' or 'Cypher's Betrayal' threads more than a relationship arc with Neo. The current grouping creates a narrative gap: it shows the cause (trace) and the reaction (escape) but omits the effect (death) and the specific relationship dynamic with Neo which is the stated focus of the thread. To be a valid 'relationship' thread centered on Trinity, it must include the death event; to be a 'sacrifice' thread, it needs the context of her protecting Neo/Morpheus during that death, which is not present in these three events.",
+   "remove": [
+    "ev-001"
+   ],
+   "add": [],
+   "better_description": "This thread tracks Trinity's immediate confrontation with the Agents, from the raid on the hotel to her rooftop escape. It highlights her combat prowess and the escalating threat posed by the Agents, serving as the direct precursor to her death. It is distinct from the broader 'Trinity's Sacrifice' arc because it lacks the actual death event and Neo's direct interaction with her in that moment."
+  },
+  {
+   "plot_id": "p-005",
+   "verdict": "should_dissolve",
+   "reasoning": "The thread is built on a single event (ev-001) which is primarily a tactical setup for the Agents' arrival, not a character study of Cypher. While Cypher's dialogue hints at doubt, the event itself is the inciting incident for the 'Hunt' plotline (ev-002, ev-003). There is no subsequent event in the provided list that develops this 'betrayal' thread; ev-004 is unrelated to Cypher. Therefore, the thread is an over-interpretation of a single scene that belongs to the main action sequence.",
+   "remove": [
+    "ev-001"
+   ]
+  }
+ ]
+}

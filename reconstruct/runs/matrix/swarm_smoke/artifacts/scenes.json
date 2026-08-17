@@ -1,0 +1,467 @@
+[
+ {
+  "scene_id": "sc-001",
+  "location": "THE_MATRIX",
+  "time_of_day": "Night (implied by 'electric darkness' and 'black-neon glass')",
+  "present": [
+   "MAN_VO",
+   "WOMAN_VO"
+  ],
+  "speaking": [
+   "MAN_VO",
+   "WOMAN_VO"
+  ],
+  "summary": "The scene opens on a close-up of a computer screen with a pulsing cursor. A phone rings, and we hear a conversation between a man (later identified as Cypher) and a woman (later identified as Trinity). They discuss a target, with the man expressing doubt about the woman's feelings for the target and stating they are going to kill him. On the screen, a trace program runs, displaying racing columns of numbers that slowly fix into a 10-digit phone number. The camera moves closer to the screen as each digit locks in. The trace completes, revealing the call origin. The woman asks if the line is clean, and the man confirms. She hangs up, and the camera passes through the numbers on the screen into the darkness.",
+  "what_changes": [
+   {
+    "who": "MAN (V.O.) / WOMAN (V.O.)",
+    "axis": "knowledge",
+    "before": "Tracing the caller",
+    "after": "Trace complete; caller identified",
+    "evidence": "On screen: 'Trace complete. Call origin: #312-555-0690.'"
+   },
+   {
+    "who": "WOMAN_VO",
+    "axis": "resolve",
+    "before": "Uncertain if line is secure",
+    "after": "Decides to leave/hang up",
+    "evidence": "TRINITY (V.O.) 'I better go.' She hangs up."
+   }
+  ],
+  "objects_that_matter": [
+   "POWERBOOK_COMPUTER",
+   "PHONE",
+   "CURSOR"
+  ],
+  "event_hint": {
+   "kind": "surveillance/tracing",
+   "one_line": "Cypher and Trinity trace a phone call to locate a target.",
+   "continues_from_earlier": false
+  },
+  "uncertain": [
+   "The physical location of the speakers is not shown, only their voices and the screen."
+  ]
+ },
+ {
+  "scene_id": "sc-002",
+  "location": "HEART_O_THE_CITY_HOTEL",
+  "time_of_day": "NIGHT",
+  "present": [
+   "TRINITY",
+   "POLICE_FORCE",
+   "POLICE_FORCE"
+  ],
+  "speaking": [
+   "POLICE_FORCE"
+  ],
+  "summary": "Four armed police officers creep down a fire-damaged, soot-blackened hotel hallway. They position themselves on either side of Room 303. The BIG COP kicks the door in, and the other officers rush in with guns drawn, shouting 'Police! Freeze!' The room is sparsely furnished with a phone, modem, and PowerBook computer. TRINITY, a woman in black leather, sits at the desk with her hands on the keyboard. When ordered to put her hands behind her head, she complies slowly.",
+  "what_changes": [
+   {
+    "who": "TRINITY",
+    "axis": "custody",
+    "before": "Active operator tracing a call in a secure location",
+    "after": "In police custody, hands behind head",
+    "evidence": "BIG COP kicks in the door and orders 'Hands behind your head! Now! Do it!' Trinity slowly puts her hands behind her head."
+   }
+  ],
+  "objects_that_matter": [
+   "PHONE",
+   "MODem",
+   "POWERBOOK_COMPUTER",
+   "FLASHLIGHTS",
+   "GUNS",
+   "CUFFS"
+  ],
+  "event_hint": {
+   "kind": "raid",
+   "one_line": "Police storm Room 303 to arrest Trinity after tracing her call.",
+   "continues_from_earlier": true
+  },
+  "uncertain": []
+ },
+ {
+  "scene_id": "sc-003",
+  "location": "HEART_O_THE_CITY_HOTEL",
+  "time_of_day": "NIGHT",
+  "present": [
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "POLICE_FORCE"
+  ],
+  "speaking": [
+   "THE_AGENTS",
+   "POLICE_FORCE"
+  ],
+  "summary": "Outside the abandoned Heart O' the City Hotel, a black sedan arrives. Agent Smith, Agent Brown, and Agent Jones exit, wearing dark suits and sunglasses. Agent Smith confronts the Lieutenant, who is overseeing a police raid inside. The Lieutenant dismisses the Agents' authority, claiming he can handle 'one little girl' and that his men are bringing her down. Agent Smith calmly informs him that his men are already dead.",
+  "what_changes": [
+   {
+    "who": "POLICE_FORCE",
+    "axis": "knowledge",
+    "before": "Believes his police units are currently engaging and subduing the target.",
+    "after": "Informed by Agent Smith that his men are already dead, though he has not yet seen the evidence.",
+    "evidence": "Agent Smith says, 'No, Lieutenant, your men are already dead.'"
+   }
+  ],
+  "objects_that_matter": [
+   "BLACK_SEDAN",
+   "SUNGLASSES",
+   "EARPHONES"
+  ],
+  "event_hint": {
+   "kind": "confrontation",
+   "one_line": "Agents arrive to take over the raid from the local police.",
+   "continues_from_earlier": true
+  }
+ },
+ {
+  "scene_id": "sc-004",
+  "location": "HEART_O_THE_CITY_HOTEL",
+  "time_of_day": "NIGHT",
+  "present": [
+   "TRINITY",
+   "POLICE_FORCE",
+   "POLICE_FORCE"
+  ],
+  "speaking": [
+   "POLICE_FORCE",
+   "TRINITY"
+  ],
+  "summary": "Trinity is caught at a computer in a fire-damaged hotel room by a team of police led by the BIG COP. As the BIG COP moves to cuff her, Trinity reacts with superhuman speed, killing him and the other officers in a brief, violent exchange. She remains standing amidst the bodies, stating 'Shit' as a flashlight falls to the floor.",
+  "what_changes": [
+   {
+    "who": "TRINITY",
+    "axis": "safety",
+    "before": "Held at gunpoint by multiple armed officers in a contained room.",
+    "after": "Free to move, but alone and surrounded by dead bodies with no immediate escape route visible.",
+    "evidence": "She kills the officers and is left standing in the room, saying 'Shit' as the scene cuts."
+   },
+   {
+    "who": "POLICE_FORCE",
+    "axis": "condition",
+    "before": "Alive and actively apprehending the suspect.",
+    "after": "Dead.",
+    "evidence": "Trinity snaps the BIG COP's nose, kicks him into another cop, and engages in a final exchange of gunfire where she is the only one standing."
+   }
+  ],
+  "objects_that_matter": [
+   "POWERBOOK_COMPUTER",
+   "MODem",
+   "PHONE",
+   "CUFFS",
+   "GUNS",
+   "FLASHLIGHTS"
+  ],
+  "event_hint": {
+   "kind": "raid",
+   "one_line": "A police raid on a hacker turns into a massacre when the suspect displays inhuman combat abilities.",
+   "continues_from_earlier": true
+  },
+  "uncertain": []
+ },
+ {
+  "scene_id": "sc-005",
+  "location": "HEART_O_THE_CITY_HOTEL",
+  "time_of_day": "NIGHT",
+  "present": [
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "POLICE_FORCE"
+  ],
+  "speaking": [
+   "THE_AGENTS",
+   "POLICE_FORCE"
+  ],
+  "summary": "A black sedan arrives at the hotel, bringing Agents Smith, Brown, and Jones. Agent Smith confronts the Lieutenant, who is overseeing the police raid inside. The Lieutenant, confident in his numbers, dismisses the Agents' authority. Agent Smith calmly informs the Lieutenant that his police officers are already dead, contradicting the Lieutenant's claim that they are bringing the suspect down now.",
+  "what_changes": [
+   {
+    "who": "POLICE_FORCE",
+    "axis": "knowledge",
+    "before": "Believes his police units are actively securing the suspect and that he has jurisdiction.",
+    "after": "Is confronted with the information that his men are already dead, undermining his control of the situation.",
+    "evidence": "Lieutenant says 'I sent two units. They're bringing her down now.' Agent Smith replies 'No, Lieutenant, your men are already dead.'"
+   }
+  ],
+  "objects_that_matter": [
+   "BLACK_SEDAN",
+   "SUNGLASSES",
+   "EARPHONES"
+  ],
+  "event_hint": {
+   "kind": "confrontation",
+   "one_line": "Agents arrive to take over the raid from the police, revealing the police have already been killed.",
+   "continues_from_earlier": true
+  }
+ },
+ {
+  "scene_id": "sc-006",
+  "location": "HEART_O_THE_CITY_HOTEL",
+  "time_of_day": "NIGHT",
+  "present": [
+   "TRINITY",
+   "POLICE_FORCE",
+   "POLICE_FORCE"
+  ],
+  "speaking": [
+   "POLICE_FORCE",
+   "TRINITY"
+  ],
+  "summary": "Four armed police officers, led by the BIG COP, kick open the door to Room 303 in the abandoned Heart O' the City Hotel. Inside, TRINITY is seated at a computer. The BIG COP orders her hands behind her head, and she complies. As the BIG COP reaches for his cuffs, TRINITY moves with inhuman speed, exploding the BIG COP's nose and kicking him into another officer. A chaotic gunfight ensues where TRINITY snatches a gun from a falling cop and fires it. When the shooting stops, TRINITY is the only one standing. She looks at a flashlight on the floor and says, 'Shit.'",
+  "what_changes": [
+   {
+    "who": "TRINITY",
+    "axis": "safety",
+    "before": "Cornered in a room, hands behind head, appearing captive",
+    "after": "Standing alone in a room full of dead or incapacitated police, but realizing she is still in danger",
+    "evidence": "She transitions from passive compliance to violent action, ending with the line 'Shit' as she assesses the aftermath."
+   },
+   {
+    "who": "POLICE_FORCE",
+    "axis": "condition",
+    "before": "Standing over TRINITY, in control of the situation",
+    "after": "Flies backward into another officer after his nose is exploded",
+    "evidence": "TRINITY's palm snaps up and the nose explodes; the BIG COP is described as a 'two-hundred-fifty pound sack of limp meat and bone' slamming into the other cop."
+   }
+  ],
+  "objects_that_matter": [
+   "POWERBOOK_COMPUTER",
+   "MODem",
+   "PHONE",
+   "CUFFS",
+   "FLASHLIGHTS",
+   "GUNS"
+  ],
+  "event_hint": {
+   "kind": "raid",
+   "one_line": "Police raid a hotel room to capture TRINITY, who reveals superhuman combat abilities and kills them.",
+   "continues_from_earlier": true
+  },
+  "uncertain": []
+ },
+ {
+  "scene_id": "sc-007",
+  "location": "HEART_O_THE_CITY_HOTEL",
+  "time_of_day": "NIGHT",
+  "present": [
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "POLICE_FORCE"
+  ],
+  "speaking": [
+   "THE_AGENTS",
+   "POLICE_FORCE"
+  ],
+  "summary": "A black sedan arrives at the hotel, bringing Agents Smith, Brown, and Jones. Agent Smith confronts the Lieutenant, who is leading the police operation inside. The Lieutenant dismisses the Agents' presence as unnecessary and claims his men are handling the suspect. Agent Smith calmly informs him that his men are already dead.",
+  "what_changes": [
+   {
+    "who": "POLICE_FORCE",
+    "axis": "knowledge",
+    "before": "Believes his police units are currently subduing the suspect (Trinity).",
+    "after": "Is informed by Agent Smith that his men are already dead, contradicting his report.",
+    "evidence": "LIEUTENANT: 'I sent two units. They're bringing her down now.' AGENT SMITH: 'No, Lieutenant, your men are already dead.'"
+   }
+  ],
+  "objects_that_matter": [
+   "BLACK_SEDAN",
+   "EARPHONES"
+  ],
+  "event_hint": {
+   "kind": "confrontation",
+   "one_line": "Agents arrive to take over the raid and inform the police chief of the failure.",
+   "continues_from_earlier": true
+  },
+  "uncertain": []
+ },
+ {
+  "scene_id": "sc-008",
+  "location": "FIRE_ESCAPE",
+  "time_of_day": "Night",
+  "present": [
+   "TRINITY",
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "POLICE_FORCE"
+  ],
+  "speaking": [
+   "POLICE_FORCE"
+  ],
+  "summary": "Trinity exits a broken window onto a fire escape and is forced to run upwards because Agent Smith is blocking her path in the alley below. She jumps across a 40-foot gap to an adjacent rooftop, landing and continuing to run. Agent Brown, leading a unit of police, pursues her across the rooftops, replicating her jump with similar grace. The chase continues across a series of buildings until Trinity spots a lit window 50 feet away from a drop-off point.",
+  "what_changes": [
+   {
+    "who": "TRINITY",
+    "axis": "safety",
+    "before": "Pursued on the fire escape with no way down due to Agent Smith",
+    "after": "Pursued on the rooftops, moving toward a potential exit at a lit window",
+    "evidence": "Trinity sees Agent Smith staring at her in the alley, forcing her to go up; she later zeros in on a yellow glow in a dark brick building."
+   },
+   {
+    "who": "POLICE_FORCE",
+    "axis": "knowledge",
+    "before": "Chasing Trinity with standard tactical expectations",
+    "after": "Witnessing supernatural feats of agility (jumping 40+ feet)",
+    "evidence": "A COP exclaims 'Jesus Christ -- that's impossible!' after watching Trinity and Agent Brown jump between buildings."
+   }
+  ],
+  "objects_that_matter": [
+   "FIRE_ESCAPE",
+   "ROOFTOPS",
+   "Broken window"
+  ],
+  "event_hint": {
+   "kind": "chase",
+   "one_line": "Trinity flees Agents Smith and Brown across the city rooftops to escape a trap.",
+   "continues_from_earlier": true
+  },
+  "uncertain": []
+ },
+ {
+  "scene_id": "sc-009",
+  "location": "ROOFTOPS",
+  "time_of_day": "Night",
+  "present": [
+   "TRINITY",
+   "THE_AGENTS",
+   "POLICE_FORCE"
+  ],
+  "speaking": [
+   "POLICE_FORCE"
+  ],
+  "summary": "Trinity runs across a series of dark rooftops while being pursued by Agent Brown and a unit of police officers. The chase involves high-risk jumps between buildings; Trinity executes a smooth, gliding jump over a 40-foot gap, while Agent Brown replicates the move with unnatural grace. The police, struggling to keep up, observe the 'impossible' jump with awe and fear. The scene ends with Trinity spotting a yellow glowing window in a distant building, identifying it as her only chance to escape.",
+  "what_changes": [
+   {
+    "who": "TRINITY",
+    "axis": "safety",
+    "before": "In active pursuit, moving horizontally across rooftops",
+    "after": "Identifying a specific vertical exit point (the yellow window) to change her trajectory",
+    "evidence": "Ahead, she sees her only chance... A yellow glow in the midst of a dark brick building. Trinity zeros in on it..."
+   },
+   {
+    "who": "POLICE_FORCE",
+    "axis": "knowledge",
+    "before": "Pursuing the suspect",
+    "after": "Realizing the suspect's abilities are superhuman ('impossible')",
+    "evidence": "COP: Jesus Christ -- that's impossible! They stare, slack-jawed..."
+   }
+  ],
+  "objects_that_matter": [
+   "WINDOW"
+  ],
+  "event_hint": {
+   "kind": "chase",
+   "one_line": "Trinity leaps across rooftops to escape Agents and police, spotting a window to dive into.",
+   "continues_from_earlier": true
+  },
+  "uncertain": []
+ },
+ {
+  "scene_id": "sc-010",
+  "location": "WINDOW",
+  "time_of_day": "Night",
+  "present": [
+   "TRINITY"
+  ],
+  "speaking": [
+   "TRINITY"
+  ],
+  "summary": "Trinity runs toward a lit window in a dark brick building, 50 feet away and beyond a drop. She launches herself into the air, diving toward the window. She crashes through the glass and wood, exploding into the interior space below.",
+  "what_changes": [
+   {
+    "who": "TRINITY",
+    "axis": "condition",
+    "before": "Running on rooftop, intact",
+    "after": "Crashed through window, tumbling down stairs, bleeding and broken",
+    "evidence": "She crashes with an EXPLOSION of GLASS and WOOD... tumbling, bouncing down stairs bleeding, broken"
+   }
+  ],
+  "objects_that_matter": [
+   "WINDOW",
+   "Glass",
+   "Wood"
+  ],
+  "event_hint": {
+   "kind": "chase",
+   "one_line": "Trinity makes a desperate leap across a gap to escape her pursuers, crashing through a window.",
+   "continues_from_earlier": true
+  },
+  "uncertain": []
+ },
+ {
+  "scene_id": "sc-011",
+  "location": "HEART_O_THE_CITY_HOTEL",
+  "time_of_day": "NIGHT",
+  "present": [
+   "THE_AGENTS",
+   "POLICE_FORCE"
+  ],
+  "speaking": [
+   "THE_AGENTS",
+   "POLICE_FORCE"
+  ],
+  "summary": "A black sedan arrives at the police blockade surrounding the abandoned Heart O' the City Hotel. Agent Smith exits the vehicle and confronts the Lieutenant, who is commanding the police units inside. The Lieutenant dismisses the Agents' presence, claiming his men are handling the suspect (Trinity) and mocking their legal jurisdiction. Agent Smith calmly informs the Lieutenant that his men are already dead.",
+  "what_changes": [
+   {
+    "who": "POLICE_FORCE",
+    "axis": "knowledge",
+    "before": "Believes his police units are successfully containing the suspect.",
+    "after": "Is informed by Agent Smith that his men are already dead.",
+    "evidence": "AGENT SMITH: 'No, Lieutenant, your men are already dead.'"
+   }
+  ],
+  "objects_that_matter": [
+   "BLACK_SEDAN",
+   "POLICE_OFFICERS"
+  ],
+  "event_hint": {
+   "kind": "confrontation",
+   "one_line": "Agent Smith arrives to take command from the local police, revealing the immediate failure of their containment.",
+   "continues_from_earlier": true
+  }
+ },
+ {
+  "scene_id": "sc-012",
+  "location": "NEOS_APARTMENT",
+  "time_of_day": "Night",
+  "present": [
+   "NEO",
+   "CHOI",
+   "DUJOUR"
+  ],
+  "speaking": [
+   "NEO",
+   "CHOI",
+   "DUJOUR"
+  ],
+  "summary": "Neo is asleep at his computer when the screen displays a series of cryptic messages, including 'The Matrix has you' and 'Follow the white rabbit.' He is startled by a knock from Choi, who is two hours late. Neo sells a computer disk to Choi for two thousand dollars, hiding the money in a hollowed-out copy of Baudrillard's 'Simulacra and Simulations.' As Choi and his friends leave, Neo notices a small white rabbit pin on Dujour's leather jacket, which triggers a feeling of unreality and prompts him to agree to go out with them, despite having work the next day.",
+  "what_changes": [
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Asleep, unaware of being watched or targeted",
+    "after": "Awake, aware of the computer messages and the symbolic connection to the white rabbit",
+    "evidence": "Neo reads 'The Matrix has you' and 'Follow the white rabbit' on his screen; he notices the white rabbit pin on Dujour's jacket and says 'The ROOM TILTS.'"
+   },
+   {
+    "who": "NEO",
+    "axis": "resolve",
+    "before": "Refuses to go out, citing work tomorrow",
+    "after": "Agrees to go out with Choi and friends",
+    "evidence": "Neo says 'I can't. I have to work tomorrow,' but after seeing the pin, he says 'Yeah, yeah. Sure, I'll go.'"
+   }
+  ],
+  "objects_that_matter": [
+   "POWERBOOK_COMPUTER",
+   "THE_MATRIX",
+   "COMPUTER_DISK",
+   "ENVELOPE_WITH_MONEY",
+   "WHITE_RABBIT"
+  ],
+  "event_hint": {
+   "kind": "encounter",
+   "one_line": "Neo receives a warning from his computer and recognizes a symbol linking the message to his friend's group.",
+   "continues_from_earlier": true
+  },
+  "uncertain": []
+ }
+]

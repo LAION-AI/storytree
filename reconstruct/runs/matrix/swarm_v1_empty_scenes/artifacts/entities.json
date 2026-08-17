@@ -1,0 +1,2419 @@
+{
+ "agents": [
+  {
+   "id": "NEO",
+   "name": "Neo",
+   "aliases": [
+    "NEO",
+    "Neo",
+    "NEO (implied, as the subject of the office)"
+   ],
+   "description": "The protagonist, a hacker known as Thomas Anderson, who is recruited by Morpheus to fight the Machines and potentially become the One.",
+   "salience": "major"
+  },
+  {
+   "id": "MORPHEUS",
+   "name": "Morpheus",
+   "aliases": [
+    "MORPHEUS",
+    "Morpheus",
+    "MORPHEUS (V.O.)",
+    "Morpheus (V.O.)"
+   ],
+   "description": "The leader of the Nebuchadnezzar and a key figure in the resistance, who believes Neo is the prophesied One.",
+   "salience": "major"
+  },
+  {
+   "id": "TRINITY",
+   "name": "Trinity",
+   "aliases": [
+    "TRINITY",
+    "Trinity",
+    "TRINITY (WOMANV.O.)"
+   ],
+   "description": "A skilled fighter and pilot on the Nebuchadnezzar who falls in love with Neo and is instrumental in his journey.",
+   "salience": "major"
+  },
+  {
+   "id": "AGENT_SMITH",
+   "name": "Agent Smith",
+   "aliases": [
+    "AGENT SMITH",
+    "Agent Smith"
+   ],
+   "description": "The primary antagonist, a program in the Matrix tasked with hunting down Neo and other anomalies.",
+   "salience": "major"
+  },
+  {
+   "id": "CYpher",
+   "name": "Cypher",
+   "aliases": [
+    "CYPHER",
+    "Cypher",
+    "CYpher",
+    "CYPHER (MANV.O.)",
+    "CYPHER (V.O.)"
+   ],
+   "description": "A crew member on the Nebuchadnezzar who betrays the group for the chance to live a life of luxury in the Matrix.",
+   "salience": "major"
+  },
+  {
+   "id": "TANK",
+   "name": "Tank",
+   "aliases": [
+    "TANK",
+    "Tank",
+    "TANK (V.O.)"
+   ],
+   "description": "The operator of the Nebuchadnezzar who manages the crew's connections to the Matrix and is Dozer's brother.",
+   "salience": "major"
+  },
+  {
+   "id": "ORACLE",
+   "name": "Oracle",
+   "aliases": [
+    "ORACLE",
+    "Oracle"
+   ],
+   "description": "A mysterious woman in the Matrix who provides guidance and prophecy to the resistance, specifically to Neo.",
+   "salience": "major"
+  },
+  {
+   "id": "DOZER",
+   "name": "Dozer",
+   "aliases": [
+    "DOZER",
+    "Dozer"
+   ],
+   "description": "The cook on the Nebuchadnezzar and Tank's brother, who is killed by Cypher during the betrayal.",
+   "salience": "supporting"
+  },
+  {
+   "id": "MOUSE",
+   "name": "Mouse",
+   "aliases": [
+    "MOUSE",
+    "Mouse"
+   ],
+   "description": "A crew member on the Nebuchadnezzar who is killed by Agent Smith at the Hotel Lafayette.",
+   "salience": "supporting"
+  },
+  {
+   "id": "SWITCH",
+   "name": "Switch",
+   "aliases": [
+    "SWITCH",
+    "Switch"
+   ],
+   "description": "A crew member on the Nebuchadnezzar who assists in the extraction of Neo and is killed by Cypher.",
+   "salience": "supporting"
+  },
+  {
+   "id": "APOC",
+   "name": "Apoc",
+   "aliases": [
+    "APOC",
+    "Apoc"
+   ],
+   "description": "A crew member on the Nebuchadnezzar who is killed by Cypher during the betrayal.",
+   "salience": "supporting"
+  },
+  {
+   "id": "AGENT_BROWN",
+   "name": "Agent Brown",
+   "aliases": [
+    "AGENT BROWN",
+    "Agent Brown"
+   ],
+   "description": "One of the Agents in the Matrix who assists Agent Smith in capturing Morpheus and Neo.",
+   "salience": "supporting"
+  },
+  {
+   "id": "AGENT_JONES",
+   "name": "Agent Jones",
+   "aliases": [
+    "AGENT JONES",
+    "Agent Jones"
+   ],
+   "description": "One of the Agents in the Matrix who assists Agent Smith in the hunt for Neo and Morpheus.",
+   "salience": "supporting"
+  },
+  {
+   "id": "BIG_COP",
+   "name": "Big Cop",
+   "aliases": [
+    "BIG COP",
+    "Big Cop"
+   ],
+   "description": "The lead police officer in the raid on Room 303 at the Heart O' the City Hotel.",
+   "salience": "minor"
+  },
+  {
+   "id": "LIEUTENANT",
+   "name": "Lieutenant",
+   "aliases": [
+    "LIEUTENANT",
+    "Lieutenant"
+   ],
+   "description": "A police officer present outside the Heart O' the City Hotel during the raid.",
+   "salience": "minor"
+  },
+  {
+   "id": "CHOI",
+   "name": "Choi",
+   "aliases": [
+    "CHOI",
+    "Choi"
+   ],
+   "description": "A neighbor of Neo who delivers a package to his apartment.",
+   "salience": "minor"
+  },
+  {
+   "id": "DUJOUR",
+   "name": "Dujour",
+   "aliases": [
+    "DUJOUR",
+    "Dujour"
+   ],
+   "description": "A neighbor of Neo who visits him in his apartment.",
+   "salience": "minor"
+  },
+  {
+   "id": "RHINEHEART",
+   "name": "Rhineheart",
+   "aliases": [
+    "RHINEHEART",
+    "RHINEHEART (implied, as the subject of the office)"
+   ],
+   "description": "Neo's boss at Meta CorTechs who lectures him about authority and company loyalty.",
+   "salience": "minor"
+  },
+  {
+   "id": "FEMALE_EMPLOYEE",
+   "name": "Female Employee",
+   "aliases": [
+    "Female Employee"
+   ],
+   "description": "A colleague at Meta CorTechs seen in Neo's office scene.",
+   "salience": "minor"
+  },
+  {
+   "id": "PRIESTESS",
+   "name": "Priestess",
+   "aliases": [
+    "PRIESTESS",
+    "Priestess",
+    "PRIESTESS (WOMAN)"
+   ],
+   "description": "The assistant to the Oracle who guides Neo to her apartment.",
+   "salience": "minor"
+  },
+  {
+   "id": "BLIND_MAN",
+   "name": "Blind Man",
+   "aliases": [
+    "Blind Man",
+    "blind man"
+   ],
+   "description": "A character encountered by Morpheus and Neo in the tenement building housing the Oracle.",
+   "salience": "minor"
+  },
+  {
+   "id": "SPOON_BOY",
+   "name": "Spoon Boy",
+   "aliases": [
+    "SPOON BOY"
+   ],
+   "description": "A child in the Oracle's apartment who demonstrates telekinetic abilities by bending a spoon.",
+   "salience": "minor"
+  },
+  {
+   "id": "PILOT",
+   "name": "Pilot",
+   "aliases": [
+    "PILOT"
+   ],
+   "description": "The pilot of the military helicopter who is transformed into Agent Jones by Neo.",
+   "salience": "minor"
+  },
+  {
+   "id": "SECURITY_GUARD",
+   "name": "Security Guard",
+   "aliases": [
+    "SECURITY GUARD"
+   ],
+   "description": "A guard at the entrance of the government building.",
+   "salience": "minor"
+  },
+  {
+   "id": "GUARD_4",
+   "name": "Guard #4",
+   "aliases": [
+    "GUARD #4"
+   ],
+   "description": "A specific security guard at the government building.",
+   "salience": "minor"
+  },
+  {
+   "id": "SOLDIER",
+   "name": "Soldier",
+   "aliases": [
+    "Soldier"
+   ],
+   "description": "A gas-masked soldier found in the basement of the Hotel Lafayette.",
+   "salience": "minor"
+  },
+  {
+   "id": "MARINES",
+   "name": "Marines",
+   "aliases": [
+    "MARINES",
+    "Marines"
+   ],
+   "description": "Soldiers deployed by the Agents to capture Neo and Morpheus at the government building.",
+   "salience": "minor"
+  },
+  {
+   "id": "POLICE_OFFICERS",
+   "name": "Police Officers",
+   "aliases": [
+    "POLICE OFFICERS",
+    "Police Officers",
+    "COPS",
+    "Cops",
+    "cops",
+    "POLICE",
+    "Police",
+    "COP",
+    "Cop",
+    "cop"
+   ],
+   "description": "The generic police force in the Matrix that raids Trinity's room and searches the Hotel Lafayette.",
+   "salience": "minor"
+  },
+  {
+   "id": "SENTINEL",
+   "name": "Sentinel",
+   "aliases": [
+    "Sentinel",
+    "Sentinel (killing machine)"
+   ],
+   "description": "A machine in the real world that hunts the Nebuchadnezzar in the sewer main.",
+   "salience": "supporting"
+  },
+  {
+   "id": "BLACK_CAT",
+   "name": "Black Cat",
+   "aliases": [
+    "Black Cat",
+    "Black cat",
+    "black cat"
+   ],
+   "description": "A cat seen by Neo in the Hotel Lafayette, which he experiences as a déjà vu moment.",
+   "salience": "minor"
+  }
+ ],
+ "locations": [
+  {
+   "id": "NEO_S_APARTMENT",
+   "name": "Neo's Apartment",
+   "aliases": [
+    "INT. NEO'S APARTMENT",
+    "INT. NEO'S APARTMENT - NIGHT",
+    "Neo's Apartment"
+   ],
+   "description": "Neo's small, cluttered studio apartment in the Matrix, featuring a computer, bed, and bathroom. It is his home before and after his initial extraction.",
+   "salience": "major"
+  },
+  {
+   "id": "HEART_O_THE_CITY_HOTEL",
+   "name": "Heart O' the City Hotel",
+   "aliases": [
+    "INT. HEART O' THE CITY HOTEL",
+    "INT. HEART O' THE CITY HOTEL - NIGHT",
+    "INT. HEART O' THE CITY HOTEL 4",
+    "EXT. HEART O' THE CITY HOTEL - NIGHT",
+    "INT. HEART O' THE CITY HOTEL - Room 303"
+   ],
+   "description": "An abandoned, fire-damaged hotel in the city. The location of the opening scene where Trinity is arrested by police and Agents.",
+   "salience": "major"
+  },
+  {
+   "id": "META_CORTECHS_OFFICE",
+   "name": "Meta CorTechs Office",
+   "aliases": [
+    "INT. META CORTECHS OFFICE",
+    "EXT. SKYSCRAPER",
+    "Neo's Cubicle / Empty Cubicle / Empty Office, Meta CorTechs Office",
+    "INT. EMPTY OFFICE (Meta CorTechs skyscraper)",
+    "Meta CorTechs skyscraper"
+   ],
+   "description": "Neo's workplace, a large corporate skyscraper. It contains his cubicle, an empty office with scaffolding, and the lobby where he is arrested.",
+   "salience": "major"
+  },
+  {
+   "id": "INTERROGATION_ROOM",
+   "name": "Interrogation Room",
+   "aliases": [
+    "INT. INTERROGATION ROOM"
+   ],
+   "description": "A stark, white-walled room in the government building where Neo is questioned by Agent Smith before being released.",
+   "salience": "supporting"
+  },
+  {
+   "id": "HOTEL_LAFAYETTE",
+   "name": "Hotel Lafayette",
+   "aliases": [
+    "EXT. HOTEL LAFAYETTE",
+    "INT. HOTEL LAFAYETTE",
+    "INT. HOTEL LAFAYETTE - DAY",
+    "EXT. HOTEL LAFAYETTE - DAY",
+    "INT. ROOM 1313, HOTEL LAFAYETTE",
+    "INT. ROOM 1313",
+    "INT. ROOM 1313 - DAY",
+    "Room 1313, Hotel Lafayette",
+    "INT. ROOM 808",
+    "INT. ROOM 808 - DAY",
+    "INT. ROOM 608",
+    "INT. ROOM 608 - DAY",
+    "INT. HALL",
+    "INT. HALL - DAY",
+    "INT. HALL (inside a tenement-like building)",
+    "INT. STAIRCASE - DAY",
+    "INT. STAIRS - DAY",
+    "INT. STAIRWELL - DAY",
+    "INT. WALL",
+    "INT. WALL - DAY",
+    "INT. BASEMENT - DAY",
+    "BASEMENT",
+    "Thirteenth floor hallway"
+   ],
+   "description": "A rotting, decaying hotel used as a hideout by the Nebuchadnezzar crew. It contains Room 1313 (the extraction point), a basement, and narrow plumbing walls.",
+   "salience": "major"
+  },
+  {
+   "id": "POWER_PLANT",
+   "name": "Power Plant",
+   "aliases": [
+    "INT. POWER PLANT",
+    "INT. POWER PLANT - CLOSE ON MAN'S BODY",
+    "EXT. FETUS FIELDS / A40 INT. POWER PLANT"
+   ],
+   "description": "The real-world facility where humans are grown and harvested for energy. It contains the fetus fields and the pod tanks.",
+   "salience": "major"
+  },
+  {
+   "id": "SEWER_MAIN",
+   "name": "Sewer Main",
+   "aliases": [
+    "INT. SEWER MAIN",
+    "EXT. SEWER MAIN"
+   ],
+   "description": "A large underground conduit system in the real world where the Nebuchadnezzar hovercraft travels and hides from Sentinels.",
+   "salience": "major"
+  },
+  {
+   "id": "NEBUCADNEZZAR",
+   "name": "Nebuchadnezzar",
+   "aliases": [
+    "INT. HOVERCRAFT",
+    "INT. HOVERCRAFT - INFIRMARY",
+    "EXT. HOVERCRAFT",
+    "HOVERCRAFT",
+    "INT. MAIN DECK",
+    "INT. MAIN DECK (Nebuchadnezzar)",
+    "Main Deck (Nebuchadnezzar)",
+    "Main Deck",
+    "INT. COCKPIT",
+    "INT. COCKPIT, NEBUCADNEZZAR",
+    "INT. MESS HALL",
+    "INT. HALL",
+    "INT. NEO'S ROOM",
+    "NEO'S ROOM",
+    "Nebuchadnezzar"
+   ],
+   "description": "The hovercraft used by the resistance to travel through the sewers and plug into the Matrix. It contains the main deck, cockpit, mess hall, and infirmary.",
+   "salience": "major"
+  },
+  {
+   "id": "CONSTRUCT",
+   "name": "Construct",
+   "aliases": [
+    "INT. CONSTRUCT",
+    "INT. DOJO",
+    "INT. DOJO (training program)",
+    "INT. CONSTRUCT - ROOFTOP - DAY"
+   ],
+   "description": "A virtual loading bay or white void used by the crew to prepare for Matrix entries and for Neo's training programs (like the dojo).",
+   "salience": "major"
+  },
+  {
+   "id": "ORACLE_S_APARTMENT",
+   "name": "Oracle's Apartment",
+   "aliases": [
+    "INT. ORACLE'S APARTMENT",
+    "INT. ORACLE'S APARTMENT (KITCHEN)",
+    "INT. ORACLE'S APARTMENT - KITCHEN",
+    "INT. KITCHEN",
+    "INT. SITTING ROOM - DAY",
+    "INT. BUILDING",
+    "INT. ELEVATOR",
+    "INT. ELEVATORS - DAY"
+   ],
+   "description": "The home of the Oracle, located in a tenement-style building. It includes a kitchen, sitting room, and elevator access.",
+   "salience": "major"
+  },
+  {
+   "id": "TV_REPAIR_SHOP",
+   "name": "TV Repair Shop",
+   "aliases": [
+    "INT. TV REPAIR SHOP",
+    "INT. TV REPAIR SHOP - DAY",
+    "TV REPAIR SHOP"
+   ],
+   "description": "An abandoned, dusty shop in the Matrix used as an exit point for the crew during the Hotel Lafayette mission.",
+   "salience": "major"
+  },
+  {
+   "id": "GOVERNMENT_BUILDING",
+   "name": "Government Building",
+   "aliases": [
+    "EXT. GOVERNMENT BUILDING",
+    "EXT. GOVERNMENT BUILDING - DAY",
+    "INT. GOVERNMENT BUILDING - DAY",
+    "INT. GOVERNMENT BUILDING - LOBBY",
+    "GOVERNMENT BUILDING",
+    "INT. EXECUTIVE OFFICE",
+    "INT. EXECUTIVE OFFICE - DAY",
+    "Executive Office",
+    "INT. LOBBY - DAY",
+    "HALL - DAY",
+    "EXT. ROOF",
+    "EXT. ROOF - DAY",
+    "ROOF",
+    "EXT. ROOFTOP"
+   ],
+   "description": "A high-rise government building where Morpheus is held. It features a lobby, executive offices, and a roof where the final confrontation occurs.",
+   "salience": "major"
+  },
+  {
+   "id": "CITY_STREETS",
+   "name": "City Streets",
+   "aliases": [
+    "EXT. CITY STREET - NIGHT",
+    "CITY STREET",
+    "EXT. STREET",
+    "EXT. STREET - DAY",
+    "EXT. CITY STREET - TRAINING PROGRAM - DAY"
+   ],
+   "description": "Various outdoor street locations in the Matrix, including the bridge, back alleys, and downtown areas used for travel and training.",
+   "salience": "supporting"
+  },
+  {
+   "id": "CAR_INTERIOR",
+   "name": "Car Interior",
+   "aliases": [
+    "INT. CAR",
+    "EXT. CAR"
+   ],
+   "description": "The interior of a moving car used by the crew to transport Neo and check for bugs, and later for travel to the Oracle.",
+   "salience": "supporting"
+  },
+  {
+   "id": "RESTAURANT",
+   "name": "Restaurant",
+   "aliases": [
+    "EXT. CAR"
+   ],
+   "description": "A well-lit restaurant where Cypher meets with Agent Smith to negotiate his exit from the Matrix. Note: The scene header says EXT. CAR but the description is a restaurant.",
+   "salience": "supporting",
+   "uncertain_merge": "Scene sc-025 is labeled 'EXT. CAR' but described as a restaurant. Merged here as a distinct location based on description."
+  },
+  {
+   "id": "APARTMENT_PARTY",
+   "name": "Apartment Party",
+   "aliases": [
+    "INT. APARTMENT"
+   ],
+   "description": "A smoke-filled, crowded apartment with industrial music where Neo meets Trinity before his extraction. Distinct from Neo's own apartment.",
+   "salience": "minor"
+  }
+ ],
+ "objects": [
+  {
+   "id": "CYPHER",
+   "name": "Cypher",
+   "aliases": [
+    "CYPHER",
+    "Cypher",
+    "CYPHER (MANV.O.)",
+    "CYPHER (V.O.)",
+    "CYpher"
+   ],
+   "description": "A crew member who betrays the group to the Agents in exchange for a life of luxury in the Matrix, killing Dozer and Tank.",
+   "salience": "major"
+  },
+  {
+   "id": "RED_PILL",
+   "name": "Red Pill",
+   "aliases": [
+    "Red pill"
+   ],
+   "description": "The pill offered by Morpheus that allows Neo to see the true nature of reality and wake up from the Matrix.",
+   "salience": "major"
+  },
+  {
+   "id": "BLUE_PILL",
+   "name": "Blue Pill",
+   "aliases": [
+    "Blue pill"
+   ],
+   "description": "The pill offered by Morpheus that allows Neo to return to his normal life in the Matrix, forgetting everything he has learned.",
+   "salience": "major"
+  },
+  {
+   "id": "WHITE_RABBIT_PIN",
+   "name": "White Rabbit Pin",
+   "aliases": [
+    "White rabbit pin",
+    "White rabbit pin on Dujour's jacket"
+   ],
+   "description": "A symbol left by Morpheus's crew to guide Neo, appearing on Dujour's jacket and serving as a clue to his destiny.",
+   "salience": "supporting"
+  },
+  {
+   "id": "META_CORTECHS",
+   "name": "Meta CorTechs",
+   "aliases": [
+    "Meta CorTechs",
+    "Meta CorTechs skyscraper",
+    "INT. META CORTECHS OFFICE"
+   ],
+   "description": "The company where Neo works as a programmer, the location where he is first approached by the Agents.",
+   "salience": "supporting"
+  },
+  {
+   "id": "ORACLES_APARTMENT",
+   "name": "Oracle's Apartment",
+   "aliases": [
+    "ORACLE'S APARTMENT",
+    "INT. ORACLE'S APARTMENT",
+    "INT. ORACLE'S APARTMENT (KITCHEN)"
+   ],
+   "description": "The location where Neo meets the Oracle, who provides him with crucial guidance and the cookie scene occurs.",
+   "salience": "supporting"
+  },
+  {
+   "id": "SIMULACRA_AND_SIMULATIONS",
+   "name": "Simulacra and Simulations",
+   "aliases": [
+    "Baudrillard's Simulacra and Simulations (hollowed out)",
+    "Baudrillard's Simulacra and Simulations (hollowed out with disks)",
+    "Book: Simulacra and Simulations",
+    "Hollowed-out book (Baudrillard's Simulacra and Simulations)"
+   ],
+   "description": "A book used by Morpheus's crew to store computer disks, given to Neo as a clue to his destiny.",
+   "salience": "minor"
+  },
+  {
+   "id": "CELLULAR_PHONE",
+   "name": "Cellular Phone",
+   "aliases": [
+    "Cellular Phone",
+    "Cellular phone",
+    "Cellular phone (used by Morpheus)",
+    "Cell phone (Morpheus's)",
+    "CELLULAR"
+   ],
+   "description": "A communication device used by the crew to contact Neo and coordinate their actions within the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "DRIVE_CHAIR",
+   "name": "Drive Chair",
+   "aliases": [
+    "Drive chair",
+    "Drive chairs",
+    "Suspension chair",
+    "ecto-skeleton chairs"
+   ],
+   "description": "The chairs used by the crew to connect their bodies to the Matrix, allowing them to enter and exit the simulation.",
+   "salience": "minor"
+  },
+  {
+   "id": "FIBER_OPTIC_WIRE_TAP",
+   "name": "Fiber-optic Wire Tap",
+   "aliases": [
+    "Fiber-optic wire tap",
+    "Fiber-optic wire tap (fluke worm device)",
+    "Fiber-optic wire tap (transforming creature)",
+    "Wire tap (fiber-optic wire tap)",
+    "wire tap (fluke-like bug)"
+   ],
+   "description": "A device used by the Agents to track Neo, which is removed by Switch during the car scene.",
+   "salience": "minor"
+  },
+  {
+   "id": "EMP_KEY",
+   "name": "E.M.P. Key",
+   "aliases": [
+    "E.M.P. (Electromagnetic Pulse) key"
+   ],
+   "description": "A device used to disable Sentinels, crucial for the Nebuchadnezzar's survival in the sewer main.",
+   "salience": "minor"
+  },
+  {
+   "id": "COOKIE",
+   "name": "Cookie",
+   "aliases": [
+    "Chocolate chip cookies",
+    "Cookie",
+    "cookie"
+   ],
+   "description": "A cookie given to Neo by the Oracle, symbolizing the choice to accept his destiny.",
+   "salience": "minor"
+  },
+  {
+   "id": "BREAKFAST_SUBSTANCE",
+   "name": "Breakfast Substance",
+   "aliases": [
+    "Breakfast (single-celled protein/synthetic aminos)",
+    "Breakfast substance (protein/aminos mixture)",
+    "breakfast substance (yogurt/cellulite consistency)",
+    "protein sludge",
+    "protein paste"
+   ],
+   "description": "The grey, synthetic protein mixture consumed by the crew on the Nebuchadnezzar, representing the harsh reality of life outside the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "MAGENTA_GEL",
+   "name": "Magenta Gel",
+   "aliases": [
+    "Magenta gelatin",
+    "Magenta amniotic gel"
+   ],
+   "description": "The fluid in which Neo's body is suspended in the power plant, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "FETUS_HUSKS",
+   "name": "Fetus Husks",
+   "aliases": [
+    "Fetus husks"
+   ],
+   "description": "The placenta-like containers in which human fetuses are grown in the power plant, illustrating the machines' control over human reproduction.",
+   "salience": "minor"
+  },
+  {
+   "id": "HELICOPTER",
+   "name": "Military Helicopter",
+   "aliases": [
+    "Helicopter",
+    "MILITARY HELICOPTER",
+    "military helicopter",
+    "Helicopter (auditory)"
+   ],
+   "description": "The helicopter used by the Agents to transport Marines and in the climax where Trinity pilots it to escape.",
+   "salience": "minor"
+  },
+  {
+   "id": "RIFLE",
+   "name": "High-tech Rifle",
+   "aliases": [
+    "High-tech rifle",
+    "High-voltage weapon/rifle",
+    "Rifle",
+    "rifle"
+   ],
+   "description": "The weapon used by Cypher to kill Dozer and Tank, and by the crew during the rescue mission.",
+   "salience": "minor"
+  },
+  {
+   "id": "GUN",
+   "name": "Gun",
+   "aliases": [
+    "Gun",
+    "gun",
+    "Guns",
+    "guns",
+    "TRINITY's .45 pistol",
+    "Trinity's gun"
+   ],
+   "description": "Various firearms used by the Agents, police, and crew members throughout the film.",
+   "salience": "minor"
+  },
+  {
+   "id": "HANDCUFFS",
+   "name": "Handcuffs",
+   "aliases": [
+    "Handcuffs",
+    "handcuffs",
+    "Cuffs",
+    "cuffs",
+    "Morpheus's handcuffs"
+   ],
+   "description": "Restraints used by the police and Agents to hold Neo and Morpheus, symbolizing their control.",
+   "salience": "minor"
+  },
+  {
+   "id": "ELEVATOR",
+   "name": "Elevator",
+   "aliases": [
+    "Elevator",
+    "ELEVATOR",
+    "Elevator Shaft"
+   ],
+   "description": "The elevator in the government building where Trinity and Neo set the bomb to create an escape route.",
+   "salience": "minor"
+  },
+  {
+   "id": "PHONE",
+   "name": "Phone",
+   "aliases": [
+    "Phone",
+    "PHONE",
+    "phone",
+    "Public phone",
+    "Pay phone",
+    "Operator phone"
+   ],
+   "description": "Various telephones used for communication within the Matrix, including the one in the TV repair shop used for extraction.",
+   "salience": "minor"
+  },
+  {
+   "id": "MONITOR",
+   "name": "Computer Monitor",
+   "aliases": [
+    "Computer Screen",
+    "Computer screen",
+    "Monitor",
+    "monitor",
+    "Monitors",
+    "monitors",
+    "Computer monitors",
+    "computer monitors"
+   ],
+   "description": "Screens used by the crew to monitor the Matrix and by the Agents to display data and communicate.",
+   "salience": "minor"
+  },
+  {
+   "id": "CABLE",
+   "name": "Cable",
+   "aliases": [
+    "Cable",
+    "cable",
+    "Cable (neck jack)",
+    "Cable/Plug in Apoc's neck",
+    "Plug in Switch's neck",
+    "Plug (in Morpheus's head)",
+    "Cerebral plug/cable",
+    "Coaxial cable plugged into skull",
+    "Coaxial cable in base of skull",
+    "coaxial line with cerebrum chip",
+    "coaxial cables",
+    "coaxial plug/cable"
+   ],
+   "description": "The cables and plugs used to connect the crew's bodies to the Matrix, allowing them to enter and exit the simulation.",
+   "salience": "minor"
+  },
+  {
+   "id": "NEO_APARTMENT",
+   "name": "Neo's Apartment",
+   "aliases": [
+    "NEO'S APARTMENT",
+    "INT. NEO'S APARTMENT",
+    "INT. NEO'S APARTMENT - NIGHT",
+    "Neo's Apartment",
+    "NEO'S ROOM",
+    "INT. NEO'S ROOM"
+   ],
+   "description": "Neo's living space in the Matrix, where he receives the initial messages and wakes up after his extraction.",
+   "salience": "minor"
+  },
+  {
+   "id": "MAIN_DECK",
+   "name": "Main Deck",
+   "aliases": [
+    "MAIN DECK",
+    "INT. MAIN DECK",
+    "INT. MAIN DECK (Nebuchadnezzar)",
+    "Main Deck (Nebuchadnezzar)",
+    "Main Deck"
+   ],
+   "description": "The central area of the Nebuchadnezzar where the crew operates the drive chairs and monitors the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "MESS_HALL",
+   "name": "Mess Hall",
+   "aliases": [
+    "MESS HALL",
+    "INT. MESS HALL"
+   ],
+   "description": "The area on the Nebuchadnezzar where the crew gathers to eat and discuss their situation.",
+   "salience": "minor"
+  },
+  {
+   "id": "INFIRMARY",
+   "name": "Infirmary",
+   "aliases": [
+    "INT. HOVERCRAFT - INFIRMARY",
+    "INT. HOVERCRAFT - INFIRMARY"
+   ],
+   "description": "The medical area on the Nebuchadnezzar where Neo is treated after his extraction.",
+   "salience": "minor"
+  },
+  {
+   "id": "DOJO",
+   "name": "Dojo",
+   "aliases": [
+    "DOJO",
+    "INT. DOJO",
+    "INT. DOJO (training program)"
+   ],
+   "description": "The training area in the Construct where Neo learns to fight and bend the rules of the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "ROOFTOP",
+   "name": "Rooftop",
+   "aliases": [
+    "ROOFTOP",
+    "EXT. ROOFTOP",
+    "EXT. ROOF",
+    "EXT. ROOF - DAY",
+    "ROOF",
+    "Rooftop",
+    "Rooftop edge"
+   ],
+   "description": "The location in the Construct where Neo learns to jump across buildings and in the climax where the final battle takes place.",
+   "salience": "minor"
+  },
+  {
+   "id": "STAIRWELL",
+   "name": "Stairwell",
+   "aliases": [
+    "Stairwell",
+    "INT. STAIRWELL - DAY",
+    "INT. STAIRS - DAY",
+    "INT. STAIRCASE - DAY",
+    "Back stairwell"
+   ],
+   "description": "The location in the Hotel Lafayette where the crew hides and fights the Agents during the rescue mission.",
+   "salience": "minor"
+  },
+  {
+   "id": "BASEMENT",
+   "name": "Basement",
+   "aliases": [
+    "BASEMENT",
+    "INT. BASEMENT - DAY"
+   ],
+   "description": "The location in the Hotel Lafayette where the crew escapes through the plumbing wall and where the final confrontation with the Agents occurs.",
+   "salience": "minor"
+  },
+  {
+   "id": "CAR",
+   "name": "Car",
+   "aliases": [
+    "Car",
+    "car",
+    "INT. CAR",
+    "EXT. CAR",
+    "Dark sedan",
+    "black sedan",
+    "black sedan with tinted windows"
+   ],
+   "description": "Various vehicles used by the crew and Agents, including the car where Neo is checked for wire taps and the sedan used by the Agents.",
+   "salience": "minor"
+  },
+  {
+   "id": "MOTORCYCLE",
+   "name": "Motorcycle",
+   "aliases": [
+    "Motorcycle",
+    "Black leather motorcycle jacket (on Dujour, referenced later)"
+   ],
+   "description": "The vehicle used by Trinity to escape the Heart O' The City Hotel and the jacket worn by Dujour, serving as a clue.",
+   "salience": "minor"
+  },
+  {
+   "id": "GARAGE_TRUCK",
+   "name": "Garbage Truck",
+   "aliases": [
+    "Garbage truck"
+   ],
+   "description": "The vehicle used by Trinity to escape the Heart O' The City Hotel, providing cover from the Agents.",
+   "salience": "minor"
+  },
+  {
+   "id": "FIRE_ESCAPE",
+   "name": "Fire Escape",
+   "aliases": [
+    "Fire escape"
+   ],
+   "description": "The structure used by Trinity to escape the Heart O' The City Hotel, providing a path to the rooftops.",
+   "salience": "minor"
+  },
+  {
+   "id": "WINDOW",
+   "name": "Window",
+   "aliases": [
+    "Window",
+    "window",
+    "Window Ledge",
+    "window ledge",
+    "Bricked-up windows",
+    "brick window"
+   ],
+   "description": "Various windows used for escape and concealment, including the one in Neo's apartment and the bricked-up windows in the Hotel Lafayette.",
+   "salience": "minor"
+  },
+  {
+   "id": "DOOR",
+   "name": "Door",
+   "aliases": [
+    "Door",
+    "Door to room 1313",
+    "Room 1313 door",
+    "Door jamb",
+    "roof access door"
+   ],
+   "description": "Various doors used for entry and exit, including the door to Room 1313 and the roof access door in the government building.",
+   "salience": "minor"
+  },
+  {
+   "id": "WALL",
+   "name": "Wall",
+   "aliases": [
+    "Wall",
+    "wall",
+    "INT. WALL",
+    "INT. WALL - DAY",
+    "Plaster and lath",
+    "plaster and lathe wall",
+    "Plaster and lathe wall"
+   ],
+   "description": "The walls in the Hotel Lafayette where the crew hides and fights the Agents, including the plumbing wall.",
+   "salience": "minor"
+  },
+  {
+   "id": "PIPE",
+   "name": "Pipe",
+   "aliases": [
+    "Pipe",
+    "pipe",
+    "Supply pipes",
+    "supply pipes",
+    "Iron stack pipe",
+    "grease-black stack pipes",
+    "Waste line pipe"
+   ],
+   "description": "The pipes in the Hotel Lafayette and power plant used for concealment and as part of the environment.",
+   "salience": "minor"
+  },
+  {
+   "id": "BOILER",
+   "name": "Boiler",
+   "aliases": [
+    "Boiler",
+    "boiler",
+    "boilers"
+   ],
+   "description": "The large machines in the basement of the Hotel Lafayette, providing a setting for the final confrontation.",
+   "salience": "minor"
+  },
+  {
+   "id": "SHEETS",
+   "name": "Sheets",
+   "aliases": [
+    "Sheets covering the dead",
+    "sheets covering bodies"
+   ],
+   "description": "The sheets used to cover the bodies of the dead crew members, symbolizing their sacrifice.",
+   "salience": "minor"
+  },
+  {
+   "id": "LIGHT_STICK",
+   "name": "Light Stick",
+   "aliases": [
+    "Light stick",
+    "fluorescent light stick",
+    "Fluorescent light sticks"
+   ],
+   "description": "The light sources used by the crew in the dark areas of the Nebuchadnezzar, providing illumination.",
+   "salience": "minor"
+  },
+  {
+   "id": "NEEDLES",
+   "name": "Needles",
+   "aliases": [
+    "Acupuncture-like needles",
+    "acupuncture-like needles",
+    "hypodermic needle"
+   ],
+   "description": "The needles used to treat Neo in the infirmary and to administer sedatives to Morpheus.",
+   "salience": "minor"
+  },
+  {
+   "id": "DEVICE",
+   "name": "Device",
+   "aliases": [
+    "Strange device",
+    "strange device",
+    "strange steel and glass device",
+    "steel and glass device (extractor)",
+    "steel and glass device (rib separator/speculum/air compressor hybrid)"
+   ],
+   "description": "The devices used to remove the wire tap from Neo and to treat him in the infirmary.",
+   "salience": "minor"
+  },
+  {
+   "id": "BATTERY",
+   "name": "Battery",
+   "aliases": [
+    "Coppertop battery",
+    "coppertop battery"
+   ],
+   "description": "The battery shown by Morpheus in the Construct, symbolizing the choice to wake up or return to the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "TV",
+   "name": "Television",
+   "aliases": [
+    "Television",
+    "Television screen",
+    "TV"
+   ],
+   "description": "The television used by Morpheus in the Construct to show Neo the real world and the Fetus Fields.",
+   "salience": "minor"
+  },
+  {
+   "id": "DISK",
+   "name": "Disk",
+   "aliases": [
+    "Disk",
+    "disk",
+    "Computer Disk",
+    "Computer disk",
+    "Computer disks",
+    "laser disk",
+    "Jujitsu disk"
+   ],
+   "description": "The disks used to store data and programs, including the Jujitsu disk used for training and the disk containing the pilot program.",
+   "salience": "minor"
+  },
+  {
+   "id": "KEYBOARD",
+   "name": "Keyboard",
+   "aliases": [
+    "Keyboard"
+   ],
+   "description": "The keyboard used by Tank to operate the Nebuchadnezzar and connect to the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "MOUSE_COMPUTER",
+   "name": "Computer",
+   "aliases": [
+    "Computer",
+    "computer",
+    "PowerBook computer",
+    "Powerbook",
+    "powerbook",
+    "powerbook computer"
+   ],
+   "description": "The computer used by Neo in his apartment and by the crew on the Nebuchadnezzar.",
+   "salience": "minor"
+  },
+  {
+   "id": "MODEM",
+   "name": "Modem",
+   "aliases": [
+    "Modem",
+    "modem"
+   ],
+   "description": "The modem used by Trinity in the Heart O' The City Hotel to connect to the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "ALARM",
+   "name": "Alarm",
+   "aliases": [
+    "ALARM CLOCK",
+    "Alarm"
+   ],
+   "description": "The alarm clock that wakes Neo up in his apartment and the alarm on the Nebuchadnezzar that signals the Sentinel's approach.",
+   "salience": "minor"
+  },
+  {
+   "id": "CIGARETTE",
+   "name": "Cigarette",
+   "aliases": [
+    "Cigarette",
+    "cigarette lighter"
+   ],
+   "description": "The cigarette smoked by the Oracle and the lighter used by Switch to remove the wire tap from Neo.",
+   "salience": "minor"
+  },
+  {
+   "id": "GLASSES",
+   "name": "Glasses",
+   "aliases": [
+    "Glasses",
+    "glasses",
+    "Sunglasses",
+    "sunglasses",
+    "Morpheus's glasses"
+   ],
+   "description": "The glasses worn by Morpheus, symbolizing his wisdom and insight into the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "JACKET",
+   "name": "Jacket",
+   "aliases": [
+    "Jacket",
+    "Morpheus's jacket",
+    "Black leather motorcycle jacket (on Dujour, referenced later)"
+   ],
+   "description": "The jacket worn by Morpheus and Dujour, serving as a clue to Morpheus's identity.",
+   "salience": "minor"
+  },
+  {
+   "id": "COAT",
+   "name": "Coat",
+   "aliases": [
+    "Coat",
+    "long black coats"
+   ],
+   "description": "The coats worn by Neo and Trinity during the rescue mission, providing concealment.",
+   "salience": "minor"
+  },
+  {
+   "id": "BAG",
+   "name": "Bag",
+   "aliases": [
+    "Bag",
+    "duffel bag",
+    "metal suitcase"
+   ],
+   "description": "The bags carried by Neo and Trinity during the rescue mission, containing their equipment.",
+   "salience": "minor"
+  },
+  {
+   "id": "BOMB",
+   "name": "Bomb",
+   "aliases": [
+    "Bomb",
+    "plastique and napalm bomb"
+   ],
+   "description": "The bomb set by Trinity in the elevator to create an escape route.",
+   "salience": "minor"
+  },
+  {
+   "id": "ROPE",
+   "name": "Rope",
+   "aliases": [
+    "Rope",
+    "rope",
+    "Climbing rope",
+    "climbing rope",
+    "harness"
+   ],
+   "description": "The rope used by Neo and Trinity to escape the government building.",
+   "salience": "minor"
+  },
+  {
+   "id": "LADDER",
+   "name": "Ladder",
+   "aliases": [
+    "Ladder",
+    "ladder"
+   ],
+   "description": "The ladder used by Neo to climb into his room on the Nebuchadnezzar.",
+   "salience": "minor"
+  },
+  {
+   "id": "SPOON",
+   "name": "Spoon",
+   "aliases": [
+    "Spoon",
+    "spoon"
+   ],
+   "description": "The spoon used by the Oracle and Spoon Boy to demonstrate telekinesis, symbolizing the bending of the rules.",
+   "salience": "minor"
+  },
+  {
+   "id": "VASE",
+   "name": "Vase",
+   "aliases": [
+    "Vase"
+   ],
+   "description": "The vase broken by Neo in the Oracle's apartment, symbolizing his acceptance of his destiny.",
+   "salience": "minor"
+  },
+  {
+   "id": "OVEN_MITTS",
+   "name": "Oven Mitts",
+   "aliases": [
+    "Oven mitts"
+   ],
+   "description": "The oven mitts worn by the Oracle, adding to her domestic and mysterious persona.",
+   "salience": "minor"
+  },
+  {
+   "id": "PLAQUE",
+   "name": "Plaque",
+   "aliases": [
+    "Wooden plaque with Latin text",
+    "Wooden plaque ('Know Thyself')"
+   ],
+   "description": "The plaque in the Oracle's apartment with the Latin text 'Know Thyself', symbolizing self-awareness.",
+   "salience": "minor"
+  },
+  {
+   "id": "BLOCKS",
+   "name": "Alphabet Blocks",
+   "aliases": [
+    "wooden alphabet blocks"
+   ],
+   "description": "The alphabet blocks in the Oracle's apartment, symbolizing the building blocks of knowledge.",
+   "salience": "minor"
+  },
+  {
+   "id": "SOAP_OPERA",
+   "name": "Soap Opera",
+   "aliases": [
+    "soap opera (on TV)"
+   ],
+   "description": "The soap opera playing on the TV in the Oracle's apartment, adding to the mundane atmosphere.",
+   "salience": "minor"
+  },
+  {
+   "id": "BEER",
+   "name": "Beer",
+   "aliases": [
+    "Bottle of beer"
+   ],
+   "description": "The beer consumed by Neo in the apartment, representing his normal life in the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "STEAK",
+   "name": "Steak",
+   "aliases": [
+    "Steak"
+   ],
+   "description": "The steak consumed by Cypher in the restaurant, representing his desire for a normal life in the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "WINE",
+   "name": "Wine",
+   "aliases": [
+    "Wine"
+   ],
+   "description": "The wine consumed by Cypher in the restaurant, representing his desire for a normal life in the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "KNIFE_AND_FORK",
+   "name": "Knife and Fork",
+   "aliases": [
+    "Knife and fork"
+   ],
+   "description": "The utensils used by Cypher in the restaurant, representing his desire for a normal life in the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "ALCOHOL",
+   "name": "Alcohol",
+   "aliases": [
+    "Plastic jug of alcohol",
+    "plastic jug of alcohol",
+    "Plastic shot glasses"
+   ],
+   "description": "The alcohol consumed by Cypher and Neo on the Nebuchadnezzar, representing their bond and Cypher's betrayal.",
+   "salience": "minor"
+  },
+  {
+   "id": "TRAY",
+   "name": "Tray",
+   "aliases": [
+    "Tray of food"
+   ],
+   "description": "The tray of food brought by Trinity to Neo's room, symbolizing her care for him.",
+   "salience": "minor"
+  },
+  {
+   "id": "BLANKET",
+   "name": "Blanket",
+   "aliases": [
+    "Blanket",
+    "heavy blanket"
+   ],
+   "description": "The blanket used to cover Neo in his room and the heavy blanket used by Cypher to reveal his rifle.",
+   "salience": "minor"
+  },
+  {
+   "id": "BED",
+   "name": "Bed",
+   "aliases": [
+    "BED",
+    "bed"
+   ],
+   "description": "The bed in Neo's apartment and room on the Nebuchadnezzar, representing his rest and recovery.",
+   "salience": "minor"
+  },
+  {
+   "id": "TABLE",
+   "name": "Table",
+   "aliases": [
+    "Table",
+    "table",
+    "fold-up table"
+   ],
+   "description": "The table in the Oracle's apartment and the fold-up table in the Heart O' The City Hotel, representing the mundane and the practical.",
+   "salience": "minor"
+  },
+  {
+   "id": "CHAIR",
+   "name": "Chair",
+   "aliases": [
+    "Chair",
+    "chair",
+    "Tank's chair",
+    "Operator's chair",
+    "Operator's station"
+   ],
+   "description": "The chairs used by the crew on the Nebuchadnezzar, including the drive chairs and the operator's chair.",
+   "salience": "minor"
+  },
+  {
+   "id": "DESK",
+   "name": "Desk",
+   "aliases": [
+    "Desk"
+   ],
+   "description": "The desk in Neo's apartment and the Heart O' The City Hotel, representing his work and the location of the initial raid.",
+   "salience": "minor"
+  },
+  {
+   "id": "MIRROR",
+   "name": "Mirror",
+   "aliases": [
+    "Cracked oval dressing mirror"
+   ],
+   "description": "The mirror in the Hotel Lafayette, reflecting the crew's preparation for the rescue mission.",
+   "salience": "minor"
+  },
+  {
+   "id": "HEADPHONES",
+   "name": "Headphones",
+   "aliases": [
+    "Headphones"
+   ],
+   "description": "The headphones used by the crew to communicate in the Matrix, adding to the technical atmosphere.",
+   "salience": "minor"
+  },
+  {
+   "id": "EARPHONE",
+   "name": "Earphone",
+   "aliases": [
+    "Earphone",
+    "earphone",
+    "Secret Service earphones",
+    "Agent Smith's earphone",
+    "earpiece",
+    "Earpiece"
+   ],
+   "description": "The earphones used by the Agents and crew to communicate, adding to the technical atmosphere.",
+   "salience": "minor"
+  },
+  {
+   "id": "FLASHLIGHT",
+   "name": "Flashlight",
+   "aliases": [
+    "Flashlight",
+    "flashlight",
+    "Flashlights",
+    "flashlights"
+   ],
+   "description": "The flashlights used by the police and crew to see in the dark, adding to the tension.",
+   "salience": "minor"
+  },
+  {
+   "id": "BOLT_CUTTERS",
+   "name": "Bolt Cutters",
+   "aliases": [
+    "Bolt cutters",
+    "bolt cutters"
+   ],
+   "description": "The bolt cutters used by Cypher to cut the main phone cable in the basement.",
+   "salience": "minor"
+  },
+  {
+   "id": "CLAMP",
+   "name": "Clamp",
+   "aliases": [
+    "Clamp",
+    "clamp"
+   ],
+   "description": "The clamp used by Neo to attach to the elevator cable in the government building.",
+   "salience": "minor"
+  },
+  {
+   "id": "COUNTERWEIGHTS",
+   "name": "Counterweights",
+   "aliases": [
+    "Counterweights",
+    "counter-weights"
+   ],
+   "description": "The counterweights in the elevator shaft, used by Neo to create an escape route.",
+   "salience": "minor"
+  },
+  {
+   "id": "CABLE_ACCESS_PANEL",
+   "name": "Elevator Shaft Access Panel",
+   "aliases": [
+    "Elevator shaft access panel"
+   ],
+   "description": "The panel in the elevator shaft, used by Neo and Trinity to access the cables.",
+   "salience": "minor"
+  },
+  {
+   "id": "ELEVATOR_CABLE",
+   "name": "Elevator Cable",
+   "aliases": [
+    "Elevator cable",
+    "elevator cable"
+   ],
+   "description": "The cable in the elevator shaft, used by Neo to create an escape route.",
+   "salience": "minor"
+  },
+  {
+   "id": "MANHOLE",
+   "name": "Manhole",
+   "aliases": [
+    "Manhole",
+    "manhole cover"
+   ],
+   "description": "The manhole cover on the street, used by Trinity to escape from the sewer main.",
+   "salience": "minor"
+  },
+  {
+   "id": "TRUCK",
+   "name": "Truck",
+   "aliases": [
+    "Truck",
+    "truck"
+   ],
+   "description": "The truck on the street, used by Trinity to escape from the sewer main.",
+   "salience": "minor"
+  },
+  {
+   "id": "GAS_CAN",
+   "name": "Gas Can",
+   "aliases": [
+    "Gas can",
+    "salience"
+   ],
+   "description": "The gas can in the basement, used by the crew to create an explosion.",
+   "salience": "minor"
+  },
+  {
+   "id": "GRENADE",
+   "name": "Grenade",
+   "aliases": [
+    "Grenade",
+    "grenade",
+    "Grenade launchers",
+    "grenade launchers"
+   ],
+   "description": "The grenades used by the crew and Agents during the rescue mission, adding to the action.",
+   "salience": "minor"
+  },
+  {
+   "id": "MACHINE_GUN",
+   "name": "Machine Gun",
+   "aliases": [
+    "Machine gun",
+    "machine gun",
+    "mounted .50 machine gun",
+    "sub-hand machine gun"
+   ],
+   "description": "The machine guns used by the Marines and Agents during the rescue mission, adding to the action.",
+   "salience": "minor"
+  },
+  {
+   "id": "UZU",
+   "name": "Uzi",
+   "aliases": [
+    "Uzi"
+   ],
+   "description": "The Uzi used by Trinity during the rescue mission, adding to the action.",
+   "salience": "minor"
+  },
+  {
+   "id": "M16",
+   "name": "M-16",
+   "aliases": [
+    "M-16"
+   ],
+   "description": "The M-16 used by the police during the rescue mission, adding to the action.",
+   "salience": "minor"
+  },
+  {
+   "id": "BULLETS",
+   "name": "Bullets",
+   "aliases": [
+    "Bullets",
+    "bullets",
+    "Ammunition"
+   ],
+   "description": "The bullets used by the police, Agents, and crew during the rescue mission, adding to the action.",
+   "salience": "minor"
+  },
+  {
+   "id": "BLOOD",
+   "name": "Blood",
+   "aliases": [
+    "Blood",
+    "blood"
+   ],
+   "description": "The blood from the injured and dead, adding to the realism and tension.",
+   "salience": "minor"
+  },
+  {
+   "id": "BODIES",
+   "name": "Bodies",
+   "aliases": [
+    "Bodies",
+    "bodies",
+    "Dead machines",
+    "Morpheus's body",
+    "Cypher's dead body",
+    "Dozer's body",
+    "Mouse's body",
+    "Mouse's dead body"
+   ],
+   "description": "The bodies of the dead crew members and machines, symbolizing the cost of the resistance.",
+   "salience": "minor"
+  },
+  {
+   "id": "FIRE",
+   "name": "Fire",
+   "aliases": [
+    "Fire",
+    "fire",
+    "FIRE CLOUDS",
+    "Burning paddy wagon"
+   ],
+   "description": "The fire from the explosion and the burning paddy wagon, adding to the chaos and tension.",
+   "salience": "minor"
+  },
+  {
+   "id": "SMOKE",
+   "name": "Smoke",
+   "aliases": [
+    "Smoke",
+    "smoke"
+   ],
+   "description": "The smoke from the explosion and the burning paddy wagon, adding to the chaos and tension.",
+   "salience": "minor"
+  },
+  {
+   "id": "SNOW_STATIC",
+   "name": "Snow Static",
+   "aliases": [
+    "Snow-static",
+    "snow-static"
+   ],
+   "description": "The snow-static effect on the screens, indicating a glitch in the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "GLITCH",
+   "name": "Glitch",
+   "aliases": [
+    "Glitch",
+    "glitch"
+   ],
+   "description": "The glitch in the Matrix, indicating the presence of the Agents and the system's instability.",
+   "salience": "minor"
+  },
+  {
+   "id": "CODE",
+   "name": "Code",
+   "aliases": [
+    "Code",
+    "salience"
+   ],
+   "description": "The code displayed on the screens, representing the data of the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "ALPHA_PATTERNS",
+   "name": "Alpha Patterns",
+   "aliases": [
+    "Alpha patterns",
+    "alpha patterns",
+    "Monitor displaying alpha patterns",
+    "monitors showing alpha patterns"
+   ],
+   "description": "The alpha patterns displayed on the monitors, indicating the extraction of Morpheus's mind.",
+   "salience": "minor"
+  },
+  {
+   "id": "SERUM",
+   "name": "Serum",
+   "aliases": [
+    "Serum",
+    "serum",
+    "serum vial"
+   ],
+   "description": "The serum administered to Morpheus by Agent Brown, sedating him during the extraction.",
+   "salience": "minor"
+  },
+  {
+   "id": "VIAL",
+   "name": "Vial",
+   "aliases": [
+    "Vial",
+    "vial",
+    "glass vial"
+   ],
+   "description": "The vial containing the serum, used by Agent Brown to sedate Morpheus.",
+   "salience": "minor"
+  },
+  {
+   "id": "NEEDLE",
+   "name": "Needle",
+   "aliases": [
+    "Needle",
+    "needle",
+    "hypodermic needle"
+   ],
+   "description": "The needle used to administer the serum to Morpheus, sedating him during the extraction.",
+   "salience": "minor"
+  },
+  {
+   "id": "MONITOR_LIFE",
+   "name": "Life Monitor",
+   "aliases": [
+    "Life monitor",
+    "life monitor",
+    "Life signs monitors",
+    "Life sign monitors",
+    "life systems monitors"
+   ],
+   "description": "The monitors displaying Morpheus's vital signs, indicating his deteriorating condition.",
+   "salience": "minor"
+  },
+  {
+   "id": "PLUG",
+   "name": "Plug",
+   "aliases": [
+    "Plug",
+    "plug",
+    "Plug (for Apoc)",
+    "Plug (for Switch)",
+    "Plug (in Morpheus's head)"
+   ],
+   "description": "The plugs used to connect the crew's bodies to the Matrix, allowing them to enter and exit the simulation.",
+   "salience": "minor"
+  },
+  {
+   "id": "CABLE_NECK",
+   "name": "Neck Jack",
+   "aliases": [
+    "Neck jack",
+    "Cable (neck jack)"
+   ],
+   "description": "The cable connected to the neck, used to connect the crew's bodies to the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "CABLE_SKULL",
+   "name": "Skull Jack",
+   "aliases": [
+    "Skull jack",
+    "Coaxial cable plugged into skull",
+    "Coaxial cable in base of skull",
+    "large outlet in base of skull"
+   ],
+   "description": "The cable connected to the skull, used to connect the crew's bodies to the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "CABLE_FOREARM",
+   "name": "Forearm Jack",
+   "aliases": [
+    "Forearm jack",
+    "grafted outlet in forearm"
+   ],
+   "description": "The cable connected to the forearm, used to connect the crew's bodies to the Matrix.",
+   "salience": "minor"
+  },
+  {
+   "id": "NEURAL_JACKS",
+   "name": "Neural Jacks",
+   "aliases": [
+    "Neural jacks (absence of)"
+   ],
+   "description": "The neural jacks used to connect the crew's bodies to the Matrix, indicating the absence of connection.",
+   "salience": "minor"
+  },
+  {
+   "id": "SUPPLEMENT_DRIVE",
+   "name": "Supplement Drive",
+   "aliases": [
+    "Supplement drive",
+    "supplement drive"
+   ],
+   "description": "The drive used to upload the pilot program to Trinity, allowing her to fly the helicopter.",
+   "salience": "minor"
+  },
+  {
+   "id": "PILOT_PROGRAM",
+   "name": "Pilot Program",
+   "aliases": [
+    "Pilot program"
+   ],
+   "description": "The program uploaded to Trinity, allowing her to fly the helicopter.",
+   "salience": "minor"
+  },
+  {
+   "id": "JUMP_PROGRAM",
+   "name": "Jump Program",
+   "aliases": [
+    "Jump program (referenced)"
+   ],
+   "description": "The program used to train Neo to jump across buildings, symbolizing his growth.",
+   "salience": "minor"
+  },
+  {
+   "id": "JUJITSU_PROGRAM",
+   "name": "Jujitsu Program",
+   "aliases": [
+    "Jujitsu program"
+   ],
+   "description": "The program used to train Neo in Jujitsu, symbolizing his growth.",
+   "salience": "minor"
+  },
+  {
+   "id": "TRAINING_PROGRAM",
+   "name": "Training Program",
+   "aliases": [
+    "Training program"
+   ],
+   "description": "The program used to train Neo in various skills, symbolizing his growth.",
+   "salience": "minor"
+  },
+  {
+   "id": "EXIT_PROGRAM",
+   "name": "Exit Program",
+   "aliases": [
+    "Exit program"
+   ],
+   "description": "The program used to extract the crew from the Matrix, allowing them to return to the real world.",
+   "salience": "minor"
+  },
+  {
+   "id": "LOADING_SEQUENCE",
+   "name": "Loading Sequence",
+   "aliases": [
+    "Loading sequence"
+   ],
+   "description": "The sequence used to load the crew into the Matrix, allowing them to enter the simulation.",
+   "salience": "minor"
+  },
+  {
+   "id": "TRACE_PROGRAM",
+   "name": "Trace Program",
+   "aliases": [
+    "Trace program data"
+   ],
+   "description": "The program used to track the crew within the Matrix, adding to the tension.",
+   "salience": "minor"
+  },
+  {
+   "id": "HARDLINE",
+   "name": "Hardline",
+   "aliases": [
+    "Hardline",
+    "main phone cable"
+   ],
+   "description": "The hardline used to connect the crew to the Matrix, allowing them to communicate and operate.",
+   "salience": "minor"
+  },
+  {
+   "id": "PHONE_CABLE",
+   "name": "Phone Cable",
+   "aliases": [
+    "Phone cable",
+    "main phone cable"
+   ],
+   "description": "The phone cable used to connect the crew to the Matrix, allowing them to communicate and operate.",
+   "salience": "minor"
+  },
+  {
+   "id": "WIRE_TAP",
+   "name": "Wire Tap",
+   "aliases": [
+    "Wire tap",
+    "wire tap",
+    "Fiber-optic wire tap",
+    "Fiber-optic wire tap (fluke worm device)",
+    "Fiber-optic wire tap (transforming creature)"
+   ],
+   "description": "The wire tap used by the Agents to track Neo, which is removed by Switch during the car scene.",
+   "salience": "minor"
+  },
+  {
+   "id": "BUG",
+   "name": "Bug",
+   "aliases": [
+    "Bug",
+    "bug"
+   ],
+   "description": "The bug used by the Agents to track Neo, which is removed by Switch during the car scene.",
+   "salience": "minor"
+  },
+  {
+   "id": "FLUKE",
+   "name": "Fluke",
+   "aliases": [
+    "Fluke",
+    "fluke"
+   ],
+   "description": "The fluke-like device used by the Agents to track Neo, which is removed by Switch during the car scene.",
+   "salience": "minor"
+  },
+  {
+   "id": "CREATURE",
+   "name": "Creature",
+   "aliases": [
+    "Creature",
+    "transforming creature"
+   ],
+   "description": "The creature-like device used by the Agents to track Neo, which is removed by Switch during the car scene.",
+   "salience": "minor"
+  },
+  {
+   "id": "WORM",
+   "name": "Worm",
+   "aliases": [
+    "Worm",
+    "worm"
+   ],
+   "description": "The worm-like device used by the Agents to track Neo, which is removed by Switch during the car scene.",
+   "salience": "minor"
+  },
+  {
+   "id": "DEVICE_EXTRACTOR",
+   "name": "Extractor",
+   "aliases": [
+    "Extractor",
+    "extractor"
+   ],
+   "description": "The device used to remove the wire tap from Neo, adding to the tension.",
+   "salience": "minor"
+  },
+  {
+   "id": "DEVICE_RIB_SEPARATOR",
+   "name": "Rib Separator",
+   "aliases": [
+    "Rib separator",
+    "rib separator"
+   ],
+   "description": "The device used to remove the wire tap from Neo, adding to the tension.",
+   "salience": "minor"
+  },
+  {
+   "id": "DEVICE_SPECULUM",
+   "name": "Speculum",
+   "aliases": [
+    "Speculum",
+    "speculum"
+   ],
+   "description": "The device used to remove the wire tap from Neo, adding to the tension.",
+   "salience": "minor"
+  },
+  {
+   "id": "DEVICE_AIR_COMPRESSOR",
+   "name": "Air Compressor",
+   "aliases": [
+    "Air compressor",
+    "air compressor"
+   ],
+   "description": "The device used to remove the wire tap from Neo, adding to the tension.",
+   "salience": "minor"
+  },
+  {
+   "id": "HYBRID",
+   "name": "Hybrid",
+   "aliases": [
+    "Hybrid",
+    "hybrid"
+   ],
+   "description": "The hybrid device used to remove the wire tap from Neo, adding to the tension.",
+   "salience": "minor"
+  },
+  {
+   "id": "STEEL",
+   "name": "Steel",
+   "aliases": [
+    "Steel",
+    "steel"
+   ],
+   "description": "The steel used in the devices and machines, adding to the industrial atmosphere.",
+   "salience": "minor"
+  },
+  {
+   "id": "GLASS",
+   "name": "Glass",
+   "aliases": [
+    "Glass",
+    "glass"
+   ],
+   "description": "The glass used in the devices and machines, adding to the industrial atmosphere.",
+   "salience": "minor"
+  },
+  {
+   "id": "METAL",
+   "name": "Metal",
+   "aliases": [
+    "Metal",
+    "salience"
+   ],
+   "description": "The metal used in the devices and machines, adding to the industrial atmosphere.",
+   "salience": "minor"
+  },
+  {
+   "id": "MACHINES",
+   "name": "Machines",
+   "aliases": [
+    "Machines",
+    "machines",
+    "Dead machines"
+   ],
+   "description": "The machines in the real world, representing the control over humanity.",
+   "salience": "minor"
+  },
+  {
+   "id": "PODS",
+   "name": "Pods",
+   "aliases": [
+    "Pods",
+    "pods",
+    "Oval capsule/pod",
+    "Power plant pod"
+   ],
+   "description": "The pods in which humans are grown in the power plant, representing the machines' control.",
+   "salience": "minor"
+  },
+  {
+   "id": "CAPSULE",
+   "name": "Capsule",
+   "aliases": [
+    "Capsule",
+    "capsule",
+    "Oval capsule/pod"
+   ],
+   "description": "The capsule in which Neo's body is suspended in the power plant, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "TUBE",
+   "name": "Tube",
+   "aliases": [
+    "Tube",
+    "tube"
+   ],
+   "description": "The tube in which Neo's body is suspended in the power plant, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "ALLOY",
+   "name": "Alloy",
+   "aliases": [
+    "Alloy",
+    "alloy"
+   ],
+   "description": "The alloy used in the capsule in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "GELATINOUS",
+   "name": "Gelatinous",
+   "aliases": [
+    "Gelatinous",
+    "gelatinous"
+   ],
+   "description": "The gelatinous substance in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "AMNIOTIC",
+   "name": "Amniotic",
+   "aliases": [
+    "Amniotic",
+    "amniotic"
+   ],
+   "description": "The amniotic substance in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "FLUID",
+   "name": "Fluid",
+   "aliases": [
+    "Fluid",
+    "fluid"
+   ],
+   "description": "The fluid in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "SUBSTANCE",
+   "name": "Substance",
+   "aliases": [
+    "Substance",
+    "substance"
+   ],
+   "description": "The substance in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "MAGENTA",
+   "name": "Magenta",
+   "aliases": [
+    "Magenta",
+    "magenta"
+   ],
+   "description": "The color of the substance in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "GEL",
+   "name": "Gel",
+   "aliases": [
+    "Gel",
+    "gel"
+   ],
+   "description": "The gel in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "GELATIN",
+   "name": "Gelatin",
+   "aliases": [
+    "Gelatin",
+    "gelatin"
+   ],
+   "description": "The gelatin in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "MAGENTA_GELATIN",
+   "name": "Magenta Gelatin",
+   "aliases": [
+    "Magenta gelatin"
+   ],
+   "description": "The magenta gelatin in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "MAGENTA_AMNIOTIC",
+   "name": "Magenta Amniotic",
+   "aliases": [
+    "Magenta amniotic"
+   ],
+   "description": "The magenta amniotic substance in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "GELATINOUS_FLUID",
+   "name": "Gelatinous Fluid",
+   "aliases": [
+    "Gelatinous fluid"
+   ],
+   "description": "The gelatinous fluid in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "AMNIOTIC_FLUID",
+   "name": "Amniotic Fluid",
+   "aliases": [
+    "Amniotic fluid"
+   ],
+   "description": "The amniotic fluid in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "MAGENTA_FLUID",
+   "name": "Magenta Fluid",
+   "aliases": [
+    "Magenta fluid"
+   ],
+   "description": "The magenta fluid in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "MAGENTA_SUBSTANCE",
+   "name": "Magenta Substance",
+   "aliases": [
+    "Magenta substance"
+   ],
+   "description": "The magenta substance in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "MAGENTA_GELATINOUS",
+   "name": "Magenta Gelatinous",
+   "aliases": [
+    "Magenta gelatinous"
+   ],
+   "description": "The magenta gelatinous substance in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "MAGENTA_AMNIOTIC_GEL",
+   "name": "Magenta Amniotic Gel",
+   "aliases": [
+    "Magenta amniotic gel"
+   ],
+   "description": "The magenta amniotic gel in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "MAGENTA_AMNIOTIC_FLUID",
+   "name": "Magenta Amniotic Fluid",
+   "aliases": [
+    "Magenta amniotic fluid"
+   ],
+   "description": "The magenta amniotic fluid in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "MAGENTA_GELATINOUS_FLUID",
+   "name": "Magenta Gelatinous Fluid",
+   "aliases": [
+    "Magenta gelatinous fluid"
+   ],
+   "description": "The magenta gelatinous fluid in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "MAGENTA_GELATINOUS_SUBSTANCE",
+   "name": "Magenta Gelatinous Substance",
+   "aliases": [
+    "Magenta gelatinous substance"
+   ],
+   "description": "The magenta gelatinous substance in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "MAGENTA_AMNIOTIC_GELATINOUS",
+   "name": "Magenta Amniotic Gelatinous",
+   "aliases": [
+    "Magenta amniotic gelatinous"
+   ],
+   "description": "The magenta amniotic gelatinous substance in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "MAGENTA_AMNIOTIC_GELATINOUS_FLUID",
+   "name": "Magenta Amniotic Gelatinous Fluid",
+   "aliases": [
+    "Magenta amniotic gelatinous fluid"
+   ],
+   "description": "The magenta amniotic gelatinous fluid in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  },
+  {
+   "id": "MAGENTA_AMNIOTIC_GELATINOUS_SUBSTANCE",
+   "name": "Magenta Amniotic Gelatinous Substance",
+   "aliases": [
+    "Magenta amniotic gelatinous substance"
+   ],
+   "description": "The magenta amniotic gelatinous substance in which Neo's body is suspended, representing the real world's conditions.",
+   "salience": "minor"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "THE_MATRIX",
+   "name": "The Matrix",
+   "aliases": [
+    "Matrix",
+    "system of control",
+    "zoo",
+    "prison"
+   ],
+   "description": "A vast, simulated reality constructed by machines to subdue the human population and use their bodies as an energy source. It functions as a prison for the mind, with rules that can be bent or broken by those who understand its nature.",
+   "salience": "major"
+  },
+  {
+   "id": "THE_MACHINES",
+   "name": "The Machines",
+   "aliases": [
+    "machine civilization",
+    "the system"
+   ],
+   "description": "The sentient computer civilization that created the Matrix and rules the real world. They harvest human bio-electric energy and view humanity as a virus that must be contained or cured.",
+   "salience": "major"
+  },
+  {
+   "id": "THE_AGENTS",
+   "name": "The Agents",
+   "aliases": [
+    "Agents",
+    "Agent Smith",
+    "Agent Brown",
+    "Agent Jones",
+    "Programs",
+    "Agent Smith's arms (punching through wall)"
+   ],
+   "description": "Programs within the Matrix that act as law enforcement and hunters of resistance fighters. They are capable of transforming, replicating, and perceiving through electronic devices to track down those who have been 'unplugged'.",
+   "salience": "major"
+  },
+  {
+   "id": "ZION",
+   "name": "Zion",
+   "aliases": [
+    "Humanity's last city",
+    "Zion's mainframe"
+   ],
+   "description": "The last free human city, located deep underground in the real world. It is the base of operations for the resistance against the Machines and the origin point for the hovercrafts that enter the Matrix.",
+   "salience": "major"
+  },
+  {
+   "id": "THE_RESISTANCE",
+   "name": "The Resistance",
+   "aliases": [
+    "Humans",
+    "Free humans",
+    "Neo's crew",
+    "Everyone (crew)"
+   ],
+   "description": "The collective of humans who have escaped the Matrix and fight for human freedom. They operate from Zion and use hovercrafts to navigate the real world and send operatives into the simulation.",
+   "salience": "major"
+  },
+  {
+   "id": "THE_CONSTRUCT",
+   "name": "The Construct",
+   "aliases": [
+    "Loading program",
+    "White void",
+    "INT. CONSTRUCT",
+    "INT. CONSTRUCT - ROOFTOP - DAY"
+   ],
+   "description": "A blank, white virtual space used by the crew to load characters, weapons, and scenarios into the Matrix. It is a place of pure potential where the rules of the simulation can be defined or ignored.",
+   "salience": "major"
+  },
+  {
+   "id": "HEART_O_CITY_HOTEL",
+   "name": "Heart O' The City Hotel",
+   "aliases": [
+    "INT. HEART O' THE CITY HOTEL",
+    "EXT. HEART O' THE CITY HOTEL",
+    "INT. HEART O' THE CITY HOTEL - NIGHT",
+    "EXT. HEART O' THE CITY HOTEL - NIGHT",
+    "INT. HEART O' THE CITY HOTEL 4",
+    "Room 303"
+   ],
+   "description": "A fire-damaged hotel in the Matrix where Trinity is initially found. It is the site of the first police raid in the film and the location where Trinity demonstrates her abilities to the Agents.",
+   "salience": "major"
+  },
+  {
+   "id": "ORACLE_APARTMENT",
+   "name": "Oracle's Apartment",
+   "aliases": [
+    "INT. ORACLE'S APARTMENT",
+    "INT. ORACLE'S APARTMENT (KITCHEN)",
+    "INT. ORACLE'S APARTMENT - KITCHEN",
+    "INT. KITCHEN",
+    "INT. SITTING ROOM - DAY"
+   ],
+   "description": "The home of the Oracle in the Matrix. It is a normal, lived-in apartment that contrasts with the sterile environments of the Agents and the Construct. It is where Neo receives his prophecy.",
+   "salience": "major"
+  },
+  {
+   "id": "SENTINELS",
+   "name": "Sentinels",
+   "aliases": [
+    "Sentinel",
+    "Sentinel (killing machine)",
+    "Insect-like machine"
+   ],
+   "description": "Autonomous combat drones deployed by the Machines in the real world. They are equipped with electromagnetic pulse weapons and are capable of destroying hovercrafts if they detect their presence.",
+   "salience": "major"
+  },
+  {
+   "id": "DRIVE_CHAIRS",
+   "name": "Drive Chairs",
+   "aliases": [
+    "Drive chair",
+    "Drive chairs",
+    "ecto-skeleton chairs",
+    "Suspension chair",
+    "Tank's chair"
+   ],
+   "description": "Mechanical chairs used to suspend the bodies of operatives while their minds are in the Matrix. They are connected to the main deck computer and can be used to extract or kill the occupant.",
+   "salience": "major"
+  },
+  {
+   "id": "RULES_OF_THE_MATRIX",
+   "name": "Rules of the Matrix",
+   "aliases": [
+    "Gravity",
+    "Sparring program rules",
+    "Jump program",
+    "There is no spoon"
+   ],
+   "description": "The fundamental laws governing the simulated reality, such as gravity and physics. These rules can be perceived and manipulated by those who understand that the Matrix is a program, allowing for feats of superhuman ability.",
+   "salience": "major"
+  },
+  {
+   "id": "POLICE",
+   "name": "Police",
+   "aliases": [
+    "Cops",
+    "Cop",
+    "POLICE",
+    "POLICE OFFICERS",
+    "Big Cop",
+    "BIG COP",
+    "Agents (standing)"
+   ],
+   "description": "The law enforcement force in the Matrix. They are ordinary humans who are unaware of the simulation and are used by the Agents to track and capture resistance fighters.",
+   "salience": "supporting"
+  },
+  {
+   "id": "ELECTROMAGNETIC_PULSE",
+   "name": "Electromagnetic Pulse",
+   "aliases": [
+    "E.M.P. (Electromagnetic Pulse) key",
+    "E.M.P. key",
+    "EMP"
+   ],
+   "description": "A weapon or defense mechanism used by the Machines and the Resistance. It can disable electronic devices and is used by the Nebuchadnezzar to hide from Sentinels.",
+   "salience": "supporting"
+  },
+  {
+   "id": "FETUS_FIELDS",
+   "name": "Fetus Fields",
+   "aliases": [
+    "Fetus husks",
+    "Newborn human",
+    "Human harvesting"
+   ],
+   "description": "An area within the Power Plant where human fetuses are grown and harvested. The machines use these bodies to replenish the population of the Matrix.",
+   "salience": "supporting"
+  }
+ ]
+}

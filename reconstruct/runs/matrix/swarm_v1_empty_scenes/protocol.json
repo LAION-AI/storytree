@@ -1,0 +1,216 @@
+{
+ "started": 1786971067.8464763,
+ "elapsed_s": 1104.6,
+ "stages": {
+  "1-scenes": {
+   "seconds": 527.1,
+   "usage": {
+    "calls": 224,
+    "ok": 224,
+    "failed": 0,
+    "tok_in": 8607200,
+    "tok_out": 101109,
+    "model_secs": 31431.905373096466,
+    "tok_per_s": 3.2167633110317997
+   },
+   "violations": [
+    "sc-015: change for 'NEO', who is not listed present",
+    "sc-032: change for 'Nebuchadnezzar Crew', who is not listed present",
+    "sc-054: change for 'MORPHEUS', who is not listed present",
+    "sc-065: change for 'Nebuchadnezzar', who is not listed present",
+    "sc-066: change for 'Crew', who is not listed present",
+    "sc-067: change for 'Crew', who is not listed present",
+    "sc-069: change for 'Crew', who is not listed present",
+    "sc-070: change for 'Crew', who is not listed present",
+    "sc-083: no-op change on 'None'",
+    "sc-087: change for 'Group (Neo, Trinity, Morpheus, Cypher, Apoc, Switch)', who is not listed present",
+    "sc-110: change for 'COP', who is not listed present",
+    "sc-125: change for 'Phone', who is not listed present",
+    "sc-134: change for 'CYPHER', who is not listed present",
+    "sc-136: change for 'Narrative Flow', who is not listed present",
+    "sc-152: change for 'Neo and Trinity', who is not listed present",
+    "sc-155: change for 'LOBBY', who is not listed present",
+    "sc-160: change for 'Narrative Structure', who is not listed present",
+    "sc-161: change for 'AGENT BROWN', who is not listed present",
+    "sc-171: change for 'CREW (specifically Neo and the group)', who is not listed present",
+    "sc-172: change for 'CREW', who is not listed present",
+    "sc-183: change for 'Group', who is not listed present",
+    "sc-197: change for 'CREW', who is not listed present"
+   ],
+   "counts": {
+    "scenes": 224,
+    "nodes": 224
+   }
+  },
+  "2-boundaries": {
+   "seconds": 79.4,
+   "usage": {
+    "calls": 56,
+    "ok": 56,
+    "tok_in": 124266,
+    "tok_out": 32564
+   },
+   "violations": [],
+   "counts": {
+    "events": 33
+   }
+  },
+  "3-events": {
+   "seconds": 93.8,
+   "usage": {
+    "calls": 33,
+    "ok": 33,
+    "failed": 0,
+    "tok_in": 1166922,
+    "tok_out": 37541,
+    "model_secs": 2629.1163787841797,
+    "tok_per_s": 14.278941892013403
+   },
+   "violations": [
+    "ev-001: participant 'Cypher' in none of its scenes",
+    "ev-001: participant 'Trinity' in none of its scenes",
+    "ev-002: participant 'Trinity' in none of its scenes",
+    "ev-002: participant 'Big Cop' in none of its scenes",
+    "ev-002: participant 'Police Officers' in none of its scenes",
+    "ev-002: participant 'Agent Smith' in none of its scenes",
+    "ev-002: participant 'Agent Brown' in none of its scenes",
+    "ev-002: participant 'Agent Jones' in none of its scenes",
+    "ev-002: participant 'Lieutenant' in none of its scenes",
+    "ev-002: participant 'Morpheus (V.O.)' in none of its scenes",
+    "ev-003: participant 'Neo' in none of its scenes",
+    "ev-003: participant 'Choi' in none of its scenes",
+    "ev-003: participant 'Dujour' in none of its scenes",
+    "ev-006: participant 'Police Officers' in none of its scenes",
+    "ev-006: participant 'Trinity' in none of its scenes",
+    "ev-008: participant 'Neo' in none of its scenes",
+    "ev-008: participant 'Morpheus' in none of its scenes",
+    "ev-008: participant 'Trinity' in none of its scenes",
+    "ev-008: participant 'Switch' in none of its scenes",
+    "ev-008: participant 'Apoc' in none of its scenes",
+    "ev-009: participant 'Agent Smith' in none of its scenes",
+    "ev-012: participant 'Mouse' in none of its scenes",
+    "ev-013: participant 'Neo' in none of its scenes",
+    "ev-013: participant 'Morpheus' in none of its scenes",
+    "ev-016: participant 'Tank' in none of its scenes",
+    "ev-016: participant 'Mouse' in none of its scenes",
+    "ev-016: participant 'Apoc' in none of its scenes",
+    "ev-016: participant 'Switch' in none of its scenes",
+    "ev-016: participant 'Dozer' in none of its scenes",
+    "ev-016: participant 'Trinity' in none of its scenes",
+    "ev-016: participant 'Cypher' in none of its scenes",
+    "ev-017: participant 'Trinity' in none of its scenes",
+    "ev-017: participant 'Mouse' in none of its scenes",
+    "ev-017: participant 'Cypher' in none of its scenes",
+    "ev-020: participant 'Tank' in none of its scenes",
+    "ev-022: participant 'Mouse' in none of its scenes",
+    "ev-022: participant 'Tank' in none of its scenes",
+    "ev-022: participant 'Dozer' in none of its scenes",
+    "ev-023: participant 'Blind Man' in none of its scenes",
+    "ev-023: participant 'Priestess' in none of its scenes",
+    "ev-025: participant 'Priestess' in none of its scenes",
+    "ev-026: participant 'Police' in none of its scenes",
+    "ev-027: participant 'Trinity' in none of its scenes",
+    "ev-029: participant 'Morpheus' in none of its scenes",
+    "ev-030: participant 'Tank' in none of its scenes",
+    "ev-031: participant 'Marines' in none of its scenes",
+    "ev-032: participant 'Agent Brown' in none of its scenes",
+    "ev-033: participant 'Tank' in none of its scenes"
+   ],
+   "counts": {
+    "events": 33,
+    "reversals": 9
+   }
+  },
+  "4-plots": {
+   "seconds": 248.9,
+   "usage": {
+    "calls": 8,
+    "ok": 8,
+    "tok_in": 107899,
+    "tok_out": 5073
+   },
+   "violations": [
+    "ev-033 belongs to no thread"
+   ],
+   "counts": {
+    "plots": 6
+   }
+  },
+  "5-entities": {
+   "seconds": 248.9,
+   "usage": {
+    "calls": 4,
+    "ok": 4,
+    "failed": 0,
+    "tok_in": 116394,
+    "tok_out": 26167,
+    "model_secs": 413.182320356369,
+    "tok_per_s": 63.330396076557705
+   },
+   "violations": [],
+   "counts": {
+    "agents": 30,
+    "locations": 16,
+    "objects": 159,
+    "concepts": 14
+   }
+  },
+  "6-profiles": {
+   "seconds": 90.7,
+   "usage": {
+    "calls": 40,
+    "ok": 40,
+    "failed": 0,
+    "tok_in": 1171484,
+    "tok_out": 35678,
+    "model_secs": 3056.7517619132996,
+    "tok_per_s": 11.671866994416394
+   },
+   "violations": [],
+   "counts": {
+    "profiles": 40
+   }
+  },
+  "7-root": {
+   "seconds": 26.6,
+   "usage": {
+    "calls": 1,
+    "ok": 1,
+    "failed": 0,
+    "tok_in": 30965,
+    "tok_out": 685,
+    "model_secs": 26.595135927200317,
+    "tok_per_s": 25.756589546113677
+   },
+   "violations": [],
+   "counts": {
+    "ok": true
+   }
+  },
+  "8-expose": {
+   "seconds": 37.8,
+   "usage": {
+    "calls": 7,
+    "ok": 7,
+    "tok_in": 48716,
+    "tok_out": 4171
+   },
+   "violations": [],
+   "counts": {
+    "words": 614
+   }
+  },
+  "_total": {
+   "seconds": 1104.6,
+   "usage": {
+    "calls": 373,
+    "ok": 373,
+    "failed": 0,
+    "tok_in": 11373846,
+    "tok_out": 242988,
+    "model_secs": 38257.07338285446,
+    "tok_per_s": 6.351452908284905
+   }
+  }
+ }
+}

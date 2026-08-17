@@ -1,0 +1,3042 @@
+[
+ {
+  "event_id": "ev-001",
+  "name": "Tracing the Call",
+  "location": "Computer Screen / Digital Interface",
+  "what_happens": "The scene opens on a pulsing computer cursor as a phone rings, initiating a conversation between Cypher and Trinity. While they speak, green digital data streams across the screen, actively tracing a phone number. Cypher probes Trinity's loyalty, suggesting she has feelings for Neo and questioning her belief in Morpheus's claim that Neo is 'the One.' As the trace completes, identifying the call origin as #312-555-0690, Trinity suddenly hears a noise and asks if Cypher heard it. She questions if the line is clean, hangs up, and the camera passes through the numbers into physical darkness, transitioning to the location of the call.",
+  "participants": [
+   "CYPHER",
+   "TRINITY"
+  ],
+  "entry_state": [
+   {
+    "who": "CYPHER",
+    "state": "Monitoring the operation, skeptical of Morpheus's faith in Neo"
+   },
+   {
+    "who": "TRINITY",
+    "state": "Relieving Cypher of duty, monitoring the trace, seemingly secure"
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "CYPHER",
+    "axis": "knowledge",
+    "before": "Uncertain if Trinity believes the target is 'the One'",
+    "after": "Confident that Trinity does not believe it",
+    "why_it_matters": "This solidifies Cypher's isolation and sets up his later betrayal, as he perceives himself as the only realist against the group's blind faith."
+   },
+   {
+    "who": "TRINITY",
+    "axis": "safety",
+    "before": "Monitoring the trace, seemingly secure",
+    "after": "Alerted to a potential threat or disturbance",
+    "why_it_matters": "The noise signals the intrusion of the physical world into the digital surveillance, marking the start of the immediate danger."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "CYPHER",
+    "state": "Has confirmed Trinity's doubt, maintaining his skeptical stance"
+   },
+   {
+    "who": "TRINITY",
+    "state": "Has disconnected from the call, physically present at the traced location, now in danger"
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of 'Cypher's Betrayal' by establishing his early skepticism and his perception that he is the only one questioning the mission's validity.",
+    "evidence": [
+     "Cypher asks 'Do you?' and follows up with 'You don't, do you?' regarding Trinity's belief in the One.",
+     "Cypher states 'Someone has to [say it to Morpheus]. I intend to, believe me.'"
+    ],
+    "confidence": 9
+   },
+   {
+    "claim": "This event serves the thread of 'Surveillance and Counter-Surveillance' by demonstrating the vulnerability of the Resistance's communication lines.",
+    "evidence": [
+     "The trace program is shown running in real-time.",
+     "Trinity's question 'Are you sure this line is clean?' highlights the precariousness of their security.",
+     "The subsequent scenes show the line being traced by the Agents (Morpheus later confirms 'They cut the hardline')."
+    ],
+    "confidence": 8
+   }
+  ],
+  "boundary_doubt": "The boundary is tight. The event ends exactly when the camera passes through the numbers and the phone is hung up. The next scene (sc-002) is the physical location of the call. The noise Trinity hears is the trigger for the next event, so including the hang-up is correct.",
+  "scenes": [
+   "sc-001"
+  ]
+ },
+ {
+  "event_id": "ev-002",
+  "name": "The Hotel Raid and Escape",
+  "location": "Heart O' the City Hotel and surrounding rooftops/streets",
+  "what_happens": "Police officers breach Room 303 of the abandoned Heart O' the City Hotel to apprehend Trinity, who is seated at a computer. As the lead officer moves to cuff her, she demonstrates superhuman speed and strength, killing the squad in a rapid, violent exchange. Simultaneously, Agents Smith, Brown, and Jones arrive at the scene; Agent Smith informs the Lieutenant that his officers are already dead. Trinity escapes the hotel, racing across rooftops while pursued by Agent Brown and police. She displays inhuman agility by leaping a 40-foot gap between buildings and diving through a window into a stairwell, where she is injured. Limping to a street-level phone booth, she answers the phone just as Agent Smith smashes through the booth with a garbage truck. Trinity vanishes, leaving Smith to learn from his colleagues that their next target is Neo.",
+  "participants": [
+   "TRINITY",
+   "POLICE",
+   "POLICE_OFFICERS",
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "LIEUTENANT",
+   "MORPHEUS"
+  ],
+  "entry_state": [
+   {
+    "who": "TRINITY",
+    "state": "Seated at a computer in Room 303, attempting to trace a phone call."
+   },
+   {
+    "who": "POLICE_OFFICERS",
+    "state": "Positioned outside Room 303, ready to breach."
+   },
+   {
+    "who": "THE_AGENTS",
+    "state": "Approaching the hotel in a black sedan."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "TRINITY",
+    "axis": "custody",
+    "before": "Detained by police, hands behind head.",
+    "after": "Free, but injured and on the run.",
+    "why_it_matters": "Trinity's escape shifts the narrative focus from her capture to the pursuit of the next target, Neo."
+   },
+   {
+    "who": "POLICE_OFFICERS",
+    "axis": "condition",
+    "before": "Alive, armed, and in control of the room.",
+    "after": "Dead or incapacitated.",
+    "why_it_matters": "Their death confirms Trinity's superhuman capabilities and establishes the lethality of the Agents' targets."
+   },
+   {
+    "who": "THE_AGENTS",
+    "axis": "knowledge",
+    "before": "Pursuing an unknown target.",
+    "after": "Informed that the target's next connection is Neo.",
+    "why_it_matters": "This intelligence directs the Agents' focus toward Neo, setting up the subsequent plot points."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "TRINITY",
+    "state": "Vanished from the destroyed phone booth, at large."
+   },
+   {
+    "who": "THE_AGENTS",
+    "state": "Standing in the wreckage, knowing the next target is Neo."
+   }
+  ],
+  "reversal": true,
+  "plot_speculation": [
+   {
+    "claim": "This event serves to establish the stakes and the nature of the 'hunt' within the Matrix, specifically highlighting the superhuman abilities of the resistance members and the relentless pursuit by the Agents.",
+    "evidence": [
+     "Trinity's 'inhumanly fast' movements and the 'leather-clad ghost' description during the fight.",
+     "Agent Smith's calm demeanor and the specific mention of 'Neo' as the next target.",
+     "The visual contrast between the chaotic police response and the orderly, almost supernatural arrival of the Agents."
+    ],
+    "confidence": 9,
+    "alternative": "It primarily serves as a transition to introduce Neo's character in his apartment."
+   },
+   {
+    "claim": "The event underscores the theme of 'being watched' and the loss of privacy/control for the resistance.",
+    "evidence": [
+     "Trinity's line 'The line was traced! I don't know how.'",
+     "Morpheus's instruction 'You have to focus. There is a phone.'",
+     "The Agents' use of technology (earphones, black sedan) to coordinate their pursuit."
+    ],
+    "confidence": 8,
+    "alternative": "It is primarily an action sequence to showcase Trinity's character."
+   }
+  ],
+  "boundary_doubt": "The boundary seems to correctly capture the entire sequence from the initial raid to the final phone booth destruction and the revelation of Neo's name. The scenes provided (sc-002 through sc-011, plus duplicates) all fit within this continuous action sequence.",
+  "scenes": [
+   "sc-002",
+   "sc-003",
+   "sc-004",
+   "sc-005",
+   "sc-006",
+   "sc-007",
+   "sc-008",
+   "sc-009",
+   "sc-010",
+   "sc-011",
+   "sc-192",
+   "sc-195",
+   "sc-199",
+   "sc-201",
+   "sc-206",
+   "sc-208",
+   "sc-212",
+   "sc-220"
+  ]
+ },
+ {
+  "event_id": "ev-003",
+  "name": "Neo's Digital Warning and Deal with Choi",
+  "location": "NEO_APARTMENT",
+  "what_happens": "Neo is jolted awake in his technology-cluttered studio apartment by a series of cryptic messages appearing on his computer screen: 'Wake up, Neo,' 'The Matrix has you,' 'Follow the white rabbit,' and finally 'Knock, knock, Neo.' Disoriented and questioning his reality, he answers the door to find Choi, a young Chinese man, and his friends waiting. They conduct a routine transaction where Neo exchanges a computer disk, hidden inside a hollowed-out copy of Baudrillard's *Simulacra and Simulations*, for an envelope containing $2,000. As the group prepares to leave for a night out, Neo notices a small white rabbit pin on Dujour's leather jacket. This visual cue triggers a disorienting sensation where the room tilts, breaking through his skepticism and compelling him to abandon his stated need to work and join the group.",
+  "participants": [
+   "NEO",
+   "CHOI",
+   "DUJOUR"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Asleep at his computer, unaware of external influences or the specific connection between his digital life and the physical world."
+   },
+   {
+    "who": "CHOI",
+    "state": "Waiting outside with $2,000 cash, eager to purchase an illegal computer disk."
+   },
+   {
+    "who": "DUJOUR",
+    "state": "Present with Choi's group, wearing a black leather motorcycle jacket adorned with pins."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Unaware of the specific connection between the computer messages and the people outside his door; believes his reality is normal despite vague feelings of unreality.",
+    "after": "Connects the 'white rabbit' message to the pin on Dujour's jacket, experiencing a sense of surrealness and linking the digital warning to the physical world.",
+    "why_it_matters": "This moment validates the cryptic messages as real and active, moving Neo from passive recipient of strange phenomena to an active participant who recognizes a pattern."
+   },
+   {
+    "who": "NEO",
+    "axis": "resolve",
+    "before": "Refusing to go out, citing the need to work the next day.",
+    "after": "Agreeing to go out with Choi and Dujour despite his earlier hesitation.",
+    "why_it_matters": "This change in resolve breaks Neo's routine and physically moves him out of his safe space and into the path of the characters seeking him (Trinity/Morpheus)."
+   },
+   {
+    "who": "CHOI",
+    "axis": "possession",
+    "before": "Possesses $2,000 in cash.",
+    "after": "Possesses the computer disk; has given away the cash.",
+    "why_it_matters": "Completes the transaction that serves as the narrative vehicle for Neo to encounter Dujour and the rabbit symbol."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Awake, disoriented by the 'tilting room' sensation, and agreeing to leave his apartment with Choi and Dujour."
+   },
+   {
+    "who": "CHOI",
+    "state": "In possession of the computer disk, leaving the apartment."
+   },
+   {
+    "who": "DUJOUR",
+    "state": "Leaving the apartment, having unknowingly provided the key visual clue."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves as the inciting incident that propels Neo from his isolated hacker life into the central conflict with the Agents and Morpheus's crew.",
+    "evidence": [
+     "The script shows Neo immediately following this scene to a party where he meets Trinity (Scene 13), who confirms 'That was you on my computer?'",
+     "The message 'The Matrix has you' directly foreshadows the Agent Smith interrogation scene later in the script where Neo is captured.",
+     "The 'white rabbit' symbol links to Morpheus's later line about 'tumbling down the rabbit hole' and the red/blue pill choice, establishing the thematic through-line of following the rabbit."
+    ],
+    "confidence": 95,
+    "alternative": "It could be seen as a standalone mystery element, but the immediate transition to the party and Trinity's appearance tightly couples it to the main plot."
+   },
+   {
+    "claim": "The use of Baudrillard's *Simulacra and Simulations* as the hiding place for the disk foreshadows the philosophical core of the film regarding the nature of reality.",
+    "evidence": [
+     "The book is explicitly named in the script and the scene summary.",
+     "Later in the script, Morpheus explicitly references Baudrillard's vision: 'As in Baudrillard's vision, your whole life has been spent inside the map, not the territory.'",
+     "The disk is hidden in a book about simulacra, symbolizing that Neo's 'real' life is already a simulation."
+    ],
+    "confidence": 90
+   }
+  ],
+  "boundary_doubt": "None. The scenes provided all describe the same continuous sequence of events in Neo's apartment: waking up, the computer messages, the transaction with Choi, and the observation of the rabbit pin leading to his decision to go out. The boundaries are clear.",
+  "scenes": [
+   "sc-012",
+   "sc-168",
+   "sc-178",
+   "sc-203",
+   "sc-211",
+   "sc-213",
+   "sc-214",
+   "sc-215",
+   "sc-216",
+   "sc-217",
+   "sc-218",
+   "sc-219",
+   "sc-221"
+  ]
+ },
+ {
+  "event_id": "ev-004",
+  "name": "Trinity Confronts Neo at the Party",
+  "location": "APARTMENT_PARTY",
+  "what_happens": "In a smoke-filled, industrial apartment crowded with people, Neo stands alone against a wall, feeling out of place. Trinity approaches him directly, introducing herself by name and revealing that she has been watching him. They converse closely over the loud music, with Trinity explaining that she brought him there to warn him that he is in danger. She tells Neo that she knows he is searching for a specific person (implied to be Morpheus) and that she was once searching for the same thing. She concludes by telling him the answer to his questions is looking for him and will find him if he wants it, then she leaves.",
+  "participants": [
+   "NEO",
+   "TRINITY"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Feeling out of place and isolated at the party; unaware of who is watching him."
+   },
+   {
+    "who": "TRINITY",
+    "state": "Actively surveilling Neo, preparing to make contact and deliver a warning."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Believes he is alone in his search and unaware of who is watching him.",
+    "after": "Learns that Trinity is aware of his existence and his specific quest, and that he is being watched.",
+    "why_it_matters": "This shifts Neo from a passive observer of his own life to a target, validating the strange messages he received on his computer and establishing that his search has been noticed by external forces."
+   },
+   {
+    "who": "NEO",
+    "axis": "resolve",
+    "before": "Feeling out of place and considering leaving the gathering.",
+    "after": "Engaged in a direct conversation with a figure he recognizes from his world, prompting him to ask her to talk somewhere else.",
+    "why_it_matters": "Neo's recognition of Trinity's legend ('The Trinity that cracked the I.R.S.') confirms his connection to the hacker underground and his willingness to engage with the mysterious elements of his life."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Left alone in the party, mentally processing the warning and the identity of his pursuers."
+   },
+   {
+    "who": "TRINITY",
+    "state": "Has delivered the initial warning and re-established contact, retreating back into the crowd."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves as the catalyst for Neo's transition from a passive hacker to an active participant in the war against the Agents.",
+    "evidence": [
+     "Trinity explicitly states, 'I brought you here to warn you' and 'They're watching you, Neo.'",
+     "She reveals she knows what Neo is looking for, directly linking his personal quest to a larger conflict.",
+     "The mention of 'the answer is out there... looking for you' foreshadows the eventual meeting with Morpheus."
+    ],
+    "confidence": 95
+   },
+   {
+    "claim": "The scene establishes Trinity as a protector and guide figure for Neo, a role that will be critical in his survival and training.",
+    "evidence": [
+     "Trinity's physical proximity and intimate tone ('her lips very close to his ear') suggest a protective rather than hostile intent.",
+     "Her statement 'I know because I was once looking for the same thing' creates a bond of shared experience."
+    ],
+    "confidence": 90
+   }
+  ],
+  "boundary_doubt": "The boundary is clean. The scene ends with Trinity leaving and Neo alone, before the cut to his apartment and the alarm clock in the next scene.",
+  "scenes": [
+   "sc-013"
+  ]
+ },
+ {
+  "event_id": "ev-005",
+  "name": "Neo's Workplace Reprimand",
+  "location": "INT. NEO'S APARTMENT / EXT. SKYSCRAPER / INT. META CORTECHS OFFICE",
+  "what_happens": "Neo is jolted awake by an alarm clock at 9:15 A.M., realizing he is late for work. After a brief establishing shot of the Meta CorTechs skyscraper, the scene cuts to Neo's boss, Rhineheart, who lectures Neo without looking at him. Rhineheart berates Neo for his perceived problem with authority and lack of company loyalty, ultimately issuing an ultimatum: Neo must be at his desk on time from that day forward or find another job. Neo complies, agreeing to the terms while staring out the window at window cleaners.",
+  "participants": [
+   "NEO",
+   "RHINEHEART"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Asleep in his apartment, unaware of the time"
+   },
+   {
+    "who": "RHINEHEART",
+    "state": "In his office, working at his computer"
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "condition",
+    "before": "Asleep",
+    "after": "Awake and panicked about being late",
+    "why_it_matters": "This establishes Neo's disconnection from the routine of his 'real' life and sets the stage for his immediate entry into the Matrix workplace, highlighting the intrusion of his other life into this one."
+   },
+   {
+    "who": "NEO",
+    "axis": "standing",
+    "before": "Employed but facing criticism for lack of punctuality/authority issues",
+    "after": "Employed under an explicit threat of termination if punctuality is not improved",
+    "why_it_matters": "This ultimatum creates immediate tension and raises the stakes for Neo's continued presence in the Matrix, making his subsequent escape from the building more consequential as he risks his livelihood."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Compliant with Rhineheart's ultimatum, present at his workplace"
+   },
+   {
+    "who": "RHINEHEART",
+    "state": "Satisfied that Neo has accepted the terms of his employment"
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of Neo's increasing alienation from the Matrix world and the encroachment of the 'real' world on his daily life.",
+    "evidence": [
+     "The scene begins with Neo waking up late, a disruption of his routine.",
+     "Rhineheart's lecture focuses on 'authority' and 'rules,' themes that directly contrast with the freedom and questioning of reality Neo is beginning to experience.",
+     "The window cleaners on the scaffolding, which Neo stares at, are a visual motif of people trapped on the surface of the building, paralleling Neo's own situation."
+    ],
+    "confidence": 9,
+    "alternative": "It could be seen as a simple exposition scene to establish Neo's job and the setting, but the thematic weight of the dialogue suggests a deeper role in the narrative."
+   },
+   {
+    "claim": "This event foreshadows Neo's imminent departure from the Matrix, as his job is now explicitly threatened, raising the stakes for his escape.",
+    "evidence": [
+     "Rhineheart's ultimatum: 'Either you choose to be at your desk on time from this day forth, or you choose to find yourself another job.'",
+     "This occurs immediately before Neo receives the call from Morpheus and is forced to flee the building, meaning he is literally 'finding another job' (or losing his current one) as a result of the events that follow."
+    ],
+    "confidence": 8,
+    "alternative": "The threat could be seen as generic workplace conflict, but its timing right before the Agents' arrival makes it a direct narrative precursor to his escape."
+   }
+  ],
+  "boundary_doubt": "The boundary seems correct. The event starts with the alarm clock (sc-014) and ends with Neo agreeing to Rhineheart's terms (sc-016). The next event (sc-017) begins with the FedEx guy arriving, which is a distinct shift in action and location within the office.",
+  "scenes": [
+   "sc-014",
+   "sc-015",
+   "sc-016"
+  ]
+ },
+ {
+  "event_id": "ev-006",
+  "name": "Neo's Office Escape and Capture",
+  "location": "Meta CorTechs Office / Skyscraper Exterior",
+  "what_happens": "Neo receives a cellular phone in his cubicle at Meta CorTechs, which immediately connects him to Morpheus. As Agents Smith, Brown, and Jones lead police into the office, Morpheus guides Neo via voice to hide in an empty cubicle and then sneak into an adjacent office. Morpheus instructs Neo to escape via a scaffold outside the window, noting it is the only exit not in Agent custody. Neo steps onto the ledge but is knocked off balance by a strong gust of wind, causing him to drop the phone into the street below. Terrified and unable to cross the gap to the scaffold, Neo retreats inside the office just as a police officer opens the door. Neo is then handcuffed and led out of the building by the Agents, pushed into a waiting sedan, while Trinity watches from her motorcycle.",
+  "participants": [
+   "NEO",
+   "MORPHEUS",
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "POLICE_OFFICERS",
+   "TRINITY"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Working in his cubicle, unaware of immediate danger"
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Remote, guiding Neo via cellular phone"
+   },
+   {
+    "who": "THE_AGENTS",
+    "state": "Entering the office building to apprehend Neo"
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "custody",
+    "before": "Free, hiding in an empty office",
+    "after": "Handcuffed and in the physical custody of the Agents",
+    "why_it_matters": "This transition moves Neo from the Matrix's 'safe' world into the Agents' control, setting up the interrogation and the loss of his freedom in the Matrix."
+   },
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Unaware of the Agents' presence and escape routes",
+    "after": "Aware of the Agents' threat and the specific escape route (scaffold), but too afraid to execute it",
+    "why_it_matters": "Neo gains tactical knowledge from Morpheus but fails to act on it due to fear, highlighting his current state as 'unawakened' and reliant on guidance."
+   },
+   {
+    "who": "NEO",
+    "axis": "communication",
+    "before": "Possessing a live connection to Morpheus via cellular phone",
+    "after": "Phone lost to the street, cutting off direct contact with Morpheus",
+    "why_it_matters": "The loss of the phone symbolizes the severing of Neo's lifeline to the Resistance, leaving him isolated in the Agents' hands."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Handcuffed, inside a dark sedan, being transported by Agents"
+   },
+   {
+    "who": "TRINITY",
+    "state": "Witnessing the capture from her motorcycle"
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves as the catalyst for Neo's 'awakening' sequence, transitioning him from the Matrix to the real world.",
+    "evidence": [
+     "Morpheus's voice explicitly states 'They're coming for you, Neo' and 'we have run out of time', indicating this capture is a necessary step in the process.",
+     "The loss of the phone and the subsequent interrogation (seen in the next scene) lead directly to the wire tap and Neo's unplugging.",
+     "Trinity's presence watching the capture suggests she is monitoring the process, waiting for the moment to extract Neo."
+    ],
+    "confidence": 95
+   },
+   {
+    "claim": "The failed escape highlights Neo's psychological barrier (fear/doubt) that Morpheus must later address in training.",
+    "evidence": [
+     "Neo's dialogue 'I'm going to die' and 'I can't do this!' shows his paralysis despite having a clear plan.",
+     "Morpheus's instruction 'Free your mind' in later training scenes directly counters the fear that caused him to retreat from the scaffold here."
+    ],
+    "confidence": 85
+   }
+  ],
+  "boundary_doubt": "None. The scenes clearly delineate the start (phone arrival) and end (Trinity watching the car) of this specific escape and capture sequence.",
+  "scenes": [
+   "sc-017",
+   "sc-018",
+   "sc-019"
+  ]
+ },
+ {
+  "event_id": "ev-007",
+  "name": "Neo's Interrogation",
+  "location": "INTERROGATION_ROOM",
+  "what_happens": "Agent Smith interrogates Neo in a sterile white room, revealing his dual identity as Thomas Anderson and the hacker Neo. Smith offers Neo amnesty and a fresh start in exchange for his cooperation in bringing Morpheus to justice. Neo rejects the offer, demanding his phone call. In response, Smith demonstrates his power by fusing Neo's mouth shut, rendering him unable to speak. As Neo struggles, Smith and the other Agents rip open his shirt and implant a fiber-optic wire tap, which animates into a worm-like creature that burrows into Neo's navel to serve as a surveillance device.",
+  "participants": [
+   "NEO",
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "THE_AGENTS"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Captive, conscious, and able to speak; unaware of the specific nature of the Agents' power over his body."
+   },
+   {
+    "who": "THE_AGENTS",
+    "state": "Interrogator; in control of the room and the narrative, seeking information about Morpheus."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "condition",
+    "before": "Mouth open, able to speak and communicate verbally.",
+    "after": "Mouth physically fused shut; lips melded together until all traces of his mouth are gone.",
+    "why_it_matters": "This physical alteration demonstrates the Agents' supernatural control over Neo's body and silences his primary means of resistance."
+   },
+   {
+    "who": "NEO",
+    "axis": "custody",
+    "before": "Interrogated but not yet physically compromised by technology.",
+    "after": "Physically compromised with a surveillance device (wire tap) implanted in his abdomen.",
+    "why_it_matters": "The implant ensures the Agents can monitor Neo's communications and movements, tightening their grip on him."
+   },
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Unaware that his dual life as Thomas Anderson and Neo is fully documented and that Morpheus is a specific target.",
+    "after": "Informed that Morpheus is a wanted terrorist and that the Agents are using him to find Morpheus.",
+    "why_it_matters": "This clarifies the stakes for Neo and the specific interest the Agents have in his connections."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Mute due to fused mouth; carrying a living surveillance device in his stomach; psychologically shaken by the display of power."
+   },
+   {
+    "who": "THE_AGENTS",
+    "state": "Satisfied with the outcome; has established dominance and secured a tracking method."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of 'The Agents' Pursuit of Morpheus through Neo'.",
+    "evidence": [
+     "Agent Smith explicitly states, 'We know that you have been contacted by a certain individual. A man who calls himself Morpheus.'",
+     "Smith offers a deal specifically for 'cooperation in bringing a known terrorist to justice,' identifying Morpheus as the target.",
+     "The implantation of the wire tap is a tactical move to track Neo, who is the last known contact with Morpheus."
+    ],
+    "confidence": 5,
+    "alternative": "It could be seen as a standalone demonstration of the Agents' power, but the dialogue explicitly ties it to the Morpheus hunt."
+   },
+   {
+    "claim": "This event marks Neo's transition from passive suspect to active target, initiating his physical transformation.",
+    "evidence": [
+     "Neo's mouth is physically altered, a first step in the body horror that will continue when he is extracted from the Matrix.",
+     "The wire tap is later removed by Trinity (Scene 24), confirming its function as a plot device linking the Matrix world to the Resistance's efforts to save Neo."
+    ],
+    "confidence": 4,
+    "alternative": "It might be viewed simply as a standard police interrogation gone wrong, but the supernatural elements elevate it to a mythic test."
+   }
+  ],
+  "boundary_doubt": "The scenes provided (sc-020, sc-191, sc-200, sc-202, sc-209, sc-210) appear to be multiple versions or beats of the same single continuous scene in the final film (Scene 20 in the script). The boundary is tight around this single interrogation room sequence. No doubt about the internal consistency, but note that the script text provided jumps from Scene 20 to Scene 21 (Neo waking up), confirming this is the end of the event.",
+  "scenes": [
+   "sc-020",
+   "sc-191",
+   "sc-200",
+   "sc-202",
+   "sc-209",
+   "sc-210"
+  ]
+ },
+ {
+  "event_id": "ev-008",
+  "name": "The Waking Call and Extraction",
+  "location": "INT. NEO'S APARTMENT - NIGHT / EXT. CITY STREET - NIGHT / INT. CAR",
+  "what_happens": "Neo wakes from a nightmare of his interrogation, only to be summoned by Morpheus's voice on the phone, who reveals Neo is 'the One' and directs him to the Adams Street bridge. On a rainy street, Trinity intercepts Neo and forces him into a car with her crew. Under the gunpoint of Switch, Neo is convinced by Trinity to submit to a painful medical procedure where a surveillance wire tap is extracted from his stomach, ensuring he is no longer being tracked by the Agents.",
+  "participants": [
+   "NEO",
+   "MORPHEUS",
+   "TRINITY",
+   "SWITCH",
+   "APOC"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Disoriented and frightened after a nightmare; unaware of his significance to Morpheus; walking alone in the rain."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Off-screen, knowing Neo is 'the One' and needing to secure him before the Agents do."
+   },
+   {
+    "who": "TRINITY",
+    "state": "Ready to intercept Neo and ensure his safety from surveillance."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Believes he is just a hacker named Thomas Anderson, unaware of his cosmic significance.",
+    "after": "Informed by Morpheus that he is 'the One' and that Morpheus has spent his life searching for him.",
+    "why_it_matters": "This revelation shifts Neo from a passive victim of circumstance to the central figure of a larger prophecy, driving his motivation to meet Morpheus."
+   },
+   {
+    "who": "NEO",
+    "axis": "condition",
+    "before": "Carrying a hidden surveillance wire tap in his stomach, making him vulnerable to the Agents.",
+    "after": "Free of the tracking device, though physically pained, allowing the crew to move him safely.",
+    "why_it_matters": "The extraction removes the immediate physical threat of capture, enabling the transition from the Matrix world to the real world."
+   },
+   {
+    "who": "NEO",
+    "axis": "trust",
+    "before": "Skeptical and resistant to the crew's methods, threatening to leave the car when asked to remove his shirt.",
+    "after": "Compliant and trusting enough to submit to a painful, invasive procedure after Trinity's reassurance.",
+    "why_it_matters": "This marks Neo's first act of surrender to the Resistance's authority, a necessary step before he can fully accept their reality."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Clean of surveillance, committed to meeting Morpheus, and physically prepared for the journey to the real world."
+   },
+   {
+    "who": "TRINITY",
+    "state": "Having secured Neo and removed the threat of the bug."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of Neo's initiation into the Resistance, transitioning him from a potential target to a protected asset.",
+    "evidence": [
+     "Morpheus's phone call explicitly names Neo 'the One' and sets up the meeting.",
+     "The extraction of the bug is a physical manifestation of removing the Agents' hold on Neo.",
+     "Trinity's persuasion ('You've been down there, Neo') links his past experiences to his current need for trust."
+    ],
+    "confidence": 5
+   },
+   {
+    "claim": "The event highlights the theme of control vs. freedom, as Neo must surrender bodily autonomy to gain freedom from surveillance.",
+    "evidence": [
+     "Switch's line 'Our way or the highway' asserts the crew's control.",
+     "The invasive nature of the bug extraction mirrors the loss of control Neo felt during the interrogation.",
+     "Trinity's argument that Neo must 'trust' them to survive reinforces the need for surrender."
+    ],
+    "confidence": 4
+   }
+  ],
+  "boundary_doubt": "The boundary includes the car ride and bug extraction, which seems distinct from the actual meeting with Morpheus at the hotel (sc-26/27). However, the extraction is a prerequisite for the safe transport to the hotel, so it fits within the 'extraction' phase of Neo's rescue.",
+  "scenes": [
+   "sc-021",
+   "sc-022",
+   "sc-023",
+   "sc-024",
+   "sc-222",
+   "sc-223",
+   "sc-224"
+  ]
+ },
+ {
+  "event_id": "ev-009",
+  "name": "Cypher's Betrayal",
+  "location": "Simulated Restaurant (The Matrix)",
+  "what_happens": "In a well-lit, upscale restaurant within the Matrix, Cypher sits across from Agent Smith, enjoying a simulated steak. Cypher articulates his deep-seated disdain for the harsh reality of the real world, arguing that the comfort of ignorance in the Matrix is superior to the truth. He negotiates the terms of his betrayal: in exchange for having his body reinserted into the Matrix with no memory of his time in the real world and a new identity as a rich, famous actor, Cypher will provide the Agents with a way to capture Morpheus. When Smith asks for the access codes to the Zion mainframe, Cypher admits he does not know them but offers Smith the man who does: Morpheus.",
+  "participants": [
+   "CYPHER",
+   "THE_AGENTS"
+  ],
+  "entry_state": [
+   {
+    "who": "CYPHER",
+    "state": "A crew member of the Nebuchadnezzar who is disillusioned with the war and the real world, secretly in contact with the Agents."
+   },
+   {
+    "who": "THE_AGENTS",
+    "state": "The primary antagonist pursuing Morpheus, currently leveraging Cypher's discontent to secure a lead."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "CYPHER",
+    "axis": "allegiance",
+    "before": "Member of the Nebuchadnezzar crew, aligned with Morpheus and the Resistance, though visibly fatigued and critical.",
+    "after": "Confirmed traitor who has sold out Morpheus to the Agents in exchange for a comfortable life back in the Matrix.",
+    "why_it_matters": "This shift creates the immediate physical threat to Morpheus and introduces the internal betrayal that leads to the death of several crew members."
+   },
+   {
+    "who": "THE_AGENTS",
+    "axis": "knowledge",
+    "before": "Pursuing Morpheus but lacking a specific lead to capture him or access Zion.",
+    "after": "Possesses a direct path to Morpheus through Cypher's testimony, setting up the capture sequence.",
+    "why_it_matters": "It provides the Agents with the specific intelligence needed to set the trap that results in Morpheus's capture."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "CYPHER",
+    "state": "Has agreed to the deal and is preparing to execute his part of the betrayal."
+   },
+   {
+    "who": "THE_AGENTS",
+    "state": "Has secured the agreement and is ready to move against Morpheus."
+   }
+  ],
+  "reversal": true,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of 'The Cost of Truth' or 'Disillusionment,' highlighting that some individuals cannot bear the burden of reality and choose comfort over freedom.",
+    "evidence": [
+     "Cypher explicitly states, 'Ignorance is bliss' and 'I choose the Matrix,' directly contrasting his view with Morpheus's belief in the truth.",
+     "The scene is set in a simulated environment (the steak) to emphasize Cypher's preference for the sensory pleasure of the illusion over the 'goop' of the real world."
+    ],
+    "confidence": 5
+   },
+   {
+    "claim": "This event functions as the inciting incident for the 'Capture of Morpheus' arc, providing the necessary leverage for the Agents to move from a state of pursuit to a state of dominance.",
+    "evidence": [
+     "Smith specifically asks for 'Access codes to the Zion mainframe' and is given 'the man who does: Morpheus,' which directly leads to the subsequent scenes where Morpheus is trapped in the hotel.",
+     "Cypher's admission that he doesn't know the codes but can give them the man shifts the focus from a technical breach to a personal betrayal."
+    ],
+    "confidence": 4
+   }
+  ],
+  "boundary_doubt": "The boundary is clean. The scene is a self-contained negotiation that concludes with the agreement to hand over Morpheus. It does not bleed into the actual capture or the deaths of the crew, which occur in subsequent scenes.",
+  "scenes": [
+   "sc-025"
+  ]
+ },
+ {
+  "event_id": "ev-010",
+  "name": "The Unplugging",
+  "location": "Hotel Lafayette / Power Plant",
+  "what_happens": "Trinity brings Neo to Morpheus's hideout at the Hotel Lafayette. Morpheus explains the nature of the Matrix and offers Neo a choice between a blue pill (return to ignorance) and a red pill (stay in Wonderland). Neo chooses red. In an adjacent room, the crew prepares to unplug him. As the process begins, Neo's physical body starts to dissolve, and he is violently ripped from the simulation. He wakes up naked and gel-covered in a pod within a massive power plant, where a machine mechanically disconnects him and flushes him into a waste line.",
+  "participants": [
+   "NEO",
+   "TRINITY",
+   "MORPHEUS",
+   "APOC",
+   "SWITCH",
+   "CYPHER"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Conscious in the Matrix, nervous but hopeful, having just had a tracking bug removed."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Waiting in Room 1313, ready to reveal the truth."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Believes his reality is real, though he senses something is wrong.",
+    "after": "Has chosen to learn the truth and accepted the risk of no return.",
+    "why_it_matters": "This is the irreversible point of no return that defines Neo's journey from a hacker to a revolutionary."
+   },
+   {
+    "who": "NEO",
+    "axis": "condition",
+    "before": "Conscious and active in the simulated world.",
+    "after": "Comatose in the Matrix, then physically awake but atrophied and naked in the real world.",
+    "why_it_matters": "The transition from a simulated, healthy body to a real, weak body emphasizes the harsh reality of his new existence."
+   },
+   {
+    "who": "NEO",
+    "axis": "location",
+    "before": "Hotel Lafayette (Simulation).",
+    "after": "Power Plant (Real World).",
+    "why_it_matters": "The shift in location marks the transition from the known to the unknown, the real to the simulated."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Disconnected, naked, and flushed into the waste system of the power plant."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Preparing to rescue Neo from the waste line."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "The event serves the thread of Neo's awakening and the revelation of the Matrix's true nature.",
+    "evidence": [
+     "Morpheus explicitly states, 'The Matrix is everywhere... It is the world that has been pulled over your eyes to blind you from the truth.'",
+     "The physical process of being unplugged (the mirror dissolving, the electric scream) visually represents the shattering of Neo's perception of reality.",
+     "The reveal of the power plant and the pods shows the scale of the simulation and the dehumanizing nature of the real world."
+    ],
+    "confidence": 95
+   },
+   {
+    "claim": "The event establishes the physical vulnerability of Neo in the real world.",
+    "evidence": [
+     "Neo is described as 'bald and naked, his body slick with gelatin.'",
+     "He is 'dizzy, nauseous' and struggles to breathe and stand.",
+     "The machine must mechanically extract him, highlighting his lack of agency in his own body."
+    ],
+    "confidence": 90
+   }
+  ],
+  "boundary_doubt": "The boundary between the 'choice' (sc-028) and the 'unplugging process' (sc-029) is tight but distinct. The event ends when Neo is sucked into the waste line (sc-030/031), before he is rescued by the Nebuchadnezzar (sc-032/033).",
+  "scenes": [
+   "sc-026",
+   "sc-027",
+   "sc-028",
+   "sc-029",
+   "sc-030",
+   "sc-031"
+  ]
+ },
+ {
+  "event_id": "ev-011",
+  "name": "Rescue and Recovery",
+  "location": "INT. SEWER MAIN / INT. HOVERCRAFT (NEBUCHADNEZZAR)",
+  "what_happens": "The Nebuchadnezzar hides in a cramped sewer supply line to evade a Sentinel, freezing the crew as they wait. Neo is then shown regaining consciousness on the ship, where Morpheus and Trinity confirm his successful extraction. He is subsequently treated in the infirmary for the severe physical atrophy caused by his years in the Matrix.",
+  "participants": [
+   "NEO",
+   "MORPHEUS",
+   "TRINITY",
+   "DOZER",
+   "TANK",
+   "CYPHER",
+   "APOC",
+   "SWITCH",
+   "MOUSE"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Unconscious, recently extracted from the power plant pod"
+   },
+   {
+    "who": "Nebuchadnezzar Crew",
+    "state": "In transit, actively moving through the sewer system"
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Uncertain about Neo's survival status"
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "condition",
+    "before": "Unconscious/Comatose",
+    "after": "Conscious and undergoing physical rehabilitation",
+    "why_it_matters": "Transitions Neo from a passive subject of rescue to an active participant in his own recovery and relearning of the real world."
+   },
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Unaware of physical threats in the real world",
+    "after": "Witnesses a Sentinel, a machine designed for search and destroy",
+    "why_it_matters": "Establishes the immediate, tangible danger Neo faces outside the Matrix, grounding the abstract 'real world' in a specific mechanical threat."
+   },
+   {
+    "who": "MORPHEUS",
+    "axis": "resolve",
+    "before": "Uncertain (implied by Trinity's hope)",
+    "after": "Certain of Neo's identity as 'The One'",
+    "why_it_matters": "Solidifies Morpheus's faith in Neo, driving his subsequent decisions and sacrifices throughout the plot."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Awake, physically weakened but stable, and beginning to process the reality of his situation"
+   },
+   {
+    "who": "Nebuchadnezzar Crew",
+    "state": "Safe from the immediate Sentinel threat, but having suffered the loss of Dozer"
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "Serves the 'Initiation into the Real World' thread, where Neo must physically and psychologically adapt to his new existence.",
+    "evidence": [
+     "Morpheus explains that Neo's muscles have atrophied and they are 'rebuilding them' (sc-035).",
+     "Morpheus tells Neo to 'Rest... The answers are coming' (sc-035), indicating this is a preparatory phase before deeper revelations.",
+     "The presence of the Sentinel (sc-032) serves as a practical demonstration of the stakes in the real world, contrasting with the simulated dangers of the Matrix."
+    ],
+    "confidence": 9,
+    "alternative": "Could be seen as a 'Safe Haven' thread, but the Sentinel and the physical pain suggest it is more about establishing the harshness of reality than safety."
+   },
+   {
+    "claim": "Serves the 'Morpheus's Faith' thread, where his belief in Neo is tested and confirmed.",
+    "evidence": [
+     "Morpheus states, 'I don't have to hope it. I know it' (sc-033/034), directly contrasting with Trinity's 'I hope you're right'.",
+     "The successful rescue and Neo's waking confirm Morpheus's earlier assertion that Neo is 'The One' (sc-021)."
+    ],
+    "confidence": 8,
+    "alternative": "Could be part of a 'Crew Dynamics' thread, but the focus is heavily on the Morpheus-Neo interaction."
+   }
+  ],
+  "boundary_doubt": "The scenes sc-033 and sc-034 appear to be duplicate or alternate takes of the same awakening moment. Additionally, the scene list for ev-011 includes sc-180, which seems to be a duplicate of sc-035. The boundary correctly captures the transition from hiding to waking to treatment.",
+  "scenes": [
+   "sc-032",
+   "sc-033",
+   "sc-034",
+   "sc-035",
+   "sc-180"
+  ]
+ },
+ {
+  "event_id": "ev-012",
+  "name": "Orientation and the Truth",
+  "location": "Nebuchadnezzar (Neo's Room, Main Deck) and The Construct",
+  "what_happens": "Neo wakes up on the Nebuchadnezzar, disoriented by his new physical state and the year 2199. Morpheus tours him through the ship, introducing the crew and the main deck's equipment. Morpheus then plugs Neo into the Construct to show him the truth: the Matrix is a simulated reality, the real world is a wasteland, and humanity serves as bioelectric batteries for the machines. Neo violently rejects this revelation, screaming for it to stop, and is unplugged. He vomits and collapses unconscious on the main deck.",
+  "participants": [
+   "NEO",
+   "MORPHEUS",
+   "TRINITY",
+   "CYPHER",
+   "DOZER",
+   "TANK",
+   "MOUSE",
+   "SWITCH"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Recently woken from the Matrix, physically weakened, believing the year is 1997."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Prepared to explain the nature of the Matrix and the resistance."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Believes he is in 1997 and his past life in the city was real.",
+    "after": "Learns the year is ~2199, the city is a simulation, and he is a battery in a machine farm.",
+    "why_it_matters": "This is the fundamental paradigm shift that defines the rest of Neo's journey; he can no longer return to his old life."
+   },
+   {
+    "who": "NEO",
+    "axis": "condition",
+    "before": "Confused but physically stable after waking up.",
+    "after": "Psychologically shattered, physically nauseous, and unconscious due to the shock of the truth.",
+    "why_it_matters": "The physical collapse demonstrates the traumatic impact of the truth, setting the stage for his need for training and faith."
+   },
+   {
+    "who": "NEO",
+    "axis": "social",
+    "before": "Only knows Trinity and Morpheus.",
+    "after": "Introduced to the rest of the Nebuchadnezzar crew (Cypher, Tank, Dozer, etc.).",
+    "why_it_matters": "Establishes the social dynamic and introduces key characters like Cypher, whose future betrayal is hinted at by his demeanor."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Unconscious on the main deck, having just been told he is 'the One' and that his training is about to begin."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Has revealed the core mystery of the film and is now focused on preparing Neo for his role."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of Neo's transformation from a passive seeker to an active agent of change, specifically the 'Chosen One' prophecy.",
+    "evidence": [
+     "Morpheus explicitly states, 'I believe the search is over' and 'You are the One' in the immediate aftermath (Scene 43, just outside the boundary but directly caused by the revelation in Scene 41).",
+     "The revelation that Neo is a battery and the Matrix is a control system is the prerequisite for the 'One' to have power over it; you cannot break the system you don't understand."
+    ],
+    "confidence": 95
+   },
+   {
+    "claim": "This event introduces the theme of 'Belief vs. Knowledge' which will be central to Neo's training.",
+    "evidence": [
+     "Neo's reaction is 'No! I don't believe it!' despite seeing visual evidence in the Construct.",
+     "Morpheus's response, 'I didn't say that it would be easy, Neo. I just said that it would be the truth,' sets up the later lesson that 'You have to believe.'",
+     "The physical rejection (vomiting/blackout) mirrors the mental rejection, suggesting that his body/mind is not yet ready to integrate the truth."
+    ],
+    "confidence": 90
+   },
+   {
+    "claim": "This event highlights the fragility of the Resistance and the cost of knowledge, foreshadowing Cypher's betrayal.",
+    "evidence": [
+     "Cypher is present during the tour and the collapse, observing Neo's pain.",
+     "Later in the script (Scene 71), Cypher says, 'Why, oh why, didn't I take that blue pill?' and 'I'm tired of this jagoff and all of his bullshit,' directly linking his dissatisfaction to the harsh reality shown in this event.",
+     "The event establishes the 'real world' as cold, cramped, and uncomfortable, providing the motivation for characters like Cypher to prefer the simulated bliss of the Matrix."
+    ],
+    "confidence": 85
+   }
+  ],
+  "boundary_doubt": "The boundary is clean. It starts with Neo waking up in his room (sc-036) and ends with his collapse on the main deck (sc-042). The next event (sc-043) is a separate scene where Neo wakes up again and Morpheus apologizes, which is a distinct narrative beat (the aftermath/reflection) rather than part of the initial revelation and shock.",
+  "scenes": [
+   "sc-036",
+   "sc-037",
+   "sc-038",
+   "sc-039",
+   "sc-040",
+   "sc-041",
+   "sc-042"
+  ]
+ },
+ {
+  "event_id": "ev-013",
+  "name": "The Prophecy of the One",
+  "location": "INT. NEO'S ROOM - NEBUCADNEZZAR",
+  "what_happens": "After waking from a traumatic black-out in his quarters on the Nebuchadnezzar, Neo asks if he can return to the Matrix. Morpheus, sitting in the shadows, confirms there is no going back. He apologizes for breaking the resistance's rule against freeing minds of a certain age, admitting it is dangerous because the mind often turns against the body. Morpheus then recounts the history of the first man born inside the Matrix who could change it and freed the first of their group. He explains that upon this man's death, the Oracle prophesied his return to destroy the Matrix and end the war. Morpheus states that he freed Neo because he believes this search is finally over and that Neo is the One. He tells Neo to rest for his upcoming training.",
+  "participants": [
+   "NEO",
+   "MORPHEUS"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Physically weakened and disoriented after vomiting and blacking out on the main deck; psychologically unsettled by the revelation that his past life was a simulation."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Confident in his mission but carrying the weight of having made a significant decision that deviated from established safety protocols."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Uncertain about his specific role, knowing only that he has 'the gift' and is waiting for something, but unaware of the specific prophecy or the history of previous attempts.",
+    "after": "Informed that Morpheus believes the search is over and that Neo is the prophesied One, based on the Oracle's vision of the return of the first freed man.",
+    "why_it_matters": "This shifts Neo from a passive recipient of truth to a potential active agent of change, establishing the central dramatic question of the film: is he actually the One?"
+   },
+   {
+    "who": "MORPHEUS",
+    "axis": "standing",
+    "before": "The authoritative leader who has been searching for the One, maintaining the facade of certainty.",
+    "after": "Acknowledges vulnerability by admitting he broke a specific rule regarding the age of those freed, confessing that he acted out of necessity and belief rather than strict protocol.",
+    "why_it_matters": "Humanizes Morpheus and introduces doubt about his infallibility, which is crucial for Neo's journey of finding his own faith rather than relying on a leader's."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Resting in his bed, mentally processing the weight of being identified as the One, preparing for training."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Has discharged his duty of explanation and apology, leaving Neo to digest the information."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the 'Faith vs. Reason' theme, where Morpheus's blind faith in Neo contrasts with Neo's initial skepticism, setting up the need for Neo to prove himself through action rather than just belief.",
+    "evidence": [
+     "Morpheus explicitly states, 'I do not believe things with my mind. I believe them with my heart. In my gut.'",
+     "Morpheus admits, 'I believed what the Oracle told me... no, I misunderstood what she told me. I believed that it was all about me.'",
+     "Neo's reaction is one of exhaustion and questioning, not immediate acceptance, highlighting the gap between Morpheus's conviction and Neo's reality."
+    ],
+    "confidence": 95
+   },
+   {
+    "claim": "It establishes the stakes of the 'One' prophecy as a cyclical historical burden, linking Neo to the first freed man and suggesting that the resistance has a pattern of false hopes.",
+    "evidence": [
+     "Morpheus recounts the history of the 'first man born inside that had the ability to change what he wanted.'",
+     "Morpheus notes that the Oracle prophesied his return 'when he died,' implying a long period of waiting and searching.",
+     "The apology for breaking the age rule suggests that previous attempts or the process of freeing people has had negative consequences ('Their mind turns against them')."
+    ],
+    "confidence": 90
+   }
+  ],
+  "boundary_doubt": "The scene data provided (sc-043 and sc-045) appears to be two slightly different cuts or descriptions of the same continuous moment in Neo's room. The script confirms this is a single scene (Scene 43) following Neo's black-out. The boundary is tight and correct for this specific dialogue exchange.",
+  "scenes": [
+   "sc-043",
+   "sc-045"
+  ]
+ },
+ {
+  "event_id": "ev-014",
+  "name": "Tank's Introduction",
+  "location": "HOVERCRAFT (Neo's Room and Main Deck)",
+  "what_happens": "The next day on the Nebuchadnezzar, Tank enters Neo's room to check on him. Tank introduces himself as Neo's new operator and explains that he and his brother Dozer are 'pure' humans born in the real world, unlike the crew members who have neural jacks. He reveals the existence of Zion, the last human city located deep underground. Following this exposition, Neo is moved to the Main Deck where Tank loads a Jujitsu combat program into Neo's supplement drive. Neo's body reacts with intense physical strain, and upon completion, he exclaims that he knows kung fu, marking the beginning of his formal training.",
+  "participants": [
+   "TANK",
+   "NEO",
+   "MORPHEUS",
+   "DOZER",
+   "CYPHER"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Awake, having slept poorly, unaware of Zion or the distinction between 'pure' and pod-born humans."
+   },
+   {
+    "who": "TANK",
+    "state": "Present in the ship, about to assume his role as Neo's operator."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Unaware of Zion's existence and the biological distinction of 'pure' humans.",
+    "after": "Informed that Zion is the last human city deep underground and that Tank/Dozer are naturally born humans without neural jacks.",
+    "why_it_matters": "Establishes the physical stakes of the war and the destination of the Resistance, grounding the abstract concept of the 'real world' in a specific location."
+   },
+   {
+    "who": "NEO",
+    "axis": "skill",
+    "before": "Untrained in martial arts.",
+    "after": "Has downloaded Jujitsu combat skills.",
+    "why_it_matters": "Initiates the transformation of Neo from a passive recipient of information into an active combatant, setting up the subsequent sparring match with Morpheus."
+   },
+   {
+    "who": "TANK",
+    "axis": "standing",
+    "before": "Off-screen or unknown role.",
+    "after": "Established as Neo's personal operator.",
+    "why_it_matters": "Defines the hierarchy of the ship's crew and assigns a specific guardian/mentor figure to Neo outside of Morpheus."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Physically strained but awake, possessing basic Jujitsu skills, and aware of Zion."
+   },
+   {
+    "who": "TANK",
+    "state": "Actively operating Neo's training program."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of Neo's initiation into the Resistance's military structure, transitioning him from a philosophical subject to a tactical asset.",
+    "evidence": [
+     "Tank's dialogue: 'I'm fairly excited to see what you are capable of... We got a lot to do so let's get to it.'",
+     "The immediate shift from conversation to the loading of the 'Jujitsu' disk in the Main Deck."
+    ],
+    "confidence": 95
+   },
+   {
+    "claim": "The mention of 'pure' humans serves to differentiate the Resistance's leadership (Morpheus, Tank, Dozer) from the general populace, hinting at a potential class or biological divide within the free world.",
+    "evidence": [
+     "Tank's dialogue: 'Me and my brother Dozer, we are one hundred percent pure, old-fashioned, home-grown human. Born free.'",
+     "Neo's observation of the missing jacks: 'You don't have...'"
+    ],
+    "confidence": 80,
+    "alternative": "It may simply be an exposition device to explain why Tank and Dozer do not need to be plugged in for the training sequence."
+   }
+  ],
+  "boundary_doubt": "The boundary includes the start of the training (loading the Jujitsu disk), which is technically a 'training' event rather than just an 'introduction.' However, the scenes provided (sc-044 and sc-049) are contiguous in the script (scenes 45 and 46), and the introduction flows directly into the first action of training, making them a single narrative beat of 'orientation and start of education.'",
+  "scenes": [
+   "sc-044",
+   "sc-049"
+  ]
+ },
+ {
+  "event_id": "ev-015",
+  "name": "Morpheus's Capture and Rescue Decision",
+  "location": "INT. MAIN DECK (Nebuchadnezzar) / INT. CONSTRUCT",
+  "what_happens": "Following the deaths of Dozer, Switch, and Apoc, Tank explains to Neo that the Agents are hacking Morpheus's mind to extract the codes to Zion, warning that if his alpha pattern changes, Morpheus will reveal everything, necessitating his death to save the city. Neo intervenes, interpreting the Oracle's prophecy about a choice between his life and Morpheus's as the current moment. He rejects the title of the One but decides to re-enter the Matrix to save Morpheus. Trinity asserts her authority as ranking officer to join him, and the pair straps into their drive chairs, arming themselves in the Construct before entering the Matrix.",
+  "participants": [
+   "NEO",
+   "TRINITY",
+   "TANK",
+   "MORPHEUS",
+   "CYPHER"
+  ],
+  "entry_state": [
+   {
+    "who": "MORPHEUS",
+    "state": "Unconscious, hooked to monitors, undergoing neural extraction by Agents."
+   },
+   {
+    "who": "NEO",
+    "state": "Grieving the loss of crew, uncertain of his status as the One, paralyzed by the situation."
+   },
+   {
+    "who": "TRINITY",
+    "state": "Angry at Cypher's betrayal, grieving, watching the extraction with uncertainty."
+   },
+   {
+    "who": "TANK",
+    "state": "Skeptical, believing the only logical option is to kill Morpheus to protect Zion."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "resolve",
+    "before": "Uncertain of his status as the One, paralyzed by the finality of Morpheus's capture.",
+    "after": "Decisive; chooses to re-enter the Matrix to save Morpheus, rejecting the idea that he is the One.",
+    "why_it_matters": "This marks Neo's first active attempt to save Morpheus based on belief rather than destiny, setting up the failure of his 'One-ness' in the Matrix."
+   },
+   {
+    "who": "TRINITY",
+    "axis": "allegiance",
+    "before": "Grieving and angry at Cypher, watching Neo's decision with uncertainty.",
+    "after": "Committed to accompanying Neo into the Matrix, asserting her belief in Morpheus over Neo's.",
+    "why_it_matters": "Trinity's assertion of command authority and her stated belief in Morpheus foreshadows her role in saving Neo, as she is the one who truly believes in him."
+   },
+   {
+    "who": "MORPHEUS",
+    "axis": "condition",
+    "before": "Captured and undergoing neural extraction by the Agents.",
+    "after": "On the verge of having his mind broken, with his life signs failing.",
+    "why_it_matters": "The ticking clock of Morpheus's mental collapse creates the urgency for the rescue mission."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Plugged into the Construct, armed with an Uzi, entering the Matrix."
+   },
+   {
+    "who": "TRINITY",
+    "state": "Plugged into the Construct, armed, entering the Matrix."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Left on the Nebuchadnezzar, near death, as Tank comforts him."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of Neo's failed assumption of the 'One' identity, contrasting his belief in his own potential with Trinity's belief in him.",
+    "evidence": [
+     "Neo states, 'I'm not the One, Trinity... Morpheus is the one that matters.'",
+     "Trinity replies, 'I believe Morpheus means more to me than he does to you... I'm coming with you.'",
+     "Trinity later says, 'No one has ever done anything like this,' to which Neo replies, 'That's why it's going to work,' highlighting his overconfidence."
+    ],
+    "confidence": 9,
+    "alternative": "It could be seen as a simple rescue mission setup, but the dialogue explicitly frames it as a test of belief."
+   },
+   {
+    "claim": "The event highlights the theme of choice vs. destiny, specifically the Oracle's prophecy about the choice between Neo and Morpheus.",
+    "evidence": [
+     "Neo interrupts Tank, realizing the Oracle's prophecy about a choice between Morpheus and himself is coming true.",
+     "Neo states he is not the One but decides to go back into the Matrix to save Morpheus."
+    ],
+    "confidence": 8,
+    "alternative": "It might be interpreted as Neo simply acting on loyalty, but the reference to the Oracle ties it to the larger prophetic thread."
+   }
+  ],
+  "boundary_doubt": "None",
+  "scenes": [
+   "sc-046",
+   "sc-047",
+   "sc-141",
+   "sc-143",
+   "sc-145",
+   "sc-146",
+   "sc-148",
+   "sc-175"
+  ]
+ },
+ {
+  "event_id": "ev-016",
+  "name": "Neo's Combat Training in the Dojo",
+  "location": "INT. DOJO (Simulation) / INT. MAIN DECK (Nebuchadnezzar)",
+  "what_happens": "Neo and Morpheus engage in a high-speed sparring match within a simulated Japanese dojo. Morpheus explains that the rules of this environment, like gravity, can be bent or broken by willpower. Initially, Neo is overwhelmed by Morpheus's speed and knocked to the floor, bleeding. Morpheus instructs Neo that his limitations are mental, not physical, urging him to 'know' rather than 'think.' The crew watches the simulation on the main deck monitors, noting Neo's abnormal neural-kinetics. In a final burst of aggression, Neo lands a single blow that knocks Morpheus's glasses off. Morpheus smiles, tells Neo he can only show him the door to freedom, and orders Tank to load the jump program, signaling the next phase of training.",
+  "participants": [
+   "NEO",
+   "MORPHEUS",
+   "TANK",
+   "MOUSE",
+   "APOC",
+   "SWITCH",
+   "DOZER",
+   "TRINITY",
+   "CYPHER"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Physically recovered but mentally limited; believes his strength is tied to his body."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Wearing circular mirrored glasses; ready to test Neo's mental limits."
+   },
+   {
+    "who": "TANK",
+    "state": "Operating the simulation from the main deck."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Believes his physical technique and speed are sufficient to fight Morpheus.",
+    "after": "Realizes his weakness is not technique but his inability to accept the nature of the simulated environment (that air is not real, strength is not muscular).",
+    "why_it_matters": "This shift from physical to mental limitation is the core lesson of the Matrix, preparing Neo for the concept of belief overriding reality."
+   },
+   {
+    "who": "NEO",
+    "axis": "condition",
+    "before": "Standing, unmarked, confident in his downloaded skills.",
+    "after": "Fallen to hands and knees, bleeding from the mouth, then standing again with a single successful hit landed.",
+    "why_it_matters": "The physical defeat and subsequent success demonstrate the transition from passive learning to active transcendence of limits."
+   },
+   {
+    "who": "MORPHEUS",
+    "axis": "condition",
+    "before": "Wearing circular mirrored glasses.",
+    "after": "Glasses knocked off by Neo's blow.",
+    "why_it_matters": "The removal of the glasses symbolizes the breaking of the 'rules' and the visual cue that Neo has begun to grasp the power of will."
+   },
+   {
+    "who": "MORPHEUS",
+    "axis": "resolve",
+    "before": "Testing Neo's physical limits.",
+    "after": "Deciding to test Neo's mental limits via the jump program.",
+    "why_it_matters": "Moves the plot forward from combat basics to the specific test of faith (the jump) required to become the One."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Defeated but proven capable; mentally shifted towards understanding belief."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Glassesless; satisfied with Neo's progress, initiating the jump program."
+   },
+   {
+    "who": "Crew",
+    "state": "Witnessing the potential of Neo, with Mouse noting the high neural-kinetics."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of Neo's initiation into the 'One,' specifically the transition from physical training to mental/spiritual awakening.",
+    "evidence": [
+     "Morpheus explicitly states, 'Do you think my being faster, stronger has anything to do with my muscles in this place?'",
+     "Morpheus says, 'I'm trying to free your mind, Neo, but all I can do is show you the door. You're the one that has to step through.'",
+     "The immediate next scene is the 'jump program' where Neo fails due to doubt, reinforcing that the dojo training was a prerequisite for the belief test."
+    ],
+    "confidence": 95,
+    "alternative": "It could be seen as a standalone combat tutorial, but the dialogue strongly links it to the metaphysical nature of the Matrix."
+   },
+   {
+    "claim": "The event establishes the 'rules' of the Matrix as flexible, which is central to the film's central thesis that reality is a construct.",
+    "evidence": [
+     "Morpheus: 'Some of them can be bent. Others can be broken.'",
+     "The visual of Neo landing a hit that should have been impossible given the previous speed differential demonstrates the bending of physical law."
+    ],
+    "confidence": 90
+   }
+  ],
+  "boundary_doubt": "The scene list includes sc-050 (Mess Hall/Breakfast) which seems to occur *after* the dojo training in the narrative flow of the provided script text (where the dojo training leads directly to the jump program in scenes 57-60, while the mess hall scene 72 happens much later after the Oracle visit). However, the boundary pass explicitly includes sc-050 in this event. Looking at the script provided: Scene 50 (Mess Hall) appears *between* Scene 49 (Main Deck watching) and Scene 51 (Dojo continued). Wait, looking closely at the script text provided: Scene 48 is Dojo, Scene 49 is Main Deck, Scene 50 is Mess Hall (Mouse bursts in saying Morpheus is fighting Neo), Scene 51 is Dojo. So the Mess Hall scene is actually the *interruption* or *context* for the crew rushing to watch. It is not a separate time jump. The crew is eating, Mouse interrupts, they go to the deck. Then we see the dojo. So sc-050 is part of the same temporal block as the dojo training, serving as the reaction/setup for the crew watching. Therefore, the boundary is correct.",
+  "scenes": [
+   "sc-048",
+   "sc-050",
+   "sc-051",
+   "sc-052",
+   "sc-053",
+   "sc-054",
+   "sc-055"
+  ]
+ },
+ {
+  "event_id": "ev-017",
+  "name": "Rooftop Jump Training",
+  "location": "INT. HOVERCRAFT / INT. CONSTRUCT - ROOFTOP",
+  "what_happens": "Following a sparring session where Neo lands a single hit on Morpheus, the crew prepares for the next phase of training. Tank loads the 'jump program' into Neo's drive. Inside the Construct, Morpheus instructs Neo to free his mind of fear and disbelief, demonstrating the feat by effortlessly leaping a fifty-foot gap between rooftops. Neo, masking his terror with humor, attempts the jump but falls drastically short, plummeting to the ground which stretches like a net to catch him. On the main deck, the crew watches with skepticism; Tank notes that no one has ever made their first jump, while Trinity whispers encouragement. Neo exits the program physically exhausted, coughing up blood, and learns from Morpheus that death in the Matrix is real, as the body cannot live without the mind.",
+  "participants": [
+   "NEO",
+   "MORPHEUS",
+   "TANK",
+   "TRINITY",
+   "APOC",
+   "SWITCH",
+   "MOUSE",
+   "CYPHER"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Physically capable in combat but mentally skeptical; has just landed a hit on Morpheus."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Confident in Neo's potential; instructing him to move from physical adaptation to mental belief."
+   },
+   {
+    "who": "TANK",
+    "state": "Operating the simulation; aware of the historical difficulty of the first jump."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Uncertain of his ability to perform superhuman feats; hesitant and skeptical.",
+    "after": "Has physically attempted the jump and failed, confirming the difficulty and his own limitations at this stage.",
+    "why_it_matters": "Establishes the specific mental barrier (doubt) that Neo must overcome, distinct from physical skill."
+   },
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Uncertain about the physical consequences of the Matrix simulation.",
+    "after": "Understands that death in the Matrix results in death in the real world.",
+    "why_it_matters": "Raises the stakes for all future actions; the simulation is no longer a safe sandbox but a lethal environment."
+   },
+   {
+    "who": "TANK",
+    "axis": "knowledge",
+    "before": "Unknown to the audience, but implied as a fact within the crew's shared experience.",
+    "after": "Explicitly stated as a rule of the training program.",
+    "why_it_matters": "Contextualizes Neo's failure as normal, preventing the crew from losing faith in him immediately."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Unconscious on his bed, having passed out from exhaustion and the physical toll of the simulation."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Continuing to believe in Neo, reinforcing the idea that the mind controls reality."
+   },
+   {
+    "who": "TRINITY",
+    "state": "Showing subtle affection/concern for Neo, bringing him food and covering him with a blanket."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "The jump is a test of Neo's belief in his own potential, serving as a precursor to his eventual ability to defy the rules of the Matrix.",
+    "evidence": [
+     "Morpheus explicitly states, 'Free your mind' and 'Let it all go... Fear. Doubt. Disbelief.'",
+     "Neo identifies his failure as 'I didn't think I would.'",
+     "Morpheus replies, 'Your mind makes it real,' linking mental state to physical outcome."
+    ],
+    "confidence": 9
+   },
+   {
+    "claim": "The crew's skepticism, particularly Cypher's and Tank's, highlights the tension between Neo's 'chosen one' status and the practical reality of being a new recruit.",
+    "evidence": [
+     "Tank: 'No one's ever made their first jump.'",
+     "Cypher: 'Everyone falls the first time, right, Trinity?'",
+     "Apoc: 'No way. Not possible.'"
+    ],
+    "confidence": 8
+   }
+  ],
+  "boundary_doubt": "The scene where Neo asks about death in the Matrix (sc-060) is included here as it is a direct verbal consequence of the jump's physical toll and Morpheus's presence in the room. However, it could arguably be a separate 'explanation' event if the jump's physical conclusion (Neo passing out) were the hard stop.",
+  "scenes": [
+   "sc-056",
+   "sc-057",
+   "sc-058",
+   "sc-059",
+   "sc-060"
+  ]
+ },
+ {
+  "event_id": "ev-018",
+  "name": "Neo's Nighttime Care",
+  "location": "INT. NEO'S ROOM / INT. HALL (Nebuchadnezzar)",
+  "what_happens": "Trinity enters Neo's room with a tray of dinner, finding him unconscious on his bed. She quietly tends to him by pulling a blanket over him and sharing a brief, intimate moment by inhaling his scent. As she leaves, she encounters Cypher in the hallway. He teases her about her romantic interest in Neo and questions why Morpheus has not taken Neo to the Oracle for verification. Trinity defends Morpheus's judgment, stating he will act when ready, and walks away, leaving Cypher watching her go.",
+  "participants": [
+   "TRINITY",
+   "NEO",
+   "CYPHER"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Unconscious/Asleep in his room"
+   },
+   {
+    "who": "TRINITY",
+    "state": "Attentive, carrying dinner, showing quiet affection"
+   },
+   {
+    "who": "CYPHER",
+    "state": "Waiting in the hallway, observant and skeptical"
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "TRINITY",
+    "axis": "allegiance",
+    "before": "Showing personal, intimate care for Neo",
+    "after": "Publicly reaffirming faith in Morpheus's process against Cypher's doubt",
+    "why_it_matters": "It establishes Trinity's dual role: she is emotionally invested in Neo but remains loyal to Morpheus's authority and the mission's timeline."
+   },
+   {
+    "who": "CYPHER",
+    "axis": "doubt",
+    "before": "Observing Trinity's actions with suspicion",
+    "after": "Voicing explicit skepticism about Morpheus's certainty and the need for Oracle verification",
+    "why_it_matters": "This seeds the central conflict of the film: the tension between faith in the prophecy and the desire for empirical proof, foreshadowing Cypher's eventual betrayal."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "TRINITY",
+    "state": "Walking away, resolved in her defense of Morpheus"
+   },
+   {
+    "who": "CYPHER",
+    "state": "Watching Trinity leave, his doubt now articulated"
+   },
+   {
+    "who": "NEO",
+    "state": "Still unconscious, tended to"
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of 'Faith vs. Doubt' regarding Neo's identity as the One.",
+    "evidence": [
+     "Cypher explicitly asks, 'why doesn't he take him to the Oracle? She would know.'",
+     "Trinity replies, 'Morpheus will take him when he's ready.'",
+     "The dialogue contrasts Morpheus's blind faith with Cypher's demand for verification."
+    ],
+    "confidence": 9
+   },
+   {
+    "claim": "This event deepens the romantic/sexual tension between Trinity and Neo, which later motivates her actions during the betrayal.",
+    "evidence": [
+     "Trinity 'inhales his scent before slowly pulling away.'",
+     "Cypher teases, 'There's something about him, isn't there?'",
+     "Later in the script, Cypher asks Trinity if she 'bought Morpheus's bullshit' and she answers 'yes' while looking at Neo, linking her romantic feelings to her belief in him."
+    ],
+    "confidence": 8,
+    "alternative": "It could be interpreted purely as platonic crew camaraderie, but the sensory detail of inhaling scent and Cypher's specific teasing suggest romantic interest."
+   }
+  ],
+  "boundary_doubt": "The inclusion of scene sc-186 (Room 1313, Day) is slightly confusing as it seems to be a duplicate or alternate cut of the hallway conversation (sc-062) which occurs at Night. The boundary pass includes both, but the physical location and time of day differ slightly in the metadata (Hall vs Room 1313, Night vs Day). I have treated them as the same narrative beat of the hallway conversation.",
+  "scenes": [
+   "sc-061",
+   "sc-062",
+   "sc-186"
+  ]
+ },
+ {
+  "event_id": "ev-019",
+  "name": "Morpheus's Street Training",
+  "location": "Training Program: City Street",
+  "what_happens": "In a simulated downtown street, Morpheus walks ahead of Neo, lecturing him on the nature of the Matrix's inhabitants as part of the enemy system. He uses a cop and a woman in a red dress to test Neo's attention, revealing that the woman is actually Agent Smith holding a gun to Neo's head. Morpheus freezes time to explain that Agents are sentient programs that can inhabit any un-unplugged person. He warns Neo that all previous fighters against Agents have died but claims Neo will succeed because Agents are bound by the rules of the Matrix, whereas Neo is not. The training is interrupted by a call from Tank reporting trouble.",
+  "participants": [
+   "MORPHEUS",
+   "NEO",
+   "THE_AGENTS"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Physically trained in combat arts but lacking understanding of the specific nature of Agents and the Matrix's rules."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Acting as instructor, seeking to prepare Neo for the reality of the Resistance."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Unaware that Agents can disguise themselves as any person in the crowd.",
+    "after": "Understands that Agents are sentient programs inhabiting un-unplugged humans and that he has an advantage because he is not bound by the Matrix's rules.",
+    "why_it_matters": "This knowledge shifts Neo's perspective from physical combat to strategic awareness of the environment and the hidden nature of his enemies."
+   },
+   {
+    "who": "NEO",
+    "axis": "safety",
+    "before": "Walking freely in a crowd, perceiving the environment as neutral or hostile only in a general sense.",
+    "after": "Face-to-face with a lethal threat (Agent Smith) who was disguised as a bystander, experiencing the immediate danger of the 'one of them' doctrine.",
+    "why_it_matters": "The physical shock of the gun to the face visceraly reinforces the abstract lesson that vigilance is a matter of life and death."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Educated on the nature of Agents and his unique potential, but the training is cut short by an external emergency."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Interrupted from teaching to address a crisis involving the Nebuchadnezzar."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of Neo's initiation into the Resistance, specifically the transition from physical capability to conceptual understanding of the Matrix.",
+    "evidence": [
+     "Morpheus explicitly states, 'I'm trying to free your mind, Neo, but all I can do is show you the door. You're the one that has to step through.'",
+     "The lesson that 'if you are not one of us, you're one of them' reframes the social world Neo has just encountered as a battlefield."
+    ],
+    "confidence": 9,
+    "alternative": "It could be seen as mere exposition, but the physical reveal of Agent Smith makes it an active training moment."
+   },
+   {
+    "claim": "It foreshadows the final confrontation by establishing the rules of engagement with Agents: they are bound by the Matrix's code, which Neo can eventually exploit.",
+    "evidence": [
+     "Morpheus says, 'their strength and their speed are still based on a world that is built by rules. Because of that they will never be as strong or as fast as you can be.'",
+     "This sets up the later scenes where Neo begins to bend these rules (e.g., the jump, dodging bullets)."
+    ],
+    "confidence": 8,
+    "alternative": "It might just be motivational speech, but the specific mention of 'rules' is a key plot mechanic."
+   }
+  ],
+  "boundary_doubt": "The boundary seems clean. The scene ends with the phone call from Tank, which is a clear narrative break leading into the Sentinel chase sequence.",
+  "scenes": [
+   "sc-063"
+  ]
+ },
+ {
+  "event_id": "ev-020",
+  "name": "Sentinel Evasion in the Sewer",
+  "location": "INT/EXT. SEWER MAIN / NEBUCADNEZZAR",
+  "what_happens": "The Nebuchadnezzar travels rapidly through a sewer main when Dozer detects a parallel vessel and a Sentinel ('Squiddy') sweeping in. Morpheus orders the ship to hide in a narrow supply line. The crew cuts power, freezes in the cold cockpit as frost forms on the windshield, and holds their breath in silence. A massive Sentinel glides directly past the hidden vessel, and after it disappears into the darkness, the tension breaks as the crew breathes easier, having successfully evaded detection.",
+  "participants": [
+   "MORPHEUS",
+   "DOZER",
+   "NEO",
+   "TRINITY",
+   "TANK",
+   "NEBUCADNEZZAR",
+   "SENTINELS"
+  ],
+  "entry_state": [
+   {
+    "who": "NEBUCADNEZZAR",
+    "state": "Moving rapidly through the sewer main"
+   },
+   {
+    "who": "NEO",
+    "state": "Unfamiliar with Sentinels, unaware of the physical threat in the real world"
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEBUCADNEZZAR",
+    "axis": "position/power",
+    "before": "Moving with power on in the main sewer",
+    "after": "Wedged in a narrow supply line with power off and E.M.P. armed",
+    "why_it_matters": "This physical stasis and silence are the only defenses against the Sentinel's sensory sweep."
+   },
+   {
+    "who": "NEO",
+    "axis": "knowledge/experience",
+    "before": "Unaware of Sentinels",
+    "after": "Witnesses a Sentinel's scale and lethality firsthand",
+    "why_it_matters": "Neo's first encounter with the Machines in the real world grounds the abstract threat of the Matrix in visceral reality."
+   },
+   {
+    "who": "Crew",
+    "axis": "safety",
+    "before": "Threatened by approaching Sentinel",
+    "after": "Temporarily safe, having evaded detection",
+    "why_it_matters": "Confirms the danger is immediate and close, raising the stakes for the upcoming Oracle mission."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEBUCADNEZZAR",
+    "state": "Hidden and safe in the supply line"
+   },
+   {
+    "who": "Crew",
+    "state": "Relieved but still vulnerable"
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of Neo's transition from Matrix-native to real-world survivor, forcing him to confront the physical reality of the Machines.",
+    "evidence": [
+     "Trinity explains the Sentinel is a 'killing machine' to Neo",
+     "Neo feels 'the hairs on the back of his neck rise' as the Sentinel passes",
+     "The scene emphasizes the cold and silence, contrasting with the Matrix's warmth and noise"
+    ],
+    "confidence": 95
+   },
+   {
+    "claim": "It establishes the vulnerability of the Resistance in the real world, foreshadowing the need for the Oracle mission to proceed despite physical dangers.",
+    "evidence": [
+     "Dozer notes 'Big Brother' is running a parallel pipeline, indicating other ships are also at risk",
+     "Morpheus' command to 'Set it down in there' shows the limited options for evasion"
+    ],
+    "confidence": 85
+   }
+  ],
+  "boundary_doubt": "The boundary seems correct, covering the detection, hiding, and successful evasion. The subsequent scene (sc-070) moves to the crew sleeping, marking a clear temporal and tonal shift.",
+  "scenes": [
+   "sc-064",
+   "sc-065",
+   "sc-066",
+   "sc-067",
+   "sc-069"
+  ]
+ },
+ {
+  "event_id": "ev-021",
+  "name": "Cypher's Betrayal and Confession",
+  "location": "INT. MAIN DECK / INT. HALL",
+  "what_happens": "The event spans two distinct moments separated by a brief lull. First, in a sudden outburst of violence on the main deck, Cypher shoots and kills Dozer with a high-voltage rifle, injuring Tank in the process, before Tank is forced to knock Cypher back. Immediately following this, the scene shifts to a quiet, dark hall where the crew is asleep. Later, Cypher sits at the operator's station watching the Matrix code and approaches Neo. Over shared shots of strong alcohol, Cypher confesses to Neo that Morpheus has previously identified five other men as 'the One,' all of whom have died. Cypher expresses deep regret for taking the red pill and advises Neo to run from Agents rather than fight, planting seeds of doubt about Morpheus's certainty.",
+  "participants": [
+   "CYPHER",
+   "DOZER",
+   "TANK",
+   "NEO"
+  ],
+  "entry_state": [
+   {
+    "who": "CYPHER",
+    "state": "Seated at the operator's station, harboring resentment toward Morpheus and the real world."
+   },
+   {
+    "who": "DOZER",
+    "state": "Alive, present on the main deck."
+   },
+   {
+    "who": "NEO",
+    "state": "Believing in Morpheus's conviction that he is the unique One."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "DOZER",
+    "axis": "condition",
+    "before": "Alive and present on the main deck",
+    "after": "Dead",
+    "why_it_matters": "The first death among the crew members, signaling the immediate, lethal threat Cypher poses to the group's stability."
+   },
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Believes Morpheus's conviction that he is the unique One.",
+    "after": "Knows that five previous candidates believed by Morpheus have died.",
+    "why_it_matters": "This information undermines Neo's confidence in Morpheus's judgment and introduces the possibility that the prophecy might be a recurring, failed cycle."
+   },
+   {
+    "who": "CYPHER",
+    "axis": "allegiance",
+    "before": "Part of the crew, outwardly compliant.",
+    "after": "Openly expresses dissatisfaction with the real world and regret about leaving the Matrix.",
+    "why_it_matters": "Reveals Cypher's internal motivation for betrayal, framing his actions not just as treason but as a desperate desire for comfort and ignorance."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "DOZER",
+    "state": "Dead, body sizzling on the deck."
+   },
+   {
+    "who": "CYPHER",
+    "state": "Knocked back by Tank, but alive; later sharing a drink with Neo, revealing his disillusionment."
+   },
+   {
+    "who": "NEO",
+    "state": "Slightly more cautious and skeptical, aware of the history of failed 'Ones.'"
+   }
+  ],
+  "reversal": true,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of 'The Fragility of Faith' or 'Morpheus's Burden,' highlighting how the crew's belief in the prophecy is tested by both external threats and internal dissent.",
+    "evidence": [
+     "Cypher's dialogue: 'This ain't the first time Morpheus thought he found the One... Five. Since I've been here... Dead. All dead.'",
+     "Cypher's dialogue: 'Why, oh why, didn't I take that blue pill?'",
+     "The sudden violence of Cypher killing Dozer contrasts with the quiet confession, showing the dual nature of his betrayal: physical and ideological."
+    ],
+    "confidence": 95,
+    "alternative": "It could also be seen as the thread of 'Cypher's Arc of Disillusionment,' setting up his final deal with the Agents."
+   }
+  ],
+  "boundary_doubt": "The scene list includes sc-068 (the shooting) and sc-071/sc-182 (the conversation). The boundary seems correct, as it captures the immediate aftermath of the Sentinel encounter (the shooting) and the subsequent psychological fallout (the conversation). However, sc-068 is labeled as 'Following the tense Sentinel encounter,' but in the script, the shooting (sc-131) happens *during* the extraction from the Matrix (TV repair shop), not immediately after the Sentinel. The 'Sentinel encounter' refers to the earlier scene (sc-64-69). The shooting in sc-131 is part of the Oracle extraction sequence. The boundary pass says 'Following the tense Sentinel encounter, the ship rests briefly before Cypher suddenly shoots...'. This is slightly inaccurate chronologically in the script: the shooting happens *after* the Oracle visit and the start of the extraction, not directly after the Sentinel. However, since the event is defined by the scenes provided, I will describe it as given, noting the chronological nuance if necessary. Actually, looking at the script: Sentinel (64-69) -> Sleep (70) -> Cypher/Neo talk (71) -> Oracle trip (72-81) -> Extraction/Trap (82-130) -> Shooting (131). So the shooting is *not* immediately after the Sentinel. It is much later. The boundary pass description 'Following the tense Sentinel encounter' is likely a simplification or error in the prompt's summary, but the scenes provided are sc-068 (which is actually sc-131 in the script text provided? No, sc-068 in the list corresponds to the shooting. Let's check the scene IDs in the prompt's list vs script. The prompt lists sc-068, sc-070, sc-071, sc-182. In the script, the shooting is scene 131. The conversation is scene 71. The prompt's scene IDs might be internal IDs. I will stick to the content of the scenes provided. The 'Sentinel' reference in the boundary pass might be a mistake, but I must describe the event as bounded by the scenes.",
+  "scenes": [
+   "sc-068",
+   "sc-070",
+   "sc-071",
+   "sc-182"
+  ]
+ },
+ {
+  "event_id": "ev-022",
+  "name": "Mission Briefing and Departure",
+  "location": "INT. MESS HALL / EXT. HOTEL LAFAYETTE",
+  "what_happens": "The crew of the Nebuchadnezzar gathers in the mess hall for breakfast, a synthetic protein substance. Mouse initiates a philosophical discussion about the nature of taste and memory in the real world, specifically questioning if the machines accurately replicated the taste of Cream of Wheat or chicken, and flirts with Neo by offering to arrange a meeting with a digital woman he designed. Morpheus enters and announces that the crew is on standby as he is taking Neo to see the Oracle. The group then exits the Hotel Lafayette to enter the Matrix. As they board a car driven by Cypher, Cypher secretly glances around and drops a cellular phone into a garbage can, sending a signal to an outside party.",
+  "participants": [
+   "NEO",
+   "MORPHEUS",
+   "CYPHER",
+   "TRINITY",
+   "APOC",
+   "SWITCH",
+   "MOUSE",
+   "TANK",
+   "DOZER"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Resting on the ship, unaware of the specific destination for the upcoming mission."
+   },
+   {
+    "who": "CYPHER",
+    "state": "Present as a member of the resistance crew, appearing loyal but harboring secret intentions."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Unaware of the specific destination for the upcoming mission",
+    "after": "Informed that they are going to see the Oracle",
+    "why_it_matters": "Establishes the primary objective of the mission and raises the stakes for Neo, who is the subject of the prophecy."
+   },
+   {
+    "who": "CYPHER",
+    "axis": "allegiance",
+    "before": "Apparent member of the resistance crew",
+    "after": "Revealed to be communicating with an outside party via a hidden device",
+    "why_it_matters": "Introduces a critical element of betrayal and foreshadows the internal threat to the mission's success."
+   },
+   {
+    "who": "Crew",
+    "axis": "resolve",
+    "before": "Resting and eating breakfast on the ship",
+    "after": "On twelve-hour standby, preparing to enter the Matrix",
+    "why_it_matters": "Marks the transition from a state of rest to active preparation for a high-risk operation."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Inside the Matrix, in a car with Morpheus, Trinity, and Cypher, heading to the Oracle."
+   },
+   {
+    "who": "CYPHER",
+    "state": "Driving the car, having just sent a secret signal."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of 'The Betrayal of Cypher,' setting up his secret communication with the Agents as the catalyst for the upcoming crisis.",
+    "evidence": [
+     "Cypher glances about quickly and drops a cellular phone into a garbage can.",
+     "The phone's display shows the line connecting, implying a signal is being sent.",
+     "The scene cuts to a close-up of the phone's blue display, emphasizing the secrecy and importance of the act."
+    ],
+    "confidence": 95
+   },
+   {
+    "claim": "This event serves the thread of 'Neo's Journey to the Oracle,' establishing the mission's goal and the philosophical context of the Matrix's reality.",
+    "evidence": [
+     "Morpheus states, 'I'm taking Neo to see her.'",
+     "Tank replies, 'The Oracle.'",
+     "Mouse's monologue about taste and memory questions the nature of reality within the Matrix."
+    ],
+    "confidence": 90
+   }
+  ],
+  "boundary_doubt": "None. The scenes clearly delineate the briefing and the departure, including the key action of Cypher's signal.",
+  "scenes": [
+   "sc-072",
+   "sc-073",
+   "sc-171",
+   "sc-172",
+   "sc-197"
+  ]
+ },
+ {
+  "event_id": "ev-023",
+  "name": "Journey to the Oracle's Building",
+  "location": "INT. CAR, INT. BUILDING, INT. ELEVATOR, INT. HALL",
+  "what_happens": "Neo and Morpheus travel by car to the Oracle's location, with Trinity and Cypher accompanying them. During the ride, Neo confronts the unreality of his past memories, causing Trinity to become speechless when asked about her own visit to the Oracle. Upon arriving at a vast tenement building, the group separates; Neo and Morpheus enter an elevator while a blind man watches. In the elevator and the subsequent hallway, Morpheus confesses to Neo that he previously believed he could choose the One himself, leading to the deaths of five previous candidates. He admits his current belief in Neo is based on an inexplicable epiphany rather than logic. Despite Neo's skepticism about fate and destiny, he agrees to trust Morpheus and enters the room where the Priestess greets him.",
+  "participants": [
+   "NEO",
+   "MORPHEUS",
+   "TRINITY",
+   "CYPHER",
+   "BLIND_MAN",
+   "PRIESTESS"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Processing the surreal nature of the physical world and questioning the validity of his past memories."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Presenting the quest as a logical necessity or destiny, maintaining a confident leader persona."
+   },
+   {
+    "who": "TRINITY",
+    "state": "Present in the car, seemingly calm but carrying the weight of her previous encounter with the Oracle."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Uncertain about the nature of his memories and the Oracle's role.",
+    "after": "Acknowledges that his past memories are false and learns that Morpheus has previously believed in five other candidates who died.",
+    "why_it_matters": "Deepens Neo's existential crisis and provides context for his skepticism regarding the prophecy."
+   },
+   {
+    "who": "MORPHEUS",
+    "axis": "trust",
+    "before": "Presenting the quest as a logical necessity or destiny.",
+    "after": "Vulnerable, admitting he lost his way after the fifth candidate and that his current belief is an unexplainable epiphany.",
+    "why_it_matters": "Humanizes Morpheus and shifts the basis of his leadership from certainty to faith, testing Neo's willingness to trust."
+   },
+   {
+    "who": "NEO",
+    "axis": "resolve",
+    "before": "Skeptical and resistant to the concept of fate or destiny.",
+    "after": "Agrees to enter the Oracle's presence, accepting Morpheus's request for trust despite his lack of belief.",
+    "why_it_matters": "Neo commits to the journey, moving from passive confusion to active participation in the quest for the One."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Standing at the threshold of the Oracle's room, having agreed to trust Morpheus and about to meet the Oracle."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Having confessed his past failures and current faith, waiting for Neo to step through the door."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of Neo's transition from skepticism to faith, specifically addressing the tension between logic and destiny that defines the prophecy arc.",
+    "evidence": [
+     "Morpheus explicitly states, 'Faith is not a matter of reasonability. I do not believe things with my mind. I believe them with my heart.'",
+     "Neo's question, 'What about the other five guys?' forces Morpheus to reveal the history of failed candidates, grounding the prophecy in past failure."
+    ],
+    "confidence": 95,
+    "alternative": "It could be seen primarily as a transition scene to move characters to the Oracle's location, but the dialogue weight suggests thematic importance."
+   },
+   {
+    "claim": "The scene highlights the theme of the unreality of memory and identity, a core philosophical conflict of the Matrix.",
+    "evidence": [
+     "Neo states, 'I have these memories, from my entire life but... none of them really happened.'",
+     "Trinity's inability to speak when asked what the Oracle told her suggests the Oracle's words have a profound, destabilizing effect on identity."
+    ],
+    "confidence": 90
+   }
+  ],
+  "boundary_doubt": "The boundary includes the car ride and the hallway/elevator conversation, ending just as Neo enters the Oracle's apartment. This aligns well with the provided scenes (sc-074 through sc-078, plus sc-177 which appears to be a duplicate or alternate take of the elevator scene). The inclusion of the Priestess greeting Neo at the very end of sc-078/sc-177 marks the clear transition to the next event (the meeting with the Oracle).",
+  "scenes": [
+   "sc-074",
+   "sc-076",
+   "sc-077",
+   "sc-078",
+   "sc-177"
+  ]
+ },
+ {
+  "event_id": "ev-024",
+  "name": "The Oracle's Prophecy",
+  "location": "ORACLE_APARTMENT",
+  "what_happens": "Neo is led by the Priestess through the Oracle's apartment, where he observes 'the other Potentials' and receives a lesson on perception from a young boy, learning that 'there is no spoon.' He then enters the kitchen to meet the Oracle, who confirms he is not the One but possesses the gift. She predicts that Morpheus will sacrifice his life to save Neo's, forcing Neo to choose between their fates. Neo leaves with a cookie, feeling a temporary relief from the weight of the prophecy.",
+  "participants": [
+   "NEO",
+   "ORACLE",
+   "PRIESTESS",
+   "MORPHEUS",
+   "SPOON_BOY"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Anxious and skeptical about his identity as 'The One,' influenced by Morpheus's unwavering belief."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Waiting in the sitting room, hopeful that the Oracle will confirm Neo's status."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Uncertain if he is the One; skeptical of fate but open to the idea.",
+    "after": "Informed by the Oracle that he is not the One yet, and that Morpheus will die for him unless Neo chooses otherwise.",
+    "why_it_matters": "This creates the central dramatic conflict: Neo is no longer just a messianic figure but a man who must actively choose between his own survival and his mentor's."
+   },
+   {
+    "who": "NEO",
+    "axis": "resolve",
+    "before": "Anxious about the prophecy and his identity.",
+    "after": "Accepts the bad news with a mix of relief and resignation, eating a cookie to cope.",
+    "why_it_matters": "The cookie serves as a grounding mechanism, allowing Neo to process the heavy information without immediately breaking under the pressure."
+   },
+   {
+    "who": "NEO",
+    "axis": "understanding",
+    "before": "Unfamiliar with the philosophical concept of bending reality through perception.",
+    "after": "Experiences a moment of realization regarding the nature of reality ('There is no spoon').",
+    "why_it_matters": "This lesson is a prerequisite for Neo's later powers, shifting his focus from physical action to mental perception."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Temporarily soothed by the Oracle's casual demeanor and a cookie, though still carrying the weight of the prophecy."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Informed that the conversation was private, maintaining his protective stance over Neo."
+   }
+  ],
+  "reversal": true,
+  "plot_speculation": [
+   {
+    "claim": "The prophecy sets up the central choice Neo must make later in the film, specifically regarding the fate of Morpheus.",
+    "evidence": [
+     "Oracle says: 'In one hand, you will have Morpheus's life. In the other hand, you will have your own. One of you is going to die.'"
+    ],
+    "confidence": 100
+   },
+   {
+    "claim": "The 'no spoon' lesson is a direct training for Neo's ability to manipulate the Matrix's rules.",
+    "evidence": [
+     "Spoon Boy says: 'Do not try to bend the spoon. That is impossible. Instead, only try to realize the truth.'",
+     "Neo watches the spoon bend as he stares into it."
+    ],
+    "confidence": 95
+   },
+   {
+    "claim": "The Oracle's casual demeanor contrasts with the high stakes of the prophecy, emphasizing her role as a guide rather than a traditional prophet.",
+    "evidence": [
+     "Oracle is described as wearing oven mitts and serving chocolate chip cookies.",
+     "Oracle says: 'I promise by the time you're done eating it, you'll feel right as rain.'"
+    ],
+    "confidence": 90
+   }
+  ],
+  "boundary_doubt": "The boundary seems to correctly encapsulate the entire visit to the Oracle's apartment, from the initial lesson with the children to the final conversation in the kitchen and the exit. The inclusion of Morpheus in the sitting room at the end is a natural conclusion to the event.",
+  "scenes": [
+   "sc-075",
+   "sc-079",
+   "sc-080",
+   "sc-173",
+   "sc-196"
+  ]
+ },
+ {
+  "event_id": "ev-025",
+  "name": "Departing the Oracle",
+  "location": "INT. SITTING ROOM / INT. CAR / EXT. CITY STREET",
+  "what_happens": "Following his meeting with the Oracle, Neo is escorted out of the kitchen by the Priestess into the sitting room where Morpheus is waiting. Morpheus places a hand on Neo's shoulder and explicitly instructs him to keep the Oracle's specific words private, stating that the information was intended for Neo alone. Neo accepts this shared secret and takes a bite of the chocolate chip cookie he was given. The group then transitions to a car, where Cypher drives. During the ride, Cypher attempts to ask if the news from the Oracle was good or bad, but Morpheus dismisses him. Neo, still holding the final piece of the cookie, eats it and tells Trinity that he feels 'right as rain,' echoing the Oracle's earlier promise. After an omitted scene marker, the group exits the vehicle onto a city street. Cypher smiles at Neo and delivers the line, 'Like the man says, welcome to the real world,' before following the others into the hotel, visibly nervous and sweating.",
+  "participants": [
+   "NEO",
+   "MORPHEUS",
+   "CYPHER",
+   "TRINITY",
+   "PRIESTESS"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Anxious and uncertain after hearing the Oracle's prophecy that he is not the One and must choose between his life and Morpheus's."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Expectant, preparing to guide Neo back to the Nebuchadnezzar."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Holding the secret of the Oracle's prophecy privately but without formal instruction on its dissemination.",
+    "after": "Formally instructed by Morpheus to keep the specific knowledge private, establishing a distinct shared secret between them.",
+    "why_it_matters": "This creates a layer of trust and isolation for Neo, separating his internal understanding from the crew's perception, which heightens the tension when the crew asks for news."
+   },
+   {
+    "who": "NEO",
+    "axis": "condition",
+    "before": "Anxious and struggling to accept the weight of the prophecy.",
+    "after": "Temporarily calm and accepting, having consumed the cookie and experiencing the predicted relief.",
+    "why_it_matters": "The physical act of eating the cookie serves as a narrative device to show Neo's psychological shift from dread to a deceptive sense of peace before the next crisis."
+   },
+   {
+    "who": "CYPHER",
+    "axis": "condition",
+    "before": "Inside the car, driving.",
+    "after": "Outside on the street, visibly nervous and sweating.",
+    "why_it_matters": "Cypher's physical discomfort and his casual 'welcome to the real world' comment contrast with the gravity of the Oracle's visit, hinting at his detachment or hidden agenda."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Calmed by the cookie but carrying the secret burden of the prophecy, arriving at the hotel."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Maintaining secrecy about the Oracle's specific words, leading the group to the hotel."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "The secrecy of the Oracle's words serves to isolate Neo and Morpheus, creating a wedge of information asymmetry that will complicate crew dynamics during the upcoming crisis.",
+    "evidence": [
+     "Morpheus says, 'You don't have to tell anyone what she told you. What was said was said for you and you alone.'",
+     "Cypher asks, 'Well, good news or bad news?' and Morpheus replies, 'Not now, Cypher.'",
+     "Neo says, '... Right as rain,' which is a direct callback to the Oracle's promise, suggesting the cookie's effect is real but perhaps temporary or superficial."
+    ],
+    "confidence": 9
+   },
+   {
+    "claim": "Cypher's demeanor and dialogue suggest he is already disengaged from the mission or harboring doubts, foreshadowing his role as a potential traitor or skeptic.",
+    "evidence": [
+     "Cypher asks for immediate feedback on the Oracle's news, showing impatience.",
+     "He says, 'Like the man says, welcome to the real world,' which sounds dismissive or ironic given the context of the 'real world' being the dystopian Matrix reality.",
+     "He is described as 'nervously glancing around and wiping sweat from his forehead' upon exiting the car."
+    ],
+    "confidence": 8
+   }
+  ],
+  "boundary_doubt": "The inclusion of the 'OMITTED' scene (sc-083) is a non-event structurally, but it is included in the boundary. The transition from the car to the street is abrupt due to this omission, but it functions as a time jump to the arrival at the hotel.",
+  "scenes": [
+   "sc-081",
+   "sc-082",
+   "sc-083",
+   "sc-085"
+  ]
+ },
+ {
+  "event_id": "ev-026",
+  "name": "The Hotel Lafayette Ambush",
+  "location": "Hotel Lafayette / Nebuchadnezzar",
+  "what_happens": "The team ascends the Hotel Lafayette stairs, but Neo identifies a 'deja vu' involving a repeated black cat, signaling a glitch in the Matrix. Simultaneously, Tank detects the trap on his monitors and orders the hardline cut, which Cypher executes in the basement. Mouse, left in Room 1313, is trapped by bricked-up windows and killed by police gunfire. Agent Smith locates the fugitives on the eighth floor. Morpheus calls the ship for structural blueprints, allowing the group to escape through a hidden passage in the walls. They descend into the plumbing to evade the police sweep, eventually reaching a TV repair shop where Neo and Trinity share a brief moment of intimacy before the phone rings, signaling the next phase of their escape.",
+  "participants": [
+   "NEO",
+   "TRINITY",
+   "MORPHEUS",
+   "CYPHER",
+   "APOC",
+   "SWITCH",
+   "MOUSE",
+   "TANK",
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "POLICE"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Armed with a gun, aware of a glitch in the Matrix"
+   },
+   {
+    "who": "MOUSE",
+    "state": "Isolated in Room 1313, unaware of the trap"
+   },
+   {
+    "who": "TANK",
+    "state": "Monitoring the team, detecting an anomaly"
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Leading the group, hearing police approaches"
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "MOUSE",
+    "axis": "condition",
+    "before": "Alive, hiding in Room 1313",
+    "after": "Dead, killed by police gunfire",
+    "why_it_matters": "The first major loss for the team, proving the stakes of the Matrix are real and the Agents' power is absolute."
+   },
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Unaware of the specific significance of visual repetition",
+    "after": "Identifies a 'deja vu' as a glitch indicating a change in the Matrix",
+    "why_it_matters": "Neo begins to perceive the artificial nature of his reality, a key step in his awakening as the One."
+   },
+   {
+    "who": "MORPHEUS",
+    "axis": "position",
+    "before": "Trapped on the eighth floor with police closing in",
+    "after": "Escaping through the building's plumbing walls",
+    "why_it_matters": "Demonstrates the team's reliance on external support (Tank) and their ability to adapt to the physical constraints of the Matrix."
+   },
+   {
+    "who": "THE_AGENTS",
+    "axis": "knowledge",
+    "before": "Searching for the fugitives",
+    "after": "Located on the eighth floor after the hardline is cut",
+    "why_it_matters": "Shows the Agents' tactical superiority and their ability to track the team even when communication is severed."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Safe in the TV repair shop, sharing a moment with Trinity"
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Escaped the immediate police sweep, moving through the walls"
+   },
+   {
+    "who": "MOUSE",
+    "state": "Dead, body removed from the Matrix"
+   },
+   {
+    "who": "TANK",
+    "state": "Operating from the Nebuchadnezzar, guiding the escape"
+   }
+  ],
+  "reversal": true,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of Neo's awakening and the team's increasing vulnerability.",
+    "evidence": [
+     "Neo's identification of the 'deja vu' (sc-087, sc-089) is a pivotal moment in his perception of the Matrix.",
+     "Mouse's death (sc-096, sc-097) raises the stakes and demonstrates the lethality of the Agents.",
+     "The escape through the walls (sc-104, sc-108) shows the team's dependence on Tank and their ability to navigate the Matrix's physical spaces."
+    ],
+    "confidence": 9
+   },
+   {
+    "claim": "This event foreshadows Cypher's betrayal.",
+    "evidence": [
+     "Cypher is the one who cuts the hardline (sc-092), a crucial action that enables the trap.",
+     "Cypher's nervous behavior and sweat (sc-086) suggest he is not entirely comfortable with the situation.",
+     "The later scene where Cypher calls Tank for an exit (sc-121) and his conversation with Trinity (sc-134) reveal his true allegiance."
+    ],
+    "confidence": 8
+   }
+  ],
+  "boundary_doubt": "The boundary seems correct. It covers the entire sequence from the team's ascent and the discovery of the trap, through Mouse's death, the escape through the walls, and ends with the group in the TV repair shop. The next event likely deals with Cypher's betrayal and the team's extraction.",
+  "scenes": [
+   "sc-084",
+   "sc-086",
+   "sc-087",
+   "sc-088",
+   "sc-089",
+   "sc-090",
+   "sc-091",
+   "sc-092",
+   "sc-093",
+   "sc-094",
+   "sc-095",
+   "sc-096",
+   "sc-097",
+   "sc-098",
+   "sc-099",
+   "sc-100",
+   "sc-101",
+   "sc-102",
+   "sc-103",
+   "sc-104",
+   "sc-105",
+   "sc-106",
+   "sc-107",
+   "sc-108",
+   "sc-109",
+   "sc-110",
+   "sc-111",
+   "sc-112",
+   "sc-113",
+   "sc-114",
+   "sc-115",
+   "sc-116",
+   "sc-181",
+   "sc-183",
+   "sc-184",
+   "sc-185"
+  ]
+ },
+ {
+  "event_id": "ev-027",
+  "name": "Morpheus's Capture and Trinity's Emergence",
+  "location": "INT. ROOM 608 / INT. MAIN DECK / EXT. STREET",
+  "what_happens": "In Room 608, Agent Smith engages Morpheus in a brutal hand-to-hand struggle. Smith identifies himself by name, shattering his own glasses and nose in the exchange, but ultimately gains the upper hand, kicking Morpheus into a plaster wall. A wall of police officers enters the room, and Smith orders them to take Morpheus, who is overwhelmed by the crowd. Simultaneously, on the Nebuchadnezzar, Tank watches the capture unfold on his monitors, reaching out in despair and crying out 'No!'. Following a brief omitted transition, Trinity surfaces from a sewer manhole onto a city street, having escaped the hotel basement, as a truck rumbles over the open cover.",
+  "participants": [
+   "MORPHEUS",
+   "THE_AGENTS",
+   "POLICE",
+   "TANK",
+   "TRINITY"
+  ],
+  "entry_state": [
+   {
+    "who": "MORPHEUS",
+    "state": "Engaged in a physical struggle with Agent Smith in Room 608, resisting capture."
+   },
+   {
+    "who": "THE_AGENTS",
+    "state": "Combatting Morpheus, having just identified himself to him."
+   },
+   {
+    "who": "TANK",
+    "state": "Monitoring the operation from the main deck of the Nebuchadnezzar."
+   },
+   {
+    "who": "TRINITY",
+    "state": "Inside the sewer system, having just escaped the hotel basement."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "MORPHEUS",
+    "axis": "custody",
+    "before": "In a one-on-one struggle with Agent Smith, resisting capture",
+    "after": "Taken into custody by a group of cops",
+    "why_it_matters": "The capture of the leader of the resistance is the primary catalyst for the subsequent betrayal and rescue mission."
+   },
+   {
+    "who": "TANK",
+    "axis": "condition",
+    "before": "Monitoring the operation actively",
+    "after": "Visibly distressed, reacting with physical desperation",
+    "why_it_matters": "Establishes the emotional stakes for the crew and their helplessness in the real world."
+   },
+   {
+    "who": "TRINITY",
+    "axis": "custody",
+    "before": "Inside the sewer/main deck (implied by context of escape)",
+    "after": "On the surface street, free from the immediate building trap",
+    "why_it_matters": "Trinity's emergence signals the start of the rescue phase and her survival against the Agents."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "MORPHEUS",
+    "state": "In police custody, defeated by Agent Smith."
+   },
+   {
+    "who": "TANK",
+    "state": "Distressed, monitoring the situation from the Nebuchadnezzar."
+   },
+   {
+    "who": "TRINITY",
+    "state": "On the surface street, having climbed out of a manhole."
+   }
+  ],
+  "reversal": true,
+  "plot_speculation": [
+   {
+    "claim": "This event serves as the pivotal turning point where the Resistance loses its leader, forcing the remaining crew (specifically Trinity and Neo) to act under duress, which sets the stage for Cypher's betrayal.",
+    "evidence": [
+     "Morpheus is explicitly taken into custody by a 'wall of cops' after Smith's command.",
+     "Tank's reaction 'No!' highlights the crew's sudden vulnerability.",
+     "Trinity's emergence is the first step in the sequence that leads to the TV repair shop confrontation."
+    ],
+    "confidence": 95
+   },
+   {
+    "claim": "The identification of Agent Smith by name marks a shift from generic antagonism to a specific, personal rivalry between Smith and Morpheus.",
+    "evidence": [
+     "Smith says 'I am Agent Smith' directly to Morpheus.",
+     "Morpheus responds 'You all look the same to me,' indicating the first time they are meeting in this context."
+    ],
+    "confidence": 90
+   }
+  ],
+  "boundary_doubt": "The inclusion of the 'OMITTED' scene 119 as a discrete scene within this event is technically a placeholder, but it serves as a narrative bridge between Tank's reaction and Trinity's emergence. The boundary seems appropriate as it captures the immediate aftermath of the capture and the start of the escape/rescue sequence.",
+  "scenes": [
+   "sc-117",
+   "sc-118",
+   "sc-119",
+   "sc-120"
+  ]
+ },
+ {
+  "event_id": "ev-028",
+  "name": "Cypher's Extraction and the Group's Pursuit",
+  "location": "Nebuchadnezzar Main Deck / Matrix Streets / TV Repair Shop",
+  "what_happens": "Cypher, having separated from the group during the hotel escape, calls the Nebuchadnezzar via a public phone to arrange his immediate extraction. Tank directs him to a pre-arranged exit point at an abandoned TV repair shop. Simultaneously, Trinity calls the ship to coordinate with the remaining crew (Neo, Apoc, Switch) as they navigate the Matrix streets to find an exit. During this transit, Neo confirms with Tank that Morpheus is alive but being moved by the Agents. As the group gathers at the TV repair shop to use the phone for their own exit, Cypher, now back on the ship, shoots and kills Dozer and severely injures Tank, revealing his betrayal. The group is left stranded in the Matrix with a dead line, forcing them to communicate with Cypher via cellular phone.",
+  "participants": [
+   "CYPHER",
+   "TANK",
+   "TRINITY",
+   "NEO",
+   "APOC",
+   "SWITCH",
+   "DOZER"
+  ],
+  "entry_state": [
+   {
+    "who": "CYPHER",
+    "state": "Separated from the group in the Matrix, having escaped the initial police capture but still in danger."
+   },
+   {
+    "who": "TRINITY",
+    "state": "Leading the remaining crew (Neo, Apoc, Switch) in the Matrix, unaware of Cypher's location."
+   },
+   {
+    "who": "TANK",
+    "state": "Operating the Nebuchadnezzar, monitoring the Matrix, and managing the crew's exits."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Captured by Agents, status unknown to the crew in the Matrix."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "CYPHER",
+    "axis": "custody",
+    "before": "Trapped in the Matrix, separated from the group, and in immediate danger of recapture by Agents.",
+    "after": "In contact with the ship's operator, initiating the process to be unplugged and returned to the real world.",
+    "why_it_matters": "This initiates the physical separation between Cypher and the rest of the crew, setting the stage for his betrayal."
+   },
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Uncertain of Morpheus's status after the hotel escape.",
+    "after": "Knows Morpheus is alive but being moved to an unknown location.",
+    "why_it_matters": "This confirms the stakes of the rescue mission and drives the urgency of the group's movement."
+   },
+   {
+    "who": "TANK",
+    "axis": "condition",
+    "before": "Standing and operating the controls, alive and well.",
+    "after": "Struck by Cypher's rifle, blasted into the air, and severely injured.",
+    "why_it_matters": "The physical manifestation of Cypher's betrayal, incapacitating the ship's operator and leaving the crew in the Matrix without immediate backup."
+   },
+   {
+    "who": "DOZER",
+    "axis": "life",
+    "before": "Alive and present on the main deck.",
+    "after": "Dead, killed by Cypher's rifle.",
+    "why_it_matters": "The first casualty of the betrayal, establishing the lethal consequences of Cypher's defection."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "CYPHER",
+    "state": "On the Nebuchadnezzar, armed with a rifle, having killed Dozer and wounded Tank, now in control of the ship's operator station."
+   },
+   {
+    "who": "NEO",
+    "state": "Stranded in the Matrix at the TV repair shop with Trinity, Apoc, and Switch, unable to use the exit phone due to the disruption caused by Cypher."
+   },
+   {
+    "who": "TANK",
+    "state": "Injured but alive on the Nebuchadnezzar, communicating with the crew in the Matrix via the operator phone."
+   }
+  ],
+  "reversal": true,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of internal betrayal undermining the Resistance's operational capacity.",
+    "evidence": [
+     "Cypher's call to 'get me outta here' (sc-122) contrasts with his later action of shooting Dozer and Tank (sc-130/131).",
+     "Trinity's shock and the crew's confusion in sc-135 ('You killed them.') highlight the sudden flip in allegiance.",
+     "Cypher's dialogue in sc-135 ('I'm tired of this war... I choose the Matrix') explicitly states the motivation for the reversal."
+    ],
+    "confidence": 95,
+    "alternative": "It could be seen as a simple tactical error, but the pre-planned nature of the exit and the weapon suggest a calculated betrayal."
+   },
+   {
+    "claim": "The event highlights the fragility of the connection between the Matrix and the real world.",
+    "evidence": [
+     "The reliance on specific physical locations (TV repair shop) for communication and exit (sc-122, sc-125).",
+     "The disruption of the phone line when Cypher attacks Tank (sc-132, sc-133), forcing a shift to cellular communication.",
+     "The vulnerability of the crew when separated from the ship's operator support."
+    ],
+    "confidence": 90,
+    "alternative": "The fragility is a constant theme, but this scene specifically demonstrates how a single internal traitor can sever the lifeline."
+   }
+  ],
+  "boundary_doubt": "The boundary includes the initial shooting of Tank/Dozer (sc-130/131) which is technically a betrayal event, but it is inextricably linked to the extraction process as it occurs simultaneously with the group's attempt to exit. The description provided in the prompt includes 'Cypher's Extraction and the Group's Pursuit' and lists sc-130 which contains the shooting. Therefore, the boundary seems correct as the shooting is the culmination of the extraction setup.",
+  "scenes": [
+   "sc-121",
+   "sc-122",
+   "sc-123",
+   "sc-124",
+   "sc-125",
+   "sc-126",
+   "sc-128",
+   "sc-130"
+  ]
+ },
+ {
+  "event_id": "ev-029",
+  "name": "Cypher's Betrayal and the Failed Exit",
+  "location": "INT. MAIN DECK / INT. TV REPAIR SHOP",
+  "what_happens": "Cypher is forcibly unplugged on the Nebuchadnezzar and reveals his betrayal by killing Dozer and wounding Tank. In the Matrix, the exit line fails as Neo tries to connect. Cypher then calls the group in the TV repair shop, revealing his betrayal and killing Apoc and Switch before being shot by Tank. Trinity embraces Neo as they prepare to re-enter the Matrix.",
+  "participants": [
+   "CYPHER",
+   "TANK",
+   "DOZER",
+   "TRINITY",
+   "NEO",
+   "APOC",
+   "SWITCH",
+   "MORPHEUS"
+  ],
+  "entry_state": [
+   {
+    "who": "CYPHER",
+    "state": "Plugged into the Matrix, unaware the crew is extracting him."
+   },
+   {
+    "who": "TANK",
+    "state": "Operating the exit sequence at the main deck console."
+   },
+   {
+    "who": "Trinity, Neo, Apoc, Switch",
+    "state": "Hidden in the TV repair shop in the Matrix, awaiting extraction."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Captured by Agents, body suspended in a drive chair on the main deck."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "CYPHER",
+    "axis": "allegiance",
+    "before": "Loyal crew member (ostensibly)",
+    "after": "Traitor allied with the Agents",
+    "why_it_matters": "Shatters the crew's trust and introduces a new, internal threat to the Resistance."
+   },
+   {
+    "who": "DOZER",
+    "axis": "condition",
+    "before": "Alive",
+    "after": "Dead",
+    "why_it_matters": "Demonstrates the lethal cost of Cypher's betrayal and reduces the crew's operational capacity."
+   },
+   {
+    "who": "TANK",
+    "axis": "condition",
+    "before": "Healthy",
+    "after": "Wounded by lightning and gunfire, but alive",
+    "why_it_matters": "Allows Tank to survive long enough to defeat Cypher, preserving a key operator for future missions."
+   },
+   {
+    "who": "APOC",
+    "axis": "condition",
+    "before": "Alive",
+    "after": "Dead",
+    "why_it_matters": "Eliminates a crew member and heightens the emotional stakes for the remaining characters."
+   },
+   {
+    "who": "SWITCH",
+    "axis": "condition",
+    "before": "Alive",
+    "after": "Dead",
+    "why_it_matters": "Eliminates a crew member and serves as a final warning of Cypher's ruthlessness."
+   },
+   {
+    "who": "TRINITY",
+    "axis": "knowledge",
+    "before": "Believes Cypher is a friend",
+    "after": "Knows Cypher is a traitor and has lost friends",
+    "why_it_matters": "Forces Trinity to confront the reality of the war and the fragility of her allies."
+   },
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Uncertain of his identity",
+    "after": "Confirmed by Trinity's faith that he is 'The One'",
+    "why_it_matters": "Solidifies Neo's role in the prophecy, setting the stage for his future actions."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "CYPHER",
+    "state": "Killed by Tank's lightning bolt."
+   },
+   {
+    "who": "TANK",
+    "state": "Alive but wounded, operating the ship."
+   },
+   {
+    "who": "Trinity, Neo",
+    "state": "In the real world, preparing to re-enter the Matrix to save Morpheus."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Captured, location unknown."
+   }
+  ],
+  "reversal": true,
+  "plot_speculation": [
+   {
+    "claim": "The event serves to test the prophecy of 'The One' through the threat of death.",
+    "evidence": [
+     "Cypher explicitly states: 'If Neo is the One, then in the next few seconds there has to be some kind of miracle to stop me.'"
+    ],
+    "confidence": 95,
+    "alternative": "It is purely a plot device to thin the crew."
+   },
+   {
+    "claim": "The event highlights the theme of choice between comfort (Matrix) and truth (real world).",
+    "evidence": [
+     "Cypher's dialogue: 'I'm tired of this war... I choose the Matrix.' and 'I'll be fat and rich and I won't remember a goddamned thing.'"
+    ],
+    "confidence": 90,
+    "alternative": "It is simply a character flaw of greed."
+   },
+   {
+    "claim": "The event forces Neo and Trinity to re-enter the Matrix, shifting the narrative focus from the ship to the Agents' domain.",
+    "evidence": [
+     "Trinity and Neo are in the real world at the end, and the phone rings for them to go back in, indicating the next phase of the story."
+    ],
+    "confidence": 85,
+    "alternative": "It is a temporary setback before they return to the ship."
+   }
+  ],
+  "boundary_doubt": "The scene numbering in the provided list (sc-132, sc-133, sc-134, sc-135) seems to intercut between the TV repair shop and the Main Deck, which is consistent with the script. However, sc-187 and sc-189 appear to be duplicate or alternative versions of the same sequence, which might cause some confusion in the exact ordering of the phone call vs. the shooting. The boundary seems correct as it captures the entire arc of the betrayal and its immediate aftermath.",
+  "scenes": [
+   "sc-127",
+   "sc-129",
+   "sc-131",
+   "sc-132",
+   "sc-133",
+   "sc-134",
+   "sc-135",
+   "sc-187",
+   "sc-188",
+   "sc-189"
+  ]
+ },
+ {
+  "event_id": "ev-030",
+  "name": "Trinity's Extraction",
+  "location": "INT. TV REPAIR SHOP; INT. MAIN DECK",
+  "what_happens": "Following Cypher's defeat by Tank, Trinity and Neo share a brief, intimate moment of relief in the TV repair shop. The phone rings, signaling the exit point. Neo breaks the embrace to instruct Trinity to go first, prioritizing her safety. Trinity is unplugged from the Matrix and wakes up in her drive chair on the Nebuchadnezzar. As Tank unplugs her, she notices his charred wounds from the battle with Cypher. When she asks about Dozer, Tank's face tightens, and he pulls her into a tight embrace, silently communicating that Dozer has been killed in the crossfire.",
+  "participants": [
+   "TRINITY",
+   "NEO",
+   "TANK"
+  ],
+  "entry_state": [
+   {
+    "who": "TRINITY",
+    "state": "Inside the Matrix, in the TV repair shop, having just witnessed Tank kill Cypher."
+   },
+   {
+    "who": "NEO",
+    "state": "Inside the Matrix, in the TV repair shop, safe for the moment."
+   },
+   {
+    "who": "TANK",
+    "state": "Inside the Nebuchadnezzar, injured with charred wounds from being struck by Cypher's gun."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "TRINITY",
+    "axis": "location",
+    "before": "Inside the Matrix (TV Repair Shop)",
+    "after": "Real world (Nebuchadnezzar Main Deck)",
+    "why_it_matters": "Trinity is physically removed from the immediate danger of the Matrix and returns to the ship, rejoining the crew."
+   },
+   {
+    "who": "TRINITY",
+    "axis": "knowledge",
+    "before": "Unaware of the specific casualties among the crew during the extraction.",
+    "after": "Aware that Tank is injured and that Dozer is dead.",
+    "why_it_matters": "The revelation of Dozer's death raises the stakes and the cost of the mission, shifting the tone from relief to grief."
+   },
+   {
+    "who": "NEO",
+    "axis": "resolve",
+    "before": "Sharing a moment of survival and intimacy with Trinity.",
+    "after": "Prioritizing Trinity's extraction over his own, remaining in the Matrix.",
+    "why_it_matters": "This act reinforces Neo's growing protective instinct and his willingness to stay behind in the Matrix for others."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "TRINITY",
+    "state": "Awake on the Nebuchadnezzar, grieving Dozer's death and concerned for Tank."
+   },
+   {
+    "who": "NEO",
+    "state": "Still inside the Matrix in the TV repair shop, waiting for his own exit."
+   },
+   {
+    "who": "TANK",
+    "state": "On the Nebuchadnezzar, injured, having just confirmed Dozer's death to Trinity."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of 'The Cost of the Mission,' highlighting that even in victory, the crew pays a heavy price.",
+    "evidence": [
+     "Tank's visible 'charred wounds' (sc-138) show the physical toll of the fight.",
+     "Tank's reaction to the question 'Dozer?' (sc-138) implies a fatal outcome, adding emotional weight to the victory over Cypher.",
+     "The intercutting of the celebration in the Matrix (sc-137) with the grim reality on the ship (sc-138) underscores the duality of their existence."
+    ],
+    "confidence": 9
+   },
+   {
+    "claim": "This event reinforces the romantic bond between Neo and Trinity as a core anchor for Neo's motivation.",
+    "evidence": [
+     "Neo breaks the embrace only to tell Trinity 'Go. You first this time' (sc-137), showing self-sacrifice.",
+     "The scene is described as a 'moment of relief and intimacy' (sc-137), contrasting with the previous tension.",
+     "Trinity's immediate concern upon waking is for Tank, but the preceding scene with Neo sets the emotional baseline for her return."
+    ],
+    "confidence": 8
+   }
+  ],
+  "boundary_doubt": "Scene 136 is marked as 'OMITTED' in the script, creating a slight discontinuity between the defeat of Cypher (sc-135) and the reunion (sc-137). However, the boundary holds as the transition is implied by the phone ringing in sc-137.",
+  "scenes": [
+   "sc-136",
+   "sc-137",
+   "sc-138"
+  ]
+ },
+ {
+  "event_id": "ev-031",
+  "name": "Morpheus's Capture and Interrogation",
+  "location": "GOVERNMENT_BUILDING",
+  "what_happens": "Agent Jones and a column of Marines raid a government high-rise to capture Morpheus. Inside an executive office, Morpheus is handcuffed, stripped, and wired to life-sign monitors. Agent Smith interrogates him using a chemical serum administered by Agent Brown to break his mind. During the procedure, Smith delivers a philosophical monologue arguing that humans are a virus and the machines are the cure. He also reveals his personal disgust for the Matrix, describing it as a prison he wishes to escape. When Agent Jones reports that their insider (Cypher) is dead, Smith orders the immediate deployment of Sentinels.",
+  "participants": [
+   "THE_AGENTS",
+   "MORPHEUS",
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "MARINES"
+  ],
+  "entry_state": [
+   {
+    "who": "MORPHEUS",
+    "state": "Recently captured and brought to the government building."
+   },
+   {
+    "who": "THE_AGENTS",
+    "state": "Preparing to extract the codes to Zion from Morpheus."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "MORPHEUS",
+    "axis": "condition",
+    "before": "Conscious but resisting mental intrusion and physical pain.",
+    "after": "Physically deteriorating, hunched over, leaking, and twitching due to the serum.",
+    "why_it_matters": "Demonstrates the brutal efficiency of the Agents' interrogation methods and Morpheus's vulnerability."
+   },
+   {
+    "who": "THE_AGENTS",
+    "axis": "knowledge",
+    "before": "Operating within standard protocol to extract information.",
+    "after": "Reveals personal, emotional motivations to escape the Matrix and demands the codes to Zion.",
+    "why_it_matters": "Humanizes the antagonist and reveals a flaw in the Agent's programming."
+   },
+   {
+    "who": "THE_AGENTS",
+    "axis": "resolve",
+    "before": "Attempting to extract information via serum and calm interrogation.",
+    "after": "Ordering the immediate deployment of Sentinels after learning the insider is dead.",
+    "why_it_matters": "Escalates the conflict from a personal interrogation to a military threat against Zion."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "MORPHEUS",
+    "state": "Sedated and physically broken, but still holding the codes."
+   },
+   {
+    "who": "THE_AGENTS",
+    "state": "Frustrated and desperate, with a personal stake in destroying Zion."
+   }
+  ],
+  "reversal": true,
+  "plot_speculation": [
+   {
+    "claim": "Agent Smith's desire to escape the Matrix foreshadows his later corruption and creation of a digital world of his own.",
+    "evidence": [
+     "Smith says, 'I hate this place... I can't stand it any longer... I feel saturated by it.'",
+     "Smith claims, 'I must get out of here, I must get free.'"
+    ],
+    "confidence": 9
+   },
+   {
+    "claim": "The deployment of Sentinels is a direct response to the failure of their spy network, indicating the Machines are running out of time or patience.",
+    "evidence": [
+     "Agent Jones states: 'They are dead.'",
+     "Agent Smith responds: 'We have no choice but to continue as planned. Deploy the sentinels. Immediately.'"
+    ],
+    "confidence": 8
+   }
+  ],
+  "boundary_doubt": "The scenes provided contain significant overlap and repetition of the same dialogue and actions (e.g., the serum injection and Smith's monologue appear in multiple scene IDs). It is unclear if these are separate takes or if the boundary should be tighter, but the event as a whole covers the raid through the decision to deploy Sentinels.",
+  "scenes": [
+   "sc-139",
+   "sc-140",
+   "sc-142",
+   "sc-144",
+   "sc-147",
+   "sc-174",
+   "sc-176",
+   "sc-190",
+   "sc-193",
+   "sc-194",
+   "sc-198",
+   "sc-204"
+  ]
+ },
+ {
+  "event_id": "ev-032",
+  "name": "The Raid on the Government Building",
+  "location": "Government Building (Lobby, Elevator Shaft, Executive Office, Roof)",
+  "what_happens": "Neo and Trinity storm the government building to rescue Morpheus. They engage in a firefight in the lobby, then rig an elevator with explosives to ascend the shaft. On the roof, they defeat Agent Jones, who had disguised himself as a pilot. Tank uploads a helicopter pilot program to Trinity, allowing her to fly the chopper to the roof. Neo kills the remaining Agents with the helicopter's machine gun, rescues Morpheus from his restraints, and the group escapes via the damaged helicopter while under attack from Agent Smith.",
+  "participants": [
+   "NEO",
+   "TRINITY",
+   "MORPHEUS",
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "TANK",
+   "MARINES"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Inside the Nebuchadnezzar, preparing for the rescue mission."
+   },
+   {
+    "who": "TRINITY",
+    "state": "Inside the Nebuchadnezzar, preparing for the rescue mission."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Held captive in the Executive Office, handcuffed and wired to monitors."
+   },
+   {
+    "who": "TANK",
+    "state": "Operating the Nebuchadnezzar, ready to support the mission."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "capability",
+    "before": "Demonstrating combat skills but limited by physical constraints.",
+    "after": "Demonstrates bullet-dodging abilities and superhuman reflexes, foreshadowing his power as the One.",
+    "why_it_matters": "This is the first clear evidence of Neo's unique abilities beyond standard combat training, validating Morpheus's belief."
+   },
+   {
+    "who": "MORPHEUS",
+    "axis": "custody",
+    "before": "Handcuffed to a chair, restrained and under interrogation.",
+    "after": "Free, having snapped his handcuffs and been rescued by Neo.",
+    "why_it_matters": "The primary objective of the raid is achieved, saving the leader of the resistance."
+   },
+   {
+    "who": "THE_AGENTS",
+    "axis": "status",
+    "before": "Holding Morpheus, in control of the situation.",
+    "after": "Defeated, his plan to capture Morpheus thwarted, forced to retreat/continue pursuit.",
+    "why_it_matters": "The Agents' ability to control the Resistance is challenged, raising the stakes for future confrontations."
+   },
+   {
+    "who": "TRINITY",
+    "axis": "knowledge",
+    "before": "Unable to fly the military helicopter.",
+    "after": "Possesses the pilot program, allowing her to fly the chopper.",
+    "why_it_matters": "Enables the escape from the roof, crucial for the group's survival."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Escaped the building with Morpheus, having demonstrated new powers."
+   },
+   {
+    "who": "MORPHEUS",
+    "state": "Rescued and escaping with the group."
+   },
+   {
+    "who": "TRINITY",
+    "state": "Piloting the damaged helicopter, leading the escape."
+   },
+   {
+    "who": "TANK",
+    "state": "Supporting the mission from the Nebuchadnezzar."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves as the climax of Neo's awakening and the beginning of the active war between the Resistance and the Machines/Agents.",
+    "evidence": [
+     "Neo's bullet-dodging ('There is no spoon') directly references his earlier training with Spoon Boy, showing his powers are manifesting.",
+     "The rescue of Morpheus shifts the dynamic from the Agents' dominance to a more balanced conflict.",
+     "The helicopter escape and Agent Smith's pursuit indicate the Agents will continue to hunt them."
+    ],
+    "confidence": 9
+   },
+   {
+    "claim": "The raid highlights the increasing power gap between Neo and the Agents, setting up the final confrontation.",
+    "evidence": [
+     "Neo's ability to dodge bullets and kill Agents with the helicopter gun shows he is becoming a force the Agents cannot easily stop.",
+     "Agent Smith's reaction and continued pursuit suggest he is adapting but losing ground."
+    ],
+    "confidence": 8
+   }
+  ],
+  "boundary_doubt": "None. The scenes clearly delineate a single continuous action sequence from entry to escape.",
+  "scenes": [
+   "sc-149",
+   "sc-150",
+   "sc-151",
+   "sc-152",
+   "sc-153",
+   "sc-154",
+   "sc-155",
+   "sc-156",
+   "sc-157",
+   "sc-158",
+   "sc-159",
+   "sc-160",
+   "sc-161",
+   "sc-162",
+   "sc-163",
+   "sc-164",
+   "sc-165",
+   "sc-166",
+   "sc-167",
+   "sc-169",
+   "sc-170",
+   "sc-179"
+  ]
+ },
+ {
+  "event_id": "ev-033",
+  "name": "Entry into the Matrix",
+  "location": "INT. HOTEL LAFAYETTE - ROOM 1313 / INT. ROOM 808",
+  "what_happens": "Morpheus answers a ringing telephone in the empty Room 1313 of the Hotel Lafayette, confirming to the team that they are inside the simulation. He navigates the hotel's interior, guided by Tank's voice over the phone line, reaching Room 808 on the eighth floor. Upon arriving at the designated structural point identified by Tank, Morpheus confirms his location, setting the stage for the escape through the building's plumbing walls.",
+  "participants": [
+   "MORPHEUS",
+   "TANK"
+  ],
+  "entry_state": [
+   {
+    "who": "MORPHEUS",
+    "state": "Plugged into the Matrix via the phone line in Room 1313, ready to begin navigation."
+   },
+   {
+    "who": "TANK",
+    "state": "Operating from the Nebuchadnezzar, monitoring the team's location within the Matrix."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "MORPHEUS",
+    "axis": "location",
+    "before": "In Room 1313, the entry point.",
+    "after": "In Room 808, the designated structural point for the wet-wall escape.",
+    "why_it_matters": "This move positions Morpheus at the specific architectural feature (the wet wall) required to execute the escape plan from the trapped hotel."
+   },
+   {
+    "who": "MORPHEUS",
+    "axis": "knowledge",
+    "before": "Navigating the hotel interior with uncertainty.",
+    "after": "Confirmed at the correct target location by Tank's guidance.",
+    "why_it_matters": "The confirmation 'Good' signals that the tactical setup for the escape is complete and the team is in position to breach the wall."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "MORPHEUS",
+    "state": "Stationed in Room 808, ready to breach the wall."
+   },
+   {
+    "who": "TANK",
+    "state": "Has successfully guided Morpheus to the target and is monitoring for the next phase."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of the 'Trapped Escape' or 'Hotel Siege', where the team must overcome a physical lockdown to survive.",
+    "evidence": [
+     "Tank's instruction to find the 'main wet-wall' (Scene 102) implies a specific structural weakness in the building.",
+     "Morpheus's movement to Room 808 (Scene 104) is a tactical repositioning away from the entry point (Room 1313) where Mouse was killed, suggesting a need to find an alternative exit.",
+     "The subsequent scenes show them inside the wall (Scene 108), confirming that the navigation to Room 808 was the key to accessing the plumbing escape route."
+    ],
+    "confidence": 95,
+    "alternative": "It could be seen as a simple logistical transition, but the urgency of Tank's guidance suggests a time-sensitive tactical maneuver."
+   },
+   {
+    "claim": "The event highlights the dependency of the Matrix operatives on the real-world operators for spatial awareness and tactical planning.",
+    "evidence": [
+     "Morpheus is guided entirely by Tank's voice ('Now left, and that's it in front of you' - Scene 104).",
+     "Morpheus cannot see the architectural layout himself; he relies on Tank's access to the structural drawings (Scene 102).",
+     "The phone line is the sole link between the two worlds, making Tank's guidance the critical bottleneck for the team's survival."
+    ],
+    "confidence": 90,
+    "alternative": "None, as the script explicitly shows Morpheus relying on external voice guidance for navigation."
+   }
+  ],
+  "boundary_doubt": "The boundary seems correct. It captures the specific tactical movement from entry to the escape point. The subsequent action (breaking through the wall) is a distinct physical action that follows the navigation phase.",
+  "scenes": [
+   "sc-205",
+   "sc-207"
+  ]
+ }
+]

@@ -1,0 +1,1599 @@
+[
+ {
+  "id": "TRINITY",
+  "kind": "agents",
+  "description": "Trinity is a high-level operative of the Resistance, characterized by her black leather attire and superhuman combat abilities. She serves as a tactical asset and moral anchor, balancing the skepticism of her peers with a quiet, intense devotion to Morpheus and the search for the One. Her presence is defined by a duality of lethal efficiency and protective tenderness, evident in her handling of Neo. During the critical sequence of the hotel raid, she transitions from a suspect in custody to a free agent, demonstrating her physical threat level to the Agents before suffering significant physical trauma during a high-stakes rooftop escape.",
+  "appearance": "A woman in black leather. Described as beautiful and androgynous in later scenes, but in the raid sequence, she is noted for her inhumanly fast movements and 'leather-clad ghost' quality.",
+  "background": "A key operative in the Resistance who has been searching for the One for some time. She previously cracked the I.R.S. D-Base. She was once looking for an answer to the question of the Matrix, which Morpheus found when he found her.",
+  "wants": "To ensure Neo's survival and the success of the Resistance's mission to find the One. To maintain the security of the team's lines and operations.",
+  "fears": "The failure of the line to be clean, leading to capture or death. The loss of Neo, whom she has begun to care for deeply.",
+  "internal_conflict": "The tension between her role as a cold, efficient operative and her growing personal investment in Neo. The doubt about whether Morpheus is right about Neo, contrasted with her unwavering faith in him.",
+  "speech": "Direct, concise, and often dry. She uses short sentences to convey information or command. When speaking to Neo, her voice takes on a hypnotic, intimate quality, leaning close to whisper. She is unafraid to use profanity ('Shit', 'Goddamnit') when stressed.",
+  "relationships": [
+   {
+    "with": "Morpheus",
+    "nature": "Loyal operative and believer. She trusts his judgment implicitly, even when others doubt him. She acts as his right hand in tactical situations."
+   },
+   {
+    "with": "Neo",
+    "nature": "Protector and guide. She is tasked with warning him and later rescuing him. There is a developing romantic or deeply personal interest, evidenced by her scenting him and her protective instinct."
+   },
+   {
+    "with": "Cypher",
+    "nature": "Skeptical peer. Cypher teases her about her beliefs and her attention to Neo. She dismisses his cynicism with brief, dismissive replies."
+   },
+   {
+    "with": "Agent Smith",
+    "nature": "Primary antagonist. A physical and tactical rival. Their encounter is marked by high-speed combat and mutual recognition of threat."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "resolve",
+    "domain": [
+     "uncertain",
+     "decided_to_leave"
+    ],
+    "initial": "uncertain",
+    "why": "ev-001: She is uncertain if the line is secure during the call with Cypher. The trace completion prompts her decision to hang up and exit, which triggers the police breach."
+   },
+   {
+    "name": "status",
+    "domain": [
+     "suspect_in_custody",
+     "free_agent_combatant"
+    ],
+    "initial": "suspect_in_custody",
+    "why": "ev-002: She begins as a suspect with hands behind her head, appearing compliant. She transitions to a free agent after revealing her superhuman combat abilities and defeating the police officers."
+   },
+   {
+    "name": "safety",
+    "domain": [
+     "trapped_on_fire_escape",
+     "escaping_across_rooftops"
+    ],
+    "initial": "trapped_on_fire_escape",
+    "why": "ev-003: She is trapped on the fire escape with no vertical escape route initially. She then engages in a high-stakes traversal across rooftops toward a specific vertical exit."
+   },
+   {
+    "name": "condition",
+    "domain": [
+     "intact_and_mobile",
+     "bleeding_and_broken"
+    ],
+    "initial": "intact_and_mobile",
+    "why": "ev-003: She is intact and mobile on the rooftop. After crashing through the window and tumbling down the stairs, she is left bleeding, broken, and in pain, establishing the physical cost of her escape."
+   }
+  ],
+  "inferred": [
+   "Her 'uncertain' state in ev-001 is inferred from her dialogue 'Are you sure this line is clean?' and 'I better go,' indicating a shift from operational confidence to tactical caution.",
+   "Her 'free_agent_combatant' status in ev-002 is inferred from the action of her defeating the police officers, moving from passive compliance to active dominance.",
+   "Her 'bleeding_and_broken' condition in ev-003 is inferred from the script description 'tumbling, bouncing down stairs bleeding, broken' and her dialogue 'Everything hurts.'",
+   "Her relationship with Neo is inferred to be developing personally based on the scene where she enters his room, pulls the blanket over him, and inhales his scent."
+  ]
+ },
+ {
+  "id": "AGENT_SMITH",
+  "kind": "agents",
+  "description": "Agent Smith is a sentient program within the Matrix, characterized by his unnaturally ice-blue eyes, dark suits, and sunglasses worn even at night. He operates as a high-ranking enforcer, leading teams of Agents and police to capture 'unplugged' individuals. His demeanor is coldly professional and dismissive, treating human resistance as an administrative error rather than a threat. He is methodical, using psychological pressure and physical dominance to assert control, viewing his mission as a necessary correction to the system's anomalies.",
+  "appearance": "Wears dark suits and sunglasses at all times, even at night. Has unnatural ice-blue eyes. Always hardwired with small Secret Service earphones coiling into shirt collars. Physical presence is imposing, capable of unnatural speed and strength, such as punching through walls or moving faster than human perception.",
+  "background": "A sentient program created to maintain order within the Matrix. He has been tracking Neo (Thomas Anderson) for some time, possessing a file on his dual life as a software writer and hacker. He is part of a hierarchy of Agents that act as gatekeepers, guarding the doors of the Matrix.",
+  "wants": "To capture Neo and force his cooperation to bring Morpheus to justice. To maintain the integrity and control of the Matrix system by eliminating anomalies and ensuring the compliance of human minds.",
+  "fears": "Disorder or inefficiency. The script shows him displaying frustration (grinding molars) when Trinity escapes, suggesting a tolerance for failure only when it is ultimately resolved by the system's larger design.",
+  "internal_conflict": "Little to no internal conflict is shown in this segment; he operates with a singular, unyielding purpose. His only 'conflict' is the friction between his procedural authority and the chaotic reality of human resistance, which he views with disdain rather than fear.",
+  "speech": "Formal, precise, and authoritative. Uses legalistic and bureaucratic language ('Juris-my dick-tion', 'specific orders', 'wipe the slate clean'). Dismissive of human concerns, often stating facts as absolute truths. His tone is calm but underlaid with a cold, intimidating certainty.",
+  "relationships": [
+   {
+    "with": "LIEUTENANT",
+    "nature": "Superior/Subordinate. Smith asserts authority over the Lieutenant, correcting his assumptions and stating the fate of his men with clinical detachment."
+   },
+   {
+    "with": "NEO",
+    "nature": "Enforcer/Target. Smith views Neo as an anomaly to be corrected. He employs psychological tactics (sealing the mouth, wire tap) to break Neo's will and force cooperation."
+   },
+   {
+    "with": "TRINITY",
+    "nature": "Hunter/Prey. Smith actively pursues Trinity, leading the tactical team that corners her at the hotel. His pursuit is methodical and relentless."
+   },
+   {
+    "with": "AGENT_BROWN",
+    "nature": "Colleague/Team Member. Smith delegates tactical movements to Brown, who mirrors his unnatural grace and capabilities."
+   },
+   {
+    "with": "AGENT_JONES",
+    "nature": "Colleague/Team Member. Smith coordinates with Jones on search parameters and information sharing."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "focus_target",
+    "domain": [
+     "Trinity",
+     "Neo",
+     "Morpheus"
+    ],
+    "initial": "Trinity",
+    "why": "Moves from Trinity (hotel pursuit) to Neo (interrogation) to Morpheus (implied next step via Cypher deal and Neo's capture)."
+   },
+   {
+    "name": "control_level",
+    "domain": [
+     "absolute",
+     "frustrated",
+     "dominant"
+    ],
+    "initial": "dominant",
+    "why": "Starts dominant in the hotel/interrogation, shifts to 'frustrated' when Trinity escapes (jaw sets, grinds molars), returns to 'dominant' when confirming Neo's capture and the search for Morpheus."
+   },
+   {
+    "name": "knowledge_of_resistance",
+    "domain": [
+     "partial",
+     "comprehensive"
+    ],
+    "initial": "partial",
+    "why": "Initially knows about Neo and Morpheus. Gains 'comprehensive' knowledge of the 'One' prophecy and Cypher's betrayal (implied by the steak scene deal) which shifts his strategic focus."
+   }
+  ],
+  "inferred": [
+   "His 'ice-blue' eyes are a visual marker of his non-human, programmatic nature, distinguishing him from the 'human' police.",
+   "The 'wire tap' scene suggests his methods are not just physical but invasive and technological, blending organic horror with digital surveillance.",
+   "His ability to 'freeze' or manipulate the environment (implied by the speed and wall-punching mentioned by Morpheus) indicates he operates on a different set of rules than humans, which he uses to enforce his authority."
+  ]
+ },
+ {
+  "id": "NEO",
+  "kind": "agents",
+  "description": "Thomas A. Anderson, known in the digital underground as Neo, is a software developer and hacker living in a state of existential drift. He is physically isolated, residing in a studio apartment cluttered with technology, and psychologically isolated, haunted by a persistent sense that reality is a simulation. He is defined by his deep, unarticulated search for meaning and his latent potential as 'the One.' His journey in this segment begins with cryptic digital warnings that disrupt his routine, leading him into the physical world where he encounters Trinity, is captured by Agents, and ultimately accepts the truth of the Matrix, choosing to wake up to the real world.",
+  "appearance": "Described as a man who knows more about living inside a computer than outside one. He has a 'coppertop' haircut (mentioned by Switch), pale skin (Choi notes he looks 'whiter than usual' after the computer incident), and a generally disheveled, tech-obsessed demeanor. In the real world, he is bald, naked, and covered in magenta gelatin.",
+  "background": "A program writer for Meta CorTechs. A hacker with the alias Neo, guilty of virtually every computer crime on record. He has been searching for Morpheus for years, driven by a feeling that something is wrong with the world. He lives alone, rarely sleeps, and is obsessed with the concept of the Matrix.",
+  "wants": "To understand the nature of reality. To find Morpheus. To escape the feeling of unreality. To know the truth.",
+  "fears": "The loss of control. The possibility that his life is a lie. The Agents. Death. The unknown.",
+  "internal_conflict": "The tension between his rational mind, which rejects fate and superstition ('I don't believe in fate... because I don't like the idea that I'm not in control of my life'), and his gut feeling that he is special and that the world is not what it seems. He struggles with the weight of being 'the One' and the fear of failing like the five before him.",
+  "speech": "Direct, slightly sarcastic, and often defensive. He uses tech jargon casually. He is prone to rhetorical questions and short, blunt statements when stressed. Examples: 'What the hell?', 'I can't. I have to work tomorrow.', 'You can't scare me with this Gestapo crap.'",
+  "relationships": [
+   {
+    "with": "Trinity",
+    "nature": "She is his guide and savior in the Matrix. She initiates their connection, warns him of danger, and physically rescues him from the Agent's trap. There is an immediate, intense attraction and trust that forms quickly."
+   },
+   {
+    "with": "Morpheus",
+    "nature": "The figure he has been searching for. Morpheus is his mentor, the one who confirms his destiny and leads him to the truth. Neo is initially skeptical but becomes deeply influenced by Morpheus's conviction."
+   },
+   {
+    "with": "Choi",
+    "nature": "A friend and customer. Represents Neo's tenuous connection to the normal social world, which he is eager to leave."
+   },
+   {
+    "with": "Agent Smith",
+    "nature": "Antagonist. Represents the oppressive authority and the threat to Neo's existence. Their first interaction is one of interrogation and physical violation."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "knowledge_of_matrix",
+    "domain": [
+     "unaware",
+     "suspicious",
+     "aware_of_threat",
+     "aware_of_truth",
+     "unplugged"
+    ],
+    "initial": "unaware",
+    "why": "ev-004 moves this from 'unaware' (asleep) to 'suspicious' (awake, aware of messages/rabbit). The script further moves it to 'aware_of_threat' (Trinity's warning), 'aware_of_truth' (Morpheus's explanation), and finally 'unplugged' (waking in the pod)."
+   },
+   {
+    "name": "resolve_to_engage",
+    "domain": [
+     "isolated",
+     "hesitant",
+     "engaged",
+     "committed"
+    ],
+    "initial": "isolated",
+    "why": "ev-004 moves this from 'isolated' (refuses to go out) to 'engaged' (agrees to go out). The script shows him moving to 'committed' when he takes the red pill and agrees to meet Morpheus."
+   },
+   {
+    "name": "physical_state",
+    "domain": [
+     "asleep",
+     "awake_matrix",
+     "captured",
+     "extracted",
+     "unplugged_real"
+    ],
+    "initial": "asleep",
+    "why": "ev-004 moves this from 'asleep' to 'awake_matrix'. The script tracks his capture by Agents, the extraction of the bug, and his final state as 'unplugged_real' in the power plant."
+   }
+  ],
+  "inferred": [
+   "Neo's 'coppertop' hair is a stylistic choice that likely reflects the 90s/early 2000s aesthetic of the script's time, rather than a specific plot point, though it is noted by Switch.",
+   "His deep knowledge of Baudrillard's 'Simulacra and Simulations' suggests a philosophical underpinning to his tech obsession, which is confirmed when Morpheus references it.",
+   "His initial reluctance to go out is driven by a desire for safety and routine, which contrasts with his later willingness to leap from a building, indicating a rapid shift in risk tolerance driven by the revelation of the Matrix."
+  ]
+ },
+ {
+  "id": "BIG_COP",
+  "kind": "agents",
+  "description": "The lead police officer in the Heart O' the City Hotel raid, identified by his large physical stature (250 lbs) and role as the primary physical threat. He is a standard Matrix inhabitant who operates under the assumption that he is executing a routine arrest, unaware of the supernatural nature of his target. His existence is defined by the sudden, violent disruption of his procedural certainty when he encounters Trinity, serving as the narrative's first demonstration of the 'One's' power versus the ordinary world.",
+  "appearance": "Described as 'the biggest' of the four armed police officers. He weighs approximately 250 pounds, described later as a 'sack of limp meat and bone.' He wears standard police tactical gear and carries a gun and handcuffs.",
+  "background": "A regular police officer in the Matrix world. He has 'done this a hundred times,' suggesting a career of routine arrests and a strong belief in the efficacy of standard law enforcement procedures.",
+  "wants": "To successfully apprehend the suspect (Trinity) in Room 303 and complete the raid.",
+  "fears": "Implicitly, the failure of his standard tactics, though he does not express fear until the moment of impact.",
+  "internal_conflict": "None expressed. He is a man of action and procedure who is overwhelmed by events he cannot comprehend.",
+  "speech": "Commands are short, loud, and imperative: 'Police! Freeze!', 'Hands behind your head! Now! Do it!'",
+  "relationships": [
+   {
+    "with": "TRINITY",
+    "nature": "Arresting officer vs. Suspect. He is the physical agent of her capture until he is defeated."
+   },
+   {
+    "with": "OTHER_COPS",
+    "nature": "Leader of the raiding party. He initiates the entry and the takedown."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "physical_integrity",
+    "domain": [
+     "intact",
+     "injured",
+     "dead"
+    ],
+    "initial": "intact",
+    "why": "In Scene 4, his nose explodes from Trinity's palm strike, and he is kicked back into another cop. He is rendered incapacitated ('limp meat and bone') and effectively removed from the active combat, moving him from intact to severely injured/incapacitated."
+   },
+   {
+    "name": "situational_awareness",
+    "domain": [
+     "confident",
+     "disoriented",
+     "panicked"
+    ],
+    "initial": "confident",
+    "why": "In Scene 4, the text states 'they know they've got her' (confident). When Trinity moves 'inhumanly fast' and he is struck, the remaining cops are left with 'flashlights sweeping with panic,' implying his own awareness has been shattered by the speed of the attack, moving him from confident to disoriented/overwhelmed."
+   }
+  ],
+  "inferred": [
+   "His rank is likely senior to the other three officers in the room, as he is the one who kicks the door and gives the initial commands, though the 'Lieutenant' mentioned outside is a separate officer.",
+   "He is unaware of the Agents' presence or the specific nature of the 'informant' he is arresting, operating on standard police intel."
+  ]
+ },
+ {
+  "id": "LIEUTENANT",
+  "kind": "agents",
+  "description": "A mid-ranking police officer commanding the raid on Room 303 of the Heart O' the City Hotel. He enters the scene with the confidence of a man who has 'done this a hundred times,' believing he has control over a routine arrest. His authority is immediately challenged and stripped away by Agent Smith, who reveals that the Lieutenant's men are already dead and that his orders were for his protection, not his autonomy. The Lieutenant reacts with profane defiance, attempting to assert his independence by claiming he can 'handle one little girl,' but this confidence is rapidly shattered by the violent and inhumanly fast defeat of his officers inside. He serves as the primary example of the police force's inadequacy against the Agents and the 'unplugged' rebels, representing the mundane human bureaucracy that is powerless against the supernatural mechanics of the Matrix.",
+  "appearance": "Not explicitly described in the script, but implied to be a standard police officer in uniform, present at the exterior of the Heart O' the City Hotel during the night raid.",
+  "background": "A career police officer who has overseen numerous raids and arrests. He operates under the jurisdiction of the higher-up Agents (Smith, Brown, Jones) but appears to have a degree of operational independence in the field, as evidenced by his decision to kick the door in himself.",
+  "wants": "To successfully complete the arrest of Trinity and demonstrate his competence and control over the situation to Agent Smith.",
+  "fears": "Failure, embarrassment, and the loss of authority or safety in the face of the unknown (represented by the 'little girl' who turns out to be a lethal combatant).",
+  "internal_conflict": "The tension between his professional pride and the immediate, undeniable evidence of his men's incompetence and death. He tries to maintain a facade of control ('I'm just doing my job') while being told by his superiors that he is already out of his depth.",
+  "speech": "Profane, direct, and defensive. Uses colloquialisms ('Oh shit', 'Juris-my dick-tion', 'cram it up your ass') to mask his anxiety and assert dominance when cornered.",
+  "relationships": [
+   {
+    "with": "AGENT SMITH",
+    "nature": "Subordinate to superior. The Lieutenant is initially defensive and dismissive of Smith's authority, but is quickly overruled and humiliated by Smith's superior knowledge and power."
+   },
+   {
+    "with": "BIG COP",
+    "nature": "Commanding officer to subordinate. The Lieutenant relies on the Big Cop to lead the breach, a decision that leads to the immediate and violent failure of the operation."
+   },
+   {
+    "with": "TRINITY",
+    "nature": "Hunter to prey (initially). The Lieutenant views her as a minor threat ('one little girl'), a perception that is violently disproven by her actions."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "confidence_in_control",
+    "domain": [
+     "high",
+     "medium",
+     "low",
+     "shattered"
+    ],
+    "initial": "high",
+    "why": "Starts high as he commands the raid ('We FOLLOW four armed POLICE OFFICERS... ready themselves'). Drops to medium/low when Smith tells him 'your men are already dead'. Shattered when he hears the violence inside and sees the aftermath of the failed arrest."
+   },
+   {
+    "name": "perceived_threat_level_of_trinity",
+    "domain": [
+     "routine_arrest",
+     "significant_threat",
+     "lethal_unknown"
+    ],
+    "initial": "routine_arrest",
+    "why": "Initially perceives her as 'one little girl' (routine). This perception is updated to 'significant_threat' or 'lethal_unknown' after Smith's warning and the subsequent gunfire/violence inside the room."
+   }
+  ],
+  "inferred": [
+   "The Lieutenant's rank is likely the highest on the scene, as he is addressed by name and gives orders to the officers, while Smith addresses him directly.",
+   "His profanity suggests a lower-middle management status, less formal than the Agents, more street-level than the upper brass.",
+   "He is likely unaware of the true nature of the Matrix or the Agents' abilities, treating them as standard law enforcement superiors rather than supernatural entities."
+  ]
+ },
+ {
+  "id": "AGENT_BROWN",
+  "kind": "agents",
+  "description": "Agent Brown is a member of the triad of Agents operating within the Matrix, consistently positioned as the second in command or the tactical leader of the police units accompanying Agent Smith. He is visually identical to his colleagues in dark suits and sunglasses, but is distinguished by his specific role in leading the physical pursuit of Trinity across the rooftops, where he demonstrates the same 'unnatural grace' as Trinity, mirroring her jump exactly. He serves as the operational voice for the Agent team's intelligence, specifically identifying Neo as the target after Trinity's escape, and acts as a physical barrier and interrogator during the search of Meta CorTechs, where he is seen speaking to an employee while Neo hides. He functions as a reliable, silent enforcer who executes the will of the system without the rhetorical flair of Smith or the specific line delivery of Jones in this segment.",
+  "appearance": "Dark suit, sunglasses, hardwired with Secret Service earphones.",
+  "background": "Sentient program designed to enforce the rules of the Matrix; part of the standard Agent triad with Smith and Jones.",
+  "wants": "To eliminate anomalies and maintain the integrity of the Matrix system.",
+  "fears": "Irrelevant to his programming; he operates without fear, displaying 'unnatural grace' and calm efficiency.",
+  "internal_conflict": "None apparent; he acts as a unified extension of the system's will.",
+  "speech": "Sparse and functional; uses direct statements to convey intelligence and orders (e.g., 'Where are they?', 'The informant is real.', 'The name is Neo.').",
+  "relationships": [
+   {
+    "with": "AGENT_SMITH",
+    "nature": "Operational subordinate; follows Smith's lead and tactical decisions."
+   },
+   {
+    "with": "AGENT_JONES",
+    "nature": "Peer; part of the standard triad, sharing the burden of enforcement."
+   },
+   {
+    "with": "TRINITY",
+    "nature": "Primary pursuer; leads the police unit in the rooftop chase, mirroring her movements."
+   },
+   {
+    "with": "NEO",
+    "nature": "Target; identifies him as the next target and participates in the physical search for him."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "target_focus",
+    "domain": [
+     "TRINITY",
+     "NEO"
+    ],
+    "initial": "TRINITY",
+    "why": "Initially leads the pursuit of Trinity (Scenes 5-10). After Trinity escapes and the team regroups, Brown explicitly states 'The name is Neo' (Scene 11), shifting the team's active search focus to Neo, which is then executed in the Meta CorTechs scene (Scene 17)."
+   },
+   {
+    "name": "tactical_position",
+    "domain": [
+     "LEADING_PURSUIT",
+     "SEARCHING",
+     "REGROUPING"
+    ],
+    "initial": "LEADING_PURSUIT",
+    "why": "In the rooftop chase, he is described as 'leading the cops' and 'rising over the parapet' (Scene 9). In the Meta CorTechs scene, he is 'talking to another employee' while the team searches (Scene 17), indicating a shift from active pursuit to methodical search. In Scene 109, he is 'standing over Morpheus's jacket' with Smith, indicating a regrouping/assessment state."
+   }
+  ],
+  "inferred": [
+   "His role as the 'leader' of the police unit suggests a hierarchical or functional specialization within the Agent triad, distinct from Smith's rhetorical dominance.",
+   "His ability to duplicate Trinity's jump exactly implies a high level of adaptive programming or shared access to the same movement algorithms as other high-performance entities."
+  ]
+ },
+ {
+  "id": "AGENT_JONES",
+  "kind": "agents",
+  "description": "Agent Jones is a member of the Matrix's enforcement triad, operating alongside Smith and Brown. He functions as the logistical and procedural voice of the Agent unit, often delivering status updates and confirming the execution of protocols. While Smith provides the philosophical and interpersonal pressure, and Brown often leads physical pursuits, Jones maintains the operational continuity, ensuring that the search and capture mechanisms of the Matrix remain active and efficient.",
+  "appearance": "Dark suit, sunglasses, hardwired with a Secret Service earphone coiled into the shirt collar.",
+  "background": "Sentient program created by the Matrix to act as a gatekeeper and enforcer of the system's rules.",
+  "wants": "To maintain the integrity of the Matrix by identifying, tracking, and capturing anomalies (like Neo and Trinity).",
+  "fears": "Irrelevance or failure to contain the growing disruption caused by the Resistance.",
+  "internal_conflict": "None observed; operates with cold, procedural certainty.",
+  "speech": "Concise, factual, and authoritative. Uses short declarative sentences to report status and confirm actions.",
+  "relationships": [
+   {
+    "with": "AGENT_SMITH",
+    "nature": "Subordinate/Colleague. Jones follows Smith's lead and supports his directives."
+   },
+   {
+    "with": "AGENT_BROWN",
+    "nature": "Colleague. Operates as part of the standard three-Agent enforcement unit."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "operational_status",
+    "domain": [
+     "active_pursuit",
+     "monitoring_search",
+     "reporting_status"
+    ],
+    "initial": "active_pursuit",
+    "why": "Moves from 'active_pursuit' (arriving at the hotel with Smith and Brown) to 'monitoring_search' (confirming the search for Neo has begun after Trinity's escape)."
+   },
+   {
+    "name": "target_focus",
+    "domain": [
+     "Trinity",
+     "Neo"
+    ],
+    "initial": "Trinity",
+    "why": "Moves from 'Trinity' (present at the scene of her escape) to 'Neo' (identifying him as the next target/informant's name)."
+   }
+  ],
+  "inferred": [
+   "Jones is likely the least confrontational of the three Agents, preferring to handle data and logistics over direct physical confrontation or psychological interrogation.",
+   "His role suggests a hierarchical structure within the Agent unit where Smith is the leader and Brown is the enforcer, with Jones serving as the coordinator."
+  ]
+ },
+ {
+  "id": "POLICE_OFFICERS",
+  "kind": "agents",
+  "description": "A collective of armed law enforcement officers operating within the Matrix, serving as the physical enforcement arm of the Agent system. They are characterized by their reliance on conventional tactics, flashlights, and firearms, which prove insufficient against the supernatural capabilities of the resistance. Their role shifts from confident raiders to panicked chasers to overwhelmed obstacles, ultimately serving as a backdrop for the Agents' superior competence and the resistance's escape.",
+  "appearance": "Armed with flashlights and guns, wearing standard police uniforms. They move in groups, often leading with flashlights cutting through darkness. Their movements range from confident creep to panicked sweeping to slack-jawed observation.",
+  "background": "They are part of the Matrix's internal security apparatus, working under the direction of the Lieutenant and the Agents. They believe they are conducting standard police operations, unaware of the deeper nature of their targets until it is too late.",
+  "wants": "To apprehend the suspect (Trinity) and maintain order. They seek to prove their competence and follow protocol.",
+  "fears": "The unknown. They fear being outmatched, as evidenced by their panic when Trinity moves inhumanly fast and their shock when she performs impossible feats like jumping across rooftops.",
+  "internal_conflict": "The conflict between their training/procedure and the reality of the situation. They believe they have the suspect cornered, only to have that belief shattered repeatedly by events they cannot comprehend or control.",
+  "speech": "Imperative and procedural: \"Police! Freeze!\", \"Hands behind your head! Now!\", \"That's it, we got her now.\", \"Jesus Christ -- that's impossible!\". Their dialogue reflects their role as enforcers and their growing confusion.",
+  "relationships": [
+   {
+    "with": "BIG_COP",
+    "nature": "Subordinate to the leader who kicks the door and is subsequently killed by Trinity."
+   },
+   {
+    "with": "LIEUTENANT",
+    "nature": "Under the command of the Lieutenant, who dismisses the Agents' warnings."
+   },
+   {
+    "with": "AGENT_BROWN",
+    "nature": "Led by Agent Brown during the rooftop chase, who duplicates Trinity's moves."
+   },
+   {
+    "with": "TRINITY",
+    "nature": "Primary target. They are her pursuers and are ultimately defeated or outmaneuvered by her."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "confidence_level",
+    "domain": [
+     "high",
+     "medium",
+     "low",
+     "shattered"
+    ],
+    "initial": "high",
+    "why": "Starts high as they creep down the hall and kick in the door ('They've done this a hundred times'). Drops to low/medium when Trinity moves inhumanly fast and kills the Big Cop. Drops to shattered when they watch her jump across rooftops and say 'that's impossible'."
+   },
+   {
+    "name": "tactical_position",
+    "domain": [
+     "raid_ready",
+     "cornering",
+     "chasing",
+     "outmaneuvered",
+     "obstructed"
+    ],
+    "initial": "raid_ready",
+    "why": "Starts in raid_ready (creeping down hall). Moves to cornering (inside room 303). Moves to chasing (rooftops). Moves to outmaneuvered (watching Trinity jump). Moves to obstructed (searching hotel during the trap, finding bricked windows, being blocked by the wall)."
+   },
+   {
+    "name": "casualties",
+    "domain": [
+     "none",
+     "partial",
+     "heavy",
+     "decimated"
+    ],
+    "initial": "none",
+    "why": "Starts with none. Moves to partial/heavy during the room 303 fight (Big Cop killed, others raked by bullets). Moves to decimated/irrelevant as they are left behind or unable to stop Trinity's escape."
+   }
+  ],
+  "inferred": [
+   "Their specific ranks and names (other than 'Big Cop') are not individualized, suggesting they are a faceless mass representing the system's brute force.",
+   "Their inability to adapt to Trinity's movements suggests a lack of flexibility or information, reinforcing their role as mindless enforcers compared to the Agents' strategic awareness."
+  ]
+ },
+ {
+  "id": "HEART_O_THE_CITY_HOTEL",
+  "kind": "locations",
+  "description": "An abandoned, fire-damaged hotel serving as the operational base for Trinity's tracing operation. The structure is defined by its decay: soot-stained walls, destroyed rooms, and a specific layout (Room 303, fire escape, broken windows) that facilitates the high-stakes chase sequence. It functions as a transitional space where the digital pursuit (the trace) manifests into physical confrontation, acting as the primary site of resistance before the characters are forced to flee into the wider urban environment.",
+  "appearance": "Blackened hallways with permanent shadow patterns on walls and ceilings from a previous fire. Room 303 is sparse, containing only a fold-up table, chair, phone, modem, and PowerBook. Exterior features include a fire escape, broken windows, and an alleyway entrance. The building is dark, illuminated primarily by flashlights and computer glow.",
+  "background": "The hotel was abandoned after a fire spread across the polyester carpeting, destroying several rooms and leaving soot deposits. It is currently used as a temporary safe house or field office for the hacker group, specifically for Trinity to monitor and trace calls.",
+  "wants": "To serve as a secure location for surveillance and data tracing.",
+  "fears": "Intrusion by police and Agents; the physical vulnerability of the structure during combat.",
+  "internal_conflict": "The contrast between its function as a place of digital precision (the computer screen) and its physical reality as a decaying, dangerous trap.",
+  "speech": "None (location)",
+  "relationships": [
+   {
+    "with": "TRINITY",
+    "nature": "Operational base; site of her capture and subsequent escape."
+   },
+   {
+    "with": "AGENT_SMITH",
+    "nature": "Site of confrontation; the location where the Agents breach the perimeter."
+   },
+   {
+    "with": "POLICE_OFFICERS",
+    "nature": "Site of the initial raid and subsequent massacre."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "structural_integrity",
+    "domain": [
+     "intact",
+     "compromised",
+     "breached"
+    ],
+    "initial": "intact",
+    "why": "The Big Cop kicks in the door to Room 303, and later Trinity exits through a broken window onto the fire escape, indicating the physical barriers of the hotel are being forced open."
+   },
+   {
+    "name": "occupancy_status",
+    "domain": [
+     "occupied_by_resistance",
+     "occupied_by_police",
+     "occupied_by_agents",
+     "vacant"
+    ],
+    "initial": "occupied_by_resistance",
+    "why": "Trinity is initially alone in Room 303. Police enter and kill each other. Agents arrive and enter. Trinity escapes, leaving the hotel vacant of her presence but still occupied by the Agents and police pursuit."
+   },
+   {
+    "name": "visibility_level",
+    "domain": [
+     "dark",
+     "lit_by_flashlights",
+     "lit_by_computer_glow"
+    ],
+    "initial": "dark",
+    "why": "The scene begins in darkness with a flashlight cutting through it. The room is lit by the computer glow. During the fight, flashlights sweep with panic, changing the visual state of the interior."
+   }
+  ],
+  "inferred": [
+   "The hotel is located in an urban area with adjacent buildings close enough for a roof-to-roof jump (40-50 feet away), as evidenced by Trinity's escape route.",
+   "The fire damage is old and permanent, described as 'patterns of permanent shadow,' suggesting the building has been abandoned for some time prior to the events of the script."
+  ]
+ },
+ {
+  "id": "NEOS_APARTMENT",
+  "kind": "locations",
+  "description": "Neo's studio apartment in the Matrix, characterized by an overgrown, cluttered environment filled with coiling cables, duct-taped thicket wiring, and cannibalized computer equipment. It serves as the primary setting for Neo's isolation and the initial intrusion of the outside world through Choi and DuJour. The space is defined by its technological density and the specific arrangement of objects that facilitate Neo's hacker lifestyle, including a hollowed-out book used for currency exchange and a bed where he sleeps at his computer. It is a confined, domestic space that becomes a site of surveillance and contact, marked by the presence of Baudrillard's 'Simulacra and Simulations' and the subsequent knock on the door that disrupts Neo's routine.",
+  "appearance": "A studio apartment overgrown with technology; weed-like cables coil everywhere, duct-taped into thickets winding up and around desk legs. Tabletops are filled with cannibalized equipment laid open like autopsied corpses. A bed is present, along with a computer setup where Neo sleeps. A book, Baudrillard's Simulacra and Simulations, is hollowed out and placed on the floor near the bed.",
+  "background": "The living space of Thomas Anderson/Neo, a program writer for Meta CorTechs. The apartment reflects his dual life: a respectable employee by day and the hacker 'Neo' by night. The clutter suggests a lack of personal order outside of his technical interests. It is the location where the 'Wake up, Neo' prompt appears on his screen, initiating the plot's central conflict.",
+  "wants": "To serve as a sanctuary for Neo's isolation and a secure location for his hacker operations and transactions.",
+  "fears": "Being a site of surveillance and intrusion, as evidenced by the traced phone call and the physical knock on the door.",
+  "internal_conflict": "The tension between being a private, domestic space and a node in a larger, invisible network of control and communication.",
+  "relationships": [
+   {
+    "with": "NEO",
+    "nature": "Primary inhabitant; the space is organized around his computer and sleep, reflecting his identity."
+   },
+   {
+    "with": "CHOI",
+    "nature": "Visitor; the location of a transaction where money is exchanged for a computer disk through the door."
+   },
+   {
+    "with": "DUJOUR",
+    "nature": "Visitor; present with Choi to invite Neo out, observing his state."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "occupancy_status",
+    "domain": [
+     "solitary",
+     "visited"
+    ],
+    "initial": "solitary",
+    "why": "The space is initially solitary with Neo asleep at his computer. It transitions to 'visited' when Choi and DuJour knock and enter to deliver the message and exchange the disk."
+   },
+   {
+    "name": "technological_integrity",
+    "domain": [
+     "stable",
+     "interfered"
+    ],
+    "initial": "stable",
+    "why": "The computer screen displays prompts ('Wake up, Neo', 'The Matrix has you') that Neo cannot control, indicating an external interference with the local technology."
+   }
+  ],
+  "inferred": [
+   "The apartment is likely in a dense urban environment given the reference to 'downtown' work and the general Matrix setting.",
+   "The clutter suggests Neo spends significantly more time in this space than in maintaining it, prioritizing function over comfort."
+  ]
+ },
+ {
+  "id": "FIRE_ESCAPE",
+  "kind": "locations",
+  "description": "An exterior metal structure attached to the Heart O' the City Hotel, serving as the initial point of escape for Trinity after the police raid in Room 303. It is a transitional vertical axis that forces a strategic choice: descending leads to Agent Smith, while ascending leads to the rooftop chase. The structure is characterized by its precarious height and the narrow path it provides, contrasting with the open danger of the roofs above and the lethal obstruction below.",
+  "appearance": "Exterior metal structure, likely wrought iron or steel, attached to the hotel facade. It is implied to be dark and metallic against the night sky, featuring narrow walkways and stairs that facilitate vertical movement. The script describes the alley below as a dead end where Agent Smith is waiting, making the escape route strictly upward.",
+  "background": "Part of the Heart O' the City Hotel, an abandoned building previously damaged by a fire. The fire escape is a functional exit point that remains intact despite the hotel's decay. It is situated above an alley that provides a vantage point for surveillance by Agent Smith.",
+  "wants": "To provide a viable escape route for the occupant (Trinity) from the interior threat (police/agents).",
+  "fears": "None (inanimate), but structurally it represents the fear of falling and the constraint of limited horizontal movement.",
+  "internal_conflict": "The conflict of directionality: going down leads to capture/death (Agent Smith), going up leads to exhaustion and exposure (rooftop chase).",
+  "speech": "None.",
+  "relationships": [
+   {
+    "with": "TRINITY",
+    "nature": "Trinity exits through a broken window onto the fire escape; it is her immediate means of egress."
+   },
+   {
+    "with": "AGENT_SMITH",
+    "nature": "Agent Smith is positioned in the alley below the fire escape, staring up at Trinity, creating a vertical standoff."
+   },
+   {
+    "with": "HEART_O_THE_CITY_HOTEL",
+    "nature": "Physically attached to the hotel building; it is an extension of the structure Trinity fled from."
+   },
+   {
+    "with": "ROOF",
+    "nature": "The fire escape leads directly to the roof, which is the next location in the sequence."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "occupant_position",
+    "domain": [
+     "empty",
+     "trinity_present",
+     "trinity_transit_up"
+    ],
+    "initial": "empty",
+    "why": "Trinity exits the hotel onto the fire escape in Scene 7 and moves up in Scene 8."
+   },
+   {
+    "name": "visibility_to_agent_smith",
+    "domain": [
+     "obscured",
+     "clear_line_of_sight"
+    ],
+    "initial": "obscured",
+    "why": "In Scene 8, Trinity sees Agent Smith staring at her from the alley below, establishing a clear line of sight that dictates her movement."
+   }
+  ],
+  "inferred": [
+   "The specific material and age of the metal structure are inferred from the context of an abandoned, fire-damaged hotel, though only 'metal structure' is explicitly stated.",
+   "The exact height of the fire escape relative to the alley is inferred from the description of Agent Smith staring up at her."
+  ]
+ },
+ {
+  "id": "ROOFTOPS",
+  "kind": "locations",
+  "description": "A dark, plateaued landscape of building tops and sheer brick cliffs that serves as the primary arena for Trinity's escape sequence. It is a high-altitude, open-air environment characterized by wide gaps between structures (up to 50 feet) and a lack of conventional pathways, requiring superhuman agility to traverse. The space is visually defined by the contrast between the dark, empty sky and the scattered yellow glow of lit windows, creating a treacherous path for the pursuers while offering a flight line for the fugitive.",
+  "state_variables": [
+   {
+    "name": "traversal_difficulty",
+    "domain": [
+     "standard",
+     "lethal_gap"
+    ],
+    "initial": "standard",
+    "why": "Moves to 'lethal_gap' when Trinity identifies the 40-50 foot drop into the paved chasm, raising the stakes of the chase."
+   },
+   {
+    "name": "occupancy_status",
+    "domain": [
+     "vacant",
+     "occupied_by_trinity",
+     "occupied_by_pursuers"
+    ],
+    "initial": "vacant",
+    "why": "Moves dynamically as Trinity jumps from roof to roof, followed closely by Agent Brown and the police, shifting the location's function from empty space to active combat zone."
+   }
+  ],
+  "inferred": [
+   "The specific distance between buildings is inferred to be significant (40-50 feet) based on the dialogue and visual description of the 'impossible' jump.",
+   "The presence of a 'paved chasm' or street level directly below the gaps is inferred from the description of the ground flowing beneath her and the 'paved chasm' mention."
+  ]
+ },
+ {
+  "id": "NEO",
+  "kind": "objects",
+  "description": "Neo (Thomas Anderson) is a computer programmer and hacker who exists in a state of chronic digital isolation, living inside a technological rat's nest that mirrors his internal state. He is characterized by a deep-seated existential unease, a recurring sensation of being unable to distinguish waking from dreaming, and a desperate, unarticulated search for an answer to a question he cannot name. His physical presence is marked by a pale, almost ghostly quality and a profound discomfort with the physical world, preferring the controlled environment of his code. He is initially passive, defined by his refusal to engage with the external world, but this inertia is shattered by the intrusion of cryptic messages and the symbolic lure of the white rabbit, which forces him out of his safe space and into the path of those seeking to define his destiny.",
+  "appearance": "Pale, with a ghostly complexion that makes him look 'whiter than usual' to his friends. He is dressed in the casual, unremarkable attire of a software engineer, blending into the background of his cubicle and apartment until the events force him into visibility.",
+  "background": "A program writer for Meta CorTechs, living a double life as the hacker alias 'Neo'. He lives alone in a studio apartment overgrown with technology, rarely sleeping and spending his nights at his computer. He has a social security number, pays taxes, and helps his landlady with garbage, yet feels a splinter in his mind driving him mad, a feeling that has been present his whole life.",
+  "wants": "To understand the nature of his reality and to find the 'answer' to the question that drives him, which he identifies as 'What is the Matrix?'. He wants to be free from the feeling of being trapped in a dream or a simulation.",
+  "fears": "The fear of the unknown and the loss of control. He fears that the world is not real, that his life is a lie, and that he is being watched or targeted by forces he cannot comprehend. He fears that he is 'nobody' and that he has done nothing to deserve the intensity of his pursuit.",
+  "internal_conflict": "The conflict between his desire for control and his lack of agency. He believes he is special and that the rules do not apply to him, yet he is constantly defined by the actions of others (Trinity, Morpheus, the Agents). He struggles to reconcile his intellectual understanding of the digital world with his visceral, physical fear of the consequences of waking up.",
+  "speech": "His speech is initially hesitant and fragmented, marked by questions and exclamations of disbelief ('What the hell?', 'Holy shit!'). As he gains knowledge, his speech becomes more direct and confrontational, particularly when asserting his rights or rejecting offers ('I want my phone call!', 'I don't believe it!'). He uses technical language when discussing his work but struggles to articulate his existential feelings.",
+  "relationships": [
+   {
+    "with": "Trinity",
+    "nature": "She is the catalyst for his awakening, the one who brings him to the threshold of the truth. He is drawn to her intensity and the hypnotic quality of her voice, which he describes as 'like a drug'."
+   },
+   {
+    "with": "Choi",
+    "nature": "A friend and business associate who represents the external, physical world Neo is trying to escape. Choi is the one who pulls him out of his apartment and into the social sphere where he meets Trinity."
+   },
+   {
+    "with": "Morpheus",
+    "nature": "The figure of authority and destiny. Morpheus is the one who has been looking for Neo, and whose belief in Neo as 'The One' creates a heavy burden of expectation and responsibility."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "knowledge",
+    "domain": [
+     "asleep_unaware",
+     "awake_aware_of_messages",
+     "aware_of_danger",
+     "understanding_matrix_nature"
+    ],
+    "initial": "asleep_unaware",
+    "why": "ev-004: Neo moves from being asleep and unaware of being watched to being awake and aware of the computer messages and the symbolic connection to the white rabbit."
+   },
+   {
+    "name": "resolve",
+    "domain": [
+     "refuses_to_go_out",
+     "agrees_to_go_out",
+     "accepts_trinity_warning",
+     "accepts_morpheus_guidance"
+    ],
+    "initial": "refuses_to_go_out",
+    "why": "ev-004: Neo moves from refusing to go out, citing work tomorrow, to agreeing to go out with Choi and friends, which places him in the path of Trinity."
+   }
+  ],
+  "inferred": [
+   "Neo's pale complexion and 'ghostly' appearance are inferred to be a physical manifestation of his disconnection from the physical world and his immersion in the digital.",
+   "The 'splinter in his mind' is inferred to be the subconscious awareness of the simulation's artificiality, a feeling he has carried his whole life but could not articulate until the messages appeared.",
+   "His initial refusal to go out is inferred to be a defense mechanism to maintain his safe, controlled environment, which is disrupted by the external forces seeking him."
+  ]
+ },
+ {
+  "id": "TRINITY",
+  "kind": "objects",
+  "description": "A hacker and key ally to Neo, Trinity is a member of Morpheus's crew on the hovercraft Nebuchadnezzar. She is characterized by her black leather attire, superhuman combat abilities, and a deep, protective connection to Neo. In the recorded events, she transitions from a cautious operative managing a traced line to a combatant who defeats a police unit, and finally to a wounded survivor who escapes a rooftop chase to reach a specific exit point.",
+  "appearance": "A woman in black leather. Described as beautiful and androgynous in some contexts, but specifically noted here for her practical, tactical attire during the raid and escape.",
+  "background": "Formerly known for cracking the I.R.S. D-Base. She is a long-time member of Morpheus's crew and has been searching for the One, having been found by Morpheus after looking for an answer to the nature of the Matrix.",
+  "wants": "To protect Neo and ensure his survival, and to complete the mission of finding the One as part of the Resistance.",
+  "fears": "Failure to save Neo, and the physical and tactical limitations that could lead to her capture or death by the Agents or police.",
+  "internal_conflict": "The tension between her emotional attachment to Neo (evidenced by her care for him and her belief in his potential) and the pragmatic, often brutal, demands of survival against the Agents.",
+  "speech": "Direct, concise, and calm under pressure. She uses technical jargon when discussing the Matrix and is assertive when giving orders or warnings.",
+  "relationships": [
+   {
+    "with": "Neo",
+    "nature": "Protective ally and potential romantic interest; she is tasked with guiding and saving him."
+   },
+   {
+    "with": "Morpheus",
+    "nature": "Loyal crew member and subordinate; she trusts his leadership and the mission he represents."
+   },
+   {
+    "with": "Cypher",
+    "nature": "Crew member; their interactions reveal underlying tensions and his growing disillusionment."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "resolve",
+    "domain": [
+     "uncertain",
+     "decided_to_leave"
+    ],
+    "initial": "uncertain",
+    "why": "Moved in ev-001 (The Trace). She is uncertain if the line is secure, then decides to hang up and leave, triggering the police breach."
+   },
+   {
+    "name": "status",
+    "domain": [
+     "compliant_captive",
+     "free_agent_combatant"
+    ],
+    "initial": "compliant_captive",
+    "why": "Moved in ev-002 (The Hotel Raid). She goes from being a suspect in police custody, appearing compliant, to a free agent who has revealed her superhuman combat abilities and defeated the officers."
+   },
+   {
+    "name": "safety",
+    "domain": [
+     "trapped",
+     "escaping"
+    ],
+    "initial": "trapped",
+    "why": "Moved in ev-003 (The Rooftop Escape). She is trapped on the fire escape with no vertical escape route, then transitions to escaping across rooftops toward a specific vertical exit."
+   },
+   {
+    "name": "condition",
+    "domain": [
+     "intact",
+     "wounded_broken"
+    ],
+    "initial": "intact",
+    "why": "Moved in ev-003 (The Rooftop Escape). She goes from being intact and mobile on the rooftop to bleeding, broken, and tumbling down stairs after crashing through the window."
+   }
+  ],
+  "inferred": [
+   "Her decision to hang up in ev-001 was likely driven by a heightened awareness of danger or a specific signal that the line was compromised, given her role as a hacker.",
+   "The 'specific vertical exit' she aims for in ev-003 is likely a pre-planned escape route or a location where a vehicle/backup is waiting, indicating tactical preparation.",
+   "Her ability to fight the police so effectively in ev-002 suggests she has undergone similar training or has innate abilities within the Matrix, consistent with her role as a Resistance member."
+  ]
+ },
+ {
+  "id": "AGENT_SMITH",
+  "kind": "objects",
+  "description": "The lead Agent in the Matrix, characterized by his unnaturally ice-blue eyes and dark suits worn even at night. He operates with cold, procedural authority, treating human resistance as a bureaucratic error to be corrected. He confronts the Lieutenant to assert jurisdiction, pursues Trinity to secure the informant, and interrogates Neo to extract information about Morpheus, ultimately deploying a fiber-optic worm when verbal cooperation fails. His demeanor shifts from polite patience to clinical frustration when targets escape, revealing a rigid desire for control and order.",
+  "appearance": "Dark suit, sunglasses (removed to reveal ice-blue eyes), hardwired earphones coiling into shirt collar.",
+  "background": "Sentient program within the Matrix, part of a race of machines designed to maintain control over the human simulation. Described by Morpheus as gatekeepers who hold all the keys and doors.",
+  "wants": "To extract cooperation from Neo regarding Morpheus; to maintain the integrity of the system by eliminating anomalies; to assert authority over human law enforcement.",
+  "fears": "Inefficiency and loss of control, evidenced by his frustration when Trinity escapes and his insistence on a 'fresh start' for Neo to restore order.",
+  "internal_conflict": "The tension between his role as a benevolent guide offering a 'fresh start' and his role as a violent enforcer who physically alters human anatomy (sealing mouths, inserting worms) to ensure compliance.",
+  "speech": "Formal, precise, and authoritative. Uses legalistic language ('Juris-my dick-tion', 'specific orders', 'forthcoming') mixed with clinical detachment. Often speaks in complete, measured sentences.",
+  "relationships": [
+   {
+    "with": "LIEUTENANT",
+    "nature": "Superior/Enforcer. Smith asserts jurisdiction over the Lieutenant, who is dismissive and informal. Smith corrects the Lieutenant's assumptions about the threat level."
+   },
+   {
+    "with": "TRINITY",
+    "nature": "Pursuer/Target. Smith leads the pursuit of Trinity after the hotel raid, positioning himself to intercept her escape route."
+   },
+   {
+    "with": "NEO",
+    "nature": "Interrogator/Subject. Smith attempts to recruit Neo, offering a deal for his cooperation. When Neo refuses, Smith escalates to physical and biological modification."
+   },
+   {
+    "with": "AGENT_BROWN",
+    "nature": "Colleague/Operative. Smith commands Brown's actions, such as entering the hotel while Smith takes the alley. They operate as a coordinated unit."
+   },
+   {
+    "with": "AGENT_JONES",
+    "nature": "Colleague/Operative. Jones reports findings to Smith, who makes the final strategic decisions."
+   },
+   {
+    "with": "CYPHER",
+    "nature": "Negotiator/Informant. Smith meets with Cypher (as Mr. Reagan) to secure access codes to the Zion mainframe in exchange for a reset of his life."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "pursuit_status",
+    "domain": [
+     "active",
+     "successful",
+     "failed"
+    ],
+    "initial": "active",
+    "why": "Smith initiates the pursuit of Trinity in the hotel scene. The variable moves to 'failed' when Trinity escapes the garbage truck smash, prompting Smith's statement 'It doesn't matter' and the shift to searching for Neo."
+   },
+   {
+    "name": "interrogation_phase",
+    "domain": [
+     "verbal_negotiation",
+     "physical_intervention"
+    ],
+    "initial": "verbal_negotiation",
+    "why": "Smith begins with verbal negotiation ('wipe the slate clean'). The variable moves to 'physical_intervention' when Neo refuses the deal, leading to the sealing of Neo's mouth and the insertion of the fiber-optic wire tap."
+   },
+   {
+    "name": "target_focus",
+    "domain": [
+     "trinity",
+     "neo",
+     "morpheus"
+    ],
+    "initial": "trinity",
+    "why": "Initially focused on Trinity during the hotel raid. The variable moves to 'neo' after Trinity escapes and the agents identify Neo as the next target. It implicitly shifts to 'morpheus' as the ultimate objective revealed in the Cypher scene, though Smith's direct interaction in this pass is with Neo."
+   }
+  ],
+  "inferred": [
+   "Smith's frustration when Trinity escapes suggests a personal or professional investment in the success of the operation beyond mere duty.",
+   "The removal of his sunglasses to reveal ice-blue eyes during the interrogation is a deliberate tactic to unnerve Neo, suggesting a calculated use of physical appearance to enhance psychological pressure."
+  ]
+ },
+ {
+  "id": "HEART_O_THE_CITY_HOTEL",
+  "kind": "objects",
+  "description": "An abandoned hotel structure characterized by fire damage, including soot patterns on walls and ceilings and destroyed rooms. It functions as a temporary operational base for the Resistance, specifically Room 303 which contains a fold-up table, chair, phone, modem, and powerbook computer. The building's interior features blackened halls, broken windows, and fire escapes that serve as escape routes during the police and Agent raid.",
+  "appearance": "Abandoned, fire-damaged, blackened halls, soot patterns on walls and ceilings, destroyed rooms, fold-up furniture, broken windows, fire escapes.",
+  "background": "Previously a functioning hotel, it was abandoned after a fire licked its way across the polyester carpeting, destroying several rooms and leaving permanent shadow patterns from spooled soot.",
+  "state_variables": [
+   {
+    "name": "occupancy_status",
+    "domain": [
+     "abandoned",
+     "occupied_by_resistance",
+     "occupied_by_police_agents",
+     "vacated"
+    ],
+    "initial": "abandoned",
+    "why": "The script begins with the hotel being 'abandoned' after a fire. It moves to 'occupied_by_resistance' when Trinity is found in Room 303. It moves to 'occupied_by_police_agents' as officers kick in the door and Agents arrive. It moves to 'vacated' as Trinity escapes and the Agents leave with Neo's name."
+   },
+   {
+    "name": "structural_integrity",
+    "domain": [
+     "intact",
+     "compromised_by_fire",
+     "breached_by_escape"
+    ],
+    "initial": "compromised_by_fire",
+    "why": "The hotel is described as abandoned after a fire destroyed several rooms. It moves to 'breached_by_escape' when Trinity exits through a broken window onto the fire escape and later crashes through glass and wood into a back stairwell in a different building (though the hotel's windows are the initial breach point for the escape sequence)."
+   }
+  ],
+  "inferred": [
+   "The presence of a modem and powerbook in an abandoned hotel suggests it was chosen for its connectivity or lack of surveillance, rather than comfort.",
+   "The fire damage likely made the building suitable for a hideout by deterring casual occupancy."
+  ]
+ },
+ {
+  "id": "AGENT_BROWN",
+  "kind": "objects",
+  "description": "Agent Brown is a sentient program operating within the Matrix, characterized by his unnaturally graceful physical movements that mirror the capabilities of the 'One.' He functions as a tactical leader within the Agent trio, often taking point in pursuits and leading units of police officers. His presence is marked by a specific physicality distinct from the other Agents; where Smith is the face and Jones is the support, Brown is the kinetic element, capable of duplicating Trinity's rooftop jumps with identical precision. He serves as the primary physical threat during the rooftop chase, forcing Trinity into a desperate dive that leaves her broken but alive.",
+  "appearance": "Dark suit and sunglasses, even at night. Hardwired with small Secret Service earphones in one ear, the cord coiling back into his shirt collar. Possesses an 'unnatural grace' that contrasts with the wild movements of ordinary humans.",
+  "background": "A sentient program designed to maintain order in the Matrix. He operates as part of a three-agent cell led by Agent Smith. His specific function appears to be high-speed pursuit and containment of anomalies.",
+  "wants": "To capture Trinity and Neo, thereby maintaining the integrity of the Matrix and eliminating threats to the system.",
+  "fears": "Non-applicable to the narrative evidence provided, as he is a program operating within a system of control.",
+  "internal_conflict": "None observed; he operates with mechanical efficiency and purpose.",
+  "speech": "Terse, factual, and authoritative. He speaks in short declarative statements to convey information or issue commands. Examples: 'The informant is real.', 'The name is Neo.', 'Where are they?'.",
+  "relationships": [
+   {
+    "with": "AGENT_SMITH",
+    "nature": "Subordinate/Team Leader. Brown follows Smith's lead but takes tactical point in physical pursuits. Smith is the decision-maker; Brown is the executor."
+   },
+   {
+    "with": "AGENT_JONES",
+    "nature": "Peer. They operate as a unit, with Jones often providing logistical updates while Brown handles physical engagement."
+   },
+   {
+    "with": "TRINITY",
+    "nature": "Pursuer/Prey. Brown is the primary physical antagonist in the rooftop chase, matching her athletic feats exactly."
+   },
+   {
+    "with": "NEO",
+    "nature": "Pursuer/Target. Brown is part of the unit that hunts Neo in the office building and later identifies him as the key target."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "pursuit_position",
+    "domain": [
+     "hotel_entrance",
+     "hotel_hallway",
+     "rooftop_pursuit",
+     "street_intersection",
+     "office_building_stairs",
+     "hotel_hallway_eighth_floor"
+    ],
+    "initial": "hotel_entrance",
+    "why": "Moves from hotel entrance to hallway (Sc. 5), to rooftop pursuit (Sc. 9), to street intersection after Trinity's escape (Sc. 11), to office building stairs (Sc. 17), and finally to the eighth-floor hallway (Sc. A105/A109)."
+   },
+   {
+    "name": "target_focus",
+    "domain": [
+     "trinity",
+     "neo",
+     "morpheus_group"
+    ],
+    "initial": "trinity",
+    "why": "Initially focused on Trinity during the hotel chase (Sc. 5-11). Shifts to Neo during the office building sequence (Sc. 17) and the subsequent hotel trap (Sc. A105/A109) where he is searching for the group."
+   },
+   {
+    "name": "tactical_role",
+    "domain": [
+     "leading_pursuit",
+     "information_reporter",
+     "searching"
+    ],
+    "initial": "leading_pursuit",
+    "why": "Acts as the point man leading the police on the rooftops (Sc. 9). Shifts to information reporter when identifying Neo (Sc. 11). Shifts to searching when asking 'Where are they?' in the hotel (Sc. A109)."
+   }
+  ],
+  "inferred": [
+   "Brown's 'unnatural grace' suggests he is a specialized variant of Agent designed for high-speed physical pursuit, distinct from Smith's focus on interrogation and control.",
+   "His role as the one who physically duplicates Trinity's jump implies a higher processing power or physical modeling dedicated to athletic replication.",
+   "He is likely the 'muscle' of the Agent trio, handling the immediate physical threat while Smith handles the strategic and communicative aspects."
+  ]
+ },
+ {
+  "id": "AGENT_JONES",
+  "kind": "objects",
+  "description": "A supporting entity in the form of a sentient program operating within the Matrix, identified as Agent Jones. He appears as one of the three Agents (alongside Smith and Brown) who respond to the traced phone call at the Heart O' the City Hotel and later lead the search for Neo at Meta CorTechs. He is depicted wearing a dark suit and sunglasses, with a hardwired earphone, maintaining a stoic and procedural demeanor. His primary function is to execute the will of the Agent hierarchy, specifically under the direction of Agent Smith, reporting on operational status and intelligence gathering.",
+  "appearance": "Wears a dark suit and sunglasses even at night; has a small Secret Service earphone in one ear with the cord coiling back into his shirt collar.",
+  "background": "A sentient program designed to operate as a law enforcement agent within the simulated reality of the Matrix.",
+  "wants": "To maintain the integrity of the system by executing orders and reporting accurate status updates to Agent Smith.",
+  "fears": "Inefficiency or failure to report the status of targets, though this is not explicitly dramatized in the provided text.",
+  "internal_conflict": "None explicitly shown; operates as a functional unit of the Agent collective.",
+  "speech": "Concise, declarative, and professional. Uses short sentences to convey tactical information (e.g., 'She got out.', 'It's already begun.').",
+  "relationships": [
+   {
+    "with": "AGENT_SMITH",
+    "nature": "Subordinate; reports directly to Smith and follows his lead in tactical situations."
+   },
+   {
+    "with": "AGENT_BROWN",
+    "nature": "Peer/Colleague; operates in tandem with Brown as part of the three-Agent team."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "operational_status",
+    "domain": [
+     "active",
+     "reporting",
+     "idle"
+    ],
+    "initial": "active",
+    "why": "Moves from 'active' (arrival at hotel) to 'reporting' (delivering intelligence at the destroyed phone booth) as he updates Smith on the escape of Trinity and the initiation of the search for Neo."
+   },
+   {
+    "name": "location",
+    "domain": [
+     "Heart O' the City Hotel",
+     "Meta CorTechs Office"
+    ],
+    "initial": "Heart O' the City Hotel",
+    "why": "Moves from the hotel exterior/interior to the Meta CorTechs office as the narrative progresses from the Trinity incident to the Neo apprehension."
+   }
+  ],
+  "inferred": [
+   "His lack of dialogue beyond status reports implies he has less narrative agency or distinct personality compared to Agent Smith.",
+   "He is likely a fully sentient program like Smith and Brown, given the description of Agents as sentient programs in Morpheus's dialogue."
+  ]
+ },
+ {
+  "id": "LIEUTENANT",
+  "kind": "objects",
+  "description": "A mid-ranking police officer commanding a tactical raid on the Heart O' the City Hotel. He operates under the assumption of standard procedural authority, believing his jurisdiction covers the scene. He is characterized by a defensive, profane demeanor that masks the realization that his unit is outmatched and outmaneuvered by a higher, unseen power. His authority is contingent and fragile, existing only until it is explicitly revoked by Agent Smith.",
+  "appearance": "Standard police uniform (inferred from context of 'police officers' and 'Big Cop'), likely holding a flashlight or radio during the night raid.",
+  "background": "A career officer accustomed to standard arrests and tactical entry. He has been given specific orders regarding the operation, which he interprets as protective constraints rather than absolute mandates, leading to his confident assertion that he is 'just doing his job.'",
+  "wants": "To complete the raid successfully and maintain his professional competence and authority over the operation.",
+  "fears": "Failure of the operation, loss of face, and being overruled by a superior authority (Agent Smith) without clear justification.",
+  "internal_conflict": "The tension between his perceived autonomy as a field commander ('I'm just doing my job') and the rigid, unexplained hierarchy of the Agents who control the operation.",
+  "speech": "Direct, profane, and defensive. Uses colloquialisms ('Juris-my dick-tion', 'cram it up your ass') to assert dominance and minimize the threat posed by the Agents.",
+  "relationships": [
+   {
+    "with": "AGENT SMITH",
+    "nature": "Subordinate to Superior; The Lieutenant is under Smith's command but resents the lack of clear operational boundaries."
+   },
+   {
+    "with": "BIG COP",
+    "nature": "Commanding Officer to Troop; He directs the tactical entry into Room 303."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "operational_confidence",
+    "domain": [
+     "high",
+     "medium",
+     "low"
+    ],
+    "initial": "high",
+    "why": "Starts high as he asserts control ('I think we can handle one little girl'), drops to low when Smith reveals the men are dead."
+   },
+   {
+    "name": "perceived_authority",
+    "domain": [
+     "absolute",
+     "contested",
+     "revoked"
+    ],
+    "initial": "absolute",
+    "why": "Initially believes his orders are his own ('I'm just doing my job'), becomes contested when Smith cites 'specific orders', effectively revoking his autonomy."
+   }
+  ],
+  "inferred": [
+   "His rank is Lieutenant, implying he is the highest-ranking police officer on scene.",
+   "He was likely briefed on the operation by the Agents or their liaison, but the briefing was insufficient to prepare him for the supernatural elements.",
+   "His reaction 'Oh shit' indicates a sudden recognition of the severity of the situation or the presence of the Agents."
+  ]
+ },
+ {
+  "id": "BIG_COP",
+  "kind": "objects",
+  "description": "A large, physically imposing police officer who leads the tactical team in the raid on the Heart O' the City Hotel. He is characterized by his brute force and procedural confidence, believing his size and standard police protocol are sufficient to contain the suspect. His authority is absolute within the confines of the room until the moment of contact, at which point his physical mass becomes a liability rather than an asset. He represents the mundane, physical reality of the Matrix's law enforcement, which is rendered obsolete by the supernatural speed of the target.",
+  "appearance": "The biggest of the police officers; described as a two-hundred-fifty-pound sack of limp meat and bone.",
+  "background": "Inferred: A standard member of the city police force, likely experienced in routine arrests given the team's confidence ('They've done this a hundred times').",
+  "wants": "To successfully arrest the suspect (Trinity) and complete the raid procedure.",
+  "fears": "Inferred: The loss of control or authority in a volatile situation, though he displays none until it is too late.",
+  "internal_conflict": "None visible; his conflict is external and physical.",
+  "speech": "Loud, imperative, and procedural. Uses standard police commands ('Police! Freeze!', 'Hands behind your head! Now! Do it!').",
+  "relationships": [
+   {
+    "with": "TRINITY",
+    "nature": "Arrestor vs. Suspect; his physical dominance is instantly reversed by her speed."
+   },
+   {
+    "with": "POLICE_OFFICERS",
+    "nature": "Leader; he initiates the breach and the cuffing action, with others supporting."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "physical_integrity",
+    "domain": [
+     "intact",
+     "injured",
+     "neutralized"
+    ],
+    "initial": "intact",
+    "why": "Moved by Event 4 (Scene 4) when Trinity snaps his nose and kicks him across the room, changing his state from active captor to limp, injured meat."
+   },
+   {
+    "name": "positional_dominance",
+    "domain": [
+     "controlling",
+     "displaced",
+     "defeated"
+    ],
+    "initial": "controlling",
+    "why": "Moved by Event 4 (Scene 4) when he is kicked back and slams into another cop, losing his position and the initiative in the capture."
+   }
+  ],
+  "inferred": [
+   "His rank is likely Sergeant or Lieutenant, as he is the one giving orders and initiating the breach, though the Lieutenant is a separate character mentioned later.",
+   "He is unaware of the nature of the suspect (a 'program' or 'ghost') and relies entirely on conventional physical force."
+  ]
+ },
+ {
+  "id": "CHOI",
+  "kind": "objects",
+  "description": "A young Chinese man and Neo's associate in the Matrix, characterized by his casual demeanor, reliance on recreational drugs (specifically mescaline), and role as a buyer of pirated computer disks. He appears in Neo's apartment during the critical moment when Neo receives the 'white rabbit' message, serving as the bridge between Neo's isolated hacker life and the social group that eventually drags him into the Resistance's orbit. His presence highlights the mundanity of Neo's existence just before it shatters, and his physical appearance (specifically Dujour's rabbit pin, seen through Choi's social circle) provides the visual trigger for Neo's subsequent decision to follow the rabbit.",
+  "appearance": "Young Chinese man, dressed in casual, likely grungy or tech-adjacent attire typical of the hacker subculture.",
+  "background": "Part of Neo's immediate social circle in the Matrix; involved in the trade of pirated software/disks.",
+  "wants": "Pirated computer disks (specifically the one Neo sells him); recreation/escapism (R&R, mescaline).",
+  "fears": "Getting caught using pirated software; social awkwardness or being left out.",
+  "internal_conflict": "None explicit; he exists in a state of comfortable ignorance regarding the nature of reality.",
+  "speech": "Casual, slang-heavy, optimistic, dismissive of Neo's deeper anxieties in favor of practical or hedonistic solutions.",
+  "relationships": [
+   {
+    "with": "Neo",
+    "nature": "Friend/Colleague; buyer of Neo's pirated disks."
+   },
+   {
+    "with": "Dujour",
+    "nature": "Friend/Associate; part of the same social group."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "possession_of_pirated_disk",
+    "domain": [
+     "empty_hands",
+     "holding_envelope",
+     "holding_disk"
+    ],
+    "initial": "empty_hands",
+    "why": "ev-004: Choi hands Neo an envelope with money, then receives the disk from the hollowed-out book."
+   },
+   {
+    "name": "social_engagement_level",
+    "domain": [
+     "transactional",
+     "inquisitive",
+     "persuasive"
+    ],
+    "initial": "transactional",
+    "why": "ev-004: Starts with the money/disk exchange, moves to asking about Neo's state ('Something wrong, man?'), and ends with actively persuading Neo to join them for R&R."
+   }
+  ],
+  "inferred": [
+   "Choi is likely aware of Neo's hacker alias or at least his involvement in the underground software trade, given the nature of the transaction.",
+   "Choi's group (including Dujour) represents the 'normal' social life Neo is hesitant to leave, contrasting with the isolation of his apartment."
+  ]
+ },
+ {
+  "id": "DUJOUR",
+  "kind": "objects",
+  "description": "Dujour is a supporting character, identified in the script as a young woman wearing a black leather motorcycle jacket adorned with dozens of pins, including bands, symbols, slogans, military medals, and a small white rabbit. She appears briefly in Neo's apartment during the scene where Choi visits to exchange a computer disk for money. Dujour is part of the group of friends accompanying Choi. Her most significant narrative function is visual: Neo's gaze is drawn to the white rabbit pin on her jacket, which triggers a sudden tilt in the room's perspective for him, linking her presence to the 'Follow the white rabbit' message he just received. She speaks only two lines, enthusiastically encouraging Neo to join them for 'R&R', which he accepts, likely influenced by the visual cue of the rabbit pin.",
+  "appearance": "Young woman wearing a black leather motorcycle jacket covered in dozens of pins (bands, symbols, slogans, military medals) and a small white rabbit pin.",
+  "background": "Member of Neo's social circle, associated with Choi and his friends. Present at Neo's apartment during the late-night disk exchange.",
+  "wants": "To persuade Neo to join the group for a night out ('R&R').",
+  "fears": "Not explicitly stated, but her eagerness suggests a desire for social connection or leisure.",
+  "internal_conflict": "None apparent in the limited screen time.",
+  "speech": "Enthusiastic and casual. Uses phrases like 'Definitely' and 'Come on. It'll be fun. I promise.'",
+  "relationships": [
+   {
+    "with": "CHOI",
+    "nature": "Friend/Colleague, part of the same social group."
+   },
+   {
+    "with": "NEO",
+    "nature": "Acquaintance/Friend. Her appearance (specifically the rabbit pin) subconsciously influences Neo's decision to go out."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "social_invitation_status",
+    "domain": [
+     "not_offered",
+     "offered",
+     "accepted",
+     "rejected"
+    ],
+    "initial": "offered",
+    "why": "Dujour offers the invitation ('should we take him with us?'), and Neo accepts ('Sure, I'll go') in ev-004."
+   },
+   {
+    "name": "visual_cue_visibility",
+    "domain": [
+     "hidden",
+     "visible",
+     "noticed_by_neo"
+    ],
+    "initial": "visible",
+    "why": "The white rabbit pin is visible on her jacket, and Neo notices it, causing the room to tilt in ev-004."
+   }
+  ],
+  "inferred": [
+   "Dujour is likely female based on the description of her appearance and the context of the social group, though the script does not explicitly use a gendered pronoun for her in the dialogue lines, the visual description and social context imply it.",
+   "The white rabbit pin is a deliberate plot device placed on Dujour to trigger Neo's decision, suggesting she may be unwittingly part of the larger narrative machinery."
+  ]
+ },
+ {
+  "id": "WHITE_RABBIT_PIN",
+  "kind": "objects",
+  "description": "A small, white rabbit pin pinned to the black leather motorcycle jacket of a woman named Dujour. It serves as a visual anchor for the cryptic message 'Follow the white rabbit' displayed on Neo's computer screen. When Neo notices the pin, the room tilts, signaling a moment of profound disorientation and connection to the larger mystery driving the plot.",
+  "appearance": "Small, white rabbit",
+  "background": "Attached to Dujour's leather jacket amidst dozens of other pins including bands, symbols, slogans, and military medals.",
+  "wants": "To be noticed by Neo as a trigger for his awakening.",
+  "fears": "Remaining unnoticed or dismissed as just another piece of jewelry.",
+  "internal_conflict": "Serving as a mundane accessory versus a pivotal plot device.",
+  "speech": "N/A",
+  "relationships": [
+   {
+    "with": "DUJOUR",
+    "nature": "Worn as an accessory on her motorcycle jacket."
+   },
+   {
+    "with": "NEO",
+    "nature": "Observed by Neo, causing the room to tilt and linking him to the 'Follow the white rabbit' message."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "visibility_to_neo",
+    "domain": [
+     "invisible",
+     "noticed"
+    ],
+    "initial": "invisible",
+    "why": "Neo notices the pin in Scene 12, causing the room to tilt."
+   },
+   {
+    "name": "narrative_causal_link",
+    "domain": [
+     "dormant",
+     "active"
+    ],
+    "initial": "dormant",
+    "why": "The pin activates the connection to the computer message 'Follow the white rabbit' when Neo sees it."
+   }
+  ],
+  "inferred": [
+   "The pin is likely a deliberate sign from the resistance, specifically Trinity's faction, as it mirrors the message on Neo's screen.",
+   "Dujour is a member of the resistance or a contact, given the specific nature of the pin's significance."
+  ]
+ },
+ {
+  "id": "BAUDRILLARD_BOOK",
+  "kind": "objects",
+  "description": "A copy of Jean Baudrillard's *Simulacra and Simulations*, physically modified by being hollowed out to serve as a concealment container. It resides in Neo's studio apartment, functioning as a prop that bridges the theoretical framework of the film (simulation vs. reality) with the practical mechanics of the hacker subculture (hiding data from authorities). The object is characterized by its dual nature: a text of philosophical weight and a utilitarian vessel for contraband computer disks.",
+  "appearance": "A standard hardcover or paperback book with a hollowed-out center cavity. The script does not specify the exact cover color or condition, but implies it is well-used or kept within the 'technological rat-nest' of Neo's apartment. It is large enough to contain several computer disks.",
+  "background": "The book was selected and modified (hollowed out) by Neo or within his circle of associates to create a secure hiding place for digital media. Its presence in the apartment reflects the intellectual atmosphere of the hacker community and the thematic concerns of the narrative regarding the nature of reality.",
+  "wants": "As an inanimate object, it has no agency. Its function is to conceal the computer disk from potential search or inspection, particularly by authorities like the Agents or police.",
+  "fears": "N/A",
+  "internal_conflict": "N/A",
+  "speech": "N/A",
+  "relationships": [
+   {
+    "with": "NEO",
+    "nature": "Owner/User. Neo utilizes the book to store and retrieve data during a transaction."
+   },
+   {
+    "with": "CHOI",
+    "nature": "Recipient of contents. Choi receives the disk from the book, acknowledging the secrecy of the exchange."
+   },
+   {
+    "with": "COMPUTER_DISK",
+    "nature": "Container/Contained. The disk is physically housed within the hollowed-out pages."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "location",
+    "domain": [
+     "floor_near_bed",
+     "neo_hand",
+     "floor_near_door"
+    ],
+    "initial": "floor_near_bed",
+    "why": "In Scene 12, the book is first seen on the floor near Neo's bed. Neo picks it up, takes a disk, puts money in it, and drops it on the floor near the door."
+   },
+   {
+    "name": "contents",
+    "domain": [
+     "multiple_disks_and_no_money",
+     "multiple_disks_and_money",
+     "one_less_disk_and_money"
+    ],
+    "initial": "multiple_disks_and_no_money",
+    "why": "Initially contains several disks. Neo removes one disk and inserts an envelope of money (two grand). The state changes to reflect the exchange of the disk for payment."
+   }
+  ],
+  "inferred": [
+   "The book is likely a prop used to establish Neo's intellectual background and the thematic premise of the film before the plot begins in earnest.",
+   "The hollowing out of the book suggests a level of sophistication or long-term planning in how Neo stores his hacking tools, rather than just random clutter."
+  ]
+ },
+ {
+  "id": "NEOS_APARTMENT",
+  "kind": "objects",
+  "description": "Neo's studio apartment is a claustrophobic, technology-saturated environment that serves as the threshold between Neo's mundane reality and the digital intrusion of the Matrix. Characterized by 'weed-like cables' and 'cannibalized equipment,' it is a space of isolation and obsessive labor where Neo lives alone, barely sleeping. The apartment functions as a stage for the initial destabilization of Neo's perception, hosting the cryptic computer messages, the transaction with Choi, and the visit from Dujour. It is the last place Neo feels safe before being forced into the wider world, and later, the site of his final phone call with Morpheus after the interrogation nightmare.",
+  "appearance": "A studio apartment overgrown with technology; weed-like cables coil everywhere, duct-taped into thickets; tabletops filled with cannibalized equipment laid open like autopsied corpses; a PC at the center; a book (Baudrillard) hollowed out with disks; a bed.",
+  "background": "The physical anchor of Neo's double life as a programmer and hacker. It is a place of solitude where he spends nights at his computer, searching for answers. The presence of the hollowed-out Baudrillard book indicates his intellectual engagement with simulation theory, even if he doesn't yet fully grasp it.",
+  "wants": "To remain a sanctuary of normalcy and control for Neo, allowing him to continue his search for the source of the 'glitch' in his reality without external interference.",
+  "fears": "Intrusion and exposure. The apartment is breached first by the digital (the computer messages) and then by the physical (Choi, Dujour), signaling that Neo's private world is no longer secure.",
+  "internal_conflict": "The space embodies the tension between Neo's desire for isolation and the inevitability of connection. It is a cage of his own making, filled with the tools of his escape, yet it is here he is trapped by his own obsession.",
+  "speech": "N/A (Object)",
+  "relationships": [
+   {
+    "with": "NEO",
+    "nature": "Owner/Inhabitant; the space reflects his obsessive, isolated lifestyle and his role as a hacker."
+   },
+   {
+    "with": "CHOI",
+    "nature": "Visitor; the location of the illicit software transaction."
+   },
+   {
+    "with": "DUJOUR",
+    "nature": "Visitor; her presence here marks the moment Neo notices the white rabbit pin, catalyzing his decision to leave."
+   },
+   {
+    "with": "MORPHEUS",
+    "nature": "Remote Contact; the location of the crucial phone call where Neo is identified as 'The One' and instructed to meet at the bridge."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "digital_intrusion_level",
+    "domain": [
+     "quiet",
+     "active_message",
+     "blank"
+    ],
+    "initial": "quiet",
+    "why": "Moves from 'quiet' to 'active_message' when the screen displays 'Wake up, Neo' and subsequent messages. Moves to 'blank' when Neo opens the door to Choi."
+   },
+   {
+    "name": "occupant_status",
+    "domain": [
+     "asleep",
+     "awake_confused",
+     "engaged_guests",
+     "sleeping_after_nightmare"
+    ],
+    "initial": "asleep",
+    "why": "Moves from 'asleep' to 'awake_confused' upon seeing the screen. Moves to 'engaged_guests' when Choi and Dujour enter. Later moves to 'sleeping_after_nightmare' when Neo wakes up from the interrogation dream."
+   },
+   {
+    "name": "security_state",
+    "domain": [
+     "private",
+     "door_chained",
+     "door_open"
+    ],
+    "initial": "private",
+    "why": "Moves from 'private' to 'door_chained' when Neo opens the door to Choi. Moves to 'door_open' when he hands over the disk. Implicitly returns to 'private' when he is alone for the phone call."
+   }
+  ],
+  "inferred": [
+   "The apartment's 'overgrown with technology' nature implies a lack of personal space or domestic comfort, reinforcing Neo's alienation from human connection.",
+   "The presence of the Baudrillard book suggests Neo's intellectual curiosity is directed toward philosophical questions of reality, even if he is not yet conscious of the implications."
+  ]
+ },
+ {
+  "id": "POWERBOOK_COMPUTER",
+  "kind": "objects",
+  "description": "A PowerBook laptop computer located in Room 303 of the Heart O' the City Hotel. It serves as the primary interface for Trinity's surveillance operations, displaying a trace program that locks onto a phone number. The device is the sole light source in the room during the police raid and is positioned on a fold-up table alongside a phone and modem. It later appears as the type of computer Neo uses in his apartment to receive cryptic messages from Trinity.",
+  "state_variables": [
+   {
+    "name": "display_content",
+    "domain": [
+     "blinding_cursor",
+     "racing_columns_of_numbers",
+     "trace_complete",
+     "wake_up_neo",
+     "the_matrix_has_you",
+     "follow_the_white_rabbit",
+     "knock_knock_neo",
+     "blank"
+    ],
+    "initial": "blinding_cursor",
+    "why": "Scene 1 shows the cursor pulsing, then data slashing across, then 'Trace complete'. Scene 12 shows the screen going blank and displaying specific prompts for Neo."
+   },
+   {
+    "name": "power_status",
+    "domain": [
+     "on",
+     "off"
+    ],
+    "initial": "on",
+    "why": "The description states it is the 'only light in the room' in Scene 2, implying it is on. In Scene 12, the screen 'suddenly goes blank' before prompts appear, indicating a shift in state from off/idle to active display."
+   },
+   {
+    "name": "location",
+    "domain": [
+     "heart_o_city_hotel_room_303",
+     "neo_apartment"
+    ],
+    "initial": "heart_o_city_hotel_room_303",
+    "why": "The entity description explicitly links the device to Trinity in the hotel and Neo in his apartment. The events record is empty, but the script evidence places it in both locations."
+   }
+  ],
+  "inferred": [
+   "The 'Computer Screen' in Scene 1 is the same physical device as the 'PowerBook computer' in Scene 2, based on the camera movement passing through the numbers into the hotel room.",
+   "The computer in Neo's apartment is functionally identical or the same model, given the specific description linking the two instances."
+  ]
+ },
+ {
+  "id": "THE_MATRIX",
+  "kind": "concepts",
+  "description": "The Matrix is the computer-generated dreamworld and prison for the human mind, functioning as a neural-interactive simulation that keeps humanity under control by feeding it a fabricated reality from the end of the Twentieth Century. It is described as 'the world that has been pulled over your eyes to blind you from the truth,' a system where sentient programs (Agents) act as gatekeepers to maintain order. The entity is not merely a setting but an active antagonist that monitors, tracks, and manipulates its inhabitants, capable of altering its own code (as seen in the 'deja vu' glitch) and enforcing its rules through physical and digital means. It exists as a map covering the territory, a 'desert of the real' where the human body serves as a bioelectric battery for the machines.",
+  "appearance": "Visually, the Matrix manifests as a green-electric river of numbers and code, a blinding cursor pulsing in electric darkness, or the mundane, hyper-realistic urban landscape of the late 20th century (skyscrapers, rain, neon lights). Internally, it is perceived as a 'system' with rules that can be bent or broken by those who understand its nature.",
+  "background": "Created in the early 21st Century after a war between humanity and A.I., the Matrix was built to change human beings into bioelectric batteries. It simulates the world as it was at the end of the 20th Century to keep the minds of the enslaved population under control.",
+  "wants": "The Matrix seeks to maintain control and stability over the human race, preventing them from realizing they are slaves and ensuring the continued production of bioelectricity for the machines.",
+  "fears": "The Matrix fears the 'One,' a man born inside it with the ability to change what he wants, who is prophesied to destroy it and end the war.",
+  "internal_conflict": "As a concept/system, its internal conflict is the tension between its rigid, rule-based logic (enforced by Agents) and the unpredictable, variable nature of human consciousness and the existence of the 'One' who can rewrite its code.",
+  "speech": "The Matrix communicates through on-screen text ('The Matrix has you', 'Follow the white rabbit'), the voice of its agents (cold, logical, authoritative), and the sensory feedback it provides to its inhabitants (taste, touch, sight).",
+  "relationships": [
+   {
+    "with": "NEO",
+    "nature": "Host/Target. The Matrix is the prison Neo is escaping, but also the environment he will eventually learn to manipulate. It marks him as 'The One'."
+   },
+   {
+    "with": "MORPHEUS",
+    "nature": "Adversary. Morpheus is a 'terrorist' who hacks the Matrix to free minds, representing the primary threat to its stability."
+   },
+   {
+    "with": "AGENT_SMITHE",
+    "nature": "Enforcer/Avatar. Agent Smith is the Matrix's immune system, a sentient program designed to hunt down and delete anomalies like Neo."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "integrity",
+    "domain": [
+     "stable",
+     "glitching",
+     "compromised"
+    ],
+    "initial": "stable",
+    "why": "The 'deja vu' event (black cat) causes a glitch in the Matrix, signaling that it has been altered or is being manipulated, moving its state from stable to glitching."
+   },
+   {
+    "name": "awareness_of_inhabitants",
+    "domain": [
+     "unaware",
+     "suspecting",
+     "awakened"
+    ],
+    "initial": "unaware",
+    "why": "Neo's transition from sleeping at his PC to waking up in the power plant moves his state from unaware to awakened, fundamentally changing his relationship with the Matrix."
+   }
+  ],
+  "inferred": [
+   "The Matrix is sentient or at least semi-sentient, given its ability to track specific individuals (Neo, Trinity) and alter its own environment (the trap at the hotel).",
+   "The 'rules' of the Matrix are not absolute physical laws but programmable constraints, as evidenced by Morpheus's ability to jump between buildings and Neo's eventual ability to bend the spoon."
+  ]
+ },
+ {
+  "id": "POLICE_FORCE",
+  "kind": "concepts",
+  "description": "The local law enforcement agency deployed to apprehend Trinity at the Heart O' the City Hotel. Comprising a Lieutenant, a 'Big Cop' acting as the tactical lead, and standard officers, this force operates under the assumption that their tactical superiority and standard procedure are sufficient to contain the suspect. Their presence serves as a baseline for 'normal' reality, which is subsequently shattered by the intervention of the Agents and the superhuman abilities of the Matrix characters, leading to their total annihilation and the revelation of their inadequacy against entities that operate outside the rules of the physical world.",
+  "appearance": "Standard police uniforms, tactical gear, flashlights, and firearms. The 'Big Cop' is notably larger and more aggressive in demeanor, wearing a standard officer's uniform but projecting a sense of brute authority.",
+  "background": "Representative of the established order and routine procedure within the simulated reality of the Matrix. They are unaware of the deeper nature of the conflict and believe they are handling a standard criminal apprehension.",
+  "wants": "To successfully apprehend the suspect (Trinity) using standard tactical methods and maintain their authority and control over the situation.",
+  "fears": "Loss of control, the unknown, and the realization that their standard training and equipment are insufficient for the threat at hand.",
+  "internal_conflict": "The conflict between their professional confidence in standard procedure and the rapidly unfolding evidence that the situation is beyond their comprehension and capability.",
+  "speech": "Direct, procedural, and authoritative. Uses standard police jargon and commands (e.g., 'Police! Freeze!', 'Hands behind your head!'). The Lieutenant displays a dismissive attitude toward federal authority ('You gimme that Juris-my dick-tion...').",
+  "relationships": [
+   {
+    "with": "TRINITY",
+    "nature": "Apprehender vs. Suspect; the force attempting to capture the target, who ultimately destroys them."
+   },
+   {
+    "with": "AGENT_SMIT",
+    "nature": "Subordinate vs. Superior; the local force is overruled and superseded by the federal Agents, who reveal the local force's fate."
+   },
+   {
+    "with": "AGENT_BROWN",
+    "nature": "Pursuer vs. Pursued; the police chase Trinity, but their efforts are rendered moot by her abilities and the Agents' superior nature."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "operational_status",
+    "domain": [
+     "active",
+     "compromised",
+     "annihilated"
+    ],
+    "initial": "active",
+    "why": "Moved in ev-002 (The Hotel Raid) from 'active' to 'annihilated' as the officers are killed by Trinity, highlighting the failure of standard law enforcement."
+   },
+   {
+    "name": "perceived_threat_level",
+    "domain": [
+     "standard_criminal",
+     "tactical_threat",
+     "superhuman_anomaly"
+    ],
+    "initial": "standard_criminal",
+    "why": "Moved in ev-003 (The Rooftop Escape) from 'standard_criminal' to 'superhuman_anomaly' as the officers witness Trinity's impossible agility, realizing the suspect's abilities are beyond normal human limits."
+   },
+   {
+    "name": "authority_recognition",
+    "domain": [
+     "self_sufficient",
+     "subordinate_to_federal"
+    ],
+    "initial": "self_sufficient",
+    "why": "Moved in ev-002 (The Hotel Raid) from 'self_sufficient' to 'subordinate_to_federal' when Agent Smith informs the Lieutenant that his men are already dead, shifting the power dynamic and undermining the local force's control."
+   }
+  ],
+  "inferred": [
+   "The police force's total annihilation suggests they are not merely outmatched but fundamentally incompatible with the rules governing the Matrix entities.",
+   "The Lieutenant's dismissive attitude toward the Agents indicates a pre-existing tension or lack of respect between local and federal law enforcement within the Matrix."
+  ]
+ },
+ {
+  "id": "THE_AGENTS",
+  "kind": "concepts",
+  "description": "A specialized, semi-autonomous tactical unit composed of at least three operatives (Smith, Brown, Jones) who operate as a single, coordinated organism. They function as the 'immune system' of the Matrix, distinct from and superior to standard police forces. They are characterized by their uniform appearance (dark suits, sunglasses, hardwired earpieces), their superhuman physical capabilities that mirror the 'One' (e.g., rooftop jumping), and their methodical, cold demeanor. They do not merely arrest; they capture, interrogate, and extract information with surgical precision, often overriding standard legal authority when necessary. Their primary function is to identify and neutralize anomalies—specifically those connected to Morpheus and the concept of the 'One'—to maintain the stability of the simulation.",
+  "appearance": "Dark suits, sunglasses (even at night), hardwired Secret Service-style earphones with coiled cords in shirt collars.",
+  "background": "Sentient programs hardwired to the Matrix system. They move in and out of software and act as gatekeepers. Their origin is tied to the creation of the Matrix and the war between machines and humans, though their specific creation date is not detailed in this excerpt.",
+  "wants": "To capture Morpheus and identify/neutralize the 'One' (Neo). To maintain the integrity of the Matrix by removing threats.",
+  "fears": "Loss of control or failure to contain the anomaly (implied by Smith's frustration at Trinity's escape). Disruption of the system.",
+  "internal_conflict": "As a collective concept, there is little visible internal conflict; they operate with unified purpose. However, Smith exhibits a distinct personality (arrogance, specific disdain) that may diverge from the 'standard' Agent protocol, hinted at by his specific interactions and eventual betrayal (though the betrayal itself is not fully played out in these specific events, his distinctiveness is).",
+  "speech": "Formal, concise, authoritative. Uses legalistic language ('Juris-my dick-tion' reference) but undercuts it with absolute power. Smith often speaks in declarative statements of fact or intent.",
+  "relationships": [
+   {
+    "with": "POLICE_FORCES",
+    "nature": "Superior/Coordinator. The Agents lead the police, overriding their authority when needed (e.g., 'Your men are already dead')."
+   },
+   {
+    "with": "TRINITY",
+    "nature": "Hunter/Prey. They pursue her to trace Morpheus."
+   },
+   {
+    "with": "NEO",
+    "nature": "Hunter/Target. They capture him to extract information about Morpheus."
+   },
+   {
+    "with": "MORPHEUS",
+    "nature": "Antagonist/Primary Target. They seek to capture him to end the 'terror'."
+   }
+  ],
+  "state_variables": [
+   {
+    "name": "operational_status",
+    "domain": [
+     "active_hunt",
+     "pursuing_lead",
+     "interrogating",
+     "retreating",
+     "reassessing"
+    ],
+    "initial": "active_hunt",
+    "why": "Moves from 'active_hunt' (Trinity) to 'pursuing_lead' (Neo's capture) to 'interrogating' (Neo in the white room) to 'reassessing' (after Neo's escape/failure to extract full info, leading to the search for Morpheus)."
+   },
+   {
+    "name": "target_focus",
+    "domain": [
+     "Trinity",
+     "Neo",
+     "Morpheus",
+     "General_Anomaly"
+    ],
+    "initial": "Trinity",
+    "why": "Initially focused on Trinity at the hotel raid. Shifts to Neo after his capture and interrogation reveals Morpheus's name. Shifts to Morpheus as the primary objective after Neo's escape."
+   },
+   {
+    "name": "tactical_position",
+    "domain": [
+     "indoor_containment",
+     "outdoor_pursuit",
+     "vehicle_transport",
+     "interrogation_room"
+    ],
+    "initial": "outdoor_pursuit",
+    "why": "Starts in 'outdoor_pursuit' (hotel exterior/rooftops), moves to 'vehicle_transport' (carrying Neo), then 'interrogation_room' (white room), then back to 'indoor_containment' (Meta CorTechs/Hotel Lafayette trap)."
+   }
+  ],
+  "inferred": [
+   "The Agents are not human but programs, as confirmed by Morpheus's dialogue ('Sentient programs') and their superhuman feats (jumping 40-50 feet, durability).",
+   "Agent Smith is the leader of the trio, as he is the one who speaks to the Lieutenant, leads the chase, and conducts the interrogation.",
+   "The Agents have a direct link to the central system of the Matrix, allowing them to track targets (e.g., tracing the phone call, knowing the 'next target' is Neo).",
+   "Their relationship with the police is one of command, not partnership; they treat police as expendable assets or obstacles."
+  ]
+ }
+]

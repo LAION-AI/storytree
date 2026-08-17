@@ -1,0 +1,316 @@
+[
+ {
+  "event_id": "ev-001",
+  "name": "The Trace",
+  "location": "THE_MATRIX",
+  "what_happens": "The scene opens on a close-up of a computer screen in electric darkness, where a cursor pulses and a phone rings. We hear a conversation between Cypher and Trinity, who are discussing a target. Cypher expresses doubt about Trinity's feelings for the target, stating they are going to kill him, while Trinity references Morpheus's belief that the target is 'the One.' As they speak, a trace program runs on the screen, displaying racing columns of numbers that slowly fix into a 10-digit phone number. The camera moves closer as each digit locks in. The trace completes, revealing the call origin. Trinity asks if the line is clean, and Cypher confirms. She hangs up, and the camera passes through the numbers on the screen into the darkness.",
+  "participants": [
+   "Cypher",
+   "TRINITY"
+  ],
+  "entry_state": [
+   {
+    "who": "Cypher",
+    "state": "Monitoring the trace, questioning Trinity's loyalty/feelings"
+   },
+   {
+    "who": "TRINITY",
+    "state": "Monitoring the trace, defending her position regarding Morpheus"
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "Cypher / Trinity",
+    "axis": "knowledge",
+    "before": "Tracing the caller; location unknown",
+    "after": "Trace complete; caller identified at #312-555-0690",
+    "why_it_matters": "The successful trace provides the specific location that leads directly to the police raid and the capture of Trinity, initiating the chain of events that results in Morpheus's capture."
+   },
+   {
+    "who": "TRINITY",
+    "axis": "resolve",
+    "before": "Uncertain if the line is secure",
+    "after": "Decides to leave/hang up",
+    "why_it_matters": "Trinity's decision to hang up and exit the room is the immediate trigger for the police breach, as they enter the room just as she is leaving the screen's perspective."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "Cypher",
+    "state": "Confirmed the line was clean (which is later proven false)"
+   },
+   {
+    "who": "TRINITY",
+    "state": "Has hung up and is about to be found by police"
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of the Agents' pursuit of Morpheus and Neo, specifically the moment of betrayal by the Resistance.",
+    "evidence": [
+     "The trace reveals the location of the Resistance's hardline, which is later confirmed as a trap: 'TANK (V.O.) It's a trap!'",
+     "Trinity's dialogue 'Morpheus believes he is the One' connects this surveillance to the larger prophecy plot.",
+     "The successful trace leads directly to the police entering Room 303, where Trinity is found, which is the catalyst for the Agents arriving and capturing Morpheus later in the sequence."
+    ],
+    "confidence": 5
+   },
+   {
+    "claim": "This event establishes Cypher's internal conflict and potential betrayal.",
+    "evidence": [
+     "Cypher's dialogue: 'You like him, don't you? You like watching him?' and 'We're going to kill him. Do you understand that?'",
+     "Cypher's later line in the same sequence: 'Someone has to [say it to Morpheus].'",
+     "The trace being successful despite Cypher's assurance that the line was clean hints at the later revelation that Cypher was working with Agent Smith."
+    ],
+    "confidence": 4,
+    "alternative": "The trace could simply be a technical success by the Resistance, but the dialogue heavily implies Cypher's unease with Morpheus's leadership."
+   }
+  ],
+  "boundary_doubt": "The boundary is strictly limited to the phone conversation and the trace on the screen. It ends when Trinity hangs up and the camera passes through the numbers. The subsequent police raid (Scene 2) is a direct consequence but is a separate event unit involving different characters (police) and a new location (hotel interior).",
+  "scenes": [
+   "sc-001"
+  ]
+ },
+ {
+  "event_id": "ev-002",
+  "name": "The Hotel Raid",
+  "location": "Heart O' the City Hotel (INT. Room 303 & EXT.)",
+  "what_happens": "Police officers storm Room 303 of the abandoned Heart O' the City Hotel to arrest Trinity, who is tracing a phone call. As the lead officer moves to cuff her, Trinity displays inhuman speed and strength, killing the officers in a brief, violent exchange. Simultaneously, Agents Smith, Brown, and Jones arrive outside in a black sedan. Agent Smith confronts the Lieutenant overseeing the raid, calmly informing him that his police units are already dead, thereby asserting federal control over the situation before entering the hotel.",
+  "participants": [
+   "TRINITY",
+   "POLICE_FORCE",
+   "POLICE_FORCE",
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "POLICE_FORCE"
+  ],
+  "entry_state": [
+   {
+    "who": "TRINITY",
+    "state": "Actively tracing a call on a PowerBook computer in a secure, fire-damaged hotel room."
+   },
+   {
+    "who": "POLICE_FORCE",
+    "state": "Creeping down the hallway, armed and ready to execute a standard arrest."
+   },
+   {
+    "who": "POLICE_FORCE",
+    "state": "Commanding the police operation, confident in his jurisdiction and the ability of his men to subdue the suspect."
+   },
+   {
+    "who": "AGENTS",
+    "state": "Arriving at the scene, hardwired and ready to intervene."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "TRINITY",
+    "axis": "status",
+    "before": "Suspect in police custody, hands behind head, appearing compliant.",
+    "after": "Free agent, standing alone among dead officers, having revealed her superhuman combat abilities.",
+    "why_it_matters": "This is the first public display of Trinity's powers, establishing the physical threat level of the Resistance members to the Agents and Police."
+   },
+   {
+    "who": "POLICE_FORCE",
+    "axis": "condition",
+    "before": "Alive and actively apprehending the suspect.",
+    "after": "Dead.",
+    "why_it_matters": "The immediate failure of the local police force highlights the inadequacy of standard law enforcement against Matrix entities."
+   },
+   {
+    "who": "POLICE_FORCE",
+    "axis": "knowledge",
+    "before": "Believes his units are currently securing the suspect.",
+    "after": "Informed by Agent Smith that his men are already dead, undermining his control.",
+    "why_it_matters": "Shifts the power dynamic from local police to federal Agents, signaling that the situation is beyond standard police procedure."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "TRINITY",
+    "state": "Escaping the room, having killed the initial police unit, and now facing the Agents."
+   },
+   {
+    "who": "AGENTS",
+    "state": "Taking command of the scene, entering the hotel to pursue Trinity."
+   }
+  ],
+  "reversal": true,
+  "plot_speculation": [
+   {
+    "claim": "This event serves as the catalyst for the 'Hunt for Neo' thread, demonstrating the Agents' capability and the necessity of their intervention.",
+    "evidence": [
+     "Agent Smith's line 'No, Lieutenant, your men are already dead' establishes the Agents' superior awareness and lethality compared to the police.",
+     "The trace of the call in Scene 1 directly leads to this raid, linking the Resistance's communication methods to their vulnerability."
+    ],
+    "confidence": 9
+   },
+   {
+    "claim": "It establishes the hierarchy of threat: Police are disposable pawns, Agents are the true antagonists, and Resistance members possess superhuman abilities.",
+    "evidence": [
+     "Trinity kills the police with ease ('nose explodes', 'wrecking ball' kick).",
+     "The Lieutenant's dismissal of the Agents ('Juris-my dick-tion') is immediately invalidated by Smith's calm correction.",
+     "The Agents' synchronized arrival and calm demeanor contrast with the chaotic police raid."
+    ],
+    "confidence": 8
+   }
+  ],
+  "boundary_doubt": "The scenes provided (sc-002 through sc-007 and sc-011) contain significant repetition of the same beats (raid entry, fight, Agent arrival). The boundary seems to correctly capture the full arc of the raid and the Agent takeover, but the duplication of scene descriptions suggests the source material may have multiple takes or revisions of the same sequence, which are all included in this single event unit.",
+  "scenes": [
+   "sc-002",
+   "sc-003",
+   "sc-004",
+   "sc-005",
+   "sc-006",
+   "sc-007",
+   "sc-011"
+  ]
+ },
+ {
+  "event_id": "ev-003",
+  "name": "The Rooftop Escape",
+  "location": "EXT. HEART O' THE CITY HOTEL / EXT. ROOFTOPS / EXT. WINDOW",
+  "what_happens": "Trinity bursts from the hotel room onto a fire escape, only to find Agent Smith blocking her exit in the alley below. Forced to go up, she sprints across the rooftops, pursued by Agent Brown and a unit of police. The chase involves supernatural leaps over 40-foot gaps; while the police are left slack-jawed by the 'impossible' agility of Trinity and Agent Brown, Trinity spots a lit window 50 feet away. She dives through the gap, crashing through the glass and wood of the window into a back stairwell, where she tumbles down the stairs bleeding and broken, but alive.",
+  "participants": [
+   "TRINITY",
+   "THE_AGENTS",
+   "THE_AGENTS",
+   "POLICE_FORCE"
+  ],
+  "entry_state": [
+   {
+    "who": "TRINITY",
+    "state": "Trapped in a hotel room with police, having just fought off the first unit and realizing the line was traced."
+   },
+   {
+    "who": "THE_AGENTS",
+    "state": "Positioned in the alley below the fire escape, ready to intercept."
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "TRINITY",
+    "axis": "safety",
+    "before": "Trapped on the fire escape with no vertical escape route.",
+    "after": "Escaping across rooftops toward a specific vertical exit (the lit window).",
+    "why_it_matters": "Transforms the escape from a static defense into a high-stakes traversal, raising the stakes of her survival."
+   },
+   {
+    "who": "TRINITY",
+    "axis": "condition",
+    "before": "Intact and mobile on the rooftop.",
+    "after": "Bleeding, broken, and tumbling down stairs after crashing through the window.",
+    "why_it_matters": "Establishes the physical cost of her escape, ensuring she is vulnerable when she reaches the next phase (the phone booth)."
+   },
+   {
+    "who": "POLICE_FORCE",
+    "axis": "knowledge",
+    "before": "Chasing a suspect with standard tactical expectations.",
+    "after": "Witnessing supernatural feats of agility and realizing the suspect's abilities are 'impossible.'",
+    "why_it_matters": "Highlights the superhuman nature of the characters involved, distinguishing them from the ordinary police force."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "TRINITY",
+    "state": "Injured and in a back stairwell, having successfully evaded immediate capture by the Agents."
+   },
+   {
+    "who": "THE_AGENTS",
+    "state": "On the rooftop, having failed to catch Trinity before she entered the building."
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "This event serves the thread of establishing Trinity's competence and the 'superhuman' nature of the Resistance members, contrasting them with the Agents.",
+    "evidence": [
+     "Trinity's movements are described as 'clean, gliding... inhumanly fast.'",
+     "A COP exclaims 'Jesus Christ -- that's impossible!' after witnessing the 40-foot jump.",
+     "Agent Brown replicates the jump with 'unnatural grace,' showing the Agents are also superhuman but pursuing."
+    ],
+    "confidence": 9
+   },
+   {
+    "claim": "This escape is a direct consequence of the trace program mentioned in the opening, serving as the inciting incident for Trinity's pursuit and eventual death later in the film.",
+    "evidence": [
+     "Morpheus tells her 'The line was traced! I don't know how.' immediately before she runs.",
+     "The chase leads directly to the phone booth where she is killed by Agent Smith's truck."
+    ],
+    "confidence": 8
+   }
+  ],
+  "boundary_doubt": "None. The scenes clearly delineate the start (exiting the hotel) and end (crashing into the stairwell) of this specific chase sequence.",
+  "scenes": [
+   "sc-008",
+   "sc-009",
+   "sc-010"
+  ]
+ },
+ {
+  "event_id": "ev-004",
+  "name": "Neo's Warning",
+  "location": "NEOS_APARTMENT",
+  "what_happens": "Neo is asleep at his computer when the screen displays cryptic messages, including 'The Matrix has you' and 'Follow the white rabbit.' He is startled by a late arrival from Choi, who comes to buy a computer disk. During the transaction, Neo notices a small white rabbit pin on Dujour's leather jacket. This visual link to the computer message triggers a feeling of unreality, prompting Neo to abandon his plan to stay home and agree to go out with Choi and his friends.",
+  "participants": [
+   "NEO",
+   "CHOI",
+   "DUJOUR"
+  ],
+  "entry_state": [
+   {
+    "who": "NEO",
+    "state": "Asleep, unaware of being watched or targeted"
+   }
+  ],
+  "state_changes": [
+   {
+    "who": "NEO",
+    "axis": "knowledge",
+    "before": "Asleep, unaware of being watched or targeted",
+    "after": "Awake, aware of the computer messages and the symbolic connection to the white rabbit",
+    "why_it_matters": "The messages and the pin establish the first concrete link between Neo's isolated digital existence and the external forces (Trinity/Resistance) seeking him out."
+   },
+   {
+    "who": "NEO",
+    "axis": "resolve",
+    "before": "Refuses to go out, citing work tomorrow",
+    "after": "Agrees to go out with Choi and friends",
+    "why_it_matters": "This decision removes Neo from his safe space and places him directly in the path of Trinity, facilitating their first meeting."
+   }
+  ],
+  "exit_state": [
+   {
+    "who": "NEO",
+    "state": "Awake, unnerved by the 'unreal' feeling, and deciding to join Choi's group for the night"
+   }
+  ],
+  "reversal": false,
+  "plot_speculation": [
+   {
+    "claim": "The event serves the thread of 'The Hunt for the One,' where the Resistance actively seeks to contact Neo before the Agents do.",
+    "evidence": [
+     "The messages 'The Matrix has you' and 'Follow the white rabbit' are direct instructions from Trinity (confirmed in later scenes).",
+     "The white rabbit pin on Dujour's jacket is a deliberate signal linking the digital warning to the physical group.",
+     "The 'Knock, knock, Neo' message anticipates Choi's arrival, showing the Resistance is monitoring his immediate environment."
+    ],
+    "confidence": 5
+   },
+   {
+    "claim": "The event marks the beginning of Neo's transition from a passive hacker to an active participant in a larger mystery.",
+    "evidence": [
+     "Neo's initial state is 'asleep' and unaware.",
+     "His refusal to go out ('I have to work tomorrow') represents his attachment to the mundane reality.",
+     "His acceptance to go out ('Yeah, yeah. Sure, I'll go') is triggered by the surreal experience, indicating a shift in his perception of reality."
+    ],
+    "confidence": 4,
+    "alternative": "It could be seen as a coincidence, but the specific symbol (rabbit) and the timing of the knock suggest deliberate orchestration."
+   }
+  ],
+  "boundary_doubt": "None. The scene boundaries clearly encompass the awakening, the transaction, and the decision to leave.",
+  "scenes": [
+   "sc-012"
+  ]
+ }
+]
