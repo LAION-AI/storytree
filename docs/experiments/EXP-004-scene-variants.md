@@ -1,5 +1,13 @@
 # EXP-004 · Cutting context at the scene layer — and the supply bug underneath it
 
+> **Superseded below.** The offset bug this report diagnoses has been fixed and
+> all arms re-run. **Everything in the original report's Frame A results and
+> §"Is V1 better, or merely more literal" is measured on corrupted input and does
+> not describe the prompts.** The corrected scoring, over four arms, is in
+> [EXP-004b](#exp-004b--the-same-question-with-the-scenes-the-models-actually-saw)
+> at the end of this file. The supply-bug diagnosis itself stands and is the
+> reason the re-run exists.
+
 **Status: inconclusive on its own question, and refuted as a measurement.** V1
 scores **1.78/5** against the scenes it names, V0 **1.53/5**; four of six
 dimensions sit below 3.0 in both arms, so V1 misses the ≥4.0 bar by a wide
@@ -705,3 +713,189 @@ explicit statement that there is a gap. On sc-148 V3 scores 21/30, tied with V0.
 The mind passes are good at inferring interiority from behaviour. They are not
 yet reliably attending to interiority the script has already marked.
 
+## 4 · V2 against V3
+
+Two separate questions, with opposite answers.
+
+### The context boundary is a real and total difference
+
+**15 of 15 V2 nodes cite a later scene in `sets_up`. 0 of 15 V3 nodes do.**
+
+| | later-scene references | event references | unlabelled |
+|---|---|---|---|
+| V2 | **16** | 0 | 13 |
+| V3 | **0** | 27 | 3 |
+
+This is not a tendency, it is a clean partition. Every V2 node reaches forward
+into the next scene by name and describes what happens in it: sc-015 sets up
+sc-016's confrontation with the boss, sc-024 sets up sc-025's extraction
+procedure, sc-113 sets up sc-114 confirming the suspect went down inside the
+wall, sc-215 sets up sc-216's bullet-stopping. Every one of those is a training
+example that teaches a model to produce a claim it will have no basis for at
+generation time.
+
+**By the criterion that decides this experiment, V2 is unusable and V3 is
+usable, and the quality scores are irrelevant to that.** V2 and V3 are within
+0.01 of each other overall. It does not matter. A `sets_up` field derived from
+reading the next scene cannot go in the training set however well written it is,
+and V2's are uniformly derived that way.
+
+V3's forward-looking claims are grounded in the event layer where they should be.
+Its sc-164 Trinity block says her confidence in the escape is misplaced "because
+the helicopter will crash" — and `ev-028` says, in the event layer V3 was shown,
+that the damaged helicopter crashes into a skyscraper. That is a writer working
+from an outline, which is precisely the target.
+
+One qualification: V3 sometimes names an event and then describes scene-level
+detail inside it. Its sc-008 `sets_up` cites `ev-001` and then narrates the
+crash through the window and the phone booth. The event boundary is respected;
+the granularity instruction ("write what this scene sets in motion, not what a
+later scene does") is not always. That is a prompt-level fix, not a design flaw.
+
+### The `grounding` field is a real difference in the labels only
+
+The four-valued `grounding` splits 28 `in_this_scene` against 8
+`from_earlier_scenes`, with `from_the_event_shape` and `extrapolated` never used
+at all. Two of four values are dead.
+
+Worse, **15 of the 36 mind blocks carry a `grounding` that contradicts their own
+`basis` field** — 42%:
+
+| Pattern | count | example |
+|---|---|---|
+| `in_this_scene`, but `basis` cites another scene or an event | 13 | sc-200 Tank: `in_this_scene`, basis cites sc-198, sc-199 and ev-033 |
+| `from_earlier_scenes`, but `basis` cites nothing outside the scene | 2 | sc-164 Tank: basis is entirely the scene's own description |
+
+sc-164 has both errors in adjacent blocks, inverted: Tank is labelled
+`from_earlier_scenes` on purely in-scene evidence, and Trinity is labelled
+`in_this_scene` on a basis built from sc-163.
+
+So: **the field replaced a boolean that was 97% true with a four-value enum that
+is 58% self-consistent and uses half its range.** That is an improvement in
+distribution and not yet an improvement in signal. It cannot be used as a filter
+in its present state — but the fix is free, because `basis` already contains the
+provenance and can be checked against the label mechanically, exactly as the
+count above was produced.
+
+### Where the two arms differ in quality, they differ for one reason
+
+V3 is better on emotional intelligence (3.47 vs 3.20) and worse on fidelity (4.07
+vs 4.20). The fidelity gap is one scene: **V3's sc-097 scores 18/30 against V2's
+24/30 because it twice places Room 1313 in "the Oracle's apartment."** Room 1313
+is in the Hotel Lafayette. The error is in `dramatic_function`, the field a
+downstream event-layer agent would read first, and V3 had the correct location
+bound into its schema as a `const` while it wrote it.
+
+That is D1's failure mode from the original report reappearing in a new place. In
+EXP-004 the binding welded a true heading onto a false body. Here the heading is
+true, the body is true, and the *interpretation* contradicts both. Binding a
+field does not bind the prose that refers to it.
+
+## 5 · The short scenes
+
+Eight of fifteen sampled scenes are under 60 words; the median is 30.
+
+| | mean scene words | mean node words | ratio | calibration |
+|---|---|---|---|---|
+| V0 | 30.6 | 157 | 5.1× | 3.12 |
+| V1 | 30.6 | 119 | 3.9× | **4.12** |
+| V2 | 30.6 | 612 | 19.9× | 1.25 |
+| V3 | 30.6 | 597 | 19.4× | 1.38 |
+
+**The ~110-word schema floor is no longer binding, and it no longer hurts.**
+V1's shortest node is 91 words (sc-113, a 30-word scene, scored 26/30 with
+calibration 5). sc-015 gets 98 words for 12 words of slug line and scores
+calibration 5 — the node says there are no characters, records the one thing the
+line establishes, and stops. sc-200 gets 94. The floor has come down from ~110 to
+~91 and, more importantly, at 91 words of required scaffolding a careful reader
+no longer objects. Calibration 4.12 on the short band is V1's best score on any
+dimension in any band.
+
+**The floor that now binds is the mind pass, and it is nineteen times worse.**
+V2 and V3 write ~600 words about scenes of ~30, and the schema forces it: `minds`
+has `minItems: 1`, every block requires `wants`, `feels`, `shows` and a `basis`
+of `minLength: 30`, plus `dramatic_function` at `minLength: 40`. There is no way
+to say "there is no one here."
+
+The results are what that guarantees:
+
+- **sc-015**, twelve words naming a building. V2 invents a character called
+  "Viewer" and reads its mind. V3 invents "The Audience" and, in a second block,
+  reads the mind of **Meta CorTechs**, which "feels impervious, dominant, and
+  all-encompassing." Both score EI 1, because the dimension asks whether what
+  people want and conceal was read plausibly, and there are no people.
+- **sc-024**, twenty-three words of a car passing under street lights, no one
+  visible. V2 reads Neo, Trinity and Apoc at 629 words. V3 declares in
+  `uncertain` that it does not know who is driving or who is inside — and then
+  reads Neo's and Trinity's minds at length anyway. The schema made the
+  contradiction visible and did not prevent it.
+- **sc-113**, thirty words: cops sweep an empty room, and the camera — not the
+  cops — sees a hole in the wall. Both mind arms give the cops a reaction the
+  scene withholds: "their focus sharpens abruptly," "they appear composed."
+
+So the answer is that the floor moved rather than lifted. B1 and B4 solved
+short-scene calibration for the facts pass. The mind pass reintroduced the
+problem at four times the magnitude, because nothing in its schema or prompt
+carries the permission to write little that V1's system prompt carries
+explicitly.
+
+## Threats to validity
+
+- **n = 15, single sample per cell.** Only three comparisons in this report
+  separate at conventional thresholds: V1 > V0 overall (10–0–5, p = 0.002),
+  V3 > V1 on EI in long scenes (6/6, p = 0.031), V1 > V3 on calibration in short
+  scenes (8/8, p = 0.008). **The overall V1 / V2 / V3 ordering does not**
+  (9–4–2, p = 0.27), and should be read as "indistinguishable in aggregate, with
+  a large and consistent interaction underneath."
+- **One evaluator, not blind to arm.** Arms are trivially identifiable by node
+  length. This is the largest uncontrolled threat in the report and every
+  qualitative judgement above inherits it. A blind A/B remains the fix.
+- **The hybrid projection at 4.09 is post-hoc.** The threshold was chosen after
+  seeing the split. It is a prediction, not a measurement.
+- **The `sets_up` provenance count is mechanical and reliable** — it matches
+  `sc-\d{3}` references numerically greater than the node's own id, and the
+  15/15-vs-0/15 result was confirmed by reading all thirty fields. The
+  `grounding` consistency count is likewise mechanical, comparing the enum
+  against scene and event references in the block's own `basis`; it will miss a
+  block whose basis draws on earlier scenes without naming one.
+- **Rubric compression at the short end.** Six of the eight short scenes offer so
+  little that fidelity and completeness saturate near 5 for every arm, so
+  calibration carries almost all the between-arm variance there — the mirror of
+  the compression noted in the original report, and a reason the short-band means
+  should not be over-read beyond the calibration finding itself.
+- **The events file V3 was shown is itself a swarm artifact** and was not audited
+  for this run. V3's forward-looking claims are legal with respect to it; whether
+  they are *true* depends on `events_draft.json` being right.
+
+## What to try next, ranked
+
+Ordered by what this run showed failing. The earlier list's ranks 1–3 are done;
+ranks 4–7 are unaffected by this run and are not repeated.
+
+| Rank | Action | Why, from this run | Cost |
+|---|---|---|---|
+| **1** | **Gate the mind pass on scene size.** Run V1 alone below a word threshold, V1 + V3's pass B at or above it. Nothing else changes | The single largest result here. V3 wins EI 6/6 on scenes ≥150 words and loses calibration 8/8 on scenes <60. Re-slicing the scores already collected gives **4.09 with no dimension below 3.40** — the first configuration that would clear the bar. Also cuts the mind pass's token cost by roughly half, since it stops paying for the scenes it cannot help | trivial |
+| **2** | **Let the mind pass say there is nobody here.** Drop `minItems: 1` on `minds`; add V1's "write in proportion" paragraph to `MIND_SYSTEM`; make `dramatic_function` optional below the threshold | Calibration 1.25 / 1.38 on short scenes is a schema fact, not a model fact. It produced mind-readings of a building (sc-015), of "the Viewer" (sc-015, sc-024), and of cops the scene gives no reaction to (sc-113). This is rank 1's belt-and-braces: rank 1 stops the pass running, this stops it writing when it does | trivial |
+| **3** | **Check `grounding` against `basis` and fail the node.** The provenance is already written in `basis`; 15 of 36 blocks contradict it | The four-value enum is 58% self-consistent and uses two of its four values. As a filter it is currently worse than useless because it looks like a filter. The check is fifteen lines and was written to produce the table above | trivial |
+| **4** | **Require the mind pass to account for marked interiority.** Where the script itself names a concealment, a hesitation, or an unfinished line, the node must have a block that addresses it | All four arms walked past sc-148's "Because…" / "Uncertainty swallows her words and she is unable to tell him what she wants to" — the sample's clearest written-down concealment, in its richest scene, in the arm built to find concealments. Cheap to detect: stage directions containing *unable to*, *can't bring*, *swallows*, *doesn't say*, trailing ellipses on a speech | small |
+| **5** | **A `sets_up` provenance gate in CI.** Reject any node whose `sets_up` names a scene id greater than its own | 15/15 V2 nodes fail this and 0/15 V3 nodes do. It is the difference between usable and unusable training data, it is one regex, and it makes the train/inference boundary a checked property of the artifact rather than a property of the prompt that produced it | trivial |
+| **6** | **Cross-field consistency on the bound fields, extended to the prose.** Carried over from the earlier list at rank 7, and now with a second failure mode: `location` is bound as `const` and the *narrative* fields still contradict it | V3's sc-097 puts Room 1313 in "the Oracle's apartment" inside `dramatic_function`, while `location: "ROOM 1313"` sits above it as a `const`. Binding a field does not bind the prose that refers to it. Check that `summary` and `dramatic_function` do not name a location other than the bound one | small |
+| **7** | **Referent binding for deictic dialogue.** Where a scene's payload is a pronoun resolved by a later line ("I'm taking Neo to see **her**" … "The Oracle"), require the node to name what the pronoun resolves to and cite both lines | V1's worst fidelity error in the sample (sc-075) is exactly this and it is the scene's punchline. V0, V2 and V3 got it right, so it is not a hard problem — it is an error V1's close-reading discipline makes and its prompt does not guard | small |
+| **8** | **Blind A/B as the headline metric (F2), now with four arms.** Two nodes plus the true scene, "which describes it better" | Promoted from the earlier list's rank 5 and now urgent for a different reason: the arms are 0.41 apart overall and the single-evaluator threat is the largest one left. At this separation, evaluator bias and arm separation are the same size | small |
+| **9** | **Re-run V1 and the gated hybrid at n = 40 with three samples per cell.** V1 costs 31k tokens for fifteen scenes | Everything in this report except three comparisons is inside the noise floor. The interaction is worth measuring properly before anything is built on it, and the arm is cheap enough that there is no reason not to | small |
+| **10** | **Audit `events_draft.json` before trusting V3's forward claims.** V3's `sets_up` and several of its `wrong_because` clauses are true relative to the event layer and unverified against the script | This is the supply question one level up. The lesson of the offset bug was *validate the supply, not just the output*; V3 introduced a new input and it has not been validated | moderate |
+
+**Retired.** `tier1.overlap` as a headline metric: V0 65%, V1 76%, V2 72%,
+V3 77% against rubric means of 3.58, 4.02, 3.61, 3.62 — the metric ranks V3
+first and the rubric ranks it third, and V2 scores 0.983 on tier-1 while being
+the one arm disqualified outright. Keep it as the near-zero floor its docstring
+describes.
+
+**The general rule this run earns.** *An intervention that helps has a domain,
+and the domain is usually visible in the data before the intervention is written.*
+The mind passes were designed for scenes with people talking in them and applied
+to a sample whose median scene is thirty words of camera direction. Both of the
+failures that keep all four arms off the bar are the same mistake in different
+directions: V1 applies the discipline of a small scene to a large one, V2 and V3
+apply the apparatus of a large scene to a small one. Neither is wrong about what
+it does; both are wrong about where.
