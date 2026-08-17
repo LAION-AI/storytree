@@ -1,0 +1,17 @@
+ENSEMBLE · writer=glm-5.2-abliterated-q3km @ http://127.0.0.1:8099/v1
+           clerk =qwen3.8-27b @ http://127.0.0.1:8107/v1
+
+  === sc-001 ===
+      GLM   craft                     143s  out= 2,523   17.7 t/s
+Traceback (most recent call last):
+  File "/home/deployer/laion/bookwriter/reconstruct/tools/run_ensemble.py", line 134, in <module>
+    tr = build(project, sid, writer, book, True)
+  File "/home/deployer/laion/bookwriter/reconstruct/tools/run_ensemble.py", line 80, in build
+    return ensemble.split_scene(writer, book, scene, ents, blind, env, prompts,
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                schemas, book_focus=involved, events=evs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deployer/laion/bookwriter/reconstruct/scriptforge/ensemble.py", line 361, in split_scene
+    prompts["psych"](scene.scene_id, eid, entities[eid],
+                                          ~~~~~~~~^^^^^
+KeyError: 'BIG COP'

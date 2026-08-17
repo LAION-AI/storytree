@@ -1,0 +1,347 @@
+<meta charset="utf-8">
+<title>Bilanz nach zwei Tagen</title>
+<style>
+:root{
+  --ground:#e9ebee;--surface:#f7f8fa;--surface-2:#eef0f3;--sunken:#dfe3e8;
+  --ink:#161a1f;--ink-2:#39424d;--muted:#66717e;--faint:#93a0ae;
+  --line:#cfd6de;--line-soft:#dde3ea;
+  --heat:#c2451a;--heat-soft:#f0d5c9;--quench:#2f6f8f;--quench-soft:#cfdfe8;
+  --good:#3f7d55;--good-soft:#d6e6db;--crit:#b03b26;--crit-soft:#f2d7d1;
+  --warn:#8a6a12;--warn-soft:#f0e6cc;
+  --shadow:0 1px 2px rgba(20,28,38,.07),0 10px 28px -14px rgba(20,28,38,.25);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;
+  --line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--quench:#6aa8c6;--quench-soft:#152935;
+  --good:#67a97e;--good-soft:#17281d;--crit:#d4715c;--crit-soft:#2e1713;
+  --warn:#c99b45;--warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.75);
+}}
+:root[data-theme="dark"]{
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;
+  --line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--quench:#6aa8c6;--quench-soft:#152935;
+  --good:#67a97e;--good-soft:#17281d;--crit:#d4715c;--crit-soft:#2e1713;
+  --warn:#c99b45;--warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.75);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0}
+a{color:var(--quench)}
+.wrap{max-width:960px;margin:0 auto;padding:0 26px 100px}
+header.top{border-bottom:1px solid var(--line);background:var(--surface);margin-bottom:40px}
+header.top .wrap{padding-top:50px;padding-bottom:32px}
+.kicker{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--heat);
+  font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(29px,4.8vw,42px);line-height:1.12;letter-spacing:-.02em;margin-bottom:14px}
+.standfirst{font-size:18.5px;color:var(--ink-2);max-width:64ch;font-family:var(--serif);line-height:1.5}
+.meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:20px;font-size:12.5px;color:var(--faint);
+  font-family:var(--mono)}
+h2{font-size:25px;letter-spacing:-.015em;margin:52px 0 8px}
+h2 .num{font-family:var(--mono);font-size:12px;color:var(--heat);display:block;
+  margin-bottom:7px;letter-spacing:.08em;font-weight:700}
+h3{font-size:17.5px;margin:30px 0 9px}
+p{margin:0 0 14px;max-width:68ch}
+ul,ol{max-width:66ch;padding-left:22px}li{margin-bottom:8px}
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1.5px 5px;
+  border-radius:4px;border:1px solid var(--line-soft)}
+strong{font-weight:650}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:18px 0}
+th{text-align:left;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;padding:8px 12px 8px 0;border-bottom:1px solid var(--line)}
+td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line-soft);vertical-align:top}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;padding-right:0}
+tr.win td{background:var(--good-soft)}
+.scroll{overflow-x:auto}
+.good{color:var(--good);font-weight:650}.bad{color:var(--crit);font-weight:650}
+.warnc{color:var(--warn);font-weight:650}
+.punch{border-radius:9px;padding:18px 22px;margin:22px 0;border:1px solid;box-shadow:var(--shadow)}
+.punch.no{background:var(--crit-soft);border-color:var(--crit)}
+.punch.yes{background:var(--good-soft);border-color:var(--good)}
+.punch.hm{background:var(--warn-soft);border-color:var(--warn)}
+.punch .lbl{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.punch.no .lbl{color:var(--crit)}.punch.yes .lbl{color:var(--good)}.punch.hm .lbl{color:var(--warn)}
+.punch .big{font-family:var(--serif);font-size:20px;line-height:1.35;margin-bottom:8px}
+.punch p{margin-bottom:0;font-size:15px}
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;
+  padding:18px 22px;margin:20px 0}
+.eyebrow{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-bottom:9px}
+.analogy{background:var(--quench-soft);border-left:3px solid var(--quench);border-radius:0 8px 8px 0;
+  padding:15px 19px;margin:20px 0}
+.analogy .lbl{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--quench);
+  font-weight:700;margin-bottom:7px}
+.analogy p{margin-bottom:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;padding:14px 16px}
+.stat .n{font-family:var(--mono);font-size:22px;font-weight:700;line-height:1;
+  font-variant-numeric:tabular-nums}
+.stat .l{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-top:7px}
+.stat .s{font-size:12px;color:var(--muted);margin-top:4px}
+.note{font-size:13.5px;color:var(--muted)}
+.verdict{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
+@media(max-width:700px){.verdict{grid-template-columns:1fr}}
+.vb{border:1px solid var(--line-soft);border-radius:9px;padding:17px 20px;background:var(--surface)}
+.vb.yes{border-color:var(--good);background:var(--good-soft)}
+.vb.no{border-color:var(--crit);background:var(--crit-soft)}
+.vb h4{font-family:var(--serif);font-size:18px;margin:0 0 8px;font-weight:600}
+.vb ul{padding-left:18px;margin:8px 0 0;font-size:14.5px}
+.vb li{margin-bottom:5px}
+pre{background:var(--sunken);border:1px solid var(--line);border-radius:7px;padding:14px 16px;
+  overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:1.6;margin:16px 0}
+.ledger{font-family:var(--mono);font-size:13px;line-height:1.9;background:var(--surface);
+  border:1px solid var(--line-soft);border-radius:8px;padding:16px 19px;margin:18px 0;overflow-x:auto}
+.ledger .ok{color:var(--good)}.ledger .x{color:var(--crit)}.ledger .q{color:var(--warn)}
+hr{border:0;border-top:1px solid var(--line);margin:46px 0}
+footer{color:var(--faint);font-size:13px;border-top:1px solid var(--line);padding-top:20px;margin-top:48px}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="kicker">Bilanz · alle Experimente, alle Befunde</div>
+  <h1>Kann das autonom laufen?</h1>
+  <p class="standfirst">Zwei Tage, vier Bewertungsdurchgänge, zwei protokollierte Experimente,
+  vier Modellkonfigurationen und drei kaputte Messungen. Die kurze Antwort auf die Titelfrage
+  lautet: für die Szenen ja, für die Ebenen darüber noch nicht — und der Grund dafür ist der
+  nützlichste Befund von allen.</p>
+  <div class="meta"><span>17. August 2026</span><span>GLM-5.2 · Qwen3.8-27B · Ensemble</span>
+  <span>9 Knoten · 18 Dimensionen · 4 Arme</span></div>
+</div></header>
+
+<div class="wrap">
+
+<h2><span class="num">01</span>Wo die Pipeline steht</h2>
+
+<div class="scroll"><table>
+<thead><tr><th>Konfiguration</th><th class="num">Rubrik</th><th class="num">Wörter</th><th class="num">Verstöße/Szene</th><th class="num">min/Szene</th></tr></thead>
+<tbody>
+<tr><td>Qwen allein</td><td class="num">57,1%</td><td class="num">5.506</td><td class="num">5,33</td><td class="num">2,6</td></tr>
+<tr><td>Qwen + Schemabindung</td><td class="num">61,7%</td><td class="num">6.013</td><td class="num">4,00</td><td class="num">2,8</td></tr>
+<tr><td>GLM allein</td><td class="num">64,2%</td><td class="num">15.988</td><td class="num">5,00</td><td class="num">19,1</td></tr>
+<tr class="win"><td><strong>Ensemble</strong></td><td class="num"><strong>72,2%</strong></td><td class="num">10.354</td><td class="num good">0,67</td><td class="num">11,7</td></tr>
+</tbody></table></div>
+
+<p>Von 57% auf 72% in zwei Tagen, und der Zuwachs kam <strong>nicht</strong> aus besseren
+Modellen — es sind dieselben Gewichte wie am Anfang. Er kam aus Arbeitsteilung und aus
+Zwangsbedingungen im Schema.</p>
+
+<h2><span class="num">02</span>Die Antwort auf die Titelfrage</h2>
+
+<div class="verdict">
+  <div class="vb yes">
+    <h4>Die Szenenebene: ja</h4>
+    <ul>
+      <li>Spezifität 4,67 von 5</li>
+      <li>Dramatische Kompetenz 4,33</li>
+      <li>Psychologische Plausibilität 4,33</li>
+      <li>0,67 Erdungsverstöße pro Szene</li>
+      <li>alle Verstöße mechanisch auffindbar</li>
+    </ul>
+  </div>
+  <div class="vb no">
+    <h4>Die Ebenen darüber: nein</h4>
+    <ul>
+      <li>9 statt 30–40 geforderten Entitäten</li>
+      <li>daraus: alle 22 Ereignisse an einem Ort</li>
+      <li>daraus: ein ontologisch unmögliches Ende</li>
+      <li>0 Umkehrungen in 22 Ereignissen</li>
+      <li>und all das <em>ohne</em> einen einzigen Formatfehler</li>
+    </ul>
+  </div>
+</div>
+
+<div class="punch hm">
+  <div class="lbl">Der Kern des Problems</div>
+  <div class="big">Ein zu dünner Oberbau erwürgt alle Ebenen darunter, und zwar leise.</div>
+  <p>Die Ereignisebene konnte die Geschichte nicht an einen zweiten Ort verlegen, weil nur
+  <em>eine</em> Ortsentität existierte. Sie konnte die Demütigung des Antagonisten nicht
+  verfolgen, weil er drei Zustandsvariablen hatte. Kein Aufruf war für sich falsch. Der Fehler
+  lag eine Ebene höher und wurde nach unten durchgereicht.</p>
+</div>
+
+<h2><span class="num">03</span>Für 100 Bücher: der Kostenrahmen</h2>
+
+<div class="grid">
+  <div class="stat"><div class="n">19 h</div><div class="l">pro Drehbuch</div><div class="s">GH200, mit Prüfschleife</div></div>
+  <div class="stat"><div class="n">~15.000</div><div class="l">GPU-Stunden</div><div class="s">für 100 Bücher</div></div>
+  <div class="stat"><div class="n">37 h</div><div class="l">Wandzeit</div><div class="s">auf 50 Knoten</div></div>
+  <div class="stat"><div class="n">1%</div><div class="l">Buchhalter</div><div class="s">der Modellzeit</div></div>
+</div>
+
+<p>100 Drehbücher sind peinlich parallel — jedes läuft unabhängig, also verteilt sich die
+Wandzeit beliebig über Knoten, während die GPU-Stunden konstant bleiben. Auf 10 Knoten acht Tage,
+auf 50 Knoten anderthalb.</p>
+
+<div class="punch no">
+  <div class="lbl">Die eine Zahl, die vor einem Antrag gemessen gehört</div>
+  <div class="big">Nebenläufigkeit trennt 59.000 von 9.500 GPU-Stunden — Faktor sechs.</div>
+  <p>Auf unserer Hardware bringt gleichzeitiges Arbeiten bei GLM gemessen <strong>null</strong>
+  Zusatzdurchsatz. Ob das an der Modellarchitektur liegt oder an der Serving-Software, entscheidet
+  die gesamte Kalkulation — und ist mit einem Knoten und einer Stunde messbar.</p>
+</div>
+
+<p class="note">Nebenbei: FP8 ist für dieses Modell die falsche Bitte. Es liest 2,2× mehr Bytes pro
+Token als unsere aktuelle Quantisierung und macht das Dekodieren dadurch <em>langsamer</em>, nicht
+schneller — und passt zudem auf keine der erwogenen Konfigurationen.</p>
+
+<h2><span class="num">04</span>Was die Experimente sagen</h2>
+
+<h3>EXP-001 — Anweisungen reparieren manches, anderes nicht</h3>
+<p>Ein Prompt-Zusatz aus den gemessenen Fehlern half bei der übertriebenen Selbstsicherheit
+(95→85, 90→65 auf beiden Szenen gleichgerichtet) und <strong>verschlechterte</strong> die
+Ortstreue.</p>
+
+<p>Die Erklärung ist strukturell: <strong>Selbstsicherheit ist ein lokales Feld</strong>, das an
+einer Stelle gefüllt wird — dort erreicht es eine Anweisung. <strong>Ortstreue ist eine globale
+Bedingung</strong> über die ganze Ausgabe hinweg, und sie stand bereits im Prompt.</p>
+
+<p>Daraus die offene Hypothese: Wenn Aufmerksamkeit für Anweisungen selbst ein Budget ist,
+verdrängen neue Klauseln die vorhandenen — <em>dieselbe</em> Verdünnung, die wir am
+Ausgabevolumen gemessen haben, nur an der Anweisungstreue. Prompt-Reparaturen ließen sich dann
+nicht stapeln.</p>
+
+<h3>EXP-002 — Zwang schafft, was Bitten nicht schafft</h3>
+<p>Ort, Besetzung und Entitäts-IDs als unveränderliche Werte ins Schema gebunden, und zwar als
+<em>erstes</em> Feld, damit das Modell die Fakten in den eigenen Kontext schreibt, bevor es denkt:
+<strong>90/180 → 111/180</strong>, neun von zwölf Dimensionen besser.</p>
+
+<div class="analogy"><div class="lbl">Der Mechanismus war nicht der vorhergesagte</div>
+<p>Erwartet war, dass Erdung nur die <em>Zulässigkeit</em> von Behauptungen regelt. Tatsächlich
+gilt: in den richtigen Raum gezwungen zu werden machte die Analyse zum <strong>richtigen
+Konflikt</strong>. Ohne Bindung verlegte das Modell die halbe Szene woandershin und produzierte
+eine Parallelmontage, in der niemand jemanden opponiert.</p></div>
+
+<h2><span class="num">05</span>Was wir gelernt haben</h2>
+
+<h3>Über Modelle</h3>
+<ul>
+<li><strong>Aufwand skaliert nicht mit der Aufgabe.</strong> Vier Figurenanalysen in einem Aufruf
+ergeben vier Hülsen; vier Aufrufe zu je einer ergeben vier vollständige. Das Modell hat ein Budget
+und teilt es. Diese eine Erkenntnis ist der Unterschied zwischen 0 von 4 und 4 von 4 bestandenen
+Szenen.</li>
+<li><strong>Selbstbewertung funktioniert nicht.</strong> 95% Sicherheit auf einer dreifach
+falschen Prognose. Und wo ein Aufruf seine eigenen Prüfkriterien erfand, meldete er null von
+fünfzehn Fehlschlägen.</li>
+<li><strong>Modelle scheitern in entgegengesetzte Richtungen.</strong> Das eine schreibt tief und
+rechnet falsch, das andere umgekehrt — und genau das macht die Arbeitsteilung möglich.</li>
+<li><strong>83,6% aller erzeugten Token sind verstecktes Denken</strong>, dessen Abschaltung in
+unseren Messungen keine Qualität kostete. Und der naheliegende Schalter dafür ist ein stiller
+Nulleffekt, der in Wahrheit das Maximum wählt.</li>
+</ul>
+
+<h3>Über Architektur</h3>
+<ul>
+<li><strong>Alles, was aus Dateien entscheidbar ist, gehört nie an ein Modell.</strong> Ist die
+Figur im Raum? Gehört die Variable dieser Entität? Liegt der Wert in der Wertemenge? Eine Funktion
+irrt sich dabei nicht.</li>
+<li><strong>Ein geschlossener Wortschatz schlägt eine Fähigkeit.</strong> Der Buchhalter muss
+nicht <em>wissen</em>, welche Variablen existieren — er bekommt die zulässigen Tripel und wählt
+daraus. Kostet 1% der Modellzeit und trägt den größten Teil der Konsistenzverbesserung.</li>
+<li><strong>Sprechen, Anwesendsein und Besprochenwerden sind drei Mengen.</strong> Sie zu
+vermengen hat einen hohlen Knoten erzeugt, der Erfolg meldete — und eine Bedingung, die den
+Fehler erzwang, den sie verhindern sollte.</li>
+</ul>
+
+<h3>Über Messung — der teuerste Abschnitt</h3>
+
+<div class="punch no">
+  <div class="lbl">Drei kaputte Messungen, dieselbe Form</div>
+  <div class="big">Jede lieferte eine selbstbewusste Zahl über der falschen Sache. Keine ist laut
+  gescheitert.</div>
+</div>
+
+<div class="ledger">
+<span class="x">✗</span> Trajektorienprüfung testete ein Feld, das das Schema nie hatte
+    → alles galt als „flach", auch was sich bewegte<br>
+<span class="x">✗</span> Leck-Detektor zerlegte rohes JSON, Interpunktion klebte an den Wörtern
+    → meldete 0,000% auf einem Text mit wörtlich übernommener Dialogzeile<br>
+<span class="x">✗</span> Erdungsprüfung las die Feldnamen eines anderen Schemas
+    → meldete jede Änderung als Verstoß, prüfte Leerläufe nie<br>
+<br>
+<span class="q">?</span> und einmal prüfte ich gegen eine Liste, die mein eigener Code erfunden hatte
+    → „null Fremdsprecher" hieß nur: das Modell gehorcht meiner Erfindung
+</div>
+
+<p>Der letzte Fall ist der schlimmste, weil er nicht nur falsch maß, sondern den Fehler
+<em>erzwang</em>: mein Schema verlangte per fester Listenlänge, dass zwei abwesende Figuren als
+anwesend geführt werden. Das Modell gehorchte, und die Bewertung wertete das als schwersten
+Einzelfehler des Durchgangs.</p>
+
+<div class="analogy"><div class="lbl">Die Regeln, die sich daraus selbst verdient haben</div>
+<p><strong>Niemals gegen eine Liste prüfen, die die eigene Apparatur erzeugt hat</strong> — das
+misst Gehorsam, nicht Richtigkeit. <strong>Die Metrik validieren, bevor man dem Ergebnis
+glaubt.</strong> Und <strong>trocken testen, bevor man Rechenzeit ausgibt</strong>: zwei der
+Fehler oben fielen erst nach einem vollen Lauf auf, zwei weitere wurden von einem
+Zehn-Sekunden-Trockenlauf abgefangen.</p></div>
+
+<h2><span class="num">06</span>Was als Nächstes am meisten bringt</h2>
+
+<div class="scroll"><table>
+<thead><tr><th>Maßnahme</th><th class="num">Aufwand</th><th>Erwarteter Effekt</th></tr></thead>
+<tbody>
+<tr><td><strong>Obere Ebenen aufteilen</strong> — eine Entität pro Aufruf statt alle 35</td><td class="num good">+3 h auf 66</td><td class="good">behebt einen aktiven Fehler, nicht nur eine Schwäche</td></tr>
+<tr><td>Mindestanforderungen erzwingen — Entitätenzahl, Ortsanzahl, Umkehrungsdichte</td><td class="num good">Stunden</td><td class="good">fängt genau die Fehler, die alles darunter vergiften</td></tr>
+<tr><td>Nebenläufigkeit auf Zielhardware messen</td><td class="num good">1 Knoten, 1 h</td><td class="good">entscheidet über Faktor 6 im Budget</td></tr>
+<tr><td>Kritik auf das schnelle Modell verlagern</td><td class="num">1 Lauf</td><td>~20% Zeitersparnis, Qualitätsrisiko gering</td></tr>
+<tr><td>Prüfschleife von 3 auf 2 Runden</td><td class="num">—</td><td class="warnc">bereits eingerechnet; ungemessen</td></tr>
+</tbody></table></div>
+
+<p>Die erste Zeile ist die wichtigste, und sie ist zugleich die billigste. Die Szenenebene wurde
+durch Aufteilen von „durchgefallen" auf „bestanden" gehoben — <strong>die Ebenen darüber haben
+diese Behandlung nie bekommen</strong> und zeigen exakt dieselben Symptome.</p>
+
+<h2><span class="num">07</span>Das ehrliche Fazit</h2>
+
+<p><strong>Für einen ersten autonomen Lauf über 100 Bücher würde ich heute nicht starten</strong>
+— nicht wegen der Szenen, sondern weil ein zu dünner Oberbau alles darunter unbrauchbar macht und
+dabei jede Formatprüfung besteht. Bei 100 Büchern ohne Aufsicht ist das der Fehler, den man erst
+am Ende sieht.</p>
+
+<p><strong>Was ich stattdessen täte:</strong> die Ebenen-Aufteilung einbauen (drei Stunden auf 66),
+die Mindestanforderungen erzwingen, die Nebenläufigkeit messen — und dann fünf Bücher fahren und
+lesen. Wenn deren Oberbau trägt, trägt er auch bei hundert.</p>
+
+<div class="punch yes">
+  <div class="lbl">Was klar funktioniert</div>
+  <div class="big">Die Werkzeuge finden inzwischen mechanisch, wofür es vorher einen aufmerksamen
+  Leser brauchte.</div>
+  <p>Gegen die bestehenden Ausgaben laufen gelassen, reproduzieren die neuen Prüfungen jeden
+  Befund, den ein Bewertungsdurchgang durch Lesen fand: den Zustandswechsel für eine abwesende
+  Figur, die Ein-Ort-Geschichte, die zu dünne Ortsebene, und die Ortsvariable, die einen Ort
+  zulässt, den es nie gab. Das ist die Voraussetzung für Autonomie — nicht dass keine Fehler
+  passieren, sondern dass sie ohne Aufsicht auffallen.</p>
+</div>
+
+<hr>
+<h2 style="margin-top:0">Kurz gefasst</h2>
+<ol>
+<li><strong>72,2% gegen 57,1%</strong> in zwei Tagen, bei unveränderten Modellgewichten. Der
+Zuwachs kam aus Arbeitsteilung und Zwangsbedingungen, nicht aus besseren Modellen.</li>
+<li><strong>Die Szenenebene ist autonomiefähig</strong>, die Ebenen darüber sind es nicht — und
+die Ursache ist ein Oberbau, der leise zu dünn ausfällt.</li>
+<li><strong>Rund 15.000 GPU-Stunden für 100 Bücher</strong>, mit einer Unsicherheit von Faktor
+sechs, die an einer einzigen ungemessenen Zahl hängt.</li>
+<li><strong>Bitten repariert lokale Felder, Zwang repariert globale Bedingungen.</strong> Diese
+Unterscheidung entscheidet, ob man am Prompt arbeitet oder am Schema.</li>
+<li><strong>Drei meiner Messungen waren kaputt</strong>, alle auf dieselbe Weise. Das steht in den
+Protokollen, weil ein Ergebnis nur so viel wert ist wie das Werkzeug, das es erzeugt hat.</li>
+</ol>
+
+<footer>
+Alle Zahlen aus Läufen auf dieser Maschine, 15.–17. August 2026. Rubrik mit verankerten
+Beschreibungen für die Noten 1, 3 und 5. Bewertung, Experimentprotokolle und Quellcode im
+Projektarchiv.<br>
+Weiterführend: <a href="ensemble.html">Das Ensemble im Detail</a> ·
+<a href="modelle.html">Modelleignung</a> · <a href="qualitaet.html">Qualitätsvergleich</a> ·
+<a href="rekonstruktion-skalierung.html">Kosten und Hochrechnung</a> ·
+<a href="prosa-research.html">Prosa-Recherche</a> · <a href="index.html">alle Projekte</a>.
+</footer>
+</div>

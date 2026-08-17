@@ -30,7 +30,8 @@ from scriptforge import jsonschema_mini as js
 from scriptforge.nodegen import entity_digest
 from scriptforge.pipeline import Project
 from scriptforge.transitions import (
-    PSYCH_SCHEMA, SPECIMEN_SCHEMA, TRANSITION_SCHEMA, grade, score_transition,
+    CONTINUITY_SCHEMA, DYNAMICS_SCHEMA, PSYCH_SCHEMA, SPECIMEN_SCHEMA,
+    TRANSITION_SCHEMA, grade, score_transition,
 )
 
 
@@ -62,9 +63,12 @@ def build(project: Project, scene_id: str, writer, book, think_ctx: bool) -> dic
         "craft": scaffold.craft_prompt,
         "psych": scaffold.psych_prompt,
         "specimen": scaffold.specimen_prompt,
+        "dynamics": scaffold.dynamics_prompt,
+        "continuity": scaffold.continuity_prompt,
     }
     schemas = {"transition": TRANSITION_SCHEMA, "psych": PSYCH_SCHEMA,
-               "specimen": SPECIMEN_SCHEMA}
+               "specimen": SPECIMEN_SCHEMA, "dynamics": DYNAMICS_SCHEMA,
+               "continuity": CONTINUITY_SCHEMA}
     # Who the vocabulary should cover. Speaker cues alone are too narrow — an
     # unresolved cue like BIG COP resolves to nobody, and the vocabulary then
     # falls back to all 36 entities, which is the wide-open list the closed
@@ -74,7 +78,7 @@ def build(project: Project, scene_id: str, writer, book, think_ctx: bool) -> dic
     evs = (docs["events"] or {}).get("events", {})
     involved, _ = scaffold.characters_in_scene(ents, scene, evs)
     return ensemble.split_scene(writer, book, scene, ents, blind, env, prompts,
-                                schemas, book_focus=involved)
+                                schemas, book_focus=involved, events=evs)
 
 
 def report(tr: dict, scene, ents) -> dict:
@@ -91,6 +95,7 @@ def report(tr: dict, scene, ents) -> dict:
             "changes": e.get("changes_recorded", 0),
             "code_problems": len(e.get("code_problems") or []),
             "grounding": len(e.get("grounding") or []),
+            "presence": len(e.get("presence") or []),
             "not_expressible": len(e.get("not_expressible") or []),
             "verdict": verdict}
 
@@ -135,8 +140,11 @@ if __name__ == "__main__":
         e = tr.get("_ensemble") or {}
         print(f"    {dt/60:.1f} min · {m['words']:,} words · {m['changes']} changes "
               f"from a {e.get('vocabulary_size', 0)}-term vocabulary")
-        print(f"    code problems {m['code_problems']} · grounding {m['grounding']} "
-              f"· inexpressible {m['not_expressible']} · {m['verdict']}")
+        print(f"    code {m['code_problems']} · grounding {m['grounding']} "
+              f"· presence {m['presence']} · inexpressible {m['not_expressible']} "
+              f"· dyn {len(tr.get('dynamics') or [])} · {m['verdict']}")
+        for v in (e.get("presence") or [])[:3]:
+            print(f"      P! {v['violation']}")
         for p in (e.get("code_problems") or [])[:3]:
             print(f"      ! {p}")
         for p in (e.get("not_expressible") or [])[:2]:

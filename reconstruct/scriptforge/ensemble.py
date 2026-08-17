@@ -41,7 +41,7 @@ import time
 
 import requests
 
-from . import grounding
+from . import grounding, presence
 
 
 # --------------------------------------------------------------------------
@@ -245,6 +245,14 @@ embellish, and do not record a change because it would be dramatically
 satisfying. If the analysis says a character becomes suspicious, that is a
 change; if it merely describes them as suspicious throughout, that is not.
 
+AN EMPTY LIST IS A VALID ANSWER. If the analysis asserts nothing this vocabulary
+can hold, return no changes and say why in `not_expressible`. Do not record a
+change whose before and after are the same value in order to have written
+something — that is a no-op, it is caught, and it is worse than an honest gap.
+
+Record changes only for characters who are IN the scene. Someone discussed but
+absent does not change during it.
+
 Every change needs its `because` grounded in a specific sentence of the analysis."""
 
 
@@ -253,7 +261,7 @@ def extract_changes(book: Endpoint, analysis: dict, vocab: dict, *, tag: str) ->
     schema = {"type": "object", "additionalProperties": False,
               "required": ["changes", "not_expressible"],
               "properties": {
-                  "changes": state_change_schema(vocab),
+                  "changes": state_change_schema(vocab),   # minItems dropped: empty is legal
                   "not_expressible": {"type": "array", "items": {"type": "string"}},
               }}
     lines = []
@@ -301,7 +309,8 @@ specific sentence that justifies each change they record."""
 
 def split_scene(writer: Endpoint, book: Endpoint, scene, entities: dict,
                 blind_ctx: dict, env: dict, prompts, schemas,
-                book_focus: list[str] | None = None) -> dict:
+                book_focus: list[str] | None = None,
+                events: dict | None = None) -> dict:
     """One scene, semantics from the writer, bookkeeping from the clerk.
 
     Returns the assembled transition plus a `_ensemble` block recording which
@@ -309,6 +318,7 @@ def split_scene(writer: Endpoint, book: Endpoint, scene, entities: dict,
     be audited rather than taken on trust.
     """
     speakers = grounding.allowed_speakers(scene, entities)
+    psets = presence.presence_sets(scene, entities, events)
     roster = "\n".join(f"  {eid:<10} {e.get('type','?'):<9} {e.get('canonical_name','?')}"
                        for eid, e in sorted(entities.items()))
 
@@ -319,7 +329,8 @@ def split_scene(writer: Endpoint, book: Endpoint, scene, entities: dict,
     craft_schema = grounding.bind_schema(craft_schema, scene, entities,
                                          speakers, sorted(entities))
 
-    craft = writer.ask(prompts["blind_system"] + WRITER_SYSTEM_SUFFIX,
+    brief = presence.briefing_for("scene", psets)
+    craft = writer.ask(prompts["blind_system"] + WRITER_SYSTEM_SUFFIX + "\n\n" + brief,
                        prompts["craft"](scene.scene_id, blind_ctx, env, roster),
                        craft_schema, tag="craft")
 
@@ -330,27 +341,82 @@ def split_scene(writer: Endpoint, book: Endpoint, scene, entities: dict,
     # because it sums over an empty list. A hollow node that reports success is
     # the worst failure mode this pipeline has, and this is the second time an
     # id-resolution mismatch has produced one.
-    analysed = [e for e in (book_focus or speakers) if e in entities]
+    # Who gets a psychology block. Presence, not a fallback to whoever is
+    # important in the work at large.
+    #
+    # `characters_in_scene()` substitutes the top two major characters when
+    # nothing resolves, and on a scene whose only cue is an unnamed police
+    # officer that produced psychology blocks for two protagonists who are not
+    # in the room. The presence checker catches it now, but the right fix is to
+    # not do it: analyse the person who is actually there, even when the entity
+    # layer has no dossier for them. An unresolved cue is a hole in that layer,
+    # not permission to write about someone else.
+    analysed = [e for e in psets["present"] if e in entities]
+    analysed += [c for c in psets["unresolved_cues"] if c not in analysed]
+    if not analysed:
+        analysed = [e for e in (book_focus or []) if e in entities][:1]
     psych = []
     for eid in analysed:
-        p = writer.ask(prompts["blind_system"] + WRITER_SYSTEM_SUFFIX,
-                       prompts["psych"](scene.scene_id, eid, entities[eid],
+        # An unresolved cue has no dossier — that is what "unresolved" means.
+        # The previous line let cues into `analysed` and the next line indexed
+        # `entities[eid]`, so the run died on the first scene whose speaker the
+        # entity layer never named. Synthesise a minimal profile instead of
+        # skipping: the person is in the room and the scene is about them, and
+        # analysing nobody is how a hollow node gets produced.
+        dossier = entities.get(eid) or {
+            "entity_id": eid, "canonical_name": eid, "type": "character",
+            "salience": "minor",
+            "_note": ("No dossier exists for this speaker. They are cued in the "
+                      "script but absent from the entity layer — a gap in that "
+                      "layer, not licence to write about someone else. Infer only "
+                      "what the scene supports and mark inferences as such."),
+        }
+        p = writer.ask(prompts["blind_system"] + WRITER_SYSTEM_SUFFIX + "\n\n" + brief,
+                       prompts["psych"](scene.scene_id, eid, dossier,
                                         blind_ctx, craft, roster),
                        schemas["psych"], tag=f"psych.{eid}")
         p["entity"] = eid
         psych.append(p)
 
+    # Risks come FROM the craft call, not invented inside the specimen call.
+    # Letting the specimen author its own risks made it grade its own exam: it
+    # marked 0 of 15 risks not-avoided across three scenes, against 14 tested
+    # with one honest failure when they were carried in. That single detail was
+    # the whole of the arm's worst rubric dimension.
+    carried = (craft.get("craft") or {}).get("risks") or craft.get("risks") or []
     spec_schema = grounding.bind_schema(schemas["specimen"], scene, entities,
                                         speakers, sorted(entities))
+    spec_prompt = prompts["specimen"](scene.scene_id, craft, psych, roster)
+    if carried:
+        spec_prompt += ("\n\nRISKS TO CHECK — these were named in the craft call and are"
+                        " not yours to revise. For each, say whether the lines you wrote"
+                        " avoid it and which line proves it. A risk you cannot show"
+                        " avoided is a risk not avoided; say so.\n"
+                        + json.dumps(carried, indent=1, ensure_ascii=False))
     specimen = writer.ask(prompts["blind_system"] + WRITER_SYSTEM_SUFFIX,
-                          prompts["specimen"](scene.scene_id, craft, psych, roster),
-                          spec_schema, tag="specimen")
+                          spec_prompt, spec_schema, tag="specimen")
+
+    dynamics = []
+    if prompts.get("dynamics"):
+        dyn_schema = {"type": "array", "items": schemas["dynamics"]}
+        dynamics = writer.ask(prompts["blind_system"] + WRITER_SYSTEM_SUFFIX,
+                              prompts["dynamics"](scene.scene_id, blind_ctx, craft, roster),
+                              dyn_schema, tag="dynamics")
+        if isinstance(dynamics, dict):
+            dynamics = dynamics.get("dynamics") or list(dynamics.values())[0]
+
+    continuity = {}
+    if prompts.get("continuity"):
+        continuity = writer.ask(prompts["blind_system"] + WRITER_SYSTEM_SUFFIX,
+                                prompts["continuity"](scene.scene_id, blind_ctx, craft, psych),
+                                schemas["continuity"], tag="continuity")
 
     # --- the clerk, on a closed vocabulary built from the dossiers ---
     # Bookkeeping covers who the scene is *about*; speaking is a narrower set,
     # and on a scene whose only cue is unresolved it would be empty — collapsing
     # the closed vocabulary back to every entity in the work.
-    focus = [e for e in (book_focus or speakers) if e in entities]
+    focus = [e for e in psets["present"] if e in entities] or \
+            [e for e in (book_focus or []) if e in entities]
     vocab = vocabulary(entities, focus=focus or None)
     book_out = extract_changes(book, {"craft": craft, "psychology": psych},
                                vocab, tag="bookkeeping")
@@ -360,6 +426,10 @@ def split_scene(writer: Endpoint, book: Endpoint, scene, entities: dict,
     tr = dict(craft)
     tr["psychology"] = psych
     tr["specimen"] = specimen
+    if dynamics:
+        tr["dynamics"] = dynamics
+    if continuity:
+        tr["continuity"] = continuity
     tr.setdefault("decision", {})["state_changes_implied"] = changes
     tr["_ensemble"] = {
         "writer": writer.model, "bookkeeper": book.model,
@@ -368,5 +438,6 @@ def split_scene(writer: Endpoint, book: Endpoint, scene, entities: dict,
         "not_expressible": book_out.get("not_expressible") or [],
         "code_problems": problems,
         "grounding": grounding.check_grounding(tr, scene, entities, speakers, None),
+        "presence": presence.assert_presence(tr, psets, entities),
     }
     return tr

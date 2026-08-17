@@ -1,0 +1,360 @@
+<meta charset="utf-8">
+<title>Zwei Modelle, ein Buchhalter</title>
+<style>
+:root{
+  --ground:#e9ebee;--surface:#f7f8fa;--surface-2:#eef0f3;--sunken:#dfe3e8;
+  --ink:#161a1f;--ink-2:#39424d;--muted:#66717e;--faint:#93a0ae;
+  --line:#cfd6de;--line-soft:#dde3ea;
+  --heat:#c2451a;--heat-soft:#f0d5c9;--quench:#2f6f8f;--quench-soft:#cfdfe8;
+  --good:#3f7d55;--good-soft:#d6e6db;--crit:#b03b26;--crit-soft:#f2d7d1;
+  --warn:#8a6a12;--warn-soft:#f0e6cc;
+  --shadow:0 1px 2px rgba(20,28,38,.07),0 10px 28px -14px rgba(20,28,38,.25);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;
+  --line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--quench:#6aa8c6;--quench-soft:#152935;
+  --good:#67a97e;--good-soft:#17281d;--crit:#d4715c;--crit-soft:#2e1713;
+  --warn:#c99b45;--warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.75);
+}}
+:root[data-theme="dark"]{
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;
+  --line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--quench:#6aa8c6;--quench-soft:#152935;
+  --good:#67a97e;--good-soft:#17281d;--crit:#d4715c;--crit-soft:#2e1713;
+  --warn:#c99b45;--warn-soft:#2b2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.75);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0}
+a{color:var(--quench)}
+.wrap{max-width:950px;margin:0 auto;padding:0 26px 100px}
+header.top{border-bottom:1px solid var(--line);background:var(--surface);margin-bottom:40px}
+header.top .wrap{padding-top:50px;padding-bottom:32px}
+.kicker{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--heat);
+  font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(29px,4.8vw,42px);line-height:1.12;letter-spacing:-.02em;margin-bottom:14px}
+.standfirst{font-size:18.5px;color:var(--ink-2);max-width:63ch;font-family:var(--serif);line-height:1.5}
+.meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:20px;font-size:12.5px;color:var(--faint);
+  font-family:var(--mono)}
+h2{font-size:25px;letter-spacing:-.015em;margin:52px 0 8px}
+h2 .num{font-family:var(--mono);font-size:12px;color:var(--heat);display:block;
+  margin-bottom:7px;letter-spacing:.08em;font-weight:700}
+h3{font-size:17.5px;margin:30px 0 9px}
+p{margin:0 0 14px;max-width:68ch}
+ul,ol{max-width:66ch;padding-left:22px}li{margin-bottom:8px}
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1.5px 5px;
+  border-radius:4px;border:1px solid var(--line-soft)}
+strong{font-weight:650}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:18px 0}
+th{text-align:left;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;padding:8px 12px 8px 0;border-bottom:1px solid var(--line)}
+td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line-soft);vertical-align:top}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;padding-right:0}
+tr.win td{background:var(--good-soft)}
+.scroll{overflow-x:auto}
+.good{color:var(--good);font-weight:650}.bad{color:var(--crit);font-weight:650}
+.warnc{color:var(--warn);font-weight:650}
+.punch{border-radius:9px;padding:18px 22px;margin:22px 0;border:1px solid;box-shadow:var(--shadow)}
+.punch.no{background:var(--crit-soft);border-color:var(--crit)}
+.punch.yes{background:var(--good-soft);border-color:var(--good)}
+.punch.hm{background:var(--warn-soft);border-color:var(--warn)}
+.punch .lbl{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.punch.no .lbl{color:var(--crit)}.punch.yes .lbl{color:var(--good)}.punch.hm .lbl{color:var(--warn)}
+.punch .big{font-family:var(--serif);font-size:20px;line-height:1.35;margin-bottom:8px}
+.punch p{margin-bottom:0;font-size:15px}
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;
+  padding:18px 22px;margin:20px 0}
+.eyebrow{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-bottom:9px}
+.analogy{background:var(--quench-soft);border-left:3px solid var(--quench);border-radius:0 8px 8px 0;
+  padding:15px 19px;margin:20px 0}
+.analogy .lbl{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--quench);
+  font-weight:700;margin-bottom:7px}
+.analogy p{margin-bottom:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;padding:14px 16px}
+.stat .n{font-family:var(--mono);font-size:22px;font-weight:700;line-height:1;
+  font-variant-numeric:tabular-nums}
+.stat .l{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-top:7px}
+.stat .s{font-size:12px;color:var(--muted);margin-top:4px}
+.note{font-size:13.5px;color:var(--muted)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
+@media(max-width:760px){.tiers{grid-template-columns:1fr}}
+.tier{border:1px solid var(--line-soft);border-radius:9px;padding:16px 18px;background:var(--surface)}
+.tier .t{font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.tier.a .t{color:var(--good)}.tier.b .t{color:var(--quench)}.tier.c .t{color:var(--heat)}
+.tier h4{font-family:var(--serif);font-size:17px;margin:0 0 6px;font-weight:600}
+.tier p{font-size:14.5px;margin:0;color:var(--ink-2)}
+pre{background:var(--sunken);border:1px solid var(--line);border-radius:7px;padding:14px 16px;
+  overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:1.6;margin:16px 0}
+hr{border:0;border-top:1px solid var(--line);margin:46px 0}
+footer{color:var(--faint);font-size:13px;border-top:1px solid var(--line);padding-top:20px;margin-top:48px}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="kicker">Ensemble · zwei Modelle, geteilte Arbeit</div>
+  <h1>Zwei Modelle, ein Buchhalter</h1>
+  <p class="standfirst">Beide Sprachmodelle scheitern, aber in entgegengesetzte Richtungen. Teilt
+  man die Aufgabe entlang dieser Bruchlinie auf und lässt den Rest von Code entscheiden, schlägt
+  das Ergebnis beide Einzelmodelle — bei 65% des Textumfangs.</p>
+  <div class="meta"><span>16. August 2026</span><span>GLM-5.2 auf 7 GPUs · Qwen3.8-27B auf 1</span>
+  <span>4 Arme · 18 Dimensionen</span></div>
+</div></header>
+
+<div class="wrap">
+
+<h2><span class="num">01</span>Das Ergebnis</h2>
+
+<div class="scroll"><table>
+<thead><tr><th>Arm</th><th class="num">Rubrik</th><th class="num">Prozent</th><th class="num">Wörter</th><th class="num">Erdungsverstöße</th><th class="num">min/Szene</th></tr></thead>
+<tbody>
+<tr><td>Qwen allein</td><td class="num">90/180</td><td class="num">50,0%</td><td class="num">5.506</td><td class="num">5,33</td><td class="num">2,6</td></tr>
+<tr><td>Qwen + Schemabindung</td><td class="num">111/180</td><td class="num">61,7%</td><td class="num">6.013</td><td class="num">4,00</td><td class="num">2,8</td></tr>
+<tr><td>GLM allein</td><td class="num">117/180</td><td class="num">65,0%</td><td class="num">15.988</td><td class="num">5,00</td><td class="num">19,1</td></tr>
+<tr class="win"><td><strong>Ensemble</strong></td><td class="num"><strong>130/180</strong></td><td class="num"><strong>72,2%</strong></td><td class="num">10.354</td><td class="num good">0,67</td><td class="num">11,7</td></tr>
+</tbody></table></div>
+
+<div class="punch yes">
+  <div class="lbl">Die Frage, die das beantwortet</div>
+  <div class="big">Mehr Text oder mehr Substanz? Substanz — bei <em>weniger</em> Text als das
+  stärkere Einzelmodell.</div>
+  <p>65% von GLMs Wortzahl, und praktisch verlustfrei: Theory of Mind auf dritter Stufe 10 gegen
+  11, Trajektorienphasen 15 gegen 16, Sinneskanäle 28 gegen 28, abgewogene Optionen 13 gegen 13.
+  Bei Musterdialogzeilen (21 gegen 19) und geprüften Risiken (15 gegen 14) liegt es sogar vorn.</p>
+</div>
+
+<h2><span class="num">02</span>Warum die Aufteilung funktioniert</h2>
+<p>Sie folgt keiner Intuition, sondern der gemessenen Bruchlinie. Die beiden Modelle scheitern
+nicht unterschiedlich stark, sondern <strong>in entgegengesetzte Richtungen</strong>:</p>
+
+<div class="scroll"><table>
+<thead><tr><th></th><th>kann</th><th>kann nicht</th></tr></thead>
+<tbody>
+<tr><td><strong>GLM-5.2</strong></td><td>Tiefe, Theory of Mind, echte Selbstkorrektur</td>
+<td class="bad">0 von 85 Zustandswerten in der eigenen Wertemenge</td></tr>
+<tr><td><strong>Qwen3.8</strong></td><td>11 von 13 Werten korrekt, keine Leerläufe, 8× schneller</td>
+<td class="bad">2 von 3 Szenen im falschen Gebäude, erfundene Ereignisse</td></tr>
+</tbody></table></div>
+
+<p>Das eine ist ein Schreibproblem, das andere Datenerfassung. Beides in einem Kopf zu verlangen
+heißt, jedem Modell die Aufgabe zu geben, in der es nachweislich scheitert.</p>
+
+<div class="tiers">
+  <div class="tier a"><div class="t">Ebene 1</div><h4>Code</h4>
+  <p>Alles, was aus Dateien entscheidbar ist. Ist die Figur in der Szene? Gehört die Variable
+  dieser Entität? Liegt der Wert in der Wertemenge? Kein Modell wird gefragt.</p></div>
+  <div class="tier b"><div class="t">Ebene 2</div><h4>Der Buchhalter</h4>
+  <p>Qwen liest die Prosa und trägt Zustandsänderungen ein — aus einem <em>geschlossenen
+  Wortschatz</em>, den es nicht kennen muss, sondern bekommt. Kostet 1% der Modellzeit.</p></div>
+  <div class="tier c"><div class="t">Ebene 3</div><h4>Der Autor</h4>
+  <p>GLM schreibt die Semantik und wird ausdrücklich von der Buchhaltung entbunden. Was das
+  kauft, ist Platz für das Material zweiter Ordnung.</p></div>
+</div>
+
+<div class="analogy"><div class="lbl">Der eigentliche Trick</div>
+<p>Der Buchhalter wird nie gefragt, welche Variablen <em>existieren</em>. Er bekommt die
+zulässigen Tripel aus Entität, Variable und Wert vorgelegt und wählt daraus. Ein Wortschatz ist
+Daten; sich einen zu merken ist eine Fähigkeit — und genau die Fähigkeit, an der beide Modelle
+gemessen scheitern.</p></div>
+
+<h2><span class="num">03</span>Der qualitative Beleg</h2>
+<p>Eine Szene trennt die Arme sauber. Ein Ermittler trifft auf etwas, das ihm hierarchisch
+überlegen ist. Alle drei vorherigen Arme scheiterten daran, und zwar identisch:</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Arm</th><th>Was passierte</th></tr></thead>
+<tbody>
+<tr><td>GLM allein</td><td>monologisierte gegen einen bereits geschlagenen Gegenspieler</td></tr>
+<tr><td>Qwen allein</td><td>löschte den Gegenspieler ganz</td></tr>
+<tr><td>Qwen + Bindung</td><td>holte ihn in die Analyse zurück und ließ ihn im Dialog wieder verschwinden</td></tr>
+<tr class="win"><td><strong>Ensemble</strong></td><td><strong>schreibt beide Hälften und trifft die tatsächliche Dramaturgie</strong> — Zuständigkeit behauptet gegen etwas Übergeordnetes, und verloren</td></tr>
+</tbody></table></div>
+
+<p>Das ist der höchstbewertete Knoten aus vier Durchgängen. Und es ist der Punkt, an dem die
+Zahlen aufhören, das Interessante zu sein: kein anderer Arm kam dorthin, und alle hatten dieselben
+Eingaben.</p>
+
+<h2><span class="num">04</span>Was ich falsch gemessen habe</h2>
+<p>Dieselbe Bewertung, die das Ergebnis bestätigte, fand einen Fehler in meinem Prüfcode — den
+dritten dieser Art in diesem Projekt.</p>
+
+<pre>meine Prüfung liest   "to" / "from"
+der Buchhalter schreibt   "before" / "after"</pre>
+
+<p>Der Domänentest verglich also gegen <code>None</code> und meldete <strong>jede</strong>
+Änderung als Verstoß. Der Leerlauf-Test, abhängig von <code>from is not None</code>, lief
+<strong>nie</strong>. Drei gemeldete Verstöße waren falsch, zwei echte Leerläufe unsichtbar.
+
+<p>Korrigiert: <strong>0,67 Verstöße pro Szene</strong> statt der von mir behaupteten 1,0 — also
+besser als gemeldet, gemessen von einer Prüfung, die nicht funktionierte.</p>
+
+<div class="punch no">
+  <div class="lbl">Das Muster, das sich dreimal wiederholt hat</div>
+  <div class="big">Jede dieser Prüfungen lieferte eine selbstbewusste Zahl über der falschen
+  Sache. Keine ist laut gescheitert.</div>
+  <p>Eine Trajektorienprüfung testete ein Feld, das es im Schema nie gab. Ein Leck-Detektor
+  zerlegte rohes JSON, sodass Interpunktion jeden Treffer verhinderte. Und nun ein Leser, der auf
+  die Feldnamen eines anderen Schemas eingestellt war. <strong>Eine Prüfung, die den falschen
+  Schlüssel liest, versagt nicht hörbar — sie lügt.</strong></p>
+</div>
+
+<p>Einen vierten Vorwurf habe ich geprüft und verworfen: Der Bewerter vermutete, der Ensemble-Autor
+sei eine andere GLM-Variante als der Vergleichsarm. Beide liefen über denselben Endpunkt, dieselben
+Gewichte, dieselbe Quantisierung. Die 13 Punkte Vorsprung stehen.</p>
+
+<h2><span class="num">05</span>Die drei Verlustdimensionen waren alle meine</h2>
+<p>Gegen GLM gewinnt das Ensemble neun Dimensionen und verliert drei. Alle drei Verluste sind
+Stufen, die ich schlicht nicht implementiert hatte:</p>
+
+<div class="scroll"><table>
+<thead><tr><th>Dimension</th><th class="num">Δ</th><th>Ursache</th></tr></thead>
+<tbody>
+<tr><td>Schema-/Anweisungstreue</td><td class="num bad">−2,00</td><td>keine <code>continuity</code>-, keine <code>dynamics</code>-Stufe</td></tr>
+<tr><td>Deliberationsehrlichkeit</td><td class="num bad">−2,33</td><td>Risiken im Dialog-Aufruf erfunden statt übernommen</td></tr>
+<tr><td>Referenzielle Integrität</td><td class="num bad">−0,67</td><td>dieselben fehlenden Stufen</td></tr>
+</tbody></table></div>
+
+<p>Die mittlere Zeile ist die lehrreichste. Weil der Musterdialog-Aufruf seine Risiken selbst
+erfand, <strong>benotete er seine eigene Prüfung</strong> — und meldete <em>null von fünfzehn</em>
+nicht vermiedenen Risiken, gegen GLMs vierzehn geprüfte mit einem ehrlichen Fehlschlag. Ein
+einzelnes Implementierungsdetail war die gesamte schlechteste Dimension des Arms.</p>
+
+<h2><span class="num">06</span>Was daraus gebaut wurde</h2>
+<p>Alle drei Stufen sind ergänzt, und dazu ein neuer Prüfbaustein, der die Frage stellt, die vier
+Bewertungsdurchgänge in immer neuer Verkleidung aufgeworfen haben: <strong>ist jeder da, wo er
+sein soll — und nur da?</strong></p>
+
+<h3>Drei Mengen, die nicht dieselbe Menge sind</h3>
+<div class="scroll"><table>
+<thead><tr><th>Menge</th><th>Woher</th><th>Was erlaubt ist</th></tr></thead>
+<tbody>
+<tr><td><code>SPEAKING</code></td><td>die Sprecherangaben des Drehbuchs</td><td>darf Dialogzeilen bekommen</td></tr>
+<tr><td><code>PRESENT</code></td><td>+ Beteiligte aus der Ereignisebene</td><td>darf handeln, darf Zustand ändern</td></tr>
+<tr><td><code>REFERABLE</code></td><td>alle etablierten Entitäten</td><td>darf gedacht werden, sonst nichts</td></tr>
+</tbody></table></div>
+
+<p>Diese drei zu vermengen hat sowohl einen <em>hohlen Knoten erzeugt, der Erfolg meldete</em>,
+als auch <em>eine Bedingung, die den Fehler erzwang, den sie verhindern sollte</em>. Eine Figur
+kann anwesend sein ohne zu sprechen, besprochen werden ohne anwesend zu sein — und, das ist der
+teure Fall, Zustand bewegt bekommen, ohne beides zu sein.</p>
+
+<h3>Die Prüfungen finden jetzt mechanisch, was vorher ein Lesedurchgang brauchte</h3>
+<p>Gegen die bestehenden Ausgaben laufen gelassen, reproduzieren sie <strong>jeden</strong> Befund,
+den der Bewerter durch Lesen gefunden hatte:</p>
+
+<pre>sc-001: state change bewegt eine Figur, die nicht in der Szene ist
+        Psychologie-Block für zwei Figuren, die nicht in der Szene sind
+
+Ereignisebene: alle 22 Ereignisse am selben Ort
+               nur 1 Ortsentität für 22 Ereignisse deklariert
+               eine Ortsvariable darf einen Ort annehmen, den es nicht gibt</pre>
+
+<p>Der letzte Punkt ist der, der die unmögliche Auflösung der Geschichte erklärt: Eine Figur
+durfte laut ihrer eigenen Variable an einen Ort, der nie als Entität existierte.</p>
+
+<h3>Und die Modelle erfahren davon</h3>
+<p>Erkennen allein hat hier eine schlechte Bilanz — eine Prompt-Klausel reparierte ein lokales Feld
+und verschlechterte ein globales. Deshalb trägt jede Prüfung den Satz mit sich, der sie verhindert
+hätte, und beim Abstieg von der allgemeinen zur konkreten Ebene bekommt das Modell genau die
+passenden mitgegeben:</p>
+
+<div class="card">
+  <div class="eyebrow">Beim Story-Root</div>
+  <p style="margin-bottom:0">Alles, was hier benannt wird, ist der geschlossene Wortschatz aller
+  Ebenen darunter. Was fehlt, kann später nicht beschrieben werden — und <em>wird</em> in das
+  gepresst, was da ist. Neun Entitäten statt der geforderten dreißig bis vierzig führten dazu, dass
+  alle 22 Ereignisse an dem einen Ort spielten, der existierte.</p>
+</div>
+
+<div class="card">
+  <div class="eyebrow">Bei den Entitäten</div>
+  <p style="margin-bottom:0">Anfangswerte in <em>derselben Form</em> wie die Wertemenge schreiben.
+  Eine Menge blanker Zeichenketten mit einem verpackten Anfangswert kann nie treffen — und
+  entwertet die gesamte Zustandsebene, während jede Schemaprüfung grün bleibt.</p>
+</div>
+
+<div class="card">
+  <div class="eyebrow">Bei der Szene</div>
+  <p style="margin-bottom:0">Die drei Mengen, benannt und konkret befüllt: wer spricht, wer
+  anwesend ist, wer nur gedacht werden darf. Plus die Wertemenge jeder verfügbaren Variable. Das
+  Modell erfährt in den Worten des Prüfers, was gleich geprüft wird.</p>
+</div>
+
+<h2><span class="num">07</span>Und wenn man nur die fehlerfreien Teile ansieht?</h2>
+<p>Eine faire Frage, weil ein guter Teil der schlechten Zahlen aus meinen Implementierungslücken
+stammt und nicht aus den Modellen.</p>
+
+<div class="punch yes">
+  <div class="lbl">Das Urteil</div>
+  <div class="big">Auf den Dimensionen ohne offensichtlichen Werkzeugfehler ist das Ensemble
+  bereits <strong>gut genug für unbeaufsichtigten Betrieb</strong> — mit einer Einschränkung.</div>
+</div>
+
+<div class="scroll"><table>
+<thead><tr><th>Dimension</th><th class="num">Wert</th><th>Einschätzung</th></tr></thead>
+<tbody>
+<tr><td>Spezifität (Verpflanzungstest)</td><td class="num good">4,67</td><td>überlebt keine andere Geschichte — genau richtig</td></tr>
+<tr><td>Dramatische Kompetenz</td><td class="num good">4,33</td><td>GLM allein lag bei 2,83</td></tr>
+<tr><td>Psychologische Plausibilität</td><td class="num good">4,33</td><td>tragfähig</td></tr>
+<tr><td>Innere Konsistenz</td><td class="num">3,67</td><td>brauchbar</td></tr>
+<tr><td>Erdung (mechanisch)</td><td class="num good">0,67</td><td>Verstöße/Szene, bester Arm</td></tr>
+</tbody></table></div>
+
+<p>Die 4,33 bei dramatischer Kompetenz ist der eigentliche Beleg für den Entwurfsgedanken: GLM
+allein erreichte 2,83. Von der Buchhaltung entlastet, schreibt dasselbe Modell nicht bloß mehr,
+sondern <strong>besser</strong>.</p>
+
+<h3>Die Einschränkung</h3>
+<p>Unbeaufsichtigter Betrieb scheitert nicht am Schreiben, sondern eine Ebene höher. Zwei Befunde
+zeigen in dieselbe Richtung:</p>
+
+<ul>
+<li><strong>Der Buchhalter meldete, was er nicht ausdrücken konnte</strong> — und das ist das
+wertvollste Feld des ganzen Arms. Es besagt nicht, dass er zu zaghaft ist, sondern dass das
+Figurendossier zu dünn war: drei Variablen für den Antagonisten des Films, weshalb dessen
+Demütigung und Verachtung nirgends unterkommen konnten.</li>
+<li><strong>Neun statt siebzehn Entitäten</strong> aus demselben Auftrag — und daraus folgte die
+Ein-Ort-Geschichte und ein ontologisch unmögliches Ende.</li>
+</ul>
+
+<div class="analogy"><div class="lbl">Die Schlussfolgerung</div>
+<p>Die Szenenebene ist unbeaufsichtigt fahrbar. <strong>Die Ebenen darüber sind es noch nicht</strong>
+— nicht weil sie schlechter geschrieben werden, sondern weil ein zu dünner Oberbau alle Ebenen
+darunter erwürgt, und zwar leise. Genau dort setzen die neuen Assertions und die absteigenden
+Hinweise an.</p></div>
+
+<hr>
+<h2 style="margin-top:0">Kurz gefasst</h2>
+<ol>
+<li><strong>Das Ensemble schlägt beide Einzelmodelle</strong> — 130/180 gegen 117 und 90 — bei 65%
+des Textumfangs des stärkeren.</li>
+<li><strong>Die Aufteilung folgt der gemessenen Bruchlinie</strong>, nicht einer Intuition: das
+eine Modell schreibt gut und rechnet falsch, das andere umgekehrt.</li>
+<li><strong>Der Buchhalter kostet 1% der Modellzeit.</strong> Die billigste Hälfte der
+Arbeitsteilung trägt den größten Teil der Verbesserung bei der Konsistenz.</li>
+<li><strong>Die drei verlorenen Dimensionen waren Implementierungslücken</strong>, keine
+Modelleigenschaften — alle drei sind inzwischen geschlossen.</li>
+<li><strong>Meine Messung war zum dritten Mal kaputt</strong>, auf dieselbe Weise: eine
+selbstbewusste Zahl über der falschen Sache. Deshalb steht jede Prüfung jetzt im Werkzeug, mit
+einem Trockenlauf davor.</li>
+</ol>
+
+<footer>
+Alle Zahlen aus Läufen auf dieser Maschine, 16. August 2026. Rubrik mit verankerten Beschreibungen
+für die Noten 1, 3 und 5. Bewertung, Experimentprotokolle und Quellcode im Projektarchiv.<br>
+Weiterführend: <a href="modelle.html">Modelleignung im Überblick</a> ·
+<a href="qualitaet.html">Qualitätsvergleich</a> ·
+<a href="rekonstruktion-skalierung.html">Kosten und Hochrechnung</a> ·
+<a href="index.html">alle Projekte</a>.
+</footer>
+</div>
