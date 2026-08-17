@@ -279,3 +279,104 @@ evaluator identified — as opposed to producing concealment-flavoured language
 around a different moment — a keyword search cannot distinguish, and treating it
 as though it could would be the eighth entry in §8's table. The rubric decides
 this, and it has not run.
+
+---
+
+## 12. Rubric results for V4 and V5, and two faults in my own harness
+
+### Both clear the bar. Neither separates from V1.
+
+| | V0 | V1 | V2 | V3 | **V4** | **V5** |
+|---|---|---|---|---|---|---|
+| **overall** | 3.58 | 4.02 | 3.61 | 3.62 | **4.16** | **4.06** |
+| fidelity | | | | | 4.80 | 4.33 |
+| completeness | | | | | 4.80 | 4.80 |
+| specificity | | | | | 4.53 | 4.47 |
+| change reality | | | | | 3.47 | 3.53 |
+| emotional intelligence | 2.40 | 2.80 | | | **3.47** | **3.67** |
+| calibration | | | 2.13 | 2.20 | **3.87** | **3.53** |
+
+V4 and V5 are the **first two configurations to clear mean ≥ 4.0 with nothing
+below 3.0**, and V4 lands 0.07 from the re-slice prediction of 4.09.
+
+**But neither separates from V1**: 7–4–4 each, p = 0.55. V4 against V5 is 4–6–5.
+**At n = 15, V1, V4 and V5 are one arm.** The defensible claim is the shape and
+not the mean: emotional intelligence moved 2.80 → 3.47/3.67 while calibration
+gave back only 0.13/0.47.
+
+### The gate is the only recommendation that was actually tested
+
+Neither model returned an empty `minds` list once in fifteen opportunities. Every
+empty array on disk is **the gate skipping**, not the model declining — the gate
+removed each scene where declining would have been right before the model saw
+it. Recommendations 1 and 2 are confounded, and only the first fired.
+
+Calibration recovered the same way. Where the pass runs it scores 3.17 / 2.89 —
+indistinguishable from V3's 3.14 on comparable scenes. Where it is skipped,
+4.33 / 4.50, because there the node simply *is* V1's node. **Every point of the
+recovery is scenes the pass never touched.**
+
+### The gates compared
+
+| | false negatives | false positives |
+|---|---|---|
+| V4, fixed 150 words | 2 (skipped scenes with legible interiority) | 0 |
+| **V5, transferable** | **0** | 1 |
+
+V5's one false positive is a 57-word scene with two cues and nothing to read; the
+pass wrote 1,255 words on a premise the preceding scene contradicts. **That
+single node is the entire V4–V5 difference.** The fix is a conjunct rather than a
+replacement: two or more cues *and* an actual exchange.
+
+### The concealment was real
+
+V5 is the only arm of six to quote the marked line in the scene all four earlier
+arms walked past, and it identifies the concealed object correctly. V4 reaches
+the same substance by inference without noticing the text said so outright.
+
+So the keyword result in §11 was pointing at something real — but the caveat
+recorded there was still right, because the same instruction produced three
+false-positive concealment readings on the scene above.
+
+### Two faults in the harness, both mine
+
+**The grounding check annotates instead of gating.** `tier1()` fixes `score` from
+the problems it can see; `check_grounding_field` appends afterwards. So seven
+contradictions sat in V5's problem list while its score read **1.000**. EXP-004b
+asked for check-and-fail; what shipped was check-and-pass.
+
+**The verbatim check covered a tenth of the node.** It read
+`what_changes[].evidence` — about 90 words of V5's 600-word average — and never
+`minds[].basis`, which is most of the rest. That is how an arm reporting 15/15
+verbatim shipped a block with fabricated dialogue in an unchecked field.
+
+### Corrected tier-1, rescored from disk
+
+| arm | as shipped | **corrected** | verbatim, full node |
+|---|---|---|---|
+| V1 | 0.983 | **0.983** | 15/15 |
+| V3 | 0.967 | **0.633** | 14/15 |
+| V4 | 0.967 | **0.900** | 13/15 |
+| V5 | **1.000** | **0.883** | 15/15 |
+
+**V5's perfect score was a score that could not see the column beside it.**
+Corrected, V1 leads tier-1 — though partly for a trivial reason worth naming: V1
+produces no mind blocks, so it cannot have grounding contradictions. A check that
+only applies to arms doing more work is not a fair ranking, and the tier-1
+comparison across arms with and without a mind pass should be read as two
+separate tables.
+
+This is the **eighth** entry in §8, and the first I introduced while fixing
+another one.
+
+### The evaluator's own caveat, which I am recording rather than discounting
+
+> one evaluator, not blind to arm, scoring arms whose design I wrote — same
+> threat as the last two reports, now compounding
+
+Three consecutive reports share an evaluator who knows which arm produced each
+node and had a hand in specifying them. The next measurement should be blind
+A/B — nodes stripped of the `_mind_pass` field that currently labels the arm on
+every one of them — at a larger n and with several samples per cell. Until then,
+"both clear the bar" is a result about fifteen scenes read once by someone who
+knew what they were looking at.

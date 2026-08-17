@@ -468,7 +468,13 @@ def tier1(node: dict, scene, text: str) -> dict:
     if names and not named_ok:
         p.append(f"none of {names[:3]} appears in the scene or its cues")
 
+    # Cover the whole node, not the tenth of it that happened to be checked
+    # first. `what_changes[].evidence` is ~90 words of V5's 600-word average;
+    # `minds[].basis` is most of the rest and was unverified — which is how an
+    # arm reporting 15/15 verbatim shipped a block with fabricated dialogue in
+    # its basis field.
     spans = [c.get("evidence", "") for c in node.get("what_changes") or []]
+    spans += [m.get("basis", "") for m in node.get("minds") or []]
     long = [e for e in spans if len(e) >= 25]
     verbatim = sum(1 for e in long if _loose(e) in _loose(own))
     if long and not verbatim:
@@ -596,9 +602,17 @@ def run_v3(out: Path, ports: list[int], model: str, per_endpoint: int = 4,
         r["minds"] = len(ms)
         r["mind_pass"] = (nd or {}).get("_mind_pass", "ran")
         r["gate"] = r["mind_pass"].split(":", 1)[-1].strip()
+        # Recompute after appending. `tier1()` fixes `score` from the problem
+        # list it can see, and this check runs afterwards — so seven grounding
+        # contradictions sat in V5's problem list while its score read 1.000.
+        # EXP-004b asked for check-and-fail; what shipped was check-and-pass.
+        # Eighth instance of a number in this project computed over the wrong
+        # thing, and the first one I introduced while fixing another.
         gb = check_grounding_field(nd or {})
         r["grounding_contradictions"] = len(gb)
         r["problems"] = r.get("problems", []) + gb
+        if r.get("produced"):
+            r["score"] = round(1.0 - 0.25 * len(r["problems"]), 2)
         for m in ms:
             grounding[m.get("grounding", "?")] += 1
         results[sid] = r
