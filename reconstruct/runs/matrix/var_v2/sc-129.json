@@ -1,0 +1,109 @@
+{
+ "scene_id": "sc-129",
+ "location": "STREET",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Cypher",
+  "Morpheus",
+  "Agent Smith"
+ ],
+ "summary": "Neo is ambushed by Agent Smith, who breaks through a wall and chokes him against a pipe. Cypher identifies the attacker. Morpheus bursts through the wall and tackles Smith, sending them both to the floor.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "listening to quiet gunfire",
+   "after": "strangled against a pipe with fingers gouging his neck",
+   "evidence": "punching Neo back against the iron stack pipe, fingers gouging into his neck"
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "custody",
+   "before": "attacking Neo through the wall",
+   "after": "crashed to the floor by Morpheus",
+   "evidence": "Morpheus explodes through the tattered plaster and lath, diving on top of Agent Smith."
+  }
+ ],
+ "objects_that_matter": [
+  "wall",
+  "iron stack pipe",
+  "wet terrazzo"
+ ],
+ "event_hint": {
+  "kind": "combat",
+  "one_line": "Morpheus rescues Neo from Agent Smith's ambush.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To survive the immediate threat and understand the nature of the attack.",
+   "feels": "A mix of confusion and primal terror. He is still reeling from the previous chaos (sc-128) and is unprepared for the physicality of the Agents.",
+   "shows": "He is passive, listening, then physically overwhelmed. He does not fight back effectively, relying on the environment and others.",
+   "believes_about": [
+    {
+     "other": "Cypher",
+     "belief": "Cypher is a reliable ally who will identify threats.",
+     "wrong_because": "Cypher's priority is his own survival and his plan to leave, not Neo's safety."
+    }
+   ],
+   "basis": "In sc-128, Neo was shooting wildly and seemed disoriented. Here, he is 'listening' before the attack, showing a lack of awareness. His inability to free himself from Smith's grip highlights his current physical limitations compared to the Agents.",
+   "inferred": true
+  },
+  {
+   "who": "Agent Smith",
+   "wants": "To eliminate Neo before he can be fully protected or awakened.",
+   "feels": "Cold efficiency and contempt. He views Neo as an anomaly to be corrected, not a person to be fought.",
+   "shows": "He attacks with surgical precision, breaking through the wall directly at Neo's neck. He does not waste movement.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is vulnerable and unaware of the true danger.",
+     "wrong_because": "Neo is beginning to sense the Matrix, though he hasn't fully grasped it yet."
+    }
+   ],
+   "basis": "The attack is described as 'smashing through' and 'gouging into his neck,' indicating a desire to kill quickly rather than interrogate. This aligns with Smith's previous behavior in sc-127 where he seized the Cop.",
+   "inferred": true
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To protect Neo and assert control over the situation.",
+   "feels": "Urgency and protective aggression. He is the experienced leader who knows the rules of the game.",
+   "shows": "He 'explodes' through the wall, a violent and decisive action. He takes the brunt of the impact to save Neo.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is not yet ready to handle Smith alone.",
+     "wrong_because": "This belief will be tested later as Neo's power grows, but is currently accurate."
+    }
+   ],
+   "basis": "Morpheus's entrance is described as 'exploding' and 'diving on top,' showing his physical dominance and willingness to sacrifice position to save Neo. This contrasts with Neo's passivity.",
+   "inferred": true
+  },
+  {
+   "who": "Cypher",
+   "wants": "To survive and identify the threat to assess his own escape options.",
+   "feels": "Alarm and calculation. He is more concerned with the implications of an Agent being present than with the immediate combat.",
+   "shows": "He shouts 'It's an Agent!' which is a diagnostic statement rather than a combat cry.",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "Morpheus will handle the Agent, allowing Cypher to maneuver.",
+     "wrong_because": "Morpheus's focus is entirely on Neo, potentially leaving Cypher exposed."
+    }
+   ],
+   "basis": "Cypher's dialogue is functional and informative. In previous scenes (sc-127), he was pulled free by Trinity, showing he is often reactive rather than proactive in combat.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-128: Neo's disoriented shooting and the Cop's seizure set the stage for the Agents' continued hunt.",
+  "sc-127: The introduction of Agents as physical threats that can manipulate reality (seizing the Cop) primes the audience for Smith's wall-breaking."
+ ],
+ "sets_up": [
+  "sc-130: Morpheus pinning Smith on the floor leads directly to the next phase of the fight and the introduction of the TV repair shop location.",
+  "Neo's realization: This close call reinforces the need for Neo to understand his own power, which will be central to subsequent scenes."
+ ],
+ "dramatic_function": "This scene serves as a pivotal moment of vulnerability for Neo, highlighting his current weakness and the absolute danger he faces. It shifts the dynamic from Neo as the shooter to Neo as the victim, necessitating Morpheus's intervention and reinforcing the hierarchy of power in the Matrix."
+}

@@ -1,0 +1,51 @@
+{
+ "scene_id": "sc-215",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "TRINITY"
+ ],
+ "speaking": [
+  "TRINITY"
+ ],
+ "summary": "Trinity speaks two lines of reassurance, stating that the person in question is going to make it. The scene contains no action description, only these two lines of dialogue.",
+ "what_changes": [
+  {
+   "who": "TRINITY",
+   "axis": "knowledge",
+   "before": "Uncertainty or concern about the outcome",
+   "after": "Assertion that the person will survive",
+   "evidence": "Don't worry. He's going to make it."
+  }
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Trinity reassures someone that Neo will survive the pursuit.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "TRINITY",
+   "wants": "To stabilize the emotional state of the crew and maintain the operational focus on retrieving Neo before the sentinels arrive.",
+   "feels": "A desperate, controlled anxiety. She is aware of the high probability of failure given the 5-minute window, but she is forcing herself to project certainty to prevent panic from spreading to Tank or Morpheus.",
+   "shows": "Calm, authoritative reassurance. Her tone is flat and directive, stripping away the uncertainty of the previous moment.",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "Neo has the instinct or capability to survive the immediate threat of Agent Smith's pursuit.",
+     "wrong_because": "This belief is currently a hope rather than a fact; Neo is still in the Matrix and has not yet demonstrated his ability to stop bullets or outmaneuver Smith in a sustained chase."
+    }
+   ],
+   "basis": "In sc-213, Trinity asks 'How long?' and receives 'Five minutes. Maybe six.' In sc-214, she objects to the EMP usage because Neo is not out. The shift from her panic ('Oh no') in sc-213 to 'Don't worry' here indicates a conscious decision to manage the team's morale rather than report the raw data of their precarious position.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-213: The establishment of the 5-minute countdown and the discovery of the sentinels.",
+  "sc-214: Morpheus's decision to hold the EMP, creating the time pressure that necessitates Trinity's reassurance."
+ ],
+ "sets_up": [
+  "sc-216: Neo's frantic call to Tank and Trinity's subsequent command to 'get your ass back here,' which contrasts with the calm assurance given in this scene."
+ ],
+ "dramatic_function": "This scene serves as a moment of false security. By asserting that Neo will make it, Trinity raises the stakes; if she is wrong, her confidence becomes a source of shame and frustration for the team, intensifying the tension before the inevitable failure of the first escape attempt."
+}

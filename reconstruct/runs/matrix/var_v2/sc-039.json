@@ -1,0 +1,111 @@
+{
+ "scene_id": "sc-039",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Neo",
+  "Morpheus",
+  "Trinity",
+  "Mouse",
+  "Cypher",
+  "Switch",
+  "Tank",
+  "Dozer"
+ ],
+ "speaking": [
+  "MORPHEUS"
+ ],
+ "summary": "Morpheus guides Neo through the Nebuchadnezzar, introducing the crew and explaining the ship's function as a hovercraft. They reach the Core, where Morpheus explains that the Matrix can be hacked from there. He guides Neo into an ecto-skeleton chair and plugs a coaxial line into the jack at the base of Neo's skull, initiating a transfer into the Construct.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Standing in the main deck, physically present in the ship",
+   "after": "Seated in an ecto-skeleton chair, connected to the Core, transitioning into a digital space",
+   "evidence": "He relaxes, opening his eyes as we PULL BACK to a feeling of weightlessness inside another place"
+  },
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Unfamiliar with the crew and the ship's purpose",
+   "after": "Informed that the ship is a hovercraft and that the Core is used to hack into the Matrix",
+   "evidence": "This is the Core.  This is where we broadcast our pirate signal and hack into the Matrix."
+  }
+ ],
+ "objects_that_matter": [
+  "ladder",
+  "Core",
+  "bizarre electronic equipment",
+  "coaxial",
+  "battery slabs",
+  "satellite dish",
+  "computer monitors",
+  "ecto-skeleton chairs",
+  "control console",
+  "coaxial line",
+  "cerebrum chip"
+ ],
+ "event_hint": {
+  "kind": "induction",
+  "one_line": "Neo is introduced to the Nebuchadnezzar's crew and connected to the Core to enter the Construct.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "Morpheus",
+   "wants": "To transition Neo from a passive recipient of information to an active participant in the war against the Matrix by physically integrating him into the ship's systems.",
+   "feels": "A sense of quiet, paternal certainty. He is not anxious about the process because he views it as a necessary, almost surgical, step in Neo's evolution. There is a deliberate pacing to his movements, ensuring Neo is calm before the 'jolt' of the connection.",
+   "shows": "Calm authority and clinical precision. He speaks in short, declarative sentences ('This is the Core'), touching Neo's head gently before the invasive procedure. He lets the machinery do the heavy lifting of explanation.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is ready to accept the truth because he has already chosen to be here. The physical discomfort of the connection is a minor hurdle compared to the psychological shock of the reality he has already glimpsed.",
+     "wrong_because": "Neo's willingness is fragile; he is following on autopilot ('like a sleepwalker'), not yet fully metabolizing the scale of the betrayal of his former life. Morpheus assumes readiness that is actually just exhaustion."
+    }
+   ],
+   "basis": "Morpheus is the only one speaking, guiding the flow. He explicitly states 'There is no reason for me to try to explain it when I can simply show it,' indicating a pedagogical choice to bypass verbal logic for experiential proof. His touch on Neo's head before the plug-in is a calming gesture before the 'disturbing noises' and 'grimace' described in the text.",
+   "inferred": true
+  },
+  {
+   "who": "Neo",
+   "wants": "To understand what has happened to his body and his timeline, and to find a stable anchor in this new, disorienting reality.",
+   "feels": "Profound disorientation and a sense of being unmoored. The revelation of the year 2199 'knocks the wind from his chest,' leaving him in a state of shock that makes him compliant. He is 'coming unglued' before Morpheus even enters the room, suggesting a psychological break is occurring.",
+   "shows": "Passive compliance and quiet inquiry. He asks simple, grounding questions ('What are you doing?', 'When?'). He allows himself to be helped into the chair without resistance, treating the physical process as the only thing he can currently grasp.",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "Morpheus is the sole source of truth and stability in this new world. If Morpheus says it is 2199 and this is the Core, Neo accepts it because the alternative (that he is crazy or dead) is less bearable than the new reality.",
+     "wrong_because": "Neo is not yet trusting Morpheus; he is dependent on him. The distinction is crucial: trust implies agency, while dependence implies surrender. Neo is surrendering his sense of self to Morpheus's narrative."
+    }
+   ],
+   "basis": "The text describes Neo as 'like a sleepwalker' and 'coming unglued.' His questions are reactive, not proactive. The physical act of 'relaxing' and 'opening his eyes' as he is plugged in suggests a surrender of physical control in exchange for mental clarity.",
+   "inferred": true
+  },
+  {
+   "who": "Trinity",
+   "wants": "To ensure Neo's safety during the transition, acting as a physical and emotional buffer between Neo and the harsh machinery of the ship.",
+   "feels": "A mixture of protective instinct and professional efficiency. She is the 'soft' element in the 'swamp of bizarre electronic equipment.' Her presence is a reminder that this is not just a technical operation, but a human one.",
+   "shows": "Gentle assistance. She smiles and nods when introduced, and physically helps Neo into the chair. She is the only crew member with a distinct, warm reaction to Neo's presence.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is vulnerable and needs to be handled with care, not just information. She sees the human cost of the 'rebuilding' and the 'hacking' that Morpheus speaks of so clinically.",
+     "wrong_because": "She may underestimate Neo's capacity for shock. While she handles him gently, the 'disturbing noises' and the 'grimace' suggest the physical toll is higher than a gentle hand can mitigate."
+    }
+   ],
+   "basis": "Morpheus explicitly says 'Help him, Trinity,' delegating the physical care to her. Her smile and nod are the only non-verbal cues of warmth in a scene dominated by cold machinery and clinical explanations.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-038: Neo's initial confusion and Morpheus's declaration 'Welcome to the real world' set the stage for this deeper integration.",
+  "sc-037: The physical trauma of Neo's arrival (falling, drowning, being dropped) explains his current 'atrophied' state and need for 'rebuilding.'",
+  "sc-036: The removal of the cerebrum chip and the gelatinous waste line establish the biological 'hardware' that is now being reconnected."
+ ],
+ "sets_up": [
+  "sc-040: The transition into the Construct, where Neo will first experience the digital loading of clothes and weapons, directly resulting from the plug-in in this scene.",
+  "The 'pirate signal' and 'hacking' mentioned here foreshadow the ship's role as a mobile base of operations for the resistance, not just a refuge.",
+  "The 'atrophied muscles' and 'rebuilding' process implies a longer-term dependency on the ship's medical and technological systems for Neo's physical survival."
+ ],
+ "dramatic_function": "This scene functions as the threshold crossing. It moves Neo from the passive state of 'discovery' (finding out he is in the real world) to the active state of 'initiation' (becoming part of the resistance). It physically and symbolically bridges the gap between Neo's old self (the office worker) and his new self (the hacker/resident), using the body as the site of this transformation."
+}

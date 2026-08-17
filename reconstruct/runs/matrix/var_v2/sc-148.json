@@ -1,0 +1,81 @@
+{
+ "scene_id": "sc-148",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Tank"
+ ],
+ "speaking": [
+  "TANK",
+  "TRINITY"
+ ],
+ "summary": "Trinity wakes up in the Main Deck with relief at seeing the ship. As Tank unplugs her, she notices his charred wounds. When she asks about Dozer, Tank's face tightens, and she takes him into her arms.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "knowledge",
+   "before": "Unaware of Dozer's fate",
+   "after": "Confronted with Dozer's absence/death through Tank's reaction",
+   "evidence": "Tank's face tightens and she takes him into her arms."
+  },
+  {
+   "who": "Trinity",
+   "axis": "safety",
+   "before": "In the Matrix",
+   "after": "Back in the ship, feeling relief",
+   "evidence": "a sense of relief surging through her at the sight of the ship"
+  }
+ ],
+ "objects_that_matter": [
+  "cables/plugs",
+  "charred wounds"
+ ],
+ "event_hint": {
+  "kind": "aftermath",
+  "one_line": "Trinity wakes to find Tank injured and Dozer gone.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To confirm the safety of her crew and understand the cost of the rescue.",
+   "feels": "A rapid oscillation between the visceral relief of survival and the dawning, heavy dread of loss. She is processing the trauma of being unplugged from the Matrix and the immediate visual evidence of violence (charred wounds) simultaneously.",
+   "shows": "Alertness and concern. She immediately assesses Tank's physical state and then pivots to the missing person. Her embrace is a protective gesture that acknowledges his pain without demanding verbal explanation.",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "Tank is injured but functional; the 'tightening' of his face signals that Dozer's fate is grim but perhaps not final, or that Tank is holding back the full extent of the tragedy.",
+     "wrong_because": "Tank's silence is not a withholding of hope, but a confirmation of finality that he cannot yet verbalize. Trinity's embrace is a bridge between her need for information and his inability to provide it."
+    }
+   ],
+   "basis": "The summary notes her relief upon seeing the ship, followed by the observation of charred wounds. Her question 'Dozer?' is a pivot point. In sc-147, she was the last one unplugged, so she has not seen the aftermath of the firefight. The 'tightening' of Tank's face is a non-verbal cue she interprets as significant news.",
+   "inferred": true
+  },
+  {
+   "who": "Tank",
+   "wants": "To stabilize the situation and protect the crew's morale by minimizing the immediate impact of the losses, while managing his own shock.",
+   "feels": "Exhaustion, guilt, and a protective stoicism. He is physically in pain (charred wounds) but emotionally guarded. He knows Dozer is dead (or effectively lost) and that Morpheus is captured, but he cannot dump both truths on Trinity at once.",
+   "shows": "Casual dismissal of his own injury ('I'll be all right') to signal that he is still in control. When asked about Dozer, his face tightens—a micro-expression of grief and burden that he does not counter with words, allowing Trinity to take the lead in the emotional exchange.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "Trinity is fragile enough to break if she hears the full scope of the disaster (Dozer dead, Morpheus captured) immediately upon waking. He needs her to be steady for the next steps.",
+     "wrong_because": "Trinity is already perceptive enough to sense the weight of his silence; his restraint is not hiding the truth from her, but pacing it so she can bear it."
+    }
+   ],
+   "basis": "In sc-147, Tank was the one who fired the lightning bolt that killed Cypher, leaving him charred. He is the operator and the de facto leader in this moment. His 'I'll be all right' is a classic operator's deflection. The tightening of his face is the only concession to the emotional weight of Dozer's absence, which is confirmed in sc-149 where he drapes a sheet over Dozer's body.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-147: The immediate cause of Tank's charred wounds and Dozer's death (implied by the firefight with Cypher).",
+  "sc-145/146: The betrayal by Cypher, which forced the crew into this desperate, unplanned rescue, creating the chaos that led to these injuries and losses."
+ ],
+ "sets_up": [
+  "sc-149: The transition from shock to action, where Tank explains the situation to Neo and the crew, and the reality of Dozer's death is physically acknowledged with the sheet.",
+  "The emotional bond between Trinity and Tank: This moment cements their reliance on each other for emotional support in the absence of Morpheus."
+ ],
+ "dramatic_function": "This scene serves as the emotional decompression chamber after the high-tension climax of the rescue. It shifts the focus from external conflict (Cypher/Agents) to internal cost (injury/death), grounding the crew in the reality of their situation before they turn their attention to the captured Morpheus."
+}

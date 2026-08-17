@@ -137,6 +137,114 @@ Now describe scene {scene.scene_id}, and only that scene.
     return V1_SYSTEM, user, v1_schema(scene)
 
 
+# --------------------------------------------------------------------------
+# V2 — two passes: structure from the scene alone, then mind from the context
+#
+# V1 established that cutting context anchors a node to its scene. But a scene
+# read in isolation cannot say why a character conceals something, what they
+# believe another believes, or what a silence costs — that information is not on
+# the page, it accumulated across the scenes before it.
+#
+# So the two things are separated, because they want opposite context:
+#
+#   pass A   what is observably there   ->  the scene alone. Cheap, fast,
+#                                           anchored, and V1 already measured it
+#   pass B   what is going on in minds  ->  pass A's facts, plus the surrounding
+#                                           scenes and what the characters have
+#                                           been through
+#
+# Pass B is explicitly allowed to go beyond the observable — that is its job —
+# but it must build on pass A's facts rather than replace them, and it must say
+# which of its claims are inferences.
+# --------------------------------------------------------------------------
+
+MIND_SCHEMA = {
+    "type": "object", "additionalProperties": False,
+    "required": ["scene_id", "minds", "connects_back", "sets_up"],
+    "properties": {
+        "scene_id": {"type": "string"},
+        "minds": {"type": "array", "minItems": 1, "items": {
+            "type": "object", "additionalProperties": False,
+            "required": ["who", "wants", "feels", "shows", "basis"],
+            "properties": {
+                "who": {"type": "string"},
+                "wants": {"type": "string",
+                          "description": "What they are trying to get here."},
+                "feels": {"type": "string",
+                          "description": "What is actually going on in them."},
+                "shows": {"type": "string",
+                          "description": "What they let be seen. If it differs "
+                                         "from `feels`, that gap is the scene."},
+                "believes_about": {"type": "array", "items": {
+                    "type": "object", "additionalProperties": False,
+                    "required": ["other", "belief"],
+                    "properties": {
+                        "other": {"type": "string"},
+                        "belief": {"type": "string"},
+                        "wrong_because": {"type": "string",
+                                          "description": "Where this belief is "
+                                                         "mistaken, if it is."}}}},
+                "basis": {"type": "string", "minLength": 30,
+                          "description": "What in the scene or in what came "
+                                         "before supports this reading."},
+                "inferred": {"type": "boolean",
+                             "description": "True if this goes beyond what is "
+                                            "observable in the scene itself."}}}},
+        "connects_back": {"type": "array", "items": {"type": "string"},
+                          "description": "What earlier this depends on."},
+        "sets_up": {"type": "array", "items": {"type": "string"},
+                    "description": "What this makes possible or necessary later."},
+        "dramatic_function": {"type": "string", "minLength": 40,
+                              "description": "What this scene is doing in the "
+                                             "story. Not what happens in it."},
+    },
+}
+
+MIND_SYSTEM = """\
+You are reading minds in a scene whose facts have already been established.
+
+Someone else recorded what observably happens. You are not re-doing that and you
+must not contradict it. Your job is the part that is not on the page: what each
+person is trying to get, what is actually going on in them, what they let be
+seen, and what they believe about each other — including where that belief is
+wrong, because a mistaken belief is where drama comes from.
+
+You have the scenes around this one. Use them. A character's guardedness here may
+be the residue of something three scenes ago, and that is exactly the kind of
+reading a scene taken alone cannot produce.
+
+Two disciplines. First, every reading needs a basis: name what in this scene or
+in what came before supports it. Second, mark as `inferred` anything that goes
+beyond what is observable here — going beyond is your job, pretending you did not
+is not.
+
+If two people could swap their inner lives without the scene changing, you have
+not read them, you have described a situation.
+
+Return JSON conforming to the schema. No prose outside it."""
+
+
+def v2_mind_prompt(scene, facts: dict, before: str, after: str) -> str:
+    return f"""\
+Read the minds in scene {scene.scene_id}.
+
+THE FACTS, already established — do not contradict them
+{json.dumps(facts, indent=1, ensure_ascii=False)}
+
+THE SCENE ITSELF
+{{scene_text}}
+
+WHAT CAME IMMEDIATELY BEFORE
+{before[:7000]}
+
+WHAT COMES IMMEDIATELY AFTER — for what this scene sets up, not for hindsight
+{after[:5000]}
+
+SCHEMA
+{json.dumps(MIND_SCHEMA, indent=1)}
+"""
+
+
 VARIANTS = {"v0": v0, "v1": v1}
 
 
@@ -198,6 +306,77 @@ def tier1(node: dict, scene, text: str) -> dict:
             "score": round(1.0 - 0.25 * len(p), 2)}
 
 
+def run_v2(out: Path, ports: list[int], model: str, per_endpoint: int = 4) -> dict:
+    """Two passes per scene: facts from the scene alone, then minds with context."""
+    out.mkdir(parents=True, exist_ok=True)
+    sw = Swarm(ports, model, per_endpoint)
+    table = json.loads((ROOT / "reconstruct/runs/matrix/script_map.json").read_text())
+    script = Path(table["source_file"]).read_text(errors="replace")
+    _, scenes = sp.parse(script)
+    by = {s.scene_id: s for s in scenes}
+    order = [s.scene_id for s in scenes]
+
+    def one(sid):
+        sc = by[sid]
+        text = script[sc.start_char:sc.end_char]
+        i = order.index(sid)
+
+        def span(j0, j1):
+            out_ = ""
+            for j in range(max(0, j0), min(len(scenes), j1)):
+                n = scenes[j]
+                out_ += (f"\n--- {n.scene_id} ({n.heading}) ---\n"
+                         + script[n.start_char:n.end_char][:2200])
+            return out_
+
+        # pass A — V1 exactly: the scene, its two neighbours, nothing else
+        system, user, schema = v1(sc, text, script, span(i - 1, i) + span(i + 1, i + 2))
+        facts = sw.ask(system, user, schema, stage="v2-facts", tag=sid, max_tokens=9000)
+        if not facts:
+            return None
+        facts["scene_id"] = sid
+
+        # pass B — minds, given the facts and a wider run of scenes
+        mind = sw.ask(MIND_SYSTEM,
+                      v2_mind_prompt(sc, facts, span(i - 3, i), span(i + 1, i + 2))
+                      .replace("{scene_text}", text[:12000]),
+                      MIND_SCHEMA, stage="v2-minds", tag=sid, max_tokens=9000)
+        if mind:
+            mind["scene_id"] = sid
+            facts["minds"] = mind.get("minds")
+            facts["connects_back"] = mind.get("connects_back")
+            facts["sets_up"] = mind.get("sets_up")
+            facts["dramatic_function"] = mind.get("dramatic_function")
+        return facts
+
+    nodes = sw.map(one, SAMPLE, stage="v2", label=lambda s: s)
+    results = {}
+    for sid, nd in zip(SAMPLE, nodes):
+        sc = by[sid]
+        r = tier1(nd, sc, script[sc.start_char:sc.end_char])
+        r["minds"] = len((nd or {}).get("minds") or [])
+        r["inferred"] = sum(1 for m in (nd or {}).get("minds") or []
+                            if m.get("inferred"))
+        results[sid] = r
+        if nd:
+            (out / f"{sid}.json").write_text(json.dumps(nd, indent=1, ensure_ascii=False))
+
+    ok = [r for r in results.values() if r.get("produced")]
+    summary = {"variant": "v2", "n": len(SAMPLE), "produced": len(ok),
+               "mean_tier1": round(sum(r["score"] for r in ok) / len(ok), 3) if ok else 0,
+               "mean_overlap": round(sum(r["overlap"] for r in ok) / len(ok), 3) if ok else 0,
+               "clean": sum(1 for r in ok if not r["problems"]),
+               "verbatim_ok": sum(1 for r in ok if r["verbatim"] != "0/0"
+                                  and not r["verbatim"].startswith("0/")),
+               "mean_words": round(sum(r["words"] for r in ok) / len(ok)) if ok else 0,
+               "mean_minds": round(sum(r["minds"] for r in ok) / len(ok), 1) if ok else 0,
+               "usage": {k: sw.summary("v2-facts")[k] + sw.summary("v2-minds")[k]
+                         for k in ("calls", "ok", "tok_in", "tok_out", "model_secs")},
+               "per_scene": results}
+    (out / "_tier1.json").write_text(json.dumps(summary, indent=1))
+    return summary
+
+
 def run_variant(name: str, out: Path, ports: list[int], model: str,
                 per_endpoint: int = 4) -> dict:
     fn = VARIANTS[name]
@@ -255,15 +434,16 @@ def run_variant(name: str, out: Path, ports: list[int], model: str,
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--variant", required=True, choices=list(VARIANTS))
+    ap.add_argument("--variant", required=True, choices=list(VARIANTS) + ["v2"])
     ap.add_argument("--out", required=True)
     ap.add_argument("--ports", default="8100,8101,8102,8103,8104,8105,8106,8107")
     ap.add_argument("--model", default="qwen3.8-27b")
     ap.add_argument("--per-endpoint", type=int, default=4)
     a = ap.parse_args()
 
-    s = run_variant(a.variant, Path(a.out), [int(p) for p in a.ports.split(",")],
-                    a.model, a.per_endpoint)
+    ports = [int(p) for p in a.ports.split(",")]
+    s = (run_v2(Path(a.out), ports, a.model, a.per_endpoint) if a.variant == "v2"
+         else run_variant(a.variant, Path(a.out), ports, a.model, a.per_endpoint))
     print(f"\n  {s['variant']}: {s['produced']}/{s['n']} produced · "
           f"tier1 {s['mean_tier1']} · clean {s['clean']}/{s['produced']} · "
           f"overlap {s['mean_overlap']:.0%} · "

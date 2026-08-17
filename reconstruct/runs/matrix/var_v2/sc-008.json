@@ -1,0 +1,100 @@
+{
+ "scene_id": "sc-008",
+ "location": "ROOF",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Agent Smith",
+  "Agent Brown",
+  "COP"
+ ],
+ "speaking": [
+  "COP"
+ ],
+ "summary": "Trinity escapes a hall through a broken window onto a fire escape, where she sees Agent Smith below. Forced upward, she runs across a roof pursued by Agent Brown and police. While the cops make wild jumps, Trinity glides cleanly across a 40-foot gap between buildings. The cops slow down in shock as Trinity launches herself into the air, somersaults, and lands running. Agent Brown then duplicates the move exactly, landing and rolling onto one knee.",
+ "what_changes": [
+  {
+   "who": "COP",
+   "axis": "knowledge",
+   "before": "Confident in their pursuit, believing they have caught her",
+   "after": "Stunned and slack-jawed, realizing the jump is impossible",
+   "evidence": "They stare, slack-jawed, as Agent Brown duplicates the move exactly, landing, rolling over a shoul"
+  },
+  {
+   "who": "Trinity",
+   "axis": "safety",
+   "before": "Trapped on the fire escape with Agent Smith staring at her",
+   "after": "Moving across rooftops, maintaining distance by jumping a 40-foot gap",
+   "evidence": "In the alley below, Trinity sees Agent Smith staring at her.  She can only go up."
+  }
+ ],
+ "objects_that_matter": [
+  "broken window",
+  "fire escape",
+  "roof",
+  "parapet"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Trinity leaps across a rooftop gap, followed by Agent Brown.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To escape the physical net of Agents and police by exploiting the vertical space they are less willing to navigate.",
+   "feels": "A profound, almost meditative calm that masks the high stakes. She is executing a pre-planned or instinctive survival protocol, detached from the fear that would paralyze a normal human.",
+   "shows": "Perfectly calm facial expression and fluid, 'gliding' movement. She stares at a point beyond the roof, ignoring the immediate danger below.",
+   "believes_about": [
+    {
+     "other": "Agent Smith",
+     "belief": "Smith is a static obstacle below; if she goes up, she is safe from his direct line of sight.",
+     "wrong_because": "Smith is not bound by the same physical constraints as the police; he can simply wait or follow, meaning 'up' is not a permanent sanctuary, only a delay."
+    }
+   ],
+   "basis": "In sc-005/006, she receives the instruction to 'focus' and 'go' from Morpheus. Her 'perfectly calm' face and 'clean' jumps contrast sharply with the 'wild' jumps of the cops, indicating a difference in relationship to the Matrix's rules.",
+   "inferred": true
+  },
+  {
+   "who": "Agent Brown",
+   "wants": "To demonstrate the Agents' superiority by matching Trinity's movement, proving that human exceptionalism is just a variable the System can equal.",
+   "feels": "Boredom and procedural precision. There is no fear, only the calculation of trajectory and force.",
+   "shows": "Unnatural grace. He duplicates Trinity's move 'exactly,' landing and rolling, mirroring her to assert dominance through imitation.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "Trinity's jump is a feat of physical prowess that can be replicated by an Agent with the correct data.",
+     "wrong_because": "He is replicating the *form* of the jump but may be missing the *intent* or the specific 'choice' Trinity made, which is why the scene emphasizes the 'unnatural' grace rather than just speed."
+    }
+   ],
+   "basis": "The text notes he has 'the same unnatural grace' as Trinity and 'duplicates the move exactly.' His role is to lead the unit, suggesting he is the tactical anchor.",
+   "inferred": true
+  },
+  {
+   "who": "COP",
+   "wants": "To catch Trinity before she escapes, relying on the assumption that their numbers and conventional pursuit tactics will succeed.",
+   "feels": "Shock and cognitive dissonance. The reality of the jump contradicts their understanding of physics and human capability.",
+   "shows": "Slack-jawed stares and the verbal admission 'That's impossible.' They slow down, physically halted by the impossibility of what they just witnessed.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "Trinity is a human who can be caught if the gap is wide enough.",
+     "wrong_because": "They believe in the limits of the human body (40 feet is 'impossible'), but Trinity operates outside those limits. Their belief in the 'normal' rules is their fatal flaw."
+    }
+   ],
+   "basis": "The cop says 'That's it, we got her now' before the jump, showing overconfidence. After the jump, they say 'Jesus Christ -- that's impossible!' and slow down, indicating a breakdown in their operational logic.",
+   "inferred": false
+  }
+ ],
+ "connects_back": [
+  "sc-005: Trinity's realization that the line was traced and Morpheus's instruction to 'focus' sets the tone for her calm execution here.",
+  "sc-006: The specific instruction 'Go' is the trigger for this physical escape sequence.",
+  "sc-007: The transition from the hall to the fire escape establishes the verticality that Trinity now exploits."
+ ],
+ "sets_up": [
+  "sc-009: The chase continues over the 'dark plateaued landscape,' raising the stakes and the visual spectacle of the Matrix.",
+  "The revelation that the Agents can mimic human feats (or rather, perform them with 'unnatural grace') sets up the theme that the Matrix is a simulation where the rules can be bent by those who understand the code."
+ ],
+ "dramatic_function": "This scene serves as the 'reveal' of the Matrix's true nature: a place where human limitations are optional. It shifts the conflict from a standard cat-and-mouse chase to a demonstration of power dynamics, where the 'prey' (Trinity) is actually demonstrating the 'predators' (Agents) are just as capable, but the prey is making choices the predators are merely calculating."
+}

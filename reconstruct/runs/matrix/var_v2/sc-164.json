@@ -1,0 +1,85 @@
+{
+ "scene_id": "sc-164",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "GUARD",
+  "Neo"
+ ],
+ "speaking": [
+  "TANK"
+ ],
+ "summary": "A guard instructs Neo to remove metallic items. Neo sets down his duffel bag and opens his coat to reveal a harness loaded with guns, knives, and grenades. The guard reacts with shock, and Neo moves with such speed that three guards are killed instantly.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Standing at security with a duffel bag",
+   "after": "In motion, killing guards",
+   "evidence": "Neo is a blur of motion. In a split second, three guards are dead"
+  },
+  {
+   "who": "GUARD",
+   "axis": "knowledge",
+   "before": "Expecting standard metallic items",
+   "after": "Witnessing an arsenal",
+   "evidence": "revealing an arsenal of guns, knives and grenades slung from a climbing harness"
+  }
+ ],
+ "objects_that_matter": [
+  "duffel bag",
+  "coat",
+  "guns",
+  "knives",
+  "grenades",
+  "climbing harness"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Neo's security check triggers an immediate lethal ambush.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To eliminate the immediate threat posed by the security checkpoint without alerting the rest of the building to the scale of the operation.",
+   "feels": "A detached, absolute certainty in his own lethality. He is not surprised by the guards' reaction; he has already moved past the point of negotiation. There is a cold efficiency in his actions, a lack of hesitation that suggests this outcome was the only acceptable one.",
+   "shows": "Calm, deliberate movement as he sets down the duffel and opens his coat. The transition from 'passive passenger' to 'lethal weapon' is instantaneous and silent until the violence begins. He does not shout or warn; he simply acts.",
+   "believes_about": [
+    {
+     "other": "GUARD",
+     "belief": "The guard is a predictable, low-level obstacle whose standard operating procedures will fail him in the face of the unexpected. He believes the guard will freeze or be killed before he can effectively communicate the threat to others.",
+     "wrong_because": "The guard is not just an obstacle but a signal; his shock is the first domino. However, Neo's belief is correct in that the guard's shock is fatal and immediate, confirming Neo's read of the situation."
+    }
+   ],
+   "basis": "In sc-161, Neo explicitly requested 'Guns. Lots of guns.' In sc-162, he armed himself in the Construct. In sc-163, he passed through the metal detector which wailed immediately, indicating a high metal load. His 'slow' setting down of the bag contrasts with the 'blur of motion' that follows, suggesting a deliberate choice to reveal the arsenal before the kill, making the shock part of the tactic.",
+   "inferred": true
+  },
+  {
+   "who": "GUARD",
+   "wants": "To complete a routine security check and maintain the order of the building's entry protocol.",
+   "feels": "Initial boredom or professional neutrality, which is instantly shattered by cognitive dissonance. The shift from 'keys and loose change' to 'arsenal' creates a moment of pure, unadulterated horror. He is experiencing the collapse of his reality in real-time.",
+   "shows": "The standard procedural posture ('Would you please remove...') which breaks into a visceral, non-verbalized shock ('Holy shit'). His body language likely stiffens or recoils as the coat opens, a physical reaction to the violation of expected norms.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is a civilian or business traveler carrying standard metallic items. He believes the interaction is a minor inconvenience, not a life-or-death confrontation.",
+     "wrong_because": "Neo is not a civilian; he is a targeted operative. The guard's belief in the normalcy of the situation is the primary reason he is killed so quickly—he has not yet registered the threat level."
+    }
+   ],
+   "basis": "The guard's dialogue ('keys, loose change') establishes his expectation of a mundane scenario. The visual of the 'climbing harness' and 'grenades' contrasts sharply with this expectation. The 'Holy shit' is a direct reaction to the violation of the security protocol he is enforcing.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-161: Neo's request for 'lots of guns' sets the expectation for the arsenal revealed here.",
+  "sc-162: The arming sequence in the Construct explains the specific gear (Uzi, etc.) and the 'climbing harness' setup.",
+  "sc-163: The metal detector wailing immediately upon Neo's entry provided the trigger for the guard's approach, making this scene the inevitable consequence of that scan."
+ ],
+ "sets_up": [
+  "sc-165: The death of three guards and the shock of the fourth (who dives for cover) creates the chaos necessary for Trinity's entry and the subsequent roof action.",
+  "The 'raid' event hint: This scene is the ignition point of the raid, transitioning the story from infiltration to open combat."
+ ],
+ "dramatic_function": "This scene serves as the threshold crossing from the internal, psychological realm (the Construct, the drive) to the external, physical conflict. It visually demonstrates the gap between the Matrix's perceived normality (security checks) and the Matrix's hidden violence (Neo's arsenal), shattering the guard's—and by extension, the audience's—sense of safety in the 'real' world. It is the moment the 'miracle' Neo mentioned in sc-161 becomes a tangible, lethal force."
+}

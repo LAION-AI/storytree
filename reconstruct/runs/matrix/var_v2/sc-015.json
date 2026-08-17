@@ -1,0 +1,72 @@
+{
+ "scene_id": "sc-015",
+ "location": "SKYSCRAPER",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "She",
+  "They"
+ ],
+ "speaking": [
+  "She"
+ ],
+ "summary": "A fragment of dialogue concludes with the statement that people must see the answer to believe it. Immediately following this line, a character identified as 'She' performs a physical action, leaning in.",
+ "what_changes": [
+  {
+   "who": "She",
+   "axis": "condition",
+   "before": "Standing at a distance",
+   "after": "Leaning in",
+   "evidence": "She leans c to that question.  They have to see it to believe it."
+  }
+ ],
+ "objects_that_matter": [],
+ "event_hint": {
+  "kind": "conversation",
+  "one_line": "Trinity explains the necessity of witnessing the truth and leans toward Neo.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "The full text of the dialogue preceding 'be told the answer'",
+  "The complete action following 'She leans c'"
+ ],
+ "minds": [
+  {
+   "who": "She",
+   "wants": "To bridge the gap between Neo's skepticism and the truth of the Matrix, ensuring he is ready to receive the final revelation.",
+   "feels": "A mix of urgency and intimacy; she is aware of the physical proximity required to convey the weight of her words in a loud, chaotic environment.",
+   "shows": "A focused, intense demeanor as she leans in to speak directly into his ear, projecting confidence and certainty.",
+   "believes_about": [
+    {
+     "other": "They",
+     "belief": "That Neo is at a threshold where he is capable of accepting the truth if presented with the right framing and proximity.",
+     "wrong_because": "She underestimates how much Neo is still clinging to his normal reality, which will cause him to wake up and forget this moment."
+    }
+   ],
+   "basis": "The dialogue 'They have to see it to believe it' indicates a strategy of persuasion based on experience. The physical action of 'leaning in' in a loud club (established in sc-013) shows she is using physical closeness to create a private, intense space for this pivotal moment.",
+   "inferred": true
+  },
+  {
+   "who": "They",
+   "wants": "To understand the nature of his reality and find the answer to the questions that have plagued him since his computer session.",
+   "feels": "A profound sense of disorientation and wonder; the world has just 'tilted' for him (sc-013), and he is now being told that his entire perception is a construct.",
+   "shows": "Passive reception; he is listening intently, allowing her to lean in, indicating he is open to the information but still processing the magnitude of it.",
+   "believes_about": [
+    {
+     "other": "She",
+     "belief": "That she is a source of truth and that her explanation will validate the strange occurrences he has experienced recently.",
+     "wrong_because": "He believes this conversation is happening in the 'real' world, when it is actually a precursor to the full extraction."
+    }
+   ],
+   "basis": "In sc-012 and sc-013, Neo is shown as a man seeking answers ('Follow the white rabbit', 'The Matrix has you'). His presence in the club and his engagement with Trinity show he is actively seeking the 'answer' she mentions.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-012: The computer messages and the 'rabbit' pin establish Neo's quest for the truth.",
+  "sc-013: Trinity's introduction and the 'tilting' of the room set the stage for this intense, close-quarters conversation."
+ ],
+ "sets_up": [
+  "sc-016: The immediate aftermath where Neo wakes up to an alarm, showing that this conversation was part of a dream or a pre-extraction vision, reinforcing the 'see it to believe it' theme as he must now physically leave the Matrix."
+ ],
+ "dramatic_function": "This scene serves as the emotional and intellectual climax of Neo's pre-extraction journey, where the abstract concept of the Matrix is made personal and immediate through Trinity's physical and verbal intimacy, setting the stage for his physical awakening."
+}

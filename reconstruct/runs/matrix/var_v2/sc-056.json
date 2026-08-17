@@ -1,0 +1,69 @@
+{
+ "scene_id": "sc-056",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Neo",
+  "Morpheus"
+ ],
+ "summary": "The scene is a fragment of a sparring match. A figure, identified by context as Neo, is in a similar stance and is described as cautiously circling. This cautious movement ends abruptly when he gives a short cry and the text cuts off at 'l', implying a launch or action that continues into the next scene.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "cautiously circling",
+   "after": "gives a short cry",
+   "evidence": "cautiously circling until he gives a short cry"
+  }
+ ],
+ "objects_that_matter": [],
+ "event_hint": {
+  "kind": "sparring match",
+  "one_line": "Neo transitions from cautious circling to a sudden cry.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "The full action following the short cry is cut off in the provided text fragment."
+ ],
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To prove the validity of the downloaded knowledge and overcome his physical hesitation.",
+   "feels": "A mixture of adrenaline-fueled excitement and the instinctive fear of a first-time fighter, transitioning into a sudden, almost violent surge of confidence or panic.",
+   "shows": "Cautious circling that breaks abruptly into a short, involuntary cry.",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That the combat skills he just downloaded are sufficient to engage Morpheus, though he is still testing the waters.",
+     "wrong_because": "He believes the skills are enough to start a fight, but he has not yet grasped the philosophical depth required to 'break' the rules, only that they exist."
+    }
+   ],
+   "basis": "In sc-054, Neo exclaims 'I know kung fu' after ten hours of downloading, indicating a belief in his new competence. In sc-055, he is told to 'hit me if you can,' prompting the cautious approach in sc-056. The 'short cry' suggests a release of tension or a trigger for action, bridging the gap between passive learning and active engagement.",
+   "inferred": true
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To observe whether Neo is still bound by the rules of the Matrix or beginning to transcend them.",
+   "feels": "Patient anticipation and a detached analytical focus, watching for the moment Neo chooses to act rather than hesitate.",
+   "shows": "A static, waiting stance, allowing Neo to make the first move.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo's hesitation is a natural part of the learning process and that the 'short cry' marks the beginning of his true potential being unlocked.",
+     "wrong_because": "He may underestimate how much of Neo's current aggression is still rooted in human instinct rather than Matrix-awareness, though this is less of a mistake and more of a pedagogical choice."
+    }
+   ],
+   "basis": "In sc-055, Morpheus explicitly states that the rules 'can be bent' or 'broken' and invites Neo to hit him. His presence in the dojo, as established in sc-053/054, is that of a teacher guiding a student through a critical transition from theory to practice.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-053: Neo's initial shock and excitement at the speed of learning.",
+  "sc-054: Neo's declaration that he 'knows kung fu' and Morpheus's challenge to 'Show me.'",
+  "sc-055: Morpheus's explanation of the rules and the specific instruction to hit him."
+ ],
+ "sets_up": [
+  "sc-057: The 'furious attack' that Neo launches, which is immediately blocked, demonstrating the gap between his new skills and Morpheus's mastery."
+ ],
+ "dramatic_function": "This scene serves as the critical pivot point between passive information acquisition and active physical application. It captures the precise moment of psychological commitment where Neo transitions from a student observing a teacher to a fighter engaging in combat, highlighting the tension between his new theoretical knowledge and his untested physical reality."
+}

@@ -1,0 +1,100 @@
+{
+ "scene_id": "sc-075",
+ "location": "MESS HALL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "NEO",
+  "CYPHER"
+ ],
+ "speaking": [
+  "NEO"
+ ],
+ "summary": "Cypher and Neo drink on the main deck. Cypher asks if Morpheus told Neo why he is there, mocking the idea that Neo is the One. He reveals that Morpheus has previously identified five other people as the One, all of whom died fighting Agents. Cypher advises Neo to run from Agents rather than fight. Neo leaves, and the scene cuts to Cypher in a restaurant with Agent Smith, eating a steak and discussing a deal.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Unsure if Morpheus told him why he is there, believing he might be the One",
+   "after": "Informed that five previous candidates for the One are dead and that Morpheus's belief in them led to their deaths",
+   "evidence": "Five. Since I've been here. ... Dead. All dead. ... Morpheus. He got them all amped up believing in bullshit."
+  },
+  {
+   "who": "NEO",
+   "axis": "resolve",
+   "before": "Standing by with the crew, potentially ready to fight",
+   "after": "Advised to run away from Agents rather than engage them",
+   "evidence": "Little piece of advice: you see an Agent, you do what we do; run. Run your ass off."
+  },
+  {
+   "who": "CYPHER",
+   "axis": "allegiance",
+   "before": "Drinking with Neo on the ship",
+   "after": "In a restaurant with Agent Smith, negotiating a deal and eating a steak",
+   "evidence": "Do we have a deal, Mr. Reagan? ... CYPHER You know, I know that this steak doesn't exist."
+  }
+ ],
+ "objects_that_matter": [
+  "clear alcohol",
+  "plastic jug",
+  "glass",
+  "steak",
+  "knife",
+  "fork"
+ ],
+ "event_hint": {
+  "kind": "negotiation",
+  "one_line": "Cypher shares his disillusionment with Neo before meeting Agent Smith to make a deal.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "CYPHER",
+   "wants": "To inoculate Neo against the burden of destiny and to validate his own decision to trade faith for comfort.",
+   "feels": "A deep, weary cynicism mixed with a sense of vindication. He feels the weight of years spent watching others die for a lie, and the immediate, visceral desire to escape that reality entirely.",
+   "shows": "A relaxed, almost friendly demeanor. He uses humor (\"killing brain cells,\" \"sweet dreams\") to mask the severity of the information he is sharing. He appears to be a casual observer rather than a participant in the tragedy he describes.",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "Neo is a naive idealist who will eventually break under the weight of Morpheus's expectations, just like the others.",
+     "wrong_because": "Neo is not merely following Morpheus's belief; he is the one who can actually alter the Matrix, making the previous deaths irrelevant to his specific fate."
+    },
+    {
+     "other": "MORPHEUS",
+     "belief": "Morpheus is a delusional leader who feeds on prophecy to keep his crew compliant and willing to die.",
+     "wrong_because": "Morpheus's belief is not just a coping mechanism; it is a strategic necessity to keep the crew alive long enough for the One to appear."
+    }
+   ],
+   "basis": "In sc-074, Cypher explicitly states he has been thinking about the blue pill since he arrived. In this scene, he actively shares the secret of the five dead 'Ones' with Neo, a piece of information he likely kept to himself to protect his own peace of mind. The transition to the restaurant with Smith immediately after shows that his conversation with Neo was a final step in his psychological detachment from the crew.",
+   "inferred": true
+  },
+  {
+   "who": "NEO",
+   "wants": "To understand his purpose and find a way to survive the coming battle.",
+   "feels": "A mix of awe at the sheer volume of data in the Matrix and a sudden, cold dread upon hearing the fate of his predecessors. He feels isolated, as if he is being set up to fail.",
+   "shows": "Curiosity and attentiveness. He asks the questions that Cypher is clearly waiting for. He leaves quietly, accepting the advice to 'run' without argument, which suggests he is not yet ready to confront the truth with force.",
+   "believes_about": [
+    {
+     "other": "CYPHER",
+     "belief": "Cypher is a reliable source of truth who is simply being honest about the dangers of their situation.",
+     "wrong_because": "Cypher's honesty is colored by his own betrayal; he is not just sharing facts, he is sharing his own disillusionment, which he hopes will rub off on Neo."
+    },
+    {
+     "other": "MORPHEUS",
+     "belief": "Morpheus is a wise mentor who knows what he is doing, but perhaps not the full cost of that knowledge.",
+     "wrong_because": "Neo begins to suspect that Morpheus's confidence is a form of manipulation, a 'mindjob' as Cypher calls it, rather than pure insight."
+    }
+   ],
+   "basis": "In sc-074, Neo is shown staring at the Matrix code with fascination, indicating his desire to understand the world. In this scene, he is the one who asks 'How many were there?' and 'What happened to them?', showing he is actively seeking to contextualize his own role. His reaction to the news is a gulp of alcohol and a quiet thanks, indicating internal processing rather than external defiance.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-074: Cypher's initial offer of a drink and his musing about the blue pill set the stage for this deeper conversation about disillusionment.",
+  "sc-073: The recent encounter with the Sentinel and the crew's fear of the machines makes Cypher's advice to 'run' a direct response to the immediate physical danger they have just escaped."
+ ],
+ "sets_up": [
+  "sc-076: Cypher's negotiation with Agent Smith, where he will formally betray the crew, is the direct consequence of the psychological shift initiated in this scene.",
+  "Neo's eventual fight with Agent Smith: The advice to 'run' creates a contrast with Neo's later decision to stand and fight, highlighting his growth beyond Cypher's cynicism."
+ ],
+ "dramatic_function": "The scene serves as a pivot point for Neo's journey, introducing the stakes of his destiny by showing the cost of previous failures. It also marks the final moment of Cypher's internal struggle before he fully commits to his betrayal, contrasting his desire for comfort with Neo's emerging resolve."
+}

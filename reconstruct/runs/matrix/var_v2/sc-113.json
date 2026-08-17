@@ -1,0 +1,73 @@
+{
+ "scene_id": "sc-113",
+ "location": "ROOM 808",
+ "time_of_day": "DAY",
+ "present": [
+  "NEO",
+  "the others"
+ ],
+ "speaking": [
+  "NEO"
+ ],
+ "summary": "Neo observes a second black cat that appears identical to the first. He utters the words 'Whoa. Deja vu.', which causes the group to halt immediately.",
+ "what_changes": [
+  {
+   "who": "the others",
+   "axis": "condition",
+   "before": "moving",
+   "after": "stopped",
+   "evidence": "Those words stop the others dead in their tracks."
+  }
+ ],
+ "objects_that_matter": [
+  "black cat"
+ ],
+ "event_hint": {
+  "kind": "anomaly",
+  "one_line": "Neo identifies a glitch in the Matrix through a repeated visual.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "NEO",
+   "wants": "To verify his suspicion that the environment is not real by speaking the anomaly aloud.",
+   "feels": "A sudden, electric jolt of recognition mixed with the weight of a long-held secret finally being acknowledged. He feels the shift from passive observer to active agent.",
+   "shows": "A brief, stunned pause followed by a casual, almost dismissive utterance ('Whoa. Deja vu.'). He masks the profound cosmic significance of the moment with the language of a minor inconvenience.",
+   "believes_about": [
+    {
+     "other": "the others",
+     "belief": "That they will understand the specific significance of this visual glitch and recognize it as a sign of the Matrix's instability.",
+     "wrong_because": "He underestimates how long it has been since they last saw a glitch of this clarity, or perhaps he overestimates their current vigilance compared to his own heightened perception."
+    }
+   ],
+   "basis": "Neo has just seen the second cat in sc-112/113, which is identical to the first. His speech is immediate and specific, indicating he is not just confused but identifying a known phenomenon. The 'Whoa' suggests a physical reaction to the cognitive dissonance.",
+   "inferred": true
+  },
+  {
+   "who": "the others",
+   "wants": "To maintain the flow of their mission and keep Neo moving toward the target without distraction.",
+   "feels": "Instantaneous, visceral alarm. The 'dead in their tracks' stop indicates a freeze response driven by the realization that the simulation is failing or being watched. There is a shared, unspoken fear of the consequences of a visible glitch.",
+   "shows": "A complete, synchronized cessation of movement. They do not ask 'what?' or 'where?'; they simply stop, creating a tableau of frozen tension that contrasts with Neo's casual speech.",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo has perceived something critical that they missed, and that speaking it aloud has now 'activated' or drawn attention to the anomaly.",
+     "wrong_because": "They believe the act of naming the glitch makes it more dangerous or visible to the System, a belief reinforced by the immediate glitching of the monitors in sc-114, but in this specific beat, their freeze is more about shock than tactical assessment."
+    }
+   ],
+   "basis": "The fact that they stop 'dead in their tracks' immediately upon hearing the words 'Deja vu' shows they are conditioned to react to this specific signal. Their stillness is a collective, trained response to the sign of the Matrix's fragility.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-111: The first sighting of the black cat establishes the visual motif.",
+  "sc-112: The repetition of the cat is the direct trigger for this scene's anomaly.",
+  "Prior scenes: The established lore that 'deja vu' is a glitch in the Matrix provides the context for the others' reaction."
+ ],
+ "sets_up": [
+  "sc-114: The immediate physical manifestation of the glitch (monitors glitching) which escalates the situation from visual to environmental.",
+  "Trinity's reaction: Her 'tight face' and turn in sc-114 are a direct consequence of the tension generated here."
+ ],
+ "dramatic_function": "This scene acts as the pivot point from subtle observation to overt crisis. It transforms Neo's internal realization into a shared, external threat, forcing the group to confront the instability of their reality and shifting the narrative momentum from movement to confrontation."
+}

@@ -1,0 +1,78 @@
+{
+ "scene_id": "sc-097",
+ "location": "ROOM 1313",
+ "time_of_day": "DAY",
+ "present": [
+  "ORACLE",
+  "Neo"
+ ],
+ "summary": "The Oracle speaks to Neo, acknowledging his good soul while delivering bad news. She comforts him by reminding him that he does not believe in fate and that he is in control of his own life. As she reaches for a tray of cookies, Neo attempts to nod in response.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "resolve",
+   "before": "Receiving bad news and feeling the weight of it",
+   "after": "Being reminded of his agency and told he will feel better outside",
+   "evidence": "You're in control of your own life, remember?"
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Listening to the Oracle's speech",
+   "after": "Attempting to physically respond to her words",
+   "evidence": "He tries to nod as she reaches for the tray of cookies."
+  }
+ ],
+ "objects_that_matter": [
+  "tray of cookies"
+ ],
+ "event_hint": {
+  "kind": "consultation",
+  "one_line": "The Oracle delivers a final piece of advice to Neo before he leaves.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Who exactly is 'she' in the first line, though context implies the Oracle."
+ ],
+ "minds": [
+  {
+   "who": "Oracle",
+   "wants": "To deliver the final, painful truth about Morpheus's fate while simultaneously providing Neo with a psychological exit ramp to ensure he can function after the choice.",
+   "feels": "A deep, maternal affection mixed with the professional weariness of being the one to break hearts. She feels the weight of 'giving good people bad news' but views it as a necessary part of Neo's growth. There is a subtle, knowing warmth in her voice, not just pity, but recognition of his character.",
+   "shows": "Compassion and authority. She speaks with a gentle, rhythmic cadence, using 'kiddo' and 'good soul' to soften the blow. Her physical action of reaching for the cookies is a deliberate, grounding gesture, signaling a return to normalcy and offering a tangible comfort.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is capable of handling the truth because he possesses a 'good soul' and a fundamental disbelief in fate. She believes that reminding him of his agency will be the key to his survival in the Matrix.",
+     "wrong_because": "She may underestimate how much the 'fate crap' has already started to take root in him; his struggle to nod suggests the weight of the prophecy is heavier than she anticipates."
+    }
+   ],
+   "basis": "Her dialogue explicitly contrasts her 'good soul' comment with 'bad news.' The specific instruction to 'remember you don't believe any of this fate crap' directly addresses the core conflict established in sc-095/096. Her action of reaching for the tray serves as a physical punctuation mark to her speech, bridging the emotional high with a mundane comfort.",
+   "inferred": true
+  },
+  {
+   "who": "Neo",
+   "wants": "To find a way to accept the inevitability of Morpheus's death without losing his own identity. He is trying to process the binary choice presented in the previous scene.",
+   "feels": "Overwhelmed and physically restricted. The 'can't breathe' sensation from sc-096 carries over. He feels the collision between his desire to save Morpheus and the Oracle's assertion that he is 'in control.' He is trying to assert his agency (nodding) but his body is lagging behind his mind, caught in the shock of the prophecy.",
+   "shows": "A struggle for composure. He attempts to nod, a small, physical act of agreement or acknowledgment, but the effort is visible. He is trying to appear strong and accepting, mirroring the Oracle's calm, but it is a conscious effort.",
+   "believes_about": [
+    {
+     "other": "Oracle",
+     "belief": "He believes the Oracle is giving him a hint or a way out, that if he simply 'remembers' his lack of belief in fate, the choice will resolve itself. He trusts her guidance but is still grappling with the logical impossibility of the choice she laid out.",
+     "wrong_because": "The Oracle isn't giving him a 'way out' from the choice, but a way to *make* the choice. He thinks she is reassuring him that the fate is fake, but she is actually telling him that his *will* is what matters, which is a much harder burden."
+    }
+   ],
+   "basis": "His physical reaction ('tries to nod') is the primary evidence. This is a micro-expression of trying to engage with her words. The context from sc-096 ('Neo can't breathe') establishes that he is in a state of high physiological stress, making his verbal and physical responses delayed and effortful.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-095: The specific binary choice (Morpheus vs. Neo) that this scene is addressing.",
+  "sc-096: The Oracle's apology ('I'm sorry, kiddo') and Neo's physical state ('can't breathe') which sets the emotional baseline for this scene."
+ ],
+ "sets_up": [
+  "sc-098: The transition to the 'cookie' scene, which serves as a palate cleanser and a final test of Neo's ability to return to normalcy.",
+  "The theme of 'choice' vs. 'fate' which will be the central conflict of the movie's climax."
+ ],
+ "dramatic_function": "This scene serves as the emotional de-escalation and the thematic pivot. It transforms the prophecy from a terrifying fate into a matter of personal responsibility. By having the Oracle explicitly name the 'fate crap' and emphasize Neo's control, she shifts the narrative agency from the Matrix's design to Neo's will, preparing him for the final act."
+}

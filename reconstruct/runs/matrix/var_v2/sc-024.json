@@ -1,0 +1,74 @@
+{
+ "scene_id": "sc-024",
+ "location": "DARK STREET",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "APOC",
+  "SWITCH"
+ ],
+ "speaking": [],
+ "summary": "A large man named APOC is driving a car. Beside him sits a beautiful androgyne called SWITCH, who is aiming a large gun. The scene cuts off before the gun's target or any dialogue is revealed.",
+ "what_changes": [
+  {
+   "who": "SWITCH",
+   "axis": "condition",
+   "before": "Not present",
+   "after": "Present, aiming a large gun",
+   "evidence": "Beside him is a beautiful androgyne called SWITCH, aiming a"
+  }
+ ],
+ "objects_that_matter": [
+  "large gun"
+ ],
+ "event_hint": {
+  "kind": "tension",
+  "one_line": "Switch aims a gun while Apoc drives.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Who Switch is aiming the gun at",
+  "What happens immediately after this cut"
+ ],
+ "minds": [
+  {
+   "who": "SWITCH",
+   "wants": "To maintain a posture of lethal readiness and control over the situation, ensuring Neo does not move before the procedure begins.",
+   "feels": "Professional detachment masking underlying tension; a focus on the task at hand rather than the person, consistent with the character's role as a specialist who values efficiency over comfort.",
+   "shows": "A beautiful, androgynous exterior that contrasts sharply with the large gun being aimed; the steady, unflinching aim of the weapon.",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo is a potential threat who must be restrained, even if the threat is more psychological or procedural than immediate physical danger.",
+     "wrong_because": "Neo is currently compliant and confused, not aggressive; the gun is a psychological tool for the upcoming extraction, not a response to active combat."
+    }
+   ],
+   "basis": "The text describes Switch as a 'beautiful androgyne' aiming a 'large gun' while Apoc drives. In the following scene (sc-025), Switch orders Neo to stop the car and take off his shirt, establishing that the gun's purpose is to enforce compliance for the worm extraction, not to shoot an enemy.",
+   "inferred": true
+  },
+  {
+   "who": "APOC",
+   "wants": "To navigate the vehicle safely and quickly to the destination, keeping the car steady for the procedure about to occur.",
+   "feels": "Focused and perhaps slightly anxious about the passenger's stability, given the high-stakes nature of the extraction described in the previous scene.",
+   "shows": "The act of driving; his presence is functional, providing the mobile platform for the operation.",
+   "believes_about": [
+    {
+     "other": "SWITCH",
+     "belief": "That Switch is handling the passenger's containment effectively.",
+     "wrong_because": "This is a functional assumption rather than a mistaken belief; Apoc is likely trusting in the team's established protocol."
+    }
+   ],
+   "basis": "Apoc is described as 'driving' while Switch aims the gun. In sc-025, Apoc stops the car on Switch's command, indicating his role is to facilitate the physical environment for the procedure.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-021: The nightmare of the worm entering Neo's navel sets the physical and psychological stakes for what is about to happen.",
+  "sc-023: Morpheus's revelation that Neo is 'the One' and the instruction to meet at the bridge leads directly to this car ride.",
+  "sc-024 (implied context): The 'large gun' is the tool that will enforce the 'one rule' mentioned in sc-025."
+ ],
+ "sets_up": [
+  "sc-025: The immediate confrontation where Neo demands to know why he is being shot at, leading to the decision to stop the car.",
+  "sc-025: The physical extraction of the worm, which requires the car to be stopped and Neo to be stripped down."
+ ],
+ "dramatic_function": "This scene serves as a moment of suspended tension, visually establishing the power dynamic between the rescuers and the rescued. It highlights the paradox of Neo's situation: he has been saved from the Agents, but is now under the gun of those who saved him, emphasizing that trust must be earned through painful, invasive procedures."
+}

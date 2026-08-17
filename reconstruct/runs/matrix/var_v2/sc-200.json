@@ -1,0 +1,81 @@
+{
+ "scene_id": "sc-200",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Agent Smith",
+  "Neo",
+  "Trinity"
+ ],
+ "summary": "Agent Smith attacks Neo with unrelenting fury, his fists pounding Neo like jackhammers. The scene cuts to Trinity watching Neo in the hovercraft.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "fighting",
+   "after": "being pounded by fists",
+   "evidence": "fists pounding Neo like jackhammers"
+  }
+ ],
+ "event_hint": {
+  "kind": "fight",
+  "one_line": "Agent Smith pummels Neo while Trinity watches from the hovercraft.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "Agent Smith",
+   "wants": "To physically destroy Neo and prove that Neo's existence is a mistake.",
+   "feels": "A cold, algorithmic rage that has replaced his usual composure. He is no longer fighting a rival, but purging a virus.",
+   "shows": "Unrelenting, mechanical fury. His face is a mask of hatred, and his movements are relentless and brutal, lacking the previous choreographed elegance.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is 'empty'—a hollow vessel without the capacity for true power or life.",
+     "wrong_because": "Neo is actually in the process of awakening to his true nature, and his 'emptiness' is the space that will soon be filled with the One."
+    }
+   ],
+   "basis": "In sc-198, Smith says 'You're empty' and the smile falls when the guns click. In sc-199, his eyes turn ice blue as he says he will enjoy watching Neo die. In sc-200, the attack is described as 'unrelenting fury' and 'pounding like jackhammers,' a shift from the mirrored, graceful combat of sc-197.",
+   "inferred": true
+  },
+  {
+   "who": "Neo",
+   "wants": "To survive the onslaught and find a counter to Smith's overwhelming force.",
+   "feels": "Overwhelmed and battered. He is in a state of reactive desperation, his body taking damage faster than he can process it.",
+   "shows": "A figure being pounded and retreating. He is the object of the action, not the subject, absorbing the 'jackhammer' blows.",
+   "believes_about": [
+    {
+     "other": "Agent Smith",
+     "belief": "Smith is an unbeatable force of nature that must be outlasted or outmaneuvered.",
+     "wrong_because": "Smith is not a force of nature but a manifestation of the System's desire to control Neo. Neo cannot outlast the System; he must transcend it."
+    }
+   ],
+   "basis": "In sc-198, Neo is sweating and panting, showing physical exhaustion. In sc-199, he is stunned and slammed into a column. In sc-200, the 'what_changes' axis moves him from 'fighting' to 'being pounded,' indicating a loss of agency.",
+   "inferred": true
+  },
+  {
+   "who": "Trinity",
+   "wants": "To see Neo survive and to confirm that he is the One.",
+   "feels": "A mix of terror and desperate hope. She is watching the man she loves being torn apart, and her faith is being tested in real-time.",
+   "shows": "A silent, watchful presence on the hovercraft. Her face is likely tight with concentration and fear, her eyes fixed on the monitor.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo has the power to turn this around and defeat Smith.",
+     "wrong_because": "At this moment, Neo is losing badly. Her belief is not yet supported by the visible evidence of his dominance, but it is the fuel for his eventual awakening."
+    }
+   ],
+   "basis": "The scene cut to Trinity watching is a deliberate narrative choice to show the stakes. In sc-201, she exclaims 'Jesus, he's killing him!', confirming her fear is well-founded. Her presence here is the emotional anchor for the fight.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-198: Smith's declaration that Neo is 'empty' and the failed gun standoff that triggered his rage.",
+  "sc-199: Smith's shift to 'ice blue' eyes and his promise to enjoy watching Neo die, which sets the tone for the brutal pummeling in sc-200."
+ ],
+ "sets_up": [
+  "sc-201: Trinity's reaction to Neo's near-death and the transition to the subway station where Neo will be found.",
+  "The moment of Neo's true awakening, which is catalyzed by Smith's overwhelming force and Trinity's faith."
+ ],
+ "dramatic_function": "This scene serves as the nadir of Neo's physical struggle, stripping away his agency and reducing him to a victim. It creates the maximum tension and danger necessary to make Neo's subsequent awakening feel earned and miraculous. The cut to Trinity externalizes the stakes, making the audience feel the terror of the 'outside' looking in."
+}

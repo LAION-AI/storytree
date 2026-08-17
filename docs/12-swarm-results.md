@@ -508,3 +508,70 @@ context is the obvious thing to do, and it is what every earlier stage of this
 project did. It was wrong for a reason that is only obvious once stated: **the
 useful context is not the largest context.** A window centred on the unit of work
 beat a window fifteen times its size, on every measure including cost.
+
+---
+
+## 13. V2 — two passes, because structure and mind want opposite context
+
+V1 established that cutting context anchors a node to its scene. But a scene read
+in isolation cannot say why someone conceals something, what they believe another
+believes, or what a silence costs. That information is not on the page; it
+accumulated across the scenes before it.
+
+So the two are separated, because they want **opposite** context:
+
+| Pass | Sees | Produces |
+|---|---|---|
+| **A · facts** | the scene plus two neighbours (V1 exactly) | who is present, what changes, verbatim evidence |
+| **B · minds** | pass A's facts, plus three scenes back and one forward | wants, feels, shows, beliefs about others, what connects back, what it sets up, dramatic function |
+
+Pass B is explicitly *allowed* to go beyond the observable — that is its job — but
+it must build on pass A's facts rather than replace them, and must mark which
+claims are inferences.
+
+### Result
+
+| Measure | V0 | V1 | V2 |
+|---|---|---|---|
+| Tier-1 score | 0.70 | 0.95 | **0.95** |
+| Clean nodes (of 15) | 4 | 12 | **12** |
+| Word overlap | 28% | 76% | **74%** |
+| Verbatim evidence | 4/15 | 13/15 | **13/15** |
+| Words per node | 188 | 161 | **768** |
+| Output tokens | — | 5,853 | 21,654 (3.7×) |
+
+**The anchoring survives the added depth.** V2 keeps every tier-1 property of V1
+while producing 4.8× more content — 38 mind blocks across fifteen scenes, each
+with a stated basis, plus explicit links backward and forward.
+
+The links are specific rather than generic. For one 76-word scene, pass B named
+which earlier scene primed the audience for what happens here, and which later
+one this makes possible. A single-pass reading of that scene could not have
+produced either.
+
+### Two problems, recorded now rather than discovered later
+
+**The `inferred` flag is useless as written.** 37 of 38 mind blocks are marked
+`inferred: true` — 97%. A flag that is almost always true carries no information.
+Either the model is being honest (mental states genuinely are not observable, so
+everything is inference) or the field is decorative. Both readings make it
+worthless as a filter, which is what it was for. It needs to become a *degree*
+— what fraction of this reading rests on this scene versus on what came before —
+or it should be dropped.
+
+This is the same shape as the five measurement bugs in §5: a field that looks
+like it discriminates and does not.
+
+**Pass B sees the following scene.** `sets_up` claims are therefore partly
+hindsight, not forecast. For a reconstruction feeding distillation that may be
+acceptable — the whitepaper argues the case for a sighted author — but it is not
+what a blind reader could produce, and any use of these nodes as forecasting data
+would be invalid. Recorded here so it is not later mistaken for prediction.
+
+### What this does not yet show
+
+Whether the extra 600 words per node are *good*. Three tier-1 properties are
+unchanged, so nothing mechanical distinguishes V1 from V2 — the entire difference
+is content that only a reader can judge. That is the rubric's job, and it is the
+same question as V1's: more, or better?
+

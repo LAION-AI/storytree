@@ -1,0 +1,118 @@
+{
+ "scene_id": "sc-003",
+ "location": "HEART O' THE CITY HOTEL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "LIEUTENANT",
+  "AGENT SMITH",
+  "TRINITY",
+  "BIG COP",
+  "cops"
+ ],
+ "summary": "Agent Smith informs the Lieutenant that his men are already dead. Inside the hotel, the Big Cop attempts to cuff Trinity, who is holding her hands behind her head. Trinity moves with inhuman speed, snapping up to explode the Big Cop's nose with her palm. She kicks him back into another cop, then moves again while bullets rake the walls and flashlights sweep in panic. She snatches a gun from a cop's hand.",
+ "what_changes": [
+  {
+   "who": "LIEUTENANT",
+   "axis": "knowledge",
+   "before": "Believes his units are bringing her down",
+   "after": "Informed his men are already dead",
+   "evidence": "LIEUTENANT I sent two units.  They're bringing her down now. AGENT SMITH No, Lieutenant, your men are already dead."
+  },
+  {
+   "who": "BIG COP",
+   "axis": "condition",
+   "before": "Attempting to cuff Trinity, confident they have her",
+   "after": "Nose exploded, kicked back, slamming into another cop",
+   "evidence": "Trinity's palm snaps up and the nose explodes, blood erupting.  Her leg kicks with the force of a wrecking ball and he flies back"
+  },
+  {
+   "who": "TRINITY",
+   "axis": "custody",
+   "before": "Hands behind her head, seemingly contained",
+   "after": "Free, moving, and snatching a gun",
+   "evidence": "until the Big Cop reaches with the cuffs and Trinity moves -- It almost doesn't register, so smooth and fast, inhumanly fast."
+  }
+ ],
+ "objects_that_matter": [
+  "cuffs",
+  "GUN"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Trinity breaks free from police custody and initiates combat.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "LIEUTENANT",
+   "wants": "To maintain control of the situation and validate his authority over the Agents.",
+   "feels": "A mix of smug confidence and sudden, dawning dread. He believes he is in charge, but Smith's revelation shatters that illusion, leaving him feeling exposed and foolish.",
+   "shows": "He displays casual bravado, claiming his units are bringing her down. When corrected, he likely stiffens, his composure cracking as the reality of his defeat sets in.",
+   "believes_about": [
+    {
+     "other": "AGENT SMITH",
+     "belief": "Smith is merely a bureaucratic obstacle he can talk down to with police rank.",
+     "wrong_because": "Smith is not a peer but a superior force with omniscient knowledge; the Lieutenant's rank is irrelevant to the outcome."
+    }
+   ],
+   "basis": "In sc-002, he tells Smith to 'cram it up your ass' and says he can handle 'one little girl.' In sc-003, he asserts 'They're bringing her down now,' only to be told 'your men are already dead.'",
+   "inferred": true
+  },
+  {
+   "who": "AGENT SMITH",
+   "wants": "To establish absolute dominance and correct the Lieutenant's misunderstanding of the hierarchy.",
+   "feels": "Cold, detached efficiency. He feels no urgency, only the need to state facts that the Lieutenant is too arrogant to see.",
+   "shows": "He is calm and precise, delivering the death of the Lieutenant's men as a simple correction rather than a tragedy.",
+   "believes_about": [
+    {
+     "other": "LIEUTENANT",
+     "belief": "The Lieutenant is a minor variable whose resistance is predictable and ultimately inconsequential.",
+     "wrong_because": "None. His assessment of the Lieutenant's limited power is accurate."
+    }
+   ],
+   "basis": "In sc-002, Smith states the orders were for the Lieutenant's 'protection.' In sc-003, his line 'No, Lieutenant, your men are already dead' is delivered with finality, indicating he knows the outcome before it happens.",
+   "inferred": true
+  },
+  {
+   "who": "TRINITY",
+   "wants": "To secure her freedom and eliminate the immediate threat to her life.",
+   "feels": "Calculated and predatory. She is not panicked; she is executing a plan. The 'hands behind her head' was a tactical pause, not a surrender.",
+   "shows": "She appears compliant and contained, allowing the Big Cop to close the distance. Her movement is described as 'inhumanly fast,' revealing her true nature only in the moment of action.",
+   "believes_about": [
+    {
+     "other": "BIG COP",
+     "belief": "He will reach for the cuffs, providing the perfect opening to strike.",
+     "wrong_because": "None. She correctly anticipates his standard procedure."
+    }
+   ],
+   "basis": "In sc-001, she is found sitting at a computer, suggesting she was working, not hiding. In sc-002, she puts her hands up 'slowly,' indicating control. In sc-003, she moves 'so smooth and fast, inhumanly fast' to explode the nose, showing premeditated violence.",
+   "inferred": true
+  },
+  {
+   "who": "BIG COP",
+   "wants": "To complete the arrest and return to the safety of routine.",
+   "feels": "Confident and routine-oriented. He believes this is just another day on the job, underestimating the target's capabilities.",
+   "shows": "He flicks out his cuffs and reaches forward, assuming the situation is under control. His physical dominance (size, position) is his primary tool.",
+   "believes_about": [
+    {
+     "other": "TRINITY",
+     "belief": "She is a standard suspect who has been cornered and is now compliant.",
+     "wrong_because": "She is an 'Anomaly' (implied by 'inhumanly fast') who is using his routine to set a trap."
+    }
+   ],
+   "basis": "In sc-001, he kicks the door and shouts 'Police! Freeze!'. In sc-002, he demands 'Hands behind your head! Now!'. In sc-003, he 'flicks out his cuffs' and reaches, assuming he 'knows they've got her.'",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-001: Trinity's presence at the computer establishes she was active, not hiding, setting the stage for her controlled compliance.",
+  "sc-002: The arrival of the Agents and the Lieutenant's arrogant dismissal of their authority creates the tension that Smith resolves with the news of the dead units.",
+  "sc-002: Trinity's 'slow' compliance with the order to put her hands behind her head is the setup for the sudden, violent release of tension in this scene."
+ ],
+ "sets_up": [
+  "sc-004: Trinity's acquisition of the gun and her demonstration of superhuman speed sets up the final violent exchange where she emerges as the only survivor.",
+  "The reveal of Trinity's 'inhuman' nature shifts the genre from a standard police raid to a sci-fi/action confrontation, raising the stakes for the Agents."
+ ],
+ "dramatic_function": "This scene serves as the 'reveal' of Trinity's true capabilities, shattering the police's sense of security and confirming the Agents' superior knowledge. It transitions the conflict from a procedural arrest to a supernatural combat scenario, establishing the power dynamic between the 'Anomalies' and the 'Agents'."
+}
