@@ -229,3 +229,53 @@ separate pass; anchors are in `experiments/EXP-004-scene-variants.md`.
 - **The source is a well-known film.** Nothing in the design detects a model
   reproducing a received summary rather than reading structure. A synthetic
   control script exists on disk and the comparison has not been run.
+
+---
+
+## 11. Run status, 17 August
+
+The rubric pass for V4 and V5 is **blocked** — the evaluator hit a weekly account
+limit that resets 19 August. No V4 or V5 scoring exists; the partial file from
+that run contains none.
+
+All outputs are on disk and the arms remain comparable, so the pass resumes
+without re-running anything.
+
+### What can be said without the rubric
+
+| | V0 | V1 | V2 | V3 | V4 | V5 |
+|---|---|---|---|---|---|---|
+| tier-1 | 0.917 | 0.983 | 0.983 | 0.967 | 0.967 | **1.000** |
+| word overlap | 65% | 76% | 72% | 77% | 79% | **79%** |
+| verbatim evidence | 12/15 | 15/15 | 15/15 | 14/15 | 13/15 | **15/15** |
+| words per node | 191 | 174 | 776 | 786 | 476 | 600 |
+| mind blocks per scene | 0 | 0 | 2.3 | 2.4 | 1.1 | 1.6 |
+| output tokens | 6.6k | 6.3k | 21.5k | 21.9k | 13.8k | 16.6k |
+
+V5 is the first arm to reach a perfect tier-1 score with 15/15 verbatim evidence,
+at 76% of V3's tokens. **That is a floor, not a quality result** — tier-1 was
+built to catch nodes describing the wrong scene, and a perfect score means only
+that none does.
+
+### One check that could be run, and what it does not prove
+
+The rubric found that every arm missed a concealment the source states outright
+in the sample's richest scene. V5 adds an instruction naming exactly that case.
+Searching the four arms' nodes for that scene:
+
+| arm | mind blocks | concealment vocabulary present |
+|---|---|---|
+| V1 | 0 | one term |
+| V3 | 3 | none |
+| V4 | 3 | one term |
+| **V5** | 3 | **three terms** |
+
+All three V5 blocks record a gap between what a character feels and what they
+show, each grounded in the scene itself.
+
+**This is keyword presence, not comprehension.** It shows the instruction changed
+the vocabulary the model reaches for. Whether it caught *the* concealment the
+evaluator identified — as opposed to producing concealment-flavoured language
+around a different moment — a keyword search cannot distinguish, and treating it
+as though it could would be the eighth entry in §8's table. The rubric decides
+this, and it has not run.
