@@ -1,0 +1,46 @@
+{
+ "scene_id": "sc-003",
+ "location": "HEART O' THE CITY HOTEL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "LIEUTENANT",
+  "AGENT SMITH",
+  "The Big Cop",
+  "the other cops",
+  "Trinity"
+ ],
+ "summary": "Agent Smith informs the Lieutenant that his men are dead. Inside the hotel, the Big Cop attempts to cuff Trinity, but she moves with inhuman speed to explode his nose and kick him into another cop. As bullets rake the walls and flashlights sweep in panic, Trinity snatches a gun from a cop's hand.",
+ "what_changes": [
+  {
+   "who": "The Big Cop",
+   "axis": "condition",
+   "before": "Holding a bead and reaching with cuffs, confident they have her",
+   "after": "Nose exploded and flying back into another cop",
+   "evidence": "Trinity's palm snaps up and the nose explodes, blood erupting.  Her leg kicks with the force of a wrecking ball and he flies back"
+  },
+  {
+   "who": "Trinity",
+   "axis": "custody",
+   "before": "Being approached by cops with cuffs",
+   "after": "In control, snatching a gun",
+   "evidence": "A GUN still in the cop's hand is snatched, twisted, and"
+  },
+  {
+   "who": "the remaining cops",
+   "axis": "safety",
+   "before": "Confident they have her",
+   "after": "Shooting in panic",
+   "evidence": "BULLETS RAKING the walls, flashlights sweeping with panic as the remaining cops try to stop a leather-clad ghost"
+  }
+ ],
+ "objects_that_matter": [
+  "cuffs",
+  "GUN"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Trinity fights off the police inside the hotel.",
+  "continues_from_earlier": true
+ },
+ "uncertain": []
+}

@@ -1,0 +1,41 @@
+{
+ "scene_id": "sc-164",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "GUARD",
+  "Neo"
+ ],
+ "speaking": [
+  "TANK",
+  "TRINITY"
+ ],
+ "summary": "A guard instructs Neo to remove metallic items like keys and loose change. Neo sets down his duffel bag and opens his coat to reveal an arsenal of guns, knives, and grenades on a climbing harness. The guard exclaims in shock, and Neo moves with blurring speed, killing three guards before they hit the ground.",
+ "what_changes": [
+  {
+   "who": "GUARD",
+   "axis": "knowledge",
+   "before": "Assuming standard security protocol regarding small metallic items",
+   "after": "Confronted with a heavy arsenal of weapons",
+   "evidence": "revealing an arsenal of guns, knives and grenades slung from a climbing harness."
+  },
+  {
+   "who": "Neo",
+   "axis": "standing",
+   "before": "Passive subject of security check",
+   "after": "Active combatant killing guards",
+   "evidence": "Neo is a blur of motion.  In a split second, three guards are dead before"
+  }
+ ],
+ "objects_that_matter": [
+  "duffel bag",
+  "arsenal of guns, knives and grenades",
+  "climbing harness"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Neo reveals his weapons and kills guards at the security checkpoint.",
+  "continues_from_earlier": true
+ },
+ "uncertain": []
+}

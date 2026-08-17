@@ -1,0 +1,31 @@
+{
+ "scene_id": "sc-024",
+ "location": "DARK STREET",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "APOC",
+  "SWITCH"
+ ],
+ "speaking": [],
+ "summary": "A large man named APOC is driving a car. Beside him, a beautiful androgyne called SWITCH is aiming a large gun, though the sentence is cut off before specifying the target.",
+ "what_changes": [
+  {
+   "who": "SWITCH",
+   "axis": "safety",
+   "before": "Not explicitly stated",
+   "after": "Aiming a large gun",
+   "evidence": "Beside him is a beautiful androgyne called SWITCH, aiming a"
+  }
+ ],
+ "objects_that_matter": [
+  "large gun"
+ ],
+ "event_hint": {
+  "kind": "transport",
+  "one_line": "Apoc drives while Switch aims a gun inside the car.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "What or who Switch is aiming the gun at, as the text cuts off after 'aiming a'"
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "scene_id": "sc-008",
+ "location": "EXT. FIRE ESCAPE / EXT. ROOF",
+ "time_of_day": "Night",
+ "present": [
+  "Trinity",
+  "Agent Smith",
+  "Agent Brown",
+  "COP"
+ ],
+ "speaking": [
+  "COP"
+ ],
+ "summary": "Trinity exits a broken window onto a fire escape and looks down to see Agent Smith waiting in the alley below, forcing her to continue upward. On the roof, she is pursued by Agent Brown and a unit of police. Trinity jumps between rooftops with fluid precision, contrasting with the wild jumps of the cops, though Agent Brown matches her unnatural grace. As they reach a wide back alley, a cop declares they have her. Trinity launches across a gap of over 40 feet, landing and somersaulting up to continue running. A cop exclaims it is impossible as Agent Brown replicates the move exactly, landing and rolling up to one knee.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "custody",
+   "before": "Escaping indoors via fire escape",
+   "after": "Forced to navigate open rooftop terrain with no downward escape",
+   "evidence": "In the alley below, Trinity sees Agent Smith staring at her. She can only go up."
+  },
+  {
+   "who": "COP",
+   "axis": "knowledge",
+   "before": "Believing the chase is ending",
+   "after": "Realizing the jump is impossible",
+   "evidence": "Jesus Christ -- that's impossible!"
+  }
+ ],
+ "objects_that_matter": [
+  "fire escape",
+  "rooftops",
+  "back alley"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Trinity is forced to jump across rooftops to escape Agents and police.",
+  "continues_from_earlier": true
+ },
+ "uncertain": []
+}

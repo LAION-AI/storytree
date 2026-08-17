@@ -1,0 +1,30 @@
+{
+ "scene_id": "sc-113",
+ "location": "ROOM 808",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "the others"
+ ],
+ "speaking": [
+  "Neo"
+ ],
+ "summary": "Neo observes a second black cat that appears identical to the first. He utters the phrase 'Whoa. Deja vu.', which causes the group to stop moving completely.",
+ "what_changes": [
+  {
+   "who": "the others",
+   "axis": "condition",
+   "before": "moving",
+   "after": "stopped dead in their tracks",
+   "evidence": "Those words stop the others dead in their tracks."
+  }
+ ],
+ "objects_that_matter": [
+  "black cat"
+ ],
+ "event_hint": {
+  "kind": "encounter",
+  "one_line": "Neo identifies a repeated visual anomaly that halts the group.",
+  "continues_from_earlier": true
+ }
+}

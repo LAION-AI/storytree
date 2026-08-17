@@ -1,0 +1,38 @@
+{
+ "scene_id": "sc-129",
+ "location": "STREET",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Cypher",
+  "Morpheus",
+  "Agent Smith"
+ ],
+ "summary": "Neo hears fast footsteps and is immediately attacked by Agent Smith, who smashes through a wall and chokes him against a pipe. Cypher identifies the attacker as an Agent. Just as Neo's throat is about to collapse, Morpheus breaks through the same wall and tackles Agent Smith, sending both men crashing to the floor.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "Listening quietly as gunfire fades",
+   "after": "Choked against a pipe with throat about to collapse",
+   "evidence": "punching Neo back against the iron stack pipe, fingers gouging into his neck."
+  },
+  {
+   "who": "Morpheus",
+   "axis": "custody",
+   "before": "Off-screen or outside the immediate struggle",
+   "after": "On top of Agent Smith, interrupting the choke",
+   "evidence": "Morpheus explodes through the tattered plaster and lath, diving on top of Agent Smith."
+  }
+ ],
+ "objects_that_matter": [
+  "wall",
+  "iron stack pipe",
+  "wet terrazzo"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Agent Smith ambushes Neo through a wall before Morpheus intervenes.",
+  "continues_from_earlier": true
+ }
+}

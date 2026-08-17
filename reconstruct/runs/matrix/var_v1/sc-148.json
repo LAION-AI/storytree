@@ -1,0 +1,41 @@
+{
+ "scene_id": "sc-148",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Neo",
+  "Tank"
+ ],
+ "speaking": [
+  "NEO",
+  "TRINITY",
+  "TANK"
+ ],
+ "summary": "Trinity wakes up on the Main Deck after Neo sends her out of the Matrix first. As Tank unplugs her, she notices his charred wounds. He claims he is fine, but when she asks about Dozer, his face tightens, prompting her to take him into her arms.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "knowledge",
+   "before": "Unaware of the physical state of the crew on the ship",
+   "after": "Aware that Tank is injured and Dozer is likely gone",
+   "evidence": "As Tank unplugs her, she sees his charred wounds."
+  },
+  {
+   "who": "Tank",
+   "axis": "condition",
+   "before": "Injured but concealing the extent of the harm",
+   "after": "Injured and emotionally affected by Dozer's status",
+   "evidence": "Tank's face tightens and she takes him into her arms."
+  }
+ ],
+ "objects_that_matter": [
+  "PHONE",
+  "charred wounds"
+ ],
+ "event_hint": {
+  "kind": "aftermath",
+  "one_line": "Trinity wakes to find Tank injured and Dozer missing.",
+  "continues_from_earlier": true
+ }
+}

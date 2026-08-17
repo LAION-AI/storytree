@@ -1,0 +1,49 @@
+{
+ "scene_id": "sc-182",
+ "location": "SUBWAY STATION",
+ "time_of_day": "DAY",
+ "present": [
+  "Morpheus",
+  "Neo",
+  "Trinity",
+  "Tank"
+ ],
+ "speaking": [
+  "NEO"
+ ],
+ "summary": "Neo and Morpheus fall from a helicopter, landing safely on a roof before the rope snaps taut and drags Neo to the edge. Trinity cuts the rope, causing the helicopter to smash into a skyscraper and explode. Neo pulls Trinity up onto the roof as they hold each other.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "Falling with the helicopter",
+   "after": "Standing on the building's edge, then pulled up by Trinity",
+   "evidence": "Neo flies like a skipping stone, hurtling at the parapet, when his feet hit the rain gutter and he levers up just as"
+  },
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "In the helicopter",
+   "after": "Swinging on the rope, bouncing against a window, pulled up by Neo",
+   "evidence": "She bounces against a shatterproof WINDOW that SPIDER-CRACKS out while flames erupt behind her."
+  },
+  {
+   "who": "Tank",
+   "axis": "knowledge",
+   "before": "Watching the screen",
+   "after": "Believes Neo is the One",
+   "evidence": "Tank stares at the screen, his mouth agape. TANK I knew it! He's the One!"
+  }
+ ],
+ "objects_that_matter": [
+  "rope",
+  "helicopter",
+  "glass skyscraper",
+  "shatterproof WINDOW"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Neo and Trinity escape the falling helicopter and survive the crash.",
+  "continues_from_earlier": true
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "scene_id": "sc-097",
+ "location": "ROOM 1313",
+ "time_of_day": "DAY",
+ "present": [
+  "ORACLE"
+ ],
+ "summary": "The Oracle delivers bad news to an unseen male figure, telling him he has a good soul but will feel better once he leaves the room and remembers he does not believe in fate. She instructs him that he is in control of his own life. As she speaks, he tries to nod while she reaches for a tray of cookies.",
+ "what_changes": [
+  {
+   "who": "He",
+   "axis": "knowledge",
+   "before": "Uninformed of the specific bad news or the Oracle's reassurance regarding fate",
+   "after": "Informed of the bad news and told to rely on his own control rather than fate",
+   "evidence": "You have a good soul and I hate giving good people bad news.  But don't worry, as soon as you walk outside that door, you'll start feeling better."
+  },
+  {
+   "who": "He",
+   "axis": "condition",
+   "before": "Passive or stunned",
+   "after": "Attempting to physically acknowledge the information",
+   "evidence": "He tries to nod as she reaches for the tray of cookies."
+  }
+ ],
+ "objects_that_matter": [
+  "tray of cookies"
+ ],
+ "event_hint": {
+  "kind": "consultation",
+  "one_line": "The Oracle delivers a verdict and offers comfort before the subject leaves.",
+  "continues_from_earlier": true
+ }
+}

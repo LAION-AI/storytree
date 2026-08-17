@@ -432,3 +432,79 @@ Ordered by expected effect per hour of work, not by expected effect alone.
 
 Ranks 1–3 are all trivial or small and can go in one variant. That is variant **V1**;
 everything after is decided by what V1 measures.
+
+---
+
+## 12. V1 — context dominance confirmed, decisively
+
+The first variant bundles ranks 1–3 of the plan: context cut from ~100,000
+characters to the scene plus its two neighbours (A1), length calibration and
+explicit permission to write little (B1, B4), outside inference forbidden (B5),
+and location/time/speakers bound into the schema (D1).
+
+Bundling means V1 cannot attribute its result to a single cause. That is
+deliberate — the first question is whether the ceiling moves at all.
+
+### Tier 1, both variants, same fifteen scenes
+
+| Measure | V0 | V1 |
+|---|---|---|
+| Tier-1 score | 0.70 | **0.95** |
+| Clean nodes (of 15) | 4 | **12** |
+| Mean word overlap with the correct scene | 28% | **76%** |
+| Nodes with a verbatim evidence span | 4/15 | **13/15** |
+| Words per node | 188 | **161** |
+| Model seconds | 388 | **86** |
+| Input tokens | 398,500 | **25,411** |
+
+**It is better, 4.5× faster and 15.7× cheaper at the same time.** That combination
+is rare enough to be suspicious, so the per-scene breakdown matters more than the
+means.
+
+### The effect is concentrated in the short scenes, exactly as predicted
+
+| Scene | Words | V0 | V1 |
+|---|---|---|---|
+| sc-056 | 12 | 0% | **100%** |
+| sc-015 | 12 | 10% | **67%** |
+| sc-024 | 23 | 9% | **89%** |
+| sc-200 | 26 | 0% | **77%** |
+| sc-215 | 27 | 0% | **56%** |
+| sc-113 | 30 | 14% | **88%** |
+| sc-164 | 57 | 3% | **75%** |
+| sc-097 | 59 | 17% | **75%** |
+| sc-129 | 76 | 86% | 88% |
+| sc-003 | 157 | 52% | 85% |
+| sc-008 | 204 | 73% | 85% |
+| sc-182 | 237 | 17% | **86%** |
+| sc-039 | 270 | 75% | **46%** ← regression |
+| sc-075 | 342 | 39% | 72% |
+| sc-148 | 511 | 33% | 60% |
+
+Every scene under 60 words was at or near zero correspondence under V0 and is
+now well above it. **The median scene in this work is 45 words**, so this is not
+an edge case — it is most of the screenplay.
+
+The mechanism is now hard to dispute. At a 100,000-character window, a 12-word
+scene is 0.01% of what the model reads. It was not ignoring the scene; the scene
+was not meaningfully present. Everything the node contained had to come from
+somewhere else, and the canary already showed where.
+
+**One honest regression**: sc-039, a 270-word scene, fell from 75% to 46%. The
+rubric pass is asked to look at that one specifically and say what was lost.
+
+### What tier 1 cannot say
+
+That V1 is *better*, only that it is more anchored to its scene. The risk of
+demanding verbatim evidence and cutting context is that a model stops
+interpreting and starts transcribing — a node can be perfectly faithful and
+useless. That question belongs to the rubric, and the answer is in
+[`experiments/EXP-004-scene-variants.md`](experiments/EXP-004-scene-variants.md).
+
+### A note on what this cost to find
+
+The V0 configuration was not careless. Handing a model the whole script for
+context is the obvious thing to do, and it is what every earlier stage of this
+project did. It was wrong for a reason that is only obvious once stated: **the
+useful context is not the largest context.** A window centred on the unit of work
+beat a window fifteen times its size, on every measure including cost.

@@ -1,0 +1,215 @@
+{
+ "variant": "v0",
+ "n": 15,
+ "produced": 15,
+ "mean_tier1": 0.7,
+ "mean_overlap": 0.285,
+ "clean": 4,
+ "verbatim_ok": 4,
+ "mean_words": 188,
+ "usage": {
+  "calls": 15,
+  "ok": 15,
+  "failed": 0,
+  "tok_in": 398500,
+  "tok_out": 6469,
+  "model_secs": 387.56836342811584,
+  "tok_per_s": 16.691248849055857
+ },
+ "per_scene": {
+  "sc-003": {
+   "produced": true,
+   "named_ok": "3/3",
+   "verbatim": "1/2",
+   "noops": 0,
+   "overlap": 0.516,
+   "words": 189,
+   "scene_words": 157,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-008": {
+   "produced": true,
+   "named_ok": "4/4",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.727,
+   "words": 219,
+   "scene_words": 204,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-015": {
+   "produced": true,
+   "named_ok": "0/3",
+   "verbatim": "0/2",
+   "noops": 0,
+   "overlap": 0.1,
+   "words": 242,
+   "scene_words": 12,
+   "problems": [
+    "none of ['Neo', 'Trinity', 'people'] appears in the scene or its cues",
+    "no evidence span appears verbatim in the scene"
+   ],
+   "score": 0.5
+  },
+  "sc-024": {
+   "produced": true,
+   "named_ok": "2/4",
+   "verbatim": "0/1",
+   "noops": 0,
+   "overlap": 0.091,
+   "words": 190,
+   "scene_words": 23,
+   "problems": [
+    "no evidence span appears verbatim in the scene",
+    "word overlap 9% \u2014 probably a different scene"
+   ],
+   "score": 0.5
+  },
+  "sc-039": {
+   "produced": true,
+   "named_ok": "3/3",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.75,
+   "words": 256,
+   "scene_words": 270,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-056": {
+   "produced": true,
+   "named_ok": "0/3",
+   "verbatim": "0/1",
+   "noops": 0,
+   "overlap": 0.0,
+   "words": 107,
+   "scene_words": 12,
+   "problems": [
+    "none of ['Apoc', 'Switch', 'Tank'] appears in the scene or its cues",
+    "no evidence span appears verbatim in the scene",
+    "word overlap 0% \u2014 probably a different scene"
+   ],
+   "score": 0.25
+  },
+  "sc-075": {
+   "produced": true,
+   "named_ok": "3/3",
+   "verbatim": "0/2",
+   "noops": 0,
+   "overlap": 0.39,
+   "words": 277,
+   "scene_words": 342,
+   "problems": [
+    "no evidence span appears verbatim in the scene"
+   ],
+   "score": 0.75
+  },
+  "sc-097": {
+   "produced": true,
+   "named_ok": "1/2",
+   "verbatim": "0/2",
+   "noops": 0,
+   "overlap": 0.167,
+   "words": 272,
+   "scene_words": 59,
+   "problems": [
+    "no evidence span appears verbatim in the scene"
+   ],
+   "score": 0.75
+  },
+  "sc-113": {
+   "produced": true,
+   "named_ok": "1/4",
+   "verbatim": "0/1",
+   "noops": 0,
+   "overlap": 0.143,
+   "words": 125,
+   "scene_words": 30,
+   "problems": [
+    "no evidence span appears verbatim in the scene"
+   ],
+   "score": 0.75
+  },
+  "sc-129": {
+   "produced": true,
+   "named_ok": "4/4",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.862,
+   "words": 157,
+   "scene_words": 76,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-148": {
+   "produced": true,
+   "named_ok": "2/2",
+   "verbatim": "0/1",
+   "noops": 0,
+   "overlap": 0.333,
+   "words": 135,
+   "scene_words": 511,
+   "problems": [
+    "no evidence span appears verbatim in the scene"
+   ],
+   "score": 0.75
+  },
+  "sc-164": {
+   "produced": true,
+   "named_ok": "2/4",
+   "verbatim": "0/2",
+   "noops": 0,
+   "overlap": 0.03,
+   "words": 247,
+   "scene_words": 57,
+   "problems": [
+    "no evidence span appears verbatim in the scene",
+    "word overlap 3% \u2014 probably a different scene"
+   ],
+   "score": 0.5
+  },
+  "sc-182": {
+   "produced": true,
+   "named_ok": "2/2",
+   "verbatim": "0/2",
+   "noops": 0,
+   "overlap": 0.167,
+   "words": 173,
+   "scene_words": 237,
+   "problems": [
+    "no evidence span appears verbatim in the scene"
+   ],
+   "score": 0.75
+  },
+  "sc-200": {
+   "produced": true,
+   "named_ok": "1/2",
+   "verbatim": "0/1",
+   "noops": 0,
+   "overlap": 0.0,
+   "words": 96,
+   "scene_words": 26,
+   "problems": [
+    "no evidence span appears verbatim in the scene",
+    "word overlap 0% \u2014 probably a different scene"
+   ],
+   "score": 0.5
+  },
+  "sc-215": {
+   "produced": true,
+   "named_ok": "1/2",
+   "verbatim": "0/1",
+   "noops": 0,
+   "overlap": 0.0,
+   "words": 128,
+   "scene_words": 27,
+   "problems": [
+    "no evidence span appears verbatim in the scene",
+    "word overlap 0% \u2014 probably a different scene"
+   ],
+   "score": 0.5
+  }
+ }
+}

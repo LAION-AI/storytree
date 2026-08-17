@@ -1,0 +1,50 @@
+{
+ "scene_id": "sc-075",
+ "location": "MESS HALL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "NEO",
+  "CYPHER",
+  "AGENT SMITH"
+ ],
+ "speaking": [
+  "NEO"
+ ],
+ "summary": "In the main deck, Cypher pours Neo a drink and reveals that Morpheus has previously believed five other men were the One, all of whom died fighting Agents. Cypher advises Neo to run from Agents rather than fight. Neo drinks and leaves. The scene cuts to a restaurant where Cypher eats a steak while Agent Smith negotiates a deal with him.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Unsure about why he is there",
+   "after": "Aware that he is the sixth candidate for the One and that the previous five died",
+   "evidence": "Five.  Since I've been here. ... Dead.  All dead."
+  },
+  {
+   "who": "NEO",
+   "axis": "resolve",
+   "before": "Unsure and listening",
+   "after": "Accepts the reality of the previous failures and prepares to leave",
+   "evidence": "Neo gulps down another shot. ... Cypher nods as Neo heads for the ladder."
+  },
+  {
+   "who": "CYPHER",
+   "axis": "allegiance",
+   "before": "Part of the crew on the ship",
+   "after": "In negotiation with Agent Smith in a restaurant",
+   "evidence": "Do we have a deal, Mr. Reagan? ... You know, I know that this steak doesn't exist."
+  }
+ ],
+ "objects_that_matter": [
+  "clear alcohol",
+  "plastic jug",
+  "ladder",
+  "serrated knife",
+  "steak"
+ ],
+ "event_hint": {
+  "kind": "negotiation",
+  "one_line": "Cypher warns Neo of the fate of previous 'Ones' before cutting a deal with Agent Smith.",
+  "continues_from_earlier": true
+ },
+ "uncertain": []
+}

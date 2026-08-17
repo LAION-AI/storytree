@@ -1,0 +1,40 @@
+{
+ "scene_id": "sc-015",
+ "location": "APARTMENT",
+ "time_of_day": "Night (implied by context of party and previous scene)",
+ "present": [
+  "Neo",
+  "Trinity",
+  "people"
+ ],
+ "speaking": [
+  "Neo",
+  "Trinity"
+ ],
+ "summary": "Neo is standing alone against a wall in a smoke-filled apartment where a party is taking place. Trinity approaches him and introduces herself. When Neo asks who is watching him, Trinity explains that she knows he has been looking for a specific man (Morpheus) and that he was actually looking for an answer to a question. She states that the answer is out there and will find him if he wants it, then leaves him.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Neo is unaware of who is watching him or the nature of his search.",
+   "after": "Neo is told that he is in danger, being watched, and that his search for 'him' is actually a search for an answer to a question.",
+   "evidence": "Right now, all I can tell you, is that you are in danger. I brought you here to warn you."
+  },
+  {
+   "who": "Neo",
+   "axis": "resolve",
+   "before": "Neo is passive and confused.",
+   "after": "Neo is left with the idea that the answer is actively looking for him.",
+   "evidence": "The answer is out there, Neo. It's looking for you and it will find you, if you want it to."
+  }
+ ],
+ "objects_that_matter": [
+  "bottle of beer"
+ ],
+ "event_hint": {
+  "kind": "encounter",
+  "one_line": "Trinity warns Neo that he is in danger and that he is searching for an answer, not a person.",
+  "continues_from_earlier": true
+ },
+ "uncertain": []
+}
