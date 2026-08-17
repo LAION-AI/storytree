@@ -134,7 +134,7 @@ schema-constrained JSON; 45 tok/s single-stream.
 | Stage | Units | Output tokens | Wall |
 |---|---|---|---|
 | 1 · scene nodes | 224 | 1,568,000 | 9.3 min |
-| 2 · event boundaries (3 passes) | 57 | 112,500 | 0.7 min |
+| 2 · event boundaries (3 passes) | 56 | 112,500 | 0.7 min |
 | 3 · event drafts | ~30 | 180,000 | 1.1 min |
 | 4 · plots (draft, panel, final) | 7 | 31,000 | 0.2 min |
 | 5 · entity unification | 4 | 24,000 | 0.1 min |
@@ -143,7 +143,7 @@ schema-constrained JSON; 45 tok/s single-stream.
 | 8 · exposé + doctors + revision | 8 | 32,000 | 0.2 min |
 | 9 · event rewrite | ~30 | 210,000 | 1.2 min |
 | 10 · scene rewrite | 224 | 2,016,000 | 11.9 min |
-| **Total** | **~690 calls** | **4,550,500** | **≈ 27 min** |
+| **Total** | **~689 calls** | **4,550,500** | **≈ 27 min** |
 
 Serially at 45 tok/s the same work is **28 hours**. The 63× is the shape of the
 work, not the hardware.
