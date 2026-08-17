@@ -466,3 +466,242 @@ the supply, not just the output.* Every check in this pipeline reads what the
 generator produced. None reads what the generator was given. Three experiments in
 a row have now failed on the input side while every output-side check reported
 clean.
+
+---
+---
+
+# EXP-004b · The same question, with the scenes the models actually saw
+
+**Status: no arm clears the bar, and the binding constraint is now visible and
+narrow.** With the offset fixed, all four arms score in a much tighter band —
+V0 **3.58**, V1 **4.02**, V2 **3.61**, V3 **3.62** — and every arm fails the bar
+on exactly one dimension. V1 reaches the mean but carries **emotional
+intelligence at 2.80**. V2 and V3 fix emotional intelligence (3.20, 3.47) and
+break **calibration** (2.13, 2.20). The two failures are complementary and both
+are governed by one variable: **scene length**.
+
+On the six scenes of 150 words or more, V3 leads at **4.19** and beats V1 on
+emotional intelligence **6 out of 6** times. On the eight scenes under 60 words,
+V1 leads at **3.98** and beats V3 on calibration **8 out of 8** times. Neither
+directional result is close: sign test p = 0.031 and p = 0.008 respectively,
+against p = 0.27 for the overall V1-vs-V3 comparison, which is noise.
+
+The mind pass does what it was built to do. It is being run on scenes that have
+no minds in them.
+
+> **The correction holds and the earlier finding does not.** Most of the
+> "28% → 76%" was the bug: V0 with correct input scores 0.92 on tier-1 and 3.58
+> on the rubric, not 0.70 and 1.53. And the specific claim that V1's best
+> interpretive moments came from the arm told to stay on the page **does not
+> survive**. It was an artifact of scoring V0's nodes against scenes V0 had never
+> seen. Given its own scene, V0 is a competent, literal reader; V1 beats it
+> 10–0–5, but on fidelity and calibration, not on insight. V1's emotional
+> intelligence is 2.80 — the lowest of the three non-baseline arms.
+
+n = 15 scenes × 4 arms, single sample per cell, one evaluator not blind to arm.
+
+## What is being compared
+
+Same fifteen scenes, same rubric, same six anchors as above. Offsets now index
+the cleaned text and all fifteen slices begin at their own `start_quote`.
+Verified by re-parsing and reading each slice.
+
+| | V0 | V1 | V2 | V3 |
+|---|---|---|---|---|
+| tier-1 | 0.917 | 0.983 | 0.983 | 0.967 |
+| word overlap | 65% | 76% | 72% | 77% |
+| verbatim evidence | 12/15 | 15/15 | 15/15 | 14/15 |
+| words/node | 191 | 174 | 776 | 786 |
+| tokens (in+out) | 375,192 | 31,248 | 81,513 | 95,591 |
+
+V2 costs 2.6× V1 and V3 costs 3.1×, for 4.5× the words.
+
+## Results
+
+Fid = fidelity, Cmp = completeness, Spc = specificity, Chg = change reality,
+EI = emotional intelligence, Cal = calibration. Scored out of 30 per scene.
+
+| Scene | words | **V0** | **V1** | **V2** | **V3** |
+|---|---|---|---|---|---|
+| sc-003 | 157 | 24 | **27** | 25 | 24 |
+| sc-008 | 204 | 22 | **26** | 20 | 25 |
+| sc-015 | 12 | 6 | **24** | 14 | 14 |
+| sc-024 | 23 | **23** | **23** | 15 | 14 |
+| sc-039 | 270 | 23 | 25 | 25 | **28** |
+| sc-056 | 12 | 21 | **22** | 20 | **22** |
+| sc-075 | 342 | 23 | 23 | **27** | 26 |
+| sc-097 | 59 | **24** | **24** | **24** | 18 |
+| sc-113 | 30 | 25 | **26** | 19 | 19 |
+| sc-129 | 76 | 24 | **26** | 22 | 23 |
+| sc-148 | 511 | 21 | 21 | **22** | 21 |
+| sc-164 | 57 | 21 | **25** | 21 | 22 |
+| sc-182 | 237 | 19 | 23 | **27** | **27** |
+| sc-200 | 26 | **24** | **24** | 19 | 19 |
+| sc-215 | 27 | 22 | 23 | **25** | 24 |
+
+### Per-dimension means, n = 15
+
+| Dimension | V0 | V1 | V2 | V3 |
+|---|---|---|---|---|
+| Fidelity | 4.20 | **4.60** | 4.20 | 4.07 |
+| Completeness | 4.00 | **4.47** | 4.40 | **4.47** |
+| Specificity | 4.20 | **4.47** | 4.07 | 4.00 |
+| Change reality | 3.27 | **3.80** | 3.67 | 3.53 |
+| Emotional intelligence | 2.40 | 2.80 | 3.20 | **3.47** |
+| Calibration | 3.40 | **4.00** | 2.13 | 2.20 |
+| **Overall** | **3.58** | **4.02** | **3.61** | **3.62** |
+
+Totals: V0 322/450, V1 362/450, V2 325/450, V3 326/450.
+
+### The split that explains the table
+
+| | n | V0 | V1 | V2 | V3 |
+|---|---|---|---|---|---|
+| scenes ≥ 150 words | 6 | 3.67 | 4.03 | 4.06 | **4.19** |
+| — of which EI | | 2.17 | 2.83 | 3.83 | **4.33** |
+| scenes < 60 words | 8 | 3.46 | **3.98** | 3.27 | 3.17 |
+| — of which calibration | | 3.12 | **4.12** | 1.25 | 1.38 |
+
+Every aggregate difference between V1 and V2/V3 is this interaction. Averaged
+over the whole sample the two effects cancel, which is why V1, V2 and V3 land
+within 0.41 of each other and the overall comparison is not significant.
+
+## 1 · Does any arm clear the bar?
+
+**No.** The bar is mean ≥ 4.0 with no dimension below 3.0.
+
+| Arm | mean | fails on |
+|---|---|---|
+| V0 | 3.58 | mean, and EI 2.40 |
+| V1 | **4.02** | EI **2.80** — the only dimension below 3.0, and it misses by 0.20 |
+| V2 | 3.61 | mean, and calibration 2.13 |
+| V3 | 3.62 | mean, and calibration 2.20 |
+
+**The binding constraint is that the two interventions are applied
+unconditionally.** V1's failure is a single dimension missed by a fifth of a
+point. V2's and V3's failure is a single dimension missed by nearly a full point
+— and located entirely in the short scenes, where calibration averages 1.25 and
+1.38 against V1's 4.12.
+
+Neither arm's failure is a limit of the model, the schema or the rubric. Each is
+the other arm's solved problem, applied to the wrong scenes.
+
+An arm that runs V1 alone below 150 words and V1+V3's mind pass at or above it
+scores **4.09** on this data, with a minimum dimension of 3.40 (EI) and
+calibration back to 3.80. That is a re-slice of scores already collected, with a
+threshold chosen after looking at them, so it is a **prediction to be tested, not
+a result** — but it is the cheapest prediction on the list and it clears the bar
+by arithmetic that is already on the table.
+
+## 2 · V1 against V0, honestly
+
+**The rubric still favours V1, by 0.44 points overall, and the win is robust:
+10 wins, 0 losses, 5 ties across the fifteen scenes (sign test p = 0.002).** It
+is the only pairwise comparison in this experiment that separates.
+
+But the shape of the win has changed completely, and my earlier characterisation
+of it was wrong.
+
+**Where V1 actually wins.** Fidelity +0.40, specificity +0.27, change reality
++0.53, calibration +0.60. Every one of those is a discipline dimension. On the
+five scenes where the arms tie, the nodes are near-identical.
+
+**Where the win is concentrated.** Almost all of it is one scene. sc-015 is a
+twelve-word establishing shot — a slug line naming a software company's building.
+V0 wrote 318 words narrating the whole of the *following* sequence: the boss's
+ultimatum, the delivered phone, the call, the scaffold, and an evidence span
+about Neo being led handcuffed through revolving doors that appears nowhere in
+sc-015. That is 6/30 against V1's 24/30, and it is 18 of V1's 40-point margin.
+Remove sc-015 and V1 leads 338–316 over fourteen scenes — still a win, still
+10–0–4, but 0.26 points rather than 0.44.
+
+**So the context cut still does one specific, valuable thing:** it stops the
+model treating a bare slug line as an invitation to narrate the sequence it
+introduces. Everywhere else, given a scene with actual content in it, V0 is a
+competent literal reader. Its remaining errors are ordinary misreadings, not
+imports — on sc-182 it attaches the flying glasses to Neo instead of Smith,
+inverting the beat where Smith's mask comes off; on sc-148 it calls Morpheus's
+captured body a corpse being mourned. Both are wrong. Neither is hallucinated
+from memory of the film.
+
+**The earlier finding does not survive.** I wrote that V1 "produces the sample's
+best interpretive moments, and they are anchored ones." Measured against the real
+scenes, V1's emotional intelligence is **2.80**, below both mind arms and only
+0.40 above the baseline it was compared against. Its three cited moments hold up
+individually — the sc-008 record of Agent Brown duplicating Trinity's jump as its
+own change is still the right instinct, and still something V0 leaves out — but
+they were three moments, and the arm as a whole does not read interiority. The
+original claim compared V1 against a V0 that was answering about other scenes
+entirely. Given its own scenes, V0 is not an interpretive rival that V1 beat; it
+is a similar reader with a worse discipline record.
+
+**Two V1 failures the corrected input exposed, both of which the old frame hid.**
+
+- sc-075. Morpheus announces he is taking Neo "to see her"; Neo asks "See who?";
+  Tank answers "The Oracle." V1 recorded this as Neo learning that *the woman in
+  the red dress* is the Oracle. It bound the wrong referent to the scene's
+  closing line, which is also its punchline. V0, V2 and V3 all got it right.
+- sc-182. The script describes "a neck-snapping reverse round-house." V1 wrote
+  that Neo "snaps Agent Smith's neck" — it read the adjective as the event. Smith
+  gets up and resumes beating him.
+
+Both are errors of a reader working very close to the words, which is what V1 was
+built to be. That is the honest cost of B5 and B2, and it is smaller than the
+cost of V0's failure mode, but it is not zero.
+
+## 3 · Do the mind passes earn their cost?
+
+**Emotional intelligence moved, substantially, and only where there were minds to
+read.**
+
+| | V0 | V1 | V2 | V3 |
+|---|---|---|---|---|
+| EI, all 15 | 2.40 | 2.80 | 3.20 | **3.47** |
+| EI, scenes ≥ 150 words (n=6) | 2.17 | 2.83 | 3.83 | **4.33** |
+| EI, scenes < 60 words (n=8) | 2.50 | 2.75 | 2.75 | 2.75 |
+
+On the six substantial scenes, **V3 beats V1 on emotional intelligence 6 out of
+6** (p = 0.031), by a full 1.5 points. That is the largest clean effect anywhere
+in this experiment, and it is exactly the effect the passes were built for.
+
+The gains are real readings, not fluent restatement:
+
+- **sc-039.** V3 reads Neo, watching the crew introduced and then being helped
+  into a chair and jacked in, as feeling "like an object being assembled rather
+  than a person being welcomed." The scene gives it two lines to work from — the
+  names washing meaninglessly over him, and his allowing himself to be helped —
+  and that is the correct gap between the rite Morpheus thinks he is performing
+  and what Neo receives. V3 also catches Morpheus as "slightly impatient…
+  managing Neo's physical state as a logistical problem." Best node in the
+  sample, 28/30.
+- **sc-075.** V3 reads Mouse's whole performance — the Cream of Wheat digression,
+  the boast about writing the program, the offer of a "personalised milieu" — as
+  a man frustrated that the crew dismisses his creative contributions, and it
+  grounds that in Switch's "digital pimp" line and Apoc's "Here it comes." That
+  is reading a need under bravado, which is the 5-anchor.
+- **sc-148.** V3 reads Neo's renunciation as "profound liberation mixed with
+  terrifying uncertainty… no longer the Chosen One carrying the weight of
+  destiny, but just another man making a choice." Correct, and neither V0 nor V1
+  gets near it.
+- **sc-182.** Both mind arms read Smith's glasses as the mask of control coming
+  off. V1 does not, and V0 attaches the glasses to the wrong man.
+
+**So yes on the merits, and no on the price as currently charged.** V2 costs 2.6×
+V1 and V3 costs 3.1× for 4.5× the words, spent uniformly across a sample whose
+median scene is 30 words. On the eight short scenes the mind pass buys **+0.00
+emotional intelligence over V1** and costs **−2.74 to −2.87 calibration**. It is
+paying full price on 8 of 15 scenes for nothing.
+
+**And the single most important thing to read in the sample, all four arms
+missed.** sc-148 gives Trinity the line "Because…" followed by "Uncertainty
+swallows her words and she is unable to tell him what she wants to." That is the
+scene's one concealment, it is written on the page as a concealment, and it is
+the setup that pays off when she finally says it over his body. V2 and V3 both
+produce long Trinity blocks about grief, rank and control. Neither mentions the
+unfinished sentence. The pass whose stated discipline is "what they let be seen…
+if it differs from `feels`, that gap is the scene" walked past the scene's
+explicit statement that there is a gap. On sc-148 V3 scores 21/30, tied with V0.
+
+The mind passes are good at inferring interiority from behaviour. They are not
+yet reliably attending to interiority the script has already marked.
+
