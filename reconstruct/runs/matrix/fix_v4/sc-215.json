@@ -1,0 +1,40 @@
+{
+ "scene_id": "sc-215",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Tank",
+  "Morpheus"
+ ],
+ "speaking": [
+  "TRINITY"
+ ],
+ "summary": "The monitors on the main deck suddenly jump back to life, causing Trinity to scream. Tank and Morpheus exchange a look, acknowledging the event as a miracle. Trinity then commands Neo, who is implied to be present given the context of the previous scene and her command, to get up.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "In tears, believing Neo is dead (from previous scene context)",
+   "after": "Screaming and commanding action",
+   "evidence": "Trinity screams as the monitors jump back to life."
+  },
+  {
+   "who": "Tank and Morpheus",
+   "axis": "knowledge",
+   "before": "Grieving/waiting (implied from previous scene)",
+   "after": "Recognizing a miracle",
+   "evidence": "Tank and Morpheus look at each other. It is a miracle."
+  }
+ ],
+ "objects_that_matter": [
+  "monitors"
+ ],
+ "event_hint": {
+  "kind": "resurrection",
+  "one_line": "The monitors reactivate and Trinity orders Neo to rise.",
+  "continues_from_earlier": true
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 27 words < 150"
+}

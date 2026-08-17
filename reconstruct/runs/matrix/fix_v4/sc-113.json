@@ -1,0 +1,30 @@
+{
+ "scene_id": "sc-113",
+ "location": "ROOM 808",
+ "time_of_day": "DAY",
+ "present": [
+  "Several cops"
+ ],
+ "speaking": [],
+ "summary": "Several cops sweep through Room 808, which is empty. As they pass the bathroom, they discover a man-sized hole smashed through the plaster and lath.",
+ "what_changes": [
+  {
+   "who": "Several cops",
+   "axis": "knowledge",
+   "before": "Sweeping the room",
+   "after": "Discovering an exit",
+   "evidence": "we see a man-sized hole smashed through the plaster and lath"
+  }
+ ],
+ "objects_that_matter": [
+  "man-sized hole",
+  "plaster and lath"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Cops search an empty room and find a breach in the wall.",
+  "continues_from_earlier": true
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 30 words < 150"
+}

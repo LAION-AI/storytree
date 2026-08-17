@@ -1,0 +1,40 @@
+{
+ "scene_id": "sc-129",
+ "location": "STREET",
+ "time_of_day": "DAY",
+ "present": [
+  "NEO",
+  "TRINITY",
+  "TANK (V.O.)"
+ ],
+ "speaking": [
+  "NEO",
+  "TRINITY",
+  "TANK"
+ ],
+ "summary": "The group moves quickly down a back street. Neo asks if Morpheus is alive; Tank confirms he is being moved but the location is unknown. Trinity relays the news to Neo. Trinity then asks for an exit, and Tank directs them toward Cypher's location at Franklin and Erie, noting he was sent there.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Uncertain if Morpheus is alive",
+   "after": "Knows Morpheus is alive",
+   "evidence": "Is Morpheus alive? ... Yes. They're moving him."
+  },
+  {
+   "who": "TRINITY",
+   "axis": "knowledge",
+   "before": "Uncertain of Cypher's whereabouts",
+   "after": "Knows Cypher is at Franklin and Erie",
+   "evidence": "You're not far from Cypher. ... I sent him to Franklin and Erie."
+  }
+ ],
+ "objects_that_matter": [],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "The team navigates the streets while coordinating with Tank to locate an exit and track Cypher.",
+  "continues_from_earlier": true
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 76 words < 150"
+}

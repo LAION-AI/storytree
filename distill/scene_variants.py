@@ -310,6 +310,66 @@ MIND_SCHEMA_V3["properties"]["minds"]["items"]["required"] = [
 MIND_SCHEMA_V3["properties"]["minds"]["items"]["properties"].pop("inferred", None)
 
 
+# --------------------------------------------------------------------------
+# V4 — the three findings of EXP-004b, applied
+#
+# The rubric found that no arm cleared the bar and each failed on exactly one
+# dimension: V1 reaches the mean and misses emotional intelligence by 0.20; V2
+# and V3 fix emotional intelligence and break calibration by nearly a point.
+#
+# The binding constraint was that both interventions ran unconditionally. The
+# difference between them is entirely an interaction with scene length, and it is
+# large exactly where the aggregate is noise:
+#
+#     scenes >= 150 words   V3 4.19, beating V1 on EI 6/6   (p = 0.031)
+#     scenes <  60 words    V1 3.98, beating V3 on calibration 8/8 (p = 0.008)
+#     overall               9-4-2, p = 0.27 — indistinguishable
+#
+# So: run the mind pass only where it pays, let it decline when nobody's inner
+# life is legible, and make the provenance field falsifiable.
+# --------------------------------------------------------------------------
+
+MIND_THRESHOLD = 150      # words. Below this the mind pass is skipped entirely.
+
+MIND_SCHEMA_V4 = json.loads(json.dumps(MIND_SCHEMA_V3))
+# minItems: 1 forced a mind-reading for every scene, which is how the schema came
+# to demand the inner life of a building and of cops the scene gives no reaction
+# to. Calibration scored 1.25 on those. An empty list is a correct answer.
+MIND_SCHEMA_V4["properties"]["minds"].pop("minItems", None)
+
+MIND_SYSTEM_V4 = MIND_SYSTEM + """
+
+WRITE IN PROPORTION, AND SAY WHEN THERE IS NOTHING TO SAY.
+
+If a scene gives you no legible inner life — nobody reacts, nobody conceals,
+nobody is deciding anything — return an empty `minds` list. That is a correct
+answer and it is the answer for a great many scenes. A building has no interior
+life. A crowd given no reaction has none you can read. Inventing one to fill the
+field is the failure this instruction exists to prevent."""
+
+
+def check_grounding_field(node: dict) -> list[str]:
+    """The provenance is already written in `basis`; hold `grounding` to it.
+
+    Measured: 15 of 36 blocks claim `in_this_scene` while their own basis cites
+    an earlier scene, or the reverse. A field that contradicts the sentence
+    beside it is not a filter, it is decoration — the same shape as the boolean
+    it replaced.
+    """
+    bad = []
+    for m in node.get("minds") or []:
+        g, basis = m.get("grounding"), (m.get("basis") or "")
+        cites_earlier = bool(re.search(r"\bsc-\d+\b|earlier|previous|before this",
+                                       basis, re.I))
+        if g == "in_this_scene" and cites_earlier:
+            bad.append(f"{m.get('who')}: grounding says in_this_scene, basis cites "
+                       f"an earlier scene")
+        if g == "from_earlier_scenes" and not cites_earlier:
+            bad.append(f"{m.get('who')}: grounding says from_earlier_scenes, basis "
+                       f"cites nothing earlier")
+    return bad
+
+
 VARIANTS = {"v0": v0, "v1": v1}
 
 
@@ -381,8 +441,16 @@ def tier1(node: dict, scene, text: str) -> dict:
             "score": round(1.0 - 0.25 * len(p), 2)}
 
 
+def run_v4(out: Path, ports: list[int], model: str, per_endpoint: int = 4) -> dict:
+    """V3, with the mind pass gated on scene size and allowed to decline."""
+    r = run_v3(out, ports, model, per_endpoint, gated=True)
+    r["variant"] = "v4"
+    (out / "_tier1.json").write_text(json.dumps(r, indent=1))
+    return r
+
+
 def run_v3(out: Path, ports: list[int], model: str, per_endpoint: int = 4,
-           events_path: Path | None = None) -> dict:
+           events_path: Path | None = None, gated: bool = False) -> dict:
     """Two passes, with pass B's sight stopping where a generator's will."""
     out.mkdir(parents=True, exist_ok=True)
     sw = Swarm(ports, model, per_endpoint)
@@ -414,6 +482,14 @@ def run_v3(out: Path, ports: list[int], model: str, per_endpoint: int = 4,
             return None
         facts["scene_id"] = sid
 
+        # Gate. Below the threshold the mind pass is skipped: it was measured
+        # costing full price for +0.00 emotional intelligence on the eight short
+        # scenes, while breaking calibration on all of them.
+        if gated and sc.word_count < MIND_THRESHOLD:
+            facts["minds"] = []
+            facts["_mind_pass"] = f"skipped: {sc.word_count} words < {MIND_THRESHOLD}"
+            return facts
+
         own = ev_of.get(sid) or {}
         # every event after this one — the shape a generator would hold
         later = []
@@ -423,12 +499,13 @@ def run_v3(out: Path, ports: list[int], model: str, per_endpoint: int = 4,
                       "what_happens": (e.get("what_happens") or "")[:260]}
                      for e in events[k + 1:k + 7]]
 
-        mind = sw.ask(MIND_SYSTEM,
+        mind = sw.ask(MIND_SYSTEM_V4 if gated else MIND_SYSTEM,
                       v3_mind_prompt(sc, facts, prior,
                                      {k: own.get(k) for k in
                                       ("event_id", "name", "what_happens")},
                                      later).replace("{scene_text}", text[:12000]),
-                      MIND_SCHEMA_V3, stage="v3-minds", tag=sid, max_tokens=9000)
+                      MIND_SCHEMA_V4 if gated else MIND_SCHEMA_V3,
+                      stage="v3-minds", tag=sid, max_tokens=9000)
         if mind:
             for k in ("minds", "connects_back", "sets_up", "dramatic_function"):
                 facts[k] = mind.get(k)
@@ -443,6 +520,10 @@ def run_v3(out: Path, ports: list[int], model: str, per_endpoint: int = 4,
         r = tier1(nd, sc, script[sc.start_char:sc.end_char])
         ms = (nd or {}).get("minds") or []
         r["minds"] = len(ms)
+        r["mind_pass"] = (nd or {}).get("_mind_pass", "ran")
+        gb = check_grounding_field(nd or {})
+        r["grounding_contradictions"] = len(gb)
+        r["problems"] = r.get("problems", []) + gb
         for m in ms:
             grounding[m.get("grounding", "?")] += 1
         results[sid] = r
@@ -459,6 +540,10 @@ def run_v3(out: Path, ports: list[int], model: str, per_endpoint: int = 4,
                "mean_words": round(sum(r["words"] for r in ok) / len(ok)) if ok else 0,
                "mean_minds": round(sum(r["minds"] for r in ok) / len(ok), 1) if ok else 0,
                "grounding": dict(grounding),
+               "grounding_contradictions": sum(
+                   r.get("grounding_contradictions", 0) for r in results.values()),
+               "mind_pass_ran": sum(1 for r in results.values()
+                                    if r.get("mind_pass") == "ran"),
                "usage": {k: sw.summary("v3-facts")[k] + sw.summary("v3-minds")[k]
                          for k in ("calls", "ok", "tok_in", "tok_out", "model_secs")},
                "per_scene": results}
@@ -601,7 +686,7 @@ def run_variant(name: str, out: Path, ports: list[int], model: str,
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--variant", required=True, choices=list(VARIANTS) + ["v2", "v3"])
+    ap.add_argument("--variant", required=True, choices=list(VARIANTS) + ["v2", "v3", "v4"])
     ap.add_argument("--out", required=True)
     ap.add_argument("--ports", default="8100,8101,8102,8103,8104,8105,8106,8107")
     ap.add_argument("--model", default="qwen3.8-27b")
@@ -609,7 +694,9 @@ if __name__ == "__main__":
     a = ap.parse_args()
 
     ports = [int(p) for p in a.ports.split(",")]
-    if a.variant == "v3":
+    if a.variant == "v4":
+        s = run_v4(Path(a.out), ports, a.model, a.per_endpoint)
+    elif a.variant == "v3":
         s = run_v3(Path(a.out), ports, a.model, a.per_endpoint)
     elif a.variant == "v2":
         s = run_v2(Path(a.out), ports, a.model, a.per_endpoint)

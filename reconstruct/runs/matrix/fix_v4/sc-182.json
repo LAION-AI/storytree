@@ -1,0 +1,88 @@
+{
+ "scene_id": "sc-182",
+ "location": "SUBWAY STATION",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Agent Smith"
+ ],
+ "speaking": [
+  "AGENT SMITH",
+  "NEO"
+ ],
+ "summary": "Neo and Agent Smith engage in a high-speed gunfight in a subway station, moving with impossible speed and entering bullet-time. They close the distance and jam their guns against each other's heads, only to discover both are empty. The standoff breaks when Smith attacks with physical fury, injuring Neo's arm and slamming him into a steel column. Neo recovers, delivering a reverse roundhouse that knocks Smith's glasses off, after which Smith declares he will enjoy watching Neo die and resumes pounding him with unrelenting force.",
+ "what_changes": [
+  {
+   "who": "Agent Smith",
+   "axis": "emotional_state",
+   "before": "Machine-calm, smiling",
+   "after": "Warped with rage",
+   "evidence": "Agent Smith machine-calm. Agent Smith smiles. ... Agent Smith's face warps with rage"
+  },
+  {
+   "who": "Neo",
+   "axis": "physical_condition",
+   "before": "Sweating, panting, standing",
+   "after": "Stunned, slammed against a steel column",
+   "evidence": "Neo sweating, panting ... A knife-hand opens his forearm, and a kick sends him slamming back against a steel column. Stunned"
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "equipment",
+   "before": "Wearing glasses",
+   "after": "Glasses fly off",
+   "evidence": "Agent Smith's glasses fly off and he glares at Neo"
+  }
+ ],
+ "objects_that_matter": [
+  "gun",
+  "steel column",
+  "glasses"
+ ],
+ "event_hint": {
+  "kind": "fight",
+  "one_line": "Neo and Smith engage in a lethal gunfight that devolves into a brutal physical brawl.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "Agent Smith",
+   "wants": "To reassert control and confirm his ontological superiority by destroying Neo before Neo's belief becomes a weapon he cannot compute.",
+   "feels": "A deep, structural terror that manifests as rage. The 'smile' was a mask of certainty; the 'rage' is the reality of his fear that Neo is no longer a program he can predict. He is not just fighting an enemy, but a variable that breaks his code.",
+   "shows": "Initially, machine-calm precision and a condescending smile. When the guns click, the calm shatters into a 'warped' face and frantic, unrelenting physical violence. He lets his rage be seen as a way to intimidate, but it is actually the crack in his armor.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is a glitch or a chosen one, but still a finite entity that can be physically dominated and deleted. He believes that if he inflicts enough pain, he will break Neo's spirit and thus his power.",
+     "wrong_because": "Neo's power is not in his spirit or his body, but in his ability to perceive and reshape the code. Physical pain does not delete Neo; it only strengthens his resolve to rewrite the rules."
+    }
+   ],
+   "basis": "Smith's transition from 'machine-calm' to 'warped with rage' is the key. The smile indicates he believed he had the upper hand. The rage indicates he realized he didn't. The 'unrelenting fury' and 'jackhammers' suggest he is compensating for a loss of control with brute force. The line 'I'm going to enjoy watching you die' is a performative attempt to regain the psychological high ground he lost when the guns clicked.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Neo",
+   "wants": "To survive long enough to reach the extraction point and to prove to himself that the 'belief' Morpheus spoke of is real.",
+   "feels": "A mix of exhaustion and a dawning, terrifying confidence. He is 'sweating, panting,' which shows the physical toll, but his 'fixed and hard' eyes from the previous scene have translated into a willingness to close the distance. He is not fighting with fear, but with a new, untested power.",
+   "shows": "He shows vulnerability through his physical state (sweat, pain, being slammed into the column) but resilience through his ability to recover and land the reverse roundhouse. He does not show rage; he shows endurance.",
+   "believes_about": [
+    {
+     "other": "Agent Smith",
+     "belief": "Smith is a powerful adversary, but not invincible. Neo believes that his new perception allows him to see the patterns in Smith's attacks, even if he is currently losing physically.",
+     "wrong_because": "Neo underestimates how much Smith's rage is actually a sign of his own weakness. He thinks he is fighting a god, but he is fighting a frightened bureaucrat."
+    }
+   ],
+   "basis": "Neo's 'fixed and hard' eyes in sc-180 set the tone for this scene. He is not running in panic; he is engaging. The fact that he lands the reverse roundhouse after being stunned shows a level of control and anticipation that goes beyond simple reflex. He is learning in real-time.",
+   "grounding": "from_earlier_scenes"
+  }
+ ],
+ "connects_back": [
+  "sc-180: Neo's 'fixed and hard' eyes establish the resolve that allows him to engage Smith in close combat rather than just flee.",
+  "sc-181: Morpheus's line 'He's beginning to believe' provides the context for why Neo is fighting differently now; his belief is manifesting as physical capability."
+ ],
+ "sets_up": [
+  "ev-034: The physical dominance Smith gains here ('pounding him with unrelenting force') sets the stage for the final, fatal blow in the hotel hallway. Smith's rage here is the engine that drives him to kill Neo, not just capture him.",
+  "ev-035: Neo's near-death experience and the physical trauma he suffers here make his subsequent 'resurrection' and return to the ship a more profound moment of transformation."
+ ],
+ "dramatic_function": "This scene is the crucible where Neo's abstract 'belief' is tested against Smith's concrete, institutional power. It shifts the conflict from a chase (ev-033) to a personal, existential duel. The 'empty guns' moment is the pivot: it strips away the tools of the Matrix's law enforcement and reveals that the fight is no longer about rules, but about will. It raises the stakes from survival to ontological proof."
+}

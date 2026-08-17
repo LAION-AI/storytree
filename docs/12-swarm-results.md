@@ -749,3 +749,91 @@ That is a stronger design principle than "blind reasoning", which this project
 adopted for the top-down pipeline and which turns out to be a special case of it
 — correct there because a top-down generator genuinely has nothing above the
 node it is writing.
+
+---
+
+## 16. The rubric verdict, and V4
+
+### No arm cleared the bar, and each failed on exactly one dimension
+
+| | V0 | V1 | V2 | V3 |
+|---|---|---|---|---|
+| **Overall** | 3.58 | **4.02** | 3.61 | 3.62 |
+| Lowest dimension | emotional intelligence 2.40 | emotional intelligence 2.80 | calibration 2.13 | calibration 2.20 |
+
+The bar is mean ≥ 4.0 with nothing below 3.0. V1 reaches the mean and misses on
+emotional intelligence by 0.20. V2 and V3 fix emotional intelligence and break
+calibration by nearly a point.
+
+**The binding constraint was that both interventions ran unconditionally.** The
+difference between them is entirely an interaction with scene length, and it is
+large exactly where the aggregate is noise:
+
+| | |
+|---|---|
+| Scenes ≥ 150 words | V3 **4.19**, beats V1 on emotional intelligence **6/6** (p = 0.031) |
+| Scenes < 60 words | V1 **3.98**, beats V3 on calibration **8/8** (p = 0.008) |
+| Overall, V1 vs V3 | 9–4–2, **p = 0.27 — indistinguishable** |
+
+Only V1 over V0 separates overall (10–0–5, p = 0.002), and 18 of V1's 40-point
+margin comes from a single scene where the baseline narrated five scenes that
+had not happened yet.
+
+### Two of my earlier claims did not survive
+
+**"V1 is not merely more literal."** Measured on corrupted input, that held. On
+real scenes V1 is the *weakest* non-baseline arm on emotional intelligence at
+2.80, and it made two close-reading errors the corrupted frame had hidden.
+
+**The `sets_up` boundary is the one total difference in the whole comparison.**
+15 of 15 V2 nodes cite a later scene; 0 of 15 V3 nodes do. That disqualifies V2
+as training data regardless of how it reads — which is what the §15 argument
+predicted, and the only place any arm separates cleanly.
+
+**And every arm missed the same thing.** In the sample's richest scene, a
+concealment the script states outright went unrecorded by all four — including
+the two arms built specifically to find concealments.
+
+### V4 — the three findings applied
+
+1. **Gate the mind pass on scene size.** It cost full price for +0.00 emotional
+   intelligence on the eight short scenes while breaking calibration on all of
+   them. Threshold 150 words.
+2. **Let it decline.** `minItems: 1` forced a mind-reading for every scene, which
+   is how the schema came to demand the inner life of a building. An empty list
+   is now a correct answer.
+3. **Make `grounding` falsifiable.** The provenance is already written in
+   `basis`; 15 of 36 blocks contradicted it. The check now reads both and fails
+   the node on disagreement.
+
+| | V1 | V3 | **V4** |
+|---|---|---|---|
+| Tier-1 | 0.983 | 0.967 | **0.967** |
+| Word overlap | 76% | 77% | **79%** |
+| Verbatim evidence | 15/15 | 14/15 | 13/15 |
+| Words per node | 174 | 786 | **476** |
+| Output tokens | 6,310 | 21,891 | **13,824** |
+| Mind pass ran | — | 15/15 | **6/15** |
+| Grounding contradictions | — | 42% | **24%** |
+
+**63% of V3's tokens for the same tier-1 score**, with the mind pass skipped on
+nine short scenes where it was measured to add nothing.
+
+### A comparability trap in my own numbers
+
+V4's clean count reads 10/15 against V3's 13/15, which looks like a regression
+and is not one. **I added the grounding-contradiction check to the same problems
+list the clean count is computed from.** On the basis the other arms were scored
+on, V4 is 13/15 — unchanged.
+
+Recorded because this is the seventh time in this project that a number moved for
+a reason other than the thing it appeared to measure. Adding a check changes what
+"clean" means, and a table comparing across that change is comparing two
+definitions.
+
+### Still unproven
+
+The gate threshold of 150 words was chosen by re-slicing scores already
+collected, so the predicted 4.09 is a **post-hoc fit, not a result**. V4 has been
+run but not yet rubric-scored; until it is, the only honest statement is that it
+costs 37% less and holds tier-1.

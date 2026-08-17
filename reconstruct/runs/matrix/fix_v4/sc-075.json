@@ -1,0 +1,121 @@
+{
+ "scene_id": "sc-075",
+ "location": "MESS HALL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "TANK",
+  "APOC",
+  "MOUSE",
+  "SWITCH",
+  "DOZER",
+  "NEO",
+  "MORPHEUS"
+ ],
+ "speaking": [
+  "TANK",
+  "APOC",
+  "MOUSE",
+  "SWITCH",
+  "DOZER",
+  "NEO",
+  "MORPHEUS"
+ ],
+ "summary": "The crew eats a synthetic breakfast in the mess hall. Mouse engages Neo in a philosophical debate about the nature of their food and memories, then attempts to set Neo up with a woman he designed. Dozer explains the food's composition. The scene ends when Morpheus enters, announces a twelve-hour standby, and states he is taking Neo to see the Oracle.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Neo is eating breakfast with the crew, unaware of the immediate next step in his journey.",
+   "after": "Neo learns that Morpheus is taking him to see the Oracle.",
+   "evidence": "I'm taking Neo to see her. With that he turns and leaves. NEO See who? TANK The Oracle."
+  },
+  {
+   "who": "Morpheus",
+   "axis": "resolve",
+   "before": "Morpheus is not present in the mess hall.",
+   "after": "Morpheus enters and immediately issues orders to go into the Matrix.",
+   "evidence": "Morpheus enters. MORPHEUS I want everyone on twelve-hour standby. We're going in."
+  }
+ ],
+ "objects_that_matter": [
+  "breakfast, a substance with a consistency somewhere between yogurt and cellulite",
+  "spoonful"
+ ],
+ "event_hint": {
+  "kind": "briefing",
+  "one_line": "Morpheus announces the mission to see the Oracle.",
+  "continues_from_earlier": false
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To understand his place among the crew and to accept the next step in his journey.",
+   "feels": "A mix of alienation and desperate hope. He is still processing the weight of Cypher's warning that he is just the sixth candidate and likely to die, which makes him cling to the mundane details (the food, Mouse's chatter) as a way to stay grounded while waiting for Morpheus's verdict.",
+   "shows": "Passive participation. He eats the goop, listens to Mouse's philosophical ramblings, and accepts the 'digital pimp' offer with a blank or confused expression ('Of who?'). He is the audience for the crew's banter until Morpheus's arrival shifts his focus entirely.",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "Morpheus is the only authority who can validate his existence and prove he is not just another failed candidate.",
+     "wrong_because": "He believes Morpheus has a plan for his survival, unaware that Morpheus's certainty is a form of faith that has cost five lives, and that the crew (like Cypher) views this quest with skepticism."
+    }
+   ],
+   "basis": "Neo's silence during Mouse's monologue and his immediate question 'See who?' when Morpheus leaves. This follows sc-073 where Cypher explicitly told him the previous candidates were dead, creating a tension between Neo's hope and the crew's grim reality.",
+   "grounding": "from_earlier_scenes"
+  },
+  {
+   "who": "Mouse",
+   "wants": "To feel human and relevant by using his knowledge of the Matrix to connect with Neo, and to relieve the tension of the ship's monotony.",
+   "feels": "Anxious and self-conscious. He uses the philosophical debate about food as a shield against the horror of their existence (the 'yogurt and cellulite' reality). His attempt to set Neo up with his designed woman is a bid for approval and a way to assert his value as a creator, not just a soldier.",
+   "shows": "Hyper-verbal energy and deflection. He launches into a monologue about Cream of Wheat to avoid the silence, then pivots to the 'red dress' woman with a mix of genuine curiosity and awkward flirtation. He is the only one who treats the food as a puzzle rather than a necessity.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is a normal person who can be integrated into their lives through shared experience (food, women, philosophy).",
+     "wrong_because": "Neo is not a normal person; he is the anomaly that the crew is orbiting. Mouse's attempt to 'arrange a personalized milieu' is a small, human gesture in a context where Neo's fate is cosmic, highlighting the gap between their worlds."
+    }
+   ],
+   "basis": "Mouse's dialogue ('If you close your eyes...', 'I designed her') and his physical movement ('sidles up to Neo'). This contrasts with Apoc's dismissal ('Shut up, Mouse'), showing Mouse as the outlier who refuses to accept the synthetic nature of their reality without questioning it.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To assert command and move the mission forward without delay, silencing the crew's distractions.",
+   "feels": "Resolute and focused. He is carrying the weight of the previous five failures (mentioned in sc-073) and the knowledge that Cypher is a traitor (sc-074, though he may not know the full extent of the deal yet, or he is moving fast to prevent it). His presence is a pivot point; the scene changes from casual to urgent the moment he speaks.",
+   "shows": "Efficiency and authority. He enters, issues a specific order ('twelve-hour standby'), states the destination ('taking Neo to see her'), and leaves. He does not engage in the banter about the food or Mouse's woman. He is the only one who is not 'in' the moment of breakfast; he is already in the next moment.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is ready to face the Oracle, or at least that the Oracle is the only one who can determine his fate.",
+     "wrong_because": "Morpheus's certainty is a gamble. He is betting that this time is different, but he is also the one who 'amped up' the previous candidates to their deaths. His resolve is partly a defense against his own fear of failure."
+    }
+   ],
+   "basis": "Morpheus's entrance and dialogue ('I want everyone on twelve-hour standby... I'm taking Neo to see her'). The brevity of his speech and the immediate shift in the scene's energy (Neo's question, Tank's answer) underscore his role as the driver of the plot.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Apoc",
+   "wants": "To maintain the status quo and the casual, almost normalcy of the mess hall, while dismissing the philosophical pretensions of others.",
+   "feels": "Bored and cynical. He represents the 'average' crew member who has accepted the reality of the ship and the Matrix. He is not interested in the 'why' (Mouse) or the 'what' (Dozer), just the 'now'. His comment about the food being 'snot' is a grounding, physical rejection of Mouse's abstraction.",
+   "shows": "Dry humor and dismissal. He cuts off Mouse's monologue and comments on the food's consistency. He is the voice of the crew's practical indifference to the grandeur of their quest.",
+   "believes_about": [
+    {
+     "other": "Mouse",
+     "belief": "Mouse is a nuisance who overthinks things that don't matter.",
+     "wrong_because": "Mouse's questions about the nature of their food and memories are actually profound reflections on their imprisonment, which Apoc ignores in favor of comfort."
+    }
+   ],
+   "basis": "Apoc's lines ('Or a bowl of snot', 'Shut up, Mouse', 'Here it comes'). These lines establish his role as the straight man to Mouse's eccentricity, highlighting the different ways the crew copes with their situation.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-073: Cypher's revelation that Neo is the sixth candidate and that the previous five died, which adds a layer of dread to Neo's presence at breakfast.",
+  "sc-074: Cypher's betrayal in the Matrix, which likely contributes to the urgency in Morpheus's decision to go into the Matrix immediately in this scene, or at least the crew's heightened state of alertness."
+ ],
+ "sets_up": [
+  "ev-019: The crew's dynamic and Neo's integration (or lack thereof) into the group are established here, setting the stage for the mission.",
+  "ev-021: Morpheus's announcement directly leads to the journey to the Oracle, where Neo will question Morpheus's certainty given the deaths of the previous candidates, a tension seeded by Cypher's earlier warning."
+ ],
+ "dramatic_function": "This scene serves as a bridge between the intimate, personal warnings of Cypher and the public, mythic quest of the Oracle. It humanizes the crew by showing them eating and bickering, grounding the high-stakes prophecy in the mundane reality of their ship life. It also highlights the isolation of Neo, who is being treated as both a person (by Mouse) and a tool (by Morpheus), while the crew's banter masks the underlying tension of their impending mission."
+}

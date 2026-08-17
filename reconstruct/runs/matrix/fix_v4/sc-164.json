@@ -1,0 +1,43 @@
+{
+ "scene_id": "sc-164",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Trinity"
+ ],
+ "speaking": [
+  "TANK",
+  "TRINITY"
+ ],
+ "summary": "Tank is at the controls of the hovercraft when Trinity's voice arrives via V.O. requesting a pilot program for a military B-212 helicopter. Tank immediately searches the disk drawers, finds the specific disk, feeds it into Trinity's supplement drive, and punches the load commands on her keyboard.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "knowledge",
+   "before": "Trinity is operating without a helicopter pilot program.",
+   "after": "Trinity is in the process of receiving the pilot program for the B-212.",
+   "evidence": "finding one that he feeds into Trinity's supplement drive, punching the 'load' commands on her keyboard."
+  },
+  {
+   "who": "Tank",
+   "axis": "condition",
+   "before": "Tank is at the controls, presumably idle or waiting.",
+   "after": "Tank is actively searching and loading data in response to an urgent request.",
+   "evidence": "Tank is immediately searching the disk drawers. TRINITY (V.O.) Hurry!"
+  }
+ ],
+ "objects_that_matter": [
+  "disk drawers",
+  "laser disks",
+  "supplement drive",
+  "keyboard"
+ ],
+ "event_hint": {
+  "kind": "preparation",
+  "one_line": "Tank loads a helicopter pilot program for Trinity.",
+  "continues_from_earlier": true
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 57 words < 150"
+}

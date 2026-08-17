@@ -1,0 +1,29 @@
+{
+ "scene_id": "sc-024",
+ "location": "DARK STREET",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "car"
+ ],
+ "summary": "The camera follows the car as it speeds through a dark, wet street, with green street lights reflecting off its tinted windshield.",
+ "what_changes": [
+  {
+   "who": "car",
+   "axis": "condition",
+   "before": "stationary or entering the street",
+   "after": "rushing through the wet underworld",
+   "evidence": "as it rushes through the wet underworld"
+  }
+ ],
+ "objects_that_matter": [
+  "green street lights",
+  "tinted windshield"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "The car drives rapidly through the dark, wet city.",
+  "continues_from_earlier": true
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 23 words < 150"
+}

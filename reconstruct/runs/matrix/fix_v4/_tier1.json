@@ -1,0 +1,247 @@
+{
+ "variant": "v4",
+ "n": 15,
+ "produced": 15,
+ "mean_tier1": 0.967,
+ "mean_overlap": 0.788,
+ "clean": 10,
+ "verbatim_ok": 13,
+ "mean_words": 476,
+ "mean_minds": 1.1,
+ "grounding": {
+  "in_this_scene": 14,
+  "from_earlier_scenes": 3
+ },
+ "grounding_contradictions": 4,
+ "mind_pass_ran": 6,
+ "usage": {
+  "calls": 21,
+  "ok": 21,
+  "tok_in": 49981,
+  "tok_out": 13824,
+  "model_secs": 192.52807521820068
+ },
+ "per_scene": {
+  "sc-003": {
+   "produced": true,
+   "named_ok": "3/3",
+   "verbatim": "3/3",
+   "noops": 0,
+   "overlap": 0.833,
+   "words": 681,
+   "scene_words": 157,
+   "problems": [],
+   "score": 1.0,
+   "minds": 2,
+   "mind_pass": "ran",
+   "grounding_contradictions": 0
+  },
+  "sc-008": {
+   "produced": true,
+   "named_ok": "3/3",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 1.0,
+   "words": 996,
+   "scene_words": 204,
+   "problems": [
+    "Trinity: grounding says in_this_scene, basis cites an earlier scene",
+    "Agent Brown: grounding says in_this_scene, basis cites an earlier scene"
+   ],
+   "score": 1.0,
+   "minds": 3,
+   "mind_pass": "ran",
+   "grounding_contradictions": 2
+  },
+  "sc-015": {
+   "produced": true,
+   "named_ok": "1/1",
+   "verbatim": "1/1",
+   "noops": 0,
+   "overlap": 0.875,
+   "words": 116,
+   "scene_words": 12,
+   "problems": [],
+   "score": 1.0,
+   "minds": 0,
+   "mind_pass": "skipped: 12 words < 150",
+   "grounding_contradictions": 0
+  },
+  "sc-024": {
+   "produced": true,
+   "named_ok": "1/1",
+   "verbatim": "1/1",
+   "noops": 0,
+   "overlap": 0.8,
+   "words": 86,
+   "scene_words": 23,
+   "problems": [],
+   "score": 1.0,
+   "minds": 0,
+   "mind_pass": "skipped: 23 words < 150",
+   "grounding_contradictions": 0
+  },
+  "sc-039": {
+   "produced": true,
+   "named_ok": "8/8",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.844,
+   "words": 981,
+   "scene_words": 270,
+   "problems": [
+    "Neo: grounding says in_this_scene, basis cites an earlier scene"
+   ],
+   "score": 1.0,
+   "minds": 3,
+   "mind_pass": "ran",
+   "grounding_contradictions": 1
+  },
+  "sc-056": {
+   "produced": true,
+   "named_ok": "1/1",
+   "verbatim": "1/1",
+   "noops": 0,
+   "overlap": 0.5,
+   "words": 104,
+   "scene_words": 12,
+   "problems": [],
+   "score": 1.0,
+   "minds": 0,
+   "mind_pass": "skipped: 12 words < 150",
+   "grounding_contradictions": 0
+  },
+  "sc-075": {
+   "produced": true,
+   "named_ok": "7/7",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.75,
+   "words": 1281,
+   "scene_words": 342,
+   "problems": [],
+   "score": 1.0,
+   "minds": 4,
+   "mind_pass": "ran",
+   "grounding_contradictions": 0
+  },
+  "sc-097": {
+   "produced": true,
+   "named_ok": "2/2",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.824,
+   "words": 179,
+   "scene_words": 59,
+   "problems": [],
+   "score": 1.0,
+   "minds": 0,
+   "mind_pass": "skipped: 59 words < 150",
+   "grounding_contradictions": 0
+  },
+  "sc-113": {
+   "produced": true,
+   "named_ok": "1/1",
+   "verbatim": "1/1",
+   "noops": 0,
+   "overlap": 0.8,
+   "words": 96,
+   "scene_words": 30,
+   "problems": [],
+   "score": 1.0,
+   "minds": 0,
+   "mind_pass": "skipped: 30 words < 150",
+   "grounding_contradictions": 0
+  },
+  "sc-129": {
+   "produced": true,
+   "named_ok": "3/3",
+   "verbatim": "0/2",
+   "noops": 0,
+   "overlap": 0.929,
+   "words": 157,
+   "scene_words": 76,
+   "problems": [
+    "no evidence span appears verbatim in the scene"
+   ],
+   "score": 0.75,
+   "minds": 0,
+   "mind_pass": "skipped: 76 words < 150",
+   "grounding_contradictions": 0
+  },
+  "sc-148": {
+   "produced": true,
+   "named_ok": "4/4",
+   "verbatim": "4/4",
+   "noops": 0,
+   "overlap": 0.579,
+   "words": 1139,
+   "scene_words": 511,
+   "problems": [
+    "Trinity: grounding says in_this_scene, basis cites an earlier scene"
+   ],
+   "score": 1.0,
+   "minds": 3,
+   "mind_pass": "ran",
+   "grounding_contradictions": 1
+  },
+  "sc-164": {
+   "produced": true,
+   "named_ok": "2/2",
+   "verbatim": "1/2",
+   "noops": 0,
+   "overlap": 0.667,
+   "words": 174,
+   "scene_words": 57,
+   "problems": [],
+   "score": 1.0,
+   "minds": 0,
+   "mind_pass": "skipped: 57 words < 150",
+   "grounding_contradictions": 0
+  },
+  "sc-182": {
+   "produced": true,
+   "named_ok": "2/2",
+   "verbatim": "1/3",
+   "noops": 0,
+   "overlap": 0.935,
+   "words": 891,
+   "scene_words": 237,
+   "problems": [],
+   "score": 1.0,
+   "minds": 2,
+   "mind_pass": "ran",
+   "grounding_contradictions": 0
+  },
+  "sc-200": {
+   "produced": true,
+   "named_ok": "1/1",
+   "verbatim": "0/1",
+   "noops": 0,
+   "overlap": 0.737,
+   "words": 108,
+   "scene_words": 26,
+   "problems": [
+    "no evidence span appears verbatim in the scene"
+   ],
+   "score": 0.75,
+   "minds": 0,
+   "mind_pass": "skipped: 26 words < 150",
+   "grounding_contradictions": 0
+  },
+  "sc-215": {
+   "produced": true,
+   "named_ok": "3/3",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.75,
+   "words": 148,
+   "scene_words": 27,
+   "problems": [],
+   "score": 1.0,
+   "minds": 0,
+   "mind_pass": "skipped: 27 words < 150",
+   "grounding_contradictions": 0
+  }
+ }
+}

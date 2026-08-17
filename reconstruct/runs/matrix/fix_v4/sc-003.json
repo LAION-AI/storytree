@@ -1,0 +1,90 @@
+{
+ "scene_id": "sc-003",
+ "location": "HEART O' THE CITY HOTEL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "The Big Cop",
+  "the other cops",
+  "Trinity"
+ ],
+ "speaking": [
+  "TRINITY"
+ ],
+ "summary": "The Big Cop attempts to cuff Trinity while the other cops hold position, confident they have her. Trinity moves with inhuman speed, snapping the Big Cop's nose and kicking him into another officer. As bullets rattle the walls and flashlights sweep in panic, Trinity snatches a gun from a cop's hand and fires it. The exchange ends with Trinity as the only one standing, after which she says 'Shit.'",
+ "what_changes": [
+  {
+   "who": "The Big Cop",
+   "axis": "condition",
+   "before": "Holding a bead and reaching with cuffs, confident they have her",
+   "after": "Flying back, described as a 'two-hundred-fifty pound sack of limp meat and bone' after his nose explodes and he is kicked",
+   "evidence": "Trinity's palm snaps up and the nose explodes, blood erupting.  Her leg kicks with the force of a wrecking ball and he flies back"
+  },
+  {
+   "who": "Trinity",
+   "axis": "custody",
+   "before": "In custody, being cuffed by the Big Cop",
+   "after": "Free and standing alone after a violent exchange of gunfire",
+   "evidence": "There is a final violent exchange of GUNFIRE and when it's over, Trinity is the only one standing."
+  },
+  {
+   "who": "the other cops",
+   "axis": "safety",
+   "before": "Holding a bead, knowing they've got her",
+   "after": "Panic-stricken, with flashlights sweeping and one cop slams into by the Big Cop",
+   "evidence": "flashlights sweeping with panic as the remaining cops try to stop a leather-clad ghost."
+  }
+ ],
+ "objects_that_matter": [
+  "cuffs",
+  "nose",
+  "blood",
+  "GUN",
+  "flashlight"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Trinity escapes police custody through sudden, violent force.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To survive the immediate physical threat and restore her agency after the violation of being restrained.",
+   "feels": "A mix of adrenaline-fueled violence and a sudden, sharp drop in adrenaline resulting in visceral, human shock. She is not triumphant; she is rattled by the sheer brutality she just inflicted.",
+   "shows": "Inhuman speed and precision in combat, followed by a single, profane exhalation of 'Shit.'",
+   "believes_about": [
+    {
+     "other": "The Police",
+     "belief": "They are fragile, predictable, and easily broken.",
+     "wrong_because": "Their panic reveals they are not just fragile, but terrified of the 'ghost' they are fighting, which validates the danger she just escaped."
+    }
+   ],
+   "basis": "Her movements are described as 'inhumanly fast' and 'smooth,' contrasting with the 'Shit' at the end. The word 'Shit' is a mundane, human reaction that breaks the 'superhuman' facade, indicating the physical and emotional toll of the violence. The fact that she is the only one standing shows the absolute success of her violence, but the word suggests it wasn't clean or expected to be this messy.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "The Big Cop",
+   "wants": "To assert dominance and secure custody through routine procedure.",
+   "feels": "Initial confidence shifting to acute physical pain and disorientation. He is experiencing the sudden collapse of his authority.",
+   "shows": "A violent kick to the door followed by a slow, deliberate reach for cuffs, then a sudden, catastrophic loss of control as his nose explodes.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "She is a standard suspect who will comply or be easily subdued.",
+     "wrong_because": "He underestimates her speed and strength, treating the arrest as a formality rather than a combat scenario."
+    }
+   ],
+   "basis": "The text states 'They've done this a hundred times, they know they've got her.' His actions (flicking out cuffs) are routine. The description of him as a 'sack of limp meat and bone' emphasizes his sudden reduction from authority figure to physical object.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-001: The initial confrontation where Trinity was found at the computer and ordered to freeze.",
+  "sc-002: The arrival of the Agents and the Lieutenant's dismissal of the threat, which sets up the police's overconfidence."
+ ],
+ "sets_up": [
+  "ev-001: The immediate need for Trinity to flee the hotel before the Agents can fully engage, leading to the rooftop chase."
+ ],
+ "dramatic_function": "This scene serves as the kinetic release of the tension built in the previous two scenes. It physically demonstrates the power disparity between Trinity and the mundane police force, validating the Agents' superior threat level. It transitions the narrative from a procedural arrest to a supernatural hunt."
+}

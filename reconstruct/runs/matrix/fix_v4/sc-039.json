@@ -1,0 +1,103 @@
+{
+ "scene_id": "sc-039",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "MORPHEUS",
+  "Trinity",
+  "Mouse",
+  "Cypher",
+  "Switch",
+  "Tank",
+  "Dozer",
+  "Neo"
+ ],
+ "speaking": [
+  "MORPHEUS"
+ ],
+ "summary": "Morpheus introduces the crew members on the main deck, explaining that the room contains the Core where they broadcast their pirate signal and hack into the Matrix. He describes the equipment as a swamp of electronic gear and points out the ecto-skeleton chairs. Morpheus then tells Neo that the answer to what the Matrix is is right there, helps Neo into a chair, and inserts a coaxial line with a cerebrum chip into the jack at the back of Neo's neck. Neo endures the procedure until his ears pop, after which he opens his eyes to a feeling of weightlessness.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "The names and faces wash meaninglessly over Neo",
+   "after": "Neo is connected to the Core and experiences a feeling of weightlessness inside another place",
+   "evidence": "He relaxes, opening his eyes as we PULL BACK to a feeling of weightlessness inside another place"
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Standing and listening to Morpheus",
+   "after": "Seated in an ecto-skeleton chair with a cable inserted into the back of his neck",
+   "evidence": "Neo allows himself to be helped into one of the chairs. He feels Morpheus guiding a coaxial line into the jack at the back of his neck."
+  }
+ ],
+ "objects_that_matter": [
+  "Core",
+  "coaxial line",
+  "ecto-skeleton chairs",
+  "cerebrum chip"
+ ],
+ "event_hint": {
+  "kind": "initiation",
+  "one_line": "Neo is physically connected to the ship's computer system to perceive the Matrix.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "Morpheus",
+   "wants": "To bridge the gap between Neo's confusion and his potential by providing a direct, sensory experience of the truth rather than a verbal explanation.",
+   "feels": "A calm, almost paternal confidence. He is not rushing; he is guiding. There is a sense of ritualistic precision in his actions, treating the physical connection as a sacred or at least solemn act.",
+   "shows": "He appears as a steady, authoritative figure. He speaks clearly, introduces the crew with brevity, and handles the equipment with practiced ease. He touches Neo's head gently before the procedure, a gesture of reassurance.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo is capable of handling the shock of the real world and that showing him the Matrix will be the catalyst for his awakening.",
+     "wrong_because": "He underestimates how much Neo's mind will resist the sheer volume of information, leading to the rejection and nightmare that follows in ev-009/ev-010."
+    }
+   ],
+   "basis": "Morpheus explicitly states, 'There is no reason for me to try to explain it when I can simply show it' (sc-037). In this scene, he moves from explanation to demonstration ('The answer is right here'), and his physical guidance of Neo into the chair and the insertion of the cable suggest a mentor-student dynamic where trust is being tested.",
+   "grounding": "from_earlier_scenes"
+  },
+  {
+   "who": "Neo",
+   "wants": "To understand what has happened to him and where he is, but also to maintain his composure and not appear weak or lost to the new people surrounding him.",
+   "feels": "Overwhelmed and disoriented. The 'names and faces wash meaninglessly' indicates a cognitive overload. He is physically vulnerable, having just been rebuilt, and psychologically unmoored. There is a fear of the unknown procedure, masked by a passive willingness to comply.",
+   "shows": "He is passive and compliant. He allows himself to be helped into the chair without resistance. His face tightens into a grimace during the procedure, showing his physical discomfort, but he endures it silently.",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus is leading him toward answers, but he doesn't yet know if those answers will be comprehensible or if he can survive the process of receiving them.",
+     "wrong_because": "He believes the 'weird' feeling will be manageable, but the transition into the Construct triggers a deeper, more disorienting state that leads to rejection."
+    }
+   ],
+   "basis": "The text notes 'The names and faces wash meaninglessly over Neo,' indicating his mental state is not fully engaged in social processing. His physical reaction ('shoulders bunch,' 'face tightens') to the needle insertion contrasts with his earlier verbal questions, showing a shift from seeking information to enduring a physical transformation.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Trinity",
+   "wants": "To support Neo and facilitate Morpheus's plan, acting as the physical link between the mentor and the student.",
+   "feels": "Protective and attentive. She is watching Neo closely, ready to assist but also observing his reactions. There is a sense of familiarity with the process, contrasting with Neo's novelty.",
+   "shows": "She smiles and nods when introduced, a small but significant social cue that she is welcoming. She physically helps Neo into the chair, providing a human point of contact during the mechanical procedure.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo is ready for this step, or at least that it is the necessary next step in his journey.",
+     "wrong_because": "She may underestimate the psychological trauma of the first immersion, which is hinted at by the 'disturbing noises' and Neo's grimace."
+    }
+   ],
+   "basis": "Trinity is the only crew member given a specific physical action ('Help him, Trinity'). Her smile and nod are the only social reactions from the crew, highlighting her role as the emotional anchor in this group of technicians.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-037: Morpheus's decision to 'show' rather than 'explain' is the direct precursor to this scene's action.",
+  "sc-036: Neo's physical vulnerability and atrophied muscles make him more susceptible to the discomfort of the procedure."
+ ],
+ "sets_up": [
+  "ev-009: The immersion into the Core is the vehicle for the history lesson that leads to Neo's mind rejecting the information.",
+  "ev-011: This scene establishes the physical setup (the chair, the cable, the jack) that Tank will later explain and manage during Neo's training."
+ ],
+ "dramatic_function": "This scene serves as the threshold crossing. It transforms Neo from a passive recipient of information into an active participant in the simulation. The physical act of being 'plugged in' externalizes the internal shift from disbelief to experiential knowledge, setting the stage for the cognitive dissonance that will follow."
+}
