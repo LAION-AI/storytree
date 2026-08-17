@@ -123,15 +123,26 @@ footer{color:var(--faint);font-size:13px;border-top:1px solid var(--line);paddin
 <div class="scroll"><table>
 <thead><tr><th>Konfiguration</th><th class="num">Rubrik</th><th class="num">Wörter</th><th class="num">Verstöße/Szene</th><th class="num">min/Szene</th></tr></thead>
 <tbody>
-<tr><td>Qwen allein</td><td class="num">57,1%</td><td class="num">5.506</td><td class="num">5,33</td><td class="num">2,6</td></tr>
+<tr><td>Qwen allein</td><td class="num">50,0%</td><td class="num">5.506</td><td class="num">5,33</td><td class="num">2,6</td></tr>
 <tr><td>Qwen + Schemabindung</td><td class="num">61,7%</td><td class="num">6.013</td><td class="num">4,00</td><td class="num">2,8</td></tr>
-<tr><td>GLM allein</td><td class="num">64,2%</td><td class="num">15.988</td><td class="num">5,00</td><td class="num">19,1</td></tr>
-<tr class="win"><td><strong>Ensemble</strong></td><td class="num"><strong>72,2%</strong></td><td class="num">10.354</td><td class="num good">0,67</td><td class="num">11,7</td></tr>
+<tr><td>GLM allein</td><td class="num">65,0%</td><td class="num">15.988</td><td class="num">5,00</td><td class="num">19,1</td></tr>
+<tr class="win"><td><strong>Ensemble</strong></td><td class="num"><strong>72,2%</strong></td><td class="num">17.413</td><td class="num good">0,67</td><td class="num">11,7</td></tr>
 </tbody></table></div>
 
-<p>Von 57% auf 72% in zwei Tagen, und der Zuwachs kam <strong>nicht</strong> aus besseren
+<p>Von 50% auf 72% in zwei Tagen, und der Zuwachs kam <strong>nicht</strong> aus besseren
 Modellen — es sind dieselben Gewichte wie am Anfang. Er kam aus Arbeitsteilung und aus
 Zwangsbedingungen im Schema.</p>
+
+<div class="punch no">
+  <div class="lbl">Korrektur an einer früheren Fassung dieser Seite</div>
+  <div class="big">Die erste Version dieser Tabelle verglich Zahlen, die nicht vergleichbar
+  waren.</div>
+  <p>Dort standen 64,2% für GLM und 57,1% für Qwen neben 72,2% für das Ensemble — aber die
+  ersten beiden waren über neun bzw. sechs Knoten gemittelt, die letzten beiden über drei. Auf
+  demselben Knotensatz lauten die Werte 65,0 und 50,0. Das Ensemble-Ergebnis wird dadurch
+  <em>größer</em>, nicht kleiner; falsch war der Vergleich trotzdem. Es ist der vierte Fall
+  derselben Fehlerklasse in diesem Projekt: eine selbstbewusste Zahl über der falschen Menge.</p>
+</div>
 
 <h2><span class="num">02</span>Die Antwort auf die Titelfrage</h2>
 
@@ -323,7 +334,8 @@ lesen. Wenn deren Oberbau trägt, trägt er auch bei hundert.</p>
 <hr>
 <h2 style="margin-top:0">Kurz gefasst</h2>
 <ol>
-<li><strong>72,2% gegen 57,1%</strong> in zwei Tagen, bei unveränderten Modellgewichten. Der
+<li><strong>72,2% gegen 50,0%</strong> auf demselben Knotensatz, in zwei Tagen, bei unveränderten
+Modellgewichten. Der
 Zuwachs kam aus Arbeitsteilung und Zwangsbedingungen, nicht aus besseren Modellen.</li>
 <li><strong>Die Szenenebene ist autonomiefähig</strong>, die Ebenen darüber sind es nicht — und
 die Ursache ist ein Oberbau, der leise zu dünn ausfällt.</li>
