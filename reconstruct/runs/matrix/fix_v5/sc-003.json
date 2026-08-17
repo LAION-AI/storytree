@@ -1,0 +1,98 @@
+{
+ "scene_id": "sc-003",
+ "location": "HEART O' THE CITY HOTEL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "The Big Cop",
+  "the other cops",
+  "Trinity"
+ ],
+ "speaking": [
+  "TRINITY"
+ ],
+ "summary": "The Big Cop moves to cuff Trinity, but she moves with inhuman speed, snapping his nose and kicking him into another officer. As bullets rake the walls and flashlights sweep in panic, Trinity snatches a gun from a cop's hand and fires. After a final violent exchange of gunfire, Trinity is the only one standing, and she says 'Shit.'",
+ "what_changes": [
+  {
+   "who": "The Big Cop",
+   "axis": "condition",
+   "before": "Holding a bead on Trinity, ready to cuff her",
+   "after": "Flying back into another cop, nose exploded",
+   "evidence": "the nose explodes, blood erupting.  Her leg kicks with the force of a wrecking ball and he flies back"
+  },
+  {
+   "who": "the other cops",
+   "axis": "custody",
+   "before": "Holding a bead, confident they've got her",
+   "after": "Panicking, trying to stop a leather-clad ghost, dead or incapacitated",
+   "evidence": "flashlights sweeping with panic as the remaining cops try to stop a leather-clad ghost"
+  },
+  {
+   "who": "Trinity",
+   "axis": "standing",
+   "before": "Being cuffed by the Big Cop",
+   "after": "The only one standing after the exchange of gunfire",
+   "evidence": "There is a final violent exchange of GUNFIRE and when it's over, Trinity is the only one standing."
+  }
+ ],
+ "objects_that_matter": [
+  "cuffs",
+  "GUN",
+  "flashlight"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Trinity escapes the police raid by taking out the officers.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "_mind_pass": "ran: 1 speaker, 157w >= p75 (125w) for this work",
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To survive the immediate physical threat and secure a path to escape.",
+   "feels": "A cold, procedural calm that is violently interrupted by the realization that the line is traced and the window is closing; the final word is a low-grade shock at the speed at which the situation has deteriorated from 'arrest' to 'war.'",
+   "shows": "Inhuman efficiency and violence, masking the fact that she is not fighting to win but to exit. The single word 'Shit' is the only crack in the armor, revealing that the outcome, while expected, was faster and more chaotic than her mental model predicted.",
+   "believes_about": [
+    {
+     "other": "The Big Cop",
+     "belief": "He is a standard physical obstacle, predictable and contained by the same laws of physics that govern her.",
+     "wrong_because": "His confidence in his own authority makes him slow to realize he is not dealing with a suspect, but a predator; his belief that he has 'got her' is the specific error that allows her to close the distance before he can react."
+    }
+   ],
+   "basis": "The transition from 'hands behind head' in sc-001 to 'inhumanly fast' movement here, and the final spoken word 'Shit' which serves as the only emotional punctuation in a scene of pure kinetic action.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "The Big Cop",
+   "wants": "To complete the arrest and assert the authority of the law over the 'little girl' mentioned by the Lieutenant.",
+   "feels": "Professional pride and the smug satisfaction of a routine job well done, which shatters into primal terror the moment his nose is snapped.",
+   "shows": "The mechanical act of flicking out the cuffs, which signals a total lack of awareness that he is out of his depth.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "She is a human criminal who has been caught in a trap; her compliance in sc-001 was a sign of defeat.",
+     "wrong_because": "He mistakes her tactical patience for submission, failing to recognize that her stillness was a loading of the spring that is now exploding into his face."
+    }
+   ],
+   "basis": "The narrative description of him as a 'two-hundred-fifty pound sack of limp meat' after the kick, and his initial confidence in sc-001 where he 'violently kicks in the door.'",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "the other cops",
+   "wants": "To maintain the perimeter and provide the 'bead' that keeps the suspect contained.",
+   "feels": "The collective shift from coordinated confidence to the chaotic, individual panic of realizing they are fighting a 'ghost.'",
+   "shows": "Flashlights sweeping in panic and the 'violent exchange of GUNFIRE' that is more reflex than strategy.",
+   "basis": "The description of their flashlights 'sweeping with panic' and their failure to stop her, highlighting their role as the background noise to her foreground action.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-001: Trinity's slow compliance and the 'almost devoid' room set the stage for the sudden explosion of violence.",
+  "sc-002: Agent Smith's revelation that the men are 'already dead' provides the dramatic irony that the police are fighting a losing battle before they even realize it."
+ ],
+ "sets_up": [
+  "ev-001: The destruction of the police squad and the 'violent exchange' clear the path for Trinity's escape into the hallway and onto the fire escape.",
+  "ev-002: Trinity's escape and the subsequent tracing of her line (implied by the chaos) creates the urgency that leads to the cryptic messages Neo receives later that night."
+ ],
+ "dramatic_function": "This scene serves as the 'proof of concept' for Trinity's nature, transforming her from a suspect in a procedural into a supernatural force. It shatters the audience's and the characters' understanding of the stakes, moving the narrative from a police procedural to a sci-fi thriller by demonstrating that the 'rules' of the physical world do not apply to her."
+}

@@ -370,6 +370,60 @@ def check_grounding_field(node: dict) -> list[str]:
     return bad
 
 
+# --------------------------------------------------------------------------
+# V5 — a gate that transfers, and the failure all four arms shared
+#
+# V4's gate is an absolute word count fitted to this screenplay. Measured on the
+# work itself: a 150-word threshold opens on 22% of its 224 scenes, because its
+# median scene is 45 words. On a work whose median is 200 the same threshold
+# opens on nearly everything, and the gate stops gating. A number tuned on
+# fifteen scenes of one film is the definition of what will not transfer.
+#
+# So the gate moves to a signal that means the same thing everywhere:
+#
+#     >= 2 speaker cues        an exchange. Someone wants something from someone
+#                              else, which is when inner life is legible at all.
+#     1 cue and long for THIS  a monologue or a reaction scene in a work where
+#     work (own 75th pct)      that is substantial. Percentile, not absolute.
+#
+# Measured here: 93 of 224 scenes have two or more cues, median length 116 words;
+# the 131 with fewer have median 26. The signal correlates with length without
+# being length, and it is derived from the screenplay's own parse rather than
+# from a constant.
+#
+# Second change: every arm, including the two built to find concealment, missed a
+# concealment the script states outright in the sample's richest scene. When the
+# text says plainly that someone cannot say what they want to, that is not
+# subtext to be inferred — it is a fact on the page that was walked past. The
+# prompt now names that case.
+# --------------------------------------------------------------------------
+
+def mind_gate(scene, pct75: int) -> tuple[bool, str]:
+    """Content-based, and derived from the work rather than hard-coded."""
+    cues = len(scene.speakers or [])
+    if cues >= 2:
+        return True, f"{cues} speakers — an exchange"
+    if cues == 1 and scene.word_count >= pct75:
+        return True, f"1 speaker, {scene.word_count}w >= p75 ({pct75}w) for this work"
+    return False, f"{cues} speaker(s), {scene.word_count}w — no exchange to read"
+
+
+MIND_SYSTEM_V5 = MIND_SYSTEM_V4 + """
+
+ONE THING THAT IS REPEATEDLY MISSED.
+
+Sometimes the text states a concealment outright — it says that someone cannot
+bring themselves to say a thing, or breaks off mid-sentence, or that a silence
+is doing work. That is not subtext you must infer. It is a fact on the page, and
+it is the single most important thing in the scene when it appears.
+
+Read the page for these before you read between the lines. An unfinished
+sentence, a stated inability to speak, a reaction the text describes but does not
+explain — each one is a concealment already handed to you, and walking past it
+while writing a paragraph of inferred psychology is the characteristic failure
+here."""
+
+
 VARIANTS = {"v0": v0, "v1": v1}
 
 
@@ -441,6 +495,14 @@ def tier1(node: dict, scene, text: str) -> dict:
             "score": round(1.0 - 0.25 * len(p), 2)}
 
 
+def run_v5(out: Path, ports: list[int], model: str, per_endpoint: int = 4) -> dict:
+    """V4, with a gate that transfers and the missed-concealment instruction."""
+    r = run_v3(out, ports, model, per_endpoint, gated=True, transferable=True)
+    r["variant"] = "v5"
+    (out / "_tier1.json").write_text(json.dumps(r, indent=1))
+    return r
+
+
 def run_v4(out: Path, ports: list[int], model: str, per_endpoint: int = 4) -> dict:
     """V3, with the mind pass gated on scene size and allowed to decline."""
     r = run_v3(out, ports, model, per_endpoint, gated=True)
@@ -450,7 +512,8 @@ def run_v4(out: Path, ports: list[int], model: str, per_endpoint: int = 4) -> di
 
 
 def run_v3(out: Path, ports: list[int], model: str, per_endpoint: int = 4,
-           events_path: Path | None = None, gated: bool = False) -> dict:
+           events_path: Path | None = None, gated: bool = False,
+           transferable: bool = False) -> dict:
     """Two passes, with pass B's sight stopping where a generator's will."""
     out.mkdir(parents=True, exist_ok=True)
     sw = Swarm(ports, model, per_endpoint)
@@ -463,6 +526,9 @@ def run_v3(out: Path, ports: list[int], model: str, per_endpoint: int = 4,
     events = json.loads(ep.read_text()) if ep.exists() else []
     ev_of = {sid: e for e in events for sid in (e.get("scenes") or [])}
     ev_order = [e.get("event_id") for e in events]
+    # the work's own distribution, so the gate carries to other screenplays
+    _lens = sorted(x.word_count for x in scenes)
+    pct75 = _lens[int(len(_lens) * 0.75)]
 
     def one(sid):
         sc = by[sid]
@@ -485,10 +551,17 @@ def run_v3(out: Path, ports: list[int], model: str, per_endpoint: int = 4,
         # Gate. Below the threshold the mind pass is skipped: it was measured
         # costing full price for +0.00 emotional intelligence on the eight short
         # scenes, while breaking calibration on all of them.
-        if gated and sc.word_count < MIND_THRESHOLD:
-            facts["minds"] = []
-            facts["_mind_pass"] = f"skipped: {sc.word_count} words < {MIND_THRESHOLD}"
-            return facts
+        if gated:
+            if transferable:
+                run_mind, why = mind_gate(sc, pct75)
+            else:
+                run_mind = sc.word_count >= MIND_THRESHOLD
+                why = f"{sc.word_count} words vs fixed {MIND_THRESHOLD}"
+            if not run_mind:
+                facts["minds"] = []
+                facts["_mind_pass"] = f"skipped: {why}"
+                return facts
+            facts["_mind_pass"] = f"ran: {why}"
 
         own = ev_of.get(sid) or {}
         # every event after this one — the shape a generator would hold
@@ -499,7 +572,8 @@ def run_v3(out: Path, ports: list[int], model: str, per_endpoint: int = 4,
                       "what_happens": (e.get("what_happens") or "")[:260]}
                      for e in events[k + 1:k + 7]]
 
-        mind = sw.ask(MIND_SYSTEM_V4 if gated else MIND_SYSTEM,
+        mind = sw.ask(MIND_SYSTEM_V5 if transferable
+                      else (MIND_SYSTEM_V4 if gated else MIND_SYSTEM),
                       v3_mind_prompt(sc, facts, prior,
                                      {k: own.get(k) for k in
                                       ("event_id", "name", "what_happens")},
@@ -521,6 +595,7 @@ def run_v3(out: Path, ports: list[int], model: str, per_endpoint: int = 4,
         ms = (nd or {}).get("minds") or []
         r["minds"] = len(ms)
         r["mind_pass"] = (nd or {}).get("_mind_pass", "ran")
+        r["gate"] = r["mind_pass"].split(":", 1)[-1].strip()
         gb = check_grounding_field(nd or {})
         r["grounding_contradictions"] = len(gb)
         r["problems"] = r.get("problems", []) + gb
@@ -543,7 +618,8 @@ def run_v3(out: Path, ports: list[int], model: str, per_endpoint: int = 4,
                "grounding_contradictions": sum(
                    r.get("grounding_contradictions", 0) for r in results.values()),
                "mind_pass_ran": sum(1 for r in results.values()
-                                    if r.get("mind_pass") == "ran"),
+                                    if str(r.get("mind_pass", "")).startswith("ran")
+                                    or r.get("mind_pass") == "ran"),
                "usage": {k: sw.summary("v3-facts")[k] + sw.summary("v3-minds")[k]
                          for k in ("calls", "ok", "tok_in", "tok_out", "model_secs")},
                "per_scene": results}
@@ -686,7 +762,7 @@ def run_variant(name: str, out: Path, ports: list[int], model: str,
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--variant", required=True, choices=list(VARIANTS) + ["v2", "v3", "v4"])
+    ap.add_argument("--variant", required=True, choices=list(VARIANTS) + ["v2", "v3", "v4", "v5"])
     ap.add_argument("--out", required=True)
     ap.add_argument("--ports", default="8100,8101,8102,8103,8104,8105,8106,8107")
     ap.add_argument("--model", default="qwen3.8-27b")
@@ -694,7 +770,9 @@ if __name__ == "__main__":
     a = ap.parse_args()
 
     ports = [int(p) for p in a.ports.split(",")]
-    if a.variant == "v4":
+    if a.variant == "v5":
+        s = run_v5(Path(a.out), ports, a.model, a.per_endpoint)
+    elif a.variant == "v4":
         s = run_v4(Path(a.out), ports, a.model, a.per_endpoint)
     elif a.variant == "v3":
         s = run_v3(Path(a.out), ports, a.model, a.per_endpoint)

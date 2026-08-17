@@ -1,0 +1,102 @@
+{
+ "scene_id": "sc-008",
+ "location": "ROOF",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Agent Brown",
+  "cops"
+ ],
+ "speaking": [
+  "COP"
+ ],
+ "summary": "Trinity runs across rooftops pursued by Agent Brown and cops. She executes a clean, gliding jump over a 40-foot gap that leaves the cops slack-jawed. Agent Brown duplicates the move with unnatural grace. The chase continues over a dark, plateaued landscape until Trinity spots her only chance 50 feet ahead.",
+ "what_changes": [
+  {
+   "who": "cops",
+   "axis": "knowledge",
+   "before": "Pursuing Trinity with confidence, believing they have her cornered",
+   "after": "Staring slack-jawed in disbelief at the impossible leap",
+   "evidence": "They stare, slack-jawed, as Agent Brown duplicates the move exactly, landing, rolling over a shoulder up onto one knee."
+  },
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "Running on the roof, being pursued",
+   "after": "Identifying a specific opportunity to escape 50 feet ahead",
+   "evidence": "Ahead, she sees her only chance, 50 feet beyond the point where her path drops away into a paved chasm"
+  }
+ ],
+ "objects_that_matter": [
+  "roofs",
+  "paved chasm"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Trinity leaps across rooftops to escape Agent Brown and the police.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "_mind_pass": "ran: 1 speaker, 204w >= p75 (125w) for this work",
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To reach the phone at Wells and Lake before the Agents close the net.",
+   "feels": "A focused, almost meditative calm born from the high stakes; she is fully present in the physical mechanics of the jump, detached from the fear that would paralyze a normal person.",
+   "shows": "A perfectly calm face and gliding, efficient movements that contrast sharply with the frantic pursuit behind her.",
+   "believes_about": [
+    {
+     "other": "Agent Brown",
+     "belief": "He is a formidable pursuer who matches her physical capabilities, meaning she cannot outlast him and must find an immediate exit.",
+     "wrong_because": "While he matches her agility, he is bound by the same physics; his grace is a tool of enforcement, not an infinite resource like her desperate need to survive."
+    },
+    {
+     "other": "The Cops",
+     "belief": "They are a secondary threat, mostly useful for providing the 'wild' contrast that highlights the supernatural nature of the chase.",
+     "wrong_because": "Their disbelief is not just a reaction; it marks the threshold where the human world ends and the Agent world begins, a boundary Trinity is currently crossing."
+    }
+   ],
+   "basis": "In sc-005, she took a deep breath to center herself before running. Here, that centering is fully realized in her 'perfectly calm' face during the 40-foot jump. The text explicitly notes her calmness against the 'wild jumps' of the cops, indicating a shift from reactive panic to proactive control.",
+   "grounding": "from_earlier_scenes"
+  },
+  {
+   "who": "Agent Brown",
+   "wants": "To maintain the pursuit and capture Trinity, asserting the Agents' dominance over the space.",
+   "feels": "A cold, procedural efficiency; he is not chasing with emotion but executing a protocol. The 'unnatural grace' suggests a detachment from the physical effort, as if the body is merely a vehicle for the will.",
+   "shows": "An unnatural grace that exactly duplicates Trinity's move, landing with a controlled roll that signals total mastery of the environment.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "She is a variable to be contained; her movements, however fluid, are predictable within the system's logic.",
+     "wrong_because": "Trinity's 'only chance' 50 feet ahead is a gamble on the system's limits, a move that relies on the chaos of the 'paved chasm' rather than pure athletic superiority."
+    }
+   ],
+   "basis": "The text highlights the 'unnatural grace' and the exact duplication of the move. In sc-006 and sc-007, he is the lead Agent, always one step ahead. His ability to match Trinity's leap without appearing strained reinforces his role as the unyielding force of the Matrix.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Cops",
+   "wants": "To secure the perimeter and apprehend the suspect.",
+   "feels": "A rapid disintegration of confidence into existential doubt. The 'slack-jawed' stare is a physical manifestation of their worldview cracking when confronted with the impossible.",
+   "shows": "Slowing down, staring, and verbal disbelief ('Jesus Christ -- that's impossible!'), shifting from active pursuers to passive witnesses.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "She was a human suspect who could be caught by standard police procedure.",
+     "wrong_because": "They are witnessing the interface between the human and the Agent, and their inability to comprehend it reveals their ignorance of the true nature of the threat."
+    }
+   ],
+   "basis": "The text explicitly states they are 'slack-jawed' and that their jumps are 'wild' compared to the Agents. Their dialogue marks the moment they realize the rules of engagement have changed.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-005: Trinity's decision to focus and go, setting the tone for her calm demeanor here.",
+  "sc-007: Agent Smith blocking the alley below, forcing the verticality and the specific path of this chase."
+ ],
+ "sets_up": [
+  "ev-001: The specific 'only chance' 50 feet ahead necessitates the desperate jump into the dark building and the subsequent injury, which leads to her reaching the phone booth.",
+  "ev-002: The destruction of the phone booth (implied by the chase's intensity and the Agents' arrival) sets the stage for Neo's night, as the message is now delayed or altered."
+ ],
+ "dramatic_function": "This scene serves as the threshold crossing for the audience and the characters, visually and physically demonstrating the difference between the human world (the cops) and the Agent world (Brown and Trinity). It transforms the chase from a physical pursuit into a metaphysical demonstration of power, raising the stakes for Neo's upcoming involvement."
+}

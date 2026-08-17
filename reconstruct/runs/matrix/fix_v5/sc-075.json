@@ -1,0 +1,114 @@
+{
+ "scene_id": "sc-075",
+ "location": "MESS HALL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "TANK",
+  "APOC",
+  "MOUSE",
+  "SWITCH",
+  "DOZER",
+  "NEO",
+  "MORPHEUS"
+ ],
+ "speaking": [
+  "TANK",
+  "APOC",
+  "MOUSE",
+  "SWITCH",
+  "DOZER",
+  "NEO",
+  "MORPHEUS"
+ ],
+ "summary": "The crew eats a synthetic breakfast in the mess hall. Mouse philosophizes about the nature of food in the Matrix and invites Neo to meet the woman in the red dress he designed. Dozer explains the food is vat-grown protein. Morpheus enters and announces they are going into the Matrix, specifically to take Neo to see the Oracle.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Unaware of the specific destination for the upcoming mission",
+   "after": "Informed that the mission is to see the Oracle",
+   "evidence": "MORPHEUS I want everyone on twelve-hour standby.  We're going in.  I'm taking Neo to see her. With that he turns and leaves. NEO See who? TANK The Oracle."
+  },
+  {
+   "who": "NEO",
+   "axis": "resolve",
+   "before": "Passively observing the crew's banter and eating",
+   "after": "Prepared to leave for the Matrix",
+   "evidence": "MORPHEUS I want everyone on twelve-hour standby.  We're going in.  I'm taking Neo to see her."
+  },
+  {
+   "who": "MOUSE",
+   "axis": "standing",
+   "before": "Speaking freely about the nature of reality",
+   "after": "Interrupted and dismissed by the group",
+   "evidence": "APOC Shut up, Mouse. Neo scoops up a spoonful. DOZER It's a single-celled protein combined with synthetic aminos, vitamins, and minerals."
+  }
+ ],
+ "objects_that_matter": [
+  "breakfast",
+  "spoon"
+ ],
+ "event_hint": {
+  "kind": "briefing",
+  "one_line": "Morpheus announces the crew is going into the Matrix to take Neo to the Oracle.",
+  "continues_from_earlier": false
+ },
+ "uncertain": [],
+ "_mind_pass": "ran: 7 speakers — an exchange",
+ "minds": [
+  {
+   "who": "MOUSE",
+   "wants": "To bridge the gap between the mundane reality of the ship and the sensory richness of the Matrix, and to secure a personal connection with Neo through his creative work.",
+   "feels": "Intellectually stimulated by the philosophical implications of synthetic food, but socially vulnerable due to his low status on the ship; he is eager to be seen as more than just a technician.",
+   "shows": "A rambling, slightly defensive philosopher who pivots quickly to a flirtatious, 'digital pimp' persona when he senses an opening with Neo.",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "Neo is open to his interpretations of reality and interested in the Matrix as a place of sensory experience and romance.",
+     "wrong_because": "Neo is currently in a state of high-stakes existential uncertainty, focused on his destiny, not the aesthetics of the simulation."
+    }
+   ],
+   "basis": "Mouse's monologue about Cream of Wheat and chicken taste is cut off by Apoc, showing his lack of social capital. His immediate pivot to 'I designed her' and 'personalized milieu' reveals his desire for validation and intimacy.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "NEO",
+   "wants": "To process the information he has just received from Cypher (that he is not the first candidate) while maintaining his composure in front of the crew.",
+   "feels": "A mix of confusion and guarded hope; he is still reeling from the revelation that five others died, which casts a shadow over his own mission.",
+   "shows": "A polite, somewhat passive observer who eats his food and answers questions briefly, masking the internal turmoil caused by Cypher's warning.",
+   "believes_about": [
+    {
+     "other": "MORPHEUS",
+     "belief": "Morpheus is confident in Neo's destiny, as evidenced by the decision to take him to the Oracle.",
+     "wrong_because": "Morpheus's confidence is actually fragile, built on a pattern of failed prophecies that he is trying to suppress, as revealed by Cypher."
+    }
+   ],
+   "basis": "Neo's silence after Apoc tells Mouse to shut up, and his brief 'See who?' question, show he is not fully engaged in the banter but is waiting for the next major plot development.",
+   "grounding": "from_earlier_scenes"
+  },
+  {
+   "who": "MORPHEUS",
+   "wants": "To initiate the next phase of the quest by taking Neo to the Oracle, thereby validating his belief in Neo as the One.",
+   "feels": "A profound, almost desperate need for the prophecy to be true; the weight of the previous five failures is a burden he carries silently.",
+   "shows": "Commanding, efficient, and decisive. He enters, gives the order, and leaves without engaging in the casual banter, signaling the shift from routine to mission.",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "Neo is the One, and the Oracle will confirm this, saving him from the fate of the previous five candidates.",
+     "wrong_because": "The Oracle's role is not just to confirm, but to test, and the previous candidates' deaths suggest the path is more dangerous and less certain than Morpheus admits."
+    }
+   ],
+   "basis": "Morpheus's abrupt entry and immediate departure contrast with the crew's relaxed state, highlighting his singular focus on the mission and his need to move forward despite the underlying anxiety.",
+   "grounding": "from_earlier_scenes"
+  }
+ ],
+ "connects_back": [
+  "sc-073: Cypher's revelation that Neo is the sixth candidate and that the previous five died, which creates the underlying tension in Neo and Morpheus.",
+  "sc-074: Cypher's betrayal and deal with Agent Smith, which raises the stakes for the crew's next move into the Matrix."
+ ],
+ "sets_up": [
+  "ev-021: The Oracle's Prophecy, as this scene directly announces the mission to visit her.",
+  "ev-020: Mouse's Status Update, as Mouse's presence in the mess hall and his connection to the Matrix program foreshadow his role in the upcoming events."
+ ],
+ "dramatic_function": "This scene serves as a transition from the internal conflict of the ship (Cypher's betrayal, Neo's doubt) to the external action of the Matrix, using the mundane act of eating to highlight the crew's resilience and the artificiality of their reality, while Morpheus's announcement resets the narrative momentum toward the Oracle."
+}

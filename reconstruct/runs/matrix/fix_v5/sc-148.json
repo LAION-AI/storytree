@@ -1,0 +1,113 @@
+{
+ "scene_id": "sc-148",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Neo",
+  "Trinity",
+  "Morpheus"
+ ],
+ "speaking": [
+  "TANK",
+  "NEO",
+  "TRINITY"
+ ],
+ "summary": "Tank and Trinity prepare to unplug Morpheus to save him from Agent interrogation, but Neo stops them, claiming the Oracle predicted this moment. Neo decides to re-enter the Matrix to save Morpheus, asserting he is not 'the One' but believes in his own ability to bring Morpheus back. Trinity, initially shocked by Neo's self-doubt, joins him, asserting her belief in Morpheus and her authority as ranking officer.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Believes he is the One, the chosen savior.",
+   "after": "Accepts he is 'just another guy' and not the One, but believes in his own potential to save Morpheus.",
+   "evidence": "I'm not the One, Trinity.  The Oracle hit me with that, too."
+  },
+  {
+   "who": "Neo",
+   "axis": "resolve",
+   "before": "Paralyzed by the finality of Morpheus's death, watching the plug being held.",
+   "after": "Decides to re-enter the Matrix to save Morpheus, stating 'I believe I can bring him back.'",
+   "evidence": "I believe I can bring him back."
+  },
+  {
+   "who": "Trinity",
+   "axis": "allegiance",
+   "before": "Reluctant to watch Morpheus die, tears slipping free as she closes her eyes.",
+   "after": "Decides to join Neo in the Matrix, asserting her belief in Morpheus and her authority to command the situation.",
+   "evidence": "I believe Morpheus means more to me than he does to you."
+  }
+ ],
+ "objects_that_matter": [
+  "plug",
+  "chair"
+ ],
+ "event_hint": {
+  "kind": "wake",
+  "one_line": "Neo and Trinity decide to re-enter the Matrix to save Morpheus before he is unplugged.",
+  "continues_from_earlier": true
+ },
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To redeem himself for Morpheus's sacrifice by proving that his faith in Morpheus is as strong as Morpheus's faith in him, regardless of the logical odds.",
+   "feels": "A profound shift from the paralysis of grief to a fierce, almost reckless clarity. He is no longer operating on the identity of 'The One' but on the raw, irrational conviction that he can defy fate through action. He feels the weight of Morpheus's death not as a tragedy to mourn, but as a debt to be paid.",
+   "shows": "He appears suddenly decisive and authoritative, stopping the ritual of death. He strips away the mystical title of 'The One' and replaces it with a simpler, more human assertion: 'I believe I can bring him back.' He lets Tank see his doubt ('I can't logically explain to you why it's not') but lets Trinity see only his resolve.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "He believes Trinity is the only one who can understand the weight of this choice because she is the one who loves Morpheus most. He assumes her presence is a natural extension of his own grief.",
+     "wrong_because": "He underestimates the personal, romantic stakes Trinity has. She isn't just there for Morpheus; she is there for him, and her joining is an act of love for Neo that she hasn't yet admitted to herself."
+    },
+    {
+     "other": "Morpheus",
+     "belief": "He believes Morpheus's death was a miscalculation based on a misunderstanding of who Neo is. He believes Morpheus would want him to continue, even if it means going back into the lion's den.",
+     "wrong_because": "Morpheus died believing Neo *was* the One, a messianic figure. Neo is now acting as a human, not a messiah, which is a different kind of hope than the one Morpheus died for."
+    }
+   ],
+   "basis": "Neo's line 'I'm not the One, Trinity. The Oracle hit me with that, too' marks a break from the prophecy. His decision to 'go in' is driven by the realization that Morpheus 'believed something and he was ready to give his life for what he believed.' This mirrors Neo's own new stance: belief over logic.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Trinity",
+   "wants": "To ensure Morpheus survives, but more urgently, to be with Neo in the face of death. She wants to assert her authority and her loyalty to counter Neo's potential isolation as the 'chosen one' (or in this case, the 'guilty one').",
+   "feels": "A mix of shock at Neo's self-doubt and a fierce, protective rage. When she says 'Morpheus means more to me than he does to you,' it is a deflection. She is actually terrified of losing Neo, and by claiming a stronger bond with Morpheus, she justifies her presence at his side. The 'uncertainty' that swallows her words when Neo asks why he is the One reveals the true, unspoken object of her belief: Neo himself.",
+   "shows": "She presents a united front, using her rank as 'ranking officer' to shut down Neo's refusal. She hides her romantic feelings behind professional duty and shared grief. She is the one who physically commits to the chair, mirroring Neo's decision.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "She believes Neo is stubborn and perhaps delusional, but she is willing to follow him into the fire because she trusts his instinct more than Tank's logic. She believes he is right, even if he doesn't believe in himself.",
+     "wrong_because": "She is right that he is the One, but she is wrong that he knows it. She is also wrong that her primary motivation is Morpheus; it is Neo."
+    }
+   ],
+   "basis": "The text notes 'Uncertainty swallows her words' when she tries to explain why Neo must be the One. This is the key concealment. Her subsequent speech about being the 'ranking officer' is a shield to cover the emotional truth she just failed to articulate.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Tank",
+   "wants": "To save Zion by doing the pragmatic, painful thing (unplugging Morpheus). He wants to be the voice of reason in a ship that is currently ruled by prophecy and passion.",
+   "feels": "Deeply conflicted. He calls Morpheus 'a father' and says they will miss him, showing he is not cold. However, he is terrified. He sees the 'military controlled building' and 'three Agents' and recognizes the suicide mission. He feels the burden of being the only one who sees the full scope of the danger.",
+   "shows": "He is the skeptic. He uses logic ('It's like hacking a computer', 'This is loco') to ground the scene. He is the one who has to actually perform the unplug, making him the physical embodiment of the alternative Neo is rejecting.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "He believes Neo is being driven by emotion and the Oracle's vague promises, not by any concrete advantage. He thinks Neo is going to die, and with him, the chance for Zion to survive.",
+     "wrong_because": "He is correct about the danger, but wrong about the outcome. Neo's 'illogical' faith is the very thing that will crack the Agent's logic."
+    }
+   ],
+   "basis": "Tank's dialogue focuses on the mechanics of the extraction ('alpha pattern', 'codes to Zion's mainframe'). His objection to Neo is practical: 'They've got Morpheus in a military controlled building.' He is the anchor to reality in a scene that is spiraling toward the fantastical.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-146: The explanation of the extraction process and the stakes for Zion.",
+  "sc-145: The context of Morpheus's interrogation and the Agents' goal.",
+  "The Oracle's prophecy (referenced in sc-148 but established in earlier scenes): The source of Neo's sudden conviction."
+ ],
+ "sets_up": [
+  "ev-026: The preparation for the rescue, as Tank must now load Neo and Trinity.",
+  "ev-027: The assault on the government building, which requires Neo and Trinity to be in the Matrix.",
+  "ev-030: The subway ambush, as Trinity's presence alongside Neo sets the stage for her confession and subsequent injury."
+ ],
+ "dramatic_function": "This scene is the pivot point where the crew shifts from a reactive state (surviving the raid) to an active, defiant one. It redefines Neo's character from a messianic figure to a human agent of will, and establishes Trinity not just as a warrior, but as Neo's equal in belief and love. It transforms the mission from a rescue to a test of faith."
+}

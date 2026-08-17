@@ -1,0 +1,95 @@
+{
+ "scene_id": "sc-129",
+ "location": "STREET",
+ "time_of_day": "DAY",
+ "present": [
+  "NEO",
+  "TRINITY",
+  "TANK"
+ ],
+ "speaking": [
+  "NEO",
+  "TRINITY",
+  "TANK"
+ ],
+ "summary": "Four characters move quickly down a back street. Neo asks if Morpheus is alive, and Trinity relays the question to Tank via voice-over. Tank confirms Morpheus is alive and being moved. Trinity then asks for an exit, and Tank directs them to where Cypher is located, revealing he sent Cypher to Franklin and Erie.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Uncertain about Morpheus's status",
+   "after": "Knows Morpheus is alive",
+   "evidence": "NEO Is Morpheus alive? TRINITY Is Morpheus still alive, Tank? TANK (V.O.) Yes. They're moving him."
+  },
+  {
+   "who": "TRINITY",
+   "axis": "knowledge",
+   "before": "Did not know Cypher's location",
+   "after": "Knows Cypher is at Franklin and Erie",
+   "evidence": "TANK (V.O.) You're not far from Cypher. TRINITY Cypher, I thought -- TANK (V.O.) So did we. I sent him to Franklin and Erie."
+  }
+ ],
+ "objects_that_matter": [],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "The group navigates a back street while coordinating with Tank for an exit and Morpheus's status.",
+  "continues_from_earlier": true
+ },
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "NEO",
+   "wants": "To confirm Morpheus is still alive before the extraction is complete.",
+   "feels": "Anxiety that is rapidly converting into a sense of fated inevitability. He is no longer just running for survival; he is running to fulfill a destiny that he feels is closing in on him.",
+   "shows": "A focused, urgent inquiry. He asks the question directly and physically, rather than through the comms, signaling his personal stake in the answer.",
+   "believes_about": [
+    {
+     "other": "MORPHEUS",
+     "belief": "Morpheus's life is the linchpin of his own purpose. If Morpheus is dead, the prophecy—and Neo's role in it—may be over before it begins.",
+     "wrong_because": "He does not yet know that Morpheus has been traded, so his relief at hearing he is 'alive' is misplaced; being alive is not the same as being free."
+    }
+   ],
+   "basis": "Neo's question 'Is Morpheus alive?' is the first thing he says, prioritizing Morpheus over his own safety or the immediate tactical situation. The narration explicitly notes that 'inevitability seems to cinch around Neo' after he receives the answer, linking his emotional state to a larger, cosmic weight rather than just tactical relief.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "TRINITY",
+   "wants": "To maintain operational control and secure an exit for the group.",
+   "feels": "Professional composure masking deep concern. She is the conduit for information, but she is also managing the team's morale and direction. There is a flicker of surprise when Tank mentions Cypher, suggesting she was not fully in sync with his tactical decisions.",
+   "shows": "Efficiency and calm. She translates Neo's question to Tank, delivers the answer back to Neo, and immediately pivots to the next tactical need ('We need an exit!'). She cuts off her own thought about Cypher quickly to stay on task.",
+   "believes_about": [
+    {
+     "other": "CYpher",
+     "belief": "She was not certain of Cypher's location or status ('Cypher, I thought --'). She believed he was perhaps still in the Matrix or in a different position, not that Tank had already directed him to the specific extraction point.",
+     "wrong_because": "Tank had already coordinated with Cypher in a previous scene (sc-127), but Trinity was not privy to that specific instruction, leading to a momentary disconnect in their shared operational picture."
+    }
+   ],
+   "basis": "Trinity's dialogue is purely functional. She asks Tank about Morpheus, then immediately asks for an exit. Her line 'Cypher, I thought --' is an unfinished sentence, indicating a mental correction or surprise that she suppresses to maintain focus. This shows she is processing new information (Cypher's location) while simultaneously managing the crisis.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "TANK",
+   "wants": "To provide accurate situational awareness and maintain the illusion of control from the ship.",
+   "feels": "Calm, detached professionalism. He is the anchor, the one who sees the whole board. There is a subtle undercurrent of tension because he is managing multiple variables (Morpheus's status, Neo/Trinity's location, Cypher's position) simultaneously.",
+   "shows": "Concise, factual reporting. He confirms Morpheus is alive but 'moving,' and directs Trinity to Cypher's location. His tone is steady, providing a counterweight to the chaos on the street.",
+   "believes_about": [
+    {
+     "other": "CYPHER",
+     "belief": "That Cypher is following instructions and will be at the designated exit. He does not yet know (or does not yet fully grasp the immediate danger) that Cypher is the one who will betray them.",
+     "wrong_because": "Tank's confidence in his coordination with Cypher is misplaced. He believes he is managing an ally, but he is actually managing a traitor who is about to turn on the crew."
+    }
+   ],
+   "basis": "Tank's voice is the only source of external information in this scene. His statements are precise: 'Yes. They're moving him. I don't know where yet.' and 'I sent him to Franklin and Erie.' This precision contrasts with the physical chaos of the street, establishing him as the strategic center of the operation.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-127: Tank's prior coordination with Cypher regarding the Franklin and Erie exit.",
+  "sc-128: Trinity's initial call to Tank, establishing the communication channel used in this scene."
+ ],
+ "sets_up": [
+  "ev-023: The confirmation of Morpheus's survival raises the stakes for his rescue, while the location of Cypher sets the stage for his betrayal at the extraction point.",
+  "ev-024: The group's arrival at the TV repair shop (Franklin and Erie) where the betrayal will unfold."
+ ],
+ "dramatic_function": "This scene serves as a tactical pivot, transitioning the characters from a state of reactive fleeing to a state of directed extraction. It reinforces the hierarchy of the crew (Tank as the brain, Trinity as the link, Neo as the driven) and introduces the critical variable of Cypher's location, which will soon be revealed as a point of weakness rather than strength. The 'inevitability' felt by Neo foreshadows the tragic certainty of the upcoming betrayal."
+}

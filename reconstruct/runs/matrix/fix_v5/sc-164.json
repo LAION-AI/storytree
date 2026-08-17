@@ -1,0 +1,82 @@
+{
+ "scene_id": "sc-164",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Trinity"
+ ],
+ "speaking": [
+  "TANK",
+  "TRINITY"
+ ],
+ "summary": "Tank is at the controls of the hovercraft when Trinity's voice arrives over the line, requesting a pilot program for a military B-212 helicopter. Urged to hurry by Trinity, Tank immediately searches the disk drawers, finds the correct laser disk, feeds it into Trinity's supplement drive, and punches the load commands on her keyboard.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "condition",
+   "before": "Idle or waiting at the controls",
+   "after": "Actively searching and loading a specific program",
+   "evidence": "Tank is immediately searching the disk drawers."
+  },
+  {
+   "who": "Trinity",
+   "axis": "knowledge",
+   "before": "Without a pilot program",
+   "after": "Receiving the pilot program for the B-212 helicopter",
+   "evidence": "finding one that he feeds into Trinity's supplement drive"
+  }
+ ],
+ "objects_that_matter": [
+  "pilot program",
+  "laser disks",
+  "supplement drive"
+ ],
+ "event_hint": {
+  "kind": "preparation",
+  "one_line": "Tank loads the helicopter pilot program for Trinity.",
+  "continues_from_earlier": true
+ },
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Tank",
+   "wants": "To execute Trinity's command with the speed and precision she expects, minimizing any window where her vulnerability could be read as anything other than operational competence.",
+   "feels": "A low-grade, professionalized tension inherited from the roof fight in sc-163 — he is still in the posture of someone who has just been doing a job and is back to doing a job. His focus is total and his body language is that of a man whose hands are faster than his thoughts, which lets him avoid having to think about what just happened to Neo and what is about to happen to the helicopter.",
+   "shows": "Fluency. 'Operator' as a verbal handoff, fingers flashing, the load commands punched without hesitation. He performs the role of a system that responds to input with zero latency. There is no affect in his face that the text calls out; the scene gives him no reaction to name, only action.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "She is operating at full command capacity and her 'Hurry!' is a pacing instruction, not a fear response. He believes the situation on the ground (the helicopter, the crash, the Agents) is contained enough that a pilot program is the correct and sufficient next step.",
+     "wrong_because": "He does not know that the helicopter is damaged beyond the pilot program's ability to fix — the text of sc-163 shows the roof-access tower engulfed and the pilot consumed by Agent Jones, and the subsequent event e-028 states the helicopter crashes into a skyscraper. A pilot program cannot repair a structural failure, and Tank's certainty about the sufficiency of the disk he loads is therefore misplaced."
+    }
+   ],
+   "basis": "The scene itself: 'Operator' is a one-word handoff that assumes she is the operator and he is the system. 'Fingers flash over the gleaming laser disks' — the adverb 'flash' and the adjective 'gleaming' are the writer telling us the speed and the ease, which is Tank's entire internal state made visible. He is at the controls of the hovercraft, the same posture as when the helicopter pilot was watching in sc-163, so he has not physically reset from the fight. The event e-028 confirms the helicopter is damaged and crashes, which is the fact his certainty about the pilot program cannot account for.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Trinity",
+   "wants": "The B-212 pilot program loaded before the window closes — i.e., before the helicopter becomes uncontrollable. She is trying to buy time for herself and for the aircraft by making the loading happen at a speed that pre-empts the need to think about whether the loading will be enough.",
+   "feels": "Fear, but a specific and operationalized fear: the fear that the helicopter is already beyond her control and that the pilot program is a delay tactic, not a fix. The 'Hurry!' is not impatience; it is the sound of someone who is watching the aircraft and knows it is doing something she cannot yet name. She is on the ground, in the helicopter, in sc-163's aftermath, and she has just watched Neo get shot in the shoulder and the thigh and nearly killed by Agent Jones. She is not in a state where she can afford to be calm, and she is not in a state where she can afford to be visibly uncalm, so she converts the uncalm into a command.",
+   "shows": "Two lines of dialogue: a request and an urgency marker. Her voice is V.O., which means she is not seen, only heard, and what is heard is functional. She does not say 'I'm scared' or 'the helicopter is shaking' or 'I just watched Neo almost die.' She says 'I need a pilot program' and 'Hurry!' The concealment is total and is the point of her being V.O. — she lets the audio channel carry the operational content and keeps the affective content in the body she is not showing.",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "Tank will find the correct disk and load it without her having to specify which one, because he is the operator of the disk system and he knows the inventory. She believes his competence is the thing that keeps her from having to think about the helicopter, and that if he hesitates or mis-loads, she will have to think, and if she thinks, the fear she is converting into a command will come back as itself.",
+     "wrong_because": "This belief is not wrong in the scene — he does find it and load it without hesitation. The error is downstream: she believes the loading will close the window, and e-028 shows the window closes anyway (the helicopter crashes). Her belief about Tank is accurate; her belief about what the pilot program will accomplish is not."
+    }
+   ],
+   "basis": "sc-163: Trinity is on the roof, she sees Neo get shot twice and nearly killed, she sees Agent Jones emerge from the static-swarm where the pilot was. She is in the helicopter in sc-164 (she is the one who needs the B-212 pilot program, which means she is in a B-212). The 'Hurry!' in this scene, taken against the fact that she is in an aircraft that is about to crash (e-028), is a fear response dressed as a pacing instruction. Her V.O. status means the scene gives us no facial or bodily reaction to read — the only observable facts are the two lines of dialogue, and the fact that the text does not describe any visible reaction is itself the concealment.",
+   "grounding": "from_earlier_scenes"
+  }
+ ],
+ "connects_back": [
+  "sc-163: the roof fight, Neo's wounding, Agent Jones's emergence from the pilot's static-swarm, Trinity's position in the helicopter",
+  "e-028: the helicopter crash, which is the event that makes Trinity's 'Hurry!' a fear response rather than a pacing instruction"
+ ],
+ "sets_up": [
+  "e-028: the helicopter crash — this scene is the preparation beat immediately before it, and the pilot program Tank loads is the instrument Trinity is using to try to prevent it",
+  "e-029: the rooftop regroup — the hovercraft Tank is at the controls of in this scene is the vehicle that will carry the group to the roof where they regroup after the crash"
+ ],
+ "dramatic_function": "This scene is the conversion of fear into procedure. Trinity is afraid and Tank is competent, and the scene's work is to show the mechanism by which the fear becomes a command and the competence becomes a response, so that neither of them has to be in the state they are actually in. It is the last beat of operational control before e-028, the crash, which is the beat where operational control ends and the group has to be in the states they have been converting away from."
+}

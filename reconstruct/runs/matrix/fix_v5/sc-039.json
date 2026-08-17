@@ -1,0 +1,89 @@
+{
+ "scene_id": "sc-039",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "MORPHEUS",
+  "Trinity",
+  "Neo",
+  "Mouse",
+  "Cypher",
+  "Switch",
+  "Tank",
+  "Dozer"
+ ],
+ "speaking": [
+  "MORPHEUS"
+ ],
+ "summary": "Morpheus introduces the crew to Neo, naming Mouse, Cypher, Switch, Tank, and Dozer, though the names wash over Neo meaninglessly. He then explains that the Core is where they broadcast their pirate signal and hack into the Matrix. After showing the equipment and ecto-skeleton chairs, Morpheus tells Neo the answer to what the Matrix is right there. He guides a coaxial line with a cerebrum chip into the jack at the back of Neo's head. Neo grimaces through the insertion until a loud click and popping ears signal completion, after which he relaxes into a feeling of weightlessness.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Physically present but mentally detached, with names and faces washing meaninglessly over him.",
+   "after": "Physically connected to the system, experiencing weightlessness inside another place.",
+   "evidence": "He relaxes, opening his eyes as we PULL BACK to a feeling of weightlessness inside another place"
+  },
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Unaware of the specific mechanism for accessing the Matrix, having just been told the year is 2197.",
+   "after": "Physically interfaced with the Core, with a cerebrum chip inserted into his neck jack.",
+   "evidence": "He feels Morpheus guiding a coaxial line into the jack at the back of his neck. The cable has the same kind of cerebrum chip"
+  }
+ ],
+ "objects_that_matter": [
+  "Core",
+  "coaxial line",
+  "ecto-skeleton chairs",
+  "cerebrum chip"
+ ],
+ "event_hint": {
+  "kind": "initiation",
+  "one_line": "Neo is introduced to the crew and physically connected to the Matrix for the first time.",
+  "continues_from_earlier": true
+ },
+ "_mind_pass": "ran: 1 speaker, 270w >= p75 (125w) for this work",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To anchor himself in a reality that is still dissolving, seeking a concrete explanation for the year 2197 and his altered body.",
+   "feels": "Overwhelmed by a sensory and cognitive disconnect. The sheer volume of new information (names, tech, time) is washing over him, leaving him in a state of passive, sleepwalker-like detachment where he cannot process the people or the place.",
+   "shows": "He is physically compliant but mentally absent. He allows himself to be guided into the chair and endures the physical intrusion of the jack without resistance, his face tightening only in pain, not fear. His relaxation at the end is not joy, but a surrender to the 'weightlessness' of being unmoored from the physical world.",
+   "basis": "The text explicitly states the names and faces 'wash meaninglessly over Neo.' In sc-038, he followed Morpheus 'like a sleepwalker.' In sc-037, the wind was knocked from his chest by the date. He is not engaging with the crew; he is being processed by the ship.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To bypass Neo's current capacity for doubt and force an experiential understanding of the Matrix that his words cannot yet convey.",
+   "feels": "Patient and deliberate. He recognizes that Neo's mind is not ready for the verbal history of the machines, so he opts for the 'show, don't tell' approach. He is the architect of Neo's initiation, controlling the pace of his awakening.",
+   "shows": "A calm, instructional demeanor. He introduces the crew briefly, not for social bonding, but to establish the context of the 'pirate signal.' His touch on Neo's head is a transition point, shifting from teacher to technician.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo's skepticism and confusion can be resolved by direct interface with the simulation, as the truth of the Matrix is undeniable once felt.",
+     "wrong_because": "He assumes the 'weird' feeling of the plug-in will lead to acceptance, but the subsequent event (ev-009) suggests Neo's mind may reject the information entirely, indicating that physical connection does not guarantee psychological integration."
+    }
+   ],
+   "basis": "Morpheus says, 'There is no reason for me to try to explain it when I can simply show it' (sc-037). In this scene, he moves quickly from introductions to the Core, prioritizing the mechanism of the Matrix over the social dynamics of the crew.",
+   "grounding": "from_earlier_scenes"
+  },
+  {
+   "who": "Trinity",
+   "wants": "To facilitate Neo's transition without imposing herself, acting as a bridge between his isolation and the crew.",
+   "feels": "A quiet, steady presence. She is the only one of the crew who is 'known' to Neo (from sc-035/036 context implied by 'most of my crew'), so her nod is a small anchor in the sea of new faces.",
+   "shows": "A simple smile and nod, followed by physical assistance. She is efficient and unobtrusive, respecting the ritual Morpheus is conducting.",
+   "basis": "She is the first person named in the 'known' category. Her action is to 'help him,' which is a physical, grounding task, contrasting with Morpheus's abstract explanations.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-037: The shock of the year 2197 creates the cognitive gap that this scene attempts to bridge through physical interface.",
+  "sc-038: The 'sleepwalker' quality of Neo's movement is the direct residue of his disorientation, which persists into the introductions."
+ ],
+ "sets_up": [
+  "ev-009: By plugging Neo in, Morpheus initiates the visual demonstration of the Matrix's history, which will lead to Neo's mental rejection.",
+  "ev-011: This scene establishes the physical connection (the jack) that Tank will later need to manage as Neo's operator, highlighting the technical dependency Neo now has."
+ ],
+ "dramatic_function": "The scene serves as the threshold moment where Neo transitions from a passive observer of his new reality to an active, albeit involuntary, participant in it. It shifts the narrative from exposition (telling him what the year is) to immersion (showing him what the world is), using the physical act of plugging in as the metaphor for losing his old identity."
+}

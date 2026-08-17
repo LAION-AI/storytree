@@ -1,0 +1,31 @@
+{
+ "scene_id": "sc-113",
+ "location": "ROOM 808",
+ "time_of_day": "DAY",
+ "present": [
+  "cops"
+ ],
+ "speaking": [],
+ "summary": "Cops sweep through the empty room of Room 808. As they pass the bathroom, the camera reveals a man-sized hole smashed through the plaster and lath, indicating a recent exit or entry point.",
+ "what_changes": [
+  {
+   "who": "cops",
+   "axis": "knowledge",
+   "before": "sweeping through an empty room",
+   "after": "aware of a man-sized hole in the bathroom wall",
+   "evidence": "we see a man-sized hole smashed through the plaster and lath."
+  }
+ ],
+ "objects_that_matter": [
+  "man-sized hole",
+  "plaster and lath"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Police search Room 808 and find a hole in the bathroom wall.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 0 speaker(s), 30w — no exchange to read"
+}

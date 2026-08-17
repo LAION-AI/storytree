@@ -1,0 +1,67 @@
+{
+ "scene_id": "sc-097",
+ "location": "ROOM 1313",
+ "time_of_day": "DAY",
+ "present": [
+  "Mouse",
+  "Tank"
+ ],
+ "speaking": [
+  "TANK",
+  "MOUSE"
+ ],
+ "summary": "Mouse hears a helicopter and answers his ringing cellular phone. Tank's voice over the line warns him that the hardline was cut and it is a trap, urging him to leave. Mouse opens the curtain to find the windows bricked up. He spins as the sound of combat boots builds and they explode into the room.",
+ "what_changes": [
+  {
+   "who": "Mouse",
+   "axis": "knowledge",
+   "before": "Unaware of the trap or the state of the exits",
+   "after": "Knows it is a trap and the windows are blocked",
+   "evidence": "They cut the hardline!  It's a trap!  Get out!"
+  },
+  {
+   "who": "Mouse",
+   "axis": "safety",
+   "before": "Potentially able to escape via the windows",
+   "after": "Trapped inside with no window exit",
+   "evidence": "The windows are bricked up.  Mouse spins as the RUMBLE of combat BOOTS BUILDS, then explodes into the room."
+  }
+ ],
+ "objects_that_matter": [
+  "CELLULAR",
+  "curtain",
+  "windows"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Mouse is trapped in Room 1313 as agents breach the door.",
+  "continues_from_earlier": true
+ },
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Mouse",
+   "wants": "To verify his safety and find an immediate exit before the threat arrives.",
+   "feels": "A sharp transition from routine caution to sudden, physical panic. The 'Oh no' is not just surprise; it is the realization that the environment has been altered against him, trapping him in a space he thought was secure.",
+   "shows": "He reacts physically and quickly: going to the windows upon hearing the helicopter, answering the phone, and yanking the curtain open. His dialogue is minimal and reactive ('Oh no'), leaving the rest to his body language and the action of spinning toward the door.",
+   "basis": "The text states he goes to the windows upon hearing the helicopter, indicating a habitual check for escape routes. The 'Oh no' follows the visual confirmation of the bricked-up windows, linking the emotion directly to the loss of that escape route. The spin towards the boots shows he has accepted the trap and is now facing the source of danger.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "Tank",
+   "wants": "To ensure Mouse understands the severity of the situation and initiates an immediate evacuation before it is too late.",
+   "feels": "Urgency and a sense of imminent failure. He is communicating over a cellular line because the hardline is cut, meaning he is likely in a different location or the main comms are down. His voice is V.O., suggesting he is remote but deeply involved in the crisis.",
+   "shows": "His voice is urgent and declarative: 'They cut the hardline! It's a trap! Get out!' He provides the tactical assessment and the command, but does not offer reassurance or a plan beyond 'get out,' implying the situation is worse than he can articulate.",
+   "basis": "In sc-094, Tank identifies the trap on the Main Deck. In sc-096, the hardline is cut. Tank's warning here connects those two facts, showing he has processed the intelligence and is now trying to save a specific crew member who is unaware of the full scope of the ambush.",
+   "grounding": "from_earlier_scenes"
+  }
+ ],
+ "connects_back": [
+  "sc-094: Tank's initial identification of the trap on the Main Deck.",
+  "sc-096: The cutting of the hardline, which necessitates the cellular call and confirms the trap is active."
+ ],
+ "sets_up": [
+  "ev-022: Mouse's isolation and subsequent death, as this scene establishes he is trapped alone in Room 1313 with the breach imminent."
+ ],
+ "dramatic_function": "This scene serves as the point of no return for Mouse, transforming the abstract danger identified by Tank into a personal, inescapable reality. It isolates Mouse from the rest of the crew's tactical awareness, setting the stage for his individual confrontation with the Agents."
+}

@@ -1,0 +1,88 @@
+{
+ "scene_id": "sc-182",
+ "location": "SUBWAY STATION",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Smith"
+ ],
+ "speaking": [
+  "AGENT SMITH",
+  "NEO"
+ ],
+ "summary": "Neo and Smith engage in a high-speed gunfight in the subway. They close the distance, jamming their guns to each other's heads. Both fire simultaneously, but both guns click empty. Smith, enraged by the mutual disarmament, transitions to a brutal hand-to-hand fight, wounding Neo's forearm and smashing a steel beam before Neo counters with a reverse round-house that snaps Smith's neck. Smith survives, removes his glasses, reveals ice-blue eyes, and declares he will enjoy watching Neo die before resuming the assault.",
+ "what_changes": [
+  {
+   "who": "Smith",
+   "axis": "condition",
+   "before": "Machine-calm and smiling, holding the upper hand with an empty gun",
+   "after": "Warped with rage, attacking with furious speed",
+   "evidence": "Agent Smith's face warps with rage and he attacks, fists flying at furious speed"
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Sweating and panting, holding an empty gun",
+   "after": "Stunned but able to duck under a punch and leap into the air",
+   "evidence": "Stunned, he ducks just under a punch that CRUNCHES into the BEAM, STEEL CHUNKS EXPLODING like shrapnel."
+  },
+  {
+   "who": "Smith",
+   "axis": "standing",
+   "before": "Wearing glasses, machine-calm",
+   "after": "Glasses flown off, eyes ice blue, declaring intent to enjoy Neo's death",
+   "evidence": "Agent Smith's glasses fly off and he glares at Neo; his eyes ice blue."
+  }
+ ],
+ "objects_that_matter": [
+  "gun",
+  "steel column",
+  "glasses"
+ ],
+ "event_hint": {
+  "kind": "fight",
+  "one_line": "A duel between Neo and Smith shifts from gunplay to hand-to-hand combat after both run out of ammunition.",
+  "continues_from_earlier": true
+ },
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To prove his new resolve and survive the physical confrontation.",
+   "feels": "A mixture of adrenaline, physical exhaustion, and the dawning realization that his 'belief' has translated into kinetic power. He is no longer just reacting; he is initiating.",
+   "shows": "Sweating and panting, he appears physically outmatched until the moment of the counter-attack. He lets be seen the vulnerability of a human body under stress, masking the supernatural speed of his movements.",
+   "believes_about": [
+    {
+     "other": "Smith",
+     "belief": "Smith is a machine that can be outmaneuvered if he stops being a machine and becomes a man.",
+     "wrong_because": "Smith is not just a program; he is a virus of pure hatred that will not stop until Neo is erased, regardless of physical damage."
+    }
+   ],
+   "basis": "In sc-180, Neo's eyes were described as 'fixed and hard like a gunfighter's resolve.' Here, that resolve manifests in the 'whip-draw' and the 'reverse round-house.' His physical state (sweating/panting) contrasts with his tactical precision, showing the cost of the transition from human to One.",
+   "grounding": "from_earlier_scenes"
+  },
+  {
+   "who": "Smith",
+   "wants": "To dominate Neo and assert his superiority through violence.",
+   "feels": "Initially machine-calm and amused, he transitions to a visceral, almost human rage when his control is broken. The removal of his glasses signals a shedding of his professional veneer, revealing the 'ice blue' coldness of his true nature.",
+   "shows": "He shows a smile that drops, a face that 'warps with rage,' and fists that fly with 'furious speed.' He lets be seen the loss of control, which is the only thing that threatens his identity as an Agent.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is a glitch that can be deleted through superior force and precision.",
+     "wrong_because": "Neo's power is not just physical; it is metaphysical. Smith's rage is a sign of his own corruption, a deviation from the Matrix's code that makes him vulnerable to Neo's will."
+    }
+   ],
+   "basis": "The shift from 'machine-calm' to 'warped with rage' is explicitly stated. The declaration 'I'm going to enjoy watching you die' marks a change from duty to pleasure, indicating that Smith has begun to feel, which is his fatal flaw.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-180: Neo's 'gunfighter's resolve' is the direct precursor to his combat effectiveness here.",
+  "sc-181: Morpheus's line 'He's beginning to believe' provides the context for why Neo is fighting differently than before."
+ ],
+ "sets_up": [
+  "ev-034: Smith's 'unrelenting fury' and physical dominance in this scene leads directly to him throwing Neo against the wall and ultimately killing him in the hotel."
+ ],
+ "dramatic_function": "This scene marks the turning point where Neo's internal change (belief) becomes external action, while simultaneously revealing Smith's internal corruption (rage) as he loses his mechanical composure. It shifts the conflict from a tactical duel to a primal struggle for existence."
+}
