@@ -1,0 +1,50 @@
+{
+ "scene_id": "sc-075",
+ "location": "INT. MESS HALL",
+ "time_of_day": "Morning",
+ "present": [
+  "TANK",
+  "NEO",
+  "APOC",
+  "MOUSE",
+  "SWITCH",
+  "DOZER",
+  "MORPHEUS"
+ ],
+ "speaking": [
+  "TANK",
+  "APOC",
+  "MOUSE",
+  "SWITCH",
+  "NEO",
+  "DOZER",
+  "MORPHEUS"
+ ],
+ "summary": "The crew gathers in the mess hall for breakfast, described as a substance between yogurt and cellulite. Mouse engages in a philosophical debate about the nature of synthetic food, comparing it to Cream of Wheat, while Dozer explains its nutritional composition. Mouse then flirts with Neo, mentioning he designed the 'woman in the red dress' from Neo's training program and offering to arrange a meeting. Morpheus enters, announces that the crew is on twelve-hour standby, and states he is taking Neo to see the Oracle.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Unaware of the specific destination of the upcoming mission",
+   "after": "Informed that he is going to see the Oracle",
+   "evidence": "MORPHEUS I want everyone on twelve-hour standby. We're going in. I'm taking Neo to see her."
+  },
+  {
+   "who": "CREW",
+   "axis": "resolve",
+   "before": "In a state of daily routine/breakfast",
+   "after": "On twelve-hour standby for immediate action",
+   "evidence": "I want everyone on twelve-hour standby. We're going in."
+  }
+ ],
+ "objects_that_matter": [
+  "breakfast substance",
+  "spoon"
+ ],
+ "event_hint": {
+  "kind": "briefing",
+  "one_line": "The crew prepares for a mission to meet the Oracle.",
+  "continues_from_earlier": true
+ },
+ "uncertain": []
+}

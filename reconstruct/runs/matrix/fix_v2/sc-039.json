@@ -1,0 +1,99 @@
+{
+ "scene_id": "sc-039",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "MORPHEUS",
+  "Trinity",
+  "Neo",
+  "Mouse",
+  "Cypher",
+  "Switch",
+  "Tank",
+  "Dozer"
+ ],
+ "speaking": [
+  "MORPHEUS"
+ ],
+ "summary": "Morpheus introduces the crew and the Core to Neo. He explains that the Core is where they broadcast their pirate signal and hack into the Matrix. Morpheus touches Neo's head, guides him into an ecto-skeleton chair, and inserts a coaxial line with a cerebrum chip into the jack at the back of his neck. As the needle is worked in, Neo grimaces until a loud CLICK fires and his ears pop, leading to a feeling of weightlessness.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Standing on the main deck, observing the crew and equipment.",
+   "after": "Seated in an ecto-skeleton chair with a coaxial line inserted into the jack at the back of his neck, experiencing a feeling of weightlessness.",
+   "evidence": "He relaxes, opening his eyes as we PULL BACK to a feeling of weightlessness inside another place"
+  },
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Unfamiliar with the specific crew members and the function of the Core.",
+   "after": "Informed that the Core is where they broadcast their pirate signal and hack into the Matrix, though the names wash meaninglessly over him initially.",
+   "evidence": "The names and faces wash meaninglessly over Neo."
+  }
+ ],
+ "objects_that_matter": [
+  "Core",
+  "coaxial line",
+  "cerebrum chip",
+  "ecto-skeleton chairs",
+  "battery slabs",
+  "satellite dish"
+ ],
+ "event_hint": {
+  "kind": "initiation",
+  "one_line": "Neo is physically connected to the ship's system to enter the Matrix.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "Morpheus",
+   "wants": "To complete the physical and psychological integration of Neo into the resistance by demonstrating the reality of their world.",
+   "feels": "A calm, priestly confidence in the inevitability of Neo's acceptance; he is no longer just explaining but initiating a rite of passage.",
+   "shows": "A steady, authoritative presence. He moves efficiently, touching Neo's head with a gesture that is both clinical and intimate, masking the physical violence of the insertion with a promise of 'weirdness' rather than pain.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is ready to be shown the truth, having already been physically prepared (muscles rebuilt) and mentally destabilized (time jump).",
+     "wrong_because": "Morpheus underestimates the sensory overload Neo will feel; while Neo is ready in spirit, his body is still adjusting to the physical reality of the plugs."
+    }
+   ],
+   "basis": "Morpheus has just told Neo the year is 2197 (sc-037) and said 'I can simply show it' (sc-037). In this scene, he moves from verbal explanation to physical connection, touching Neo's head and guiding the needle, indicating a shift from teacher to operator/initiator.",
+   "inferred": true
+  },
+  {
+   "who": "Neo",
+   "wants": "To understand his new reality and find his place among these people.",
+   "feels": "Overwhelmed and dissociative. The 'names and faces wash meaninglessly over him,' indicating a cognitive break where the sheer volume of new information (time, place, people, technology) prevents proper encoding. He is in a state of suspended animation, waiting to be acted upon.",
+   "shows": "Passive compliance. He 'allows himself to be helped' and his face tightens into a grimace during the insertion, showing a mix of fear and the physical shock of the needle, followed by a sudden, total relaxation as the connection is made.",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "Morpheus is leading him toward the answers he has been promised.",
+     "wrong_because": "Neo believes he is still in the physical world (the Nebuchadnezzar), whereas he is actually about to be transported into a simulated one (the Construct/Matrix)."
+    }
+   ],
+   "basis": "In sc-037, Neo is 'just as he starts to come unglued' when Morpheus enters. In sc-039, the narrative explicitly states the names 'wash meaninglessly over Neo.' His physical reaction (grimace to relaxation) mirrors his mental state of being overwhelmed then released from the burden of processing.",
+   "inferred": true
+  },
+  {
+   "who": "Trinity",
+   "wants": "To assist in the transition and ensure Neo's comfort during the physical procedure.",
+   "feels": "A quiet, protective solidarity. She is the bridge between Morpheus's authority and Neo's vulnerability.",
+   "shows": "A simple smile and nod, followed by physical assistance ('Help him, Trinity'). She is the only one who acknowledges Neo's presence with a social cue before the technical procedure begins.",
+   "basis": "Trinity is the first person listed in the 'present' and the first to react with a 'smile and nod.' Her role as 'help' suggests a caretaker dynamic established in previous scenes (implied by her presence in the infirmary in sc-036 context, though not explicitly speaking there, her presence is consistent).",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-037: Morpheus's promise to 'show' rather than 'explain' the year 2197.",
+  "sc-036: The physical preparation of Neo's body (muscle rebuilding) which makes the insertion of the jack possible and less catastrophic.",
+  "sc-038: The journey from the lower levels to the main deck, establishing the spatial context for the Core."
+ ],
+ "sets_up": [
+  "sc-040: The immediate transition into the Construct, where Neo will confront the nature of reality.",
+  "The establishment of the 'Core' as the operational center of the ship, which will be the hub for future Matrix dives.",
+  "The physical integration of Neo, making him a functional member of the crew rather than just a passenger."
+ ],
+ "dramatic_function": "This scene serves as the physical threshold crossing. It transforms Neo from an observer of the Nebuchadnezzar into a participant in its mission, using the visceral sensation of the jack insertion to mark the point of no return before the metaphysical revelation of the Matrix."
+}

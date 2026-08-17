@@ -1,0 +1,194 @@
+{
+ "variant": "v0",
+ "n": 15,
+ "produced": 15,
+ "mean_tier1": 0.917,
+ "mean_overlap": 0.65,
+ "clean": 12,
+ "verbatim_ok": 12,
+ "mean_words": 191,
+ "usage": {
+  "calls": 15,
+  "ok": 15,
+  "failed": 0,
+  "tok_in": 368613,
+  "tok_out": 6579,
+  "model_secs": 355.6934950351715,
+  "tok_per_s": 18.49626178670897
+ },
+ "per_scene": {
+  "sc-003": {
+   "produced": true,
+   "named_ok": "3/3",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.724,
+   "words": 173,
+   "scene_words": 157,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-008": {
+   "produced": true,
+   "named_ok": "3/3",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.615,
+   "words": 194,
+   "scene_words": 204,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-015": {
+   "produced": true,
+   "named_ok": "0/2",
+   "verbatim": "0/2",
+   "noops": 0,
+   "overlap": 0.0,
+   "words": 318,
+   "scene_words": 12,
+   "problems": [
+    "none of ['Neo', 'Rhineheart'] appears in the scene or its cues",
+    "no evidence span appears verbatim in the scene",
+    "word overlap 0% \u2014 probably a different scene"
+   ],
+   "score": 0.25
+  },
+  "sc-024": {
+   "produced": true,
+   "named_ok": "1/1",
+   "verbatim": "1/1",
+   "noops": 0,
+   "overlap": 0.8,
+   "words": 126,
+   "scene_words": 23,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-039": {
+   "produced": true,
+   "named_ok": "8/8",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.773,
+   "words": 256,
+   "scene_words": 270,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-056": {
+   "produced": true,
+   "named_ok": "1/1",
+   "verbatim": "1/1",
+   "noops": 0,
+   "overlap": 0.375,
+   "words": 164,
+   "scene_words": 12,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-075": {
+   "produced": true,
+   "named_ok": "7/7",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.812,
+   "words": 202,
+   "scene_words": 342,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-097": {
+   "produced": true,
+   "named_ok": "2/2",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.81,
+   "words": 179,
+   "scene_words": 59,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-113": {
+   "produced": true,
+   "named_ok": "1/1",
+   "verbatim": "1/1",
+   "noops": 0,
+   "overlap": 0.667,
+   "words": 107,
+   "scene_words": 30,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-129": {
+   "produced": true,
+   "named_ok": "3/3",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.913,
+   "words": 226,
+   "scene_words": 76,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-148": {
+   "produced": true,
+   "named_ok": "4/4",
+   "verbatim": "0/3",
+   "noops": 0,
+   "overlap": 0.679,
+   "words": 338,
+   "scene_words": 511,
+   "problems": [
+    "no evidence span appears verbatim in the scene"
+   ],
+   "score": 0.75
+  },
+  "sc-164": {
+   "produced": true,
+   "named_ok": "2/2",
+   "verbatim": "0/1",
+   "noops": 0,
+   "overlap": 0.462,
+   "words": 131,
+   "scene_words": 57,
+   "problems": [
+    "no evidence span appears verbatim in the scene"
+   ],
+   "score": 0.75
+  },
+  "sc-182": {
+   "produced": true,
+   "named_ok": "2/2",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.758,
+   "words": 211,
+   "scene_words": 237,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-200": {
+   "produced": true,
+   "named_ok": "1/1",
+   "verbatim": "1/1",
+   "noops": 0,
+   "overlap": 0.615,
+   "words": 111,
+   "scene_words": 26,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-215": {
+   "produced": true,
+   "named_ok": "3/3",
+   "verbatim": "1/1",
+   "noops": 0,
+   "overlap": 0.75,
+   "words": 122,
+   "scene_words": 27,
+   "problems": [],
+   "score": 1.0
+  }
+ }
+}

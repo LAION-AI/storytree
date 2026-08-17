@@ -1,0 +1,61 @@
+{
+ "scene_id": "sc-056",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "MOUSE"
+ ],
+ "speaking": [
+  "MOUSE"
+ ],
+ "summary": "On the main deck, several people gasp in reaction to an unseen event. Mouse exclaims in disbelief, stating he does not believe it, highlighting the shock of the moment among the crew.",
+ "what_changes": [
+  {
+   "who": "MOUSE",
+   "axis": "knowledge",
+   "before": "unaware of the specific event",
+   "after": "reacting with disbelief to the event",
+   "evidence": "MOUSE I don't believe it!"
+  }
+ ],
+ "objects_that_matter": [],
+ "event_hint": {
+  "kind": "reaction",
+  "one_line": "Crew members on the main deck react with shock to an event.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Who else is present besides Mouse",
+  "What specific event caused the gasps"
+ ],
+ "minds": [
+  {
+   "who": "MOUSE",
+   "wants": "To validate his own perception of reality by witnessing the impossible, thereby shifting from a passive observer to an active participant in the Matrix.",
+   "feels": "Overwhelming awe and cognitive dissonance. His prior understanding of how things work (from sc-053/054) is being shattered in real-time, leading to a breathless, almost eupaster-like state.",
+   "shows": "A single, sharp exclamation of disbelief that masks the depth of his internal processing. He lets the crew see his shock but not yet his full comprehension.",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo is currently achieving a level of physical mastery that Mouse himself, despite his years of training, has never seen.",
+     "wrong_because": "Mouse may be underestimating his own potential by comparing it to Neo's 'One' status rather than his own trajectory."
+    },
+    {
+     "other": "MORPHEUS",
+     "belief": "That Morpheus is the source of this 'impossible' physics that is currently unfolding on the dojo.",
+     "wrong_because": "He attributes the effectect to Morpheus's teaching rather than Neo's own adaptation."
+    }
+   ],
+   "basis": "In sc-054, Mouse explicitly identifies Neo's 'neural-kinetics' as 'way above normal.' In sc-055, Neo lands a hit on Morpheus. This scene is the immediate crew reaction to that hit. Mouse's exclamation 'I don't believe it!' is a direct consequence of the knowledge change from sc-054 to sc-055.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-054 (Mouse observing Neo's speed)",
+  "sc-055 (Neo hitting Morpheus)"
+ ],
+ "sets_up": [
+  "sc-057 (Morpheus telling Neo that he must step through the door himself)"
+ ],
+ "dramatic_function": "To serve as the 'audience surrogate' that punctuates the transition from Neo's training to his realization of agency, marking the moment the crew collectively accepts the Matrix's physics."
+}

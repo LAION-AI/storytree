@@ -1,0 +1,121 @@
+{
+ "scene_id": "sc-148",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Neo",
+  "Trinity",
+  "Morpheus"
+ ],
+ "speaking": [
+  "TANK",
+  "NEO",
+  "TRINITY"
+ ],
+ "summary": "Tank and Trinity prepare to unplug Morpheus's body from the Matrix. Neo interrupts, refusing to accept the death and revealing that the Oracle told him he would have to make a choice. Neo declares he is not the One and that Morpheus believed in a false prophecy. Despite Tank's objections that the mission is suicide, Neo insists on going back in to save Morpheus because he believes in something. Trinity, initially stunned by Neo's confession, decides to join him, asserting her authority as the ranking officer.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Believes he is the One as per Morpheus's faith and the Oracle's initial hint",
+   "after": "Confesses he is not the One, just another guy, and that Morpheus believed he was something he is not",
+   "evidence": "I'm not the One, Trinity.  The Oracle hit me with that, too."
+  },
+  {
+   "who": "Neo",
+   "axis": "resolve",
+   "before": "Paralyzed by the finality of Morpheus's death, watching the plug being held",
+   "after": "Decides to go back into the Matrix to save Morpheus, driven by a new belief in his own ability to bring him back",
+   "evidence": "I believe I can bring him back."
+  },
+  {
+   "who": "Trinity",
+   "axis": "allegiance",
+   "before": "Grieving and trying to prevent Neo from returning, arguing that Morpheus sacrificed himself to get Neo out",
+   "after": "Decides to join Neo in the Matrix, using her rank as the ranking officer to override his objection",
+   "evidence": "I believe that if you are serious about saving him then you are going to need my help and since I am the ranking officer on this ship, if you don't like it then I believe that you can go to hell, because you aren't going anywhere else."
+  }
+ ],
+ "objects_that_matter": [
+  "plug",
+  "chair"
+ ],
+ "event_hint": {
+  "kind": "wake",
+  "one_line": "Neo and Trinity decide to re-enter the Matrix to rescue Morpheus before his body is unplugged.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To save Morpheus by entering the Matrix, driven by a sudden, irrational conviction that he can do so.",
+   "feels": "A profound shift from paralysis to resolve. He is processing the loss of his identity as 'The One' and replacing it with a new, self-generated belief in his own agency. He feels a deep, almost painful gratitude toward Morpheus for the faith Morpheus placed in him, which now motivates Neo to prove that faith was not wasted.",
+   "shows": "He appears decisive and slightly arrogant in his refusal to accept death, but his admission that he is 'just another guy' reveals a fragile ego that is quickly being rebuilt. He is emotionally raw, moving from grief to a kind of zealous purpose.",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "Morpheus's death was a sacrifice made in vain if Neo does not go back, but it becomes meaningful if Neo succeeds. Neo believes Morpheus is the one who truly matters, not himself.",
+     "wrong_because": "Neo is mistaken in thinking his identity as 'The One' is the sole source of his power; he is beginning to realize that his belief in himself is the actual mechanism, a realization that is still forming."
+    },
+    {
+     "other": "Trinity",
+     "belief": "Trinity will understand his need to go back because she loves Morpheus more than he does.",
+     "wrong_because": "He underestimates Trinity's agency; she does not just join him out of love for Morpheus, but because she is taking command of the situation to prevent Neo from making a fatal error in judgment."
+    }
+   ],
+   "basis": "Neo's dialogue 'I'm not the One... I'm just another guy' and 'Morpheus is the one that matters' shows the shift in his self-concept. His action of walking to the chair before explaining shows his resolve is instinctive, not logical. This follows sc-146 where he was already trying to find a way to save Morpheus.",
+   "inferred": true
+  },
+  {
+   "who": "Trinity",
+   "wants": "To ensure Morpheus is saved, but also to maintain control over the mission and the ship. She wants to join Neo to guarantee his survival and to assert her authority.",
+   "feels": "Initially stunned and grieving, she is overwhelmed by the revelation that Neo is not The One. This is complicated by her romantic interest in Neo, which makes his confession painful. She feels a surge of protective instinct that transforms into a strategic decision to take charge. She feels a need to prove that her faith in Morpheus (and by extension, the mission) is stronger than Neo's new, shaky confidence.",
+   "shows": "She displays a mix of vulnerability (tears, stunned silence) and rigid authority. Her final speech is a performance of dominance, using her rank to override Neo's objection. She hides her emotional turmoil behind a facade of military precision.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is impulsive and likely to die if he goes alone. She believes she is more capable of handling the danger because she has more experience and a deeper emotional stake in Morpheus's survival.",
+     "wrong_because": "She is correct in her assessment of Neo's impulsiveness, but she is wrong to think that her presence is just 'help'; it is a necessary correction to his potential fatalism."
+    },
+    {
+     "other": "Tank",
+     "belief": "Tank is the logical voice of reason, but he is too cautious. She believes she can override him because she is the ranking officer, a position she is asserting more firmly now that the situation is critical.",
+     "wrong_because": "Tank's caution is well-founded given the odds, but Trinity's authority is what allows the mission to proceed at all."
+    }
+   ],
+   "basis": "Trinity's tears and 'stunned' reaction to Neo's confession are observable. Her dialogue 'I believe Morpheus means more to me than he does to you' reveals her personal stake. Her use of 'ranking officer' is a direct appeal to hierarchy, showing she is taking control. This connects to sc-146 where she was pacing and kicking Cypher, showing her rage and protectiveness.",
+   "inferred": true
+  },
+  {
+   "who": "Tank",
+   "wants": "To preserve the remaining crew and the ship by following logical protocol. He wants to prevent Neo from making a mistake that could kill everyone.",
+   "feels": "He is grieving for his brother and Morpheus, but he is trying to suppress his emotions to focus on the practical problem. He feels frustrated by Neo's irrationality and worried about the high risk of the mission. He feels a sense of duty to the greater good (Zion) that often conflicts with personal feelings.",
+   "shows": "He appears calm and analytical, focusing on the facts (military building, Agents, suicide). He is the voice of reason, but his grief is evident in his initial eulogy for Morpheus. He is reluctant to support Neo's idea but does not stop them because he trusts their judgment more than his own in this emotional context.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is acting on emotion rather than logic and is likely to die. He believes the mission is suicide.",
+     "wrong_because": "Tank is correct about the odds, but he is wrong to think that logic is the only way to survive in the Matrix; Neo's 'belief' is a different kind of logic that Tank cannot quantify."
+    },
+    {
+     "other": "Trinity",
+     "belief": "Trinity is the authority figure who can make the final call. He defers to her because she is the ranking officer and because he knows she will take the risk anyway.",
+     "wrong_because": "Tank's deference is appropriate, but it also shows his own lack of agency in the face of the crew's emotional turmoil."
+    }
+   ],
+   "basis": "Tank's dialogue 'This is loco... what you are talking about is suicide' shows his logical assessment. His eulogy 'You were... a father' shows his personal loss. His role in sc-146 as the one who explains the situation and the need to pull the plug establishes him as the practical operator.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-146: The decision to pull the plug was established as the only logical option to save Zion, creating the conflict Neo now defies.",
+  "sc-145: Morpheus's capture and the Agents' interrogation set the stakes for the rescue mission."
+ ],
+ "sets_up": [
+  "sc-149: The rescue mission in the Matrix, where Neo and Trinity will face the Agents and the revelation about humans as a virus.",
+  "Neo's transformation: This scene marks the moment Neo stops relying on Morpheus's faith and starts generating his own belief, which is crucial for his later powers."
+ ],
+ "dramatic_function": "This scene shifts the narrative from a reaction to loss (grief) to an active pursuit of salvation (agency). It redefines Neo's character from a passive recipient of prophecy to an active agent of his own fate, and it reasserts Trinity's role as a leader and protector, not just a lover."
+}

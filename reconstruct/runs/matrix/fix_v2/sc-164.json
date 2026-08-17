@@ -1,0 +1,87 @@
+{
+ "scene_id": "sc-164",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Trinity"
+ ],
+ "speaking": [
+  "TANK",
+  "TRINITY"
+ ],
+ "summary": "Tank is at the controls in the hovercraft when Trinity's voice comes over the line requesting a pilot program for a military B-212 helicopter. Urged to hurry by Trinity, Tank rapidly searches the disk drawers, finds the correct laser disk, feeds it into Trinity's supplement drive, and punches the load commands on her keyboard.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "knowledge",
+   "before": "Lacking the specific pilot program needed to fly the helicopter",
+   "after": "In the process of receiving the pilot program for a military B-212 helicopter",
+   "evidence": "Tank, I need a pilot program for a military B-212 helicopter."
+  },
+  {
+   "who": "Tank",
+   "axis": "condition",
+   "before": "Standing at the controls",
+   "after": "Actively searching and loading data",
+   "evidence": "Tank is immediately searching the disk drawers."
+  }
+ ],
+ "objects_that_matter": [
+  "laser disks",
+  "supplement drive",
+  "keyboard"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Preparing Trinity to fly the helicopter by loading the pilot program.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "Tank",
+   "wants": "To successfully transfer the B-212 pilot program to Trinity before the Agents reach the roof, relying on his technical competence to bridge the gap between Neo's injury and their escape.",
+   "feels": "A mix of professional pride and underlying anxiety. He is the 'ground' support, the one who must make the impossible (remote loading) work so the heroes can fly. There is a quiet confidence in his speed, but also the weight of knowing that if this fails, Trinity and Neo are dead.",
+   "shows": "Efficiency and calm. He is 'immediately searching,' his fingers 'flash' over the disks, and he punches commands with precision. He does not ask questions; he executes. The 'Operator' callout is a procedural anchor, showing he is in his element, the technician in control.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "Trinity can absorb the pilot program quickly enough to fly immediately once it's loaded. He trusts her capacity to handle the data dump.",
+     "wrong_because": "He assumes the technical transfer is the bottleneck, not the human processing. He doesn't account for the sheer volume of information or the pain/fear Trinity is suppressing."
+    },
+    {
+     "other": "Neo",
+     "belief": "Neo is stable enough to be left behind or is not the immediate concern of the flight plan. His focus is entirely on getting Trinity airborne.",
+     "wrong_because": "Neo's 'bullet-time' injury and the fact that he had to say 'Help' suggest a fragility that Tank, from his safe distance, may be underestimating in the immediate physical sense."
+    }
+   ],
+   "basis": "Tank is at the controls, a position of safety and control. The summary notes he 'rapidly searches' and 'punches the load commands.' His dialogue is minimal ('Operator'), indicating he is in a workflow state. The connection to sc-163 shows Trinity just pulled out the phone after a high-stress combat sequence, implying Tank has been ready to receive this call for some time, anticipating this exact moment.",
+   "inferred": true
+  },
+  {
+   "who": "Trinity",
+   "wants": "To acquire the ability to fly the helicopter instantly, transforming a static object (the grounded chopper) into a vehicle of escape.",
+   "feels": "Urgency and a desperate need for agency. She is on the roof, under fire (implied by the 'Hurry!'), and physically wounded or exhausted from the fight. The 'Hurry!' is not just speed; it is a plea for survival. She is projecting her need for control back through the line to Tank.",
+   "shows": "Impatience and command. She speaks over the line (V.O.) with direct requests. She does not explain the situation; she issues orders ('I need...', 'Hurry!'). This masks the vulnerability of being the one who must fly a machine she has never flown before, under fire.",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "Tank can find the specific disk quickly. She trusts his inventory and his speed. She believes the technology will work as promised.",
+     "wrong_because": "She is projecting her own urgency onto him. She doesn't know if he has the disk or if the connection is stable; she just knows she needs it *now*. Her belief in his capability is a coping mechanism for her own lack of control."
+    }
+   ],
+   "basis": "Trinity's voice is heard over the line, indicating she is not in the hovercraft. The 'Hurry!' comes after the initial request, signaling an escalation of threat or time pressure. In sc-163, she just killed an Agent and helped Neo up; she is in a high-adrenaline state. The fact that she asks for a 'military B-212' specifically suggests she has identified the target vehicle and knows what she needs.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-163: Trinity's decision to pull out the cellular phone after Neo asks if she can fly the helicopter, and her admission that she 'can't yet.'",
+  "sc-163: The high-stakes combat environment on the roof, with Agents closing in (Agent Jones emerging), which necessitates the 'Hurry!'"
+ ],
+ "sets_up": [
+  "sc-165: The immediate physical and mental transformation of Trinity as the information surges into her brain, allowing her to say 'Let's go.'",
+  "The transition from a grounded, vulnerable position to an airborne, mobile one, shifting the dynamic of the chase from ground-based to aerial."
+ ],
+ "dramatic_function": "This scene serves as the mechanical and psychological bridge between the chaotic ground combat and the aerial escape. It externalizes the theme of 'technology as salvation' by showing how Tank's mundane technical work enables Trinity's superhuman adaptation. It also highlights the division of labor: Neo/Trinity are the warriors, Tank is the enabler. The 'Hurry!' injects the ticking clock into the technical process, ensuring the scene doesn't feel like a pause in the action but a critical, high-tension step in the survival sequence."
+}

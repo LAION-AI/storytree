@@ -1,0 +1,38 @@
+{
+ "scene_id": "sc-215",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Tank",
+  "Morpheus"
+ ],
+ "speaking": [
+  "TRINITY"
+ ],
+ "summary": "On the main deck, the monitors suddenly activate. Trinity screams in response to this event. Tank and Morpheus look at each other, and the narrator describes the moment as a miracle. Trinity then commands someone to get up.",
+ "what_changes": [
+  {
+   "who": "monitors",
+   "axis": "condition",
+   "before": "inactive or dark (implied by 'jump back to life')",
+   "after": "active",
+   "evidence": "Trinity screams as the monitors jump back to life."
+  },
+  {
+   "who": "Tank and Morpheus",
+   "axis": "knowledge",
+   "before": "expecting failure or death (implied by the miracle description)",
+   "after": "witnessing a miraculous recovery",
+   "evidence": "Tank and Morpheus look at each other. It is a miracle."
+  }
+ ],
+ "objects_that_matter": [
+  "monitors"
+ ],
+ "event_hint": {
+  "kind": "resuscitation",
+  "one_line": "The monitors restart, prompting Trinity to urge the patient to rise.",
+  "continues_from_earlier": true
+ }
+}

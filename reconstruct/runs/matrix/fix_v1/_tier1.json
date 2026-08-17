@@ -1,0 +1,188 @@
+{
+ "variant": "v1",
+ "n": 15,
+ "produced": 15,
+ "mean_tier1": 0.983,
+ "mean_overlap": 0.76,
+ "clean": 14,
+ "verbatim_ok": 15,
+ "mean_words": 174,
+ "usage": {
+  "calls": 15,
+  "ok": 15,
+  "failed": 0,
+  "tok_in": 24938,
+  "tok_out": 6310,
+  "model_secs": 91.12065577507019,
+  "tok_per_s": 69.2488431555643
+ },
+ "per_scene": {
+  "sc-003": {
+   "produced": true,
+   "named_ok": "3/3",
+   "verbatim": "3/3",
+   "noops": 0,
+   "overlap": 0.884,
+   "words": 241,
+   "scene_words": 157,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-008": {
+   "produced": true,
+   "named_ok": "3/3",
+   "verbatim": "3/3",
+   "noops": 0,
+   "overlap": 0.923,
+   "words": 242,
+   "scene_words": 204,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-015": {
+   "produced": true,
+   "named_ok": "1/1",
+   "verbatim": "1/1",
+   "noops": 0,
+   "overlap": 0.875,
+   "words": 98,
+   "scene_words": 12,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-024": {
+   "produced": true,
+   "named_ok": "0/1",
+   "verbatim": "1/1",
+   "noops": 0,
+   "overlap": 0.812,
+   "words": 135,
+   "scene_words": 23,
+   "problems": [
+    "none of ['the car'] appears in the scene or its cues"
+   ],
+   "score": 0.75
+  },
+  "sc-039": {
+   "produced": true,
+   "named_ok": "8/8",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.579,
+   "words": 276,
+   "scene_words": 270,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-056": {
+   "produced": true,
+   "named_ok": "1/1",
+   "verbatim": "1/1",
+   "noops": 0,
+   "overlap": 0.5,
+   "words": 119,
+   "scene_words": 12,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-075": {
+   "produced": true,
+   "named_ok": "7/7",
+   "verbatim": "3/3",
+   "noops": 0,
+   "overlap": 0.694,
+   "words": 221,
+   "scene_words": 342,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-097": {
+   "produced": true,
+   "named_ok": "2/2",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.667,
+   "words": 139,
+   "scene_words": 59,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-113": {
+   "produced": true,
+   "named_ok": "1/1",
+   "verbatim": "1/1",
+   "noops": 0,
+   "overlap": 0.818,
+   "words": 91,
+   "scene_words": 30,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-129": {
+   "produced": true,
+   "named_ok": "3/3",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.9,
+   "words": 157,
+   "scene_words": 76,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-148": {
+   "produced": true,
+   "named_ok": "4/4",
+   "verbatim": "1/3",
+   "noops": 0,
+   "overlap": 0.667,
+   "words": 260,
+   "scene_words": 511,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-164": {
+   "produced": true,
+   "named_ok": "2/2",
+   "verbatim": "1/2",
+   "noops": 0,
+   "overlap": 0.72,
+   "words": 150,
+   "scene_words": 57,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-182": {
+   "produced": true,
+   "named_ok": "2/2",
+   "verbatim": "1/3",
+   "noops": 0,
+   "overlap": 0.938,
+   "words": 263,
+   "scene_words": 237,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-200": {
+   "produced": true,
+   "named_ok": "1/1",
+   "verbatim": "1/1",
+   "noops": 0,
+   "overlap": 0.667,
+   "words": 94,
+   "scene_words": 26,
+   "problems": [],
+   "score": 1.0
+  },
+  "sc-215": {
+   "produced": true,
+   "named_ok": "3/3",
+   "verbatim": "2/2",
+   "noops": 0,
+   "overlap": 0.75,
+   "words": 131,
+   "scene_words": 27,
+   "problems": [],
+   "score": 1.0
+  }
+ }
+}

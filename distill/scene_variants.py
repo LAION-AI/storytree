@@ -264,6 +264,16 @@ def _loose(s: str) -> str:
     return re.sub(r"\s+", " ", (s or "").lower()).strip()
 
 
+def _assert_supply(sid: str, scene, text: str) -> None:
+    """The slice must actually be this scene. Verified against its own anchors."""
+    if not text.strip():
+        raise ValueError(f"{sid}: empty scene text")
+    q = (scene.start_quote or "").strip()
+    if q and _loose(q[:40]) not in _loose(text[:400]):
+        raise ValueError(f"{sid}: slice does not start with the scene's own "
+                         f"anchor — offsets are misaligned")
+
+
 def tier1(node: dict, scene, text: str) -> dict:
     """Cheap checks. Not a quality judgement — a floor."""
     if not node:
@@ -312,13 +322,15 @@ def run_v2(out: Path, ports: list[int], model: str, per_endpoint: int = 4) -> di
     sw = Swarm(ports, model, per_endpoint)
     table = json.loads((ROOT / "reconstruct/runs/matrix/script_map.json").read_text())
     script = Path(table["source_file"]).read_text(errors="replace")
-    _, scenes = sp.parse(script)
+        # offsets index the CLEANED text; slice that, not the raw file
+    script, scenes = sp.parse(script)
     by = {s.scene_id: s for s in scenes}
     order = [s.scene_id for s in scenes]
 
     def one(sid):
         sc = by[sid]
         text = script[sc.start_char:sc.end_char]
+        _assert_supply(sid, sc, text)
         i = order.index(sid)
 
         def span(j0, j1):
@@ -385,15 +397,20 @@ def run_variant(name: str, out: Path, ports: list[int], model: str,
 
     table = json.loads((ROOT / "reconstruct/runs/matrix/script_map.json").read_text())
     script = Path(table["source_file"]).read_text(errors="replace")
-    _, scenes = sp.parse(script)
+        # offsets index the CLEANED text; slice that, not the raw file
+    script, scenes = sp.parse(script)
     by = {s.scene_id: s for s in scenes}
     order = [s.scene_id for s in scenes]
 
     def one(sid):
         sc = by[sid]
         text = script[sc.start_char:sc.end_char]
-        if not text.strip():
-            raise ValueError(f"{sid}: empty scene text")
+        # Presence is not integrity. The previous guard checked only that the
+        # slice was non-empty, and passed a misaligned window unchanged — the
+        # model then wrote fluent, well-evidenced nodes about the wrong scene.
+        # Scene already carries start_quote/end_quote for exactly this and they
+        # were unused.
+        _assert_supply(sid, sc, text)
         i = order.index(sid)
         nb = ""
         for j in (i - 1, i + 1):

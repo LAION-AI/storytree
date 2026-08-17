@@ -1,0 +1,47 @@
+{
+ "scene_id": "sc-003",
+ "location": "HEART O' THE CITY HOTEL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "The Big Cop",
+  "the other cops"
+ ],
+ "speaking": [
+  "TRINITY"
+ ],
+ "summary": "The Big Cop moves to cuff Trinity while the other cops hold her, confident they have her. Trinity moves with inhuman speed, snapping up her palm to explode the Big Cop's nose and kicking him back into another cop. As the remaining cops fire bullets and sweep flashlights in panic, Trinity snatches a gun from a cop's hand, twists it, and fires. After a final exchange of gunfire, Trinity is the only one standing, and she says 'Shit.'",
+ "what_changes": [
+  {
+   "who": "The Big Cop",
+   "axis": "condition",
+   "before": "Standing, holding a bead, reaching with the cuffs",
+   "after": "Flying back, slams into the cop farthest from her",
+   "evidence": "Her leg kicks with the force of a wrecking ball and he flies back, a two-hundred-fifty pound sack of limp meat and bone that slams into the cop farthest from her."
+  },
+  {
+   "who": "the other cops",
+   "axis": "standing",
+   "before": "Holding a bead, confident they've got her",
+   "after": "Trying to stop a leather-clad ghost, panicking, eventually dead",
+   "evidence": "BULLETS RAKING the walls, flashlights sweeping with panic as the remaining cops try to stop a leather-clad ghost."
+  },
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "Being cuffed",
+   "after": "The only one standing",
+   "evidence": "when it's over, Trinity is the only one standing."
+  }
+ ],
+ "objects_that_matter": [
+  "cuffs",
+  "GUN",
+  "flashlight"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Trinity defeats the police officers attempting to arrest her.",
+  "continues_from_earlier": true
+ }
+}

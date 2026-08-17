@@ -1,0 +1,100 @@
+{
+ "scene_id": "sc-008",
+ "location": "ROOF",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Agent Brown",
+  "cops",
+  "COP"
+ ],
+ "speaking": [
+  "COP"
+ ],
+ "summary": "Trinity runs across rooftops, pursued by Agent Brown and cops. She executes a massive jump over a 40-foot gap with calm precision, which the cops watch in disbelief. Agent Brown replicates the move exactly. The chase continues until Trinity spots a yellow glow in a distant building window as her only escape option.",
+ "what_changes": [
+  {
+   "who": "COP",
+   "axis": "knowledge",
+   "before": "Confident in capturing Trinity",
+   "after": "Disbelieving the physics of the jump",
+   "evidence": "Jesus Christ -- that's impossible!"
+  },
+  {
+   "who": "Trinity",
+   "axis": "resolve",
+   "before": "Running from pursuit",
+   "after": "Committing to a specific distant target",
+   "evidence": "Ahead, she sees her only chance"
+  }
+ ],
+ "objects_that_matter": [
+  "roof",
+  "parapet",
+  "back alley",
+  "building",
+  "paved chasm"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Trinity and Agent Brown leap across rooftop gaps while cops look on.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To reach the yellow light in the distant window before her path ends at the chasm.",
+   "feels": "A state of hyper-focused calm; the terror of the 40-foot gap is suppressed by the absolute certainty of the 'yellow glow' being her only exit. She is not running *from* the cops, but *toward* a specific point of rescue.",
+   "shows": "Perfectly calm face, gliding movements, and precise execution of the jump. She appears almost bored or mechanical, contrasting sharply with the chaos around her.",
+   "believes_about": [
+    {
+     "other": "Agent Brown",
+     "belief": "Brown is a physical threat that must be outrun, but he is not the primary constraint; the environment is.",
+     "wrong_because": "Brown is not just a pursuer but a mirror of her reality. His ability to replicate her move exactly signals that the rules of the world are different than she thinks, a realization she hasn't fully processed yet."
+    }
+   ],
+   "basis": "In sc-005, Morpheus told her to 'focus' and gave her a specific location (Wells and Lake). In sc-007, she was cornered by Smith, forcing her up. Here, her 'perfectly calm' face and the fact that she sees the yellow glow as her 'only chance' suggest she is executing a plan, not improvising. The calmness is the residue of Morpheus's instruction to center herself.",
+   "inferred": true
+  },
+  {
+   "who": "Agent Brown",
+   "wants": "To capture Trinity and demonstrate the superior logic of the Agent's existence.",
+   "feels": "A sense of predatory patience. He is not struggling; he is matching. There is a cold, almost artistic satisfaction in replicating her 'unnatural grace.' He knows she is trying to escape into the Matrix's 'impossible' spaces.",
+   "shows": "The same unnatural grace as Trinity. He duplicates the move 'exactly,' landing and rolling with precision. He does not shout or exert visible effort.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "Trinity is a 'chosen one' or highly skilled operative, but she is still bound by the same physical laws he is. He believes he can outlast her because he does not fear the fall.",
+     "wrong_because": "He underestimates the symbolic weight of her destination. He sees a chase; she sees a rendezvous. His focus is on the body; hers is on the signal."
+    }
+   ],
+   "basis": "In sc-006, he leads the unit. In sc-008, the text explicitly contrasts the 'wild jumps of the cops' with his 'unnatural grace.' His exact duplication of Trinity's somersault and roll is a deliberate act of dominance, showing he is not just following but mirroring.",
+   "inferred": true
+  },
+  {
+   "who": "COP",
+   "wants": "To apprehend the suspect using standard police tactics and physics.",
+   "feels": "Profound disorientation and existential doubt. The 'Jesus Christ' line is not just exclamation but a crisis of perception. They are seeing something that violates their understanding of the world, which breaks their confidence in their ability to catch her.",
+   "shows": "Slack-jawed stares, slowing down, and verbal disbelief. They are physically present but mentally detached from the reality of the jump.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "Trinity is a human being who should fall to her death after a 40-foot jump. Her survival is 'impossible' and therefore an anomaly to be explained or ignored.",
+     "wrong_because": "They are operating within the rules of the 'real' world (or their perceived reality), while Trinity and Brown are operating within the rules of the Matrix. Their belief in physics is the barrier that keeps them from catching her."
+    }
+   ],
+   "basis": "The text notes the cops' 'wild jumps' vs. Trinity's 'clean' ones. The COP's line 'That's it, we got her now' is immediately followed by 'Jesus Christ -- that's impossible!' This shift from confidence to disbelief is the key emotional beat for the police unit.",
+   "inferred": false
+  }
+ ],
+ "connects_back": [
+  "sc-005: Morpheus's instruction to 'focus' and the specific location (Wells and Lake) provides the context for Trinity's calmness and her targeting of the yellow glow.",
+  "sc-007: The appearance of Agent Smith forces Trinity 'up,' establishing that the rooftop is the only viable path, setting the stage for the vertical chase."
+ ],
+ "sets_up": [
+  "sc-009: The identification of the 'yellow glow' as the 'only chance' necessitates the final, desperate dive into the window in the next scene.",
+  "The 'impossible' nature of the jump establishes the rules of the Matrix: gravity is a suggestion, and the Agents are not just strong, but physically identical to the Chosen Ones."
+ ],
+ "dramatic_function": "This scene serves as the threshold moment where the 'rules' of the world are revealed to the audience and the police. It transforms the chase from a physical pursuit into a metaphysical demonstration of the Matrix's malleability. The 'impossible' jump is the first clear proof that the world is not what it seems, shifting the tone from action to wonder/dread."
+}

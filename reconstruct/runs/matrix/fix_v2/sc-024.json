@@ -1,0 +1,75 @@
+{
+ "scene_id": "sc-024",
+ "location": "DARK STREET",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "the car"
+ ],
+ "summary": "The scene is a brief transitional shot showing the car moving through a dark, wet street. Green street lights curve over the car's tinted windshield as it rushes through the underworld.",
+ "what_changes": [
+  {
+   "who": "the car",
+   "axis": "condition",
+   "before": "stationary or implied from previous scene",
+   "after": "moving rapidly through wet streets",
+   "evidence": "the green street lights curve over the car's tinted windshield as it rushes through the wet underworld"
+  }
+ ],
+ "objects_that_matter": [
+  "green street lights",
+  "tinted windshield"
+ ],
+ "event_hint": {
+  "kind": "travel",
+  "one_line": "The car drives through a dark, wet street.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To reach the destination safely and to retain his composure in the face of the bizarre and invasive situation.",
+   "feels": "A mix of dawning realization and visceral dread. The transition from the static tension of the car interior to the rushing motion of the street externalizes his internal state: he is being swept along by forces he does not fully understand, yet he has chosen to go with them.",
+   "shows": "Nothing observable. He is behind the tinted glass, invisible to the outside world, a secret being carried through the underworld.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "That she is telling the truth about the danger he poses to them, and that the 'road' she mentioned is a place of no return.",
+     "wrong_because": "He does not yet know that the 'road' is actually a path to his salvation, not just his death, nor that the bug is a physical manifestation of the Agents' surveillance."
+    }
+   ],
+   "basis": "In sc-023, Neo stared out into the rain and closed the door, signaling his decision to trust Trinity. This scene is the physical enactment of that decision. The 'rush' through the 'underworld' reflects the high stakes and the surreal nature of the reality he is entering.",
+   "inferred": true
+  },
+  {
+   "who": "Trinity",
+   "wants": "To maintain the vehicle's speed and trajectory to reach the extraction point before the Agents close in.",
+   "feels": "Urgency and controlled tension. She is the anchor in the car, managing Neo's fear and the team's efficiency.",
+   "shows": "Her presence is implied by the car's movement and the previous scene's dialogue, but in this transitional shot, her focus is on the road and the mission.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo is capable of withstanding the physical and psychological shock of the truth.",
+     "wrong_because": "While correct in the long run, she may underestimate the immediate visceral horror Neo will feel during the extraction in the next scene."
+    }
+   ],
+   "basis": "In sc-023, she had to convince Neo to stay in the car. Now that he has agreed, her role shifts to execution. The 'rush' suggests she is not waiting around to be caught.",
+   "inferred": true
+  },
+  {
+   "who": "Apoc",
+   "wants": "To drive fast and keep the car stable on the wet streets.",
+   "feels": "Professional detachment. He is a mechanic of the underworld, focused on the machine and the road.",
+   "shows": "His hands on the wheel, navigating the dark street.",
+   "basis": "He was driving in sc-023. The 'wet underworld' and 'green street lights' create a visual atmosphere of speed and danger that requires a focused driver.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-023: Neo's decision to close the door and trust Trinity initiates the journey.",
+  "sc-022: The arrival of the car and Trinity's command 'Get in' sets the stage for the enclosed space of the car."
+ ],
+ "sets_up": [
+  "sc-025: The car's movement allows the team to perform the invasive extraction procedure in relative privacy and motion, which is necessary for the 'bug' removal."
+ ],
+ "dramatic_function": "This scene serves as a visual and auditory transition that heightens the sense of urgency and surrealism. It bridges the static dialogue of the car interior with the physical action of the extraction, using the environment (dark, wet, rushing) to mirror the characters' internal states of displacement and danger."
+}

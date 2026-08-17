@@ -1,0 +1,29 @@
+{
+ "scene_id": "sc-200",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank"
+ ],
+ "speaking": [
+  "TANK"
+ ],
+ "summary": "Tank uses a finger to trace Neo's path on a monitor. He identifies a specific location, the fire escape at the end of the alley, and tells Neo that he is almost there.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "knowledge",
+   "before": "Observing Neo's general progress",
+   "after": "Identifying the specific exit point",
+   "evidence": "That's it!  You're almost there! That fire escape at the end of the alley!"
+  }
+ ],
+ "objects_that_matter": [
+  "monitor"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Tank guides Neo to the fire escape exit via monitor.",
+  "continues_from_earlier": true
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "scene_id": "sc-113",
+ "location": "INT. ROOM 808",
+ "time_of_day": "DAY",
+ "present": [
+  "cops"
+ ],
+ "summary": "Several police officers sweep through Room 808, which is currently empty. As they pass the bathroom, the camera reveals a man-sized hole smashed through the plaster and lath wall.",
+ "what_changes": [
+  {
+   "who": "cops",
+   "axis": "knowledge",
+   "before": "Searching for the fugitives in an empty room",
+   "after": "Discovering evidence of a recent escape route",
+   "evidence": "As they pass the bathroom, we see a man-sized hole smashed through the plaster and lath."
+  }
+ ],
+ "objects_that_matter": [
+  "man-sized hole smashed through the plaster and lath"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Police discover the hole the resistance used to escape the hotel.",
+  "continues_from_earlier": true
+ },
+ "uncertain": []
+}

@@ -1,0 +1,53 @@
+{
+ "scene_id": "sc-113",
+ "location": "ROOM 808",
+ "time_of_day": "DAY",
+ "present": [
+  "cops"
+ ],
+ "summary": "Cops sweep through Room 808 and find it empty. As they pass the bathroom, they observe a man-sized hole smashed through the plaster and lath, indicating a point of egress.",
+ "what_changes": [
+  {
+   "who": "cops",
+   "axis": "knowledge",
+   "before": "searching for the suspect in the room",
+   "after": "aware the suspect has escaped through the bathroom wall",
+   "evidence": "we see a man-sized hole smashed through the plaster and lath."
+  }
+ ],
+ "objects_that_matter": [
+  "man-sized hole",
+  "plaster and lath"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Cops search an empty room and find the escape route.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "cops",
+   "wants": "To locate the suspect who was recently in the room.",
+   "feels": "A mix of urgency and the sudden, deflating realization that they have lost their target. The discovery of the hole shifts their focus from the interior of the room to the structure of the building itself, marking a transition from a search to a chase.",
+   "shows": "Professional efficiency and tactical movement. They sweep the room and pause to observe the hole, allowing the audience to see the evidence of escape before they fully process it.",
+   "believes_about": [
+    {
+     "other": "suspect",
+     "belief": "The suspect is still in the building, having used the bathroom wall as a point of egress into the walls.",
+     "wrong_because": "While they are right about the escape route, they likely underestimate the speed and distance the suspect has already gained within the confined space of the plumbing."
+    }
+   ],
+   "basis": "The scene follows a rapid escalation of movement (boots in sc-111, flooding the hall in sc-112). The cops' presence in an empty room after such a rush implies a failed intercept. The hole is the only visible evidence of the suspect's location, shifting their knowledge axis from 'searching' to 'aware of egress'.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "The urgency and movement in sc-111 and sc-112 establish the momentum that leads to this specific room.",
+  "The fact that the room is empty despite the 'flood' of cops in sc-112 indicates the suspect acted faster than the police anticipated."
+ ],
+ "sets_up": [
+  "It reveals the suspect's location (inside the wall) and direction (down), which is immediately confirmed in sc-114.",
+  "It establishes the physical constraint of the chase: the suspect is now in a confined, vertical space, changing the nature of the pursuit."
+ ],
+ "dramatic_function": "This scene serves as the pivotal moment of transition from a horizontal search to a vertical chase. It bridges the gap between the police's initial arrival and the suspect's hidden movement, using the static image of the hole to signal that the game has changed from 'finding' to 'catching'."
+}

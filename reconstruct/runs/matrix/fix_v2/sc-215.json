@@ -1,0 +1,94 @@
+{
+ "scene_id": "sc-215",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Tank",
+  "Morpheus"
+ ],
+ "speaking": [
+  "TRINITY"
+ ],
+ "summary": "Trinity screams as the monitors on the main deck suddenly jump back to life. Tank and Morpheus exchange a look, and the narration identifies the event as a miracle. Trinity then commands someone to get up.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "knowledge",
+   "before": "Uncertainty about Neo's status",
+   "after": "Confirmation that Neo is alive/responsive",
+   "evidence": "Trinity screams as the monitors jump back to life."
+  },
+  {
+   "who": "Tank",
+   "axis": "knowledge",
+   "before": "Shock or despair",
+   "after": "Recognition of a miracle",
+   "evidence": "Tank and Morpheus look at each other. It is a miracle."
+  }
+ ],
+ "objects_that_matter": [
+  "monitors"
+ ],
+ "event_hint": {
+  "kind": "resurrection",
+  "one_line": "The monitors reboot, signaling Neo's return.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To force the miracle to complete itself; she needs Neo to physically rise, not just have a heartbeat.",
+   "feels": "A violent oscillation between the terror of the past few seconds (holding a dead man) and the raw, almost aggressive hope of the present. Her scream is not just joy, but the release of the immense pressure of her own faith.",
+   "shows": "She screams and commands, 'Now get up!' She is loud, imperative, and physically present, anchoring the abstract miracle into a concrete demand for action.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "He is capable of rising because she has already declared him alive; his body must obey the truth of her love.",
+     "wrong_because": "It is not yet certain that the physical resurrection is complete; he is still struggling to find his footing."
+    }
+   ],
+   "basis": "In sc-213, she explicitly states 'You can't be dead, Neo, you can't be because I love you.' Her scream in sc-215 is the immediate auditory confirmation of that belief. The command 'Now get up!' bridges the gap between the monitors coming back (sc-215) and Neo actually standing (sc-216).",
+   "inferred": true
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To confirm that the Oracle's prophecy has held true and that the ship is not left in a state of despair.",
+   "feels": "A profound relief that borders on disbelief. He has just held the EMP switch, ready to kill the ship if Neo was truly gone (sc-213). Seeing the monitors jump back to life validates his faith in the One, but the 'miracle' aspect suggests he is still processing the impossibility of the event.",
+   "shows": "He exchanges a look with Tank. He is silent, observing rather than reacting vocally. This shared glance is a non-verbal acknowledgment that the rules of their world have just been broken or reaffirmed in a way that defies logic.",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "Tank shares his sense of awe and recognition of the 'miracle' as a spiritual or prophetic event, not just a technical glitch.",
+     "wrong_because": "Tank is likely focused on the technical reality (the monitors rebooting) while Morpheus is focused on the metaphysical significance."
+    }
+   ],
+   "basis": "In sc-213, Morpheus is 'in tears' and holds the EMP switch, showing his willingness to sacrifice everything for Neo. In sc-215, his silent look with Tank contrasts with Trinity's vocal outburst, suggesting he is processing the weight of the 'miracle' label applied to the event.",
+   "inferred": true
+  },
+  {
+   "who": "Tank",
+   "wants": "To process the sudden shift from total loss to total victory and to confirm that the equipment is functioning correctly.",
+   "feels": "Shock and a dawning, heavy relief. As the technical expert, he is likely the first to realize that the monitors jumping back to life is a 'miracle' because it contradicts the expected failure or flatline.",
+   "shows": "He looks at Morpheus. This look is a silent communication of 'Did you see that?' and 'What does this mean?'. He is the grounding presence for the two more emotionally driven characters.",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "Morpheus understands the technical magnitude of the event as well as the emotional one.",
+     "wrong_because": "Morpheus is more focused on the prophetic implication (the 'miracle') than the technical reboot."
+    }
+   ],
+   "basis": "Tank is the operator of the ship. In sc-213, he is not described as holding the EMP switch (Morpheus is), implying Tank was monitoring the systems. His look in sc-215 is a reaction to the data he was just watching fail and now succeed.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-213: Trinity's declaration of love and Morpheus's willingness to die with Neo set the emotional stakes that make the 'miracle' in sc-215 possible.",
+  "sc-214: Neo's eyes snapping open in the hotel hall is the physical counterpart to the monitors jumping back to life in sc-215; these two scenes occur simultaneously or in immediate succession, linking the physical and the metaphysical."
+ ],
+ "sets_up": [
+  "sc-216: Trinity's command 'Now get up!' directly motivates Neo's struggle to stand and his subsequent ability to stop the bullets. It bridges the gap between being alive and being the One.",
+  "The 'miracle' label in sc-215 prepares the audience and the characters for the supernatural events (bullet stopping) in sc-216, establishing that the laws of physics are now suspended."
+ ],
+ "dramatic_function": "This scene serves as the pivot point from tragedy to triumph. It translates the internal, intimate act of love (Trinity's kiss) and the external, technical reality (monitors) into a shared, communal experience of awe. It validates the theme that belief (faith) can override reality (death), setting the stage for Neo's awakening to his full power."
+}

@@ -1,0 +1,50 @@
+{
+ "scene_id": "sc-008",
+ "location": "ROOF",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Agent Brown",
+  "COP"
+ ],
+ "speaking": [
+  "COP"
+ ],
+ "summary": "Trinity runs across rooftops pursued by Agent Brown and cops. She leaps a 40-foot gap with calm precision, landing and rolling, while the cops watch in disbelief. Agent Brown replicates the jump with equal grace. The chase continues over a dark rooftop landscape until Trinity spots a window 50 feet away as her path drops into a chasm.",
+ "what_changes": [
+  {
+   "who": "COP",
+   "axis": "knowledge",
+   "before": "Cops believe they have caught Trinity: \"That's it, we got her now.\"",
+   "after": "Cops are stunned by the impossible jump: \"Jesus Christ -- that's impossible!\"",
+   "evidence": "The cops slow, realizing they are about to see something ugly as Trinity drives at the edge, launching herself into the air."
+  },
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "Running on the roof, being pursued.",
+   "after": "Hanging in flight over a 40-foot gap, then landing and running hard.",
+   "evidence": "Trinity's face is perfectly calm, staring at some point beyond the other roof."
+  },
+  {
+   "who": "Agent Brown",
+   "axis": "standing",
+   "before": "Rising over the parapet, leading the cops in pursuit.",
+   "after": "Duplicates the move exactly, landing, rolling over a shoulder up onto one knee.",
+   "evidence": "They stare, slack-jawed, as Agent Brown duplicates the move exactly, landing, rolling over a shoulder up onto one knee."
+  }
+ ],
+ "objects_that_matter": [
+  "parapet",
+  "roof",
+  "back alley",
+  "building",
+  "paved chasm"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Trinity and Agent Brown leap across a 40-foot rooftop gap, outpacing the cops.",
+  "continues_from_earlier": true
+ },
+ "uncertain": []
+}

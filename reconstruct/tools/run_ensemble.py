@@ -40,7 +40,9 @@ def build(project: Project, scene_id: str, writer, book, think_ctx: bool) -> dic
     ents = (docs["entities"] or {}).get("entities", {})
     scenes_all = (docs["scenes"] or {}).get("scenes", {})
     table = json.loads((project.root / "script_map.json").read_text())
-    _, parsed = sp.parse(Path(table["source_file"]).read_text(errors="replace"))
+    _raw = Path(table["source_file"]).read_text(errors="replace")
+    # offsets index the CLEANED text; slice that, not the raw file
+    script, parsed = sp.parse(_raw)
     scene = next(s for s in parsed if s.scene_id == scene_id)
 
     ctx = {
@@ -119,7 +121,9 @@ if __name__ == "__main__":
     outdir.mkdir(exist_ok=True)
 
     table = json.loads((project.root / "script_map.json").read_text())
-    _, parsed = sp.parse(Path(table["source_file"]).read_text(errors="replace"))
+    _raw = Path(table["source_file"]).read_text(errors="replace")
+    # offsets index the CLEANED text; slice that, not the raw file
+    script, parsed = sp.parse(_raw)
     scenes = {s.scene_id: s for s in parsed}
     ents = (project.load("entities") or {}).get("entities", {})
 

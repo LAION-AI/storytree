@@ -1,0 +1,40 @@
+{
+ "scene_id": "sc-164",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Trinity"
+ ],
+ "speaking": [
+  "TANK",
+  "TRINITY"
+ ],
+ "summary": "Tank is at the controls when Trinity's voice arrives via V.O., requesting a pilot program for a military B-212 helicopter. Urged to hurry, Tank searches the disk drawers, finds the correct disk, and feeds it into Trinity's supplement drive while punching the load commands.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "knowledge",
+   "before": "Not yet possessing the pilot program for the B-212",
+   "after": "Receiving the pilot program via the supplement drive",
+   "evidence": "finding one that he feeds into Trinity's supplement drive, punching the 'load' commands on her keyboard."
+  },
+  {
+   "who": "Tank",
+   "axis": "resolve",
+   "before": "Standing at the controls",
+   "after": "Actively searching and loading the disk in response to urgency",
+   "evidence": "Tank is immediately searching the disk drawers. TRINITY (V.O.) Hurry!"
+  }
+ ],
+ "objects_that_matter": [
+  "laser disks",
+  "supplement drive",
+  "keyboard"
+ ],
+ "event_hint": {
+  "kind": "preparation",
+  "one_line": "Tank loads the helicopter pilot program into Trinity's mind.",
+  "continues_from_earlier": true
+ }
+}

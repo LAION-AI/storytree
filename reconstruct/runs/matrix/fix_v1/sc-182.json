@@ -1,0 +1,48 @@
+{
+ "scene_id": "sc-182",
+ "location": "SUBWAY STATION",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Agent Smith"
+ ],
+ "speaking": [
+  "AGENT SMITH",
+  "NEO"
+ ],
+ "summary": "Neo and Agent Smith engage in a high-speed gunfight in a subway station, moving at impossible speeds until they are nearly on top of each other, jamming their guns to each other's heads. Both fire empty chambers. Agent Smith, initially machine-calm, becomes enraged and attacks Neo with fists, wounding his forearm and slamming him into a steel column. Neo recovers, snaps Agent Smith's neck with a reverse round-house, causing Smith's glasses to fly off. Smith, with ice blue eyes, declares he will enjoy watching Neo die and resumes pounding him with unrelenting fury.",
+ "what_changes": [
+  {
+   "who": "Agent Smith",
+   "axis": "condition",
+   "before": "machine-calm",
+   "after": "face warps with rage",
+   "evidence": "Agent Smith machine-calm. Agent Smith smiles. ... The smile falls. Agent Smith yanks his TRIGGER. CLICK. Agent Smith's face warps with rage"
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "sweating, panting",
+   "after": "forearm opened, stunned, slamming back against a steel column",
+   "evidence": "Neo sweating, panting ... A knife-hand opens his forearm, and a kick sends him slamming back against a steel column. Stunned, he ducks"
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "standing",
+   "before": "attacking with fists",
+   "after": "glasses fly off, eyes ice blue, declaring he will enjoy watching Neo die",
+   "evidence": "Agent Smith's glasses fly off and he glares at Neo; his eyes ice blue. AGENT SMITH I'm going to enjoy watching you die, Mr. Anderson."
+  }
+ ],
+ "objects_that_matter": [
+  "gun",
+  "cartridges",
+  "steel column",
+  "glasses"
+ ],
+ "event_hint": {
+  "kind": "fight",
+  "one_line": "Neo and Agent Smith fight in a subway station, ending with Smith attacking with unrelenting fury.",
+  "continues_from_earlier": true
+ }
+}

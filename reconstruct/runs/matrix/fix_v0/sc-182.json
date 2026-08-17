@@ -1,0 +1,41 @@
+{
+ "scene_id": "sc-182",
+ "location": "INT. SUBWAY STATION",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Agent Smith"
+ ],
+ "speaking": [
+  "AGENT SMITH",
+  "NEO"
+ ],
+ "summary": "Neo and Agent Smith engage in a high-speed gunfight, utilizing bullet-time effects to illustrate their impossible speed. They close the distance until they are nearly touching, jamming their guns against each other's heads in a mirrored stance. Both pull their triggers simultaneously, resulting in an empty click for each. Agent Smith reacts with rage, transitioning into a brutal hand-to-hand combat sequence where he punches Neo against a steel column, shattering it, and delivers a reverse round-house that knocks Neo's glasses off. Smith declares he will enjoy watching Neo die before continuing to pound him with fists.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Armed and moving at impossible speed",
+   "after": "Injured (forearm opened, glasses lost) and being physically overwhelmed",
+   "evidence": "A knife-hand opens his forearm, and a kick sends him slamming back against a steel column."
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "resolve",
+   "before": "Machine-calm, smiling",
+   "after": "Warped with rage, attacking with unrelenting fury",
+   "evidence": "Agent Smith's face warps with rage and he attacks, fists flying at furious speed"
+  }
+ ],
+ "objects_that_matter": [
+  "gun",
+  "steel column",
+  "glasses"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Neo and Agent Smith fight in a subway station, transitioning from gunplay to hand-to-hand combat.",
+  "continues_from_earlier": true
+ },
+ "uncertain": []
+}

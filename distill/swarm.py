@@ -1257,7 +1257,8 @@ def run(project: Path, out: Path, ports: list[int], model: str,
 
     table = json.loads((project / "script_map.json").read_text())
     script = Path(table["source_file"]).read_text(errors="replace")
-    _, scenes = sp.parse(script)
+        # offsets index the CLEANED text; slice that, not the raw file
+    script, scenes = sp.parse(script)
     if limit:
         scenes = scenes[:limit]
     print(f"SWARM · {len(scenes)} scenes · {len(ports)} endpoints × {per_endpoint} "

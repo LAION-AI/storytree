@@ -1,0 +1,88 @@
+{
+ "scene_id": "sc-097",
+ "location": "ROOM 1313",
+ "time_of_day": "DAY",
+ "present": [
+  "Mouse",
+  "TANK"
+ ],
+ "speaking": [
+  "TANK",
+  "MOUSE"
+ ],
+ "summary": "Mouse hears a helicopter and answers his ringing cellular phone. Tank's voice warns him that the hardline has been cut and it is a trap, urging him to get out. Mouse opens the curtain to find the windows bricked up. As combat boots rumble and explode into the room, Mouse spins around.",
+ "what_changes": [
+  {
+   "who": "Mouse",
+   "axis": "knowledge",
+   "before": "Unaware of the specific nature of the threat",
+   "after": "Knows it is a trap and the hardline is cut",
+   "evidence": "They cut the hardline!  It's a trap!  Get out!"
+  },
+  {
+   "who": "Mouse",
+   "axis": "safety",
+   "before": "Possibly believing an exit was available",
+   "after": "Trapped with bricked-up windows and combat boots entering",
+   "evidence": "The windows are bricked up.  Mouse spins as the RUMBLE of combat BOOTS BUILDS, then explodes into the room."
+  }
+ ],
+ "objects_that_matter": [
+  "CELLULAR",
+  "curtain",
+  "windows"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Mouse is trapped in Room 1313 as combat boots enter.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "Mouse",
+   "wants": "Immediate survival and escape from Room 1313.",
+   "feels": "A sudden, visceral shift from routine to primal panic. The 'Oh no' is not just a statement of fact but a physical reaction to the realization that his environment has been fundamentally altered against him. He is experiencing the specific horror of being hunted in a place that was supposed to be safe.",
+   "shows": "He shows urgency and confusion. He answers the phone (habit), then immediately checks the windows (instinct). His 'Oh no' is brief and understated, masking the magnitude of the trap. He spins to face the threat, ready for combat or flight, but his body language is that of a cornered animal rather than a prepared warrior.",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "Tank is his lifeline and the only one who knows the full scope of the danger.",
+     "wrong_because": "Mouse believes Tank is warning him in time, but the hardline was cut before the warning could be sent via the usual channel; Tank is only reaching him now via the cellular, which might also be compromised or monitored, though Mouse doesn't yet know that."
+    },
+    {
+     "other": "The Agents/Hostiles",
+     "belief": "They are just arriving.",
+     "wrong_because": "The boots are already 'exploding into the room' as he spins. The raid is not imminent; it is immediate. The helicopter sound he heard was likely a diversion or the arrival of the main force, but the ground team was already in position."
+    }
+   ],
+   "basis": "Mouse is in Room 1313, a place of relative safety. He hears a helicopter (sc-095 context) and answers his phone. Tank's voice is urgent ('Get out!'). Mouse checks the windows, a standard exit route, and finds them bricked up. This physical blockage mirrors the communication blockage (hardline cut in sc-096). His 'Oh no' and the subsequent spin to face the boots indicate a rapid assessment of the situation: the exit is gone, and the threat is inside.",
+   "inferred": true
+  },
+  {
+   "who": "Tank",
+   "wants": "To save Mouse and the others by getting them out before the Agents arrive.",
+   "feels": "Frantic urgency and dawning horror. Tank is on the Main Deck (sc-094/098 context), watching the trap close. He knows the hardline is cut, meaning the Matrix's internal communication is down, so he is using the cellular as a last resort. He is feeling the weight of command and the specific fear of losing a friend to a predictable mistake.",
+   "shows": "He shows only his voice, but it is stripped of its usual dry humor or calm. It is a direct command: 'They cut the hardline! It's a trap! Get out!' There is no time for explanation or reassurance. He is projecting his own panic as a call to action.",
+   "believes_about": [
+    {
+     "other": "Mouse",
+     "belief": "Mouse will hear him and act immediately.",
+     "wrong_because": "Mouse is in the middle of a scene transition, possibly distracted or unaware of the specific nature of the threat until Tank speaks. There is a delay in Mouse's reaction (answering the phone, checking the window) that Tank cannot see, creating a dangerous gap in time."
+    }
+   ],
+   "basis": "Tank is speaking V.O., meaning he is not physically present. He is reacting to the events on the Main Deck (sc-094 'It's a trap!') and the cutting of the hardline (sc-096). His warning is specific to the hardline, showing he understands the technical aspect of the trap. He is trying to bridge the gap between what he sees on the deck and what Mouse is experiencing in Room 1313.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-094: Tank identifies the trap on the Main Deck.",
+  "sc-095: The helicopter sound is heard by Morpheus and others, signaling the arrival of the Agents.",
+  "sc-096: The hardline is cut, isolating the Matrix users from the real world and each other, necessitating Tank's use of the cellular."
+ ],
+ "sets_up": [
+  "sc-098: Tank's helpless watching on the Main Deck as the raid proceeds.",
+  "The immediate combat in Room 1313 as Mouse faces the Agents.",
+  "The realization that the cellular is the only remaining link, and it may be the only way to coordinate a response or escape."
+ ],
+ "dramatic_function": "This scene serves as the 'point of no return' for the group. It shifts the narrative from a tense preparation to an active, inescapable crisis. The bricked-up windows and the cut hardline symbolize the closure of all easy exits, forcing the characters to confront the threat directly. It also isolates Mouse physically and emotionally, making his individual survival the immediate focus while the group's fate hangs in the balance on the Main Deck."
+}

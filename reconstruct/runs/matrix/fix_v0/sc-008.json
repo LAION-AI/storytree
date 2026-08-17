@@ -1,0 +1,43 @@
+{
+ "scene_id": "sc-008",
+ "location": "EXT. ROOF",
+ "time_of_day": "Night",
+ "present": [
+  "Trinity",
+  "Agent Brown",
+  "COP"
+ ],
+ "speaking": [
+  "COP"
+ ],
+ "summary": "Trinity runs across rooftops, pursued by Agent Brown and a group of cops. Trinity performs a clean, gliding jump over a wide gap between buildings, landing and continuing to run. The cops are shocked by the distance and ease of the jump. Agent Brown then duplicates the jump with similar grace, landing on one knee. The chase continues across the dark cityscape until Trinity spots a chance to escape through a window 50 feet away.",
+ "what_changes": [
+  {
+   "who": "COP",
+   "axis": "knowledge",
+   "before": "Confident they have caught Trinity",
+   "after": "Shocked and uncertain due to the impossible jump",
+   "evidence": "Jesus Christ -- that's impossible!"
+  },
+  {
+   "who": "Trinity",
+   "axis": "safety",
+   "before": "Being pursued on the roof",
+   "after": "Identifying a specific escape route (window) to gain distance",
+   "evidence": "Ahead, she sees her only chance, 50 feet beyond the point where her path drops away"
+  }
+ ],
+ "objects_that_matter": [
+  "rooftops",
+  "parapet",
+  "back alley"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Trinity and Agent Brown perform acrobatic jumps across rooftops to evade police.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "The specific identities of the other cops, as they are only referred to as 'cops' or 'COP'."
+ ]
+}

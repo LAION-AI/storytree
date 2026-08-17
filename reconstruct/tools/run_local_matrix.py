@@ -179,7 +179,8 @@ def run_scene(project: Project, scene_id: str, think: str) -> dict:
     scenes_all = (docs["scenes"] or {}).get("scenes", {})
     table = json.loads((project.root / "script_map.json").read_text())
     text = Path(table["source_file"]).read_text(errors="replace")
-    _, parsed = sp.parse(text)
+        # offsets index the CLEANED text; slice that, not the raw file
+    text, parsed = sp.parse(text)
     scene = next(s for s in parsed if s.scene_id == scene_id)
 
     ctx = {

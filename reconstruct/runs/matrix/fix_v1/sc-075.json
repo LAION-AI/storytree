@@ -1,0 +1,58 @@
+{
+ "scene_id": "sc-075",
+ "location": "MESS HALL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Neo",
+  "Apoc",
+  "Mouse",
+  "Switch",
+  "Dozer",
+  "Morpheus"
+ ],
+ "speaking": [
+  "TANK",
+  "APOC",
+  "MOUSE",
+  "SWITCH",
+  "DOZER",
+  "NEO",
+  "MORPHEUS"
+ ],
+ "summary": "The crew eats a synthetic breakfast while debating the nature of simulated taste. Mouse philosophizes about the accuracy of machine-made food and asks Neo about the woman in the red dress from the training program. Morpheus enters, interrupts the conversation, and announces that they are going into the Matrix to visit the Oracle.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Uncertain about the identity of the woman he encountered in the training program.",
+   "after": "Informed by Tank that the woman is the Oracle.",
+   "evidence": "NEO See who? TANK The Oracle."
+  },
+  {
+   "who": "Morpheus",
+   "axis": "resolve",
+   "before": "Present in the mess hall.",
+   "after": "Decides to take Neo to see the Oracle immediately, placing the crew on standby.",
+   "evidence": "MORPHEUS I want everyone on twelve-hour standby. We're going in. I'm taking Neo to see her."
+  },
+  {
+   "who": "Mouse",
+   "axis": "standing",
+   "before": "Engaged in philosophical debate and flirting with Neo.",
+   "after": "Dismissed by Apoc and characterized by Switch as a 'digital pimp' while trying to arrange a meeting for Neo.",
+   "evidence": "SWITCH The digital pimp hard at work."
+  }
+ ],
+ "objects_that_matter": [
+  "breakfast",
+  "spoon",
+  "woman in the red dress"
+ ],
+ "event_hint": {
+  "kind": "departure",
+  "one_line": "Morpheus announces the imminent departure to visit the Oracle.",
+  "continues_from_earlier": false
+ },
+ "uncertain": []
+}

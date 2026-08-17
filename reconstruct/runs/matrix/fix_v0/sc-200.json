@@ -1,0 +1,31 @@
+{
+ "scene_id": "sc-200",
+ "location": "INT. MAIN DECK",
+ "time_of_day": "Day",
+ "present": [
+  "Tank"
+ ],
+ "speaking": [
+  "Tank"
+ ],
+ "summary": "Tank is at the operator's station on the Main Deck, using his finger to trace Neo's path on a monitor. He calls out to Neo, telling him he is almost there and directing him toward a fire escape at the end of an alley.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "knowledge",
+   "before": "Tracking Neo's position",
+   "after": "Confirming Neo is near the exit point",
+   "evidence": "That's it!  You're almost there! That fire escape at the end of the alley!"
+  }
+ ],
+ "objects_that_matter": [
+  "monitor",
+  "fire escape"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Tank guides Neo to his exit point during a pursuit.",
+  "continues_from_earlier": true
+ },
+ "uncertain": []
+}

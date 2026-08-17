@@ -1,0 +1,88 @@
+{
+ "scene_id": "sc-182",
+ "location": "SUBWAY STATION",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Agent Smith"
+ ],
+ "speaking": [
+  "AGENT SMITH",
+  "NEO"
+ ],
+ "summary": "Neo and Agent Smith engage in a high-speed gunfight that ends with both men holding empty guns to each other's heads. After confirming their weapons are empty, Smith attacks with martial arts, injuring Neo's arm and slamming him against a steel column. Neo counters with a neck-snap, causing Smith's glasses to fly off, after which Smith vows to enjoy Neo's death and resumes a furious assault.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Engaged in a gunfight, moving at impossible speed",
+   "after": "Injured with an opened forearm and stunned against a steel column",
+   "evidence": "A knife-hand opens his forearm, and a kick sends him slamming back against a steel column."
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "standing",
+   "before": "Smiling calmly, confident in the standoff",
+   "after": "Raging and attacking with unrelenting fury after his gun clicks empty",
+   "evidence": "Agent Smith's face warps with rage and he attacks, fists flying at furious speed"
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "condition",
+   "before": "Wearing glasses, machine-calm",
+   "after": "Glasses are off, eyes ice blue, glaring at Neo",
+   "evidence": "Agent Smith's glasses fly off and he glares at Neo; his eyes ice blue."
+  }
+ ],
+ "objects_that_matter": [
+  "gun",
+  "steel column",
+  "glasses"
+ ],
+ "event_hint": {
+  "kind": "fight",
+  "one_line": "A duel between Neo and Agent Smith transitions from firearms to hand-to-hand combat.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To survive the immediate physical threat and prove the validity of his new 'belief' through action.",
+   "feels": "A mix of adrenaline, the shock of sudden pain, and a hardening resolve that has replaced doubt. He is no longer fighting to live, but fighting to define himself.",
+   "shows": "Sweating and panting, displaying physical strain and vulnerability (the opened forearm), yet maintaining a mirrored, aggressive posture that matches Smith's intensity.",
+   "believes_about": [
+    {
+     "other": "Agent Smith",
+     "belief": "Smith is a machine-like obstacle that can be overcome if Neo remains in the present moment.",
+     "wrong_because": "Smith is not just an obstacle; he is a manifestation of Neo's own potential for failure and a mirror of his own nature, making the conflict psychological as much as physical."
+    }
+   ],
+   "basis": "The 'gunfighter's resolve' mentioned in sc-180 and the physical evidence of his injury and the 'mirror' movement described in the scene text. His counter-attack (neck snap) shows a shift from passive defense to active dominance.",
+   "inferred": true
+  },
+  {
+   "who": "Agent Smith",
+   "wants": "To eliminate Neo and, in doing so, erase the anomaly that threatens his own existence and identity.",
+   "feels": "A transition from cold, calculated confidence to raw, almost human rage. The loss of his glasses (the mask of control) reveals the ice-blue eyes of pure, unadulterated hatred and fear of his own obsolescence.",
+   "shows": "Initially 'machine-calm' with a smile, which shatters into 'warped' rage. He shifts from the precision of the gun to the brute force of fists, letting his composure break to show the fury underneath.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is an error or a 'Mr. Anderson' that can be killed, and that watching his death will provide a sense of satisfaction and closure.",
+     "wrong_because": "Neo is not just an error to be deleted; he is the 'One' who has the power to choose, and Smith's rage stems from the fact that Neo's existence invalidates Smith's own chosen path."
+    }
+   ],
+   "basis": "The explicit change in his 'standing' from calm to raging, the removal of the glasses, and his dialogue 'I'm going to enjoy watching you die,' which suggests a personal vendetta beyond mere duty.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-180: Neo's decision to stop running and face the moment ('There is only what is') directly enables his aggressive, present-focused fighting style in this scene.",
+  "sc-181: Morpheus's statement that Neo is 'beginning to believe' sets the context for why Neo is fighting with such sudden, lethal competence rather than fear."
+ ],
+ "sets_up": [
+  "sc-183: The intensity of Smith's 'unrelenting fury' and the physical damage to Neo (opened forearm, stunned against the column) lead directly to the scene where Neo is coughing blood and his life signs go wild.",
+  "Future: Smith's loss of his glasses and the reveal of his ice-blue eyes marks a de-escalation of his 'Agent' persona and a move toward his true, self-aware nature, setting up his later transformation."
+ ],
+ "dramatic_function": "This scene serves as the crucible where Neo's abstract belief becomes physical reality. It transitions the conflict from a chase to a duel, forcing both characters to drop their masks (Smith's glasses, Neo's hesitation) and engage in a raw, existential confrontation that defines their opposing natures."
+}

@@ -1,0 +1,127 @@
+{
+ "scene_id": "sc-075",
+ "location": "MESS HALL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "TANK",
+  "APOC",
+  "MOUSE",
+  "SWITCH",
+  "DOZER",
+  "NEO",
+  "MORPHEUS"
+ ],
+ "speaking": [
+  "TANK",
+  "APOC",
+  "MOUSE",
+  "SWITCH",
+  "DOZER",
+  "NEO",
+  "MORPHEUS"
+ ],
+ "summary": "The crew eats a synthetic breakfast in the mess hall. Mouse philosophizes about the nature of taste in the Matrix, prompting Dozer to explain the food's chemical composition. Mouse then flirts with Neo, revealing he designed the woman in the red dress from Neo's training program. Morpheus enters, announces they are going into the Matrix immediately to see 'her', and leaves. Tank identifies 'her' as the Oracle.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Has completed the Agent training program and encountered a woman in a red dress.",
+   "after": "Learns that Mouse designed the woman and that the mission is to see the Oracle.",
+   "evidence": "MORPHEUS I want everyone on twelve-hour standby. We're going in. I'm taking Neo to see her. ... TANK The Oracle."
+  },
+  {
+   "who": "NEO",
+   "axis": "standing",
+   "before": "Is being fed and briefed by the crew in a casual setting.",
+   "after": "Is selected by Morpheus for an immediate, high-stakes mission into the Matrix.",
+   "evidence": "MORPHEUS I want everyone on twelve-hour standby. We're going in. I'm taking Neo to see her."
+  },
+  {
+   "who": "MOUSE",
+   "axis": "trust",
+   "before": "Is part of the crew enjoying breakfast.",
+   "after": "Positions himself as an authority on the Matrix's design, specifically regarding the woman in the red dress.",
+   "evidence": "MOUSE So what did you think of her? ... MOUSE The woman in the red dress. I designed her."
+  }
+ ],
+ "objects_that_matter": [
+  "breakfast",
+  "spoon"
+ ],
+ "event_hint": {
+  "kind": "briefing",
+  "one_line": "Morpheus announces the imminent mission to see the Oracle.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "MOUSE",
+   "wants": "To validate his own existence and intellectual authority by proving that the Matrix is a construct he can manipulate, thereby asserting that his role is vital.",
+   "feels": "A mix of existential anxiety regarding the artificiality of taste and a smug, predatory confidence in his ability to design and sell experiences to the new arrival.",
+   "shows": "A playful, philosophical eccentric who uses humor to mask a deeper, almost religious belief in the power of simulation.",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "Neo is a blank slate susceptible to influence, and Mouse can shape his perception of reality (and romance) as easily as he shaped the woman in the red dress.",
+     "wrong_because": "Neo is not merely a consumer of the Matrix but a potential agent of change; Mouse’s control is an illusion that will crumble when Neo begins to see the code."
+    }
+   ],
+   "basis": "Mouse’s monologue on Cream of Wheat and his direct address to Neo about the red dress ('I designed her') show he is trying to establish authorship over the world they inhabit. His 'sidling up' to Neo is a physical assertion of this authority.",
+   "inferred": true
+  },
+  {
+   "who": "NEO",
+   "wants": "To process the overwhelming new information and maintain his composure in the face of the crew's chaotic energy and Morpheus's abrupt command.",
+   "feels": "A profound sense of disorientation and vulnerability, compounded by the lingering, unresolved curiosity from the red dress encounter and the fear of being another 'failed' candidate like the five before him.",
+   "shows": "A polite, slightly overwhelmed newcomer who accepts the food and the flirting with a mixture of amusement and bewilderment.",
+   "believes_about": [
+    {
+     "other": "MOUSE",
+     "belief": "Mouse is a quirky technical expert whose comments on the Matrix's design are meant to be taken literally as a matter of course.",
+     "wrong_because": "Mouse is using the design of the red dress as a metaphor for his own desire to be seen and needed, not just a technical fact."
+    }
+   ],
+   "basis": "Neo’s silence while Mouse talks and his simple question 'See who?' after Morpheus leaves indicate he is still in a state of passive reception, not yet actively questioning the nature of his reality or the crew's motives.",
+   "inferred": true
+  },
+  {
+   "who": "MORPHEUS",
+   "wants": "To initiate the next phase of Neo’s training and to assert his own decisiveness in the face of the impending threat (Cypher’s deal with Smith).",
+   "feels": "A heavy, urgent burden of leadership. He is aware that the window of opportunity is closing and that Neo must be tested immediately, despite the crew’s casual atmosphere.",
+   "shows": "A calm, authoritative figure who enters, delivers a single, decisive command, and exits without elaboration.",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "Neo is ready for the next step, and seeing the Oracle is the necessary catalyst to unlock his potential.",
+     "wrong_because": "Neo is not ready for the psychological weight of the Oracle’s words, nor does he yet understand the true nature of the choice he is being asked to make."
+    }
+   ],
+   "basis": "Morpheus’s abrupt entrance and exit, contrasted with the crew’s leisurely breakfast, highlights his sense of urgency. His command 'I'm taking Neo to see her' is a direct action that overrides the crew’s current state of rest.",
+   "inferred": true
+  },
+  {
+   "who": "APOC",
+   "wants": "To maintain the group’s casual, humorous dynamic as a defense mechanism against the underlying tension and danger.",
+   "feels": "A cynical weariness with the crew’s philosophical tangents and a subtle anxiety about the mission Morpheus is about to announce.",
+   "shows": "A sarcastic observer who uses dry humor to puncture Mouse’s pretensions and keep the mood light.",
+   "believes_about": [
+    {
+     "other": "MOUSE",
+     "belief": "Mouse’s philosophical musings are a waste of time and a sign of his own insecurity.",
+     "wrong_because": "Mouse’s musings are a genuine attempt to understand the nature of their reality, which is more important than Apoc realizes."
+    }
+   ],
+   "basis": "Apoc’s 'Shut up, Mouse' and 'Here it comes' show he is actively trying to manage the group’s energy and prevent it from becoming too introspective or tense.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-073: Cypher’s revelation that Morpheus has failed five times before and that Neo is just another 'mindjob' adds a layer of doubt to Neo’s status that the crew is unaware of but Neo has just learned.",
+  "sc-074: Cypher’s deal with Agent Smith creates an immediate, unseen threat that makes Morpheus’s urgency in this scene more critical than it appears to the crew."
+ ],
+ "sets_up": [
+  "sc-076: The transition from the casual mess hall to the strapped-in main deck for the Matrix entry, highlighting the shift from rest to action.",
+  "The Oracle scene: Neo’s state of mind here—still passive, still processing—will directly affect his interaction with the Oracle and his understanding of the 'choice' he is facing."
+ ],
+ "dramatic_function": "This scene serves as a breather that is actually a pressure cooker. It uses the mundane act of eating to explore the philosophical underpinnings of the Matrix (Mouse) and the political dynamics of the crew (Morpheus’s command), while simultaneously hiding the immediate, life-or-death threat (Cypher’s betrayal) that makes the mission urgent. It contrasts the crew’s casual humanity with the cold, urgent necessity of their mission."
+}

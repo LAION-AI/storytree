@@ -575,3 +575,105 @@ unchanged, so nothing mechanical distinguishes V1 from V2 — the entire differe
 is content that only a reader can judge. That is the rubric's job, and it is the
 same question as V1's: more, or better?
 
+
+---
+
+## 14. Correction — the V1 headline was largely a measurement artifact
+
+The rubric pass found a bug in the harness that invalidates §12's headline, and
+it is the sixth instance of this project's recurring class.
+
+`sp.parse()` returns `(cleaned_text, scenes)`, and the scene offsets index the
+**cleaned** text. The variant runner discarded the cleaned text and sliced the
+**raw** file with those offsets. The two differ by 6,235 characters, so drift ran
+from 186 characters at the first sample scene to 6,083 at the last.
+
+**Thirteen of fifteen scenes were never shown to the model, in either arm.**
+
+### Why the metric could not see it
+
+`tier1.overlap` compares a node's evidence against the same slice the prompt was
+built from. When that slice is wrong, a node faithfully describing it scores
+*high*. So "28% → 76%" measured **obedience to a corrupted input** — and V1 was
+explicitly designed to increase obedience to the supplied text.
+
+A metric that shares its source of truth with the generator measures compliance,
+not correctness. That is the rule this project wrote down after EXP-002 and then
+broke again here.
+
+### Re-run with correct slicing
+
+| Measure | V0 broken | **V0 fixed** | V1 broken | **V1 fixed** | **V2 fixed** |
+|---|---|---|---|---|---|
+| Tier-1 score | 0.70 | **0.92** | 0.95 | **0.98** | **0.98** |
+| Clean nodes (of 15) | 4 | **12** | 12 | **14** | **14** |
+| Word overlap | 28% | **65%** | 76% | **76%** | 72% |
+| Verbatim evidence | 4/15 | **12/15** | 13/15 | **15/15** | **15/15** |
+| Words per node | 188 | 191 | 161 | 174 | 776 |
+
+**Most of the claimed gain was the bug.** With correct input, V0 — the
+configuration I called a failure — scores 0.92 and 65% overlap. The real effect of
+the context cut is the narrower margin on the right: 0.98 against 0.92, 14 clean
+nodes against 12, and **15/15 verbatim evidence against 12/15**.
+
+That is a genuine improvement and a modest one. It is not the transformation §12
+claimed.
+
+### What survives unchanged
+
+- **The 15.7× input-token reduction and 4.5× speedup.** Those follow from sending
+  less context and are independent of what the context contained.
+- **The mechanism.** The rubric pass measured fidelity against *the text each arm
+  actually received* and found V0 2.07 against V1 4.73 — V0 answered partly from
+  memory of the film even when its window contained the answer, V1 described what
+  it was given and said where the page ran out. Context dominance is supported as
+  a mechanism; its effect size on correct input is what has just been corrected
+  downward.
+- **V2's structure.** Anchoring survives the added depth on correct input too:
+  identical tier-1 score and verbatim rate to V1, at 4.5× the content.
+
+### The rubric verdict, on the corrupted run
+
+**V0 1.53/5, V1 1.78/5** against a bar of 4.0 with no dimension below 3.0. Both
+fail, and both were scored on nodes describing scenes the models never saw, so
+the numbers bound nothing except how well a model writes about the wrong page.
+The rubric must be re-run on the corrected outputs before any verdict stands.
+
+One finding from it survives the bug, because it was measured against what each
+arm actually received: **V1 is not merely more literal.** Its strongest
+interpretive moments in the sample came from the arm instructed to stay on the
+page. The predicted cost of demanding verbatim evidence — a model that
+transcribes instead of reading — did not appear.
+
+### The fix, and the class
+
+`script, scenes = sp.parse(raw)` in five files. The same pattern was present in
+`swarm.py`, `run_ensemble.py`, `measure_addendum.py` and `run_local_matrix.py`;
+`experiment_scaffold.py` was already correct.
+
+And a real guard, since the previous one checked only that the slice was
+non-empty and passed a misaligned window unchanged:
+
+```python
+def _assert_supply(sid, scene, text):
+    if not text.strip():
+        raise ValueError(f"{sid}: empty scene text")
+    q = (scene.start_quote or "").strip()
+    if q and _loose(q[:40]) not in _loose(text[:400]):
+        raise ValueError(f"{sid}: slice does not start with the scene's own anchor")
+```
+
+`Scene.start_quote` and `end_quote` already existed for exactly this and were
+unused. **Presence is not integrity** — that is the third time a guard in this
+project has checked the cheaper of the two.
+
+### The sixth entry in the table
+
+| # | Check | What it actually did |
+|---|---|---|
+| 6 | scene-correspondence overlap | compared node evidence against the corrupted slice the prompt was built from, so a faithful node scored high on the wrong scene |
+
+Every one of the six produced a confident number over the wrong thing. Five were
+caught by an independent reader; one by recomputing arithmetic. **None was caught
+by the pipeline itself**, which is the finding that matters for the autonomy
+question in §8.

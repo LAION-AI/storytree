@@ -1,0 +1,33 @@
+{
+ "scene_id": "sc-164",
+ "location": "INT. HOVERCRAFT",
+ "time_of_day": "Day",
+ "present": [
+  "TANK",
+  "TRINITY"
+ ],
+ "speaking": [
+  "TANK",
+  "TRINITY"
+ ],
+ "summary": "Tank is seated at the controls of the hovercraft. Trinity, who is not physically present but communicating via voice, urgently requests a pilot program for a military B-212 helicopter. Tank immediately searches through drawers of laser disks, selects the correct one, feeds it into Trinity's supplement drive, and punches the load commands on her keyboard.",
+ "what_changes": [
+  {
+   "who": "TRINITY",
+   "axis": "knowledge",
+   "before": "Does not know how to fly a military B-212 helicopter",
+   "after": "Receives the pilot program data to learn how to fly the helicopter",
+   "evidence": "TANK punchs the 'load' commands on her keyboard."
+  }
+ ],
+ "objects_that_matter": [
+  "laser disks",
+  "supplement drive",
+  "keyboard"
+ ],
+ "event_hint": {
+  "kind": "preparation",
+  "one_line": "Tank loads a helicopter pilot program for Trinity to escape the city.",
+  "continues_from_earlier": true
+ }
+}

@@ -94,7 +94,9 @@ if __name__ == "__main__":
     scene_ids = sys.argv[2:]
 
     table = json.loads((project / "script_map.json").read_text())
-    _, parsed = sp.parse(Path(table["source_file"]).read_text(errors="replace"))
+    _raw = Path(table["source_file"]).read_text(errors="replace")
+    # offsets index the CLEANED text; slice that, not the raw file
+    script, parsed = sp.parse(_raw)
     scenes = {s.scene_id: s for s in parsed}
 
     ents = (json.loads((project / "artifacts" / "entities.json").read_text())

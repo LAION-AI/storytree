@@ -1,0 +1,54 @@
+{
+ "scene_id": "sc-200",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank"
+ ],
+ "speaking": [
+  "TANK"
+ ],
+ "summary": "Tank is on the Main Deck, using his finger to trace Neo's path on a monitor. He identifies a specific location, the fire escape at the end of an alley, and shouts that Neo is almost there.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "knowledge",
+   "before": "Tracking Neo's general position",
+   "after": "Identifies the specific exit point (fire escape at end of alley)",
+   "evidence": "That fire escape at the end of the alley!"
+  }
+ ],
+ "objects_that_matter": [
+  "monitor"
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Tank tracks Neo's escape route on a monitor.",
+  "continues_from_earlier": true
+ },
+ "minds": [
+  {
+   "who": "Tank",
+   "wants": "To confirm Neo has reached the designated extraction point so he can initiate the next phase of the escape, likely the transition to the Heart O' The City Hotel.",
+   "feels": "A surge of relief mixed with the residual adrenaline of the near-miss in the apartment; he is no longer just tracking, but actively managing the outcome.",
+   "shows": "Focused intensity and triumph. He traces the path with his finger, physically mapping the success, and shouts with a tone of command and encouragement rather than panic.",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is physically capable of making the final jump to the fire escape and is following his instructions with enough clarity to avoid further errors.",
+     "wrong_because": "While Neo is currently compliant, the physical toll of the chase (bleeding, scraping) suggests his capacity for error or fatigue is higher than Tank's calm tracking implies."
+    }
+   ],
+   "basis": "Tank's transition from the rapid-fire corrections in sc-198 ('No! Other left!') to the declarative, guiding tone in sc-200 ('That's it! You're almost there!') indicates a shift from crisis management to confirmation. His finger tracing the monitor suggests he is visually verifying the data, not just reacting to it.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-198: Tank's earlier frantic corrections establish the stakes and the physical danger, making his current calm confidence a relief rather than a default state.",
+  "sc-199: The visual of Neo tumbling down the fire escape provides the immediate data point Tank is reacting to."
+ ],
+ "sets_up": [
+  "sc-201: By confirming the 'end of the alley' as the location, Tank is effectively setting the coordinates for the next scene where Agent Smith pauses at the Heart O' The City Hotel, implying the alley leads directly to or near this destination."
+ ],
+ "dramatic_function": "It serves as the narrative pivot from kinetic chaos to strategic control, allowing the audience to breathe and understand the geography of the escape before the next complication arises."
+}

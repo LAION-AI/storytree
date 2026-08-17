@@ -1,0 +1,103 @@
+{
+ "scene_id": "sc-003",
+ "location": "HEART O' THE CITY HOTEL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "The Big Cop",
+  "the other cops",
+  "Trinity"
+ ],
+ "speaking": [
+  "TRINITY"
+ ],
+ "summary": "The Big Cop attempts to cuff Trinity while other cops hold her. As he reaches for her, Trinity moves with inhuman speed, snapping her palm into his nose and kicking him into another cop. She then snatches a gun from a cop's hand, firing it during a violent exchange of gunfire. When it is over, Trinity is the only one standing, and she says 'Shit.'",
+ "what_changes": [
+  {
+   "who": "The Big Cop",
+   "axis": "condition",
+   "before": "Actively cuffing Trinity, holding a bead on her.",
+   "after": "His nose explodes, and he is kicked back, slamming into another cop.",
+   "evidence": "Trinity's palm snaps up and the nose explodes, blood erupting.  Her leg kicks with the force of a wrecking ball and he flies back"
+  },
+  {
+   "who": "the other cops",
+   "axis": "custody",
+   "before": "Holding a bead on Trinity, believing they have her.",
+   "after": "They are in panic, sweeping flashlights, and are ultimately defeated in a violent exchange of gunfire.",
+   "evidence": "they know they've got her, until the Big Cop reaches with the cuffs and Trinity moves"
+  },
+  {
+   "who": "Trinity",
+   "axis": "standing",
+   "before": "Being cuffed by the Big Cop.",
+   "after": "The only one standing after the violent exchange of gunfire.",
+   "evidence": "There is a final violent exchange of GUNFIRE and when it's over, Trinity is the only one standing."
+  }
+ ],
+ "objects_that_matter": [
+  "cuffs",
+  "a GUN"
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Trinity defeats the police officers attempting to arrest her in a violent struggle.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [
+  {
+   "who": "The Big Cop",
+   "wants": "To physically secure Trinity and complete the arrest before the Agents arrive.",
+   "feels": "Initially confident and dominant, transitioning rapidly to shock, pain, and disorientation as his physical superiority is invalidated.",
+   "shows": "Aggressive authority (flicking cuffs, reaching in) that masks a sudden, catastrophic failure of control.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "She is a standard suspect who has been cornered and will submit to the process of being cuffed.",
+     "wrong_because": "He underestimates her physical capabilities, assuming she is bound by human limits like the rest of the world."
+    }
+   ],
+   "basis": "In sc-002, he dismisses the Agents' warning ('handle one little girl'), establishing his overconfidence. His physical act of reaching for the cuffs in sc-003 is the specific moment his belief is tested and destroyed.",
+   "inferred": true
+  },
+  {
+   "who": "Trinity",
+   "wants": "To escape the immediate physical constraint of the arrest and survive the ensuing chaos.",
+   "feels": "A mix of high-alert focus during the struggle and immediate, visceral frustration or realization of the situation's severity in the aftermath.",
+   "shows": "Inhuman speed and precision during the fight, followed by a singular, grounded exclamation of 'Shit' that reveals her humanity.",
+   "believes_about": [
+    {
+     "other": "The Big Cop",
+     "belief": "He is a threat that must be neutralized quickly to prevent being restrained.",
+     "wrong_because": "Not wrong, but her belief in her own invincibility is slightly shaken by the outcome, as indicated by her reaction."
+    }
+   ],
+   "basis": "Her movement is described as 'inhumanly fast' and 'smooth,' suggesting a level of training or nature beyond the normal. The single word 'Shit' at the end is the only dialogue, signaling a shift from kinetic action to static consequence.",
+   "inferred": true
+  },
+  {
+   "who": "The other cops",
+   "wants": "To maintain the perimeter and support the Big Cop in securing the suspect.",
+   "feels": "Confidence that shifts to panic and helplessness as the situation escalates beyond their training.",
+   "shows": "Sweeping flashlights and firing guns in a disorganized manner, indicating a breakdown in tactical cohesion.",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "They have her in a 'bead' and she cannot escape.",
+     "wrong_because": "They rely on the Big Cop's success; when he fails, their collective belief in the containment collapses."
+    }
+   ],
+   "basis": "The script notes they 'know they've got her' until the Big Cop reaches. Their subsequent panic ('flashlights sweeping') and the 'violent exchange of gunfire' show they are reacting to a threat they are not equipped to handle.",
+   "inferred": true
+  }
+ ],
+ "connects_back": [
+  "sc-001: Establishes the setting and Trinity's initial compliance, creating the contrast for her sudden violence.",
+  "sc-002: Establishes the Big Cop's overconfidence and the presence of the Agents, raising the stakes of the arrest."
+ ],
+ "sets_up": [
+  "sc-004: The arrival of Agent Brown and Smith is now urgent because the police unit has been decimated.",
+  "Establishes Trinity as a formidable physical opponent for the Agents."
+ ],
+ "dramatic_function": "This scene serves as the 'turning point' where the mundane world of police procedure is shattered by the introduction of Trinity's superhuman capabilities, transitioning the conflict from a procedural arrest to a survival fight and justifying the Agents' intervention."
+}
