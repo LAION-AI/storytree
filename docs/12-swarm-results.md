@@ -275,3 +275,160 @@ as evidence rather than deleted.
 
 *Source screenplays are read for structure and never copied into artifacts;
 committed outputs contain structural fields only.*
+
+---
+
+# Part II — Optimising the scene layer
+
+Added 17 August 2026. Everything below this line is the optimisation campaign:
+what was tried, what it did, and what was learned. Written as it happens, so
+failed attempts stay in.
+
+## 9. The target, restated — and why the earlier metric was wrong
+
+The goal is **not** to reproduce the screenplay's own sentences. It is to produce
+a structure that a careful reader — or an Opus-class agent applying a rubric —
+would call good, plausible, emotionally intelligent and complete.
+
+A scene node may use entirely different words from the script, mention things the
+script leaves implicit, or omit incidental detail, and still be right. What it
+may not do is get the **core of the scene**, its **dramatic function**, or its
+**given constraints** wrong.
+
+This makes §4's headline number — 25% content-word overlap — a measurement of the
+wrong thing. Word overlap tests paraphrase distance, and paraphrase distance is
+not the target. It survives only as a **cheap negative signal**: a node with
+near-zero overlap is probably describing a different scene, which is worth
+catching. It says nothing useful above that floor.
+
+### The evaluation method, defined before optimising
+
+**Fixed sample, fifteen scenes**, chosen once and never changed, spread across
+acts and lengths so an improvement cannot be an artifact of easy cases:
+
+```
+sc-003  sc-008  sc-015  sc-024  sc-039     act I
+sc-056  sc-075  sc-097  sc-113  sc-129     act I/II
+sc-148  sc-164  sc-182  sc-200  sc-215     act II/III
+```
+
+Lengths run from 12 to 511 words. **The median scene in this work is 45 words** —
+which matters enormously and is discussed in §10.
+
+**Two tiers of measurement**, and only the second decides anything:
+
+*Tier 1 — mechanical, runs in seconds, gates the expensive tier.*
+
+| Check | Why |
+|---|---|
+| Node produced at all | |
+| Every `present` name occurs in the scene or its speaker cues | roster reality |
+| At least one evidence span occurs verbatim in the scene | correspondence floor |
+| No change where `before == after` | a change that changes nothing |
+| Word overlap ≥ 10% | catches wrong-scene nodes only |
+
+A variant failing tier 1 badly is not sent to tier 2. Judging costs real tokens
+and a node describing the wrong scene does not need a rubric to reject.
+
+*Tier 2 — Opus-5 rubric, the actual target.* Six dimensions, 0–5, anchored at
+1/3/5, applied per scene with the scene text in view:
+
+| Dimension | Question |
+|---|---|
+| **Fidelity** | Does this describe what happens, whatever words it uses? |
+| **Completeness** | Is anything load-bearing missing? |
+| **Specificity** | Could this node be pasted onto a different scene? |
+| **Change reality** | Are the recorded changes real, and do they matter? |
+| **Emotional intelligence** | Is what people want, fear and conceal read plausibly? |
+| **Calibration** | Is the node's length and confidence proportionate to a scene this size? |
+
+The last dimension exists because of the sample's shape. Half these scenes are
+under 60 words. A 900-word analysis of a 12-word scene is a failure even if every
+sentence in it is defensible, and no other dimension catches that.
+
+**The bar to move on to the next layer: mean ≥ 4.0 with no dimension below 3.0**,
+on the same fixed fifteen. Until then the scene layer is the only thing being
+worked on.
+
+---
+
+## 10. Brainstorm — the full palette
+
+Everything worth trying, before ranking. Effect is a guess and labelled as such;
+cost is measured in what it takes to implement and run.
+
+### A · Context
+
+| # | Idea | Expected effect | Cost |
+|---|---|---|---|
+| A1 | **Cut the script context drastically** — scene plus two neighbours instead of 100k chars | **Large.** The median scene is 45 words against a 100,000-character window: the scene is 0.2% of what the model reads. This is the single most likely cause of weak correspondence | Trivial |
+| A2 | No script context at all — scene only | Large, direction unknown; may lose who people are | Trivial |
+| A3 | Structured context instead of prose: the scene-heading list, not the text | Moderate; keeps orientation at a fraction of the tokens | Small |
+| A4 | Put the scene **last** in the prompt rather than first | Moderate; recency is usually stronger than primacy | Trivial |
+| A5 | Repeat the scene text after the schema, so it brackets the instructions | Small–moderate | Trivial |
+
+### B · Prompting
+
+| # | Idea | Expected effect | Cost |
+|---|---|---|---|
+| B1 | **Length calibration**: state the scene's word count and require proportion | Moderate–large on the calibration dimension, which nothing currently addresses | Trivial |
+| B2 | **Verbatim-quote evidence** (already changed) — makes correspondence exact | Moderate | Done |
+| B3 | One worked example of a good node for a short scene | Moderate; few-shot usually beats instruction for format | Small |
+| B4 | Explicit permission to write little: "a 12-word scene may need two changes and no psychology" | Moderate | Trivial |
+| B5 | Forbid inference from outside the scene: "if it is not on this page, it is not in your node" | Moderate; directly targets recall | Trivial |
+| B6 | Ask for a one-line "what this scene is doing in the story" separate from what happens | Small–moderate; may improve dramatic-function scores | Trivial |
+
+### C · Scaffolding
+
+| # | Idea | Expected effect | Cost |
+|---|---|---|---|
+| C1 | **Split into two calls**: literal facts first, then interpretation conditioned on them | Large if budget dilution applies here as it did elsewhere | Small |
+| C2 | Per-character psychology as its own call, as the ensemble does | Large on emotional intelligence, at 2–4× the calls | Moderate |
+| C3 | **Verification call**: a second agent asks "does this node describe this scene?" and returns a verdict | Moderate; catches wrong-scene nodes at generation time | Small |
+| C4 | Retry with the mechanical violations fed back | Moderate; proven to work elsewhere in this project | Small |
+| C5 | Beat-level decomposition before the node | Moderate–large on completeness; more calls | Moderate |
+
+### D · Structural enforcement
+
+| # | Idea | Expected effect | Cost |
+|---|---|---|---|
+| D1 | **Bind location and time as `const`**, speakers as `enum` — proven in EXP-002 | Moderate; removes a whole error class by construction | Small |
+| D2 | Require `evidence` to be a span the checker can find, and reject at generation | Moderate | Small |
+| D3 | Cap node length as a function of scene length in the schema | Moderate on calibration | Small |
+| D4 | Give the previous scene's node as context for continuity | Small–moderate; risks propagating errors | Small |
+
+### E · Model and decoding
+
+| # | Idea | Expected effect | Cost |
+|---|---|---|---|
+| E1 | Lower temperature for the factual pass | Small–moderate | Trivial |
+| E2 | Turn thinking **on** for stage 1 only | Unknown; measured elsewhere as no quality gain at 6× cost | Trivial to try |
+| E3 | Two samples per scene, pick by mechanical score | Moderate at 2× cost | Small |
+
+### F · Evaluation itself
+
+| # | Idea | Expected effect | Cost |
+|---|---|---|---|
+| F1 | **Run the same pipeline on `tideline`**, a synthetic script no model can have memorised | Diagnostic, not an improvement: separates recall from context dominance | Small |
+| F2 | Blind A/B — show a judge two nodes and the scene, ask which describes it | Strong signal, cheap per comparison | Small |
+| F3 | Regenerate-the-scene test: from the node alone, can a model produce something recognisable? | Strong signal on completeness | Moderate |
+
+---
+
+## 11. Ranked plan
+
+Ordered by expected effect per hour of work, not by expected effect alone.
+
+| Rank | Try | Why first |
+|---|---|---|
+| **1** | **A1** — cut context to the scene plus neighbours | Largest suspected cause, trivial to implement, and one run answers it |
+| **2** | **B1 + B4** — length calibration and permission to write little | Half the sample is under 60 words; nothing currently tells the model that |
+| **3** | **D1** — bind location, time and speakers | Already proven in EXP-002; removes an error class rather than discouraging it |
+| **4** | **C1** — split facts from interpretation | Budget dilution is the most reliable finding in this project |
+| **5** | **B5** — forbid outside inference | Directly targets what the canary proved is happening |
+| **6** | **C3** — verification call | Catches at generation what the checks catch after |
+| **7** | **F1** — the `tideline` control | Diagnostic; tells us whether the remaining gap is recall or capability |
+| **8** | **C2** — per-character psychology | Largest expected quality gain, but the most expensive, and only worth it once the cheap wins are in |
+
+Ranks 1–3 are all trivial or small and can go in one variant. That is variant **V1**;
+everything after is decided by what V1 measures.
