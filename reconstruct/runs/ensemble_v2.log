@@ -2,3 +2,47 @@ ENSEMBLE · writer=glm-5.2-abliterated-q3km @ http://127.0.0.1:8099/v1
            clerk =qwen3.8-27b @ http://127.0.0.1:8107/v1
 
   === sc-001 ===
+      GLM   craft                    1220s  out=40,000   32.8 t/s
+      GLM   craft                     116s  out= 2,460   21.2 t/s
+      GLM   psych.BIG COP             315s  out= 6,406   20.4 t/s
+      GLM   specimen                  122s  out= 2,568   21.1 t/s
+      GLM   dynamics                  309s  out= 7,173   23.2 t/s
+      GLM   continuity                155s  out= 3,717   23.9 t/s
+      Qwen  bookkeeping                 7s  out=   292   44.7 t/s
+    37.4 min · 15,869 words · 1 changes from a 13-term vocabulary
+    code 0 · grounding 0 · presence 1 · inexpressible 2 · dyn 5 · pass
+      P! state change 0 moves 'ch-02', who is not in this scene at all
+      ~ could not express: The analysis explicitly states 'Every named character is in their starting state' and 'No 
+      ~ could not express: The analysis describes the 'BIG COP's' perception, appraisal, and social norms, but 'BIG C
+
+  === sc-002 ===
+      GLM   craft                     142s  out= 2,351   16.5 t/s
+      GLM   psych.ch-04               338s  out= 6,709   19.8 t/s
+      GLM   psych.LIEUTENANT          288s  out= 5,915   20.5 t/s
+      GLM   specimen                  140s  out= 2,906   20.8 t/s
+      GLM   dynamics                  279s  out= 6,507   23.3 t/s
+      GLM   continuity                129s  out= 2,937   22.7 t/s
+      Qwen  bookkeeping                 5s  out=   214   47.2 t/s
+    22.0 min · 20,087 words · 1 changes from a 3-term vocabulary
+    code 1 · grounding 1 · presence 0 · inexpressible 1 · dyn 5 · pass
+      ! change[0]: no-op, "False" unchanged
+      ~ could not express: The analysis describes Smith's visceral repulsion to the environment (smell, taste) and hi
+
+  === sc-003 ===
+      GLM   craft                     125s  out= 2,027   16.3 t/s
+      GLM   psych.ch-02               374s  out= 7,387   19.7 t/s
+      GLM   specimen                  117s  out= 2,491   21.3 t/s
+      GLM   dynamics                  294s  out= 6,855   23.3 t/s
+      GLM   continuity                129s  out= 2,852   22.1 t/s
+      Qwen  bookkeeping                18s  out= 1,294   72.3 t/s
+    17.6 min · 16,283 words · 1 changes from a 3-term vocabulary
+    code 0 · grounding 1 · presence 0 · inexpressible 3 · dyn 7 · pass
+      ~ could not express: The analysis asserts a significant change in Trinity's physical and emotional state from h
+      ~ could not express: The analysis asserts that Trinity's operational competence is highlighted and that she est
+
+======================================================================
+  3 scene(s) · 77.0 min wall
+  writer: 17 calls, 111,261 out, 76.5 min
+  clerk : 3 calls, 1,800 out, 0.5 min (1% of model time)
+  thinking suppressed: yes
+  -> runs/matrix/transitions_ensemble_v2

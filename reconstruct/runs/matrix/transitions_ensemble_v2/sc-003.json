@@ -1,0 +1,693 @@
+{
+ "binding": {
+  "scene_id": "sc-003",
+  "location": "HEART O' THE CITY HOTEL",
+  "time_of_day": "UNSPECIFIED",
+  "on_screen": [
+   "ch-02"
+  ]
+ },
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-003",
+  "ordinal": 3
+ },
+ "situation": "Trinity is alone in Room 303 of the Heart O' The City Hotel, having just escaped a police raid and the Agents who commandeered it. The hardwired rotary phone on the nightstand is her only exit. She has seen the Agents' ability to override police authority and their insectoid coordination firsthand. The Agents are actively hunting her. The phone is the single object standing between her and death.",
+ "craft": {
+  "audience_need": "The audience has just been shown two tiers of threat — police, then Agents — and watched Trinity outmaneuver both. They now need the payoff: does she escape? The 157-word envelope means this is a single-beat scene — setup, reversal, escape — with no room for anything else. The audience needs to feel the relief of escape while simultaneously having a new, larger question planted.",
+  "genre_convention": "Cyberpunk thriller escape sequence. The genre demands the exit be earned through tension, not handed for free. The convention is: the hero reaches the exit, the exit is threatened, the hero makes it by a margin. This node satisfies that convention while subverting the audience's sense of safety — the escape proves the Agents are beatable in the moment but not defeated. The genre also demands that the exit method (hardwired phone) be established as a rule, not a convenience, because later scenes will weaponize that rule when phone lines are cut.",
+  "theme_and_style": "The story's register is plain, sentence length varied, figurative density medium. Forbidden tics require all psychology externalized into action and gesture — no interior monologue. The scene must communicate Trinity's state through physical precision: how she moves, what she touches, how her body responds to the phone ringing. The Gibson-noir texture means the technology itself carries menace and salvation simultaneously. The PK Dick instability is present in the uncanny nature of the exit — a person dissolving into a phone line is body horror dressed as cyberpunk.",
+  "dramatic_function": "This node closes the cold open's escape sequence (paying off the chase from sc-001 and sc-002) and establishes the hardwired-phone-as-exit rule as a concrete, witnessed fact rather than exposition. It also seeds the Oracle's love prophecy plot (pl-03) by giving Trinity her first solo moment where her human vulnerability can register beneath her operative competence — though NOT through any explicit reference to feelings, which the timeline forbids. The scene's primary structural job is to transition from cold-open to Act One by removing the immediate threat and opening narrative space for Neo's introduction.",
+  "tension_management": {
+   "entering": 85,
+   "leaving": 25,
+   "how": "Entering tension is maximal from the chase. The phone ringing provides a momentary false calm — the audience sees the exit but hasn't seen her use it. The Agents' arrival (feet in hallway, door breach) spikes tension back up during the approach. The actual escape — Trinity lifting the receiver, her body dissolving — converts the tension into spectacle and then relief. Leaving tension drops to 25 because the immediate threat is resolved but the world has been established as one where exits are narrow, temporary, and always contested. The residual tension is existential, not situational."
+  },
+  "why_now": "This scene must happen now because it is the third beat of a three-beat cold open: threat established (sc-001), threat escalated (sc-002), threat escaped (sc-003). The audience cannot be left in the chase indefinitely — the genre requires the escape to demonstrate that the resistance is real and capable, which is necessary before the story shifts to Neo. If this scene came later, the audience would have no proof that the Agents can be survived, and Neo's later choice to engage them would lack the context of what he's choosing to fight. If it came earlier, the threat wouldn't be established.",
+  "why_not_otherwise": [
+   {
+    "alternative": "Trinity is caught or killed here, resetting the cold open as a flash-forward to a later death",
+    "rejected_because": "Trinity must survive to be the one who first contacts Neo, which is the entry point to Act One. Killing her here destroys pl-03 entirely and removes the only established sympathetic resistance character.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "If the story were structured as a non-linear puzzle box where Trinity's death is a mystery the audience pieces together, this could work — but the established chronology is 'framed,' not 'non-linear,' and the plot structure requires her alive."
+   },
+   {
+    "alternative": "Trinity escapes without Agents arriving — she reaches the phone, uses it, and the scene is a quiet technical beat about how extraction works",
+    "rejected_because": "The previous two scenes established the Agents as the real threat. If they simply fail to arrive, the threat is deflated and the cold open ends on a whimper. The genre requires the exit be contested to establish that escape is always marginal.",
+    "nearly_chosen": true,
+    "what_would_flip_it": "If the story's tone were closer to Le Carré espionage — procedural, quiet, where the tension is bureaucratic rather than kinetic — a clean technical escape would fit. The Gibson-noir and PK Dick touchstones demand the body-horror spectacle of the digitized exit and the margin of survival."
+   },
+   {
+    "alternative": "The scene includes a brief phone exchange with an operator (Tank or Dozer) before Trinity exits, establishing the ship-side support crew",
+    "rejected_because": "The 157-word envelope cannot accommodate a second speaking character. Adding dialogue would require either cutting the escape beat or compressing it to the point of incomprehensibility. The operator dialogue belongs in a later scene where the extraction process can be shown from both ends.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "If the envelope were 500+ words, a brief operator exchange could establish the crew relationship and the extraction protocol simultaneously. At 157 words, it is physically impossible."
+   }
+  ],
+  "promises": {
+   "made": [
+    "The hardwired phone is the only way in or out of the Matrix — this rule is now established by demonstration, not exposition",
+    "The Agents can find anyone, anywhere, with enough time — their pursuit is relentless and margin-dependent",
+    "Trinity is human beneath her operative competence — her body language in the quiet moment before the exit seeds this without stating it",
+    "The resistance has infrastructure (operators, ships, extraction protocols) that exists outside the Matrix — implied by the phone ringing on cue"
+   ],
+   "kept": [
+    "sc-001's chase sequence promised a resolution to the immediate threat — this scene delivers it",
+    "sc-002's escalation of the Agents from police to a superior tier promised that the real threat would define the scene's stakes — this scene confirms it by making the Agents the ones who nearly catch her"
+   ]
+  }
+ },
+ "interaction": {
+  "what_collides": "Trinity's need to exit the Matrix immediately versus the Agents' mandate to capture or kill her. The phone is the fulcrum — whoever controls access to the phone controls whether Trinity lives or dies. The Agents cannot use the phone themselves (they are native to the Matrix and have no body to exit to), but they can prevent Trinity from using it by destroying it or reaching her before she does.",
+  "power_balance": "At scene start, Trinity has positional advantage (she's already in the room with the phone) but systemic disadvantage (the Agents control the building, the police, and every connected person). The balance is a countdown: her advantage erodes with every second. The Agents' power is environmental — they convert the hotel itself into a trap by directing police to surround it. Trinity's only power is speed and the single phone line. The balance shifts entirely at the moment she lifts the receiver — the Agents' environmental control becomes irrelevant because the connection is instantaneous.",
+  "information_asymmetry": "Trinity knows the phone will ring because she has an operator coordinating extraction (the audience infers this from the timing). The Agents do not know the exact extraction protocol — they must physically stop her rather than simply cut the line, suggesting either they don't know which line she'll use or they've arrived too late to cut it. The audience knows more than the Agents (that the phone is the exit) but less than Trinity (what happens after she lifts the receiver). This asymmetry makes the audience complicit in the escape while still surprised by the visual of digitization.",
+  "turning_point": "The moment Trinity lifts the receiver and the phone connects. Before this moment, she is a physical body in a physical room with men approaching. After this moment, the physical room is irrelevant — her digitization begins and the Agents' physical pursuit is rendered moot. The turning point is technological, not physical: it is the moment the Matrix's own infrastructure (the phone system) is repurposed as an escape vector. This is the PK Dick inversion — the prison's own architecture becomes the exit."
+ },
+ "psychology": [
+  {
+   "entity": "ch-02",
+   "entering_state": "Combat-shrunk operative running on adrenaline residue from a prolonged pursuit. She has been hunted through a building by police and then by Agents — the latter a qualitative escalation she has survived before but never at a margin this thin. Her body is in Room 303; her mind is running exit protocol. The Oracle's prophecy sits in her like a splinter she has built scar tissue around, not removed. She is not thinking about love. She is thinking about the phone.",
+   "perception": {
+    "sight": "Room 303: a single bed with a thin mattress, a nightstand, a rotary telephone — beige plastic, coiled cord, the kind Ma Bell installed in the 1970s. The wallpaper is stained yellow. One window, curtains drawn, light bleeding through the gaps in amber slats. The door is hollow-core, particle-board, a kick would go through it. She can see the phone's rotary dial catching the window-light. The carpet is industrial brown, the kind that hides blood. There is a crack in the plaster above the door frame. She has already mapped the room — she entered scanning, the way her eyes sweep is not how a civilian looks at a room; it is inventory: cover, sightlines, exit, object-of-value. The phone is the only object-of-value.",
+    "sound": "Her own breathing, ragged but controlled — four-count inhale, six-count exhale, the pattern drilled until it is autonomic. The building's sounds: plumbing in the walls, a television two floors down playing through the floor, the particular silence of a hotel where the other guests have been cleared or are too afraid to make noise. Then: footsteps in the stairwell. Multiple sets, synchronized, the particular cadence of people who do not need to communicate verbally because they share a single will. The phone does not ring yet. The silence where the ring should be is the loudest sound in the room.",
+    "touch": "The door frame under her palm as she leans against it — cheap wood, splintering. The phone receiver is cold plastic, smooth, the weight of the handset when she finally lifts it. Her gloves are tacky with perspiration inside the leather. The pistol grip against her right thigh where it sits in a holster. Her knees ache from the rooftop landing — she hit a gravel surface two scenes ago and the bruising is deep-tissue, a hot throb that intensifies when she crouches.",
+    "smell": "The hotel room: decades of cigarette smoke embedded in the carpet and curtains, industrial cleaning fluid failing to mask it, the metallic tang of old plumbing. Her own sweat — cortisol-heavy, the sour-sharp smell of sustained adrenal output. Gun oil from the weapon. The room smells like every other transient space she has extracted from; the familiarity is not comforting, it is procedural.",
+    "taste": "Copper. She bit the inside of her cheek during the rooftop descent and the wound is open. Adrenaline sits on the back of the tongue like a metallic film. She swallowed a pill of spit and blood a minute ago and the taste has not left.",
+    "interoception": "Heart rate approximately 160, decelerating from the 180+ peak of active pursuit but plateaued rather than continuing to drop — her body knows the threat is not over. Her hands are cold from vasoconstriction, the blood shunted to core muscles. There is a tremor in her forearms that she is controlling through isometric tension. The bruised knees pulse with each heartbeat. Her stomach is clenched around nothing — she has not eaten in fourteen hours and the cortisol is curdling the acid. A sensation she would not name and does not examine: a looseness in her chest, a relief that is not yet safe to feel, held behind the diaphragm like a breath she cannot take.",
+    "proprioception": "She is standing beside the nightstand, weight on the balls of her feet, knees slightly bent — the default combat stance that has become her resting posture. Her left hand is on the door frame, right hand free near the holster. She is oriented toward the door with the phone in her peripheral vision. Her body is angled to pivot toward either threat-axis: door, window. The room is small enough that she can reach the phone in one step from any position.",
+    "attention": "The phone. The door. The window. In that rotation, approximately two seconds per object, looping. She is NOT attending to: the bed, the curtains, the stains, anything that does not affect survival. She is failing to notice: her own hands are shaking more than they should be for someone who has done this before — the tremor is not just adrenaline, it is the cumulative weight of doing this over and over, each extraction a coin-flip she survives, and the body keeps a count the mind refuses to."
+   },
+   "appraisal": {
+    "value_at_stake": "Survival — her own — which she frames not as self-preservation but as operational continuity: she is an asset to the resistance and her death diminishes the mission. Beneath that framing, which she believes, there is a simpler valuation she would not articulate: she does not want to die in this room.",
+    "valence": -70,
+    "arousal": 92,
+    "self_conscious_emotion": "None that she would name. If pressed she might identify a cold pride in having reached the room — she is good at this, the best operative Morpheus has, and the competence is the only identity she allows herself in these moments. There is no shame in the fear because she has reframed fear as data.",
+    "moral_reading": "She is a soldier executing a tactical retreat. The police she evaded are unwitting conscripts of a system they do not understand — she feels no malice toward them and no satisfaction in having injured them. The Agents are the enemy in its purest form: intelligent, relentless, and inhuman. Escaping them is not just survival; it is a refusal to let the system reclaim a freed mind. In her moral framework, every mind that stays free is a wound in the enemy's architecture.",
+    "somatic_marker": "A tightening across the upper back and shoulders — the body's preparation for the phone's ring, which will be the signal to transition from defensive to exit posture. The marker is anticipatory: her body is already oriented toward the moment of extraction before it arrives. There is a secondary marker she does not recognize: a micro-loosening of the jaw muscles when she confirms the phone is on the nightstand and intact, a physiological relief she would attribute to tactical assessment rather than the fear of death."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "Operational discipline: the extraction protocol is followed without deviation, without hesitation, without emotional commentary",
+     "Chain of command: the operator on the other end of the hardline is her lifeline and she treats their instructions as orders",
+     "Operative code: do not engage civilians, do not use lethal force against police who are dupes rather than agents, minimize collateral",
+     "Silence protocol: no unnecessary communication during extraction — the line must stay clear for the operator's data feed"
+    ],
+    "how_others_would_judge": "There is no one present to judge. The operator on the other end of the line — she does not know who is on rotation, possibly Tank, possibly Dozer — would judge her solely on whether she reaches the phone in time. Morpheus would judge her on whether she compromised the mission. There is no social audience in this room; there is only the operational audience of the crew, and their judgment is binary: extracted or dead.",
+    "how_absent_others_would_judge": "Morpheus would be satisfied with her performance and would not say so — he would note the extraction in the log and move to the next operation. The crew would feel relief and would express it later, off-duty, in the mess. Cypher would make a comment about her luck running out eventually — she can hear it in advance, and the anticipation of it produces a specific disgust she does not examine. The Oracle — if the Oracle ever learned the details of this night — would say nothing about the extraction and something about the look on Trinity's face in the moment before the phone rang, something Trinity would not understand and would think about for weeks.",
+    "standing_at_risk": "Her standing as the resistance's most effective field operative. If she is caught, the crew loses not just a soldier but the institutional knowledge of how to survive in the field — she has done more extractions than anyone alive. If she is caught and converted — turned into an Agent's informant through whatever they do to captured minds — the damage is catastrophic. She knows this. The knowledge sits on her like a weight she has carried so long it feels like posture.",
+    "norm_conflict": "Operational discipline demands she wait for the operator's ring — the protocol exists because the operator must align the ship's systems with the hardline's signal before extraction is possible. But the footsteps in the stairwell mean the Agents are close enough that waiting even five more seconds may be fatal. The protocol says wait. Survival says pick up the receiver and dial. She follows the protocol because she trusts the operator's timing more than her own panic — but the conflict produces a specific agony: standing still while boots ascend stairs."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-04",
+     "d1": "Agent Smith is the coordinating intelligence behind the pursuit. He does not tire, does not hesitate, does not negotiate. He has access to every camera, every police radio, every building system in this city. His limitation is physical speed — he cannot move faster than a human body allows — but his coordination with the other Agents means he does not need to; they triangulate. She believes he has anticipated this room as a possible exit point because it has a hardwired line, and the fact that the line has not been cut means either he has not reached this room in his analysis or he is letting her reach it to trace the extraction signal back to the ship.",
+     "d2": "Smith believes Trinity is a resource to be captured or eliminated. He does not fear her — she has seen the way Agents move toward her, the absence of tactical caution, the confidence of entities that know they cannot truly die. She believes he sees her as a bug to be squashed, not an opponent to be respected, and that this contempt is her only advantage: he will not expect her to do anything clever because he does not believe she is capable of it.",
+     "d3": "She believes Smith believes that she believes the phone is her only exit — and that he is counting on this belief to trap her. If he has left the line intact deliberately, he expects her to use it and is positioning to either intercept her during the extraction window or trace the signal. She has considered the possibility that using this phone is walking into a trap, and has decided that the alternative — staying in the Matrix — is a certainty of death, whereas the phone is a probability of survival, and probabilities are all she has ever had.",
+     "accuracy": "She is WRONG that Smith sees her as beneath cleverness. Smith has studied her file — he knows her extraction count, her methods, her patterns. He is not contemptuous; he is methodical. Her belief that she can predict his behavior based on previous encounters is the error that has killed five operatives before her: each one believed they understood the Agents' approach, and each one was wrong about the specific adaptation the Agents had made since the last encounter. The cost of this error: she may be walking into a trace trap that leads the Agents to the Nebuchadnezzar's broadcast signal, endangering the entire crew."
+    },
+    {
+     "other": "ch-03",
+     "d1": "Morpheus authorized this operation and is monitoring from the ship. She believes he has confidence in her — not the false confidence of encouragement but the operational confidence of a commander who has weighed the probability and accepted the risk. She believes he would order her to use the phone rather than be captured, and that if she is caught he will consider her lost and move to protect the crew. This is not cruelty in her reading; it is the mathematics of resistance.",
+     "d2": "She believes Morpheus believes she is the operative most likely to survive this extraction — that is why he sent her. She believes he carries the weight of that calculation and that it costs him something he will never show. She does not believe he feels guilt about it; she believes he feels purpose, and that purpose justifies the risk to her life in both their eyes.",
+     "d3": "She believes Morpheus believes she believes in the mission enough to accept the risk without resentment. This is true. But she also believes he does not know about the Oracle's prophecy — he does not know she carries a private reason to survive that has nothing to do with the mission. She believes this secret is invisible to him because she has been careful, and because the prophecy is the one thing she has ever kept from the man who freed her.",
+     "accuracy": "She is WRONG that Morpheus does not know about the prophecy. Morpheus knows the Oracle tells everyone who comes to her something, and he has deduced from Trinity's behavior over the years that her prophecy involves someone specific. He does not know the content, but he knows the weight is there, and he factors it into his operational planning — he sends her on missions he believes she has extra motivation to survive. The cost of this error: Trinity believes she is protecting Morpheus from a complication; in reality, her secret is already structuring his decisions in ways she cannot see or consent to."
+    },
+    {
+     "other": "ch-06",
+     "d1": "Tank is the operator on the other end of the hardline — she believes this based on the rotation schedule and the signal protocol she received before insertion. Tank is young, capable, and has never lost an operative on his watch. He will ring the phone at the earliest possible moment the ship's systems can safely receive her signal. She believes he is monitoring the building's security systems through the Matrix feed and knows the Agents' positions in real-time.",
+     "d2": "She believes Tank believes she will make it to the phone — he has confidence in her, but his confidence is tempered by the five operatives who did not make it, whose extractions he also coordinated. She believes he is running the numbers in his head and that the numbers are not good, and that he will not tell her this because the protocol forbids emotional communication during extraction.",
+     "d3": "She believes Tank believes she believes the phone will ring in time. She does believe this. She believes his competence is the variable that determines her survival, and she has placed her life in his hands the way a climber places her life in a belayer's hands — not with trust exactly, but with the pragmatic acceptance that the system is designed to work and the alternative is not climbing.",
+     "accuracy": "She is likely CORRECT about Tank's competence and his real-time awareness. She is WRONG about his emotional state — Tank, on the ship, is not the cold professional she imagines. He is terrified. He has watched the signal traces of five people flatline on his monitor and he is watching her signal now and his hands are shaking worse than hers. The cost of this error: she does not know that the person saving her is barely holding together, and this ignorance is a kindness — if she knew, the doubt would add seconds to her reaction time, and seconds are what she does not have."
+    }
+   ],
+   "urges": {
+    "cravings": "None active. The survival state has suppressed all appetitive drives. There is no hunger, no thirst, no sexual awareness — the body has triaged everything below the level of 'stay alive.'",
+    "physical_needs": "Rest. Her muscles are saturated with lactate from the pursuit. Her knees need ice and immobility. She needs fourteen hours of sleep. She will get none of these until she is back on the ship and the adrenaline has cleared, and even then the sleep will be broken by the dream she always has after extractions — the dream where the phone does not ring.",
+    "psych_needs_conscious": "To reach the phone. To hear it ring. To lift the receiver and feel the disassembly begin. To be back on the ship, in the cold metal dark, where the air smells like coolant and sweat and the only sounds are the reactor's hum and Tank's breathing. She wants to be safe in the way that 'safe' means anything to her, which is: behind the EMP and the hull, with the crew around her, in the place where the Agents cannot reach.",
+    "psych_needs_unconscious": "To be seen. Not as an operative, not as a weapon, not as the woman who survived — but as a person who is afraid and does not want to do this anymore. This need has no object and no name in her consciousness. It manifests only as the particular quality of her exhaustion, which is heavier than physical fatigue and which she attributes to the mission rather than to the isolation the mission requires.",
+    "avoidances": "She is avoiding the thought that this extraction might fail. She is avoiding the thought that the phone might not ring. She is avoiding the thought of what the Agents do to captured minds — she has seen it once, in a crew member who was recovered alive, and the thing that came back was not the person who left. She is avoiding, specifically, the image of her own face with that expression. She is also avoiding, at a deeper level she would deny, the thought that survival is not the same as living."
+   },
+   "impairments": {
+    "physical": "Deep-tissue bruising on both knees from a hard rooftop landing. Lactic acid accumulation in major muscle groups from sustained sprint. Minor laceration inside the cheek. Dehydration. Fourteen hours without food. These impairments reduce her sprint speed by an estimated 15-20% and her fine motor control is compromised by the forearm tremor, though her grip strength is intact.",
+    "medical": "None chronic. Acute: the adrenaline dump that will follow extraction will produce nausea, tremors, and possibly vomiting — she knows this from experience and has prepared for it the way one prepares for a known side effect.",
+    "magical": "none",
+    "chemical": "Endogenous cortisol and adrenaline at sustained peak levels. No exogenous substances. The hormonal cocktail is narrowing her attention — useful for survival, deleterious for any processing that requires nuance or reflection.",
+    "coercive": "The Agents' pursuit is not coercion in the interpersonal sense but it is an external compulsion that has eliminated all her options except one. She is not choosing to use the phone; she is choosing between the phone and death, which is not a choice.",
+    "cognitive": "She cannot think clearly about three things: (1) the possibility that the extraction is a trap, because considering it fully would paralyze her at the moment she needs to act; (2) the cumulative psychological cost of repeated extractions, because examining it would compromise the functional dissociation that keeps her operational; (3) anything related to the Oracle's prophecy, which she has compartmentalized so thoroughly that it does not enter her conscious processing during operations — this compartmentalization is itself an impairment, as it means a significant emotional resource is sealed off from her awareness at all times.",
+    "net_effect": "She is operating at approximately 70% of her peak capacity. The physical impairments are manageable; the cognitive impairments are the real constraint. Her tunnel vision — literal and metaphorical — is both what will save her and what will prevent her from seeing the larger picture. She is a weapon aimed at a single point in space-time: the moment the phone rings. Everything outside that point is blur."
+   },
+   "deliberation": {
+    "framing": "She has framed this as a standard extraction under hostile pursuit — a scenario she has trained for and executed multiple times. The framing suppresses the uniqueness of this specific situation (the Agents' proximity, the thinness of the margin) by categorizing it as a known problem with a known solution. This is the error in her framing: each extraction is unique because the Agents learn, and treating this as routine is the cognitive shortcut that has killed previous operatives.",
+    "options_weighed": [
+     {
+      "option": "Wait for the operator's ring signal, then lift the receiver and execute standard extraction protocol",
+      "predicted_outcome": "70% probability of successful extraction, 25% probability of interception during the 3-4 second disassembly window, 5% probability of signal trace leading to ship compromise",
+      "cost": "Zero tactical cost if successful. If intercepted during disassembly, death is certain and the body may be converted. If traced, the crew is endangered."
+     },
+     {
+      "option": "Lift the receiver now and attempt to force a connection before the operator is ready",
+      "predicted_outcome": "15% probability of successful extraction (the ship's systems may not be aligned), 80% probability of a dead line or misaligned signal that could cause incomplete disassembly — a fate she considers worse than death, 5% probability of catastrophic signal feedback",
+      "cost": "High probability of failure in a way that is worse than simple death. The incomplete disassembly scenarios she has seen described in training — a consciousness caught half-in, half-out — are the one thing she genuinely fears beyond the Agents."
+     },
+     {
+      "option": "Abandon the phone and attempt to exit the building on foot, find another hardline",
+      "predicted_outcome": "10% probability of finding another hardline before the Agents corner her. The Agents control the building and the police cordon. Running extends the pursuit but does not change the fundamental calculus.",
+      "cost": "Near-certain death. The pursuit has already demonstrated that the Agents can coordinate police to close any ground exit. Extending the engagement increases the chance of civilian casualties."
+     },
+     {
+      "option": "Stand and fight — engage the Agents in the room",
+      "predicted_outcome": "0% probability of survival. She cannot defeat even one Agent in sustained combat. She can delay, but delay without an exit is simply a slower death.",
+      "cost": "Certain death, certain capture of her body, potential conversion to an Agent asset."
+     }
+    ],
+    "reasoning": "Standard extraction protocol is the only option with a survival probability above 50%. The operator's ring is the synchronization signal — the ship's systems must align the broadcast receiver with the hardline's carrier frequency before disassembly can begin. Lifting the receiver early is like jumping before the net is in place. Waiting is not a choice; it is physics. The footsteps tell me I have between thirty and sixty seconds. The operator knows this. The operator has the building feed. The operator will ring when the alignment is complete, which will be the latest possible moment, because the operator is also running the math and the math says: every second of alignment reduces the interception window. I stand at the phone. I wait. When it rings I lift the receiver. I do not hesitate. Hesitation is the variable I control.",
+    "chosen_because": "It is the only option with a survival probability she can accept, and it is the protocol she has trained to execute. The deliberation is not really deliberation — it is confirmation that the trained response is still the correct response, which it is, because the alternatives are death or worse.",
+    "known_unknowns": "She does not know the Agents' exact positions — she infers from the footsteps but does not know if they have a second team approaching from the fire escape. She does not know if the line has been traced. She does not know if Tank is the operator or if there has been a rotation change. She does not know the exact alignment status of the ship's systems. She hedges against all of these by standing at the phone, keeping her weapon accessible, and treating every sound as the last sound before contact."
+   },
+   "control": {
+    "mode": "compelled",
+    "felt": "A compression of the entire self into a single point of attention. Fear is present but it has been metabolized into readiness — the hands shake but the mind is clear, the way a lens is clear. There is no emotion in the foreground; there is only the countdown. Beneath that, in a layer she cannot access while the adrenaline is active, there is something that might be grief — not for herself but for the version of herself that has to do this, again, and will have to do it again, and again, until one day the phone does not ring in time.",
+    "expressed": "Stillness. Controlled breathing. Eyes tracking the room's threat axes in a disciplined sweep. When the phone rings, her hand moves to the receiver without hesitation — the motion is smooth, practiced, devoid of the jerkiness that would indicate panic. Her face shows nothing. This is not suppression; it is the absence of expression that comes from having moved all processing to motor planning, where emotion is not relevant.",
+    "divergence_reason": "The divergence is not between felt and expressed — it is between the operative self that is running the extraction and the human self that is sealed behind it. The operative self is authentic in this moment; it is the self that knows how to survive. The human self — the one that will, in the shower on the ship, put her forehead against the tile and shake — does not exist right now. This is not a performance. It is a functional dissociation that she has trained into herself so thoroughly that it no longer feels like splitting; it feels like professionalism.",
+    "leakage": "The forearm tremor. She is controlling it through isometric tension but a careful observer would see the tendons standing out in her wrists, the way her fingers curl slightly when she is not actively gripping. When the phone rings, there is a micro-pause — not hesitation, but the body's involuntary flinch at the sound, a startle reflex suppressed in under a quarter-second but present. The way she lifts the receiver is too fast, too smooth — the smoothness itself is the tell, because real calm is not that smooth, and the performance of calm is what reveals the terror underneath.",
+    "inhibited_impulse": "She wants to pick up the phone NOW. Every fiber of her body wants to lift that receiver and begin the disassembly. The protocol says wait. The protocol is what keeps her alive. She stands still and waits and the effort of standing still while boots ascend stairs is the hardest thing she has ever done, harder than the rooftop leap, harder than the combat, because every other challenge required action and this requires its absence."
+   },
+   "intention": "To survive this extraction. To lift the receiver when it rings, complete the disassembly, and return to the Nebuchadnezzar alive. Nothing else exists in her intention. The prophecy, the mission, the crew, the future — all of it is sealed behind the operational self and will not be accessible until she is through the phone and the body is safe.",
+   "action": "She stands at the nightstand in Room 303, weapon accessible, eyes on the door, and waits for the phone to ring. When it rings — a mechanical bell sound, the rotary phone's actual ringer, not a digital tone — she lifts the receiver in a single smooth motion, places it against her ear, and holds still for the connection. The disassembly begins: her body appears to dissolve from the feet up, the digital artifacts of the Matrix's rendering of her form breaking apart into scrolling green characters, the room's simulation stuttering as the system loses track of her avatar. The last thing visible is her hand on the receiver, and then the phone is hanging on its cradle, swinging slightly, and the room is empty.",
+   "trajectory": [
+    {
+     "phase": "Arrival and tactical assessment (entering the room)",
+     "shift": "Transitions from movement to forced stillness. The pursuit demanded action; the extraction demands waiting. Her body wants to run and she commands it to stand. The shift is from kinetic to static, from fleeing to enduring. The room is simultaneously the safest place she has been in the last twenty minutes (door closed, phone present) and the most dangerous (the Agents know about hardlines, this room may be anticipated).",
+     "trigger": "The door closing behind her. The click of the latch produces a physiological shift — the pursuit phase ends and the extraction phase begins. Her heart rate does not drop; it changes quality, from the ragged irregularity of sprint to the hard, steady pound of sustained readiness.",
+     "state_delta": {}
+    },
+    {
+     "phase": "The wait (standing at the phone, listening to footsteps approach)",
+     "shift": "The forced stillness becomes a specific kind of suffering. She has moved from tactical assessment to the experience of waiting for a signal that will determine whether she lives or dies, while hearing the agents of her death approach. The tremor in her forearms intensifies. Her breathing pattern holds — four in, six out — but the exhales lengthen as if her body is trying to slow time. She is not praying; she is counting. The count is the only thing between her and the impulse to act prematurely. She becomes, in this phase, acutely aware of the phone as a physical object — its weight, its color, the specific sound of its ringer — in a way that is both tactical and something else, something closer to how a drowning person thinks about the surface.",
+     "trigger": "The sound of footsteps reaching the floor below. The footsteps are synchronized — three or four sets, moving at a pace that is not hurried because the walkers do not need to hurry. The sound rises through the floor and she can feel it in the soles of her boots. This is the trigger for the shift from assessment to endurance: she now knows, acoustically, how much time she has, and the knowledge is a weight.",
+     "state_delta": {}
+    },
+    {
+     "phase": "The ring (phone activation)",
+     "shift": "The entire organism pivots from endurance to execution. The fear does not disappear — it is shoved sideways, into a compartment that will open later, on the ship, in private. What replaces it in the foreground is a crystalline clarity that she has experienced before and that she knows, intellectually, is an adrenal and dopaminergic cascade, but that feels like competence, like being the weapon she has made herself into. Her hand moves to the receiver. The motion is practiced. She has done this enough times that her body knows the weight of the handset, the angle at which to hold it, the way to position her body for the disassembly. The clarity is real and it is also the last defense between her and the terror.",
+     "trigger": "The phone rings. The sound is mechanical — a physical bell inside the handset housing, the analog ring of a 1970s rotary phone, nothing digital about it. The sound fills the room at a specific frequency and volume. It is the single most acoustically significant sound in her experiential library: it means survival. It means the operator has achieved alignment. It means the next four seconds will determine whether she lives.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Disassembly (the extraction)",
+     "shift": "The transition from physical presence to signal. This is not an experience she can describe to someone who has not undergone it. The body — her body, the leather and the sweat and the bruised knees — begins to lose its integrity as a rendered object. From the feet up, the Matrix's simulation of her form breaks apart. There is a sensation she would not call pain and would not call pleasure: a loosening, a disassembly that is also a relief, because the body that has been running and hurting and trembling is being taken apart and the thing that is her — the pattern, the signal, the self — is being pulled through the carrier frequency toward the ship's receiver. The room dissolves around her. The last thing she processes is the weight of the receiver in her hand and then that too is gone and there is the cold and the dark of the real and the sound of Tank's voice saying 'I've got you, I've got you' and the hard metal of the operator's chair against her bare skin.",
+     "trigger": "The connection completing — the moment the carrier frequency locks and the disassembly protocol initiates. This is not a decision point; it is a physiological event. The trigger is technological, not psychological. She has already made every decision she can make; the rest is physics.",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "Back on the Nebuchadnezzar, in the operator's chair, naked and shaking, the residual signal-static crawling across her skin like insects. The adrenaline is crashing. The room — the real room, the metal room with the CRT monitors and the cold air — is safe in a way the hotel was not, and the safety produces not relief but a delayed terror that hits her in the stomach and sends her to the bucket Tank has placed next to the chair because he knew it would be there. She is alive. She is not okay. She will not be okay for hours. She will sit in the chair and let the tremors pass and then she will stand and dress and debrief with Morpheus and the operative self will reassemble and the human self will go back into its box and the box will go back into the wall and no one will see the seam. The phone in Room 303 is hanging off the hook. The Agents will arrive to an empty room. The pursuit is over. The war is not.",
+   "unresolved": "The extraction has deposited her back into her body — her real body, the one that hurts in ways the Matrix body does not — and with the body comes the return of everything the operational self sealed away. The exhaustion that is heavier than fatigue. The awareness that she will have to do this again. The sealed compartment where the Oracle's prophecy lives, which did not open during the extraction but which she can feel pressing against the wall, the way you can feel a bruise through a bandage. She does not think about Neo — she has not met Neo yet, he is a name in Morpheus's intelligence briefings, not a person to her — but the compartment presses, and the pressing is the shape of something she will spend the rest of her life trying not to look at directly. What she is left carrying is the knowledge that survival is a rehearsal for a death that has not happened yet, and that each rehearsal brings her closer to the performance she will not survive."
+  }
+ ],
+ "specimen": {
+  "binding": {
+   "scene_id": "sc-003",
+   "location": "HEART O' THE CITY HOTEL",
+   "time_of_day": "UNSPECIFIED",
+   "on_screen": [
+    "ch-02"
+   ]
+  },
+  "moment": "The rotary phone rings. Trinity is alone in Room 303. Boots are in the hallway. The receiver is the only object in the world that matters.",
+  "lines": [
+   {
+    "speaker": "ch-02",
+    "line": "(She stands at the nightstand. The rotary phone sits on doily. Her eyes lock on the door. Her right hand hovers three inches from the receiver. The hallway outside — boots. Two sets, heavy, fast. Her forearm tremor: visible in the tendons. She breathes through her nose. Four-count. In. Hold. Out. The boots stop. The door handle tries. Locked. A shoulder hits the frame. The phone rings — one mechanical bell burst. She lifts the receiver in one motion. She presses it to her ear.)",
+    "subtext": "The entire scene is a body in a room with one object and a closing window. Every detail is physical. The phone is technology as salvation — a rotary phone, deliberately analog, deliberately old, because old things are outside the system's attention. The tremor is the human self leaking through the operative self. The four-count breathing is trained, not natural. The boots stopping at the door is the Agents arriving one beat too late. The phone ringing is the operator — someone she trusts with her life, someone she cannot see — telling her the line is ready. The single motion to lift the receiver is the smoothness that is itself the tell: real calm is not this smooth."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "(The connection clicks. A sound like a modem handshake — high, thin, then a cascade of static that resolves into silence. Her eyes close. Her jaw tightens. The disassembly begins at her feet: the leather of her boots loses coherence, the pixels of her form breaking apart into scrolling green characters that climb her body like vegetation. Her legs are gone. Her torso. The hand on the receiver is the last thing — her fingers white on the plastic, then the plastic itself dissolves, and the receiver swings on its cord and settles against the cradle with a small plastic click. The room is empty. The phone hangs. The boots hit the door again. The door frame cracks.)",
+    "subtext": "The disassembly is body horror dressed as cyberpunk — a human being taken apart by the same system that renders them. The green characters are the Matrix's own code, meaning the prison's architecture is the exit. The hand on the receiver being last is the human anchor point — the last thing she holds onto before she stops being a body. The receiver settling on the cradle is the image that stays: the phone is ordinary again, and the room is ordinary, and the boots are still coming, and she is gone. The door cracking is the Agents arriving into an empty room. Their power is environmental and total and it does not matter because the phone was one second faster."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "(The door gives. Three men — dark suits, earpieces, the insectoid stillness of bodies that do not fidget. The lead one sees the phone. He crosses to it. Lifts the receiver. Listens. The line is dead. He sets it back on the cradle with a motion that is precise, unhurried, and the precision itself communicates something that rage would not: this has happened before. He looks at the nightstand. At the doily. At the space where she stood. He turns to the others. He does not speak. They do not need him to.)",
+    "subtext": "The Agents do not need dialogue. Their communication is the absence of communication — the way they move in coordination without words, the way the lead Agent's unhurried precision tells the audience this is a recurring loss. The phone being dead is the rule made visible: the line is spent. Lifting the receiver and hearing nothing is the Agent confirming what the audience already knows — she is gone, the phone is just a phone now. The doily is the detail that makes the scene: a grandmother's doily under a phone that just extracted a soldier from a simulated war. The domestic and the martial in the same frame."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "(The lead Agent removes his earpiece. Examines it. Replaces it. He touches the phone receiver — not lifting it, just touching, the way you touch something to confirm it is real. His fingers come away clean. There is nothing on the nightstand. No DNA, no fiber, no trace. The system has no record of her. He straightens his tie. The three of them turn and leave the room in single file, closing the door behind them. The room is as it was. Bed made. Phone on the doily. The only evidence is the cracked door frame, and even that will be repaired in the next render cycle.)",
+    "subtext": "The Agents are the system's immune response — methodical, incurious about motive, interested only in the fact of the breach. The tie-straightening is the tell: he is resetting himself for the next pursuit. There will be a next pursuit. The room being restored is the Matrix itself erasing the evidence — the system does not remember her, only the Agents do, and even their memory is operational, not personal. The render-cycle repair is the world healing over the wound as if it never happened."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "(HALLWAY — CONTINUOUS — The three Agents walk toward the stairwell. The lead one stops. He looks back at Room 303's closed door. Not with emotion. With the look of a system logging an error. He turns away. They descend. The hallway is empty. The hotel is quiet. The fluorescent lights hum at 60 hertz, the same frequency in every office building in every city in the Matrix, and the sound does not change because a woman almost died here, and the sound will not change when someone actually does.)",
+    "subtext": "The 60-hertz hum is the sound of the system itself — indifferent, constant, the background radiation of a world that does not know it is a world. The Agents logging an error is the closest they come to emotion, and it is not emotion — it is process. The hallway being empty and quiet is the scene's true horror: the violence is over and the world does not care. The woman is gone. The men are gone. The phone is a phone. The hum continues."
+   },
+   {
+    "speaker": "ch-02",
+    "line": "(ROOM 303 — LATER — The door frame is whole. The lock is intact. The phone sits on the doily. The bed is made. The curtains are drawn. The carpet shows no scuff marks, no blood, no trace. A maid enters with fresh towels. She sets them in the bathroom. She does not look at the phone. She does not know the phone is different from any other phone. She leaves. The room is a room. The Matrix provides.)",
+    "subtext": "The maid is the final detail — a human being in the system, living her simulated life, placing towels in a bathroom where a woman was disassembled into code three hours ago. She does not know. She will never know. The room being restored is the system's perfect, terrible competence: it does not just hide the evidence, it makes the evidence impossible. The phone is a phone. The towels are towels. The Matrix provides. This is the line that establishes the world's true nature — not the Agents, not the chase, but the maid and the towels and the hum of the lights."
+   }
+  ],
+  "what_this_exposes": "The analysis described Trinity's psychology in terms of dissociative layers — operative self versus human self. Writing the scene reveals that the operative self IS the human self under sufficient pressure. The four-count breathing is not dissociation; it is the body's actual response to mortal fear when the mind has decided to act anyway. The tremor in the forearm is not leakage from a sealed self — it is the self, whole, experiencing terror and choosing stillness. The analysis was wrong to frame this as a split. It is integration under conditions the analysis cannot imagine. The phone scene also reveals that the Agents' menace is not in their violence but in their tidiness. The tie-straightening is more frightening than the door breach because it says: this is routine. The maid is more frightening than the Agents because she says: this world does not know it is a world.",
+  "risks_checked": [
+   {
+    "risk": "The scene becomes a silent technical sequence with no human anchor, making Trinity a special-effects vehicle rather than a character",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The forearm tremor. The four-count breathing. The white knuckles on the receiver. These are the human anchor — the body experiencing what the mind has chosen to endure. The special effects serve the character, not the reverse."
+   },
+   {
+    "risk": "The Agents are reduced to generic pursuers with no distinct menace",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The tie-straightening. The unhurried precision examining the dead phone line. The look-back at the door that is system-error-logging rather than emotion. This is a specific, non-generic menace: the horror of competent process."
+   },
+   {
+    "risk": "The escape feels unearned — she reaches the phone and simply vanishes without the moment being contested",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The boots stopping at the door. The door frame cracking. The Agents entering the room as the receiver settles. The margin is one second. The contest is the entire scene."
+   },
+   {
+    "risk": "The digitization is described as spectacle rather than body horror, losing the PK Dick register",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The hand on the receiver being last. The fingers white on the plastic. The plastic itself dissolving. The body being taken apart by the system that renders it. This is body horror — the spectacle IS the horror."
+   },
+   {
+    "risk": "The maid scene reads as sentimental human-interest filler rather than world-building",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "She does not look at the phone. She does not know. The towels are towels. The line is not sentimental — it is the opposite. It is the system's perfect indifference rendered as domestic routine. The horror is in the normalcy."
+   }
+  ],
+  "voices_distinct": "There is only one entity on screen (ch-02). The Agents do not speak. The maid does not speak. The scene is voiceless by construction — the craft reasoning specified that the 157-word envelope cannot accommodate a second speaking character. The 'dialogue' is the language of bodies and objects in a room. If this is a failure of the prompt's dialogue requirement, it is a failure the prompt's own constraints mandated: a scene with one on-screen character, no operator exchange, and a word count that precludes conversation. The scene's speech is physical. The forearm tremor says what dialogue would not. The tie-straightening says what the Agents would not. The maid's towels say what the world would not. These are the lines."
+ },
+ "dynamics": [
+  {
+   "entity": "lo-01",
+   "kind": "location",
+   "entering_state": "A functioning transient hotel with an active hardwired phone line in Room 303. The building is under police cordon from the raid Trinity escaped, with officers in the stairwells and lobby. The rotary phone on the nightstand is intact and connected to the central exchange. The room itself is unremarkable — bed, nightstand, lamp, window with fire-escape access. The hotel's role as an extraction point is covert; its public identity is as a decaying residential hotel in a forgotten part of the city.",
+   "forces_acting": [
+    "Trinity's physical presence converting the room into a temporary extraction site",
+    "Police cordon compressing the building's usable space floor by floor",
+    "Agents commandeering the police operation and directing it toward Room 303 specifically",
+    "The hardwired phone line's connection to an external switching infrastructure that the resistance can access",
+    "Time — every second the phone remains unused, the physical cordon tightens"
+   ],
+   "axis_changes": [
+    {
+     "axis": "control",
+     "from": "Ambiguous — police hold nominal authority but the building's systems (phone, electrical, structural) operate on autonomous infrastructure no one in the room commands",
+     "to": "Contested between three parties — Trinity controls the physical phone receiver, the Agents control the building's human and surveillance infrastructure, the resistance controls the switching path on the other end of the line",
+     "caused_by": "The phone ringing establishes a live connection path that neither the Agents nor Trinity's pursuers can sever from inside the room; the Agents' arrival in the hallway collapses the remaining ambiguity"
+    },
+    {
+     "axis": "meaning",
+     "from": "A physical structure containing a communication device — the phone is a phone, the room is a room",
+     "to": "An extraction theater — the room's entire identity collapses to the single object on the nightstand and the distance between that object and the door; the hotel transforms from 'place' to 'margin'",
+     "caused_by": "Trinity's single-minded movement toward the phone redefines every square foot of the room in relation to that object — the door becomes a countdown timer, the window becomes irrelevant, the bed becomes an obstacle"
+    },
+    {
+     "axis": "condition",
+     "from": "Physically intact room with functioning utilities and an undisturbed crime-scene perimeter established by police",
+     "to": "A room containing evidence of a departure that defies forensic explanation — the receiver off the hook, no body, no exit used — which will be meaningless to police investigators but perfectly legible to the Agents as a successful extraction",
+     "caused_by": "Trinity's digitization removes her physical mass from the room without using any physical exit, leaving behind a scene that reads as impossible to conventional responders and as confirmation-of-extraction to the Agents"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "on entering — Trinity alone in Room 303",
+     "shift": "The room's spatial identity reorganizes around the phone. Every other element — the bed, the window, the door — demotes to obstacle or irrelevance. The room becomes a container for a single transaction between a person and a device.",
+     "trigger": "Trinity's eyes finding the rotary phone on the nightstand; her body orienting toward it with the focused economy of someone who has rehearsed this protocol under worse conditions",
+     "state_delta": {}
+    },
+    {
+     "phase": "the phone rings — the connection activates",
+     "shift": "The room's acoustic and electromagnetic environment changes. The bell of the rotary phone is a mechanical event — a physical striker hitting metal — but it represents a data path opening. The room is now bifurcated: physical space controlled by whoever approaches the door, data space controlled by whoever holds the receiver. Trinity reaches the phone.",
+     "trigger": "The phone's ringer activating — this is an external signal from the resistance's operator indicating the line is prepped for digitization",
+     "state_delta": {}
+    },
+    {
+     "phase": "Agents arrive in the hallway — door breach imminent",
+     "shift": "The room's boundary (the door) transforms from a passive barrier into a timer. The hallway outside becomes hostile space. The distance between the door and the phone — perhaps eight feet — becomes the entire margin of survival. The room's physical dimensions are now a race track with a single finish line.",
+     "trigger": "Footsteps in the hallway, the sound of a tactical stack forming outside the door, the door handle engaging",
+     "state_delta": {}
+    },
+    {
+     "phase": "Trinity lifts the receiver and digitizes",
+     "shift": "The room empties. The physical space that was a theater of survival becomes an empty crime scene. The phone receiver, off the hook, emits a carrier tone. The room's condition is now forensic evidence — but evidence of what? No body, no blood trail, no exit used. To police: inexplicable. To Agents: a known extraction signature.",
+     "trigger": "Trinity's hand closing around the receiver and lifting it from the cradle, completing the circuit that begins the digitization process",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "An empty hotel room with a phone receiver dangling off the hook. The police cordon outside will find no suspect. The Agents will recognize the extraction signature and add Room 303's hardwired line to their surveillance catalog. The hotel's usefulness as an extraction point is now compromised — the resistance will need to identify a new safe line, because this one has been witnessed and will be monitored or physically severed going forward.",
+   "significance_shift": "Before this scene, the Heart O' The City Hotel was a location where things happened — a setting. After this scene, it becomes evidence of a method. For the Agents, it is proof that the resistance uses hardwired analog infrastructure as extraction vectors, which will drive their strategy of cutting and monitoring phone lines in subsequent operations. For the resistance, the hotel is now burned — a location that has been used and cannot be reused. For the audience, the room itself becomes the image they associate with 'escape' in this world: a cramped, ugly space where a person ceases to be physical. The hotel's meaning shifts from 'place' to 'burned extraction point,' and its future appearances (if any) will carry the resonance of this first witnessed departure."
+  },
+  {
+   "entity": "ob-01",
+   "kind": "object",
+   "entering_state": "Not physically present in the scene. The Red Pill exists in the narrative's conceptual space as a future object — a tool of awakening that has not yet been fabricated, administered, or described. Its meaning is entirely latent: it is the idea of a choice that does not yet exist. No character in this scene is aware of it, thinking about it, or positioned to encounter it.",
+   "forces_acting": [
+    "The scene's demonstration of the hardwired-phone-as-exit establishes the technological precondition that makes the Red Pill's later function coherent — the audience is being taught that digital infrastructure in this world can move consciousness between states, which is the conceptual foundation the Red Pill will later operationalize",
+    "Trinity's digitized departure provides the first visual grammar for 'a person transitioning out of the Matrix' that the Red Pill's awakening sequence will later echo and invert"
+   ],
+   "axis_changes": [
+    {
+     "axis": "meaning",
+     "from": "A hypothetical future object with no narrative presence — purely conceptual, existing only in the story's structural blueprint",
+     "to": "A future object whose eventual function now has a visual and technological precedent in the audience's memory — the digitization Trinity undergoes establishes that bodies and consciousness can be separated through Matrix infrastructure, which is the mechanical prerequisite for what the Red Pill will later do to Neo",
+     "caused_by": "The audience witnessing Trinity's body dissolve through the phone line — this is the first demonstration that the Matrix's communication infrastructure can mediate a full mind-body state transition, and that demonstration creates the conceptual scaffolding the Red Pill will later occupy"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "throughout the scene — the phone-as-exit is demonstrated",
+     "shift": "The Red Pill remains entirely absent from the scene, but the conceptual ground it will later occupy is prepared. The audience sees, for the first time, that the Matrix's own infrastructure can be repurposed to move a person between states of being. This is not the Red Pill — it is its distant architectural cousin. The phone moves data; the Red Pill will move perception. But the audience is being taught the rule that makes the Red Pill narratively possible: in this world, a person's relationship to the Matrix can be changed through the correct interface with the correct infrastructure.",
+     "trigger": "Trinity's digitization — the visual of her body dissolving into the phone line establishes the principle that Matrix infrastructure can mediate consciousness transfer, which is the precondition for the Red Pill's later narrative function",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "Still physically absent and narratively latent. No character has referenced it, thought about it, or moved toward it. But the audience has now been given the technological framework — infrastructure-as-exit, digitization-as-transition — that will make the Red Pill's later introduction feel like an evolution of an established rule rather than a new invention. The Red Pill's narrative preconditions are partially laid without the object itself appearing.",
+   "significance_shift": "The Red Pill's significance does not change for any character in this scene — none of them know it exists. Its significance shifts for the audience: the concept of 'a technological interface that changes a person's relationship to the Matrix' has been introduced through the phone-as-exit, and the Red Pill will eventually occupy a modified version of that conceptual space. The audience does not know the Red Pill is coming, but they have now been taught the rule the Red Pill will later exploit. This is preparatory meaning-shift, not character-facing meaning-shift."
+  },
+  {
+   "entity": "cn-01",
+   "kind": "concept",
+   "entering_state": "The Matrix is established in the audience's mind as a hostile, surveilled environment from which Trinity is fleeing. Its nature is not yet understood — the audience has seen police and Agents operating within it but has not been shown what it IS. The Matrix's meaning at this point is 'the place where the bad guys are' — a threat environment, not a philosophical concept. Its relationship to the audience is purely adversarial and suspense-driven.",
+   "forces_acting": [
+    "Trinity's escape through the phone line reveals that the Matrix has an infrastructure layer — phone systems, data networks, switching equipment — that can be turned against its own surveillance architecture",
+    "The Agents' ability to commandeer police operations reveals that the Matrix's institutional structures (law enforcement, authority hierarchies) are extensions of the Agents' will, not independent systems",
+    "The digitization process reveals that the Matrix mediates physical embodiment — bodies within it are data constructs that can be transmitted, which begins to expose the simulation's nature without stating it"
+   ],
+   "axis_changes": [
+    {
+     "axis": "meaning",
+     "from": "An adversarial environment — 'the place where the threats are' — understood by the audience as a setting rather than a system",
+     "to": "A contested infrastructure — a system whose own communication architecture can be repurposed as an escape vector, whose institutional authority is puppeted by non-human agents, and whose physical bodies are transmissible data. The Matrix begins to mean 'a system with exploitable seams' rather than 'a place that is dangerous.'",
+     "caused_by": "The phone-as-exit demonstration — by showing that the Matrix's own phone infrastructure can be used against its controllers, the scene reframes the Matrix from a monolithic threat to a system with internal contradictions the resistance can exploit"
+    },
+    {
+     "axis": "credence",
+     "from": "The audience has no framework for what the Matrix IS — they have seen people moving through a city that looks real, with police and hotels and phones, and the only unusual elements are the Agents' abilities and Trinity's enhanced physicality",
+     "to": "The audience has been given a critical piece of the puzzle without the framework to interpret it: a human body dissolving into a phone line is not possible in a physical world. The scene creates a cognitive dissonance that will make the audience receptive to the Matrix's eventual explanation, because they have now seen direct evidence that the world on screen does not operate by physical laws.",
+     "caused_by": "The digitization visual — Trinity's body breaking into a transmitted signal is the first direct, undeniable evidence that the world the characters inhabit is not physically real, even though the audience does not yet have the vocabulary to articulate what they've seen"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "on entering — the Matrix as pursuit environment",
+     "shift": "The Matrix is functioning as a hostile environment with the Agents directing its institutional resources (police) against Trinity. At this stage it means 'threat space' to the audience.",
+     "trigger": "Scene opening with Trinity alone in a room she has reached through violent escape — the Matrix is the container she is trying to exit",
+     "state_delta": {}
+    },
+    {
+     "phase": "the phone rings — infrastructure as resistance tool",
+     "shift": "The Matrix's meaning bifurcates. It is simultaneously the threat environment AND a system whose own infrastructure (analog phone lines, switching equipment) can be turned against its controllers. The audience begins to perceive the Matrix as a system with seams, not a monolithic adversary.",
+     "trigger": "The phone ringing — an external signal arriving through the Matrix's own communication infrastructure, sent by operators who exist outside the Matrix and can manipulate its systems",
+     "state_delta": {}
+    },
+    {
+     "phase": "Agents arrive — the Matrix as puppeted institution",
+     "shift": "The Agents' arrival reveals that the Matrix's institutional layer (police authority, tactical coordination, building access) is an extension of non-human will. The Matrix's meaning darkens: it is not merely a surveilled environment but a puppeted simulation where institutional authority is a skin worn by the Agents.",
+     "trigger": "The sound of tactical approach in the hallway — footsteps, door handle engagement — coordinated with a precision that exceeds police capability",
+     "state_delta": {}
+    },
+    {
+     "phase": "digitization — the Matrix as transmissible illusion",
+     "shift": "The Matrix's deepest layer is exposed without explanation. A human body dissolving into a phone line is not possible in a physical world. The audience now has direct sensory evidence that the Matrix is not a physical place, even though they lack the conceptual framework to articulate what they've witnessed. The Matrix's meaning shifts from 'setting' to 'question' — what IS this place?",
+     "trigger": "Trinity lifting the receiver and her body beginning to digitize — the visual of a physical form breaking into transmissible data",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "The Matrix is no longer legible to the audience as merely 'the place where the chase happened.' It is now a system with three visible layers: a puppeted institutional surface (police, authority), a exploitable infrastructure layer (phone systems, data networks), and a hidden ontological nature (bodies are transmissible data, physical laws do not apply). The audience does not understand what they've seen, but they have been given the sensory evidence that will make the eventual explanation land as revelation rather than exposition. The Matrix's meaning has shifted from 'threat environment' to 'incomprehensible system with visible seams.'",
+   "significance_shift": "For the audience, the Matrix ceases to be a setting and becomes a question. The phone-as-exit and the digitization visual have introduced the idea that this world is programmable, transmissible, and not physically real — without stating any of those things. For the resistance (implied through the phone ringing on cue), the Matrix is a system they have mapped well enough to exploit its infrastructure. For the Agents, the Matrix is a garden they tend — and Trinity's extraction is a weed they failed to pull. The concept's significance has moved from 'where the action happens' to 'the central mystery the story will interrogate.'"
+  },
+  {
+   "entity": "gr-01",
+   "kind": "group",
+   "entering_state": "The Agents are established as a superior tier of threat above police — they can commandeer police operations, move with insectoid coordination, and pursue targets through institutional infrastructure. Their nature is unknown (are they government? private? something else?). They have just lost Trinity in the preceding chase and are actively hunting her. Their organizational state is one of focused pursuit — they have a target, they have institutional resources, and they are closing in.",
+   "forces_acting": [
+    "The Agents' mandate to capture or kill Trinity — this is their operational objective and the organizing principle of their behavior in this scene",
+    "The police cordon as a force multiplier — the Agents direct human assets they have commandeered, extending their reach through institutional authority",
+    "Time working against them — the resistance's extraction protocol operates on a timeline the Agents cannot directly observe, only infer from behavior patterns",
+    "The hardwired phone line as the single point of failure in their perimeter — if they knew which line, they could cut it; they don't, so they must physically interdict the target"
+   ],
+   "axis_changes": [
+    {
+     "axis": "control",
+     "from": "Ascending — the Agents have just escalated from observers to commanders of the police operation, demonstrating that institutional authority bends to their will. They appear to be tightening a net around Trinity.",
+     "to": "Outmaneuvered at the margin — the Agents arrive at Room 303's door at the moment Trinity's extraction completes. Their institutional control (police cordon, building access, tactical coordination) is rendered irrelevant by the speed of the digitization process. They are left holding an empty room.",
+     "caused_by": "The temporal asymmetry between physical pursuit (requires traversing space, breaching doors, coordinating teams) and digital extraction (requires lifting a receiver) — the Agents' entire operational model is defeated by an interface that operates faster than human movement"
+    },
+    {
+     "axis": "credence",
+     "from": "In the audience's perception, the Agents are an overwhelming, seemingly unbeatable force — they commandeered a police operation in seconds, they move with coordination that exceeds human capability, they appear to control the entire urban environment",
+     "to": "The Agents are revealed to have a critical structural limitation: they cannot prevent extraction through infrastructure they don't control. Their power is environmental and institutional, not absolute. They can be beaten by someone who reaches the right interface before they reach the person. This does not diminish their threat — it defines its boundary.",
+     "caused_by": "Trinity's successful extraction — the audience witnesses the Agents fail in real time, which establishes that their power has structural limits even as it confirms they remain dangerous within those limits"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "on entering — the pursuit closes",
+     "shift": "The Agents are converging on Trinity's location through the police infrastructure they have commandeered. Their organizational state is one of operational confidence — they have the resources, the authority, and the target's general location. They are closing a net.",
+     "trigger": "The scene's opening context — Trinity has just escaped a raid the Agents directed, and they are tracking her through the building",
+     "state_delta": {}
+    },
+    {
+     "phase": "hallway approach — the net tightens",
+     "shift": "The Agents' operational model is at its peak effectiveness. They have directed police to the building, they have identified the floor, they are approaching the specific room. Their coordination is visible in the tactical sounds from the hallway. This is their power expressed at maximum.",
+     "trigger": "Audible tactical approach — footsteps in formation, door handle engagement — the Agents converting institutional authority into physical interdiction",
+     "state_delta": {}
+    },
+    {
+     "phase": "breach and empty room — the net closes on nothing",
+     "shift": "The Agents' operational model fails. They breach the room and find it empty — no body, no suspect, a phone receiver off the hook. Their institutional control has been defeated by a technological asymmetry they cannot counter from within the Matrix. The group's state shifts from 'closing' to 'failed interdiction,' and their organizational attention will now turn to identifying and cutting future extraction lines.",
+     "trigger": "The door opening to reveal an empty room — the extraction completed before the breach, leaving the Agents with forensic evidence of a method they cannot physically prevent",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "The Agents have failed to capture Trinity. Their operational model — institutional commandeering, physical interdiction, environmental control — has been defeated by a technological vector they cannot directly counter (hardwired phone extraction). Their organizational state shifts from 'pursuing a target' to 'analyzing a failure and adapting.' They will now treat phone lines as extraction vectors to be surveilled, cut, or trapped. Their threat level is not diminished — it is refined. The audience now understands that the Agents are beatable in the moment but adaptive across encounters.",
+   "significance_shift": "Before this scene, the Agents meant 'overwhelming, seemingly unbeatable institutional threat.' After this scene, they mean 'a threat with defined structural limitations.' The audience has seen them fail, which does three things: it establishes that the resistance can survive (raising the stakes for Neo's eventual choice to engage), it defines the Agents' power boundary (institutional and physical, not infrastructural), and it foreshadows that the Agents will adapt (they will target phone lines in future operations, making extraction harder). The Agents' significance shifts from 'unstoppable' to 'adaptable predator with a known weakness it will work to close.'"
+  },
+  {
+   "entity": "gr-02",
+   "kind": "group",
+   "entering_state": "The Nebuchadnezzar crew is entirely off-screen but their existence is implied by the phone ringing on cue. Their organizational state is one of operational support — they have identified an extraction line, prepped the switching path, and are coordinating Trinity's exit from outside the Matrix. They are invisible to the audience but their infrastructure is the reason Trinity survives.",
+   "forces_acting": [
+    "The extraction protocol — a timed, coordinated operation in which an operator on the ship side preps a hardwired line and signals readiness by ringing the phone",
+    "Trinity's compliance with the protocol — she waits for the signal, approaches the phone, and executes the extraction without hesitation, indicating this is a rehearsed procedure the crew has used before",
+    "The Agents' counter-operation — the crew's extraction protocol is racing against the Agents' physical interdiction, and the crew's margin of safety is measured in seconds they cannot control"
+   ],
+   "axis_changes": [
+    {
+     "axis": "meaning",
+     "from": "A hypothetical resistance group — the audience has seen Trinity operate alone and has no evidence of a supporting organization",
+     "to": "A confirmed organization with operational infrastructure — the phone ringing on cue proves there are people outside the Matrix who can manipulate its systems, prep extraction lines, and coordinate timed operations. The crew's existence is established by implication rather than depiction.",
+     "caused_by": "The phone ringing at the precise moment Trinity needs extraction — this is not a coincidence the audience can attribute to chance; it is evidence of coordinated external support"
+    },
+    {
+     "axis": "credence",
+     "from": "The audience has no reason to believe Trinity is anything other than a lone operative — her escape in sc-001 and sc-002 could be individual competence",
+     "to": "The audience now infers that Trinity is part of an organization with resources, infrastructure, and operational protocols. The crew's existence is not confirmed by direct depiction but by the logical necessity of the phone ringing on cue — someone had to ring it, and that someone exists outside the Matrix.",
+     "caused_by": "The extraction's technological requirements — digitization through a phone line requires a receiving system on the other end, which implies a ship, an operator, and an organization"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "throughout — the invisible hand",
+     "shift": "The crew's organizational presence is felt entirely through a single signal: the phone ringing. They do not appear, speak, or act visibly. Their entire contribution to the scene is the timed activation of an extraction line. This minimal presence is, paradoxically, their most significant narrative function — it establishes that the resistance is not one person but a system, and that system is the thing the Agents are actually fighting.",
+     "trigger": "The phone ringing — the crew's only visible action in the scene, and the action that saves Trinity's life",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "The crew remains off-screen and unnamed. Their existence is established by implication. Their organizational state has successfully executed an extraction, which means their protocols work — but the narrow margin (Agents at the door) means their protocols are not safe. The crew's operational reality is one of constant near-failure, where every extraction is a race against an adaptive adversary. Their significance is as the invisible infrastructure that makes resistance possible.",
+   "significance_shift": "Before this scene, the resistance was embodied entirely by Trinity — one person running. After this scene, the audience infers a network. The crew's significance shifts from 'nonexistent' to 'the invisible infrastructure of survival.' This raises the stakes for the entire story: the conflict is not one woman against the system, it is two systems against each other, and the crew's existence implies a broader war the audience has not yet seen. The crew also becomes the answer to a question the audience didn't know to ask: how does anyone survive in this world? Someone rings the phone."
+  },
+  {
+   "entity": "gr-03",
+   "kind": "group",
+   "entering_state": "Not present or referenced in this scene. The Sentinels exist in the narrative's future as a physical-world threat tied to the hovercraft and the desolate reality outside the Matrix. They have no presence in the Matrix itself and no reason to appear in a scene set entirely within it.",
+   "forces_acting": [
+    "No forces act on the Sentinels in this scene — they are entirely absent"
+   ],
+   "axis_changes": [
+    {
+     "axis": "meaning",
+     "from": "Nonexistent in the audience's awareness — the Sentinels have not been introduced, referenced, or foreshadowed",
+     "to": "Latently foreshadowed by the implication that the resistance operates from a physical location outside the Matrix — if there is a ship (implied by the extraction infrastructure), there are physical-world threats to that ship. The Sentinels' narrative preconditions are being laid without the Sentinels themselves appearing.",
+     "caused_by": "The extraction's logical implications — the crew exists on a ship, the ship exists in a physical world, and the physical world has its own threats. The audience does not yet know this, but the extraction scene creates the logical space the Sentinels will eventually occupy."
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "throughout — absent but logically implied",
+     "shift": "The Sentinels do not appear, are not referenced, and exert no force on this scene. Their only connection is the logical implication that a resistance operating from a physical ship faces physical-world threats. This is not foreshadowing in a literary sense — it is the structural logic of the world being built. If the crew is on a ship, the ship is somewhere, and that somewhere is dangerous. The Sentinels' absence is meaningful only in retrospect.",
+     "trigger": "The extraction scene's implication that the resistance has a physical-world base of operations — this creates the logical space for physical-world threats without naming them",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "Still absent, still unmentioned, still nonexistent in the audience's awareness. The Sentinels' narrative preconditions are marginally advanced by the implication of a physical-world resistance base, but this is structural groundwork, not narrative presence. The Sentinels remain entirely future-tense.",
+   "significance_shift": "No significance shift for the audience — the Sentinels are not a concept the audience holds yet. The significance shift is structural: the extraction scene's implications create the logical framework within which the Sentinels will eventually make sense. This is world-building groundwork, not audience-facing meaning."
+  },
+  {
+   "entity": "lo-06",
+   "kind": "location",
+   "entering_state": "Not present in the scene. The Nebuchadnezzar exists in the narrative's future as the physical-world base of the resistance. Like the Sentinels, it has no presence within the Matrix. Unlike the Sentinels, its existence is more strongly implied by this scene — the extraction infrastructure must be hosted somewhere physical.",
+   "forces_acting": [
+    "The extraction protocol implies a receiving system — the digitization process must have a destination, and that destination is a physical ship with computing infrastructure capable of reconstructing a human body from transmitted data",
+    "The operator's presence is implied by the phone ringing — someone must monitor the Matrix's state, identify safe lines, and time the extraction signal"
+   ],
+   "axis_changes": [
+    {
+     "axis": "meaning",
+     "from": "Nonexistent in the audience's awareness — the Nebuchadnezzar has not been introduced or referenced",
+     "to": "Latently implied as the destination of the extraction — the digitization process must terminate somewhere, and that somewhere is a physical location with computing infrastructure and a human operator. The ship's existence is a logical inference the audience can make but has not been invited to make explicitly.",
+     "caused_by": "The extraction's logical requirements — data transmitted through a phone line must have a receiver, and a human consciousness transmitted as data must be reconstructed by a system that exists in physical space"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "throughout — the implied destination",
+     "shift": "The Nebuchadnezzar does not appear but is the logical terminus of the extraction process. The phone-as-exit implies an exit-to-where, and that 'where' is a ship. The ship's absence from the scene is itself a narrative choice — the audience is shown the exit but not the destination, which creates a question that will drive the next act: where does Trinity go?",
+     "trigger": "The extraction completing — Trinity's digitization implies arrival somewhere, and that somewhere is the Nebuchadnezzar",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "Still absent and unnamed. The ship's existence is a logical inference, not a depicted fact. Its narrative preconditions are advanced by the extraction scene's implications — the audience now has reason to suspect there is a physical world outside the Matrix, even though they have not seen it. The ship's absence creates the central question that will pull the audience into Act One: what is on the other side of the phone line?",
+   "significance_shift": "Before this scene, the ship did not exist in the audience's mind. After this scene, the audience can infer that something physical exists on the other side of the extraction — a destination, a system, people. The ship's significance shifts from 'nonexistent' to 'the answer to the scene's central implied question.' This is the narrative hook that the extraction scene creates: not 'will Trinity escape?' (she does) but 'where does she go?' The ship becomes the answer the audience now wants, which is the engine that drives the story forward."
+  }
+ ],
+ "continuity": {
+  "established_facts_used": [
+   {
+    "fact": "The Heart O' The City Hotel is a decaying building with cracked plaster, exposed wiring, and a room 303 that has been used as a rendezvous point — the room's layout and the rotary phone on the nightstand were established as physical fixtures.",
+    "source": "sc-001",
+    "how_used": "The scene's entire spatial logic depends on this room and its contents. The phone's physical presence — rotary, hardwired, nightstand — is the single object the scene turns on. Trinity's knowledge of the room's layout (door, nightstand, phone, window) drives her movement through the beat."
+   },
+   {
+    "fact": "Trinity is a trained operative who has demonstrated superhuman combat effectiveness against armed officers, including wall-running, close-quarters disarmament, and the ability to kill or incapacitate multiple armed opponents in seconds.",
+    "source": "sc-001",
+    "how_used": "Her movement through this scene is calibrated to that established competence — she does not fumble, hesitate at the phone, or act as a non-combatant would. Her physical precision in the room is continuous with sc-001. The contrast the scene draws is between that competence and the moment where her body betrays a human tremor, which only registers because the audience has seen her as otherwise superhuman."
+   },
+   {
+    "fact": "Agents Smith, Jones, and Brown are entities that override police authority, wear identical dark suits and sunglasses, move with insectoid coordination, and have demonstrated the ability to appear where their targets are with no visible means of transit consistent with normal human movement.",
+    "source": "sc-002",
+    "how_used": "The sound of dress shoes on the hallway floor and the synchronized arrival at the door are the Agents' signature from sc-002 — their insectoid uniformity translated into audio. The scene does not show their faces because sc-002 already established their identical appearance; the shoes and the door breach are sufficient recognition codes. Their arrival is the countdown mechanism that converts the phone from object to lifeline."
+   },
+   {
+    "fact": "Smith declared the police operation futile and transferred operational control to the Agents, establishing that the police are subordinate tools and the Agents are the real threat with superior capability and authority.",
+    "source": "sc-002",
+    "how_used": "The absence of police in the hallway — this is now an Agent operation, not a police raid — is a direct consequence. The men who breach the door are Agents, not officers, because sc-002 established the transfer. The scene's stakes are calibrated to the Agent-tier threat, not the police-tier threat; if police arrived instead of Agents, the scene would contradict sc-002's escalation."
+   },
+   {
+    "fact": "The story's world operates on Gibson-noir technological texture where devices carry simultaneous menace and salvation, and PK Dick instability where the Matrix's own infrastructure can be inverted against its controllers.",
+    "source": "root.rules_of_the_world",
+    "how_used": "The phone is rendered as both — a mundane rotary object that is also the only gap in the prison's architecture. The digitization of Trinity's body is the PK Dick inversion made visible: the system's own communication infrastructure repurposed as an exit. The scene's horror register (body dissolution) and thriller register (countdown) coexist because this rule demands technology be both."
+   },
+   {
+    "fact": "The narrative register forbids interior monologue and requires all psychology externalized into action and gesture; figurative density is medium, sentence length varied, plain language.",
+    "source": "root.rules_of_the_world",
+    "how_used": "Every psychological beat is rendered physically: the hand on the receiver, the tremor in the fingers, the breath, the posture shift. Trinity's emotional state is communicated entirely through what her body does, not what she thinks. The digitization is described in concrete sensory detail, not metaphor."
+   }
+  ],
+  "constraints_honoured": [
+   "Hardwired phone as exit rule: The scene establishes by demonstration that a hardwired phone connection is required to exit the Matrix — not a cell phone, not a wireless device, not any convenient communication method. The rotary phone's physical properties (cable, receiver, ringer) are the mechanism. This rule is shown, not told.",
+   "No interior monologue: Trinity's psychological state is conveyed exclusively through observable physical behavior — hand movements, breathing, posture, eye movement. At no point does the text state what she thinks, feels, or remembers. The tremor in her hand is described; its cause is not.",
+   "Operative competence continuity: Trinity's actions in the room are consistent with the skill level established in sc-001. She does not make amateur mistakes. Her vulnerability is shown as a crack in competence, not a collapse of it.",
+   "Agent capability ceiling: The Agents arrive physically and must physically stop Trinity. They cannot teleport into the room (they arrive through the door), they cannot cut the line remotely (they are too late), and they cannot follow her through the phone (they have no body outside the Matrix). Their power is environmental and physical, not omniscient.",
+   "Body horror register for digitization: The exit is not clean or magical. Trinity's body dissolving into the phone line is described with the PK Dick instability — uncanny, physical, disturbing. The audience sees a person unmade. This is not teleportation; it is digitization of a body.",
+   "Tension curve 85 → 25: The scene enters at maximum chase tension, spikes again with the Agents' arrival, converts to spectacle during digitization, and exits with residual existential tension. The relief is real but incomplete — the audience has learned exits are marginal and temporary.",
+   "Word envelope (~157 words): The scene is a single beat with no subplots, no secondary characters, no dialogue. Every word is in service of setup-reversal-escape.",
+   "No operator dialogue: The phone rings but no voice is heard. The operator's presence is implied by the timing, not depicted. This preserves the word envelope and keeps the scene solo.",
+   "Scene must close the cold open and open narrative space for Neo: The escape resolves the immediate chase while the residual tension (Agents are unbeatable in the long run, exits are narrow) sets up the stakes for Neo's later choice."
+  ],
+  "contradictions_checked": [
+   {
+    "risk": "Trinity's competence could be contradicted if she panics, fumbles the phone, or behaves like a non-trained civilian — sc-001 established her as a lethal operative capable of superhuman combat.",
+    "avoided_by": "Her movements through the room are efficient and deliberate even under extreme threat. She crosses to the phone with purpose, lifts the receiver with a trained hand. The single tremor in her fingers is framed as involuntary physiology under adrenaline load, not incompetence — it is the body's betrayal of the operator, not the operator's failure. She completes the action; the tremor does not prevent it."
+   },
+   {
+    "risk": "The Agents could be depicted as omniscient or teleporting, contradicting sc-002 where they arrived physically and operated through conventional building access.",
+    "avoided_by": "The Agents' approach is rendered entirely through audio cues — footsteps on carpet, then the door. They must physically traverse the hallway and breach the door. They arrive seconds too late because Trinity reached the phone first. Their failure is a margin-of-time failure, not a capability limitation. This is consistent with sc-002 where they commandeered police rather than manifesting independently."
+   },
+   {
+    "risk": "The phone-as-exit rule could be contradicted if Trinity exits through a cell phone, wireless device, or any method other than a hardwired line — which would destroy the rule the scene is supposed to establish.",
+    "avoided_by": "The phone is explicitly a rotary hardwired phone with a physical cable connecting the handset to the base and the base to the wall. The receiver is lifted from the cradle. The digitization occurs through this physical connection. No wireless technology is present or implied."
+   },
+   {
+    "risk": "The digitization could be depicted as clean, painless, or magical, contradicting the PK Dick instability and body-horror register the world requires.",
+    "avoided_by": "The dissolution is described in physical, sensory terms — the body losing coherence, the visual of flesh becoming signal, the sound changing. It is framed as something happening to a body, not something a person does. The register is uncanny and disturbing, not triumphant."
+   },
+   {
+    "risk": "The scene could imply Trinity has feelings, memories, or internal monologue about love, the Oracle, or her mission — contradicting the timeline which forbids explicit emotional reference at this point.",
+    "avoided_by": "The vulnerability beat is a single physical detail — the tremor in her hand — with no stated cause. The audience may project emotional significance, but the text attributes it to adrenaline and physiology. No word in the scene names an emotion, a memory, or a prophecy."
+   },
+   {
+    "risk": "Police could appear in the hallway alongside the Agents, contradicting sc-002's transfer of operational control from police to Agents.",
+    "avoided_by": "The hallway threat is rendered through dress shoes on carpet and the synchronized door breach — the Agents' recognition codes from sc-002. No police uniforms, no police radio chatter, no police-tactical sounds appear. The threat tier is Agent-only."
+   },
+   {
+    "risk": "The scene could end with Trinity fully safe and the threat neutralized, contradicting the required leaving tension of 25 and the promise that the Agents are relentless.",
+    "avoided_by": "The final image is the empty phone swinging on its cord and the Agents arriving to find the room vacant — they have lost this encounter but their presence in the doorway establishes they are still there, still hunting. The escape is marginal and temporary, not a defeat of the threat."
+   }
+  ],
+  "state_preconditions": [
+   {
+    "entity": "ch-02",
+    "variable": "physical_location",
+    "must_be": "Inside room 303, Heart O' The City Hotel, door closed, having just reached the room ahead of pursuit"
+   },
+   {
+    "entity": "ch-02",
+    "variable": "pursuit_status",
+    "must_be": "Agents actively converging on room 303 with knowledge of her location, seconds behind her arrival"
+   },
+   {
+    "entity": "ch-02",
+    "variable": "extraction_readiness",
+    "must_be": "An operator at a remote terminal has identified this phone line as a viable hardwired exit and is prepared to execute the digitization transfer the moment the circuit is completed"
+   },
+   {
+    "entity": "environment",
+    "variable": "room_303_state",
+    "must_be": "Intact from sc-001 — rotary phone on nightstand, door with single lock, window overlooking fire escape, minimal furnishings, decaying plaster"
+   },
+   {
+    "entity": "agents",
+    "variable": "proximity",
+    "must_be": "In the building, ascending or converging on floor 3, aware of room 303 as the target room, operating with police support having secured the building perimeter"
+   }
+  ],
+  "forward_commitments": [
+   "The hardwired-phone-as-exit rule is now established by demonstration. Every subsequent scene involving entry to or exit from the Matrix must use a hardwired phone line. Any scene that shows a character exiting through a cell phone or wireless device directly contradicts this node.",
+   "The Agents have been shown arriving seconds too late to prevent an extraction. Later scenes must maintain that the margin between capture and escape is measured in seconds — if the Agents become incapable of arriving in time, this scene's threat level is retroactively deflated.",
+   "The digitization visual — body dissolving into phone line — is now the established aesthetic for Matrix exits. Later exit scenes must be consistent with this depiction or explicitly justify deviations (e.g., a forced extraction under duress looking different from a clean one).",
+   "Trinity has been shown as human beneath her operative competence (the hand tremor). Later scenes that develop her emotional interior — particularly any reference to the Oracle's prophecy — must build on this established vulnerability without contradicting it (she is not emotionless, but she is controlled).",
+   "The existence of a remote operator who can execute extractions is now implied. When an operator character is eventually introduced (Tank, Dozer, or equivalent), their capability must be consistent with the timing and precision demonstrated here — the phone rang exactly when needed, the digitization was immediate.",
+   "The Agents' response to a missed extraction — what they do when they find an empty room — is now a question the narrative has opened. Later scenes must address whether they trace the line, investigate the operator, or simply move to the next target.",
+   "Neo's introduction in the following scene must occur in a world where the audience now knows: (a) the Matrix is a constructed reality with hard-coded rules, (b) the Agents are the enforcement tier and are beatable only by seconds, (c) a resistance exists with extraction infrastructure, and (d) the stakes of being caught are existential. Neo's choices in Act One now carry the weight of this established context."
+  ]
+ },
+ "decision": {
+  "state_changes_implied": [
+   {
+    "entity": "ch-02",
+    "variable": "belief_in_neo_as_one",
+    "before": "uncertain",
+    "after": "suspecting",
+    "because": "The analysis states in the 'd3' section of the theory of mind regarding Morpheus that 'She believes Morpheus believes she believes in the mission enough to accept the risk without resentment. This is true. But she also believes he does not know about the Oracle's prophecy... She believes this secret is invisible to him', and in the 'accuracy' section it notes 'Morpheus knows... her prophecy involves someone specific', implying the existence of a specific belief/prophecy about a person (Neo) that she holds but keeps secret, moving her from general uncertainty to a state where she suspects/knows the prophecy's subject, though the text is subtle. However, looking closer, the text says 'She is not thinking about love' and 'The Oracle's prophecy sits in her like a splinter'. The variable is 'belief_in_neo_as_one'. The text does not explicitly state she believes Neo is the One in this scene. It mentions the prophecy involves 'someone specific'. Is that enough to change from 'uncertain' to 'suspecting'? The prompt says 'Record only changes the analysis actually asserts'. The analysis asserts she has a prophecy about someone specific. It does not explicitly link that person to Neo in *this* scene's internal state description, only that Morpheus deduces it involves someone specific. Let's look for a stronger signal. Actually, the 'entering_state' says 'The Oracle's prophecy sits in her like a splinter she has built scar tissue around, not removed.' This implies the prophecy is active and present. Does she believe Neo is the One? The text doesn't name Neo in the psychology section, only 'someone specific'. However, the variable is specific to Neo. If the analysis doesn't explicitly link the prophecy to Neo in her current mental state *in this scene*, I should be cautious. But wait, the 'not_expressible' might be better if the change isn't clear. Let's re-read carefully. 'She also believes he does not know about the Oracle's prophecy — he does not know she carries a private reason to survive that has nothing to do with the mission.' It doesn't say she believes Neo is the One. It just says she has a prophecy. Without explicit mention of Neo or the 'One' in her current belief state, changing 'belief_in_neo_as_one' might be an inference. Let's look at the other variables. 'love_for_neo': 'She is not thinking about love.' This suggests it is not 'urgent' or 'confessed'. Is it 'growing'? 'A looseness in her chest, a relief that is not yet safe to feel...'. This is physical relief from the chase, not necessarily love. 'oracle_love_prophecy_status': 'unspoken'. The text says 'The Oracle's prophecy sits in her like a splinter...'. It has not been spoken in this scene. Has it been partially disclosed? No. Has it been confessed? No. So it remains 'unspoken'. Wait, is there ANY change? The scene is a cold open escape. The analysis says 'seeds the Oracle's love prophecy plot... by giving Trinity her first solo moment where her human vulnerability can register... though NOT through any explicit reference to feelings'. This implies the state is internal and unchanged in terms of disclosure. The variables are about disclosure or intensity. If the intensity doesn't change (she is 'not thinking about love'), and disclosure doesn't change (it's 'unspoken'), and belief in Neo isn't explicitly updated (just that she has a prophecy about someone), then there might be no changes. Let's check 'belief_in_neo_as_one' again. 'uncertain' vs 'suspecting'. If she has a prophecy about 'someone specific', does that count as 'suspecting' that person is the One? The variable is 'belief_in_neo_as_one'. If the 'someone specific' is Neo, and she has a prophecy about him, she likely suspects he is the One. But the text doesn't explicitly name Neo in the psychology. It's a risk. However, the 'd3' section says 'Morpheus knows... her prophecy involves someone specific'. It doesn't say she knows it's Neo. It's a stretch. Let's look for 'not_expressible'. The analysis asserts her physical state (adrenaline, fear, relief) and her operational mindset. These are not in the vocabulary. The vocabulary is very specific to the Neo/Love/Prophecy arc. If the analysis does not assert a change in those specific relational/prophecy states, the answer is an empty list. The analysis says 'She is not thinking about love.' This supports 'unrecognized' or 'growing' but doesn't assert a *change* to one of the other values. It describes her current state as focused on survival. 'The Oracle's prophecy sits in her...' describes a static possession, not a change in status. Therefore, no changes are asserted for the specific variables provided.",
+    "serves_plot": "pl-03"
+   }
+  ]
+ },
+ "_ensemble": {
+  "writer": "glm-5.2-abliterated-q3km",
+  "bookkeeper": "qwen3.8-27b",
+  "vocabulary_size": 3,
+  "changes_recorded": 1,
+  "not_expressible": [
+   "The analysis asserts a significant change in Trinity's physical and emotional state from high-stress combat survival (tension 85) to relief and safety (tension 25), including specific physiological details like heart rate deceleration and 'a looseness in her chest', but the vocabulary does not include variables for stress, tension, physical relief, or survival status.",
+   "The analysis asserts that Trinity's operational competence is highlighted and that she establishes the 'hardwired-phone-as-exit rule' as a concrete fact, but there is no variable for operational knowledge, rule establishment, or tactical status.",
+   "The analysis asserts that Trinity's belief in the Agents' capabilities is refined (she realizes they are 'beatable in the moment but not defeated'), but there is no variable for belief in the Agents or their threat level."
+  ],
+  "code_problems": [],
+  "grounding": [
+   "decision never mentions the bound location (\"HEART O' THE CITY HOTEL\")"
+  ],
+  "presence": []
+ }
+}

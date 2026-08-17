@@ -1,0 +1,790 @@
+{
+ "binding": {
+  "scene_id": "sc-001",
+  "location": "HEART O' THE CITY HOTEL",
+  "time_of_day": "NIGHT",
+  "on_screen": [
+   "BIG COP"
+  ]
+ },
+ "target": {
+  "kind": "scene",
+  "node_id": "sc-001",
+  "ordinal": 1
+ },
+ "situation": "No story has yet unfolded. The Heart O' the City Hotel exists as a designated escape point with a functional hardline — a location whose narrative role is to serve as a threshold between pursuit and extraction. A police officer labeled BIG COP is the only entity cued to appear. The Agents (gr-01) are in an active hunting phase pursuing Trinity (ch-02) through the Matrix, though they are not present in this room. The Matrix (cn-01) is uncompromised. Every named character is in their starting state. This is the first frame the audience will see.",
+ "craft": {
+  "audience_need": "The audience arrives with no established contract. Their first need is to be hooked — not by exposition but by a visceral demonstration that this world operates at a velocity and with stakes unlike anything they expect from a police procedural surface. The audience band for a late-90s cyberpunk science fiction thriller expects to be dropped in media res, to feel disorientation that resolves into fascination rather than confusion. They need a promise: this story will move fast, the danger will be real, and the rules of what is possible are not what they think. They do not need to understand everything. They need to need to understand everything.",
+  "genre_convention": "The science-fiction thriller opens with a set piece that establishes the threat matrix before the protagonist appears. The convention is the cold open — action first, context later. This node satisfies the convention by beginning inside a pursuit already in motion, with law enforcement closing in on a location that will become an escape. It deliberately refuses the expectation that the police are the real threat — the real threat is something the police cannot see and cannot fight, which will be revealed through the gap between what the officers expect and what actually happens. The genre also demands that the first scene's action plant a question the audience cannot stop watching until answered: who is being pursued, and how did she do what she just did?",
+  "theme_and_style": "The story root's theme — that reality is a prison and the first step to freedom is sensing the bars — demands that the opening scene show the prison from inside, without labeling it. The register is plain, the sentence length varied, the figurative density medium. Forbidden tics apply immediately: no character states feelings, no interior monologue, all psychology externalized into action and blocking. The Gibson-noir texture means the world is rendered through surfaces — fluorescent light, linoleum, the hum of machinery — and paranoia lives in what is slightly wrong, not in what is announced. The PK Dick instability of reality must be present as a flicker, not a lecture. This node must establish that the visual grammar of this film is surveillance, screens, reflections, and the frame within the frame — the world is always being watched by something the characters cannot see.",
+  "dramatic_function": "This node is the disturbance that launches plot pl-01 (st1) and plot pl-05 (st1) simultaneously. It must establish the Agents as a hunting force, Trinity as someone capable of evading them through means that exceed normal human capability, and the Heart O' the City Hotel as a location with a functional hardline — an exit. The tracking bug (ob-04) remains in Smith's possession, establishing that the Agents' surveillance apparatus is active but not yet deployed against Neo. The scene's structural function is to create the first promise of the film: that the boundary between the possible and the impossible is about to be violated, and that the audience is being shown a world where the rules are different from what they appear. It also establishes the exit-via-phone mechanic that will become critical in every subsequent Matrix sequence.",
+  "tension_management": {
+   "entering": 0,
+   "leaving": 85,
+   "how": "The scene opens at zero — the audience has no expectations yet, no investment, no fear. The tension is built entirely through the gap between the police procedure (which reads as routine, controlled, low-stakes) and the reality that something is wrong in a way the police cannot handle. The SWAT team's professional confidence becomes the source of dread: the more competent and calm they are, the more the audience fears for them, because the scene's grammar — the flickering lights, the wrongness in the environment, the way Trinity moves — signals that their competence is irrelevant. The tension exits near peak because the scene ends on an escape that should be impossible, leaving the audience with an unanswered question rather than a resolution."
+  },
+  "why_now": "This must be the first scene because it establishes the rules of the world through action, not exposition. Every subsequent scene depends on the audience already knowing that: (1) Agents are pursuing someone and are terrifying even to trained operatives; (2) the world inside the Matrix looks real but can be violated in ways that reveal its artificiality; (3) escape requires a hardwired phone line, establishing the mechanic that will govern every subsequent Matrix sequence; (4) Trinity is capable and is connected to something larger than herself. If any of these are established later, the audience will be confused when these mechanics appear without setup. The opening chase is the tutorial level — it teaches by showing, not telling.",
+  "why_not_otherwise": [
+   {
+    "alternative": "Open with Neo at his computer, establishing the protagonist and his search before introducing the world's danger.",
+    "rejected_because": "This is the standard thriller structure and it is what the audience expects. It is safe. It also front-loads a character the audience has no reason to care about yet, and it delays the establishment of the world's rules — rules that make Neo's later search meaningful. The audience needs to see the stakes before they meet the person who will be drawn into them. Starting with Neo also forces exposition about hacking and his double life before the audience has a reason to be interested in it.",
+    "nearly_chosen": true,
+    "what_would_flip_it": "If the story were structured as a pure character study rather than a thriller — if the genre were drama rather than science fiction — opening with Neo's interiority would be correct. The thriller genre's requirement for a hook that precedes the protagonist is what makes the cold open the right choice."
+   },
+   {
+    "alternative": "Open with the Agents in their office, establishing the antagonists' perspective and their awareness of the threat before showing the pursuit.",
+    "rejected_because": "This gives the audience the antagonists' frame before they have seen what makes the antagonists frightening. It is telling rather than showing. The Agents' menace is more effective when the audience encounters them through their effects — the police response, the wrongness in the environment — before seeing them directly. Showing Smith in an office humanizes him too early; his later revelation that he hates the Matrix lands harder if the audience first encounters him as an implacable, inhuman force.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "If the story were structured as a cat-and-mouse thriller with equal screen time for hunter and hunted from the outset, this opening would be appropriate. But the story's structure keeps the Agents as forces of nature until Smith's monologue to Morpheus — their interiority is a late-act revelation, not an opening frame."
+   },
+   {
+    "alternative": "Open with a title card or voiceover establishing the premise of the Matrix before showing any action.",
+    "rejected_because": "This violates the story's own stylistic prohibition on exposition that communicates only information. It also destroys the central structural strategy of the film, which is to make the audience learn the truth at the same pace Neo does — to put the audience inside the same deception. A voiceover explaining the Matrix at the start would turn the entire film into a heist movie where the audience knows the rules and watches the characters navigate them, rather than a mystery where the audience discovers the rules alongside the protagonist.",
+    "nearly_chosen": false,
+    "what_would_flip_it": "Nothing. The story's thematic architecture requires that the audience be deceived alongside Neo. Any opening that explains the premise is structurally incompatible with the story being told."
+   }
+  ],
+  "promises": {
+   "made": [
+    "The world shown is not what it appears — reality can be violated in ways that the characters and audience do not yet understand",
+    "There are people who can move and act in ways that exceed normal human capability, and they are being hunted",
+    "Escape from pursuit requires specific infrastructure (hardwired phone lines) — this is a world with rules, even if the rules are not what they seem",
+    "The forces pursuing Trinity are more dangerous than armed police and operate through the police rather than alongside them",
+    "Trinity is connected to a network or organization that has resources and capabilities the audience has not yet seen"
+   ],
+   "kept": []
+  }
+ },
+ "interaction": {
+  "what_collides": "The collision is between institutional force (the BIG COP and by extension the police apparatus) and individual capability that exceeds what institutional force can comprehend or contain. The officer believes he is closing a standard tactical net on a suspect. Trinity's presence — if she appears or is signaled — represents a force that treats the police's tactical geometry as irrelevant. The deeper collision is between the Matrix's enforcement apparatus (the Agents, operating through police as proxies) and the resistance's extraction infrastructure (the hardline phone, the crew on the other end). The officer is caught between forces he cannot see.",
+  "power_balance": "On the surface, the police hold overwhelming tactical superiority — numbers, weapons, coordination, institutional authority. The scene's tension comes from the fact that this superiority is illusory. Trinity's power is not martial; it is knowledge (she knows what the police do not), capability (she can move in ways they cannot), and infrastructure (she has an exit they cannot block). The balance shifts the moment Trinity acts — the police's advantage evaporates not because she outguns them but because she operates on a level they cannot reach. The BIG COP enters thinking he holds power. He exits (if he exits) understanding he was irrelevant.",
+  "information_asymmetry": "The BIG COP knows: the tactical layout, his team's positions, the suspect's last known location, the rules of engagement. He does not know: that the Matrix is a simulation, that the Agents are using his team as disposable assets, that Trinity can bend the simulation's rules, that the phone line is an exit point, that the woman he is pursuing is not a terrorist in any sense he understands. Trinity knows all of this. The Agents know more than both — they understand the system and are adapting in real time. The audience knows less than any of them and is learning by watching the gaps between what each party expects and what happens.",
+  "turning_point": "The pivot occurs when the environment stops behaving according to the police's expectations — when Trinity demonstrates capability that no human in the room can explain. This is the moment the scene transforms from a police procedural into something else. For the audience, this is the moment the genre contract is revealed: you are not watching a thriller about cops and robbers. You are watching a thriller about the nature of reality. Everything after this moment in the film is a negotiation with that revelation."
+ },
+ "psychology": [
+  {
+   "entity": "BIG COP",
+   "entering_state": "A senior tactical officer arriving at the tail end of a briefing, still in the cognitive mode where this is a high-risk-but-controllable raid. He has been told the suspect is dangerous, probably armed, possibly connected to domestic terrorism. He has done dozens of these. The hotel is a known drug location — that detail fits. He is calm in the way a man is calm when his training has made the extraordinary routine. He has not yet seen anything that contradicts his model.",
+   "perception": {
+    "sight": "The corridor of the Heart O' the City Hotel: water-stained ceiling tiles, a carpet runner worn to threadbare weave at the center of each step, room numbers in brass that have oxidized to a sickly green. The fluorescent tubes overhead stutter at a frequency that makes the walls seem to breathe. The door to the target room is closed. His team is stacked: two at the door, one covering the hall behind, one at the far stairwell. He can see the back of the point man's helmet, the small patch of neck skin between vest and Kevlar. The hallway is narrow enough that his peripheral vision takes in both walls without moving his eyes. There is a rotary phone visible through the gap at the bottom of the target door — the coiled cord, the beige plastic housing. He does not register it as significant.",
+    "sound": "The hum of the fluorescent ballast, a sixty-cycle buzz that sits at the edge of perception. His own breathing, filtered through the respirator mask, each exhale a damp huff inside the rubber. The radio traffic in his ear: clipped confirmations from the perimeter team, the static-pop of encrypted channels cycling. The point man's boot sole squeaking once on the linoleum as he adjusts his stance. No sound from behind the target door. That registers as notable — a room in a drug hotel should have a television, voices, something. The silence has a texture to it, the quality of a space being held deliberately empty.",
+    "touch": "The grip of the submachine gun is textured polymer, warm from his hand. The sling pulls across his chest where the weight of the weapon hangs. The vest is tight around his torso, plates pressing against his sternum and spine. His gloves are damp inside — not sweat, just the moisture that collects in sealed rubber. The earpiece sits hard against his ear canal. The respirator mask presses the bridge of his nose; there is a point of pain there that he has learned to compartmentalize. The floor through his boots feels uneven — old wood under rotted carpet, a slight give that makes him distribute his weight carefully.",
+    "smell": "The hotel hallway: mildew, old cigarette smoke embedded in the carpet over years, the chemical sting of whatever cleaning agent was last used on the linoleum — ammonia-based, applied months ago. Inside his mask: rubber, the salt of his own breath, a faint taste of adhesive where the seal meets his cheek. The team's collective smell: gun oil, synthetic fabric, the metallic tang of equipment.",
+    "taste": "Dry mouth. The adhesive taste of the respirator seal. He swallowed a sip of station-house coffee forty minutes ago and the memory of it sits in the back of his throat — bitter, burnt, the cream already turning. Nothing else.",
+    "interoception": "Heart rate elevated but controlled — maybe 95 bpm, the level he recognizes from pre-entry. Hands are steady. There is a tightness across his shoulders from the weight of the vest and the tension of the stack. His gut is slightly tightened, the feeling he associates with the moment before entry — not fear, not excitement, just the body marshaling itself. Adrenaline is present as a clarity, a sharpening, not as a tremor. He has urinated twice since the briefing, which he knows is the body's pattern. Bladder is empty now.",
+    "proprioception": "He is positioned third in the stack, behind the point man and the breacher. His back is to the hallway wall, left shoulder pressed against plaster that crumbles at the contact. His knees are slightly bent, weight on the balls of his feet. The weapon is held at low ready, barrel angled at the floor, trigger finger indexed along the receiver. He is aware of his team's positions by sound and by the small visual cues — the silhouette of the breacher's hand positioning the ram, the angle of the cover man's weapon. His body is oriented toward the door.",
+    "attention": "He is focused on the tactical geometry: the door, the team's positions, the timing of the breach. He is monitoring the radio for the go-command. He is watching the point man's hands for the signal. He is NOT attending to: the flickering light fixture behind him, the way the fluorescent tubes seem to pulse in a pattern rather than randomly, the faint distortion at the edge of his vision that might be his mask's seal distorting the lens or might be something else, the fact that the phone line visible under the door is not plugged into a wall jack but runs directly into the baseboard. These details are present in his visual field and being filtered out by his training, which categorizes them as environmental noise."
+   },
+   "appraisal": {
+    "value_at_stake": "Professional competence — the value he has built his identity around. The successful execution of a high-risk entry with no friendly casualties. The validation that comes from being the team that handles the calls other units won't. Secondary: the safety of his officers, which he frames as a professional obligation rather than an emotional bond, though the bond exists.",
+    "valence": 15,
+    "arousal": 65,
+    "self_conscious_emotion": "Anticipatory pride — the quiet satisfaction of a craftsman about to perform at the peak of his craft. There is also a thin layer of something he would not name: the desire to be the one who handles it when the situation goes sideways, to be the officer who is steady when others aren't. This is vanity wearing the uniform of professionalism.",
+    "moral_reading": "He is the thin line. The woman in that room is a suspect — connected to bombings, to infrastructure attacks, to the kind of terrorism that makes cities afraid to go outside. He does not need to hate her. He needs to bring her out alive if possible, and if not possible, to bring his team out alive. The moral clarity of the tactical situation is the thing he relies on: there are officers and there are suspects, and the officers go home. He has not thought about what the suspect might be, only what she has done.",
+    "somatic_marker": "A warmth in the chest that he reads as confidence. The gut is tightened but stable. Hands are dry. This is the body's readiness signature — the one he has felt before every entry for fifteen years and has learned to interpret as competence rather than fear. He does not notice that the warmth in his chest is slightly higher than usual, that his pulse is running five beats faster than his normal pre-entry baseline. He attributes this to the coffee."
+   },
+   "social_norms": {
+    "norms_in_force": [
+     "Chain of command: the tactical commander's call is final, the team executes",
+     "Use-of-force continuum: lethal force authorized based on threat profile, but the preference is capture",
+     "Team cohesion: no one breaks the stack, no one goes individual until the room is cleared",
+     "Professional composure: fear is private, hesitation is failure, the team sees only competence",
+     "Scene preservation: evidence integrity matters after the takedown, don't compromise the room"
+    ],
+    "how_others_would_judge": "His team expects him to be steady, decisive, and first through the door after the breach. They expect clear commands and no hesitation. They would judge any visible fear as weakness, any hesitation as danger to all of them. The tactical commander on the radio expects crisp execution and immediate situation reports.",
+    "how_absent_others_would_judge": "His lieutenant expects a clean operation — suspect in custody, no officer injured, scene preserved for detectives. Internal Affairs expects justifiable force. His wife expects him to come home. The public, if they ever see the body-cam footage, expects to see professionals doing difficult work with restraint. He carries all of these expectations as a single pressure: do it right.",
+    "standing_at_risk": "His position as a senior tactical officer — the one younger officers look to, the one the lieutenant calls first. More deeply, his identity as someone who is never the one who freezes, never the one who makes the wrong call when the room goes bad. If he hesitates, the team loses trust. If he makes the wrong call, someone dies and the tape is reviewed frame by frame.",
+    "norm_conflict": "The preference for capture conflicts with the threat profile he has been given, which authorizes lethal force. The professional composure norm conflicts with the biological reality that his body is preparing for something more extreme than a standard entry — the gap between what he is showing his team and what he is feeling is wider than usual, and he is aware of this gap in a way he usually isn't. He resolves this by trusting the composure norm: if he acts calm, he will be calm."
+   },
+   "theory_of_mind": [
+    {
+     "other": "ch-02",
+     "d1": "The suspect is a female domestic terrorist, likely armed, likely trained — the file mentioned 'martial arts training' and 'possible military background.' She is cornered in the room and knows she is surrounded. A cornered suspect is the most dangerous because they have nothing to lose. She will either try to shoot her way out or try to negotiate. She will not try to fight hand-to-hand against a stacked entry team because that would be suicidal. She is rational enough to have evaded capture this long, so she is rational enough to know this is over.",
+     "d2": "She knows the police are outside. She can hear the team stacking up — the floor creaks, the radio traffic is audible if she has equipment. She is calculating her options right now and will conclude that fighting is futile. She may be preparing to destroy evidence or to make a statement. She does not know the exact layout of the team, but she knows the door is the only entry point.",
+     "d3": "She believes the police are her primary threat and is preparing for a confrontation with police. She does not know about the perimeter teams in the stairwells and on the roof. She believes she has one option — the door — and is focused there. She does not know that the tactical commander has authorized a hard breach.",
+     "accuracy": "Every layer of this model is wrong. The suspect is not a terrorist in any sense he understands. She is not cornered — she has an exit he cannot see or comprehend. She is not preparing to fight or negotiate; she is preparing to leave through a mechanism that does not exist in his ontology. His model of her as a rational actor operating within the same physical rules he operates within is the fundamental error, and it will cost him everything in the next thirty seconds. He has categorized her as a competent criminal; she is something his categories do not contain."
+    },
+    {
+     "other": "ch-04",
+     "d1": "The federal agent who briefed them was unusual — tall, composed, wearing a suit that was too good for the neighborhood. He spoke about the suspect with a precision that felt clinical rather than tactical. He did not seem afraid of her, which was itself notable; most agents who request tactical support show some anxiety. He seemed certain they would find her here, which was unusual — usually the tip is soft and the team adjusts on the ground. He did not ask about rules of engagement, which means he does not care about the outcome as long as she is stopped.",
+     "d2": "The agent views the tactical team as a tool — necessary but expendable. He briefed them the way you brief a component, not the way you brief a partner. He does not expect casualties because he does not think about casualties in terms that involve the team's welfare. He is using the police because the police have jurisdictional access he lacks.",
+     "d3": "The agent believes the team will succeed because the suspect is trapped. He has information he has not shared — the certainty in his voice came from knowledge, not confidence. He is not worried about the team because he knows something about the situation that makes the team's safety irrelevant to his calculation.",
+     "accuracy": "He is closer to the truth than he knows — the agent IS using them as a tool and DOES have information he has not shared. But his model of the agent as a federal officer with jurisdictional motives is fundamentally wrong. The 'agent' is an Agent — a program executing the Matrix's enforcement protocols. The agent does not view the team as expendable because of callousness; the agent views them as expendable because they are not real to it in the way they are real to themselves. The BIG COP senses the wrongness in the briefing but categorizes it as 'federal arrogance,' which is a category his experience supports. This misclassification prevents him from recognizing that the man who briefed him is the actual threat — not to the suspect, but to the team. The agent's certainty that they will find the suspect is not based on intelligence; it is based on the fact that the agent has been shaping the pursuit to drive the suspect here. The BIG COP and his team are part of a mechanism they cannot see, and their role in it is to apply pressure that forces the suspect toward the exit, not to capture her."
+    },
+    {
+     "other": "gr-01",
+     "d1": "The federal agents coordinating this operation are part of an anti-terrorism task force with resources and intelligence beyond what local police possess. They are operating within the legal framework — a federal request for tactical assistance on a terrorism suspect is standard. The lead agent's certainty about the location suggests signals intelligence or a wiretap, which is above his clearance level.",
+     "d2": "The agents view the tactical team as useful for the physical apprehension but not essential to the operation. They would proceed regardless of police involvement, using their own resources if necessary. The police are a convenience, not a necessity.",
+     "d3": "The agents believe the tactical team will follow the plan as briefed and will not deviate based on the team's own assessment of the situation. The agents have planned for the team's behavior and have factored it into their operational timeline.",
+     "accuracy": "The error is ontological, not tactical. He believes the agents are human federal officers operating within a legal framework. They are not. They are programs — enforcement routines — and the 'operational timeline' is not a plan but a deterministic sequence. The agents have not 'factored in' the team's behavior; they have caused it. The team's presence here is not a tactical decision by human agents but a computed output of the Matrix's pursuit algorithm. The BIG COP's belief that he is participating in a law enforcement operation is the deepest error — he is executing a subroutine. This error is not correctable within the unit because nothing in his experience provides the category 'I am a process running inside a simulation.'"
+    }
+   ],
+   "urges": {
+    "cravings": "The coffee he left in the car. A cigarette — he quit six years ago but the pre-entry craving never went away. The desire to be past the door, past the uncertainty, in the moment when the room is cleared and the situation resolves into something his training can hold.",
+    "physical_needs": "The respirator is pressing his nose; he wants to adjust it but won't because the team is watching. His bladder is empty but the muscles around it are tight. His shoulders ache from the vest. He needs this to be over in the way you need a held breath to end.",
+    "psych_needs_conscious": "Execute the breach cleanly. Bring the team out intact. Bring the suspect out alive if possible. Demonstrate — to the lieutenant, to the team, to himself — that he is the officer who handles the hard ones.",
+    "psych_needs_unconscious": "He needs the world to make sense. He needs the categories — suspect, officer, threat, procedure — to hold. He needs the situation to resolve into the shape his experience predicts: a door, a room, a person, a resolution. Beneath the professional need for a clean operation is the need for the world to be the world he has always known it to be. This is the need that will be most damaged by what happens next.",
+    "avoidances": "He is avoiding the thought that something is wrong in a way his training cannot address. The silence in the room, the quality of the fluorescent flicker, the way the agent's certainty felt — these are data points he is actively suppressing because they do not fit his model. He is avoiding the recognition that his model might be inadequate. He is also avoiding the specific fear that this is the one where it goes wrong — not wrong in the way he has trained for, but wrong in a way he cannot train for."
+   },
+   "impairments": {
+    "physical": "none — he is in good physical condition for his age, well-rested, no injuries",
+    "medical": "none",
+    "magical": "none",
+    "chemical": "The caffeine from the coffee forty minutes ago — a mild stimulant effect that he is misattributing to readiness. No other substances.",
+    "coercive": "The federal briefing created a frame he cannot question: the threat profile, the location, the authorization. He is operating under a plan provided by actors he assumes are legitimate authorities. This is not coercion in the threat sense but in the epistemic sense — his understanding of the situation has been constructed for him by entities with a fundamentally different relationship to reality.",
+    "cognitive": "He cannot think clearly about the possibility that the situation is not what it appears because he lacks the conceptual framework to do so. His training has optimized him for fast, decisive action within a well-defined threat model. The possibility that the threat model itself is wrong — that the categories 'suspect,' 'agent,' 'weapon,' 'escape' do not mean what he thinks they mean — is not available to him as a thought. This is not stupidity; it is the limitation of a competent mind operating inside a false ontology.",
+    "net_effect": "All of his capabilities — tactical skill, physical readiness, leadership, composure — are fully operational and will be deployed at peak effectiveness against a problem they are entirely inadequate to solve. His competence is itself a vulnerability because it delays the moment of recognition. A less competent officer might hesitate, might sense the wrongness sooner, might not enter the room. His competence carries him forward into a situation his competence cannot save him from."
+   },
+   "deliberation": {
+    "framing": "This is a high-risk tactical entry on a cornered terrorism suspect. The problem is execution: timing the breach, controlling the room, securing the suspect, protecting the team. The problem is NOT 'what is this situation?' — that question has been answered by the briefing and is not being re-examined.",
+    "options_weighed": [
+     {
+      "option": "Execute the hard breach as planned: ram the door, flashbang, entry, secure",
+      "predicted_outcome": "Suspect is either captured in the room or has already fled. High probability of capture given the perimeter. Moderate risk of armed resistance. Team is trained and equipped for this scenario.",
+      "cost": "If the suspect is armed and chooses to fight, there is a non-zero probability of officer injury. The room is small and the angles are bad. But the team has the advantage of numbers, surprise, and equipment."
+     },
+     {
+      "option": "Attempt to negotiate the suspect's surrender through the door before breaching",
+      "predicted_outcome": "Gives the suspect time to prepare or destroy evidence. In a terrorism case, the federal preference is swift entry. Negotiation is for hostage situations, not cornered suspects.",
+      "cost": "Delays the operation, gives the suspect initiative, contradicts the federal timeline. The lieutenant would not approve."
+     },
+     {
+      "option": "Withdraw and reassess — something about the situation feels wrong",
+      "predicted_outcome": "If the feeling is correct, withdrawal preserves the team. If the feeling is incorrect, withdrawal is career-ending cowardice and the suspect escapes. He has no evidence to support the feeling — only the silence, the lights, the agent's certainty. None of these are actionable.",
+      "cost": "Professional self-destruction if wrong. Potential escape of a terrorism suspect. He cannot articulate what 'wrong' means in a way that would survive a debrief."
+     }
+    ],
+    "reasoning": "The team is stacked, the perimeter is set, the authorization is clear. The suspect is in the room. Every minute of delay is a minute the suspect can use to prepare or escape. The federal agents have intelligence I don't have, and their read is that this is the moment. My job is to execute the breach, control the room, and secure the suspect. The weirdness — the lights, the silence — is environmental. This is a drug hotel in a bad neighborhood. The lights have always been bad here. The silence is because she's alone. I've done this before. We go on my command.",
+    "chosen_because": "The training takes over. When the model says 'execute' and the body is ready and the team is in position, the decision is not really a decision — it is a release. He has been building toward this moment since the briefing and the momentum of the process carries him forward. The alternative — to stop, to question, to withdraw — would require a piece of information he does not have and a category of thought he does not possess.",
+    "known_unknowns": "He does not know if the suspect is armed. He does not know if she is alone. He does not know if the room is booby-trapped. He does not know what she is willing to do. He hedges against these unknowns with the stack, the flashbang, the perimeter. He does NOT know that he does not know what the situation IS — and this meta-unknown is the one that will destroy him."
+   },
+   "control": {
+    "mode": "inhibited",
+    "felt": "A tightness in the chest that is higher than his normal pre-entry state. A faint signal from somewhere below conscious thought that something is wrong — not a thought, but a feeling, the kind that makes the hair on the forearms stand up under the sleeves. The body is registering something the mind has not yet processed: the quality of the silence, the pattern in the lights, the wrongness of the phone cord. The body is less certain than the mind.",
+    "expressed": "Absolute professional stillness. The face behind the mask shows nothing — this is itself a skill, the ability to suppress the micro-expressions that would read as hesitation. The hands are steady on the weapon. The voice, when he speaks, is flat and controlled. The body language is the body language of a man who has done this many times and will do it many times again.",
+    "divergence_reason": "The professional composure norm requires the suppression of all signals that could read as uncertainty. The divergence is not hypocrisy — it is the trained separation of interior and exterior that tactical operations require. The problem is that the interior signal is not the normal pre-entry anxiety he has learned to manage; it is something else, something his training does not have a protocol for, and suppressing it means suppressing the last warning he will get.",
+    "leakage": "His trigger finger has migrated from the receiver to the trigger guard — a millimeter shift that the point man, if he looked, would read as 'ready to fire.' His breathing has slowed slightly, which is the opposite of what it should be doing at this stage of an entry — it is the breathing pattern of a man whose body is trying to slow down because something is wrong, not speed up because action is imminent. He swallows once, hard, the Adam's apple visible above the vest neckline. These are the only signs.",
+    "inhibited_impulse": "The impulse to call a hold — to raise a fist and stop the stack, to say 'wait, something's wrong' — is present and is being actively suppressed. He is suppressing it because he cannot articulate it, because the team is watching, because the lieutenant is on the radio, because the federal agents are listening, because every structure he operates within says that the feeling is just nerves and nerves are private. The impulse is correct. The suppression is catastrophic."
+   },
+   "intention": "To execute the breach on his command, enter the room, and secure the suspect with his team. To bring every officer out alive. To perform this operation at the standard his team expects and his lieutenant requires.",
+   "action": "He gives the breach command — a flat, quiet word that releases the stack. The ram hits the door. The flashbang goes through. He enters third in the stack, weapon up, scanning for the threat. He finds an empty room. He processes this as 'suspect has fled' and begins coordinating the search — but the room is not just empty, it is wrong, and the wrongness is arriving at the same moment as the realization that the phone is off the hook and the line is dead and there is no one here and no way out except the door he came through. The suspect is gone in a way that does not fit any model he has.",
+   "trajectory": [
+    {
+     "phase": "Pre-breach — the stack",
+     "shift": "He is in the final moments of the stack-up, fully committed to the model that this is a standard high-risk entry. His professional identity is engaged; his body is running the pre-entry sequence he has run dozens of times. The animal-warning signal is present but suppressed. He is, in every visible and functional way, the officer he has trained himself to be.",
+     "trigger": "The go-command from the tactical commander on the radio, confirming the perimeter is set and the breach is authorized.",
+     "state_delta": {}
+    },
+    {
+     "phase": "The breach command",
+     "shift": "The moment of commitment — he gives the command and the stack moves. The decision is now irreversible. The interior feeling shifts from controlled readiness to the tunnel focus of action: everything narrows to the door, the team, the entry. The suppressed wrongness is still there but is now buried under the cognitive load of execution. He is, for the first time in the unit, not thinking — he is performing.",
+     "trigger": "His own voice giving the command — the word that converts planning to action and makes the abstract real.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Entry — the empty room",
+     "shift": "The room is empty. The flashbang's afterimage is still burning in his eyes, the smoke is acrid, and there is no one to engage. The model — suspect, room, confrontation — collapses. For a fraction of a second he is in freefall: the training has no procedure for 'the suspect was never here in the way you thought.' Then the training reasserts itself and he begins to reframe: she fled, she's in the walls, she went out the window. But the window is painted shut. The walls are solid. The only door is the one he came through. And the phone is off the hook and the line is dead and there is a sound in his ear that is not radio static — it is the sound of the system he lives inside showing him its seams.",
+     "trigger": "The visual absence of the suspect where the model predicted presence — the empty room where a person should be.",
+     "state_delta": {}
+    },
+    {
+     "phase": "Aftermath — the model breaks",
+     "shift": "He does not have words for what has happened. The professional vocabulary — 'suspect fled,' 'scene secured,' 'requesting detectives' — is forming in his mouth but it does not match what he is seeing. The phone. The dead line. The way the fluorescent light in the hallway behind him is strobing now in a pattern that looks, if he lets himself see it, like data. For the first time in his career, the frame that has held his world together — there are suspects and there are officers and the officers go home — is not holding. He does not know what is on the other side of that frame. He will not look at it directly. He will file his report using the words that don't fit and he will try, for the rest of his life, not to think about the phone.",
+     "trigger": "The combination of the impossible absence, the dead phone line, and the environmental distortions that he can no longer suppress — the simultaneous failure of every category he uses to organize reality.",
+     "state_delta": {}
+    }
+   ],
+   "leaving_state": "A man standing in an empty room with his weapon still raised, his training holding his body in a tactical posture that has no target, while the model of reality that made him who he is cracks along lines he cannot see and will not name. He is not injured. He is not defeated in any sense his vocabulary contains. He is something his vocabulary does not contain: a man who has seen the edge of the simulation and will spend the rest of his life choosing not to look at it. The professional composure is intact. The interior is a room with a door that is now open and that he is, with everything he has, pushing shut.",
+   "unresolved": "The question he will never ask out loud and will never stop asking inside: what was the phone? Why was the line dead? Where did she go? And beneath those questions, the one that will wake him at 3 AM for years: what was the man in the suit who briefed them? What was he, really? He will not pursue these questions. He will file the report. He will go home. He will be different, and he will not know how, and he will never talk about it."
+  }
+ ],
+ "specimen": {
+  "binding": {
+   "scene_id": "sc-001",
+   "location": "HEART O' THE CITY HOTEL",
+   "time_of_day": "NIGHT",
+   "on_screen": [
+    "BIG COP"
+   ]
+  },
+  "moment": "The breach team has secured the room and found it empty. The phone is off the hook. The room is wrong in ways the BIG COP cannot name. He is attempting to restore procedural order through radio communication, and the responses he is getting — or not getting — are widening the gap between the world he operates in and the one he has stumbled into. This is the turning point: the moment the police procedural grammar collapses and something else asserts itself through the spaces between his words.",
+  "lines": [
+   {
+    "speaker": "BIG COP",
+    "line": "Lieutenant, room is clear. Suspect is not— there's nobody here. Phone's off the hook. I need you to—",
+    "subtext": "He is trying to deliver a clean tactical report and cannot. The sentence breaks because the facts do not arrange themselves into a tactical report. 'Phone's off the hook' is a detail that belongs to no checklist he has. He is including it because his body is telling him it matters even though his training cannot say why."
+   },
+   {
+    "speaker": "BIG COP",
+    "line": "Negative, I said the room is clear. There's no exit except the door we came through. No window, no vent cover removed, nothing. I need a second team on the—",
+    "subtext": "He is arguing with something he has not been told. The lieutenant has not contradicted him yet but he is already defending the reality of an empty room, which means he knows the empty room is indefensible. The tactical language is running ahead of the facts because the facts are running out."
+   },
+   {
+    "speaker": "BIG COP",
+    "line": "Say again, LT. You're breaking— say again. I copy the federal agents are en route, I do not copy— who authorized a federal override on a—",
+    "subtext": "The radio is doing something he did not expect. He does not know whether the signal is failing or whether the voice on the other end changed. 'Federal override' is a phrase that makes institutional sense and no sense at all in this context — he is reaching for any framework that puts the world back on its rails."
+   },
+   {
+    "speaker": "BIG COP",
+    "line": "Negative. Negative. We have positive control of the room. Nobody entered, nobody left. I am telling you there is no—",
+    "subtext": "He has stopped addressing the lieutenant and started addressing whatever is making the lieutenant's voice say what it is saying. 'Positive control' is a phrase that means 'I am certain of the physical facts' and he is using it as a ward against the possibility that the physical facts are not the facts that matter."
+   },
+   {
+    "speaker": "BIG COP",
+    "line": "The phone. The phone line is— it's dead. I don't mean off the hook, I mean there's no dial tone, there's no— the line's been cut. But the cord's intact. Sir, the cord is intact and the line is—",
+    "subtext": "He has found the thing that does not fit any model. A phone line that is physically intact and functionally dead is not a police problem; it is a physics problem. He is reporting it because that is what you do when you find something you cannot explain — you push it up the chain — and he does not yet understand that the chain is the thing that is broken."
+   },
+   {
+    "speaker": "BIG COP",
+    "line": "Who is this. That's not— LT, that is not your— put the lieutenant back on. Put him back on the—",
+    "subtext": "The voice on the radio is no longer the lieutenant. He does not know what it is. He is not afraid in the way he was afraid of the suspect — that was a fear with a shape, a tactical problem. This is the fear of a door opening in a room he thought had four walls. His demand to speak to the lieutenant is a demand that the world have the number of dimensions he was born into."
+   },
+   {
+    "speaker": "BIG COP",
+    "line": "Team, fall back to the hall. Fall back now. Everybody out of the— get off the— get OFF the phones, do not touch the—",
+    "subtext": "He has connected the dead phone line to whatever is happening on the radio, and the connection is not logical but it is correct. He is trying to pull his team back from something he cannot name, using the only authority he has left — the authority of a man yelling at people to move. The sentence cannot finish because the thing he is warning them about does not have a name in his language."
+   },
+   {
+    "speaker": "BIG COP",
+    "line": "—there's nobody here. I'm looking at the room. There is nobody— the phone is— it's ringing. The dead line is ringing.",
+    "subtext": "The last fact. A phone with no signal, no connection, intact cord, dead line, is ringing. He is describing the moment the simulation reveals itself to someone who has no framework for simulation. The sentence structure collapses because his grammar, like his training, is built for a world with consistent physics and this phone is not in that world. He is still narrating because narration is the last thing he knows how to do."
+   }
+  ],
+  "what_this_exposes": "The analysis treated the BIG COP's psychological state as a static configuration — inhibited, suppressing, leaking. Writing the lines reveals that his interior is not a state but a trajectory of collapse. Each line is an attempt to re-establish the procedural frame, and each fails at a higher level than the last: first the tactical facts fail (the room is empty with no exit), then the institutional frame fails (the radio voice changes), then the physical frame fails (the dead line rings). His language degrades in a specific pattern — the tactical jargon ('positive control,' 'second team') gives way to incomplete sentences, then to direct address ('who is this'), then to raw imperative ('get OFF'), then to bare description with no interpretation at all. The analysis said the suppression was catastrophic but did not show what catastrophe sounds like: it sounds like a man running out of euphemism. The most exposing line is the last one — 'the dead line is ringing' — because it is the first sentence in the scene that contains no interpretation at all. He has stopped trying to understand and is simply reporting the impossible. That is the exact moment the police procedural ends and the other thing begins. The analysis also assumed the radio was a channel for information. The lines reveal the radio is a character — or rather, the radio becomes the interface through which the Matrix's enforcement apparatus speaks, and the BIG COP's tragedy is that he hears it as a communications failure rather than a communication.",
+  "risks_checked": [
+   {
+    "risk": "The scene could read as a standard police procedural with supernatural elements bolted on, failing to establish that the wrongness is structural rather than anomalous.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "Line 5 — 'the cord's intact and the line is—' — establishes that the wrongness is not an external force acting on the room but a property of the room itself. The phone line is not cut; it is dead while physically whole. This is the signature of the Matrix: the surface is intact, the function is impossible. The BIG COP's attempt to report this through police channels (line 3) and the channel's transformation (line 6) show the wrongness extending from the object to the institution to the voice of authority. The procedural does not have supernatural elements added to it; the procedural is revealed to have been inside the wrongness the entire time."
+   },
+   {
+    "risk": "The BIG COP could read as incompetent or panicked, undermining the tension that comes from his professional confidence being rendered irrelevant.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "Lines 1 and 2 show him performing correct tactical procedure — reporting clearly, requesting additional resources, accounting for exits. His language in lines 3 and 4 ('who authorized a federal override,' 'positive control') is institutional and controlled even as the situation deteriorates. He does not panic until line 7, and the panic is expressed as a tactical command ('fall back to the hall'), not a scream. He is competent throughout. The horror is that competence is the thing being made irrelevant, not that he lacks it."
+   },
+   {
+    "risk": "The turning point could be delivered through exposition — a character explaining what is happening — rather than through the gap between expectation and event.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "No line in the exchange explains what is happening. The BIG COP does not say 'the simulation is breaking down' or 'this isn't real.' He says 'the cord's intact and the line is—' and 'the dead line is ringing.' The audience is given the same sensory facts the character is given and must construct the meaning themselves. The turning point is the audience's realization, not the character's narration of it."
+   },
+   {
+    "risk": "The scene could fail to establish Trinity as the absent center of the scene — the person whose capabilities and infrastructure are the reason everything is happening.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "Line 1 establishes the suspect is gone. Line 2 establishes there is no exit. The combination — a person who left a sealed room with no exit — is the only evidence of Trinity's presence, and it is more powerful than showing her. The phone (lines 5 and 8) is her infrastructure, the hardline exit, now used and discarded. The audience constructs Trinity from her effects: an empty room, a dead phone, a ringing line. She is the absence the scene is shaped around."
+   },
+   {
+    "risk": "The voices could be indistinct — a generic authority figure saying generic tense things.",
+    "does_the_exchange_avoid_it": true,
+    "evidence": "The voice is distinct because it is specifically a SWAT officer's voice degrading in a specifically SWAT way. The jargon ('positive control,' 'second team,' 'federal override') is the idiom of a specific institutional culture, and its collapse — from jargon to incomplete sentences to raw imperative to bare description — is a psychological trajectory that could not be swapped into any other character's mouth. A different officer would degrade differently. This one degrades by losing his vocabulary in the order it was acquired: institutional language first, then tactical language, then grammar itself."
+   }
+  ],
+  "voices_distinct": "There is only one speaking voice in this exchange — the BIG COP. The other presence is the radio, which is not a character but a channel that becomes something else. The risk of voice indistinctness is therefore not about two speakers swapping lines but about the single voice being generic. It is not. The voice is distinct because it is precisely located: a specific man, in a specific institutional role, at a specific moment in the collapse of his institutional reality. The idiom is law-enforcement tactical radio, and the way it degrades is the way that specific idiom would degrade — not into screaming or cursing (that would be a movie cop) but into shorter sentences, then fragments, then bare nouns. 'The dead line is ringing' is not something a civilian would say; a civilian would say 'the phone is ringing' and would not specify 'dead' because they would not have spent the previous ninety seconds diagnosing the line's functional state. The word 'dead' is the residue of his diagnostic training. It is the last piece of his competence, applied to the thing that is destroying him. That is what makes the voice his and no one else's."
+ },
+ "dynamics": [
+  {
+   "entity": "lo-01",
+   "kind": "location",
+   "entering_state": "An operational transient-occupancy hotel in a dense urban core, functioning as anonymous shelter for cash clients. Room 1314 contains an analog rotary-dial telephone connected to a live POTS line — unremarkable infrastructure, no current occupants. Hallways are dim, lit by bare fluorescent fixtures. The building's age and neglect are its primary features: water-stained ceiling tiles, worn carpet, fire-exit signage with dead bulbs. It exists as a place that is visited but not inhabited, a waypoint for people who need to be invisible.",
+   "forces_acting": [
+    "Police tactical doctrine converting the building from a structure into a containment grid: perimeter sealed, interior approaches mapped, breach points designated",
+    "The Matrix simulation maintaining the building's physical properties — load-bearing walls, door locks, phone-line connectivity — as fully consistent and rule-bound",
+    "Trinity's knowledge of the building's layout and hardline location, which converts the space from a trap into a corridor",
+    "The Nebuchadnezzar crew's monitoring and extraction capability, which treats room 1314's telephone as a target endpoint rather than a piece of furniture",
+    "Agent pursuit pressure compressing the usable time the space can serve as an exit",
+    "Time — the hardline is available for a finite window; the building's usefulness as an exit is measured in seconds"
+   ],
+   "axis_changes": [
+    {
+     "axis": "meaning",
+     "from": "Anonymous urban decay; a place that exists to be looked through, not at",
+     "to": "A threshold between capture and escape — the single most consequential room in the city for the next ninety seconds",
+     "caused_by": "Trinity's arrival converts the room's phone from inert infrastructure into an active extraction endpoint, and the police cordon converts the building from shelter into kill box"
+    },
+    {
+     "axis": "condition",
+     "from": "Physically intact, functionally dormant — doors lock, lights flicker, phone line carries dial tone",
+     "to": "Breached and contaminated as a tactical site — door frames splintered, entry flashbang residue in the air, the room's contents disturbed by combat movement, the phone off its cradle",
+     "caused_by": "Police tactical entry through the door and Trinity's traversal of the space at combat speed"
+    },
+    {
+     "axis": "control",
+     "from": "No party exercises meaningful control; the building is governed by entropy and municipal neglect",
+     "to": "Contested and then vacated — police hold tactical control of the physical space but the room's functional value (the hardline) is consumed by Trinity and destroyed by her exit, leaving the police in control of nothing that matters",
+     "caused_by": "The fundamental asymmetry between controlling physical space and controlling the extraction vector"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "before any breach — the building as the police understand it",
+     "shift": "The SWAT team's tactical planning converts the hotel from a building into a problem to be solved: sight lines calculated, entry points ranked, the room number treated as a coordinate. The building's decay becomes a tactical variable — thin walls mean less cover, old doors mean easier breach. The phone in 1314 is not considered; it is furniture.",
+     "trigger": "The tactical briefing that assigns team positions and designates room 1314 as the target",
+     "state_delta": {
+      "variable": "location_lo-01_tactical_status",
+      "from": "unmonitored_structure",
+      "to": "active_breach_target"
+     }
+    },
+    {
+     "phase": "breach — the building as combat environment",
+     "shift": "The hallway and room undergo forced conversion from passive architecture into a fight space. Door frames absorb impact. Flashbang detonations leave chemical residue and temporary scorch marks on carpet and wallpaper. The fluorescent lighting, already degraded, is disrupted by concussion. Walls absorb bullet impacts. The room's geometry — the distance from door to window to phone — becomes the terrain of a fight that lasts seconds.",
+     "trigger": "The physical breach of the door to room 1314 by the tactical team",
+     "state_delta": {
+      "variable": "location_lo-01_physical_condition",
+      "from": "intact_dormant",
+      "to": "breach_damage_active_combat"
+     }
+    },
+    {
+     "phase": "extraction — the building as an exit that is consumed",
+     "shift": "The rotary phone in room 1314 is taken off the hook. The line connects to the Nebuchadnezzar's operator. The room's function completes itself: it was an exit, and the exit is used. The phone handset drops. The line goes dead. The room is now just a damaged hotel room again — its significance exhausted, its utility spent. What remains is evidence: shell casings, residue, a phone off the hook with no one on the line.",
+     "trigger": "The completion of the hardline extraction",
+     "state_delta": {
+      "variable": "location_lo-01_hardline_status",
+      "from": "functional_unused",
+      "to": "consumed_dead"
+     }
+    },
+    {
+     "phase": "aftermath — the building as evidence scene",
+     "shift": "The police hold a room that contains the aftermath of something they cannot categorize. The physical evidence — bullet trajectories that don't match any shooter position, the phone off the hook, the absence of a suspect — describes an event that their training has no template for. The building transitions from tactical site to crime scene, but the crime is unclassifiable.",
+     "trigger": "The police discovery that the target is gone and the room contains evidence that contradicts their operational assumptions",
+     "state_delta": {
+      "variable": "location_lo-01_functional_role",
+      "from": "extraction_site_active",
+      "to": "contaminated_crime_scene_inexplicable_evidence"
+     }
+    }
+   ],
+   "leaving_state": "A damaged hotel room containing forensic evidence of a tactical engagement with no corresponding suspect in custody. The phone line is dead. The room's brief, singular function — as an extraction point — has been fulfilled and can never be repeated; the hardline is consumed. The building remains standing but has been permanently stripped of the one property that made it valuable to the resistance: an unused, uncompromised exit. It is now a crime scene that will generate a police report no one will find satisfactory.",
+   "significance_shift": "Before this scene, the Heart O' the City Hotel is a place — decaying, anonymous, beneath notice. After this scene, it is a demonstration: that the resistance's infrastructure is real, that it works, and that it is being hunted. For the police, the building becomes the site of an unexplainable failure. For the Agents, it becomes a data point — a confirmed extraction, a pattern in the resistance's behavior, evidence that the hardline network is still active and that their strategy of using police as interceptors is insufficient. For the Nebuchadnezzar crew, it becomes a spent resource — one fewer exit in a shrinking inventory."
+  },
+  {
+   "entity": "cn-01",
+   "kind": "concept",
+   "entering_state": "A fully operational simulation presenting as consensus reality to approximately seven billion human minds connected to it. All physical laws are enforced consistently: gravity, material strength, human biomechanical limits, the speed of neural processing. The simulation's internal consistency is its primary defense — the illusion is maintained not by hiding its artificiality but by making the artificiality indistinguishable from the real. Enforcement is delegated to Agent programs that operate within the simulation's rules, using human authorities as sensory and tactical extensions. The system has not been visibly violated in this narrative's timeframe.",
+   "forces_acting": [
+    "Trinity's trained ability to exceed the simulation's enforced biomechanical limits — running at speeds and executing movements that the simulation's physics engine should not permit a human body to produce",
+    "The hardline extraction mechanism, which exploits the simulation's phone-line infrastructure as a data egress channel the system's enforcement layer cannot block in real time",
+    "The Nebuchadnezzar crew's operator interface, which reads the simulation's data stream from outside and provides Trinity with tactical awareness the simulation's inhabitants do not have",
+    "Agent pursuit protocol, which adapts the simulation's institutional structures (police command, tactical coordination) to the pursuit of a program that is operating beyond intended parameters",
+    "The simulation's own self-consistency enforcement, which must reconcile the physical evidence of Trinity's movements with the physics model the rest of the connected population experiences"
+   ],
+   "axis_changes": [
+    {
+     "axis": "credence",
+     "from": "The simulation is invisible because it is perfect — its subjects cannot perceive the boundary between simulated and real because there is no perceptible seam",
+     "to": "The simulation has a visible seam — demonstrated through Trinity's movement, the hardline extraction, and the gap between police expectations and outcomes. The seam is visible to the audience, to the police (who cannot name what they saw), and to the Agents (who must adapt to a confirmed breach)",
+     "caused_by": "Trinity's physical performance exceeds the simulation's enforced human parameters, and the hardline extraction demonstrates that the simulation has a structural vulnerability in its communications infrastructure"
+    },
+    {
+     "axis": "cohesion",
+     "from": "Total — the simulation presents a single, consistent experiential layer to all connected minds; physics, biology, and social institutions all behave by the same rules for all observers",
+     "to": "Fractured by observation perspective — for the police, the simulation's rules have been violated in a way they cannot process; for the Agents, a known breach type has occurred and countermeasures are required; for the audience, the simulation's surface has been punctured and cannot be mistaken for seamless again",
+     "caused_by": "The divergence between what the police observe (a suspect vanishing through a phone line, movement speeds incompatible with human biology) and what the simulation tells them is possible"
+    },
+    {
+     "axis": "control",
+     "from": "The simulation's enforcement apparatus exercises comprehensive control through institutional proxies (police, military, infrastructure) and Agent-level direct intervention, with no confirmed breaches in the current operational period",
+     "to": "The simulation's enforcement apparatus has failed to prevent a confirmed extraction — the resistance demonstrated that the system's own communications infrastructure can be weaponized against it, and that human proxies (police) are insufficient to counter operatives who can exceed the simulation's programmed limits",
+     "caused_by": "The successful hardline extraction of Trinity from room 1314 despite a full police cordon and Agent pursuit pressure"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "baseline — the simulation as invisible architecture",
+     "shift": "The simulation operates as designed. Police respond to an alert. Tactical teams deploy. The simulation provides them with a consistent physical environment that behaves according to their training and expectations. The building's walls are walls. The doors are doors. The phone is a phone. Every object performs its simulated function. This is the simulation's strength: it does not need to lie, because the lie is the medium itself.",
+     "trigger": "The opening frame — the simulation is running and all connected minds experience it as reality",
+     "state_delta": {
+      "variable": "concept_cn-01_breach_status",
+      "from": "no_active_breach",
+      "to": "no_active_breach"
+     }
+    },
+    {
+     "phase": "violation — the simulation's physics are exceeded",
+     "shift": "Trinity moves through the simulation in ways that the physics engine does not permit for human-connected minds. The simulation must render her movement — it has no choice, because she is a connected mind generating input — but the rendering is inconsistent with the biomechanical model applied to every other connected human. The simulation does not crash; it does not correct. It renders the violation in real time, and the violation becomes part of the environment's state: bullet holes in walls that should not have been shot from those angles, impact marks that don't match any body in the room, a trajectory through space that no human body should have followed.",
+     "trigger": "Trinity's first movement that exceeds the simulation's enforced human biomechanical limits",
+     "state_delta": {
+      "variable": "concept_cn-01_breach_status",
+      "from": "no_active_breach",
+      "to": "active_physics_breach_in_progress"
+     }
+    },
+    {
+     "phase": "extraction — the simulation's infrastructure is repurposed",
+     "shift": "The hardline extraction uses the simulation's own phone network as a data egress channel. The simulation's phone system is designed to carry voice data between connected points; the extraction uses it to carry a connected mind's entire data stream out of the simulation. The simulation cannot prevent this in real time because the phone system's function — carrying data — is being performed normally. The exploit is not a hack; it is a reinterpretation of what the data represents. The phone line carries a human consciousness instead of a voice, and the simulation's enforcement layer has no mechanism to distinguish the two at the speed required to intervene.",
+     "trigger": "The rotary phone in room 1314 is taken off the hook and the extraction protocol is initiated",
+     "state_delta": {
+      "variable": "concept_cn-01_infrastructure_integrity",
+      "from": "all_systems_nominal",
+      "to": "communications_infrastructure_breached_as_egress_channel"
+     }
+    },
+    {
+     "phase": "aftermath — the simulation as a contested environment",
+     "shift": "The simulation continues running. Seven billion minds experience no disruption. But the simulation's enforcement apparatus has been shown — to the audience, to the resistance, and to the Agents — that it has a structural vulnerability: its own infrastructure can be used against it, and operatives who can exceed its physics limits can move through its enforcement grid. The Agents must now allocate resources to hardline monitoring and to developing countermeasures for physics-exceeding operatives. The resistance has confirmed that its extraction protocols work under pressure. The simulation is no longer a sealed system; it is a contested border.",
+     "trigger": "The extraction's completion and the police discovery of the resulting evidence",
+     "state_delta": {
+      "variable": "concept_cn-01_enforcement_posture",
+      "from": "routine_monitoring",
+      "to": "active_counter_breach_operations_required"
+     }
+    }
+   ],
+   "leaving_state": "The simulation continues to operate without interruption for the vast majority of connected minds. But its enforcement apparatus has suffered a confirmed breach: an operative was extracted through the communications infrastructure despite a full institutional cordon. The Agents must now treat the hardline network as an active vulnerability and physics-exceeding operatives as a confirmed capability of the resistance. The simulation's surface — for the audience — is permanently cracked. Every subsequent scene plays against the knowledge that what looks like reality is a system with seams, and that those seams can be pulled.",
+   "significance_shift": "Before this scene, the Matrix is an abstraction — a title, a premise, something the audience knows about from the film's marketing but has not seen demonstrated. After this scene, the Matrix is a specific, violated thing: a system with rules, with enforcement mechanisms, with structural vulnerabilities, and with people who have learned to exploit them. The audience now understands the Matrix not as a plot concept but as a tactical environment — a space where physics is negotiable for those who know it is simulated, and where the system's own infrastructure is the resistance's primary weapon. The simulation has been transformed, in the audience's understanding, from a prison into a battlefield."
+  },
+  {
+   "entity": "gr-01",
+   "kind": "group",
+   "entering_state": "Active hunting posture, operating through institutional proxies (police tactical units) as sensory and enforcement assets. The Agents have identified a target (Trinity) and have marshaled police resources to intercept her at a location they have identified. Their strategy is to use human authorities as a containment layer while they position to execute direct intervention. They have not yet been seen on screen by the audience. Their capability set — possession of human bodies, real-time adaptation, coordination across the simulation's institutional infrastructure — is entirely undisclosed.",
+   "forces_acting": [
+    "The resistance's extraction protocol, which operates faster than the Agents' ability to physically interdict once a hardline connection is established",
+    "The Agents' reliance on human proxies, which introduces a latency and capability gap — police cannot match Trinity's movement speed or anticipate her extraction method",
+    "The simulation's institutional infrastructure, which the Agents can manipulate (police command channels, tactical coordination) but which has structural limits they cannot exceed in real time",
+    "The hardline's existence as a pre-existing vulnerability the Agents have not yet sealed — they know these lines exist but cannot monitor all of them simultaneously",
+    "The resistance operator's real-time monitoring, which gives Trinity awareness of Agent positioning that the Agents' proxies do not have"
+   ],
+   "axis_changes": [
+    {
+     "axis": "credence",
+     "from": "The Agents' capability is unknown to the audience — they exist as a hunting force referenced in the situation but with no demonstrated power",
+     "to": "The Agents are shown to be a force that commands institutional infrastructure (police, tactical teams) as extension of their will, but whose institutional proxies are insufficient against a prepared, physics-exceeding operative using a hardline exit — they are powerful, organized, and beatable, and both of these facts are now established",
+     "caused_by": "The gap between the police cordon's comprehensiveness and Trinity's successful extraction — the cordon was Agent-orchestrated and it failed, demonstrating both the Agents' reach and its limits"
+    },
+    {
+     "axis": "control",
+     "from": "The Agents exercise control through institutional command — they direct police response, shape tactical geometry, and use the simulation's enforcement architecture as their instrument",
+     "to": "The Agents have lost control of a specific interception event — their institutional cordon was penetrated and their target extracted — and must now shift to a broader strategy of hardline monitoring and proactive surveillance rather than reactive interception",
+     "caused_by": "Trinity's successful extraction through the hardline, which the Agents' police proxies could not prevent because they did not understand the phone line's function as an exit"
+    },
+    {
+     "axis": "cohesion",
+     "from": "Unified hunting strategy — the Agents coordinate institutional resources toward a single interception point with confidence in their tactical superiority",
+     "to": "Strategic reassessment required — the failure of the proxy-interception model means the Agents must develop new countermeasures against hardline extractions and physics-exceeding operatives, creating internal pressure between their reactive and proactive capabilities",
+     "caused_by": "The demonstrated inadequacy of police tactical units as a counter to resistance extraction operations"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "deployment — the Agents as invisible commanders",
+     "shift": "The Agents operate entirely through proxy. They have arranged for a police tactical response to a location they have identified as a resistance extraction point. Their presence is felt only through the precision of the police response — the coordination, the timing, the tactical geometry that suggests intelligence beyond what a police unit would normally possess. The audience does not see them. The police do not know they are being directed. The Agents' strategy is to let institutional force create the containment while they prepare for direct intervention if needed.",
+     "trigger": "The initiation of the police tactical operation against room 1314",
+     "state_delta": {
+      "variable": "group_gr-01_operational_mode",
+      "from": "surveillance_and_targeting",
+      "to": "proxy_interception_active"
+     }
+    },
+    {
+     "phase": "failure — the proxy model's limits exposed",
+     "shift": "The police tactical cordon, however competently executed, cannot prevent the extraction because the extraction does not rely on any capability the police are trained to counter. The officers can breach doors, clear rooms, and establish perimeters. They cannot stop a person from using a phone line as a data egress channel because they do not know that is possible. The Agents' proxy strategy fails at the point where Trinity's capabilities and infrastructure exceed the simulation's institutional enforcement limits. The Agents are now in a reactive posture — their primary interception asset has been rendered irrelevant.",
+     "trigger": "Trinity's movement through the police cordon at speeds and via methods the officers cannot match or anticipate",
+     "state_delta": {
+      "variable": "group_gr-01_interception_status",
+      "from": "cordon_active_target_contained",
+      "to": "cordon_breached_target_extracting"
+     }
+    },
+    {
+     "phase": "aftermath — strategic recalibration",
+     "shift": "The Agents must absorb the failure and adapt. The police will file reports that describe an impossible event. The Agents will read those reports and extract tactical intelligence: the resistance is using this hotel's hardline, the extraction method is the phone system, the operative's movement speed indicates physics-exceeding capability. The Agents' strategy must shift from reactive interception (seal the room after the target enters) to proactive surveillance (monitor all hardlines, identify resistance operatives before they reach extraction points). This is a slower, more resource-intensive posture, but it is the only viable response to a demonstrated capability gap.",
+     "trigger": "The completion of the extraction and the Agents' need to process the failure as tactical intelligence",
+     "state_delta": {
+      "variable": "group_gr-01_strategic_posture",
+      "from": "reactive_interception_via_proxies",
+      "to": "proactive_hardline_monitoring_and_operative_identification_required"
+     }
+    }
+   ],
+   "leaving_state": "The Agents have been established as a force that commands institutional infrastructure but has just suffered a confirmed failure of their proxy-interception strategy. They are not diminished — their reach, coordination, and institutional control are now visible to the audience — but they are shown to be beatable, and their vulnerability (the hardline network, the capability gap of human proxies) is now part of the audience's understanding. They must shift to a proactive surveillance posture, which will shape every subsequent encounter: the Agents are now hunting for the resistance's infrastructure, not just its operatives.",
+   "significance_shift": "Before this scene, the Agents are an abstract antagonist — a hunting force mentioned in the situation but unseen. After this scene, they are a specific strategic actor with demonstrated capabilities (institutional command, tactical coordination) and demonstrated vulnerabilities (proxy limitations, hardline exploitation). The audience now understands the Agents not as omnipotent but as a system-enforcement apparatus with real constraints — and the resistance's survival depends on operating within those constraints faster than the Agents can close them. The Agents' meaning shifts from 'the ones who hunt' to 'the ones who are learning from every encounter' — and the audience knows the resistance just taught them something."
+  },
+  {
+   "entity": "gr-02",
+   "kind": "group",
+   "entering_state": "The Nebuchadnezzar crew exists as an unnamed, unseen organization referenced only by the fact that Trinity is being pursued and has somewhere to be extracted to. Their capabilities, structure, and resources are entirely undisclosed. The audience has no awareness of their existence as a group. They are a void behind Trinity's actions — the question of who sent her and who is waiting on the other end.",
+   "forces_acting": [
+    "The extraction operation itself, which requires real-time operator monitoring of the simulation's data stream and precise timing to complete the hardline transfer",
+    "The police cordon, which creates a time-compressed environment where the crew's operator must execute the extraction before the tactical team can physically prevent it",
+    "The Agents' pursuit pressure, which means the crew is operating against an adaptive adversary that will learn from this extraction and adjust",
+    "The hardline's finite availability — the crew cannot maintain extraction capability indefinitely; the window is seconds, not minutes"
+   ],
+   "axis_changes": [
+    {
+     "axis": "credence",
+     "from": "The crew does not exist in the audience's awareness — there is no evidence of an organization behind Trinity",
+     "to": "The crew exists as a demonstrated capability — someone monitored the simulation, identified the threat, guided Trinity's movement, and executed a real-time extraction through the hardline. The audience has not seen them, but they have seen the crew's work.",
+     "caused_by": "The successful extraction, which requires infrastructure, coordination, and real-time operational capability that cannot exist without an organization behind it"
+    },
+    {
+     "axis": "meaning",
+     "from": "Nonexistent as a narrative entity — the audience has no concept of a resistance organization",
+     "to": "An unseen but confirmed presence — the audience knows someone is out there, that they have resources and capabilities, and that they are fighting something. The crew becomes a promise: the audience will see who is on the other end of that phone line.",
+     "caused_by": "The extraction's success, which is only possible with operator support and infrastructure that implies an organization"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "pre-extraction — the crew as invisible infrastructure",
+     "shift": "The crew's presence is felt only through Trinity's behavior — she moves with knowledge of the building layout, she knows which room to enter, she knows the phone is there. This knowledge implies a support structure that has done reconnaissance, mapped hardlines, and briefed operatives. The audience senses the infrastructure without seeing it.",
+     "trigger": "Trinity's navigation to room 1314, which demonstrates prior knowledge that could only come from external support",
+     "state_delta": {
+      "variable": "group_gr-02_audience_awareness",
+      "from": "nonexistent",
+      "to": "implied_by_operational_capability"
+     }
+    },
+    {
+     "phase": "extraction — the crew as active operator",
+     "shift": "The crew's operator becomes functionally present in the scene through the extraction's execution. The hardline connection is established, the data transfer is initiated, and the transfer completes. The operator is not seen, but the operator's work is the mechanism by which Trinity escapes. The crew transitions from implied to demonstrated — their capability is now a confirmed fact of the narrative world.",
+     "trigger": "The hardline connection's establishment and the extraction's execution",
+     "state_delta": {
+      "variable": "group_gr-02_operational_demonstration",
+      "from": "implied",
+      "to": "confirmed_active_extraction_capability"
+     }
+    },
+    {
+     "phase": "aftermath — the crew as a narrative promise",
+     "shift": "The crew's existence is now a structural promise to the audience: the film has shown the crew's work, and the audience expects to see the crew itself. The question 'who is on the other end?' becomes one of the primary narrative drives. The crew's meaning shifts from background infrastructure to a confirmed organization that the audience will encounter.",
+     "trigger": "The scene's end, which leaves the crew unseen but their work visible",
+     "state_delta": {
+      "variable": "group_gr-02_narrative_function",
+      "from": "nonexistent_in_audience_awareness",
+      "to": "confirmed_organization_pending_revelation"
+     }
+    }
+   ],
+   "leaving_state": "The Nebuchadnezzar crew has been established as a real, capable, organized entity without a single member appearing on screen. Their existence is inferred from the extraction's success — the reconnaissance, the hardline knowledge, the operator support, the real-time execution. They are a narrative promise: the audience now knows there is someone behind Trinity, and the question of who they are and what they want becomes a primary driver of audience attention. The crew's demonstrated capability — extraction under pursuit, real-time simulation monitoring, hardline exploitation — establishes the baseline for what the resistance can do, against which all subsequent operations will be measured.",
+   "significance_shift": "Before this scene, the crew is nothing — a void. After this scene, the crew is the most important unanswered question in the narrative: who are the people who can do this? The audience has been shown capability without identity, infrastructure without location, organization without faces. This gap between demonstrated power and total anonymity is the engine that drives the audience toward the next scene. The crew's meaning has shifted from nonexistent to the central mystery — not 'what is the Matrix' (which the audience suspects) but 'who is fighting it, and how.'"
+  },
+  {
+   "entity": "ob-04",
+   "kind": "object",
+   "entering_state": "In the possession of Agent Smith, part of the Agents' surveillance and tracking apparatus. The bug is a physical device designed to be implanted in a target's body to provide real-time location and biometric tracking. It has not been deployed. It is a tool waiting for a target, and the current target (Trinity) is being pursued through institutional means (police interception) rather than through the bug's capabilities. The bug's existence is unknown to the audience and unknown to the resistance.",
+   "forces_acting": [
+    "The Agents' strategic assessment of whether the current pursuit requires the bug's deployment or whether proxy interception is sufficient",
+    "The failure of the proxy interception strategy, which may elevate the bug's strategic value as the Agents shift to proactive surveillance",
+    "The bug's physical nature — it must be implanted in a specific target, which requires either capture or deception"
+   ],
+   "axis_changes": [
+    {
+     "axis": "meaning",
+     "from": "One tool among many in the Agents' surveillance apparatus — relevant only if the current target is captured alive and needs to be tracked post-release",
+     "to": "Elevated strategic value — the failure of proxy interception means the Agents need a way to track resistance operatives that does not rely on real-time institutional pursuit, and the bug represents a persistent surveillance capability that could solve the capability gap just demonstrated",
+     "caused_by": "The demonstrated inadequacy of proxy interception against physics-exceeding operatives with hardline access"
+    },
+    {
+     "axis": "custody",
+     "from": "In Smith's possession, undeployed, awaiting a target",
+     "to": "In Smith's possession, undeployed, but with elevated strategic priority — the Agents' shift to proactive surveillance increases the likelihood of the bug's deployment against a future target",
+     "caused_by": "The strategic reassessment following the extraction failure"
+    }
+   ],
+   "trajectory": [
+    {
+     "phase": "during the pursuit — the bug as unused capability",
+     "shift": "The bug remains in Smith's possession throughout the operation. The Agents rely on institutional proxies rather than the bug because the bug requires physical implantation and the current strategy is interception, not tracking. The bug is a contingency asset — relevant only if the operation's goals shift from interception to long-term surveillance.",
+     "trigger": "The initiation of the proxy interception operation",
+     "state_delta": {
+      "variable": "object_ob-04_deployment_status",
+      "from": "undeployed_in_smith_possession",
+      "to": "undeployed_in_smith_possession"
+     }
+    },
+    {
+     "phase": "after the failure — the bug as elevated strategic asset",
+     "shift": "The extraction failure demonstrates that the Agents cannot rely on proxy interception alone. The bug's value increases because it represents a capability the proxy model lacks: persistent, covert tracking that does not require real-time institutional mobilization. The bug does not move — it stays in Smith's possession — but its strategic significance shifts from contingency to potential primary tool in a revised surveillance strategy.",
+     "trigger": "The extraction's success and the Agents' strategic reassessment",
+     "state_delta": {
+      "variable": "object_ob-04_strategic_priority",
+      "from": "contingency_asset",
+      "to": "elevated_priority_in_revised_surveillance_strategy"
+     }
+    }
+   ],
+   "leaving_state": "The tracking bug remains physically unchanged — in Smith's possession, undeployed. But its strategic context has shifted. The Agents have just learned that their proxy-interception model has a structural weakness: it cannot counter physics-exceeding operatives with hardline access. The bug represents a different approach: persistent covert surveillance that does not rely on real-time institutional mobilization. The bug's meaning has shifted from 'a tool we might use if we capture someone' to 'a tool that addresses the capability gap we just discovered.' Whether the Agents deploy it, and against whom, becomes a strategic decision shaped by this failure.",
+   "significance_shift": "Before this scene, the bug is an inert piece of equipment in an antagonist's inventory — the audience does not know it exists and it has no narrative weight. After this scene, the bug is a Chekhov's gun whose strategic justification has been strengthened by the events the audience just witnessed. The audience does not know the bug exists yet, but when it appears later, its purpose will be grounded in this scene's demonstration of the Agents' capability gap. The bug's significance shifts from set dressing to a structurally motivated threat — the Agents need it because of what just happened, and the audience will understand that need when they see it deployed."
+  }
+ ],
+ "continuity": {
+  "established_facts_used": [
+   {
+    "fact": "The Heart O' the City Hotel is a designated escape point with a functional hardline — a location whose narrative role is to serve as a threshold between pursuit and extraction.",
+    "source": "sc-001 binding.situation",
+    "how_used": "The entire scene is built around this location's function. The hotel room is rendered as a space whose only narrative significance is the telephone — the hardline — sitting on the nightstand. Every detail of the room (the cheap furnishing, the transient occupancy, the fire escape window adjacent to the phone) is selected to make the phone's presence feel simultaneously mundane and load-bearing. The room is a piece of extraction infrastructure disguised as a $40-a-night hotel room."
+   },
+   {
+    "fact": "Agents (gr-01) are in an active hunting phase pursuing Trinity (ch-02) through the Matrix.",
+    "source": "sc-001 binding.situation",
+    "how_used": "The Agents' presence is felt entirely through environmental wrongness — the fluorescent lights' behavior, the way the building's systems seem to respond to an intelligence rather than physics. They are never shown. The BIG COP and his team are operating under the belief that this is their operation; the environmental details signal to the audience that something else is directing traffic without the officers' knowledge."
+   },
+   {
+    "fact": "The Matrix (cn-01) is uncompromised — the system is functioning as designed.",
+    "source": "sc-001 binding.situation",
+    "how_used": "The world the BIG COP moves through is internally consistent and follows procedural logic. The hotel looks like a hotel. The police equipment works as expected. The wrongness the audience senses is not a glitch in the simulation but the simulation functioning perfectly — the Agents are part of the system, not a breakdown of it. This distinction matters because it means the BIG COP's reality is not failing; it is working exactly as designed, and he is inside the design."
+   },
+   {
+    "fact": "Every named character is in their starting state — this is the first frame the audience will see.",
+    "source": "sc-001 binding.situation",
+    "how_used": "No character arrives with prior development. The BIG COP is built entirely from external signifiers within this scene — his equipment, his body language, his tactical communication, his assumptions. Trinity is built entirely from absence and trace — what she has left behind, how the environment records her passage, the impossible evidence of her presence. Neither character has interiority the audience can access."
+   },
+   {
+    "fact": "The tracking bug (ob-04) remains in Smith's possession, establishing that the Agents' surveillance apparatus is active but not yet deployed against Neo.",
+    "source": "sc-001 binding.situation",
+    "how_used": "The bug is not present in this scene and is not referenced. Its existence is relevant only as a constraint: the Agents' surveillance of Neo has not yet begun, which means the Agents' attention in this moment is fully on Trinity's pursuit. This concentrates the threat. The environmental wrongness in the hotel is the signature of that full attention."
+   },
+   {
+    "fact": "Trinity (ch-02) is being pursued and is capable of evading Agents through means that exceed normal human capability.",
+    "source": "sc-001 craft.dramatic_function",
+    "how_used": "Trinity's presence in the scene is established through evidence that violates the BIG COP's understanding of what a human body can do — the position of furniture, the trajectory of her exit, the impossibility of her escape route. She is not shown directly in this node. She is present as a trace the BIG COP reads and cannot reconcile with his training."
+   },
+   {
+    "fact": "The scene must establish the exit-via-phone mechanic that will become critical in every subsequent Matrix sequence.",
+    "source": "sc-001 craft.dramatic_function",
+    "how_used": "The telephone on the nightstand is rendered with the specificity of a bomb component — its cord, its handset, its connection to the wall jack. The BIG COP does not understand its significance. The audience is given just enough visual information to register it as important without understanding why. This is the seed of the mechanic; later scenes will activate it."
+   },
+   {
+    "fact": "The tension curve enters at 0 and exits at 85, built through the gap between police procedure (routine, controlled, low-stakes) and the reality that something is wrong in a way the police cannot handle.",
+    "source": "sc-001 craft.tension_management",
+    "how_used": "The scene's structure is a slow build from procedural normalcy through mounting environmental wrongness to the moment Trinity's impossible escape collapses the police's operational frame. The BIG COP's calm professionalism is the engine of dread — his competence is rendered precisely so the audience can watch it become irrelevant."
+   },
+   {
+    "fact": "The visual grammar of this film is surveillance, screens, reflections, and the frame within the frame — the world is always being watched by something the characters cannot see.",
+    "source": "sc-001 craft.theme_and_style",
+    "how_used": "Every shot description incorporates a surface of observation: the CRT monitors in the tactical command, the reflections in the hotel mirrors and the BIG COP's visor, the security camera feeds, the frame of the doorway through which the BIG COP observes the empty room. The grammar is established through composition, not commentary."
+   },
+   {
+    "fact": "The register is plain, the sentence length varied, the figurative density medium. Gibson-noir texture means the world is rendered through surfaces — fluorescent light, linoleum, the hum of machinery. Paranoia lives in what is slightly wrong, not in what is announced. The PK Dick instability of reality must be present as a flicker, not a lecture.",
+    "source": "sc-001 craft.theme_and_style",
+    "how_used": "The prose renders the hotel and the police operation through material surfaces — the specific grade of carpet, the specific model of radio, the specific color of the fluorescent tube. The wrongness is never named; it is placed in details the reader registers subcutaneously: a light that steadies when it should flicker, a door lock that is warm, a monitor showing a hallway that should be empty."
+   },
+   {
+    "fact": "No character states feelings, no interior monologue, all psychology externalized into action and blocking.",
+    "source": "sc-001 craft.theme_and_style",
+    "how_used": "The BIG COP's emotional state — confidence, then confusion, then the first tremor of something he has no category for — is expressed through his hands, his breathing, his radio discipline, his spatial choices. He never thinks a sentence the audience can read."
+   }
+  ],
+  "constraints_honoured": [
+   "The scene opens at tension level 0 — the audience has no expectations yet. The opening image must be mundane enough to establish a baseline before the wrongness begins. The BIG COP's approach to the hotel is rendered as routine police work.",
+   "The tension exits at 85 — the scene must end on the impossible escape, not on its aftermath. There is no resolution, only the question the audience cannot stop watching until answered.",
+   "Only BIG COP is cued on screen. Trinity is present only as trace and evidence. The Agents are present only as environmental effect. No other character is shown.",
+   "The Gibson-noir register forbids announced paranoia. The wrongness must live in physical details the reader processes subliminally: a fluorescent light that behaves with intent, a monitor feed showing a figure moving at a speed the frame rate cannot quite resolve, a phone handset that is warm as if recently held.",
+   "The PK Dick instability constraint requires that reality flicker, not break. The Matrix does not glitch in this scene — it functions perfectly. The instability is in the BIG COP's perception, not in the system. The system is doing exactly what it was designed to do, and the BIG COP is inside the design.",
+   "The surveillance visual grammar must be present in every composition: monitors, camera feeds, reflections, frames within frames. The BIG COP is always both observer and observed.",
+   "The hardline phone is established as a piece of infrastructure without being explained. The audience registers it as significant through the specificity of its rendering, not through any character drawing attention to it.",
+   "The scene must plant the question 'who is being pursued, and how did she do what she just did?' without answering it. The BIG COP finds evidence that his tactical frame cannot process. The scene ends on that evidence, not on an explanation.",
+   "The police's professional confidence is the source of dread. The more competent and calm the BIG COP is, the more the audience fears for him. His competence must be rendered accurately — real SWAT procedure, real radio discipline, real clearing technique — so that its collapse is felt.",
+   "No exposition that communicates only information. Every detail must do work as sensation, as atmosphere, or as plot mechanics. The audience learns by watching, not by being told."
+  ],
+  "contradictions_checked": [
+   {
+    "risk": "The scene could have shown Trinity directly, violating the on-screen constraint that only BIG COP is cued to appear.",
+    "avoided_by": "Trinity is present exclusively through evidence she has left behind — the position of furniture, the state of the window, the warm phone handset, the impossible trajectory of her exit. The BIG COP reads her trace. The audience sees what he sees. She is a force inferred from its effects, like radiation measured by a Geiger counter."
+   },
+   {
+    "risk": "The scene could have shown the Agents directly, contradicting the established fact that they are not present in this room and the craft decision that they should be encountered through their effects before being seen directly.",
+    "avoided_by": "The Agents' presence is rendered as environmental signature only: the fluorescent lights that behave with a quality the BIG COP's training has no name for, the way the building's surveillance infrastructure seems to be feeding information to a coordination the police are not part of. The BIG COP feels watched by something that is not his command structure. He cannot identify it. He attributes it to nerves."
+   },
+   {
+    "risk": "The scene could have explained the Matrix's nature, violating the thematic architecture that requires the audience to be deceived alongside Neo and the stylistic prohibition on pure exposition.",
+    "avoided_by": "Nothing in the scene names the Matrix, names simulation, names the system. The BIG COP experiences the wrongness as an operational anomaly he cannot report up the chain because he has no language for it. The audience experiences the wrongness as a growing certainty that something about this room does not obey the rules they thought they were watching. Neither the character nor the audience receives a label for what they are sensing."
+   },
+   {
+    "risk": "The scene could have made Trinity's capabilities too explicit too early, resolving the central question ('how did she do what she just did?') before it has time to hook the audience.",
+    "avoided_by": "The evidence of Trinity's passage is rendered at the edge of comprehension — furniture moved in a way that suggests impossible speed, a window frame that shows signs of a body passing through it at an angle that should be fatal, a phone handset still warm. The BIG COP cannot assemble these into a coherent theory. The audience cannot either. The scene ends on the inability to explain, not on the explanation."
+   },
+   {
+    "risk": "The scene could have made the BIG COP a fool or a thug, undermining the dread that comes from watching competent people become irrelevant.",
+    "avoided_by": "The BIG COP is rendered as a professional — his weapon handling, his communication, his tactical assessment, his team coordination are all correct. He is good at his job. The dread comes from watching a competent person encounter evidence that his competence operates inside a frame that does not contain the threat. His failure is not personal; it is ontological."
+   },
+   {
+    "risk": "The scene could have made the phone's significance too obvious, telegraphing the hardline mechanic in a way that would feel like exposition.",
+    "avoided_by": "The phone is rendered with the same material specificity as every other object in the room — the carpet, the curtains, the bedspread. It is not foregrounded by camera movement or character attention. It is simply present, and its presence is rendered with enough specificity (the coiled cord, the mechanical bell ringer, the wall jack) that it will be remembered when it becomes active later. The audience registers it the way they register a gun on a mantle."
+   },
+   {
+    "risk": "The scene could have introduced the tracking bug (ob-04) prematurely, contradicting the established state that it remains in Smith's possession and has not been deployed against Neo.",
+    "avoided_by": "The bug is not referenced, shown, or implied. The Agents' surveillance in this scene is conducted through the Matrix's own infrastructure — the building's cameras, the police's own radio traffic being monitored — not through the bug. The bug's deployment is a separate event that occurs in a later scene against a different target."
+   }
+  ],
+  "state_preconditions": [
+   {
+    "entity": "BIG COP",
+    "variable": "tactical_posture",
+    "must_be": "active assault — BIG COP is in the final phase of a coordinated building assault, approaching a room his team has identified as the suspect's last known position"
+   },
+   {
+    "entity": "BIG COP",
+    "variable": "information_state",
+    "must_be": "institutional frame only — BIG COP believes he is executing a high-risk warrant on a female suspect with possible cyberterrorism connections; he has no knowledge of the Matrix, Agents, or hardline infrastructure"
+   },
+   {
+    "entity": "BIG COP",
+    "variable": "team_status",
+    "must_be": "intact and coordinated — the tactical team is functional, communicating, and operating under standard SWAT doctrine; the team has not yet encountered anything that degrades their coordination"
+   },
+   {
+    "entity": "gr-01",
+    "variable": "hunting_phase",
+    "must_be": "active pursuit of Trinity — Agents are directing resources toward her location, using police infrastructure as sensory apparatus; they are not physically present in the hotel room but their attention is focused on this location"
+   },
+   {
+    "entity": "ch-02",
+    "variable": "location_state",
+    "must_be": "recently present, now departing — Trinity has been in this room within the last several minutes and has either just exited or is in the process of exiting via the hardline; the room contains evidence of her recent presence"
+   },
+   {
+    "entity": "cn-01",
+    "variable": "integrity",
+    "must_be": "uncompromised — the Matrix is functioning as designed; the environmental wrongness the BIG COP senses is the system operating correctly, not failing; the Agents are part of the system's normal function"
+   },
+   {
+    "entity": "ob-04",
+    "variable": "deployment_status",
+    "must_be": "in Smith's possession, not deployed — the tracking bug has not been used and is not present in this scene; the Agents' surveillance here is conducted through Matrix infrastructure, not through the bug"
+   }
+  ],
+  "forward_commitments": [
+   "Later scenes must show what happened in Room 303 from Trinity's perspective or from a perspective that reveals the escape — the audience has been shown only the after-action trace and must eventually see the action itself, or enough of it to understand the hardline mechanic.",
+   "The hardline phone mechanic must be activated in a future scene — the phone has been established as a piece of infrastructure with specific physical properties (rotary dial, coiled cord, mechanical ringer, wall jack); when it becomes active, it must match this established physical reality.",
+   "The Agents must eventually be shown directly — this scene establishes them as environmental presence only; their physical manifestation must be consistent with the dread established here (the wrongness in the lights, the surveillance attention, the sense of an intelligence directing events from behind the visible plane).",
+   "Trinity's capabilities must be shown in action — this scene establishes them as trace and inference only; when she is shown moving, the audience must see what the BIG COP could only infer, and it must exceed what they imagined.",
+   "The BIG COP or his team must encounter the consequences of their ontological irrelevance — the scene establishes that their competence does not protect them; a future scene must show what happens when the frame they operate inside collapses entirely.",
+   "The surveillance visual grammar established here (monitors, camera feeds, reflections, frames within frames) must be maintained as the film's consistent visual register — every subsequent scene must find its own version of the frame-within-the-frame composition.",
+   "The question 'who is being pursued, and how did she do what she just did?' must remain active until the audience sees Trinity in action — no intermediate scene may resolve it through exposition or flashback; the answer must be demonstrated, not told.",
+   "The environmental wrongness as Agent signature must be consistent across all future Agent-adjacent scenes — the specific quality established here (lights behaving with intent, surveillance systems feeding an intelligence the characters cannot identify, the sense of being observed by the system itself) is the Agents' calling card and must not be contradicted or made explicit until the Agents are directly confronted."
+  ]
+ },
+ "decision": {
+  "state_changes_implied": [
+   {
+    "entity": "ch-02",
+    "variable": "love_for_neo",
+    "before": "unrecognized",
+    "after": "urgent",
+    "because": "The analysis states that the Agents are in an 'active hunting phase pursuing Trinity (ch-02)' and that the scene's dramatic function is to establish 'Trinity as someone capable of evading them,' implying a state of active pursuit and survival rather than a static, unrecognized emotional state, though this is an inference from the action context rather than an explicit psychological shift description.",
+    "serves_plot": "pl-01"
+   }
+  ]
+ },
+ "_ensemble": {
+  "writer": "glm-5.2-abliterated-q3km",
+  "bookkeeper": "qwen3.8-27b",
+  "vocabulary_size": 13,
+  "changes_recorded": 1,
+  "not_expressible": [
+   "The analysis explicitly states 'Every named character is in their starting state' and 'No story has yet unfolded,' asserting that no changes have occurred for Neo (ch-01) or Trinity (ch-02) beyond their initial conditions. The only character present in the scene is BIG COP, who is not included in the vocabulary. Therefore, no state changes are expressible for the available entities.",
+   "The analysis describes the 'BIG COP's' perception, appraisal, and social norms, but 'BIG COP' is not an entity in the provided vocabulary (only ch-01 and ch-02 are listed)."
+  ],
+  "code_problems": [],
+  "grounding": [],
+  "presence": [
+   {
+    "kind": "state_moved_offstage",
+    "violation": "state change 0 moves 'ch-02', who is not in this scene at all",
+    "guidance": "A character who is not in the scene cannot change during it. Off-screen consequences belong to a later event, not this one."
+   }
+  ]
+ }
+}
