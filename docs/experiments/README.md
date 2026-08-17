@@ -48,6 +48,14 @@ Where that check was not done, the entry must say so.
 
 **A negative result is a result.** Do not delete a failed arm.
 
+**Validate the supply, not just the output.** Every check in this pipeline reads
+what the generator produced; none reads what the generator was given. EXP-003 fed
+224 agents an empty scene; EXP-004 fed 15 agents a character window sliced from
+the raw file with cleaned-text offsets, past an assertion written for EXP-003's
+bug that tests presence rather than correctness. Both times every output-side
+check reported clean. An input assertion must check that the input is *the right
+input*, and it must fail the run rather than repair it.
+
 **Never grade against a roster the harness authored.** EXP-002 reported
 "off-roster speakers 2 → 0" while the constraint that produced the output and the
 check that scored it drew on the *same* wrong list. A check that shares its
@@ -61,6 +69,7 @@ Corrections go in the entry, in place, not in a new one.
 | [EXP-001](EXP-001-model-notes-addendum.md) | Does a failure-derived system-prompt addendum reduce the failures it was written against? | mixed |
 | [EXP-002](EXP-002-grounding-scaffold.md) | Do the failures a prompt clause could not fix yield to schema-level enforcement? | supported on quality (+11.7pts); violation count corrected downward |
 | [EXP-003](EXP-003-swarm-first-run.md) | Does the bottom-up swarm produce a better tree than the top-down pipeline on a 224-scene feature? | refuted — stage 1 never received its scene text; 5.2% of quoted evidence occurs in the scene it is attributed to |
+| [EXP-004](EXP-004-scene-variants.md) | Does cutting the scene agent's context from 100k chars to two neighbours produce better scene nodes, or only more literal ones? | inconclusive on its question, refuted as a measurement — both arms were sliced from the raw file with cleaned-text offsets, so 13/15 scenes were never shown; rubric 1.53 → 1.78/5, fidelity to the *supplied* text 2.07 → 4.73 |
 
 ## Earlier work, recorded outside this format
 
