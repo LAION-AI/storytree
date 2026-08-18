@@ -75,7 +75,9 @@ Read in this order:
 10. [`docs/09b-rp-ecosystem-evidence.md`](docs/09b-rp-ecosystem-evidence.md) — the roleplay-finetune ecosystem as revealed preference
 11. [`docs/10-prose-system-prompt.md`](docs/10-prose-system-prompt.md) — an actionable prose addendum, every clause traced to a finding
 12. [`docs/12-swarm-results.md`](docs/12-swarm-results.md) — **the bottom-up swarm's first two runs.** What the inversion proved, the bug that made the first run worthless, and the canary that would have caught it
-13. [`docs/experiments/`](docs/experiments/README.md) — **the experiment log.** Every intervention tried, prediction recorded before the run, negative results kept. Written to be reconstructable without access to whoever ran it
+13. [`docs/13-scene-experiments-data.md`](docs/13-scene-experiments-data.md) — raw scene-layer data and method
+14. [`docs/14-rubric-scores-and-next-steps.md`](docs/14-rubric-scores-and-next-steps.md) — **all rubric scores, the oracle-ceiling analysis, and proposals**
+15. [`docs/experiments/`](docs/experiments/README.md) — **the experiment log.** Every intervention tried, prediction recorded before the run, negative results kept. Written to be reconstructable without access to whoever ran it
 
 ## Quick start
 
