@@ -61,6 +61,8 @@ what turns the exercise into a measurement.
 
 ## Documentation
 
+**Resuming after a break, or new to this?** Start with [`docs/00-HANDSHAKE.md`](docs/00-HANDSHAKE.md) — state, what worked, what did not, and what was about to happen next.
+
 Read in this order:
 
 1. [`docs/01-architecture.md`](docs/01-architecture.md) — the layered graph, JSON Patch, the fold, and why there are no arrays in patchable regions
