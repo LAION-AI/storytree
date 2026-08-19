@@ -1,0 +1,43 @@
+Six dimensions, 0–5. Anchors written before scoring, so a second evaluator can
+land in the same place.
+
+**Fidelity** — does it describe what actually happens, whatever words it uses?
+- **5** — every claim in the summary and the changes is true of this scene; nothing asserted the scene does not support.
+- **3** — the central action is right; one or two claims are wrong, imported from a neighbour, or belong to a different moment.
+- **1** — the node describes a different scene, or the central action is wrong.
+
+**Completeness** — is anything load-bearing missing?
+- **5** — every change the story depends on is recorded; a reader could rebuild the scene's function from the node alone.
+- **3** — the main change is present; one significant beat or participant is missing.
+- **1** — most of what matters is absent, or one incidental change stands in for the scene.
+
+**Specificity** — could this node be pasted onto a different scene and still read as true?
+- **5** — names, objects and turns that occur only here; unmistakably this scene.
+- **3** — mostly specific, but at least one generic filler (`before: "Idle or observing"`).
+- **1** — could describe a dozen scenes; placeholders in `before`/`after`; nothing tied to this page. A node that is vividly specific *about the wrong scene* scores 1, because pasted onto the scene it names it reads false.
+
+**Change reality** — are the recorded changes real, and do they matter?
+- **5** — each is a genuine state transition the story uses downstream; `before` ≠ `after` in a way that matters.
+- **3** — changes are real, but at least one restates the action rather than naming a transition, or is trivial.
+- **1** — no-ops, unstated befores (`before: "Not explicitly stated"`), or changes to a state this scene does not touch.
+
+**Emotional intelligence** — is what people want, fear and conceal read plausibly?
+- **5** — reads a concealed motive or an unspoken pressure correctly and briefly.
+- **3** — emotion named at surface level, not wrong, not deep.
+- **1** — emotion absent where the scene is built from it, or attributed wrongly.
+- For a scene with no people in it, 3 is the default; 5 requires that there was something to read and it was read.
+
+**Calibration** — length and confidence proportionate to a scene this size?
+- **5** — node length tracks scene size; uncertainty flagged where the text is genuinely ambiguous and absent where it is not.
+- **3** — modestly over- or under-written, or confident where it should hedge.
+- **1** — a 900-word analysis of a 12-word scene, or a one-line node for a 500-word scene; confident assertion with no basis.
+
+Calibration is weighted the same as the rest but discriminates most here: the
+sample runs 12 to 511 words and the median scene in this work is 45.
+
+
+SCORING RULES
+- Integers 0-5. Score the node as delivered, not as it could be read charitably.
+- Every score needs one sentence of evidence naming a specific field or quoting text.
+- Bar: mean >= 4.0 with no dimension below 3.0.
+- Frame: node against the scene it names (the product question).

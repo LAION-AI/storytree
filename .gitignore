@@ -18,6 +18,9 @@ reconstruct/runs/*/prose/
 **/matrix.txt
 **/*_screenplay.txt
 **/*.pdf
+# Reference papers this project builds on are meant to ship. Explicit exception rather than
+# a narrowed pattern: narrowing the screenplay rule is how a full script reached history once.
+!reference/CogniTino-whitepaper.pdf
 
 # Model weights and inference scratch
 models/
