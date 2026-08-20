@@ -20,11 +20,12 @@ Repo: `christophschuhmann/storytree`, private. Working dir
 ## The one-paragraph state
 
 The bottom-up swarm works and runs a 224-scene feature in ~20 minutes. The scene
-layer has been optimised through six variants; **V4 (4.16) and V5 (4.06) clear
-the quality bar** of mean ≥ 4.0 with nothing below 3.0, but neither separates
-statistically from the much simpler V1 (4.02) at n=15. The remaining blocker for
-autonomy is **not quality** — it is that eight measurement errors have occurred
-and the pipeline caught none of them.
+layer has been optimised through six variants. **The scores below are superseded:
+a blind A/B has since been run and no arm clears the bar** — see *Since then*.
+V4 and V5 remain the best arms and remain indistinguishable from each other. The
+remaining blocker for autonomy is **not quality** — it is that eight measurement
+errors have occurred and the pipeline caught none of them, and the blind result
+is a ninth of the same kind.
 
 ## Where things are
 
