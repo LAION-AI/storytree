@@ -40,7 +40,10 @@ import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, "/home/deployer/laion/project-alexandria/screenplay/src")
+from event_scaffold import (build_scaffold, canonical_roster, exits_by_entity,  # noqa: E402
+                            render_scaffold)
 from screenplay_ku.client import EndpointPool, run_parallel  # noqa: E402
 from screenplay_ku.kuschema import grammar_safe  # noqa: E402
 
@@ -103,6 +106,87 @@ def segment_schema(scene_ids: Sequence[str]) -> Dict[str, Any]:
 
 
 # ----------------------------------------------------------------- 2. compose
+
+_COMPOSE_B3 = """\
+Condense these scenes into one event node.
+
+**This is a merge, not a fresh reading.** The scene layer has already established who is
+present, what changed, and what was going on in people's minds. Your job is to carry that
+forward into one arc per entity — and then, on top of it, say what the event means and how it
+connects to the rest of the story.
+
+You are given three things, deliberately overlapping:
+
+  1. **The roster and change ledger** — computed from the scenes, not proposed by you.
+  2. **The scene nodes in order** — the analyses as written.
+  3. **The scenes' actual text** — the screenplay itself, so you can check anything.
+
+Where they disagree, the screenplay wins, then the scene nodes, then your reading.
+
+## Rules that come from the scaffold
+
+**The roster is closed.** Every entity listed needs a state triple. No entity outside it may
+be added. If someone seems missing, they were not recorded as present or as changing, and
+that is a fact about the scenes rather than an invitation.
+
+**`moved` is transcription, not judgement.** For each entity, the scaffold lists the registers
+the scene layer recorded a change on. Those registers are `moved: true`. Every other register
+is `moved: false`, and then **`exit` must be identical to `entry`** and
+`unchanged_because` must say why it did not move. Setting `moved: true` on a register whose
+entry and exit say the same thing is the single most common defect in earlier builds.
+
+**`entry` comes from the previous event where the scaffold supplies one.** That chain is what
+the layer exists for. Never write "not stated" — if the scaffold gives you nothing and the
+scenes show nothing, describe the state the screenplay implies at the moment the event opens.
+
+**`evidence_scene` must be a scene the entity actually appears in.** The scaffold lists them.
+
+## What to condense
+
+For each entity, the ledger may hold several changes across several scenes on the same
+register. **Fold them into one arc**: the entry of the first, the exit of the last, and a
+`change` that names the path between them rather than listing the steps.
+
+Mind material the scene layer already found is the basis for `reading`. Summarise and sharpen
+it; do not replace it with a new invention. You may add what the accumulated scenes make
+visible and no single scene could — that is the value this layer adds.
+
+## What to add
+
+`turns_on` and `turns_on_entity` — the pivot, and the entity it belongs to. The entity must be
+on the roster.
+
+`affects_outside` — three separate questions: what this event **enables**, what it **blocks or
+costs**, and who **reacts off-screen**. Answer each from the story, not from this event's own
+contents; an on-screen participant is not an off-screen reactor.
+
+`carried_uncertainty` — the scaffold lists what the scenes could not determine. Carry it. Do
+not resolve it, and do not assert elsewhere in the node something the scaffold flags as
+unknown.
+
+## Length
+
+Each field has a hard ceiling and the ceilings are tight on purpose. A state is a state:
+"cuffed, face down, in police custody" is complete. Do not write paragraphs into a register.
+Earlier builds lost more points on proportion than on any other dimension.
+
+## Discipline
+
+Everything external: reported speech, no quoted lines, no narrated interior. `reading` is the
+only interior field, and it is about the character's mind — not commentary about the script.
+
+=== SCAFFOLD ===
+{scaffold}
+
+=== SCENE NODES, IN ORDER ===
+{nodes}
+
+=== THE SCENES THEMSELVES ===
+{text}
+
+Write the node for: {title}
+"""
+
 
 _COMPOSE = """\
 Write the event node for the scenes below.
@@ -210,10 +294,15 @@ def _register_slot(scene_ids: Sequence[str]) -> Dict[str, Any]:
         "type": "object",
         "properties": {
             "moved": {"type": "boolean"},
-            "entry": {"type": "string", "minLength": 3},
-            "change": {"type": "string", "minLength": 3},
-            "exit": {"type": "string", "minLength": 3},
-            "unchanged_because": {"type": ["string", "null"]},
+            # Upper bounds, not just lower ones. Left unbounded the model wrote 8,300 tokens
+            # for a single event node — one register description running to a paragraph. A
+            # state is a state: "cuffed, in police custody" says it. Calibration has been the
+            # dimension that decided every comparison in this project, and a maxLength is the
+            # only way to ask for brevity that the model cannot decline.
+            "entry": {"type": "string", "minLength": 3, "maxLength": 180},
+            "change": {"type": "string", "minLength": 3, "maxLength": 220},
+            "exit": {"type": "string", "minLength": 3, "maxLength": 180},
+            "unchanged_because": {"type": ["string", "null"], "maxLength": 160},
             "evidence_scene": {"type": "string", "enum": list(scene_ids)},
         },
         "required": ["moved", "entry", "change", "exit", "unchanged_because",
@@ -222,18 +311,37 @@ def _register_slot(scene_ids: Sequence[str]) -> Dict[str, Any]:
     }
 
 
-def compose_schema(entity_ids: Sequence[str], scene_ids: Sequence[str]) -> Dict[str, Any]:
+def compose_schema(entity_ids: Sequence[str], scene_ids: Sequence[str],
+                   registers_by_entity: Optional[Dict[str, Sequence[str]]] = None) -> Dict[str, Any]:
+    """Per-entity register sets, derived from the scaffold.
+
+    Build 2 required all seven registers for every entity. On an event with twenty entities
+    that is 140 register slots and 840 constrained fields — which at this model's decode rate
+    does not finish, and which a build-1 judge had already named "completeness theatre": the
+    schema was satisfied by writing the reason a register did not move, twenty times over,
+    rather than by recording a state.
+
+    The scaffold knows which registers the scene layer actually recorded a change on. Those
+    are required. An entity with no recorded change gets a presence record instead of seven
+    slots of boilerplate. Requiring less produces more, because what is required is now the
+    part that carries information.
+    """
     ent = ({"type": "string", "enum": list(entity_ids)} if entity_ids
            else {"type": "string", "minLength": 1})
+    req_map = registers_by_entity or {}
+    union_required = sorted({r for v in req_map.values() for r in v}) if req_map else []
     return {
         "type": "object",
         "properties": {
-            "title": {"type": "string", "minLength": 8},
-            "summary": {"type": "string", "minLength": 40},
-            "action": {"type": "string", "minLength": 60},
+            "title": {"type": "string", "minLength": 8, "maxLength": 90},
+            "summary": {"type": "string", "minLength": 40, "maxLength": 500},
+            "action": {"type": "string", "minLength": 60, "maxLength": 1200},
             "participants": {"type": "array", "items": ent, "minItems": 1},
             "locations": {"type": "array", "items": {"type": "string"}},
-            "state_triples": {"type": "array", "minItems": 1, "items": {
+            "state_triples": {"type": "array",
+                              "minItems": len(entity_ids) if entity_ids else 1,
+                              "maxItems": len(entity_ids) if entity_ids else 60,
+                              "items": {
                 "type": "object",
                 "properties": {
                     "entity": ent,
@@ -247,10 +355,14 @@ def compose_schema(entity_ids: Sequence[str], scene_ids: Sequence[str]) -> Dict[
                     "registers": {
                         "type": "object",
                         "properties": {r: _register_slot(scene_ids) for r in REGISTERS},
-                        "required": list(REGISTERS),
+                        # The union of registers any entity in this event moved on. JSON
+                        # Schema cannot vary `required` by sibling value, so the union is the
+                        # tightest expressible floor; the prompt carries the per-entity set,
+                        # and lint checks it after the fact.
+                        "required": union_required,
                         "additionalProperties": False,
                     },
-                    "reading": {"type": ["string", "null"]},
+                    "reading": {"type": ["string", "null"], "maxLength": 320},
                 },
                 "required": ["entity", "registers", "reading"],
                 "additionalProperties": False,
@@ -261,14 +373,14 @@ def compose_schema(entity_ids: Sequence[str], scene_ids: Sequence[str]) -> Dict[
             "affects_outside": {
                 "type": "object",
                 "properties": {
-                    "enables": {"type": "string", "minLength": 15},
-                    "blocks_or_costs": {"type": "string", "minLength": 15},
-                    "off_screen_reactor": {"type": "string", "minLength": 15},
+                    "enables": {"type": "string", "minLength": 15, "maxLength": 260},
+                    "blocks_or_costs": {"type": "string", "minLength": 15, "maxLength": 260},
+                    "off_screen_reactor": {"type": "string", "minLength": 15, "maxLength": 260},
                 },
                 "required": ["enables", "blocks_or_costs", "off_screen_reactor"],
                 "additionalProperties": False,
             },
-            "turns_on": {"type": "string", "minLength": 20},
+            "turns_on": {"type": "string", "minLength": 20, "maxLength": 300},
             # The thing an event turns on must itself have a recorded state. In the first
             # run ev-030 turned on a bulging wall that had been demoted to a `locations`
             # string, so the pivot of the event carried no state at all.
@@ -324,7 +436,7 @@ def reconcile_schema() -> Dict[str, Any]:
         "properties": {
             "summary": {"type": "string", "minLength": 40},
             "action": {"type": "string", "minLength": 60},
-            "turns_on": {"type": "string", "minLength": 20},
+            "turns_on": {"type": "string", "minLength": 20, "maxLength": 300},
         },
         "required": ["summary", "action", "turns_on"],
         "additionalProperties": False,
@@ -518,28 +630,40 @@ def segment_all(pool: EndpointPool, scenes: Sequence[Dict], *, window: int = 24,
 
 def compose_all(pool: EndpointPool, events: Sequence[Dict], by_id: Dict[str, Dict],
                 *, workers: int = 2, progress=None,
-                previous: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
+                previous: Optional[Dict[str, Any]] = None,
+                scene_text: Optional[Dict[str, str]] = None,
+                canon: Optional[Dict[str, str]] = None) -> List[Dict[str, Any]]:
     previous = previous or {}
+    scene_text = scene_text or {}
     def work(ev):
         nodes = [by_id[s] for s in ev["scene_ids"] if s in by_id]
-        ents = sorted({p for n in nodes for p in (n.get("present") or [])})
-        prev = previous.get(ev["event_id"])
-        prev_block = ""
-        if prev:
-            prev_block = ("PREVIOUS EVENT'S EXIT STATES — an entity's entry state is its exit\n"
-                          "state here unless something changed it:\n"
-                          + json.dumps(prev, ensure_ascii=False, indent=1) + "\n")
-        prompt = _COMPOSE.format(
-            registers=", ".join(REGISTERS), title=ev["working_title"], count=len(nodes),
-            previous=prev_block,
-            scenes=json.dumps([brief(n, full=True) for n in nodes], ensure_ascii=False, indent=1))
-        r = pool.call(SYSTEM, prompt,
-                      schema=grammar_safe(compose_schema(ents, ev["scene_ids"])),
-                      max_tokens=12288)
+        scaffold = build_scaffold(ev["scene_ids"], nodes,
+                                  previous_exits=previous.get(ev["event_id"]), canon=canon)
+        # The entity enum is the computed roster. That is what makes `turns_on_entity`
+        # satisfiable at last: build 2 required the field while admitting only characters,
+        # so an event turning on a phone had nowhere to name it.
+        ents = [e["entity"] for e in scaffold["entities"]]
+        text = "\n\n".join(
+            "--- {} ---\n{}".format(sid, scene_text.get(sid, "[text unavailable]"))
+            for sid in ev["scene_ids"])
+        prompt = _COMPOSE_B3.format(
+            scaffold=render_scaffold(scaffold),
+            nodes=json.dumps([brief(n, full=True) for n in nodes], ensure_ascii=False, indent=1),
+            text=text, title=ev["working_title"])
+        # Required registers per entity, straight from the scaffold. An entity the scene
+        # layer never recorded a change for gets one slot, not seven.
+        required_by = {e["entity"]: (e["registers_with_recorded_change"] or ["status"])
+                       for e in scaffold["entities"]}
+        schema = compose_schema(ents, ev["scene_ids"], required_by)
+        budget = 2600 + 340 * sum(len(v) for v in required_by.values())
+        r = pool.call(SYSTEM, prompt, schema=grammar_safe(schema),
+                      max_tokens=min(16384, budget))
         node = _parse(r.text)
         node["event_id"] = ev["event_id"]
         node["scene_ids"] = ev["scene_ids"]
         node["boundary_reason"] = ev["why_here"]
+        node["_scaffold_counts"] = scaffold["counts"]
+        node["_roster"] = ents
         return node
 
     out = run_parallel(list(events), work, max_workers=workers, on_done=progress)
@@ -830,12 +954,23 @@ def main() -> int:
     ap.add_argument("--model", default="ornith-1.5-397b")
     ap.add_argument("--workers", type=int, default=2)
     ap.add_argument("--window", type=int, default=24)
+    ap.add_argument("--wave", type=int, default=4,
+                    help="events composed per wave; each wave sees the previous wave's exits")
+    ap.add_argument("--source", default="reconstruct/runs/matrix/script.normalized.txt")
+    ap.add_argument("--scene-map", default="reconstruct/runs/matrix/script_map.json")
     ap.add_argument("--skip-verify", action="store_true")
     a = ap.parse_args()
 
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
     started = time.time()
     scenes = load_scenes(Path(a.scenes_dir))
+    # The screenplay itself, so the composer can check the scene nodes against the source.
+    scene_text: Dict[str, str] = {}
+    if a.source and a.scene_map:
+        raw = Path(a.source).read_text(encoding="utf-8")
+        smap = json.loads(Path(a.scene_map).read_text(encoding="utf-8"))["scenes"]
+        for sid, meta in smap.items():
+            scene_text[sid] = raw[meta["start_char"]:meta["end_char"]]
     if not scenes:
         print("no scene nodes in {}".format(a.scenes_dir)); return 2
     by_id = {s["scene_id"]: s for s in scenes}
@@ -860,8 +995,34 @@ def main() -> int:
     (out / "segmentation.json").write_text(json.dumps({"events": events}, indent=1),
                                            encoding="utf-8")
 
-    print("\nstage 2 — composing {} events".format(len(events)), flush=True)
-    nodes = compose_all(pool, events, by_id, workers=a.workers, progress=prog)
+    canon = canonical_roster(scenes)
+    print("  roster: {} spellings -> {} entities across the film".format(
+        len(canon), len(set(canon.values()))), flush=True)
+
+    # Composed in waves so each wave can be handed the previous wave's exit states. Fully
+    # sequential would serialise the layer; fully parallel leaves every `entry` unchained,
+    # which was build 1's largest defect. A wave is the compromise: parallel within, chained
+    # across.
+    print("\nstage 2 — composing {} events in waves of {}".format(len(events), a.wave),
+          flush=True)
+    nodes: List[Dict[str, Any]] = []
+    previous: Dict[str, Any] = {}
+    partial = out / "events.partial.json"
+    for start in range(0, len(events), a.wave):
+        batch = events[start:start + a.wave]
+        got = compose_all(pool, batch, by_id, workers=a.workers, progress=prog,
+                          previous=previous, scene_text=scene_text, canon=canon)
+        nodes.extend(got)
+        # Written after every wave. A four-hour run that produces nothing until the last
+        # second cannot be inspected, and a crash at hour three costs everything — the same
+        # rule this project imposes on its judge agents, finally applied to itself.
+        partial.write_text(json.dumps({"events": nodes}, indent=1), encoding="utf-8")
+        previous = {}
+        if got:
+            tail = exits_by_entity(got[-1])
+            nxt = events[start + a.wave] if start + a.wave < len(events) else None
+            if nxt:
+                previous[nxt["event_id"]] = tail
     print("  {} composed ({} failed)".format(len(nodes), len(events) - len(nodes)), flush=True)
 
     canon = canonicalise_entities(nodes)
