@@ -66,3 +66,14 @@ plotemb.txt
 site/
 archive/
 *.tar.gz
+
+# Derived corpora from the reconstruction runs. These carry no source prose — the KU and
+# abstraction layers are gated on verbatim overlap — but the project's own copyright
+# position is to ship the method and withhold the corpus, and these are the corpus. They
+# were untracked rather than ignored, which meant one `git add -A` away from being
+# committed. Structure travels in docs/; the run trees stay local.
+runs/ku_*/
+runs/cognitino_*/
+runs/v4_enriched/
+runs/v4_ornith*/
+runs/v4_qwen_fresh/

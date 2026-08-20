@@ -186,9 +186,11 @@ def load_cognitino(graph: Dict[str, Any], scene_id: str) -> Dict[str, Any] | Non
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--graph", default=str(ROOT / "runs" / "cognitino_matrix" / "scene_graph.json"))
+    parser.add_argument("--graph", default="")
     parser.add_argument("--graph2", default="", help="second cognitino graph, scored as its own arm")
     parser.add_argument("--enriched-dir", default="", help="enriched V4 nodes, scored as its own arm")
+    parser.add_argument("--extra-dirs", default="",
+                        help="name=path,... extra V-style node dirs, each scored as its own arm")
     parser.add_argument("--variants", default="v1,v4,v5")
     parser.add_argument("--out", required=True)
     parser.add_argument("--seed", type=int, default=20260819)
@@ -196,13 +198,18 @@ def main() -> int:
 
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
-    graph = json.loads(Path(args.graph).read_text(encoding="utf-8"))
+    graph = json.loads(Path(args.graph).read_text(encoding="utf-8")) if args.graph else None
     graph2 = json.loads(Path(args.graph2).read_text(encoding="utf-8")) if args.graph2 else None
     variants = args.variants.split(",")
 
     rng = random.Random(args.seed)
+    extra = {}
+    for spec in filter(None, args.extra_dirs.split(",")):
+        name, path = spec.split("=", 1)
+        extra[name] = path
     arms = variants + (["cognitino"] if args.graph else []) \
-        + (["cognitino_v2"] if graph2 else []) + (["v4_enriched"] if args.enriched_dir else [])
+        + (["cognitino_v2"] if graph2 else []) + (["v4_enriched"] if args.enriched_dir else []) \
+        + sorted(extra)
     labels = ["arm-{}".format(c) for c in "ABCDEFGH"[:len(arms)]]
     shuffled = arms[:]
     rng.shuffle(shuffled)
@@ -217,6 +224,10 @@ def main() -> int:
                 node = load_cognitino(graph, scene_id)
             elif source == "cognitino_v2":
                 node = load_cognitino(graph2, scene_id)
+            elif source in extra:
+                q = Path(extra[source]) / "{}.json".format(scene_id)
+                node = (_strip_arm_signals(normalise_v(json.loads(q.read_text(encoding="utf-8"))))
+                        if q.exists() else None)
             elif source == "v4_enriched":
                 q = Path(args.enriched_dir) / "{}.json".format(scene_id)
                 node = (_strip_arm_signals(normalise_v(json.loads(q.read_text(encoding="utf-8"))))

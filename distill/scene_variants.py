@@ -781,7 +781,16 @@ if __name__ == "__main__":
     ap.add_argument("--ports", default="8100,8101,8102,8103,8104,8105,8106,8107")
     ap.add_argument("--model", default="qwen3.8-27b")
     ap.add_argument("--per-endpoint", type=int, default=4)
+    # The frozen SAMPLE keeps arms comparable and must not change casually. A replication
+    # on a fresh, disjoint sample is the one legitimate reason to override it, and it is
+    # recorded in the run output so a later reader cannot mistake the two for one series.
+    ap.add_argument("--scenes", default="",
+                    help="comma-separated scene ids, overriding the frozen SAMPLE")
     a = ap.parse_args()
+    if a.scenes:
+        global SAMPLE
+        SAMPLE = [x.strip() for x in a.scenes.split(",") if x.strip()]
+        print("SAMPLE overridden: {} scenes (replication, not the frozen set)".format(len(SAMPLE)))
 
     ports = [int(p) for p in a.ports.split(",")]
     if a.variant == "v5":
