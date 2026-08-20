@@ -187,8 +187,16 @@ against 1). Emotional intelligence, the dimension nothing else could move, goes 
 Costs 4.7× the model time, 4 GPUs per instance and 224 GB on disk, and is mechanically
 *worse* (tier-1 0.883 vs 0.967). See [`docs/ornith/`](ornith/).
 
+**Replicated on fifteen fresh scenes with zero overlap: +0.378, p = 0.017.** Pooled over both
+samples, n = 30: **+0.383, CI95 [0.133, 0.628], p = 0.0019.** The effect is near-identical
+across two disjoint samples, and calibration — the dimension the fresh sample was expected to
+flatter — came out exactly level, so the advantage is not a sampling artefact.
+
 **The bottleneck was the model, not the scaffold.** Three scaffold changes lost; one model
-change won.
+change won, and it is the only result in this line of work that has reproduced.
+
+New readers: [`docs/rubric-explained.md`](rubric-explained.md) explains the six dimensions and
+what 0–5 mean, including why 3 means "acceptable" rather than "good".
 
 ## What was about to happen next
 

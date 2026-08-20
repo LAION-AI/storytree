@@ -1,6 +1,7 @@
 # Scene Communities
 
-*An explainer for readers new to this project.*
+*An explainer for readers new to this project. For how the quality scores work, see
+[`docs/rubric-explained.md`](../rubric-explained.md).*
 
 ---
 

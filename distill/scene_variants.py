@@ -788,7 +788,7 @@ if __name__ == "__main__":
                     help="comma-separated scene ids, overriding the frozen SAMPLE")
     a = ap.parse_args()
     if a.scenes:
-        global SAMPLE
+        # Module scope, so a plain rebinding — `global` is a syntax error out here.
         SAMPLE = [x.strip() for x in a.scenes.split(",") if x.strip()]
         print("SAMPLE overridden: {} scenes (replication, not the frozen set)".format(len(SAMPLE)))
 

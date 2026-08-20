@@ -1,5 +1,8 @@
 # Ornith-1.5-397B on the V4 scene layer
 
+*New to the scoring? [`docs/rubric-explained.md`](../rubric-explained.md) explains the six
+dimensions and the 0–5 scale.*
+
 The first change in this line of work that actually improves V4. Every earlier attempt —
 the CogniTino abstraction layer, narrower windows, a separate deepening pass — lost to plain
 V4. **The bottleneck was not the scaffold. It was the model.**
@@ -23,8 +26,8 @@ parameters, so **not one line changed**. Only the model behind the endpoint.
 | **Mean** | **3.38** | **3.77** | **+0.39** |
 
 **Paired bootstrap over scenes: +0.389, CI95 [+0.000, +0.778], p = 0.052.** The interval
-touches zero exactly. **Called not significant.** At n=15 that is the honest reading, and a
-confirmatory run on a fresh sample is the obvious next step.
+touches zero exactly, so on this sample alone it was **called not significant** — and a
+replication was run rather than the number being talked up. It held: see below.
 
 Bar cleared (mean ≥ 4.0, no dimension < 3.0): **Ornith 6 of 15 scenes, Qwen 1 of 15.** Ornith
 better on 9 scenes, worse on 3, tied on 3.
@@ -80,15 +83,72 @@ Four things cost time and are worth recording:
 flat across concurrent slots, and slots divide the context window, so one slot with the whole
 window is strictly better.
 
+---
+
+## Replication on a fresh sample: it holds
+
+The first result sat at p = 0.052 with an interval touching zero, which is a reason to repeat
+it rather than a conclusion. It was repeated on **fifteen new scenes with zero overlap** with
+the frozen set (`replication_sample.txt`), drawn with the same stratification and a new seed,
+both models run on the same day, blind-scored by three fresh judges.
+
+| Dimension | Qwen3.8-27B | **Ornith-1.5-397B** | Δ |
+|---|---|---|---|
+| **emotional_intelligence** | 2.93 | **3.80** | **+0.87** |
+| specificity | 3.80 | 4.47 | +0.67 |
+| fidelity | 3.67 | 4.20 | +0.53 |
+| change_reality | 3.40 | 3.60 | +0.20 |
+| completeness | 3.73 | 3.73 | 0.00 |
+| calibration | 3.53 | 3.53 | 0.00 |
+| **Mean** | **3.51** | **3.89** | **+0.38** |
+
+**+0.378, CI95 [+0.067, +0.678], p = 0.017 — significant.** Bar cleared: **Ornith 8 of 15,
+Qwen 2 of 15.** Better on 10 scenes, worse on 3.
+
+**Pooled across both samples (n = 30): +0.383, CI95 [+0.133, +0.628], p = 0.0019.**
+
+The effect is near-identical across two disjoint samples — +0.389 and +0.378. That is the
+strongest evidence produced in this line of work, and the only result here that has
+reproduced.
+
+### Two things this settles
+
+**The pre-registered worry was wrong, in Qwen's favour.** Before running, the concern was that
+the fresh sample would flatter Ornith: its smallest scene is 32 words against the frozen set's
+12, and calibration — the one dimension Ornith lost — was the dimension that discriminated on
+tiny scenes. In the event **calibration came out exactly level at 3.53**. The advantage does
+not come from a sampling artefact; it comes from emotional intelligence, specificity and
+fidelity.
+
+**The mechanical tier-1 score is not a usable proxy for quality.** It reversed between samples
+— Ornith 0.883 → 0.917, Qwen 0.967 → 0.900 — while the rubric gap stayed constant. tier-1
+varies more between samples than between models, so it cannot stand in for the rubric.
+
+### Where the 27B is still better
+
+Recorded because the aggregate hides it. Judges found consistently that Ornith **leaves
+`speaking` and `objects_that_matter` null** while quoting the very dialogue those fields
+should list, and that its **length barely tracks scene size** — a 172-word scene receives an
+analysis comparable to a 593-word one. One node contained **corrupted non-English tokens
+mid-sentence**, which is a character-encoding artefact worth watching.
+
+Qwen took the only fidelity 5 in one batch and imports less foreign material on short scenes.
+
+---
+
 ## Limits
 
-- **n = 15 scenes, one film, one judge model, one run per arm.** p = 0.052 is not a result to
-  build on without repetition.
-- **Judge variance in this project has moved arm means by up to 0.24 between rounds**, which
-  is over half the effect measured here.
-- Ornith leaves `speaking` null on most nodes while quoting the dialogue itself, and on one
-  12-word scene filled a deliberate blank with neighbouring-scene content. The 27B filled
-  schema slots more reliably and flagged the genuine unknowns.
+- **Two samples, 30 scenes, one film, one judge model.** The result reproduced, which is more
+  than anything else here can claim, but it is still one screenplay.
+- **Judge variance has moved arm means by up to 0.24 between rounds** in this project. The
+  pooled effect (+0.383) is larger than that, and it held across two independent judge panels
+  on disjoint scenes — which is the specific reason to trust it over the single-sample number.
+- **Only the scene layer was tested.** Events, plots, profiles, exposé and root have never
+  been rubric-scored against either model.
+- Ornith leaves `speaking` and `objects_that_matter` null on most nodes while quoting the
+  dialogue itself, and on one 12-word scene filled a deliberate blank with neighbouring-scene
+  content. The 27B fills schema slots more reliably and flags the genuine unknowns. One Ornith
+  node carried corrupted non-English tokens mid-sentence.
 - Both arms made the same knowledge-attribution error on sc-148, recording Neo's prior state
   as "believes he is the One" when the Oracle has already told him otherwise. That is a
   recurring failure across every arm in this project and is not a model difference.

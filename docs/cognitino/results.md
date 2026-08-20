@@ -1,5 +1,8 @@
 # Results — blind evaluation against V1 / V4 / V5
 
+*New to the scoring? [`docs/rubric-explained.md`](../rubric-explained.md) explains the six
+dimensions and what 0–5 mean — in particular why 3 means "acceptable", not "good".*
+
 **The CogniTino approach lost, significantly, on every comparison.** The hypothesis in
 [README.md](README.md) — that splitting perception from abstraction would lift the
 dimensions the V-series never scored well on — is refuted by this run.
