@@ -69,7 +69,17 @@ A second finding matters more than the first: blind scoring puts **V1, V4 and V5
 4.0 as well**, roughly 0.4 under their published figures. The bar the handshake records as
 cleared has not, under blind conditions, been cleared by anything.
 
-Full numbers, diagnosis and limits in [`results.md`](results.md).
+**The diagnosis was then tested and the fix produced exactly nothing.** Two-scene windows
+raised objects per scene from 2.6 to 4.0 and cut the no-mind-object gap from 23% to 8%, and
+the score moved **0.000** (p = 0.98): emotional intelligence gained 0.40, calibration lost
+0.47. The 23% gap turned out to be partly correct restraint, and the rule I wrote against it
+forced inner life onto twelve-word scenes.
+
+Against the strongest arm the whole deficit is one dimension: CogniTino **beats V4 on
+emotional intelligence** (+0.37) and loses **−1.13 on calibration**. Against V5 it loses on
+all six — V5 does the same job better and shorter.
+
+Full numbers, both rounds, and limits in [`results.md`](results.md).
 
 ---
 

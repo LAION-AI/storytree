@@ -1,0 +1,211 @@
+{
+ "dimensions": [
+  "fidelity",
+  "completeness",
+  "specificity",
+  "change_reality",
+  "emotional_intelligence",
+  "calibration"
+ ],
+ "arms": {
+  "arm-A": {
+   "system": "v4",
+   "n_scenes": 15,
+   "per_dimension": {
+    "fidelity": 4.27,
+    "completeness": 3.8,
+    "specificity": 4.67,
+    "change_reality": 3.4,
+    "emotional_intelligence": 3,
+    "calibration": 4.13
+   },
+   "overall": 3.88,
+   "worst_dimension": "emotional_intelligence",
+   "scenes_clearing_bar": 3,
+   "scene_means": [
+    3.83,
+    3.67,
+    3.67,
+    3.83,
+    3.83,
+    3.67,
+    4,
+    4,
+    3.83,
+    3.5,
+    4.33,
+    4,
+    4.33,
+    4,
+    3.67
+   ]
+  },
+  "arm-B": {
+   "system": "v1",
+   "n_scenes": 15,
+   "per_dimension": {
+    "fidelity": 4.2,
+    "completeness": 3.53,
+    "specificity": 4.27,
+    "change_reality": 2.93,
+    "emotional_intelligence": 2.2,
+    "calibration": 3.93
+   },
+   "overall": 3.51,
+   "worst_dimension": "emotional_intelligence",
+   "scenes_clearing_bar": 0,
+   "scene_means": [
+    3.33,
+    3.67,
+    3.83,
+    3.83,
+    3.67,
+    3.5,
+    2.5,
+    3.67,
+    3.83,
+    3.83,
+    3.17,
+    3.83,
+    3.33,
+    4,
+    2.67
+   ]
+  },
+  "arm-C": {
+   "system": "v5",
+   "n_scenes": 15,
+   "per_dimension": {
+    "fidelity": 3.93,
+    "completeness": 3.87,
+    "specificity": 4.53,
+    "change_reality": 2.93,
+    "emotional_intelligence": 3.53,
+    "calibration": 3.53
+   },
+   "overall": 3.72,
+   "worst_dimension": "change_reality",
+   "scenes_clearing_bar": 5,
+   "scene_means": [
+    3.67,
+    3.5,
+    3.83,
+    3.5,
+    3.83,
+    3.17,
+    4,
+    4.5,
+    3.83,
+    4.17,
+    4,
+    2.67,
+    3.33,
+    4.17,
+    3.67
+   ]
+  },
+  "arm-D": {
+   "system": "cognitino_v2",
+   "n_scenes": 15,
+   "per_dimension": {
+    "fidelity": 3.67,
+    "completeness": 3.53,
+    "specificity": 4.07,
+    "change_reality": 2.87,
+    "emotional_intelligence": 3.33,
+    "calibration": 2.8
+   },
+   "overall": 3.38,
+   "worst_dimension": "calibration",
+   "scenes_clearing_bar": 1,
+   "scene_means": [
+    4,
+    3.33,
+    3.17,
+    3.83,
+    3.5,
+    2.33,
+    3.17,
+    3.33,
+    3.17,
+    3.17,
+    4,
+    3.5,
+    3.67,
+    2.83,
+    3.67
+   ]
+  },
+  "arm-E": {
+   "system": "cognitino",
+   "n_scenes": 15,
+   "per_dimension": {
+    "fidelity": 3.87,
+    "completeness": 3.27,
+    "specificity": 4.07,
+    "change_reality": 2.87,
+    "emotional_intelligence": 2.93,
+    "calibration": 3.27
+   },
+   "overall": 3.38,
+   "worst_dimension": "change_reality",
+   "scenes_clearing_bar": 1,
+   "scene_means": [
+    3.33,
+    3,
+    3.5,
+    3.17,
+    3,
+    2.67,
+    3.17,
+    3.33,
+    3.67,
+    4,
+    3.83,
+    3.83,
+    3.33,
+    3,
+    3.83
+   ]
+  }
+ },
+ "comparisons": {
+  "cognitino vs v4": {
+   "n_scenes": 15,
+   "diff": -0.5,
+   "ci95": [
+    -0.711,
+    -0.267
+   ],
+   "p": 0.0
+  },
+  "cognitino vs v1": {
+   "n_scenes": 15,
+   "diff": -0.133,
+   "ci95": [
+    -0.422,
+    0.178
+   ],
+   "p": 0.3917
+  },
+  "cognitino vs v5": {
+   "n_scenes": 15,
+   "diff": -0.344,
+   "ci95": [
+    -0.611,
+    -0.044
+   ],
+   "p": 0.0289
+  },
+  "cognitino vs cognitino_v2": {
+   "n_scenes": 15,
+   "diff": 0.0,
+   "ci95": [
+    -0.211,
+    0.211
+   ],
+   "p": 0.9842
+  }
+ },
+ "bar": "mean >= 4.0 and no dimension below 3.0"
+}

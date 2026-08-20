@@ -155,6 +155,7 @@ def load_cognitino(graph: Dict[str, Any], scene_id: str) -> Dict[str, Any] | Non
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--graph", default=str(ROOT / "runs" / "cognitino_matrix" / "scene_graph.json"))
+    parser.add_argument("--graph2", default="", help="second cognitino graph, scored as its own arm")
     parser.add_argument("--variants", default="v1,v4,v5")
     parser.add_argument("--out", required=True)
     parser.add_argument("--seed", type=int, default=20260819)
@@ -163,10 +164,11 @@ def main() -> int:
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     graph = json.loads(Path(args.graph).read_text(encoding="utf-8"))
+    graph2 = json.loads(Path(args.graph2).read_text(encoding="utf-8")) if args.graph2 else None
     variants = args.variants.split(",")
 
     rng = random.Random(args.seed)
-    arms = variants + ["cognitino"]
+    arms = variants + ["cognitino"] + (["cognitino_v2"] if graph2 else [])
     labels = ["arm-{}".format(c) for c in "ABCDEFGH"[:len(arms)]]
     shuffled = arms[:]
     rng.shuffle(shuffled)
@@ -177,8 +179,12 @@ def main() -> int:
         entry = {"scene_id": scene_id, "arms": {}}
         for label in labels:
             source = key[label]
-            node = (load_cognitino(graph, scene_id) if source == "cognitino"
-                    else load_variant(source, scene_id))
+            if source == "cognitino":
+                node = load_cognitino(graph, scene_id)
+            elif source == "cognitino_v2":
+                node = load_cognitino(graph2, scene_id)
+            else:
+                node = load_variant(source, scene_id)
             if node is None:
                 missing.append((scene_id, source))
                 continue

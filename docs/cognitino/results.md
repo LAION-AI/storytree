@@ -164,6 +164,108 @@ Four errors were made building this harness before it produced a usable number; 
 listed in [README.md](README.md#evaluation-harness--errors-made-and-what-they-cost). Two would
 have produced confident wrong figures.
 
+---
+
+# Round 2 — narrower windows, and a null result
+
+The diagnosis above said the abstraction windows were too wide. It was tested: **two scenes
+per window instead of five**, plus explicit guidance on the rubric dimensions, plus the
+ability for the abstraction pass to repair the Perception layer.
+
+**The structural prediction was confirmed. The score did not move at all.**
+
+| | v1 (5 scenes) | **v2 (2 scenes)** |
+|---|---|---|
+| Abstraction objects | 596 (2.6/scene) | **896 (4.0/scene)** |
+| Mind-type objects | 323 (1.4/scene) | **501 (2.2/scene)** |
+| **Scenes with no mind object** | **51 (23%)** | **17 (8%)** |
+| Theory of mind | 82 | 110 |
+| Links / arcs | 626 / 106 | 1173 / 245 |
+
+| Dimension | v1 | v2 | Δ |
+|---|---|---|---|
+| emotional_intelligence | 2.93 | **3.33** | **+0.40** |
+| completeness | 3.27 | 3.53 | +0.26 |
+| specificity | 4.07 | 4.07 | 0.00 |
+| change_reality | 2.87 | 2.87 | 0.00 |
+| fidelity | 3.87 | 3.67 | −0.20 |
+| **calibration** | 3.27 | **2.80** | **−0.47** |
+| **Mean** | **3.38** | **3.38** | **0.000** (p = 0.98) |
+
+Fifty percent more objects, the coverage gap cut from 23% to 8%, emotional intelligence up
+0.40 — and **exactly the same score**, because calibration paid back what emotional
+intelligence earned.
+
+## What the diagnosis got wrong
+
+I called the 23% of scenes with no mind object a defect and wrote a rule against it: *"every
+scene with a person in it needs at least one reading of that person's inner life — silence
+there is not restraint, it is an omission."*
+
+Blind, the judges describe the result: *three mind entries on a 12-word scene; adrenaline-level
+interiority for anonymous police in a 30-word wordless scene; five mind entries on a 76-word
+radio exchange.*
+
+**The gap was not a defect. It was partly correct restraint.** A share of those 23% were
+scenes that do not support an inner life, and the rule forced content onto them. The system
+had been right and I overrode it.
+
+There is a worse consequence than a wash. Two judges independently found that v2 asserts
+characters know about Cypher's betrayal — **the story's central withheld fact**. More mind
+objects means more opportunities to attribute knowledge a character does not have, and
+misattributed knowledge is the most damaging error a theory-of-mind layer can make.
+
+## Against the best non-CogniTino arm
+
+Pooled across both blind runs (identical nodes, different judges; n=30 for the V-series):
+
+| System | n | fid | compl | spec | chg | emo | calib | **Mean** | Bar |
+|---|---|---|---|---|---|---|---|---|---|
+| **V4** | 30 | 4.20 | 3.77 | 4.57 | 3.13 | 2.97 | 3.93 | **3.76** | 13% |
+| **V5** | 30 | 3.90 | 4.00 | 4.63 | 2.90 | 3.57 | 3.43 | **3.74** | **23%** |
+| V1 | 30 | 4.27 | 3.50 | 4.40 | 2.90 | 2.17 | 4.00 | 3.54 | 3% |
+| CogniTino v2 | 15 | 3.67 | 3.53 | 4.07 | 2.87 | 3.33 | 2.80 | **3.38** | 7% |
+| CogniTino v1 | 30 | 3.80 | 3.17 | 4.03 | 2.73 | 2.87 | 3.13 | 3.29 | 3% |
+
+CogniTino v2 − V4 = **−0.500** (p < 0.0001) · − V5 = **−0.344** (p = 0.034) ·
+− V1 = −0.133 (n.s.).
+
+**Against V4, the whole gap is one dimension:**
+
+| | CogniTino v2 | V4 | Δ |
+|---|---|---|---|
+| **emotional_intelligence** | **3.33** | 2.97 | **+0.37** ← wins |
+| **calibration** | **2.80** | 3.93 | **−1.13** ← the entire deficit |
+
+The design does what it was built to do, measured against the strongest arm by mean: it reads
+inner life better. It then loses three times that much on proportion. Against V5 — the
+emotion-focused arm — it loses on all six dimensions: V5 does the same job better and shorter.
+
+**Calibration is the largest single lever but not a sufficient one.** At V4's calibration
+level CogniTino v2 would reach 3.57 — above V1, still below V4 and V5.
+
+## The capability that was never used
+
+The abstraction pass was given the ability to repair the Perception layer: add a missing state
+change, add a missing beat, flag a wrong one. Across **113 windows it fired zero times**
+(`{'state_changes_added': 0, 'beats_added': 0, 'flagged': 0}`).
+
+That is reported as a finding rather than tuned away. With zero observations it cannot be
+distinguished whether the Knowledge Units are genuinely sound or the model will not correct an
+upstream layer it was handed as authoritative. It matters because `change_reality` sits at
+2.87 for both CogniTino arms and **that field originates in the Perception layer** — so the
+one defect the repair capability existed to fix is the one that did not move.
+
+## Two limits on all of the above
+
+**Judge variance is larger than some reported differences.** Between the two blind runs V4
+moved 3.64 → 3.88 and V5 3.76 → 3.72, swapping rank. The pooled table is the more stable
+estimate; single-run rankings should not be read closely.
+
+**Only CogniTino v2 was prompted against the rubric dimensions.** V1, V4 and V5 were not. That
+asymmetry favours the new arm, and it still lost — which strengthens the negative result
+rather than weakening it, but a fair rematch would give a V-variant the same guidance.
+
 ## What is published here, and what is not
 
 `blind_eval.json` (the aggregate) and `rubric6.txt` (the instrument) are in this folder.
