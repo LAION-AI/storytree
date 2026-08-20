@@ -195,8 +195,14 @@ flatter — came out exactly level, so the advantage is not a sampling artefact.
 **The bottleneck was the model, not the scaffold.** Three scaffold changes lost; one model
 change won, and it is the only result in this line of work that has reproduced.
 
-New readers: [`docs/rubric-explained.md`](rubric-explained.md) explains the six dimensions and
-what 0–5 mean, including why 3 means "acceptable" rather than "good".
+New readers, in order:
+[`docs/scene-layer-explained.md`](scene-layer-explained.md) — what the six scene conditions
+were, what differed, what worked and what did not ·
+[`docs/rubric-explained.md`](rubric-explained.md) — the dimensions and what 0–5 mean ·
+[`docs/events/`](events/) — the layer above scenes, and the first measurement of it.
+
+**Naming warning:** `V0–V5` are *scene conditions*; `V1–V5` in the event rubric are *scoring
+dimensions*. Unrelated, same letters.
 
 ## What was about to happen next
 

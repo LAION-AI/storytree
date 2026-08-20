@@ -51,6 +51,16 @@ it is scoring or quoting the text it checked against. A score without that is no
 
 ---
 
+## A naming collision to know about
+
+The scene layer's six experimental conditions are called **V0–V5**. The event layer's rubric
+dimensions are *also* called **V1–V5**. They are unrelated: scene-V5 is a way of prompting,
+event-V5 is the question "is the mental state recorded at both endpoints?".
+
+Where both could appear, this documentation writes scene conditions as `scene-V4` and event
+dimensions by name. The ids in the code are unchanged, because renaming them would invalidate
+every recorded score.
+
 ## The six dimensions
 
 ### 1. Fidelity — *is it true of this scene?*
