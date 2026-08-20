@@ -141,6 +141,44 @@ check in the system.**
 
 ---
 
+## Since then: the blind A/B was run, and it changed the picture
+
+Step #1 below was done. Three blind rounds, fifteen scenes, three independent Opus judges,
+same six-dimension rubric, arms relabelled with the key withheld. Everything in
+[`docs/cognitino/results.md`](cognitino/results.md).
+
+**The bar has not been cleared by anything.** Blind scoring puts every arm ~0.4 below its
+published figure:
+
+| Arm | Published (docs/14) | **Blind** |
+|---|---|---|
+| V4 | 4.16 | **3.63 – 3.88** |
+| V5 | 4.06 | **3.66 – 3.74** |
+| V1 | 4.02 | **3.51 – 3.57** |
+
+The claim in this document that *"V4 and V5 are the first two arms to clear the bar"* does not
+survive blinding. **Neither does. Nor does any arm.** That is what the non-blind caveat below
+predicted, and it is the single most important correction to make to this file.
+
+**V4 and V5 remain indistinguishable from each other** across all three rounds. Judge variance
+between rounds moved V4 by 0.24 and swapped its rank with V5 — larger than several differences
+previously reported as findings.
+
+**Three extensions were tried and all three lost to plain V4:**
+
+| Extension | Mean | Effort vs V4 |
+|---|---|---|
+| CogniTino abstraction layer, 2-scene windows | 3.37 | 1.9× calls, ~17× input tokens |
+| CogniTino abstraction layer, 5-scene windows | 3.29 | same |
+| V4 + a separate deepening pass | **2.57** | 2.4× calls, 3.3× input |
+
+The pattern is consistent and is the transferable lesson: **every attempt to append more
+analysis cost more in proportion and fidelity than it gained in insight.** Twice the same
+mistake was made — forcing content onto scenes that cannot carry it. The abstraction layer does
+win emotional intelligence (+0.37 against V4), so the mechanism works; it is not worth its cost.
+
+**Practical consequence:** return to V4, and treat its published score as ~3.7, not 4.16.
+
 ## What was about to happen next
 
 Ranked, from `docs/14`:
