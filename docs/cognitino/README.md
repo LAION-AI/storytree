@@ -79,7 +79,17 @@ Against the strongest arm the whole deficit is one dimension: CogniTino **beats 
 emotional intelligence** (+0.37) and loses **−1.13 on calibration**. Against V5 it loses on
 all six — V5 does the same job better and shorter.
 
-Full numbers, both rounds, and limits in [`results.md`](results.md).
+**Round 3 went back to V4 and deepened it in place** — V4's node untouched, a second pass
+added alongside for inner life, theory of mind and justified causal links. It is the worst
+arm of all three rounds: **3.63 → 2.57**. Emotional intelligence gained +0.07; fidelity lost
+2.20 and calibration 3.07. Two measurable design errors: 20% of its causal links run backwards
+through time (the scene index was never bound in the schema), and the pass ran identically on
+every scene, putting 7.6 KB of analysis on a 27-word one.
+
+**Nothing beats plain V4.** Across three blind rounds V4 and V5 are indistinguishable from
+each other and every extension scores below both.
+
+Full numbers, all three rounds, costs and limits in [`results.md`](results.md).
 
 ---
 

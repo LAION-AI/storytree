@@ -64,7 +64,39 @@ def load_variant(variant: str, scene_id: str) -> Dict[str, Any] | None:
 
 
 def normalise_v(node: Dict[str, Any]) -> Dict[str, Any]:
-    """Map a V-series node onto the common presentation slots."""
+    """Map a V-series node onto the common presentation slots.
+
+    An enriched node carries extra keys added alongside the original; they are folded into
+    the same slots so the arm is not identifiable by field names. Stripping them recovers
+    plain V4 exactly, which is what makes the pair comparable.
+    """
+    minds = list(node.get("minds") or [])
+    for m in node.get("deepened_minds") or []:
+        minds.append({"who": m.get("who"), "wants": m.get("wants"),
+                      "feels": "fears: {} | conceals: {} (from {})".format(
+                          m.get("fears"), m.get("conceals"), m.get("from_whom")),
+                      "shows": m.get("because"), "confidence": m.get("confidence"),
+                      "would_be_wrong_if": m.get("would_be_wrong_if")})
+    for t in node.get("theory_of_mind") or []:
+        minds.append({"who": t.get("who"), "about": t.get("about"),
+                      "feels": t.get("believes"), "shows": t.get("because"),
+                      "confidence": t.get("confidence"),
+                      "would_be_wrong_if": t.get("would_be_wrong_if")})
+    changes = list(node.get("what_changes") or [])
+    for c in node.get("internal_changes") or []:
+        changes.append({"who": c.get("who"), "axis": c.get("axis"),
+                        "before": c.get("before"), "after": c.get("after"),
+                        "evidence": c.get("because")})
+    sets_up = list(node.get("sets_up") or [])
+    back = list(node.get("connects_back") or [])
+    for l in node.get("causal_links") or []:
+        line = "{} -> {}: {} ({})".format(
+            (l.get("cause") or {}).get("scene_id"), (l.get("effect") or {}).get("scene_id"),
+            l.get("because"), l.get("confidence"))
+        (sets_up if l.get("kind") == "causes" else back).append(line)
+    node = dict(node)
+    node["minds"], node["what_changes"] = minds, changes
+    node["sets_up"], node["connects_back"] = sets_up, back
     return {
         "scene_id": node.get("scene_id"),
         "location": node.get("location"),
@@ -156,6 +188,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--graph", default=str(ROOT / "runs" / "cognitino_matrix" / "scene_graph.json"))
     parser.add_argument("--graph2", default="", help="second cognitino graph, scored as its own arm")
+    parser.add_argument("--enriched-dir", default="", help="enriched V4 nodes, scored as its own arm")
     parser.add_argument("--variants", default="v1,v4,v5")
     parser.add_argument("--out", required=True)
     parser.add_argument("--seed", type=int, default=20260819)
@@ -168,7 +201,8 @@ def main() -> int:
     variants = args.variants.split(",")
 
     rng = random.Random(args.seed)
-    arms = variants + ["cognitino"] + (["cognitino_v2"] if graph2 else [])
+    arms = variants + (["cognitino"] if args.graph else []) \
+        + (["cognitino_v2"] if graph2 else []) + (["v4_enriched"] if args.enriched_dir else [])
     labels = ["arm-{}".format(c) for c in "ABCDEFGH"[:len(arms)]]
     shuffled = arms[:]
     rng.shuffle(shuffled)
@@ -183,6 +217,10 @@ def main() -> int:
                 node = load_cognitino(graph, scene_id)
             elif source == "cognitino_v2":
                 node = load_cognitino(graph2, scene_id)
+            elif source == "v4_enriched":
+                q = Path(args.enriched_dir) / "{}.json".format(scene_id)
+                node = (_strip_arm_signals(normalise_v(json.loads(q.read_text(encoding="utf-8"))))
+                        if q.exists() else None)
             else:
                 node = load_variant(source, scene_id)
             if node is None:

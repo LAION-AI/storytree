@@ -266,6 +266,111 @@ estimate; single-run rankings should not be read closely.
 asymmetry favours the new arm, and it still lost — which strengthens the negative result
 rather than weakening it, but a fair rematch would give a V-variant the same guidance.
 
+---
+
+# Round 3 — back to V4, deepened in place. It broke V4.
+
+CogniTino replaced the V-series node. This attempt kept the V4 node untouched and added a
+second agent pass alongside it: pass 1 deepens one scene (wants, conceals, theory of mind,
+non-physical state changes); pass 2 lets each agent see every other scene's deepening and
+write causal links with a cause pointer, an effect pointer, and a justification.
+
+Fifteen scenes, 30 calls, **54 seconds**. It produced 28 mind entries, 26 theory-of-mind
+entries, 26 internal state changes and 41 causal links.
+
+**It is the worst-scoring arm across all three blind rounds.**
+
+| Dimension | V4 | V4 + deepening | Δ |
+|---|---|---|---|
+| completeness | 3.33 | 3.73 | +0.40 |
+| **emotional_intelligence** | 2.80 | 2.87 | **+0.07** |
+| change_reality | 2.87 | 2.20 | −0.67 |
+| specificity | 4.20 | 3.27 | −0.93 |
+| **fidelity** | 4.27 | **2.07** | **−2.20** |
+| **calibration** | 4.33 | **1.27** | **−3.07** |
+| **Mean** | **3.63** | **2.57** | **−1.067** (CI95 −1.23 … −0.89) |
+
+Bar cleared: **0 of 15**, against 3 for plain V4. It gained essentially nothing on the
+dimension it was built for and destroyed the two on which V4's result rests.
+
+## Two design errors, both mine, both measurable
+
+**1. Causal links run backwards through time.** Pass 2 showed every agent all fifteen scenes
+and never constrained `caused_by` to point at earlier ones. Measured on the output: **8 of 41
+links (20%) have the cause at or after the effect** — `sc-003 caused_by sc-008`,
+`sc-039 caused_by sc-075`, `sc-024 causes sc-008`. Three judges found this independently. The
+scene index was available and simply was not bound in the schema — the project's own standing
+finding, that structure repairs what instructions do not, applied and ignored.
+
+**2. No size gate.** The pass ran identically on every scene. Judges measured 7.6 KB of
+analysis on a 27-word scene and "two paragraphs about Trinity's rooftop tactics on a 12-word
+location card" — the rubric's literal anchor-1 case for calibration.
+
+Both are cheap to fix. But the deeper point is that **this is the same mistake as round 2,
+made again**: content forced onto scenes that cannot carry it, losing more in proportion than
+it gains in insight. Round 2 was a wash; round 3 cost a full point.
+
+## Standing table, all three rounds
+
+| System | Mean | Effort vs V4 |
+|---|---|---|
+| **V5** | 3.66 – 3.74 | 1× |
+| **V4** | **3.63 – 3.88** | **1×** |
+| CogniTino v2 | 3.37 | 1.9× calls, ~17× input tokens |
+| CogniTino v1 | 3.29 | 1.9× calls, ~17× input tokens |
+| V4 + deepening | **2.57** | 2.4× calls, 3.3× input tokens |
+
+**No extension beats plain V4.** V4 and V5 remain indistinguishable from each other across
+every round.
+
+---
+
+# Verdict on the approach, and what it costs
+
+## Where the detour helps, and where it hurts
+
+Both blind rounds point the same way, and the per-dimension breakdown says why.
+
+**It helps where the work is implicit perspective-taking.** Against V4 — the strongest arm by
+mean — CogniTino wins the one dimension that requires putting yourself inside a character:
+emotional intelligence, +0.37. That is not noise and it is not an accident; it is what the
+two-layer split was built to do, and it does it.
+
+**It hurts everywhere else.** Fidelity −0.53, specificity −0.50, calibration −1.13 against the
+same arm. The pattern across both rounds is consistent: **routing the work through an
+intermediate knowledge layer appears to disorient the agents on everything that is not
+perspective-taking.** Plausible mechanism, though not isolated by any experiment here: the
+abstraction agent is handed a structured summary as its object of study, and questions whose
+answer is simply *what the page says* are now answered from the summary rather than from the
+page. The judges' concrete findings fit that reading — a change asserted on a state the scene
+never touches, characters credited with knowledge the story withholds, a state change taken
+from the beat ledger rather than from the drama.
+
+The knowledge layer is a lens. It sharpens one thing and blurs the rest.
+
+## What it costs
+
+Measured, per scene, from the run protocols:
+
+| | LLM calls | input tokens | output tokens |
+|---|---|---|---|
+| **V4** | **1.4** | **3,332** | **922** |
+| V4 + deepening pass | 3.4 | 11,118 | 2,546 |
+| CogniTino v2 (generation only) | 0.5 | 22,405 | 816 |
+| **CogniTino v2 (all five modules)** | **2.6** | **~56,000** | **~2,000** |
+
+**CogniTino costs roughly 1.9× the calls and 17× the input tokens of V4** for a result 0.50
+below it. The input cost is structural rather than incidental: every abstraction agent is
+shown the entire screenplay, which is cheap in wall-clock here because vLLM prefix-caches it
+(15.8 s cold, 0.8 s warm) and would not be cheap at all against a metered API.
+
+Wall clock is the misleading number — 22 minutes for 225 scenes looks fine. The token bill is
+the honest one.
+
+**The conclusion is to stop developing this line and return to V4**, keeping the finding that
+a dedicated pass aimed at inner life does raise the dimension it targets. That finding is
+worth carrying forward; the intermediate knowledge layer is not.
+
 ## What is published here, and what is not
 
 `blind_eval.json` (the aggregate) and `rubric6.txt` (the instrument) are in this folder.
