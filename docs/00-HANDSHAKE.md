@@ -180,6 +180,16 @@ win emotional intelligence (+0.37 against V4), so the mechanism works; it is not
 
 **Practical consequence:** return to V4, and treat its published score as ~3.7, not 4.16.
 
+**Then the model was swapped, and that is what moved the number.** Same V4 code, same sample,
+same rubric, blind: **Ornith-1.5-397B scores 3.77 against Qwen3.8-27B's 3.38** (+0.39,
+CI95 [0.00, 0.78], p = 0.052 — not significant, but it clears the bar on 6 of 15 scenes
+against 1). Emotional intelligence, the dimension nothing else could move, goes 2.67 → 3.60.
+Costs 4.7× the model time, 4 GPUs per instance and 224 GB on disk, and is mechanically
+*worse* (tier-1 0.883 vs 0.967). See [`docs/ornith/`](ornith/).
+
+**The bottleneck was the model, not the scaffold.** Three scaffold changes lost; one model
+change won.
+
 ## What was about to happen next
 
 Ranked, from `docs/14`:

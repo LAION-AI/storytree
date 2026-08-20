@@ -1,0 +1,78 @@
+{
+ "dimensions": [
+  "fidelity",
+  "completeness",
+  "specificity",
+  "change_reality",
+  "emotional_intelligence",
+  "calibration"
+ ],
+ "arms": {
+  "arm-A": {
+   "system": "v4",
+   "n_scenes": 15,
+   "per_dimension": {
+    "fidelity": 3.73,
+    "completeness": 3.33,
+    "specificity": 3.6,
+    "change_reality": 3,
+    "emotional_intelligence": 2.67,
+    "calibration": 3.93
+   },
+   "overall": 3.38,
+   "worst_dimension": "emotional_intelligence",
+   "scenes_clearing_bar": 1,
+   "scene_means": [
+    3.5,
+    3.33,
+    3.5,
+    3.83,
+    3.83,
+    4,
+    2.83,
+    3.5,
+    3.5,
+    3.33,
+    2.5,
+    3.5,
+    2.83,
+    3.5,
+    3.17
+   ]
+  },
+  "arm-B": {
+   "system": "ornith_v4",
+   "n_scenes": 15,
+   "per_dimension": {
+    "fidelity": 4.07,
+    "completeness": 3.67,
+    "specificity": 4.27,
+    "change_reality": 3.33,
+    "emotional_intelligence": 3.6,
+    "calibration": 3.67
+   },
+   "overall": 3.77,
+   "worst_dimension": "change_reality",
+   "scenes_clearing_bar": 6,
+   "scene_means": [
+    3.83,
+    4,
+    3.5,
+    4,
+    3.83,
+    2.67,
+    4.17,
+    4,
+    3.83,
+    4,
+    4.33,
+    3.33,
+    4.5,
+    3.33,
+    3.17
+   ]
+  }
+ },
+ "comparisons": {},
+ "bar": "mean >= 4.0 and no dimension below 3.0"
+}
