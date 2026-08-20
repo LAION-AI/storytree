@@ -190,6 +190,38 @@ SCENES ({count}):
 """
 
 
+def _iter_registers(triple: Dict[str, Any]):
+    """Yield (name, slot) whether registers are the new object or the old array.
+
+    Both shapes exist on disk: build 1 and 2 wrote arrays, build 3 writes an object. Reading
+    both keeps every earlier run scoreable by the current lint instead of stranding it.
+    """
+    regs = triple.get("registers")
+    if isinstance(regs, dict):
+        for name, slot in regs.items():
+            yield name, slot
+    else:
+        for slot in regs or []:
+            yield slot.get("register"), slot
+
+
+def _register_slot(scene_ids: Sequence[str]) -> Dict[str, Any]:
+    return {
+        "type": "object",
+        "properties": {
+            "moved": {"type": "boolean"},
+            "entry": {"type": "string", "minLength": 3},
+            "change": {"type": "string", "minLength": 3},
+            "exit": {"type": "string", "minLength": 3},
+            "unchanged_because": {"type": ["string", "null"]},
+            "evidence_scene": {"type": "string", "enum": list(scene_ids)},
+        },
+        "required": ["moved", "entry", "change", "exit", "unchanged_because",
+                     "evidence_scene"],
+        "additionalProperties": False,
+    }
+
+
 def compose_schema(entity_ids: Sequence[str], scene_ids: Sequence[str]) -> Dict[str, Any]:
     ent = ({"type": "string", "enum": list(entity_ids)} if entity_ids
            else {"type": "string", "minLength": 1})
@@ -205,30 +237,19 @@ def compose_schema(entity_ids: Sequence[str], scene_ids: Sequence[str]) -> Dict[
                 "type": "object",
                 "properties": {
                     "entity": ent,
-                    # The full set, every time. The first run let registers go missing
-                    # rather than be marked unchanged, which is indistinguishable from an
-                    # omission — the exact failure `unchanged_because` exists to prevent.
-                    "registers": {"type": "array", "minItems": len(REGISTERS),
-                                  "maxItems": len(REGISTERS), "items": {
+                    # An OBJECT with one required key per register, not an array with a
+                    # count. Build 2 required "exactly seven" as `minItems`, and the model
+                    # satisfied the count by repeating one register name seven times; the
+                    # de-duplication pass then collapsed them and left 107 of 253 entities
+                    # below the count the schema had demanded. A count is a number to be
+                    # satisfied; an object shape cannot be satisfied dishonestly, because
+                    # there is nowhere to put a duplicate.
+                    "registers": {
                         "type": "object",
-                        "properties": {
-                            "register": {"type": "string", "enum": REGISTERS},
-                            # `moved` makes the changed/unchanged distinction machine-readable.
-                            # The first run expressed it four different ways across four nodes
-                            # (null, empty string, "not applicable —", reason stuffed into
-                            # `change`), so no validator could tell the two apart. A boolean
-                            # can only be read one way.
-                            "moved": {"type": "boolean"},
-                            "entry": {"type": "string", "minLength": 3},
-                            "change": {"type": "string", "minLength": 3},
-                            "exit": {"type": "string", "minLength": 3},
-                            "unchanged_because": {"type": ["string", "null"]},
-                            "evidence_scene": {"type": "string", "enum": list(scene_ids)},
-                        },
-                        "required": ["register", "moved", "entry", "change", "exit",
-                                     "unchanged_because", "evidence_scene"],
+                        "properties": {r: _register_slot(scene_ids) for r in REGISTERS},
+                        "required": list(REGISTERS),
                         "additionalProperties": False,
-                    }},
+                    },
                     "reading": {"type": ["string", "null"]},
                 },
                 "required": ["entity", "registers", "reading"],
@@ -323,7 +344,7 @@ def reconcile_all(pool: EndpointPool, events: Sequence[Dict], *, workers: int = 
         compact = [{"entity": t["entity"], "reading": t.get("reading"),
                     "registers": [{"register": r["register"], "moved": r.get("moved"),
                                    "entry": r["entry"], "change": r["change"], "exit": r["exit"]}
-                                  for r in t.get("registers") or [] if r.get("moved")]}
+                                  for _rn, r in _iter_registers(t) if r.get("moved")]}
                    for t in event.get("state_triples") or []]
         r = pool.call(SYSTEM, _RECONCILE.format(
             title=event.get("title"), triples=json.dumps(compact, ensure_ascii=False, indent=1),
@@ -539,7 +560,7 @@ def verify_all(pool: EndpointPool, events: Sequence[Dict], *, workers: int = 2,
                                                   "moved": r.get("moved"),
                                                   "entry": r["entry"], "change": r["change"],
                                                   "unchanged_because": r.get("unchanged_because"),
-                                                  "exit": r["exit"]} for r in t["registers"]]}
+                                                  "exit": r["exit"]} for _rn, r in _iter_registers(t)]}
                                   for t in e.get("state_triples") or []],
                 "affects_outside": e.get("affects_outside")}
 
@@ -567,7 +588,8 @@ _PLACEHOLDER = re.compile(
 _CONCESSION = re.compile(r"\b(beyond|except|other than|aside from|apart from|save for)\b", re.I)
 
 
-def lint(events: List[Dict[str, Any]]) -> Dict[str, Any]:
+def lint(events: List[Dict[str, Any]],
+         scenes_by_id: Optional[Dict[str, Dict[str, Any]]] = None) -> Dict[str, Any]:
     """Count the defects that are decidable without a model, and name where they are.
 
     Every item here was found by a judge reading nodes by hand. None of them needs judgement
@@ -576,7 +598,14 @@ def lint(events: List[Dict[str, Any]]) -> Dict[str, Any]:
     """
     report = {"placeholder_entries": 0, "conceding_unchanged": 0, "unmoved_with_exit": 0,
               "quotes_outside_reading": 0, "participants_mismatch": 0,
-              "missing_registers": 0, "examples": []}
+              "missing_registers": 0,
+              # Both added after build 2. A judge found one node giving the pursuing POLICE
+              # the operator's state, and another marking a register `moved: true` from a
+              # value to the identical value. Both are decidable without judgement, and both
+              # were load-bearing: a consumer reading the first gets the police taking
+              # orders from the crew.
+              "entity_absent_from_evidence_scene": 0, "moved_but_identical": 0,
+              "examples": []}
 
     def note(kind, event, detail):
         if len(report["examples"]) < 20:
@@ -587,11 +616,11 @@ def lint(events: List[Dict[str, Any]]) -> Dict[str, Any]:
         if declared != set(event.get("participants") or []):
             report["participants_mismatch"] += 1
         for triple in event.get("state_triples") or []:
-            seen = {r.get("register") for r in triple.get("registers") or []}
+            seen = {n for n, _ in _iter_registers(triple)}
             missing = set(REGISTERS) - seen
             if missing:
                 report["missing_registers"] += len(missing)
-            for reg in triple.get("registers") or []:
+            for _rname, reg in _iter_registers(triple):
                 if _PLACEHOLDER.match(reg.get("entry") or ""):
                     report["placeholder_entries"] += 1
                     note("placeholder_entry", event.get("event_id"),
@@ -603,6 +632,36 @@ def lint(events: List[Dict[str, Any]]) -> Dict[str, Any]:
                     note("conceding_unchanged", event.get("event_id"), because)
                 if reg.get("moved") is False and (reg.get("exit") or "").strip() != (reg.get("entry") or "").strip():
                     report["unmoved_with_exit"] += 1
+
+                entry_s, exit_s = (reg.get("entry") or "").strip(), (reg.get("exit") or "").strip()
+                # Literal identity, and the weaker prefix case. A judge found
+                # `positional: "At the console." -> "At the console, directed to fetch a
+                # drawing."` marked as moved: the place did not change, and the material that
+                # was added belongs to a different register. String equality alone misses it,
+                # so a shared prefix counts too. This still cannot catch a paraphrased no-op;
+                # lint has a floor and that floor is worth stating rather than papering over.
+                if reg.get("moved") is True and entry_s and (
+                        exit_s == entry_s or
+                        (len(entry_s) > 25 and exit_s.startswith(entry_s.rstrip(".")))):
+                    report["moved_but_identical"] += 1
+                    note("moved_but_identical", event.get("event_id"),
+                         "{}.{}: {}".format(triple.get("entity"), reg.get("register"),
+                                            (reg.get("entry") or "")[:60]))
+
+                if scenes_by_id:
+                    scene = scenes_by_id.get(reg.get("evidence_scene") or "")
+                    present = {str(x).strip().casefold()
+                               for x in (scene or {}).get("present") or []}
+                    who = (triple.get("entity") or "").strip().casefold()
+                    # Only flag when the scene declares a cast at all, and the entity is not
+                    # a substring of anyone in it — collectives legitimately do not match
+                    # exactly, and flagging those would drown the real cases.
+                    if present and who and not any(who in p or p in who for p in present):
+                        report["entity_absent_from_evidence_scene"] += 1
+                        note("entity_absent", event.get("event_id"),
+                             "{} cites {} whose cast is {}".format(
+                                 triple.get("entity"), reg.get("evidence_scene"),
+                                 sorted(present)[:4]))
             for field in ("registers",):
                 for reg in triple.get(field) or []:
                     for key in ("entry", "change", "exit"):
@@ -637,8 +696,8 @@ def merge_duplicate_keys(events: List[Dict[str, Any]]) -> Dict[str, Any]:
             report["conflicts"].append({"event": event.get("event_id"), "entity": name,
                                         "kind": "duplicate entity key"})
             target = by_entity[name]
-            seen = {r.get("register") for r in target.get("registers") or []}
-            for reg in triple.get("registers") or []:
+            seen = {n for n, _ in _iter_registers(target)}
+            for _rname, reg in _iter_registers(triple):
                 if reg.get("register") not in seen:
                     target.setdefault("registers", []).append(reg)
                     seen.add(reg.get("register"))
@@ -646,8 +705,10 @@ def merge_duplicate_keys(events: List[Dict[str, Any]]) -> Dict[str, Any]:
                 target["reading"] = triple["reading"]
 
         for triple in by_entity.values():
+            if isinstance(triple.get("registers"), dict):
+                continue  # object shape: duplicates are structurally impossible
             kept: Dict[str, Any] = {}
-            for reg in triple.get("registers") or []:
+            for _rname, reg in _iter_registers(triple):
                 key = reg.get("register")
                 if key in kept:
                     report["registers_merged"] += 1
@@ -689,7 +750,7 @@ def chain_and_validate(events: List[Dict[str, Any]]) -> Dict[str, Any]:
     for event in events:
         for triple in event.get("state_triples") or []:
             entity = triple.get("entity")
-            for reg in triple.get("registers") or []:
+            for _rname, reg in _iter_registers(triple):
                 key = (entity, reg.get("register"))
 
                 if _PLACEHOLDER.match(reg.get("entry") or "") and key in last_exit:
@@ -809,7 +870,7 @@ def main() -> int:
         print("duplicate keys: {} entities merged, {} registers merged".format(
             merged["entities_merged"], merged["registers_merged"]), flush=True)
     chain = chain_and_validate(nodes)
-    lint_report = lint(nodes)
+    lint_report = lint(nodes, by_id)
     print("lint: {} placeholder entries, {} conceding-unchanged, {} unmoved-with-exit, "
           "{} quotes outside reading, {} missing registers".format(
               lint_report["placeholder_entries"], lint_report["conceding_unchanged"],

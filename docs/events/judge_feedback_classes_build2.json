@@ -1,0 +1,180 @@
+{
+ "note": "Full feedback quotes the screenplay and is withheld.",
+ "items": [
+  {
+   "where": "state_triples[*].safety.change and .unchanged_because (ev-017)",
+   "caused_by": "event layer",
+   "problem_class": "A per-entity register template is filled in bulk and then applied to t"
+  },
+  {
+   "where": "state_triples[*].registers[*].moved / change",
+   "caused_by": "schema",
+   "problem_class": "`moved: true` is used for registers whose entry and exit are the same "
+  },
+  {
+   "where": "state_triples[*].registers[*].exit",
+   "caused_by": "schema",
+   "problem_class": "`exit` is written as a recap of the whole event instead of a state a c"
+  },
+  {
+   "where": "state_triples[*].entity, participants, turns_on_entity",
+   "caused_by": "scene layer",
+   "problem_class": "Entity identifiers are not drawn from a registry, so the same entity g"
+  },
+  {
+   "where": "state_triples[*].registers[*].evidence_scene",
+   "caused_by": "schema",
+   "problem_class": "`evidence_scene` points at the scene where the entity's entry was obse"
+  },
+  {
+   "where": "affects_outside.off_screen_reactor and .enables",
+   "caused_by": "schema",
+   "problem_class": "`affects_outside` slots are filled with parties inside the event, or w"
+  },
+  {
+   "where": "state_triples[*].registers (ev-017)",
+   "caused_by": "schema",
+   "problem_class": "Register coverage is inconsistent between events, and the omissions la"
+  },
+  {
+   "where": "state_triples[*].registers[*].entry/change/exit",
+   "caused_by": "event layer",
+   "problem_class": "The node states as fact things the covered scenes do not contain, in t"
+  },
+  {
+   "where": "summary / carried_uncertainty vs state_triples[*].safety",
+   "caused_by": "event layer",
+   "problem_class": "The reconcile pass edits the summary and leaves the triples contradict"
+  },
+  {
+   "where": "title, boundary_reason",
+   "caused_by": "event layer",
+   "problem_class": "`title` and `boundary_reason` are written to a different draft than th"
+  },
+  {
+   "where": "turns_on, turns_on_entity",
+   "caused_by": "schema",
+   "problem_class": "`turns_on` / `turns_on_entity` are used for two incompatible things: a"
+  },
+  {
+   "where": "action, summary",
+   "caused_by": "event layer",
+   "problem_class": "Field length budgets are not applied"
+  },
+  {
+   "where": "state_triples[*].registers[*].entry/change/exit, especially the emotional and safety registers",
+   "caused_by": "event layer",
+   "problem_class": "Interiority leaks out of `reading` into the register triples: 'Detache"
+  },
+  {
+   "where": "state_triples[*] for walk-on entities",
+   "caused_by": "schema",
+   "problem_class": "Bystanders are given full entity blocks whose triples are the action r"
+  },
+  {
+   "where": "state_triples[].entity / registers[] / reading",
+   "caused_by": "event layer",
+   "problem_class": "An entity's registers are filled with another entity's state"
+  },
+  {
+   "where": "participants / state_triples",
+   "caused_by": "event layer",
+   "problem_class": "Actors who appear in the node's own prose are missing from participant"
+  },
+  {
+   "where": "registers[].moved / entry / change / exit",
+   "caused_by": "schema",
+   "problem_class": "moved:true asserted where entry and exit are identical, and registers "
+  },
+  {
+   "where": "registers[].evidence_scene",
+   "caused_by": "schema",
+   "problem_class": "evidence_scene points at the scene where the entity first appears rath"
+  },
+  {
+   "where": "state_triples[].entity",
+   "caused_by": "scene layer",
+   "problem_class": "Group entities double-count characters that are separately modelled"
+  },
+  {
+   "where": "action / turns_on / registers[].moved",
+   "caused_by": "schema",
+   "problem_class": "Field length and register discipline vary wildly between sibling event"
+  },
+  {
+   "where": "registers[].entry / change / exit",
+   "caused_by": "event layer",
+   "problem_class": "Verbatim screenplay dialogue is quoted inside state fields ('Oh shit!'"
+  },
+  {
+   "where": "affects_outside.enables / reading",
+   "caused_by": "event layer",
+   "problem_class": "Forward claims sourced from the scene layer's sets_up / dramatic_funct"
+  },
+  {
+   "where": "turns_on_entity / turns_on",
+   "caused_by": "schema",
+   "problem_class": "turns_on_entity does not agree with turns_on and is not constrained to"
+  },
+  {
+   "where": "state_triples[].registers (compose_schema minItems/maxItems = 7)",
+   "caused_by": "schema",
+   "problem_class": "Entities ship with fewer than the seven required registers \u2014 ev-031 gi"
+  },
+  {
+   "where": "state_triples[].registers[].exit",
+   "caused_by": "schema",
+   "problem_class": "Exit states contradict each other across registers of the same entity "
+  },
+  {
+   "where": "state_triples[].registers[].entry, with `moved: false`",
+   "caused_by": "event layer",
+   "problem_class": "Entries are not datable to the event's first scene"
+  },
+  {
+   "where": "turns_on_entity vs participants vs the `ent` enum in compose_schema",
+   "caused_by": "schema",
+   "problem_class": "All three events name a `turns_on_entity` ('the exit phone line', 'The"
+  },
+  {
+   "where": "state_triples[].registers[].entry / change / exit",
+   "caused_by": "event layer (detector exists but is advisory)",
+   "problem_class": "Direct quotation of screenplay dialogue inside state fields, which the"
+  },
+  {
+   "where": "state_triples[].reading",
+   "caused_by": "event layer",
+   "problem_class": "`reading` used for commentary about the document rather than about a m"
+  },
+  {
+   "where": "scene_ids vs evidence_scene coverage; summary; the reconcile step",
+   "caused_by": "event layer",
+   "problem_class": "A scene inside the event is represented nowhere"
+  },
+  {
+   "where": "state_triples[].registers[].register",
+   "caused_by": "schema",
+   "problem_class": "Registers duplicated as padding because their boundaries are undefined"
+  },
+  {
+   "where": "state_triples coverage against the scene nodes' what_changes",
+   "caused_by": "event layer",
+   "problem_class": "Changes recorded at the scene layer are silently dropped at the event "
+  },
+  {
+   "where": "summary; state_triples[].registers[].change",
+   "caused_by": "event layer",
+   "problem_class": "Confident false detail introduced above the scene layer"
+  },
+  {
+   "where": "affects_outside.enables, affects_outside.off_screen_reactor",
+   "caused_by": "schema",
+   "problem_class": "`affects_outside` slots filled with the generic form the rubric flags "
+  },
+  {
+   "where": "state_triples[].registers[].change; carried_uncertainty",
+   "caused_by": "event layer",
+   "problem_class": "An uncertainty was promoted to a fact"
+  }
+ ]
+}

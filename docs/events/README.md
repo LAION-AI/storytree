@@ -243,16 +243,97 @@ transfers (see [`scene-layer-explained.md`](../scene-layer-explained.md)), openi
 
 ---
 
+---
+
+## Build 2 — measured. A null result, and a useful one.
+
+Build 2 was built, run and scored under the same method: nine of the fifty-one events (the
+ones that map onto Build 1's sample by scene overlap), three fresh judges, same rubric.
+
+**2.87 against Build 1's 2.89. Delta −0.02. Gate still cleared 0 of 9.**
+
+### The mechanical defects are nearly gone. The rubric did not notice.
+
+| Defect | Build 1 | **Build 2** |
+|---|---|---|
+| Placeholder entries **per 100 register entries** | **35.9** | **1.2** |
+| Registers missing rather than marked unchanged | 900 | 250 |
+| `participants` disagreeing with the entity list | 7 | 0 |
+| Quotes outside the permitted field | 3 | 1 |
+
+Every one of those was real, and every one is measurably gone. **They were simply not what
+the rubric measures.** That is worth stating plainly: six defect classes eliminated, overall
+score unchanged.
+
+### Where it improved — exactly as intended
+
+| Dimension | Δ |
+|---|---|
+| **Mental simulation** | **+0.67** |
+| Psychological plausibility | +0.55 |
+| **State triple completeness** | **+0.31** |
+| Dramatic competence | +0.31 |
+
+The weakest dimension of Build 1 became the most improved. The scene-layer gate change was
+the cause, and it did what the measurement predicted it would.
+
+### Where it got worse — and that was my doing
+
+| Dimension | Δ |
+|---|---|
+| **Internal consistency** | **−0.64** |
+| **Fidelity to source** | **−0.69** |
+| Referential integrity | −0.36 |
+
+Two causes, both traceable to Build 2's own changes:
+
+**`moved: true` became decorative.** I added the boolean so that changed-versus-unchanged
+would be machine-readable. The model now also sets it where entry and exit say the same thing
+— *"Certain, without hedging" → "Still certain."* That is the rubric's definition of change
+reality = 1, and it drags internal consistency down with it. The field made the distinction
+legible and simultaneously made it cheap to assert.
+
+**The reconcile stage fixed the prose and left the triples behind.** In one node
+`carried_uncertainty` asks whether a character intends betrayal while eight registers assert
+it as fact. I built a stage that derives prose from triples and never checked whether the
+triples agree with each other.
+
+### Two findings about the checks themselves
+
+**A judge caught something my lint provably cannot.** My check reported zero
+"moved-but-unmoved". A judge found `positional: "At the console." → "At the console, directed
+to fetch a drawing."` marked as moved — the location does not change, and what was added
+belongs in a different register. My check tests string identity; the judge tested meaning. I
+extended it to the prefix case, but a paraphrased no-op still escapes it. **That is a floor
+under what lint can do**, and it is better stated than papered over.
+
+**And a bug of mine that a judge found by arithmetic.** The schema required "exactly seven
+registers" as a `minItems` count. The model satisfied the count by repeating one register name
+seven times; the de-duplication pass then collapsed them, leaving **107 of 253 entities below
+the count the schema had demanded**. A count is a number to be satisfied. Build 3 replaces the
+array with an **object keyed by register name** — seven required keys, duplicates structurally
+impossible, nowhere to put a second `physical`.
+
+That is this project's standing lesson arriving a third time in one layer: *instructions repair
+local fields, structure repairs global properties* — and `minItems: 7` is an instruction
+wearing a schema's clothes.
+
 ## What is next, in order
 
-1. **Rebuild scenes with the transferable gate**, then rebuild events on top. *(running)*
-2. **Re-score Build 2** against the same rubric, same method. The honest comparison needs the
-   same judges' successors on the same twelve events.
-3. **Check whether the lint counts actually fall.** 440 placeholders and 900 missing registers
-   are now mechanically counted, so the fixes either move those numbers or they do not.
-4. **Fix the scene-layer defects the judges surfaced** — one scene merges two units across a
-   cut, and uncertainty flags need to survive into this layer rather than being dropped.
-5. **Then the layers above**: plots, entity profiles, exposé, story root. None has ever been
+1. ~~Rebuild scenes with the transferable gate, then rebuild events.~~ **Done.** Mind pass
+   coverage 22% → 46%; mental simulation +0.67.
+2. ~~Re-score Build 2.~~ **Done.** 2.87 vs 2.89.
+3. ~~Check whether the lint counts fall.~~ **Done.** Placeholders 35.9 → 1.2 per 100 entries.
+4. **Stop `moved: true` from being free.** Require, in the schema, that a moved register's
+   exit differ from its entry — the largest single regression in Build 2 and structurally
+   preventable.
+5. **Extend the reconcile stage to the triples**, not just the prose. It currently makes the
+   summary agree with a record that may contradict itself.
+6. **Seed the entity enum from the scene layer's objects**, so `turns_on_entity` can name the
+   phone or the wall an event actually turns on. It is currently unsatisfiable: the field is
+   required, but the enum admits only characters.
+7. **Fix the one genuine scene-layer defect**: a scene that merges two units across a cut.
+8. **Then the layers above**: plots, entity profiles, exposé, story root. None has ever been
    scored.
 
 ## Honest limits
