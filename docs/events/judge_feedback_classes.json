@@ -1,0 +1,245 @@
+{
+ "note": "Full feedback quotes the screenplay and is withheld; classes and fields only.",
+ "items": [
+  {
+   "where": "state_triples[].registers[].entry / .change / .exit",
+   "caused_by": "schema",
+   "problem_class": "The literal strings 'Not stated', 'unchanged', 'Not applicable beyond "
+  },
+  {
+   "where": "state_triples[].registers[] (arithmetic between the three fields)",
+   "caused_by": "event layer",
+   "problem_class": "`change` says 'unchanged' while `entry` and `exit` describe different "
+  },
+  {
+   "where": "state_triples[].registers (minItems: 1)",
+   "caused_by": "schema",
+   "problem_class": "Registers are silently omitted rather than marked unchanged, which the"
+  },
+  {
+   "where": "compose_all(): ents = sorted({p for n in nodes for p in (n.get('present') or [])}), feeding the `entity` enum in compose_schema",
+   "caused_by": "schema (entity enum) plus scene layer (`present` is people-only)",
+   "problem_class": "Objects and places can never hold state, so the thing an event turns o"
+  },
+  {
+   "where": "state_triples[] entity coverage",
+   "caused_by": "schema",
+   "problem_class": "Background bodies are forced into full triples and produce pure noise"
+  },
+  {
+   "where": "state_triples[].registers[].evidence_scene",
+   "caused_by": "schema",
+   "problem_class": "One `evidence_scene` per register cannot support a claim that spans th"
+  },
+  {
+   "where": "state_triples[].registers[].change / .exit; also summary and action",
+   "caused_by": "event layer, seeded by scene layer",
+   "problem_class": "Dialogue is quoted verbatim in register fields in all four events ('th"
+  },
+  {
+   "where": "state_triples[].registers[].change / .exit and `reading`; source is scene `minds[].believes_about[].wrong_because`",
+   "caused_by": "scene layer",
+   "problem_class": "Forward references to events that have not happened yet, asserted in t"
+  },
+  {
+   "where": "ev-020 state_triples[Cypher].status and affects_outside[0].how",
+   "caused_by": "event layer",
+   "problem_class": "Genuine model-prior leakage where the hedge upstream was dropped"
+  },
+  {
+   "where": "compose_schema properties.action, and the _COMPOSE prompt which never defines it against `summary`",
+   "caused_by": "schema plus event layer prompt",
+   "problem_class": "`action` has no defined job and drifts wildly between nodes written by"
+  },
+  {
+   "where": "segment_all() -> events[].why_here, copied to node.boundary_reason in compose_all()",
+   "caused_by": "event layer (stage 1, segmentation)",
+   "problem_class": "`boundary_reason` on the last event of every segmentation window makes"
+  },
+  {
+   "where": "participants[] and state_triples[].entity, sourced from the scene layer's `present`",
+   "caused_by": "scene layer, propagated unflagged by the event layer",
+   "problem_class": "The same actor is recorded twice at two granularities"
+  },
+  {
+   "where": "compose_schema properties.affects_outside items {what, how}",
+   "caused_by": "schema",
+   "problem_class": "`affects_outside` is free prose in both slots, so it never satisfies w"
+  },
+  {
+   "where": "REGISTERS enum vs the 'Externalisation' section of _COMPOSE",
+   "caused_by": "schema",
+   "problem_class": "The prompt demands everything be photographable while the register enu"
+  },
+  {
+   "where": "state_triples[].reading (type: [string, null])",
+   "caused_by": "schema",
+   "problem_class": "V5 has no home at the event layer"
+  },
+  {
+   "where": "compose_all(), between brief() and the returned node",
+   "caused_by": "event layer",
+   "problem_class": "Changes that the composer's own input supplies are dropped"
+  },
+  {
+   "where": "state_triples[].reading; upstream runs/scenes_ornith_full/*.json `_mind_pass` / `minds`",
+   "caused_by": "scene layer (the 150-word gate) with the event layer failing to compensate",
+   "problem_class": "`reading` is the empty string on every entity of ev-030 and reduced to"
+  },
+  {
+   "where": "state_triples[].registers[].change and .unchanged_because",
+   "caused_by": "schema (underspecified) plus event layer",
+   "problem_class": "`unchanged_because` has four different conventions across four events"
+  },
+  {
+   "where": "state_triples[].registers[] triple arithmetic",
+   "caused_by": "event layer",
+   "problem_class": "`exit` does not follow from `entry` plus `change`"
+  },
+  {
+   "where": "state_triples[].registers[].entry",
+   "caused_by": "event layer, but fixable only by changing what the event layer is handed (pipeline)",
+   "problem_class": "'Unstated' / 'Not stated' is used as an entry placeholder for entities"
+  },
+  {
+   "where": "participants vs state_triples[].entity",
+   "caused_by": "event layer",
+   "problem_class": "`participants` and the `state_triples` key set disagree in every event"
+  },
+  {
+   "where": "state_triples[].entity",
+   "caused_by": "event layer (the rename), scene layer (sc-118's own duplicate)",
+   "problem_class": "Duplicate entity keys, sometimes with disjoint referents"
+  },
+  {
+   "where": "state_triples[].registers[].register",
+   "caused_by": "schema (fixed register enum) meeting an open scene-layer axis vocabulary",
+   "problem_class": "Duplicate register keys inside one entity, used to smuggle a second ax"
+  },
+  {
+   "where": "event schema has no slot for it; the flags live in scenes_ornith_full/*.json `uncertain`",
+   "caused_by": "schema (no slot), then event layer",
+   "problem_class": "The scene layer's `uncertain` flags are silently dropped, and the even"
+  },
+  {
+   "where": "state_triples[entity=Cypher].registers[knowledge].change in ev-026; upstream sc-103 what_changes",
+   "caused_by": "scene layer (sc-103), propagated by the event layer without flagging",
+   "problem_class": "A false attribution inherited from the scene layer and propagated with"
+  },
+  {
+   "where": "summary vs state_triples[entity=Morpheus].registers[physical].exit",
+   "caused_by": "event layer (ordering of generation)",
+   "problem_class": "`summary` contradicts the node's own state triples"
+  },
+  {
+   "where": "affects_outside[]",
+   "caused_by": "schema",
+   "problem_class": "`affects_outside` is a free-form list and delivers only what the model"
+  },
+  {
+   "where": "state_triples (missing entity) vs turns_on and locations in ev-030",
+   "caused_by": "event layer",
+   "problem_class": "An entity whose change IS the event's turning point was dropped"
+  },
+  {
+   "where": "state_triples[].reading and affects_outside[].how",
+   "caused_by": "event layer, enabled by an unconstrained field description in the schema",
+   "problem_class": "`reading` is being used for dramaturgical commentary about the documen"
+  },
+  {
+   "where": "state_triples[].registers[] coverage",
+   "caused_by": "schema (register set optional rather than required)",
+   "problem_class": "The register set is not enforced, so registers go missing rather than "
+  },
+  {
+   "where": "the register enum (knowledge/emotional) and the entity schema",
+   "caused_by": "schema",
+   "problem_class": "The schema forces bad answers in two places"
+  },
+  {
+   "where": "state_triples[].entity",
+   "caused_by": "schema",
+   "problem_class": "Entity blocks are duplicated inside state_triples"
+  },
+  {
+   "where": "participants",
+   "caused_by": "schema",
+   "problem_class": "participants does not contain every entity that has a state triple"
+  },
+  {
+   "where": "state_triples[].registers[].entry",
+   "caused_by": "event layer, enabled by schema (entry only requires minLength 3)",
+   "problem_class": "entry is filled with 'Not stated"
+  },
+  {
+   "where": "state_triples[].registers[].unchanged_because",
+   "caused_by": "event layer",
+   "problem_class": "unchanged_because is routinely used as an exception clause that conced"
+  },
+  {
+   "where": "state_triples[].registers[] (entry/change/exit/unchanged_because coherence)",
+   "caused_by": "schema (the four fields are independent strings with no cross-field constraint)",
+   "problem_class": "A register can declare a change and then exit 'Unchanged'"
+  },
+  {
+   "where": "state_triples[].registers[].change and .exit",
+   "caused_by": "event layer",
+   "problem_class": "Verbatim dialogue appears in change and exit fields despite the prompt"
+  },
+  {
+   "where": "brief() at distill/event_layer.py:266-275 drops `uncertain`; compose_schema has no field to put a question in",
+   "caused_by": "schema",
+   "problem_class": "The scene layer's `uncertain` array never reaches the composer, so fla"
+  },
+  {
+   "where": "distill/event_layer.py:339 \u2014 `ents = sorted({p for n in nodes for p in (n.get('present') or [])})` builds the entity enum only from scene `present`",
+   "caused_by": "schema",
+   "problem_class": "Non-character entities can never carry state, so objects and locations"
+  },
+  {
+   "where": "verify_all / small()",
+   "caused_by": "schema",
+   "problem_class": "The pipeline's own verify pass is blind to every defect listed above"
+  },
+  {
+   "where": "boundary_reason (copied verbatim from segment stage `why_here` at distill/event_layer.py:349)",
+   "caused_by": "schema",
+   "problem_class": "boundary_reason is written at segmentation time against a proposed spa"
+  },
+  {
+   "where": "scene segmentation upstream of runs/scenes_ornith_full/sc-223.json; event layer propagated it without flagging",
+   "caused_by": "scene layer",
+   "problem_class": "ev-054's single-scene span is justified as an event boundary but expos"
+  },
+  {
+   "where": "state_triples[].registers[].evidence_scene",
+   "caused_by": "schema",
+   "problem_class": "There is nowhere to point an inherited entry state, so entry states ei"
+  },
+  {
+   "where": "state_triples[].registers[].register",
+   "caused_by": "schema (REGISTERS is a bare enum at distill/event_layer.py:47 with no definitions anywhere in the prompt)",
+   "problem_class": "Registers are misfiled and then double-counted, which inflates the tri"
+  },
+  {
+   "where": "scene layer `minds` / `_mind_pass` threshold; event layer state_triples[].reading",
+   "caused_by": "scene layer (primary), event layer (secondary)",
+   "problem_class": "V5 collapses because the mental material the event layer would build o"
+  },
+  {
+   "where": "affects_outside[].what / .how",
+   "caused_by": "schema",
+   "problem_class": "affects_outside stays general because the schema asks for the wrong sh"
+  },
+  {
+   "where": "_COMPOSE prompt at distill/event_layer.py:104-135; `action` field",
+   "caused_by": "schema (the prompt specifies only three of the eight required fields)",
+   "problem_class": "The compose prompt never describes title, summary, action, participant"
+  },
+  {
+   "where": "_SEGMENT prompt rules at distill/event_layer.py:53-71",
+   "caused_by": "event layer (segment stage)",
+   "problem_class": "The events that are pure transit score worst on E and the segmentation"
+  }
+ ]
+}

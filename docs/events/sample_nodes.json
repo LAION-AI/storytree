@@ -1,0 +1,473 @@
+{
+ "events": [
+  {
+   "title": "Neo's Capture at the Office",
+   "summary": "Woken late into an ordinary workday, Neo is disciplined by his boss, then seized mid-raid on the office floor as Morpheus tries to guide him out. The escape route \u2014 across the hall, down a row, out a window onto a ledge \u2014 collapses under his terror, and he is taken into custody. In an interrogation room he rejects Agent Smith's deal, whereupon the Agents seal his mouth shut and burrow a wire-tap creature into his body, converting him from a defiant suspect into a physically violated asset.",
+   "action": "The event moves Neo from the insulated routine of his double life into open, physical peril and finally into bodily violation. Rhineheart's ultimatum (compliance or unemployment) is immediately overtaken by a raid: a phone arrives, Morpheus commands, the Agents close, and Neo is shepherded through concealment and a ledge-climb that he cannot complete. He is arrested, and in the interrogation room Smith's offer of a clean slate is refused, triggering the mouth-sealing and the navel-bug. The pursuit that began as a warning ends with the target caught, marked, and claimed.",
+   "participants": [
+    "Agent Brown",
+    "Agent Jones",
+    "Agent Smith",
+    "Morpheus",
+    "Neo",
+    "RHINEHEART",
+    "Trinity",
+    "a cop",
+    "a female employee",
+    "cops",
+    "the Agents"
+   ],
+   "locations": [
+    "NEO'S APARTMENT",
+    "SKYSCRAPER (Meta CorTechs, downtown office)",
+    "META CORTECHS OFFICE",
+    "NEO'S CUBICLE",
+    "EMPTY OFFICE",
+    "INTERROGATION ROOM"
+   ],
+   "state_triples": [
+    {
+     "entity": "Neo",
+     "registers": [
+      {
+       "register": "positional",
+       "entry": "Late, asleep-just-woken in his apartment, then at his desk in the Meta CorTechs office.",
+       "change": "From exposed at his cubicle, to concealed and moving through the floor (lunging, freezing, sneaking), to trapped on an exterior ledge, back inside when a cop enters, then handcuffed out of the building into a sedan, and finally strapped into a chair in the interrogation room.",
+       "exit": "Immobile, restrained in the interrogation-room chair, his body no longer his own.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-014"
+      },
+      {
+       "register": "status",
+       "entry": "A subordinate being reprimanded; a man with two lives but still protected by ordinary routine.",
+       "change": "From disciplined employee to wanted fugitive ('they're coming for you') to captured suspect to physically invaded subject \u2014 a fiber-optic creature burrows into his navel.",
+       "exit": "A marked, claimed asset: Smith states he will be made to help 'whether you want to or not.'",
+       "unchanged_because": null,
+       "evidence_scene": "sc-020"
+      },
+      {
+       "register": "knowledge",
+       "entry": "Unaware of any threat; absorbed in the ordinary workday.",
+       "change": "Learns the Agents are coming for him, sees them leading cops, and is told an explanation is coming; in interrogation, learns his full file is known and that the Agents can alter his body.",
+       "exit": "Knows the pursuit is real and lethal, but still does not grasp that the Agents are more than ordinary authority \u2014 his rights-based framing has just been physically disproven.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-017"
+      },
+      {
+       "register": "relational",
+       "entry": "Detached from and inwardly resistant to Rhineheart; a stranger to Morpheus and the Agents.",
+       "change": "Submits verbally to Rhineheart; then places trust in Morpheus's voice and obeys it under fire; then is treated as a target by the Agents and a betrayer by the female employee.",
+       "exit": "Bound to Morpheus as his only guide, and in open, physical enmity with the Agents.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-017"
+      },
+      {
+       "register": "emotional",
+       "entry": "Annoyed at the time, then detached during the lecture.",
+       "change": "A fast spike from unnerved to terror under the raid; raw, drowning panic on the ledge; defiant bravado in interrogation that collapses into genuine terror when his body is seized.",
+       "exit": "Helpless and terrified, his defiance broken by the mouth-sealing and the burrowing device.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-020"
+      },
+      {
+       "register": "physical",
+       "entry": "Awake, whole, unremarkable.",
+       "change": "Exhausted by concealment and the failed climb; then his jaw tightens, his lips meld until his mouth is gone, his shirt is ripped open, and a creature burrows into his navel.",
+       "exit": "Mouthless and internally wired \u2014 unable to speak, his body no longer his own.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-020"
+      }
+     ],
+     "reading": "The event is the ordinary world proving it was never harmless: the petty reprimand escalates, without a break, into a manhunt and then into bodily violation, so that Neo's detachment is punished and his self-image as 'nobody' is physically dismantled."
+    },
+    {
+     "entity": "RHINEHEART",
+     "registers": [
+      {
+       "register": "status",
+       "entry": "A manager lecturing a chronically late subordinate without looking at him.",
+       "change": "Escalates from criticism to a direct ultimatum \u2014 punctuality or the job \u2014 and extracts a verbal submission.",
+       "exit": "Reasserted as authority in his own frame, having won the encounter.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-016"
+      },
+      {
+       "register": "knowledge",
+       "entry": "Believes Neo is an arrogant slacker with an authority problem \u2014 a petty disciplinary case.",
+       "change": "Unchanged: he never learns Neo is the person the real powers are hunting.",
+       "exit": "Still managing a man on the verge of being pulled out of the very system Rhineheart thinks he is defending.",
+       "unchanged_because": "He is not present after sc-016, and nothing in the event corrects his misreading; his belief is the event's irony, not a position that changes.",
+       "evidence_scene": "sc-016"
+      },
+      {
+       "register": "physical",
+       "entry": "Not applicable beyond sc-016.",
+       "change": "unchanged: he is not present after the office reprimand.",
+       "exit": "unchanged: absent from the rest of the event.",
+       "unchanged_because": "He appears only in sc-016 and does not reappear.",
+       "evidence_scene": "sc-016"
+      }
+     ],
+     "reading": "Rhineheart embodies the hollowness of the authority Neo is outgrowing \u2014 his performative control is immediately shown up as trivial by the real, physical power that follows."
+    },
+    {
+     "entity": "Morpheus",
+     "registers": [
+      {
+       "register": "positional",
+       "entry": "Absent from the floor, present only as a voice on a phone.",
+       "change": "Guides Neo through the raid and to the window, then forces the ledge choice and hangs up, leaving Neo alone with it.",
+       "exit": "Still off-site and voice-only; his guidance has failed to get Neo out.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-018"
+      },
+      {
+       "register": "status",
+       "entry": "A hidden operator who has been looking for Neo and can read the floor like a board.",
+       "change": "Attempts a clean extraction of a panicked novice; the plan runs out of time and Neo is captured despite the guidance.",
+       "exit": "A gambler whose confidence in a clean extraction has been disproven \u2014 he could not prevent the capture.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-018"
+      },
+      {
+       "register": "relational",
+       "entry": "A stranger-voice to Neo; an unseen protector.",
+       "change": "Becomes the authority Neo obeys under fire, then the one who refuses to soothe him and forces him to choose.",
+       "exit": "Neo's only guide, but one whose trust now outruns his demonstrated control.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-018"
+      },
+      {
+       "register": "physical",
+       "entry": "Not applicable \u2014 he is only a voice.",
+       "change": "unchanged: he never appears on-screen in this event.",
+       "exit": "unchanged: still voice-only.",
+       "unchanged_because": "He is present only as V.O. and is not physically acted upon.",
+       "evidence_scene": "sc-017"
+      }
+     ],
+     "reading": "Morpheus's calm, command-not-comfort method works tactically but cannot overcome the Agents' reach \u2014 the event establishes both his competence and the limit of his control over Neo's fate."
+    },
+    {
+     "entity": "Agent Smith",
+     "registers": [
+      {
+       "register": "status",
+       "entry": "The organizing presence of the raid, moving cops as pieces with unhurried certainty.",
+       "change": "From negotiator offering a clean slate in exchange for Morpheus, to openly coercive enforcer once refused.",
+       "exit": "In full physical control, having sealed Neo's mouth and wired his body \u2014 the 'reasonable' mask removed.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-020"
+      },
+      {
+       "register": "relational",
+       "entry": "Treats Neo as a contained, catchable fugitive \u2014 a small-time hacker to be flipped.",
+       "change": "Moves from paternal persuasion ('you want to do the right thing') to proprietary contempt ('whether you want to or not').",
+       "exit": "Neo's captor and violator, certain of his own control and blind to what Neo will become.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-020"
+      },
+      {
+       "register": "knowledge",
+       "entry": "Believes Neo is a rational, frightenable criminal pliable to deal and fear.",
+       "change": "Unchanged in kind: his contempt is never corrected within the event; he never suspects 'The One.'",
+       "exit": "Still operating on a categorical error \u2014 mistaking Neo's latent capacity for a small-time hacker's pliability \u2014 that the rest of the story will exploit.",
+       "unchanged_because": "The event confirms his tactical success (he takes Neo) but does nothing to correct his misreading of who Neo is; the flaw is set, not changed.",
+       "evidence_scene": "sc-020"
+      },
+      {
+       "register": "physical",
+       "entry": "Not applicable beyond his on-screen actions.",
+       "change": "Removes and replaces his sunglasses as a signal of the negotiation ending; otherwise physically unchanged.",
+       "exit": "Physically unchanged; he is the agent of change, not its object.",
+       "unchanged_because": "He acts on Neo's body but is not himself physically altered.",
+       "evidence_scene": "sc-020"
+      }
+     ],
+     "reading": "Smith's cold certainty and fatal contempt are the event's counterweight to Morpheus's calm; his pivot from persuasion to force reveals that the 'offer' was always a formality, and his misreading of Neo is the flaw the story will later exploit."
+    },
+    {
+     "entity": "Trinity",
+     "registers": [
+      {
+       "register": "knowledge",
+       "entry": "Watching the building, unaware of the outcome.",
+       "change": "Sees Neo arrested in her rearview mirror and realizes the capture has succeeded.",
+       "exit": "Aware Neo has been taken; the pursuit has lost its target to the Agents.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-019"
+      },
+      {
+       "register": "positional",
+       "entry": "Seated on her motorcycle outside the skyscraper.",
+       "change": "Unchanged: she remains a witness, taking no action within the event.",
+       "exit": "Still on her motorcycle, having only observed the arrest.",
+       "unchanged_because": "She does not move or intervene; she only watches and reacts.",
+       "evidence_scene": "sc-019"
+      },
+      {
+       "register": "physical",
+       "entry": "Not applicable beyond her reaction.",
+       "change": "unchanged: she is not physically acted upon.",
+       "exit": "unchanged: physically whole, only reacting with a curse.",
+       "unchanged_because": "She witnesses but is not touched by the event's physical action.",
+       "evidence_scene": "sc-019"
+      }
+     ],
+     "reading": "Trinity is the event's witness and its register of loss \u2014 her curse marks that the extraction has failed and the target is now in enemy hands."
+    },
+    {
+     "entity": "the Agents",
+     "registers": [
+      {
+       "register": "status",
+       "entry": "An orderly, methodical force closing on a contained target.",
+       "change": "Sweep the floor, seize Neo, and in the interrogation room physically enforce him \u2014 sealing his mouth, restraining him, wiring his body.",
+       "exit": "In uncontested physical control, having converted persuasion into violation.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-020"
+      },
+      {
+       "register": "knowledge",
+       "entry": "Believe Neo is a target to be processed, not reasoned with.",
+       "change": "Unchanged in kind: their dehumanizing certainty is never corrected within the event.",
+       "exit": "Still treating Neo as an object to be wired \u2014 a category error the story will overturn.",
+       "unchanged_because": "The event confirms their success but does not correct their misreading of Neo.",
+       "evidence_scene": "sc-020"
+      },
+      {
+       "register": "physical",
+       "entry": "Not applicable beyond their actions.",
+       "change": "unchanged: they act on Neo's body but are not themselves physically altered.",
+       "exit": "unchanged: physically whole; they are the instruments of change.",
+       "unchanged_because": "They are the enforcers, not the objects, of the physical violation.",
+       "evidence_scene": "sc-020"
+      }
+     ],
+     "reading": "The Agents are the event's implacable mechanism \u2014 orderly, unhurried, and physically absolute \u2014 whose dehumanizing certainty sets up the reversal the story will later deliver."
+    },
+    {
+     "entity": "cops",
+     "registers": [
+      {
+       "register": "status",
+       "entry": "A search party led by the Agents into the office floor.",
+       "change": "Sweep the floor, search the bathroom, and one cop opens the door that traps Neo back inside.",
+       "exit": "Having completed the floor search; one has cornered Neo, enabling the arrest.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-018"
+      },
+      {
+       "register": "knowledge",
+       "entry": "Unchanged: ordinary officers executing a search, unaware of the larger stakes.",
+       "change": "unchanged: they remain instruments of the raid with no corrected belief.",
+       "exit": "unchanged: still operating inside ordinary law-enforcement logic.",
+       "unchanged_because": "They are functionaries of the raid; nothing in the event changes their understanding.",
+       "evidence_scene": "sc-017"
+      },
+      {
+       "register": "physical",
+       "entry": "Not applicable beyond their search actions.",
+       "change": "unchanged: they search and corner but are not physically altered.",
+       "exit": "unchanged: physically whole.",
+       "unchanged_because": "They act but are not acted upon.",
+       "evidence_scene": "sc-017"
+      }
+     ],
+     "reading": "The cops are the ordinary-world teeth of the raid \u2014 their mundane search function makes the escalation into body-horror feel all the more invasive."
+    },
+    {
+     "entity": "a female employee",
+     "registers": [
+      {
+       "register": "relational",
+       "entry": "A coworker in the honeycomb, position ambiguous.",
+       "change": "Turns and points out Neo's cubicle to the Agents, enabling the raid to home in.",
+       "exit": "Having handed Neo over, receding into the office \u2014 either unthinking compliance or knowing betrayal, the scene won't say.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-017"
+      },
+      {
+       "register": "knowledge",
+       "entry": "Believes Neo is a troublemaker the authorities are entitled to.",
+       "change": "Unchanged: she cannot know he is 'The One' or that the authorities are programs.",
+       "exit": "Still categorizing him inside the system's logic.",
+       "unchanged_because": "Her misreading is never corrected within the event; it is the system's logic in miniature.",
+       "evidence_scene": "sc-017"
+      },
+      {
+       "register": "physical",
+       "entry": "Not applicable beyond her gesture.",
+       "change": "unchanged: she points and recedes, physically untouched.",
+       "exit": "unchanged: physically whole.",
+       "unchanged_because": "She acts but is not acted upon.",
+       "evidence_scene": "sc-017"
+      }
+     ],
+     "reading": "Her single pointing gesture is the ordinary world's quiet betrayal \u2014 the moment a coworker treats Neo as a problem to be handed over, sealing his exposure."
+    }
+   ],
+   "affects_outside": [
+    {
+     "what": "The pursuit plot",
+     "how": "The event ends the chase phase: the target Morpheus and Trinity are hunting is now captured and physically marked by the Agents, moving the story from pursuit to revelation/interrogation and forcing the rescuers to respond to a taken, wired asset rather than a free doubter."
+    },
+    {
+     "what": "Trinity's position",
+     "how": "Worsened \u2014 she witnesses the extraction fail and the target lost to the enemy, cursing; the operation she is part of has taken a hard setback."
+    },
+    {
+     "what": "Agent Smith's standing",
+     "how": "Advanced in the short term \u2014 he has captured and violated the target against his colleagues' skepticism \u2014 but the event also locks in the contempt and categorical error that the rest of the story will exploit against him."
+    }
+   ],
+   "turns_on": "Neo's failure of nerve on the ledge \u2014 the one exit Morpheus offers that Neo cannot complete \u2014 which converts a possible clean escape into a foregone capture.",
+   "event_id": "ev-003",
+   "scene_ids": [
+    "sc-014",
+    "sc-015",
+    "sc-016",
+    "sc-017",
+    "sc-018",
+    "sc-019",
+    "sc-020"
+   ],
+   "boundary_reason": "A new situation begins with Neo waking late for work; the office pursuit, failed ledge escape, arrest, and interrogation with the mouth-sealing and bug implant are one captured-and-coerced arc, ending when the bug takes hold and the scene cuts away."
+  },
+  {
+   "title": "Revival and Neo's Promise",
+   "summary": "Neo returns to life aboard the hovercraft and reconnects with Trinity, then\u2014his voice carried over a phone line into the Matrix\u2014broadcasts a public declaration that he is done running and that the world inside the Matrix can be changed from within by freeing one's mind. The event turns a private resurrection into an open, outward-facing promise aimed at everyone still asleep.",
+   "action": "declaration_after_resurrection_and_outward_call_to_awaken_others",
+   "participants": [
+    "Neo",
+    "Trinity"
+   ],
+   "locations": [
+    "HOVERCRAFT",
+    "MATRIX"
+   ],
+   "state_triples": [
+    {
+     "entity": "Neo",
+     "registers": [
+      {
+       "register": "physical",
+       "entry": "Dead or dormant in the still darkness of the hovercraft, only the humans alive around him.",
+       "change": "Revived: eyes open, reaches up to touch Trinity.",
+       "exit": "Alive and reconnected with Trinity, who kisses him.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-223"
+      },
+      {
+       "register": "positional",
+       "entry": "Present but inert aboard the hovercraft.",
+       "change": "Moves from a body lying still to a voice broadcasting over a phone line into the Matrix.",
+       "exit": "Positioned as a transmitter addressing an unseen audience inside the Matrix; his physical body remains on the hovercraft.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-223"
+      },
+      {
+       "register": "knowledge",
+       "entry": "Saw only the cage of the Matrix and its edges, rules, leaders, laws.",
+       "change": "Comes to understand the Matrix as a potential chrysalis, and that freedom comes from changing oneself rather than the cage.",
+       "exit": "Holds the conviction that the boundary was a self-imposed limit; knows the doctrine but withholds the 'how' of getting there.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-223"
+      },
+      {
+       "register": "status",
+       "entry": "A hunted man, defined by running and hiding.",
+       "change": "Declares he is done running and done hiding, and reframes his role from fugitive to one who changes the world from within.",
+       "exit": "A self-proclaimed herald of liberation; whether he is done fighting is left to his listeners.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-223"
+      },
+      {
+       "register": "emotional",
+       "entry": "Not stated in the scene.",
+       "change": "Not stated in the scene.",
+       "exit": "Not stated in the scene.",
+       "unchanged_because": "The scene externalises Neo only as a calm, steady voice over a screen; no interior feeling is shown, only the steadiness itself.",
+       "evidence_scene": "sc-223"
+      },
+      {
+       "register": "relational",
+       "entry": "Reconnected with Trinity through touch and a kiss.",
+       "change": "Extends his orientation from Trinity to the sleeping inhabitants of the Matrix, asserting a new reciprocity ('I can feel you now / you can feel me too').",
+       "exit": "In a bond with Trinity and simultaneously reaching outward toward those still asleep, whom he now addresses directly.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-223"
+      }
+     ],
+     "reading": "Neo has died and returned carrying not triumph over the machines but a calm certainty that the prison was the limit he imposed on himself; his steadiness is the message, and his refusal to give the 'how' marks him as an inviter rather than a commander."
+    },
+    {
+     "entity": "Trinity",
+     "registers": [
+      {
+       "register": "physical",
+       "entry": "Awake and alive aboard the dark hovercraft, beside Neo's body.",
+       "change": "Calls his name, weeps through a smile, and kisses him as he wakes.",
+       "exit": "Still aboard the hovercraft, holding the man she believed she lost; no further physical action recorded.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-223"
+      },
+      {
+       "register": "positional",
+       "entry": "Beside Neo in the darkness.",
+       "change": "None recorded beyond leaning into the reunion.",
+       "exit": "Unchanged in position; she remains at his side.",
+       "unchanged_because": "The scene records only her call, tears, and kiss; no relocation is shown.",
+       "evidence_scene": "sc-223"
+      },
+      {
+       "register": "knowledge",
+       "entry": "Uncertain whether Neo's return is real or a final flicker she is inventing.",
+       "change": "His eyes opening and reaching for her confirms the return is real.",
+       "exit": "Relieved that the return is real, though with no assurance that the danger is over.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-223"
+      },
+      {
+       "register": "emotional",
+       "entry": "A collision of unfinished grief and relief not yet trusted, after having confessed love over his body and lost him.",
+       "change": "The return she called for is granted; her guard drops entirely in the darkness.",
+       "exit": "Tearful relief expressed through a smile and a kiss; no dialogue beyond his name.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-223"
+      },
+      {
+       "register": "status",
+       "entry": "The contained operative performing for a crew.",
+       "change": "Stripped of that containment by the darkness and the near-loss.",
+       "exit": "Unchanged: the scene does not re-establish or alter her standing; it only shows her without guard.",
+       "unchanged_because": "Her role and rank are not addressed by the event; only her emotional guard is shown to fall.",
+       "evidence_scene": "sc-223"
+      },
+      {
+       "register": "relational",
+       "entry": "Bound to Neo, having already grieved him.",
+       "change": "Reunited with him through touch and a kiss that 'might last forever'.",
+       "exit": "Holding the man she believes she was promised and thought lost; the reunion is intimate and private.",
+       "unchanged_because": null,
+       "evidence_scene": "sc-223"
+      }
+     ],
+     "reading": "Trinity's restraint\u2014only his name, then silent weeping\u2014reads as someone testing whether the return is real rather than declaring it, carrying the residue of having already said the thing she feared would go unheard over his body."
+    }
+   ],
+   "affects_outside": [
+    {
+     "what": "The inhabitants of the Matrix",
+     "how": "Neo's broadcast reframes their world from cage to chrysalis and urges them to free their minds, shifting the story from escape to a public doctrine of internal liberation aimed at everyone still asleep. It spends the pursuit that defined the film by declaring it over and leaving the question of continued fighting to his listeners."
+    }
+   ],
+   "turns_on": "Neo's revival and his decision to broadcast a public promise rather than remain hidden.",
+   "event_id": "ev-054",
+   "scene_ids": [
+    "sc-223"
+   ],
+   "boundary_reason": "This single scene is a pivot: the ship is quiet, Neo revives and reunites with Trinity, and his phone broadcast reframes the whole conflict \u2014 a self-contained resolution beat distinct from the escape that follows."
+  }
+ ]
+}

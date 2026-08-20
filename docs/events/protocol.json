@@ -1,0 +1,881 @@
+{
+ "seconds": 3535.3,
+ "scenes": 224,
+ "events": 55,
+ "scenes_per_event": {
+  "min": 1,
+  "max": 14,
+  "mean": 4.07
+ },
+ "coverage": "224/224",
+ "state_triples": 303,
+ "register_entries": 1224,
+ "affects_outside": 131,
+ "verify": [
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-001",
+    "ev-002"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "ev-002 exits Neo relationally 'in active contact with the faction that is both hunting and saving him, with Trinity positioned as the one who knows his interior life,' but ev-003 enters Neo relationally as 'a stranger to Morpheus and the Agents' and emotionally 'detached during the lecture,' with no accounting for the severance of the Trinity contact or the return to ordinary detachment. The named question and promise from ev-002 are also absent from ev-003's knowledge register, which treats his awareness of the pursuit as newly real.",
+     "entity": "Neo",
+     "register": "relational / knowledge"
+    },
+    {
+     "detail": "ev-002 exits Neo positionally 'no longer at home,' placed in a club crowd; ev-003 enters him 'asleep-just-woken in his apartment,' with no account of his return home or the intervening time. The event titles ('Summoned... to a club' \u2192 'Capture at the Office') confirm the gap rather than bridge it.",
+     "entity": "Neo",
+     "register": "positional"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-002",
+    "ev-003"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "NEO physical/positional: ev-003 exits with Neo 'Mouthless and internally wired \u2014 unable to speak, his body no longer his own,' restrained in the interrogation-room chair. ev-004 opens with him waking in his own apartment bed, checking his mouth and stomach to confirm they are 'intact and normal.' The earlier node records his body as violated and himself as a held asset; nothing in either node accounts for the mouth being restored, the internal wire-tap removed, or his release from the interrogation room back to his apartment. This is the single most glaring break: the physical state at ev-003.exit is directly contradicted by ev-004.entry with no intervening cause recorded.",
+     "entity": "NEO",
+     "register": "physical / positional"
+    },
+    {
+     "detail": "NEO relational: ev-003 exits with Neo 'Bound to Morpheus as his only guide.' ev-004 opens with Neo fearing Morpheus as 'the dangerous figure the Agents framed' and needing to be re-secured into agreement. The trust/bond recorded at ev-003.exit has been reset to fear and stranger-status at ev-004.entry with nothing accounting for the reversal.",
+     "entity": "NEO",
+     "register": "relational"
+    },
+    {
+     "detail": "NEO status: ev-003 exits with Neo a 'marked, claimed asset' whom Smith states he will be made to help 'whether you want to or not' \u2014 i.e., captured and processed. ev-004 opens with him a free but hunted man alone in his apartment, then a 'self-perceived nobody' who still has the agency to commit or refuse. His shift from captured-and-wired asset back to free-and-deciding is unaccounted for.",
+     "entity": "NEO",
+     "register": "status"
+    },
+    {
+     "detail": "MORPHEUS relational: ev-003 exits with Morpheus as 'Neo's only guide' whose trust 'now outruns his demonstrated control.' ev-004 opens with Morpheus 'Framed by the Agents as a terrorist Neo feared' \u2014 a stranger-enemy, not a trusted guide. The relational gain at ev-003.exit is gone at ev-004.entry with no accounting.",
+     "entity": "MORPHEUS",
+     "register": "relational"
+    },
+    {
+     "detail": "TRINITY relational: ev-003 records Trinity only as an outside observer on her motorcycle, 'having only observed the arrest,' with no relationship to Neo beyond that. ev-004 opens with Neo regarding Trinity as 'another captor' and 'a figure from the interrogation.' There is no recorded basis in ev-003 for Neo to know Trinity at all \u2014 she was not part of the interrogation or the floor raid in these nodes \u2014 so the 'figure from the interrogation' framing appears without source.",
+     "entity": "TRINITY",
+     "register": "relational"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "Whether Neo was successfully captured and violated. ev-003 states plainly that Neo was seized, taken into custody, interrogated, had his mouth sealed shut, and a wire-tap creature burrowed into his body \u2014 'converting him from a defiant suspect into a physically violated asset,' with the Agents in 'uncontested physical control.' ev-004 opens with Neo waking in his own bed, body 'intact and normal,' alone and free. The two nodes assert incompatible outcomes for Neo: captured-and-wired-and-held versus free-and-whole-and-home. Both cannot be true without an account of his escape/restoration, which neither provides."
+    },
+    {
+     "detail": "Whether Neo trusts Morpheus. ev-003.exit records Neo 'Bound to Morpheus as his only guide.' ev-004.entry records Neo fearing Morpheus as a dangerous terrorist and needing to be re-secured into agreement. The nodes assert incompatible relational states at the join with no bridging event."
+    }
+   ],
+   "missing_links": [],
+   "between": [
+    "ev-003",
+    "ev-004"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-004",
+    "ev-005"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-005",
+    "ev-006"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's knowledge. ev-006 exit records that he has swallowed the red pill and is 'committed and resolved,' understanding the choice, but nothing in ev-006 places him back in the hotel room being wired up. ev-007 opens with him already seated in the crew's hardwire setup with Trinity fixing electrodes to him. The transition from 'led onward by Morpheus' (ev-006 exit) to 'seated at the center of the crew's setup' (ev-007 entry) is not accounted for within these two nodes.",
+     "entity": "Neo",
+     "register": "knowledge"
+    },
+    {
+     "detail": "Neo's relational/positional state. ev-006 ends with Neo alone with Morpheus, being led onward by him. ev-007 begins with Neo surrounded by the full crew (Trinity, Apoc, Switch, Cypher) in the same hotel room. The arrival of the crew and the re-populating of the room is not accounted for between the two nodes.",
+     "entity": "Neo",
+     "register": "relational"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [
+    {
+     "detail": "ev-006's affects_outside explicitly claims that Neo's red pill 'begins the physical unmaking that will remove his body from the Matrix (the pod awakening)' and that 'the next event will deal with that consequence.' ev-007 is precisely that event \u2014 the trace, extraction, and pod-awakening \u2014 yet neither node states that ev-007 realises ev-006's promised consequence. The outward effect is claimed and plainly realised, but the link is left unspoken in both."
+    }
+   ],
+   "between": [
+    "ev-006",
+    "ev-007"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [
+    {
+     "detail": "Neo's relational stance toward Morpheus is asserted inconsistently across the join. ev-007's exit has Neo 'still smiling at Morpheus as at a rescuer' and trusting him 'as a guide who will explain and protect him.' ev-008's exit has Neo 'following a guide ... with no grounds yet to trust or reject him.' The later node re-frames the trust as not-yet-established without either node marking the shift."
+    }
+   ],
+   "missing_links": [],
+   "between": [
+    "ev-007",
+    "ev-008"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-008",
+    "ev-009"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-009",
+    "ev-010"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-010",
+    "ev-011"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-011",
+    "ev-012"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "The LATER event introduces Mouse and 'everyone' (the crew) as spectators of the sparring match, but the EARLIER event's positional registers for Neo, Tank, and Morpheus all mark them as 'unchanged' and confined to the suspension chair / main deck, with no outward effect acknowledging that the fight is being watched by an assembled crew.",
+     "entity": "everyone / MOUSE",
+     "register": "positional"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [
+    {
+     "detail": "The EARLIER event's affects_outside claims it 'converts Neo from untrained to program-loaded, creating the fighter the crew will rely on' and hands the story 'a live sparring test.' The LATER event realises exactly this: Neo uses the downloaded skill in the sparring program while the crew watches. Neither node states that the EARLIER event's loaded capability is what the crew is now witnessing, though the LATER event plainly realises the EARLIER event's claimed outward effect."
+    }
+   ],
+   "between": [
+    "ev-012",
+    "ev-013"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Tank ends ev-013 on the main deck with the crew as spectators of the sparring fight (positional/knowledge), but enters ev-014 'reaching for and taking hold of the disk at the hovercraft station' \u2014 a different position with no account of the move between the two events. The intervening relocation (and the shift from watching sparring to loading the next program) is unrecorded.",
+     "entity": "Tank",
+     "register": "positional"
+    },
+    {
+     "detail": "Tank ends ev-013 holding a diagnostic read on the fighters' differing states (knowledge), but enters ev-014 'certain, with the crew, that Neo will fail.' The shift from a neutral diagnostic stance to a settled prediction of failure is not accounted for within the nodes.",
+     "entity": "Tank",
+     "register": "knowledge"
+    },
+    {
+     "detail": "Mouse ends ev-013 as a 'stunned witness' who has registered Neo performing beyond normal limits (a positive, impressed reaction to Neo hitting Morpheus), but enters ev-014 as 'the one crew member willing to entertain that Neo might succeed' while the rest are certain he will fail. The nodes do not record when the rest of the crew hardened into certainty, so Mouse's isolation is a state that appears without the group's shift being narrated.",
+     "entity": "Mouse",
+     "register": "relational"
+    },
+    {
+     "detail": "Everyone/crew ends ev-013 astonished by Neo's performance (raised estimation of him), but by ev-014 the veterans are 'certain he cannot succeed' and the failure 'hardens the scepticism.' The reversal from astonishment back to confident scepticism is not accounted for between the two events.",
+     "entity": "everyone",
+     "register": "knowledge"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "ev-013 has Tank 'tasked with loading the next test' (the jump program) at the end, but ev-014 opens with Tank 'reaching for and taking hold of the disk' as though the loading action is only just beginning. The two nodes place the same loading action on opposite sides of the event boundary without clarifying whether it was completed, reading as a minor inconsistency in when the action occurs."
+    }
+   ],
+   "missing_links": [],
+   "between": [
+    "ev-013",
+    "ev-014"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's knowledge state is left ambiguous across the seam. The later event's physical register has Neo 'unconscious, still plugged in after the fall' with knowledge 'not stated,' while its knowledge register immediately has him 'confronted with the rule that mind governs body.' The earlier event left Neo only 'tentatively' aware of the belief rule and did not establish that he had been told death in the Matrix is real death, so the jump to being 'confronted' with that rule is not bridged by either node.",
+     "entity": "Neo",
+     "register": "knowledge"
+    },
+    {
+     "detail": "Trinity's emotional throughline is dropped rather than resolved. The earlier event ends with her 'openly, if quietly, invested in Neo's success,' but the later event marks her emotional register 'not stated' at entry and shows her leaving the deck ('absent from the deck'), giving no account of how her newly-observable investment plays out as the injured Neo is brought up.",
+     "entity": "Trinity",
+     "register": "emotional"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "The earlier event records Mouse as 'the one crew member willing to entertain that Neo might succeed' and 'still hopeful,' whereas the later event has Mouse 'left with Switch's nihilistic framing (it means nothing)' \u2014 a defeatist stance that is at odds with the hopeful isolation the earlier node banks for him, with no intervening beat accounting for the shift."
+    }
+   ],
+   "missing_links": [],
+   "between": [
+    "ev-014",
+    "ev-015"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "TRINITY ends ev-015 'absent from the deck' (positional exit) and opens ev-016 in Neo's room, close to the bed (positional entry). The relocation is plausible but neither node accounts for the move; the earlier event's exit and the later event's entry leave the transition unstated.",
+     "entity": "TRINITY",
+     "register": "positional"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-015",
+    "ev-016"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-016",
+    "ev-017"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "NEO's positional/physical state is unresolved across the join. ev-017 exits with NEO 'still standing on the same frozen street with Morpheus' (inside the Matrix simulation), while ev-018 enters with NEO 'crowding into the cockpit behind Morpheus' in the real world aboard the Nebuchadnezzar. The affects_outside of ev-017 record that Tank's call ('We got trouble') interrupts the training and pulls the crew out toward a crisis, which motivates the relocation, but no node in either event records NEO (or the crew) actually leaving the simulation and returning to the ship \u2014 so the physical repositioning is asserted by the later entry state without any scene accounting for the transition.",
+     "entity": "NEO",
+     "register": "physical/positional"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-017",
+    "ev-018"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-018",
+    "ev-019"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's relational register to ev-020: entry 'Being welcomed and teased as the new crew member' \u2014 but ev-019 left Neo 'Overwhelmed and rattled,' distrust-seeded, and physically recovering from being plied with alcohol by the man who just reframed his destiny as a death sentence. Nothing in ev-020 accounts for Neo returning to 'tentative ease' and ordinary banter with a crew that now contains his betrayer.",
+     "entity": "Neo",
+     "register": "relational"
+    },
+    {
+     "detail": "Cypher's relational register to ev-020: entry 'Crew member appearing to serve the mission' \u2014 but ev-019's exit established Cypher as an overt, committed traitor operating as Smith's inside man with Morpheus already named as the deliverable. Framing his ev-020 entry as merely 'appearing to serve' understates/contradicts the already-active treason; the continuity of his secret allegiance is not carried forward.",
+     "entity": "Cypher",
+     "register": "relational"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-019",
+    "ev-020"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-020",
+    "ev-021"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-021",
+    "ev-022"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-022",
+    "ev-023"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's knowledge register exits ev-023 as 'Obligated to conceal the Oracle's message from the rest of the crew,' but ev-024 opens with Neo loudly naming the cat a 'deja vu' in front of the group, prompting Trinity to turn and demand an explanation. Nothing accounts for Neo breaking his imposed silence about the anomaly so openly, though this may be a minor register mismatch (concealing the Oracle's message vs. remarking on a cat) rather than a hard break.",
+     "entity": "Neo",
+     "register": "knowledge/behavioral"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [
+    {
+     "detail": "ev-023's affects_outside explicitly flags 'The ship's crew (via Tank) now knows the party is returning.' ev-024 realises this by placing Tank at his deck station monitoring the returning crew and then detecting the glitch. Neither node acknowledges that Tank was already alerted to their inbound status in ev-023, so the continuity of Tank's watch is unlinked."
+    }
+   ],
+   "between": [
+    "ev-023",
+    "ev-024"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "The earlier event ends with the crew halted on the stairwell, alarmed, and having just recognised the ambush; the later event opens with the crew (Morpheus) 'leading the group up the staircase, urging them on.' No node records the decision to resume movement or the transition from a frozen, listening stance back into forward motion, so the crew's positional/motional state flips from arrested to advancing without an accounting beat.",
+     "entity": "MORPHEUS / the crew",
+     "register": "positional"
+    },
+    {
+     "detail": "The earlier event establishes the crew as unarmed people caught mid-climb; the later event opens with Neo already armed and Apoc handing off a weapon. No node records the arming itself \u2014 the distribution of weapons from a state of being unarmed is asserted as already complete at the later event's entry with nothing in either node bridging the two.",
+     "entity": "NEO / APOC",
+     "register": "physical"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-024",
+    "ev-025"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-025",
+    "ev-026"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-026",
+    "ev-027"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [
+    {
+     "detail": "ev-027's affects_outside claims the police 'pour onto the target floor' and a 'mass police force is deployed onto their exact floor,' which ev-028 realises as the cops sweeping Room 808 and discovering the escape hole. Neither node states that the floor occupation of ev-027 is the same police presence now searching Room 808 in ev-028."
+    }
+   ],
+   "between": [
+    "ev-027",
+    "ev-028"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-028",
+    "ev-029"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-029",
+    "ev-030"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [
+    {
+     "detail": "ev-030 establishes the cops have confirmed the fugitives are inside the walls (knowledge/status: hunters with a located target), and ev-031 opens with the Cop firing directly into that wall. The escalation from 'confirmed hiding place' to 'shooting into the wall' is a realisation of the cornering action set up in ev-030, but neither node states it."
+    }
+   ],
+   "between": [
+    "ev-030",
+    "ev-031"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "ev-031 ends with the Cop frozen, spasming, disarmed and 'at the mercy of whatever or whatever seized him,' with the event explicitly flagging an outside force that seized him. ev-032 opens with an Agent ambushing Neo and never returns to the Cop, so the Cop's frozen/disarmed state is simply dropped rather than resolved. Because ev-031 itself names the seizure as an open thread ('opening the way for whatever force seized him to act'), the unresolved Cop is a defect visible across the join.",
+     "entity": "the Cop",
+     "register": "physical/status"
+    },
+    {
+     "detail": "ev-032's Morpheus enters 'Uninjured, arriving fresh to the fight' and 'elsewhere,' but ev-031 contained no Morpheus and gave no signal that he was arriving or about to intervene. A fresh commander appearing mid-struggle with no prior positioning is an unaccounted entry state at the join.",
+     "entity": "Morpheus",
+     "register": "physical/positional"
+    },
+    {
+     "detail": "ev-032's Neo enters 'Momentarily safe as the gunfire quiets,' but ev-031 ended with Neo armed and actively returning fire in a live firefight, with no indication the gunfire had quieted. The shift from active exchange to a momentary lull is unaccounted for at the join.",
+     "entity": "Neo",
+     "register": "physical/positional"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [
+    {
+     "detail": "ev-031's affects_outside explicitly claims the seizure of the Cop 'opens the way for whatever force seized him to act on the situation.' ev-032 realises exactly this: an Agent (the force) now acts, ambushing Neo and driving the capture of Morpheus. Neither node states that the seizing force is the Agent who opens ev-032, so the promised effect is realised without being named as the link."
+    }
+   ],
+   "between": [
+    "ev-031",
+    "ev-032"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-032",
+    "ev-033"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Tank's relational state. In ev-033 he ends the event having just been 'made to abandon' Morpheus, in open mourning. In ev-034 he enters 'working alone at the ship's console' with no relational residue of the grief just registered \u2014 a shift from mourning crewmate to neutral operator with nothing accounting for the change.",
+     "entity": "Tank",
+     "register": "relational"
+    },
+    {
+     "detail": "Tank's knowledge of Morpheus's outcome. ev-033 exit: he is 'in possession of the confirmed outcome \u2014 Morpheus has been lost/left behind.' ev-034 entry: he is 'searching the Matrix at the monitors, unaware of who is calling,' and later 'confirms Morpheus is alive but being moved.' The confirmed 'lost/left behind' knowledge regresses to a state where Morpheus's survival is newly established, with nothing accounting for the reversal.",
+     "entity": "Tank",
+     "register": "knowledge"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "Morpheus's status. ev-033 records the confirmed outcome as 'Morpheus has been lost/left behind' (a closed loss). ev-034 reports 'Morpheus is alive but being moved to an unknown location.' The earlier event treats the loss as confirmed; the later event treats his survival as a fresh revelation. These are incompatible without an intervening correction, and neither node supplies it at this join."
+    },
+    {
+     "detail": "The Franklin and Erie exit's availability. ev-034's affects_outside ('Escape logistics') states the exit is 'spent' by routing Cypher through it first, so 'the remaining crew must now find another way out.' Yet ev-034's own summary and Trinity's knowledge exit state that Franklin and Erie 'is the group's way out.' The event contradicts itself on whether that exit remains usable."
+    }
+   ],
+   "missing_links": [
+    {
+     "detail": "ev-033's affects_outside claims it 'closes the beat of escape with grief and sets the crew's emotional state as they move on without their captain.' ev-034 plainly realises the crew moving on (regrouping, locating an exit) but registers no grief or emotional carryover from the mourning Tank \u2014 the claimed emotional setup is not realised at the join."
+    }
+   ],
+   "between": [
+    "ev-033",
+    "ev-034"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-034",
+    "ev-035"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's status register in ev-036 entry records him 'next in line for Cypher to kill,' implying Cypher had not yet reached him, but the summary states Cypher was 'stopped only at the moment of killing Neo,' and no intervening scene accounts for Cypher moving from the other victims to Neo.",
+     "entity": "Neo",
+     "register": "status"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [
+    {
+     "detail": "ev-035's affect 'Cypher's betrayal plot' claims Cypher arming himself advances a plan to 'act against the crew,' and ev-036 realises exactly this (the murders of Apoc, Switch, Dozer and the delivery of Morpheus), yet neither node frames ev-036 as the direct realisation of ev-035's stated outward effect."
+    }
+   ],
+   "between": [
+    "ev-035",
+    "ev-036"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Trinity's knowledge of the betrayal. In ev-036 she exits having learned the full extent of Cypher's betrayal ('My God. Morpheus. You gave them Morpheus'), yet in ev-037 she enters 'Unaware of Dozer's death and Cypher's betrayal's full cost.' Nothing between the events accounts for her forgetting or being unaware of what she just learned.",
+     "entity": "Trinity",
+     "register": "knowledge"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-036",
+    "ev-037"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-037",
+    "ev-038"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Morpheus: LATER's entry register places him 'Seated in the executive office' (positional) / 'held in the executive office' (status), but EARLIER's exit register left him 'still in custody \u2014 the rescue has not yet reached him' without specifying the office. More importantly, LATER's physical entry says 'handcuffed' and status entry says 'the Agents' prisoner, held in the executive office,' asserting a specific location and restraint that EARLIER never established. This is a mild over-specification rather than a true break, since EARLIER left his exact position unspecified.",
+     "entity": "Morpheus",
+     "register": "positional/status/physical"
+    },
+    {
+     "detail": "Agent Jones: EARLIER's exit register records him 'Destroyed \u2014 his body reverts to the dead Pilot' (physical/status both terminal). LATER's entry register has him 'Reconstituted as the helicopter pilot in sc-163, then enters the executive office armed.' Nothing in EARLIER's exit states or affects_outside indicates that a destroyed Agent can reconstitute into a new body and re-enter the field. The later event both introduces and relies on this reconstitution rule, but the earlier event records his destruction as final ('body reverts to the dead Pilot'). This is a state break: Jones leaves ev-038 destroyed/dead and enters ev-039 operational, with no accounting in ev-038.",
+     "entity": "Agent Jones",
+     "register": "physical/status"
+    },
+    {
+     "detail": "Agent Brown: EARLIER's exit register leaves him 'Still a reacting subordinate,' 'physically intact, no physical change recorded,' alive in the executive office. LATER's entry register has him as an armed Agent who is then 'destroyed.' While going from alive to destroyed is a normal event progression, the deeper issue is continuity of the reconstitution rule (see Jones) \u2014 but Brown himself shows no unaccounted break; his destruction is realized within LATER. No break for Brown beyond the shared reconstitution-gap noted under Jones.",
+     "entity": "Agent Brown",
+     "register": "physical"
+    },
+    {
+     "detail": "Agent Smith: EARLIER's exit register leaves him 'physically intact, directing the hunt' in the executive office. LATER's entry register has him 'having just been gunned down and reconstituted (sc-166).' The gunning-down and reconstitution occur inside LATER, so Smith's own transition is accounted for within the later event. However, this again depends on the reconstitution rule absent from EARLIER. Smith himself is not a break; the break is systemic (the rule) and surfaces most sharply with Jones, whose EARLIER exit was terminal.",
+     "entity": "Agent Smith",
+     "register": "physical"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "Agent Jones's terminality: EARLIER's exit register asserts Jones is 'Destroyed \u2014 his body reverts to the dead Pilot' and 'Eliminated by Trinity,' a final state. LATER's entry register asserts the same Jones-form is 'Reconstituted as the helicopter pilot' and actively enters the executive office armed. These are incompatible unless a reconstitution rule bridges them \u2014 a rule EARLIER never states (it frames the kill as final). The two nodes therefore assert incompatible things about whether Jones's destruction was terminal at the ev-038/ev-039 boundary. This is the contradiction counterpart to the state_break above. (Brown and Smith are not contradictions, since EARLIER left them alive.)"
+    }
+   ],
+   "missing_links": [
+    {
+     "detail": "EARLIER's affects_outside explicitly flags that 'Agents reconstitute' is NOT yet understood and that destroying a body is not ending the threat \u2014 but EARLIER's own state_triples treat Jones's destruction as a clean terminal exit ('body reverts to the dead Pilot,' 'Eliminated'). The later event's entire opening (Jones and Smith reconstituted and re-armed) realizes a capability the earlier event's state model does not encode. Because EARLIER's affects_outside does gesture at reconstitution as an outside effect, this is a soft missing_link: the earlier event names the phenomenon as an external consequence but does not carry it in Jones's exit register, so the join reads as a break rather than a setup. Flagging as missing_link because EARLIER's affects_outside does claim the escalation ('commit their full response... deploy an Agent to the field') without its state model reflecting that Agents return."
+    }
+   ],
+   "between": [
+    "ev-038",
+    "ev-039"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "NEO's status exit in ev-039 ('the rescuer who has ascended from victim to agent') is not carried into ev-040, where his status entry is 'still the newly-confirmed One, but not yet treated as such in this exchange' \u2014 the ascension is dropped rather than continued. Neither node accounts for the difference.",
+     "entity": "NEO",
+     "register": "status"
+    },
+    {
+     "detail": "NEO's knowledge exit in ev-039 ('his belief in the line as safety has been shaken by the near-disaster') is not carried into ev-040, whose knowledge entry concerns only being 'troubled by what the Oracle told him' \u2014 the shaken-belief state is dropped without accounting.",
+     "entity": "NEO",
+     "register": "knowledge"
+    },
+    {
+     "detail": "MORPHEUS's physical exit in ev-039 ('Wounded (leg), partially freed (one cuff still on his wrist)') is not carried into ev-040, whose MORPHEUS triples contain no physical register \u2014 the wound and remaining cuff vanish without accounting.",
+     "entity": "MORPHEUS",
+     "register": "physical"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "ev-039's MORPHEUS status exit ('stranded on a rooftop rather than safely away') and positional exit ('no longer safely aboard the aircraft', i.e., exposed on the roof) are contradicted by ev-040's MORPHEUS positional entry, which lists 'In transit, exposed, without a secured way out' \u2014 'in transit' contradicts the stranded-on-a-rooftop state the earlier event ended on. The later node asserts movement the earlier node explicitly denied had begun. (The positional register is the same contradiction; the status register echoes it.)"
+    }
+   ],
+   "missing_links": [
+    {
+     "detail": "ev-039's affects_outside explicitly claims the helicopter's destruction 'strands the trio on a rooftop and forces the next leg of the escape on foot' \u2014 an outward effect that ev-040 realises (the group securing a subway exit and preparing to move), yet neither node states this causal link between the crash and the exit being sought on foot."
+    }
+   ],
+   "between": [
+    "ev-039",
+    "ev-040"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Morpheus enters ev-041 'Present and physical in the subway station with Neo and Trinity,' but ev-040 ended with him only 'en route to the secured subway exit with the others' and 'about to depart toward the exit' \u2014 never recorded as having arrived at the subway station. His presence inside the station at ev-041's open is unaccounted for by ev-040.",
+     "entity": "Morpheus",
+     "register": "positional"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [
+    {
+     "detail": "ev-040 claims the crew's belief in Neo is now confirmed ('Tank's declaration, Trinity's silent commitment') 'setting the crew's stance going into the next confrontation,' but ev-041 neither shows the crew acting on that confirmed belief nor registers it \u2014 the affirmed stance is left unrealised in the later event."
+    }
+   ],
+   "between": [
+    "ev-040",
+    "ev-041"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-041",
+    "ev-042"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-042",
+    "ev-043"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-043",
+    "ev-044"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Trinity enters ev-045 with no knowledge of the external threat ('Aware the target was lost but not of the external threat'), yet ev-044's end state has her alarmed and distressed over Neo's dying body inside the Matrix. The shift from alarmed-over-Neo to questioning/unsettled-over-lost-target is unaccounted for between the two events, and the two emotional/knowledge states do not cleanly chain.",
+     "entity": "Trinity",
+     "register": "knowledge"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-044",
+    "ev-045"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Tank enters ev-046 'Searching the Matrix code for an exit while Neo is under pursuit' (knowledge), but ev-045 ended with him 'charging the E.M.P.' / 'Arming the ship's weapon' with attention on the incoming sentinels. The later event offers no account of how or why he shifted from arming a real-world weapon back to searching the Matrix for an exit.",
+     "entity": "Tank",
+     "register": "knowledge"
+    },
+    {
+     "detail": "Tank's ev-046 entry 'Answering an incoming call as Operator, reactive' (status) implies Neo has just re-established contact, yet ev-046's own Neo triple has his entry as already 'Running loose through the city' and its summary opens with him 'cut off from his crew.' Neo's act of stealing the phone to call (the cause of the incoming call) happens inside ev-046, so Tank entering the event already answering a call that Neo has not yet been shown placing leaves the contact-state unaccounted for between the two events.",
+     "entity": "Tank",
+     "register": "status"
+    },
+    {
+     "detail": "Trinity enters ev-046 'Focused on Tank's search for an exit,' but in ev-045 she was 'Anxious but reassured by Morpheus's faith in Neo' regarding the imminent sentinel attack and the EMP deadline. She drops the real-world threat entirely with nothing in ev-046 accounting for the shift of her attention back to the Matrix extraction.",
+     "entity": "Trinity",
+     "register": "emotional"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "ev-045 establishes the crew's urgent focus as the inbound sentinels and a hard five-to-six-minute deadline to get Neo out before the EMP must fire; ev-046 has Tank and Trinity calmly searching for and routing Neo to an exit with no reference to that deadline or threat. The later event behaves as though the countdown from the earlier event is not in force, which is incompatible with ev-045's stated stakes."
+    }
+   ],
+   "missing_links": [
+    {
+     "detail": "ev-045's affects_outside explicitly worsens 'Neo's position' by imposing a hard deadline and forcing a weapon decision that 'depends on Neo, who is absent from the event.' ev-046 plainly realises this by bringing Neo back under crew contact and routing him to an exit, yet neither event states that the extraction resumed under that deadline or that the crew's search was driven by it \u2014 the causal bridge the earlier event promised is unmarked."
+    }
+   ],
+   "between": [
+    "ev-045",
+    "ev-046"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Agent Smith is in close pursuit of Neo at the end of ev-046 (still chasing, having just missed him in the exit alley), but enters ev-047 moving alone and unattached to a target outside the hotel, with no account of how he broke off the pursuit or became separated from Neo and the other Agents.",
+     "entity": "Agent Smith",
+     "register": "status / relational"
+    },
+    {
+     "detail": "ev-046 ends with Neo alive, wounded, and being actively chased by massed Agents closing the exit alley; ev-047 features only Smith, alone, with no sign of Neo, the other Agents, or the ongoing chase \u2014 Neo's flight and the entire pursuit appear to have vanished without anything accounting for the change.",
+     "entity": "Neo / the Agents / Agent Brown",
+     "register": "positional / status"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "ev-046 ends with Smith as an active shooter in close pursuit of Neo in the exit alley, whereas ev-047 presents Smith moving without recognition of his surroundings and unattached to any target \u2014 the two states of 'locked onto Neo in a live chase' and 'wandering without a target' are incompatible with nothing bridging them."
+    }
+   ],
+   "missing_links": [],
+   "between": [
+    "ev-046",
+    "ev-047"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-047",
+    "ev-048"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-048",
+    "ev-049"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-049",
+    "ev-050"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-050",
+    "ev-051"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-051",
+    "ev-052"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "The LATER event opens with the Nebuchadnezzar under a full sentinel assault ('destroying it,' 'descending on the crew'), yet the EARLIER event ended with the ship merely 'shaken by an explosion' and no sentinel attack, no evacuation, and no crisis of that scale described or foreshadowed. The ship and crew move from a moment of triumph to being overrun with nothing in the nodes accounting for the escalation.",
+     "entity": "the Nebuchadnezzar / crew",
+     "register": "physical / status"
+    },
+    {
+     "detail": "In the EARLIER event Trinity is on the main deck 'watching,' calm, with unchanged knowledge/emotional registers. In the LATER event she opens already 'distressed, crying out for Neo amid the destruction' and commanding an evacuation. The nodes carry no account of how she moved from passive observer to distressed commander under active attack.",
+     "entity": "Trinity",
+     "register": "emotional / positional / status"
+    },
+    {
+     "detail": "Morpheus ends the EARLIER event 'vindicated,' still captain, calmly declarative on the main deck. He enters the LATER event as an 'aimed-at target, about to be struck by a sentinel.' No node bridges the vindicated prophet to a man about to be killed by a descending machine.",
+     "entity": "Morpheus",
+     "register": "physical / status"
+    },
+    {
+     "detail": "Neo ends the EARLIER event as the dominant force in the hall, having just destroyed Smith and driven off the Agents. He enters the LATER event 'still inside the Matrix, off-deck,' merely 'moving toward the exit phone.' The nodes do not account for how the hall fight ended, whether he jacked out and back in, or how he returned to the Matrix; his transition from victorious stand to mid-transit evacuee is untracked.",
+     "entity": "Neo",
+     "register": "physical / positional"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [
+    {
+     "detail": "The EARLIER event's third outward effect states that 'an explosion that shakes the entire ship \u2014 a new external threat lands as the moment of triumph closes.' The LATER event plainly realises this as the sentinel assault ('sentinels overrun the ship and close on the crew'). Neither node states that the explosion was the sentinel attack beginning, so the causal identity of the 'new external threat' is left implicit across the join."
+    }
+   ],
+   "between": [
+    "ev-052",
+    "ev-053"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "TRINITY enters ev-054 'Awake and alive aboard the dark hovercraft, beside Neo's body,' but in ev-053 she was on the Main Deck commanding the EMP discharge, with no recorded movement to Neo's side or shift from active command to waiting vigil. The change of position and role is unaccounted for between the two nodes.",
+     "entity": "TRINITY",
+     "register": "positional"
+    },
+    {
+     "detail": "TRINITY enters ev-054 having 'already grieved him' / 'having confessed love over his body and lost him,' but ev-053 records her as distressed and calling out for Neo while initiating the EMP, not grieving a confirmed death or confessing love over his body. The shift from 'calling for Neo' to 'having lost and grieved Neo' is not accounted for.",
+     "entity": "TRINITY",
+     "register": "emotional"
+    },
+    {
+     "detail": "NEO enters ev-054 'Dead or dormant in the still darkness of the hovercraft,' but ev-053 leaves him 'In the act of jacking out' / 'Exiting the Matrix; about to rejoin the crew in reality.' The transition from actively jacking out to being dead/dormant is not accounted for.",
+     "entity": "NEO",
+     "register": "physical"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-053",
+    "ev-054"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-054",
+    "ev-055"
+   ]
+  }
+ ],
+ "canonicalisation": {
+  "variants_folded": 15,
+  "renames_applied": 79,
+  "entities_before": 74,
+  "entities_after": 59,
+  "mapping_size": 15
+ }
+}
