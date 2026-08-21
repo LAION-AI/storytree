@@ -42,7 +42,7 @@ from typing import Any, Dict, List, Optional, Sequence
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, "/home/deployer/laion/project-alexandria/screenplay/src")
-from event_scaffold import (build_scaffold, canonical_roster, exits_by_entity,  # noqa: E402
+from event_scaffold import (_terminal_for, build_scaffold, canonical_roster, exits_by_entity,  # noqa: E402
                             render_scaffold)
 from screenplay_ku.client import EndpointPool, run_parallel  # noqa: E402
 from screenplay_ku.kuschema import grammar_safe  # noqa: E402
@@ -1422,6 +1422,275 @@ def repair_node(node: Dict[str, Any]) -> Dict[str, int]:
     return report
 
 
+
+# ------------------------------------------------- build 7: audit and regenerate
+
+# A quoted span that does not occur in the screenplay is an invention. Both build 5
+# and build 6 put a Morpheus line in `carried_uncertainty` that the source does not
+# contain, and both judges caught it; a string comparison catches it for nothing.
+_QUOTED = re.compile(r'["\u201c]([^"\u201c\u201d]{15,140})["\u201d]'
+                     r"|(?<=[\s:,])'([^']{15,140})'(?=[\s.,;:!?)]|$)")
+
+# Reasons that explain nothing. My own replacement text for pipeline reasons was
+# itself called mechanical by a judge, which is the point: a template is not a
+# reason, whichever template it is.
+_EMPTY_REASON = re.compile(
+    r"^(nothing across [^.]*acts on|no change (?:was |is )?recorded|"
+    r"the (?:scene layer|scaffold|pipeline)|not recorded|"
+    r"this register (?:is )?(?:not|un)|the scene records only)", re.I)
+
+
+def _norm_words(text: str) -> str:
+    return " ".join(re.findall(r"[a-z0-9']+", str(text).lower()))
+
+
+def audit_node(node: Dict[str, Any], source_words: str,
+               scenes_by_id: Optional[Dict[str, Dict]] = None) -> List[Dict[str, Any]]:
+    """Faults worth another model call, each naming the entity that must be redone.
+
+    Distinct from repair_node: those faults have a correct answer code can write
+    ("unchanged" on an unmoved register). These do not. A fabricated quotation
+    cannot be repaired by deletion without leaving a hole, and a contradiction
+    between two registers cannot be resolved without knowing which one is true.
+    So they are reported here and handed back to the model with the fault named.
+    """
+    faults: List[Dict[str, Any]] = []
+
+    def add(entity, kind, detail):
+        faults.append({"entity": entity, "kind": kind, "detail": detail})
+
+    for triple in node.get("state_triples") or []:
+        entity = triple.get("entity")
+        texts = [("reading", triple.get("reading"))]
+        for name, reg in _iter_registers(triple):
+            if isinstance(reg, dict):
+                texts += [("{}.{}".format(name, f), reg.get(f))
+                          for f in ("entry", "change", "exit", "unchanged_because")]
+
+        for field, value in texts:
+            if not isinstance(value, str):
+                continue
+            for match in _QUOTED.finditer(value):
+                quote = match.group(1) or match.group(2)
+                words = _norm_words(quote)
+                if len(words.split()) >= 4 and words not in source_words:
+                    add(entity, "fabricated_quotation",
+                        "{} presents as a quotation a line the screenplay does not "
+                        "contain: {}".format(field, quote[:90]))
+            if field.endswith("unchanged_because") and _EMPTY_REASON.match(value.strip()):
+                add(entity, "empty_reason",
+                    "{} gives no reason in the world, only a statement about the "
+                    "record: {}".format(field, value[:80]))
+
+        # Two registers of one entity whose exits cannot both be true. Judges
+        # cited this every round: cops "Living officers completing a controlled
+        # arrest" beside "All dead"; Trinity "the sole survivor" beside "a
+        # compliant suspect under armed control".
+        #
+        # Terminal detection reuses _terminal_for, which carries five guards
+        # earned against real misfires. Writing a fresh keyword test here
+        # reproduced the first of them immediately: "standing over the dead cops"
+        # marked Trinity as destroyed.
+        dead, alive, controlled, free = [], [], [], []
+        for name, reg in _iter_registers(triple):
+            if not isinstance(reg, dict):
+                continue
+            exit_text = reg.get("exit") or ""
+            low = exit_text.casefold()
+            if _terminal_for(exit_text, str(entity or ""), None):
+                dead.append(name)
+            elif any(w in low for w in ("living", "alive", "unharmed", "intact")):
+                alive.append(name)
+            if any(w in low for w in ("under armed control", "in custody", "captured",
+                                      "restrained", "compliant suspect", "outgunned",
+                                      "at the mercy")):
+                controlled.append(name)
+            if any(w in low for w in ("sole survivor", "only one left", "uncontained",
+                                      "free and unchallenged", "the only one standing")):
+                free.append(name)
+        if alive and dead:
+            add(entity, "life_contradiction",
+                "the {} register exits describing this entity as destroyed while the "
+                "{} register exits describing it as intact".format(
+                    ", ".join(dead), ", ".join(alive)))
+        if controlled and free:
+            add(entity, "control_contradiction",
+                "the {} register exits with this entity held or outgunned while the "
+                "{} register exits with it free and in command; both cannot be the "
+                "state it leaves in".format(", ".join(controlled), ", ".join(free)))
+
+    for name in node.get("_names_from_outside_this_event") or []:
+        add(None, "outside_name",
+            "{} is named in a consequence field but appears in none of this "
+            "event's scenes".format(name))
+    return faults
+
+
+
+_REGEN_SYSTEM = (
+    "You are correcting one entity's state record inside a story-graph event node. "
+    "You are given the entity's current record, the faults found in it, the scenes "
+    "the event covers, and the changes the scene layer recorded for this entity. "
+    "Return the corrected record for this entity only.\n\n"
+    "Rules you must satisfy, because the faults you were given come from breaking them:\n"
+    "  * A quotation must be a line the screenplay actually contains. If you cannot "
+    "point to one, do not present anything as a quotation -- say what was communicated.\n"
+    "  * `unchanged_because` states why the thing did not change IN THE WORLD: what the "
+    "entity was doing, and why nothing in these scenes touched it. Never a statement "
+    "about records, scenes-as-documents, or what was or was not noted.\n"
+    "  * The registers of one entity must describe one coherent state. An entity cannot "
+    "exit both destroyed and intact, or both held and free.\n"
+    "  * If `moved` is false, `change` reads exactly `unchanged` and `exit` repeats "
+    "`entry` word for word.\n"
+    "  * Keep every register the record already has. Do not add or drop registers.\n"
+    "Return only JSON."
+)
+
+
+def regenerate_entity(pool, node: Dict[str, Any], entity: str,
+                      faults: Sequence[Dict[str, Any]], scaffold: Dict[str, Any],
+                      scene_text: Dict[str, str], source_words: str,
+                      ctx: int = 65536) -> Optional[Dict[str, Any]]:
+    """Ask the model to redo one entity, with the fault named.
+
+    The pipeline could detect faults but never acted on one: repairs overwrote a
+    field with a value code could compute. That works for "unchanged" and nothing
+    else -- a fabricated quotation cannot be deleted without leaving a hole, and a
+    contradiction cannot be resolved without knowing which side is true. So the
+    smallest unit that can actually be rewritten, one entity, goes back to the
+    model with the reason it failed.
+
+    The result is accepted only if it fixes what it was sent for and breaks
+    nothing else. Otherwise the original stands: a repair that cannot be verified
+    is not an improvement.
+    """
+    triple = next((t for t in node.get("state_triples") or []
+                   if t.get("entity") == entity), None)
+    if triple is None:
+        return None
+
+    entry = next((e for e in scaffold["entities"] if e["entity"] == entity), {})
+    recorded = "\n".join(
+        "  [{}] {:<11} {} -> {}".format(c.get("scene"), c.get("register") or "?",
+                                        str(c.get("before"))[:70], str(c.get("after"))[:70])
+        for c in entry.get("changes") or []) or "  (none recorded)"
+    body = "\n\n".join("--- {} ---\n{}".format(sid, scene_text.get(sid, ""))
+                        for sid in node.get("scene_ids") or [])
+
+    schema = {
+        "type": "object",
+        "properties": {
+            "entity": {"const": entity},
+            "reading": {"type": ["string", "null"], "maxLength": 560},
+            "registers": {
+                "type": "object",
+                "properties": {r: _register_slot(node.get("scene_ids") or [])
+                               for r in REGISTERS},
+                "required": sorted({n for n, _ in _iter_registers(triple)}),
+                "additionalProperties": False,
+            },
+        },
+        "required": ["entity", "registers", "reading"],
+        "additionalProperties": False,
+    }
+
+    prompt = "\n\n".join([
+        "ENTITY: {}".format(entity),
+        "FAULTS FOUND IN THIS RECORD:\n" + "\n".join(
+            "  - {}".format(f["detail"]) for f in faults),
+        "CHANGES THE SCENE LAYER RECORDED FOR THIS ENTITY:\n" + recorded,
+        "THE EVENT'S SCENES:\n" + body[:24000],
+        "THE CURRENT RECORD:\n" + json.dumps(triple, ensure_ascii=False, indent=1),
+    ])
+
+    try:
+        result = pool.call(_REGEN_SYSTEM, prompt, schema=grammar_safe(schema),
+                           max_tokens=4000, temperature=0.3)
+        fixed = _parse(result.text)
+    except Exception:
+        return None
+    if not isinstance(fixed, dict) or not fixed.get("registers"):
+        return None
+
+    # Accepted only if it is actually better. A model asked to fix a fault will
+    # sometimes return the fault, and sometimes trade it for a new one.
+    probe = {"event_id": node.get("event_id"),
+             "scene_ids": node.get("scene_ids"),
+             "state_triples": [fixed]}
+    before = {f["kind"] for f in faults}
+    after = {f["kind"] for f in audit_node(probe, source_words)}
+    if after & before:
+        return None
+    if len({n for n, _ in _iter_registers(fixed)}) != len(
+            {n for n, _ in _iter_registers(triple)}):
+        return None
+    # Mind material must not be traded away. Build 6 gained on the contract and
+    # lost V5, and a judge measured it: "seven substantive character readings with
+    # traced mechanism against the other arm's single truncated one". A rewrite
+    # that shortens the reading is buying compliance with the dimension this layer
+    # exists to serve.
+    old_reading = (triple.get("reading") or "").strip()
+    new_reading = (fixed.get("reading") or "").strip()
+    if len(old_reading) > 40 and len(new_reading) < 0.7 * len(old_reading):
+        return None
+    return fixed
+
+
+def regenerate_all(pool, nodes: Sequence[Dict[str, Any]], by_id: Dict[str, Dict],
+                   scene_text: Dict[str, str], source_words: str,
+                   canon: Optional[Dict[str, str]] = None,
+                   workers: int = 2, rounds: int = 2,
+                   progress=None) -> Dict[str, Any]:
+    """Audit every node, redo the entities that failed, audit again."""
+    report = {"rounds": [], "regenerated": 0, "rejected": 0}
+    for round_no in range(rounds):
+        jobs = []
+        for node in nodes:
+            faults = audit_node(node, source_words)
+            per_entity: Dict[str, List[Dict[str, Any]]] = {}
+            for fault in faults:
+                if fault.get("entity"):
+                    per_entity.setdefault(fault["entity"], []).append(fault)
+            for entity, group in per_entity.items():
+                jobs.append((node, entity, group))
+        if not jobs:
+            report["rounds"].append({"round": round_no + 1, "faults": 0})
+            break
+
+        def work(job):
+            node, entity, group = job
+            member = [by_id[s] for s in node.get("scene_ids") or [] if s in by_id]
+            scaffold = build_scaffold(node.get("scene_ids") or [], member, canon=canon)
+            return node, entity, regenerate_entity(
+                pool, node, entity, group, scaffold, scene_text, source_words)
+
+        fixed_count = rejected = 0
+        # run_parallel takes items first and returns a list, not an iterator.
+        for node, entity, fixed in run_parallel(jobs, work, max_workers=workers,
+                                                on_done=progress):
+            if fixed is None:
+                rejected += 1
+                continue
+            triples = node.get("state_triples") or []
+            for i, t in enumerate(triples):
+                if t.get("entity") == entity:
+                    triples[i] = fixed
+                    fixed_count += 1
+                    break
+        report["regenerated"] += fixed_count
+        report["rejected"] += rejected
+        report["rounds"].append({"round": round_no + 1, "entities": len(jobs),
+                                 "regenerated": fixed_count, "rejected": rejected})
+        print("  round {}: {} entities with faults, {} regenerated, {} rejected".format(
+            round_no + 1, len(jobs), fixed_count, rejected), flush=True)
+        if not fixed_count:
+            break
+
+    remaining = sum(len(audit_node(n, source_words)) for n in nodes)
+    report["faults_remaining"] = remaining
+    return report
+
+
 def verbatim_gate(nodes, source_path: str, label: str) -> Dict[str, Any]:
     """Report copied source text in a finished layer.
 
@@ -1475,6 +1744,8 @@ def main() -> int:
     # Reusing a segmentation removes boundary variance from a comparison. Two
     # builds scored on identically bounded events differ only in what the
     # composer did, which is the thing under test.
+    ap.add_argument("--skip-regenerate", action="store_true")
+    ap.add_argument("--regen-rounds", type=int, default=2)
     ap.add_argument("--segmentation", default="",
                     help="reuse an existing segmentation.json instead of re-segmenting")
     ap.add_argument("--limit", type=int, default=0,
@@ -1638,6 +1909,18 @@ def main() -> int:
         canon["variants_folded"], canon["renames_applied"],
         canon["entities_before"], canon["entities_after"]), flush=True)
 
+    source_words = _norm_words(
+        Path(a.source).read_text(encoding="utf-8", errors="ignore")
+        if a.source and Path(a.source).exists() else "")
+    regen: Dict[str, Any] = {}
+    if source_words and not a.skip_regenerate:
+        print("\nstage 2a — auditing and regenerating failed entities", flush=True)
+        regen = regenerate_all(pool, nodes, by_id, scene_text, source_words,
+                               canon=canon, workers=a.workers, rounds=a.regen_rounds)
+        print("  {} regenerated, {} rejected, {} faults left".format(
+            regen.get("regenerated"), regen.get("rejected"),
+            regen.get("faults_remaining")), flush=True)
+
     print("\nstage 2b — reconciling prose to the finished triples", flush=True)
     rec = reconcile_all(pool, nodes, workers=a.workers, progress=prog)
     print("  {}/{} reconciled".format(rec["reconciled"], rec["of"]), flush=True)
@@ -1666,6 +1949,7 @@ def main() -> int:
         "canonicalisation": canon,
         "chain_repair": chain,
         "build5_repairs": repairs,
+        "regeneration": regen,
         "duplicate_merge": merged,
         "reconcile": rec,
         "lint": lint_report,
