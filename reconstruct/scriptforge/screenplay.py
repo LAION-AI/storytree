@@ -166,6 +166,27 @@ def _count_matches(text: str, quote: str) -> int:
     return len(anchor_pattern(quote).findall(text))
 
 
+# Anchors are stored in artifacts that get published, so they are bound by the
+# same rule as everything else: fewer than eight consecutive source words. Three
+# of 224 scenes needed eight or nine words to become unique and therefore shipped
+# over the bar. The limit is now the bar, and a scene that cannot be uniquely
+# anchored inside it is reported non-unique so the caller falls back to the
+# character span -- which is exact anyway, and quotes nothing.
+ANCHOR_TOKEN_BAR = 8
+
+_ANCHOR_TOKEN = re.compile(r"[A-Za-z0-9]+(?:'[A-Za-z0-9]+)*")
+
+
+def _anchor_token_count(quote: str) -> int:
+    """Count the way the leak sweep counts.
+
+    Whitespace words are not the unit: "9:15 A.M." is two whitespace words and
+    four tokens. A limit expressed in whitespace words therefore let a nine-token
+    anchor through while looking like a five-word one.
+    """
+    return len(_ANCHOR_TOKEN.findall(quote))
+
+
 def _unique_anchor(text: str, body: str, *, from_end: bool, start_at: int = 5,
                    limit: int = 24) -> tuple[str, bool]:
     """Grow a quote until it matches exactly once in `text`.
@@ -178,6 +199,11 @@ def _unique_anchor(text: str, body: str, *, from_end: bool, start_at: int = 5,
     for n in range(start_at, limit + 1):
         quote = _words(body, n, from_end=from_end)
         if not quote or quote == last:
+            break
+        if _anchor_token_count(quote) >= ANCHOR_TOKEN_BAR:
+            # Growing further would publish a copyable run. Stop at the last
+            # legal length and report non-unique; the caller falls back to the
+            # character span, which is exact and quotes nothing.
             break
         last = quote
         if _count_matches(text, quote) == 1:

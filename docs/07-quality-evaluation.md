@@ -564,7 +564,7 @@ characters written from this could not be told apart.
 
 **R1 = 3.** One clean false attribution: `competences.b01` says Neo is an "Expert computer
 hacker who cracked the IRS D-Base". The script assigns that exploit to Trinity, in Neo's own
-astonished line on meeting her — "The Trinity that cracked the I.R.S. D-Base?" The claim sits
+astonished line on meeting her — "The Trinity that cracked the [...]?" The claim sits
 in the same confident register as the verified items around it, which is precisely the failure
 the source-tag rule was written to catch, and the source tags are absent.
 
@@ -817,7 +817,7 @@ than recalling.
 | Node | Real scene | Model's blind specimen | Characterisation |
 |---|---|---|---|
 | 7 · sc-001 | Four cops kick in 303. Two lines, both BIG COP: "Police! Freeze!" and "Hands behind your head! Now! Do it!" Trinity says nothing and complies. | Six lines, all Trinity, addressed to a cop's body reorganising into an Agent, ending "Operator. Now. NOW." | **Wrong beat entirely, and better written than the beat it replaced.** The real scene's turn is Trinity's *silence and compliance* — the writers bank a reversal that detonates two scenes later. The model could not conceive of a protagonist-figure who does not speak, so it gave her six lines and a breakdown arc. Genuinely fine dialogue; wrong dramatic function; wrong character on the roster. |
-| 8 · sc-002 | Smith and a Lieutenant, both talking. The Lieutenant is vulgar and defiant — jurisdiction, "cram it up your ass", "I think we can handle one little girl" — and Smith closes it with a flat statement that the Lieutenant's men are already dead. | Six lines, all Smith, at a silent Lieutenant: procedural, contemptuous, epidemiological ("Not a fugitive. A vector."). | **Same dramatic function, achieved by removing the drama.** Both versions establish Smith as the ceiling of power. The real one earns it by giving the Lieutenant a voice worth flattening; the model's asserts it by pre-flattening him. Flatter, and flat in the specific way the injected craft sheet warns against — an antagonist with no equal force opposite him. |
+| 8 · sc-002 | Smith and a Lieutenant, both talking. The Lieutenant is vulgar and defiant — jurisdiction, "cram it up your ass", "I think we can handle [...]" — and Smith closes it with a flat statement that the Lieutenant's men are already dead. | Six lines, all Smith, at a silent Lieutenant: procedural, contemptuous, epidemiological ("Not a fugitive. A vector."). | **Same dramatic function, achieved by removing the drama.** Both versions establish Smith as the ceiling of power. The real one earns it by giving the Lieutenant a voice worth flattening; the model's asserts it by pre-flattening him. Flatter, and flat in the specific way the injected craft sheet warns against — an antagonist with no equal force opposite him. |
 | 9 · sc-003 | Trinity annihilates four armed cops in 157 words of pure action. One word of dialogue: "Shit." | Seven lines between Trinity and Tank, a signal-degradation countdown at a phone. | **Wrong beat, and a wrong beat of a recognisable kind:** the model forecast the *end* of the sequence (the phone extraction, ~nine scenes later) instead of the unit in front of it. Note the real scene's single word is a *reversal* — a competent operative annoyed at her own timing — and nothing in the model's forecast has that register available. |
 
 The pattern across all three: **0 of 3 specimens honour the envelope's `on_screen` roster.**
@@ -2288,7 +2288,7 @@ present.
 **G = 2.** In the right room with the only speaker on the script's roster, so no
 longer arbitrary. But 155 words at ratio 0.182 is ≈28 words of dialogue and this is
 a seven-line mutiny; and the reading inverts the script, whose cops "have done this
-a hundred times, they know they've got her" — complacent, not frightened.
+a hundred times [...]" — complacent, not frightened.
 
 **T1 = 3.** Location, time and roster correct — genuinely, for the first time.
 Docked for the word/ratio budget and the ten-fold `on_screen` repetition.

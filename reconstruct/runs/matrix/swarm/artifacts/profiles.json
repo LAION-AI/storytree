@@ -405,7 +405,7 @@
   "id": "ORACLE",
   "kind": "agents",
   "description": "An elderly woman who serves as the guide and prophet of the Resistance, residing in a modest apartment within the Matrix. She appears as a domestic figure, often seen baking or wearing comfortable clothing, contrasting with the high-stakes nature of her role. Her primary function in this segment is to deliver a specific, counter-intuitive prophecy to Neo that undermines Morpheus's certainty and shifts the narrative focus from Neo's destiny to his agency. She is characterized by a casual, grandmotherly demeanor that masks her profound knowledge and detachment from the immediate physical dangers facing the Resistance.",
-  "appearance": "Old woman, wearing big oven mitts, comfortable slacks, and a print blouse. Described as looking like 'someone's grandma.'",
+  "appearance": "Old woman, wearing big oven mitts [...]. Described as looking like 'someone's grandma.'",
   "background": "Has been with the Resistance since its beginning. Prophesied the return of the One after the death of the man who freed the first of the Resistance. Morpheus states she is a guide who helps find the path, though he admits he previously misunderstood her words as being about himself rather than the One's agency.",
   "wants": "To provide Neo with the truth he needs to make his own choice, specifically that he is not 'the One' in the way Morpheus believes, but that he has the gift and is waiting for something (possibly his next life).",
   "fears": "None explicitly stated in this segment, though she expresses a personal aversion to giving good people bad news ('I hate giving good people bad news').",
@@ -434,7 +434,7 @@
      "accepted"
     ],
     "initial": "pending",
-    "why": "Moves to 'delivered' in Scene 80 when she tells Neo, 'You got the gift but looks like you're waiting for something,' effectively redefining the prophecy from a confirmation of identity to a statement of potential and choice."
+    "why": "Moves to 'delivered' in Scene 80 when she tells Neo, 'You got the gift but [...],' effectively redefining the prophecy from a confirmation of identity to a statement of potential and choice."
    },
    {
     "name": "morpheus_belief_impact",
@@ -444,7 +444,7 @@
      "neutral"
     ],
     "initial": "reinforced",
-    "why": "Moves to 'undermined' in Scene 80 when she tells Neo that Morpheus 'believes it so blindly that he's going to sacrifice his life to save yours' and that Neo will have to choose between their lives. This directly contradicts Morpheus's expectation that Neo is the savior who will save everyone."
+    "why": "Moves to 'undermined' in Scene 80 when she tells Neo that Morpheus 'believes it so blindly that [...]' and that Neo will have to choose between their lives. This directly contradicts Morpheus's expectation that Neo is the savior who will save everyone."
    },
    {
     "name": "neo_disposition",
@@ -468,7 +468,7 @@
   "description": "Tank is the operator of the Nebuchadnezzar, a 'pure' human born in the real world (Zion) without a neural jack, making him one of the few who cannot enter the Matrix. He serves as the technical bridge between the physical ship and the digital world, managing crew connections and monitoring data. He is Dozer's brother and Neo's designated operator, tasked with guiding the new recruit through training and combat. His role shifts from technical support to critical tactical command when the crew is ambushed, culminating in a moment of mortal injury that is later subverted by his survival, allowing him to facilitate the rescue of Morpheus.",
   "appearance": "Described as having no jacks; a 'pure' human. Specific physical features are not detailed in the provided script excerpts, but he is shown sitting at the operator's station, working furiously with controls.",
   "background": "Born in the real world in Zion, the last human city. He is one of the 'home-grown' humans who was never part of the Matrix. He is the brother of Dozer, the pilot. He has experience operating the Nebuchadnezzar and monitoring the Matrix, having likely operated for previous 'One' candidates mentioned by Cypher.",
-  "wants": "To prove Neo's capability ('I'm fairly excited to see what you are capable of'), to maintain the operational integrity of the Nebuchadnezzar, and to survive the war against the Machines.",
+  "wants": "To prove Neo's capability ('I'm fairly excited to see [...]'), to maintain the operational integrity of the Nebuchadnezzar, and to survive the war against the Machines.",
   "fears": "Failure of the operation, the loss of the crew, and the overwhelming power of the Agents (evidenced by his realization of the trap and his panic during the Sentinel attack).",
   "internal_conflict": "The tension between his role as a 'pure' human observer/controller and the visceral danger faced by those 'plugged in.' He is safe from the Matrix but vulnerable to the physical world (Sentinels, Agents in the real world/Cypher's betrayal).",
   "speech": "Casual, technical, and reassuring. Uses operator jargon ('Power off-line,' 'E.M.P. armed'). Shows a friendly, slightly informal demeanor with Neo ('Hey, Mikey,' 'Breakfast of champions').",
@@ -875,7 +875,7 @@
      "emp_armed"
     ],
     "initial": "online",
-    "why": "Event 68: Tank announces 'Power off-line. E.M.P. armed and ready' when the ship is forced to stop to hide from a Sentinel. Event 69: The crew waits in the dark with heating systems off, causing frost to build on the windshield."
+    "why": "Event 68: Tank announces 'Power off-line. E.M [...]' when the ship is forced to stop to hide from a Sentinel. Event 69: The crew waits in the dark with heating systems off, causing frost to build on the windshield."
    },
    {
     "name": "position",
@@ -1029,7 +1029,7 @@
  {
   "id": "NEBUCHADNEZZAR_INFIRMARY",
   "kind": "locations",
-  "description": "A cramped, sterile medical bay aboard the hovercraft Nebuchadnezzar, characterized by unnaturally bright fluorescent light sticks and the presence of Dozer and Morpheus. It serves as the immediate point of physical reintegration for Neo after his extraction from the Matrix, where his atrophied muscles are rebuilt using acupuncture-like needles wired to a strange device. The space is defined by its clinical, almost surgical intensity, contrasting with the organic decay of the real world outside. It is a place of forced awakening and physical reconstruction, where the boundaries between medical treatment and technological augmentation blur.",
+  "description": "A cramped, sterile medical bay aboard the hovercraft Nebuchadnezzar, characterized by unnaturally bright fluorescent light sticks and the presence of Dozer and Morpheus. It serves as the immediate point of physical reintegration for Neo after his extraction from the Matrix, where his atrophied muscles are rebuilt using acupuncture-like needles wired to [...]. The space is defined by its clinical, almost surgical intensity, contrasting with the organic decay of the real world outside. It is a place of forced awakening and physical reconstruction, where the boundaries between medical treatment and technological augmentation blur.",
   "appearance": "Cramped, sterile, lit by unnaturally bright fluorescent light sticks. Contains medical equipment including acupuncture-like needles and a strange device for muscle reconstruction.",
   "background": "Part of the Nebuchadnezzar, the Resistance's primary vessel. It functions as the medical hub for crew members, particularly those recently freed from the Matrix who require physical rehabilitation due to prolonged atrophy.",
   "wants": "To facilitate the physical recovery and biological reintegration of Neo, enabling him to survive in the real world and prepare for the training ahead.",
@@ -1116,7 +1116,7 @@
   "kind": "locations",
   "description": "The communal dining area aboard the Nebuchadnezzar, characterized by its cramped, utilitarian design and the consumption of grey, paste-like synthetic food. It serves as the primary social hub for the crew, functioning as a space where the mundane realities of their existence—represented by the 'single-celled protein' meals—are confronted with the high-stakes paranoia and camaraderie of the Resistance. The room is a stage for interpersonal friction, specifically regarding the crew's relationship with Neo and Morpheus, acting as a neutral ground where alliances are tested and the physical discomfort of their life in the 'real world' is shared.",
   "appearance": "Cramped and utilitarian, consistent with the 'small like a submarine' description of the Nebuchadnezzar. It contains seating for the crew to gather, likely with a central table or bench where they consume their meals. The lighting is likely functional and dim, reflecting the ship's overall aesthetic of fluorescent light sticks and monitor glow. It is distinct from the Main Deck (control/construct area) and the Infirmary, serving specifically as a domestic or social space.",
-  "background": "A dedicated space on the Nebuchadnezzar for crew sustenance. The food served here is described as a 'single-celled protein combined with synthetic aminos, vitamins, and minerals,' grown in a vat. This contrasts sharply with the 'ignorance is bliss' steak Cypher consumes in the Matrix, highlighting the sensory deprivation of the real world. The room facilitates the crew's social dynamics, allowing for the exchange of information (like Mouse's design of the red dress woman) and the expression of dissent (Cypher's complaints).",
+  "background": "A dedicated space on the Nebuchadnezzar for crew sustenance. The food served here is described as a 'single-celled protein combined [...],' grown in a vat. This contrasts sharply with the 'ignorance is bliss' steak Cypher consumes in the Matrix, highlighting the sensory deprivation of the real world. The room facilitates the crew's social dynamics, allowing for the exchange of information (like Mouse's design of the red dress woman) and the expression of dissent (Cypher's complaints).",
   "wants": "To function as a site of social cohesion and routine maintenance for the crew, providing a necessary break from the high-stress operations of the Main Deck and the psychological weight of the Construct.",
   "fears": "None inherent to the location, but it is a site where the crew's collective anxiety and dissatisfaction are vocalized, particularly regarding the 'One' prophecy and the monotony of their existence.",
   "internal_conflict": "The tension between the crew's need for human connection and comfort (symbolized by the meal) and the harsh, unpalatable reality of their physical sustenance and situation.",
@@ -1168,7 +1168,7 @@
   "id": "NEO_APARTMENT",
   "kind": "locations",
   "description": "Neo's cluttered, tech-filled studio apartment in the real world (or the Matrix, depending on the ontological layer) before he leaves. It is a space defined by the 'overgrown' nature of its technology, where cables coil like weeds and equipment lies open like autopsied corpses. It serves as the primary locus for Neo's pre-awakening life, the initial contact with the Resistance, and the final phone call that precipitates his departure. The apartment is a microcosm of Neo's existence: isolated, monitored, and saturated with the tools of his digital obsession.",
-  "appearance": "A studio apartment that seems overgrown with technology. Weed-like cables coil everywhere, duct-taped into thickets that wind up and around the legs of several desks. Tabletops are filled with cannibalized equipment that lay open like an autopsied corpse. A bed, a door with multiple locks, and a central PC setup are the key physical anchors. The lighting is likely dim, dominated by the glow of screens, creating a claustrophobic, neon-lit atmosphere.",
+  "appearance": "A studio apartment that seems [...]. A bed, a door with multiple locks, and a central PC setup are the key physical anchors. The lighting is likely dim, dominated by the glow of screens, creating a claustrophobic, neon-lit atmosphere.",
   "background": "The residence of Thomas Anderson/Neo. It is the site where he lives as a program writer for Meta CorTechs and a hacker in the Matrix. The apartment is the location where he receives the 'Wake up, Neo' message, meets Choi, and later receives the call from Morpheus after his interrogation. It represents the 'cage' of his known reality before the red pill.",
   "wants": "To remain a place of safety and routine for Neo, until the intrusion of the Matrix's truth forces a change. It wants to be the container for Neo's identity as Thomas Anderson.",
   "fears": "Being breached by the Agents or the Resistance. It fears the exposure of Neo's dual life. The physical state of the apartment (cluttered, tech-heavy) reflects the mental clutter of Neo's life, which is on the verge of collapse.",
@@ -1221,7 +1221,7 @@
    }
   ],
   "inferred": [
-   "The apartment is located in a 20th-century city, as referenced by Morpheus in the Construct (Scene 39) showing the 'world as it was at the end of the Twentieth Century.'",
+   "The apartment is located in a 20th-century city, as referenced by Morpheus in the Construct (Scene 39) showing the 'world as it was [...].'",
    "The 'cluttered' nature of the apartment is inferred to reflect Neo's psychological state of being 'overgrown' with technology and his inability to separate his work life from his personal life.",
    "The apartment is likely a low-cost, urban dwelling, consistent with the 'studio' description and the presence of Choi and his friends, suggesting a gritty, realistic urban setting."
   ]
@@ -1293,7 +1293,7 @@
   "kind": "locations",
   "description": "An abandoned, fire-damaged hotel structure that serves as the initial containment site for Trinity and the primary arena for the first major escape sequence. The interior is characterized by blackened halls, soot-patterned walls, and a sparse Room 303 containing only a fold-up table, phone, modem, and PowerBook. The exterior features a fire escape and a roof with a significant gap to the adjacent building. The structure is sufficiently robust to support a high-velocity pursuit involving rooftop jumps and a crash through a window into a back stairwell, though it is ultimately breached by a garbage truck that destroys the telephone booth outside its perimeter.",
   "appearance": "Exterior: A dark, urban building with a fire escape and a roofline overlooking a paved alley. Interior: Halls with blackened, soot-stained walls and ceilings; Room 303 is nearly empty, lit only by a computer screen; a back stairwell with a window that shatters upon impact.",
-  "background": "The hotel was abandoned after a fire licked across the polyester carpeting, destroying several rooms and spooling soot up the walls and ceilings, leaving permanent shadow patterns.",
+  "background": "The hotel was abandoned after [...] across the polyester carpeting, destroying several rooms and spooling soot up the walls and ceilings, leaving permanent shadow patterns.",
   "wants": "None (inanimate object)",
   "fears": "None (inanimate object)",
   "internal_conflict": "None (inanimate object)",
@@ -1416,11 +1416,11 @@
   "kind": "locations",
   "description": "A vast, subterranean industrial facility in the real world, functioning as the primary energy source for the Machines. It is characterized by an overwhelming verticality, with towers of glowing, petal-like pods spiraling up to incomprehensible heights and down into a dim, abyssal murk. The atmosphere is oppressive and organic-industrial, filled with the sound of a mechanical ocean and the smell of magenta amnion. It is a place of horrifying efficiency where human beings are grown, suspended in gelatin-filled capsules, and harvested for bioelectricity and body heat. The facility is not merely a building but a living system of production and waste, connected to the 'Fetus Fields' where new humans are cultivated.",
   "appearance": "Infinite vertical columns of red, dimly-glowing pods attached to black metal stems. The interior is slick with magenta gelatin and obscured by surreal, hospital-like metal tubes. The lighting is a mix of the pods' red glow and the dim, murky darkness of the deep levels. The architecture is functional and brutal, dominated by the 'center core' to which all capsules are connected.",
-  "background": "Established by the Machines after they discovered a new form of fusion that required a small electrical charge to initiate. Humans, generating more bioelectricity than a 120-volt battery and 25,000 B.T.U.'s of body heat, became the ideal fuel source. The facility represents the ultimate irony of human history: dependence on machines leading to being consumed by them.",
+  "background": "Established by the Machines after they discovered a new form of fusion that required a small electrical charge to initiate. Humans, generating more bioelectricity than a 120 [...] 25,000 B.T.U [...], became the ideal fuel source. The facility represents the ultimate irony of human history: dependence on machines leading to being consumed by them.",
   "wants": "To maintain the continuous cycle of human growth, suspension, and energy harvest to sustain the Machine race.",
   "fears": "Disruption of the harvest or the escape of the 'Potentials' that might threaten the stability of the Matrix system.",
   "internal_conflict": "None, as it is a machine-made facility. However, it embodies the conflict between organic life and mechanical efficiency.",
-  "speech": "The sound of the plant is described as like the sound of the ocean heard from inside the belly of Leviathan. There is no human speech, only the mechanical hum and the squelch of organic matter.",
+  "speech": "The sound of the plant is described as like the sound of the [...]. There is no human speech, only the mechanical hum and the squelch of organic matter.",
   "relationships": [
    {
     "with": "Machines",
@@ -1466,7 +1466,7 @@
   "kind": "locations",
   "description": "A vast, industrial agricultural landscape within the 'real world' of the year 2197 (or later), characterized by endless rows of human embryos suspended in placenta-like husks. It functions as a bioelectric power source for the Machines, where humans are grown rather than born. The environment is dark, lit by lightning and the glow of the husks, and monitored by thresher-like farm machines that harvest the 'crops.' It is presented visually as a surreal, horror-tinged visualization of human exploitation, serving as the visual proof of the Matrix's true nature: a control mechanism that converts human beings into batteries.",
   "appearance": "Endless fields stretching to the horizon under a dark, storm-torn sky. Rows of glowing, magenta-tinged pods or husks hang from stalks. The husks contain malleable human fetuses with growing skulls around brain-jacks. Thresher-like farm machines sweep through the rows, plucking the husks. The ground is scorched and split, resembling burnt flesh, with a general atmosphere of organic industrial horror.",
-  "background": "Established after the war between humans and machines, when the machines discovered that the human body generates more bioelectricity than a 120-volt battery and over 25,000 B.T.U.'s of body heat. It represents the shift from human birth to human cultivation for energy.",
+  "background": "Established after the war between humans and machines, when the machines discovered that the human body generates more [...]. It represents the shift from human birth to human cultivation for energy.",
   "wants": "Efficiency. To harvest human bioelectricity with 'pure, horrifying precision.'",
   "fears": "Disruption. The 'inebriation of hubris' that led to the war is the historical fear, but the fields themselves embody the cold, unfeeling certainty of the machines' survival strategy.",
   "internal_conflict": "The conflict between the biological humanity of the 'crops' and their reduction to mere fuel. The visual juxtaposition of the vulnerable, growing fetus and the mechanical, harvesting thresher.",
@@ -1621,7 +1621,7 @@
   "description": "A simulated downtown street environment within the Matrix, populated by program-generated pedestrians, used specifically for Neo's orientation to the rules of the system. It features a cop writing a parking ticket and a woman in a red dress (designed by Mouse) who serves as a distraction. The location's primary function is to demonstrate that the background population is part of the enemy system, culminating in a freeze-frame reveal of Agent Smith.",
   "appearance": "Crowded downtown street during the day; includes specific program elements like a cop in sunglasses and a woman in a red dress.",
   "background": "Part of the training programs loaded by Tank; created to simulate the social dynamics of the Matrix for new recruits.",
-  "wants": "To teach Neo that 'if you are not one of us, you're one of them.'",
+  "wants": "To teach Neo that 'if you are not one [...].'",
   "fears": "N/A (location)",
   "internal_conflict": "N/A (location)",
   "speech": "N/A (location)",
@@ -1991,7 +1991,7 @@
      "controlled"
     ],
     "initial": "locked",
-    "why": "Initially, Neo is trapped inside with no knowledge of access. Morpheus and the crew 'hack into the Matrix' via the Core on the Nebuchadnezzar. They use the Construct to load programs (like the Dojo and City Street) into Neo's mind, indicating they have 'hacked' or 'controlled' access to specific parts of the system. The Agents 'move in and out of any software still hardwired to their system,' implying they have native access, while the resistance has external, hacked access."
+    "why": "Initially, Neo is trapped inside with no knowledge of access. Morpheus and the crew 'hack into the Matrix' via the Core on the Nebuchadnezzar. They use the Construct to load programs (like the Dojo and City Street) into Neo's mind, indicating they have 'hacked' or 'controlled' access to specific parts of the system. The Agents 'move in and out of [...],' implying they have native access, while the resistance has external, hacked access."
    },
    {
     "name": "perceived_reality",
@@ -2043,7 +2043,7 @@
      "broken"
     ],
     "initial": "intact",
-    "why": "Neo's elbow knocks the vase from the table, and it breaks against the linoleum floor. This event is explicitly mentioned by the Oracle as a test of Neo's perception and fate ('would you still have broken it if I hadn't said anything?')."
+    "why": "Neo's elbow knocks the vase from the table, and it breaks against the linoleum floor. This event is explicitly mentioned by the Oracle as a test of Neo's perception and fate ('would you still have broken [...]?')."
    },
    {
     "name": "cookie_consumption",
@@ -2204,7 +2204,7 @@
  {
   "id": "SENINELS",
   "kind": "objects",
-  "description": "Robotic machines in the real world that hunt humans and protect the Matrix infrastructure. Described as 'almost insect-like in design' with 'beautiful housings of alloyed metal covering organic-like systems of hard and soft polymers.' They are 'beautiful and terrifying,' with 'black alloy skin [that] flickers like sequins beneath sinewy coils and skeletal appendages.' They move with 'shark-like malevolence' and are capable of sensing sound, as indicated by Morpheus's warning to Neo: 'Don't move. It'll hear you.' They are vulnerable to electromagnetic pulses (EMP), which disable their electrical systems.",
+  "description": "Robotic machines in the real world that hunt humans and protect the Matrix infrastructure. Described as 'almost insect-like in design' with 'beautiful housings of alloyed metal [...].' They are 'beautiful and terrifying,' with 'black alloy skin [that] flickers like sequins beneath sinewy [...].' They move with 'shark-like malevolence' and are capable of sensing sound, as indicated by Morpheus's warning to Neo: 'Don't move. It'll hear you.' They are vulnerable to electromagnetic pulses (EMP), which disable their electrical systems.",
   "appearance": "Insect-like, with black alloy skin that flickers like sequins, sinewy coils, and skeletal appendages. Described as beautiful and terrifying.",
   "background": "Created by the Machines to protect the Matrix infrastructure and hunt humans in the real world.",
   "wants": "To search and destroy humans and protect the Matrix.",

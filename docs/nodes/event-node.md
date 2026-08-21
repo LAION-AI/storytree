@@ -2,6 +2,14 @@
 
 *What it is, what is in it, and what real ones look like. No background assumed.*
 
+
+> **About the […] marks.** These are real node values, not rewritten ones. Where a node
+> quoted the screenplay for eight or more consecutive words, the run is elided and marked
+> `[…]` — the project's rule is that no such run reaches a published file. Nothing else is
+> altered. `tools/check_no_leak.py` enforces this over every file git tracks, and
+> `tools/redact_source_spans.py` does the eliding.
+
+
 ---
 
 ## In one paragraph
@@ -35,23 +43,147 @@ everyone*.
 
 ### The frame
 
-| Field | |
-|---|---|
-| `event_id` | `ev-001` |
-| `scene_ids` | the scenes this event covers, in order |
-| `title`, `summary`, `action` | what happened, at three levels of detail |
-| `participants` | every entity with a state triple. **Derived from the triples, not asserted** — the two disagreed in every node of an early build. |
-| `locations` | where it plays |
-| `boundary_reason` | why the event starts here rather than one scene earlier |
+Every row below is a real value from `ev-001`, the opening raid.
 
-### The substance
+| Field | What it holds | From `ev-001` |
+|---|---|---|
+| `event_id` | the handle | `ev-001` |
+| `scene_ids` | member scenes, in order | `["sc-001", "sc-002", "sc-003", "sc-004"]` |
+| `title` | a name a person can hold in their head | *Trinity Kills the Cops; the Agents Arrive* |
+| `summary` | what happened, with its causal joints | see below |
+| `action` | the same, stripped to what is done | see below |
+| `participants` | every entity carrying a state triple | Trinity · BIG COP · the cops · Agent Smith · Agent Brown · LIEUTENANT · Agent Jones |
+| `locations` | where it plays | `HEART O' THE CITY HOTEL (Room 303)`, `(exterior)` |
+| `boundary_reason` | why it starts and stops here | see below |
 
-| Field | |
-|---|---|
-| `state_triples` | **the core** — see below |
-| `turns_on` + `turns_on_entity` | the pivot, and the entity it belongs to |
-| `affects_outside` | what this changes for things *not* in the event |
-| `carried_uncertainty` | what the scenes left unsettled, carried rather than resolved |
+**`participants` is derived from the triples, not asserted.** The composer used to write
+this list itself, and in an early build the list and the triples disagreed in **every single
+node** — a name in one and not the other. It is now computed from the triples after they are
+final, so the two cannot drift apart.
+
+### `title`, `summary`, `action` — the same event at three grains
+
+They are not redundant. Each answers a different question, and downstream code picks the one
+it can afford.
+
+**`title`** — for a human scanning fifty of them:
+
+> Trinity Kills the Cops; the Agents Arrive
+
+**`summary`** — what happened *and how it hangs together*. Note the causal joints: *closes
+on*, *then*, *at the moment*, *simultaneously*:
+
+> A four-officer raid on Room 303 of the fire-gutted Heart O' The City Hotel closes on Trinity
+> at her keyboard: she submits to the guns, then, at the moment the Big Cop reaches to cuff
+> her, she moves inhumanly fast and kills the entire squad, ending as the only one standing.
+> Simultaneously, three suited Agents arrive outside, override the Lieutenant's territorial
+> protest, and reveal that his two units are already dead; Brown then enters the hotel while
+> Smith breaks off alone for the alley.
+
+**`action`** — the same event with the interpretation taken out. What a camera would record:
+
+> The police breach and take Trinity under guns; she complies, then converts the cuff into a
+> massacre and walks away as the sole survivor. Outside, the Agents arrive, correct the
+> Lieutenant's belief that his men are winning, and split to pursue — Brown through the lobby,
+> Smith toward the alley.
+
+The pair is a **cheap consistency check**. `summary` may explain; `action` may not. If
+something appears in `action` that is not photographable, or if the two describe different
+events, the node is wrong in a way that is visible without reading the film.
+
+### `boundary_reason` — why the cut is here
+
+The field that stops segmentation from being arbitrary. It must name the **question** the
+event answers, and say that the next scene asks a different one:
+
+> The raid-and-fight unit ends when Trinity has wiped out her captors and the agents split to
+> hunt her; the next scene shifts the story to Trinity's escape call, answering a different
+> question (how she gets out) than the one just resolved (who wins the room).
+
+That is the working definition of an event in this project: **a run of scenes that answers one
+question.** When the question changes, the event ends. Compare `ev-002`, which ends where
+*"will Trinity escape"* gives way to *"who is Neo"*.
+
+---
+
+## The substance
+
+| Field | What it holds | From `ev-001` / `ev-002` |
+|---|---|---|
+| `state_triples` | **the core** — see the next section | 7 entities × 7 registers |
+| `turns_on` + `turns_on_entity` | the pivot, and whose it is | see below |
+| `affects_outside` | what this changes for things not in the event | 3 sub-fields, below |
+| `carried_uncertainty` | what the scenes left unsettled | 5 items in `ev-001` |
+
+### `turns_on` — the moment the event hinges on
+
+One event, one pivot. The discipline is that it must be a **moment**, not a summary of the
+event, and it must belong to a named entity.
+
+`ev-001`, and note it is not the obvious choice:
+
+> The pivot is the moment the Big Cop reaches with [...]: the contact the squad reads as the
+> finish of a routine arrest is the trigger she was waiting for, inverting the raid in one
+> instant.
+>
+> `turns_on_entity`: **Trinity**
+
+"Trinity kills the cops" would have been the obvious pivot. The node instead picks the instant
+where **two people read the same gesture differently** — one man finishing an arrest, one woman
+starting a fight. That divergence is the event.
+
+`ev-002` picks a physical impossibility rather than a psychological one:
+
+> The impossible rooftop leap — Trinity committing fully to a gap that should kill her, and
+> Agent Brown duplicating it exactly — which shatters the ordinary physics of the chase and
+> reveals the pursuers as something other than men.
+
+Both share a shape: the pivot is where **the audience's model of the world has to be
+revised**, not where the most happens.
+
+### `affects_outside` — three questions, not a list
+
+Asked as one open field, this returned whatever came to mind. Split into three, each one has
+an answer that can be checked. From `ev-001`:
+
+| Sub-field | The question | |
+|---|---|---|
+| `enables` | what is now possible that was not | *converts the story from a contained police bust into a pursuit: Trinity is now a fugitive who has just killed a squad, and the Agents — with superior knowledge and a divided hunt — are set…* |
+| `blocks_or_costs` | what is now impossible, and what it cost | *costs the police their entire Room 303 squad and their illusion of control, and strips the Lieutenant of any claim that his operation was handling the target* |
+| `off_screen_reactor` | who reacts to this without appearing in it | *whatever command sent the Agents must now reckon with a squad wiped out and a target loose* |
+
+`off_screen_reactor` is the one that earns its place. `ev-002` uses it to record the betrayal
+that has already happened and that nobody on screen can yet name:
+
+> The unseen informant (Cypher) has, by this escape's end, delivered a verified name to the
+> Agents — his betrayal is now operationally live though no one on-screen yet names him.
+
+A reader querying "when does Cypher's betrayal begin to bite?" gets an answer from an event
+Cypher does not appear in.
+
+### `carried_uncertainty` — doubt with a return address
+
+Each item carries `what` and `from_scene`, so a doubt can be traced to the scene that raised
+it. From `ev-001`:
+
+```jsonc
+[
+  { "what": "Whether Trinity surrenders willingly or is setting a trap — her slow
+             compliance is ambiguous.",                        "from_scene": "sc-001" },
+  { "what": "What Trinity was doing on the computer before the cops entered.",
+                                                               "from_scene": "sc-001" },
+  { "what": "Whether any cop besides Trinity survives the gunfire.",
+                                                               "from_scene": "sc-003" }
+]
+```
+
+The rule is that an event may **carry** a doubt but not **resolve** it. The first item is the
+interesting one: whether Trinity's compliance is real is exactly the question the pivot turns
+on, and the node declines to settle it — because the scene declines to.
+
+An earlier build stripped this field before the composer ever saw it, and the composer then
+asserted the ambiguous reading as fact. That was a bug in my projection function, not in the
+model: a doubt laundered into a claim by code.
 
 ---
 
@@ -120,7 +252,7 @@ Four scenes (`sc-001`…`sc-004`), seven entities.
 
 **`turns_on`** — the pivot, and note that it is not the obvious one:
 
-> The pivot is the moment the Big Cop reaches with the cuffs and Trinity moves: the contact the
+> The pivot is the moment the Big Cop reaches with [...]: the contact the
 > squad reads as the finish of a routine arrest is the trigger she was waiting for.
 
 The obvious pivot would be "Trinity kills the cops". The node instead identifies **the moment

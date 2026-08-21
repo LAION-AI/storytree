@@ -165,7 +165,7 @@ itself was examined.
 The schema asked for `evidence: "What in the scene shows this."` — an invitation
 to *describe*. The model described:
 
-> "She slowly puts her hands behind her head in response to the BIG COP's command."
+> "She slowly puts her hands [...] in response to the BIG COP's command."
 
 The check tested whether that string occurred **verbatim** in the scene. It does
 not, because it is a paraphrase, correctly produced as instructed. So 216 of the

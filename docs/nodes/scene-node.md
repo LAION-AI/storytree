@@ -2,6 +2,14 @@
 
 *What it is, what is in it, and what real ones look like. No background assumed.*
 
+
+> **About the […] marks.** These are real node values, not rewritten ones. Where a node
+> quoted the screenplay for eight or more consecutive words, the run is elided and marked
+> `[…]` — the project's rule is that no such run reaches a published file. Nothing else is
+> altered. `tools/check_no_leak.py` enforces this over every file git tracks, and
+> `tools/redact_source_spans.py` does the eliding.
+
+
 ---
 
 ## In one paragraph
@@ -36,39 +44,138 @@ the examples on this page show nodes only, never the scenes they came from.
 
 ## The fields
 
-A scene node has fourteen fields. They fall into four groups.
+Fourteen fields in four groups. Every example below is a real value from one of the three
+nodes shown later on this page.
 
 ### 1. Where and who — the frame
 
-| Field | |
-|---|---|
-| `scene_id` | `sc-029`. Stable across the whole project; every layer above points at these. |
-| `location` | as named in the scene heading — `ROOM`, `HEART O' THE CITY HOTEL` |
-| `time_of_day` | `NIGHT`, `DAY`, or `UNSPECIFIED` when the script does not say |
-| `present` | everyone physically in the scene |
-| `objects_that_matter` | things that matter to the plot — a phone, a wall, a pill. Not every prop: the ones a later scene depends on. |
+| Field | What it holds | Real value |
+|---|---|---|
+| `scene_id` | the handle. Stable across the project; every layer above points at these. | `sc-029` |
+| `location` | as named in the scene heading, not reinterpreted | `ROOM` · `NEO'S APARTMENT` · `DARK STREET` |
+| `time_of_day` | `NIGHT`, `DAY`, or `UNSPECIFIED` | `UNSPECIFIED` — all three examples, because the headings do not say |
+| `present` | everyone physically in the scene | `["MORPHEUS", "NEO", "TRINITY", "DARK FIGURE"]` |
+| `objects_that_matter` | the props a later scene depends on | red pill · blue pill · circular mirrored glasses · cracked, burgundy-leather chairs |
+
+Two things to notice.
+
+**`present` lists a person twice under two descriptions** — `MORPHEUS` and `DARK FIGURE` are
+the same man, and the scene is built on the reveal. The node records the screenplay's own
+naming rather than tidying it, and folding the two together is the job of a later
+canonicalisation step that knows the reveal has happened. Tidying it here would delete the
+reveal.
+
+**`objects_that_matter` is a judgement about the future.** From `sc-012`:
+
+```jsonc
+["Neo's PC and its screen",
+ "the messages on the screen",
+ "the door with its series of locks and chain",
+ "Baudrillard's Simulacra and Simulations, hollowed out to hide computer disks",
+ "an envelope of money (\"two grand\")",
+ "Dujour's black leather motorcycle jacket and its pins",
+ "a small white rabbit pin"]
+```
+
+The rabbit pin is four words in the screenplay and decides where Neo goes next. The bed, the
+chair and the window are not listed at all. The test is *does a later scene depend on it* —
+not *is it visible*.
 
 ### 2. What happened — the observations
 
-| Field | |
-|---|---|
-| `summary` | what occurs, in the node's own words |
-| `what_changes` | **the most important field** — see below |
+| Field | What it holds | Real value |
+|---|---|---|
+| `summary` | what occurs, in the node's own words | see below |
+| `what_changes` | **the field the layer exists for** | see the next section |
+
+`sc-029`, the pill scene, compressed to five sentences:
+
+> In a decaying room, a dark figure at the windows turns to reveal himself as Morpheus, who
+> welcomes Neo and sits him down. Morpheus probes why Neo has come, reframing Neo's
+> hacker-hero worship into a deeper, felt conviction that 'something is wrong with the world.'
+> When Neo names 'The Matrix,' Morpheus defines it as an illusory world 'pulled over your
+> eyes' […] then admits it cannot be explained, only seen. He offers Neo a final choice
+> between a blue pill, which ends the story and returns him to comfortable ignorance, and a
+> red pill, which means staying to learn the truth. Neo swallows the red pill, and Morpheus
+> tells him to follow.
+
+Compare `sc-024`, twenty-three words of screenplay, and the summary is honest about being
+about nothing:
+
+> The car carrying Neo moves through a dark, wet urban environment […] The scene is a brief
+> transitional shot of the vehicle in motion, with no dialogue and no other visible
+> characters.
+
+**Proportionality is a scored dimension.** A node that gives a transitional shot the same
+weight as the pill scene is wrong even if every sentence in it is true.
 
 ### 3. What it means — the readings
 
-| Field | |
-|---|---|
-| `minds` | per character: what they want, feel, show and conceal |
-| `dramatic_function` | what this scene does *for the story*, as distinct from what happens in it |
-| `sets_up` / `connects_back` | what it makes possible later; what earlier scene it depends on |
+| Field | What it holds | Real value |
+|---|---|---|
+| `minds` | per character: wants, feels, shows, conceals | see the next section |
+| `dramatic_function` | what the scene does *for the story* | see below |
+| `sets_up` | what it makes possible later | pointers forward |
+| `connects_back` | what earlier scene it depends on | pointers back |
+
+**`dramatic_function` is not a second summary.** It names the scene's job. `sc-029`:
+
+> It converts Neo's vague, lifelong dread into a named enemy and then into an irreversible,
+> self-chosen commitment, so that the catastrophe of unplugging feels earned rather than
+> inflicted — the scene's job is the crossing of the threshold, not the consequences past it.
+
+The last clause is the useful part: it says what the scene is **not** doing. A scene that tried
+to also deliver the consequences would be doing two jobs badly.
+
+**`sets_up` and `connects_back` are what make this a graph.** Each entry names a target and
+says what the dependency *is* — a bare id would be an edge with no content. From `sc-029`:
+
+```jsonc
+"sets_up": [
+  "ev-006: Neo swallowing the pill as the act that lets the crew trace and unplug him.",
+  "ev-007 / ev-008: The irreversible 'no going back' — his body must be recovered and
+   rebuilt because there is no return to his old life.",
+  "ev-009: The payoff of 'you have to see […]' — Morpheus now owes Neo the
+   visible truth he could not be told."
+],
+"connects_back": [
+  "sc-028: Trinity's advice licenses Neo's direct, unguarded answers to Morpheus.",
+  "sc-028: Neo's pounding heart carries into this scene's physical nervousness at the
+   threshold."
+]
+```
+
+Two entries point at `sc-028` for **different reasons** — one about permission to speak, one
+about a body still reacting. Collapsing them into one edge would lose the second.
+
+> **A wrinkle worth knowing.** Some `sets_up` entries cite `ev-` ids, which means the scene
+> layer saw an event artifact from an earlier run. So the layer is *not* purely bottom-up, and
+> anything that treats it as independent evidence for the event layer is overstating its
+> case. Stated here rather than buried, because it affects how the numbers should be read.
 
 ### 4. Honesty about limits
 
-| Field | |
-|---|---|
-| `uncertain` | what the scene genuinely does not settle |
-| `_mind_pass` | whether the interiority pass ran here, and why — see *gating* below |
+| Field | What it holds | Real value |
+|---|---|---|
+| `uncertain` | what the scene genuinely does not settle | see below |
+| `_mind_pass` | whether the interiority pass ran, and why | `ran: 2 speakers — an exchange` |
+
+`sc-012` raises three things and settles none of them:
+
+```jsonc
+["Whether the on-screen messages are sent by a real external party or are a hallucination.",
+ "Whether Neo's \"feeling of unrealness\" is caused by the messages, exhaustion, or
+  something else.",
+ "Whether Dujour's white rabbit pin is a deliberate signal meant for Neo or a coincidence
+  he interprets as one."]
+```
+
+All three are questions the *film* is deliberately not answering yet. An empty `uncertain` —
+as in `sc-029`, which settles what it raises — is a claim, not an omission.
+
+> **Not every node carries all fourteen fields.** `sc-024` has seven: a twenty-three word
+> transitional shot has no `objects_that_matter`, no `dramatic_function` worth asserting and
+> nothing uncertain. Absent is different from empty, and both are different from wrong.
 
 ---
 

@@ -145,12 +145,12 @@
   "id": "NEO",
   "kind": "agents",
   "description": "Thomas A. Anderson, known in the digital underground as Neo, is a software developer and hacker living in a state of existential drift. He is physically isolated, residing in a studio apartment cluttered with technology, and psychologically isolated, haunted by a persistent sense that reality is a simulation. He is defined by his deep, unarticulated search for meaning and his latent potential as 'the One.' His journey in this segment begins with cryptic digital warnings that disrupt his routine, leading him into the physical world where he encounters Trinity, is captured by Agents, and ultimately accepts the truth of the Matrix, choosing to wake up to the real world.",
-  "appearance": "Described as a man who knows more about living inside a computer than outside one. He has a 'coppertop' haircut (mentioned by Switch), pale skin (Choi notes he looks 'whiter than usual' after the computer incident), and a generally disheveled, tech-obsessed demeanor. In the real world, he is bald, naked, and covered in magenta gelatin.",
+  "appearance": "Described as a man who knows more [...] has a 'coppertop' haircut (mentioned by Switch), pale skin (Choi notes he looks 'whiter than usual' after the computer incident), and a generally disheveled, tech-obsessed demeanor. In the real world, he is bald, naked, and covered in magenta gelatin.",
   "background": "A program writer for Meta CorTechs. A hacker with the alias Neo, guilty of virtually every computer crime on record. He has been searching for Morpheus for years, driven by a feeling that something is wrong with the world. He lives alone, rarely sleeps, and is obsessed with the concept of the Matrix.",
   "wants": "To understand the nature of reality. To find Morpheus. To escape the feeling of unreality. To know the truth.",
   "fears": "The loss of control. The possibility that his life is a lie. The Agents. Death. The unknown.",
-  "internal_conflict": "The tension between his rational mind, which rejects fate and superstition ('I don't believe in fate... because I don't like the idea that I'm not in control of my life'), and his gut feeling that he is special and that the world is not what it seems. He struggles with the weight of being 'the One' and the fear of failing like the five before him.",
-  "speech": "Direct, slightly sarcastic, and often defensive. He uses tech jargon casually. He is prone to rhetorical questions and short, blunt statements when stressed. Examples: 'What the hell?', 'I can't. I have to work tomorrow.', 'You can't scare me with this Gestapo crap.'",
+  "internal_conflict": "The tension between his rational mind, which rejects fate and superstition ('I don't believe in fate... because I don't like the [...]'), and his gut feeling that he is special and that the world is not what it seems. He struggles with the weight of being 'the One' and the fear of failing like the five before him.",
+  "speech": "Direct, slightly sarcastic, and often defensive. He uses tech jargon casually. He is prone to rhetorical questions and short, blunt statements when stressed. Examples: 'What the hell?', 'I can't. I have to work tomorrow.', 'You can't scare me with [...].'",
   "relationships": [
    {
     "with": "Trinity",
@@ -514,7 +514,7 @@
      "breached"
     ],
     "initial": "intact",
-    "why": "The Big Cop kicks in the door to Room 303, and later Trinity exits through a broken window onto the fire escape, indicating the physical barriers of the hotel are being forced open."
+    "why": "The Big Cop kicks in the door to Room 303, and later Trinity exits through a broken window onto [...], indicating the physical barriers of the hotel are being forced open."
    },
    {
     "name": "occupancy_status",
@@ -547,7 +547,7 @@
   "id": "NEOS_APARTMENT",
   "kind": "locations",
   "description": "Neo's studio apartment in the Matrix, characterized by an overgrown, cluttered environment filled with coiling cables, duct-taped thicket wiring, and cannibalized computer equipment. It serves as the primary setting for Neo's isolation and the initial intrusion of the outside world through Choi and DuJour. The space is defined by its technological density and the specific arrangement of objects that facilitate Neo's hacker lifestyle, including a hollowed-out book used for currency exchange and a bed where he sleeps at his computer. It is a confined, domestic space that becomes a site of surveillance and contact, marked by the presence of Baudrillard's 'Simulacra and Simulations' and the subsequent knock on the door that disrupts Neo's routine.",
-  "appearance": "A studio apartment overgrown with technology; weed-like cables coil everywhere, duct-taped into thickets winding up and around desk legs. Tabletops are filled with cannibalized equipment laid open like autopsied corpses. A bed is present, along with a computer setup where Neo sleeps. A book, Baudrillard's Simulacra and Simulations, is hollowed out and placed on the floor near the bed.",
+  "appearance": "A studio apartment overgrown with technology; weed-like [...] winding up and around desk legs. Tabletops are filled with cannibalized equipment laid open like autopsied corpses. A bed is present, along with a computer setup where Neo sleeps. A book, Baudrillard's Simulacra and Simulations, is hollowed out and placed on the floor near the bed.",
   "background": "The living space of Thomas Anderson/Neo, a program writer for Meta CorTechs. The apartment reflects his dual life: a respectable employee by day and the hacker 'Neo' by night. The clutter suggests a lack of personal order outside of his technical interests. It is the location where the 'Wake up, Neo' prompt appears on his screen, initiating the plot's central conflict.",
   "wants": "To serve as a sanctuary for Neo's isolation and a secure location for his hacker operations and transactions.",
   "fears": "Being a site of surveillance and intrusion, as evidenced by the traced phone call and the physical knock on the door.",
@@ -604,7 +604,7 @@
   "relationships": [
    {
     "with": "TRINITY",
-    "nature": "Trinity exits through a broken window onto the fire escape; it is her immediate means of egress."
+    "nature": "Trinity exits through a broken window onto [...]; it is her immediate means of egress."
    },
    {
     "with": "AGENT_SMITH",
@@ -874,7 +874,7 @@
   "kind": "objects",
   "description": "An abandoned hotel structure characterized by fire damage, including soot patterns on walls and ceilings and destroyed rooms. It functions as a temporary operational base for the Resistance, specifically Room 303 which contains a fold-up table, chair, phone, modem, and powerbook computer. The building's interior features blackened halls, broken windows, and fire escapes that serve as escape routes during the police and Agent raid.",
   "appearance": "Abandoned, fire-damaged, blackened halls, soot patterns on walls and ceilings, destroyed rooms, fold-up furniture, broken windows, fire escapes.",
-  "background": "Previously a functioning hotel, it was abandoned after a fire licked its way across the polyester carpeting, destroying several rooms and leaving permanent shadow patterns from spooled soot.",
+  "background": "Previously a functioning hotel, it was abandoned after a fire [...] and leaving permanent shadow patterns from spooled soot.",
   "state_variables": [
    {
     "name": "occupancy_status",
@@ -895,7 +895,7 @@
      "breached_by_escape"
     ],
     "initial": "compromised_by_fire",
-    "why": "The hotel is described as abandoned after a fire destroyed several rooms. It moves to 'breached_by_escape' when Trinity exits through a broken window onto the fire escape and later crashes through glass and wood into a back stairwell in a different building (though the hotel's windows are the initial breach point for the escape sequence)."
+    "why": "The hotel is described as abandoned after a fire destroyed several rooms. It moves to 'breached_by_escape' when Trinity exits through a broken window onto [...] and later crashes through glass and wood into a back stairwell in a different building (though the hotel's windows are the initial breach point for the escape sequence)."
    }
   ],
   "inferred": [
@@ -907,7 +907,7 @@
   "id": "AGENT_BROWN",
   "kind": "objects",
   "description": "Agent Brown is a sentient program operating within the Matrix, characterized by his unnaturally graceful physical movements that mirror the capabilities of the 'One.' He functions as a tactical leader within the Agent trio, often taking point in pursuits and leading units of police officers. His presence is marked by a specific physicality distinct from the other Agents; where Smith is the face and Jones is the support, Brown is the kinetic element, capable of duplicating Trinity's rooftop jumps with identical precision. He serves as the primary physical threat during the rooftop chase, forcing Trinity into a desperate dive that leaves her broken but alive.",
-  "appearance": "Dark suit and sunglasses, even at night. Hardwired with small Secret Service earphones in one ear, the cord coiling back into his shirt collar. Possesses an 'unnatural grace' that contrasts with the wild movements of ordinary humans.",
+  "appearance": "Dark suit and sunglasses, even at night. Hardwired with small Secret Service earphones in [...] his shirt collar. Possesses an 'unnatural grace' that contrasts with the wild movements of ordinary humans.",
   "background": "A sentient program designed to maintain order in the Matrix. He operates as part of a three-agent cell led by Agent Smith. His specific function appears to be high-speed pursuit and containment of anomalies.",
   "wants": "To capture Trinity and Neo, thereby maintaining the integrity of the Matrix and eliminating threats to the system.",
   "fears": "Non-applicable to the narrative evidence provided, as he is a program operating within a system of control.",
@@ -1047,7 +1047,7 @@
      "low"
     ],
     "initial": "high",
-    "why": "Starts high as he asserts control ('I think we can handle one little girl'), drops to low when Smith reveals the men are dead."
+    "why": "Starts high as he asserts control ('I think we can handle [...]'), drops to low when Smith reveals the men are dead."
    },
    {
     "name": "perceived_authority",
@@ -1070,7 +1070,7 @@
   "id": "BIG_COP",
   "kind": "objects",
   "description": "A large, physically imposing police officer who leads the tactical team in the raid on the Heart O' the City Hotel. He is characterized by his brute force and procedural confidence, believing his size and standard police protocol are sufficient to contain the suspect. His authority is absolute within the confines of the room until the moment of contact, at which point his physical mass becomes a liability rather than an asset. He represents the mundane, physical reality of the Matrix's law enforcement, which is rendered obsolete by the supernatural speed of the target.",
-  "appearance": "The biggest of the police officers; described as a two-hundred-fifty-pound sack of limp meat and bone.",
+  "appearance": "The biggest of the police officers; described as a two-hundred-fifty-pound [...].",
   "background": "Inferred: A standard member of the city police force, likely experienced in routine arrests given the team's confidence ('They've done this a hundred times').",
   "wants": "To successfully arrest the suspect (Trinity) and complete the raid procedure.",
   "fears": "Inferred: The loss of control or authority in a volatile situation, though he displays none until it is too late.",
@@ -1163,8 +1163,8 @@
  {
   "id": "DUJOUR",
   "kind": "objects",
-  "description": "Dujour is a supporting character, identified in the script as a young woman wearing a black leather motorcycle jacket adorned with dozens of pins, including bands, symbols, slogans, military medals, and a small white rabbit. She appears briefly in Neo's apartment during the scene where Choi visits to exchange a computer disk for money. Dujour is part of the group of friends accompanying Choi. Her most significant narrative function is visual: Neo's gaze is drawn to the white rabbit pin on her jacket, which triggers a sudden tilt in the room's perspective for him, linking her presence to the 'Follow the white rabbit' message he just received. She speaks only two lines, enthusiastically encouraging Neo to join them for 'R&R', which he accepts, likely influenced by the visual cue of the rabbit pin.",
-  "appearance": "Young woman wearing a black leather motorcycle jacket covered in dozens of pins (bands, symbols, slogans, military medals) and a small white rabbit pin.",
+  "description": "Dujour is a supporting character, identified in the script as a young woman wearing a black leather motorcycle jacket adorned with dozens of pins, including bands, symbols, slogans, military medals [...]. She appears briefly in Neo's apartment during the scene where Choi visits to exchange a computer disk for money. Dujour is part of the group of friends accompanying Choi. Her most significant narrative function is visual: Neo's gaze is drawn to the white rabbit pin on her jacket, which triggers a sudden tilt in the room's perspective for him, linking her presence to the 'Follow the white rabbit' message he just received. She speaks only two lines, enthusiastically encouraging Neo to join them for 'R&R', which he accepts, likely influenced by the visual cue of the rabbit pin.",
+  "appearance": "Young woman wearing a black leather motorcycle jacket covered in dozens of pins (bands, symbols [...] pin.",
   "background": "Member of Neo's social circle, associated with Choi and his friends. Present at Neo's apartment during the late-night disk exchange.",
   "wants": "To persuade Neo to join the group for a night out ('R&R').",
   "fears": "Not explicitly stated, but her eagerness suggests a desire for social connection or leisure.",
@@ -1308,7 +1308,7 @@
   "id": "NEOS_APARTMENT",
   "kind": "objects",
   "description": "Neo's studio apartment is a claustrophobic, technology-saturated environment that serves as the threshold between Neo's mundane reality and the digital intrusion of the Matrix. Characterized by 'weed-like cables' and 'cannibalized equipment,' it is a space of isolation and obsessive labor where Neo lives alone, barely sleeping. The apartment functions as a stage for the initial destabilization of Neo's perception, hosting the cryptic computer messages, the transaction with Choi, and the visit from Dujour. It is the last place Neo feels safe before being forced into the wider world, and later, the site of his final phone call with Morpheus after the interrogation nightmare.",
-  "appearance": "A studio apartment overgrown with technology; weed-like cables coil everywhere, duct-taped into thickets; tabletops filled with cannibalized equipment laid open like autopsied corpses; a PC at the center; a book (Baudrillard) hollowed out with disks; a bed.",
+  "appearance": "A studio apartment overgrown with technology; weed-like [...]; tabletops filled with cannibalized equipment laid open like autopsied corpses; a PC at the center; a book (Baudrillard) hollowed out with disks; a bed.",
   "background": "The physical anchor of Neo's double life as a programmer and hacker. It is a place of solitude where he spends nights at his computer, searching for answers. The presence of the hollowed-out Baudrillard book indicates his intellectual engagement with simulation theory, even if he doesn't yet fully grasp it.",
   "wants": "To remain a sanctuary of normalcy and control for Neo, allowing him to continue his search for the source of the 'glitch' in his reality without external interference.",
   "fears": "Intrusion and exposure. The apartment is breached first by the digital (the computer messages) and then by the physical (Choi, Dujour), signaling that Neo's private world is no longer secure.",
@@ -1417,9 +1417,9 @@
  {
   "id": "THE_MATRIX",
   "kind": "concepts",
-  "description": "The Matrix is the computer-generated dreamworld and prison for the human mind, functioning as a neural-interactive simulation that keeps humanity under control by feeding it a fabricated reality from the end of the Twentieth Century. It is described as 'the world that has been pulled over your eyes to blind you from the truth,' a system where sentient programs (Agents) act as gatekeepers to maintain order. The entity is not merely a setting but an active antagonist that monitors, tracks, and manipulates its inhabitants, capable of altering its own code (as seen in the 'deja vu' glitch) and enforcing its rules through physical and digital means. It exists as a map covering the territory, a 'desert of the real' where the human body serves as a bioelectric battery for the machines.",
+  "description": "The Matrix is the computer-generated dreamworld and prison for the human mind, functioning as a neural-interactive simulation that keeps humanity under control by feeding it a fabricated reality from the end of the Twentieth Century. It is described as 'the world that has been [...],' a system where sentient programs (Agents) act as gatekeepers to maintain order. The entity is not merely a setting but an active antagonist that monitors, tracks, and manipulates its inhabitants, capable of altering its own code (as seen in the 'deja vu' glitch) and enforcing its rules through physical and digital means. It exists as a map covering the territory, a 'desert of the real' where the human body serves as a bioelectric battery for the machines.",
   "appearance": "Visually, the Matrix manifests as a green-electric river of numbers and code, a blinding cursor pulsing in electric darkness, or the mundane, hyper-realistic urban landscape of the late 20th century (skyscrapers, rain, neon lights). Internally, it is perceived as a 'system' with rules that can be bent or broken by those who understand its nature.",
-  "background": "Created in the early 21st Century after a war between humanity and A.I., the Matrix was built to change human beings into bioelectric batteries. It simulates the world as it was at the end of the 20th Century to keep the minds of the enslaved population under control.",
+  "background": "Created in the early 21st Century after a war between humanity and A.I., the Matrix was built to change human beings into bioelectric batteries. It simulates the world as it was [...] 20th Century to keep the minds of the enslaved population under control.",
   "wants": "The Matrix seeks to maintain control and stability over the human race, preventing them from realizing they are slaves and ensuring the continued production of bioelectricity for the machines.",
   "fears": "The Matrix fears the 'One,' a man born inside it with the ability to change what he wants, who is prophesied to destroy it and end the war.",
   "internal_conflict": "As a concept/system, its internal conflict is the tension between its rigid, rule-based logic (enforced by Agents) and the unpredictable, variable nature of human consciousness and the existence of the 'One' who can rewrite its code.",

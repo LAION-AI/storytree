@@ -142,7 +142,7 @@ counting slug lines in a wall of script and landing a few headings past it.
 
 ### The failure, in three artifacts
 
-- **sc-072.** Script, in full: the ship is quiet and dark, everyone is asleep —
+- **sc-072.** Script, in full: the ship is quiet and [...] —
   11 words. The node returns a 400-character summary of the mess-hall breakfast,
   seven characters present, and two state changes with quoted dialogue.
 - **sc-197.** Script: Neo springs up the apartment stairs — 14 words. The node

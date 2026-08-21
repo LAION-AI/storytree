@@ -702,7 +702,7 @@ paying full price on 8 of 15 scenes for nothing.
 
 **And the single most important thing to read in the sample, all four arms
 missed.** sc-148 gives Trinity the line "Because…" followed by "Uncertainty
-swallows her words and she is unable to tell him what she wants to." That is the
+swallows her words and [...]." That is the
 scene's one concealment, it is written on the page as a concealment, and it is
 the setup that pays off when she finally says it over his body. V2 and V3 both
 produce long Trinity blocks about grief, rank and control. Neither mentions the
@@ -877,7 +877,7 @@ ranks 4–7 are unaffected by this run and are not repeated.
 | **1** | **Gate the mind pass on scene size.** Run V1 alone below a word threshold, V1 + V3's pass B at or above it. Nothing else changes | The single largest result here. V3 wins EI 6/6 on scenes ≥150 words and loses calibration 8/8 on scenes <60. Re-slicing the scores already collected gives **4.09 with no dimension below 3.40** — the first configuration that would clear the bar. Also cuts the mind pass's token cost by roughly half, since it stops paying for the scenes it cannot help | trivial |
 | **2** | **Let the mind pass say there is nobody here.** Drop `minItems: 1` on `minds`; add V1's "write in proportion" paragraph to `MIND_SYSTEM`; make `dramatic_function` optional below the threshold | Calibration 1.25 / 1.38 on short scenes is a schema fact, not a model fact. It produced mind-readings of a building (sc-015), of "the Viewer" (sc-015, sc-024), and of cops the scene gives no reaction to (sc-113). This is rank 1's belt-and-braces: rank 1 stops the pass running, this stops it writing when it does | trivial |
 | **3** | **Check `grounding` against `basis` and fail the node.** The provenance is already written in `basis`; 15 of 36 blocks contradict it | The four-value enum is 58% self-consistent and uses two of its four values. As a filter it is currently worse than useless because it looks like a filter. The check is fifteen lines and was written to produce the table above | trivial |
-| **4** | **Require the mind pass to account for marked interiority.** Where the script itself names a concealment, a hesitation, or an unfinished line, the node must have a block that addresses it | All four arms walked past sc-148's "Because…" / "Uncertainty swallows her words and she is unable to tell him what she wants to" — the sample's clearest written-down concealment, in its richest scene, in the arm built to find concealments. Cheap to detect: stage directions containing *unable to*, *can't bring*, *swallows*, *doesn't say*, trailing ellipses on a speech | small |
+| **4** | **Require the mind pass to account for marked interiority.** Where the script itself names a concealment, a hesitation, or an unfinished line, the node must have a block that addresses it | All four arms walked past sc-148's "Because…" / "Uncertainty swallows her words [...]" — the sample's clearest written-down concealment, in its richest scene, in the arm built to find concealments. Cheap to detect: stage directions containing *unable to*, *can't bring*, *swallows*, *doesn't say*, trailing ellipses on a speech | small |
 | **5** | **A `sets_up` provenance gate in CI.** Reject any node whose `sets_up` names a scene id greater than its own | 15/15 V2 nodes fail this and 0/15 V3 nodes do. It is the difference between usable and unusable training data, it is one regex, and it makes the train/inference boundary a checked property of the artifact rather than a property of the prompt that produced it | trivial |
 | **6** | **Cross-field consistency on the bound fields, extended to the prose.** Carried over from the earlier list at rank 7, and now with a second failure mode: `location` is bound as `const` and the *narrative* fields still contradict it | V3's sc-097 puts Room 1313 in "the Oracle's apartment" inside `dramatic_function`, while `location: "ROOM 1313"` sits above it as a `const`. Binding a field does not bind the prose that refers to it. Check that `summary` and `dramatic_function` do not name a location other than the bound one | small |
 | **7** | **Referent binding for deictic dialogue.** Where a scene's payload is a pronoun resolved by a later line ("I'm taking Neo to see **her**" … "The Oracle"), require the node to name what the pronoun resolves to and cite both lines | V1's worst fidelity error in the sample (sc-075) is exactly this and it is the scene's punchline. V0, V2 and V3 got it right, so it is not a hard problem — it is an error V1's close-reading discipline makes and its prompt does not guard | small |
@@ -1288,7 +1288,7 @@ And it is used correctly. V5's Trinity block on sc-148 cites the stage direction
 as its `basis`, names it "the key concealment," and — this is the part keyword
 presence cannot fake — **identifies what is being concealed**: that the thing
 she cannot say is about Neo, not about Morpheus. Its `feels` field reads her
-subsequent "I believe Morpheus means more to me than he does to you" as a
+subsequent "I believe Morpheus means more [...]" as a
 deflection covering the sentence she just failed to finish, and its `sets_up`
 points forward to the confession. That is the correct reading of the setup, the
 correct object, and the correct payoff. The rubric's EI 5-anchor is "reads a
