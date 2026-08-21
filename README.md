@@ -1,5 +1,10 @@
 # storytree
 
+**New here? Start with [The StoryTree structure](docs/storytree-structure.md)** — the
+layers, what each node contains, real examples from *The Matrix*, and where the measurements
+are.
+
+
 Generate screenplays as an explicit, inspectable graph — and run the same machinery
 backwards to recover that graph from a finished screenplay.
 

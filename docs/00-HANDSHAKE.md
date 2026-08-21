@@ -195,6 +195,9 @@ flatter — came out exactly level, so the advantage is not a sampling artefact.
 **The bottleneck was the model, not the scaffold.** Three scaffold changes lost; one model
 change won, and it is the only result in this line of work that has reproduced.
 
+**[The StoryTree structure](storytree-structure.md)** is the map: the layers, what each node
+type contains, real examples, and where the results are. Start there.
+
 New readers, in order:
 [`docs/scene-layer-explained.md`](scene-layer-explained.md) — what the six scene conditions
 were, what differed, what worked and what did not ·
