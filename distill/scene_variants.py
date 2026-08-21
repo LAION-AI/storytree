@@ -83,9 +83,24 @@ no elaborate psychology, and that is a correct answer, not a lazy one. A
 five-hundred-word scene gets a full one. Padding a small scene is a failure of
 the same kind as skimping a large one.
 
-Every piece of evidence you cite must be COPIED from the scene, word for word.
-Do not paraphrase it. If you cannot find a span that shows a change, do not claim
-the change.
+DO NOT COPY THE SCREENPLAY. You are recording what happened, not the words it
+happened in. Never reuse eight or more consecutive words from the page.
+
+  * SPEECH becomes reported speech, in the third person. Do not keep the
+    character's words.
+      on the page:  "I said, is everything in place?"
+      in your node: she asks a second time whether everything is ready
+  * A STAGE DIRECTION becomes the observable fact in your own words.
+      on the page:  The lamp swings above the table, throwing shadows that refuse to settle
+      in your node: the lamp keeps swinging and the shadows never come to rest
+  * NAMES, NUMBERS, DATES, TIMES AND PLACE NAMES stay exactly as written. Those
+    are facts, and rewording them makes the node wrong. "Room 303" stays
+    "Room 303".
+
+The one exception is `evidence`. That field exists so a reader can find the spot
+on the page, so it IS copied exactly — but AT MOST SEVEN WORDS. Pick the seven
+that pin the moment down. If you cannot find a span that shows a change, do not
+claim the change.
 
 Name people the way this scene names them. Consistency across scenes is handled
 elsewhere.
@@ -102,8 +117,16 @@ def v1_schema(scene) -> dict:
     p["time_of_day"] = {"const": scene.time_of_day or "UNSPECIFIED"}
     ev = p["what_changes"]["items"]["properties"]["evidence"]
     ev["minLength"] = 25
-    ev["description"] = ("A span COPIED VERBATIM from this scene, at least 25 "
-                         "characters. Not a paraphrase.")
+    # Bounded below the publication bar. This field is deliberately verbatim --
+    # it is what makes a claim checkable against the page -- but an unbounded
+    # verbatim field is a copy, and it was the single largest source of copied
+    # text in the layer: 428 of 905 runs. maxLength is in characters, which is
+    # the only unit a JSON schema has; the word cap is enforced afterwards by
+    # paraphrase_pass.trim_verbatim, since a schema cannot count words.
+    ev["maxLength"] = 60
+    ev["description"] = ("A span copied EXACTLY from this scene: at least 25 "
+                         "characters and AT MOST SEVEN WORDS. Not a paraphrase, "
+                         "and not a whole sentence.")
     if scene.speakers:
         p["speaking"] = {"type": "array",
                          "items": {"type": "string", "enum": list(scene.speakers)}}
@@ -212,6 +235,13 @@ wrong, because a mistaken belief is where drama comes from.
 You have the scenes around this one. Use them. A character's guardedness here may
 be the residue of something three scenes ago, and that is exactly the kind of
 reading a scene taken alone cannot produce.
+
+Write the basis in your own words. Do not quote the page: never reuse eight or
+more consecutive words from the screenplay, and turn any line of dialogue into
+reported speech in the third person.
+  on the page:  a line asking whether she likes watching him
+  in your basis: he presses her about how closely she has been watching Neo
+Names, numbers, dates and place names stay exactly as written.
 
 Two disciplines. First, every reading needs a basis: name what in this scene or
 in what came before supports it. Second, mark as `inferred` anything that goes
@@ -773,6 +803,60 @@ def run_variant(name: str, out: Path, ports: list[int], model: str,
     return summary
 
 
+
+def verbatim_gate(out: Path, source_path: str = "") -> dict:
+    """Report copied source text in a finished scene layer.
+
+    At the end of the build rather than as a separate errand: a check that has
+    to be remembered is a check that gets skipped, and this layer reads the
+    screenplay directly, so it is the layer most likely to copy from it.
+
+    Reports; does not block. The fix is distill/paraphrase_pass.py, which needs
+    a model and a decision about which endpoint to spend.
+    """
+    import sys as _sys
+    _sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        import verbatim as _V
+    except Exception as error:                                # pragma: no cover
+        print("\nverbatim gate unavailable: {}".format(error))
+        return {}
+    candidates = [source_path] if source_path else []
+    candidates += ["distill/runs/matrix/script.normalized.txt",
+                   "reconstruct/runs/matrix/script.normalized.txt"]
+    src = next((c for c in candidates if c and Path(c).exists()), None)
+    if src is None:
+        print("\nverbatim gate: no source available, skipped")
+        return {}
+    index = _V.SourceIndex(Path(src).read_text(encoding="utf-8", errors="ignore"))
+    exact = near = dirty = worst = 0
+    files = sorted(Path(out).glob("sc-*.json"))
+    per_field: dict = {}
+    for f in files:
+        node = json.loads(f.read_text(encoding="utf-8"))
+        hits = _V.scan_node(node, index)
+        ex = [(path, r) for path, r in hits if r.kind == "exact"]
+        exact += len(ex)
+        near += len([r for _p, r in hits if r.kind == "near"])
+        dirty += 1 if ex else 0
+        worst = max([worst] + [r.words for _p, r in ex])
+        for path, _r in ex:
+            key = path.split("/")[1].split("[")[0]
+            per_field[key] = per_field.get(key, 0) + 1
+    print("\nverbatim gate — scene layer")
+    print("  exact runs (>= {} source words): {} in {}/{} nodes, longest {}".format(
+        _V.BAR, exact, dirty, len(files), worst))
+    print("  by field: {}".format(dict(sorted(per_field.items(), key=lambda x: -x[1])[:6])))
+    print("  near hits (review only): {}".format(near))
+    if exact:
+        print("  fix: python3 distill/paraphrase_pass.py --nodes {} \\".format(out))
+        print("         --source {} --ports <ports> --model <small model>".format(src))
+    report = {"exact_runs": exact, "near_hits": near, "nodes_with_runs": dirty,
+              "nodes": len(files), "longest_run_words": worst, "by_field": per_field}
+    (Path(out) / "_verbatim.json").write_text(json.dumps(report, indent=1))
+    return report
+
+
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser()
@@ -784,6 +868,8 @@ if __name__ == "__main__":
     # The frozen SAMPLE keeps arms comparable and must not change casually. A replication
     # on a fresh, disjoint sample is the one legitimate reason to override it, and it is
     # recorded in the run output so a later reader cannot mistake the two for one series.
+    ap.add_argument("--source", default="",
+                    help="screenplay text, for the post-build verbatim gate")
     ap.add_argument("--scenes", default="",
                     help="comma-separated scene ids, overriding the frozen SAMPLE")
     a = ap.parse_args()
@@ -811,3 +897,5 @@ if __name__ == "__main__":
     for sid, r in s["per_scene"].items():
         if r.get("problems"):
             print(f"    {sid} ({r.get('scene_words')}w): {'; '.join(r['problems'])}")
+
+    verbatim_gate(Path(a.out), a.source)

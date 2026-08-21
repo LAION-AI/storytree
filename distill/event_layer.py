@@ -52,6 +52,17 @@ SYSTEM = (
     "run of consecutive scenes that function as one unit of story. You work only from what "
     "the scenes record; you never invent material they do not contain. You return only valid "
     "JSON."
+    "\n\n"
+    "NEVER COPY THE SCREENPLAY. You are given the scene text as a check on the scene nodes, "
+    "not as material to quote from. Never reuse eight or more consecutive words from it.\n"
+    "  * Speech becomes reported speech, in the third person:\n"
+    "      on the page:  \"I said, is everything in place?\"\n"
+    "      in your node: she asks a second time whether everything is ready\n"
+    "  * A stage direction becomes the observable fact in your own words:\n"
+    "      on the page:  The lamp swings above the table, throwing shadows that refuse to settle\n"
+    "      in your node: the lamp keeps swinging and the shadows never come to rest\n"
+    "  * Names, numbers, dates, times and place names stay EXACTLY as written. Those are "
+    "facts, and rewording them makes the node wrong."
 )
 
 # `safety` added after the first run: judges found duplicate `knowledge` registers inside
@@ -961,6 +972,41 @@ def canonicalise_entities(events: List[Dict[str, Any]]) -> Dict[str, Any]:
             "mapping": mapping}
 
 
+
+def verbatim_gate(nodes, source_path: str, label: str) -> Dict[str, Any]:
+    """Report copied source text in a finished layer.
+
+    Runs at the end of a build rather than as a separate errand, because a check
+    that has to be remembered is a check that gets skipped. It reports and does
+    not block: the fix is paraphrase_pass.py, which needs a model and a decision
+    about which endpoint to spend, and neither belongs inside a build that has
+    just finished four hours of work.
+    """
+    if not source_path or not Path(source_path).exists():
+        print("\nverbatim gate: no source available, skipped")
+        return {}
+    import verbatim as _V
+    index = _V.SourceIndex(Path(source_path).read_text(encoding="utf-8", errors="ignore"))
+    exact = near = dirty = 0
+    worst = 0
+    for node in nodes:
+        hits = _V.scan_node(node, index)
+        ex = [r for _p, r in hits if r.kind == "exact"]
+        exact += len(ex)
+        near += len([r for _p, r in hits if r.kind == "near"])
+        dirty += 1 if ex else 0
+        worst = max([worst] + [r.words for r in ex])
+    print("\nverbatim gate — {}".format(label))
+    print("  exact runs (>= {} source words): {} in {}/{} nodes, longest {}".format(
+        _V.BAR, exact, dirty, len(nodes), worst))
+    print("  near hits (review only): {}".format(near))
+    if exact:
+        print("  fix: python3 distill/paraphrase_pass.py --nodes <out> \\")
+        print("         --source {} --ports <ports> --model <small model>".format(source_path))
+    return {"exact_runs": exact, "near_hits": near, "nodes_with_runs": dirty,
+            "nodes": len(nodes), "longest_run_words": worst}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Build the event layer from scene nodes")
     ap.add_argument("--scenes-dir", required=True)
@@ -1072,6 +1118,8 @@ def main() -> int:
                  for k in ("state_breaks", "contradictions", "missing_links")}
         print("  {}".format(tally), flush=True)
 
+    gate = verbatim_gate(nodes, a.source, "event layer")
+
     triples = sum(len(n.get("state_triples") or []) for n in nodes)
     registers = sum(len(t.get("registers") or []) for n in nodes
                     for t in n.get("state_triples") or [])
@@ -1088,6 +1136,7 @@ def main() -> int:
         "duplicate_merge": merged,
         "reconcile": rec,
         "lint": lint_report,
+        "verbatim": gate,
         "affects_outside": sum(len(n.get("affects_outside") or []) for n in nodes),
         "verify": findings,
     }, indent=1), encoding="utf-8")

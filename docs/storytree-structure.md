@@ -134,4 +134,5 @@ and was satisfied by writing the same register seven times.
 | [Model comparison](ornith/) | the one change that reproduced |
 | [Event layer results](events/) | three builds, including a null result |
 | [The abstraction-layer attempt](cognitino/results.md) | a design that lost, recorded in full |
+| [Not copying the screenplay](verbatim-policy.md) | the rule, how it is checked, and the paraphrase pass |
 | [Handshake](00-HANDSHAKE.md) | the fastest path back to working state |
