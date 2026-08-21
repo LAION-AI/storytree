@@ -159,8 +159,48 @@ def build_scaffold(scene_ids: Sequence[str], scene_nodes: Sequence[Dict[str, Any
         # Registers the scene layer already witnessed a change on. `moved` is then a fact to
         # be transcribed rather than a judgement to be made — which is what stops it from
         # being set on a register whose entry and exit say the same thing.
-        entry["registers_with_recorded_change"] = sorted(
-            {c["register"] for c in entry["changes"] if c["register"]})
+        demanded = {c["register"] for c in entry["changes"] if c["register"]}
+        # Registers derivable from the scene layer without a typed axis. Judges
+        # found `emotional` absent from every entity in an event built on shock,
+        # and `positional` absent from entities the scenes plainly move around --
+        # because neither had a change whose axis happened to be typed. Both are
+        # computable, so they are computed rather than hoped for.
+        if entry["mind_material"]:
+            demanded.add("emotional")
+        if len(entry["appears_in"]) > 1 and entry["is_person"]:
+            demanded.add("positional")
+        entry["registers_with_recorded_change"] = sorted(demanded)
+
+    # Fold names that are the same thing said twice. Judges found "cellular
+    # phone" beside "the phone", and "Mouse" beside "Mouse's dead body", declared
+    # as separate entities inside one node. A shorter name that is contained in a
+    # longer one, where neither is a different named person, is the same entity.
+    names = sorted(entities, key=len)
+    for i, short in enumerate(names):
+        if short not in entities:
+            continue
+        bare = _norm(short).casefold().lstrip("the ").strip()
+        if len(bare) < 4:
+            continue
+        for long in names[i + 1:]:
+            if long not in entities or long == short:
+                continue
+            longer = _norm(long).casefold()
+            # A possessive is not the same entity: "the Big Cop's cuffs" folded
+            # into "BIG COP" would have deleted the object the event turns on.
+            # Nor may a person absorb an object or the other way round.
+            if "{}'s".format(bare) in longer or "{}s'".format(bare) in longer:
+                continue
+            if entities[short]["is_person"] != entities[long]["is_person"]:
+                continue
+            if bare and bare in longer:
+                keep_e, drop_e = entities[short], entities.pop(long)
+                for sid in drop_e["appears_in"]:
+                    if sid not in keep_e["appears_in"]:
+                        keep_e["appears_in"].append(sid)
+                keep_e["changes"].extend(drop_e["changes"])
+                keep_e["mind_material"].extend(drop_e["mind_material"])
+                keep_e.setdefault("folded_from", []).append(long)
 
     # Trim the roster to entities that carry information. An entity the scene layer recorded
     # no change for, that appears in a single scene, is a walk-on: a build-1 judge found

@@ -77,20 +77,27 @@ absolute level of V3 does not.
 
 ## The finding worth more than the comparison
 
-All three judges independently reported fields breaking off mid-clause. Measured:
+All three judges independently reported fields breaking off mid-clause, with specific examples:
+a `reading` "truncated at 'not seeing that Neo'", another ending in a corrupt non-Latin glyph.
 
-| | long fields ending without punctuation | worst fields |
-|---|---|---|
-| Build 3 | 484 / 5,728 (8%) | `reading`, `entry`, `exit` |
-| Build 4 | **1,892 / 8,169 (23%)** | `entry` 535, `exit` 531, `unchanged_because` 265 |
+> **Corrected.** This section first reported **23% of long fields truncated**. That number was
+> wrong, and wrong the same way three other numbers in this project have been: the *check* was
+> measuring the wrong thing. It counted any long field not ending in punctuation as truncated —
+> but a state field is often written as a phrase, not a sentence. *"Commanding the room over a
+> compliant suspect"* is a complete state description and was counted as damage.
+>
+> Measured properly — a field within three characters of its schema limit, or ending on a
+> function word — build 4 truncates **2.5% / 2.3% of 6,263 fields**, an order of magnitude less
+> than reported.
 
-Plus about fifteen fields per build containing corrupt non-Latin glyphs.
+The judges' observation still stands, and points somewhere specific: **`reading` is where it
+happens.** It has the tightest budget relative to what it is asked to hold, and the
+theory-of-mind clause — the part that earns the dimension — is written last and so cut first.
+Four of the five worst offenders are `reading` fields sitting exactly on the 320-character cap.
 
-The cause is the schema's `maxLength`, introduced to stop one register description running to a
-paragraph. Under guided decoding a maxLength does not make a model concise — **it cuts the
-sentence wherever the limit falls.** An `exit` that ends mid-word breaks the rule the layer
-exists for, and judges lost V5 to it repeatedly: "the one attempt at an error in Morpheus's
-model of Neo is truncated".
+The cause remains the schema's `maxLength`. Under guided decoding a maxLength does not make a
+model concise — **it cuts the sentence wherever the limit falls.** The fix is a bigger budget
+where the content justifies it, not a uniform one.
 
 ## What the judges found that a lint could have
 

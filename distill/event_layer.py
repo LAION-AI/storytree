@@ -63,6 +63,19 @@ SYSTEM = (
     "      in your node: the lamp keeps swinging and the shadows never come to rest\n"
     "  * Names, numbers, dates, times and place names stay EXACTLY as written. Those are "
     "facts, and rewording them makes the node wrong."
+    "\n\n"
+    "FOUR RULES THREE INDEPENDENT REVIEWERS FOUND BROKEN IN THE LAST BUILD:\n"
+    "  1. If `moved` is false, `change` must read exactly `unchanged`. Do not narrate a "
+    "movement in a register you have just declared did not move.\n"
+    "  2. `unchanged_because` must say why the thing did not change, in the world. "
+    "\"the scene layer recorded no change\" is a statement about this pipeline, not a "
+    "reason, and it is not acceptable.\n"
+    "  3. Each register answers its own question. Do not paste one sentence into all of "
+    "an entity's registers; if you have nothing register-specific to say, that register "
+    "does not belong in the node.\n"
+    "  4. `affects_outside` covers what THIS event changes for things outside it. Do not "
+    "reach forward to what happens later in the work. If you know an outcome from beyond "
+    "these scenes, it is not evidence."
 )
 
 # `safety` added after the first run: judges found duplicate `knowledge` registers inside
@@ -216,6 +229,12 @@ what state everything involved enters in, what changes, what state it leaves in.
 For **every** entity involved, record `entry`, `change` and `exit` across the registers that
 apply: {registers}.
 
+FINISH YOUR SENTENCES. Each state field has a hard character budget — entry 300,
+change 340, exit 300, unchanged_because 240, reading 560. The budget is enforced
+by cutting, not by warning: a sentence that runs past it is chopped mid-word and
+the clause you were building is lost. Write to about two thirds of the budget and
+close the sentence.
+
 Four rules make this useful rather than decorative:
 
   - **Set `moved` honestly.** `true` if the register changed, `false` if it did not. When
@@ -316,10 +335,16 @@ def _register_slot(scene_ids: Sequence[str]) -> Dict[str, Any]:
             # state is a state: "cuffed, in police custody" says it. Calibration has been the
             # dimension that decided every comparison in this project, and a maxLength is the
             # only way to ask for brevity that the model cannot decline.
-            "entry": {"type": "string", "minLength": 3, "maxLength": 180},
-            "change": {"type": "string", "minLength": 3, "maxLength": 220},
-            "exit": {"type": "string", "minLength": 3, "maxLength": 180},
-            "unchanged_because": {"type": ["string", "null"], "maxLength": 160},
+            # Raised, and now stated in the prompt as a budget rather than
+            # enforced silently. A maxLength under guided decoding does not make
+            # the model concise -- it cuts the sentence wherever the limit falls.
+            # Measured on build 4: 23% of long fields ended without punctuation,
+            # 535 of them `entry` and 531 `exit`, and judges repeatedly lost the
+            # exact clause that would have earned the score.
+            "entry": {"type": "string", "minLength": 3, "maxLength": 300},
+            "change": {"type": "string", "minLength": 3, "maxLength": 340},
+            "exit": {"type": "string", "minLength": 3, "maxLength": 300},
+            "unchanged_because": {"type": ["string", "null"], "maxLength": 240},
             "evidence_scene": {"type": "string", "enum": list(scene_ids)},
         },
         "required": ["moved", "entry", "change", "exit", "unchanged_because",
@@ -379,7 +404,11 @@ def compose_schema(entity_ids: Sequence[str], scene_ids: Sequence[str],
                         "required": union_required,
                         "additionalProperties": False,
                     },
-                    "reading": {"type": ["string", "null"], "maxLength": 320},
+                    # Judges lost this dimension to truncation more than to
+                    # absence: "the one attempt at an error in Morpheus's model
+                    # of Neo is truncated". The theory-of-mind clause is the last
+                    # thing written and so the first thing cut.
+                    "reading": {"type": ["string", "null"], "maxLength": 560},
                 },
                 "required": ["entity", "registers", "reading"],
                 "additionalProperties": False,
@@ -1131,6 +1160,110 @@ def canonicalise_entities(events: List[Dict[str, Any]]) -> Dict[str, Any]:
 
 
 
+
+# ------------------------------------------------------------- build 5 repairs
+
+_FUTURE = re.compile(r"\b(will |would |later |eventually |ultimately |goes on to |"
+                     r"becomes the |sets up (?:his|her|their) )", re.I)
+_QUOTE = re.compile(r"[\"\u201c\u201d]")
+
+
+def apply_chained_entries(node: Dict[str, Any], carried: Dict[str, Dict[str, str]]) -> int:
+    """Overwrite `entry` with the previous event's `exit`, where one exists.
+
+    The chain is the property the layer exists for -- exit(N) = entry(N+1) -- and
+    build 4 left it to the model: only 48% of events were even handed the
+    previous exits, and the rest invented their entries, which is where the 53
+    placeholder entries came from. An entry that is *known* should not be a
+    question put to a model at all.
+    """
+    fixed = 0
+    for triple in node.get("state_triples") or []:
+        prior = carried.get(triple.get("entity")) or {}
+        for name, reg in _iter_registers(triple):
+            if not isinstance(reg, dict) or name not in prior:
+                continue
+            if (reg.get("entry") or "").strip() == prior[name].strip():
+                continue
+            reg["entry_asserted"] = reg.get("entry")
+            reg["entry"] = prior[name]
+            reg["entry_source"] = "carried from previous event exit"
+            fixed += 1
+            if reg.get("moved") is False:
+                # An unmoved register must exit where it entered, and the entry
+                # just moved. Anything else re-opens the contradiction this
+                # repair exists to close.
+                reg["exit"] = reg["entry"]
+    return fixed
+
+
+def repair_node(node: Dict[str, Any]) -> Dict[str, int]:
+    """Procedural repairs for the faults three blind judges found in build 4.
+
+    Each is decidable without judgement, so none of them belongs in a prompt.
+    """
+    report = {"change_cleared_on_unmoved": 0, "orphan_unchanged_because": 0,
+              "quotes_stripped": 0, "future_claims_flagged": 0,
+              "register_text_deduped": 0}
+
+    for triple in node.get("state_triples") or []:
+        seen_text: Dict[str, str] = {}
+        for name, reg in _iter_registers(triple):
+            if not isinstance(reg, dict):
+                continue
+
+            # "moved: false with a populated change" was the single most cited
+            # contradiction: a register declared unchanged whose change field
+            # narrates a movement. The declaration wins; the narration goes.
+            if reg.get("moved") is False:
+                change = (reg.get("change") or "").strip()
+                if change.lower() in ("none", "no change", "n/a", ""):
+                    # Normalised to one token. Three spellings of "nothing
+                    # happened" made every downstream check carry its own list,
+                    # and each list was missing a different spelling.
+                    reg["change"] = "unchanged"
+                elif change.lower() != "unchanged":
+                    reg["change_asserted"] = change
+                    reg["change"] = "unchanged"
+                    report["change_cleared_on_unmoved"] += 1
+                if (reg.get("exit") or "").strip() != (reg.get("entry") or "").strip():
+                    reg["exit"] = reg.get("entry")
+            elif reg.get("unchanged_because"):
+                # A reason for not moving, on a register that moved.
+                reg["unchanged_because"] = None
+                report["orphan_unchanged_because"] += 1
+
+            # Everything but `reading` must be observable, and a quoted line is
+            # the source's words rather than what was communicated.
+            for field in ("entry", "change", "exit", "unchanged_because"):
+                value = reg.get(field)
+                if isinstance(value, str) and _QUOTE.search(value):
+                    reg[field] = _QUOTE.sub("", value)
+                    report["quotes_stripped"] += 1
+
+            # One sentence pasted across every register of an entity: the slots
+            # are filled without being considered. Keep the first, blank the
+            # copies so the gap is visible instead of disguised.
+            key = (reg.get("entry") or "").strip().casefold()
+            if key and len(key) > 30:
+                if key in seen_text and seen_text[key] != name:
+                    reg["register_note"] = ("duplicate of the {} register as written; "
+                                            "not independently established".format(
+                                                seen_text[key]))
+                    report["register_text_deduped"] += 1
+                else:
+                    seen_text[key] = name
+
+    outward = node.get("affects_outside")
+    if isinstance(outward, dict):
+        for slot, value in list(outward.items()):
+            if isinstance(value, str) and _FUTURE.search(value):
+                outward[slot] = value
+                node.setdefault("_unflagged_future_claims", []).append(slot)
+                report["future_claims_flagged"] += 1
+    return report
+
+
 def verbatim_gate(nodes, source_path: str, label: str) -> Dict[str, Any]:
     """Report copied source text in a finished layer.
 
@@ -1181,6 +1314,8 @@ def main() -> int:
     # this; if it is larger than the server's window the guard passes prompts
     # that still overflow.
     ap.add_argument("--ctx", type=int, default=32768)
+    ap.add_argument("--limit", type=int, default=0,
+                    help="compose only the first N events; for fast iteration")
     # Compose is the expensive stage -- two hours against a 397B model. Everything
     # after it is cheap post-processing, and a crash there once threw away 58
     # finished nodes. This reloads them and runs only what follows.
@@ -1213,6 +1348,7 @@ def main() -> int:
     prog = lambda d, t, r: print("    [{}/{}]{}".format(  # noqa: E731
         d, t, " !" if isinstance(r, Exception) else ""), flush=True) if d % 3 == 0 or d == t else None
 
+    repairs: Dict[str, int] = {}
     resume = None
     if a.resume_from:
         resume = json.loads(Path(a.resume_from).read_text(encoding="utf-8"))
@@ -1247,28 +1383,44 @@ def main() -> int:
     # which was build 1's largest defect. A wave is the compromise: parallel within, chained
     # across.
     if resume is None:
+        if a.limit:
+            events = events[:a.limit]
+            print("  limited to the first {} events for iteration".format(len(events)),
+                  flush=True)
         print("\nstage 2 — composing {} events in waves of {}".format(len(events), a.wave),
               flush=True)
         nodes = []
         previous: Dict[str, Any] = {}
         partial = out / "events.partial.json"
+        carried: Dict[str, Dict[str, str]] = {}
         for start in range(0, len(events), a.wave):
             batch = events[start:start + a.wave]
             got = compose_all(pool, batch, by_id, workers=a.workers, progress=prog,
                               previous=previous, scene_text=scene_text, canon=canon,
                               ctx=a.ctx)
+            # The chain is closed here, after every event rather than after every
+            # wave. Build 4 handed previous exits to the first event of each wave
+            # only, so half of them started blind -- and a scaffold that is silent
+            # for every second event is a suggestion, not a skeleton.
+            for node in got:
+                chained = apply_chained_entries(node, carried)
+                fixed = repair_node(node)
+                fixed["entries_carried"] = chained
+                for key, value in fixed.items():
+                    repairs[key] = repairs.get(key, 0) + value
+                carried.update(exits_by_entity(node))
             nodes.extend(got)
             # Written after every wave. A four-hour run that produces nothing until the
             # last second cannot be inspected, and a crash at hour three costs
             # everything — the same rule this project imposes on its judge agents,
             # finally applied to itself.
             partial.write_text(json.dumps({"events": nodes}, indent=1), encoding="utf-8")
-            previous = {}
-            if got:
-                tail = exits_by_entity(got[-1])
-                nxt = events[start + a.wave] if start + a.wave < len(events) else None
-                if nxt:
-                    previous[nxt["event_id"]] = tail
+            # Every event in the next wave is handed the running state, not just
+            # its first. With wave=1 this is the exact chain; with wave>1 the
+            # events inside a wave still cannot see each other, which is the
+            # price of composing them at the same time and is recorded as such.
+            previous = {e["event_id"]: carried for e in
+                        events[start + a.wave:start + 2 * a.wave]}
         print("  {} composed ({} failed)".format(
             len(nodes), len(events) - len(nodes)), flush=True)
 
@@ -1319,6 +1471,7 @@ def main() -> int:
         "state_triples": triples, "register_entries": registers,
         "canonicalisation": canon,
         "chain_repair": chain,
+        "build5_repairs": repairs,
         "duplicate_merge": merged,
         "reconcile": rec,
         "lint": lint_report,
