@@ -655,9 +655,15 @@ def compose_all(pool: EndpointPool, events: Sequence[Dict], by_id: Dict[str, Dic
         required_by = {e["entity"]: (e["registers_with_recorded_change"] or ["status"])
                        for e in scaffold["entities"]}
         schema = compose_schema(ents, ev["scene_ids"], required_by)
-        budget = 2600 + 340 * sum(len(v) for v in required_by.values())
+        # Counts entities as well as slots. The first formula priced only register slots, so
+        # a twenty-seven entity event was budgeted as if its twenty-seven entity names,
+        # readings and JSON scaffolding were free. The four earliest waves — which hold the
+        # largest events — failed on truncation while later, smaller ones passed.
+        budget = (3000
+                  + 360 * sum(len(v) for v in required_by.values())
+                  + 150 * len(required_by))
         r = pool.call(SYSTEM, prompt, schema=grammar_safe(schema),
-                      max_tokens=min(16384, budget))
+                      max_tokens=min(18000, budget))
         node = _parse(r.text)
         node["event_id"] = ev["event_id"]
         node["scene_ids"] = ev["scene_ids"]
@@ -821,10 +827,19 @@ def merge_duplicate_keys(events: List[Dict[str, Any]]) -> Dict[str, Any]:
                                         "kind": "duplicate entity key"})
             target = by_entity[name]
             seen = {n for n, _ in _iter_registers(target)}
+            # Registers are an object in build 3 onward and an array before it. Appending to
+            # the object crashed the run after forty-four nodes had been composed, all of
+            # which were lost because this build predated incremental writing. Both shapes
+            # are handled here rather than assuming either.
             for _rname, reg in _iter_registers(triple):
-                if reg.get("register") not in seen:
+                if _rname in seen:
+                    continue
+                bucket = target.get("registers")
+                if isinstance(bucket, dict):
+                    bucket[_rname] = reg
+                else:
                     target.setdefault("registers", []).append(reg)
-                    seen.add(reg.get("register"))
+                seen.add(_rname)
             if triple.get("reading") and not target.get("reading"):
                 target["reading"] = triple["reading"]
 
