@@ -1,0 +1,33 @@
+{
+ "scene_id": "sc-117",
+ "location": "WALL",
+ "time_of_day": "DAY",
+ "present": [
+  "Cypher"
+ ],
+ "summary": "Inside the plumbing wall, Cypher has lost his footing and is stuck: he trapped between the wall and a cluster of large pipes. scene simply registers his trapped position within the wall.",
+ "what_changes": [
+  {
+   "who": "Cypher",
+   "axis": "condition",
+   "before": "moving down the wall with the others",
+   "after": "stuck, jammed between the wall and a cluster of large pipes",
+   "evidence": "Cypher has slipped and is wedged between"
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "The crew's descent through the plumbing wall continues, and Cypher slips and gets wedged.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the wall",
+  "several thick supply pipes"
+ ],
+ "uncertain": [
+  "Whether the others have noticed Cypher is stuck or whether he is alone here.",
+  "Whether Cypher will free himself or needs help."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 0 speaker(s), 24w — no exchange to read"
+}

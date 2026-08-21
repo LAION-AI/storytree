@@ -1,0 +1,83 @@
+{
+ "scene_id": "sc-061",
+ "location": "ROOFTOP",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Neo",
+  "Morpheus"
+ ],
+ "summary": "On the rooftop, Neo summons his strength and launches himself into the air with a shriek, but comes up drastically short and plummets. The ground gives way beneath him, stretching like a trapeze net, and he bounces and flips until he comes to rest on his back. He laughs, unsure, wiping tears blowing across his face. Morpheus steps out of the building and assists him up, then asks if Neo knows why he didn't make the jump. Neo guesses it is because he didn't think he would. Morpheus smiles and nods, confirming the answer.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "He fails the jump without understanding the reason.",
+   "after": "He recognizes that his disbelief—'I didn't think I would'—is why he fell short.",
+   "evidence": "MORPHEUS: Do you know why you didn't"
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "He is falling and then lies flat on his back after the failed jump.",
+   "after": "He is helped to his feet by Morpheus.",
+   "evidence": "the ground gives way, stretching like a"
+  }
+ ],
+ "event_hint": {
+  "kind": "a training exercise",
+  "one_line": "Neo fails his first rooftop jump in the Construct and learns that disbelief, not ability, is what holds him back.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether Morpheus's nod means Neo has fully learned the lesson or merely named part of it."
+ ],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To recover his dignity after a humiliating, very public failure, and to find some explanation that makes sense of it.",
+   "feels": "Shaken and flooded with adrenaline — he genuinely expected to die ('eyes widen as he plummets'), so the laughter is a release of real fear, not confidence. Underneath is a bruised self-image: he tried 'every ounce of strength' and still fell absurdly short, which contradicts everything he thought effort could buy.",
+   "shows": "An unsure laugh and a light, self-mocking tone, wiping windblown tears as if they were just from the wind. He offers his answer as a half-joke — 'I didn't think I would?' — with a questioning lilt, testing whether naming it will make it less true.",
+   "basis": "He 'laughs, a bit unsure' and reframes fear-tears as windblown ones; his answer trails off with a question mark, offered to Morpheus for confirmation rather than stated as knowledge. sc-059 established him psyching himself up with bravado ('Alright then. I'm free. Got it. No trouble at all.') that the jump then punctured.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus is assessing him for a verdict — pass or fail — and that the right answer might earn approval.",
+     "wrong_because": "Morpheus isn't judging the failure at all; he's delighted that Neo has located the real obstacle. The smile and nod reward the insight, not the performance, so Neo's fear of being measured is misdirected."
+    },
+    {
+     "other": "himself",
+     "belief": "That the jump is a test of physical ability and nerve — that he fell because he isn't strong or brave enough yet.",
+     "wrong_because": "sc-059's instruction ('Fear. Doubt. Disbelief. Free your mind') and this scene's outcome both say the limit is belief, not capacity. His own answer admits as much, but he hasn't yet let himself believe that the reverse — believing he can — will actually work."
+    }
+   ]
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To lead Neo to name the obstacle himself rather than be told it, so the lesson lands as his own discovery and not doctrine.",
+   "feels": "Patient and quietly pleased — the failure is exactly the teaching moment he wanted, because a clean success would have let Neo keep attributing the rules to physics. He believes, with the certainty of long faith, that Neo is capable of the jump once disbelief is removed.",
+   "shows": "He waits for Neo to recover, helps him up physically before asking the question, and answers only with a smile and a single nod — giving nothing away until Neo does the work, then confirming without elaboration.",
+   "basis": "He asks an open question ('Morpheus asks why he failed, then nods.?') instead of explaining, and responds with a nod rather than praise, consistent with sc-059's Socratic method ('Let it all go. Free your mind') rather than instruction. The physical help precedes the lesson.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo is ready to understand — and soon to accept — that the mind's limits are self-imposed, and that this recognition is the beginning of real progress.",
+     "wrong_because": "Naming the cause is not the same as internalizing it; the 'uncertain' note in the record flags that Neo has only identified disbelief, not yet freed himself from it. Morpheus's nod may credit Neo with more than he has actually integrated."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-059's rooftop lesson — 'Fear. Doubt. Disbelief. Free your mind' — is the doctrine this scene proves empirically when Neo fails despite full physical effort.",
+  "Neo's bravado in sc-059 ('Alright. Let me go. Got it. No worries.') is the self-deception the failed jump punctures, forcing the honest admission here.",
+  "The observers' certainty in sc-060 ('No one's ever made their first jump,' 'He won't') frames this failure as expected, sharpening the lesson that the barrier is internal, not a matter of precedent."
+ ],
+ "sets_up": [
+  "ev-016: Having located disbelief as the obstacle, Neo can now be trained to act despite the system's rules — the street program and the red-dress distraction test exactly this capacity to override learned limits.",
+  "ev-021: Morpheus's confidence that the mind's limits are self-imposed, reinforced by Neo's dawning grasp here, underwrites his decision to finally take Neo to the Oracle for confirmation of the prophecy.",
+  "The principle that belief governs physical capability in the Construct becomes the basis for every later feat Neo performs inside the Matrix."
+ ],
+ "dramatic_function": "It converts the abstract creed of the jump program into a lived, personal truth for Neo — that the only thing limiting him is his own disbelief — while establishing Morpheus as a teacher who guides rather than instructs, so the story's central rule (mind over the Matrix) is earned through failure instead of exposition."
+}

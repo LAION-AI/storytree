@@ -1,0 +1,89 @@
+{
+ "scene_id": "sc-057",
+ "location": "DOJO",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "MORPHEUS",
+  "NEO",
+  "Tank"
+ ],
+ "summary": "After their sparring match, Morpheus rubs his face and smiles, pleased with Neo's progress. Neo tries to dismiss him, saying 'I know what you're trying to do --', but Morpheus corrects him: he is not doing anything to Neo, only 'trying to free your mind,' and clarifies that he can only 'show you the door' while Neo himself is 'the one that has to step through.' Morpheus then turns to Tank and orders him to 'load the jump program,' moving the training to the next stage.",
+ "what_changes": [
+  {
+   "who": "MORPHEUS",
+   "axis": "trust",
+   "before": "Presented as someone acting on Neo, with Neo suspicious of his methods",
+   "after": "Reframes himself as merely a guide who can only show the way, placing the responsibility on Neo",
+   "evidence": "I'm trying to free your mind, Neo"
+  },
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Believes he understands Morpheus's intentions and resists them",
+   "after": "Told that understanding is not enough; he must act himself",
+   "evidence": "You're the one that has to step"
+  },
+  {
+   "who": "MORPHEUS",
+   "axis": "standing",
+   "before": "Engaged in physical sparring with Neo",
+   "after": "Shifts from fighting to directing the next training exercise",
+   "evidence": "Morpheus rubs his face, then smiles."
+  }
+ ],
+ "event_hint": {
+  "kind": "a training session",
+  "one_line": "Morpheus finishes coaching Neo through the sparring lesson and orders Tank to load the jump program."
+ },
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "MORPHEUS",
+   "wants": "To reframe the whole enterprise so that Neo stops treating him as a manipulator and accepts that the work is Neo's own to do — then to move the lesson forward without losing authority.",
+   "feels": "Genuinely pleased and quietly vindicated: the boy he bet on actually landed the blow (sc-055), confirming his faith. But the pleasure is disciplined — he converts it immediately into the next instruction rather than lingering in it.",
+   "shows": "A rub of the face, a smile, a calm correction ('I'm trying to free your mind'), and an unhurried order to Tank. He lets warmth show but keeps it teacherly, not personal.",
+   "basis": "The smile follows the sparring win (sc-055) where Neo finally 'hit' him; his correction of Neo's 'I know what you're trying to do' into 'I can only show you the door' is a deliberate reframe; he then commands Tank to load the jump program, resuming control of the session.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo is the One, or at least the real thing worth investing in, and that his method of 'freeing the mind' rather than forcing it is the right one.",
+     "wrong_because": "Neo's own certainty ('I know what you're trying to do') shows he does not yet share this belief — he reads Morpheus as someone doing something TO him. Morpheus is betting on a conviction Neo has not yet formed."
+    }
+   ]
+  },
+  {
+   "who": "NEO",
+   "wants": "To keep his footing as the suspicious skeptic — to name Morpheus's maneuver before it works on him, so he isn't just a subject being processed.",
+   "feels": "A residue of the rage from the beating (sc-055) now cooling into wary defensiveness; being bested physically, he reaches for the one thing he thinks he still controls — seeing through the older man.",
+   "shows": "The preemptive 'I know what you're trying to do --', cut off before he can finish the accusation. He shows suspicion, not the bruised pride underneath.",
+   "basis": "He interrupts his own sentence with a dash; his line is an attempt to seize interpretive control right after Morpheus's pleased smile, which to Neo reads as a teacher pleased with a successful manipulation.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "MORPHEUS",
+     "belief": "That Morpheus is 'trying to do' something to him — acting on him, engineering him.",
+     "wrong_because": "Morpheus explicitly denies this: he can only show the door, Neo must step through himself. Neo's model of being manipulated is exactly the illusion Morpheus is trying to dissolve, so the suspicion is misdirected at the method rather than aimed at his own reluctance to act."
+    }
+   ]
+  },
+  {
+   "who": "Tank",
+   "wants": "To take the cue and execute cleanly — load the program and move the training to its next stage without needing further explanation.",
+   "feels": "Alert and ready at the console, the operator's satisfaction at having watched a real breakthrough (the crew's gasps in sc-056, Mouse's disbelief) now channeled into his function.",
+   "shows": "Nothing observable here beyond being the named recipient of the order; he is addressed and presumed to comply.",
+   "basis": "Morpheus addresses him by name with a direct command ('Tank, load the jump program'); his established role as operator (sc-054 shows the crew watching through his station) makes him the one who executes.",
+   "grounding": "in_this_scene",
+   "believes_about": []
+  }
+ ],
+ "connects_back": [
+  "Morpheus's pleased smile is the direct reaction to Neo landing the blow that knocked off his glasses in sc-055.",
+  "Neo's 'I know what you're trying to do' grows out of having just been physically dominated and 'coached' through rage in sc-055, which he experiences as something being done to him.",
+  "The order to load the jump program follows the crew watching the spar through Tank's station in sc-054/sc-056, where Tank is already positioned at the controls."
+ ],
+ "sets_up": [
+  "ev-013: The jump program Morpheus orders loaded is the very exercise in which he demonstrates the rooftop leap and Neo, unable to 'step through' his own doubt, falls — proving his point that seeing the door is not the same as crossing it."
+ ],
+ "dramatic_function": "The scene converts a physical victory into a philosophical handoff: it shifts the burden of the journey from teacher to student, replacing Neo's suspicion with the harder demand of personal action, and pivots the training from combat to the fear-based test that follows."
+}

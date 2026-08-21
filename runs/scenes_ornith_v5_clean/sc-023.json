@@ -1,0 +1,153 @@
+{
+ "scene_id": "sc-023",
+ "location": "CAR",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "APOC",
+  "SWITCH",
+  "NEO",
+  "TRINITY"
+ ],
+ "summary": "Inside a car in heavy rain, Neo is held at gunpoint by Switch while Apoc drives and Trinity insists the restraint is 'necessary. For our protection. From you.' Trinity produces a large steel-and-glass device and Switch orders Neo to 'Take off your shirt.' When Neo resists with 'What? Why?', Switch has Apoc 'Stop the car' and lays down the group's one rule: 'Follow our orders or get out.' Neo yields verbally ('Fine.') and opens the door to leave, but Trinity stops him by appealing to trust and to his own past ('you've been down there, Neo. You know exactly where it ends'), adding 'that's not where you want to be.' Neo, who had moved to exit, instead 'closes the door,' staying with them.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "custody",
+   "before": "A resisting captive under armed guard, confused and defiant about the threat.",
+   "after": "Still captive but voluntarily compliant, choosing to stay rather than flee.",
+   "evidence": "NEO 'Fine.' Neo opens the door... He closes the door."
+  },
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Ignorant of why he is being restrained, asking 'From what?'",
+   "after": "Told the danger is himself and reminded of a road he already knows, reframing his resistance as self-destructive.",
+   "evidence": "TRINITY 'From you.'... 'You already know that"
+  },
+  {
+   "who": "SWITCH",
+   "axis": "standing",
+   "before": "An armed guard enforcing the group's will on a defiant Neo.",
+   "after": "Openly dictating terms, ending any negotiation: 'Our way or the highway.'",
+   "evidence": "SWITCH 'Listen to me, coppertop! We don't"
+  }
+ ],
+ "event_hint": {
+  "kind": "negotiation",
+  "one_line": "Neo's captors try to force his compliance, and Trinity persuades him to stay rather than bolt from the car.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "large gun",
+  "steel and glass device (rib separator / speculum / air compressor)",
+  "WINDOW WIPERS",
+  "car door",
+  "sheets of rain"
+ ],
+ "uncertain": [
+  "Whether Neo actually removes his shirt or only hesitates before opening the door.",
+  "The exact nature of the 'road' Trinity says Neo already knows.",
+  "Whether Apoc speaks or only drives."
+ ],
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "NEO",
+   "wants": "To get out of the car and away from people who are pointing a gun at him and demanding he strip for an unknown procedure.",
+   "feels": "Cornered and humiliated, but underneath the panic is a genuine terror of the unknown that he can't name — which is exactly why Trinity's words land. When she says he knows where that road ends, she isn't threatening him; she's naming a fear he already carries from the interrogation room (sc-020) and the phone call (sc-021), where every authority figure promised him a future that required surrender. He closes the door not because he trusts her, but because staying feels marginally less like falling into an abyss than boltng into the rain.",
+   "shows": "Defiance ('What the hell is this?!', 'Fine.') that curdles into silence and, finally, the physical act of closing the door — a surrender he frames to himself as a choice.",
+   "basis": "He opens the door to leave, then at Trinity's appeal about the 'road' he knows and 'where it ends,' he stares into the rain and closes the door. His 'Why?' is the last verbal resistance before silence takes over.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "That she is his captor and the steel device is meant to hurt or kill him.",
+     "wrong_because": "She is about to use it to extract a tracking bug from his body (ev-004) — an act of extraction, not harm — and she is the one arguing against Switch's brute-force approach."
+    },
+    {
+     "other": "Trinity",
+     "belief": "That her talk of a 'road' he knows is manipulation, another con to get him to comply.",
+     "wrong_because": "She genuinely recognizes his pattern of running toward a precipice — the hacker life, the isolation — and is warning him that this particular surrender leads somewhere he's already been and doesn't want to return to."
+    },
+    {
+     "other": "Himself",
+     "belief": "That closing the door is an act of agency, him choosing them.",
+     "wrong_because": "inferred — he has no real option; the gun and the stopped car mean there is no highway. He reframes capitulation as a decision to preserve a shred of dignity."
+    }
+   ]
+  },
+  {
+   "who": "TRINITY",
+   "wants": "To get Neo to submit to the bug-extraction voluntarily, because a struggling captive during a medical procedure in a moving car is dangerous, and because she has staked something on him being 'the One.'",
+   "feels": "A pressure that is part duty, part something closer to investment — Morpheus told her he's the One (implied by ev-004/005 and her later knowledge), and she is now responsible for delivering a frightened, resistant man to that destiny without breaking him. There is also a flicker of recognition: she sees in his fear and defiance a version of a road she may know herself.",
+   "shows": "Calm, almost gentle insistence ('It's necessary,' 'please, you have to trust me') that stands in deliberate contrast to Switch's aggression — she is playing good cop by design, letting Switch be the threat so her voice becomes the only safe harbor.",
+   "basis": "She reframes the restraint as protection 'From you,' then, when force fails, pivots to an appeal grounded in Neo's own history ('you've been down there... You know exactly where it ends'). The shift from 'necessary' to 'please, trust me' is a calculated softening.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That he is the One Morpheus has been searching for, and therefore worth this elaborate, gentle coercion.",
+     "wrong_because": "inferred — at this moment Neo is only a terrified man; whether the belief is true is the entire arc the story is setting up, and she is acting on faith Morpheus has placed in her."
+    },
+    {
+     "other": "Neo",
+     "belief": "That appealing to his self-knowledge will reach him where threats won't.",
+     "wrong_because": "Correct — it works. He closes the door. This is the one belief of hers the scene confirms."
+    },
+    {
+     "other": "Switch",
+     "belief": "That Switch's hardness is an obstacle to her method.",
+     "wrong_because": "inferred — Switch's 'our way or the highway' ultimatum actually creates the pressure that makes Trinity's softness the only exit, so the hardness serves her, not opposes her."
+    }
+   ]
+  },
+  {
+   "who": "SWITCH",
+   "wants": "To end the negotiation and establish control through an unambiguous threat, because every second spent on 'twenty questions' is a second the car is exposed and the mission is at risk.",
+   "feels": "Impatience sharpened into contempt — he reads Neo as just another 'coppertop,' a potential liability, not the prophesied One. His authority here is also partly performative: he's the armed one, and he needs the group (and maybe himself) to feel that someone is in command while Trinity works her softer angle.",
+   "shows": "Open aggression and a flat ultimatum ('Our way or the highway'), escalating by stopping the car to force the issue — a physical demonstration that resistance has a cost.",
+   "basis": "He orders the car stopped, delivers the 'one rule,' and uses the demeaning 'coppertop.' His gun never wavers, and his method is pure coercion, in stark contrast to Trinity's appeal.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo is a dangerous, ignorant liability who must be broken into compliance, not reasoned with.",
+     "wrong_because": "inferred — he does not yet share Trinity's/Morpheus's conviction that Neo is the One; to Switch this is cargo control, and his contempt blinds him to why the others are treating this captive with such care."
+    },
+    {
+     "other": "Trinity",
+     "belief": "That her pleading is wasted sentimentality that he'll exploit.",
+     "wrong_because": "inferred — her approach is what actually succeeds where his threat fails, but his reading of Neo as purely adversarial won't let him credit her method."
+    }
+   ]
+  },
+  {
+   "who": "APOC",
+   "wants": "To keep the car moving and the group safe, executing Switch's commands without becoming involved in the confrontation.",
+   "feels": "inferred — Watchful and contained. As the driver he holds a role that requires him to be the steady instrument of the others' decisions; his silence is a choice to let Switch and Trinity divide the labor of coercion, and possibly a wariness of Neo as the unknown variable in the vehicle.",
+   "shows": "Nothing verbal — he drives, stops on Switch's order, and stays out of the exchange.",
+   "basis": "The scene gives him no dialogue; his only actions are driving and stopping the car when told. The uncertainty note flags whether he speaks at all.",
+   "grounding": "extrapolated",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "inferred — that Neo is a risk to be managed, consistent with the group's decision to hold him at gunpoint.",
+     "wrong_because": "inferred — unverifiable from the scene; he reveals no belief directly, so this is a placeholder for the group's shared posture, not a read of his interior life."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "Neo's interrogation by Agent Smith (sc-020), where authorities offered him a 'fresh start' contingent on surrender — Trinity's 'necessary... for our protection' echoes that same coercive framing, and Neo's resistance is colored by having just been there.",
+  "The phone call with Morpheus (sc-021) establishing that Neo is 'the One' and that the Agents 'got to' him first — this is why the crew treats him as both precious and dangerous, and why Trinity believes a road he knows leads somewhere fatal.",
+  "The rainy night and the car pickup at the bridge (sc-022), which places Neo, against his full understanding, into the custody of people he has only just met and who arrive as fugitives.",
+  "The bug-extraction event (ev-004) that this scene realizes: the steel-and-glass device and the demand to remove his shirt are the physical enactment of removing a tracking bug planted during the interrogation."
+ ],
+ "sets_up": [
+  "Ev-005 (Arrival at the Hotel Lafayette): Neo's decision to stay in the car is what delivers him, compliant enough to be led, to the thirteenth floor — the compliance this scene wins is the precondition for everything that follows.",
+  "Ev-006 (Neo's Unplugging): His acceptance of Trinity's authority and the extraction procedure foreshadows his later acceptance of the red pill and the far more violent unplugging of his real body.",
+  "The Trinity–Neo bond that will carry through the story: her choice to persuade rather than force, and his choice to trust her over his own instinct to flee, plants the specific loyalty that later events depend on.",
+  "Ev-009/010 (the history and the prophecy revelations): Trinity's claim that Neo is already on a known road presupposes the 'One' mythology that Morpheus will later explain to him directly."
+ ],
+ "dramatic_function": "This scene converts Neo from a resisting prisoner into a willing, if confused, follower — the pivotal handoff from the ordinary world to the hidden war. It does this by staging two modes of coercion (Switch's threat and Trinity's appeal to self-knowledge) and showing that only the latter can move him, establishing Trinity as his guide and the theme that his own nature is both the danger and the destiny. It also dramatizes, in miniature, the whole film's bargain: surrender that feels like freedom."
+}

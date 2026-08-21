@@ -1,0 +1,83 @@
+{
+ "scene_id": "sc-164",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Trinity"
+ ],
+ "summary": "Tank is back at the controls when Trinity calls him over the link, identifying herself and demanding Trinity requests a B-212 military helicopter pilot program. At her urgent 'Hurry!', Tank immediately searches the disk drawers, his fingers flashing over the laser disks until he finds the right one, feeds it into Trinity's supplement drive, and punches the 'load' commands on her keyboard.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "activity",
+   "before": "He is 'back at the controls', stationary at his station.",
+   "after": "He is actively searching and loading the program Trinity needs.",
+   "evidence": "Tank is immediately searching the disk drawers."
+  },
+  {
+   "who": "Trinity",
+   "axis": "capability",
+   "before": "She lacks the program to fly the military helicopter.",
+   "after": "Tank loads Tank inserts a bootleg copy of the B-212 helicopter software into the drive' into her drive.",
+   "evidence": "finding one that he feeds into Trinity's"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Trinity urgently requests a helicopter pilot program and Tank loads it, continuing the rooftop escape.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the controls",
+  "the disk drawers",
+  "the laser disks",
+  "the a test flight for a combat B-212 chopper",
+  "Trinity's supplement drive",
+  "her keyboard"
+ ],
+ "uncertain": [],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Tank",
+   "wants": "To get Trinity the helicopter-pilot program before the Agents reach Neo and Trinity on the roof.",
+   "feels": "A jolt of alarm — he has been 'back at the controls,' passive and watching, and Trinity's voice drags him instantly into action; the fear for his crew converts straight into hyper-focused, physical efficiency. He does not waste a syllable on a question.",
+   "shows": "Pure operational competence and speed: 'his hands dart across the shining laser disks,' locating and loading the exact program, punching the 'load' commands without hesitation. He stays terse — no panic leaks into his voice.",
+   "basis": "He is 'back at the controls' (idle) until Trinity's call, then 'immediately searching the disk drawers,' working fast enough that his fingers 'flash' — a shift from observer to actor. His lack of any question ('which program?') shows he already knows what a military B-212 needs and where it lives.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "That she is in immediate, lethal danger and that her needing a pilot program means the escape is still on a knife's edge.",
+     "wrong_because": "He cannot see the roof; he is inferring the urgency from her tone alone, so his reading of the threat is necessarily one step removed from what she actually faces."
+    }
+   ]
+  },
+  {
+   "who": "Trinity",
+   "wants": "To obtain the ability to fly the B-212 so the three of them can escape the rooftop before the Agents close in.",
+   "feels": "Compressed urgency and pressure — she has just saved Neo, they are exposed on an open roof, and the only exit is a machine she cannot yet operate. Her 'Hurry!' is the fear of a closing window, not impatience with Tank.",
+   "shows": "She lets only the command through: a clipped identification and demand, then a single shouted 'Hurry!' She does not explain, plead, or reveal how close the danger is — she gives Tank the minimum that will make him fast.",
+   "basis": "She names the exact program ('military B-212 helicopter') rather than asking for help, then escalates with 'Hurry!' — two beats that read as someone buying time against something already arriving. This follows sc-163, where she said 'Not yet' to flying and pulled out the phone.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "That he will have the program ready and loaded in the seconds she has — that the hovercraft end can move as fast as the situation demands.",
+     "wrong_because": "Nothing here shows it failing, but her belief rests on trust under fire: she is betting the link will hold and that the right disk is findable in real time, neither of which is guaranteed in the chaos she is standing in."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-163: Trinity's 'Not yet' to 'Can you fly that thing?' and her pulling out the cellular phone — this call is the direct consequence of that beat.",
+  "The rooftop firefight in sc-163 where Neo was nearly killed by Agent Jones, which is why the escape is now time-critical.",
+  "The Agents' mobilization in sc-162 ('Find them and destroy them!'), which supplies the pressure both Tank and Trinity feel."
+ ],
+ "sets_up": [
+  "ev-029 (Rooftop Regroup and Escape Planning): Trinity now has the program to fly the helicopter, making the group's continued escape possible.",
+  "The helicopter becoming the crew's means of moving Neo, Trinity, and Morpheus toward a subway-phone exit (ev-030)."
+ ],
+ "dramatic_function": "This is the mechanical bridge between the rooftop's near-death and the escape: it converts the hand-to-hand victory into forward motion by delivering, in real time, the one skill Trinity lacks, keeping the chase's momentum unbroken while re-anchoring the action to the hovercraft and Tank's role as the crew's lifeline."
+}

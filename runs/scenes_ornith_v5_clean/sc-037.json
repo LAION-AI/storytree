@@ -1,0 +1,92 @@
+{
+ "scene_id": "sc-037",
+ "location": "NEO'S ROOM",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Neo",
+  "Morpheus"
+ ],
+ "summary": "Neo wakes from a deep sleep feeling better and examines his altered body, discovering a futuristic IV plugged into a jack in his forearm, which he pulls out while staring at the grafted outlet, and a large outlet at the base of his skull. As he begins to come unglued, Morpheus enters. Neo asks what has happened to him and what this place is. Morpheus redirects him from what to when, telling him that he believes the year is 1997 when it is actually closer to 2197, and admits he cannot be certain of the exact year because no one truly knows. The revelation knocks the wind from Neo's chest. Morpheus then declines to explain further, saying he will instead show it, and tells Neo to come with him.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Believes the year is 1997",
+   "after": "Told it is closer to 2197, and that no one truly knows the year",
+   "evidence": "You believe the year is 1997 when"
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Waking feeling better, only starting to notice his body has been altered",
+   "after": "Physically shaken, as the wind is knocked from his chest by the temporal revelation",
+   "evidence": "The wind is knocked from Neo's chest."
+  },
+  {
+   "who": "Morpheus",
+   "axis": "custody",
+   "before": "Keeping Neo sedated and operated on, offstage",
+   "after": "Actively retrieving Neo to show him the reality rather than explain it",
+   "evidence": "There is no reason for me to"
+  }
+ ],
+ "event_hint": {
+  "kind": "a revelation",
+  "one_line": "Morpheus reveals to the newly-awakened Neo that he has been asleep for roughly two centuries, then moves to show him the truth.",
+  "continues_from_earlier": true
+ },
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To regain a stable footing — to get a coherent answer that explains what has been done to his body and where he is.",
+   "feels": "A mounting, wordless panic. He has just discovered foreign hardware grafted into his own flesh (the forearm jack he pulls out, the outlet at the base of his skull), and his self-examination is already tipping him toward 'coming unglued' before Morpheus even speaks. He is not curious so much as terrified and dislocated.",
+   "shows": "Two direct, compressed questions — 'What's become of me? Where am I?' — spoken to the one person entering the room, i.e. he channels the dread into language and into a plea for orientation rather than collapsing.",
+   "basis": "The stage direction 'Morpheus swings the door open just as Neo begins to unravel.' places Neo at the edge of panic; his questions target body and place directly. 'The wind is knocked from Neo's chest' registers the temporal answer physically, not verbally — he cannot immediately speak the shock.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus is a rescuer/authority who will explain what's being done to him and restore his bearings.",
+     "wrong_because": "Morpheus deliberately refuses to explain ('I have no need to explain when I can just demonstrate.') and is steering Neo toward a truth that will destabilize him further, not comfort him."
+    },
+    {
+     "other": "himself",
+     "belief": "That the year is 1997 and that his frame of reference is intact.",
+     "wrong_because": "He is told it is closer to 2197 — he has lost roughly two centuries, which is the ground being pulled out from under him."
+    }
+   ]
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To move Neo out of the room toward a direct experience of reality, and to do it by reframing rather than by answering the questions Neo asks.",
+   "feels": "A controlled, deliberate certainty. He has done this before (the rescue, the rebuilding) and treats Neo's disorientation as a stage to be managed, not soothed. There is no anxiety in him — only the patience of someone who knows the revelation must be witnessed, not described.",
+   "shows": "Calm redirection. He declines Neo's 'what' questions, substitutes 'when,' delivers the temporal shock in a flat, factual register, admits the one thing he genuinely cannot know (the exact year), then converts explanation into an invitation: 'Come with me.'",
+   "basis": "He overrides Neo's questions with 'More important than what is when?' and later 'I have no need to explain when I can just demonstrate. Follow me.' His admission of uncertainty about the exact year is the one crack of honesty in an otherwise authoritative posture. This follows his earlier pattern of withholding — 'Rest, Neo. The answers are coming' (sc-036).",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo is ready to be shown the truth and that a visual demonstration will land cleanly.",
+     "wrong_because": "The coming events show the truth overwhelming Neo to the point of rejection (ev-009) — Morpheus is underestimating how violently the mind he 'cannot be certain' about will resist what he is about to show."
+    },
+    {
+     "other": "Neo",
+     "belief": "That Neo still believes it is 1997 and can be reoriented by a single correction.",
+     "wrong_because": "The correction is not an adjustment but an annihilation of Neo's entire timeline; Morpheus delivers it as information, not yet grasping — or deliberately withholding — how total the rupture is."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "Morpheus's withholding in sc-036 ('The answers are coming') sets the pattern he continues here — he doles out revelation rather than explaining.",
+  "Neo's semi-conscious rescue and repeated fading in/out across sc-034–sc-036 means he has had no chance to process anything; this is his first lucid moment, so his disorientation is cumulative, not new.",
+  "The bodily alterations Dozer and Morpheus were performing in sc-036 (rebuilding atrophied muscle, the needles) are what Neo now discovers concretely as grafted ports."
+ ],
+ "sets_up": [
+  "ev-009: Morpheus's refusal to explain and insistence on showing ('I can simply show it') is the method he will use to deliver the history of the machines — and the very thing that overwhelms Neo into rejection.",
+  "ev-010: The temporal dislocation and 'no one truly knows' establish the irreversible break from the Matrix that Morpheus will later have to apologize for ('breaking the rule against freeing older minds').",
+  "ev-008/ev-011: Neo's discovery of his ports here underlies his later orientation as an operator-connected mind and the note that he lacks certain jacks."
+ ],
+ "dramatic_function": "This is the pivot from physical rescue to ontological rupture: it converts Neo's private horror at his altered body into the larger horror of lost time, and it establishes Morpheus's governing strategy of showing over telling — the method that will both enlighten and nearly destroy Neo."
+}

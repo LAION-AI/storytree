@@ -1,0 +1,71 @@
+{
+ "scene_id": "sc-108",
+ "location": "ROOM 808",
+ "time_of_day": "DAY",
+ "present": [
+  "Morpheus",
+  "Tank"
+ ],
+ "summary": "In Room 808 during the day, Morpheus is being guided by Tank, who speaks to him remotely through an earpiece. Tank directs Morpheus's movements, telling him to go left and confirming that the destination is directly in front of him. Morpheus acknowledges the guidance with a brief 'Good,' indicating he has reached or is about to reach the target location. The scene is a short, functional beat of remote navigation.",
+ "what_changes": [
+  {
+   "who": "Morpheus",
+   "axis": "condition",
+   "before": "Being led through the building without yet knowing his exact position",
+   "after": "Arrives at the intended spot, confirmed to be directly in front of him",
+   "evidence": "TANK (V.O.) Now left, and that's"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Tank remotely guides Morpheus through the building to a target location during the ongoing operation.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "earpiece"
+ ],
+ "uncertain": [],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Morpheus",
+   "wants": "To reach the target location precisely and without error, trusting Tank's guidance to navigate the building blind.",
+   "feels": "A focused, disciplined calm — the veteran's narrowing of attention to the single task in front of him, with the chaos of the raid (Mouse's death, the firefight, Smith) held at bay by refusing to give it room.",
+   "shows": "Only a clipped 'Good' — minimal, controlled, giving Tank nothing but confirmation that the instruction landed and was executed.",
+   "basis": "He is being guided remotely through the earpiece (object_that_matters), follows 'He turns left, then stops, with the target directly ahead.' exactly, and answers with a one-word acknowledgment. His restraint is legible against sc-107, where Smith has just killed Mouse and located the group on the eighth floor — Morpheus does not know this yet, but the pressure is real.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "That Tank's read of the building is reliable and that following it will get the crew out.",
+     "wrong_because": "Not yet wrong — but the event shape shows Tank is about to realise 'it's a trap' and Morpheus's capture is imminent; the trust that works in this beat is about to be exploited by the Agents closing in."
+    }
+   ]
+  },
+  {
+   "who": "Tank",
+   "wants": "To move Morpheus to the right position safely and efficiently, keeping the operation on track.",
+   "feels": "Alert and task-locked — his mind is on the diagram and the sequence of calls, managing a field op from the ship where he can see but not act.",
+   "shows": "Crisp, economical direction ('Turn left; the destination lies directly ahead.') — authority and certainty in his voice, no sign of the dread that will later overtake him.",
+   "basis": "He is directing movement from a remote position (V.O.), sequencing commands and confirming the destination, consistent with his role established in sc-106 where he located the main wet-wall ('Got it').",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus is executing cleanly and the escape route is holding.",
+     "wrong_because": "He does not yet know the Agents have altered the building into a trap; moments from now he will watch Morpheus get cornered and realise the whole descent was funneling them where the Agents wanted."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-106: Tank identified the main wet-wall as the escape route and is now guiding Morpheus through it.",
+  "sc-107: Agent Smith has just killed Mouse and located the fugitives on the eighth floor — the raid is closing in around this navigation beat.",
+  "ev-022: Morpheus is leading the crew through the building's internal walls; this is one step of that descent."
+ ],
+ "sets_up": [
+  "ev-022: Morpheus reaching the intended position keeps the escape in motion, leading toward Cypher getting wedged, the firefight in the cavity, and ultimately Morpheus's capture.",
+  "ev-022: Tank's clean, confident guidance here makes his imminent realization that 'it's a trap' land harder — the navigation that seemed to be working was the trap working."
+ ],
+ "dramatic_function": "A small, controlled beat of competent navigation that lets the audience breathe for a moment while maintaining forward momentum — and that very competence is ironic, since the guidance that is working so cleanly is steering Morpheus toward his capture."
+}

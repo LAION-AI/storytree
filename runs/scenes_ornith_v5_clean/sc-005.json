@@ -1,0 +1,93 @@
+{
+ "scene_id": "sc-005",
+ "location": "HEART O' THE CITY HOTEL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Morpheus",
+  "Operator"
+ ],
+ "summary": "Trinity paces while on the phone until the call connects to an operator, through whom she reaches Morpheus. She reports that the line was traced; Morpheus confirms they cut the hardline and that this line is not a viable exit. She asks if there are any Agents, and he says yes, prompting her to curse. Morpheus tells her to focus, directing her to a phone at Wells and Lake that she can reach. She takes a deep breath to center herself, agrees to go, and after Morpheus says \"Go,\" she drops the phone.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "safety",
+   "before": "Connected to a hardline that she believes is her way out",
+   "after": "Told the line is compromised and she must reach a different phone to escape",
+   "evidence": "MORPHEUS (MANV.O.) I know. They cut"
+  },
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "Panicked and swearing after learning Agents are present",
+   "after": "Centered and resolved to make the run to the phone",
+   "evidence": "She takes a deep breath, centering herself"
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Trinity, cut off from her exit, is directed by Morpheus to reach another phone while Agents close in.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the phone / hardline",
+  "the phone at Wells and Lake"
+ ],
+ "uncertain": [
+  "Whether the Operator on the line is the same as Morpheus or a separate person relaying him.",
+  "The exact time of day, which the scene does not specify."
+ ],
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To get out of the hotel alive — which now means abandoning her planned exit and reaching a different phone under Morpheus's direction.",
+   "feels": "A spike of fear she does not have the luxury to indulge. Learning Agents are present (after she has already killed a police squad and is cornered) tells her the situation has escalated from dangerous to potentially terminal, and the loss of the hardline removes the clean escape she was counting on. Underneath the obedience is the specific dread of being hunted by something far beyond the cops she just handled.",
+   "shows": "Frenetic movement (pacing), a curse, then a deliberate deep breath and a clipped 'All right --' — she lets Morpheus see her register the blow and then visibly re-collect herself into a soldier following orders.",
+   "basis": "She paces while on the phone (physical agitation); asks 'Are there any Agents?' — a diagnostic question, not small talk; curses ('Goddamnit!') on hearing 'Yes'; then 'takes a deep breath, centering herself' before agreeing to go. The what_changes entry confirms the before/after axis of panicked→centered.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That his instructions are her best and only chance of survival, and that he has the whole situation mapped even when she does not.",
+     "wrong_because": "He cannot actually guarantee the Wells and Lake phone will work or that she can reach it; the event shape shows she is being driven into a desperate improvisation (a rooftop chase and a 50-foot jump) that no one has fully controlled."
+    },
+    {
+     "other": "the Agents",
+     "belief": "That the presence of Agents means her capture or death is now likely — that they are an overwhelming escalation beyond the police.",
+     "wrong_because": ""
+    }
+   ]
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To get Trinity out of the building alive by forcing her past her panic and toward a reachable exit before the Agents close in.",
+   "feels": "Compressed alarm held under a hard shell of command. He already knows the line was traced and the hardline cut (information he has before she fully reports it), so he is working against a clock he can see better than she can — and his steadiness is a discipline he is imposing on himself as much as on her.",
+   "shows": "A flat, unhurried voice: 'I know' (not startled), 'You have to focus,' a concrete destination ('Wells and Lake. You can make it'), and the single-word 'Go.' He gives her no room to panic because he will not panic himself on the line.",
+   "basis": "He says 'I know' before she finishes reporting — he is ahead of her information, consistent with directing an operation. He does not answer her curse or her fear directly but redirects: 'You have to focus.' He supplies the exit and the encouragement, then the command to move.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "That she is capable of the run to Wells and Lake — 'You can make it' is an assertion of confidence in her, not a guess.",
+     "wrong_because": ""
+    },
+    {
+     "other": "Trinity",
+     "belief": "That she needs to be told to focus because fear is getting the better of her.",
+     "wrong_because": "She is already re-centering herself (the deep breath) the moment he says it; he reads her as closer to panic than she actually is, which is why his command lands exactly when she is ready to obey it."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-003: Trinity's 'Shit' after killing the police squad is the beat this scene continues — she already knows she is in over her head, and the Agent question is her checking whether it has gotten worse.",
+  "sc-002: The Agents' arrival and the revelation that the cops are 'already dead' establishes the escalated threat Trinity is now asking about and Morpheus confirms.",
+  "sc-004: Agent Brown entering the hotel and Agent Smith taking the alley are the physical closing-in that makes 'This line is not a viable exit' urgent and real."
+ ],
+ "sets_up": [
+  "ev-001: Trinity's flight to the Wells and Lake phone, the rooftop chase, and the leap into the dark building — this scene puts her in motion toward that exit.",
+  "ev-001: The destruction of the phone booth by the garbage truck — the exit Morpheus directs her to becomes itself a trap, which the scene's fragile 'You can make it' foreshadows without resolving."
+ ],
+ "dramatic_function": "This scene converts the static victory of defeating the police into a flight by removing Trinity's safe exit and handing her a worse one, tightening the trap just as the real antagonists (the Agents) are confirmed — it is the pivot from fight to chase, and it establishes Morpheus as the guiding authority whose voice will later shepherd Neo the same way."
+}

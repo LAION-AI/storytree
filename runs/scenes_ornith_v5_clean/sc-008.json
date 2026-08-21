@@ -1,0 +1,117 @@
+{
+ "scene_id": "sc-008",
+ "location": "ROOF",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Agent Brown",
+  "cops"
+ ],
+ "summary": "On the roof, Trinity runs as Agent Brown climbs over the parapet, the cops following behind him. Trinity starts jumping from one roof to the next with clean, gliding movement, contrasted with the wild jumps of the cops, while Agent Brown moves with the same unnatural grace. When the roof gives way to a broad alleyway with the next building over 40 feet away, Trinity's face stays perfectly calm, staring beyond the other roof. A cop says, \"That's it, we got her now., expecting something ugly as Trinity launches herself into the air. From above she hangs in flight, then hits and somersaults up, still running. A cop exclaims, \"Jesus Christ -- that's impossible!\" The cops they watch, mouths agape, as Agent Brown mirrors the maneuver perfectly, touching down, pivoting over a shoulder to rise onto one knee. The chase continues up and over the rooftops until Trinity sees her only chance, 50 feet beyond 50 feet past the spot where her route plunges into a paved abyss.",
+ "what_changes": [
+  {
+   "who": "cops",
+   "axis": "knowledge",
+   "before": "confident they have Trinity cornered at the edge of the roof",
+   "after": "stunned that her impossible leap is real and duplicated by Brown",
+   "evidence": "COP: That's it, we got her now."
+  },
+  {
+   "who": "Agent Brown",
+   "axis": "standing",
+   "before": "merely leading the pursuit over the parapet",
+   "after": "revealed as an unnatural, superhuman threat equal to Trinity",
+   "evidence": "Agent Brown duplicates the move exactly, landing"
+  },
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "pursued with the roof ahead of her",
+   "after": "facing her only chance, 50 feet beyond where her path drops into a paved chasm",
+   "evidence": "Ahead, she sees her only chance, 50"
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Trinity leads Agent Brown and the cops across the rooftops, making an impossible leap that Brown then duplicates.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "rooftops",
+  "the 40-foot gap between buildings",
+  "the paved chasm"
+ ],
+ "uncertain": [
+  "Whether it is day or night; the scene only calls the landscape \"dark.\"",
+  "Whether Trinity clears the final gap, since the scene cuts off at the paved chasm."
+ ],
+ "_mind_pass": "ran: 1 speaker, 204w >= p75 (125w) for this work",
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To put distance and an impossible obstacle between herself and the pursuit — to reach the Wells/Lake phone before the line is fully closed.",
+   "feels": "A trained, coldly managed adrenaline: she has already accepted that the only way across is to commit fully, so there is no hesitation to spend. The calm is not absence of fear but a decision not to let fear touch her hands or her stride.",
+   "shows": "Perfectly calm face, eyes fixed on a point beyond the far roof; clean, gliding movement that makes the impossible look like the easiest available option.",
+   "basis": "Her face 'stays her expression remains completely serene, her gaze fixed on a spot past the neighboring roof.' even as a 40-foot gap opens; she launches without breaking rhythm, and her grace is explicitly contrasted with the cops' wild jumps. sc-005 shows her doing exactly this kind of self-regulation — 'takes a deep breath, centering herself' after Morpheus says 'You have to focus.'",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Agent Brown",
+     "belief": "He is a pursuer she can outrun — another human obstacle the Matrix's rules will slow or stop at the gap.",
+     "wrong_because": "He duplicates her impossible leap exactly, proving he is not bound by the physical limits she is betting her escape on; she does not yet know Agents are programs who can rewrite the rules she is relying on."
+    },
+    {
+     "other": "the cops",
+     "belief": "They are noise and a deadline, not a real threat — their expectation of 'something ugly' confirms they measure the jump by ordinary physics.",
+     "wrong_because": "Their misjudgment is actually correct about everyone except her and Brown; the gap that would kill them is trivial for the two of them, so her contempt is aimed at the only people in the chase who genuinely cannot follow."
+    }
+   ]
+  },
+  {
+   "who": "the cops",
+   "wants": "To close the distance and complete the arrest they believe is already secured.",
+   "feels": "A confident, almost casual certainty that collapses into shock — their mental model of what a fleeing woman can do is being rewritten in real time, and it leaves them genuinely frightened without yet knowing why.",
+   "shows": "'That's it, we got her now,' then slowing in anticipation of 'something ugly'; after the leap, 'Jesus Christ — that's impossible!' and staring slack-jawed.",
+   "basis": "The two cop lines bracket the entire reversal — certainty ('we got her now') to disbelief ('that's impossible') — and the direction notes them slowing and going slack-jawed. sc-005/007 established them as the ordinary, outmatched force already beaten once by Trinity.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "She is cornered — a woman who has run out of roof and will either be caught or die at the edge.",
+     "wrong_because": "The edge is not her limit but her launch point; she clears 40 feet cleanly, so their certainty about the geometry of the chase is exactly backwards."
+    },
+    {
+     "other": "Agent Brown",
+     "belief": "He is simply the officer leading them — one of their own, on their side of the human/physical line.",
+     "wrong_because": "He matches Trinity's impossible leap precisely, revealing he belongs to a category they cannot comprehend; their assumption that he is 'with them' masks that he is as alien to them as the woman they're chasing."
+    }
+   ]
+  },
+  {
+   "who": "Agent Brown",
+   "wants": "To maintain the pursuit and demonstrate, without effort, that Trinity's tricks change nothing about the outcome.",
+   "feels": "Nothing like exertion — an unhurried, impersonal certainty that the physical challenge she treats as desperate is beneath him; his 'grace' is the absence of any stake in the effort.",
+   "shows": "The same 'unnatural grace' throughout, and a precise, economical duplication of her leap — landing, rolling over a shoulder [.] — as if mirroring her were the obvious thing to do.",
+   "basis": "He is described as having 'the same unnatural grace' from the first jump, and he 'duplicates the move exactly,' including the stylized recovery, rather than merely clearing the gap.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "She is prey whose agility only delays recapture, and whose belief in her own physical superiority is a mistake he will shortly correct.",
+     "wrong_because": "He is right that he can match her physically, but wrong that this ends the chase — her desperation is buying something (the exit Morpheus named) that his power over physics cannot intercept, which the scene's 'only chance' framing points toward."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-005: Morpheus naming the traced line and the Wells/Lake phone gives Trinity's running a specific deadline and destination, so her calm is goal-directed, not blind flight.",
+  "sc-006–007: Brown leading the unit into the hall and Smith pinning her in the alley below are what force her upward onto the roof, so this chase is the continuation of a closing trap, not a fresh pursuit.",
+  "sc-005: Trinity 'centering herself' after Morpheus says 'You have to focus' establishes the self-regulation she is now performing at the edge."
+ ],
+ "sets_up": [
+  "ev-001: The 50-foot 'only chance' jump into the paved chasm and Trinity's injured but surviving landing, so this scene's impossible-leap logic escalates to her most desperate bound.",
+  "ev-001: The Agents' realization that ordinary pursuit cannot catch her, which drives them to shift focus to Neo as the next target.",
+  "ev-002 onward: The transfer of narrative pressure from Trinity's escape to Neo, who becomes the Agents' objective once this chase proves a human fugitive can slip them."
+ ],
+ "dramatic_function": "To convert the hotel escape from a human foot-chase into a revelation that the rules of this world are breakable — and that the pursuers break them too — by staging the impossible leap as the moment the cops' (and the audience's) ordinary physics is shattered, while quietly establishing the Agents as something other than men."
+}

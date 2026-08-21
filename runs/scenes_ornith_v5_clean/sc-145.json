@@ -1,0 +1,118 @@
+{
+ "scene_id": "sc-145",
+ "location": "EXECUTIVE OFFICE",
+ "time_of_day": "DAY",
+ "present": [
+  "Agent Smith",
+  "Morpheus",
+  "Agent Brown",
+  "Agent Jones"
+ ],
+ "summary": "Agent Smith stands at the office window philosophizing about the Matrix's design while Morpheus is held captive—Morpheus is bound to a chair, bare-chested, with wires and electrodes attached to his body., wired to monitors. Agent Brown injects Morpheus with serum from a hypodermic needle, causing his life signs to react violently. Smith lectures Morpheus about how humans define reality through suffering, how the machines redesigned the Matrix, and declares the future belongs to them. He then orders Brown to double the dosage, and Agent Jones enters with a warning that there could be a problem.",
+ "what_changes": [
+  {
+   "who": "Morpheus",
+   "axis": "condition",
+   "before": "Held captive but relatively stable, handcuffed and wired to monitors",
+   "after": "Subjected to a doubled injection dosage after his life signs react violently",
+   "evidence": "Agent Brown jams the needle into Morpheus's"
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "standing",
+   "before": "Contemplative, staring out the window at the city",
+   "after": "Asserts dominance by sitting directly in front of Morpheus and declaring machine supremacy",
+   "evidence": "He sits down directly in front of"
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "standing",
+   "before": "Philosophizing about the Matrix redesign as their civilization",
+   "after": "Escalates the interrogation by ordering Double the dosage",
+   "evidence": "Agent Smith looks at Agent Brown. Double the dosage."
+  }
+ ],
+ "event_hint": {
+  "kind": "interrogation",
+  "one_line": "Agent Smith interrogates and tortures the captive Morpheus with injections while monologuing, interrupted by Agent Jones's warning.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "What specific problem Agent Jones is referring to",
+  "Whether Morpheus will survive the doubled dosage",
+  "What information Smith is trying to extract from Morpheus"
+ ],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Agent Smith",
+   "wants": "To assert total dominance by framing Morpheus's torture as the inevitable, even elegant, result of 'evolution' — to make his captive understand and accept that the machines have won before extracting the information he needs.",
+   "feels": "A cold, aesthetic relish in his own superiority. He is not angry; he is savoring the philosophical justification of his cruelty, which lets him experience domination as intellectual clarity rather than violence.",
+   "shows": "Contemplative, almost reverent — marveling at the Matrix's 'beauty' and 'genius,' speaking like a lecturer or a connoisseur. He only reveals the cruelty underneath when he sits directly in front of Morpheus and orders the doubled dose.",
+   "basis": "He opens with aesthetic admiration ('Marveled at its beauty. Its genius'), lectures Morpheus about the redesign of the Matrix as 'the peak of your civilization,' lifts Morpheus's head to force eye contact while declaring 'The future is our time,' then coldly orders 'Double the dosage' without breaking register. The shift from window-gazing to sitting directly in front of Morpheus marks the move from musing to direct assertion of control.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus is a defeated relic ('Like the dinosaur... You had your time') who will break under escalating pain and give up what the Agents want.",
+     "wrong_because": "Morpheus glares at him, forcing down the agony.' — he does not break, and the doubled dosage that follows is the signal that Smith's assumption of imminent capitulation is about to fail, setting up the stalemate that the rescue resolves."
+    },
+    {
+     "other": "Morpheus",
+     "belief": "That human beings define reality only through suffering, and therefore torture is the correct, even natural, instrument for reaching him.",
+     "wrong_because": "This is Smith's ideological blind spot — it never occurs to him that a human could endure suffering for a belief rather than define reality through it, which is exactly what Morpheus is doing."
+    }
+   ]
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To hold back the information the Agents are after — to survive the interrogation without breaking.",
+   "feels": "Agony 'racking his mind' from the serum, a storm of physical reaction (shivering, sweating) that he is fighting to keep from becoming a surrender.",
+   "shows": "Almost nothing — he is bound and silent, and the only thing he permits himself is to 'stare hard' at Smith, converting all his inner turmoil into a fixed, unreadable gaze.",
+   "basis": "The text states outright that he is 'Morpheus glares at him, suppressing the agony tearing at his thoughts.' while he 'stares hard at him' — a concealment named on the page. His silence throughout the monologue, against the violent reaction of the monitors, is the observable residue of that effort.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Agent Smith",
+     "belief": "That Smith's philosophizing is a performance meant to unnerve him, and that his only leverage is to refuse to react.",
+     "wrong_because": ""
+    }
+   ]
+  },
+  {
+   "who": "Agent Brown",
+   "wants": "To carry out Smith's orders precisely and efficiently — to be the instrument that translates Smith's philosophy into physical effect.",
+   "feels": "Nothing legible as personal investment; he operates as an extension of Smith's will, his attention on the machinery rather than on Morpheus as a person.",
+   "shows": "Pure procedure — drawing the serum, jamming the needle, studying the screens as the life signs react. He does not speak.",
+   "basis": "His every action is functional and reactive to Smith's cues ('Agent Brown sucks a serum,' 'jams the needle,' 'Agent Brown examines the monitors as the vital signs spike in response to the shot.'); he only acts when Smith looks at him to order the doubling. There is no observable inner life beyond task-execution, so little can be said.",
+   "grounding": "in_this_scene",
+   "believes_about": []
+  },
+  {
+   "who": "Agent Jones",
+   "wants": "To interrupt the interrogation with a warning that something has gone wrong and requires attention.",
+   "feels": "Alerted and disturbed by information from outside the room — the first crack in the Agents' total control of the situation.",
+   "shows": "Only the interruption itself: he enters and delivers a single clipped line, 'There could be a problem,' without yet specifying what it is.",
+   "basis": "He 'suddenly enters' from sc-144, where he was arriving at the building with Marines to secure Morpheus; his warning line breaks across Smith's monologue and is left deliberately unspecified, which is why Smith's order to double the dosage and Jones's entrance collide. This is the first observable sign that the outside world (the approaching rescue) is intruding on the interrogation.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Agent Smith",
+     "belief": "That Smith's certainty of total control is premature — that a problem is developing which Smith has not yet registered.",
+     "wrong_because": ""
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "Morpheus's capture and the Agents 'breaking into his mind' (ev-024) is the condition this interrogation exploits.",
+  "sc-144, where Jones arrives at the government building with Marines, is the physical basis for his sudden entrance here and the 'problem' he brings.",
+  "The crew's decision on the Nebuchadnezzar (ev-024) to re-enter the Matrix to save Morpheus is what will produce the 'problem' Jones is about to name."
+ ],
+ "sets_up": [
+  "The failure of the doubled dosage to break Morpheus, producing the stalemate that the rescue must resolve (ev-028).",
+  "Jones's unspecified 'problem' escalating into the confirmed breach that forces the Agents to react (ev-025 / ev-027).",
+  "The helicopter assault on the executive office, which returns the scene's location as the site of the rescue (ev-028)."
+ ],
+ "dramatic_function": "To dramatize the villain's ideological core — that domination is natural and inevitable — while tightening the clock: the monologue establishes what Morpheus is refusing to surrender, and Jones's interruption pivots the scene from a closed, controlled torture into a situation that is already slipping out of the Agents' hands."
+}

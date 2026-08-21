@@ -1,0 +1,34 @@
+{
+ "scene_id": "sc-189",
+ "location": "CITY STREET",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Agent Smith"
+ ],
+ "summary": "On a city street in daylight, Neo dives down an alley while Agent Smith, who has been chasing him, starts to gain on him. Neo urgently calls out to Tank over the comms, reporting that he is under serious pursuit.",
+ "what_changes": [
+  {
+   "who": "Agent Smith",
+   "axis": "condition",
+   "before": "chasing Neo but not yet closing the distance",
+   "after": "starting to gain on Neo as Neo dives down an alley",
+   "evidence": "Neo dives down an alley, Agent Smith"
+  },
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "evading pursuit in relative silence",
+   "after": "openly declaring he is under serious pursuit to Tank",
+   "evidence": "NEO\\nHurry, Tank!  I got some serious\\npursuit!"
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Neo flees down an alley as Agent Smith closes in, and calls Tank to be extracted.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [],
+ "minds": [],
+ "_mind_pass": "skipped: 1 speaker(s), 23w — no exchange to read"
+}

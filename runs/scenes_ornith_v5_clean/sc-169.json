@@ -1,0 +1,133 @@
+{
+ "scene_id": "sc-169",
+ "location": "GOVERNMENT BUILDING",
+ "time_of_day": "DAY",
+ "present": [
+  "Trinity",
+  "Agent Smith",
+  "Neo",
+  "Morpheus"
+ ],
+ "summary": "Trinity pulls the helicopter up and away from the government building while Agent Smith stands in the shattered window firing his gun through the rain. The rear hull is hit repeatedly, and smoke and oil pour out as the dying machine forces Trinity to throw it toward the nearest roof. Morpheus and Neo fall but land landing unharmed, tumbling clear as the cable loosens. However, the falling helicopter's rope snaps taut and yanks Neo off his feet, dragging him toward the roof's edge. Trinity lunges for the back door and grabs the rope while Neo hits the rain gutter and levers himself up. Trinity fires her gun, severing the cord, freeing Neo just before the helicopter smashes blades-first into a glass skyscraper and explodes. Trinity, still holding the rope, swings and bounces against a shatterproof window that cracks as flames erupt behind her.",
+ "what_changes": [
+  {
+   "who": "Trinity / Neo / Morpheus",
+   "axis": "safety",
+   "before": "Fleeing in a helicopter that is intact enough to carry them away from the building",
+   "after": "On foot, having survived the crash, but exposed on a rooftop with Trinity dangling from a rope",
+   "evidence": "Trinity pulls the copter up and away"
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Safe on the roof, trying to detach himself after dropping with Morpheus",
+   "after": "Yanked off his feet and dragged at speed toward the edge by the falling helicopter's rope",
+   "evidence": "The coils of slack snap taut, yanking"
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Being dragged helplessly toward the parapet like a skipping stone",
+   "after": "Levered up onto the rain gutter, saving himself from going over the edge",
+   "evidence": "his feet hit the rain gutter and"
+  },
+  {
+   "who": "Trinity",
+   "axis": "agency",
+   "before": "Reaching for the rope while the helicopter still threatens to pull Neo over",
+   "after": "Having fired to cut the cord and free Neo from the doomed helicopter",
+   "evidence": "Trinity fires, severing the cord from the"
+  }
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Trinity crash-lands the getaway helicopter while saving Neo from being dragged over the roof, ending with the pair connected by a rope as the machine explodes.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "helicopter",
+  "Agent Smith's gun",
+  "climbing rope",
+  "rain gutter",
+  "Trinity's gun",
+  "glass skyscraper",
+  "shatterproof window"
+ ],
+ "uncertain": [
+  "Whether Neo and Morpheus are injured after the drop",
+  "Whether Trinity is injured when she bounces against the shatterproof window"
+ ],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To keep the machine airborne long enough to get Morpheus and Neo down safely, and then to keep Neo from being dragged over the roof with the doomed helicopter.",
+   "feels": "A rapid shift from control to raw alarm — the pilot who had a plan is suddenly improvising against a machine dying under fire, and the fear is loudest in that it breaks her composure into \"Shit-shit-no!\" rather than a call.",
+   "shows": "Competence under fire right up to the one cracked syllable, then immediate physical commitment — throwing the helicopter at the nearest roof, lunging for the door, grabbing the rope one-handed while drawing her gun with the other.",
+   "basis": "Her only line is an involuntary \"Shit-shit-no!\" the instant the hull is punched full of holes (\"black smoke and oil spew out like a vein of blood\"), after which she never stops acting: guiding the parabolic fall, lunging for the back door, grabbing the rope, and firing to sever the cord. The single breach of her usual control is the legible interior event.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That he is still the untested, exposed member of the crew she has to protect — the one most likely to be lost.",
+     "wrong_because": "This is the moment he has already begun to disprove it: he rigged the rope to save Morpheus mid-fall (sc-168) and is himself lever- ing up onto the gutter as she reaches for him, yet her lunge treats him as the one in over his head."
+    }
+   ]
+  },
+  {
+   "who": "Neo",
+   "wants": "To survive the fall and then to not be pulled over the edge with the crashing helicopter — and to hold onto Morpheus while he does it.",
+   "feels": "A dazed, almost gallows-humored awareness of how fast things are going wrong (\"Uh-oh --\"), underpinned by the residue of the desperate mid-air rescue he just executed — he has, seconds earlier, committed his own body as an anchor for Morpheus.",
+   "shows": "A clipped, near-comic \"Uh-oh\" at the sound of the dying engine, then pure physical reaction — dropped safely, rolling free, yanked off his feet, skipping toward the parapet, and finally levers himself onto the gutter. He shows no panic, only response.",
+   "basis": "His \"Uh-oh --\" registers the helicopter dying without tipping into panic; he then moves through being dragged \"like a skipping stone\" to self-rescue on the rain gutter. The calm register echoes sc-168, where he hurled himself into open space to catch Morpheus and held on.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Agent Smith",
+     "belief": "That Smith is down for good after the .50 caliber emptied the office (sc-166) — that the immediate threat is the machine and the fall, not the man in the window.",
+     "wrong_because": "Smith is upright in the shattered window firing through the rain as the scene opens; Neo's attention is on the helicopter and the rope, not on the Agent who is very much still shooting at them."
+    },
+    {
+     "other": "Morpheus",
+     "belief": "That he has successfully anchored his mentor and they are both, for the moment, safe on the roof."
+    }
+   ]
+  },
+  {
+   "who": "Agent Smith",
+   "wants": "To stop the escape — to hit the helicopter, its occupants, or anything that ends the flight before it gets clear.",
+   "feels": "The focused, unrelenting fury of an Agent who has been shot down and reconstituted, refusing the loss of his quarry; the scene opens on him already standing and firing, not reacting to the escape but driving the attack that forces it to fail.",
+   "shows": "Only the physical facts: standing in the shattered window, gun aimed \"out through the curtain of rain,\" firing until the hull is \"punched full of holes.\" No face, no wasted motion — the mechanical persistence of the threat.",
+   "basis": "The scene opens with Smith already in the window firing, and the hull takes repeated hits (\"PONK. PONK. PONK\") that kill the machine. This is continuous with sc-166 (where he is shot) and sc-168 (where he screams \"Nooo!\" and sweeps the wall) — the same unyielding pursuit, now expressed as suppressive fire rather than speech.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo is still the soft, human variable — a passenger to be shot out of the sky rather than the one who just engineered Morpheus's rescue mid-fall.",
+     "wrong_because": "The man he is firing at is the same one who, seconds earlier, used his own body as a counterweight to save Morpheus (sc-168) and is now saving himself on the gutter; Smith's fire treats the helicopter's occupants as doomed targets, not as the resourceful pair they've proven to be."
+    }
+   ]
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To get himself and Neo off this falling machine and onto the roof alive.",
+   "feels": "The spent aftermath of the dive — shot in the leg in sc-168, then caught by Neo mid-air — now reduced to whatever is needed to land and roll free; his interior life here is mostly the physical consequence of the wound and the fall.",
+   "shows": "Almost nothing legible: he drops, rolls free as the rope goes slack, and is not shown reacting or deciding. He is being survived rather than acting.",
+   "basis": "The text gives him only \"land without a scratch, tumbling loose once the line goes limp.\" He has no line and no described reaction in this scene, and the preceding scene left him shot in the leg, which accounts for his passivity here.",
+   "grounding": "in_this_scene",
+   "believes_about": []
+  }
+ ],
+ "connects_back": [
+  "Agent Smith firing from the shattered window continues directly from sc-166, where Neo's .50 caliber shot him down, and sc-168, where he swept the wall trying to kill Morpheus.",
+  "The climbing rope and harnesses Neo attached in sc-166 and sc-168 are the exact mechanism that now yanks Neo toward the edge and connects him to Trinity.",
+  "The helicopter dying under fire is the consequence of the firefight Neo started from the mounted .50 in sc-166.",
+  "Morpheus's wounded leg (sc-168) underlies his silent, passive landing here."
+ ],
+ "sets_up": [
+  "ev-030: The three survivors reach a subway station phone booth as an exit, where Trinity enters the booth and begins to confess her love to Neo before Agent Smith ambushes them.",
+  "ev-030: Trinity's established role as Neo's protector and her physical commitment to saving him here set the emotional ground for her confession at the phone booth.",
+  "ev-029: Having survived the crash exposed on the rooftop, the group must now regroup and arrange extraction via the Nebuchadnezzar, with the Agents having completed a trace on their position."
+ ],
+ "dramatic_function": "To convert the indoor firefight into a public, kinetic escape and to nearly cost the crew Neo at the last second — the crash sequence tests the fledgling protector (Neo) and reasserts Trinity's fierce investment in him, while keeping the mechanical menace of the Agents present through Smith's fire, so the survivors land exposed and running rather than safely clear."
+}

@@ -1,0 +1,120 @@
+{
+ "scene_id": "sc-067",
+ "location": "COCKPIT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Morpheus",
+  "Dozer",
+  "Neo",
+  "Trinity"
+ ],
+ "summary": "Morpheus enters the cockpit and asks Dozer whether Zion sent the warning; Dozer says no, it was another ship (Big Brother) running a parallel pipeline. As Morpheus watches the decayed sewer main pass and Neo and Trinity squeeze in behind him, an alarm starts to blare. Dozer reports a Squiddy sweeping in fast; Morpheus orders him to set the ship down in the sewer main. Neo asks what a Squiddy is; Trinity explains it's a Sentinel, a killing machine, and Dozer adds 'Search and destroy.' The ship rocks as Dozer squeezes it into a tiny supply line.",
+ "what_changes": [
+  {
+   "who": "Morpheus / crew",
+   "axis": "safety",
+   "before": "The ship is moving through the sewer main after learning another crew is running a parallel pipeline.",
+   "after": "A Sentinel is sweeping in and Morpheus orders Dozer to set the ship down to hide.",
+   "evidence": "An ALARM BEGINS TO SOUND. DOZER Shit"
+  },
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Neo does not know what a 'Squiddy' is.",
+   "after": "Neo learns it is a Sentinel, a killing machine built to search and destroy.",
+   "evidence": "NEO Squiddy? TRINITY A Sentinel. It's a"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid / evasion",
+  "one_line": "A Sentinel sweeps in on the Nebuchadnezzar, forcing the crew to dive into a supply line to hide.",
+  "continues_from_earlier": false
+ },
+ "objects_that_matter": [
+  "the copilot's chair",
+  "the parallel pipeline (Big Brother's ship)",
+  "the ALARM",
+  "the Squiddy / Sentinel",
+  "the tiny supply line"
+ ],
+ "uncertain": [],
+ "_mind_pass": "ran: 4 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Morpheus",
+   "wants": "To confirm whether the warning came from Zion, then immediately to keep his ship and the unproven One alive when the Sentinel appears.",
+   "feels": "A commander's mind snapping instantly from inquiry to survival mode — the alarm is not a surprise that rattles him but a cue that he has already been waiting for; his calm is a discipline, not an absence of fear.",
+   "shows": "Barely any reaction to the alarm — he simply issues the order 'Set it down in there' with no rise in volume and no explanation, treating evasion as routine.",
+   "basis": "He asks a precise intelligence question ('Did Zion send the warning?'), and when the alarm sounds he gives a clipped, unhesitating order rather than reacting with alarm. This matches his role throughout ev-016 as the one who receives the 'call from Tank about trouble' and who has repeatedly survived by concealing themselves and fleeing.'",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "the crew (Dozer, Trinity)",
+     "belief": "That they will execute evasion without needing to be told why — the order alone is sufficient.",
+     "wrong_because": "It holds for Dozer and Trinity, but not for Neo, who is still ignorant enough to ask 'Squiddy?' — a gap Morpheus does not address here because survival leaves no time to teach."
+    },
+    {
+     "other": "Neo",
+     "belief": "That Neo can be brought up to speed on real threats later, after the immediate danger passes.",
+     "wrong_because": "Inferred — the training in sc-065 was about Agents, not Sentinels, and Morpheus's silence on the Squiddy leaves Neo dangerously uninformed at the exact moment he needs context."
+    }
+   ]
+  },
+  {
+   "who": "Dozer",
+   "wants": "To keep flying the ship accurately while flagging the danger to the captain fast enough to be acted on.",
+   "feels": "Heightened and slightly rattled — the 'Shit' is a genuine reflex, not performance; he is the first to register the threat and the one whose hands are on the ship, so his fear and his job are the same thing.",
+   "shows": "A burst of alarm ('Shit, Squiddy's sweeping in quick') immediately followed by obedient execution — he lets the fear out in one word and then clamps down to squeeze the ship into a line too small for it.",
+   "basis": "He swears at the contact before Morpheus has even finished processing it, then complies instantly with 'Set it down in there,' physically rocking the ship into the tiny supply line. His role as pilot/monitor of the external feed puts him first on the alarm.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That a newcomer squeezing into the cockpit is simply another crew member who knows what a Squiddy is.",
+     "wrong_because": "Neo's 'Squiddy?' reveals he doesn't; Dozer's terse 'Search and destroy' is the first real briefing Neo has had, delivered under pressure rather than by choice."
+    }
+   ]
+  },
+  {
+   "who": "Neo",
+   "wants": "To get oriented — to understand what is happening in this world he has just entered and what the sudden alarm means.",
+   "feels": "Overwhelmed and behind: he has just been told in sc-065 that Agents are the enemy, and now a completely new threat (the Sentinel) arrives with an alarm, a swear, and jargon he doesn't know; he is physically out of place, squeezing in last.",
+   "shows": "A single confused question — 'Squiddy?' — the only verbal contribution he makes, and even that is just a repetition of Dozer's word, exposing how little he actually grasps.",
+   "basis": "He has only just been unplugged and trained (sc-065 covered Agents, not Sentinels). His question is the honest reaction of someone who lacks the vocabulary of the real war, and the scene's own 'knowledge' change axis confirms he learns here what a Squiddy is.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus, who just taught him about Agents with total authority, is in control of every threat.",
+     "wrong_because": "Inferred — Morpheus is composed, but his composure here is evasion, not dominance; the Sentinel is precisely the kind of threat they survive by hiding from, and Morpheus offers no reassurance because there is none to give."
+    }
+   ]
+  },
+  {
+   "who": "Trinity",
+   "wants": "To get Neo informed quickly and correctly, filling the gap the men leave under pressure.",
+   "feels": "Protective and alert — she is the one who notices that Neo doesn't understand and supplies the definition before Dozer's terse add-on, showing she is watching both the threat and the newcomer at once.",
+   "shows": "A calm, precise explanation ('A Sentinel. It's a killing [.]') with no visible fear, contrasting Dozer's 'Shit.'",
+   "basis": "She answers Neo's question directly and completely rather than dismissing it, consistent with sc-064 where she is the one defending and explaining Morpheus's faith to Cypher — she is the crew's interpreter for outsiders.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo needs to be brought up to speed on real threats immediately, even mid-crisis.",
+     "wrong_because": "Not wrong as such — but it shows she already treats him as someone worth protecting and educating, ahead of the crew's general skepticism (cf. Cypher in sc-064)."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-065's training established Agents as the known enemy and Morpheus's doctrine of 'hiding from them, running from them' — the Sentinel evasion here is that doctrine in practice, and Neo's ignorance of Sentinels shows the training was incomplete.",
+  "sc-066 (the ship blistering through the sewer main) places the Nebuchadnezzar exactly where this evasion occurs.",
+  "ev-016's 'call from Tank about trouble' is the off-page trigger that pulled Morpheus from the training program into this real-world emergency."
+ ],
+ "sets_up": [
+  "ev-017 (Hiding from the Sentinel): the dive into the supply line, the power-down, the armed E.M.P., and the dropping temperature all follow directly from Morpheus's order here.",
+  "ev-018 (Cypher's Warning and Betrayal): the revelation that five previous candidates died reinforces how exposed and out-of-his-depth Neo is, which this scene has just made visceral.",
+  "The crew's protective/educational stance toward Neo (Trinity's explanation) sets up the tension with Cypher's resentment that will surface in the coming events."
+ ],
+ "dramatic_function": "To puncture the classroom safety of the training program with a real, immediate threat, converting Morpheus's abstract lesson about hiding into lived danger while exposing how much of the real war Neo still doesn't understand — and quietly establishing who on the crew is inclined to protect him."
+}

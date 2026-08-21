@@ -1,0 +1,38 @@
+{
+ "scene_id": "sc-131",
+ "location": "TV REPAIR SHOP",
+ "time_of_day": "DAY",
+ "present": [
+  "Cypher"
+ ],
+ "summary": "The interior of the shop is shown: dead machines, eviscerated and shrouded with dust, lie metal shelves holding the machines like corpses in a morgue. The A sheet of plywood shielding a narrow window is torn away, allowing Cypher to squeeze through. Farther back, an antique telephone, silent for years, starts to ring.",
+ "what_changes": [
+  {
+   "who": "Cypher",
+   "axis": "safety",
+   "before": "Outside the boarded-up window (having stepped onto a dumpster in the alley)",
+   "after": "Inside the shop, having entered through the window",
+   "evidence": "Plywood covering a small window is ripped"
+  },
+  {
+   "who": "A PHONE",
+   "axis": "condition",
+   "before": "A phone that hasn't made a sound in years",
+   "after": "Begins to RING",
+   "evidence": "a PHONE that has not rung in"
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Cypher enters the TV repair shop to make a call, continuing the group's escape to find an exit.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "Dead machines on metal shelves",
+  "Plywood covering a small window",
+  "A PHONE in the back room"
+ ],
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 0 speaker(s), 50w — no exchange to read"
+}

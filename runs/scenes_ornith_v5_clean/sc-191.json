@@ -1,0 +1,31 @@
+{
+ "scene_id": "sc-191",
+ "location": "ALLEY",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Agent Smith",
+  "Neo",
+  "Trinity"
+ ],
+ "summary": "In the alley, Agent Smith stops and takes aim at Neo, who is fleeing. Neo speaks to Trinity over a link, saying \"I'm trying, Trinity. I'm trying.\" A bullet then shatters the image of Neo reflected in a truck's rearview mirror, showing Smith has opened fire and is close behind.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "Being pursued down the alley with Smith gaining.",
+   "after": "Smith has stopped, taken aim, and fired, the bullet shattering Neo's reflected image — the chase has turned into active shooting at close range.",
+   "evidence": "Agent Smith stops and takes aim."
+  }
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Agent Smith fires at Neo as Neo tries to reach his exit.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether the bullet hits Neo or only the mirror.",
+  "How far ahead of Smith Neo is."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 1 speaker(s), 26w — no exchange to read"
+}

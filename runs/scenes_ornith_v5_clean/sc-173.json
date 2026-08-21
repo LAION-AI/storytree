@@ -1,0 +1,111 @@
+{
+ "scene_id": "sc-173",
+ "location": "ROOFTOP",
+ "time_of_day": "DAY",
+ "present": [
+  "AGENT SMITH",
+  "AGENT BROWN",
+  "AGENT JONES"
+ ],
+ "summary": "The three Agents charge out through the roof access door as it slams open, but Neo, Trinity and Morpheus have already vanished. Brown reports that the trace was completed and Jones says they have their position. Brown adds that Sentinels are standing by, and Jones orders the strike. Smith, unable to stand listening to them, moves to the edge of the building and looks out at the surrounding city, saying the targets are not out yet.",
+ "what_changes": [
+  {
+   "who": "The three Agents",
+   "axis": "knowledge",
+   "before": "They rush out to find the rooftop empty, having apparently lost their targets.",
+   "after": "They know exactly where Neo, Trinity and Morpheus are, because the trace was completed.",
+   "evidence": "\"The trace was completed.\" / \"We have their position.\""
+  },
+  {
+   "who": "The Sentinels",
+   "axis": "safety",
+   "before": "The targets' position is known but no attack has been launched.",
+   "after": "A Sentinel strike has been ordered against them.",
+   "evidence": "\"Sentinels are standing by.\" / \"Order the strike.\""
+  },
+  {
+   "who": "AGENT SMITH",
+   "axis": "allegiance",
+   "before": "He is part of the unit acting together on the rooftop.",
+   "after": "He withdraws from the others' exchange, moving to the edge, apart and dissenting.",
+   "evidence": "Agent Smith can't stand listening to them"
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "The Agents locate the escaped crew and order a Sentinel strike, though Smith doubts they have truly gotten clear."
+ },
+ "uncertain": [
+  "Whether the ordered Sentinel strike succeeds, since Smith says \"They're not out yet.\"",
+  "Whether Smith's apartness amounts to open opposition or merely private impatience."
+ ],
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "AGENT SMITH",
+   "wants": "To refuse the satisfaction of a clean, procedural victory — to assert that the hunt is not over and that the prey has not truly escaped.",
+   "feels": "A corrosive fury at having been eluded, mixed with a deeper, almost aesthetic disgust at his colleagues' bureaucratic contentment. The failure is personal; Trinity and the others slipping away is an insult to him specifically, and the casual efficiency of 'order the strike' trivializes what he experiences as a wound.",
+   "shows": "A single curse ('Damnit!'), then physical withdrawal — turning his back, moving to the edge, looking out over the city — and the flat, dissenting correction: 'They're not out yet.' He lets the anger show but withdraws the rest.",
+   "basis": "The text states outright that 'Agent Smith can't stand listening to them,' which is a stated concealment — he is suppressing a reaction to Brown and Jones's exchange. His movement to the edge, apart from the unit, and his contradictory line against the completed trace support a reading of private dissent and obsession.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "AGENT BROWN",
+     "belief": "That Brown is a complacent functionary, satisfied with a completed trace and a standing-by force, unable to feel the quarry has genuinely escaped.",
+     "wrong_because": "Brown's report is accurate and procedural, not complacent; the trace genuinely was completed. Smith's contempt is for the manner of the victory, not its reality, so he misreads competence as stupidity."
+    },
+    {
+     "other": "AGENT JONES",
+     "belief": "That Jones's order to strike is a hollow, premature gesture that misunderstands the situation — that the targets are still reachable and the matter is not settled.",
+     "wrong_because": "Jones is acting correctly on confirmed data; Smith's certainty that 'they're not out yet' is an intuition born of obsession, not superior information, and may be wrong about where the crew actually is."
+    },
+    {
+     "other": "NEO",
+     "belief": "That Neo personally humiliated him by escaping and that this particular quarry is his to finish — the chase is unfinished business between them.",
+     "wrong_because": "The escape was a crew operation (Morpheus and Trinity unplugged, an exit prepared by Tank); Smith personalizes a collective evasion, which is the seed of the monomaniacal fixation that will consume him at the subway."
+    }
+   ]
+  },
+  {
+   "who": "AGENT JONES",
+   "wants": "To convert the completed trace into an immediate, decisive action — close the operation out with a Sentinel strike.",
+   "feels": "Nothing that would register as feeling; a pure operational drive to act on confirmed data. Where Smith is agitated, Jones is the unit's executing will — the trace is complete, therefore the strike follows, no residue.",
+   "shows": "Two terse declaratives — 'We have their position' and 'Order the strike.' He shows only the decision, no reaction to Smith's dissent.",
+   "basis": "His lines are purely instrumental and sequential: he confirms the position Brown reports and immediately commands the strike. He does not react to Smith's 'Damnit!' or his withdrawal, treating Smith's dissent as irrelevant to the operation.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "AGENT SMITH",
+     "belief": "That Smith's dissent ('They're not out yet') is noise — an irrelevant objection that does not alter a completed, data-driven action.",
+     "wrong_because": "Smith's intuition, however irrationally derived, points at a truth Jones's procedural certainty cannot see: the crew may not be as trapped as the trace suggests, and Smith's obsession will repeatedly prove more dangerous to the crew than Jones's correctness."
+    }
+   ]
+  },
+  {
+   "who": "AGENT BROWN",
+   "wants": "To relay the status that enables Jones's strike — the trace is done, the force is ready — and keep the unit moving as one.",
+   "feels": "The satisfaction of a system functioning as designed: a trace completed, Sentinels standing by, a target located. He is the unit's smooth continuity, and Smith's rupture is, to him, an anomaly he does not engage.",
+   "shows": "Two status reports delivered flatly — 'The trace was completed' and 'Sentinels are standing by.' He shows no reaction to Smith's curse or departure.",
+   "basis": "Brown supplies the two factual premises (trace complete, Sentinels ready) that Jones turns into a command. He neither echoes Smith's 'Damnit!' nor acknowledges Smith's move to the edge, indicating he registers no disruption.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "AGENT SMITH",
+     "belief": "That the operation is proceeding normally and that Smith remains, functionally, part of the reporting unit.",
+     "wrong_because": "Smith has already, in feeling, withdrawn from the unit — the 'can't stand listening to them' rupture means Brown's assumption of cohesion is false, and this is the first visible crack in Agent solidarity."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-172: Morpheus's call to Tank for an exit and Tank's ready 'Subway, State and Balbo' line is the escape the Agents have just failed to prevent — the trace they completed is on a crew that is already moving to a prepared exit.",
+  "sc-171: The rooftop embrace of Neo and Trinity is the moment the crew regrouped before vanishing, which is why the roof is empty when the Agents charge out.",
+  "ev-030: Smith's 'Damnit!' and his fixation carry over from the subway ambush where Trinity slipped through his fingers and he shot into an empty booth — the escape he cannot stomach is a repeat of that humiliation."
+ ],
+ "sets_up": [
+  "ev-031: Smith's insistence that 'they're not out yet' and his refusal to accept the crew's escape channel his rage into the personal pursuit of Neo at the subway — the showdown is the acting-out of the dissent begun here.",
+  "ev-033: The Sentinel strike ordered here either fails to catch the crew or drives them into the open, producing the chase through the city where Smith pursues Neo.",
+  "The fracture in Agent unity — Smith apart from Brown and Jones — is the condition that lets Smith operate as a lone, obsessive hunter rather than a coordinated unit in the events to come."
+ ],
+ "dramatic_function": "The scene converts a seeming failure (an empty rooftop) into a reversal of fortune for the Agents while, in the same breath, isolating Smith as something other than his unit — it plants the seed of his personal, almost emotional vendetta against Neo that will drive the story's central confrontation."
+}

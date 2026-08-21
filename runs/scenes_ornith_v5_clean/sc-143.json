@@ -1,0 +1,86 @@
+{
+ "scene_id": "sc-143",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "TRINITY",
+  "TANK"
+ ],
+ "summary": "Trinity's eyes snap open and she feels relief at seeing the ship. As Tank unplugs her, she notices his charred wounds and tells him, 'Tank, you're hurt.' Tank replies, 'I'll be all right.' She then asks, 'Dozer?' His her expression hardens, and she embraces him.",
+ "what_changes": [
+  {
+   "who": "TRINITY",
+   "axis": "condition",
+   "before": "Unconscious, jacked into the Matrix aboard the ship.",
+   "after": "Awake, unplugged, and aware of the ship's return.",
+   "evidence": "Trinity's eyes snap open, a sense of"
+  },
+  {
+   "who": "TRINITY",
+   "axis": "knowledge",
+   "before": "Unaware of Dozer's fate.",
+   "after": "Infers Dozer is dead from Tank's reaction.",
+   "evidence": "TRINITY Dozer? Tank's face tightens and she"
+  }
+ ],
+ "event_hint": {
+  "kind": "a wake",
+  "one_line": "In the aftermath of Cypher's betrayal, Trinity wakes to find Tank wounded and learns Dozer is dead.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "TRINITY",
+   "wants": "To take the measure of what her unconsciousness cost the crew — to find out who is alive and who is gone, and to anchor herself back in reality.",
+   "feels": "A surge of relief at waking safe on the ship, immediately overtaken by dawning horror as she registers Tank's injuries and then the absence she can't yet name. The relief and the grief collide.",
+   "shows": "She keeps her voice low and controlled — 'Tank, you're hurt' is an observation, not panic. She lets her body do what her words won't: she opens her arms to him.",
+   "basis": "The scene opens on her relief at seeing the ship, then her eyes go straight to Tank's charred wounds. Her question 'Dozer?' is a single word, and when his face tightens she doesn't ask anything further — she moves in to hold him. The stated change (before: unaware of Dozer's fate; after: infers Dozer is dead from Tank's reaction) confirms she reads his face and understands.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "TANK",
+     "belief": "That his tightened face is answer enough — that she can trust his silence to tell her the worst without him having to say it.",
+     "wrong_because": ""
+    },
+    {
+     "other": "TANK",
+     "belief": "That he is holding himself together ('I'll be all right').",
+     "wrong_because": "He is charred and freshly traumatized by watching Cypher murder two crewmates; his reassurance is for her benefit, not a true account of his condition."
+    },
+    {
+     "other": "APOC",
+     "belief": "From sc-140/141 she last knew the crew as alive and whole; she does not yet know Apoc and Switch were killed by Cypher before Tank killed him.",
+     "wrong_because": "The full scale of the loss is still larger than what she has inferred; she has only named Dozer's death."
+    }
+   ]
+  },
+  {
+   "who": "TANK",
+   "wants": "To get Trinity back safely and to keep the worst of what happened from having to be spoken aloud — by either of them.",
+   "feels": "Physical pain from his burns layered over shock and grief — he was conscious through Cypher's betrayal, watched Apoc and Switch die, was himself nearly killed, and only just managed to kill Cypher. He is raw.",
+   "shows": "He minimizes his own injury ('I'll be all right') and, when she asks about Dozer, says nothing — his face tightens and that is his whole answer. He lets her hold him rather than trying to explain.",
+   "basis": "He was the operator left alive after Cypher's attack (event ev-024) and is described as charred. His clipped reassurance and his wordless, tightening face in response to 'Dozer?' do the emotional work the dialogue refuses to do. Trinity has to complete the inference for him.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "TRINITY",
+     "belief": "That she will understand his silence and not force him to say Dozer is dead out loud — that sparing her the words is a kindness he can still offer.",
+     "wrong_because": ""
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-140/141: Trinity was unconscious while Cypher murdered Apoc and Switch and betrayed Morpheus; she wakes into the aftermath with none of it witnessed.",
+  "ev-024: Tank survived and killed Cypher but was charred in the process; Dozer was killed.",
+  "The crew's last intact state before the betrayal is the baseline against which this scene measures the loss."
+ ],
+ "sets_up": [
+  "ev-024/ev-026: Trinity's re-entry into the Matrix to rescue Morpheus now carries the fresh weight of having just lost three crewmates — the stakes of losing Morpheus too are immediate.",
+  "The crew is reduced to Tank, Trinity, and Neo, which is what makes the rescue debate and the two-person assault on the government building possible.",
+  "The unspoken grief between Trinity and Tank becomes part of the resolve that drives the rescue rather than mourning."
+ ],
+ "dramatic_function": "This is the quiet intake of breath between the betrayal and the rescue — it converts an off-screen massacre into felt loss by letting Trinity, and the audience, finally register what Cypher did, so the coming rescue runs on grief and urgency rather than abstract duty."
+}

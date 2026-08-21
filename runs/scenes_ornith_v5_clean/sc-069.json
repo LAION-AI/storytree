@@ -1,0 +1,33 @@
+{
+ "scene_id": "sc-069",
+ "location": "COCKPIT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "MORPHEUS",
+  "TANK"
+ ],
+ "summary": "In the cockpit, Morpheus clicks the intercom and hails Tank, asking how things are going. The scene contains only this action and line of dialogue, with Tank addressed but not shown responding within the text given.",
+ "what_changes": [
+  {
+   "who": "MORPHEUS",
+   "axis": "knowledge",
+   "before": "Morpheus has not yet made contact to check on status.",
+   "after": "Morpheus has opened the intercom channel and posed the question to Tank.",
+   "evidence": "Morpheus clicks the intercom. MORPHEUS How we"
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Morpheus checks in with Tank over the intercom as the ship evades a Sentinel.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "intercom"
+ ],
+ "uncertain": [
+  "Whether Tank answers, since no reply is shown in the text.",
+  "Whether TANK is physically present in the cockpit or elsewhere on the ship."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 1 speaker(s), 11w — no exchange to read"
+}

@@ -1,0 +1,84 @@
+{
+ "scene_id": "sc-209",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Neo",
+  "Trinity",
+  "Morpheus",
+  "everyone"
+ ],
+ "summary": "On the INT. MAIN DECK: Neo convulses, and the sound of the heart monitors flatlining cuts through the air. the life monitors snap flatline, signalling his death. Trinity screams and Morpheus stumbles back in disbelief, repeating that it can't be. At that moment, lasers sear through the laser beams rip the deck apart as sentinels cut through the hull, turning their grief into immediate physical danger.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Alive in the chair on the main deck",
+   "after": "His body jerks and the life monitors snap flatline — he has died",
+   "evidence": "Neo's body jerks, and everyone hears it"
+  },
+  {
+   "who": "Morpheus",
+   "axis": "condition",
+   "before": "Steady, watching Neo work",
+   "after": "Stumbles back in disbelief, refusing to accept Neo's death",
+   "evidence": "Morpheus stumbles back in disbelief. MORPHEUS No"
+  },
+  {
+   "who": "everyone on the main deck",
+   "axis": "safety",
+   "before": "Grieving Neo's death",
+   "after": "Under attack as lasers sear through the deck and sentinels slice open the hull",
+   "evidence": "Lasers suddenly sear through the main deck"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "As Neo dies in the chair, the machines breach the ship's hull and attack the main deck.",
+  "continues_from_earlier": true
+ },
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To pull Neo back from death — to refuse the flatline as final, even though she has no means to do it yet.",
+   "feels": "The Oracle's prophecy has just been confirmed in the worst possible way: she loves him and has lost him at the exact moment the prophecy told her she would fall in love. Grief collides with the terror of the hull breaching, so there is no room to process either — only the raw scream.",
+   "shows": "A scream — total, involuntary. Nothing held back, because there is no one to hold it back from; she is not performing grief, she is being consumed by it.",
+   "basis": "The facts state 'Trinity screams' immediately on the flatline. ev-034 establishes she is the one holding his body and confessing love tied to the Oracle's words. Her scream is the only vocal outlet before the lasers cut her off.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "He is gone — this is real death, not a jacking-out.",
+     "wrong_because": "Within moments (ev-034) her own act of holding and confessing to his body will coincide with his revival; she believes this is an ending when it is the threshold of his becoming the One."
+    }
+   ]
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To deny the evidence — to keep the prophecy of the One alive by refusing to accept that Neo has died.",
+   "feels": "His faith has just been struck at its most vulnerable point: the man he steered, tested, and believed in is dead, and the repetition of 'It can't be' is less surprise than a man arguing reality out of existence because accepting it means his entire conviction was misplaced.",
+   "shows": "Stumbling back in disbelief, repeating 'No, it can't be. It can't be.' — a leader's composure cracking into something almost childlike in its refusal.",
+   "basis": "The facts give his exact line and the physical recoil. Across the film Morpheus has staked his identity on Neo being the One; a flatline is an existential threat to that, so denial is the only defense available in the instant before the attack.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo has failed / died like any ordinary man, disproving the prophecy.",
+     "wrong_because": "He reads the flatline as disproof of the One, when it is actually the necessary prelude to Neo's resurrection and confirmation as the One (ev-034)."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-207: the sentinels burning through the outer hull, which is why death and danger arrive simultaneously here.",
+  "sc-208: Neo's inability to move or think before being shot by Agent Smith — the physical cause of the death the crew now registers.",
+  "ev-034: Trinity's established role as the one who holds Neo and whose love-confession precedes his revival."
+ ],
+ "sets_up": [
+  "ev-034: Trinity moving to Neo's body to confess and kiss him — her scream here is the grief that act will complete and reverse.",
+  "ev-034: Morpheus witnessing the monitors spike back to life — his denial here makes that confirmation the story's payoff.",
+  "ev-035: the hull breach forcing Morpheus to trigger the EMP and the crew to abandon ship — the lasers searing the deck here are the opening of that escape."
+ ],
+ "dramatic_function": "It converts the crew's private grief over Neo's death into immediate collective physical peril, and — by freezing Morpheus in denial and Trinity in raw loss — it sets the emotional stakes at their lowest possible point so that the resurrection to follow lands as both a personal and prophetic reversal."
+}

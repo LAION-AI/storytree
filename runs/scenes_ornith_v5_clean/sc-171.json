@@ -1,0 +1,114 @@
+{
+ "scene_id": "sc-171",
+ "location": "ROOFTOP",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Trinity",
+  "MORPHEUS"
+ ],
+ "summary": "On the rooftop in daylight, Neo pulls Trinity up into his arms and, both shaking, they hold each other. Morpheus asks Trinity whether she believes it now, and she responds only by looking at Neo. Neo then tries to raise the Oracle with Morpheus, saying 'she told me --', but Morpheus cuts him off, insisting the Oracle 'She gave you precisely the information you required. Nothing more.,' and tells Neo that 'sooner or later' he will realize 'the distinction between understanding a route and traversing it.'",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "trust",
+   "before": "Her belief in Neo as the One is in question, as Morpheus presses 'Do you believe it now, Trinity?'",
+   "after": "She answers without words, her faith shown rather than stated: 'Trinity looks at Neo.'",
+   "evidence": "Trinity looks at Neo. NEO Morpheus, the"
+  },
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "He is still troubled by what the Oracle said and wants to explain it: 'Morpheus, the Oracle... she told me --'",
+   "after": "Morpheus reframes it as lived experience, telling him 'the distinction between understanding a route and actually traversing it.'",
+   "evidence": "Sooner or later, Neo, you're going to"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "In the immediate aftermath of the rooftop rescue, the three regroup and Morpheus addresses Trinity's belief and Neo's doubt.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether Trinity actually now believes Neo is the One, since she only 'looks at Neo' and says nothing.",
+  "Exactly what the Oracle told Neo, since he is cut off before finishing 'she told me --'."
+ ],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To transmit the urgent, destabilizing truth the Oracle told him — that he is not the One — before it settles into a lie by default.",
+   "feels": "Shaking from the near-death physics of the rescue, but more fundamentally shaken in his identity: he has just performed a genuinely impossible act (catching Morpheus, surviving the fall) that contradicts the Oracle's verdict, and he cannot reconcile the two. He needs Morpheus to hear the real report.",
+   "shows": "Physical closeness to Trinity, then a rush of words toward Morpheus — 'Morpheus, the Oracle... she told me --' — an attempt at confession that gets cut off. He lets the embrace show, and reaches for the explanation, but is not given the floor to complete it.",
+   "basis": "He initiates 'Morpheus, the Oracle... she told me --' immediately after the rescue, still in the physical aftermath ('both shaking'). The dash shows he is interrupted before completing the thought. The earlier sc-170 Tank cry 'He's the One!' frames the belief Neo is about to contradict.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus needs to hear what the Oracle actually said, and that honesty with his mentor matters more than the comfort of the prophecy.",
+     "wrong_because": "Morpheus has already decided what the Oracle's words mean ('she gave you precisely the words you wanted to believe'), so Neo's correction cannot land — Morpheus will absorb any report as confirmation, not contradiction."
+    },
+    {
+     "other": "Trinity",
+     "belief": "That after what he just did — catching Morpheus mid-fall — Trinity's faith in him is now earned rather than merely professed.",
+     "wrong_because": "He cannot know whether her look is belief in him as the One or simply relief that he is alive; the scene leaves the content of her faith genuinely unresolved."
+    }
+   ]
+  },
+  {
+   "who": "Trinity",
+   "wants": "To answer Morpheus's question without saying aloud what she cannot yet fully articulate about what she believes.",
+   "feels": "Freshly terrified — she just watched Neo nearly die twice (the fall, the helicopter) and physically hauled him back from the edge — so her emotional state is relief and attachment, not theological certainty. The question 'Do you believe it now?' lands on a heart that has just been through physical terror, not doctrinal resolution.",
+   "shows": "She says nothing. She looks at Neo — letting the look carry the whole answer, which reads as devotion but is deliberately ambiguous about whether it is belief in 'the One' or belief in the man.",
+   "basis": "Morpheus asks 'Do you believe it now, Trinity?' and 'Trinity looks at Neo' is her only response — a stated, deliberate silence. This is the concealment handed outright on the page: the text refuses to give her a verbal answer, so any certainty about her belief is inference.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That the man she is holding is more than the doubt he carries about himself.",
+     "wrong_because": "This may be right about him (he is evolving) but she cannot yet know it; her certainty outruns the evidence either of them possesses, which is exactly the tension Morpheus is probing."
+    }
+   ]
+  },
+  {
+   "who": "MORPHEUS",
+   "wants": "To keep the prophecy intact — to convert both Neo's report and Trinity's silence back into confirmation of the One, protecting the belief that has structured his entire life.",
+   "feels": "Triumphant and vindicated after surviving the rescue he did not expect to survive; he reads the impossible outcome as proof. But underneath is a man who cannot afford to hear a contradiction, so he preempts it — cutting Neo off is not dismissal of a student but self-protection of a believer.",
+   "shows": "Calm, teacherly authority. He reframes the Oracle's words as purposeful ('exactly what you needed to hear') and delivers the aphorism about 'knowing a path and walking a path' — offering wisdom where Neo offered a report, thereby controlling the meaning of everything that just happened.",
+   "basis": "He cuts Neo off before 'she told me --' can be completed, then asserts what the Oracle meant better than Neo can. His 'just like I did' reveals this is his own lived conviction, forged earlier, now being handed down. His question to Trinity ('Do you believe it now?') shows he is actively consolidating belief in the aftermath.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo's doubt is merely the gap between intellectual knowing and lived experience ('knowing a path and walking a path'), which time and action will close.",
+     "wrong_because": "Neo's problem is not experiential — he has just had the experience (the impossible rescue) — it is that the Oracle explicitly told him he is NOT the One, a factual contradiction no amount of 'walking' resolves. Morpheus misdiagnoses a prophecy-failure as a faith-journey."
+    },
+    {
+     "other": "Trinity",
+     "belief": "That her silent look at Neo is an affirmation of belief in him as the One.",
+     "wrong_because": "Her look may be love or relief at his survival rather than doctrinal conviction; Morpheus will read it as the answer he wants regardless of what it actually is."
+    }
+   ]
+  },
+  {
+   "who": "Neo",
+   "wants": "",
+   "feels": "",
+   "shows": "",
+   "basis": "Placeholder second pass not required; Neo is fully read above.",
+   "grounding": "extrapolated",
+   "believes_about": []
+  }
+ ],
+ "connects_back": [
+  "The rooftop rescue (sc-168/sc-169): Neo catching Morpheus mid-fall and surviving the helicopter drag is the 'impossible' act that fuels Morpheus's vindication and that Neo himself cannot reconcile with the Oracle's verdict.",
+  "Tank's 'He's the One!' (sc-170): the crew's certainty now frames the whole scene, making Neo's desire to correct the record dramatically urgent and doomed.",
+  "Neo's earlier session with the Oracle (referenced in the event shape): the content he tries and fails to report — that he is not the One — is what Morpheus refuses to hear."
+ ],
+ "sets_up": [
+  "Neo's inability to make his doubt heard (Morpheus cuts him off) sets up the persistence of his self-doubt into the coming confrontation with Agent Smith (ev-032/ev-033), where he must resolve it alone rather than through the crew's belief.",
+  "Morpheus's framing of 'knowing vs. walking a path' sets up the necessity that Neo prove the prophecy through action — the physical ordeal and death-and-return arc (ev-034/ev-035) that will finally close the gap Morpheus names.",
+  "Trinity's ambiguous, unspoken answer sets up her willingness to risk everything for Neo (ev-035), grounded in a faith that the scene deliberately leaves undefined."
+ ],
+ "dramatic_function": "To convert the physical miracle of the rescue into an ideological trap: Morpheus seals the prophecy against contradiction, so that Neo's doubt is silenced rather than resolved — creating the internal contradiction (a 'One' who has been told he is not) that the coming fight with Smith must finally settle by experience, not by belief."
+}

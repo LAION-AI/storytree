@@ -1,0 +1,76 @@
+{
+ "scene_id": "sc-196",
+ "location": "ALLEY",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Neo",
+  "Agents"
+ ],
+ "summary": "In the alley, Neo dives for the door but finds \"It's locked.\" Tank, heard only as a voice, orders him to \"Kick it in!\" Neo obeys, \"Neo nearly dislodges the door from its frame as he retreats from the Agents' gunfire.,\" and then lunges away from the Agents' gunfire, \"lunging from the Agents' BULLETS.\"",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "Trapped at a dead-end door that is locked, with the Agents closing in.",
+   "after": "He forces the door open and lunges away from the gunfire.",
+   "evidence": "Peeling back, Neo almost kicks the door"
+  }
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Neo kicks a locked alley door open and escapes the Agents' bullets.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the door"
+ ],
+ "uncertain": [],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To get through the door before the Agents' bullets reach him.",
+   "feels": "A spike of panic the instant the door proves locked — the dead-end alley (sc-194) has just closed into a trap — followed by an immediate, violent conversion of that panic into physical force.",
+   "shows": "Only the facts of the problem and the solution: \"It's locked,\" then obeying \"Kick it in!\" with such force he nearly tears the door off its hinges and flings himself away from the gunfire.",
+   "basis": "He dives for the door, reports \"It's locked,\" and on Tank's command attacks it with overwhelming force (\"almost kicks the door from its hinges\") while lunging from the bullets — the whole scene is his reaction to a closing trap.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "Tank can see the way out and his instructions are the reliable path through the trap.",
+     "wrong_because": "Tank is reading the situation at a distance and under pressure (sc-195 has him frantically scanning a monitor); his certainty here is real but provisional, and the exit he's steering Neo toward will not keep Neo ahead of the Agents."
+    },
+    {
+     "other": "the door",
+     "belief": "A locked door in a dead-end alley is a fatal barrier.",
+     "wrong_because": "In the Matrix his strength is not ordinary; the door yields almost instantly to force, which is the first lesson of the chase — the environment that traps an ordinary man does not trap him."
+    }
+   ]
+  },
+  {
+   "who": "Tank",
+   "wants": "To convert what he alone can see on the monitor into an immediate, executable action for Neo.",
+   "feels": "Urgency without panic — he has just located the door as the way out (sc-195) and is now closing the loop by barking the one instruction that turns a dead-end into an escape route.",
+   "shows": "A single clipped command, \"Kick it in!\" — no explanation, no reassurance, pure direction delivered as voice only.",
+   "basis": "In sc-195 Tank identifies \"The door\" as the exit; here, hearing Neo report it locked, he instantly supplies the force-based solution, consistent with an operator who sees the layout Neo cannot.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo needs to be told what to do with the door rather than figure it out himself under fire.",
+     "wrong_because": "He underestimates how readily Neo will exceed the instruction — Neo doesn't just kick the door open, he nearly rips it from its hinges, acting beyond the minimal command."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-194: Neo is cornered in the dead-end alley and calls for help, establishing the trap the door now seems to seal.",
+  "sc-195: Tank locates \"the door\" on the monitor, which is exactly why he can order Neo to force it rather than flee.",
+  "ev-033: the pursuit by the Agents that produces the gunfire Neo lunges away from."
+ ],
+ "sets_up": [
+  "ev-034: Neo's continued flight toward the exit that will end in the hotel hallway confrontation with Agent Smith.",
+  "ev-035: Neo reaching a phone/exit and being unplugged, the continuation of the escape this door-breach keeps alive."
+ ],
+ "dramatic_function": "It turns the dead-end of the chase into forward motion, proving that Neo can break the rules of the ordinary world through force of will, and it dramatizes the operator-and-runner relationship — Tank's eyes and Neo's body acting as one — that the coming Sentinel crisis will depend on."
+}

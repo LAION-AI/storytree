@@ -1,0 +1,102 @@
+{
+ "scene_id": "sc-049",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "MORPHEUS",
+  "TANK",
+  "NEO"
+ ],
+ "summary": "On the main deck, a computer monitor shows a download meter filling in as it loads combat programs—\"Combat Series 10 of 12,\" with categories like \"Savate, Jujitsu, Ken Po, Drunken Boxing.\" Morpheus enters and asks Tank, \"How is he?\" Tank replies that Neo has gone \"Ten hours nonstop. He's a machine., his eyes open with breath hissing, and he looks like he just orgasmed. Neo exclaims, \"\"This is incredible. I know kung fu,\" Neo says. Morpheus replies, \"Show me.\" answers, \"Show me.\"",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Loading combat programs one after another without yet knowing what they have given him.",
+   "after": "He has internalized the skills and declares, \"This is incredible. I know kung fu.\"",
+   "evidence": "Neo's body spasms and relaxes as his"
+  },
+  {
+   "who": "MORPHEUS",
+   "axis": "standing",
+   "before": "Arriving only to inquire about Neo's state—\"How is he?\"",
+   "after": "Moving from observer to instructor by demanding a demonstration: \"Show me.\"",
+   "evidence": "MORPHEUS Show me. NE O This is incredible. I know kung fu."
+  }
+ ],
+ "event_hint": {
+  "kind": "training",
+  "one_line": "Neo finishes downloading combat programs and realizes he now knows kung fu, prompting Morpheus to demand a demonstration.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "MORPHEUS",
+   "wants": "To convert Neo's self-report ('I know kung fu') into proof — to see the belief made flesh before he commits to it verbally.",
+   "feels": "A watchful, almost reverent anticipation. He has been waiting for this threshold and is now standing on it; the demand 'Show me' is the calm surface over a man who has wagered his life's purpose on this body.",
+   "shows": "Cool economy. He does not greet, does not marvel, does not ask a follow-up. He meets Neo's ecstasy with a two-word test, letting nothing of his investment leak.",
+   "basis": "He enters asking 'How is he?' — observer, checking status — and, on hearing Neo's declaration, pivots instantly to 'Show me,' moving from observer to instructor. The lack of any congratulation or shared wonder, against Neo's orgasmic exhilaration, is the gap: Morpheus refuses to celebrate knowledge until it is demonstrated.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo is, or is becoming, the One — that this download will register as genuine ability rather than noise.",
+     "wrong_because": "Not yet wrong; this scene is the first real test of that belief, and Morpheus's 'Show me' is precisely him withholding confirmation until the belief is either validated or exposed."
+    },
+    {
+     "other": "NEO",
+     "belief": "That Neo will understand the demonstration as a test to be met seriously rather than a moment to be enjoyed.",
+     "wrong_because": "Inferred: Neo's euphoria ('This is incredible') suggests he is still savoring the sensation of knowing, and may not yet grasp that Morpheus wants the knowing weaponized."
+    }
+   ]
+  },
+  {
+   "who": "NEO",
+   "wants": "To have his astonishing new certainty witnessed and confirmed — to say the thing out loud and have it be true in someone else's eyes.",
+   "feels": "Overwhelmed, almost intoxicated by the sudden presence of a skill he did not earn through effort. The physical description (spasm, hiss, the look of having just orgasmed) marks this as a bodily, ecstatic event, not an intellectual one — he has been pleasured by knowledge.",
+   "shows": "Unfiltered declaration — 'This is incredible. I know kung fu.' He lets everything out; there is no guard, no performance anxiety, only the need to announce.",
+   "basis": "His line is pure exclamation, and his body betrays the intensity of the download before he speaks. Coming off sc-048's 'Hell yes!' eagerness, this is the same appetite now satisfied and overflowing.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "MORPHEUS",
+     "belief": "That Morpheus will share his excitement — that 'I know kung fu' will be received as a triumph to be celebrated together.",
+     "wrong_because": "Morpheus answers with a flat 'Show me,' treating the declaration not as a celebration but as a claim requiring verification. Neo has not yet learned that in this world, knowing is nothing until it is performed."
+    },
+    {
+     "other": "NEO (himself)",
+     "belief": "That 'knowing kung fu' is a completed fact, an arrival.",
+     "wrong_because": "Inferred: what he has is downloaded information, not embodied mastery. The coming sparring (ev-014) will punish exactly this confusion between possessing a program and being able to use it under pressure."
+    }
+   ]
+  },
+  {
+   "who": "TANK",
+   "wants": "To deliver a clean status report to Morpheus and to register his own awe at what he is operating.",
+   "feels": "Pride and fascination — he is watching something unprecedented ('He's a machine'), and there is a booster's delight in reporting a success up the chain.",
+   "shows": "A terse, admiring assessment — 'Ten hours straight. He's a machine.' — offered without embellishment, then he recedes as Morpheus and Neo take the foreground.",
+   "basis": "His single exchange is entirely in service of answering Morpheus's 'How is he?' and framing Neo as exceptional. This continues the enthusiasm he showed in sc-047 ('I'm actually quite eager to find out what you're able to do.') and sc-048 ('Hey, Mikey, he likes it!').",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo's ability to endure ten hours straight marks him as special — 'a machine,' possibly the One Morpheus spoke of.",
+     "wrong_because": "Inferred and not yet settled: endurance and download-tolerance are being read as evidence of destiny, which is exactly what the rest of the training will have to confirm or refute. His belief runs ahead of proof, matching Morpheus's wager."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-048 established the combat-download procedure and Neo's eager appetite for it ('Hell yes!'), so 'Combat Series 10 of 12' and the ten-hour run are the direct continuation of that session.",
+  "sc-047's Tank — 'quite eager to find out what you can do. if Morpheus is right' — supplies the crew's underlying stake in whether Neo measures up, which animates Tank's 'He's a machine' and Morpheus's 'Show me.'",
+  "The whole event (ev-011/ev-012): Tank as operator managing Neo's neural loading is the mechanism that makes the download, and therefore this moment of realization, possible."
+ ],
+ "sets_up": [
+  "ev-014: The gap 'I know kung fu' (information) vs. what Morpheus demands ('Show me' — performance) is precisely what the sparring session will test, brutally correcting Neo's conflation of downloaded knowledge with usable skill.",
+  "ev-012/ev-014: Morpheus's move from observer to instructor ('Show me') establishes him as Neo's trainer, the relationship the dojo fight and rooftop training will deepen.",
+  "ev-013: A demonstrated, confident Neo is the prerequisite for escalating the training to the rooftop jump, where fear rather than knowledge becomes the obstacle."
+ ],
+ "dramatic_function": "This scene converts an off-screen download into an on-screen claim and immediately submits that claim to a test, dramatizing the film's central distinction between possessing knowledge and being able to perform it — and it installs Morpheus as the skeptic-instructor whose 'Show me' will govern Neo's training."
+}

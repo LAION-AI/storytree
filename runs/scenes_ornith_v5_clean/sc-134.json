@@ -1,0 +1,28 @@
+{
+ "scene_id": "sc-134",
+ "location": "TV REPAIR SHOP",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo"
+ ],
+ "summary": "In the TV repair shop, Neo squeezes through the window Cypher had pried open., entering the interior from outside.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "Outside the TV repair shop, not yet inside.",
+   "after": "Inside the shop, having crawled through the window.",
+   "evidence": "Neo crawls through the window that Cypher"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Neo follows Cypher into the TV repair shop.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the window"
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 0 speaker(s), 14w — no exchange to read"
+}

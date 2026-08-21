@@ -1,0 +1,80 @@
+{
+ "scene_id": "sc-059",
+ "location": "CONSTRUCT - ROOFTOP",
+ "time_of_day": "DAY",
+ "present": [
+  "Morpheus",
+  "Neo"
+ ],
+ "summary": "In the white space of the Construct, a jump program rushes up beneath Morpheus and Neo as the jump program lifts them onto a rooftop amid the city skyline. Morpheus tells Neo to let go of fear, doubt, and disbelief and to free his mind. He then runs hard at the rooftop's edge and jumps, sailing through the air with his coat billowing like a cape to land on the rooftop across the street. Neo swears, looks down at the street twenty floors below and across at Morpheus fifty feet away, mutters \"Free my mind,\" He inhales sharply, then launches himself forward.",
+ "what_changes": [
+  {
+   "who": "Morpheus",
+   "axis": "standing",
+   "before": "Standing on the rooftop with Neo, coaching him.",
+   "after": "Has crossed the street by leaping the gap to the far rooftop.",
+   "evidence": "Morpheus spins, running hard at the edge"
+  },
+  {
+   "who": "Neo",
+   "axis": "resolve",
+   "before": "Daunted, reacting with fear to the jump.",
+   "after": "Steeling himself, taking a breath, and beginning to run toward the leap.",
+   "evidence": "He takes a deep breath. And starts"
+  }
+ ],
+ "event_hint": {
+  "kind": "a jump",
+  "one_line": "Morpheus demonstrates the rooftop jump and Neo prepares to attempt it himself.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Morpheus",
+   "wants": "To get Neo to stop treating the simulation's physics as binding — to make him attempt the jump rather than refuse it — by handing him a single instruction that does the work: release the mental grip that makes the gap real.",
+   "feels": "A settled, tested certainty. He has crossed this exact gap countless times in training; the distance is not a threat to him, which is why he can afford to be calm and even theatrical (the coat 'like a cape') rather than urgent. Under the certainty is the weight of the larger stakes from ev-014 — he is training a man he believes may be 'the One' — so this demonstration is not a stunt but a deliberate lesson in the doctrine that mind governs the Construct.",
+   "shows": "Only the teacher: a low, even voice, a clean three-word triad ('Fear. Doubt. Disbelief.'), and a physical proof he performs without hesitation. He does not reassure Neo that the jump is safe, and he does not look back to check — he lets the landing do the persuading.",
+   "basis": "His line 'Let it all go... Free your mind' is the same mission statement he gave in sc-057 ('I'm trying to free your mind, Neo'), so this scene is the applied version of that promise. His unhesitating run and jump, coat 'billowing... like a cape,' show comfort, not risk-taking. He gives instruction before the act, not after, trusting the demonstration to carry the argument.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo can cross the gap the moment he stops believing the gap constrains him — that the obstacle is entirely mental, not physical.",
+     "wrong_because": "Correct in doctrine but premature in practice: Neo's mind is not yet free, which is exactly why the attempt that begins here will fail (ev-014 notes Neo 'fails to complete' the jump due to doubt). Morpheus is right about the principle and wrong about Neo's readiness in this moment."
+    }
+   ]
+  },
+  {
+   "who": "Neo",
+   "wants": "To force himself to do the thing he does not believe is possible — to close the fifty feet Morpheus just crossed — because refusing would mean admitting he can't, and he will not do that in front of Morpheus.",
+   "feels": "Genuine vertigo and disbelief: the 'Shit' is a reflex at the height (twenty floors) and the distance, and the stammering 'Okie dokie... Right. No problem.' is nervous bravado — he is talking himself into courage he does not feel. The 'deep breath' is a deliberate self-regulation, an attempt to manufacture the calm Morpheus simply has.",
+   "shows": "A front of wry, sarcastic compliance — the quips and the muttered 'Free my mind' — over the fear. He lets the fear show only in the involuntary 'Shit,' then covers it with humor and a run.",
+   "basis": "He swears on seeing the drop, then measures Morpheus as 'an impossible fifty feet away' — 'impossible' names his real belief. His self-mocking patter ('Okie dokie... No problem') is the sound of someone steeling himself, and the deep breath followed by running is a conscious decision to act despite doubt, not the absence of it.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus crossed the gap by some exceptional physical skill or nerve that Neo may simply lack — that it was a feat of ability.",
+     "wrong_because": "Morpheus's whole lesson (sc-057, ev-014) is that it was not physical at all but a matter of not believing the rules applied; Neo still reads it as an athletic accomplishment, which is precisely the misconception that will make his own attempt fail."
+    },
+    {
+     "other": "himself",
+     "belief": "That if he runs fast enough and commits hard enough, he can make the jump — that will and effort can substitute for belief.",
+     "wrong_because": "The doctrine he just learned is that consequences in the Construct are real because the mind makes them so (ev-014); effort without genuine belief is not enough, so the run he starts here is doomed to end in a fall."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-057: Morpheus's stated purpose ('I'm trying to free your mind') is now being applied as the jump program he ordered Tank to load.",
+  "ev-014: the dojo lesson that the simulation's rules are not absolute and that pain/consequences are real because the mind makes them so — the intellectual premise Neo must now put his body on the line for.",
+  "ev-014: the established fact that Neo will fail this jump because of doubt, which is the dramatic truth this scene is enacting in real time."
+ ],
+ "sets_up": [
+  "ev-015: Neo's collapse into unconsciousness after the training, which Trinity then tends to — the intensity of the attempt begun here is what leaves him spent.",
+  "ev-016: the continued street-level training where Morpheus keeps drilling the lesson that the Matrix's inhabitants and physics are not binding — the jump is one step in that escalating curriculum."
+ ],
+ "dramatic_function": "It converts the dojo's abstract lesson ('the rules are not absolute') into a concrete, bodily test, staging the gap between knowing a truth intellectually and believing it enough to act on it; Neo's courageous-but-doubting run toward the leap makes his coming failure inevitable and meaningful rather than a simple mistake."
+}

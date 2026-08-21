@@ -1,0 +1,89 @@
+{
+ "scene_id": "sc-053",
+ "location": "DOJO",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "NEO",
+  "MORPHEUS"
+ ],
+ "summary": "In the dojo, Neo hurls himself at Morpheus, but Morpheus attacks and overwhelms him, taking him apart until Neo falls to his hands and knees, spitting blood onto the white floor. Morpheus asks how he was beaten; Neo says 'You -- You're too fast.' Morpheus challenges whether his speed and strength come from muscles in this place, and asks 'Morpheus asks if Neo truly believes the air he inhales is real., frustrated and breathless, slowly stands and nods. Morpheus says 'Again,' and their fists fly with pneumatic speed.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "condition",
+   "before": "Attacking Morpheus with clenched fury, believing he can fight him.",
+   "after": "Beaten down, fallen, spitting blood, and forced to admit Morpheus is simply too fast.",
+   "evidence": "His feet and fists are everywhere, taking"
+  },
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Attributes Morpheus's victory to physical speed and strength.",
+   "after": "Begins to accept that the physical rules here are mental, nodding that the air is not real.",
+   "evidence": "Do you believe that's air you are"
+  }
+ ],
+ "event_hint": {
+  "kind": "a sparring bout",
+  "one_line": "Morpheus beats Neo in the sparring program, then teaches him the rules can be broken before they resume fighting.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the white floor of the dojo"
+ ],
+ "uncertain": [],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "NEO",
+   "wants": "To land a blow on Morpheus — to prove that the kung fu he downloaded (ev-012) actually makes him capable, and to win back some dignity after the furious attack in sc-050 was effortlessly blocked.",
+   "feels": "Humiliated and frightened. His body is being dismantled faster than his new skills can process, and the pain (blood on the floor) is real to him even though he is only just beginning to suspect it shouldn't be. Under the frustration is the first crack in his assumption that this world works like the one he grew up in.",
+   "shows": "Clenched fury at first (knotted face, teeth), then collapse and breathless admission — 'You're too fast' — and finally a slow, reluctant nod when asked about the air. He lets the physical defeat show but is only halfway to letting himself believe the explanation.",
+   "basis": "His his features are twisted, jaw locked, as he launches himself at Morpheus; he falls, spits blood, and can only explain the loss as speed ('You -- You're too fast'). When pressed about muscles and air, he Neo is winded and annoyed, struggling to draw a full breath.,' then 'stands, nodding slowly' — the nod is visibly grudging, not eager. This follows sc-050, where he attacked with confident fury and was blocked with 'effortless speed,' and ev-012, where he woke declaring 'I know kung fu.'",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "MORPHEUS",
+     "belief": "Morpheus is simply faster and stronger — a physical superior he can someday match with enough training.",
+     "wrong_because": "Morpheus's advantage is not muscular but mental: he understands the program's rules can be bent and broken (sc-050), which is exactly what this scene is forcing Neo to confront. Neo's 'too fast' answer is the wrong model of what he's up against."
+    },
+    {
+     "other": "MORPHEUS",
+     "belief": "Morpheus is humiliating him on purpose, testing him the way a hard teacher breaks a student.",
+     "wrong_because": "The beating is instruction, not contempt; Morpheus stops to ask 'How did I beat you?' and to redirect him toward the truth about the air, which is care expressed as pressure. Neo can't yet see the teaching inside the violence."
+    }
+   ]
+  },
+  {
+   "who": "MORPHEUS",
+   "wants": "To shatter Neo's physicalist model of this reality — to move him from 'you beat me because you're faster' to 'the rules here are mental and can be broken' — the lesson he laid out in sc-050 and that the coming jump (ev-013) will demand.",
+   "feels": "Controlled, patient, and deliberate. He feels no strain (contrast Tank's reading in sc-051: 'slow and steady rhythm'), and there is a teacher's certainty underneath the ferocity — he is not fighting to win, he is fighting to make a point land.",
+   "shows": "Overwhelming force — 'nothing we have seen,' taking Neo apart — then an almost calm Socratic pause ('How did I beat you?', 'Do you think the air you're inhaling is real?'), and a single-word command ('Again') that resumes the violence the instant the lesson is half-taken in. He shows dominance, not anger.",
+   "basis": "He corrects Neo's diagnosis ('your weakness isn't your technique'), then refuses to answer his own question and instead reframes it toward the body ('muscles in this place') and the air — a deliberate pedagogical sequence, not a fighter's taunt. He says 'Again' only after Neo nods, timing the resumption to the moment of comprehension. This is consistent with sc-050's framing ('Some can be bent. Others can be broken. Do you understand?') and with sc-051, where his body stays serene while Neo's is 'wildly and chaotically lit up.'",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "Neo is ready to be pushed this hard — that breaking his body is the right way to break his wrong model of the world.",
+     "wrong_because": "Neo is only just beginning to suspect the air isn't real (he nods 'slowly,' half-convinced); Morpheus is ahead of him and is betting that physical overwhelm will force understanding faster than explanation could. The bet may outrun what Neo can actually absorb in this moment."
+    },
+    {
+     "other": "NEO",
+     "belief": "Neo's furious attack is a sign of the adaptability he praised ('Good. Adaptation. Improvisation.') — that there is raw material worth brutalizing into shape.",
+     "wrong_because": "What Neo experiences as fury and failure Morpheus reads as promising raw instinct; Morpheus may be seeing the One he's waiting for (ev-012, ev-018) in behavior that, from the outside, is just a scared man getting beaten."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-050: Morpheus's opening lesson that the program's rules 'can be bent... broken' is the thesis this scene tests against Neo's body, and Neo's earlier confident, blocked attack is what gets dismantled here.",
+  "ev-012: Neo's 'I know kung fu' confidence is the specific illusion of physical mastery this beating is designed to collapse.",
+  "sc-051: Tank's read of Morpheus as 'slow and steady' versus Neo as 'wildly and chaotically lit up' grounds that Morpheus's dominance is mental composure, not exertion."
+ ],
+ "sets_up": [
+  "ev-013: The rooftop jump requires Neo to act on the belief that physics here is mental — exactly the acceptance ('the air is not real') Morpheus extracts with his question here, so the jump is the practical exam of this lesson.",
+  "ev-014: The crew watching from the main deck reframes this beating as a spectacle and a turning point; this scene supplies the brutal content they are witnessing.",
+  "ev-016: The later street lesson — that the Matrix's inhabitants are part of the system and its rules can be manipulated — extends the 'rules can be broken' principle Neo begins to internalize here."
+ ],
+ "dramatic_function": "To convert an abstract teaching (the rules of the simulation are mental and bendable) into a felt, bodily truth for Neo by humiliating his physical assumptions, so that his reluctant nod marks the first real shift from 'the Matrix is a harder version of the real world' to 'the Matrix is a set of rules I can rewrite' — the mindset every later feat depends on."
+}

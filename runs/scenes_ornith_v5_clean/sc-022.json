@@ -1,0 +1,35 @@
+{
+ "scene_id": "sc-022",
+ "location": "CITY STREET",
+ "time_of_day": "NIGHT",
+ "present": [
+  "Neo",
+  "TRINITY"
+ ],
+ "summary": "Late at night, Neo walks alone down a rain-soaked city street, feeling watched as headlights appear behind him. A car slides to a stop beside him on the bridge and its back door opens; Trinity, inside, tells him to get in.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "Alone and exposed on the street, where everything feels unsafe and every pair of eyes seems to follow him.",
+   "after": "A car stops beside him and its back door opens, offering escape or capture.",
+   "evidence": "As he reaches the bridge, headlights creep"
+  },
+  {
+   "who": "TRINITY",
+   "axis": "allegiance",
+   "before": "Absent, only watching Neo's capture from afar in the earlier scene.",
+   "after": "Present in the car, directly intervening to get Neo into the vehicle.",
+   "evidence": "The back door opens. TRINITY Get in."
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Trinity arrives by car to extract Neo from the street at night."
+ },
+ "uncertain": [
+  "Whether Neo gets in the car, since the scene ends on Trinity's command."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 1 speaker(s), 79w — no exchange to read"
+}

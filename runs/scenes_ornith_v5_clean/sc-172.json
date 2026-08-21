@@ -1,0 +1,76 @@
+{
+ "scene_id": "sc-172",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "TANK",
+  "MORPHEUS"
+ ],
+ "summary": "On the main deck the phone rings and Morpheus's voice comes through it, addressing Tank. Tank responds with relief and pleasure at hearing Morpheus's voice. Morpheus states that they need an exit; Tank reports that he already has one prepared at the subway, at State and Balbo. Morpheus tells him they are on their way.",
+ "what_changes": [
+  {
+   "who": "TANK",
+   "axis": "condition",
+   "before": "Startled and uncertain when the phone rings, unsure who is on the other end.",
+   "after": "Relieved and glad once he recognizes Morpheus's voice.",
+   "evidence": "TANK\nGoddamn!  It's good to hear your"
+  },
+  {
+   "who": "MORPHEUS",
+   "axis": "condition",
+   "before": "Contacting Tank to request an exit, without one yet in place.",
+   "after": "Informed that an exit is ready at the subway, State and Balbo, and heading toward it.",
+   "evidence": "MORPHEUS (V.O.)\nWe need an exit"
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Morpheus calls Tank from the field and gets an exit wired up at the subway, continuing the crew's escape.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "TANK",
+   "wants": "To give Morpheus exactly what he's asked for, instantly and competently — to be the operator who holds the line and gets his people out.",
+   "feels": "A surge of relief and almost giddy pleasure at hearing Morpheus's voice — he's been watching his crew in mortal danger on the screens and the sound of Morpheus alive and in command releases whatever tension he'd been carrying.",
+   "shows": "Unfiltered enthusiasm — \"Holy hell! I was hoping to hear from you, sir!\" — then immediate snap into professional efficiency, reporting the pre-wired exit with precise coordinates.",
+   "basis": "His outburst \"Damn it! I'm glad to hear from you, sir!\" is disproportionate relief for a routine comms check; in sc-170 he was staring at the screen \"mouth agape\" watching the crew nearly die, so Morpheus's voice is proof they survived. He already has an exit \"ready,\" meaning he anticipated the need before being asked.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "MORPHEUS",
+     "belief": "That Morpheus is unshakable, always in control, the man who brings everyone home.",
+     "wrong_because": "Morpheus is calling from a chase, dependent on Tank to get him out; Tank's idealization of him (reinforced by the rooftop survival and his 'He's the One!' fervor) papers over how precarious the crew's position actually is."
+    }
+   ]
+  },
+  {
+   "who": "MORPHEUS",
+   "wants": "To get himself and Neo out of the Matrix as fast as possible — to move the crew from danger to safety with no wasted motion.",
+   "feels": "Focused urgency; no room for the relief Tank feels, because he is still inside the threat and responsible for Neo. The mission comes before any personal reaction.",
+   "shows": "Terse, functional commands only — \"Tank.\" \"We need an exit.\" \"We're on their way.\" He doesn't return Tank's warmth or acknowledge the near-death; he treats the call as a logistics transaction.",
+   "basis": "He opens with Tank's name and immediately states the need (\"We need an exit\"), then cuts the exchange short with \"We're on their way --\" as soon as the location is confirmed. This is the same Morpheus who on the rooftop (sc-171) redirected Neo's emotional revelation toward discipline (\"the distinction between understanding a route and traversing it\"), so his compression of feeling into purpose is consistent.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "TANK",
+     "belief": "That Tank can be relied on to have the exit ready and to hold his post without needing reassurance or explanation.",
+     "wrong_because": "This is not so much wrong as trusted — but Morpheus's assumption that the crew will keep holding together is about to be tested, since the coming events (Neo's standoff, the EMP, the later losses) will strain that reliability to its breaking point."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-169/170: the crew's barely-survived helicopter crash and fall, which Tank watched in horror — his relief at Morpheus's voice is the release of that dread.",
+  "sc-171: Morpheus's rooftop insistence on walking the path over merely knowing it — he carries that same no-nonsense, forward-moving purpose into this call.",
+  "ev-030: the subway-exit plan is already in motion; Tank has pre-wired the State and Balbo booth as the crew's designated way out."
+ ],
+ "sets_up": [
+  "ev-031: Neo and Morpheus reaching the subway booth sets the stage for Neo's solo confrontation with Agent Smith once the others exit.",
+  "ev-033: the pattern of Tank as operator holding the exit line and Morpheus trusting Neo will make it back underpins the later siren/EMP sequence.",
+  "ev-035: the established exit-and-EMP protocol the crew relies on to escape the hovercraft's sentinel attack."
+ ],
+ "dramatic_function": "A brief decompression-and-reassembly beat: it lets the audience feel the crew's bond and relief at survival, then snaps back into mission mechanics, moving Morpheus and Neo toward the subway where the story's next confrontation awaits."
+}

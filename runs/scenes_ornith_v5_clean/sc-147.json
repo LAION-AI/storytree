@@ -1,0 +1,108 @@
+{
+ "scene_id": "sc-147",
+ "location": "GOVERNMENT BUILDING",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Morpheus",
+  "Agent Smith",
+  "Agent Brown",
+  "Agent Jones"
+ ],
+ "summary": "The Agents stand over Morpheus, who is fighting to hold his mind together. They conclude that their interrogation plan has reached a decision point. After Agent Brown notes the insider will sever the connection if their man has failed, Agent Jones states that their man is dead either way. Agent Smith declares they have no choice but to proceed as planned and orders the sentinels deployed immediately.",
+ "what_changes": [
+  {
+   "who": "The Agents",
+   "axis": "resolve",
+   "before": "Uncertain whether their plan still applies, weighing whether the insider has failed",
+   "after": "Settled on continuing as planned and deploying the sentinels",
+   "evidence": "We have no choice but to continue"
+  },
+  {
+   "who": "Agent Jones",
+   "axis": "knowledge",
+   "before": "Considering the possibility that the insider has failed",
+   "after": "Asserting the insider is dead regardless of outcome",
+   "evidence": "They are dead.  In either case --"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "The Agents decide to deploy the sentinels to hunt down the crew while Morpheus breaks.",
+  "continues_from_earlier": true
+ },
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Agent Smith",
+   "wants": "To close the interrogation down and convert it into a physical hunt — to reassert machine control over a situation that has begun to slip toward human contingency.",
+   "feels": "The residue of the crack in sc-145, where his composure broke and he squeezed Morpheus in personal hatred rather than cool procedure. He is now forcing himself back into the role of the decision-maker, using the order to the sentinels as a way to seal that breach and prove nothing has gotten to him.",
+   "shows": "Absolute command. 'There is no alternative. We proceed with the original orders. Send out the sentinels. Now.' — a flat, unanswerable pronouncement that pretends the choice is not a choice at all.",
+   "basis": "His 'Never let a person perform a task a machine can handle.' is a cold, aphoristic restoration of order immediately after the emotional excess of sc-145; he then overrides Brown's hedging and Jones's correction with a single decisive order.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "The insider (Cypher)",
+     "belief": "The insider is dead in either case, so the human variable is canceled and only the machine response remains.",
+     "wrong_because": "The crew on the Nebuchadnezzar (sc-146) is not severing at all — Neo has rejected pulling the plug and is committing to a rescue, which the Agents have not yet perceived."
+    }
+   ]
+  },
+  {
+   "who": "Agent Brown",
+   "wants": "To keep the analysis open — to name the one contingency (the insider succeeding in severing) that would change their next action.",
+   "feels": "The most hedged, least certain of the three; he is still working the problem conditionally ('If, indeed... unless --'), unwilling to let the sentence close before the exception is registered.",
+   "shows": "A carefully qualified statement that he does not get to finish — he is cut off by Jones, so his caution is absorbed into the group's momentum rather than acted on.",
+   "basis": "His line is built entirely on conditionals and breaks off at 'unless --', the unfinished sentence handed to the scene; Jones then finishes the thought for him.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Agent Jones",
+     "belief": "That Jones's 'They are dead' resolves the 'unless' clause he was about to raise.",
+     "wrong_because": "inferred: he lets Jones's assertion stand in for his own reasoning, though the two are not actually addressing the same contingency — the death of the insider does not itself answer what the crew will do next."
+    }
+   ]
+  },
+  {
+   "who": "Agent Jones",
+   "wants": "To collapse Brown's branching logic into a single certainty, so that no further deliberation is required.",
+   "feels": "The one who has just arrived from the roof (sc-144) and is inclined toward the decisive reading; he treats the human element as already settled ('In either case --') so the unit can move.",
+   "shows": "A curt, terminal statement — 'They are dead. In either case --' — that he also does not finish, because Smith takes the sentence out of his mouth and turns it into the order.",
+   "basis": "He enters with 'There could be a problem' in sc-145 and here converts that problem into a foregone conclusion, cutting across Brown's 'unless' with a flat assertion.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "The crew / the insider",
+     "belief": "That the outcome is closed — the man is dead whether he failed or succeeded — and therefore no human move remains to surprise them.",
+     "wrong_because": "The crew's actual response (a rescue, sc-146 onward) is precisely the case his binary did not include; his certainty is the blind spot the raid will expose."
+    }
+   ]
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To hold the last thing the serum cannot reach — the codes, and with them Zion — by refusing to let his mind crack.",
+   "feels": "Being systematically dismantled; every injection and every word from Smith is working toward the ordered symmetrical alpha pattern Tank described in sc-146, and he knows what that pattern means.",
+   "shows": "Nothing but the fight itself — 'fighting to hold his mind together' while the Agents stand over him; his resistance is entirely internal and, to the Agents, legible only as a matter of time.",
+   "basis": "The scene frames him purely as the object of the interrogation, and sc-146 establishes exactly what 'cracking' will cost; his silence here is the last agency he has.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Agent Smith",
+     "belief": "That Smith's certainty of victory is justified — that he will break before the crew can reach him.",
+     "wrong_because": "Neo has already refused to let him die (sc-146) and is moving to rescue him; Morpheus cannot know this as he fights, and his endurance is being spent on the assumption that he is alone."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-145: Smith's interrogation and the serum that is 'cracking' Morpheus's mind — this scene is the point at which that process reaches its decision.",
+  "sc-145: Jones's interruption ('There could be a problem') — the uncertainty he flagged is what the three Agents are now resolving among themselves.",
+  "sc-144: Jones arriving by helicopter with Marines — the physical force that makes 'deploy the sentinels' a continuation of an already-mobilized operation.",
+  "sc-146: Tank's explanation that the goal is Zion's mainframe codes and that the crew's only counter is to 'pull the plug' — the 'sever the connection' the Agents are calculating against."
+ ],
+ "sets_up": [
+  "ev-026: The sentinels closing in on the Nebuchadnezzar is what forces the crew's rescue debate to a deadline — Neo must argue for saving Morpheus while the machines are literally at the door.",
+  "ev-027/ev-028: By choosing the physical hunt over continued interrogation, the Agents leave the building's defense to Marines and sentinels, the gap Neo and Trinity exploit in the assault and helicopter rescue.",
+  "ev-026: The Agents' belief that the insider is dead and the situation closed is the blind spot Neo's rescue plan walks straight through."
+ ],
+ "dramatic_function": "This is the pivot where the scene's tension converts from psychological (a mind being broken) to physical (a building being hunted): the Agents' decision to deploy the sentinels hands the initiative back to the machine world and, by declaring the human variable dead, creates the exact overconfidence that the rescue will punish."
+}

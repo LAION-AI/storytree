@@ -1,0 +1,90 @@
+{
+ "scene_id": "sc-202",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Morpheus",
+  "Trinity"
+ ],
+ "summary": "Inside the hovercraft, Tank readies the exit and declares he will make the call; Morpheus orders him to do it. Then the lights suddenly go red, Trinity says \"No,\" and Morpheus, looking up, announces that their pursuers have arrived.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "action",
+   "before": "loading the exit",
+   "after": "about to make the call",
+   "evidence": "Tank loads the exit. TANK I'm going"
+  },
+  {
+   "who": "Morpheus",
+   "axis": "safety",
+   "before": "urging Tank to make the call",
+   "after": "aware the pursuers have arrived",
+   "evidence": "Suddenly, the lights go red. TRINITY No"
+  }
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "The crew prepares to bring Neo out, but the agents arrive before the call can be made.",
+  "continues_from_earlier": true
+ },
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Tank",
+   "wants": "To complete the extraction — to get Neo out before it's too late — by taking initiative and making the call himself.",
+   "feels": "A taut, forward-driving urgency; he has located the exit and is committing to the one action that can save Neo. There is no hesitation in him, only the push to finish.",
+   "shows": "Decisive competence. He announces the action ('I'm going to make the call') rather than asking permission, then executes. His voice is the crew's engine toward escape.",
+   "basis": "He loads the exit and declares 'I'm going to make the call' — a statement of intent, not a question. This follows sc-200 where he was tracking Neo's path to 'the fire escape at the alley's end,' so he knows the exit is found and time is short.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus wants the call made and is only supplying the command to proceed.",
+     "wrong_because": "Morpheus's 'Do it!' is less an order to continue than a desperate last push — and Morpheus is about to realize it is already too late, a fact Tank has not yet seen."
+    }
+   ]
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To force the escape through in the closing window — to get Neo out alive.",
+   "feels": "The whole of his will compressed into a single command. Beneath the bark of 'Do it!' is the fear of being a fraction of a second too late, the same fear that will make him the first to register the red lights.",
+   "shows": "Authority — a one-word order. Then, the instant the lights go red, his focus snaps upward and outward; his 'Here they come' is calm, almost resigned, the voice of a man who has been hunted before and recognizes the moment the hunt turns against him.",
+   "basis": "He answers Tank's declaration with 'Do it!' — urgency, not deliberation. When the lights go red he does not panic but looks up and names the threat, showing he immediately reads the environmental shift as the pursuers' arrival. This tracks the event shape (ev-034): the crew is trying to pull Neo out even as the ship is being breached by Sentinels.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "That Tank is about to succeed in making the call and getting Neo out.",
+     "wrong_because": "The arrival he detects means the window Tank is rushing into is already closing — the call may not complete before the agents are on them."
+    }
+   ]
+  },
+  {
+   "who": "Trinity",
+   "wants": "Nothing she can act on — only to stop, or undo, what she has just understood is coming.",
+   "feels": "A cold, immediate dread that lands a beat before the men name it. Where Tank drives forward and Morpheus commands, she is the one who registers the loss — her single word 'No.' is the emotional truth of the scene: the escape has just failed.",
+   "shows": "The smallest possible signal — one word, no explanation. She does not elaborate because there is nothing to add; the red lights have already said it. She lets the dread be heard but not argued.",
+   "basis": "She speaks only 'No.' — a reaction, not an instruction, and she offers no reason because the text gives her none to give; the lights going red are the reason. Her economy of speech contrasts with the men's action-oriented lines, marking her as the reader of the scene's turn.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "That Tank's determination to make the call can still carry the day.",
+     "wrong_because": "She senses — correctly, before anyone confirms it — that the arrival of the pursuers has already made his effort too late; her 'No.' is aimed at exactly that doomed momentum."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-200: Tank tracing Neo's path to the fire escape, which is why he now has the exit loaded and ready.",
+  "sc-199/sc-201: Neo's flight down the fire escape and Agent Smith's sudden pause at the hotel, establishing that Neo is nearly to the exit while the agents close in.",
+  "ev-034: The crew's attempt to extract Neo even as the ship is being breached — this scene is the pursuers actually arriving."
+ ],
+ "sets_up": [
+  "ev-035: The hovercraft's breach forces Morpheus to trigger the EMP and Neo to reach the exit phone before the line is lost — the call Tank was about to make now happens under attack.",
+  "ev-035: Neo's unplugging and reunion with Trinity, which this failed-but-just-in-time extraction makes possible."
+ ],
+ "dramatic_function": "It is the turn of the chase — the moment the escape's momentum is arrested by the arrival of the hunters. By letting Trinity name the loss ('No.') and Morpheus name the threat ('Here they come'), the scene converts forward action into sudden jeopardy, snapping the tension from 'will they get him out' to 'they are here,' and launching the ship-breach climax."
+}

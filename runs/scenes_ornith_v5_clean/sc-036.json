@@ -1,0 +1,102 @@
+{
+ "scene_id": "sc-036",
+ "location": "HOVERCRAFT - INFIRMARY",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "NEO",
+  "DOZER",
+  "MORPHEUS"
+ ],
+ "summary": "Neo wakes on an operating table to find his body pierced by the needles are like acupuncture needles, hooked up to some unfamiliar gadget. Dozer: reports that Neo 'still needs a lot of work' as he and Morpheus operate on him. Neo asks what they are doing; Morpheus explains that Neo's muscles have atrophied and they are rebuilding them. Under unnaturally bright fluorescent light sticks, Neo asks why his eyes hurt, and Morpheus answers that Neo has never used his eyes before. Morpheus then closes Neo's eyes, Neo lays back, and Morpheus tells him to rest because 'the answers are coming.'",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "condition",
+   "before": "Half-conscious, having just been recovered, unaware of what is being done to his body.",
+   "after": "Awake and being actively rebuilt — his atrophied muscles are being repaired by the two men operating on him.",
+   "evidence": "He focuses and sees his body pierced"
+  },
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Confused and questioning, not understanding his state or why his body is failing.",
+   "after": "Told the reason for his condition (atrophied muscles, unused eyes) and promised that 'the answers are coming.'",
+   "evidence": "MORPHEUS: Your muscles have atrophied. We're rebuilding"
+  }
+ ],
+ "event_hint": {
+  "kind": "a medical procedure",
+  "one_line": "Neo is rebuilt after being pulled from the Matrix, his body repaired and his confusion eased by Morpheus.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "acupuncture-style needles connected to an odd apparatus",
+  "fluorescent light sticks"
+ ],
+ "uncertain": [],
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "NEO",
+   "wants": "To make the overwhelming physical assault make sense — to get a reason for the needles, the pain, the burning light — so he can stop being a body that is being done to and become a mind that understands what is happening.",
+   "feels": "Raw and disoriented, flooded by sensation his nervous system has no framework for. The needles and the light are not just painful but alien, and the two questions he asks are the only footholds he can reach for.",
+   "shows": "Only two clipped questions — 'What are you doing?' and 'Why do my eyes hurt?' — and then, once Morpheus closes his eyes, he obeys and lays back into rest.",
+   "basis": "He opens his eyes, focuses on the needles 'wired to a strange device,' and immediately asks what they are doing and why his eyes hurt; when Morpheus shuts his eyes he complies and lays back. His questions track a mind trying to name sensations rather than fight them.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "MORPHEUS",
+     "belief": "That Morpheus is a competent authority who is repairing him and can be trusted to explain things in time.",
+     "wrong_because": "He has no evidence yet beyond Morpheus's calm; the reassurance 'the answers are coming' asks him to trust a man he met hours ago and who is now piercing him — a trust that will be severely strained when the larger truth is revealed."
+    },
+    {
+     "other": "MORPHEUS",
+     "belief": "That 'You've never used them before' is a strange or metaphorical answer about his eyes.",
+     "wrong_because": "He cannot yet know it is literally true — his eyes never operated in the real world because his body has been grown in a pod — so he is hearing a factual statement as if it were an evasion."
+    }
+   ]
+  },
+  {
+   "who": "MORPHEUS",
+   "wants": "To get Neo's body rebuilt while keeping Neo's frightened, questioning mind calm enough not to resist the procedure — delivering the minimum truth needed to soothe and deferring everything else.",
+   "feels": "A controlled, deliberate calm that is partly genuine confidence and partly a practiced management of a newly-freed mind; he is watching Neo the way one watches someone waking from a long anaesthesia.",
+   "shows": "Terse, literal answers ('Your muscles have atrophied. We're rebuilding them.'), a physical gesture of closing Neo's eyes, and the closing reassurance 'Rest, Neo. The answers are coming.' — giving just enough to settle, not enough to explain.",
+   "basis": "He answers each of Neo's two questions with a bare fact and then actively closes Neo's eyes and tells him to rest, refusing to expand. The phrase 'the answers are coming' is a deliberate deferral, not ignorance.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo can be steadied by small doses of truth and that deferral ('the answers are coming') is the right handling for him now.",
+     "wrong_because": "He is treating Neo as a manageable new mind, but this is the One he 'knows' he has found (sc-035), so his certainty about Neo's significance already outruns what he is telling Neo — and the eventual rejection of the full truth (ev-009) shows the calm he is cultivating here is fragile."
+    }
+   ]
+  },
+  {
+   "who": "DOZER",
+   "wants": "To keep the procedure moving and mark Neo's condition honestly to his partner — assessing the work still to be done rather than comforting the patient.",
+   "feels": "A technician's absorbed focus; Neo is a body he is repairing, and his remark is a status report, not a conversation with the man on the table.",
+   "shows": "A single line — 'He still needs a lot of work' — addressed to Morpheus, not to Neo, and no further engagement with Neo's questions.",
+   "basis": "He speaks about Neo in the third person ('He still needs a lot of work') while operating on him, and then does not participate in Neo's exchange with Morpheus, marking him as the working crew rather than the explainer.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo is a patient under repair, not yet someone to be briefed — the appropriate audience for assessment is Morpheus, not the half-conscious man on the table.",
+     "wrong_because": "Nothing in the scene corrects this; it is a functional stance, though it also means Dozer has no investment yet in Neo as anything but a body to rebuild."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "Morpheus's 'Welcome to the real world' (sc-034) and his certainty 'I know it' (sc-035) frame this procedure as the fulfillment of a search, which is why he handles Neo with patient confidence rather than uncertainty.",
+  "Neo passing out on the hovercraft floor (sc-034) explains why he now wakes pierced and atrophied rather than simply rested — his body has been unattended and unused since recovery.",
+  "Neo's 'am I dead?' (sc-035) carries into this scene as the same disorientation: he still cannot interpret his own sensations, hence 'Why do my eyes hurt?'"
+ ],
+ "sets_up": [
+  "Neo's discovery of his grafted ports and physical modifications upon waking in his room (ev-008), since this procedure is where his body is actively rebuilt.",
+  "The literal truth behind 'You've never used them before' — that his eyes never operated outside the pod — which underwrites the history of the fetus fields (ev-009).",
+  "Morpheus's pattern of measured, deferred revelation ('the answers are coming'), which culminates in the overwhelming exposition Neo's mind rejects (ev-009).",
+  "The trust Neo places in Morpheus here, which Morpheus will later have to reckon with when he apologizes for freeing an older mind and confirms Neo cannot return (ev-010)."
+ ],
+ "dramatic_function": "To translate the rescue into a physical and cognitive awakening — making the abstract 'real world' concrete as pain, needles, and burning light — while establishing Morpheus as the calm authority who doles out truth, so the audience feels the cost of liberation on the body before the mind is asked to bear it."
+}

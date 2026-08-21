@@ -1,0 +1,108 @@
+{
+ "scene_id": "sc-044",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "NEO",
+  "TRINITY",
+  "Dozer",
+  "CYPHER"
+ ],
+ "summary": "Neo wakes on the main deck, thrashing against a chair and trying to rip a cable from the back of his neck, shouting for it to be removed. Trinity urges calm while Dozer holds him down and Trinity unlocks the cable. Once it is out, Neo tears free and falls, recoiling from their touch. On his hands and knees, disoriented and sweating, he feels pressure building in his skull and cries that he can't believe it. Cypher warns he's going to pop. Neo then vomits violently, pitches forward and blacks out.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "condition",
+   "before": "Awake but restrained and panicking, fighting the cable in his neck.",
+   "after": "Freed from the cable but physically collapsing from the shock of re-entry.",
+   "evidence": "he tears away from them, falling as"
+  },
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Resisting what he has just learned about the real world.",
+   "after": "His body physically rejects the truth, overwhelmed by it.",
+   "evidence": "Vomiting violently, Neo pitches forward and blacks"
+  }
+ ],
+ "event_hint": {
+  "kind": "a wake",
+  "one_line": "Neo is disconnected from the Matrix and his body violently rejects the reality he has just been shown.",
+  "continues_from_earlier": true
+ },
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "NEO",
+   "wants": "To get the cable out of his neck — to sever the physical connection to a reality he cannot accept.",
+   "feels": "His entire organism is in revolt. The truth Morpheus showed him (sc-043) did not land as an idea but as a physical assault; his mind cannot reconcile it, so his body takes over — the centrifuge-pressure, the vomiting, the blackout are the somatic expression of a psyche that has hit the limit of what it can integrate.",
+   "shows": "Pure panic and rejection: thrashing, shouting 'Get this thing out of me!', then 'Don't touch me! Get away from me!' — and finally 'I don't believe it!' before his body collapses.",
+   "basis": "His thrashing to rip the cable and his demands to be let out directly continue his 'Stop! Let me out! I want out!' from sc-043; the repeated 'I don't believe it!' echoes his 'Neo rejects the truth, insisting it cannot be real.!' in the Construct. The vomiting and blackout are the event's stated physical rejection.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "the crew (Trinity, Dozer, Cypher)",
+     "belief": "They are the agents of an unbearable violation — touching him, holding him down — and his recoil ('Don't touch me!') treats them as a threat to be fought off.",
+     "wrong_because": "They are the ones freeing him; Trinity's 'Easy, Neo. Easy.' is care, not harm. He has no framework yet to know these are the people who rescued him."
+    },
+    {
+     "other": "himself / his own senses",
+     "belief": "That disbelief is a valid response — that if he refuses to believe it, the truth can be resisted.",
+     "wrong_because": "His body's violent rejection proves the truth operates independently of his belief; the blackout is precisely what happens when refusing to believe meets something that is true regardless."
+    }
+   ]
+  },
+  {
+   "who": "TRINITY",
+   "wants": "To get the cable out of him quickly and safely, and to keep him from injuring himself while she does it.",
+   "feels": "Controlled urgency. She has done this before and knows the pattern of a newly-freed mind rejecting reality, so she works the procedure while trying to soothe him — but she is also the specific person who pulled him out, which carries its own weight.",
+   "shows": "Only calm, low, repetitive reassurance — 'Easy, Neo. Easy.' — while she physically does the work of unlocking the cable. She lets nothing of her own stake show.",
+   "basis": "She is the one who unlocks the cable while Dozer holds him, and her line is the only soothing voice in the chaos; ev-015 will later reveal a private intimacy toward Neo, so this is her first caretaking of him.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That he is 'the one' Morpheus has been waiting for — worth the risk of freeing an older mind.",
+     "wrong_because": "Right now he is only a terrified, vomiting stranger recoiling from her touch; her larger belief in him (per the prophecy) has no support in what he is showing her here."
+    }
+   ]
+  },
+  {
+   "who": "Dozer",
+   "wants": "To hold Neo still long enough for Trinity to free the cable — to be the physical restraint that keeps the new man from tearing himself apart.",
+   "feels": "Practiced, unalarmed competence. This is a routine he knows; he is doing a job, not reacting to the horror of it.",
+   "shows": "Bodily action only — he holds Neo down and says nothing. There is no emotional display, only function.",
+   "basis": "The text gives him no dialogue and assigns him a single physical task (holding Neo while Trinity unlocks the cable), which reads as the crew's division of labor in a standard extraction.",
+   "grounding": "in_this_scene",
+   "believes_about": []
+  },
+  {
+   "who": "CYPHER",
+   "wants": "To name the danger to the others — to get across that Neo is about to physically break down.",
+   "feels": "A sharp, alarmed read of Neo's condition; he is watching for the physical limit and calls it the instant he sees it. There is also, in his knowing the phrase, a familiarity with how badly this can go.",
+   "shows": "A single clipped warning — 'He's going to pop!' — diagnostic and blunt rather than comforting. He does not move to help; he reports.",
+   "basis": "His only line is an observation of Neo's imminent physical collapse, delivered as a warning to the room; ev-015 will later frame Cypher as a man bitter about the cost of the real world, and this is an early marker of his focus on the body's limits over the mind's feelings.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo is simply going to 'pop' — a body failing under strain, a problem to be named and ridden out.",
+     "wrong_because": "What is happening to Neo is not merely physical overload but the collapse of a worldview; Cypher's framing reduces a psychological catastrophe to a mechanical one — which suits a man who will later wish he'd never seen the truth at all."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "Neo's 'Get this thing out of me!' and thrashing are the real-world continuation of his 'Stop! Let me out! I want out!' in sc-043.",
+  "His 'I don't believe it!' repeats the disbelief he voiced at the coppertop-battery revelation in sc-043.",
+  "The fetus-fields and power-plant horror (sc-041, sc-042) is the specific content his body is now physically rejecting.",
+  "The neural cable in his neck is the physical consequence of the brain-jack growing around the skull described in sc-041."
+ ],
+ "sets_up": [
+  "Neo waking disoriented in his dark room on the ship, where Morpheus must confirm he cannot return to the Matrix because his mind would turn against itself (ev-010).",
+  "The rule Morpheus broke by freeing an older mind — the difficulty of Neo's re-entry is the proof of that mistake (ev-010).",
+  "Neo's physical debilitation, which makes the crew's caretaking and his long, exhausting training downloads necessary (ev-011, ev-012).",
+  "Trinity's established role as the one who watches over and tends to Neo, grounding her later private ministrations (ev-015)."
+ ],
+ "dramatic_function": "To convert the intellectual horror of the revelation into a bodily, unavoidable fact — the story refuses to let Neo (or the audience) treat the truth as something he can simply argue his way out of. The physical collapse externalizes the cost of waking up and marks the irreversible threshold between the man who wanted answers and the man who now has to survive having them."
+}

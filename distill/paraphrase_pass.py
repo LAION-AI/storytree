@@ -35,6 +35,7 @@ Usage
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import json
 import re
 import sys
@@ -153,6 +154,7 @@ def _tidy(text: str) -> str:
     text = re.sub(r"\s+([,.;:!?])", r"\1", text)
     text = re.sub(r"([,;:])\1+", r"\1", text)
     text = re.sub(r",\s*\.", ".", text)
+    text = re.sub(r"([.!?])\1+", r"\1", text)
     return re.sub(r"\s{2,}", " ", text).strip()
 
 
@@ -257,6 +259,120 @@ def rewrite_one(pool, value: str, runs: Sequence[V.Run], index: V.SourceIndex,
     return elided, "elided after {} attempt(s): {}".format(attempts, last_reason)
 
 
+
+SPAN_SYSTEM = """\
+You rewrite one short stretch of text that was copied from a screenplay.
+
+You are given the stretch, the sentence it sits in, and the screenplay lines it
+came from. Rewrite ONLY the stretch. Return nothing else.
+
+  * If it is SPEECH, say what was communicated, in the third person. Do not keep
+    the speaker's words.
+  * If it is a STAGE DIRECTION, state the same visible fact in different words.
+  * Keep every proper name, number, date, time and place name EXACTLY.
+  * Use different words. Do not reuse the wording you were given: no run of
+    eight consecutive words may survive.
+  * Keep it about the same length. Do not explain, do not add, do not comment.
+
+Return JSON: {"rewritten": "<the stretch, rewritten>"}
+"""
+
+SPAN_SCHEMA = {
+    "type": "object",
+    "properties": {"rewritten": {"type": "string", "maxLength": 900}},
+    "required": ["rewritten"],
+    "additionalProperties": False,
+}
+
+
+def _fit_case(before: str, span: str, protected: Optional[set]) -> str:
+    """Lower a spliced span's first letter when it lands mid-sentence.
+
+    A stretch rewritten on its own comes back as a sentence and is spliced into
+    the middle of one: "Trinity runs As Agent Brown vaults..." Names keep their
+    capital; ordinary words do not.
+    """
+    tail = before.rstrip()
+    if not span or not tail or tail[-1] in ".!?:;\"'":
+        return span
+    first = re.match(r"[A-Za-z][A-Za-z'\-]*", span)
+    if not first:
+        return span
+    word = first.group(0)
+    if word.isupper() or (protected and word.lower() in protected):
+        return span
+    return span[0].lower() + span[1:]
+
+
+def rewrite_spans(pool, value: str, runs: Sequence[V.Run], index: V.SourceIndex,
+                  path: str, *, attempts: int = 3,
+                  protected: Optional[set] = None,
+                  escalate=None) -> Tuple[str, str]:
+    """Rewrite each copied stretch on its own and splice the results in.
+
+    A 9B model asked to rewrite a whole field returns the field almost unchanged:
+    measured at 1 of 10 accepted, against 64 of 74 for a 397B on the same task.
+    The task, not the model, was wrong. One stretch at a time is a small, closed
+    problem -- and the splicing, which is where a small model would actually do
+    damage, is done by code instead.
+    """
+    ordered = sorted(runs, key=lambda r: r.start)
+    pieces, last, rewritten, failed = [], 0, 0, 0
+    for run in ordered:
+        pieces.append(value[last:run.start])
+        span = value[run.start:run.end]
+        sentence = value[max(0, run.start - 120):min(len(value), run.end + 120)]
+        prompt = "\n\n".join([
+            "THE STRETCH TO REWRITE:\n" + span,
+            "IT SITS INSIDE:\n..." + sentence + "...",
+            "IT WAS COPIED FROM ({}):\n{}".format(
+                run.role, index.context(run.source_char) or "(unavailable)"),
+        ])
+        best = None
+        # The small model first, the large one only for what it could not do.
+        # Measured on scene-layer spans: the 9B clears about seven in ten, and
+        # escalating the rest costs a handful of calls instead of a whole run.
+        for endpoint in ([pool] if escalate is None else [pool, escalate]):
+            for attempt in range(attempts):
+                try:
+                    result = endpoint.call(SPAN_SYSTEM, prompt, schema=SPAN_SCHEMA,
+                                           temperature=0.3 + 0.25 * attempt,
+                                           max_tokens=400)
+                    new = (json.loads(result.text) or {}).get("rewritten", "").strip()
+                except Exception:
+                    continue
+                new = _tidy(new.replace("\u00ab", "").replace("\u00bb", ""))
+                if not new or index.exact_runs(new):
+                    continue
+                if facts_preserved(span, new, protected):
+                    continue
+                if not (0.4 * len(span) <= len(new) <= 2.2 * len(span)):
+                    continue
+                best = new
+                break
+            if best is not None:
+                break
+        if best is None:
+            failed += 1
+            sp = V.spans(span)
+            best = (span[:sp[4][1]] + " [...]") if len(sp) >= 5 else "[...]"
+        else:
+            rewritten += 1
+        pieces.append(_fit_case("".join(pieces), best, protected))
+        last = run.end
+    pieces.append(value[last:])
+    out = _tidy("".join(pieces))
+    # The splice can still trip the gate where a rewritten stretch meets the text
+    # around it, so the whole field is re-checked, not just the parts replaced.
+    if index.exact_runs(out):
+        return _elide(value, ordered)[0], "elided: splice still carries a run"
+    if failed and rewritten:
+        return out, "{} span(s) rewritten, {} elided".format(rewritten, failed)
+    if failed:
+        return out, "{} span(s) elided".format(failed)
+    return out, "{} span(s) rewritten".format(rewritten)
+
+
 def _elide(value: str, runs: Sequence[V.Run], keep: int = 5) -> Tuple[str, int]:
     pieces, last = [], 0
     for run in sorted(runs, key=lambda r: r.start):
@@ -350,7 +466,8 @@ def restore_unmoved(node) -> int:
     return fixed
 
 
-def process_node(node, index: V.SourceIndex, pool) -> List[Dict[str, Any]]:
+def process_node(node, index: V.SourceIndex, pool,
+                 span_mode: bool = True, escalate=None) -> List[Dict[str, Any]]:
     """Rewrite in place. Returns one record per field touched."""
     log: List[Dict[str, Any]] = []
     for before, after in shorten_identifiers(node, index).items():
@@ -383,6 +500,9 @@ def process_node(node, index: V.SourceIndex, pool) -> List[Dict[str, Any]]:
             continue
         elif pool is None:
             new, outcome = _elide(value, runs)[0], "elided (no model available)"
+        elif span_mode:
+            new, outcome = rewrite_spans(pool, value, runs, index, path,
+                                         protected=protected, escalate=escalate)
         else:
             new, outcome = rewrite_one(pool, value, runs, index, path,
                                        protected=protected)
@@ -422,6 +542,17 @@ def main() -> int:
     ap.add_argument("--check-only", action="store_true",
                     help="report and exit non-zero; change nothing")
     ap.add_argument("--report", default="")
+    # Nodes are independent, so they parallelise cleanly. The useful ceiling is
+    # the number of endpoints: each llama.cpp server runs -np 1, so extra
+    # requests to one instance queue rather than overlap. Measured earlier in
+    # this project: throughput is flat within an instance and doubles across
+    # them.
+    ap.add_argument("--workers", type=int, default=2)
+    ap.add_argument("--escalate-ports", default="",
+                    help="a larger model to try on spans the small one cannot do")
+    ap.add_argument("--escalate-model", default="")
+    ap.add_argument("--whole-field", action="store_true",
+                    help="rewrite the entire field in one call; needs a large model")
     a = ap.parse_args()
 
     index = V.SourceIndex(Path(a.source).read_text(encoding="utf-8", errors="ignore"))
@@ -463,23 +594,54 @@ def main() -> int:
     else:
         print("  client unavailable: falling back to elision")
 
+    big = None
+    if a.escalate_ports and EndpointPool is not None:
+        big = EndpointPool([int(p) for p in a.escalate_ports.split(",")],
+                           a.escalate_model or a.model, temperature=0.3, max_tokens=400)
+        print("  escalating failed spans to {} on {}".format(
+            a.escalate_model or a.model, a.escalate_ports))
+
     report: List[Dict[str, Any]] = []
     out_root = Path(a.out) if a.out else None
     if out_root and Path(a.nodes).is_dir():
         out_root.mkdir(parents=True, exist_ok=True)
 
+    def handle(job):
+        path, node = job
+        entries = process_node(node, index, pool, span_mode=not a.whole_field,
+                               escalate=big)
+        for entry in entries:
+            entry["file"] = path.name
+            entry["node"] = node.get("scene_id") or node.get("event_id")
+        return entries
+
+    jobs = []
     for path, data, kind in items:
         nodes = data["events"] if kind == "events" and isinstance(data, dict) else (
             data if isinstance(data, list) else [data])
-        for node in nodes:
-            for entry in process_node(node, index, pool):
-                entry["file"] = path.name
-                entry["node"] = node.get("scene_id") or node.get("event_id")
+        jobs += [(path, node) for node in nodes]
+
+    done = 0
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, a.workers)) as ex:
+        for entries in ex.map(handle, jobs):
+            done += 1
+            for entry in entries:
                 report.append(entry)
                 print("  {:<10} {:<28} {}".format(
                     entry["node"] or "-", entry["path"][:28], entry["outcome"]))
-        dest = (out_root / path.name) if out_root and path.is_file() and out_root.is_dir() \
-            else (Path(a.out) if a.out and not Path(a.nodes).is_dir() else path)
+            if done % 25 == 0:
+                print("  ... {}/{} nodes".format(done, len(jobs)), flush=True)
+
+    # Write-back is its own pass over the items. Folded into the worker loop it
+    # closed over the last `path` and `data` only, so a directory of 224 scene
+    # nodes would have written exactly one file.
+    for path, data, _kind in items:
+        if out_root and Path(a.nodes).is_dir():
+            dest = out_root / path.name
+        elif a.out:
+            dest = Path(a.out)
+        else:
+            dest = path
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n",
                         encoding="utf-8")

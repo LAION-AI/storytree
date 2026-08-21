@@ -1,0 +1,114 @@
+{
+ "scene_id": "sc-011",
+ "location": "STREET",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Agent Smith",
+  "Agent Jones",
+  "Agent Brown"
+ ],
+ "summary": "Hurt from her fall, Trinity emerges from an alley and sees a telephone booth at the end of the block. As the phone begins to ring, she races toward it while a garbage truck U-turns across the street and accelerates toward the booth. She reaches it first and answers the phone; an instant later the truck smashes the booth into a brick wall, destroying it. A black loafer descends from the truck and Agent Smith inspects the wreckage, finding no body — Trinity is gone. Agents Jones and Brown join him. They confirm she escaped, that the informant is real, and that they now have the name of the crew's next target: Neo. Smith orders a search, which Jones says has already begun. The camera is then sucked into the phone's mouthpiece, falls through a digital darkness filled with the word 'searching,' and emerges from a computer screen where a search engine runs; it drifts back from the screen and into something else.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "safety",
+   "before": "Hurt and cornered on the street, racing a garbage truck to reach the phone booth.",
+   "after": "She answers the phone and is gone before the truck destroys the booth; 'There is no body.  Trinity is gone.'",
+   "evidence": "Gritting through the pain, she races the"
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "knowledge",
+   "before": "Frustrated that Trinity has escaped, grinding his molars over the empty wreckage.",
+   "after": "He learns the informant is real and they have the next target's name, and 'Agent Smith almost smiles' at the prospect of running a search.",
+   "evidence": "AGENT BROWN  The informant is real.  Agent"
+  },
+  {
+   "who": "The Agents",
+   "axis": "custody",
+   "before": "They have failed to capture Trinity and only wreckage to inspect.",
+   "after": "They now possess actionable intelligence: 'They now hold the identity of the next person they intend to eliminate. The name is Neo,' and a search is underway.",
+   "evidence": "AGENT JONES  We have the name of"
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Trinity escapes the Agents by answering a ringing phone booth just before a garbage truck destroys it, after which the Agents learn their next target is Neo and launch a search.",
+  "continues_from_earlier": true
+ },
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To reach the ringing phone booth and answer it before the garbage truck reaches her — the only exit left from a street that has become a kill box.",
+   "feels": "Running on pure adrenaline and discipline, pain from her crash through the window and down the stairwell (sc-010) screaming through her body, but refusing to let it slow her. There is no panic, only a ferocious narrowing of attention onto the one point of escape.",
+   "shows": "Gritting through the pain, racing the truck, slamming into the booth, answering the phone a split-second before the truck obliterates it. Nothing else — no glance back, no reaction to the Agents.",
+   "basis": "The scene opens with her 'obviously hurt' and 'gritting through the pain' as she races a truck that is 'taking aim' at the booth; she answers 'just as' it smashes the Plexiglas. This is the tail of the rooftop/stairwell chase from sc-008 through sc-010, where she was already bleeding and broken but still moving.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "The Agents",
+     "belief": "They will try to physically stop her, and she can outrun or out-timing their violence by reaching the phone first.",
+     "wrong_because": "She does not yet know how close the trap has come — that the informant (Cypher) has already given them the crew's next target, Neo. Her escape looks like a clean win to her, but the net is now tightening around someone else because of what she cannot see."
+    }
+   ]
+  },
+  {
+   "who": "Agent Smith",
+   "wants": "To convert a failed capture into a usable lead — to lock onto the crew's next target and put the machine's search apparatus on it.",
+   "feels": "Genuine, bodily frustration at being cheated again ('grinds his molars,' jaw set) — the same prey slipping the same way — which then flips, almost imperceptibly, into satisfaction the instant the informant's information lands. The failure stops mattering because a larger, colder pleasure has arrived: the hunt now has a name.",
+   "shows": "First, pure physical irritation at the empty wreckage. Then, when Brown confirms 'The informant is real,' he 'almost smiles' and says a clipped 'Yes' — the only crack in the agent-mask, quickly re-contained as he issues the order to run a search.",
+   "basis": "The text explicitly marks the concealment: 'He clenches his jaw and grinds his teeth in anger.,' then 'Agent Smith almost smiles' on Brown's line, and he reasserts command with 'We'll need a search running.' 'It doesn't matter' to Jones's report that she escaped — the dismissal is the pivot from loss to gain.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "The informant (unseen)",
+     "belief": "The informant is 'real' — a reliable asset inside the crew, delivering truth.",
+     "wrong_because": "A mistaken belief in the wrong direction: the informant IS real and IS delivering truth, but Smith does not yet know this is Cypher trading his crew for his own return to the Matrix. Smith reads the betrayal as simple loyalty to the system; it is actually a private deal. (This is future-correcting, not yet knowable to him.)"
+    },
+    {
+     "other": "Trinity / the crew",
+     "belief": "Letting Trinity escape is a negligible loss because the next target is now in hand; the machine's search will close the gap.",
+     "wrong_because": "He underestimates what Trinity's escape preserves — she is the one who will reach Neo first (ev-005) and guide him out. The 'small' escape is the seed of the crew staying ahead of the search he is so pleased to launch."
+    }
+   ]
+  },
+  {
+   "who": "Agent Jones",
+   "wants": "To register the operational facts precisely and demonstrate the apparatus is already executing — no wasted motion, no emotion.",
+   "feels": "Nothing that reads as personal; he is the clean instrument of the collective, stating outcomes and status. If there is any interiority, it is the quiet satisfaction of a system functioning exactly as designed — the search 'already begun' before the order is even given.",
+   "shows": "Two flat, factual lines: 'She got out' (acknowledging the failure without flinching from it) and 'It's already begun' (anticipating Smith's command). He offers no justification and no reaction to Smith's near-smile.",
+   "basis": "His dialogue is purely informational — he names Trinity's escape and confirms the search is underway before being asked. This matches the Agents' established characterization in sc-008, where they move and report as a single coordinated jurisdiction rather than as individuals.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Agent Smith",
+     "belief": "Smith's frustration is a momentary reaction that the mission's momentum will override; the correct response is to keep feeding facts and keep the machine moving.",
+     "wrong_because": "Jones reads Smith's near-smile as mere re-engagement with the hunt, not registering — cannot register — that Smith carries a private, almost sensual relish for this kind of predation that exceeds the collective's cold efficiency. (Inferred; not yet legible as divergence in this scene.)"
+    }
+   ]
+  },
+  {
+   "who": "Agent Brown",
+   "wants": "To deliver the decisive confirmation that closes the loop — that the informant is real and the target is named — so the unit can act.",
+   "feels": "The same impersonal certainty as Jones; he is a relay for verified data. There is no evident private stake, only the satisfaction of a fact confirmed.",
+   "shows": "Two declarative lines — 'The informant is real' and 'The name is Neo' — delivered without inflection, standing with the other two over the wreckage. He shows no reaction to Trinity's escape or to Smith's almost-smile.",
+   "basis": "His only contributions are the two confirming statements that trigger Smith's shift. This is consistent with his role in sc-008, where he was the physical pursuer on the rooftops — now back in the collective, reporting rather than hunting.",
+   "grounding": "in_this_scene",
+   "believes_about": []
+  }
+ ],
+ "connects_back": [
+  "Trinity's injuries ('obviously hurt,' 'gritting through the pain') are the direct physical residue of her crash through the window and tumble down the stairwell in sc-010.",
+  "The whole escape is the continuation of the rooftop chase begun in sc-008 and the window dive in sc-009 — the phone booth is the exit Morpheus directed her to when he told her the line was traced (ev-001).",
+  "The Agents' arrival by garbage truck and their coordinated reporting extend the collective, jurisdiction-asserting behavior established in the hotel raid (ev-001 / sc-008).",
+  "The confirmation that 'the informant is real' pays off the unseen betrayal that enabled the police to storm Room 303 in the first place (ev-001)."
+ ],
+ "sets_up": [
+  "The naming of 'Neo' as the target and the launch of the search directly motivates the Agents' convergence on Neo in his apartment and office (ev-002, ev-003).",
+  "Trinity's survival — she is 'gone,' not captured — keeps the crew intact so she can later reach and guide Neo out (ev-005, ev-006).",
+  "The machine's 'searching' apparatus, visualized as the camera falls through the phone into the running search engine, establishes the surveillance reach that will pursue Neo through the Matrix (ev-002 onward)."
+ ],
+ "dramatic_function": "To close the escape-chase event by converting Trinity's narrow physical survival into the story's pivot from hunter-vs-prey to hunter-with-a-new-target: the scene trades one failure (the escaped prisoner) for a colder victory (a named quarry), and its final image — the camera literally falling through the phone into a running 'search' — dramatizes the machine's totalizing surveillance turning its gaze toward Neo, who becomes the axis of everything that follows."
+}

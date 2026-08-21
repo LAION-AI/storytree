@@ -1,0 +1,79 @@
+{
+ "scene_id": "sc-177",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Tank"
+ ],
+ "summary": "In the hovercraft, Trinity shudders as her consciousness returns from the Construct. She urgently calls out for Neo, then Tank demands to know what just happened. Trinity reports that an Agent attacked and insists that Tank send her back into the Matrix immediately. Tank refuses, telling her he cannot.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "Still recovering as her mind returns from the Construct",
+   "after": "Alert and desperate to be sent back into the Matrix to help Neo",
+   "evidence": "Trinity blinks, shivering as her conscious exits"
+  },
+  {
+   "who": "Tank",
+   "axis": "knowledge",
+   "before": "Unaware of what happened in the Matrix",
+   "after": "Learns an Agent attacked Neo",
+   "evidence": "TANK\nWhat the hell just happened?"
+  }
+ ],
+ "event_hint": {
+  "kind": "a crisis response",
+  "one_line": "Trinity jolts back to the hovercraft and demands to be sent back after Neo, but Tank refuses."
+ },
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To be jacked back into the Matrix immediately, so she can reach Neo before it is too late.",
+   "feels": "She has just watched Smith fire point-blank through the booth window and seen Neo scream 'No!' as she was pulled out — she believes Neo is dead or dying, and her terror converts straight into the imperative to move.",
+   "shows": "Only the demand — 'You have to send me back!' — no explanation, no plea, no grief. She gives Tank the fact ('An Agent!') as if it were a reason in itself.",
+   "basis": "In sc-176 she saw the bullet burst through the plastic as she disappeared, and heard Neo's 'No!'; here she jolts awake shouting his name and skips straight past Tank's 'What happened?' with a command. Her refusal to narrate is the residue of having just watched it happen.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "That he is refusing out of hesitation or fear, and that she can override him by force of urgency.",
+     "wrong_because": "Tank isn't refusing because he is afraid — he is refusing because he cannot; he has no line to send her to, or the situation has closed the exit. She reads his 'I can't' as a block to be overcome rather than a real constraint."
+    },
+    {
+     "other": "Neo",
+     "belief": "That he is still alive and reachable if only she gets back in fast enough.",
+     "wrong_because": "She has just seen a gunshot through the booth; there is real reason to think she is already too late, which is exactly why she will not let herself slow down to think."
+    }
+   ]
+  },
+  {
+   "who": "Tank",
+   "wants": "To find out what happened and keep Trinity — his last crewmate still in the ship — from charging back into a fight with an Agent.",
+   "feels": "Blindsided and alarmed: he has been watching the subway fight from the hovercraft and now something has ruptured that he can't see, and the person who can explain is trying to run back toward the danger.",
+   "shows": "A demand for information ('What the hell just happened?') and then a flat, short refusal ('I can't!') — he gives no reason, which reads as obstruction to Trinity.",
+   "basis": "He was monitoring the Matrix feed during the subway showdown (event ev-031), so he knows the crew was in a firefight; his 'What the hell' marks that the feed just broke in a way he didn't expect, and his refusal is the operator's instinct to hold the line rather than lose a second person to an Agent.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "That if he can just get her to explain, she will calm down and they can decide together.",
+     "wrong_because": "She is past deliberation — she saw Neo shot and is operating on panic, so explanation is not what she needs and not what she will give; his attempt to slow her down only deepens her desperation."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-176: Trinity sees the bullet burst through the booth window and hears Neo's 'No!' as she is pulled out — the image that drives her demand to be sent back.",
+  "sc-175/sc-176: Agent Smith reappears and fires on Trinity, confirming the crew's worst fear that an Agent has closed in.",
+  "ev-031: The hovercraft crew has been observing the subway showdown, which is why Tank's feed suddenly breaking is alarming rather than routine."
+ ],
+ "sets_up": [
+  "ev-034: Neo's death and resurrection — Trinity's conviction that Neo is in mortal danger, and her need to reach him, is what she will act on when his vitals flatline.",
+  "ev-035: The hovercraft's desperate escape and Neo being pulled from the Matrix, the payoff of Trinity's insistence on getting back to him.",
+  "The crew's realization that an Agent has cornered Neo alone, forcing them to confront the limits of what they can do from the ship."
+ ],
+ "dramatic_function": "It snaps the story out of the Matrix and converts Trinity's private, just-witnessed horror into an active, blocked objective — her demand to return versus Tank's inability to send her — so the audience is left stranded with the crew, knowing Neo is alone and out of reach, which tightens the suspense toward his death and the rescue that must follow."
+}

@@ -1,0 +1,87 @@
+{
+ "scene_id": "sc-123",
+ "location": "ROOM 608",
+ "time_of_day": "DAY",
+ "present": [
+  "Morpheus",
+  "Agent Smith",
+  "cops"
+ ],
+ "summary": "Morpheus and Agent Smith are still on the floor locked together. They exchange brief words in which Smith identifies himself and Morpheus mocks the Agents' identical appearance. Smith begins prying Morpheus's hands off his throat, so Morpheus head-butts him, shattering his nose and glasses. Unfazed and bleeding, Smith returns three head butts in quick succession, staggering Morpheus. A kick then drives Morpheus deep into the wall, crunching through plaster and lathe. Morpheus turns to see a wall of cops in the doorway; Smith orders them to take him, and the cops rush in, burying Morpheus under their numbers.",
+ "what_changes": [
+  {
+   "who": "Agent Smith",
+   "axis": "condition",
+   "before": "pinned on the ground in Morpheus's death grip, unable to breathe",
+   "after": "has freed his throat and gained the upper hand over Morpheus",
+   "evidence": "Agent Smith counters Morpheus and slowly begins"
+  },
+  {
+   "who": "Morpheus",
+   "axis": "condition",
+   "before": "dominant, strangling Smith",
+   "after": "staggered and driven into the wall, then overwhelmed by the cops",
+   "evidence": "Morpheus staggers back, his body going slack"
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "standing",
+   "before": "alone, grappling one-on-one with Morpheus",
+   "after": "in command of a wall of cops who seize Morpheus on his order",
+   "evidence": "The wall of cops rushes Morpheus, filling"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Agent Smith turns a one-on-one struggle with Morpheus into a capture by overwhelming him with cops.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "Agent Smith's nose and glasses"
+ ],
+ "uncertain": [],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Agent Smith",
+   "wants": "To free his throat and convert a one-on-one struggle he is losing into a controlled capture.",
+   "feels": "Something colder than pain: his grip is failing, and the moment his hands start to pry is the moment he stops relying on his own body and reaches for the institution behind him. He feels no injury — the head-butt that shatters his nose registers as information, not suffering.",
+   "shows": "Ceremonial calm — 'The great Morpheus. We meet at last.' — and, after his nose and glasses shatter, an unfazed smile as he returns three head-butts and then stands to command a wall of cops.",
+   "basis": "He speaks with unhurried formality while pinned ('We meet at last'), then 'slowly frees his hands from his neck' rather than panic; after Morpheus head-butts him and 'His nose and glasses shatter,' he is 'unfazed, smiles, blood oozing,' returns violence mechanically, and ends by ordering 'Take him,' turning the fight into a police action. This inverts sc-121, where Morpheus had him pinned and weaponless.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus is a dangerous but ultimately capturable insurgent, worth taking alive for what is in his mind.",
+     "wrong_because": "He does not yet know how much Morpheus will refuse to yield, nor that this capture will force the crew — the 'Neo' he has not met — to come for him. He reads Morpheus as prey; the scene's outcome (ev-025 interrogation, ev-026 rescue debate) will correct that."
+    }
+   ]
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To keep Smith dead or dying long enough to have bought Trinity and Neo the time to escape — and, failing that, to die on his feet rather than be taken.",
+   "feels": "He is already losing. The 'slowly begins to pry' tells him his grip is not going to hold, so he spends his last leverage in one vicious, close-range strike (the head-butt) meant to finish the job before the room fills. Under the violence is the calm of a man who, in sc-121, already gave the order that removed the only thing he was fighting to protect.",
+   "shows": "Defiance and contempt — 'And you are?' and 'You all look the same to me' — then the viper-strike head-butt, and after being staggered and kicked into the wall, turning in time to see the cops rather than begging or flinching.",
+   "basis": "His two lines are deliberate taunts designed to deny Smith identity ('You all look the same to me') even while he is being strangled; the head-butt comes 'striking like a viper' the instant prying begins, a final attempt to end it; once buried in the wall and facing 'a wall of men,' he does not submit verbally — he simply disappears 'under the tide.' Earlier (sc-121) he committed fully to Trinity getting Neo out, so this fight is now only about time and dignity, not survival.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Agent Smith",
+     "belief": "That Smith is merely another identical Agent, interchangeable and therefore beneath genuine recognition ('You all look the same to me').",
+     "wrong_because": "This Smith is the one who will personally interrogate him (ev-025) and develop a particular, venomous fixation on him — the interchangeability Morpheus asserts here is a taunt that this specific Smith will spend later events contradicting."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-121: Morpheus diving on Smith and pinning him weaponless, then ordering Trinity to get Neo out — this scene is the fight he stayed behind to finish.",
+  "sc-121: 'Before Agent Smith can find his weapon' — Smith's turn to the cops instead of a gun is the same problem (losing the grapple) solved another way.",
+  "sc-120/122: the cops and soldiers closing in around Room 608 and the basement, so the 'wall of men in the doorway' is the building finally arriving where the earlier scenes said it was going."
+ ],
+ "sets_up": [
+  "ev-025: Morpheus in Agent Smith's custody, where Smith's 'We meet at last' here matures into his interrogation monologue.",
+  "ev-025: The interrogation of a live, restrained Morpheus rather than a corpse — the capture, not the kill, is what this scene achieves.",
+  "ev-026: The crew's rescue debate, made necessary because Morpheus is taken alive and the building is now known to hold him under guard."
+ ],
+ "dramatic_function": "To flip the rescue-in-progress of the preceding scenes into a clean, decisive capture: it ends Neo's crew's escape as a victory and reopens the story as a capture-and-rescue structure, while establishing Smith's personal investment in Morpheus that the interrogation will pay off."
+}

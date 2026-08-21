@@ -1,0 +1,131 @@
+{
+ "scene_id": "sc-020",
+ "location": "INTERROGATION ROOM",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Neo",
+  "Agent Smith",
+  "Agent Brown",
+  "Agent Jones",
+  "the standing Agents"
+ ],
+ "summary": "Viewed first through a camera monitor that the viewpoint enters like a window, Neo sits alone in a white room until the door swings open and the Agents walk in. Agent Smith takes a seat. across from him and slaps down a thick manila file labeled \"Anderson, Thomas A.\" Smith lays out Neo's two lives — respectable program writer Thomas A. Anderson who \"pay[s] your taxes\" and the hacker \"Neo,\" guilty of \"virtually every computer crime.\" He offers a deal: help capture the terrorist Morpheus and the slate will be wiped clean. Neo rejects it with contempt, demanding his phone call and asserting his rights. Smith then asks \"what use is a call if you cannot talk?\" and Neo's mouth seals shut, his lips melding until every hint of his mouth has vanished.\" When Neo lunges for the door, the Agents pin him in the chair; Smith declares, \"\"You will assist us, Mr. Anderson, regardless of your desire.\" Smith removes a fiber-optic wire tap that animates into an insect/fluke-worm creature, which burrows into Neo's navel.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "custody",
+   "before": "A detained but physically intact suspect sitting alone at a table, still believing he can assert his rights.",
+   "after": "Physically violated and held down while a bug is implanted into his body, fully in the Agents' control.",
+   "evidence": "Neo struggles helplessly as Smith dangles the"
+  },
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "Confident and defiant, mocking the interrogation as \"Gestapo crap\" and demanding his phone call.",
+   "after": "Terrified, panicking, and struggling helplessly as his own mouth seals shut and a creature burrows into him.",
+   "evidence": "The question unnerves Neo and strangely he"
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "standing",
+   "before": "A negotiator offering a bargain, claiming \"I think you desire to act correctly.\"",
+   "after": "An enforcer who drops the pretense of negotiation and imposes compliance by force.",
+   "evidence": "You are going to help us, Mr"
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Whole-bodied, able to speak and to give Smith the finger.",
+   "after": "Mouthless and implanted — his lips \"seal shut, melding into each other\" and a wire-creature enters his navel.",
+   "evidence": "Neo feels his lips grow soft and"
+  }
+ ],
+ "event_hint": {
+  "kind": "interrogation",
+  "one_line": "Agents interrogate Neo, offer him a deal to catch Morpheus, and when he refuses, Smith seals his mouth shut and implants a tracking bug in his navel.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "camera monitor",
+  "the manila file / envelope labeled \"Anderson, Thomas A.\"",
+  "Agent Smith's sunglasses / ice-blue eyes",
+  "the phone call Neo demands",
+  "the fiber-optic wire tap that becomes an insect/fluke-worm creature"
+ ],
+ "uncertain": [
+  "Whether Neo actually has any legal rights or a phone call owed to him in this place.",
+  "Whether the mouth-sealing and the bug are physical reality or a hallucination Neo experiences.",
+  "Whether Neo will ultimately cooperate after the bug is implanted."
+ ],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To remain an autonomous agent — to refuse the bargain, assert his rights, and walk out of the room with his dignity and body intact.",
+   "feels": "A dawning, bottomless dread ('sinking into a pit of shit') beneath a brittle, contemptuous bravado; the contempt is a shield against how thoroughly he has been read and how little leverage he actually has.",
+   "shows": "Mocking deflection ('He mockingly remarks that the offer sounds excellent.') and open insult — giving Smith the finger and demanding his phone call — right up until Smith's question about speech makes his jaw tighten, at which point the contempt collapses into visible panic.",
+   "basis": "His 'give you the finger / I want my phone call' performance is pure defiance, but the text tracks a precise collapse: 'The question unnerves Neo,' his jaw tightens, and 'confusion grow[s] into panic' before his mouth seals and he is pinned. The bravado is loud exactly because the fear is large.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Agent Smith",
+     "belief": "That Smith is a corrupt human lawman he can intimidate with rights-talk and contempt ('Gestapo crap,' 'I know my rights').",
+     "wrong_because": "Smith is not bound by human law or a real phone call; he can literally erase Neo's mouth and implant a creature, so Neo's appeal to rights is a category error against a being who controls the rules of this reality."
+    },
+    {
+     "other": "Agent Smith",
+     "belief": "That his refusal and insult cost him something / changed the outcome.",
+     "wrong_because": "Smith had already decided — 'whether you want to or not' — so the defiant performance only determined the manner of Neo's violation, not whether it happened."
+    }
+   ]
+  },
+  {
+   "who": "Agent Smith",
+   "wants": "Neo's cooperation in locating Morpheus, obtained by any means — ideally by consent, but by force if consent is refused.",
+   "feels": "Cold, patient certainty and a faint, proprietary amusement; no anger, because he holds total control and treats Neo's rebellion as a minor, expected delay rather than a genuine obstacle.",
+   "shows": "A reasonable, almost courteous negotiator's manner — 'forthcoming,' 'I'm convinced you'd prefer to act with integrity.,' offering a 'fresh start' — which he drops without heat the instant Neo refuses, replacing it with a smile and physical enforcement.",
+   "basis": "He stages a soft cop pitch ('My team thinks I'm squandering my efforts. I'm convinced you're on the side of justice.') and only removes his glasses / escalates to the mouth-seal and bug after Neo's finger and rights-demand, with the line 'You are going to help us. whether you want to or not' marking the seamless switch from persuasion to compulsion.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo is a frightened, self-interested small criminal who can be turned by the promise of a wiped slate and a 'future.'",
+     "wrong_because": "Neo refuses the deal outright and with contempt; Smith's model of Neo as a rational, self-preserving turncoat misses that Neo has a loyalty and a stubbornness that make him reject self-interest — the very quality that later makes him 'The One.'"
+    },
+    {
+     "other": "Neo",
+     "belief": "That he has correctly sized Neo up ('we've had our eye on you,' the two-lives lecture) and that control equals understanding.",
+     "wrong_because": "He has catalogued Neo's external life completely yet fundamentally misreads Neo's character — he knows everything about Anderson and nothing about why Neo will not be bought."
+    }
+   ]
+  },
+  {
+   "who": "the standing Agents (Brown and Jones)",
+   "wants": "To witness and enforce Smith's authority, enjoying the demonstration of power over a trapped suspect.",
+   "feels": "Derisive satisfaction — they are the 'colleagues' who thought Smith was wasting his time, and Neo's panic amuses them.",
+   "shows": "Snickering at Neo's 'confusion grow[n] into panic' and physically restraining him, ripping open his shirt on Smith's nod — participating as an audience and as muscle, not as negotiators.",
+   "basis": "They 'snicker, watching Neo's confusion grow into panic' and later 'restrain him, holding him in the chair' and 'rip open his shirt' at Smith's signal, marking them as a contemptuous, unified backup rather than independent actors.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That he is a trivial, laughable target unworthy of Smith's personal attention.",
+     "wrong_because": "This is the same man Morpheus has been hunting for and calling 'The One'; their contempt is a misreading of exactly how significant Neo is."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "The capture at the end of sc-019 (handcuffed Neo forced into the sedan) delivers him into this room, so the interrogation is the payoff of his failed scaffold escape.",
+  "Neo's dropped phone in sc-018 — his loss of contact with Morpheus — is why he is now isolated and has no ally to appeal to, sharpening his 'I want my phone call' demand.",
+  "Morpheus's warning in sc-017 ('They're coming for you. I'm not certain what their next move will be') pays off here: the Agents' true, inhuman nature is exactly what Morpheus feared.",
+  "The 'two lives' file presupposes the surveillance established when the Agents located Neo's cubicle in sc-017."
+ ],
+ "sets_up": [
+  "The implanted creature and sealed mouth are the physical mechanism the story will need to explain and reverse — Neo waking 'physically intact but psychologically shaken' (ev-004) and later discovering his body has been modified (ev-008).",
+  "The violation establishes the Agents' power to reach into a body inside the Matrix, foreshadowing the revelation that this world is a construct and Neo's body is actually plugged in elsewhere (ev-006).",
+  "Neo's refusal of the deal under threat confirms to the resistance that he will not betray Morpheus, setting up Morpheus's decision to treat him as 'The One' (ev-004).",
+  "The trauma of being silenced and implanted motivates Neo's shaken state and his willingness to finally follow Morpheus's instructions (ev-004, ev-005)."
+ ],
+ "dramatic_function": "To strip Neo of every illusion of control and agency — exposing the Matrix's rulers as literally able to rewrite a human body — so that his defiant refusal becomes the cost of his freedom and the violation becomes the physical debt the story must later repay."
+}

@@ -1,0 +1,83 @@
+{
+ "scene_id": "sc-129",
+ "location": "STREET",
+ "time_of_day": "DAY",
+ "present": [
+  "NEO",
+  "TRINITY",
+  "TANK"
+ ],
+ "summary": "NEO, TRINITY, and TANK (voice over radio) hurry along a rear alley. NEO asks if MORPHEUS is alive. TRINITY relays the question to TANK, who confirms MORPHEUS is alive but being moved to an unknown location. TRINITY tells NEO he is alive, and inevitability seems to cinch around NEO. TRINITY demands an exit, and TANK informs them CYPHER is nearby at Franklin and Erie, having been sent there despite their earlier suspicion of him.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Uncertain whether MORPHEUS survived",
+   "after": "Knows MORPHEUS is alive",
+   "evidence": "TRINITY: He's alive. Again, inevitability seems to"
+  },
+  {
+   "who": "TRINITY",
+   "axis": "knowledge",
+   "before": "Needs to know MORPHEUS's status",
+   "after": "Learns MORPHEUS is alive but being moved",
+   "evidence": "TANK (V.O.): Yes. They're moving him"
+  },
+  {
+   "who": "TRINITY",
+   "axis": "knowledge",
+   "before": "Seeking an exit route",
+   "after": "Learns CYPHER is at Franklin and Erie",
+   "evidence": "TRINITY: Got it. TANK (V.O.): So"
+  }
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "The group races down a back street, confirming MORPHEUS is alive and locating an exit via CYPHER.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [],
+ "uncertain": [
+  "The exact location they are heading to",
+  "Why TANK sent CYPHER to Franklin and Erie despite suspicions"
+ ],
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "NEO",
+   "wants": "To know whether Morpheus survived — the one fact that would settle what he owes.",
+   "feels": "The confirmation that Morpheus is alive does not relieve him; it tightens a trap. A rescue now becomes the thing he is responsible for, and the text marks this as inevitability cinching around him — he is being drawn toward a choice he has already, in effect, made.",
+   "shows": "A single clipped question, then outwardly stays in the run. He lets nothing of the weight show.",
+   "basis": "He opens the scene with 'Is Morpheus alive?' and the narration states 'inevitability seems to cinch around Neo' only after Trinity confirms 'He's alive.' This is the second such reaction to Morpheus's capture, the first being his refusal to accept the crew's plan to unplug Morpheus rather than let the Agents in (ev-023 context).",
+   "grounding": "from_the_event_shape"
+  },
+  {
+   "who": "TRINITY",
+   "wants": "To convert uncertainty into actionable orders fast: Morpheus's status, then an exit, then the rendezvous.",
+   "feels": "Operating under pressure with a commander's compression — she is managing both Neo and the ship at once, and there is no room to feel anything she cannot use. The Cypher problem is filed, not resolved; she registers the risk and moves on because the mission outranks her suspicion.",
+   "shows": "Barked relays and commands: 'We need an exit!', 'Got it.' When Cypher is named she starts 'Cypher, I thought —' then cuts herself off at Tank's answer rather than argue it into the street.",
+   "basis": "She relays Neo's question to Tank instead of answering it herself, then immediately pivots to demanding an exit, and only briefly breaks ('Cypher, I thought —') before accepting Tank's dispatch. The crew already suspected Cypher (established before this scene) yet he was sent to the exit anyway.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "TANK",
+   "wants": "To keep his people out of the Matrix and moving toward extraction while managing the Cypher problem he can see from the ship.",
+   "feels": "Pragmatic and slightly defensive about the Cypher call: he knows the crew's suspicion ('So did we') but made the operational decision to position Cypher at the exit because he had no better option and Cypher was the one who got out. He is not reconciling the betrayal because, from his seat, there is no evidence yet — only a dislike.",
+   "shows": "Terse, factual reports over the radio: confirms Morpheus is alive but moving, then explains the Cypher placement with 'That's what we did. I dispatched him to Franklin and Erie.,' acknowledging the shared suspicion while standing by the order.",
+   "basis": "In sc-126/127 he took Cypher's panicked call and directed him to the nearest exit (Franklin and Erie TV repair shop); here he repeats that decision to Trinity while conceding the crew's distrust. His 'So did we' is an admission that he acted against the group's instinct.",
+   "grounding": "from_earlier_scenes"
+  }
+ ],
+ "connects_back": [
+  "sc-126/127: Tank's decision to send Cypher to the Franklin and Erie TV repair shop exit, which is now the rendezvous Trinity is being routed toward.",
+  "The crew's established suspicion of Cypher, which Trinity's half-spoken 'Cypher, I thought —' carries and Tank's 'So did we' concedes.",
+  "Morpheus's capture and the earlier debate over unplugging him, which is what makes 'He's alive' land on Neo as inevitability rather than relief.",
+  "sc-128: Trinity's call reaching Tank, which initiates this three-way coordination."
+ ],
+ "sets_up": [
+  "The crew converging on the Franklin and Erie exit (TV repair shop) where Cypher will be waiting with the rifle that kills Dozer and shoots Tank (ev-023).",
+  "Neo's commitment to rescuing Morpheus now that he knows Morpheus is alive — the drive that leads him to reject a clean escape and go back in (ev-026).",
+  "The fatal gap between the crew's suspicion of Cypher and their failure to act on it, which the betrayal exploits (ev-023)."
+ ],
+ "dramatic_function": "It is the false-exit beat: the scene gives the crew (and the audience) the two reassurances that should mean safety — Morpheus lives, and an exit is secured — while quietly routing them straight into the trap, so that relief and doom arrive at the same door."
+}

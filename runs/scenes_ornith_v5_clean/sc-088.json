@@ -1,0 +1,70 @@
+{
+ "scene_id": "sc-088",
+ "location": "ROOM 1313",
+ "time_of_day": "DAY",
+ "present": [
+  "MOUSE",
+  "TANK"
+ ],
+ "summary": "In ROOM 1313, Mouse's cellular phone rings. Mouse answers it with a jokey line, 'Welcome to Movie-Phone.' Tank, speaking over the phone (V.O.), delivers a message: 'They're on their way.' The scene is a brief phone contact in which Tank relays that something or someone is en route.",
+ "what_changes": [
+  {
+   "who": "MOUSE",
+   "axis": "knowledge",
+   "before": "Mouse is at his station when his cellular phone rings, unaware of any incoming message.",
+   "after": "Mouse learns from Tank that 'They're on their way,' receiving news of an approaching group.",
+   "evidence": "MOUSE\nWelcome to Movie-Phone.\nTANK (V"
+  }
+ ],
+ "event_hint": {
+  "kind": "a phone contact",
+  "one_line": "Tank rings Mouse to report that 'They're on their way.'",
+  "continues_from_earlier": false
+ },
+ "uncertain": [
+  "Who 'they' refers to.",
+  "Whether Tank is physically in ROOM 1313 or calling from elsewhere, since Tank is heard only as V.O."
+ ],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "MOUSE",
+   "wants": "To hold onto a moment of unguarded levity before the work resumes — to be the kid who cracks a joke rather than the operator braced for a raid.",
+   "feels": "A reflexive, defensive brightness — the phone ringing yanks him out of whatever reverie or boredom he was in, and his 'Welcome to Movie-Phone' is the instinct to keep things light, to not let the crew see him as the nervous youngest one. Under it, a readiness to snap back into operator mode the instant a real message lands.",
+   "shows": "A jokey, performative greeting — playful, almost flippant. Then, off-page, he goes quiet and listens, taking in Tank's report.",
+   "basis": "His line 'Welcome to Movie-Phone' is a deliberate bit of comic theater aimed at whoever's on the other end; it is the one observable beat of his interior life here. The jokey register is exactly the register a person uses to keep a tense situation from feeling tense. That Tank's reply is a flat, information-only 'They're on their way' means the joke dies on arrival and Mouse's face would change accordingly.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "TANK",
+     "belief": "That Tank is a fellow crew member clocking him being silly on the phone and will take the joke the way it's meant.",
+     "wrong_because": "Tank isn't trading banter back — he's relaying operational news, which means he's either not in a joking mood or not in a position to joke, and Mouse's read of the moment as light is about to be corrected."
+    }
+   ]
+  },
+  {
+   "who": "TANK",
+   "wants": "To get a single piece of time-critical information to Mouse with zero ornament — the crew is inbound, prepare the exit.",
+   "feels": "Focused and unamused. He has no bandwidth for Mouse's gag; his mind is on the mechanics of bringing the others out, which is why his message is stripped to four words and carries no reciprocal warmth.",
+   "shows": "Nothing visible — he is present only as V.O., so all we get is the voice: flat, efficient, no return on Mouse's joke.",
+   "basis": "Tank's line contains no acknowledgment of the 'Movie-Phone' bit and no padding — pure transmission. Reading him from the event shape (the crew returning to the Hotel Lafayette to extract, ev-022), his 'They're on their way' is the heads-up that precedes an extraction, which is the only reason to call with such compression.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "MOUSE",
+     "belief": "That Mouse is at his station, alert and ready to receive the message and act on it.",
+     "wrong_because": "This is inferred from the event shape, not the scene. Tank has no way of knowing how little time is actually left before the raid turns lethal — his belief that Mouse is simply 'at his station, ready' will be undercut by what the approaching group does (ev-022)."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "The Oracle's verdict to Neo ('not the One,' waiting for something) and Morpheus's instruction to keep it secret (sc-085/086) put the crew on a clock — the 'gift' in Neo and the coming choice (ev-021) make the crew's movements urgent.",
+  "The crew is en route back to the Hotel Lafayette after the Oracle visit (sc-087), which is why Tank is reporting that 'they' are inbound to a fixed location."
+ ],
+ "sets_up": [
+  "The arrival of the approaching group at the Hotel Lafayette that triggers the Agents' environmental glitch and the bricking-up of the windows (ev-022).",
+  "Mouse being caught at his station / separated during the raid that follows (ev-022)."
+ ],
+ "dramatic_function": "A pivot from the intimate, philosophical quiet of the Oracle's apartment back into operational momentum — the phone call re-anchors us in the crew's machinery and, by compressing the whole exchange to a jokey greeting and a four-word warning, it converts the scene's lightness into dread, signaling that the consequence of Neo's 'waiting' is about to arrive."
+}

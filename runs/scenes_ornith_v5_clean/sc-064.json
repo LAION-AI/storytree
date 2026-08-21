@@ -1,0 +1,83 @@
+{
+ "scene_id": "sc-064",
+ "location": "HALL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Cypher"
+ ],
+ "summary": "Trinity steps out of Neo's room into the hall and finds Cypher watching her. Cypher opens with a jab — 'I can't recall you ever bringing me a meal.' — and, when she stays silent, presses his suspicion that there is 'something about him.' Trinity meets this coolly, asking 'Cypher asks if she has become a believer, and Trinity responds with skepticism. then shifts to a strategic question: if Morpheus is so certain, why doesn't he bring him to the Oracle? Neo to the Oracle, who 'would know.' Trinity answers that 'Morpheus will take him when he's ready,' turns, and walks away while Cypher watches her go.",
+ "what_changes": [
+  {
+   "who": "Cypher",
+   "axis": "allegiance",
+   "before": "He is quietly suspicious of Trinity's attachment to Neo and probes her about it.",
+   "after": "He moves from suspicion to a concrete plan, suggesting Neo be taken to the Oracle to confirm Morpheus's certainty.",
+   "evidence": "I just keep wondering if Morpheus is"
+  },
+  {
+   "who": "Trinity",
+   "axis": "trust",
+   "before": "She is caught off guard, saying nothing as Cypher watches and probes her.",
+   "after": "She regains control, deflects his doubt, and leaves on her own terms once he raises the Oracle.",
+   "evidence": "She turns and he watches her walk"
+  }
+ ],
+ "event_hint": {
+  "kind": "a negotiation",
+  "one_line": "Cypher tests Trinity's loyalty to Neo and plants the idea of going to the Oracle.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether Cypher's questions are genuine curiosity or a calculated probe of Trinity's feelings."
+ ],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Cypher",
+   "wants": "To confirm and expose that Trinity has feelings for Neo — and, failing to rattle her, to redirect the conversation toward a concrete strategic lever (the Oracle) that serves his own skepticism about Morpheus's certainty.",
+   "feels": "Resentful and sidelined. He reads Trinity's caretaking of Neo (the dinner) as evidence of a favoritism he doesn't share, and underneath the smirk is a man who feels the crew's priorities shifting toward a candidate he privately doubts. The Oracle line is not idle curiosity; it's the real payload — a way to test whether Morpheus's faith can be verified, and a seed for his later position that the prophecy is unproven.",
+   "shows": "A lazy, needling tone — the 'dinner' jab dressed as a joke, then a cool strategic musing about the Oracle. He performs casual indifference so the probe doesn't look like a wound.",
+   "basis": "He opens with a personal jab ('I can't recall a single time you brought me food.'), presses 'There's something about him, isn't there?' when she stays silent, and only after her deflection pivots to the Oracle ('why doesn't he bring him to the Oracle? She would know'). The scene's own record has him moving from suspicion to a concrete plan. Sc-062 shows him already needling Trinity ('right, Trinity?') and sc-063 shows the dinner he's actually reacting to.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "That she's emotionally compromised by Neo — that her coolness is a cover for an attachment he's sniffing out.",
+     "wrong_because": "He's right about the attachment (sc-063 confirms the intimacy), but wrong to treat it as a weakness he can exploit; he doesn't yet grasp how central her belief in Neo is, which undercuts him later."
+    },
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus's certainty about Neo is unverified and should be put to a test (the Oracle) rather than trusted on faith.",
+     "wrong_because": "This 'reasonable skepticism' is the thin end of the wedge that becomes his betrayal (ev-018); he believes he's being pragmatic where he's actually withdrawing loyalty."
+    }
+   ]
+  },
+  {
+   "who": "Trinity",
+   "wants": "To shut the probe down without confirming anything — to keep her feelings for Neo entirely off the record and leave on her own terms.",
+   "feels": "Just stepped out of an intensely private moment (sc-063: leaning over the sleeping Neo, breathing him in). She's been caught, off-balance for a beat, and feels the exposure risk of Cypher having watched her. The silence isn't calm; it's the scramble to recover before she speaks.",
+   "shows": "Nothing at first — she says nothing to the jab or the 'something about him.' Then a controlled, deflecting counter ('Don't tell me you're a believer now?') that reframes his suspicion as his problem, and a clean exit once the Oracle is raised, answering with doctrine ('Morpheus will take him when he's ready') rather than anything personal.",
+   "basis": "She 'says nothing' to two provocations, then deflects rather than denying, and closes with an orthodox line about Morpheus's timing before turning away. The scene record has her regaining control and leaving on her terms. Her guardedness is directly the residue of sc-063, the intimate moment she's just left.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Cypher",
+     "belief": "That his needling is the usual Cypher cynicism, deflatable with a cool deflection — not yet a real threat.",
+     "wrong_because": "She treats him as a nuisance to be managed, not foreseeing that his skepticism about Neo/Morpheus hardens into the betrayal of ev-018."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-063: Trinity's intimate moment with the sleeping Neo (the dinner, the closeness) is exactly what Cypher is detecting and what Trinity is trying to conceal.",
+  "sc-062: Cypher's pattern of needling Trinity ('right, Trinity?') and the crew's breakup after the failed jump establish his skeptical, needling stance.",
+  "sc-061/sc-062: Neo's failure and injury are the fresh reason Morpheus hasn't yet taken him to the Oracle, grounding Trinity's 'when he's ready.'"
+ ],
+ "sets_up": [
+  "ev-015 (Trinity's Care and Cypher's Inquiry): Cypher's suspicion of Trinity's attachment to Neo, and his Oracle probe, are the through-line that this scene plants.",
+  "ev-018 (Cypher's Warning and Betrayal): Cypher's framing of Morpheus's certainty as unverified (the Oracle test) is the ideological seed of his later disillusionment and betrayal.",
+  "The Oracle as a destination: raising 'She would know' puts the Oracle on the table as the arbiter of Neo's status, a lever that remains available to the story."
+ ],
+ "dramatic_function": "It converts a private, wordless intimacy (Trinity and Neo) into a contested secret by putting a skeptical witness on it, while quietly introducing the Oracle as the story's mechanism for verifying faith — so the scene both raises the stakes of Trinity's hidden feelings and lays the ideological groundwork for Cypher's doubt."
+}

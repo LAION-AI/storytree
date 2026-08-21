@@ -1,0 +1,33 @@
+{
+ "scene_id": "sc-190",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "TRINITY",
+  "Tank"
+ ],
+ "summary": "Inside the hovercraft, the keyboard is clicking while Tank looks for a way out. Trinity yells into the headset, urgently ordering Neo to return immediately., urgently telling Neo to get his ass back there.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "knowledge",
+   "before": "Searching for an exit",
+   "after": "Still searching for an exit (ongoing)",
+   "evidence": "The KEYBOARD is CLICKING, Tank searches for"
+  },
+  {
+   "who": "TRINITY",
+   "axis": "condition",
+   "before": "Calm enough to operate normally",
+   "after": "Screaming urgently into the headset",
+   "evidence": "Trinity screams into the headset. TRINITY Neo"
+  }
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Trinity relays urgent instructions to Neo during his escape, while Tank searches for an exit.",
+  "continues_from_earlier": true
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 1 speaker(s), 25w — no exchange to read"
+}
