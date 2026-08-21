@@ -132,7 +132,8 @@ and was satisfied by writing the same register seven times.
 |---|---|
 | [The scene layer experiments](scene-layer-explained.md) | six configurations, what worked, what did not |
 | [Model comparison](ornith/) | the one change that reproduced |
-| [Event layer results](events/) | three builds, including a null result |
+| [Event layer results](events/) | four builds, including two null results |
+| [Build 3 vs build 4](events/build3-vs-build4.md) | the blind comparison, and the defect it turned up |
 | [The abstraction-layer attempt](cognitino/results.md) | a design that lost, recorded in full |
 | [Not copying the screenplay](verbatim-policy.md) | the rule, how it is checked, and the paraphrase pass |
 | [Handshake](00-HANDSHAKE.md) | the fastest path back to working state |
