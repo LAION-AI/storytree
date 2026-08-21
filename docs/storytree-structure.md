@@ -135,6 +135,7 @@ and was satisfied by writing the same register seven times.
 | [Event layer results](events/) | four builds, including two null results |
 | [Build 3 vs build 4](events/build3-vs-build4.md) | the blind comparison, and the defect it turned up |
 | [Build 5](events/build5.md) | scaffolding that binds — the first positive trend |
+| [Build 6](events/build6.md) | **the first significant result: +0.33, CI excludes zero** |
 | [The abstraction-layer attempt](cognitino/results.md) | a design that lost, recorded in full |
 | [Not copying the screenplay](verbatim-policy.md) | the rule, how it is checked, and the paraphrase pass |
 | [Handshake](00-HANDSHAKE.md) | the fastest path back to working state |

@@ -1,0 +1,175 @@
+{
+ "seconds": 1238.5,
+ "scenes": 224,
+ "events": 6,
+ "scenes_per_event": {
+  "min": 1,
+  "max": 20,
+  "mean": 37.33
+ },
+ "coverage": "224/224",
+ "state_triples": 68,
+ "register_entries": 404,
+ "canonicalisation": {
+  "variants_folded": 0,
+  "renames_applied": 0,
+  "entities_before": 56,
+  "entities_after": 56,
+  "mapping": {}
+ },
+ "chain_repair": {
+  "entries_chained": 0,
+  "contradictions_fixed": 0,
+  "participants_synced": 3,
+  "placeholders_left": 44
+ },
+ "build5_repairs": {
+  "change_cleared_on_unmoved": 0,
+  "orphan_unchanged_because": 0,
+  "quotes_stripped": 25,
+  "future_claims_flagged": 2,
+  "register_text_deduped": 23,
+  "pipeline_reasons_rewritten": 8,
+  "placeholder_registers_dropped": 0,
+  "text_tidied": 20,
+  "outside_names_flagged": 5,
+  "entries_carried": 14
+ },
+ "duplicate_merge": {
+  "entities_merged": 1,
+  "registers_merged": 0,
+  "conflicts": [
+   {
+    "event": "ev-006",
+    "entity": "the scaffold",
+    "kind": "duplicate entity key"
+   }
+  ]
+ },
+ "reconcile": {
+  "reconciled": 6,
+  "of": 6
+ },
+ "lint": {
+  "placeholder_entries": 44,
+  "conceding_unchanged": 7,
+  "unmoved_with_exit": 0,
+  "quotes_outside_reading": 0,
+  "participants_mismatch": 0,
+  "missing_registers": 0,
+  "entity_absent_from_evidence_scene": 3,
+  "moved_but_identical": 0,
+  "entities_without_registers": 0,
+  "examples": [
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-001",
+    "detail": "He is given no action beyond exiting the car; no physical change is recorded"
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-003",
+    "detail": "They appear only in sc-008 and are left behind at the gap; no positional change is recorded beyond that scene"
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-003",
+    "detail": "They appear together only in sc-011 and do not move as a unit within the event beyond that gathering"
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-004",
+    "detail": "He arrives, transacts, and departs within sc-012; his location relative to the story does not advance beyond t"
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-004",
+    "detail": "Her role is fixed at the doorway; the scenes do not follow her beyond it or record any movement of her own."
+   },
+   {
+    "kind": "placeholder_entry",
+    "event": "ev-004",
+    "detail": "Neo's PC and its screen.None: Not applicable to an object."
+   },
+   {
+    "kind": "placeholder_entry",
+    "event": "ev-004",
+    "detail": "Neo's PC and its screen.None: Not applicable to an object."
+   },
+   {
+    "kind": "placeholder_entry",
+    "event": "ev-004",
+    "detail": "Neo's PC and its screen.None: Not applicable to an object."
+   },
+   {
+    "kind": "placeholder_entry",
+    "event": "ev-004",
+    "detail": "Neo's PC and its screen.None: Not applicable to an object."
+   },
+   {
+    "kind": "placeholder_entry",
+    "event": "ev-004",
+    "detail": "the messages on the screen (\"Wake up, Neo\", \"The Matrix has you\", \"Follow the white rabbit\", \"Knock, knock, Ne"
+   },
+   {
+    "kind": "placeholder_entry",
+    "event": "ev-004",
+    "detail": "the messages on the screen (\"Wake up, Neo\", \"The Matrix has you\", \"Follow the white rabbit\", \"Knock, knock, Ne"
+   },
+   {
+    "kind": "placeholder_entry",
+    "event": "ev-004",
+    "detail": "the messages on the screen (\"Wake up, Neo\", \"The Matrix has you\", \"Follow the white rabbit\", \"Knock, knock, Ne"
+   },
+   {
+    "kind": "placeholder_entry",
+    "event": "ev-004",
+    "detail": "the messages on the screen (\"Wake up, Neo\", \"The Matrix has you\", \"Follow the white rabbit\", \"Knock, knock, Ne"
+   },
+   {
+    "kind": "placeholder_entry",
+    "event": "ev-004",
+    "detail": "the door with its series of locks and chain.None: Not applicable to an object."
+   },
+   {
+    "kind": "placeholder_entry",
+    "event": "ev-004",
+    "detail": "the door with its series of locks and chain.None: Not applicable to an object."
+   },
+   {
+    "kind": "placeholder_entry",
+    "event": "ev-004",
+    "detail": "the door with its series of locks and chain.None: Not applicable to an object."
+   },
+   {
+    "kind": "placeholder_entry",
+    "event": "ev-004",
+    "detail": "the door with its series of locks and chain.None: Not applicable to an object."
+   },
+   {
+    "kind": "placeholder_entry",
+    "event": "ev-004",
+    "detail": "Baudrillard's Simulacra and Simulations, hollowed out to hide computer disks.None: Not applicable to an object"
+   },
+   {
+    "kind": "placeholder_entry",
+    "event": "ev-004",
+    "detail": "Baudrillard's Simulacra and Simulations, hollowed out to hide computer disks.None: Not applicable to an object"
+   },
+   {
+    "kind": "placeholder_entry",
+    "event": "ev-004",
+    "detail": "Baudrillard's Simulacra and Simulations, hollowed out to hide computer disks.None: Not applicable to an object"
+   }
+  ]
+ },
+ "verbatim": {
+  "exact_runs": 6,
+  "near_hits": 16,
+  "nodes_with_runs": 3,
+  "nodes": 6,
+  "longest_run_words": 10
+ },
+ "affects_outside": 18,
+ "verify": []
+}

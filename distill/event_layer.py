@@ -816,6 +816,26 @@ def compose_all(pool: EndpointPool, events: Sequence[Dict], by_id: Dict[str, Dic
         r = pool.call(SYSTEM, prompt, schema=grammar_safe(schema),
                       max_tokens=out_tokens)
         node = _parse(r.text)
+        # JSON Schema cannot vary `required` per sibling, so compose_schema has to
+        # demand the union of every entity's registers. One person needing
+        # `emotional` therefore forces it onto every object in the event, and the
+        # model answers honestly -- "Not applicable to an object" -- which the lint
+        # then counts as a forbidden placeholder. 44 of them in build 6, all from
+        # this. The registers an object cannot have are removed here.
+        #
+        # Only the impossible ones. Trimming to what the scaffold *typed* instead
+        # cut 312 registers of 404, including registers people legitimately hold
+        # that no scene-layer change happened to be typed for.
+        object_only = {"physical", "positional", "status"}
+        is_person = {e["entity"]: e.get("is_person", True)
+                     for e in scaffold["entities"]}
+        for triple in node.get("state_triples") or []:
+            if is_person.get(triple.get("entity"), True):
+                continue
+            regs = triple.get("registers")
+            if isinstance(regs, dict):
+                for name in [k for k in regs if k not in object_only]:
+                    regs.pop(name)
         if fit.get("trimmed") or fit.get("budget_clamped_from"):
             # Recorded on the node, not just printed. A run whose largest events
             # were quietly shortened must be readable as such afterwards.

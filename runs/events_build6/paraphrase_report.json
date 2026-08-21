@@ -1,0 +1,72 @@
+[
+ {
+  "path": "/state_triples[9]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "A dark, plateaued landscape of rooftops [...]",
+  "after": "A a shadowy, flat expanse of tiled roofs and vertical brick walls",
+  "file": "events.json",
+  "node": "ev-003"
+ },
+ {
+  "path": "/state_triples[9]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "A dark, plateaued landscape of rooftops [...]",
+  "after": "A a dark, flat expanse of roofs and vertical brick walls",
+  "file": "events.json",
+  "node": "ev-003"
+ },
+ {
+  "path": "/state_triples[10]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "A gap over 40 feet wide where the roof falls away into [...]",
+  "after": "A gap over 40 feet wide where the roof gives way to a broad alleyway behind it",
+  "file": "events.json",
+  "node": "ev-003"
+ },
+ {
+  "path": "/state_triples[10]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "A gap over 40 feet wide where the roof falls away into [...]",
+  "after": "A gap over 40 feet wide where the roof opens up to reveal a broad alleyway behind it",
+  "file": "events.json",
+  "node": "ev-003"
+ },
+ {
+  "path": "(unmoved registers)",
+  "outcome": "exit re-synced to entry on 2 register(s)",
+  "words": 0,
+  "role": "invariant",
+  "before": "",
+  "after": "",
+  "file": "events.json",
+  "node": "ev-003"
+ },
+ {
+  "path": "/state_triples[2]/registers/knowledge/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "Identified as the downtown office of Meta [...].",
+  "after": "Identified as the headquarters of Meta CorTechs, a software development firm.",
+  "file": "events.json",
+  "node": "ev-005"
+ },
+ {
+  "path": "/carried_uncertainty[1]/what",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "What the Agents specifically intend to do to Neo, since Morpheus says 'I'm not sure what they're [...].'",
+  "after": "What the Agents specifically intend to do to Neo, since Morpheus says 'I have no idea what their plans are.'",
+  "file": "events.json",
+  "node": "ev-006"
+ }
+]
