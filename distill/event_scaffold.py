@@ -94,6 +94,75 @@ def canonical_roster(scene_nodes: Sequence[Dict[str, Any]]) -> Dict[str, str]:
     return mapping
 
 
+
+_ENDS = ("dead", "killed", "destroyed", "unconscious", "dying", "smashed",
+         "shot", "broken", "dies", "die")
+# Verbs that make the clause a statement *about* someone: "Smith reveals the men
+# are already dead" is not Smith dying.
+_REPORTING = ("reveal", "state", "say", "tell", "learn", "know", "see", "find",
+              "hear", "report", "confirm", "announce", "realis", "realiz",
+              "watch", "witness", "discover")
+_SELF = ("them", "they", "he", "she", "it", "himself", "herself", "itself",
+         "themselves", "all of them", "both")
+
+
+def _terminal_for(text: str, entity: str, canon: Optional[Dict[str, str]] = None) -> bool:
+    """Does this change text say that *this* entity ends?
+
+    Three guards, one per observed misfire:
+      * attributive use -- "the dead cops" describes cops, not the subject
+      * a reporting verb -- "reveals the men are already dead" is testimony
+      * another entity named in the same clause owns the death
+    """
+    low = " " + re.sub(r"\s+", " ", text.casefold()) + " "
+    if not any(" {}".format(w) in low or "-{}".format(w) in low for w in _ENDS):
+        return False
+
+    own = {w for w in re.findall(r"[a-z']+", _norm(entity).casefold()) if len(w) > 2}
+    others = set()
+    for name in (canon or {}).values():
+        words = {w for w in re.findall(r"[a-z']+", str(name).casefold()) if len(w) > 2}
+        if words and not (words & own):
+            others |= words
+
+    # Clause containing the terminal word.
+    for clause in re.split(r"[,;:.]| and | but | while | as | over | leaving |"
+                           r" before | after ", low):
+        hit = next((w for w in _ENDS
+                    if " {} ".format(w) in " {} ".format(clause.strip())), None)
+        if not hit:
+            continue
+        words = clause.split()
+        try:
+            i = words.index(hit)
+        except ValueError:
+            i = next((n for n, w in enumerate(words) if w.strip('"\'.,') == hit), -1)
+        # attributive: "dead cops" -- the word qualifies the noun after it
+        if 0 <= i < len(words) - 1 and words[i + 1].strip('"\'.,') in others:
+            continue
+        # active participle: "smashing" has the entity doing the smashing, not
+        # being smashed. Caught Neo in ev-039, where he breaks out of a hold.
+        # "dying" is exempt: it has no active reading.
+        if hit.endswith("ing") and hit != "dying":
+            before = {w.strip('"\'.,') for w in words[max(0, i - 3):i]}
+            if not (before & {"is", "are", "was", "were", "being", "been", "gets", "got"}):
+                continue
+        if any(v in clause for v in _REPORTING):
+            continue
+        # Negation: "He is not ready to die" is the opposite of terminal, and it
+        # was the last false positive left in the film after three other guards.
+        if any(n in " {} ".format(clause) for n in
+               (" not ", " never ", "n't ", " refuses ", " avoids ", " escapes ",
+                " survives ", " without ")):
+            continue
+        subject = set(re.findall(r"[a-z']+", " ".join(words[:i])))
+        if subject & others and not (subject & own):
+            continue
+        if (subject & own) or (subject & set(_SELF)) or not subject:
+            return True
+    return False
+
+
 def build_scaffold(scene_ids: Sequence[str], scene_nodes: Sequence[Dict[str, Any]],
                    previous_exits: Optional[Dict[str, Dict[str, str]]] = None,
                    canon: Optional[Dict[str, str]] = None) -> Dict[str, Any]:
@@ -160,6 +229,44 @@ def build_scaffold(scene_ids: Sequence[str], scene_nodes: Sequence[Dict[str, Any
         # be transcribed rather than a judgement to be made — which is what stops it from
         # being set on a register whose entry and exit say the same thing.
         demanded = {c["register"] for c in entry["changes"] if c["register"]}
+
+        # An object has no knowledge, no feelings and no relationships. Build 5
+        # demanded five registers for eight objects, which the model filled by
+        # repeating one sentence and writing "n/a" or "An object" as the state --
+        # exactly the placeholder the rules forbid. The restriction is a fact
+        # about the entity, so it is applied, not requested.
+        if not entry["is_person"]:
+            demanded &= {"physical", "positional", "status"}
+
+        # If the member scenes put this entity in more than one location, its
+        # position changed. Build 5 marked Neo positional-unchanged across a
+        # flight from cubicle to office to ledge to car, because no change had
+        # been *typed* as positional. Whether the location differs is computable.
+        if entry["is_person"]:
+            where = {s.get("location") for s in scene_nodes
+                     if s.get("scene_id") in entry["appears_in"] and s.get("location")}
+            if len(where) > 1:
+                demanded.add("positional")
+                entry["positional_must_move"] = sorted(x for x in where if x)
+
+        # A recorded change that ends this entity's life or integrity does not
+        # leave its status and safety untouched. Build 5 shipped "the cops" whose
+        # physical exit was "All dead" beside a status exit "Living officers
+        # completing a controlled arrest" -- each register obeying its own
+        # contract, the node as a whole absurd.
+        #
+        # The hard part is that the change text belongs to this entity while the
+        # death in it may belong to someone else. The first version marked
+        # Trinity terminal because she stands over dead cops, and Agent Smith
+        # because he reports that others are dead: two misfires out of three.
+        # `_terminal_for` carries the guards that fix those.
+        if any(_terminal_for(str(c.get("after") or ""), entry["entity"], canon)
+               for c in entry["changes"]):
+            demanded.add("status")
+            if entry["is_person"]:
+                demanded.add("safety")
+            entry["terminal_change"] = True
+
         # Registers derivable from the scene layer without a typed axis. Judges
         # found `emotional` absent from every entity in an event built on shock,
         # and `positional` absent from entities the scenes plainly move around --
@@ -267,6 +374,16 @@ def render_scaffold(scaffold: Dict[str, Any]) -> str:
             lines.append("    entry state carried from the previous event:")
             for reg, val in entry["entry_from_previous_event"].items():
                 lines.append("      {:<11} {}".format(reg, val))
+        if entry.get("positional_must_move"):
+            lines.append("    MUST MOVE — positional: the member scenes place this entity "
+                         "in {}".format(" then ".join(entry["positional_must_move"])))
+        if entry.get("terminal_change"):
+            lines.append("    MUST MOVE — status (and safety): a recorded change ends this "
+                         "entity's life or integrity. No register may exit describing it as "
+                         "intact and active.")
+        if not entry.get("is_person"):
+            lines.append("    object — only physical, positional and status apply. It has no "
+                         "knowledge, feelings or relationships.")
         if entry["changes"]:
             lines.append("    changes the scene layer recorded, in order:")
             for c in entry["changes"]:
