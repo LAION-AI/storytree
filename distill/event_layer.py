@@ -465,9 +465,14 @@ def reconcile_all(pool: EndpointPool, events: Sequence[Dict], *, workers: int = 
     """
     def work(event):
         compact = [{"entity": t["entity"], "reading": t.get("reading"),
-                    "registers": [{"register": r["register"], "moved": r.get("moved"),
-                                   "entry": r["entry"], "change": r["change"], "exit": r["exit"]}
-                                  for _rn, r in _iter_registers(t) if r.get("moved")]}
+                    # The name comes from _iter_registers. Object-shaped slots carry
+                    # no "register" key -- the name IS the dict key -- so reading
+                    # r["register"] raised KeyError on every build-3-or-later node.
+                    "registers": [{"register": rn, "moved": r.get("moved"),
+                                   "entry": r.get("entry"), "change": r.get("change"),
+                                   "exit": r.get("exit")}
+                                  for rn, r in _iter_registers(t)
+                                  if isinstance(r, dict) and r.get("moved")]}
                    for t in event.get("state_triples") or []]
         r = pool.call(SYSTEM, _RECONCILE.format(
             title=event.get("title"), triples=json.dumps(compact, ensure_ascii=False, indent=1),
@@ -801,11 +806,14 @@ def verify_all(pool: EndpointPool, events: Sequence[Dict], *, workers: int = 2,
                 # unchanged/exit contradictions that turned out to be the layer's most
                 # common defect — a check blind to the field it should police.
                 "state_triples": [{"entity": t["entity"],
-                                   "registers": [{"register": r["register"],
+                                   "registers": [{"register": rn,
                                                   "moved": r.get("moved"),
-                                                  "entry": r["entry"], "change": r["change"],
+                                                  "entry": r.get("entry"),
+                                                  "change": r.get("change"),
                                                   "unchanged_because": r.get("unchanged_because"),
-                                                  "exit": r["exit"]} for _rn, r in _iter_registers(t)]}
+                                                  "exit": r.get("exit")}
+                                                 for rn, r in _iter_registers(t)
+                                                 if isinstance(r, dict)]}
                                   for t in e.get("state_triples") or []],
                 "affects_outside": e.get("affects_outside")}
 
@@ -907,13 +915,19 @@ def lint(events: List[Dict[str, Any]],
                              "{} cites {} whose cast is {}".format(
                                  triple.get("entity"), reg.get("evidence_scene"),
                                  sorted(present)[:4]))
-            for field in ("registers",):
-                for reg in triple.get(field) or []:
-                    for key in ("entry", "change", "exit"):
-                        if '"' in (reg.get(key) or "") or "\u201c" in (reg.get(key) or ""):
-                            report["quotes_outside_reading"] += 1
-                            note("quote_outside_reading", event.get("event_id"),
-                                 "{}.{}".format(triple.get("entity"), reg.get("register")))
+            # Iterating triple["registers"] directly yields dict *keys* -- plain
+            # strings -- once registers became an object in build 3, and this
+            # line then crashed the whole lint after 58 events had composed.
+            # _iter_registers exists precisely to read both shapes; the fix is to
+            # use it here as everywhere else.
+            for name, reg in _iter_registers(triple):
+                if not isinstance(reg, dict):
+                    continue
+                for key in ("entry", "change", "exit"):
+                    if '"' in (reg.get(key) or "") or "\u201c" in (reg.get(key) or ""):
+                        report["quotes_outside_reading"] += 1
+                        note("quote_outside_reading", event.get("event_id"),
+                             "{}.{}".format(triple.get("entity"), name))
     return report
 
 
@@ -1004,8 +1018,16 @@ def chain_and_validate(events: List[Dict[str, Any]]) -> Dict[str, Any]:
     for event in events:
         for triple in event.get("state_triples") or []:
             entity = triple.get("entity")
-            for _rname, reg in _iter_registers(triple):
-                key = (entity, reg.get("register"))
+            for rname, reg in _iter_registers(triple):
+                if not isinstance(reg, dict):
+                    continue
+                # The name comes from _iter_registers, never from inside the slot.
+                # Object-shaped slots carry no "register" key, so reg.get("register")
+                # is None for all seven -- which collapsed every register of one
+                # entity into a single chain bucket and would have carried a
+                # physical exit into an emotional entry. Silent, and it destroys
+                # exactly the property this layer exists to hold.
+                key = (entity, rname)
 
                 if _PLACEHOLDER.match(reg.get("entry") or "") and key in last_exit:
                     reg["entry"] = last_exit[key]
@@ -1127,6 +1149,11 @@ def main() -> int:
     # this; if it is larger than the server's window the guard passes prompts
     # that still overflow.
     ap.add_argument("--ctx", type=int, default=32768)
+    # Compose is the expensive stage -- two hours against a 397B model. Everything
+    # after it is cheap post-processing, and a crash there once threw away 58
+    # finished nodes. This reloads them and runs only what follows.
+    ap.add_argument("--resume-from", default="",
+                    help="an events.partial.json; skips segmenting and composing")
     ap.add_argument("--skip-verify", action="store_true")
     a = ap.parse_args()
 
@@ -1154,46 +1181,64 @@ def main() -> int:
     prog = lambda d, t, r: print("    [{}/{}]{}".format(  # noqa: E731
         d, t, " !" if isinstance(r, Exception) else ""), flush=True) if d % 3 == 0 or d == t else None
 
-    print("\nstage 1 — segmenting", flush=True)
-    events = segment_all(pool, scenes, window=a.window, workers=a.workers)
-    sizes = [len(e["scene_ids"]) for e in events]
-    covered = sum(sizes)
-    print("  {} events | scenes/event min {} max {} mean {:.1f} | coverage {}/{}".format(
-        len(events), min(sizes), max(sizes), covered / len(events), covered, len(scenes)),
-        flush=True)
-    (out / "segmentation.json").write_text(json.dumps({"events": events}, indent=1),
-                                           encoding="utf-8")
+    resume = None
+    if a.resume_from:
+        resume = json.loads(Path(a.resume_from).read_text(encoding="utf-8"))
+        resume = resume["events"] if isinstance(resume, dict) else resume
+        seg_path = Path(a.resume_from).parent / "segmentation.json"
+        events = json.loads(seg_path.read_text(encoding="utf-8"))["events"] \
+            if seg_path.exists() else [{"event_id": n["event_id"],
+                                        "scene_ids": n["scene_ids"]} for n in resume]
+        print("\nresuming from {}: {} composed nodes, {} segmented events".format(
+            a.resume_from, len(resume), len(events)), flush=True)
+        sizes = [len(e["scene_ids"]) for e in events]
+        covered = sum(sizes)
+        canon = canonical_roster(scenes)
+        nodes = resume
+    else:
+        print("\nstage 1 — segmenting", flush=True)
+        events = segment_all(pool, scenes, window=a.window, workers=a.workers)
+        sizes = [len(e["scene_ids"]) for e in events]
+        covered = sum(sizes)
+        print("  {} events | scenes/event min {} max {} mean {:.1f} | coverage {}/{}".format(
+            len(events), min(sizes), max(sizes), covered / len(events), covered, len(scenes)),
+            flush=True)
+        (out / "segmentation.json").write_text(json.dumps({"events": events}, indent=1),
+                                               encoding="utf-8")
 
-    canon = canonical_roster(scenes)
-    print("  roster: {} spellings -> {} entities across the film".format(
-        len(canon), len(set(canon.values()))), flush=True)
+        canon = canonical_roster(scenes)
+        print("  roster: {} spellings -> {} entities across the film".format(
+            len(canon), len(set(canon.values()))), flush=True)
 
     # Composed in waves so each wave can be handed the previous wave's exit states. Fully
     # sequential would serialise the layer; fully parallel leaves every `entry` unchained,
     # which was build 1's largest defect. A wave is the compromise: parallel within, chained
     # across.
-    print("\nstage 2 — composing {} events in waves of {}".format(len(events), a.wave),
-          flush=True)
-    nodes: List[Dict[str, Any]] = []
-    previous: Dict[str, Any] = {}
-    partial = out / "events.partial.json"
-    for start in range(0, len(events), a.wave):
-        batch = events[start:start + a.wave]
-        got = compose_all(pool, batch, by_id, workers=a.workers, progress=prog,
-                          previous=previous, scene_text=scene_text, canon=canon,
-                          ctx=a.ctx)
-        nodes.extend(got)
-        # Written after every wave. A four-hour run that produces nothing until the last
-        # second cannot be inspected, and a crash at hour three costs everything — the same
-        # rule this project imposes on its judge agents, finally applied to itself.
-        partial.write_text(json.dumps({"events": nodes}, indent=1), encoding="utf-8")
-        previous = {}
-        if got:
-            tail = exits_by_entity(got[-1])
-            nxt = events[start + a.wave] if start + a.wave < len(events) else None
-            if nxt:
-                previous[nxt["event_id"]] = tail
-    print("  {} composed ({} failed)".format(len(nodes), len(events) - len(nodes)), flush=True)
+    if resume is None:
+        print("\nstage 2 — composing {} events in waves of {}".format(len(events), a.wave),
+              flush=True)
+        nodes = []
+        previous: Dict[str, Any] = {}
+        partial = out / "events.partial.json"
+        for start in range(0, len(events), a.wave):
+            batch = events[start:start + a.wave]
+            got = compose_all(pool, batch, by_id, workers=a.workers, progress=prog,
+                              previous=previous, scene_text=scene_text, canon=canon,
+                              ctx=a.ctx)
+            nodes.extend(got)
+            # Written after every wave. A four-hour run that produces nothing until the
+            # last second cannot be inspected, and a crash at hour three costs
+            # everything — the same rule this project imposes on its judge agents,
+            # finally applied to itself.
+            partial.write_text(json.dumps({"events": nodes}, indent=1), encoding="utf-8")
+            previous = {}
+            if got:
+                tail = exits_by_entity(got[-1])
+                nxt = events[start + a.wave] if start + a.wave < len(events) else None
+                if nxt:
+                    previous[nxt["event_id"]] = tail
+        print("  {} composed ({} failed)".format(
+            len(nodes), len(events) - len(nodes)), flush=True)
 
     canon = canonicalise_entities(nodes)
     merged = merge_duplicate_keys(nodes)
