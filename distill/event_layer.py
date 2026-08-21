@@ -639,11 +639,100 @@ def segment_all(pool: EndpointPool, scenes: Sequence[Dict], *, window: int = 24,
             for i, e in enumerate(events)]
 
 
+
+# --------------------------------------------------------------- context fit
+
+CTX_MARGIN = 384      # room for the chat template and the schema grammar
+MIN_OUTPUT = 3500     # below this an event cannot be written at all
+
+
+def count_tokens(pool: EndpointPool, text: str) -> int:
+    """Exact token count from the server, with an estimate as the fallback.
+
+    Estimating was not good enough. The overflow this guards against is a
+    difference of a few hundred tokens on a 33,000-token call, and a
+    characters-per-token ratio is wrong by more than that.
+    """
+    import urllib.request
+    endpoint = pool.endpoints[0]
+    try:
+        request = urllib.request.Request(
+            "http://{}:{}/tokenize".format(endpoint.host, endpoint.port),
+            data=json.dumps({"content": text}).encode("utf-8"),
+            headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(request, timeout=120) as response:
+            return len(json.load(response)["tokens"])
+    except Exception:
+        return int(len(text) / 3.6)
+
+
+def fit_to_context(pool, prompt: str, budget: int, ctx: int, *,
+                   text_block: str = "", rebuild=None,
+                   label: str = "") -> Tuple[str, int, Dict[str, Any]]:
+    """Make prompt + output fit in the context window, and say what it cost.
+
+    The largest events overflowed silently: a 15,700-token prompt with an
+    18,000-token budget needs 33,700 of a 32,768 window, so llama.cpp truncated
+    the generation and the node came back cut off. Truncation is worst exactly
+    where it hurts most -- the biggest events are the ones carrying the most
+    story.
+
+    Two levers, in this order:
+
+      1. shrink the scene text. It is the third of three overlapping views and
+         the most redundant: the scene nodes already encode it. Each scene is
+         capped rather than dropped, so every member scene stays represented and
+         the screenplay keeps its role as the check on the nodes.
+      2. clamp the output budget, down to MIN_OUTPUT.
+
+    Below MIN_OUTPUT the event is reported as unfittable rather than attempted.
+    A truncated node is worse than a missing one, because a missing one is
+    visible.
+    """
+    note: Dict[str, Any] = {"trimmed": False}
+    tokens = count_tokens(pool, prompt)
+    room = ctx - tokens - CTX_MARGIN
+    if room >= budget:
+        note["prompt_tokens"] = tokens
+        return prompt, budget, note
+
+    if text_block and rebuild is not None:
+        # Cap each scene until the prompt fits, halving the cap as needed.
+        for cap in (3000, 2000, 1200, 700, 400):
+            candidate = rebuild(cap)
+            tokens = count_tokens(pool, candidate)
+            room = ctx - tokens - CTX_MARGIN
+            if room >= budget:
+                note.update(trimmed=True, scene_text_cap=cap, prompt_tokens=tokens)
+                return candidate, budget, note
+        prompt = candidate
+        note.update(trimmed=True, scene_text_cap=400, prompt_tokens=tokens)
+
+    out = max(MIN_OUTPUT, min(budget, room))
+    note.update(prompt_tokens=tokens, budget_clamped_from=budget, budget=out,
+                fits=(tokens + out + CTX_MARGIN) <= ctx)
+    if not note["fits"]:
+        note["unfittable"] = True
+        print("      {} does not fit: prompt {} + output {} > ctx {}".format(
+            label, tokens, out, ctx), flush=True)
+    return prompt, out, note
+
+
+def _cap_scene(text: str, cap: Optional[int]) -> str:
+    """Keep the head and the tail of a scene, which is where a scene turns."""
+    if cap is None or len(text) <= cap:
+        return text
+    head = int(cap * 0.6)
+    return text[:head] + "\n[... middle of scene omitted to fit context ...]\n" + \
+        text[-(cap - head):]
+
+
 def compose_all(pool: EndpointPool, events: Sequence[Dict], by_id: Dict[str, Dict],
                 *, workers: int = 2, progress=None,
                 previous: Optional[Dict[str, Any]] = None,
                 scene_text: Optional[Dict[str, str]] = None,
-                canon: Optional[Dict[str, str]] = None) -> List[Dict[str, Any]]:
+                canon: Optional[Dict[str, str]] = None,
+                ctx: int = 32768) -> List[Dict[str, Any]]:
     previous = previous or {}
     scene_text = scene_text or {}
     def work(ev):
@@ -654,13 +743,21 @@ def compose_all(pool: EndpointPool, events: Sequence[Dict], by_id: Dict[str, Dic
         # satisfiable at last: build 2 required the field while admitting only characters,
         # so an event turning on a phone had nowhere to name it.
         ents = [e["entity"] for e in scaffold["entities"]]
+        def render(cap: Optional[int] = None) -> str:
+            body = "\n\n".join(
+                "--- {} ---\n{}".format(
+                    sid, _cap_scene(scene_text.get(sid, "[text unavailable]"), cap))
+                for sid in ev["scene_ids"])
+            return _COMPOSE_B3.format(
+                scaffold=render_scaffold(scaffold),
+                nodes=json.dumps([brief(n, full=True) for n in nodes],
+                                 ensure_ascii=False, indent=1),
+                text=body, title=ev["working_title"])
+
         text = "\n\n".join(
             "--- {} ---\n{}".format(sid, scene_text.get(sid, "[text unavailable]"))
             for sid in ev["scene_ids"])
-        prompt = _COMPOSE_B3.format(
-            scaffold=render_scaffold(scaffold),
-            nodes=json.dumps([brief(n, full=True) for n in nodes], ensure_ascii=False, indent=1),
-            text=text, title=ev["working_title"])
+        prompt = render()
         # Required registers per entity, straight from the scaffold. An entity the scene
         # layer never recorded a change for gets one slot, not seven.
         required_by = {e["entity"]: (e["registers_with_recorded_change"] or ["status"])
@@ -673,9 +770,16 @@ def compose_all(pool: EndpointPool, events: Sequence[Dict], by_id: Dict[str, Dic
         budget = (3000
                   + 360 * sum(len(v) for v in required_by.values())
                   + 150 * len(required_by))
+        prompt, out_tokens, fit = fit_to_context(
+            pool, prompt, min(18000, budget), ctx,
+            text_block=text, rebuild=render, label=ev["event_id"])
         r = pool.call(SYSTEM, prompt, schema=grammar_safe(schema),
-                      max_tokens=min(18000, budget))
+                      max_tokens=out_tokens)
         node = _parse(r.text)
+        if fit.get("trimmed") or fit.get("budget_clamped_from"):
+            # Recorded on the node, not just printed. A run whose largest events
+            # were quietly shortened must be readable as such afterwards.
+            node["_context_fit"] = fit
         node["event_id"] = ev["event_id"]
         node["scene_ids"] = ev["scene_ids"]
         node["boundary_reason"] = ev["why_here"]
@@ -1019,6 +1123,10 @@ def main() -> int:
                     help="events composed per wave; each wave sees the previous wave's exits")
     ap.add_argument("--source", default="reconstruct/runs/matrix/script.normalized.txt")
     ap.add_argument("--scene-map", default="reconstruct/runs/matrix/script_map.json")
+    # Must match the server's -c. The composer sizes its own generation against
+    # this; if it is larger than the server's window the guard passes prompts
+    # that still overflow.
+    ap.add_argument("--ctx", type=int, default=32768)
     ap.add_argument("--skip-verify", action="store_true")
     a = ap.parse_args()
 
@@ -1072,7 +1180,8 @@ def main() -> int:
     for start in range(0, len(events), a.wave):
         batch = events[start:start + a.wave]
         got = compose_all(pool, batch, by_id, workers=a.workers, progress=prog,
-                          previous=previous, scene_text=scene_text, canon=canon)
+                          previous=previous, scene_text=scene_text, canon=canon,
+                          ctx=a.ctx)
         nodes.extend(got)
         # Written after every wave. A four-hour run that produces nothing until the last
         # second cannot be inspected, and a crash at hour three costs everything — the same

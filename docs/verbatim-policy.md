@@ -185,9 +185,8 @@ definition of what does not transfer — the mind-pass gate learned this the exp
 **Git history.** The 140 files were cleaned in the working tree. The runs are still in earlier
 commits, and removing them means rewriting history and force-pushing a public repository.
 
-**Context truncation.** Unrelated but found alongside: two of roughly 1,180 event-layer
-generations hit the 32,768-token context limit and were truncated. Rare, but the largest events
-are exactly the ones that overflow, and they are the ones worth the most.
+*(A second issue found alongside this one — event-layer generations hitting the context
+limit — is fixed; see [the event layer's context budget](events/context-budget.md).)*
 
 ---
 
