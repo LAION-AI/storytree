@@ -17,7 +17,12 @@ quietly opt it out.
 Allowances are encoded here with their reason. An exception a human has to
 remember is an exception that gets forgotten by whoever runs this next.
 
+Known gap: this sweeps files, so it does not see commit messages. One has already
+gone out quoting a nine-word entity name in the course of explaining how such
+names get shortened. Prose in a commit is published the same as prose in a file.
+
 Usage: python3 tools/check_no_leak.py
+       python3 tools/check_no_leak.py --message <file>   # check a commit message
 """
 
 from __future__ import annotations
@@ -88,7 +93,25 @@ def tracked_files():
     return [line for line in out.splitlines() if line]
 
 
+def check_message(path: str) -> int:
+    """Sweep a commit message before it is written."""
+    source = next((ROOT / s for s in SOURCES if (ROOT / s).exists()), None)
+    if source is None:
+        print("BLOCKED: no source copy present; cannot sweep")
+        return 1
+    words = tokens(source.read_text(encoding="utf-8", errors="ignore"))
+    index = {" ".join(words[i:i + BAR]) for i in range(len(words) - BAR + 1)}
+    worst = longest_run(Path(path).read_text(encoding="utf-8", errors="ignore"), index)
+    if worst >= BAR:
+        print("BLOCKED: commit message carries a {}-word run".format(worst))
+        return 1
+    print("commit message clear")
+    return 0
+
+
 def main() -> int:
+    if len(sys.argv) > 2 and sys.argv[1] == "--message":
+        return check_message(sys.argv[2])
     source = next((ROOT / s for s in SOURCES if (ROOT / s).exists()), None)
     if source is None:
         # Loud, and non-zero. The old sweep returned 0 here, so a machine without

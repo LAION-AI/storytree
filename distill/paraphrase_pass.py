@@ -64,9 +64,9 @@ VERBATIM_FIELDS = {"evidence", "start_quote", "end_quote"}
 # `/participants[5]`, `/state_triples[9]/entity` and `/_roster[9]` of the same
 # node independently.
 #
-# They can still be copied text: "a pile of spoons bent and twisted into knots"
-# is nine words off the page. So they are *shortened*, deterministically, and the
-# same shortening is applied everywhere the name occurs.
+# They can still be copied text: this film has an entity whose name runs to nine
+# words straight off the page. So they are *shortened*, deterministically, and
+# the same shortening is applied everywhere the name occurs.
 IDENTIFIER_FIELDS = {"entity", "participants", "_roster", "turns_on_entity"}
 IDENTIFIER_WORD_CAP = 6
 VERBATIM_WORD_CAP = 7          # one below the bar
