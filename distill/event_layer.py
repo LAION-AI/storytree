@@ -70,6 +70,12 @@ SYSTEM = (
 # exposure to danger. Giving it its own name removes the collision instead of policing it.
 REGISTERS = ["physical", "positional", "knowledge", "relational", "emotional", "status", "safety"]
 
+# Words that carry no identity. "the cops" and "the other cops" share only "cops"
+# once these are dropped, which is the whole point: a collective has to match on
+# what it names, not on its determiners.
+_COLLECTIVE_STOP = {"the", "a", "an", "of", "and", "other", "some", "his", "her",
+                    "their", "its", "at", "in", "on", "to"}
+
 
 # ----------------------------------------------------------------- 1. segment
 
@@ -851,6 +857,9 @@ def lint(events: List[Dict[str, Any]],
     """
     report = {"placeholder_entries": 0, "conceding_unchanged": 0, "unmoved_with_exit": 0,
               "quotes_outside_reading": 0, "participants_mismatch": 0,
+              # Retired: it scored against build 2's "all seven registers" contract,
+              # which build 3 deliberately replaced. Kept at 0 so older protocols
+              # stay readable rather than gaining a key that means something else.
               "missing_registers": 0,
               # Both added after build 2. A judge found one node giving the pursuing POLICE
               # the operator's state, and another marking a register `moved: true` from a
@@ -858,6 +867,7 @@ def lint(events: List[Dict[str, Any]],
               # were load-bearing: a consumer reading the first gets the police taking
               # orders from the crew.
               "entity_absent_from_evidence_scene": 0, "moved_but_identical": 0,
+              "entities_without_registers": 0,
               "examples": []}
 
     def note(kind, event, detail):
@@ -870,9 +880,16 @@ def lint(events: List[Dict[str, Any]],
             report["participants_mismatch"] += 1
         for triple in event.get("state_triples") or []:
             seen = {n for n, _ in _iter_registers(triple)}
-            missing = set(REGISTERS) - seen
-            if missing:
-                report["missing_registers"] += len(missing)
+            # Measured against the contract this build actually has, not the one
+            # build 2 had. Build 3 deliberately stopped demanding all seven
+            # registers per entity -- on a twenty-entity event that produced 140
+            # slots of padding -- and asks only for the registers the scene layer
+            # recorded a change on. Scoring against a constant 7 reported 1505
+            # "missing" registers for a build that was doing exactly what it was
+            # told, which measures the check rather than the layer.
+            if not seen:
+                report["entities_without_registers"] += 1
+                note("no_registers", event.get("event_id"), str(triple.get("entity")))
             for _rname, reg in _iter_registers(triple):
                 if _PLACEHOLDER.match(reg.get("entry") or ""):
                     report["placeholder_entries"] += 1
@@ -902,19 +919,34 @@ def lint(events: List[Dict[str, Any]],
                                             (reg.get("entry") or "")[:60]))
 
                 if scenes_by_id:
-                    scene = scenes_by_id.get(reg.get("evidence_scene") or "")
-                    present = {str(x).strip().casefold()
-                               for x in (scene or {}).get("present") or []}
+                    scene = scenes_by_id.get(reg.get("evidence_scene") or "") or {}
+                    # The scene's whole inventory, not just its cast. Two thirds of
+                    # this check's 1013 hits were not defects:
+                    #   "the phone / hardline" -- an object. The design says anything
+                    #     whose state changes is an entity, and objects are never in
+                    #     `present`. The check was reporting "this entity is a thing".
+                    #   "the cops" against a cast of "the other cops" -- a collective
+                    #     that a substring test cannot match in either direction.
+                    # So: match against people, objects and the location, and compare
+                    # content words rather than whole strings.
+                    inventory = [str(x) for x in (scene.get("present") or [])]
+                    inventory += [str(x) for x in (scene.get("objects_that_matter") or [])]
+                    inventory += [str(scene.get("location") or "")]
+                    inventory += [str(c.get("who") or "")
+                                  for c in scene.get("what_changes") or []]
                     who = (triple.get("entity") or "").strip().casefold()
-                    # Only flag when the scene declares a cast at all, and the entity is not
-                    # a substring of anyone in it — collectives legitimately do not match
-                    # exactly, and flagging those would drown the real cases.
-                    if present and who and not any(who in p or p in who for p in present):
+                    who_words = {w for w in re.findall(r"[a-z0-9']+", who)
+                                 if w not in _COLLECTIVE_STOP}
+                    known = set()
+                    for item in inventory:
+                        known |= {w for w in re.findall(r"[a-z0-9']+", item.casefold())
+                                  if w not in _COLLECTIVE_STOP}
+                    if inventory and who_words and not (who_words & known):
                         report["entity_absent_from_evidence_scene"] += 1
                         note("entity_absent", event.get("event_id"),
-                             "{} cites {} whose cast is {}".format(
+                             "{} cites {} whose inventory is {}".format(
                                  triple.get("entity"), reg.get("evidence_scene"),
-                                 sorted(present)[:4]))
+                                 sorted(known)[:6]))
             # Iterating triple["registers"] directly yields dict *keys* -- plain
             # strings -- once registers became an object in build 3, and this
             # line then crashed the whole lint after 58 events had composed.
@@ -1248,10 +1280,10 @@ def main() -> int:
     chain = chain_and_validate(nodes)
     lint_report = lint(nodes, by_id)
     print("lint: {} placeholder entries, {} conceding-unchanged, {} unmoved-with-exit, "
-          "{} quotes outside reading, {} missing registers".format(
+          "{} quotes outside reading, {} entities without registers".format(
               lint_report["placeholder_entries"], lint_report["conceding_unchanged"],
               lint_report["unmoved_with_exit"], lint_report["quotes_outside_reading"],
-              lint_report["missing_registers"]), flush=True)
+              lint_report["entities_without_registers"]), flush=True)
     print("chain repair: {} entries chained, {} unmoved-exit contradictions fixed, "
           "{} participant lists synced, {} placeholders left".format(
               chain["entries_chained"], chain["contradictions_fixed"],

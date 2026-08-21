@@ -56,6 +56,19 @@ except Exception:                                   # pragma: no cover
 # asks what supports a reading, which is a paraphrase -- so it is rewritten like
 # any other prose field rather than cut.
 VERBATIM_FIELDS = {"evidence", "start_quote", "end_quote"}
+
+# Entity names are identifiers. They appear in participants, in each triple's
+# `entity`, in `_roster` and in `turns_on_entity`, and every consumer joins on
+# them. Paraphrasing one occurrence renames the entity in one place and breaks
+# the join -- which the first version of this pass did, rewriting
+# `/participants[5]`, `/state_triples[9]/entity` and `/_roster[9]` of the same
+# node independently.
+#
+# They can still be copied text: "a pile of spoons bent and twisted into knots"
+# is nine words off the page. So they are *shortened*, deterministically, and the
+# same shortening is applied everywhere the name occurs.
+IDENTIFIER_FIELDS = {"entity", "participants", "_roster", "turns_on_entity"}
+IDENTIFIER_WORD_CAP = 6
 VERBATIM_WORD_CAP = 7          # one below the bar
 
 SYSTEM = """\
@@ -154,7 +167,11 @@ def facts_preserved(before: str, after: str, protected: Optional[set] = None) ->
     if words_b - words_a:
         return "dropped quantity word(s): " + ", ".join(sorted(words_b - words_a))
 
-    folded = {w.lower() for w in _CAPPED.findall(after)}
+    # Every word of the rewrite, not only the capitalised ones. The question is
+    # whether the name is still there, and "the Big Cop" -> "the big cop" is a
+    # case change, not a dropped name. Matching capitalised-to-capitalised
+    # reported both Big and Cop as lost and forced a needless elision.
+    folded = {w.lower() for w in re.findall(r"[A-Za-z0-9'\-]+", after)}
     names_b = {w for w in _ALLCAPS.findall(before)}
     names_b |= {w for w in _CAPPED.findall(before)
                 if protected and w.lower() in protected}
@@ -252,9 +269,94 @@ def _elide(value: str, runs: Sequence[V.Run], keep: int = 5) -> Tuple[str, int]:
     return "".join(pieces), len(runs)
 
 
+# A name cut to a word count lands on whatever word happens to be there, and
+# "a pile of spoons bent and" reads as a truncation rather than a name.
+_DANGLING = {"and", "or", "of", "the", "a", "an", "into", "with", "but", "that",
+             "which", "to", "in", "on", "at", "for", "from", "by", "as"}
+
+
+def _trim_dangling(name: str) -> str:
+    words = name.rstrip(" ,;:").split()
+    while words and words[-1].lower().strip(",;:") in _DANGLING:
+        words.pop()
+    return " ".join(words).rstrip(" ,;:")
+
+
+def entity_names(node) -> List[str]:
+    out: List[str] = []
+    for name in node.get("participants") or []:
+        if isinstance(name, str):
+            out.append(name)
+    for triple in node.get("state_triples") or []:
+        if isinstance(triple, dict) and isinstance(triple.get("entity"), str):
+            out.append(triple["entity"])
+    for name in node.get("_roster") or []:
+        if isinstance(name, str):
+            out.append(name)
+    if isinstance(node.get("turns_on_entity"), str):
+        out.append(node["turns_on_entity"])
+    return out
+
+
+def shorten_identifiers(node, index: V.SourceIndex) -> Dict[str, str]:
+    """Cut copied entity names below the bar, consistently across the node."""
+    mapping: Dict[str, str] = {}
+    for name in set(entity_names(node)):
+        if not index.exact_runs(name):
+            continue
+        sp = V.spans(name)
+        short = name[:sp[IDENTIFIER_WORD_CAP - 1][1]] if len(sp) > IDENTIFIER_WORD_CAP else name
+        while index.exact_runs(short) and len(V.spans(short)) > 2:
+            short = short[:V.spans(short)[-2][1]]
+        short = _trim_dangling(short)
+        if short != name and short:
+            mapping[name] = short
+    if not mapping:
+        return {}
+
+    node["participants"] = [mapping.get(x, x) if isinstance(x, str) else x
+                            for x in node.get("participants") or []]
+    node["_roster"] = [mapping.get(x, x) if isinstance(x, str) else x
+                       for x in node.get("_roster") or []]
+    if isinstance(node.get("turns_on_entity"), str):
+        node["turns_on_entity"] = mapping.get(node["turns_on_entity"],
+                                              node["turns_on_entity"])
+    for triple in node.get("state_triples") or []:
+        if isinstance(triple, dict) and isinstance(triple.get("entity"), str):
+            triple["entity"] = mapping.get(triple["entity"], triple["entity"])
+    return mapping
+
+
+def restore_unmoved(node) -> int:
+    """Re-assert exit == entry on every register marked unmoved.
+
+    The pass rewrites fields one at a time, so a register whose `entry` was
+    copied text and whose `exit` was identical to it came out of the rewrite with
+    the two no longer matching. That is the layer's central rule -- an unmoved
+    register cannot assert a new state -- and the pass had quietly broken it in
+    seven places. Rewriting is allowed to change how a state is worded; it is not
+    allowed to change whether the state moved.
+    """
+    fixed = 0
+    for triple in node.get("state_triples") or []:
+        registers = triple.get("registers")
+        slots = registers.values() if isinstance(registers, dict) else (registers or [])
+        for slot in slots:
+            if not isinstance(slot, dict) or slot.get("moved") is not False:
+                continue
+            if (slot.get("exit") or "").strip() != (slot.get("entry") or "").strip():
+                slot["exit"] = slot.get("entry")
+                fixed += 1
+    return fixed
+
+
 def process_node(node, index: V.SourceIndex, pool) -> List[Dict[str, Any]]:
     """Rewrite in place. Returns one record per field touched."""
     log: List[Dict[str, Any]] = []
+    for before, after in shorten_identifiers(node, index).items():
+        log.append({"path": "(entity name)", "outcome": "shortened everywhere it occurs",
+                    "words": len(V.spans(before)), "role": "identifier",
+                    "before": before, "after": after})
     protected = roster(node)
     hits = [(p, r) for p, r in V.scan_node(node, index, near=False)]
     by_field: Dict[str, List[V.Run]] = {}
@@ -267,6 +369,9 @@ def process_node(node, index: V.SourceIndex, pool) -> List[Dict[str, Any]]:
             continue
         name = field_name(path)
 
+        if name in IDENTIFIER_FIELDS or path == "/turns_on_entity":
+            # Already handled above, node-wide. Never paraphrased in place.
+            continue
         if name in VERBATIM_FIELDS:
             new = trim_verbatim(value)
             outcome = "trimmed to {} words (exact by design)".format(VERBATIM_WORD_CAP)
@@ -286,6 +391,12 @@ def process_node(node, index: V.SourceIndex, pool) -> List[Dict[str, Any]]:
         log.append({"path": path, "outcome": outcome,
                     "words": max(r.words for r in runs),
                     "role": runs[0].role, "before": value[:160], "after": new[:160]})
+
+    restored = restore_unmoved(node)
+    if restored:
+        log.append({"path": "(unmoved registers)", "outcome":
+                    "exit re-synced to entry on {} register(s)".format(restored),
+                    "words": 0, "role": "invariant", "before": "", "after": ""})
     return log
 
 
