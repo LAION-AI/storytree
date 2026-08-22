@@ -1349,7 +1349,7 @@ def repair_node(node: Dict[str, Any]) -> Dict[str, int]:
     """
     report = {"change_cleared_on_unmoved": 0, "orphan_unchanged_because": 0,
               "quotes_stripped": 0, "future_claims_flagged": 0,
-              "register_text_deduped": 0, "pipeline_reasons_rewritten": 0,
+              "register_text_deduped": 0, "pipeline_reasons_cleared": 0,
               "placeholder_registers_dropped": 0, "text_tidied": 0,
               "outside_names_flagged": 0}
 
@@ -1406,16 +1406,20 @@ def repair_node(node: Dict[str, Any]) -> Dict[str, int]:
                     reg[field] = cleaned
                     report["text_tidied"] += n
 
-            # A reason that talks about this pipeline is not a reason. Replaced
-            # with one derived from the event itself: which scenes the entity is
-            # in and the fact that none of them touches this register. That is a
-            # statement about the story, which is what the field asks for.
+            # A reason that talks about this pipeline is not a reason -- but it
+            # is not code's job to invent the replacement either. The previous
+            # version wrote a template here, and audit_node then flagged that
+            # template as an empty reason, so the repair manufactured the fault
+            # the audit found: 74 of them across nine events. Worse, a judge
+            # caught one that shipped when regeneration was rejected.
+            #
+            # It is cleared instead, and the register is left for regeneration to
+            # write a reason from the scenes. An empty field is visibly missing;
+            # a template looks like an answer.
             because = reg.get("unchanged_because") or ""
             if because and _PIPELINE.search(because):
-                where = ", ".join(node.get("scene_ids") or []) or "this event"
-                reg["unchanged_because"] = (
-                    "nothing across {} acts on this entity's {}".format(where, name))
-                report["pipeline_reasons_rewritten"] += 1
+                reg["unchanged_because"] = None
+                report["pipeline_reasons_cleared"] += 1
 
             # One sentence pasted across an entity's registers. Build 5 marked
             # these with a note; a judge read the note as a confession and scored
@@ -1515,6 +1519,14 @@ def audit_node(node: Dict[str, Any], source_words: str,
         # earned against real misfires. Writing a fresh keyword test here
         # reproduced the first of them immediately: "standing over the dead cops"
         # marked Trinity as destroyed.
+        for name, reg in _iter_registers(triple):
+            if (isinstance(reg, dict) and reg.get("moved") is False
+                    and not (reg.get("unchanged_because") or "").strip()):
+                add(entity, "missing_reason",
+                    "the {} register is unmoved and gives no reason at all; say what "
+                    "the entity was doing and why nothing in these scenes touched "
+                    "it".format(name))
+
         dead, alive, controlled, free = [], [], [], []
         for name, reg in _iter_registers(triple):
             if not isinstance(reg, dict):
