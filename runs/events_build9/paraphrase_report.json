@@ -1,0 +1,252 @@
+[
+ {
+  "path": "/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "dialogue",
+  "before": "Neo is at his PC when the screen blanks and a prompt appears reading 'Wake up, Neo.' He tries to type but the keyboard types a message on its own instead, endin",
+  "after": "Neo is at his PC when the screen blanks and a prompt appears reading 'Wake up, Neo.' He tries to type but the keyboard types a message on its own instead, endin",
+  "file": "events.json",
+  "node": "ev-004"
+ },
+ {
+  "path": "/prose_before_reconcile/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "dialogue",
+  "before": "Neo is asleep at his PC when the screen blanks and a prompt appears reading 'Wake up, Neo.' He tries to type but the keyboard types a message on its own instead",
+  "after": "Neo is asleep at his PC when the screen blanks and a prompt appears reading 'Wake up, Neo.' He tries to type but the keyboard types a message on its own instead",
+  "file": "events.json",
+  "node": "ev-004"
+ },
+ {
+  "path": "(unmoved registers)",
+  "outcome": "exit re-synced to entry on 1 register(s)",
+  "words": 0,
+  "role": "invariant",
+  "before": "",
+  "after": "",
+  "file": "events.json",
+  "node": "ev-004"
+ },
+ {
+  "path": "/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "An alarm clock wakes Neo at 9:15 A.M., startling him into alarmed consciousness in his apartment; the story then establishes the downtown office of Meta CorTech",
+  "after": "An alarm clock wakes Neo at 9:15 A.M., startling him into alarmed consciousness in his apartment; the story then establishes the downtown headquarters of Meta C",
+  "file": "events.json",
+  "node": "ev-005"
+ },
+ {
+  "path": "/prose_before_reconcile/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "An alarm clock wakes Neo at 9:15 A.M., startling him into alarmed consciousness in his apartment; the story then establishes the downtown office of Meta CorTech",
+  "after": "An alarm clock wakes Neo at 9:15 A.M., startling him into alarmed consciousness in his apartment; the story then establishes Meta CorTechs, a software developme",
+  "file": "events.json",
+  "node": "ev-005"
+ },
+ {
+  "path": "/carried_uncertainty[1]/what",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "What the Agents specifically intend to do to Neo, since Morpheus says 'I'm not sure what they're [...].'",
+  "after": "What the Agents specifically intend to do to Neo, since Morpheus says 'I have no idea what their plans are.'",
+  "file": "events.json",
+  "node": "ev-006"
+ },
+ {
+  "path": "/state_triples[1]/registers/status/entry_asserted",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "dialogue",
+  "before": "A negotiator offering a bargain, claiming \"I believe you want to [...].\"",
+  "after": "A negotiator offering a bargain, claiming \"I'm convinced you're inclined to act with integrity.\"",
+  "file": "events.json",
+  "node": "ev-007"
+ },
+ {
+  "path": "/turns_on",
+  "outcome": "1 span(s) rewritten",
+  "words": 12,
+  "role": "dialogue",
+  "before": "Smith's question — what good is a phone [...] — is the pivot: the instant Neo's mouth seals and the bug enters, persuasion ends and ph",
+  "after": "Smith's question — what use is a call if you cannot talk — is the pivot: the instant Neo's mouth seals and the bug enters, persuasion ends and physical enforcem",
+  "file": "events.json",
+  "node": "ev-007"
+ },
+ {
+  "path": "/prose_before_reconcile/turns_on",
+  "outcome": "1 span(s) rewritten",
+  "words": 12,
+  "role": "dialogue",
+  "before": "Smith's question — 'what good is a phone [...]?' — is the pivot: the instant Neo's mouth seals, persuasion ends and physical enforceme",
+  "after": "Smith's question — 'what use is a phone call if you cannot talk?' — is the pivot: the instant Neo's mouth seals, persuasion ends and physical enforcement begins",
+  "file": "events.json",
+  "node": "ev-007"
+ },
+ {
+  "path": "/state_triples[11]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "Railing against the dark street [...], then curving over the rushing car.",
+  "after": "She leans against the railing, gazing out at the rain-swept street beyond the open doorway., then curving over the rushing car.",
+  "file": "events.json",
+  "node": "ev-008"
+ },
+ {
+  "path": "/state_triples[9]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Stopped in a deserted alley behind [...].",
+  "after": "Stopped a desolate alleyway behind an abandoned hotel.",
+  "file": "events.json",
+  "node": "ev-009"
+ },
+ {
+  "path": "/state_triples[3]/reading",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "dialogue",
+  "before": "Morpheus has waited for this recruit and treats the encounter as a ritual he has performed before, framing engineered persuasion as pure non-coercion — 'all I a",
+  "after": "Morpheus has waited for this recruit and treats the encounter as a ritual he has performed before, framing engineered persuasion as pure non-coercion — 'I'm giv",
+  "file": "events.json",
+  "node": "ev-010"
+ },
+ {
+  "path": "/prose_before_reconcile/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "dialogue",
+  "before": "Trinity leads Neo down the thirteenth-floor hall and stops him outside room 1313, warning him to be honest because 'He knows more than you [...].",
+  "after": "Trinity leads Neo down the thirteenth-floor hall and stops him outside room 1313, warning him to be honest because 'He possesses knowledge beyond your wildest e",
+  "file": "events.json",
+  "node": "ev-010"
+ },
+ {
+  "path": "/state_triples[4]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "An oval capsule of clear [...]",
+  "after": "a smooth, egg-shaped pod made of transparent metal containing a pink, jelly-like substance",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[4]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "An oval capsule of clear [...]",
+  "after": "an egg-shaped pod made of transparent metal containing a pink gel",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[5]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "An enormous coaxial plugged and [...] Neo's skull, impossible for him to pull out.",
+  "after": "A massive coaxial cable is jammed and secured into the base of Neo's skull, making it impossible for him to remove. Neo's skull, impossible for him to pull out.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[5]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "An enormous coaxial plugged and [...] Neo's skull, impossible for him to pull out.",
+  "after": "A massive coaxial cable is jammed and secured into the base of his skull, a feat he cannot undo. Neo's skull, impossible for him to pull out.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[8]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A long clear plastic needle [...] at the anterior of Neo's skull, sliding out with blood and spinal fluid.",
+  "after": "A transparent plastic spike and brain-circuit at the anterior of Neo's skull, sliding out with blood and spinal fluid.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[8]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A long clear plastic needle [...] at the anterior of Neo's skull, sliding out with blood and spinal fluid.",
+  "after": "A transparent plastic needle and brain-chip at the anterior of Neo's skull, sliding out with blood and spinal fluid.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[9]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A tremendous vacuum, like an [...], sucking gelatin and Neo into a black hole.",
+  "after": "a powerful suction, reminiscent of an aircraft hatch swinging open, sucking gelatin and Neo into a black hole.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[9]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A tremendous vacuum, like an [...], sucking gelatin and Neo into a black hole.",
+  "after": "A powerful suction, reminiscent of an aircraft cabin door being yanked open, sucking gelatin and Neo into a black hole.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[12]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "A metal harness that opens and drops the half [...].",
+  "after": "A metal harness that The metal restraint unlatches, sending the semi-awake Neo crashing to the ground.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[12]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "A metal harness that opens and drops the half [...].",
+  "after": "A metal harness that The metal restraint unlatches and sends the semi-awake Neo crashing to the ground.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "(unmoved registers)",
+  "outcome": "exit re-synced to entry on 5 register(s)",
+  "words": 0,
+  "role": "invariant",
+  "before": "",
+  "after": "",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "(entity name)",
+  "outcome": "shortened everywhere it occurs",
+  "words": 8,
+  "role": "identifier",
+  "before": "acupuncture-like needles wired to [...]",
+  "after": "acupuncture-like needles wired",
+  "file": "events.json",
+  "node": "ev-012"
+ }
+]
