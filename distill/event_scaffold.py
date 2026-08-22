@@ -158,6 +158,14 @@ def _terminal_for(text: str, entity: str, canon: Optional[Dict[str, str]] = None
         subject = set(re.findall(r"[a-z']+", " ".join(words[:i])))
         if subject & others and not (subject & own):
             continue
+        # A terminal word opening a clause with an object after it is active:
+        # "shot the squad" is the entity doing the shooting. The empty-subject
+        # fallback below reads a clause with no subject as being about the entity
+        # itself, which is right for "Dead, murdered when..." and wrong here --
+        # it marked Trinity terminal for shooting the police.
+        if i == 0 and len(words) > 1 and words[1].strip('"\'.,') in (
+                "the", "a", "an", "his", "her", "their", "them", "it", "him"):
+            continue
         if (subject & own) or (subject & set(_SELF)) or not subject:
             return True
     return False

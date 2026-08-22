@@ -887,9 +887,23 @@ def verify_all(pool: EndpointPool, events: Sequence[Dict], *, workers: int = 2,
     return [x for x in out if not isinstance(x, Exception)]
 
 
+# Matched by shape, not by enumeration. The list version named eight openings and
+# the model kept inventing a ninth: "Not established by the prior event", "No
+# physical state recorded for this entity", "No emotional state recorded" all
+# passed a check that reported zero placeholders while judges were counting
+# fourteen in one node. A blacklist of phrasings loses to a generative model.
+#
+# The shape is: an assertion that no record exists, rather than a description of
+# a state. Either a bare non-value, or "no/not <anything> recorded/established/
+# given/available/noted/applicable".
 _PLACEHOLDER = re.compile(
-    r"^\s*(not stated|unstated|unknown|n/?a|not specified|not recorded|none|"
-    r"unchanged|not applicable|no change)\b", re.I)
+    r"^\s*(?:"
+    r"(?:not stated|unstated|unknown|n/?a|not specified|none|unchanged|"
+    r"not applicable|no change|inapplicable)\b"
+    r"|(?:no|not|nothing)\b[^.;]{0,60}?\b"
+    r"(?:recorded|established|given|available|noted|specified|applicable|"
+    r"determined|provided|captured|indicated)\b"
+    r")", re.I)
 
 # An "unchanged" that immediately concedes an exception is not an unchanged. Judges found
 # this in three of four events: the reason field denies the change and then grants it.
@@ -1196,8 +1210,10 @@ _QUOTE = re.compile(
 _PIPELINE = re.compile(
     r"\b(scene layer|scaffold|pipeline|no change (?:was |is )?recorded|"
     r"not recorded|nothing was recorded|the roster|upstream)\b", re.I)
-_PLACEHOLDER_STATE = re.compile(
-    r"^\s*(n/?a|none|an object|not applicable|unknown|unspecified|-{1,3})\s*[.]?\s*$", re.I)
+# Was a second, narrower list beside _PLACEHOLDER, and the two disagreed: this one
+# missed "inapplicable" and "No physical state recorded", so 23 registers were
+# dropped by neither and shipped. One pattern, matched by shape, used everywhere.
+_PLACEHOLDER_STATE = _PLACEHOLDER
 
 
 def apply_chained_entries(node: Dict[str, Any], carried: Dict[str, Dict[str, str]]) -> int:
@@ -1307,14 +1323,22 @@ def outside_names(node: Dict[str, Any], present: set, people: set) -> List[str]:
         present_heads |= heads(item)
 
     hits = []
+    seen_key = set()
     for name in people:
         low = str(name).casefold().strip()
         if len(low) < 4 or low in ("they", "them", "no one", "someone"):
             continue
         if heads(name) & present_heads:
             continue
+        # One entity, one flag. "Agents", "The Agents" and "the Agents" are the
+        # same party, and counting each spelling turned 4 real findings into 9 --
+        # the fifth counting artefact in this project, all of the same shape.
+        folded = re.sub(r"^(the|a)\s+", "", low).rstrip("s")
+        if folded in seen_key:
+            continue
         if re.search(r"\b{}\b".format(re.escape(low)), blob):
             hits.append(str(name))
+            seen_key.add(folded)
     return sorted(set(hits))
 
 
@@ -1519,7 +1543,15 @@ def audit_node(node: Dict[str, Any], source_words: str,
                 "{} register exits with it free and in command; both cannot be the "
                 "state it leaves in".format(", ".join(controlled), ", ".join(free)))
 
+    # Folded on read as well as on write: nodes built before the fold carry the
+    # duplicate spellings, and a metric that changes meaning between builds is
+    # worse than one that is merely wrong.
+    seen_outside = set()
     for name in node.get("_names_from_outside_this_event") or []:
+        folded = re.sub(r"^(the|a)\s+", "", str(name).casefold()).rstrip("s")
+        if folded in seen_outside:
+            continue
+        seen_outside.add(folded)
         add(None, "outside_name",
             "{} is named in a consequence field but appears in none of this "
             "event's scenes".format(name))
