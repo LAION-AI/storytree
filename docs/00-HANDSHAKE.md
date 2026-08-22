@@ -1,7 +1,8 @@
 # Handshake — read this first
 
 You are picking up a project you have no memory of. This file is the fastest
-path back to working state. Written 18 August 2026.
+path back to working state. Rewritten 22 August 2026, after the event-layer
+campaign (builds 3–7).
 
 ---
 
@@ -9,273 +10,198 @@ path back to working state. Written 18 August 2026.
 
 **storytree** generates screenplays as an explicit graph — story root, exposé,
 plots, entity profiles, events, scenes, prose — and runs the same machinery
-*backwards* to recover that graph from a finished screenplay. The reverse
-direction produces training data for distilling narrative understanding into
-smaller models.
+*backwards* to recover that graph from a finished screenplay (the 1998 Matrix
+shooting script, 224 scenes). The reverse direction produces training data for
+distilling narrative understanding into smaller models.
 
-Repo: `christophschuhmann/storytree`, private. Working dir
-`/home/deployer/laion/bookwriter`. `GH_TOKEN` and `HYPRLAB_API_KEY` are in
-`.env` (chmod 600, gitignored). **Never print them.**
+Repo: `christophschuhmann/storytree`. Working dir `/home/deployer/laion/bookwriter`.
+`GH_TOKEN` is in `.env` (chmod 600, gitignored). **Never print tokens.** Push
+ONLY via `tools/publish.sh <message-file>` — it gates the push on two leak
+sweeps; twice a leak shipped because the sweep ran beside the push instead of in
+front of it.
 
 ## The one-paragraph state
 
-The bottom-up swarm works and runs a 224-scene feature in ~20 minutes. The scene
-layer has been optimised through six variants. **The scores below are superseded:
-a blind A/B has since been run and no arm clears the bar** — see *Since then*.
-V4 and V5 remain the best arms and remain indistinguishable from each other. The
-remaining blocker for autonomy is **not quality** — it is that eight measurement
-errors have occurred and the pipeline caught none of them, and the blind result
-is a ninth of the same kind.
+The scene layer is done and published clean (224 nodes, zero copied source
+runs). The event layer is at **build 7**, which beat build 4 in the largest
+blind evaluation run so far: **23 paired events, 4 independent judges, +0.69,
+95% CI [+0.49, +0.88], preferred 20:3.** No dimension got worse. The bar
+(mean ≥ 4.0, no dimension < 3.0) is still not met: build 7 means 3.32 with its
+weakest dimension (internal consistency) at 2.09. The gains came from moving
+decisions out of prompts into code; the remaining deficits have named causes
+(§ next steps). Upper layers (plots, entities, exposé) are documented but
+deliberately unbuilt — they depend on the event chain.
 
-## Where things are
+## Serving — what actually runs here
+
+Everything local runs under **llama.cpp** (`llama-server`), NOT vLLM. (vLLM
+served the Qwen 27B in the sibling project `project-alexandria`; do not confuse
+the two.) Binary: `/home/deployer/models/llama.cpp.build/build/bin/llama-server`
+(built from source, CUDA 12.8, arch 80).
+
+**Ornith-1.5-397B** (sparse MoE, Q4_K_M GGUF) — the composer/judge workhorse.
+Two instances, 4 GPUs each:
+
+```bash
+llama-server -m /home/deployer/models/Ornith-1.5-397B/Ornith-1.5-397B-Q4_K_M.gguf \
+  --host 127.0.0.1 --port 8110 --device CUDA0,CUDA1,CUDA2,CUDA3 -sm layer -ngl 999 \
+  -c 65536 -np 1 -fa on -b 2048 -ub 512 --jinja --alias ornith-1.5-397b
+# second instance: port 8111, CUDA4-7
+```
+
+Facts you will otherwise rediscover the hard way:
+* `-c 65536` is required. At 32,768 the largest event (33,680 tokens needed)
+  truncated **by arithmetic, every run**. 64k costs only ~350 MB/GPU on this MoE
+  and was verified with a needle at position ~40k (answered correctly).
+* `-np 1` is correct: throughput is flat within one instance (41→44 tok/s) and
+  doubles across instances. Parallelise across ports, not slots.
+* ~44 tok/s generation; a full-film compose pass (wave=1, sequential for the
+  state chain) runs ~4–5 min/event.
+* The server's `/tokenize` endpoint gives exact counts — `fit_to_context()`
+  uses it; estimates are off by more than the margin that matters.
+
+**Qwen3.8-9B-Distill** (Q8_0 GGUF, `empero-ai/Qwen3.8-9B-Distill-GGUF`) — the
+paraphrase workhorse, one spare-capacity GPU:
+
+```bash
+llama-server -m /home/deployer/models/Qwen3.8-9B-Distill/Qwen3.8-9B-Q8_0.gguf \
+  --host 127.0.0.1 --port 8120 --device CUDA3 -ngl 999 -c 32768 -np 4 -fa on \
+  --jinja --alias qwen38-9b
+```
+
+The 9B **cannot** rewrite a whole field (measured: 1/10 accepted vs 64/74 for
+the 397B). Asked to rewrite **one marked span**, with code doing the splicing,
+it clears ~71% at 1.8 s/field; the rest escalates to Ornith
+(`--escalate-ports 8110,8111`), residue is elided. Final acceptance 95.8%.
+
+Client: `EndpointPool` in
+`/home/deployer/laion/project-alexandria/screenplay/src/screenplay_ku/client.py`
+(prefix caching, JSON-schema guided decoding, round-robin over ports).
+
+## Where the code is
 
 | | |
 |---|---|
-| **Start here** | `docs/14-rubric-scores-and-next-steps.md` — all scores, the ceiling analysis, 14 proposals |
-| Raw data + method | `docs/13-scene-experiments-data.md` |
-| Narrative of the swarm | `docs/12-swarm-results.md` |
-| Evaluator's own reports | `docs/experiments/EXP-004-scene-variants.md` (1,424 lines, four passes) |
-| Design | `distill/WHITEPAPER-SWARM.md` + `distill/swarm/*.md` (14 sections) |
-| Model behaviour, measured | `docs/05-model-behaviour.md` — **read this before changing any prompt** |
-| Serving and reproduction | `ops/README.md` |
+| `distill/event_layer.py` | the whole event pipeline: segment → scaffold → compose → repair → chain → **audit → regenerate** → reconcile → verify → verbatim gate. CLI: `--segmentation` (reuse boundaries), `--limit N`, `--resume-from partial.json` (compose is the expensive stage; never redo it for a post-processing crash), `--ctx`, `--wave 1` (exact state chain) |
+| `distill/event_scaffold.py` | procedural scaffold: film-wide roster (396 spellings → 364 entities), per-entity register demands, object restriction (physical/positional/status only), positional-MUST-MOVE from scene locations, `_terminal_for` (**six guards**, each from a real misfire — reuse it, never write a fresh keyword test; that mistake was made three times) |
+| `distill/verbatim.py` | copied-source detection: exact gate (8+ tokens) + near gate (window overlap, order-insensitive) + dialogue/action role hints |
+| `distill/paraphrase_pass.py` | span-level de-copying with the 9B + escalation; identifier-safe (entity names shortened consistently node-wide, never paraphrased); preserves numbers incl. spelled-out, names, unmoved-invariant, reading length |
+| `distill/build_event_eval_pack.py` | blind A/B packs: pairing **by scene anchor** (ids shift between segmentations), labels shuffled per pairing, key to a separate dir |
+| `distill/aggregate_event_eval.py` | paired bootstrap **over pairings** (the sampled unit), per-dimension table, gate check |
+| `tools/check_no_leak.py` | sweeps everything `git ls-files` reports + `--message` for commit texts |
+| `tools/redact_source_spans.py` | elision (JSON-structure-aware) |
+| `tools/publish.sh` | the ONLY sanctioned push path |
+| `distill/scene_variants.py` | scene layer (done; evidence capped at 7 words) |
 
-**Code:** `distill/swarm.py` (eight-stage bottom-up pipeline),
-`distill/scene_variants.py` (V0–V5 and the tier-1 harness),
-`reconstruct/scriptforge/{presence,grounding,ensemble}.py`,
-`tools/check_integrity.py`.
+Artifacts: `runs/scenes_ornith_v5` (scene layer, scored), `runs/scenes_ornith_v5_clean`
+(published, 0 copied runs), `runs/events_build{3..7}` (6-event iterations),
+`runs/events_build7_24` (23 events, sc-001..sc-114, the current best).
+Screenplay text: `distill/runs/matrix/script.normalized.txt` +
+`reconstruct/runs/matrix/script_map.json` (never committed; `.gitignore` matches
+by filename anywhere).
 
-**Run outputs:** `reconstruct/runs/matrix/fix_v0` … `fix_v5` (the scored arms),
-`swarm/` (full bottom-up run), `swarm_v1_empty_scenes/` (kept as evidence of a
-bug, do not delete).
+## The event-layer campaign — what was done and learned
 
----
+Full docs: `docs/events/build3-vs-build4.md`, `build5.md`, `build6.md`;
+node format for outsiders: `docs/nodes/`; scoring: `docs/rubric-explained.md`.
 
-## What worked
-
-**Inverting the direction.** The top-down pipeline wrote a story root first and
-everything under it inherited its poverty — nine entities where thirty were
-needed, then all 22 events at the one location that existed, then an ending
-placing a character somewhere her own state model could not hold. Reading scenes
-first and inducing upward fixed it: 23 locations against 1, 13 concepts against
-0, 11 reversals against 0.
-
-**Cutting context.** V0 gave the model ~100,000 characters of script per scene.
-The median scene in this work is **45 words** — 0.01% of the window. V1 cuts to
-the scene plus two neighbours: better on every measure, **4.5× faster and 15.7×
-cheaper**.
-
-**Splitting facts from minds.** They want opposite context. Pass A reads the
-scene alone; pass B adds prior scenes and the event layer. Emotional intelligence
-2.80 → 3.67.
-
-**Gating the mind pass.** Running it everywhere broke calibration (2.13). Gating
-on content — **≥2 speaker cues, or 1 cue above the work's own 75th percentile** —
-keeps the gain and drops the cost. Prefer this over an absolute word count, which
-does not transfer between screenplays.
-
-**Schema-level enforcement over instructions.** Binding location and cast as
-`const`/`enum` fixed what a prompt clause could not. General rule, measured
-repeatedly: *instructions repair local fields, structure repairs global
-consistency.*
-
-**The canary.** One agent per run gets a deliberately blank scene. Anything it
-writes is recall. It fired on its first execution and is the only check in the
-system that detects failure by construction.
-
-## What did not work
-
-**Prompt clauses for global properties.** A failure-derived addendum fixed
-confidence calibration and *regressed* location adherence. See EXP-001.
-
-**Speculative decoding on a sparse MoE.** An n-gram drafter was a 25%
-*regression* on GLM-5.2. The model's own trained MTP head won 45%. On a dense
-model (Qwen) the same technique gives +138%.
-
-**Concurrency on a sparse MoE.** Aggregate throughput is flat from 1 to 8
-concurrent requests. Do not restructure a job from serial to parallel there.
-
-**FP8 for GLM-5.2.** It reads 2.2× more bytes per token than the current
-quantisation, so it makes decoding *slower*, and it fits on no reasonable
-configuration.
-
-**Letting the mind pass decline.** `minItems: 1` was dropped so an empty `minds`
-list would be legal — the model never once used it in fifteen opportunities,
-because the gate had already removed every scene where declining was right.
-Untested, not disproven.
-
----
-
-## The eight measurement errors
-
-This is the most transferable thing here. **Every one produced a confident number
-computed over the wrong thing, and not one failed loudly.**
-
-| # | Check | What it actually did |
+| Build | Change | Blind result (6 anchors unless noted) |
 |---|---|---|
-| 1 | trajectory flatness | tested a field the schema never had |
-| 2 | leak detector | tokenised raw JSON; punctuation blocked every match |
-| 3 | grounding | read another schema's field names |
-| 4 | arm comparison | averaged over different node counts, then compared |
-| 5 | correspondence | tested for a quote where the schema asked for a paraphrase |
-| 6 | scene slicing | sliced the raw file with cleaned-text offsets — 13 of 15 scenes never reached the model, and the metric could not see it because it compared against the same corrupted slice |
-| 7 | clean count | a new check written into the list an older count derives from |
-| 8 | grounding gate | appended after the score was fixed, so contradictions could not lower it |
+| 3→4 | 64k context + anti-copy prompting | **null** (−0.17, CI [−0.45,+0.09]). Prompting did not reduce copying (0.88→1.10 runs/node) |
+| 4→5 | chain closed per event; entry procedural; 5 judge findings → code | trend (+0.31, CI touches 0) |
+| 5→6 | objects restricted; positional/terminal MUST-MOVE; dedup registers; carry map expires | **significant** (+0.33, CI [+0.06,+0.61]) — first ever |
+| 6→7 | **audit→regenerate loop**: fabricated quotes, empty reasons, life/control contradictions, outside names → one entity redone with the fault named; V5 guard | +0.24 (n.s. at 6) |
+| 4→7 | cumulative, **23 anchors, 4 judges** | **+0.69, CI [+0.49,+0.88], 20:3** |
 
-**Six of eight were found by an outside reader; two by recomputing. Zero by any
-check in the system.**
+The regeneration loop at scale: **108/108 entities accepted, 0 rejected.**
+Acceptance requires: named fault gone, register set unchanged, reading not
+shortened (the V5 guard — build 6 traded mind material for compliance and a
+judge measured it; build 7 recovered V5 +0.83).
 
-### Rules earned from them
+**The lessons, in order of how often they were re-learned:**
 
-1. **Never grade against a list your own apparatus generated.** That measures
-   compliance, not correctness. It once produced a schema that *mandated* the
-   error it was meant to prevent.
-2. **Validate the metric before trusting the result.** Read the check next to the
-   schema it checks.
-3. **Presence is not integrity.** A guard that accepts any non-empty input passes
-   a misaligned one unchanged.
-4. **A guard that substitutes empty input for missing input is worse than no
-   guard** — it converts a crash into a confident wrong answer.
-5. **A check that has never been shown to fail is not a check.** Every one of the
-   eight passed silently on data it should have rejected.
-6. **Dry-run before spending GPU time.** Two bugs were caught by ten-second
-   checks; several were not, and cost full runs.
+1. **Instructions repair local fields; structure repairs global properties.**
+   Confirmed again: anti-copy prompting did nothing; schema+code changes moved
+   every number that moved.
+2. **Checkers measure themselves.** SEVEN instances this campaign: lint counted
+   build-2's register contract (1505 phantom "missing"), entity-absent flagged
+   objects for not being people (1013→19), truncation counted noun phrases as
+   damage (23%→2.5%), placeholder list missed every new phrasing the model
+   invented (0 reported, 23 real; **match by shape, not by list**), two
+   unmoved-predicates wrong, outside-name counted spellings (9→4). When a number
+   is surprising, audit the checker before the pipeline.
+3. **Repairs must not manufacture faults.** repair_node wrote a template reason;
+   audit_node flagged the template; regeneration undid it — 74 self-made faults
+   in one run. Clear the field and let regeneration write from the scenes.
+4. **A model asked to fix a fault sometimes returns it.** Regeneration accepts
+   only verified improvements; everything else keeps the original.
+5. **JSON Schema cannot vary `required` per sibling** — the union forces
+   registers onto entities that cannot have them; the model answers "n/a"
+   honestly. Remove the impossible ones after parsing (only the impossible:
+   trimming to what the scaffold *typed* deleted 312/404 registers).
+6. **The 6-anchor treadmill.** ±0.28-wide CIs cannot resolve +0.3 effects.
+   Iterate small, but *decide* at 23+.
+7. Guards on text heuristics are earned, not designed: `_terminal_for` needed
+   six (attributive, reporting verb, other subject, active participle, negation,
+   object-after-terminal-word), each found by auditing all 517 entities, not by
+   reasoning.
 
----
+## Next steps to raise event scores (ranked)
 
-## Since then: the blind A/B was run, and it changed the picture
+The two weak dimensions are **A internal consistency (2.09)** and **D schema
+compliance (2.57)**. All four judges independently named the same causes:
 
-Step #1 below was done. Three blind rounds, fifteen scenes, three independent Opus judges,
-same six-dimension rubric, arms relabelled with the key withheld. Everything in
-[`docs/cognitino/results.md`](cognitino/results.md).
+1. **Stale carried entries — the top A-killer.** The carry map now expires after
+   one event, but the *scaffold* still shows "entry from previous event" text
+   that the model copies into scenes it contradicts ("entering the hotel...
+   then leaving the mess hall"). Fix: label carried text with its source event
+   and instruct update-don't-inherit; better, have `apply_chained_entries`
+   overwrite AFTER compose only when the entity appeared in the direct
+   predecessor, and give the model no carried text at all for gaps.
+2. **Template `unchanged_because` from the old-code compose runs** is still in
+   `events_build7_24` nodes where regeneration missed them (audit pattern
+   `_EMPTY_REASON` catches "nothing across sc-X"; extend it to "neither added
+   nor removed in the ledger" and any sentence naming a scene id). One node had
+   101 `"No recorded change on this register."` `change` fields — normalise
+   those to `unchanged` in repair_node (shape-match, like `_PLACEHOLDER`).
+3. **Act on verify_all.** It found 37 state breaks + 20 contradictions across
+   22 joins and NOTHING consumes its findings. Feed them into the audit→
+   regenerate loop as faults on the named entity (they carry event ids).
+4. **`outside_name` faults have no entity** so regeneration never touches them
+   (17 left). Route them to a node-level rewrite of the affects_outside block.
+5. **Duplicate entity declarations** ("BIG COP"/"The Big Cop" with conflicting
+   states) — the roster folds these but the model re-splits them; add the fold
+   map to merge_duplicate_keys as authoritative.
+6. **After that, the model.** The only replicated gain in the whole project is
+   the model swap (+0.38, p=0.002, scene layer). Procedural rounds yield ~+0.3
+   each and the mechanically decidable faults are mostly harvested. To reach
+   4.0 (gap: 0.68), expect to need a stronger composer, not a seventh round of
+   rules. Composing via HYPRLAB API (Grok/Opus) is untested for the event layer.
 
-**The bar has not been cleared by anything.** Blind scoring puts every arm ~0.4 below its
-published figure:
+Also owed: the remaining 24 events (build7_24 covers sc-001..sc-114; the film
+has 47 segmented events), and one event of the 24 failed compose — check
+`b7_24.log` before reusing.
 
-| Arm | Published (docs/14) | **Blind** |
-|---|---|---|
-| V4 | 4.16 | **3.63 – 3.88** |
-| V5 | 4.06 | **3.66 – 3.74** |
-| V1 | 4.02 | **3.51 – 3.57** |
+## Judge protocol (blind A/B) — do not re-derive
 
-The claim in this document that *"V4 and V5 are the first two arms to clear the bar"* does not
-survive blinding. **Neither does. Nor does any arm.** That is what the non-blind caveat below
-predicted, and it is the single most important correction to make to this file.
+`build_event_eval_pack.py` → per-judge dirs with `pairings.json`, `rubric.txt`
+(`docs/cognitino`-era 14-dim rubric, POSTURE: 3="acceptable"), `scenes.json`.
+KEY goes to a separate dir — an early run left it beside the batches and 2 of 3
+judges read it. Brief judges on: the register contract (NOT all seven; objects
+= physical/positional/status), noun phrases ≠ truncation, `[...]` elisions
+neutral, `off_screen_reactor` legitimately names absent parties, `_`-prefixed
+fields are annotations. Every briefing error becomes a systematic scoring bias —
+V3 was invalid for one whole round because the briefing described build 2's
+contract. Judges must never quote >7 consecutive screenplay words.
 
-**V4 and V5 remain indistinguishable from each other** across all three rounds. Judge variance
-between rounds moved V4 by 0.24 and swapped its rank with V5 — larger than several differences
-previously reported as findings.
+## Standing rules
 
-**Three extensions were tried and all three lost to plain V4:**
-
-| Extension | Mean | Effort vs V4 |
-|---|---|---|
-| CogniTino abstraction layer, 2-scene windows | 3.37 | 1.9× calls, ~17× input tokens |
-| CogniTino abstraction layer, 5-scene windows | 3.29 | same |
-| V4 + a separate deepening pass | **2.57** | 2.4× calls, 3.3× input |
-
-The pattern is consistent and is the transferable lesson: **every attempt to append more
-analysis cost more in proportion and fidelity than it gained in insight.** Twice the same
-mistake was made — forcing content onto scenes that cannot carry it. The abstraction layer does
-win emotional intelligence (+0.37 against V4), so the mechanism works; it is not worth its cost.
-
-**Practical consequence:** return to V4, and treat its published score as ~3.7, not 4.16.
-
-**Then the model was swapped, and that is what moved the number.** Same V4 code, same sample,
-same rubric, blind: **Ornith-1.5-397B scores 3.77 against Qwen3.8-27B's 3.38** (+0.39,
-CI95 [0.00, 0.78], p = 0.052 — not significant, but it clears the bar on 6 of 15 scenes
-against 1). Emotional intelligence, the dimension nothing else could move, goes 2.67 → 3.60.
-Costs 4.7× the model time, 4 GPUs per instance and 224 GB on disk, and is mechanically
-*worse* (tier-1 0.883 vs 0.967). See [`docs/ornith/`](ornith/).
-
-**Replicated on fifteen fresh scenes with zero overlap: +0.378, p = 0.017.** Pooled over both
-samples, n = 30: **+0.383, CI95 [0.133, 0.628], p = 0.0019.** The effect is near-identical
-across two disjoint samples, and calibration — the dimension the fresh sample was expected to
-flatter — came out exactly level, so the advantage is not a sampling artefact.
-
-**The bottleneck was the model, not the scaffold.** Three scaffold changes lost; one model
-change won, and it is the only result in this line of work that has reproduced.
-
-**[The StoryTree structure](storytree-structure.md)** is the map: the layers, what each node
-type contains, real examples, and where the results are. Start there.
-
-New readers, in order:
-[`docs/scene-layer-explained.md`](scene-layer-explained.md) — what the six scene conditions
-were, what differed, what worked and what did not ·
-[`docs/rubric-explained.md`](rubric-explained.md) — the dimensions and what 0–5 mean ·
-[`docs/events/`](events/) — the layer above scenes, and the first measurement of it.
-
-**Naming warning:** `V0–V5` are *scene conditions*; `V1–V5` in the event rubric are *scoring
-dimensions*. Unrelated, same letters.
-
-## What was about to happen next
-
-Ranked, from `docs/14`:
-
-1. **Blind A/B at n=40, three samples per cell, V1 vs V4 vs V5.** Nothing in
-   three evaluator reports separates statistically. Strip `_mind_pass` first — it
-   labels the arm on every node. *This is the only step that turns any of the
-   quality work into evidence.*
-2. **Negative test cases for every check.** Would have caught most of the eight.
-3. **Test the short-scene ceiling hypothesis.** All five worst-ceiling scenes are
-   12–27 words with 0–1 cues. Either the rubric asks them for what they cannot
-   have, or a twelve-word scene is the wrong unit and belongs to its event as a
-   beat. One cheap test distinguishes these and it has not been run.
-4. **Gate on ≥2 cues AND an actual exchange.** V5's single false positive cost 9
-   rubric points on one scene.
-5. Then: the other layers. Events, plots, profiles, exposé and root have never
-   been rubric-scored. The bar was to finish the scene layer first, and it is
-   now cleared.
-
-## Things that will bite you
-
-- **The evaluator is one Opus agent, not blind to arm, who helped specify the
-  designs it scores.** Three consecutive reports share this. Discount accordingly
-  and prefer the blind A/B.
-- **Opus subscription limits.** A weekly cap has already killed three agents
-  mid-task. Tell every spawned agent to write incrementally; a partial file is
-  worth more than none.
-- **Commit messages with backticks or quotes break the shell.** Always
-  `git commit -F <file>`.
-- **History was force-pushed** (to purge a screenplay). `git fetch` before
-  committing.
-- **`pkill -f <pattern>` matches the shell running it** and kills the launcher.
-  Use the bracket trick or kill by PID.
-- **Copyright.** The reconstruction reads a copyrighted screenplay. Structure is
-  derived and committed; prose is stored by reference and never copied. Check
-  `.gitignore` before adding anything under a `runs/` tree — a narrower pattern
-  once failed to cover a newly created directory and a full screenplay was
-  committed and had to be purged from history.
-
-## How to get back to the good results
-
-```bash
-./ops/launch_all.sh                                    # 8 endpoints, ~2 min to load
-python3 distill/scene_variants.py --variant v5 --out /tmp/check
-```
-
-Expect tier-1 ≈ 0.88 corrected, 15/15 verbatim evidence, ~600 words per node,
-~16.6k output tokens for fifteen scenes. If those numbers are far off, something
-in serving changed — check the request body against `ops/README.md` before
-suspecting the model.
-
-For the full pipeline:
-
-```bash
-python3 distill/swarm.py reconstruct/runs/matrix --out /tmp/swarm --per-endpoint 8
-```
-
-~20 minutes, 373 calls, `protocol.json` with per-stage timings and violations.
-
----
-
-## The honest summary
-
-The architecture is sound and the scene layer clears its bar. But the strongest
-claim the data supports is narrow: **on fifteen scenes, read once, by one
-non-blind evaluator, two configurations scored above 4.0 and did not
-distinguish themselves from a simpler one.**
-
-The interesting work left is not more variants. It is making the system able to
-detect its own failures — because the record is eight for eight in the wrong
-direction, and that, not quality, is what stands between here and a hundred books
-unattended.
+* No published artifact carries ≥8 consecutive source words. The scene layer's
+  `evidence` fields are verbatim BY DESIGN but capped at 7 words.
+* Push only via `tools/publish.sh`. Commit messages are swept too (one shipped
+  a 9-word quote while explaining how quotes get shortened).
+* The 140-file copied-text history predates the cleanup and is still in git
+  history; removing it means a public force-push — **user's call, not yours**.
+* GPU7 hosts a live voices demo (other project) — keep it free.
+* The frozen scene SAMPLE and the fix_v* artifacts must not change; blind
+  scores were computed on them.

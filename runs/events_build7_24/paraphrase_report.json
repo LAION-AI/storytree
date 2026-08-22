@@ -1,0 +1,352 @@
+[
+ {
+  "path": "/turns_on",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "The instant the Big Cop reaches with [...] — the first touch becomes the trigger for her violence, inverting the arrest into a slaughter.",
+  "after": "The instant the Big Cop extends his wrists to apply the restraints and Trinity shifts — the first touch becomes the trigger for her violence, inverting the arre",
+  "file": "events.json",
+  "node": "ev-001"
+ },
+ {
+  "path": "/prose_before_reconcile/turns_on",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "The instant the Big Cop reaches with [...] — the first touch becomes the trigger for her violence, inverting the arrest into a slaughter.",
+  "after": "The instant the Big Cop reaches for the cuffs and Trinity shifts — the first touch becomes the trigger for her violence, inverting the arrest into a slaughter.",
+  "file": "events.json",
+  "node": "ev-001"
+ },
+ {
+  "path": "/summary",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "The alarm drags Neo awake at 9:15 A.M. in his own apartment, and he reacts with alarmed cursing at the time. An establishing shot names the destination as the d",
+  "after": "The alarm drags Neo awake at 9:15 A.M. in his own apartment, and he reacts with alarmed cursing at the time. An establishing shot names the destination as the d",
+  "file": "events.json",
+  "node": "ev-005"
+ },
+ {
+  "path": "/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "Neo is jolted from sleep by the alarm at 9:15 A.M. and reacts with alarmed cursing. The scene then names the destination as the downtown office of Meta CorTechs",
+  "after": "Neo is jolted from sleep by the alarm at 9:15 A.M. and reacts with alarmed cursing. The scene then names the destination as the city-center headquarters of Meta",
+  "file": "events.json",
+  "node": "ev-005"
+ },
+ {
+  "path": "/state_triples[3]/registers/knowledge/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "Identified as the downtown office of Meta [...].",
+  "after": "Identified as the headquarters of Meta CorTechs, a software development firm.",
+  "file": "events.json",
+  "node": "ev-005"
+ },
+ {
+  "path": "/prose_before_reconcile/summary",
+  "outcome": "1 span(s) elided",
+  "words": 10,
+  "role": "action",
+  "before": "The alarm drags Neo awake at 9:15 A.M. in his own apartment, and he reacts with alarmed cursing at the time. An establishing shot names the destination as the d",
+  "after": "The alarm drags Neo awake at 9:15 A.M. in his own apartment, and he reacts with alarmed cursing at the time. An establishing shot names the destination as the d",
+  "file": "events.json",
+  "node": "ev-005"
+ },
+ {
+  "path": "/action",
+  "outcome": "2 span(s) rewritten",
+  "words": 13,
+  "role": "action",
+  "before": "A Federal Express Guy delivers a softpak to Neo at his cubicle; inside is a cellular phone that rings the moment Neo holds it, and Morpheus warns that forces ar",
+  "after": "A Federal Express Guy delivers a softpak to Neo at his cubicle; inside is a cellular phone that rings the moment Neo holds it, and Morpheus warns that forces ar",
+  "file": "events.json",
+  "node": "ev-006"
+ },
+ {
+  "path": "/carried_uncertainty[1]/what",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "What the Agents specifically intend to do to Neo, since Morpheus says 'I'm not sure what they're [...].'",
+  "after": "What the Agents specifically intend to do to Neo, since Morpheus says 'he is uncertain what they intend to do.'",
+  "file": "events.json",
+  "node": "ev-006"
+ },
+ {
+  "path": "/prose_before_reconcile/action",
+  "outcome": "2 span(s) rewritten",
+  "words": 13,
+  "role": "action",
+  "before": "A Federal Express Guy delivers a softpak to Neo at his cubicle; inside is a cellular phone that rings the moment Neo holds it, and Morpheus warns that people ar",
+  "after": "A Federal Express Guy delivers a softpak to Neo at his cubicle; inside is a cellular phone that rings the moment Neo holds it, and Morpheus warns that people ar",
+  "file": "events.json",
+  "node": "ev-006"
+ },
+ {
+  "path": "/state_triples[4]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "An oval capsule of clear [...], its surface curdling once breached.",
+  "after": "a transparent, egg-shaped container of alloy containing a magenta gel, its surface curdling once breached.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[4]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "An oval capsule of clear [...], its surface curdling once breached.",
+  "after": "An egg-shaped pod made of transparent metal, containing pink gelatin, its surface curdling once breached.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[5]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "An enormous coaxial plugged and [...] Neo's skull, impossible for him to pull out.",
+  "after": "A massive coaxial cable, jammed and secured into the base of Neo's skull, is impossible for him to remove. Neo's skull, impossible for him to pull out.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[8]/registers/physical/entry",
+  "outcome": "2 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A long clear plastic needle [...] that slides from the anterior of [...] blood and spinal fluid.",
+  "after": "A transparent plastic needle and brain-chip that slides out from the front of Neo's head, accompanied by a mix of blood and spinal fluid blood and spinal fluid.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[8]/registers/physical/exit",
+  "outcome": "2 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A long clear plastic needle [...] that slides from the anterior of [...] blood and spinal fluid.",
+  "after": "a slender, transparent plastic probe and neural implant that emerges from the front of Neo's skull, trailing blood and spinal fluid.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[9]/registers/physical/entry",
+  "outcome": "2 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "A tremendous vacuum, like an [...], that sucks the gelatin and then [...].",
+  "after": "a powerful suction, similar to an aircraft door swinging open, that a powerful suction, similar to an aircraft door unlatching, pulls the jelly and Neo into a b",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[9]/registers/physical/exit",
+  "outcome": "2 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "A tremendous vacuum, like an [...], that sucks the gelatin and then [...].",
+  "after": "a powerful suction, reminiscent of an aircraft hatch being yanked open, that the gelatin and then Neo are sucked into a black hole by the vacuum.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[11]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "A metal harness that opens and drops the half [...] hovercraft floor.",
+  "after": "A metal harness that The metal clamp releases, sending the dazed Neo crashing onto the hovercraft's deck. hovercraft floor.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[11]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "A metal harness that opens and drops the half [...] hovercraft floor.",
+  "after": "A metal harness that The metal restraint releases, sending the dazed Neo crashing onto the hovercraft's deck. hovercraft floor.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "(unmoved registers)",
+  "outcome": "exit re-synced to entry on 4 register(s)",
+  "words": 0,
+  "role": "invariant",
+  "before": "",
+  "after": "",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "(entity name)",
+  "outcome": "shortened everywhere it occurs",
+  "words": 8,
+  "role": "identifier",
+  "before": "acupuncture-like needles wired to [...]",
+  "after": "acupuncture-like needles wired",
+  "file": "events.json",
+  "node": "ev-012"
+ },
+ {
+  "path": "/state_triples[5]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "Dozens of acupuncture-like needles [...], piercing Neo's body on the operating table.",
+  "after": "Numerous acupuncture-style needles, connected to an odd apparatus, are embedded in Neo's body on the operating table., piercing Neo's body on the operating tabl",
+  "file": "events.json",
+  "node": "ev-012"
+ },
+ {
+  "path": "/state_triples[5]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "Dozens of acupuncture-like needles [...], piercing Neo's body on the operating table.",
+  "after": "Numerous acupuncture-style needles, connected to an odd apparatus, are embedded in Neo's body on the operating table., piercing Neo's body on the operating tabl",
+  "file": "events.json",
+  "node": "ev-012"
+ },
+ {
+  "path": "/carried_uncertainty[1]/what",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "dialogue",
+  "before": "How much of Morpheus's historical account is established fact versus his own interpretation, since he states 'We have only bits and [...].'",
+  "after": "How much of Morpheus's historical account is established fact versus his own interpretation, since he states 'We possess merely fragments of data.'",
+  "file": "events.json",
+  "node": "ev-013"
+ },
+ {
+  "path": "/state_triples[0]/registers/emotional/entry_asserted",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "dialogue",
+  "before": "Distracted and casual, looking at the woman in [...].",
+  "after": "Distracted and casual, gazing at the woman wearing red.",
+  "file": "events.json",
+  "node": "ev-018"
+ },
+ {
+  "path": "/state_triples[0]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 11,
+  "role": "action",
+  "before": "set down, almost wedged into a [...]",
+  "after": "set settling into a narrow conduit, nearly too large to fit",
+  "file": "events.json",
+  "node": "ev-019"
+ },
+ {
+  "path": "/state_triples[0]/registers/positional/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 11,
+  "role": "action",
+  "before": "set down, almost wedged into a [...]",
+  "after": "set settling into a narrow conduit, nearly too large to fit",
+  "file": "events.json",
+  "node": "ev-019"
+ },
+ {
+  "path": "/state_triples[0]/registers/status/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 11,
+  "role": "action",
+  "before": "set down, almost wedged into a [...]",
+  "after": "set lowering itself, nearly jammed into a conduit too narrow for its bulk",
+  "file": "events.json",
+  "node": "ev-019"
+ },
+ {
+  "path": "(unmoved registers)",
+  "outcome": "exit re-synced to entry on 1 register(s)",
+  "words": 0,
+  "role": "invariant",
+  "before": "",
+  "after": "",
+  "file": "events.json",
+  "node": "ev-019"
+ },
+ {
+  "path": "(entity name)",
+  "outcome": "shortened everywhere it occurs",
+  "words": 9,
+  "role": "identifier",
+  "before": "a pile of spoons bent [...]",
+  "after": "a pile of spoons bent",
+  "file": "events.json",
+  "node": "ev-022"
+ },
+ {
+  "path": "/state_triples[9]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "A pile of spoons bent [...], lying near the Spoon Boy",
+  "after": "a heap of spoons warped and contorted into knots, lying near the Spoon Boy",
+  "file": "events.json",
+  "node": "ev-022"
+ },
+ {
+  "path": "/state_triples[9]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "A pile of spoons bent [...], lying near the Spoon Boy",
+  "after": "A heap of spoons warped and contorted into knots, lying near the Spoon Boy",
+  "file": "events.json",
+  "node": "ev-022"
+ },
+ {
+  "path": "(unmoved registers)",
+  "outcome": "exit re-synced to entry on 1 register(s)",
+  "words": 0,
+  "role": "invariant",
+  "before": "",
+  "after": "",
+  "file": "events.json",
+  "node": "ev-022"
+ },
+ {
+  "path": "/state_triples[12]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "A man-sized hole smashed [...] of the bathroom wall.",
+  "after": "a gap the size of a man ripped through the plaster and lath of the bathroom wall.",
+  "file": "events.json",
+  "node": "ev-024"
+ },
+ {
+  "path": "/state_triples[12]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "A man-sized hole smashed [...] of the bathroom wall.",
+  "after": "a gap the size of a man tore through the bathroom's plaster and lath of the bathroom wall.",
+  "file": "events.json",
+  "node": "ev-024"
+ },
+ {
+  "path": "(unmoved registers)",
+  "outcome": "exit re-synced to entry on 1 register(s)",
+  "words": 0,
+  "role": "invariant",
+  "before": "",
+  "after": "",
+  "file": "events.json",
+  "node": "ev-024"
+ }
+]
