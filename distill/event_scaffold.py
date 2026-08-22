@@ -173,6 +173,7 @@ def _terminal_for(text: str, entity: str, canon: Optional[Dict[str, str]] = None
 
 def build_scaffold(scene_ids: Sequence[str], scene_nodes: Sequence[Dict[str, Any]],
                    previous_exits: Optional[Dict[str, Dict[str, str]]] = None,
+                   previous_source: Optional[str] = None,
                    canon: Optional[Dict[str, str]] = None) -> Dict[str, Any]:
     """Everything about this event that can be known without asking a model.
 
@@ -333,6 +334,18 @@ def build_scaffold(scene_ids: Sequence[str], scene_nodes: Sequence[Dict[str, Any
         (keep if significant else background).append(entry)
     entities = OrderedDict((e["entity"], e) for e in keep)
 
+    # Label carried entries with the event they came from. Unlabelled, the
+    # composer reads any carried row as "where the entity is now" and copies it
+    # into registers this event's scenes contradict -- the single most cited
+    # internal-consistency fault in build 7 ("entering the hotel ... then
+    # leaving the mess hall"). Naming the source makes the inheritance visible;
+    # the composer instruction and the rendered hint tell it to update, not
+    # inherit.
+    if previous_source:
+        for entry in entities.values():
+            if entry.get("entry_from_previous_event"):
+                entry["entry_from_event"] = previous_source
+
     uncertainty = []
     for node in scene_nodes:
         for item in node.get("uncertain") or []:
@@ -379,9 +392,13 @@ def render_scaffold(scaffold: Dict[str, Any]) -> str:
         lines.append("• {}  [{}]  appears in: {}".format(
             entry["entity"], kind, ", ".join(entry["appears_in"]) or "—"))
         if entry.get("entry_from_previous_event"):
-            lines.append("    entry state carried from the previous event:")
+            src = entry.get("entry_from_event")
+            lines.append("    entry state carried from {} (the immediately preceding event):".format(
+                "event {}".format(src) if src else "the previous event"))
             for reg, val in entry["entry_from_previous_event"].items():
                 lines.append("      {:<11} {}".format(reg, val))
+            lines.append("      UPDATE this to the state at THIS event's opening; if these "
+                         "scenes show the entity elsewhere, the scenes win")
         if entry.get("positional_must_move"):
             lines.append("    MUST MOVE — positional: the member scenes place this entity "
                          "in {}".format(" then ".join(entry["positional_must_move"])))

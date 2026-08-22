@@ -43,7 +43,7 @@ from typing import Any, Dict, List, Optional, Sequence
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, "/home/deployer/laion/project-alexandria/screenplay/src")
 from event_scaffold import (_terminal_for, build_scaffold, canonical_roster, exits_by_entity,  # noqa: E402
-                            render_scaffold)
+                            render_scaffold, _norm)
 from screenplay_ku.client import EndpointPool, run_parallel  # noqa: E402
 from screenplay_ku.kuschema import grammar_safe  # noqa: E402
 
@@ -166,8 +166,11 @@ is `moved: false`, and then **`exit` must be identical to `entry`** and
 entry and exit say the same thing is the single most common defect in earlier builds.
 
 **`entry` comes from the previous event where the scaffold supplies one.** That chain is what
-the layer exists for. Never write "not stated" — if the scaffold gives you nothing and the
-scenes show nothing, describe the state the screenplay implies at the moment the event opens.
+the layer exists for. A carried entry is a starting point to UPDATE, not a text to inherit:
+if these scenes show the entity somewhere or somewhen else, the scenes win — write the entry
+as the state at the moment THIS event opens, and let `change` record the path from there.
+Never write "not stated" — if the scaffold gives you nothing and the scenes show nothing,
+describe the state the screenplay implies at the moment the event opens.
 
 **`evidence_scene` must be a scene the entity actually appears in.** The scaffold lists them.
 
@@ -770,15 +773,19 @@ def _cap_scene(text: str, cap: Optional[int]) -> str:
 def compose_all(pool: EndpointPool, events: Sequence[Dict], by_id: Dict[str, Dict],
                 *, workers: int = 2, progress=None,
                 previous: Optional[Dict[str, Any]] = None,
+                previous_src: Optional[Dict[str, str]] = None,
                 scene_text: Optional[Dict[str, str]] = None,
                 canon: Optional[Dict[str, str]] = None,
                 ctx: int = 32768) -> List[Dict[str, Any]]:
     previous = previous or {}
+    previous_src = previous_src or {}
     scene_text = scene_text or {}
     def work(ev):
         nodes = [by_id[s] for s in ev["scene_ids"] if s in by_id]
         scaffold = build_scaffold(ev["scene_ids"], nodes,
-                                  previous_exits=previous.get(ev["event_id"]), canon=canon)
+                                  previous_exits=previous.get(ev["event_id"]),
+                                  previous_source=previous_src.get(ev["event_id"]),
+                                  canon=canon)
         # The entity enum is the computed roster. That is what makes `turns_on_entity`
         # satisfiable at last: build 2 required the field while admitting only characters,
         # so an event turning on a phone had nowhere to name it.
@@ -1026,7 +1033,9 @@ def lint(events: List[Dict[str, Any]],
     return report
 
 
-def merge_duplicate_keys(events: List[Dict[str, Any]]) -> Dict[str, Any]:
+def merge_duplicate_keys(events: List[Dict[str, Any]],
+                         roster_canon: Optional[Dict[str, str]] = None,
+                         event_fold: Optional[Dict[str, str]] = None) -> Dict[str, Any]:
     """Fold duplicate entity keys and duplicate registers inside one entity.
 
     The first run produced two `state_triples` entries both keyed `the others` inside one
@@ -1037,12 +1046,26 @@ def merge_duplicate_keys(events: List[Dict[str, Any]]) -> Dict[str, Any]:
     Merging rather than dropping, because either copy may carry the better content. A
     conflict is recorded rather than silently resolved — a duplicate key with disjoint
     referents is a real defect and the artifact should say so instead of hiding it.
+
+    `roster_canon` (the film-wide roster fold map) and `event_fold` (canonicalise_entities'
+    case-fold map) are applied FIRST and are authoritative: the roster folds
+    "BIG COP"/"The Big Cop" at scaffold time, the composer re-splits them inside one node,
+    and an exact-string dedup cannot see two spellings of one entity as duplicates. Build 7
+    shipped exactly that, with conflicting states on the two copies.
     """
-    report = {"entities_merged": 0, "registers_merged": 0, "conflicts": []}
+    report = {"entities_merged": 0, "registers_merged": 0,
+              "names_normalised": 0, "conflicts": []}
+    roster_canon = roster_canon or {}
+    event_fold = event_fold or {}
     for event in events:
         by_entity: Dict[str, Dict[str, Any]] = {}
         for triple in event.get("state_triples") or []:
             name = (triple.get("entity") or "").strip()
+            folded = roster_canon.get(_norm(name), event_fold.get(name, name))
+            if folded and folded != name:
+                triple["entity"] = folded
+                report["names_normalised"] += 1
+                name = folded
             if name not in by_entity:
                 by_entity[name] = triple
                 continue
@@ -1265,20 +1288,30 @@ def tidy_text(value: str) -> Tuple[str, int]:
         value = _FOREIGN.sub("", value)
         fixed += 1
     stripped = value.rstrip()
-    if stripped and not _SENT_END.search(stripped):
+    if stripped:
         words = stripped.split()
-        # A dangling function word, or a word cut in half, means the tail is
-        # noise. Cut at the last comma or sentence end if there is one.
-        tail = words[-1].strip(",;:").casefold()
-        dangling = tail in {"and", "or", "of", "the", "a", "an", "to", "in", "on",
-                            "at", "with", "for", "from", "by", "as", "that",
-                            "which", "his", "her", "their", "into", "but", "is",
-                            "was", "not", "he", "she", "it", "they"}
+        # The last word, punctuation stripped. A dangling function word means
+        # the tail is noise WHETHER OR NOT a period followed it: a clause cut
+        # mid-thought that happens to end "...is that she." reads complete to
+        # the sentence-end regex and shipped in build 8's own sample.
+        last_word = re.sub(r"[\"')\]\.,;:!?]+$", "", words[-1]).casefold()
+        dangling = last_word in {"and", "or", "of", "the", "a", "an", "to", "in",
+                                 "on", "at", "with", "for", "from", "by", "as",
+                                 "that", "which", "his", "her", "their", "into",
+                                 "but", "is", "was", "not", "he", "she", "it",
+                                 "they"}
+        ends_clean = bool(_SENT_END.search(stripped))
         if dangling:
+            # Cut at the last comma or sentence end if there is one.
             cut = max(stripped.rfind(","), stripped.rfind(";"))
             value = (stripped[:cut] if cut > len(stripped) // 2
                      else " ".join(words[:-1]))
             fixed += 1
+        elif not ends_clean:
+            cut = max(stripped.rfind(","), stripped.rfind(";"))
+            if cut > len(stripped) // 2:
+                value = stripped[:cut]
+                fixed += 1
     return value.rstrip(" ,;:-—"), fixed
 
 
@@ -1350,6 +1383,7 @@ def repair_node(node: Dict[str, Any]) -> Dict[str, int]:
     report = {"change_cleared_on_unmoved": 0, "orphan_unchanged_because": 0,
               "quotes_stripped": 0, "future_claims_flagged": 0,
               "register_text_deduped": 0, "pipeline_reasons_cleared": 0,
+              "template_changes_cleared": 0,
               "placeholder_registers_dropped": 0, "text_tidied": 0,
               "outside_names_flagged": 0}
 
@@ -1417,9 +1451,24 @@ def repair_node(node: Dict[str, Any]) -> Dict[str, int]:
             # write a reason from the scenes. An empty field is visibly missing;
             # a template looks like an answer.
             because = reg.get("unchanged_because") or ""
-            if because and _PIPELINE.search(because):
+            if because and (_PIPELINE.search(because)
+                            or _EMPTY_REASON.match(because.strip())
+                            or _SCENE_ID_REF.search(because)):
                 reg["unchanged_because"] = None
                 report["pipeline_reasons_cleared"] += 1
+
+            # The same template language in `change`. On an unmoved register the
+            # branch above has already normalised it to `unchanged`; on a moved
+            # one (or where `moved` was omitted) it is cleared rather than kept:
+            # "No recorded change on this register." shipped 101 times in one
+            # build-7 node, and a movement described as unrecorded is not a
+            # description of a movement. Regeneration writes the real change.
+            change_val = (reg.get("change") or "").strip()
+            if reg.get("moved") is not False and change_val and (
+                    _EMPTY_REASON.match(change_val)
+                    or _SCENE_ID_REF.search(change_val)):
+                reg["change"] = None
+                report["template_changes_cleared"] += 1
 
             # One sentence pasted across an entity's registers. Build 5 marked
             # these with a note; a judge read the note as a confession and scored
@@ -1465,7 +1514,15 @@ _QUOTED = re.compile(r'["\u201c]([^"\u201c\u201d]{15,140})["\u201d]'
 _EMPTY_REASON = re.compile(
     r"^(nothing across [^.]*acts on|no change (?:was |is )?recorded|"
     r"the (?:scene layer|scaffold|pipeline)|not recorded|"
-    r"this register (?:is )?(?:not|un)|the scene records only)", re.I)
+    r"this register (?:is )?(?:not|un)|the scene records only|"
+    r"no recorded change|neither added nor removed|"
+    r"nothing (?:to report|has changed|happened|moved))", re.I)
+
+# A sentence that names a scene id is talking about this pipeline's records, not
+# about the world. Build 7 shipped one node with 101 `change` fields reading
+# "No recorded change on this register." -- matched by shape here, like
+# _PLACEHOLDER, rather than by enumerating phrasings the model keeps inventing.
+_SCENE_ID_REF = re.compile(r"\bsc[-_ ]?\d+\b", re.I)
 
 
 def _norm_words(text: str) -> str:
@@ -1505,10 +1562,19 @@ def audit_node(node: Dict[str, Any], source_words: str,
                     add(entity, "fabricated_quotation",
                         "{} presents as a quotation a line the screenplay does not "
                         "contain: {}".format(field, quote[:90]))
-            if field.endswith("unchanged_because") and _EMPTY_REASON.match(value.strip()):
+            if field.endswith("unchanged_because") and (
+                    _EMPTY_REASON.match(value.strip())
+                    or _SCENE_ID_REF.search(value)):
                 add(entity, "empty_reason",
                     "{} gives no reason in the world, only a statement about the "
                     "record: {}".format(field, value[:80]))
+            elif field.endswith(".change") and (
+                    _EMPTY_REASON.match(value.strip())
+                    or _SCENE_ID_REF.search(value)):
+                add(entity, "empty_reason",
+                    "{} describes no change in the world, only a statement about "
+                    "the record: {}. Say what actually happened to this register "
+                    "across these scenes.".format(field, value[:80]))
 
         # Two registers of one entity whose exits cannot both be true. Judges
         # cited this every round: cops "Living officers completing a controlled
@@ -1680,24 +1746,102 @@ def regenerate_entity(pool, node: Dict[str, Any], entity: str,
     return fixed
 
 
+def regenerate_affects_outside(pool, node: Dict[str, Any], names: Sequence[str],
+                               by_id: Dict[str, Dict], scene_text: Dict[str, str],
+                               film_people: Optional[set] = None) -> Optional[Dict[str, Any]]:
+    """Rewrite the node's `affects_outside` block, with the flagged names named.
+
+    `outside_name` faults carry no entity, so the entity-level regeneration loop
+    never touched them and 17 shipped in build 7. The block is one object with
+    three typed slots, so the smallest unit that can be rewritten here is the
+    whole block. Accepted only if the flags are actually gone and no slot was
+    bought cheaply -- the same acceptance discipline as regenerate_entity.
+    """
+    current = node.get("affects_outside") or {}
+    slots = ("enables", "blocks_or_costs", "off_screen_reactor")
+    old = {k: str(current.get(k) or "") for k in slots}
+    body = "\n\n".join("--- {} ---\n{}".format(sid, scene_text.get(sid, ""))
+                       for sid in node.get("scene_ids") or [])
+    prompt = "\n\n".join([
+        "EVENT: {} ({})".format(node.get("title"),
+                                ", ".join(node.get("scene_ids") or [])),
+        "THE CURRENT OUTWARD-EFFECT BLOCK:\n" + json.dumps(old, ensure_ascii=False, indent=1),
+        "FAULTS FOUND IN IT:\n" + "\n".join(
+            "  - names {!r}, who does not appear in this event's scenes. An "
+            "on-screen participant is not an off-screen reactor; name parties "
+            "who would react from OUTSIDE these scenes.".format(n) for n in names),
+        "THE EVENT'S SCENES:\n" + body[:24000],
+    ])
+    schema = {
+        "type": "object",
+        "properties": {k: {"type": "string", "minLength": 15, "maxLength": 260}
+                       for k in slots},
+        "required": list(slots),
+        "additionalProperties": False,
+    }
+    try:
+        result = pool.call(_REGEN_SYSTEM, prompt, schema=grammar_safe(schema),
+                           max_tokens=1200, temperature=0.3)
+        fixed = _parse(result.text)
+    except Exception:
+        return None
+    if not isinstance(fixed, dict) or set(fixed) != set(slots):
+        return None
+    # Not shorter at any cost: a rewrite that escapes the fault by writing less
+    # is build 6's trade in miniature.
+    for k, v in old.items():
+        if len(v) > 60 and len(str(fixed.get(k) or "")) < 0.6 * len(v):
+            return None
+    member = [by_id[s] for s in node.get("scene_ids") or [] if s in by_id]
+    present = {str(x).casefold() for m in member for x in (m.get("present") or [])}
+    present |= {str(m.get("location") or "").casefold() for m in member}
+    probe = dict(node)
+    probe["affects_outside"] = fixed
+    if outside_names(probe, present, film_people):
+        return None
+    return fixed
+
+
 def regenerate_all(pool, nodes: Sequence[Dict[str, Any]], by_id: Dict[str, Dict],
                    scene_text: Dict[str, str], source_words: str,
                    canon: Optional[Dict[str, str]] = None,
                    workers: int = 2, rounds: int = 2,
+                   extra: Optional[Dict[str, Dict[str, List[Dict[str, Any]]]]] = None,
                    progress=None) -> Dict[str, Any]:
-    """Audit every node, redo the entities that failed, audit again."""
-    report = {"rounds": [], "regenerated": 0, "rejected": 0}
+    """Audit every node, redo the entities that failed, audit again.
+
+    `extra` carries faults found OUTSIDE this module's own audit. Build 7 ran
+    verify_all after regeneration and nothing consumed what it reported -- 37
+    state breaks and 20 contradictions measured and dropped. Join-verifier
+    findings carry event ids, so each is attached to the LATER event of its pair
+    (the entries are the side a break contradicts), grouped under its entity,
+    and joined to round one only.
+    """
+    report = {"rounds": [], "regenerated": 0, "rejected": 0, "outside_rewrites": 0}
+    # The film-wide people set the outside-name check needs on acceptance.
+    people = {str(x).strip() for n in by_id.values()
+              for x in (n.get("present") or []) if str(x).strip()}
     for round_no in range(rounds):
         jobs = []
+        outside_jobs = []
         for node in nodes:
             faults = audit_node(node, source_words)
             per_entity: Dict[str, List[Dict[str, Any]]] = {}
             for fault in faults:
                 if fault.get("entity"):
                     per_entity.setdefault(fault["entity"], []).append(fault)
-            for entity, group in per_entity.items():
-                jobs.append((node, entity, group))
-        if not jobs:
+            extra_for_node = ((extra or {}).get(node.get("event_id")) or {}
+                              if round_no == 0 else {})
+            for entity in sorted(set(per_entity) | set(extra_for_node)):
+                jobs.append((node, entity,
+                             per_entity.get(entity, []) + extra_for_node.get(entity, [])))
+            # Outside-name faults have no entity, so the loop above never saw
+            # them. They belong to the affects_outside block, rewritten as a
+            # whole, round one only.
+            if round_no == 0 and (node.get("_names_from_outside_this_event") or []):
+                outside_jobs.append(
+                    (node, list(node["_names_from_outside_this_event"])))
+        if not jobs and not outside_jobs:
             report["rounds"].append({"round": round_no + 1, "faults": 0})
             break
 
@@ -1723,11 +1867,28 @@ def regenerate_all(pool, nodes: Sequence[Dict[str, Any]], by_id: Dict[str, Dict]
                     break
         report["regenerated"] += fixed_count
         report["rejected"] += rejected
+
+        def outside_work(job):
+            node, names = job
+            return node, regenerate_affects_outside(
+                pool, node, names, by_id, scene_text, people)
+
+        rewrites = 0
+        for node, fixed in run_parallel(outside_jobs, outside_work,
+                                        max_workers=workers, on_done=progress):
+            if fixed is None:
+                continue
+            node["affects_outside"] = fixed
+            node.pop("_names_from_outside_this_event", None)
+            rewrites += 1
+        report["outside_rewrites"] += rewrites
         report["rounds"].append({"round": round_no + 1, "entities": len(jobs),
-                                 "regenerated": fixed_count, "rejected": rejected})
-        print("  round {}: {} entities with faults, {} regenerated, {} rejected".format(
-            round_no + 1, len(jobs), fixed_count, rejected), flush=True)
-        if not fixed_count:
+                                 "regenerated": fixed_count, "rejected": rejected,
+                                 "outside_rewrites": rewrites})
+        print("  round {}: {} entities with faults, {} regenerated, {} rejected, "
+              "{} outward-effect blocks rewritten".format(
+                  round_no + 1, len(jobs), fixed_count, rejected, rewrites), flush=True)
+        if not fixed_count and not rewrites:
             break
 
     remaining = sum(len(audit_node(n, source_words)) for n in nodes)
@@ -1867,6 +2028,11 @@ def main() -> int:
         print("  roster: {} spellings -> {} entities across the film".format(
             len(canon), len(set(canon.values()))), flush=True)
 
+    # The film-wide roster fold map, kept before `canon` is reassigned to
+    # canonicalise_entities' report below. Authoritative input to
+    # merge_duplicate_keys (build 7's duplicate-entity finding).
+    roster_canon = dict(canon)
+
     # Composed in waves so each wave can be handed the previous wave's exit states. Fully
     # sequential would serialise the layer; fully parallel leaves every `entry` unchained,
     # which was build 1's largest defect. A wave is the compromise: parallel within, chained
@@ -1880,8 +2046,10 @@ def main() -> int:
               flush=True)
         nodes = []
         previous: Dict[str, Any] = {}
+        previous_src: Dict[str, str] = {}
         partial = out / "events.partial.json"
         carried: Dict[str, Dict[str, str]] = {}
+        carried_src = ""
         # People named anywhere in the film, from the scene layer's own cast
         # lists. Objects and abstractions are excluded: they were the bulk of the
         # first version's false positives.
@@ -1890,7 +2058,8 @@ def main() -> int:
         for start in range(0, len(events), a.wave):
             batch = events[start:start + a.wave]
             got = compose_all(pool, batch, by_id, workers=a.workers, progress=prog,
-                              previous=previous, scene_text=scene_text, canon=canon,
+                              previous=previous, previous_src=previous_src,
+                              scene_text=scene_text, canon=canon,
                               ctx=a.ctx)
             # The chain is closed here, after every event rather than after every
             # wave. Build 4 handed previous exits to the first event of each wave
@@ -1918,26 +2087,37 @@ def main() -> int:
                 # her at a party. Only the immediately preceding event's exits
                 # are a legitimate entry.
                 carried = exits_by_entity(node)
+                carried_src = node.get("event_id") or ""
             nodes.extend(got)
             # Written after every wave. A four-hour run that produces nothing until the
             # last second cannot be inspected, and a crash at hour three costs
             # everything — the same rule this project imposes on its judge agents,
             # finally applied to itself.
             partial.write_text(json.dumps({"events": nodes}, indent=1), encoding="utf-8")
-            # Every event in the next wave is handed the running state, not just
-            # its first. With wave=1 this is the exact chain; with wave>1 the
-            # events inside a wave still cannot see each other, which is the
-            # price of composing them at the same time and is recorded as such.
-            previous = {e["event_id"]: carried for e in
-                        events[start + a.wave:start + 2 * a.wave]}
+            # Every event in the next wave is handed the running state -- but only
+            # the FIRST of them has its true predecessor finished. Handing the same
+            # map to every event made event N+2 inherit event N+1's exits labelled
+            # "from the previous event", which is exactly the copied-stale-entry
+            # fault all four build-7 judges named ("entering the hotel ... then
+            # leaving the mess hall"). An event whose predecessor is still being
+            # composed gets NOTHING: stale state is worse than absent state, and
+            # the composer is told to derive the entry from the scenes instead.
+            # With wave=1 this is the exact chain, as before.
+            next_wave = events[start + a.wave:start + 2 * a.wave]
+            for j, e in enumerate(next_wave):
+                previous[e["event_id"]] = carried if j == 0 else {}
+                previous_src[e["event_id"]] = carried_src if j == 0 else ""
         print("  {} composed ({} failed)".format(
             len(nodes), len(events) - len(nodes)), flush=True)
 
     canon = canonicalise_entities(nodes)
-    merged = merge_duplicate_keys(nodes)
-    if merged["entities_merged"] or merged["registers_merged"]:
-        print("duplicate keys: {} entities merged, {} registers merged".format(
-            merged["entities_merged"], merged["registers_merged"]), flush=True)
+    merged = merge_duplicate_keys(nodes, roster_canon=roster_canon,
+                                  event_fold=canon.get("mapping") or {})
+    if merged["entities_merged"] or merged["registers_merged"] or merged["names_normalised"]:
+        print("duplicate keys: {} entities merged, {} registers merged, "
+              "{} names folded to roster form".format(
+                  merged["entities_merged"], merged["registers_merged"],
+                  merged["names_normalised"]), flush=True)
     chain = chain_and_validate(nodes)
     lint_report = lint(nodes, by_id)
     print("lint: {} placeholder entries, {} conceding-unchanged, {} unmoved-with-exit, "
@@ -1957,10 +2137,40 @@ def main() -> int:
         Path(a.source).read_text(encoding="utf-8", errors="ignore")
         if a.source and Path(a.source).exists() else "")
     regen: Dict[str, Any] = {}
+    verify_faults: Dict[str, Dict[str, List[Dict[str, Any]]]] = {}
+    if not a.skip_verify and len(nodes) > 1:
+        # Verify BEFORE repair, and feed the findings in. Build 7 ran this after
+        # regeneration: 37 state breaks and 20 contradictions across 22 joins,
+        # measured, printed, dropped. Each finding carries the pair of event ids
+        # and an entity, so it becomes a named fault on that entity in the LATER
+        # event of the pair -- its entries are the side a break contradicts.
+        print("\nstage 2p — verifying joins before repair", flush=True)
+        pre_verify = verify_all(pool, nodes, workers=a.workers, progress=prog)
+        pre_tally = {k: sum(len(f.get(k) or []) for f in pre_verify)
+                     for k in ("state_breaks", "contradictions", "missing_links")}
+        print("  {}".format(pre_tally), flush=True)
+        by_eid = {n["event_id"]: n for n in nodes}
+        for finding in pre_verify:
+            between = finding.get("between") or [None, None]
+            later = by_eid.get(between[1]) if len(between) > 1 else None
+            if not later:
+                continue
+            for brk in (finding.get("state_breaks") or []) + \
+                    (finding.get("contradictions") or []):
+                ent = brk.get("entity")
+                if not ent or not brk.get("detail"):
+                    continue
+                verify_faults.setdefault(later["event_id"], {}).setdefault(ent, []) \
+                    .append({"entity": ent, "kind": "verify_finding",
+                             "detail": brk["detail"]})
+        print("  {} findings routed to regeneration".format(
+            sum(len(v) for m in verify_faults.values() for v in m.values())), flush=True)
+
     if source_words and not a.skip_regenerate:
         print("\nstage 2a — auditing and regenerating failed entities", flush=True)
         regen = regenerate_all(pool, nodes, by_id, scene_text, source_words,
-                               canon=canon, workers=a.workers, rounds=a.regen_rounds)
+                               canon=canon, workers=a.workers, rounds=a.regen_rounds,
+                               extra=verify_faults)
         print("  {} regenerated, {} rejected, {} faults left".format(
             regen.get("regenerated"), regen.get("rejected"),
             regen.get("faults_remaining")), flush=True)

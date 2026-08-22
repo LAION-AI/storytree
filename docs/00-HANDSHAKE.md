@@ -2,7 +2,7 @@
 
 You are picking up a project you have no memory of. This file is the fastest
 path back to working state. Rewritten 22 August 2026, after the event-layer
-campaign (builds 3–7).
+campaign (builds 3–7); updated same day for **build 8**.
 
 ---
 
@@ -23,14 +23,22 @@ front of it.
 ## The one-paragraph state
 
 The scene layer is done and published clean (224 nodes, zero copied source
-runs). The event layer is at **build 7**, which beat build 4 in the largest
-blind evaluation run so far: **23 paired events, 4 independent judges, +0.69,
-95% CI [+0.49, +0.88], preferred 20:3.** No dimension got worse. The bar
-(mean ≥ 4.0, no dimension < 3.0) is still not met: build 7 means 3.32 with its
-weakest dimension (internal consistency) at 2.09. The gains came from moving
-decisions out of prompts into code; the remaining deficits have named causes
-(§ next steps). Upper layers (plots, entities, exposé) are documented but
-deliberately unbuilt — they depend on the event chain.
+runs). The event layer is at **build 8**, which passes the quality gate for the
+first time (mean 4.03, weakest dimension 3.35) against build 7's FAIL — +0.14
+over twelve shared anchors under a NEW judge panel: four independent
+agents-as-judges on the local Ornith endpoints (`distill/judge_events.py`,
+same 14-dim rubric and corrected briefing; the old backend is retired, and the
+baseline build4-vs-build7 comparison was re-judged under the new panel so no
+numbers are mixed across judges: +0.18 there, direction reproduces). Build 8's
+changes: stale-carry fix in the compose loop (the top A-killer), template
+reasons normalised by shape, verify_all findings fed into regeneration,
+`outside_name` faults routed to a block rewrite, roster fold map authoritative
+in duplicate merging. Full doc: `docs/events/build8.md`. Next: build 9 targets
+the fault classes the judges' evidence names (object boilerplate leaking into
+person registers, moved-but-identical registers, wrong-event register fills,
+duplicate location pointers, V5 degree-two ceiling). Upper layers (plots,
+entities, exposé) are documented but deliberately unbuilt — they depend on the
+event chain.
 
 ## Serving — what actually runs here
 

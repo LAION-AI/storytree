@@ -1,0 +1,326 @@
+{
+ "seconds": 6027.8,
+ "scenes": 224,
+ "events": 11,
+ "scenes_per_event": {
+  "min": 1,
+  "max": 20,
+  "mean": 18.67
+ },
+ "coverage": "224/224",
+ "state_triples": 120,
+ "register_entries": 481,
+ "canonicalisation": {
+  "variants_folded": 0,
+  "renames_applied": 0,
+  "entities_before": 95,
+  "entities_after": 95,
+  "mapping": {}
+ },
+ "chain_repair": {
+  "entries_chained": 0,
+  "contradictions_fixed": 0,
+  "participants_synced": 5,
+  "placeholders_left": 0
+ },
+ "build5_repairs": {
+  "change_cleared_on_unmoved": 0,
+  "orphan_unchanged_because": 0,
+  "quotes_stripped": 31,
+  "future_claims_flagged": 8,
+  "register_text_deduped": 15,
+  "pipeline_reasons_cleared": 25,
+  "template_changes_cleared": 0,
+  "placeholder_registers_dropped": 4,
+  "text_tidied": 18,
+  "outside_names_flagged": 6,
+  "entries_carried": 30
+ },
+ "regeneration": {
+  "rounds": [
+   {
+    "round": 1,
+    "entities": 35,
+    "regenerated": 35,
+    "rejected": 0,
+    "outside_rewrites": 0
+   },
+   {
+    "round": 2,
+    "faults": 0
+   }
+  ],
+  "regenerated": 35,
+  "rejected": 0,
+  "outside_rewrites": 0,
+  "faults_remaining": 6
+ },
+ "duplicate_merge": {
+  "entities_merged": 0,
+  "registers_merged": 0,
+  "names_normalised": 0,
+  "conflicts": []
+ },
+ "reconcile": {
+  "reconciled": 11,
+  "of": 11
+ },
+ "lint": {
+  "placeholder_entries": 0,
+  "conceding_unchanged": 6,
+  "unmoved_with_exit": 0,
+  "quotes_outside_reading": 0,
+  "participants_mismatch": 0,
+  "missing_registers": 0,
+  "entity_absent_from_evidence_scene": 7,
+  "moved_but_identical": 0,
+  "entities_without_registers": 0,
+  "examples": [
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-001",
+    "detail": "They remain cuffs; the scene records no change to them beyond being produced for the arrest that never complet"
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-005",
+    "detail": "It only appears at the moment of waking and does nothing beyond sounding; its nature and role do not shift."
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-005",
+    "detail": "It holds a single reading and does nothing beyond being read; its display does not change."
+   },
+   {
+    "kind": "entity_absent",
+    "event": "ev-006",
+    "detail": "Morpheus cites sc-017 whose inventory is ['agent', 'another', 'brown', 'cellular', 'cop', 'cops']"
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-006",
+    "detail": "She stays mounted on the motorcycle for the whole of her appearance; the scene gives her no movement other tha"
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-006",
+    "detail": "The Agents seize Neo, not her; she remains beyond their notice and out of danger for the whole of the scene."
+   },
+   {
+    "kind": "entity_absent",
+    "event": "ev-006",
+    "detail": "Agent Smith cites sc-019 whose inventory is ['agents', 'neo', 'skyscraper', 'trinity']"
+   },
+   {
+    "kind": "entity_absent",
+    "event": "ev-006",
+    "detail": "Agent Smith cites sc-019 whose inventory is ['agents', 'neo', 'skyscraper', 'trinity']"
+   },
+   {
+    "kind": "entity_absent",
+    "event": "ev-006",
+    "detail": "Agent Smith cites sc-019 whose inventory is ['agents', 'neo', 'skyscraper', 'trinity']"
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-006",
+    "detail": "His stance toward Neo as a quarry to be seized does not change; what he intends beyond seizure stays hidden, w"
+   },
+   {
+    "kind": "entity_absent",
+    "event": "ev-008",
+    "detail": "sheets of rain cites sc-022 whose inventory is ['city', 'neo', 'street', 'trinity']"
+   },
+   {
+    "kind": "entity_absent",
+    "event": "ev-008",
+    "detail": "sheets of rain cites sc-022 whose inventory is ['city', 'neo', 'street', 'trinity']"
+   },
+   {
+    "kind": "entity_absent",
+    "event": "ev-008",
+    "detail": "sheets of rain cites sc-022 whose inventory is ['city', 'neo', 'street', 'trinity']"
+   }
+  ]
+ },
+ "verbatim": {
+  "exact_runs": 27,
+  "near_hits": 81,
+  "nodes_with_runs": 9,
+  "nodes": 11,
+  "longest_run_words": 12
+ },
+ "affects_outside": 33,
+ "verify": [
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-001",
+    "ev-002"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Agent Smith leaves ev-002 'Heading for the alley on his own, away from the hotel entrance' and enters ev-003 'Waiting in the alley below the fire escape, blocking Trinity's way down.' Both events record him moving toward and into the alley, so the positional hand-off is continuous. But the LATER event's summary states the Agents 'pursue and match her' across the rooftops while the state triples place Smith stationary in the alley (physical unchanged: 'The scenes place him in the alley forcing Trinity upward'). Nothing in either node explains how Smith, committed to the ground-level alley block, also participates in the rooftop pursuit that ev-003's own summary attributes to 'the Agents' — a movement the later node neither claims nor accounts for.",
+     "entity": "Agent Smith",
+     "register": "physical/positional"
+    },
+    {
+     "detail": "Agent Brown leaves ev-002 'Inside the hotel, on his own, while Smith heads for the alley' and enters ev-003 'Leading the police pursuit over the parapet onto the roof.' The LATER node's positional register has him going 'from the hall to the roof,' which is continuous with having entered the hotel. But the rooftop chase is a sustained pursuit that the LATER physical register declares 'unchanged' ('nothing records a change to his bodily condition, only to what his movement reveals about him') while simultaneously the status register narrates a major revelation — that he duplicates Trinity's impossible leap and is 'Exposed... as something other than human.' A status that flips from 'silent instrument following Smith's lead' to 'exposed as superhuman' is a change the node both asserts and denies in the same breath.",
+     "entity": "Agent Brown",
+     "register": "physical/status"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "The LATER event's positional register for Agent Brown ends 'Standing with Jones and Smith over the destroyed booth on the street,' and its summary has the three Agents gathered at the wreckage. Yet ev-002 split Smith into the alley and Brown into the hotel as separate solo movements. Nothing in either node accounts for Agent Jones's presence at all: he appears in ev-003 with no prior positioning, and ev-002's split explicitly produced only two Agents (Smith + Brown) covering two exits. The third Agent's arrival at the street is asserted in the later node but has no antecedent in the earlier one and no transition recorded between them — the unit of 'three Agents gathered' contradicts the two-man split that ev-002 established as the whole of their deployment."
+    },
+    {
+     "detail": "The LATER event's affects_outside names the informant as Cypher and states he 'has traded his crew for his own return to the Matrix,' and the knowledge registers for Smith, the Agents, and the cops all depend on 'the confirmation that the informant is real.' But ev-002 records the Agents closing on a target with no mention of any informant, tip, or betrayal — the earlier event's entire premise is a physical trap sprung by a two-man split, with affects_outside describing only 'their quarry, still at large.' The later node therefore introduces a betrayal-and-informant layer that the earlier node neither contains nor foreshadows, and neither node bridges the gap between 'hunting a loose quarry by covering exits' and 'confirming a named next target via a real informant.'"
+    }
+   ],
+   "missing_links": [
+    {
+     "detail": "ev-002's affects_outside claims the split 'lets them close both routes their target could use to slip away' and that 'their quarry... now has to move past one of the two.' ev-003 plainly realises this: Smith in the alley forces Trinity upward onto the fire escape and roof (exactly the 'move past one of the two' the earlier node predicted), and the Agents converge at the street. Neither node states that ev-002's predicted trap-closing is what produces the alley-block → rooftop-flight → street-convergence sequence in ev-003; the outward effect is claimed and then realised without being named as the connective tissue."
+    },
+    {
+     "detail": "ev-002's affects_outside warns the split 'thins them to one man per path, so neither can back the other up.' ev-003 realises the cost directly: Smith alone in the alley cannot stop Trinity's ascent, and Brown alone on the roof must himself duplicate the leap rather than rely on backup. The thinning-to-one-man-per-path that ev-002 flags as a cost is exactly what shapes the pursuit in ev-003, yet neither node links the predicted vulnerability to the solo efforts the later event depicts."
+    }
+   ],
+   "between": [
+    "ev-002",
+    "ev-003"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [
+    {
+     "detail": "Trinity's knowledge register in ev-004 is internally contradictory and also contradicts the ev-004 summary. The unchanged_because says she already knows Neo is the target and nothing about the threat's direction changes for her, yet the entry and exit both say she is 'unaware the net has shifted to Neo.' These two claims cannot both hold, and the exit contradicts the summary, where she explicitly names Neo as the target being watched and in danger."
+    },
+    {
+     "detail": "Trinity's status register in ev-004 contradicts the ev-004 summary. The register keeps her status fixed as 'a hunted crew member forced to flee the building,' but the summary places her moving freely inside a crowded party, initiating contact, and withdrawing at will — a functioning operative in control of the encounter, not someone being forced to flee."
+    },
+    {
+     "detail": "Trinity's emotional register in ev-004 contradicts the ev-004 summary. The register holds 'no panic, only disciplined, single-pointed drive onto the phone,' but the phone is no longer in the scene; the summary shows a controlled, hypnotic, close-quarters conversation, so the register describes a state tied to an action that is not occurring in this event."
+    }
+   ],
+   "missing_links": [
+    {
+     "detail": "ev-003's affects_outside states the Agents now have Neo's name and a search running, and ev-004's summary and affects_outside confirm the Agents are the unseen pressure closing on Neo. The two events share the target 'Neo' as the bridge, but neither node states that the Agents' named quarry from ev-003 is the same person Trinity is now warning, leaving the causal chain implicit."
+    }
+   ],
+   "between": [
+    "ev-003",
+    "ev-004"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-004",
+    "ev-005"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-005",
+    "ev-006"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's `positional` register in ev-007 is declared `moved: false` with change `unchanged`, but its `entry`/`exit` ('pushed into a dark sedan in the Agents' custody at the SKYSCRAPER') describes a location that is not the INTERROGATION ROOM where the rest of the event's registers place him. The event records him being led into a room and pinned to a chair, so the position did change; declaring it unchanged while the entry/exit text describes a car contradicts the register's own content and Rule 1.",
+     "entity": "Neo",
+     "register": "positional"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "ev-006's Morpheus `off_screen_reactor` states the scene 'proves Neo does not yet have' the readiness Morpheus counted on. ev-007's Neo `relational` register asserts he refuses Smith's deal and demands a phone call out of 'the same loyalty' to Morpheus. The later event shows Neo choosing Morpheus over his own safety, which is evidence of loyalty/readiness that sits against the earlier event's flat claim that Neo has none — and per Rule 4 the earlier event may not treat a later-scene outcome as evidence."
+    }
+   ],
+   "missing_links": [],
+   "between": [
+    "ev-006",
+    "ev-007"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's physical register. ev-007 exits with Neo mouthless and a tracker burrowed into his navel; ev-008 enters with his mouth normal and his stomach fine, attributed to the prior state being 'a nightmare he has woken from.' The nodes supply no account of how a real, in-flesh implantation and mouth-sealing become a dream, so the body leaves the first event altered and enters the second unaltered with nothing bridging the difference.",
+     "entity": "Neo",
+     "register": "physical"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-007",
+    "ev-008"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's positional register is declared unchanged with the exit 'rushing through the dark wet streets' and 'the car keeps moving and only halts after this event ends,' but the later event's own car nodes record the car coming to a stop in the alley behind the hotel. Neo, seated in the back, cannot remain 'rushing' through the streets at the close of an event whose transport has stopped.",
+     "entity": "Neo",
+     "register": "positional"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "The later event's affects_outside.blocks_or_costs says 'the crew's mercy costs Neo a brutal ordeal,' and its safety register frames the pain as 'aimed at saving him,' yet the earlier event's affects_outside.blocks_or_costs insists Neo consented 'in fear, not conviction' and was being pulled from the only existence he knew. The later node's 'mercy' framing is not a defect in itself, but it sits in tension with the earlier event's established coercion-without-consent; however, since both can hold (a rescue that is also a violation), this is a tonal friction rather than a hard contradiction and is not reported as one."
+    }
+   ],
+   "missing_links": [],
+   "between": [
+    "ev-008",
+    "ev-009"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's `safety` register in ev-011 opens with the entry 'Enclosed in the car, committed to the journey — the danger now reframed as protection from you.' — but in ev-009 the car has already stopped in a deserted alley and Neo is no longer enclosed in a moving car. The entry state does not match the exit state of the earlier event (a stopped car in an alley), so nothing in ev-011 accounts for how he gets from a halted car to a pod in the power plant.",
+     "entity": "Neo",
+     "register": "safety"
+    },
+    {
+     "detail": "Neo's `status` register in ev-011 opens with 'A willing, if confused, passenger — still captive, but no longer resisting.' — but the last recorded state in ev-009 is a man who has just been electrocuted and is 'stunned and appalled,' still a captive subjected to force. The entry invents a 'willing... no longer resisting' stance that the earlier event does not establish, leaving a gap between the two.",
+     "entity": "Neo",
+     "register": "status"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [
+    {
+     "detail": "ev-009 ends with the car stopping in a deserted alley behind [...], and its `affects_outside` frames this as the crew preparing to carry Neo to their hideout. ev-011 opens with Neo already unplugged in a power-plant pod. Neither node records the crew taking Neo from the car to be re-jacked into the Matrix (the 'born into the real world' sequence requires him to be reconnected first). The outward effect of the car stopping — delivering Neo somewhere — is realised only off-screen, and neither event says so."
+    }
+   ],
+   "between": [
+    "ev-009",
+    "ev-011"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-011",
+    "ev-012"
+   ]
+  }
+ ]
+}
