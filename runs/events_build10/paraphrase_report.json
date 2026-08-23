@@ -1,0 +1,246 @@
+[
+ {
+  "path": "(unmoved registers)",
+  "outcome": "exit re-synced to entry on 2 register(s)",
+  "words": 0,
+  "role": "invariant",
+  "before": "",
+  "after": "",
+  "file": "events.json",
+  "node": "ev-003"
+ },
+ {
+  "path": "/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "dialogue",
+  "before": "The ALARM CLOCK drags Neo toward wakefulness and he reads the clock-face at 9:15 A.M., alarmed at the time. The scene cuts to the skyscraper housing Meta CorTec",
+  "after": "The ALARM CLOCK drags Neo toward wakefulness and he reads the clock-face at 9:15 A.M., alarmed at the time. The scene cuts to the skyscraper housing Meta CorTec",
+  "file": "events.json",
+  "node": "ev-005"
+ },
+ {
+  "path": "/prose_before_reconcile/summary",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "An alarm drags Neo awake in his apartment; he registers 9:15 A.M. and curses. A bare exterior establishes the downtown office of Meta [...] devel",
+  "after": "An alarm drags Neo awake in his apartment; he registers 9:15 A.M. and curses. A bare exterior establishes the headquarters of Meta CorTechs, a software developm",
+  "file": "events.json",
+  "node": "ev-005"
+ },
+ {
+  "path": "/prose_before_reconcile/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "dialogue",
+  "before": "The ALARM CLOCK pulls Neo out of sleep, and he reads the clock-face at 9:15 A.M. and swears at being late. The story then cuts to the skyscraper that houses Met",
+  "after": "The ALARM CLOCK pulls Neo out of sleep, and he reads the clock-face at 9:15 A.M. and swears at being late. The story then cuts to the skyscraper that houses Met",
+  "file": "events.json",
+  "node": "ev-005"
+ },
+ {
+  "path": "/action",
+  "outcome": "kept: names and numbers only",
+  "words": 8,
+  "file": "events.json",
+  "node": "ev-006"
+ },
+ {
+  "path": "/carried_uncertainty[1]/what",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "What the Agents specifically intend to do to Neo, since Morpheus says 'I'm not sure what they're [...].'",
+  "after": "What the Agents specifically intend to do to Neo, since Morpheus says 'I have no idea what their plans are.'",
+  "file": "events.json",
+  "node": "ev-006"
+ },
+ {
+  "path": "/prose_before_reconcile/action",
+  "outcome": "kept: names and numbers only",
+  "words": 8,
+  "file": "events.json",
+  "node": "ev-006"
+ },
+ {
+  "path": "/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Agent Smith sits across from Neo at the interrogation-room table and offers to wipe his record clean in exchange for help capturing Morpheus. Neo rejects the de",
+  "after": "Agent Smith sits across from Neo at the interrogation-room table and offers to wipe his record clean in exchange for help capturing Morpheus. Neo rejects the de",
+  "file": "events.json",
+  "node": "ev-007"
+ },
+ {
+  "path": "/state_triples[1]/registers/status/entry_asserted",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "dialogue",
+  "before": "A negotiator offering a bargain, claiming \"I believe you want to [...].\"",
+  "after": "A negotiator offering a bargain, claiming \"I'm convinced you're inclined to act with integrity.\"",
+  "file": "events.json",
+  "node": "ev-007"
+ },
+ {
+  "path": "/prose_before_reconcile/summary",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "The viewpoint enters the INTERROGATION ROOM through a camera monitor as if it were a window, where Neo sits alone until the door opens and the Agents enter. Age",
+  "after": "The viewpoint enters the INTERROGATION ROOM through a camera monitor as if it were a window, where Neo sits alone until the door swings open and the Agents walk",
+  "file": "events.json",
+  "node": "ev-007"
+ },
+ {
+  "path": "/prose_before_reconcile/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Agent Smith sits across from Neo and slaps down a thick manila file labeled \"Anderson, Thomas A.\", then flips through it while laying out Neo's two lives. He re",
+  "after": "Agent Smith sits across from Neo and slaps down a thick manila file labeled \"Anderson, Thomas A.\", then flips through it while laying out Neo's two lives. He re",
+  "file": "events.json",
+  "node": "ev-007"
+ },
+ {
+  "path": "/prose_before_reconcile/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "dialogue",
+  "before": "Trinity leads Neo to room 1313 and warns him to be honest because 'He knows more than you [...].' Morpheus receives Neo in the adjacent room, ref",
+  "after": "Trinity leads Neo to room 1313 and warns him to be honest because 'He is aware of far more than you could ever conceive.' Morpheus receives Neo in the adjacent ",
+  "file": "events.json",
+  "node": "ev-010"
+ },
+ {
+  "path": "/state_triples[4]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "An oval capsule of clear [...], its surface solidified like curdled milk.",
+  "after": "a translucent, egg-shaped shell of clear metal containing a magenta gel, its surface solidified like curdled milk.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[4]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "An oval capsule of clear [...], its surface solidified like curdled milk.",
+  "after": "A clear alloy oval capsule containing magenta gelatin, its surface solidified like curdled milk.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[8]/registers/physical/entry",
+  "outcome": "2 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A long, clear plastic needle [...] that slides from the anterior of [...] blood and spinal fluid.",
+  "after": "a slender, transparent plastic needle coupled with a brain chip that emerges from the front of Neo's skull, trailing blood and spinal fluid.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[8]/registers/physical/exit",
+  "outcome": "2 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A long, clear plastic needle [...] that slides from the anterior of [...] blood and spinal fluid.",
+  "after": "a slender, transparent plastic needle coupled with a neural implant that moves out from the front of Neo's skull, trailing blood and spinal fluid.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[8]/registers/positional/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Seated in the anterior of Neo's skull, then slid free with an ooze of blood [...].",
+  "after": "Seated in the anterior of Neo's skull, then slid free oozing blood and cerebrospinal fluid.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[8]/registers/positional/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Seated in the anterior of Neo's skull, then slid free with an ooze of blood [...].",
+  "after": "Seated in the anterior of Neo's skull, then slid free a gush of blood and cerebrospinal fluid.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[9]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A tremendous vacuum, like an [...], that sucks the gelatin and Neo into a black hole.",
+  "after": "A massive suction, as if a jetliner's hatch had just blown open, that sucks the gelatin and Neo into a black hole.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[9]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A tremendous vacuum, like an [...], that sucks the gelatin and Neo into a black hole.",
+  "after": "A vacuum, similar to an airplane door opening, pulls the gelatin and Neo into a black hole., that sucks the gelatin and Neo into a black hole.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[11]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "A metal harness that opens and drops the half [...] hovercraft floor.",
+  "after": "A metal harness that The mechanism snaps open and unceremoniously unloads the dazed Neo onto the hovercraft floor. hovercraft floor.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[11]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "A metal harness that opens and drops the half [...] hovercraft floor.",
+  "after": "A metal harness that The metal clasp releases, sending the semi-awake Neo crashing to the hovercraft's deck. hovercraft floor.",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/prose_before_reconcile/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "Neo ruptures the gelatin shroud of his pod and stands, bald and naked, able to breathe for the first time. He finds a coaxial cable locked into the base of his ",
+  "after": "Neo ruptures the gelatin shroud of his pod and stands, bald and naked, able to breathe for the first time. He finds a coaxial cable locked into the base of his ",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "(unmoved registers)",
+  "outcome": "exit re-synced to entry on 5 register(s)",
+  "words": 0,
+  "role": "invariant",
+  "before": "",
+  "after": "",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "(entity name)",
+  "outcome": "shortened everywhere it occurs",
+  "words": 8,
+  "role": "identifier",
+  "before": "acupuncture-like needles wired to [...]",
+  "after": "acupuncture-like needles wired",
+  "file": "events.json",
+  "node": "ev-012"
+ }
+]

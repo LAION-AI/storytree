@@ -357,7 +357,8 @@ def _register_slot(scene_ids: Sequence[str]) -> Dict[str, Any]:
 
 
 def compose_schema(entity_ids: Sequence[str], scene_ids: Sequence[str],
-                   registers_by_entity: Optional[Dict[str, Sequence[str]]] = None) -> Dict[str, Any]:
+                   registers_by_entity: Optional[Dict[str, Sequence[str]]] = None,
+                   locations: Optional[Sequence[str]] = None) -> Dict[str, Any]:
     """Per-entity register sets, derived from the scaffold.
 
     Build 2 required all seven registers for every entity. On an event with twenty entities
@@ -382,7 +383,14 @@ def compose_schema(entity_ids: Sequence[str], scene_ids: Sequence[str],
             "summary": {"type": "string", "minLength": 40, "maxLength": 500},
             "action": {"type": "string", "minLength": 60, "maxLength": 1200},
             "participants": {"type": "array", "items": ent, "minItems": 1},
-            "locations": {"type": "array", "items": {"type": "string"}},
+            # Closed to the scenes' own locations. The open string list produced
+            # "The downtown office of Meta CorTechs" beside META CORTECHS OFFICE
+            # -- a pointer that resolves to no distinct declared place, and a
+            # referential fault judges counted every round.
+            "locations": {"type": "array",
+                          "items": ({"type": "string", "enum": sorted(set(locations))}
+                                    if locations else {"type": "string"}),
+                          "minItems": 1},
             "state_triples": {"type": "array",
                               "minItems": len(entity_ids) if entity_ids else 1,
                               "maxItems": len(entity_ids) if entity_ids else 60,
@@ -809,7 +817,9 @@ def compose_all(pool: EndpointPool, events: Sequence[Dict], by_id: Dict[str, Dic
         # layer never recorded a change for gets one slot, not seven.
         required_by = {e["entity"]: (e["registers_with_recorded_change"] or ["status"])
                        for e in scaffold["entities"]}
-        schema = compose_schema(ents, ev["scene_ids"], required_by)
+        locs = sorted({str(n.get("location")).strip() for n in nodes
+                       if n.get("location")})
+        schema = compose_schema(ents, ev["scene_ids"], required_by, locations=locs)
         # Counts entities as well as slots. The first formula priced only register slots, so
         # a twenty-seven entity event was budgeted as if its twenty-seven entity names,
         # readings and JSON scaffolding were free. The four earliest waves — which hold the
@@ -1524,6 +1534,11 @@ _EMPTY_REASON = re.compile(
 # _PLACEHOLDER, rather than by enumerating phrasings the model keeps inventing.
 _SCENE_ID_REF = re.compile(r"\bsc[-_ ]?\d+\b", re.I)
 
+# The compose prompt's object rule, pasted INTO state fields. Build 8 shipped it
+# as Agent Jones' physical entry and inside two objects' registers -- judges
+# counted it as an internal contradiction and a contract breach at once.
+_OBJECT_BOILERPLATE = re.compile(r"an object with no\b", re.I)
+
 
 def _norm_words(text: str) -> str:
     return " ".join(re.findall(r"[a-z0-9']+", str(text).lower()))
@@ -1568,6 +1583,11 @@ def audit_node(node: Dict[str, Any], source_words: str,
                 add(entity, "empty_reason",
                     "{} gives no reason in the world, only a statement about the "
                     "record: {}".format(field, value[:80]))
+            if _OBJECT_BOILERPLATE.search(value):
+                add(entity, "boilerplate_state",
+                    "{} carries object-rule boilerplate instead of a state: "
+                    "{}. Write what this entity's state actually is.".format(
+                        field, value[:90]))
             elif field.endswith(".change") and (
                     _EMPTY_REASON.match(value.strip())
                     or _SCENE_ID_REF.search(value)):
@@ -1575,6 +1595,38 @@ def audit_node(node: Dict[str, Any], source_words: str,
                     "{} describes no change in the world, only a statement about "
                     "the record: {}. Say what actually happened to this register "
                     "across these scenes.".format(field, value[:80]))
+
+        # A pointer to a scene where this entity does not appear. The scaffold
+        # computes exactly this set per entity (appears_in), so a pointer
+        # outside it is provable -- build 7 shipped Neo citing his apartment
+        # scene for a party state, and judges counted every one as a
+        # referential fault. Same shape as lint's entity_absent check.
+        if scenes_by_id:
+            checked = set()
+            for name, reg in _iter_registers(triple):
+                sid = reg.get("evidence_scene") if isinstance(reg, dict) else None
+                if not sid or sid in checked:
+                    continue
+                checked.add(sid)
+                scene = scenes_by_id.get(sid)
+                if scene is None:
+                    add(entity, "bad_pointer",
+                        "cites {} as evidence but no such scene exists".format(sid))
+                    continue
+                words = {w for w in re.findall(r"[a-z0-9']+", str(entity).casefold())
+                         if w not in _COLLECTIVE_STOP}
+                known = set()
+                for item in ([str(x) for x in (scene.get("present") or [])]
+                             + [str(x) for x in (scene.get("objects_that_matter") or [])]
+                             + [str(scene.get("location") or "")]
+                             + [str(c.get("who") or "")
+                                for c in scene.get("what_changes") or []]):
+                    known |= {w for w in re.findall(r"[a-z0-9']+", item.casefold())
+                              if w not in _COLLECTIVE_STOP}
+                if words and known and not (words & known):
+                    add(entity, "bad_pointer",
+                        "cites {} as its evidence scene, but that scene's records "
+                        "never mention this entity; point at a scene listed for it".format(sid))
 
         # Two registers of one entity whose exits cannot both be true. Judges
         # cited this every round: cops "Living officers completing a controlled
@@ -1592,6 +1644,33 @@ def audit_node(node: Dict[str, Any], source_words: str,
                     "the {} register is unmoved and gives no reason at all; say what "
                     "the entity was doing and why nothing in these scenes touched "
                     "it".format(name))
+            elif isinstance(reg, dict) and reg.get("moved") is True:
+                # A declared movement whose change does not name a path.
+                # Build 9's version of this fault offered "mark it unmoved with
+                # a reason" as an alternative, and the model took that exit on
+                # registers that genuinely moved -- V3 fell 0.62. The text now
+                # demands the path and offers nothing else; the trigger also
+                # covers the change==exit verbatim pattern build 9 manufactured
+                # in place of the old entry==exit one.
+                e_s = (reg.get("entry") or "").strip()
+                x_s = (reg.get("exit") or "").strip()
+                c_s = (reg.get("change") or "").strip()
+                cf = c_s.casefold()
+                names_no_path = (
+                    not c_s
+                    or cf in ("unchanged", "no change")
+                    or _EMPTY_REASON.match(c_s)
+                    or _SCENE_ID_REF.search(c_s)
+                    or c_s == e_s
+                    or c_s == x_s
+                    or (len(c_s) > 25 and (x_s.startswith(c_s)
+                                           or e_s.startswith(c_s))))
+                if e_s and len(e_s) > 25 and names_no_path:
+                    add(entity, "moved_but_identical",
+                        "the {} register declares movement but its change does not "
+                        "name a path -- it repeats the entry or exit state, or "
+                        "states no change. Write what actually happened between "
+                        "the entry and exit states.".format(name))
 
         dead, alive, controlled, free = [], [], [], []
         for name, reg in _iter_registers(triple):
@@ -1660,7 +1739,8 @@ _REGEN_SYSTEM = (
 def regenerate_entity(pool, node: Dict[str, Any], entity: str,
                       faults: Sequence[Dict[str, Any]], scaffold: Dict[str, Any],
                       scene_text: Dict[str, str], source_words: str,
-                      ctx: int = 65536) -> Optional[Dict[str, Any]]:
+                      ctx: int = 65536,
+                      scenes_by_id: Optional[Dict[str, Dict]] = None) -> Optional[Dict[str, Any]]:
     """Ask the model to redo one entity, with the fault named.
 
     The pipeline could detect faults but never acted on one: repairs overwrote a
@@ -1706,6 +1786,15 @@ def regenerate_entity(pool, node: Dict[str, Any], entity: str,
 
     prompt = "\n\n".join([
         "ENTITY: {}".format(entity),
+        # Build 9: an object regenerated into a fabricated person ("sheets of
+        # rain" exiting as a woman leaning on a railing), counted by judges
+        # under four dimensions at once. The contract now travels with the
+        # rewrite request.
+        ("THIS ENTITY IS AN OBJECT: only physical, positional and status "
+         "registers apply. Never write a person's actions, perceptions or "
+         "emotions into its registers." if entry.get("is_person") is False
+         else "THIS ENTITY IS A PERSON: write states a person could actually "
+              "hold; never paste object-rule boilerplate into its registers."),
         "FAULTS FOUND IN THIS RECORD:\n" + "\n".join(
             "  - {}".format(f["detail"]) for f in faults),
         "CHANGES THE SCENE LAYER RECORDED FOR THIS ENTITY:\n" + recorded,
@@ -1728,7 +1817,8 @@ def regenerate_entity(pool, node: Dict[str, Any], entity: str,
              "scene_ids": node.get("scene_ids"),
              "state_triples": [fixed]}
     before = {f["kind"] for f in faults}
-    after = {f["kind"] for f in audit_node(probe, source_words)}
+    after = {f["kind"] for f in audit_node(probe, source_words,
+                                           scenes_by_id=scenes_by_id)}
     if after & before:
         return None
     if len({n for n, _ in _iter_registers(fixed)}) != len(
@@ -1742,6 +1832,10 @@ def regenerate_entity(pool, node: Dict[str, Any], entity: str,
     old_reading = (triple.get("reading") or "").strip()
     new_reading = (fixed.get("reading") or "").strip()
     if len(old_reading) > 40 and len(new_reading) < 0.7 * len(old_reading):
+        return None
+    # Build 9 shipped seven nulled readings on objects -- a rewrite erasing
+    # mind material the original had, too short to trip the ratio guard above.
+    if old_reading and not new_reading:
         return None
     return fixed
 
@@ -1824,8 +1918,8 @@ def regenerate_all(pool, nodes: Sequence[Dict[str, Any]], by_id: Dict[str, Dict]
     for round_no in range(rounds):
         jobs = []
         outside_jobs = []
-        for node in nodes:
-            faults = audit_node(node, source_words)
+        for node_i, node in enumerate(nodes):
+            faults = audit_node(node, source_words, scenes_by_id=by_id)
             per_entity: Dict[str, List[Dict[str, Any]]] = {}
             for fault in faults:
                 if fault.get("entity"):
@@ -1833,7 +1927,14 @@ def regenerate_all(pool, nodes: Sequence[Dict[str, Any]], by_id: Dict[str, Dict]
             extra_for_node = ((extra or {}).get(node.get("event_id")) or {}
                               if round_no == 0 else {})
             for entity in sorted(set(per_entity) | set(extra_for_node)):
-                jobs.append((node, entity,
+                # The predecessor travels with the job: build 9's accepted
+                # regenerations replaced whole triples and severed the entry
+                # chain the carry fix had closed at compose time -- judges read
+                # entries borrowed from scenes two events back. Re-applying the
+                # predecessor's exits to a rewritten triple is now part of the
+                # repair itself, not a hope.
+                pred = nodes[node_i - 1] if node_i > 0 else None
+                jobs.append((node, pred, entity,
                              per_entity.get(entity, []) + extra_for_node.get(entity, [])))
             # Outside-name faults have no entity, so the loop above never saw
             # them. They belong to the affects_outside block, rewritten as a
@@ -1846,11 +1947,17 @@ def regenerate_all(pool, nodes: Sequence[Dict[str, Any]], by_id: Dict[str, Dict]
             break
 
         def work(job):
-            node, entity, group = job
+            node, pred, entity, group = job
             member = [by_id[s] for s in node.get("scene_ids") or [] if s in by_id]
             scaffold = build_scaffold(node.get("scene_ids") or [], member, canon=canon)
-            return node, entity, regenerate_entity(
-                pool, node, entity, group, scaffold, scene_text, source_words)
+            fixed = regenerate_entity(
+                pool, node, entity, group, scaffold, scene_text, source_words,
+                scenes_by_id=by_id)
+            if fixed is not None and pred is not None:
+                probe = {"state_triples": [fixed]}
+                apply_chained_entries(probe, exits_by_entity(pred))
+                fixed = probe["state_triples"][0]
+            return node, entity, fixed
 
         fixed_count = rejected = 0
         # run_parallel takes items first and returns a list, not an iterator.
@@ -1891,7 +1998,8 @@ def regenerate_all(pool, nodes: Sequence[Dict[str, Any]], by_id: Dict[str, Dict]
         if not fixed_count and not rewrites:
             break
 
-    remaining = sum(len(audit_node(n, source_words)) for n in nodes)
+    remaining = sum(len(audit_node(n, source_words, scenes_by_id=by_id))
+                    for n in nodes)
     report["faults_remaining"] = remaining
     return report
 

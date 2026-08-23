@@ -23,22 +23,17 @@ front of it.
 ## The one-paragraph state
 
 The scene layer is done and published clean (224 nodes, zero copied source
-runs). The event layer is at **build 8**, which passes the quality gate for the
-first time (mean 4.03, weakest dimension 3.35) against build 7's FAIL — +0.14
-over twelve shared anchors under a NEW judge panel: four independent
-agents-as-judges on the local Ornith endpoints (`distill/judge_events.py`,
-same 14-dim rubric and corrected briefing; the old backend is retired, and the
-baseline build4-vs-build7 comparison was re-judged under the new panel so no
-numbers are mixed across judges: +0.18 there, direction reproduces). Build 8's
-changes: stale-carry fix in the compose loop (the top A-killer), template
-reasons normalised by shape, verify_all findings fed into regeneration,
-`outside_name` faults routed to a block rewrite, roster fold map authoritative
-in duplicate merging. Full doc: `docs/events/build8.md`. Next: build 9 targets
-the fault classes the judges' evidence names (object boilerplate leaking into
-person registers, moved-but-identical registers, wrong-event register fills,
-duplicate location pointers, V5 degree-two ceiling). Upper layers (plots,
-entities, exposé) are documented but deliberately unbuilt — they depend on the
-event chain.
+runs). The event layer is at **build 10**, the current best: +0.49 over
+build 8 (CI [+0.22, +0.74], P = 1.000, twelve anchors, four local judges) and
+the first arm through the gate (mean 4.17, weakest dimension 3.56). Build 9
+had regressed by over-repairing — its lessons and the drift finding are in
+`docs/events/build9.md`; build 10 kept its mechanical wins and reverted its
+losses (`docs/events/build10.md`). Judging is four independent agents-as-judges
+on the local Ornith endpoints (`distill/judge_events.py`, same 14-dim rubric);
+absolute means do NOT survive across judging sessions, every pack carries a
+shared control arm. Next candidates: the remaining ~35 events for a
+full-film decision, then the upper layers (plots, entities, exposé), which
+are documented but deliberately unbuilt — they depend on the event chain.
 
 ## Serving — what actually runs here
 

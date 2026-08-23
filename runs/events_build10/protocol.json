@@ -1,0 +1,377 @@
+{
+ "seconds": 3545.9,
+ "scenes": 224,
+ "events": 11,
+ "scenes_per_event": {
+  "min": 1,
+  "max": 20,
+  "mean": 18.67
+ },
+ "coverage": "224/224",
+ "state_triples": 126,
+ "register_entries": 437,
+ "canonicalisation": {
+  "variants_folded": 0,
+  "renames_applied": 0,
+  "entities_before": 97,
+  "entities_after": 97,
+  "mapping": {}
+ },
+ "chain_repair": {
+  "entries_chained": 0,
+  "contradictions_fixed": 0,
+  "participants_synced": 4,
+  "placeholders_left": 0
+ },
+ "build5_repairs": {
+  "change_cleared_on_unmoved": 0,
+  "orphan_unchanged_because": 32,
+  "quotes_stripped": 23,
+  "future_claims_flagged": 6,
+  "register_text_deduped": 30,
+  "pipeline_reasons_cleared": 62,
+  "template_changes_cleared": 0,
+  "placeholder_registers_dropped": 33,
+  "text_tidied": 200,
+  "outside_names_flagged": 2,
+  "entries_carried": 33
+ },
+ "regeneration": {
+  "rounds": [
+   {
+    "round": 1,
+    "entities": 40,
+    "regenerated": 38,
+    "rejected": 2,
+    "outside_rewrites": 1
+   },
+   {
+    "round": 2,
+    "entities": 3,
+    "regenerated": 1,
+    "rejected": 2,
+    "outside_rewrites": 0
+   }
+  ],
+  "regenerated": 39,
+  "rejected": 4,
+  "outside_rewrites": 1,
+  "faults_remaining": 5
+ },
+ "duplicate_merge": {
+  "entities_merged": 0,
+  "registers_merged": 0,
+  "names_normalised": 0,
+  "conflicts": []
+ },
+ "reconcile": {
+  "reconciled": 11,
+  "of": 11
+ },
+ "lint": {
+  "placeholder_entries": 0,
+  "conceding_unchanged": 12,
+  "unmoved_with_exit": 0,
+  "quotes_outside_reading": 0,
+  "participants_mismatch": 0,
+  "missing_registers": 0,
+  "entity_absent_from_evidence_scene": 2,
+  "moved_but_identical": 0,
+  "entities_without_registers": 7,
+  "examples": [
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-001",
+    "detail": "the scenes give him no movement beyond exiting the car"
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-003",
+    "detail": "He only appears at the end and performs no physical action beyond arriving and speaking"
+   },
+   {
+    "kind": "entity_absent",
+    "event": "ev-006",
+    "detail": "Morpheus cites sc-017 whose inventory is ['agent', 'another', 'brown', 'cellular', 'cop', 'cops']"
+   },
+   {
+    "kind": "entity_absent",
+    "event": "ev-006",
+    "detail": "Morpheus cites sc-017 whose inventory is ['agent', 'another', 'brown', 'cellular', 'cop', 'cops']"
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-006",
+    "detail": "she is never placed at risk and remains an observer beyond the Agents' reach"
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-007",
+    "detail": "the scene records no movement of the file beyond being slapped down and opened on the table"
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-010",
+    "detail": "The scenes record no change to its standing; it remains the boundary between the hall and what lies beyond."
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-010",
+    "detail": "The scenes record no physical change to them beyond the leather creaking as Morpheus leans back."
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-010",
+    "detail": "The scenes record no physical change to them beyond being seated on Neo."
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-010",
+    "detail": "The scenes record no physical change to them beyond the scream erupting through them."
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-010",
+    "detail": "It is the same pill Neo swallowed; the scenes record no further physical change beyond its function."
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-010",
+    "detail": "The scenes record no physical change to them beyond the alarms erupting."
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-010",
+    "detail": "The scenes record no physical change to it beyond being dialed."
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-010",
+    "detail": "The scenes record no physical change to it beyond being pounded."
+   },
+   {
+    "kind": "no_registers",
+    "event": "ev-012",
+    "detail": "Trinity"
+   },
+   {
+    "kind": "no_registers",
+    "event": "ev-012",
+    "detail": "Dozer"
+   },
+   {
+    "kind": "no_registers",
+    "event": "ev-012",
+    "detail": "light stick"
+   },
+   {
+    "kind": "no_registers",
+    "event": "ev-012",
+    "detail": "acupuncture-like needles wired to [...]"
+   },
+   {
+    "kind": "no_registers",
+    "event": "ev-012",
+    "detail": "The Nebuchadnezzar"
+   },
+   {
+    "kind": "no_registers",
+    "event": "ev-012",
+    "detail": "the ladder"
+   }
+  ]
+ },
+ "verbatim": {
+  "exact_runs": 27,
+  "near_hits": 81,
+  "nodes_with_runs": 6,
+  "nodes": 11,
+  "longest_run_words": 10
+ },
+ "affects_outside": 33,
+ "verify": [
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-001",
+    "ev-002"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Agent Smith's `physical` register says he stays planted in the alley below the fire escape the whole event and never moves from that post, while his `positional` register says he ends at the STREET wreckage over the destroyed booth. He leaves ev-002 heading for the alley and enters ev-003's end-state on the street with no register accounting for how he got from the alley to the street.",
+     "entity": "Agent Smith",
+     "register": "physical / positional"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "ev-003's `affects_outside.enables` says Trinity's survival lets her reach Neo first to guide his extraction and keeps the hunt one step ahead, but `off_screen_reactor` says the informant's deal is what hands the Agents their lead and the machine search locks onto Neo. The two statements give incompatible accounts of who is ahead and why within the same event's framing, though the second is explicitly off-screen beyond these scenes."
+    }
+   ],
+   "missing_links": [],
+   "between": [
+    "ev-002",
+    "ev-003"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's positional register ends ev-003 in the STREET phone booth answering the ringing hardline (the garbage truck destroying the booth behind him), and ev-005 opens with him asleep in NEO'S APARTMENT, then carried to the META CORTECHS OFFICE. Nothing in either event accounts for how he got from the booth back to his apartment asleep, nor does the later event's entry state ('asleep in NEO'S APARTMENT') match the earlier event's exit (awake, in a phone booth, mid-escape). The intervening scenes that would bridge them are absent, so Neo leaves ev-003 in one place/state and enters ev-005 in another with no recorded cause.",
+     "entity": "Neo",
+     "register": "positional"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-003",
+    "ev-005"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's emotional register. ev-005 exits him 'detached and inwardly elsewhere' and its emotional register is declared unmoved. ev-006 enters him with the same phrase 'detached and inwardly elsewhere' but then immediately records him 'Frightened as the Agents close in.' The fear is triggered by the Agents' arrival, which belongs to ev-006, so the entry state should reflect the alarm/fear already beginning, not a detached calm carried over unchanged from the reprimand scene.",
+     "entity": "Neo",
+     "register": "emotional"
+    },
+    {
+     "detail": "Neo's positional register. ev-005 exits him 'at his desk area in the META CORTECHS OFFICE.' ev-006 enters him at the identical 'desk area in the META CORTECHS OFFICE,' yet the change field opens with 'Guided out of his cubicle past the searching Agents.' The Agents' search of the cubicle rows is the event that dislodges him from that desk, so his entry into ev-006 should already show him being roused/moved from the desk by the search rather than resting at it.",
+     "entity": "Neo",
+     "register": "positional"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [
+    {
+     "detail": "ev-005's affects_outside states the ordinary world is 'handing the authorities a pretext to reach him' and that 'the forces already tracking NEO... are about to shatter' his routine. ev-006 realises exactly this: the Agents close in and seize him at that same desk. Neither node frames the capture as the payoff of the ultimatum/submission that ev-005 set up — ev-006's status change simply begins with 'Becomes a fugitive following Morpheus's guidance,' and the connecting logic (the job-pretext enabling the Agents to reach him at the office) is asserted by ev-005's affects_outside but never picked up as the mechanism of the capture in ev-006."
+    }
+   ],
+   "between": [
+    "ev-005",
+    "ev-006"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's positional register exits ev-006 as 'handcuffed and forced into a dark sedan at the SKYSCRAPER,' and ev-007 opens with him still 'handcuffed and forced into a dark sedan at the SKYSCRAPER' before being taken into the INTERROGATION ROOM. This join is clean. However, Neo's safety register is broken: it enters ev-007 as 'exposed and nearly lost after the wind hits and the phone falls' — the exit state of ev-006's safety register — but that state describes a fall from a ledge, whereas by the end of ev-006 Neo has been taken into custody and forced into a sedan. The safety register never advanced from 'nearly lost on the ledge' to 'in custody,' so it enters ev-007 carrying a stale physical circumstance that ev-006's own summary and positional register have already superseded.",
+     "entity": "Neo",
+     "register": "safety"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "ev-006 records Neo's emotional exit as 'terrified and resigned, his nerve broken,' and ev-007's emotional register repeats this verbatim as its entry state. But ev-007's emotional change then says his 'contempt collapses into visible panic' and he gives Smith the finger and demands his phone call — an act of defiance and contempt that contradicts the 'nerve broken' / 'resigned' state he is said to be entering ev-007 with. The entry state (resigned, nerve broken) and the behaviour recorded at the start of ev-007 (defiant, contemptuous, still asserting rights) are incompatible, and the node does not account for the shift from broken resignation to active contempt."
+    }
+   ],
+   "missing_links": [],
+   "between": [
+    "ev-006",
+    "ev-007"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's physical register leaves ev-007 mouthless and implanted (his mouth fused smooth, a fluke-worm creature burrowed into his navel) and enters ev-008 with the violation already undone (mouth normal, stomach fine, creature gone). ev-008's physical change reports only that he wakes and finds it undone; it names no extractor, no device, no action that reverses it. The steel-and-glass device that would account for removal is present in ev-008 but held in reserve and never used on-screen, so the transition from implanted to unharmed is left unaccounted for at the join.",
+     "entity": "Neo",
+     "register": "physical"
+    }
+   ],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-007",
+    "ev-008"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's `status` register enters ev-009 as 'Fully in the Agents' control—a physically violated prisoner held down while a bug is implanted into his body,' but nothing in ev-009 returns him to the Agents or re-implants a bug. The exit state was true at the end of ev-008 (before he fled) and was superseded by his choice to stay; it should not be re-established as his entry state.",
+     "entity": "Neo",
+     "register": "status"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "ev-008's `affects_outside.off_screen_reactor` states the Agents 'underestimated him' and now 'face a quarry slipping their grasp,' which presupposes Neo escaped/defied them. ev-009's Neo `status` entry re-asserts he is 'Fully in the Agents' control... a bug is implanted into his body.' The two cannot both hold at the join: either he slipped their grasp (ev-008) or he is fully in their control with the bug still in him (ev-009 entry). The bug is in fact removed in ev-009, so the entry claim is doubly false at the join."
+    }
+   ],
+   "missing_links": [],
+   "between": [
+    "ev-008",
+    "ev-009"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's `status` register enters ev-010 as 'Fully in the Agents' control—a physically violated prisoner held down while a bug is implanted into his body,' but ev-009's own `status` register already ended with Neo free of the bug and in the crew's custody. The ev-010 entry re-imports ev-009's opening state rather than continuing from ev-009's exit, leaving the 'prisoner held down while a bug is implanted' claim unaccounted for between the two events.",
+     "entity": "Neo",
+     "register": "status"
+    },
+    {
+     "detail": "Trinity's `physical` register is declared `moved: false` in ev-010, yet its own `change`/`exit` describe her moving from the city street into the hotel room and then the equipment room fixing electrodes—an unacknowledged relocation that contradicts the 'unchanged' declaration.",
+     "entity": "Trinity",
+     "register": "physical"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "ev-010 Trinity `physical` says she 'stays on her feet beside Neo the whole event' and her position 'never leaves Neo's side,' but the same node's `change` says she 'becomes Neo's medical monitor, reporting his failing readings' from a station—these describe different bodily dispositions within one register."
+    }
+   ],
+   "missing_links": [
+    {
+     "detail": "ev-009's `affects_outside.off_screen_reactor` states the Agents 'lose their fix on him and are left blind to the crew's next move,' and ev-010's `affects_outside.off_screen_reactor` states the Agents 'are the unseen power now hunting the traced connection.' The restoration of the Agents' ability to pursue Neo is realised in ev-010 (via the red-pill trace program pinpointing his location) but neither node narrates that transition."
+    }
+   ],
+   "between": [
+    "ev-009",
+    "ev-010"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's `emotional` register enters ev-011 carrying 'Panic and bodily revolt—\"It's cold, Uh-oh\"—as the body takes over entirely at the arrest.' ev-010's `physical` register for Neo ended with him 'swallowed by darkness at the moment of the signal' and his `emotional` register at the same panic-and-revolt note, but ev-010's `safety` register states the operation was 'barely locking his target before the signal takes him,' i.e. the extraction succeeded. ev-011's `safety` register then says 'The arrest belongs to the world he is leaving; he emerges from the pod breathing on his own.' Nothing in ev-011 records the resuscitation from cardiac arrest back to spontaneous breathing, so the reader is left with Neo entering in arrest and re-entering breathing without the intervening recovery accounted for.",
+     "entity": "Neo",
+     "register": "safety/emotional"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "ev-010's `physical` register for Neo exits with 'mercury running from his nose,' while ev-011's `the magenta amnion / gelatin` register and summary describe him surrounded by and flushed out with 'magenta gelatin.' The two nodes name different substances filling/leaving Neo's body at the transfer with no bridge between them."
+    },
+    {
+     "detail": "ev-011's Morpheus `physical` register entry reads 'A dark figure at the windows of the ROOM, turning to reveal himself,' and its `positional` entry reads 'At the center of the operation, timing the crew around Neo's dissolution and calling for the signal.' Both are copied verbatim from ev-010's exit states, and the `unchanged_because` fields explain the stasis by saying the scenes 'only follow Neo's fall... up to that same deck,' which is a statement about the pipeline's coverage, not a reason in the world."
+    }
+   ],
+   "missing_links": [
+    {
+     "detail": "ev-010's `affects_outside.off_screen_reactor` names 'Tank, called for the signal,' and ev-010's `red pill`/`Morpheus's cellular phone` registers establish the signal call to Tank as the event's closing action. ev-011 opens with Neo already having been pulled from the pod and breathing, which realises that signal. Neither ev-010's event body nor ev-011's nodes state that the signal was sent and took effect; the enabling of the whole of ev-011 is left in the gap between the two."
+    }
+   ],
+   "between": [
+    "ev-010",
+    "ev-011"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-011",
+    "ev-012"
+   ]
+  }
+ ]
+}
