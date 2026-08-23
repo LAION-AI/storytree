@@ -1,0 +1,752 @@
+[
+ {
+  "path": "/state_triples[3]/registers/knowledge/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "Identified as the downtown office of Meta [...].",
+  "after": "Identified as the headquarters of Meta CorTechs, a software firm.",
+  "file": "events.json",
+  "node": "ev-005"
+ },
+ {
+  "path": "/state_triples[3]/registers/status/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "Named as the downtown office of Meta [...].",
+  "after": "Named as the headquarters of Meta CorTechs, a software development firm.",
+  "file": "events.json",
+  "node": "ev-005"
+ },
+ {
+  "path": "/carried_uncertainty[1]/what",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "What the Agents specifically intend to do to Neo, since Morpheus says 'I'm not sure what they're [...].'",
+  "after": "What the Agents specifically intend to do to Neo, since Morpheus says 'I have no idea what their plans are.'",
+  "file": "events.json",
+  "node": "ev-006"
+ },
+ {
+  "path": "/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Trinity seals the extractor over Neo's navel and increases the suction; when that fails to catch the tracker, she fires an electric charge into him that drives ",
+  "after": "Trinity seals the extractor over Neo's navel and increases the suction; when that fails to catch the tracker, she fires an electric charge into him that drives ",
+  "file": "events.json",
+  "node": "ev-009"
+ },
+ {
+  "path": "/state_triples[3]/registers/physical/change",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Suction fails to dislodge the tracker, so Trinity triggers an electric shock that drives the bug out through the extractor's coils into the glass cage at the en",
+  "after": "Suction fails to dislodge the tracker, so Trinity triggers an electric shock that drives the bug out through the extractor's coils into the a glass enclosure at",
+  "file": "events.json",
+  "node": "ev-009"
+ },
+ {
+  "path": "/state_triples[3]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Sealed over Neo's navel, cylinder having driven the tracker out into the glass cage at the end [...]",
+  "after": "Sealed over Neo's navel, cylinder having driven the tracker out into the a glass cage at the tubing's terminus",
+  "file": "events.json",
+  "node": "ev-009"
+ },
+ {
+  "path": "/state_triples[8]/registers/physical/change",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "Rocketed wetly out of Neo's stomach [...] into the glass cage, then reverted back into a common wire tap",
+  "after": "Rocketed a wet stream of fluid erupts from Neo's stomach, propelled through the extractor's coils into the glass cage, then reverted back into a common wire tap",
+  "file": "events.json",
+  "node": "ev-009"
+ },
+ {
+  "path": "/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "dialogue",
+  "before": "Trinity delivers Neo to room 1313 and tells him to be honest because 'He knows more than you [...],' then hands him to Morpheus. Morpheus recasts",
+  "after": "Trinity delivers Neo to room 1313 and tells him to be honest because 'He understands far beyond what you could ever conceive.,' then hands him to Morpheus. Morp",
+  "file": "events.json",
+  "node": "ev-010"
+ },
+ {
+  "path": "/state_triples[3]/reading",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "dialogue",
+  "before": "Morpheus frames coercion as pure freedom — 'all I am offering is [...]' — because he already knows Neo will say yes; his ceremonial calm is th",
+  "after": "Morpheus frames coercion as pure freedom — 'Morpheus insists that he is only presenting the truth, and nothing else.' — because he already knows Neo will say ye",
+  "file": "events.json",
+  "node": "ev-010"
+ },
+ {
+  "path": "/prose_before_reconcile/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "dialogue",
+  "before": "Trinity brings Neo to room 1313 and instructs him to be honest because 'He knows more than you [...],' then hands him off. Morpheus reframes Neo'",
+  "after": "Trinity brings Neo to room 1313 and instructs him to be honest because 'He possesses knowledge beyond your comprehension.,' then hands him off. Morpheus reframe",
+  "file": "events.json",
+  "node": "ev-010"
+ },
+ {
+  "path": "/state_triples[4]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "An oval capsule of clear [...]",
+  "after": "a capsule shaped like an egg, made of transparent metal and containing a pink gel",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[4]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "An oval capsule of clear [...]",
+  "after": "a smooth, egg-shaped pod made of transparent metal, containing a pink, jelly-like substance",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[5]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "An enormous coaxial plugged and [...] Neo's skull",
+  "after": "a massive coaxial cable, securely fastened to the base of his cranium. Neo's skull",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[5]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "An enormous coaxial plugged and [...] Neo's skull",
+  "after": "A massive coaxial cable is firmly jammed into the base of Neo's skull. Neo's skull",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[8]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A long clear plastic needle [...] that slides from the front of Neo's skull with blood and spinal fluid",
+  "after": "a clear plastic needle and a chip made for the brain that slides from the front of Neo's skull with blood and spinal fluid",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[8]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A long clear plastic needle [...] that slides from the front of Neo's skull with blood and spinal fluid",
+  "after": "A slender transparent needle accompanied by a neural implant. that slides from the front of Neo's skull with blood and spinal fluid",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[9]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A tremendous vacuum, like an [...], that sucks the gelatin and Neo into a black hole",
+  "after": "a powerful suction, similar to the rush of an aircraft door swinging open, that sucks the gelatin and Neo into a black hole",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "/state_triples[9]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A tremendous vacuum, like an [...], that sucks the gelatin and Neo into a black hole",
+  "after": "a vacuum so powerful it resembles the rush of an airplane door being yanked open, that sucks the gelatin and Neo into a black hole",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "(unmoved registers)",
+  "outcome": "exit re-synced to entry on 4 register(s)",
+  "words": 0,
+  "role": "invariant",
+  "before": "",
+  "after": "",
+  "file": "events.json",
+  "node": "ev-011"
+ },
+ {
+  "path": "(entity name)",
+  "outcome": "shortened everywhere it occurs",
+  "words": 8,
+  "role": "identifier",
+  "before": "acupuncture-like needles wired to [...]",
+  "after": "acupuncture-like needles wired",
+  "file": "events.json",
+  "node": "ev-012"
+ },
+ {
+  "path": "/carried_uncertainty[1]/what",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "dialogue",
+  "before": "How much of Morpheus's historical account is established fact versus his own interpretation, since he states 'We have only bits and [...].'",
+  "after": "How much of Morpheus's historical account is established fact versus his own interpretation, since he states 'We possess merely fragmented data.'",
+  "file": "events.json",
+  "node": "ev-013"
+ },
+ {
+  "path": "/state_triples[3]/registers/emotional/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "Warm, jokey, and excited — fairly excited to see what [...] — with the urgency of a lot to do'",
+  "after": "Warm, jokey, and excited — pretty pumped to find out what you're able to do — with the urgency of a lot to do'",
+  "file": "events.json",
+  "node": "ev-014"
+ },
+ {
+  "path": "/affects_outside/blocks_or_costs",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "dialogue",
+  "before": "Neo's last door to his old life is closed ('No. But if you could [...]?'), so any path back to the life he knew is now foreclosed rather tha",
+  "after": "Neo's last door to his old life is closed ('No. But if you had the chance, would you truly choose it?'), so any path back to the life he knew is now foreclosed ",
+  "file": "events.json",
+  "node": "ev-014"
+ },
+ {
+  "path": "/state_triples[1]/registers/emotional/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "Warm, jokey, and excited — fairly excited to see what [...] — with the urgency of a lot to do'",
+  "after": "Warm, jokey, and excited — fairly eager to witness your potential — with the urgency of a lot to do'",
+  "file": "events.json",
+  "node": "ev-015"
+ },
+ {
+  "path": "/state_triples[1]/registers/emotional/entry_asserted",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "Warm, jokey, and excited — fairly excited to see what [...]",
+  "after": "Warm, jokey, and excited — pretty pumped to find out what you're actually good at",
+  "file": "events.json",
+  "node": "ev-015"
+ },
+ {
+  "path": "/state_triples[1]/reading",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Morpheus is managing a trainee's terror while steering him toward a destiny he treats as fact — the 'you will succeed' is partly faith and partly a necessary pe",
+  "after": "Morpheus is managing a trainee's terror while steering him toward a destiny he treats as fact — the 'you will succeed' is partly faith and partly a necessary pe",
+  "file": "events.json",
+  "node": "ev-018"
+ },
+ {
+  "path": "/prose_before_reconcile/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Morpheus moves effortlessly through the crowd while Neo is constantly bumped and shouldered off [...] frames the businessmen, lawyers, teachers and",
+  "after": "Morpheus moves effortlessly through the crowd while Neo is constantly shoved aside and jostled from the way; Morpheus frames the businessmen, lawyers, teachers ",
+  "file": "events.json",
+  "node": "ev-018"
+ },
+ {
+  "path": "/state_triples[0]/registers/physical/change",
+  "outcome": "1 span(s) rewritten",
+  "words": 11,
+  "role": "action",
+  "before": "set down, almost wedged into a [...]",
+  "after": "set settling into a narrow conduit that can hardly contain it",
+  "file": "events.json",
+  "node": "ev-019"
+ },
+ {
+  "path": "/state_triples[18]/reading",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "The blurring street is how the Matrix reveals itself to Neo as code — 'an endless stream of data [...]' — converting his abstract knowl",
+  "after": "The blurring street is how the Matrix reveals itself to Neo as code — 'a ceaseless cascade of information cascading across a monitor' — converting his abstract ",
+  "file": "events.json",
+  "node": "ev-021"
+ },
+ {
+  "path": "(entity name)",
+  "outcome": "shortened everywhere it occurs",
+  "words": 9,
+  "role": "identifier",
+  "before": "a pile of spoons bent [...]",
+  "after": "a pile of spoons bent",
+  "file": "events.json",
+  "node": "ev-022"
+ },
+ {
+  "path": "/state_triples[9]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "a pile of spoons bent [...]",
+  "after": "a heap of spoons warped and contorted into knots",
+  "file": "events.json",
+  "node": "ev-022"
+ },
+ {
+  "path": "/state_triples[9]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "a pile of spoons bent [...]",
+  "after": "a heap of spoons warped and contorted into knots",
+  "file": "events.json",
+  "node": "ev-022"
+ },
+ {
+  "path": "/state_triples[10]/reading",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "Neo watches a little girl [...] in the family room; the blocks remain suspended as a display of the Potential's power while Neo crosse",
+  "after": "A young girl floats wooden alphabet blocks while Neo observes in the family room; the blocks remain suspended as a display of the Potential's power while Neo cr",
+  "file": "events.json",
+  "node": "ev-022"
+ },
+ {
+  "path": "/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "The police begin probing the rotting darkness of the Hotel Lafayette with flashlights and sweep the building floor by floor, flooding the eighth floor and rushi",
+  "after": "The police begin probing the rotting darkness of the Hotel Lafayette with flashlights and sweep the building floor by floor, flooding the eighth floor and rushi",
+  "file": "events.json",
+  "node": "ev-024"
+ },
+ {
+  "path": "/state_triples[11]/registers/knowledge/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "They have discovered the man-sized hole smashed through [...] in the bathroom wall of Room 808.",
+  "after": "They have discovered the a hole the size of a man ripped through the wall's plaster and lath in the bathroom wall of Room 808.",
+  "file": "events.json",
+  "node": "ev-024"
+ },
+ {
+  "path": "/turns_on",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "The man-sized hole smashed through [...] of the bathroom wall in Room 808 — the crew's only escape route into the main wet-wall, and the tell tha",
+  "after": "The a hole big enough for a man ripped through the wall's plaster and lath of the bathroom wall in Room 808 — the crew's only escape route into the main wet-wal",
+  "file": "events.json",
+  "node": "ev-024"
+ },
+ {
+  "path": "/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 11,
+  "role": "action",
+  "before": "Agent Brown, listening at his earpiece, stops concealing his purpose and openly demands to know where the people he is hunting are. Agent Smith, having relayed ",
+  "after": "Agent Brown, listening at his earpiece, stops concealing his purpose and openly demands to know where the people he is hunting are. Agent Smith, having relayed ",
+  "file": "events.json",
+  "node": "ev-025"
+ },
+ {
+  "path": "/state_triples[4]/registers/physical/change",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "Loses his footing and becomes wedged between the wall and [...], then is pulled free by Trinity once the firing starts.",
+  "after": "Loses his footing and becomes stuck in the gap between the wall and a cluster of large water pipes, then is pulled free by Trinity once the firing starts.",
+  "file": "events.json",
+  "node": "ev-025"
+ },
+ {
+  "path": "/state_triples[1]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Eviscerated, dust-shrouded machines lying on metal shelves like bodies [...].",
+  "after": "Eviscerated, dust-shrouded machines lying scattered across metal shelves like corpses in a morgue.",
+  "file": "events.json",
+  "node": "ev-028"
+ },
+ {
+  "path": "/state_triples[1]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Eviscerated, dust-shrouded machines lying on metal shelves like bodies [...].",
+  "after": "Eviscerated, dust-shrouded machines lying on steel racks like corpses in a mortuary.",
+  "file": "events.json",
+  "node": "ev-028"
+ },
+ {
+  "path": "/state_triples[2]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A phone that has not [...], sitting in the back room.",
+  "after": "A telephone untouched by sound for a long time, sitting in the back room.",
+  "file": "events.json",
+  "node": "ev-028"
+ },
+ {
+  "path": "/state_triples[2]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A phone that has not [...], sitting in the back room.",
+  "after": "A telephone untouched by a ring for many years, sitting in the back room.",
+  "file": "events.json",
+  "node": "ev-028"
+ },
+ {
+  "path": "/state_triples[3]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A phone that has not [...].",
+  "after": "A telephone unused for a long time.",
+  "file": "events.json",
+  "node": "ev-028"
+ },
+ {
+  "path": "(unmoved registers)",
+  "outcome": "exit re-synced to entry on 2 register(s)",
+  "words": 0,
+  "role": "invariant",
+  "before": "",
+  "after": "",
+  "file": "events.json",
+  "node": "ev-028"
+ },
+ {
+  "path": "(unmoved registers)",
+  "outcome": "exit re-synced to entry on 5 register(s)",
+  "words": 0,
+  "role": "invariant",
+  "before": "",
+  "after": "",
+  "file": "events.json",
+  "node": "ev-030"
+ },
+ {
+  "path": "/state_triples[3]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Handcuffed to a chair, stripped [...], wired to monitors, shivering and sweating but holding.",
+  "after": "Bound to a chair, shirtless, wired to monitors, shivering and sweating but holding.",
+  "file": "events.json",
+  "node": "ev-031"
+ },
+ {
+  "path": "/state_triples[6]/registers/knowledge/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "dialogue",
+  "before": "Understanding the full stakes and searching for a way to act: \"There has to be something [...].\"",
+  "after": "Understanding the full stakes and searching for a way to act: \"Neo insists there must be some action they can take.\"",
+  "file": "events.json",
+  "node": "ev-031"
+ },
+ {
+  "path": "/state_triples[0]/registers/knowledge/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "dialogue",
+  "before": "Understanding what Morpheus's cracking will cost and refusing the forced choice: There has to be something [...].'",
+  "after": "Understanding what Morpheus's cracking will cost and refusing the forced choice: We need to find a solution.'",
+  "file": "events.json",
+  "node": "ev-032"
+ },
+ {
+  "path": "/state_triples[0]/registers/knowledge/entry_asserted",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "dialogue",
+  "before": "Understanding what Morpheus's cracking will cost and refusing the forced choice: 'There has to be something [...].'",
+  "after": "Understanding what Morpheus's cracking will cost and refusing the forced choice: 'There must be a way out of this.'",
+  "file": "events.json",
+  "node": "ev-032"
+ },
+ {
+  "path": "/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "dialogue",
+  "before": "Watching from the ship, Tank moves from uncertainty to certainty and exclaims that the man on screen is the One. On the rooftop, Morpheus asks Trinity whether s",
+  "after": "Watching from the ship, Tank moves from uncertainty to certainty and exclaims that the man on screen is the One. On the rooftop, Morpheus asks Trinity whether s",
+  "file": "events.json",
+  "node": "ev-035"
+ },
+ {
+  "path": "/prose_before_reconcile/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "dialogue",
+  "before": "Tank declares from the Main Deck that the man on screen is the One. On the rooftop, Neo pulls Trinity into his arms and they hold each other, both shaking, whil",
+  "after": "Tank declares from the Main Deck that the man on screen is the One. On the rooftop, Neo pulls Trinity into his arms and they hold each other, both shaking, whil",
+  "file": "events.json",
+  "node": "ev-035"
+ },
+ {
+  "path": "/state_triples[0]/registers/knowledge/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Convinced the quarry is still in play and that he will never be free [...], his certainty sharpened into focus.",
+  "after": "Convinced the quarry is still in play and that The old man realizes he can never escape the Matrix., his certainty sharpened into focus.",
+  "file": "events.json",
+  "node": "ev-036"
+ },
+ {
+  "path": "/state_triples[3]/registers/physical/change",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "From a frozen figure arrested by what he has heard to the old man in the far corner who becomes Agent Smith, raising a [...] and firing.",
+  "after": "From a frozen figure arrested by what he has heard to the old man in the far corner who the old man in the far corner transforms into Agent Smith, brandishing a",
+  "file": "events.json",
+  "node": "ev-037"
+ },
+ {
+  "path": "/state_triples[3]/registers/knowledge/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Convinced the quarry is still in play and that he will never be free [...], his certainty sharpened into focus.",
+  "after": "Convinced the quarry is still in play and that he will never escape the Matrix., his certainty sharpened into focus.",
+  "file": "events.json",
+  "node": "ev-037"
+ },
+ {
+  "path": "/state_triples[3]/registers/knowledge/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Convinced the quarry is still in play and that he will never be free [...], his certainty sharpened into focus.",
+  "after": "Convinced the quarry is still in play and that he will never escape the Matrix., his certainty sharpened into focus.",
+  "file": "events.json",
+  "node": "ev-037"
+ },
+ {
+  "path": "/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 11,
+  "role": "action",
+  "before": "The event cuts between two places at once: the Main Deck, where Morpheus and Trinity stand behind [...], and the subway station, wh",
+  "after": "The event cuts between two places at once: the Main Deck, where Morpheus and Trinity stand behind Tank, bound to the cascading code., and the subway station, wh",
+  "file": "events.json",
+  "node": "ev-038"
+ },
+ {
+  "path": "/prose_before_reconcile/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 11,
+  "role": "action",
+  "before": "The event cuts between two places at once: the Main Deck, where Morpheus and Trinity stand behind [...], and the subway station, wh",
+  "after": "The event cuts between two places at once: the Main Deck, where Morpheus and Trinity stand behind Tank, bolted to the cascading code, and the subway station, wh",
+  "file": "events.json",
+  "node": "ev-038"
+ },
+ {
+  "path": "/state_triples[0]/registers/knowledge/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "dialogue",
+  "before": "Following Tank's voice to the fire escape at the end [...].",
+  "after": "Following Tank's voice to the a fire escape at the alley's end.",
+  "file": "events.json",
+  "node": "ev-041"
+ },
+ {
+  "path": "/state_triples[10]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "dialogue",
+  "before": "A fire escape at the end [...], Neo's route down.",
+  "after": "A A fire escape at the alley's terminus, Neo's route down.",
+  "file": "events.json",
+  "node": "ev-041"
+ },
+ {
+  "path": "/state_triples[10]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "dialogue",
+  "before": "A fire escape at the end [...], Neo's route down.",
+  "after": "A A fire escape at the alley's end, where Neo descends., Neo's route down.",
+  "file": "events.json",
+  "node": "ev-041"
+ },
+ {
+  "path": "(unmoved registers)",
+  "outcome": "exit re-synced to entry on 1 register(s)",
+  "words": 0,
+  "role": "invariant",
+  "before": "",
+  "after": "",
+  "file": "events.json",
+  "node": "ev-041"
+ },
+ {
+  "path": "/prose_before_reconcile/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Agent Smith halts outside the Heart O' The City Hotel, his attention fixing on the building's faded neon sign as something there registers with him. Inside the ",
+  "after": "Agent Smith halts outside the Heart O' The City Hotel, his attention fixing on the building's faded neon sign as something there registers with him. Inside the ",
+  "file": "events.json",
+  "node": "ev-042"
+ },
+ {
+  "path": "/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Agent Smith moves from outside the Heart O The City Hotel into the third-floor hall, stands over Neo's body at door 303, and shoots him three times in the chest",
+  "after": "Agent Smith moves from outside the Heart O The City Hotel into the third-floor hall, stands over Neo's body at door 303, and shoots him three times in the chest",
+  "file": "events.json",
+  "node": "ev-044"
+ },
+ {
+  "path": "/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "Neo rises in the hall and stops the three Agents' gunfire midair with a raised hand, studies a bullet's reflection, lets the rounds fall, and reads the room as ",
+  "after": "Neo rises in the hall and stops the three Agents' gunfire midair with a raised hand, studies a bullet's reflection, lets the rounds fall, and reads the room as ",
+  "file": "events.json",
+  "node": "ev-045"
+ },
+ {
+  "path": "/state_triples[4]/registers/emotional/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "dialogue",
+  "before": "Certain and triumphant, repeating He is the one. He [...]!'",
+  "after": "Certain and triumphant, repeating Morpheus declares with certainty that Neo is the chosen one.!'",
+  "file": "events.json",
+  "node": "ev-045"
+ },
+ {
+  "path": "/prose_before_reconcile/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 9,
+  "role": "action",
+  "before": "Neo rises in the hall and halts the three Agents' gunfire midair, then studies a bullet's reflection before letting the rounds fall and reading the room as a st",
+  "after": "Neo rises in the hall and halts the three Agents' gunfire midair, then studies a bullet's reflection before letting the rounds fall and reading the room as a st",
+  "file": "events.json",
+  "node": "ev-045"
+ },
+ {
+  "path": "/summary",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Sentinels overrun the ship's main deck, jolting Trinity from awe at Neo's return into a single, urgent summons to get up. In a hall, a man who has only been hea",
+  "after": "Sentinels overrun the ship's main deck, jolting Trinity from awe at Neo's return into a single, urgent summons to get up. In a hall, a man who has only been hea",
+  "file": "events.json",
+  "node": "ev-046"
+ },
+ {
+  "path": "/state_triples[5]/registers/physical/change",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "A blinding shock of white [...] pit and they blink and fall dead on the spot.",
+  "after": "A dazzling burst of white light fills the pit and they blink and fall dead on the spot.",
+  "file": "events.json",
+  "node": "ev-046"
+ },
+ {
+  "path": "/prose_before_reconcile/summary",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Sentinels overrun the ship's main deck, and Trinity's single summons cuts across the destruction. In a hall, a man who has been hearing a woman's voice reacts t",
+  "after": "Sentinels overrun the ship's main deck, and Trinity's single summons cuts across the destruction. In a hall, a man who has been hearing a woman's voice reacts t",
+  "file": "events.json",
+  "node": "ev-046"
+ },
+ {
+  "path": "/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "Alone in the still dark, Trinity says his name, his eyes open, and she reaches for him and kisses him. The image then shows Neo standing alone in a hall, the la",
+  "after": "Alone in the still dark, Trinity says his name, his eyes open, and she reaches for him and kisses him. The image then shows Neo standing alone in a hall, the la",
+  "file": "events.json",
+  "node": "ev-047"
+ },
+ {
+  "path": "/state_triples[1]/registers/knowledge/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "Seeing another world where all things are [...] and peace—and teaching that freedom is self-change.",
+  "after": "Seeing another world where every thing is possible—a world of hope and peace—and teaching that freedom is self-change.",
+  "file": "events.json",
+  "node": "ev-047"
+ },
+ {
+  "path": "/state_triples[4]/registers/physical/entry",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Billowing behind Neo like a black leather cape [...].",
+  "after": "Billowing behind Neo streaming behind Neo like a dark leather cloak while he soars.",
+  "file": "events.json",
+  "node": "ev-047"
+ },
+ {
+  "path": "/state_triples[4]/registers/physical/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "Billowing behind Neo like a black leather cape [...].",
+  "after": "Billowing behind Neo like a black leather cape trailing behind him.",
+  "file": "events.json",
+  "node": "ev-047"
+ },
+ {
+  "path": "/prose_before_reconcile/action",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "The two of them are alone in the still dark when Trinity says his name and his eyes open; she reaches for her and she kisses him, and it seems to last forever. ",
+  "after": "The two of them are alone in the still dark when Trinity says his name and his eyes open; she reaches for her and she kisses him, and it seems to last forever. ",
+  "file": "events.json",
+  "node": "ev-047"
+ },
+ {
+  "path": "(unmoved registers)",
+  "outcome": "exit re-synced to entry on 1 register(s)",
+  "words": 0,
+  "role": "invariant",
+  "before": "",
+  "after": "",
+  "file": "events.json",
+  "node": "ev-047"
+ }
+]
