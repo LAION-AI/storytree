@@ -1,0 +1,63 @@
+{
+  "rubric_id": "meta",
+  "version": 1,
+  "title": "META layer — themes, dilemma, conflicts, relationship arcs, perspectives",
+  "gate": {"min_per_dimension": 3, "min_mean": 4.0},
+  "posture": "Hard marking. 3 means acceptable-with-notes. Score the artifact AS DELIVERED against the event layer it claims to describe; the layers are the ground truth, not general knowledge of the work.",
+  "dimensions": [
+    {
+      "id": "M1",
+      "name": "Groundedness",
+      "anchors": {
+        "1": "Claims float free: pointers missing, or pointing at material that does not support them, or at events/scenes that do not contain what the grounding paraphrases.",
+        "3": "Most pointers genuinely support their claims; a minority are generic ('this appears throughout') or stretch past what the cited scene shows.",
+        "5": "Every claim lands on evidence a sceptical reader can check in the cited event and scene, and the grounding paraphrase names WHAT there supports it."
+      }
+    },
+    {
+      "id": "M2",
+      "name": "Thematic weight",
+      "anchors": {
+        "1": "Category words posing as themes ('the struggle within', 'good vs evil') that survive the transplant test -- paste them into any other story and they fit.",
+        "3": "Real questions, but stated abstractly, with little of this story's particular shape in them.",
+        "5": "Questions only THIS story could be asking, welded to its particulars, phrased so a different story answering them identically would be a coincidence."
+      }
+    },
+    {
+      "id": "M3",
+      "name": "Dilemma integrity",
+      "anchors": {
+        "1": "A strawman: one horn obviously right, or the horns not mutually exclusive, or no cost shown for either side.",
+        "3": "A genuine tension, but the horns are unevenly costed -- one side's price is shown in events, the other is asserted.",
+        "5": "Two mutually exclusive pulls, each with real, demonstrated costs visible in the layers; a reasonable person could live on either horn."
+      }
+    },
+    {
+      "id": "M4",
+      "name": "Coverage",
+      "anchors": {
+        "1": "Misses whole movements of the story visible in the event layer; conflicts or arcs named that belong to a different story.",
+        "3": "The spine is covered but notable secondary conflicts, arcs or turns recorded in the events are absent.",
+        "5": "Everything the event layer shows as story-carrying is represented, across the full span from first event to last."
+      }
+    },
+    {
+      "id": "M5",
+      "name": "Fidelity (non-invention)",
+      "anchors": {
+        "1": "Invents characters, scenes, motives or outcomes the layers do not contain, or contradicts what they record.",
+        "3": "No inventions, but several claims over-reach the layers' evidence or sharpen ambiguity into certainty.",
+        "5": "Nothing exceeds what the scene and event layers support; where the layers are ambiguous, the artifact stays ambiguous or flags it."
+      }
+    },
+    {
+      "id": "M6",
+      "name": "Perspective discipline",
+      "anchors": {
+        "1": "Throughlines collapse into one voice, or stances are labels without content, or perspectives disagree with the dilemma they claim to view.",
+        "3": "Distinct throughlines present, but some stances restate the dilemma rather than occupy a position on it.",
+        "5": "Each throughline holds a distinct, defensible position ON the central dilemma -- THEY, I, YOU, WE genuinely differ -- every stance anchored in events."
+      }
+    }
+  ]
+}
