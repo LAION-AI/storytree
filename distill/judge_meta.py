@@ -69,15 +69,22 @@ def main() -> int:
     pool = EndpointPool([int(p) for p in a.ports.split(",")], a.model,
                         temperature=0.3, max_tokens=6000, timeout=1800)
 
+    # NOTE: evidence and commentary live INSIDE properties. An earlier
+    # version put them beside it, the grammar never enforced them, and the
+    # first judgement shipped with evidence=null -- which crashed the
+    # revision pass that consumes those clauses.
     schema = grammar_safe({
         "type": "object",
-        "properties": {d: {"type": "integer", "enum": [1, 2, 3, 4, 5]}
-                       for d in DIMENSIONS},
-        "evidence": {"type": "object",
-                     "properties": {d: {"type": "string"} for d in DIMENSIONS},
-                     "required": sorted(DIMENSIONS),
-                     "additionalProperties": False},
-        "commentary": {"type": "string"},
+        "properties": {
+            **{d: {"type": "integer", "enum": [1, 2, 3, 4, 5]}
+               for d in DIMENSIONS},
+            "evidence": {"type": "object",
+                         "properties": {d: {"type": "string"}
+                                        for d in DIMENSIONS},
+                         "required": sorted(DIMENSIONS),
+                         "additionalProperties": False},
+            "commentary": {"type": "string", "minLength": 20},
+        },
         "required": sorted(DIMENSIONS) + ["evidence", "commentary"],
         "additionalProperties": False,
     })

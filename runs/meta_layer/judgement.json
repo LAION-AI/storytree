@@ -1,16 +1,23 @@
 {
  "judge": "meta_judge_ornith",
  "scores": {
-  "M1": 4,
-  "M2": 4,
+  "M1": 5,
+  "M2": 5,
   "M3": 5,
   "M4": 5,
-  "M5": 3,
+  "M5": 5,
   "M6": 5
  },
- "mean": 4.333,
- "weakest_dimension": "M5",
+ "mean": 5,
+ "weakest_dimension": "M1",
  "gate": "PASS",
- "evidence": null,
- "commentary": null
+ "evidence": {
+  "M1": "Every grounding clause names a specific event/scene and paraphrases material the layer actually contains — e.g. ev-007/sc-020 'Smith lays out Neo's two lives and offers to wipe his record clean in return for Morpheus' matches the layer's interrogation summary.",
+  "M2": "The questions are welded to this story's machinery — 'Is it better to know an unbearable reality or live a pleasant illusion?' is anchored to the red/blue pill choice (ev-010) and Cypher's 'impossible steak' (ev-020), not transferable abstractions.",
+  "M3": "The dilemma's horns are mutually exclusive and each is costed in events: sacrifice is priced by Neo being 'not the One' so the rescue is 'a wager on a man' (ev-032), and self-preservation is modeled by Cypher's betrayal (ev-020/ev-029) and Morpheus's sacrifice precedent (ev-025).",
+  "M4": "The artifact covers the full span from Trinity's opening capture (ev-001) through Neo's awakening and flight (ev-045–047), including secondary arcs like the Sentinel hunt (ev-019/ev-040/ev-046) and Cypher's betrayal (ev-020/ev-029).",
+  "M5": "No invented characters, scenes, or outcomes appear; where the layers are ambiguous (e.g. Cypher's fall 'seems to trip, hidden by the gas smoke' in ev-026) the artifact does not sharpen it, and it flags Trinity's silence rather than resolving it.",
+  "M6": "The four throughlines genuinely differ on the dilemma: THEY (world logic = cut the loss, ev-031/ev-032/ev-040), I (Neo's faith-wager, ev-032/ev-038), YOU (Morpheus as the sacrifice precedent, ev-025/ev-031/ev-035), and WE (the Neo–Trinity bond overriding survival, ev-032/ev-044) — each anchored in events."
+ },
+ "commentary": "The artifact is exceptionally well-grounded and internally consistent. Its only notable weakness is the Neo–Trinity relationship arc, which is labeled 'deteriorates' while every cited turning point and the 'what_changes' description show faith hardening into protective, grief-driven loyalty that culminates in the reviving kiss — a clear label/evidence mismatch (M5/M4 note). The 'Meaning vs. pleasure' theme also leans partly on the inferred 'hollow routine of Meta CorTechs' (ev-005) rather than fully demonstrated cost, but it is otherwise supported by Cypher's arc. These are minor against otherwise clean, checkable, story-specific work."
 }
