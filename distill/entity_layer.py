@@ -53,7 +53,8 @@ def main() -> int:
     ap.add_argument("--out", required=True)
     ap.add_argument("--source",
                     default="distill/runs/matrix/script.normalized.txt")
-    ap.add_argument("--max-scenes", type=int, default=30)
+    ap.add_argument("--max-scenes", type=int, default=30,
+                    help="0 = all scenes")
     ap.add_argument("--top", type=int, default=8)
     ap.add_argument("--ports", default="8110,8111")
     ap.add_argument("--model", default="ornith-1.5-397b")
@@ -63,23 +64,26 @@ def main() -> int:
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
 
-    files = sorted(Path(a.scenes_dir).glob("sc-*.json"))[:a.max_scenes]
+    files = sorted(Path(a.scenes_dir).glob("sc-*.json"))
+    if a.max_scenes:
+        files = files[:a.max_scenes]
     nodes = [json.loads(p.read_text(encoding="utf-8")) for p in files]
     print("trial scope: {} scenes".format(len(nodes)), flush=True)
 
     counts = Counter()
+    canon_all: dict = {}
     for n in nodes:
         names = ([str(x) for x in (n.get("present") or [])]
                  + [str(c.get("who")) for c in (n.get("what_changes") or [])
                     if isinstance(c, dict)]
                  + [str(m.get("who")) for m in (n.get("minds") or [])
                     if isinstance(m, dict)])
-        canon = {}
+        # Fold case variants ACROSS nodes: NEO and Neo are one entity.
         for x in names:
             key = re.sub(r"[^a-z0-9 ]", "", x.casefold()).strip()
             if len(key) > 2:
-                canon.setdefault(key, x)
-                counts[canon[key]] += 1
+                disp = canon_all.setdefault(key, x)
+                counts[disp] += 1
     loc_counts = Counter(str(n.get("location")) for n in nodes
                          if n.get("location"))
     targets = [t for t, _ in counts.most_common(a.top)]
