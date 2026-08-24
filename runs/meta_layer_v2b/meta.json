@@ -1,0 +1,827 @@
+{
+ "themes": {
+  "big_questions": [
+   {
+    "question": "Identity — Who am I, really?",
+    "why_central": "The plot is engineered to strip one name off a man and press another onto him. Smith confronts Neo with his split existence and offers to erase the 'Anderson' record in exchange for Morpheus (ev-007); a disembodied voice then names him 'the One' and demands a single 'Yes' before he has any grounds to believe it (ev-008). He actively rejects the title — denying he is the One even as he commits to a rescue (ev-032) — yet behaves as the One, so the story suspends the label between destiny and self-",
+    "evidence": [
+     {
+      "event_id": "ev-007",
+      "scene_id": "sc-020",
+      "grounding": "Smith lays out Neo's two lives and offers to wipe his record clean in return for Morpheus."
+     },
+     {
+      "event_id": "ev-008",
+      "scene_id": "sc-021",
+      "grounding": "A voice calls him 'the One' and requires a single 'Yes' before he has grounds to accept it."
+     },
+     {
+      "event_id": "ev-032",
+      "scene_id": "sc-148",
+      "grounding": "Neo denies being the One, so his rescue is a wager on a man rather than a prophecy."
+     },
+     {
+      "event_id": "ev-045",
+      "scene_id": "sc-216",
+      "grounding": "Only after death and revival does he seize the identity, halting bullets and reading the room as code."
+     }
+    ]
+   },
+   {
+    "question": "Truth vs. a comfortable lie — Is it better to know an unbearable reality or to live a pleasant illusion?",
+    "why_central": "This is the story's literal switch. Morpheus reframes Neo's lifelong dread as an enslaving system and offers him two exits — forget or know — and Neo swallows the red pill (ev-010). The honest answer costs him: he recoils as the world is revealed to be a simulation and humans farmed for power, an unbearable violation (ev-013). Cypher is the counter-argument made flesh, tasting an impossible steak and bargaining to be re-plugged into the lie (ev-020).",
+    "evidence": [
+     {
+      "event_id": "ev-010",
+      "scene_id": "sc-028",
+      "grounding": "Morpheus recasts Neo's dread as an enslaving system and offers a choice between forgetting and knowing; Neo takes the red pill."
+     },
+     {
+      "event_id": "ev-013",
+      "scene_id": "sc-039",
+      "grounding": "Neo recoils as he learns the world is a simulation and humans are farmed — the truth is an unbearable violation."
+     },
+     {
+      "event_id": "ev-020",
+      "scene_id": "sc-073",
+      "grounding": "Cypher savors a fabricated steak and bargains to be returned to ignorant comfort."
+     }
+    ]
+   },
+   {
+    "question": "Meaning vs. pleasure — A life of purposeful struggle or empty satisfaction?",
+    "why_central": "Cypher's arc states this question most purely. He recasts Morpheus's prophecy as 'a body count' (ev-020) and trades a hard, meaningful freedom for a soft, meaningless comfort. Neo travels the opposite route — from the hollow routine of Meta CorTechs, where he gives flat, deferential compliance to an ultimatum (ev-005), toward a cause worth dying for (ev-032).",
+    "evidence": [
+     {
+      "event_id": "ev-005",
+      "scene_id": "sc-014",
+      "grounding": "Neo's ordinary life is a mundane morning and an ultimatum about lateness and authority."
+     },
+     {
+      "event_id": "ev-020",
+      "scene_id": "sc-073",
+      "grounding": "Cypher measures the cause only in deaths and chooses pleasure over purpose."
+     },
+     {
+      "event_id": "ev-032",
+      "scene_id": "sc-148",
+      "grounding": "Neo commits to a dangerous rescue with no guarantee, choosing meaning over safety."
+     }
+    ]
+   },
+   {
+    "question": "Freedom vs. determinism (fate) — Do we choose, or is the path already written?",
+    "why_central": "The prophecy of the One and the Oracle's verdict (ev-014, ev-023) set up a world that seems pre-scripted, yet the characters keep acting against the script. Neo's refusal of the name and fate Smith pronounces at the point of death (ev-039) is the story's loudest claim that choice overrides destiny.",
+    "evidence": [
+     {
+      "event_id": "ev-014",
+      "scene_id": "sc-045",
+      "grounding": "Morpheus reframes the rescue as destiny through the myth of the One and the Oracle's prophecy."
+     },
+     {
+      "event_id": "ev-023",
+      "scene_id": "sc-085",
+      "grounding": "Neo carries a private verdict and a death-prophecy he is ordered to keep."
+     },
+     {
+      "event_id": "ev-039",
+      "scene_id": "sc-182",
+      "grounding": "At the edge of death Neo refuses the name and fate Smith pronounces and summons a surge that breaks the predicted outcome."
+     }
+    ]
+   },
+   {
+    "question": "Mortality — What does it mean to die, and can death be refused?",
+    "why_central": "Death is shown as both final and reversible. Mouse and the crew die and stay dead (ev-023, ev-029), giving mortality its weight, while Neo is shot three times and confirmed gone (ev-044) — then called back. The story treats death as the one boundary whose rules the awakened can contest (ev-045).",
+    "evidence": [
+     {
+      "event_id": "ev-023",
+      "scene_id": "sc-085",
+      "grounding": "Mouse is cornered and killed; death is presented as real and permanent."
+     },
+     {
+      "event_id": "ev-044",
+      "scene_id": "sc-209",
+      "grounding": "Neo is shot three times, the life monitors flatline, and the crew gives him up — then Trinity's kiss restarts his heart."
+     },
+     {
+      "event_id": "ev-045",
+      "scene_id": "sc-216",
+      "grounding": "Revived, he halts bullets and destroys an Agent, having crossed death and returned."
+     }
+    ]
+   }
+  ],
+  "central_dilemma": {
+   "name": "Self-preservation vs. self-sacrifice — flee to save your own life, or risk it to save another's.",
+   "horn_a": "Preserve oneself: accept that Morpheus is lost, escape while escape is still possible, and live to fight another day.",
+   "horn_b": "Sacrifice for another: go back into a world that will kill you to pull out a man you cannot save by any logic.",
+   "why_genuine": "Both horns cost something the story has priced in. Choosing self costs Morpheus his life and costs Neo his emerging self-respect and the crew's trust; choosing sacrifice costs Neo any claim to safety and, by his own admission, he is not the One, so the gamble carries no prophetic guarantee — only faith. The story refuses to make either side cheap: Morpheus has already modeled the sacrifice horn by giving his life for Neo (ev-025), and Cypher has modeled the self-preservation horn by trading a",
+   "evidence": [
+    {
+     "event_id": "ev-025",
+     "scene_id": "sc-115",
+     "grounding": "Morpheus pins an Agent and orders Trinity to get Neo out, choosing to give his own life so the others escape — the sacrifice precedent."
+    },
+    {
+     "event_id": "ev-032",
+     "scene_id": "sc-148",
+     "grounding": "Neo stops Morpheus's plug from being pulled and commits to going back in, denying he is the One, so the mission is a wager on a man, not a prophecy."
+    },
+    {
+     "event_id": "ev-020",
+     "scene_id": "sc-073",
+     "grounding": "Cypher embodies the self-preservation horn, bargaining to save himself by betraying Morpheus and the crew."
+    }
+   ]
+  }
+ },
+ "external": {
+  "conflicts": [
+   {
+    "name": "The Agents vs. the freed crew (the systemic hunt)",
+    "parties": [
+     "Agent Smith / Brown / Jones",
+     "Trinity, Morpheus, Neo and the Nebuchadnezzar crew"
+    ],
+    "stakes": "The Agents enforce the simulation and eliminate anyone unplugged or threatening it; the crew fights to stay free and to free others.",
+    "how_it_develops": "Opens with the Agents cornering and nearly capturing Trinity (ev-001), escalates through the rooftop chase (ev-003) and the office raid and interrogation of Neo (ev-006, ev-007), and culminates in the helicopter rescue and Neo's destruction of Smith (ev-034, ev-045).",
+    "evidence": [
+     {
+      "event_id": "ev-001",
+      "scene_id": "sc-001",
+      "grounding": "Four cops breach Room 303 and take Trinity at gunpoint; Agent Smith reveals the raid's true cost to the Lieutenant, and Trinity breaks the arrest and kills the squad."
+     },
+     {
+      "event_id": "ev-003",
+      "scene_id": "sc-005",
+      "grounding": "Trinity runs for a separate pay phone while Agents Brown, Jones and Smith close in across the rooftops."
+     },
+     {
+      "event_id": "ev-006",
+      "scene_id": "sc-017",
+      "grounding": "A ringing phone turns a routine package into a real office raid; Neo slips past the searching Agents to a ledge he cannot cross."
+     },
+     {
+      "event_id": "ev-007",
+      "scene_id": "sc-020",
+      "grounding": "Smith lays out Neo's two lives and offers to wipe his record in exchange for Morpheus; on refusal, Neo's mouth is sealed and a tap-creature is implanted."
+     },
+     {
+      "event_id": "ev-034",
+      "scene_id": "sc-165",
+      "grounding": "Neo drops a helicopter onto the executive office and guns down Agents Jones, Brown and Smith to extract Morpheus."
+     },
+     {
+      "event_id": "ev-045",
+      "scene_id": "sc-216",
+      "grounding": "Revived, Neo halts the Agents' volley, reads the room as code, and bursts out of Smith, destroying him so the surviving Agents feel fear."
+     }
+    ]
+   },
+   {
+    "name": "Cypher's betrayal of the crew",
+    "parties": [
+     "Cypher (allied with Agent Smith)",
+     "Morpheus, Neo, Trinity, Apoc, Switch, Dozer, Tank"
+    ],
+    "stakes": "A disillusioned crew member trades his comrades to the Agents for reinsertion into the Matrix, nearly destroying the ship from within.",
+    "how_it_develops": "Cypher's resentment curdles into a secret deal with Smith (ev-020), he sabotages the Oracle trip (ev-021), then murders Apoc and Switch, delivers Morpheus, and is only stopped by a surviving Tank (ev-029).",
+    "evidence": [
+     {
+      "event_id": "ev-020",
+      "scene_id": "sc-073",
+      "grounding": "Cypher recasts Morpheus's prophecy as a body count to unsettle Neo, then crosses into the Matrix and strikes a bargain with Agent Smith over a steak."
+     },
+     {
+      "event_id": "ev-021",
+      "scene_id": "sc-075",
+      "grounding": "Cypher covertly connects a phone and drops it in a garbage can, foreshadowing his treachery during the Oracle trip."
+     },
+     {
+      "event_id": "ev-029",
+      "scene_id": "sc-137",
+      "grounding": "Cypher shoots Tank, answers Trinity with a false 'accident' story, murders Apoc and Switch, delivers Morpheus to the Agents, and is struck down by the surviving Tank."
+     }
+    ]
+   },
+   {
+    "name": "Neo vs. the truth of the Matrix (initiation)",
+    "parties": [
+     "Neo",
+     "The reality revealed by Morpheus / the Matrix itself"
+    ],
+    "stakes": "Whether Neo can accept the unbearable truth of the simulation and the cost of freedom, or recoil back into denial.",
+    "how_it_develops": "Neo is drawn toward the truth (ev-004), resists the office raid (ev-006), chooses the red pill (ev-010), physically rejects the 'Desert of the Real' (ev-013), and only later commits to a personal wager to save Morpheus (ev-032).",
+    "evidence": [
+     {
+      "event_id": "ev-004",
+      "scene_id": "sc-012",
+      "grounding": "Neo is contacted through his own machine and, against his plans, follows a white rabbit to meet Trinity, who approaches him by name."
+     },
+     {
+      "event_id": "ev-010",
+      "scene_id": "sc-028",
+      "grounding": "Morpheus reframes Neo's lifelong dread as a real enslaving system and offers a choice between forgetting and knowing; Neo swallows the red pill."
+     },
+     {
+      "event_id": "ev-013",
+      "scene_id": "sc-039",
+      "grounding": "Morpheus walks Neo through the truth of the Matrix; Neo resists every step and recoils from the crew as agents of an unbearable violation."
+     },
+     {
+      "event_id": "ev-032",
+      "scene_id": "sc-148",
+      "grounding": "Neo stops the plug from being pulled on Morpheus and commits to rescuing him alive, denying he is the One and making the mission a wager on a man."
+     }
+    ]
+   },
+   {
+    "name": "Neo vs. Agent Smith (the destined duel)",
+    "parties": [
+     "Neo",
+     "Agent Smith"
+    ],
+    "stakes": "The personal, escalating confrontation between the prophesied One and the system's most committed enforcer.",
+    "how_it_develops": "Smith leads Neo's seizure and interrogation (ev-006, ev-007), hunts him through the subway where Neo first summons his power (ev-037, ev-039), and finally faces a transformed Neo who destroys him (ev-043, ev-045).",
+    "evidence": [
+     {
+      "event_id": "ev-006",
+      "scene_id": "sc-017",
+      "grounding": "Smith's raid drives Neo to a window ledge he cannot cross, beginning their direct antagonism."
+     },
+     {
+      "event_id": "ev-007",
+      "scene_id": "sc-020",
+      "grounding": "Smith negotiates for Morpheus, and on Neo's contemptuous refusal, seals his mouth and implants the tracker."
+     },
+     {
+      "event_id": "ev-039",
+      "scene_id": "sc-182",
+      "grounding": "After their gunfight clicks empty, Neo and Smith trade blows until Smith chokes Neo by the third-rail; Neo refuses the fate Smith pronounces and hurls him into the tunnel ceiling."
+     },
+     {
+      "event_id": "ev-043",
+      "scene_id": "sc-205",
+      "grounding": "Neo races toward door 303 under fire and is stopped cold by Agent Smith's point-blank shot."
+     },
+     {
+      "event_id": "ev-045",
+      "scene_id": "sc-216",
+      "grounding": "Neo enters Agent Smith and bursts out of him, destroying the first Agent ever."
+     }
+    ]
+   },
+   {
+    "name": "The crew vs. the Sentinels (real-world survival)",
+    "parties": [
+     "The Sentinels / machines",
+     "The Nebuchadnezzar crew (Morpheus, Trinity, Neo, Tank, Dozer)"
+    ],
+    "stakes": "Physical survival of the ship and crew in the real world, running parallel to and colliding with the Matrix conflict.",
+    "how_it_develops": "A Sentinel forces the ship to hide and arm its EMP (ev-019); later the Sentinels breach the hull as Neo dies, driving Morpheus toward the EMP in despair (ev-044), and overrun the deck at the moment of Neo's awakening and escape (ev-046).",
+    "evidence": [
+     {
+      "event_id": "ev-019",
+      "scene_id": "sc-066",
+      "grounding": "A Sentinel sweeping the sewer main forces the Nebuchadnezzar into a too-small supply line; the crew goes cold and silent while the machine glides over them."
+     },
+     {
+      "event_id": "ev-044",
+      "scene_id": "sc-209",
+      "grounding": "As Neo flatlines in the Matrix, sentinels breach the hull in the real world while Morpheus reaches for the EMP in weeping despair."
+     },
+     {
+      "event_id": "ev-046",
+      "scene_id": "sc-219",
+      "grounding": "Sentinels overrun the ship's main deck, descending on Morpheus at the EMP switch as Neo dives for the phone at Trinity's 'Now!'."
+     }
+    ]
+   },
+   {
+    "name": "Neo and Trinity vs. the pull of grief (the bond under strain)",
+    "parties": [
+     "Trinity (and her growing bond with Neo)",
+     "The deaths of the crew and Neo's self-denial"
+    ],
+    "stakes": "Whether Trinity's connection to Neo hardens into protective, grief-driven loyalty, or collapses under the weight of loss and his refusal of the prophecy.",
+    "how_it_develops": "Trinity's reserve cracks during the jump program (ev-016), she deflects Cypher's needling rather than owning her feelings (ev-017), converts grief into command when Neo denies he is the One (ev-032), refuses to accept his death and revives him with a kiss (ev-044), and finally releases the grief she held while watching over him (ev-047).",
+    "evidence": [
+     {
+      "event_id": "ev-016",
+      "scene_id": "sc-058",
+      "grounding": "As Neo prepares for the rooftop jump, Trinity's quiet hope breaks her reserve, then she leaves before the failed attempt's aftermath."
+     },
+     {
+      "event_id": "ev-017",
+      "scene_id": "sc-063",
+      "grounding": "Trinity comes out of being alone with the unconscious Neo in a way she can't own, and deflects Cypher's needling about her feelings without denying anything."
+     },
+     {
+      "event_id": "ev-032",
+      "scene_id": "sc-148",
+      "grounding": "Gutted by Morpheus's condition and Neo's self-denial, Trinity converts her grief into command and insists on joining the rescue."
+     },
+     {
+      "event_id": "ev-044",
+      "scene_id": "sc-209",
+      "grounding": "When the crew gives Neo up as the monitors flatline, Trinity refuses the ending, takes hold of his body, and kisses him until the monitors jump back to life."
+     },
+     {
+      "event_id": "ev-047",
+      "scene_id": "sc-223",
+      "grounding": "Neo wakes at Trinity's voice and reaches for her; she weeps as she kisses him, releasing the grief she held while watching over his body."
+     }
+    ]
+   }
+  ]
+ },
+ "internal": {
+  "internal_conflicts": [
+   {
+    "character": "Neo",
+    "torn_between": [
+     "The safety and routine of his known life as Thomas Anderson (the Meta CorTechs office, Rhineheart's authority, the 'two grand' disk deals)",
+     "The dangerous, unverifiable pull toward the truth represented by the white rabbit and Trinity"
+    ],
+    "what_it_costs": "His entire former identity is destroyed: he is captured, his mouth is sealed shut, a tracking bug is implanted in his body, and he is physically ejected from the pod that sustained him, nearly drowning before being recovered.",
+    "evidence": [
+     {
+      "event_id": "ev-004",
+      "scene_id": "sc-012",
+      "grounding": "Told through his own machine to follow a white rabbit, Neo spots the pin on Dujour's jacket and, 'against his plan to work the next day,' agrees to go out."
+     },
+     {
+      "event_id": "ev-005",
+      "scene_id": "sc-014",
+      "grounding": "The night's pull collapses into a mundane morning; Neo curses the alarm clock and answers Rhineheart's ultimatum with 'flat, deferential compliance.'"
+     },
+     {
+      "event_id": "ev-007",
+      "scene_id": "sc-020",
+      "grounding": "Smith offers to wipe Neo's record clean in exchange for Morpheus; Neo refuses with contempt, insults him, and his mouth seals shut."
+     }
+    ]
+   },
+   {
+    "character": "Neo",
+    "torn_between": [
+     "Morpheus's framing of him as 'the One' and the destiny of the prophecy",
+     "His own disbelief and fear that he is not the chosen one"
+    ],
+    "what_it_costs": "He is beaten to the floor in the dojo, fails the rooftop jump and injures himself, and later dies in the hotel hallway — shot three times — before returning to life.",
+    "evidence": [
+     {
+      "event_id": "ev-015",
+      "scene_id": "sc-056",
+      "grounding": "Neo's 'furious, technique-driven assault is blocked and dismantled every time, until Morpheus beats him to the floor.'"
+     },
+     {
+      "event_id": "ev-016",
+      "scene_id": "sc-058",
+      "grounding": "Neo runs the rooftop jump and 'falls badly short,' the yielding ground catching him."
+     },
+     {
+      "event_id": "ev-032",
+      "scene_id": "sc-148",
+      "grounding": "Neo 'denies being the One,' so his rescue of Morpheus becomes 'a wager on a man rather than a prophecy.'"
+     },
+     {
+      "event_id": "ev-044",
+      "scene_id": "sc-209",
+      "grounding": "Smith shoots Neo three times in the chest; the life monitors flatline and the crew gives him up."
+     }
+    ]
+   },
+   {
+    "character": "Trinity",
+    "torn_between": [
+     "Her growing, private feelings for Neo",
+     "Her duty, discipline, and the crew's mission"
+    ],
+    "what_it_costs": "She must hold her grief silently while watching Neo die, then actively refuse the accepted ending — risking everything on a kiss — before she can release what she held.",
+    "evidence": [
+     {
+      "event_id": "ev-016",
+      "scene_id": "sc-062",
+      "grounding": "During Neo's failed jump, 'Trinity's quiet hope breaks her reserve and then she leaves before the aftermath.'"
+     },
+     {
+      "event_id": "ev-017",
+      "scene_id": "sc-063",
+      "grounding": "Trinity deflects Cypher's needling about her feelings 'without denying anything' and leaves on her own terms."
+     },
+     {
+      "event_id": "ev-032",
+      "scene_id": "sc-150",
+      "grounding": "Gutted by Morpheus's condition and Neo's self-denial, Trinity 'converts her grief into command.'"
+     },
+     {
+      "event_id": "ev-044",
+      "scene_id": "sc-211",
+      "grounding": "Trinity 'refuses the ending,' takes hold of Neo's body and kisses him, and the monitors jump back to life."
+     },
+     {
+      "event_id": "ev-047",
+      "scene_id": "sc-223",
+      "grounding": "Neo wakes at her voice and she 'weeps as she kisses him, releasing the grief she held while watching over his body.'"
+     }
+    ]
+   },
+   {
+    "character": "Cypher",
+    "torn_between": [
+     "Resentment toward the hardship and uncertainty of real life and Morpheus's faith",
+     "The longing for the comfortable, verifiable illusion of the Matrix (the steak, the wine)"
+    ],
+    "what_it_costs": "He becomes a murderer of his own crew — shooting Tank, killing Apoc and Switch, delivering Morpheus to the Agents — and is himself struck down by the Tank he left for dead.",
+    "evidence": [
+     {
+      "event_id": "ev-017",
+      "scene_id": "sc-064",
+      "grounding": "Cypher 'dressing up resentment over the dinner as a joke' reaches for the Oracle to 'force Morpheus's faith into something verifiable.'"
+     },
+     {
+      "event_id": "ev-020",
+      "scene_id": "sc-073",
+      "grounding": "Cypher recasts Morpheus's prophecy as a body count — 'five before him took on an Agent and died because Morpheus got them believing.'"
+     },
+     {
+      "event_id": "ev-020",
+      "scene_id": "sc-074",
+      "grounding": "Cypher savors an 'impossible steak' in a restaurant and 'strikes a bargain with Agent Smith.'"
+     },
+     {
+      "event_id": "ev-029",
+      "scene_id": "sc-137",
+      "grounding": "Cypher turns 'quiet treachery into open murder,' shooting Tank and leaving him for dead."
+     }
+    ]
+   },
+   {
+    "character": "Morpheus",
+    "torn_between": [
+     "His unwavering belief that Neo is the One and the certainty of the prophecy",
+     "The reality that Neo denies it and that his own faith has already cost five lives"
+    ],
+    "what_it_costs": "He is captured and tortured with a doubled serum dosage that drives his mind toward breaking, and he spends his last agency fighting to keep his mind from cracking rather than saving himself.",
+    "evidence": [
+     {
+      "event_id": "ev-014",
+      "scene_id": "sc-045",
+      "grounding": "Morpheus 'reframes the rescue as destiny' by recounting the myth of the One and declares 'the search is over.'"
+     },
+     {
+      "event_id": "ev-022",
+      "scene_id": "sc-081",
+      "grounding": "Morpheus 'confesses that he misunderstood the Oracle' regarding the five failed candidates."
+     },
+     {
+      "event_id": "ev-031",
+      "scene_id": "sc-146",
+      "grounding": "Smith escalates to a 'doubled serum dosage' that drives Morpheus's alpha pattern into an ordered wave — 'the sign he is about to break.'"
+     },
+     {
+      "event_id": "ev-035",
+      "scene_id": "sc-170",
+      "grounding": "When Neo tries to report what the Oracle told him, 'Morpheus cuts him off and reinterprets both the prophecy and Trinity's silence as confirmation.'"
+     }
+    ]
+   },
+   {
+    "character": "Agent Smith",
+    "torn_between": [
+     "His function as an Agent serving the system and the collective hunt",
+     "A personal, disgust-tinged fixation on Neo that sets him apart from the other Agents"
+    ],
+    "what_it_costs": "He is destroyed from within — Neo enters him and bursts out — and for the first time the Agents feel fear, marking the collapse of his certainties.",
+    "evidence": [
+     {
+      "event_id": "ev-036",
+      "scene_id": "sc-174",
+      "grounding": "Smith 'withdraws from the unit in disgust, insisting the quarry is not gone.'"
+     },
+     {
+      "event_id": "ev-039",
+      "scene_id": "sc-182",
+      "grounding": "Smith uses the arriving train to 'frame [Neo's] death as settled inevitability' and pronounces a name and fate Neo refuses."
+     },
+     {
+      "event_id": "ev-045",
+      "scene_id": "sc-217",
+      "grounding": "Neo 'enters Agent Smith and bursts out of him, destroying the first Agent ever,' so the surviving Agents 'feel fear for the first time.'"
+     }
+    ]
+   }
+  ]
+ },
+ "relationships": {
+  "relationship_arcs": [
+   {
+    "pair": [
+     "Neo",
+     "Trinity"
+    ],
+    "arc": "grows",
+    "what_changes": "Trinity's guarded, proprietary hope in Neo survives his repeated failures to meet the prophecy and deepens into a bond that refuses his death — the kiss that revives him is the culmination of that faith, not a reversal of it.",
+    "turning_points": 2,
+    "evidence": [
+     {
+      "event_id": "ev-016",
+      "scene_id": "sc-062",
+      "grounding": "As the crew splits between doubters and believers over Neo's failed jump, Trinity's quiet hope breaks her reserve before she leaves ahead of the aftermath."
+     },
+     {
+      "event_id": "ev-017",
+      "scene_id": "sc-063",
+      "grounding": "Trinity comes out of Neo's room having just been alone with the unconscious Neo in a way she can't own, and runs straight into Cypher watching her; she deflects his needling about her feelings without denying anything."
+     },
+     {
+      "event_id": "ev-032",
+      "scene_id": "sc-154",
+      "grounding": "Trinity, gutted by both Morpheus's condition and Neo's self-denial, converts her grief into command and insists on going."
+     },
+     {
+      "event_id": "ev-044",
+      "scene_id": "sc-211",
+      "grounding": "Trinity refuses the ending: she takes hold of his body and kisses him, and the monitors jump back to life."
+     },
+     {
+      "event_id": "ev-047",
+      "scene_id": "sc-223",
+      "grounding": "Trinity's vigil breaks: Neo wakes at her voice, reaches for her, and she weeps as she kisses him, releasing the grief she held while watching over his body."
+     }
+    ]
+   },
+   {
+    "pair": [
+     "Neo",
+     "Morpheus"
+    ],
+    "arc": "grows",
+    "what_changes": "Morpheus's certainty that Neo is the One is tested and ultimately confirmed, while Neo moves from resisting the role to acting as if he believes.",
+    "turning_points": 2,
+    "evidence": [
+     {
+      "event_id": "ev-012",
+      "scene_id": "sc-035",
+      "grounding": "Morpheus—certain they have found the one—has his body rebuilt and then begins dismantling his assumptions about himself and his era."
+     },
+     {
+      "event_id": "ev-014",
+      "scene_id": "sc-045",
+      "grounding": "Morpheus enters, reframes the rescue as destiny by recounting the myth of the One and the Oracle's prophecy, then declares 'the search is over' before committing to guide him into training."
+     },
+     {
+      "event_id": "ev-032",
+      "scene_id": "sc-148",
+      "grounding": "Neo stops the plug from being pulled on Morpheus and commits to going back into the Matrix to bring him out alive. He denies being the One, so his mission becomes a wager on a man rather than a prophecy."
+     },
+     {
+      "event_id": "ev-035",
+      "scene_id": "sc-170",
+      "grounding": "Tank's watch resolves into certainty about the One; Neo tries to report what the Oracle told him, but Morpheus cuts him off and reinterprets both the prophecy and Trinity's silence as confirmation."
+     },
+     {
+      "event_id": "ev-045",
+      "scene_id": "sc-217",
+      "grounding": "aboard the Nebuchadnezzar the crew watches him blaze across the screens and Morpheus declares him the One."
+     }
+    ]
+   },
+   {
+    "pair": [
+     "Cypher",
+     "Morpheus"
+    ],
+    "arc": "deteriorates",
+    "what_changes": "Cypher's loyalty curdles into resentment over Morpheus's prophecy, culminating in a bargain with the enemy to betray the crew.",
+    "turning_points": 1,
+    "evidence": [
+     {
+      "event_id": "ev-017",
+      "scene_id": "sc-064",
+      "grounding": "Cypher—dressing up resentment over the dinner as a joke—fails to rattle her and reaches for the Oracle as a way to force Morpheus's faith into something verifiable."
+     },
+     {
+      "event_id": "ev-020",
+      "scene_id": "sc-073",
+      "grounding": "Cypher pours Dozer's liquor for Neo and recasts Morpheus's prophecy as a body count, telling him five before him took on an Agent and died because Morpheus got them believing."
+     },
+     {
+      "event_id": "ev-020",
+      "scene_id": "sc-074",
+      "grounding": "Cypher then crosses into the Matrix to a restaurant, where he savors an impossible steak and strikes a bargain with Agent Smith."
+     },
+     {
+      "event_id": "ev-029",
+      "scene_id": "sc-137",
+      "grounding": "Cypher turns quiet treachery into open murder aboard the ship: having shot Tank and left him for dead, he answers Trinity's call with a false story of an 'accident,' then murders Apoc and Switch, delivers Morpheus to the Agents."
+     }
+    ]
+   },
+   {
+    "pair": [
+     "Cypher",
+     "Tank"
+    ],
+    "arc": "changes_direction",
+    "what_changes": "A crewmate relationship becomes lethal when Cypher attempts to murder Tank, who survives and returns to kill Cypher.",
+    "turning_points": 1,
+    "evidence": [
+     {
+      "event_id": "ev-029",
+      "scene_id": "sc-137",
+      "grounding": "having shot Tank and left him for dead... only to be struck down by Tank, who survived and returns armed."
+     },
+     {
+      "event_id": "ev-030",
+      "scene_id": "sc-143",
+      "grounding": "Trinity wakes aboard the ship on the Main Deck, is unplugged by Tank... reading the tightening of Tank's face, infers that he too is dead. She takes Tank's wounds and loss into her arms."
+     }
+    ]
+   },
+   {
+    "pair": [
+     "Neo",
+     "Agent Smith"
+    ],
+    "arc": "grows",
+    "what_changes": "Smith's contempt for Neo as a mere prisoner sharpens into a personal, almost obsessive hunt that ends with Neo destroying him from the inside.",
+    "turning_points": 2,
+    "evidence": [
+     {
+      "event_id": "ev-007",
+      "scene_id": "sc-020",
+      "grounding": "Smith lays out Neo's two lives and offers to wipe his record clean in exchange for Morpheus; Neo refuses with contempt, insults Smith, and demands his phone call."
+     },
+     {
+      "event_id": "ev-031",
+      "scene_id": "sc-144",
+      "grounding": "Smith escalates the interrogation from cold philosophy to a doubled serum dosage that drives Morpheus's alpha pattern into an ordered wave."
+     },
+     {
+      "event_id": "ev-037",
+      "scene_id": "sc-176",
+      "grounding": "A train's roar and strobing light cover Agent Smith's reveal from the drunk in the corner and his shot at Trinity."
+     },
+     {
+      "event_id": "ev-039",
+      "scene_id": "sc-182",
+      "grounding": "Neo and Agent Smith trade bare-handed blows until Smith chokes Neo near the electrified third-rail and uses the arriving train to frame his death as settled inevitability."
+     },
+     {
+      "event_id": "ev-045",
+      "scene_id": "sc-218",
+      "grounding": "back in the hall Neo enters Agent Smith and bursts out of him, destroying the first Agent ever, so the surviving Agents feel fear for the first time."
+     }
+    ]
+   },
+   {
+    "pair": [
+     "Morpheus",
+     "Trinity"
+    ],
+    "arc": "changes_direction",
+    "what_changes": "Trinity shifts from a subordinate who shares Morpheus's belief to an independent commander who acts on her own conviction when Morpheus falls.",
+    "turning_points": 1,
+    "evidence": [
+     {
+      "event_id": "ev-008",
+      "scene_id": "sc-023",
+      "grounding": "Trinity insists the restraint is 'for our protection. From you.'"
+     },
+     {
+      "event_id": "ev-025",
+      "scene_id": "sc-119",
+      "grounding": "Morpheus bursts through, pins the Agent down, and orders Trinity to get Neo out—choosing to give his own life so the others can escape."
+     },
+     {
+      "event_id": "ev-032",
+      "scene_id": "sc-154",
+      "grounding": "Trinity, gutted by both Morpheus's condition and Neo's self-denial, converts her grief into command and insists on going."
+     },
+     {
+      "event_id": "ev-038",
+      "scene_id": "sc-179",
+      "grounding": "Trinity, having been brought back aboard from the rooftop, urges Neo to run."
+     }
+    ]
+   }
+  ]
+ },
+ "perspectives": {
+  "perspectives": [
+   {
+    "throughline": "objective_story",
+    "label": "THEY — the world-level collision",
+    "stance_on_dilemma": "The world frames the dilemma as a tactical calculation with a near-certain answer: when Morpheus is taken, the rational, survivable move is to cut the loss and escape. The Agents treat Morpheus as a broken key whose value is about to expire (ev-031: 'doubled serum dosage... the sign he is about to break'), and even the crew's own survival protocol is to pull Morpheus's plug rather than mount a rescue (ev-032: 'stops the plug from being pulled'). The objective situation prices self-preservation, ",
+    "evidence": [
+     {
+      "event_id": "ev-031",
+      "scene_id": "sc-144",
+      "grounding": "Smith escalates to a doubled serum dosage that drives Morpheus's alpha pattern into an ordered wave — the sign he is about to break — rendering him, in world-logic, a lost asset."
+     },
+     {
+      "event_id": "ev-032",
+      "scene_id": "sc-148",
+      "grounding": "The crew's default is to pull Morpheus's plug and abandon him; Neo's act is to interrupt that accepted, survival-first procedure."
+     },
+     {
+      "event_id": "ev-040",
+      "scene_id": "sc-185",
+      "grounding": "When the ship is hunted, Morpheus immediately converts to survival protocol — reading the Sentinels, giving the crew minutes, ordering the EMP charged — the world's instinct being to preserve the ship, not to gamble on one man."
+     }
+    ]
+   },
+   {
+    "throughline": "main_character",
+    "label": "I — the protagonist's inside view",
+    "stance_on_dilemma": "Neo resolves the dilemma from the inside not by logic but by refusing the arithmetic of it. He explicitly denies he is the One (ev-032), so going back has no prophetic cover — it is a pure wager on a man. His choice is framed as the only thing he can live with after Morpheus already gave his life for him (ev-025), making self-preservation a cost to his emerging self-respect he will not pay.",
+    "evidence": [
+     {
+      "event_id": "ev-032",
+      "scene_id": "sc-148",
+      "grounding": "Neo stops Morpheus's plug from being pulled and commits to the rescue while denying he is the One — 'a wager on a man rather than a prophecy... something he cannot justify logically, only believe in.'"
+     },
+     {
+      "event_id": "ev-025",
+      "scene_id": "sc-115",
+      "grounding": "Morpheus pins an Agent and orders Trinity to get Neo out, 'choosing to give his own life so the others can escape' — the debt of sacrifice Neo is answering."
+     },
+     {
+      "event_id": "ev-038",
+      "scene_id": "sc-179",
+      "grounding": "When cornered in the subway, urged to run, Neo does not run — he 'turns back from the escalator to face the hunter,' the same refusal to flee carrying through to the end."
+     }
+    ]
+   },
+   {
+    "throughline": "impact_character",
+    "label": "YOU — whoever challenges the protagonist's worldview",
+    "stance_on_dilemma": "Morpheus is the living argument for the sacrifice horn — he has already enacted it (ev-025) and, even while being tortured, spends his last agency fighting to keep his mind from cracking rather than saving himself by breaking (ev-031). His faith reframes Neo's illogical gamble as destiny (ev-035: 'reinterprets both the prophecy and Trinity's silence as confirmation'), pressing Neo toward the belief that a man is worth any risk.",
+    "evidence": [
+     {
+      "event_id": "ev-025",
+      "scene_id": "sc-115",
+      "grounding": "Morpheus models the sacrifice horn directly, giving his life so Neo and Trinity escape."
+     },
+     {
+      "event_id": "ev-031",
+      "scene_id": "sc-144",
+      "grounding": "Captured and drugged, Morpheus 'spends his last agency fighting to keep his mind from cracking' — refusing self-preservation through betrayal of the crew."
+     },
+     {
+      "event_id": "ev-035",
+      "scene_id": "sc-170",
+      "grounding": "After the rescue, Morpheus reinterprets the prophecy and Trinity's silence as confirmation of the One, converting Neo's faith-wager back into destiny and validating the sacrifice path."
+     }
+    ]
+   },
+   {
+    "throughline": "relationship",
+    "label": "WE — a bond under the dilemma",
+    "stance_on_dilemma": "The Neo–Trinity bond is where the dilemma is felt as loyalty versus survival. Trinity, gutted by Morpheus's condition and Neo's self-denial, converts grief into command and makes the rescue possible only on her terms (ev-032), then refuses to accept Neo's death at all (ev-044). Their 'we' is the force that overrides the world's cut-the-loss logic — she will not let him be sacrificed, and will not let Morpheus be abandoned.",
+    "evidence": [
+     {
+      "event_id": "ev-032",
+      "scene_id": "sc-148",
+      "grounding": "Trinity, 'gutted by both Morpheus's condition and Neo's self-denial, converts her grief into command and insists on' directing the rescue — binding herself to Neo's wager."
+     },
+     {
+      "event_id": "ev-044",
+      "scene_id": "sc-209",
+      "grounding": "When the crew gives Neo up after he is shot, 'Trinity refuses the ending: she takes hold of his body and kisses him, and the monitors jump back to life' — the bond overriding the survival verdict."
+     },
+     {
+      "event_id": "ev-030",
+      "scene_id": "sc-142",
+      "grounding": "Inside the exit, Neo 'breaks free of Trinity's embrace, and sends her out first' — the protective reciprocity of the bond even amid escape."
+     }
+    ]
+   },
+   {
+    "throughline": "society",
+    "label": "WE (group) — a group living the question",
+    "stance_on_dilemma": "The crew collectively lives out both horns. Cypher embodies self-preservation to its logical end — recasting Morpheus's prophecy as a mere 'body count' (ev-020) and then trading Morpheus and the crew to save himself (ev-029). The rest of the crew — Tank, Switch, Apoc, Dozer — are the ones who pay the price of the sacrifice horn, and whose split between 'doubters and believers' (ev-016) shows a community wrestling with whether any one man is worth dying for.",
+    "evidence": [
+     {
+      "event_id": "ev-020",
+      "scene_id": "sc-073",
+      "grounding": "Cypher 'recasts Morpheus's prophecy as a body count, telling him five before him took on an Agent and died,' embodying the self-preservation horn and retreating Neo toward caution."
+     },
+     {
+      "event_id": "ev-029",
+      "scene_id": "sc-137",
+      "grounding": "Cypher completes the self-preservation horn by murdering Apoc and Switch and delivering Morpheus to the Agents to save himself — only struck down by the surviving Tank."
+     },
+     {
+      "event_id": "ev-016",
+      "scene_id": "sc-058",
+      "grounding": "During Neo's failed jump, 'the crew watches the attempt split between doubters and believers' — the group's live argument over faith in one man versus prudent self-regard."
+     }
+    ]
+   }
+  ]
+ }
+}
