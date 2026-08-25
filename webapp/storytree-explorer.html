@@ -106,16 +106,34 @@ function fld(t,v){ return v?`<div class="fld">${t}</div>${F(v)}`:''; }
 function plt(title,inner){ return `<div class="plaq"><div class="t"><span class="chev">▸</span><b>${title}</b></div><div class="b">${inner}</div></div>`; }
 function bind(){ document.querySelectorAll('.plaq>.t').forEach(t=>t.addEventListener('click',()=>t.parentElement.classList.toggle('open'))); }
 
-function renderRoot(r){ return fld('Logline',r.logline)+fld('Premise',r.premise)+
-  fld('Genre',(r.genre_primary||'')+' '+(r.genre_secondary?'/ '+r.genre_secondary:''))+
-  fld('Audience',r.audience)+fld('POV',r.pov)+fld('Setting',r.setting)+fld('Writing style',r.style)+
-  `<div class="card"><div class="eyebrow">Narrative vector</div>`+
-  `Goal — <b>${ESC(r.narrative_vector.goal)}</b><br>`+
-  `Motivation — <b>${ESC(r.narrative_vector.motivation)}</b><br>`+
-  `Conflict — <b>${ESC(r.narrative_vector.conflict)}</b><br>`+
-  `Generative question — <b>${ESC(r.narrative_vector.generative_question)}</b></div>`+
-  fld('State dimensions',JO(r.state_dimensions))+fld('Constraints',JO(r.constraints))+
-  fld('Keep in mind',JO(r.keep_in_mind)); }
+function renderRoot(r){ const nv=r.narrative_vector||{};
+  let h= fld('Logline',r.logline)+fld('Premise',r.premise)+
+    fld('Genre',(r.genre_primary||'')+' '+(r.genre_secondary?'/ '+r.genre_secondary:''))+
+    fld('POV',r.pov)+fld('Setting',r.setting)+fld('Writing style',r.style);
+  const iv=r.identification_value;
+  if(iv){ h+=`<div class="card"><div class="eyebrow">Identification value of the protagonist (RT10)</div>`+
+    fld('Admirable strength — what makes the figure sympathetic',iv.admirable_strength)+
+    fld('Opening vulnerability — why the audience feels close',iv.opening_vulnerability)+
+    fld('Connection — the mechanism',iv.connection)+'</div>'; }
+  if(Array.isArray(r.audiences)){ h+='<div class="fld">Audiences ('+r.audiences.length+')</div>';
+    r.audiences.forEach(a=>h+=plt(a.group,fld('Why this group',a.why_this_group)+fld('Reader promise',a.reader_promise))); }
+  h+=`<div class="card"><div class="eyebrow">Narrative vector</div>`+
+    `Goal — <b>${ESC(nv.goal)}</b><br>Motivation — <b>${ESC(nv.motivation)}</b><br>`+
+    `Conflict — <b>${ESC(nv.conflict)}</b><br>Generative question — <b>${ESC(nv.generative_question)}</b></div>`;
+  if(r.rules_of_the_world) h+=fld('Rules of the world',JO(r.rules_of_the_world));
+  if(r.forbidden_tics) h+=fld('Forbidden tics',JO(r.forbidden_tics));
+  if(Array.isArray(r.entity_roster)){ h+='<div class="fld">Entity roster ('+r.entity_roster.length+')</div>';
+    r.entity_roster.forEach(e=>h+=plt('<b>'+e.name+'</b> <span class="badge th">'+(e.kind||'')+'</span>',F(e.description))); }
+  if(Array.isArray(r.plot_briefs)){ h+='<div class="fld">Plot briefs ('+r.plot_briefs.length+')</div>';
+    r.plot_briefs.forEach(p=>h+=plt(p.name,fld('Who wants what',p.who_wants_what)+fld('What resists',p.what_resists)+fld('Cost',p.cost)+fld('Resolution',p.resolution))); }
+  const ds=r.dramatic_structure;
+  if(ds){ h+='<div class="fld">Dramatic structure ('+ds.act_count+' acts)</div>';
+    (ds.turning_points||[]).forEach(t=>h+=plt(t.name,F(t.where))); }
+  if(Array.isArray(r.human_experience_dilemmas)){ h+='<div class="fld">Human-experience dilemmas ('+r.human_experience_dilemmas.length+')</div>';
+    r.human_experience_dilemmas.forEach(d=>h+=plt(d.topic,fld('Side A',d.side_a)+fld('Side B',d.side_b)+fld('Anchored in',d.anchored_in))); }
+  h+=fld('State dimensions',JO(r.state_dimensions))+fld('Constraints',JO(r.constraints))+
+     fld('Keep in mind',JO(r.keep_in_mind));
+  return h; }
 function renderExpose(d){ const sec=Object.entries(d.synopsis||{}).map(([k,v])=>`<div class="cat"><b>${ESC(k)}</b><p class="p">${ESC(v.text)}</p></div>`).join('');
   return fld('Jacket copy',d.jacket_copy)+`<div class="card"><div class="eyebrow">Synopsis (${ESC(d.synopsis_word_count)} words)</div>${sec}</div>`+
     fld('Ending first',(d.ending_first||{}).ending); }
