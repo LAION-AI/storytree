@@ -17,7 +17,7 @@ def main() -> int:
     data = {"layers": {}, "source": {"story": "The Matrix", "form": "screenplay"}}
 
     # z1 story root
-    data["layers"]["story_root"] = load(R / "story_root_v1/story_root.json")
+    data["layers"]["story_root"] = load(R / "story_root_v2/story_root.json")
 
     # z2 expose / treatment
     exp = load(R / "expose_v1/expose.json")

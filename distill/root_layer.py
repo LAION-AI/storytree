@@ -39,6 +39,62 @@ ROOT_SCHEMA = grammar_safe({"type": "object", "properties": {
         "generative_question": {"type": "string"}},
         "required": ["goal", "motivation", "conflict",
                      "generative_question"], "additionalProperties": False},
+    "audiences": {"type": "array", "minItems": 2, "maxItems": 4,
+        "items": {"type": "object", "properties": {
+            "group": {"type": "string", "minLength": 10},
+            "why_this_group": {"type": "string", "minLength": 40},
+            "reader_promise": {"type": "string", "minLength": 30}},
+            "required": ["group", "why_this_group", "reader_promise"],
+            "additionalProperties": False}},
+    "rules_of_the_world": {"type": "array", "minItems": 2,
+                            "maxItems": 8, "items": {"type": "string"}},
+    "forbidden_tics": {"type": "array", "minItems": 1, "maxItems": 6,
+                        "items": {"type": "string"}},
+    "identification_value": {"type": "object", "properties": {
+        "admirable_strength": {"type": "string", "minLength": 60,
+            "maxLength": 500},
+        "opening_vulnerability": {"type": "string", "minLength": 60,
+            "maxLength": 500},
+        "connection": {"type": "string", "minLength": 60,
+            "maxLength": 500}},
+        "required": ["admirable_strength", "opening_vulnerability",
+                     "connection"], "additionalProperties": False},
+    "entity_roster": {"type": "array", "minItems": 4, "maxItems": 12,
+        "items": {"type": "object", "properties": {
+            "name": {"type": "string"},
+            "kind": {"type": "string"},
+            "description": {"type": "string", "minLength": 60,
+                             "maxLength": 400}},
+            "required": ["name", "kind", "description"],
+            "additionalProperties": False}},
+    "plot_briefs": {"type": "array", "minItems": 3, "maxItems": 6,
+        "items": {"type": "object", "properties": {
+            "name": {"type": "string"},
+            "who_wants_what": {"type": "string", "minLength": 30},
+            "what_resists": {"type": "string", "minLength": 30},
+            "cost": {"type": "string"},
+            "resolution": {"type": "string"}},
+            "required": ["name", "who_wants_what", "what_resists",
+                          "cost", "resolution"],
+            "additionalProperties": False}},
+    "dramatic_structure": {"type": "object", "properties": {
+        "act_count": {"type": "integer", "minimum": 2, "maximum": 5},
+        "turning_points": {"type": "array", "minItems": 2,
+            "maxItems": 6, "items": {"type": "object", "properties": {
+                "name": {"type": "string"},
+                "where": {"type": "string", "minLength": 20}},
+                "required": ["name", "where"],
+                "additionalProperties": False}}},
+        "required": ["act_count", "turning_points"],
+        "additionalProperties": False},
+    "human_experience_dilemmas": {"type": "array", "minItems": 2,
+        "maxItems": 5, "items": {"type": "object", "properties": {
+            "topic": {"type": "string"},
+            "side_a": {"type": "string", "minLength": 30},
+            "side_b": {"type": "string", "minLength": 30},
+            "anchored_in": {"type": "string", "minLength": 20}},
+            "required": ["topic", "side_a", "side_b", "anchored_in"],
+            "additionalProperties": False}},
     "state_dimensions": {"type": "array", "minItems": 3, "maxItems": 8,
                          "items": {"type": "string"}},
     "constraints": {"type": "array", "minItems": 2, "items": {
@@ -48,7 +104,10 @@ ROOT_SCHEMA = grammar_safe({"type": "object", "properties": {
     "required": ["title", "logline", "premise", "genre_primary",
                  "genre_secondary", "audience", "setting", "pov", "style",
                  "narrative_vector", "state_dimensions", "constraints",
-                 "keep_in_mind"], "additionalProperties": False})
+                 "keep_in_mind", "audiences", "rules_of_the_world",
+                 "forbidden_tics", "identification_value", "entity_roster",
+                 "plot_briefs", "dramatic_structure",
+                 "human_experience_dilemmas"], "additionalProperties": False})
 
 JUDGE_SCHEMA = grammar_safe({"type": "object", "properties": {"scores": {
     "type": "array", "minItems": 10, "maxItems": 10, "items": {
@@ -114,7 +173,35 @@ def main() -> int:
               "screenplay compressed three ways: an event layer (causal "
               "chains), extracted spine facts with evidence, and the meta "
               "plus entity layers built earlier. Every field must agree "
-              "with them; do not invent beyond them.\nEVENT LAYER:\n"
+              "with them; do not invent beyond them.\n"
+              "MANDATORY SECTIONS:\n"
+              "- identification_value: BOTH halves, mechanically connected -- "
+              "(a) admirable_strength: a named strength, virtue or competence "
+              "the audience would want FOR THEMSELVES (this is what makes the "
+              "identification figure sympathetic); (b) opening_vulnerability: "
+              "a weakness the audience RECOGNISES IN THEMSELVES, the thing "
+              "that gives them the feeling of being close to the figure; "
+              "(c) connection: how the strength costs something or the flaw "
+              "is the price of the virtue. Generic stock virtue + stock wound "
+              "scores 3; the two halves must be THIS protagonist's.\n"
+              "- audiences: two or more GENUINELY distinct groups, each with "
+              "its own reason for engaging and its own reader_promise.\n"
+              "- rules_of_the_world: constraints the script actually OBEYS "
+              "(a rule nobody tests is not a rule).\n"
+              "- forbidden_tics: habits this script's style conspicuously "
+              "avoids.\n"
+              "- entity_roster: every entity whose removal would change the "
+              "plot, including non-character classes (groups, objects, "
+              "systems); descriptions say what it concretely IS, not its "
+              "function label.\n"
+              "- plot_briefs: per plot -- who wants what, what specifically "
+              "resists, what it costs, how it resolves; clauses causal.\n"
+              "- dramatic_structure: act count and each turning point with "
+              "where it sits in the story's own ordering.\n"
+              "- human_experience_dilemmas: topics stated as dilemmas with "
+              "two defensible sides, anchored in a specific plot or "
+              "character.\n"
+              "EVENT LAYER:\n"
               + digest[:55000] + "\nSPINE FACTS:\n"
               + json.dumps(facts, ensure_ascii=False)[:30000] + "\n"
               + layers_ctx)
