@@ -51,12 +51,12 @@ ROOT_SCHEMA = grammar_safe({"type": "object", "properties": {
     "forbidden_tics": {"type": "array", "minItems": 1, "maxItems": 6,
                         "items": {"type": "string"}},
     "identification_value": {"type": "object", "properties": {
-        "admirable_strength": {"type": "string", "minLength": 60,
-            "maxLength": 500},
-        "opening_vulnerability": {"type": "string", "minLength": 60,
-            "maxLength": 500},
-        "connection": {"type": "string", "minLength": 60,
-            "maxLength": 500}},
+        "admirable_strength": {"type": "string", "minLength": 150,
+            "maxLength": 700},
+        "opening_vulnerability": {"type": "string", "minLength": 150,
+            "maxLength": 700},
+        "connection": {"type": "string", "minLength": 150,
+            "maxLength": 700}},
         "required": ["admirable_strength", "opening_vulnerability",
                      "connection"], "additionalProperties": False},
     "entity_roster": {"type": "array", "minItems": 4, "maxItems": 12,
@@ -175,14 +175,26 @@ def main() -> int:
               "plus entity layers built earlier. Every field must agree "
               "with them; do not invent beyond them.\n"
               "MANDATORY SECTIONS:\n"
+              "ANTI-FLOSKEL RULE, applies to EVERY field: an abstract claim "
+              "without a concrete anchor is worthless. Every strength, "
+              "weakness, dilemma or theme you name must cite at least one "
+              "SPECIFIC moment from the story -- a scene id (sc-xxx / ev-xxx), "
+              "a quoted action or line, or a named concrete situation. If a "
+              "sentence could survive with the proper nouns swapped out, it "
+              "is not finished. No adjective stacks without examples.\n"
               "- identification_value: BOTH halves, mechanically connected -- "
               "(a) admirable_strength: a named strength, virtue or competence "
               "the audience would want FOR THEMSELVES (this is what makes the "
-              "identification figure sympathetic); (b) opening_vulnerability: "
-              "a weakness the audience RECOGNISES IN THEMSELVES, the thing "
-              "that gives them the feeling of being close to the figure; "
-              "(c) connection: how the strength costs something or the flaw "
-              "is the price of the virtue. Generic stock virtue + stock wound "
+              "identification figure sympathetic) -- ground it in at least "
+              "two concrete scenes where the strength is TESTED and shown to "
+              "cost something, cite them; (b) opening_vulnerability: a "
+              "weakness the audience RECOGNISES IN THEMSELVES from their own "
+              "life -- name the recognisable everyday situation it mirrors "
+              "(the job, the obligation, the fear of looking foolish), then "
+              "cite the concrete scenes where the script stages it; "
+              "(c) connection: spell out the MECHANISM -- which exact scene "
+              "shows the strength costing something, which shows the flaw as "
+              "the price of the virtue. Generic stock virtue + stock wound "
               "scores 3; the two halves must be THIS protagonist's.\n"
               "- audiences: two or more GENUINELY distinct groups, each with "
               "its own reason for engaging and its own reader_promise.\n"
