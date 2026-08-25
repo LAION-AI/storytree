@@ -1,0 +1,33 @@
+{
+ "scene_id": "sc-076",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "everyone (the crew)"
+ ],
+ "summary": "On the Main Deck, everyone is strapped into their chairs with Tank at the operator's station. Tank announces over the intercom that the no smoking and fasten seat belt signs have been turned on and tells them to sit back and enjoy their flight. He strikes the enter key, and the camera rushes clockwise over the chairs as each body reacts.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "condition",
+   "before": "Sitting at the operator's station with the crew strapped in, awaiting departure",
+   "after": "Has struck the enter key, initiating the flight so that bodies react as the camera rushes over them",
+   "evidence": "He strikes the enter key and we RUSH CLOCKWISE OVER the chairs, each body reacting as we..."
+  },
+  {
+   "who": "everyone (the crew)",
+   "axis": "condition",
+   "before": "Strapped into their chairs, not yet in flight",
+   "after": "The flight is underway, each body reacting to the acceleration/movement",
+   "evidence": "He strikes the enter key and we RUSH CLOCKWISE OVER the chairs, each body reacting as we..."
+  }
+ ],
+ "event_hint": {
+  "kind": "a departure",
+  "one_line": "Tank initiates the ship's flight and the crew braces as it accelerates.",
+  "continues_from_earlier": false
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 1 speaker(s), 57w — no exchange to read"
+}

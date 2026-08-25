@@ -1,0 +1,84 @@
+{
+ "scene_id": "sc-016",
+ "location": "META CORTECHS OFFICE",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "RHINEHEART",
+  "NEO"
+ ],
+ "summary": "In the main offices of Meta CorTechs, Rhineheart lectures Neo without looking at him, typing continuously while Neo stares out the window at two window cleaners dragging squeegees down the glass. Rhineheart accuses him of having a problem with authority and believing the rules don't apply to him. He explains that the company's success depends on every employee being part of a whole, so an employee's problem becomes the company's problem. He then forces a choice: be at his desk on time from now on, or find another job. Neo submits, answering that it is perfectly clear.",
+ "what_changes": [
+  {
+   "who": "RHINEHEART",
+   "axis": "standing",
+   "before": "A disciplinarian who lectures Neo without looking at him, typing at his computer continuously while accusing him of thinking the rules don't apply.",
+   "after": "He escalates from criticism to a direct ultimatum, forcing Neo to choose between punctuality and his job: 'Either you choose to be at your desk on time from this day forth, or you choose to find yourself another job.'",
+   "evidence": "The time has come to make a choice, Mr. Anderson.  Either you choose to be at your desk on time from this day forth, or you choose to find yourself another job."
+  },
+  {
+   "who": "NEO",
+   "axis": "allegiance",
+   "before": "Detached and inwardly resistant, he stares at the window cleaners rather than engage, absorbing the lecture in silence.",
+   "after": "He verbally submits to the authority he resents, answering with practiced compliance.",
+   "evidence": "NEO / Yes, Mr. Rhineheart.  Perfectly / clear."
+  }
+ ],
+ "event_hint": {
+  "kind": "a reprimand",
+  "one_line": "Rhineheart disciplines Neo and delivers an ultimatum about his lateness, which Neo accepts.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "computer / keyboard",
+  "window glass",
+  "two window cleaners on a scaffolding with rubber squeegees"
+ ],
+ "uncertain": [
+  "Whether Neo genuinely intends to comply or is merely placating Rhineheart.",
+  "The exact time of day, though sc-014 shows 9:15 A.M. and the scene concerns being late."
+ ],
+ "_mind_pass": "ran: 172 words vs fixed 150",
+ "minds": [
+  {
+   "who": "RHINEHEART",
+   "wants": "To reassert managerial control over a subordinate he reads as insubordinate, extracting a verbal acknowledgment of the rules without ever having to look at him or raise his voice.",
+   "feels": "Anxious and irritated — the typing is a way to channel that agitation into something productive and to avoid a genuine confrontation. He is performing authority rather than feeling secure in it; the continuous clicking is a shield against the discomfort of the person in the room.",
+   "shows": "Cool, bureaucratic discipline. He lectures to the screen, treats Neo as a problem to be processed, and only 'turns' when it's time to deliver the ultimatum — using the machine as his instrument of power.",
+   "basis": "He 'lectures Neo without looking at him, typing at his computer continuously.' His speech frames Neo as 'special,' believing 'the rules do not apply,' and reduces a person to a malfunction in 'a whole.' The ultimatum ('be at your desk on time... or find yourself another job') is the escalation that the what_changes data confirms.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo is merely an arrogant slacker with an authority problem — a petty disciplinary case.",
+     "wrong_because": "Rhineheart has no idea Neo is the person Trinity and Morpheus are hunting for; he is managing a man on the verge of being pulled out of the entire system Rhineheart thinks he's defending."
+    }
+   ]
+  },
+  {
+   "who": "NEO",
+   "wants": "To get through the reprimand with the least possible engagement — to give Rhineheart exactly the compliance that ends the encounter, and nothing more.",
+   "feels": "Detached and inwardly absent. He is not really here; his mind is still in the world Trinity opened up the night before (sc-013), and the 9:15 lateness (sc-014) means his attention is already elsewhere. The lecture lands on someone who has quietly stopped believing this office is the real stakes.",
+   "shows": "A practiced, minimal submission — 'Yes, Mr. Rhineheart. Perfectly clear' — while his eyes stay fixed on the window cleaners, performing just enough deference to be left alone.",
+   "basis": "He 'stares at two window cleaners... rather than engage,' absorbing the lecture in silence, then submits verbally the moment a choice is forced. The what_changes axis shows him moving from 'inwardly resistant' to 'practiced compliance.'",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "RHINEHEART",
+     "belief": "That Rhineheart is a hollow functionary whose authority is performative and therefore not worth his genuine attention.",
+     "wrong_because": "He underestimates how this same system, in the very next movement of the event, will escalate from a lecture to physical modification (the mouth-sealing and the bug) — the office's power is far from hollow."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-013: Neo's night with Trinity and the revelation that he is 'in danger' and being watched has already pulled his inner allegiance away from this ordinary life, which is why he can sit through the reprimand so detached.",
+  "sc-014: The 9:15 A.M. alarm and Neo's 'Shitshitshit' explain the concrete lateness Rhineheart is disciplining him for.",
+  "The established pattern of Neo's double life (programmer/hacker) that the event's later interrogation will expose."
+ ],
+ "sets_up": [
+  "ev-003: Neo's fragile, placating relationship to workplace authority makes the imminent arrival of the phone from Morpheus — and his choice to flee rather than submit — the real test of where his loyalty now lies.",
+  "ev-003: The theme of forced 'compliance' here prefigures Agent Smith's far more literal attempt to ensure Neo's silence and cooperation in the interrogation room.",
+  "ev-004 and beyond: Neo's hollow 'perfectly clear' marks the last moment he plays the company man, so that his subsequent unplugging can be a genuine break from a life he was only ever performing."
+ ],
+ "dramatic_function": "To dramatize the hollowness of Neo's ordinary life at the exact moment he's outgrowing it — the reprimand establishes the 'rules' of the world he's about to reject, while his detached compliance shows he has already begun to leave it, tightening the contrast between petty corporate authority and the larger reality Trinity has just revealed."
+}

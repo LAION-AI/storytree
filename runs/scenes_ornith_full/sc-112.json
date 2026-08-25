@@ -1,0 +1,30 @@
+{
+ "scene_id": "sc-112",
+ "location": "HALL",
+ "time_of_day": "DAY",
+ "present": [
+  "Cops"
+ ],
+ "summary": "In the hall, cops flood the eighth floor, rushing everywhere. The scene is a brief burst of action: a group of police officers arrives en masse and spreads out across the floor.",
+ "what_changes": [
+  {
+   "who": "Cops",
+   "axis": "safety",
+   "before": "Not yet present on the eighth floor.",
+   "after": "They flood the eighth floor, rushing everywhere, establishing a police presence.",
+   "evidence": "Cops flood the eight floor, rushing everywhere."
+  }
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Police pour onto the eighth floor as part of the building-wide search.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether the cops are looking for a specific target on the eighth floor.",
+  "How many cops are involved.",
+  "Whether anyone is present on the floor for them to find."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 11 words vs fixed 150"
+}

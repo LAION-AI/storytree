@@ -1,0 +1,213 @@
+scenes: 224
+
+stage 1 — reusing segmentation from runs/events_build7_24/segmentation.json: 47 events
+  roster: 396 spellings -> 364 entities
+
+stage 2 — composing 47 events in waves of 1
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1] !
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+  46 composed (1 failed)
+duplicate keys: 2 entities merged, 0 registers merged, 0 names folded to roster form
+lint: 0 placeholder entries, 46 conceding-unchanged, 0 unmoved-with-exit, 0 quotes outside reading, 27 entities without registers
+chain repair: 0 entries chained, 0 unmoved-exit contradictions fixed, 18 participant lists synced, 0 placeholders left
+
+entity canonicalisation: 0 variants folded, 0 renames, 275 -> 275 entities
+
+stage 2p — verifying joins before repair
+    [3/45]
+    [6/45]
+    [9/45]
+    [12/45]
+    [15/45]
+    [18/45]
+    [21/45]
+    [24/45]
+    [27/45]
+    [30/45]
+    [33/45]
+    [36/45]
+    [39/45]
+    [42/45]
+    [45/45]
+  {'state_breaks': 102, 'contradictions': 68, 'missing_links': 43}
+  102 findings routed to regeneration
+
+stage 2a — auditing and regenerating failed entities
+  round 1: 181 entities with faults, 165 regenerated, 16 rejected, 5 outward-effect blocks rewritten
+  round 2: 13 entities with faults, 5 regenerated, 8 rejected, 0 outward-effect blocks rewritten
+  170 regenerated, 24 rejected, 44 faults left
+
+stage 2b — reconciling prose to the finished triples
+    [3/46]
+    [6/46]
+    [9/46]
+    [12/46]
+    [15/46]
+    [18/46]
+    [21/46]
+    [24/46]
+    [27/46]
+    [30/46]
+    [33/46]
+    [36/46]
+    [39/46]
+    [42/46]
+    [45/46]
+    [46/46]
+  46/46 reconciled
+
+stage 3 — verifying 45 joins
+    [3/45]
+    [6/45]
+    [9/45]
+    [12/45]
+    [15/45]
+    [18/45]
+    [21/45]
+    [24/45]
+    [27/45]
+    [30/45]
+    [33/45]
+    [36/45]
+    [39/45]
+    [42/45]
+    [45/45]
+  {'state_breaks': 94, 'contradictions': 52, 'missing_links': 35}
+
+verbatim gate — event layer
+  exact runs (>= 8 source words): 74 in 28/46 nodes, longest 11
+  near hits (review only): 263
+  fix: python3 distill/paraphrase_pass.py --nodes <out> \
+         --source reconstruct/runs/matrix/script.normalized.txt --ports <ports> --model <small model>
+
+46 events, 495 state triples, 1983 register entries in 13348s
+wrote runs/events_build10_full/events.json
+checked 1 file(s) against script.normalized.txt
+  exact runs (>= 8 words): 74 in 28 node(s)
+  near hits (review only):  263
+  escalating failed spans to ornith-1.5-397b on 8110,8111
+  ev-005     /state_triples[3]/registers/ 1 span(s) rewritten
+  ev-005     /state_triples[3]/registers/ 1 span(s) rewritten
+  ev-006     /carried_uncertainty[1]/what 1 span(s) rewritten
+  ev-009     /action                      1 span(s) rewritten
+  ev-009     /state_triples[3]/registers/ 1 span(s) rewritten
+  ev-009     /state_triples[3]/registers/ 1 span(s) rewritten
+  ev-009     /state_triples[8]/registers/ 1 span(s) rewritten
+  ev-010     /action                      1 span(s) rewritten
+  ev-010     /state_triples[3]/reading    1 span(s) rewritten
+  ev-010     /prose_before_reconcile/acti 1 span(s) rewritten
+  ev-011     /state_triples[4]/registers/ 1 span(s) rewritten
+  ev-011     /state_triples[4]/registers/ 1 span(s) rewritten
+  ev-011     /state_triples[5]/registers/ 1 span(s) rewritten
+  ev-011     /state_triples[5]/registers/ 1 span(s) rewritten
+  ev-011     /state_triples[8]/registers/ 1 span(s) rewritten
+  ev-011     /state_triples[8]/registers/ 1 span(s) rewritten
+  ev-011     /state_triples[9]/registers/ 1 span(s) rewritten
+  ev-011     /state_triples[9]/registers/ 1 span(s) rewritten
+  ev-011     (unmoved registers)          exit re-synced to entry on 4 register(s)
+  ev-012     (entity name)                shortened everywhere it occurs
+  ev-013     /carried_uncertainty[1]/what 1 span(s) rewritten
+  ev-014     /state_triples[3]/registers/ 1 span(s) rewritten
+  ev-014     /affects_outside/blocks_or_c 1 span(s) rewritten
+  ev-015     /state_triples[1]/registers/ 1 span(s) rewritten
+  ev-015     /state_triples[1]/registers/ 1 span(s) rewritten
+  ev-018     /state_triples[1]/reading    1 span(s) rewritten
+  ev-018     /prose_before_reconcile/acti 1 span(s) rewritten
+  ev-019     /state_triples[0]/registers/ 1 span(s) rewritten
+  ev-021     /state_triples[18]/reading   1 span(s) rewritten
+  ev-022     (entity name)                shortened everywhere it occurs
+  ev-022     /state_triples[9]/registers/ 1 span(s) rewritten
+  ev-022     /state_triples[9]/registers/ 1 span(s) rewritten
+  ev-022     /state_triples[10]/reading   1 span(s) rewritten
+  ev-024     /action                      1 span(s) rewritten
+  ev-024     /state_triples[11]/registers 1 span(s) rewritten
+  ev-024     /turns_on                    1 span(s) rewritten
+  ev-025     /action                      1 span(s) rewritten
+  ev-025     /state_triples[4]/registers/ 1 span(s) rewritten
+  ... 25/46 nodes
+  ev-028     /state_triples[1]/registers/ 1 span(s) rewritten
+  ev-028     /state_triples[1]/registers/ 1 span(s) rewritten
+  ev-028     /state_triples[2]/registers/ 1 span(s) rewritten
+  ev-028     /state_triples[2]/registers/ 1 span(s) rewritten
+  ev-028     /state_triples[3]/registers/ 1 span(s) rewritten
+  ev-028     (unmoved registers)          exit re-synced to entry on 2 register(s)
+  ev-030     (unmoved registers)          exit re-synced to entry on 5 register(s)
+  ev-031     /state_triples[3]/registers/ 1 span(s) rewritten
+  ev-031     /state_triples[6]/registers/ 1 span(s) rewritten
+  ev-032     /state_triples[0]/registers/ 1 span(s) rewritten
+  ev-032     /state_triples[0]/registers/ 1 span(s) rewritten
+  ev-035     /action                      1 span(s) rewritten
+  ev-035     /prose_before_reconcile/acti 1 span(s) rewritten
+  ev-036     /state_triples[0]/registers/ 1 span(s) rewritten
+  ev-037     /state_triples[3]/registers/ 1 span(s) rewritten
+  ev-037     /state_triples[3]/registers/ 1 span(s) rewritten
+  ev-037     /state_triples[3]/registers/ 1 span(s) rewritten
+  ev-038     /action                      1 span(s) rewritten
+  ev-038     /prose_before_reconcile/acti 1 span(s) rewritten
+  ev-041     /state_triples[0]/registers/ 1 span(s) rewritten
+  ev-041     /state_triples[10]/registers 1 span(s) rewritten
+  ev-041     /state_triples[10]/registers 1 span(s) rewritten
+  ev-041     (unmoved registers)          exit re-synced to entry on 1 register(s)
+  ev-042     /prose_before_reconcile/acti 1 span(s) rewritten
+  ev-044     /action                      1 span(s) rewritten
+  ev-045     /action                      1 span(s) rewritten
+  ev-045     /state_triples[4]/registers/ 1 span(s) rewritten
+  ev-045     /prose_before_reconcile/acti 1 span(s) rewritten
+  ev-046     /summary                     1 span(s) rewritten
+  ev-046     /state_triples[5]/registers/ 1 span(s) rewritten
+  ev-046     /prose_before_reconcile/summ 1 span(s) rewritten
+  ev-047     /action                      1 span(s) rewritten
+  ev-047     /state_triples[1]/registers/ 1 span(s) rewritten
+  ev-047     /state_triples[4]/registers/ 1 span(s) rewritten
+  ev-047     /state_triples[4]/registers/ 1 span(s) rewritten
+  ev-047     /prose_before_reconcile/acti 1 span(s) rewritten
+  ev-047     (unmoved registers)          exit re-synced to entry on 1 register(s)
+
+75 field(s) touched: {'1 span(s) rewritten': 68, 'exit re-synced to entry on 4 register(s)': 1, 'shortened everywhere it occurs': 2, 'exit re-synced to entry on 2 register(s)': 1, 'exit re-synced to entry on 5 register(s)': 1, 'exit re-synced to entry on 1 register(s)': 2}
+runs remaining after the pass: 0
+report -> runs/events_build10_full/paraphrase_report.json

@@ -1,0 +1,113 @@
+{
+ "scene_id": "sc-018",
+ "location": "EMPTY OFFICE",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "NEO",
+  "MORPHEUS (V.O.)",
+  "a cop"
+ ],
+ "summary": "Alone in an empty office, Neo is guided by Morpheus's voice over the phone. Morpheus tells him there is a scaffold outside and a window he should open. Neo opens it, and wind howls in. Morpheus instructs him to use the scaffold to reach the roof, but Neo refuses, insisting it is too far. Morpheus insists there is a ledge and a short climb, then frames the choice: the scaffold, or capture by 'them,' leaving the decision to Neo, then hangs up. Neo protests his innocence and climbs out onto the window ledge, stepping onto a small ledge that makes the scaffold seem even farther. A sudden blast of wind knocks him off balance; he clings to the frame and drops the phone, watching it fall into the distance. Terrified, he declares he cannot do it and climbs back inside, just as a cop opens the door, prompting Neo to curse.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "resolve",
+   "before": "Refusing to attempt the crossing: 'No! It's too far away.' and 'No way, no way, this is crazy.'",
+   "after": "He commits to the attempt: 'He climbs up onto the window ledge. Hanging onto the frame, he steps onto the small ledge.'",
+   "evidence": "He climbs up onto the window ledge. Hanging onto the frame, he steps onto the small ledge."
+  },
+  {
+   "who": "NEO",
+   "axis": "resolve",
+   "before": "Willing to try despite fear, even voicing 'I'm going to die.' as he stays on the ledge.",
+   "after": "His nerve breaks and he retreats: 'This is insane! I can't do this! Forget it!' and 'He climbs back into the office'.",
+   "evidence": "This is insane! I can't do this! Forget it! He climbs back into the office"
+  },
+  {
+   "who": "NEO",
+   "axis": "safety",
+   "before": "Sheltered inside the office, weighing two exits.",
+   "after": "Exposed and nearly lost after the wind hits and the phone falls: 'He watches as it is swallowed by the distance beneath him.'",
+   "evidence": "The WIND suddenly BLASTS up the face of the building, knocking Neo off balance."
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Morpheus guides Neo's escape by phone toward the scaffold, an attempt that fails when Neo retreats from the ledge.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the scaffold",
+  "the window",
+  "the phone",
+  "the ledge",
+  "the roof"
+ ],
+ "uncertain": [
+  "Whether Neo is actually in danger of dying from the height or whether this is an illusion within the Matrix.",
+  "Who 'they' are beyond the Agents and cops seen in the neighbouring scene.",
+  "Whether the cop who opens the door has already spotted Neo."
+ ],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "NEO",
+   "wants": "To be let off the hook — to find some way out that does not require him to do the impossible thing Morpheus is demanding.",
+   "feels": "A terror that is not only about the height but about the entire frame of his life collapsing: he has been told he is hunted, told the rules of his world are a lie, and now told to step off a ledge on the word of a voice. Under the panic is a deeper conviction that none of this could really be happening to someone as insignificant as he believes himself to be.",
+   "shows": "Outward argument and protest — 'No! It's too far away,' 'this is crazy,' and the self-pitying litany 'What did I do? I'm nobody. I didn't do anything.' He lets Morpheus hear a man bargaining for a saner option, then, alone, commits and immediately breaks.",
+   "basis": "He repeatedly refuses ('No way, no way, this is crazy') even after being told the only alternatives are the scaffold or capture. His monologue after Morpheus hangs up is addressed to no one present — 'Why is this happening to me?' — and he only climbs out after weighing the door against the scaffold, i.e. still searching for the least-terrible exit. The text states he climbs out, says 'I'm going to die,' then the wind knocks him off balance, he drops the phone, watches it vanish, and retreats saying 'This is insane! I can't do this! Forget it!'",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "himself",
+     "belief": "That he is 'nobody,' that he has done nothing to deserve being hunted, and therefore that this nightmare is a mistake that should not be happening.",
+     "wrong_because": "The whole pursuit presupposes he is precisely the someone they are looking for; his sense of his own insignificance is the falsest thing about him, and this scene is the first place that self-conception is being violently tested against reality."
+    },
+    {
+     "other": "MORPHEUS",
+     "belief": "That Morpheus is asking him to attempt something genuinely lethal — a real death from a real height — and that obeying means likely dying.",
+     "wrong_because": "Inferred: within the Matrix the physics are not binding the way they feel; Morpheus's calm certainty ('You can make it') suggests the danger is not what Neo's body is telling him it is. Neo's fear is real, but the lethality he believes in may be an illusion he has not yet learned to see past."
+    },
+    {
+     "other": "the situation / 'them'",
+     "belief": "That capture is a bad but survivable alternative — that he is weighing 'certain death' against 'getting caught,' and choosing the lesser risk.",
+     "wrong_because": "He does not yet know what 'their custody' actually entails (the interrogation and physical modification awaiting him in this event); his terror of the ledge is blinding him to the fact that the option he retreats toward is the more dangerous one."
+    }
+   ]
+  },
+  {
+   "who": "MORPHEUS (V.O.)",
+   "wants": "To get Neo out of the building alive by making him take the one exit Morpheus can vouch for, without ever doing the choosing for him.",
+   "feels": "A pressured calm — he is guiding a man toward a real edge under real time pressure, and he must hold his own certainty steady enough to lend it to Neo. Beneath the composure is investment: he is not testing a stranger, he is stewarding someone he has been 'looking for.'",
+   "shows": "A dry, unhurried voice that laughs quietly at Neo's 'How do you know all this?' and defers the answer ('The answer is coming'). He refuses to reassure beyond the facts, and when Neo resists he does not command — he reframes as a clean either/or and then explicitly surrenders the decision: 'I leave it to you,' before hanging up.",
+   "basis": "He withholds explanation ('The answer is coming, Neo') rather than soothe. He restates the route as achievable ('It's a short short climb. You can make it') but, when met with refusal, does not order or coax further; instead he lays out the two ways out and hands Neo the choice, then clicks off. The hang-up is the deliberate act that forces Neo to decide alone.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo can be brought to choose correctly when the choice is made clear and unavoidable — that fear, not incapacity, is the only thing between Neo and the ledge.",
+     "wrong_because": "Inferred: this scene proves the belief only partially right. Neo does commit, but his nerve breaks the instant the environment turns on him; Morpheus is counting on a readiness Neo does not yet have, which is exactly why this escape fails and a harder education has to follow."
+    },
+    {
+     "other": "the situation",
+     "belief": "That he can guide Neo out remotely — that voice and instruction are enough to substitute for Neo's own experience.",
+     "wrong_because": "The wind, the dropped phone, and the retreat show the limit of remote guidance: he cannot steady Neo's body for him. The scene demonstrates that knowing the way out is not the same as being able to take it, a gap Morpheus will have to close differently from here."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "The scaffold Neo must cross is the same window-cleaning scaffolding he was staring at in sc-016 while Rhineheart lectured him — the physical route out grows directly out of the office he was just being disciplined in.",
+  "Morpheus's 'There are only two ways out... the other is in their custody' is the payoff to sc-017, where the Agents and cops were shown closing on Neo's cubicle; the custody he fears is the group he already saw.",
+  "The phone in his hand is the one delivered by the FedEx man in sc-017, the instrument that turned an ordinary workday into a flight, and dropping it here severs his only link to his guide.",
+  "Morpheus's calm, deferred answers ('The answer is coming') echo his manner in sc-017, where he likewise directed a panicked Neo step by step and withheld the larger picture.",
+  "Neo's 'I'm nobody. I didn't do anything' answers Rhineheart's accusation in sc-016 that Neo 'believes that you are special' — the two scenes bracket the same unexamined self-image from opposite directions."
+ ],
+ "sets_up": [
+  "A failed escape that ends in capture becomes necessary so that Neo can be taken into custody and interrogated in this event — the scaffold refusal is what delivers him to Smith.",
+  "The interrogation and physical modification Neo undergoes (his mouth sealed, the worm implanted) are made possible by his retreat back through the office door into the cop's reach.",
+  "Neo's conviction that he cannot survive the impossible — that the rules of his world are fixed and lethal — is the exact misconception that his later revelation as 'The One' must overturn.",
+  "Morpheus's habit of handing Neo the choice and letting consequences teach him is established here as the method he will keep using to push Neo past what Neo thinks he can do."
+ ],
+ "dramatic_function": "It turns the abstract warning of being hunted into a physical, bodily test, and uses Neo's failure at that test — his inability to trust and to leap — to strip him of his escape, deliver him into enemy hands, and thereby set the entire interrogation-and-awakening sequence in motion. The scene is the first concrete argument that Neo's prison is his own disbelief, which the rest of the story will have to dismantle."
+}

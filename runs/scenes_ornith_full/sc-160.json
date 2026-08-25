@@ -1,0 +1,34 @@
+{
+ "scene_id": "sc-160",
+ "location": "ELEVATOR SHAFT",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Trinity"
+ ],
+ "summary": "In the elevator shaft, Neo ratchets a clamp onto the elevator cable until both locks engage, then looks up the dark shaft and breathes. He says, \"There is no spoon,\" draws his gun, and presses it to the cable below where they are attached. He fires; the cable snaps, the counter-weights plummet, and Trinity and Neo are yanked upward through the shaft as the elevator falls away beneath them, rising to the top amid whistling metal.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "Neo and Trinity are clamped to a stationary elevator cable.",
+   "after": "The cable is severed and they are hauled rapidly upward as the elevator falls.",
+   "evidence": "BOOM!  The CABLE SNAPS. The counter-weights plummet, yanking Trinity and Neo up through the shaft as the elevator falls away beneath them"
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Neo is preparing, looking up the shaft and taking a breath.",
+   "after": "Neo commits to firing on the cable, sending them both searing to the top.",
+   "evidence": "Neo whips out his GUN and presses it to the cable, lower than they attached themselves."
+  }
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Neo shoots the elevator cable so he and Trinity rocket up the shaft, escaping the falling elevator.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 93 words vs fixed 150"
+}

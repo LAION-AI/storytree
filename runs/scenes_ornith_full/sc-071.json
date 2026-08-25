@@ -1,0 +1,151 @@
+{
+ "scene_id": "sc-071",
+ "location": "COCKPIT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Neo",
+  "Trinity",
+  "Dozer",
+  "Morpheus"
+ ],
+ "summary": "In the cockpit, Neo quietly asks Trinity \"E.M.P.?\" and she explains it is \"an electromagnetic pulse\" that \"disables any electrical system in the blast radius\" and \"It's the only weapon we have against the machines.\" Dozer looks up and says \"Now we wait.\" Through the windshield the crew see a frozen sewer main. Neo starts to angle around Dozer but \"Morpheus grabs him\" and warns \"Don't move. It'll hear you.\" Neo freezes and, with the ship's heating off, \"the temperature in the cockpit begins to rapidly drop\" until the crew huddle together, their breath freezing. Dozer brushes frost off the windshield, clearing a swath, and through it they see \"a shifting shadow of mechanized death\" — \"beautiful and terrifying\" — that \"silently glides over them with shark-like malevolence until it disappears into the darkness.\" Once it is gone, \"everyone breathes a little easier.\"",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "He only half-knows what the E.M.P. is, prompting Trinity with \"E.M.P.?\"",
+   "after": "He learns it \"disables any electrical system in the blast radius\" and is \"the only weapon we have against the machines.\"",
+   "evidence": "It disables any electrical system in the blast radius. It's the only weapon we have against the machines."
+  },
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "He begins to move, about to \"angle around Dozer\" as if to proceed.",
+   "after": "He is stopped and held still: \"Morpheus grabs him\" and says \"Don't move. It'll hear you.\" so \"Neo freezes and they wait.\"",
+   "evidence": "Morpheus grabs him. Don't move. It'll hear you. Neo freezes and they wait."
+  },
+  {
+   "who": "the crew",
+   "axis": "condition",
+   "before": "They are waiting in a functional ship with its heating running.",
+   "after": "With the systems off, \"the temperature in the cockpit begins to rapidly drop\" and \"the crew members huddle together, their breath freezing into a uniform cloud.\"",
+   "evidence": "the temperature in the cockpit begins to rapidly drop. The crew members huddle together, their breath freezing into a uniform cloud"
+  },
+  {
+   "who": "the crew",
+   "axis": "safety",
+   "before": "They are hidden but unsure where the threat is, waiting in darkness.",
+   "after": "They directly see the machine — \"a shifting shadow of mechanized death\" — as it \"silently glides over them,\" then passes, so that \"everyone breathes a little easier.\"",
+   "evidence": "silently glides over them with shark-like malevolence until it disappears into the darkness. In the frozen little room, everyone breathes a little easier."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "The crew lies in wait inside the Nebuchadnezzar with the E.M.P. armed, hiding from a Sentinel that glides over them before passing.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "E.M.P. (electromagnetic pulse)",
+  "cockpit windshield",
+  "the Sentinel (shifting shadow of mechanized death)"
+ ],
+ "uncertain": [
+  "Whether the Sentinel detects them or passes on by chance.",
+  "How long the crew must keep waiting after the machine disappears.",
+  "What happens if the machine had heard them."
+ ],
+ "_mind_pass": "ran: 207 words vs fixed 150",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To understand what the crew is relying on to survive, and to position himself so he can act if needed.",
+   "feels": "Newly inserted into a lethal situation he does not yet comprehend; alert and anxious, his body already reacting (hairs rising) before his mind catches up.",
+   "shows": "A quiet, minimal question ('E.M.P.?'), then an attempt to angle around Dozer — curiosity and readiness expressed as movement — before he is frozen by Morpheus.",
+   "basis": "He whispers 'E.M.P.?' to Trinity, then 'begins to angle around Dozer' until Morpheus grabs him and says 'Don't move. It'll hear you,' at which 'Neo freezes.' Later 'the hairs on the back of his neck rise' as the machine passes.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "the E.M.P.",
+     "belief": "That it is a weapon he now basically understands, like a conventional explosive.",
+     "wrong_because": "He has only a technical definition; he cannot yet know what it costs, how it will actually play out, or that he is the ship's real hope independent of it."
+    },
+    {
+     "other": "the Sentinel",
+     "belief": "That a machine must be seen, tracked, or fought to be dangerous.",
+     "wrong_because": "Here danger is precisely what passes unseen and unheard; movement itself — not the machine's attention — is the trigger."
+    }
+   ]
+  },
+  {
+   "who": "Trinity",
+   "wants": "To give Neo the exact operational meaning of the E.M.P. — nothing more, nothing less — so he stops being a liability.",
+   "feels": "Compressed calm: she is as frightened as anyone but has long since converted fear into procedure, and she will not spend breath on reassurance.",
+   "shows": "A clipped, textbook definition delivered in a whisper close to his ear; no comfort, no glance beyond the information.",
+   "basis": "She answers 'E.M.P.?' with a terse three-sentence technical explanation ('disables any electrical system... the only weapon we have against the machines') and offers nothing else.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That he is a raw recruit who needs to be briefed and contained, not yet someone who will matter to their survival.",
+     "wrong_because": "She cannot yet see that this 'liability' will become central to the crew's fate and to Morpheus's prophecy."
+    }
+   ]
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To keep the ship undetected by enforcing absolute stillness at the one moment instinct tells Neo to move.",
+   "feels": "Total, unblinking vigilance — the whole weight of command reduced to a single physical intervention and a whispered command.",
+   "shows": "He grabs Neo and says 'Don't move. It'll hear you.' — economical, authoritative, and physically decisive.",
+   "basis": "He physically stops Neo's movement and names the rule ('It'll hear you'), the one discipline that governs the entire wait.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "the Sentinel",
+     "belief": "That discipline and silence are enough to get them through — that the machine operates on detectable sound alone.",
+     "wrong_because": "Survival here has an element of chance he cannot control; the machine 'glides over them' and may simply choose to pass, not be fooled."
+    }
+   ]
+  },
+  {
+   "who": "Dozer",
+   "wants": "To hold the crew in the waiting posture and then restore a small measure of sight without breaking cover.",
+   "feels": "The steady, practiced patience of someone who has survived this before — nervous but trusting the protocol, punctuated by a small, human need to see.",
+   "shows": "He announces 'Now we wait' and later, quietly, brushes frost from the windshield to clear a swath.",
+   "basis": "He signals the shift to waiting ('Now we wait') and is the one who 'reaches to brush away the frost on the windshield' to clear a view.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "the crew",
+     "belief": "That a brief, controlled look through a cleared patch is safe enough to satisfy their need to see.",
+     "wrong_because": "Seeing the machine carries its own terror — 'beautiful and terrifying' — and offers no safety, only the ordeal of watching it pass."
+    }
+   ]
+  },
+  {
+   "who": "the crew",
+   "wants": "To stay alive by becoming as still and silent and small as the cold will allow.",
+   "feels": "Collective dread held in check by shared discipline; the cold makes their fear physical, and the passing machine turns it into something almost reverent.",
+   "shows": "They 'huddle together,' breath freezing into 'a uniform cloud,' and only after the machine leaves does 'everyone breathe a little easier.'",
+   "basis": "They physically cluster against the dropping temperature, their breath forming 'a uniform cloud,' and collectively exhale relief once the Sentinel 'disappears into the darkness.'",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "the moment of relief",
+     "belief": "That the machine passing means they are, for now, safe.",
+     "wrong_because": "The danger has only moved on, not ended; the wait continues and the threat can return — relief is provisional, not earned."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-070's powering down of the turbines and arming of the E.M.P. — this scene is the silence that follows that decision.",
+  "sc-068's wedging the ship into the pipe, which places them in the confined, frozen hiding spot they now occupy.",
+  "Neo's status as a freshly freed recruit who still needs the crew's technology explained to him in basic terms."
+ ],
+ "sets_up": [
+  "ev-017's continuation of the silent, frozen wait as the Sentinel completes its sweep over the ship.",
+  "The later strain on the crew's nerves and loyalty that Cypher will exploit (ev-018), since surviving such brushes feeds his disillusionment.",
+  "The recurring real-world pattern of the ship going silent and hiding from machines, which will recur with higher stakes later."
+ ],
+ "dramatic_function": "To translate the abstract threat of the machines into a felt, physical ordeal — cold, silence, stillness, and a predator gliding inches away — so that Neo (and the audience) viscerally grasp the real world's danger and the crew's hard-won discipline, while establishing Neo as a novice still being briefed and restrained."
+}

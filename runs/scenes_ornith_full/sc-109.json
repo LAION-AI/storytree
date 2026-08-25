@@ -1,0 +1,25 @@
+{
+ "scene_id": "sc-109",
+ "location": "ROOM 1313",
+ "time_of_day": "DAY",
+ "present": [
+  "AGENT SMITH"
+ ],
+ "summary": "Agent Smith is on the phone in Room 1313 when the line clicks dead on his end. Reacting to the silence, he reports the location of whoever was on the other end, stating that they are on the eighth floor.",
+ "what_changes": [
+  {
+   "who": "AGENT SMITH",
+   "axis": "knowledge",
+   "before": "On a call whose status is unknown",
+   "after": "Has located the target on the eighth floor",
+   "evidence": "Eighth floor.  They're on the eighth floor."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Smith's contact is cut off, but he relays the target's location on the eighth floor.",
+  "continues_from_earlier": true
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 21 words vs fixed 150"
+}

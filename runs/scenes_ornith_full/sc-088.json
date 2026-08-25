@@ -1,0 +1,33 @@
+{
+ "scene_id": "sc-088",
+ "location": "ROOM 1313",
+ "time_of_day": "DAY",
+ "present": [
+  "Mouse",
+  "Tank"
+ ],
+ "summary": "In Room 1313, Mouse's cellular phone rings. Mouse answers it and greets the caller with a cover line, \"Welcome to Movie-Phone.\" The caller, Tank, speaking by voice-over, delivers a terse progress report: \"They're on their way.\"",
+ "what_changes": [
+  {
+   "who": "Mouse",
+   "axis": "communication",
+   "before": "Mouse is at rest until Mouse's CELLULAR RINGS.",
+   "after": "Mouse has answered and opened the line with a code phrase: \"Welcome to Movie-Phone.\"",
+   "evidence": "Mouse's CELLULAR RINGS.\nMOUSE\nWelcome to Movie-Phone."
+  },
+  {
+   "who": "Tank",
+   "axis": "knowledge",
+   "before": "Tank's message is unknown before he speaks.",
+   "after": "Tank reports that the expected party is en route: \"They're on their way.\"",
+   "evidence": "TANK (V.O.)\nThey're on their way."
+  }
+ ],
+ "event_hint": {
+  "kind": "a phone call",
+  "one_line": "Mouse answers a ringing cellular phone and Tank reports by voice-over that the expected group is en route.",
+  "continues_from_earlier": false
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 18 words vs fixed 150"
+}

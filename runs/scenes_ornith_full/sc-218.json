@@ -1,0 +1,109 @@
+{
+ "scene_id": "sc-218",
+ "location": "HALL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Agent Smith",
+  "Neo",
+  "the Agents"
+ ],
+ "summary": "Agent Smith screams, his machine-like calm replaced by rage, and rushes Neo with a ferocious attack that Neo blocks easily before striking him in the chest and sending him flying. For the first time the Agents know fear. Agent Smith gets up and dives as Neo charges, but Neo sinks into him, disappearing like into a deep pool of water. Smith spins around, sensing a tremor before a quake. A searing sound stabs through his earpiece, his chest swells and balloons, and Neo bursts up out of him. Agent Smith dies screaming, exploding like an empty husk in a burst of light, his shards absorbed by the Matrix, leaving only Neo. Neo faces the remaining Agents, who look at each other, share the same idea, and run.",
+ "what_changes": [
+  {
+   "who": "Agent Smith",
+   "axis": "condition",
+   "before": "Attacking ferociously, driven by rage, still a functioning Agent",
+   "after": "Killed and destroyed, exploded like an empty husk, absorbed by the Matrix",
+   "evidence": "Agent Smith EXPLODES like an empty husk in a brilliant cacophony of light, his shards spinning away, absorbed by the Matrix"
+  },
+  {
+   "who": "the Agents",
+   "axis": "condition",
+   "before": "Confident attackers rushing Neo",
+   "after": "Afraid and fleeing, running away from Neo",
+   "evidence": "For the first time since their inception, the Agents know fear."
+  },
+  {
+   "who": "Neo",
+   "axis": "standing",
+   "before": "Blocking and defending against Smith's attack",
+   "after": "Dominant, having destroyed Smith and driven off the remaining Agents",
+   "evidence": "he sends Agent Smith flying backwards."
+  }
+ ],
+ "event_hint": {
+  "kind": "a fight",
+  "one_line": "Neo destroys Agent Smith by entering and bursting out of him, and the remaining Agents flee in fear.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "Agent Smith's tie and coat rippling like water",
+  "the searing sound in the earpiece",
+  "the brilliant cacophony of light",
+  "the shards absorbed by the Matrix"
+ ],
+ "uncertain": [
+  "Whether the remaining Agents physically flee the hall or merely break and run toward the elevator seen earlier",
+  "Whether Neo's possession-and-burst is a repeatable ability or a one-time event"
+ ],
+ "_mind_pass": "ran: 188 words vs fixed 150",
+ "minds": [
+  {
+   "who": "Agent Smith",
+   "wants": "To kill Neo and reassert his dominance after being humiliated.",
+   "feels": "Rage, but beneath it, for the first time, a tremor of something his programming cannot process — the dawning wrongness of a system that can be entered and burst from within.",
+   "shows": "Ferocious, screaming assault; then the stunned, spinning search for a threat that has vanished into himself.",
+   "basis": "He screams with 'pure rage' and rushes Neo, but after Neo sinks into him he 'spins around' sensing 'a tremor before a quake' — the text marks a shift from offensive certainty to a felt, premonitory dread.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo is a program to be deleted like any other anomaly, a threat contained by force.",
+     "wrong_because": "Neo has just demonstrated he can move through and destroy Smith from the inside, treating an Agent's body as permeable — a capability that reclassifies Smith from hunter to prey and that Smith's model of the world did not allow for."
+    }
+   ]
+  },
+  {
+   "who": "Neo",
+   "wants": "To end Smith definitively and confront what he now perceives as the true nature of the Matrix.",
+   "feels": "A newly total confidence — no longer survival, but command — mixed with the awe of seeing the code behind the illusion, which makes the Agents' violence seem trivial.",
+   "shows": "Effortless blocking, a single decisive strike, and the deliberate, almost curious act of sinking into Smith rather than trading blows.",
+   "basis": "He blocks 'each blow easily' and sends Smith flying with 'one quick strike,' then chooses the intimate, invasive method of entering Smith's body — behavior of someone who has stopped fearing and begun to understand his own power.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "the Agents",
+     "belief": "That they are no longer the authority in this space — that he now holds the power and they are merely obstacles.",
+     "wrong_because": "This is not yet fully tested; the possession-and-burst may be a one-time event, so his certainty may slightly outrun his confirmed ability — though nothing in the scene punishes it."
+    }
+   ]
+  },
+  {
+   "who": "the Agents",
+   "wants": "To survive — the goal has shifted, wordlessly and simultaneously, from capture to flight.",
+   "feels": "Fear, pure and unprecedented — the collapse of the invulnerability their nature assumed. The death of Smith, one of their own, is the evidence that breaks their certainty.",
+   "shows": "A shared glance, a synchronized decision, and then running — the first retreat in their existence.",
+   "basis": "'For the first time since their inception, the Agents know fear'; they 'look at each other, the same idea striking simultaneously' and then run, having just witnessed Smith's total destruction.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That he has become something their protocols cannot handle — a threat beyond deletion.",
+     "wrong_because": "They cannot yet know whether this power is stable or repeatable, or what its limits are; their flight is a judgment made on terror, not on a full assessment — but in this moment that miscalculation is precisely what saves them."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-216: Neo stopping the bullets and seeing the Matrix as raw code — the perceptual breakthrough that makes Smith's body 'a deep pool of water' possible rather than arbitrary.",
+  "sc-216: Smith ripping off his sunglasses and staring at Neo 'as if he were looking at a ghost' — the first crack in his certainty that this scene completes by making him afraid.",
+  "sc-217: The crew's awe and the ship's explosion — the external confirmation that what Neo is becoming exceeds description, paralleling the Agents' inability to process him.",
+  "The earlier pattern of Smith's machine-like calm — this scene's rage reads as that composure finally breaking under an anomaly it cannot absorb."
+ ],
+ "sets_up": [
+  "ev-036: Neo's surviving dominance in the hall, and the Agents' demonstrated vulnerability to him, clears the space for Neo to turn from physical combat to broadcasting a message — the defeated program-authority cannot stop him from speaking into the Matrix.",
+  "ev-036: The Agents' newly learned fear makes credible that a confident, taunting Neo could address the system's inhabitants without immediate suppression — the power balance the flight establishes is what lets him speak as he does.",
+  "ev-037: The demonstration that an Agent can be destroyed by being entered and burst from within plants the possibility that this ability — or its logic — may recur when Neo and Trinity move through the government building's controlled space."
+ ],
+ "dramatic_function": "This scene converts Neo's perceptual awakening into an irreversible power shift: by destroying one Agent and making the others flee, it ends the Agents' era of invulnerability and repositions Neo from hunted anomaly to the dominant force, so that the story can move from physical survival to proclamation and counter-attack."
+}

@@ -1,0 +1,38 @@
+{
+ "scene_id": "sc-070",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank"
+ ],
+ "summary": "Tank works furiously at the operator's station while the ship's turbines grind to a halt, plunging the main deck into dark silence. As the rest of the crew stands behind him, he whispers that power is offline and the E.M.P. is armed and ready. He then curls his fingers around a small key that glows a dim red.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "condition",
+   "before": "Working furiously at the operator's station while the turbines are still running",
+   "after": "The turbines have stopped and he reports power is offline, with the E.M.P. armed",
+   "evidence": "the ceaseless WHIR of the ship's TURBINES GRIND TO a HALT. The main deck is plunged into dark silence."
+  },
+  {
+   "who": "Tank",
+   "axis": "condition",
+   "before": "Finishing his work and reporting the ship's status",
+   "after": "Physically gripping the glowing red key, ready to trigger the E.M.P.",
+   "evidence": "Tank's fingers curl around a small key that glows a dim red."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "The crew prepares the ship's E.M.P. weapon as the turbines stop and the deck goes dark.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the operator's station",
+  "the ship's turbines",
+  "the small glowing red key (E.M.P.)"
+ ],
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 1 speaker(s), 60w — no exchange to read"
+}

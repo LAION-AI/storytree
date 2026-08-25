@@ -1,0 +1,35 @@
+{
+ "scene_id": "sc-118",
+ "location": "ROOM 608",
+ "time_of_day": "DAY",
+ "present": [
+  "COP"
+ ],
+ "summary": "The Cop leans in, his ear almost against the thin membrane of plaster separating them, and hears WHISPERS, HISSES and a GRUNT coming through the wall. Then the wall suddenly bulges, shatter-cracking, and the Cop realizes the fugitives are hiding inside the structure itself, exclaiming, \"They're in the walls!\"",
+ "what_changes": [
+  {
+   "who": "COP",
+   "axis": "knowledge",
+   "before": "The Cop strains to hear ambiguous sounds—WHISPERS, HISSES and a GRUNT—through the plaster, unsure of their source.",
+   "after": "The Cop understands the fugitives are concealed inside the wall structure once it bulges and shatter-cracks.",
+   "evidence": "The wall suddenly bulges, shatter-cracking as the Cop realizes -- They're in the walls!"
+  },
+  {
+   "who": "COP",
+   "axis": "safety",
+   "before": "The Cop presses his ear close to the thin membrane of plaster, physically near the hidden occupants.",
+   "after": "The wall bulges and shatter-cracks, revealing the hidden occupants are dangerously close and about to break through.",
+   "evidence": "his ear almost against the thin membrane of plaster separating them ... The wall suddenly bulges, shatter-cracking"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "During the search of Room 608, a Cop discovers the fugitives are hiding inside the walls."
+ },
+ "uncertain": [
+  "Whether more than one cop is present, since only the COP is named and speaks in this scene.",
+  "Whether the wall physically breaks open in this scene or merely bulges and cracks."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 1 speaker(s), 45w — no exchange to read"
+}

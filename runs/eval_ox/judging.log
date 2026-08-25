@@ -1,0 +1,187 @@
+23 pairing(s)
+  [5/23] ok
+  [10/23] ok
+  [15/23] ok
+  [20/23] ok
+  [23/23] ok
+jox1: 23 scored, 0 failed, 2063s -> runs/eval_ox/baseline_scores/scores_jox1.json
+  [5/23] ok
+  [10/23] ok
+  [15/23] ok
+  [20/23] ok
+  [23/23] ok
+jox2: 23 scored, 0 failed, 1889s -> runs/eval_ox/baseline_scores/scores_jox2.json
+  [5/23] ok
+  [10/23] ok
+  [15/23] ok
+  [20/23] ok
+  [23/23] ok
+jox3: 23 scored, 0 failed, 1005s -> runs/eval_ox/baseline_scores/scores_jox3.json
+  [5/23] ok
+  [10/23] ok
+  [15/23] ok
+  [20/23] ok
+  [23/23] ok
+jox4: 23 scored, 0 failed, 892s -> runs/eval_ox/baseline_scores/scores_jox4.json
+2026-08-22T12:45:43-04:00 compose done; paraphrase pass
+2026-08-22T12:45:56-04:00 building pack8
+  batch1: pair-01@sc-001, pair-02@sc-003, pair-03@sc-005, pair-04@sc-007
+  batch2: pair-05@sc-009, pair-06@sc-011, pair-07@sc-013, pair-08@sc-015
+  batch3: pair-09@sc-017, pair-10@sc-019, pair-11@sc-021, pair-12@sc-023
+
+12 pairing(s) over 12 anchors
+pack -> runs/eval_ox/pack8
+key  -> /home/deployer/eval_keys_ox/pack8_key  (never give this to a judge)
+2026-08-22T12:45:56-04:00 judging pack8
+12 pairing(s)
+  [5/12] ok
+  [10/12] ok
+  [12/12] ok
+jox1: 12 scored, 0 failed, 418s -> runs/eval_ox/pack8_scores/scores_jox1.json
+  [5/12] ok
+  [10/12] ok
+  [12/12] ok
+jox2: 12 scored, 0 failed, 402s -> runs/eval_ox/pack8_scores/scores_jox2.json
+  [5/12] ok
+  [10/12] ok
+  [12/12] ok
+jox3: 12 scored, 0 failed, 399s -> runs/eval_ox/pack8_scores/scores_jox3.json
+  [5/12] ok
+  [10/12] ok
+  [12/12] ok
+jox4: 12 scored, 0 failed, 416s -> runs/eval_ox/pack8_scores/scores_jox4.json
+2026-08-22T13:13:11-04:00 PACK8-DONE
+2026-08-22T15:09:25-04:00 pack9: waiting for compose
+  batch1: pair-01@sc-001, pair-02@sc-003, pair-03@sc-005, pair-04@sc-007
+  batch2: pair-05@sc-009, pair-06@sc-011, pair-07@sc-013, pair-08@sc-015
+  batch3: pair-09@sc-017, pair-10@sc-019, pair-11@sc-021, pair-12@sc-023
+
+12 pairing(s) over 12 anchors
+pack -> runs/eval_ox/pack9
+key  -> /home/deployer/eval_keys_ox/pack9_key  (never give this to a judge)
+12 pairing(s)
+  [5/12] ok
+  [10/12] ok
+  [12/12] ok
+jox1: 12 scored, 0 failed, 416s -> runs/eval_ox/pack9_scores/scores_jox1.json
+  [5/12] ok
+  [10/12] ok
+  [12/12] ok
+jox2: 12 scored, 0 failed, 410s -> runs/eval_ox/pack9_scores/scores_jox2.json
+  [5/12] ok
+  [10/12] ok
+  [12/12] ok
+jox3: 12 scored, 0 failed, 407s -> runs/eval_ox/pack9_scores/scores_jox3.json
+  [5/12] ok
+  [10/12] ok
+  [12/12] ok
+jox4: 12 scored, 0 failed, 414s -> runs/eval_ox/pack9_scores/scores_jox4.json
+2026-08-22T16:34:09-04:00 PACK9-DONE
+2026-08-22T17:18:41-04:00 pack10: waiting for compose
+12 pairing(s)
+  [5/12] ok
+  [10/12] ok
+  [12/12] ok
+jox1: 12 scored, 0 failed, 403s -> runs/eval_ox/pack10_scores/scores_jox1.json
+  [5/12] ok
+  [10/12] ok
+  [12/12] ok
+jox2: 12 scored, 0 failed, 389s -> runs/eval_ox/pack10_scores/scores_jox2.json
+  [5/12] ok
+  [10/12] ok
+  [12/12] ok
+jox3: 12 scored, 0 failed, 391s -> runs/eval_ox/pack10_scores/scores_jox3.json
+  [5/12] ok
+  [10/12] ok
+  [12/12] ok
+jox4: 12 scored, 0 failed, 403s -> runs/eval_ox/pack10_scores/scores_jox4.json
+2026-08-23T05:12:20-04:00 full: waiting for compose
+2026-08-23T07:08:09-04:00 meta: waiting for FULL-DONE
+2026-08-23T07:08:09-04:00 meta: building meta layer
+2026-08-23T07:09:34-04:00 meta: waiting for packfull8 scores
+2026-08-23T07:16:03-04:00 autopush: waiting for FULL-DONE
+2026-08-23T07:16:04-04:00 autopush: full results pushed
+2026-08-23T07:16:04-04:00 autopush: waiting for META-DONE
+2026-08-23T07:16:04-04:00 autopush: revising meta layer under the judge's feedback
+2026-08-23T07:17:11-04:00 autopush: waiting for full results
+2026-08-23T08:56:10-04:00 full: pack A vs build7_24 (23 anchors)
+  batch1: pair-01@sc-001, pair-02@sc-004, pair-03@sc-005, pair-04@sc-012, pair-05@sc-014, pair-06@sc-017, pair-07@sc-020, pair-08@sc-021
+  batch2: pair-09@sc-025, pair-10@sc-031, pair-11@sc-035, pair-12@sc-039, pair-13@sc-045, pair-14@sc-048, pair-15@sc-058, pair-16@sc-063
+  batch3: pair-17@sc-065, pair-18@sc-066, pair-19@sc-073, pair-20@sc-075, pair-21@sc-080, pair-22@sc-085, pair-23@sc-105
+
+23 pairing(s) over 23 anchors
+pack -> runs/eval_ox/packfull7
+key  -> /home/deployer/eval_keys_ox/packfull7_key  (never give this to a judge)
+23 pairing(s)
+  [5/23] ok
+  [10/23] ok
+  [15/23] ok
+  [20/23] ok
+  [23/23] ok
+jox1: 23 scored, 0 failed, 735s -> runs/eval_ox/packfull7_scores/scores_jox1.json
+  [5/23] ok
+  [10/23] ok
+  [15/23] ok
+  [20/23] ok
+  [23/23] ok
+jox2: 23 scored, 0 failed, 723s -> runs/eval_ox/packfull7_scores/scores_jox2.json
+  [5/23] ok
+  [10/23] ok
+  [15/23] ok
+  [20/23] ok
+  [23/23] ok
+jox3: 23 scored, 0 failed, 768s -> runs/eval_ox/packfull7_scores/scores_jox3.json
+  [5/23] ok
+  [10/23] ok
+  [15/23] ok
+  [20/23] ok
+  [23/23] ok
+jox4: 23 scored, 0 failed, 764s -> runs/eval_ox/packfull7_scores/scores_jox4.json
+2026-08-23T09:46:01-04:00 full: pack B vs build8
+  batch1: pair-01@sc-001, pair-02@sc-003, pair-03@sc-005, pair-04@sc-007
+  batch2: pair-05@sc-009, pair-06@sc-011, pair-07@sc-013, pair-08@sc-015
+  batch3: pair-09@sc-017, pair-10@sc-019, pair-11@sc-021, pair-12@sc-023
+
+12 pairing(s) over 12 anchors
+pack -> runs/eval_ox/packfull8
+key  -> /home/deployer/eval_keys_ox/packfull8_key  (never give this to a judge)
+12 pairing(s)
+  [5/12] ok
+  [10/12] ok
+  [12/12] ok
+jox1: 12 scored, 0 failed, 400s -> runs/eval_ox/packfull8_scores/scores_jox1.json
+  [5/12] ok
+  [10/12] ok
+  [12/12] ok
+jox2: 12 scored, 0 failed, 393s -> runs/eval_ox/packfull8_scores/scores_jox2.json
+  [5/12] ok
+  [10/12] ok
+  [12/12] ok
+jox3: 12 scored, 0 failed, 412s -> runs/eval_ox/packfull8_scores/scores_jox3.json
+  [5/12] ok
+  [10/12] ok
+  [12/12] ok
+jox4: 12 scored, 0 failed, 405s -> runs/eval_ox/packfull8_scores/scores_jox4.json
+2026-08-23T10:12:51-04:00 FULL-DONE
+2026-08-23T10:13:16-04:00 autopush: full results pushed
+2026-08-23T10:13:16-04:00 autopush: waiting for meta judgement
+2026-08-23T10:13:34-04:00 meta: building meta layer
+2026-08-23T10:18:26-04:00 meta: judging
+2026-08-23T10:18:53-04:00 META-DONE
+2026-08-23T10:19:19-04:00 autopush: revising meta layer under the judge's feedback
+2026-08-23T15:16:58-04:00 fix: re-judging meta v1 with evidence
+2026-08-23T15:17:14-04:00 fix: revising to build 2
+2026-08-23T15:24:42-04:00 fix: judging meta v2
+2026-08-23T15:25:26-04:00 METAFIX-DONE
+2026-08-24T06:11:21-04:00 PLOTS-DONE
+2026-08-24T17:03:07-04:00 sampler: sample v4
+2026-08-24T17:05:51-04:00 v4 pushed
+2026-08-24T17:05:51-04:00 sampler: sample v5
+2026-08-24T17:08:29-04:00 v5 pushed
+2026-08-24T17:08:29-04:00 sampler: sample v6
+2026-08-24T17:11:25-04:00 v6 pushed
+2026-08-24T17:11:25-04:00 sampler: sample v7
+2026-08-24T17:14:56-04:00 v7 pushed
+2026-08-24T17:14:56-04:00 sampler: sample v8
+2026-08-24T17:18:12-04:00 v8 pushed
+2026-08-24T17:18:12-04:00 SAMPLER-DONE

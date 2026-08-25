@@ -1,0 +1,42 @@
+{
+ "scene_id": "sc-186",
+ "location": "COCKPIT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Morpheus",
+  "Trinity",
+  "Tank"
+ ],
+ "summary": "Morpheus climbs into the cockpit and, seeing the sentinels on the hologram radar, orders Tank to charge the E.M.P. Trinity, alarmed, asks how long until they arrive and is told \"Five minutes. Maybe six.\" She protests that the E.M.P. cannot be used until Neo is out of the Matrix. Morpheus acknowledges this but refuses to fire early, reassuring Trinity that Neo is going to make it.",
+ "what_changes": [
+  {
+   "who": "Morpheus",
+   "axis": "knowledge",
+   "before": "Unaware of the immediate threat, he climbs into the cockpit.",
+   "after": "He sees the sentinels on the hologram radar and knows the ship is about to be attacked.",
+   "evidence": "On the hologram radar, he sees the sentinels."
+  },
+  {
+   "who": "Tank",
+   "axis": "condition",
+   "before": "The E.M.P. is not yet armed.",
+   "after": "He is ordered to charge the E.M.P. and confirms he is doing so.",
+   "evidence": "Morpheus lifts the headset. MORPHEUS Tank, charge the E.M.P."
+  },
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "She does not yet know the E.M.P. cannot be fired while Neo is still jacked in.",
+   "after": "She insists the weapon must wait until Neo is out, and Morpheus agrees but resolves to trust Neo will survive.",
+   "evidence": "TRINITY You can't use that until Neo is out!"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "With sentinels closing on the ship, Morpheus orders the E.M.P. charged but holds fire until Neo escapes the Matrix.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 63 words vs fixed 150"
+}

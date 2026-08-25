@@ -1,0 +1,125 @@
+{
+ "scene_id": "sc-153",
+ "location": "EXECUTIVE OFFICE",
+ "time_of_day": "DAY",
+ "present": [
+  "AGENT SMITH",
+  "AGENT BROWN",
+  "AGENT JONES",
+  "MORPHEUS"
+ ],
+ "summary": "Agent Smith stands at the window and asks Agent Brown why the serum isn't working; Brown suggests they may be asking the wrong questions. Smith, hiding a knotting fist and becoming angry — 'something that isn't supposed to happen to Agents' — orders Brown and Jones to leave him alone with Morpheus. After they exchange a look and exit at his sharp 'Now!', Smith sits beside the captive Morpheus and, removing his earphone to let it dangle, claims he will be honest. He confesses his hatred for the Matrix ('this zoo. This prison'), describing being saturated by its smell and fearing he has been 'infected by it.' He wipes sweat from Morpheus' forehead, coats his fingertips and holds them to Morpheus' nose, asking 'Repulsive, isn't it?' He lifts Morpheus' head tightly, declaring that this mind holds 'the key. My key,' and that once Zion is destroyed he won't need to remain. He demands the codes to get inside Zion: 'You are going to tell me or you are going to die,' squeezing his fingers into Morpheus' flesh.",
+ "what_changes": [
+  {
+   "who": "AGENT SMITH",
+   "axis": "condition",
+   "before": "A composed Agent performing an interrogation, puzzled only that the serum fails.",
+   "after": "An angry, disgusted being who feels 'infected' by the Matrix and desperate to escape it.",
+   "evidence": "Agent Smith hides his knotting fist.  He is becoming angry.  It is something that isn't supposed to happen to Agents."
+  },
+  {
+   "who": "AGENT SMITH",
+   "axis": "allegiance",
+   "before": "Acts within the Agent collective, flanked by Brown and Jones.",
+   "after": "Isolates himself from the other Agents to pursue a private goal of getting out.",
+   "evidence": "AGENT SMITH Leave me with him. AGENT SMITH Now! They leave and Agent Smith sits beside Morpheus."
+  },
+  {
+   "who": "MORPHEUS",
+   "axis": "custody",
+   "before": "Held under interrogation by the Agents generally, with the serum failing.",
+   "after": "Held alone by Smith, who physically assaults him and threatens death to force out Zion's codes.",
+   "evidence": "He begins squeezing, his fingers gouging into his flesh. AGENT SMITH You are going to tell me or you are going to die."
+  }
+ ],
+ "event_hint": {
+  "kind": "interrogation",
+  "one_line": "A rogue-leaning Agent Smith, repulsed by the Matrix, interrogates the captive Morpheus for the codes to Zion.",
+  "continues_from_earlier": false
+ },
+ "objects_that_matter": [
+  "the serum",
+  "earphone",
+  "the codes",
+  "Zion"
+ ],
+ "uncertain": [
+  "Whether Morpheus will yield the codes.",
+  "What 'the key' in Morpheus's mind specifically refers to beyond Smith calling it 'My key.'",
+  "Whether Brown's 'wrong questions' is genuine insight or mere speculation."
+ ],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "AGENT SMITH",
+   "wants": "The Zion codes — the one thing Morpheus can give him that buys his exit. More precisely: he wants to stop being trapped inside the Matrix, and Morpheus's mind is the tool ('My key') he intends to use to that end.",
+   "feels": "Revulsion and dread at his own condition. He experiences the Matrix as a physical contamination ('I feel saturated by it... I fear that I've somehow been infected by it'), and the loss of his composure — anger, disgust — terrifies him because it is 'something that isn't supposed to happen to Agents.' Under the loathing is a being coming unglued from his function.",
+   "shows": "First, bureaucratic coldness with Brown and Jones, then a calculated performance of candor with Morpheus ('I'm going to be honest with you'), framed as a confession between two creatures who both despise this world. He lets the disgust show — the sweat on the fingers, 'Repulsive, isn't it?' — as if inviting Morpheus to share it, then reveals the coercion underneath ('You are going to tell me or you are going to die').",
+   "basis": "He hides his knotting fist from his fellow Agents (a concealment), then dismisses them ('Leave me with him' / 'Now!') to be alone with Morpheus. He removes his earphone — a deliberate, visible signal of dropping the Agent channel. His monologue is saturated with sensory disgust and the word 'infected,' and he names Morpheus's mind 'the key. My key,' before escalating to physical torture and a death threat.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "MORPHEUS",
+     "belief": "That Morpheus is a lock to be opened — 'the key' — and that pain plus the threat of death will make him talk. He believes the captive is fundamentally breakable and that this transaction (codes for continued existence, or death) is one he controls.",
+     "wrong_because": "He is misreading what he is up against: Morpheus has already withstood the serum, and this is a man who will sneer through torture rather than yield. Smith also believes he is simply using Morpheus, when in fact his need to escape has already driven him to break the Agent protocol that defines him."
+    },
+    {
+     "other": "AGENT BROWN",
+     "belief": "That Brown is a colleague who can be managed with a dismissal, and that Brown's 'Perhaps we are asking the wrong questions' is either harmless or an intrusion to be shut down.",
+     "wrong_because": "Brown's line is the only other voice in the room registering that Smith's method is failing — and Smith's anger at it suggests he senses, and refuses, the implication that the failure is his."
+    }
+   ]
+  },
+  {
+   "who": "AGENT BROWN",
+   "wants": "To solve the interrogation's failure — to get the codes by whatever means works — while preserving the smooth functioning of the Agent unit.",
+   "feels": "A cool, analytical distance from the problem, but also a dawning wariness. His suggestion that they're 'asking the wrong questions' is both a real hypothesis and a probe of Smith, whose composure he is clearly watching closely.",
+   "shows": "Calm, understated rationality. He offers a reframe rather than a challenge, then — when Smith's anger surfaces and he's dismissed — he doesn't argue. He and Jones simply exchange a look before obeying.",
+   "basis": "His only line is the reframe ('Perhaps we are asking the wrong questions'). The text notes 'Agents Brown and Jones look at each other' in response to Smith's dismissal — a silent, shared communication. He leaves without protest at Smith's 'Now!'",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "AGENT SMITH",
+     "belief": "That Smith is still the composed lead Agent, momentarily frustrated, and that the 'look' with Jones need not escalate into concern. He treats Smith's anger as a manageable aberration.",
+     "wrong_because": "He underestimates how far Smith has already slipped — Smith isn't just frustrated, he's becoming something that 'isn't supposed to happen to Agents,' and by isolating himself from the collective he's moving toward a private agenda Brown can't yet see."
+    }
+   ]
+  },
+  {
+   "who": "MORPHEUS",
+   "wants": "To hold the line — to give the Agents nothing, because the codes are the last thing standing between Zion and destruction.",
+   "feels": "Pain, and a contempt for Smith that is almost serene. He registers Smith's disgust not as a shared truth but as something to be turned back on him — his sneer is a small, defiant assertion that he is not broken.",
+   "shows": "Very little, physically — he is bound and being tortured. What he does show is the sneer ('Morpheus sneers through his pain'), refusing to give Smith the satisfaction of yielding or of shared commiseration.",
+   "basis": "He is the silent, captive center of the scene; his only action is the sneer through pain, and he never answers Smith's rhetorical questions. This follows his having already resisted the serum, and the scene ends with Smith threatening death rather than Morpheus capitulating.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "AGENT SMITH",
+     "belief": "That Smith is a torturer to be endured and outlasted — that his revulsion and his 'confession' are just another interrogation technique, and that the right response is to give him nothing.",
+     "wrong_because": "He may not yet grasp that Smith is not merely doing a job but is himself coming apart — that this Agent hates the system he serves and sees Morpheus as his personal exit. That makes Smith more dangerous, not less, but also more volatile and less predictable than a standard interrogator."
+    }
+   ]
+  },
+  {
+   "who": "AGENT JONES",
+   "wants": "To remain a functional part of the unit and defer to Smith's lead on the interrogation.",
+   "feels": "Watchful but subordinate — present, absorbing Smith's deterioration without comment, and letting Brown do the talking.",
+   "shows": "Silence, and a shared look with Brown when dismissed. He obeys without question.",
+   "basis": "Jones has no lines in this scene; his presence is registered only in the collective framing ('Agents Brown and Jones look at each other') and his exit at Smith's command. He is the silent second witness to Smith's crack.",
+   "grounding": "in_this_scene",
+   "believes_about": []
+  }
+ ],
+ "connects_back": [
+  "The failed serum established in this scene's opening question ('Why isn't the serum working?') — the interrogation method from the event has stopped working, which is what triggers Smith's isolation and escalation.",
+  "Smith's knotting fist and anger continue the composure-crack noted in the event shape: the Agent is losing his mask, first from his fellow Agents and then from Morpheus.",
+  "The 'wrong questions' reframe by Brown responds directly to the serum's failure and implicitly to Smith's increasingly personal, non-collective investment in the outcome."
+ ],
+ "sets_up": [
+  "ev-026: Neo's insistence on rescuing Morpheus gains urgency because Smith has now made clear that Morpheus will be tortured to death for the Zion codes — there is a hard deadline on getting him out.",
+  "ev-028: The helicopter rescue is necessitated by Smith being alone with Morpheus and physically assaulting him; Smith's isolation of the prisoner is what the rescue must penetrate.",
+  "ev-030 / ev-031: Smith's personal, emotional investment ('My key,' his need to escape) lays the groundwork for his later, singular pursuit of Neo in the subway — he is no longer operating purely as a collective Agent.",
+  "The threat 'You are going to tell me or you are going to die' sets the stakes that Morpheus must refuse, keeping Zion's codes out of Smith's hands and forcing the physical rescue."
+ ],
+ "dramatic_function": "This scene converts the interrogation from a procedural obstacle into a character revelation: it exposes Smith as a being who hates his own reality and is breaking free of the Agent collective, while simultaneously raising the stakes for the heroes by making Morpheus's captivity lethal and time-sensitive. It is the pivot from 'the Agents are holding Morpheus' to 'a rogue, desperate Smith will kill him for the codes,' which is what forces Neo's rescue decision."
+}

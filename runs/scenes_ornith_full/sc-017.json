@@ -1,0 +1,135 @@
+{
+ "scene_id": "sc-017",
+ "location": "NEO'S CUBICLE",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Neo",
+  "FEDERAL EXPRESS GUY",
+  "VOICE",
+  "MORPHEUS",
+  "Agent Smith",
+  "Agent Brown",
+  "Agent Jones",
+  "cops",
+  "a female employee",
+  "another employee"
+ ],
+ "summary": "A Federal Express Guy delivers a softpak to Neo at his cubicle; inside is a cellular phone that rings the instant Neo holds it. On the line is Morpheus, who has been looking for Neo and warns that 'they're coming for you,' urging Neo to stand and see. Neo peeks over the partition and spots Agent Smith, Agent Brown and Agent Jones leading a group of cops toward him, and a female employee points out his cubicle, so he ducks. Guided by Morpheus's voice, Neo lunges into an empty cubicle across the hall just as the Agents turn into his row, then crams himself into a dark corner clutching the phone. The Agents enter his empty cubicle and send a cop to search the bathroom while Morpheus keeps him low and quiet. When Morpheus instructs him to move to the end of the row, Neo rolls out and freezes directly behind a cop who has just turned around, then sneaks down the row and shoots across the opening to the first office on the left.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Receiving an ordinary delivery, unaware of any threat.",
+   "after": "Learns from Morpheus that people are coming for him and sees the Agents leading cops toward his cubicle.",
+   "evidence": "\"They're coming for you, Neo. And I'm not sure what they're going to do.\""
+  },
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "Exposed at his cubicle door, signing for the package in the open.",
+   "after": "Hidden in a dark corner, then forced to move while concealed, freezing behind a cop.",
+   "evidence": "\"Neo crams himself into a dark corner, clutching the phone tightly to him.\""
+  },
+  {
+   "who": "Neo",
+   "axis": "trust",
+   "before": "Startled and unnerved, unsure who is on the phone.",
+   "after": "Follows Morpheus's instructions exactly under pressure, acting on each command.",
+   "evidence": "\"Go! Now!\" Neo lunges across the hall, diving into the other cubicle just as the Agents turn into his row."
+  }
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Agents and cops raid Neo's office to seize him, and Morpheus guides his escape by phone.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether Neo actually reaches the first office on the left or is caught after the scene ends.",
+  "What the Agents intend to do to Neo beyond Morpheus's uncertainty.",
+  "Whether the female employee who points out the cubicle is acting knowingly or incidentally."
+ ],
+ "_mind_pass": "ran: 452 words vs fixed 150",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To survive the closing raid by doing exactly what Morpheus says, since he has no plan of his own.",
+   "feels": "A fast spike from unnerved to terror — knees giving, sweat, eyes popping — underlaid by the shock that the mythic voice from the phone is real and that his ordinary workday has turned into a manhunt. He is frightened but, crucially, compliant.",
+   "shows": "Startled professionalism at the delivery, then obedience: standing slowly, ducking, lunging on 'Go!', cramming into a corner, freezing, sneaking. He keeps his panic mostly silent, venting only in hushed exclamations.",
+   "basis": "He 'sinks into his chair' when he names Morpheus, asks 'Who's coming for me?!' and 'How?!', then executes each command precisely ('Go! Now!' → he lunges; 'Now.' → he rolls out). Sweat and 'eyes popping' betray the fear he doesn't voice.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "This unseen voice is a protector who can guide him out and is worth obeying under fire.",
+     "wrong_because": "Not wrong yet in this scene, but the event shape shows Morpheus cannot actually prevent Neo's capture — the raid ends with Neo seized and interrogated — so Neo's trust outruns Morpheus's control here."
+    },
+    {
+     "other": "The Agents and cops",
+     "belief": "They are ordinary authority figures (like Rhineheart) coming to reprimand or arrest him for something he did.",
+     "wrong_because": "He still frames them inside his hacker-vs-the-system worldview; he does not yet know they are programs who can alter reality and his own body, which ev-003 will demonstrate."
+    }
+   ]
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To extract Neo from the building before the Agents reach him, using voice-command control of a panicked novice.",
+   "feels": "Compressed urgency — he has 'run out of time' — married to a disciplined calm; he is reading the whole floor like a board and issuing moves a beat ahead of the threat. Under the steadiness is a gamble on someone he isn't sure is ready.",
+   "shows": "Only a voice: low, unhurried, imperative. He times Neo's standing ('Do it slowly'), times the dodge ('A little longer...'), and commits him with single words ('Go!', 'Now.'). No visible fear leaks through.",
+   "basis": "His lines are all calibration and timing against the Agents' movement; he withholds reassurance ('I'm not sure what they're going to do') to keep Neo moving rather than comforting him.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo may not be 'ready to see,' but he will follow instructions closely enough to be guided out.",
+     "wrong_because": "The guidance works in this scene, yet ev-003 shows Neo will be caught anyway — the window escape fails — so Morpheus's confidence in a clean extraction is at least partly misplaced."
+    },
+    {
+     "other": "The Agents",
+     "belief": "They will sweep the obvious cubicle and can be evaded by staying low and moving between beats.",
+     "wrong_because": "He underestimates how thoroughly the Agents will corner Neo (they reach him at ev-003); the calm tactical frame can't fully account for their reach."
+    }
+   ]
+  },
+  {
+   "who": "Agent Smith",
+   "wants": "To close on and seize the target (Anderson) with methodical certainty, delegating the search rather than scrambling.",
+   "feels": "Cold, unhurried possession of the space — he treats the capture as a foregone conclusion, moving the cops as pieces. There is no chase-anxiety, only the patience of something that expects to win.",
+   "shows": "Leading the group, entering Neo's empty cubicle, dispatching a cop to the bathroom; no raised voice, no visible reaction to the near-miss. His control is the scene's counterweight to Morpheus's.",
+   "basis": "He is named leading the cops and entering the cubicle as the organizing presence while others do the searching; his calm delegation contrasts with a frantic raid.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Anderson is a contained, catchable fugitive trapped in a honeycomb with no exit.",
+     "wrong_because": "He is right that he will take Neo (ev-003), but wrong that the cubicle maze contains him — Neo slips past and nearly escapes, and ultimately will not stay caught at all."
+    }
+   ]
+  },
+  {
+   "who": "The female employee",
+   "wants": "To be helpful / to answer the authority figures' implicit question by identifying the target's location.",
+   "feels": "Either unthinking compliance with authority or a knowing betrayal — the scene won't say, and that ambiguity is the point. Either way she treats Neo as a problem to be handed over.",
+   "shows": "A single gesture: turning and pointing out Neo's cubicle, then receding into the honeycomb. No explanation, no visible conflict.",
+   "basis": "She 'turns and points out Neo's cubicle' to the Agents/cops, directly enabling the raid to home in; the facts flag her intent as genuinely uncertain.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "He is a troublemaker the authorities are entitled to, so pointing him out is the correct, unremarkable thing to do.",
+     "wrong_because": "She cannot know he is 'The One' or that the 'authorities' are programs; she has categorized him inside the system's logic, which the whole story is about to overturn."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "Rhineheart's sc-016 ultimatum ('be at your desk on time... or find yourself another job') is undercut in the same breath: the authority that arrives for Neo is not his boss but Agents, escalating the 'problem with authority' theme into a life-and-death register.",
+  "The honeycomb office (sc-015) and Neo's alienation at his desk (staring at window cleaners in sc-016) pay off as the very maze he must now hide inside and escape through.",
+  "The cellular phone package is the payoff of the mysterious contact thread; Neo's immediate trust in Morpheus's voice builds on the pull he's felt toward that world."
+ ],
+ "sets_up": [
+  "ev-003: Neo's failed escape and capture — the raid this scene launches ends with him seized, so his near-miss here makes the capture a genuine close call rather than a foregone grab.",
+  "ev-003: Agent Smith's interrogation — Smith's calm certainty here foreshadows the 'dual identity' revelation and the physical silencing he will impose.",
+  "ev-004 onward: Neo's willingness to follow Morpheus blindly, proven under fire here, is what lets him later accept 'The One' and take the red pill."
+ ],
+ "dramatic_function": "To convert Neo from a curious, half-drawn doubter into an active fugitive who must trust an invisible guide, while introducing the Agents as an implacable, orderly force — the story's ordinary-reality thread (a reprimand at work) detonates into the real conflict and locks Neo onto the path that ends in capture and, beyond it, awakening."
+}

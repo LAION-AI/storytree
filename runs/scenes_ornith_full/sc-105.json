@@ -1,0 +1,28 @@
+{
+ "scene_id": "sc-105",
+ "location": "HOTEL LAFAYETTE",
+ "time_of_day": "DAY",
+ "present": [
+  "the police"
+ ],
+ "summary": "Inside the Hotel Lafayette in daylight, flashlights probe the rotting darkness as the police search every floor of the building.",
+ "what_changes": [
+  {
+   "who": "the police",
+   "axis": "custody",
+   "before": "closing in on the fugitives elsewhere in the building",
+   "after": "actively searching every floor of the Hotel Lafayette",
+   "evidence": "Flashlights probe the rotting darkness as the police search every floor."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "The police sweep through the Hotel Lafayette, flashlights probing the darkness floor by floor."
+ },
+ "uncertain": [
+  "Whether the police know the fugitives are still inside",
+  "Whether this search is happening simultaneously with Morpheus's call to Tank"
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 16 words vs fixed 150"
+}

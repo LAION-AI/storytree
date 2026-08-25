@@ -1,0 +1,41 @@
+{
+ "scene_id": "sc-144",
+ "location": "GOVERNMENT BUILDING",
+ "time_of_day": "DAY",
+ "present": [
+  "Agent Jones",
+  "Marines"
+ ],
+ "summary": "At a government highrise in the middle of downtown, a military helicopter sets down on the roof. Agent Jones gets out of the helicopter, flanked by columns of Marines. They open the roof access door and enter the top floor maintenance level of the hotel.",
+ "what_changes": [
+  {
+   "who": "Agent Jones",
+   "axis": "custody",
+   "before": "Arriving at the government highrise by military helicopter.",
+   "after": "Disembarking onto the roof, flanked by columns of Marines.",
+   "evidence": "Agent Jones gets out of the helicopter, flanked by columns of Marines."
+  },
+  {
+   "who": "Agent Jones and the Marines",
+   "axis": "custody",
+   "before": "Standing on the roof after landing.",
+   "after": "Moving inside, entering the top floor maintenance level of the hotel.",
+   "evidence": "They open the roof access door and enter the top floor maintenance level of the hotel."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Agent Jones arrives with Marines at a government building and moves inside.",
+  "continues_from_earlier": false
+ },
+ "objects_that_matter": [
+  "military helicopter",
+  "roof access door"
+ ],
+ "uncertain": [
+  "Whether the Marines are real military or constructs of the Matrix.",
+  "What Agent Jones's objective is inside the maintenance level."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 50 words vs fixed 150"
+}

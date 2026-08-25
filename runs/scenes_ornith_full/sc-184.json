@@ -1,0 +1,108 @@
+{
+ "scene_id": "sc-184",
+ "location": "SUBWAY STATION",
+ "time_of_day": "DAY",
+ "present": [
+  "Agent Smith",
+  "Neo",
+  "TRAIN"
+ ],
+ "summary": "Agent Smith overpowers Neo, hurling him against the tunnel wall near the electrified third-rail, then drop-kicks him on the tracks as a train approaches. Smith pins Neo in a choke-hold, forcing him to face the oncoming headlight while declaring it is the sound of his death. Choking and unable to breathe, Neo refuses to accept death, asserting his identity, and impossibly hurls himself upward to smash Smith against the tunnel ceiling. As the train explodes into the station, Neo backflips off the tracks and the train barrels over Smith. Neo stands, knees shaking, and begins to run for the escalator as the train slams its emergency brake; the last car's doors open and Agent Smith bursts out in pursuit, glasses intact.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "Overpowered and pinned; Agent Smith grabs hold of him, lifting him into the air, hurling him against the curved wall of the train tunnel, where he falls inches from the electrified third-rail.",
+   "after": "Temporarily free and mobile; Neo backflips up off the tracks... Neo stands, knees shaking... Neo turns, limping, starting to run, racing for the escalator.",
+   "evidence": "Impossibly, he hurls himself straight up, smashing Smith against the concrete ceiling of the tunnel."
+  },
+  {
+   "who": "Neo",
+   "axis": "resolve",
+   "before": "Choked and resigned to death; Neo is unable to breathe. Agent Smith: Good-bye, Mr. Anderson.",
+   "after": "Reclaims his will to live and his identity; He is not ready to die. NEO: My name is Neo.",
+   "evidence": "He is not ready to die. NEO: My name is Neo."
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "condition",
+   "before": "Dominant and in control; Agent Smith tightens his hold, declaring the train the sound of Neo's death.",
+   "after": "Struck by the train but surviving; Agent Smith bursts out in furious pursuit, his glasses again intact.",
+   "evidence": "The train barrels over Agent Smith."
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Agent Smith nearly kills Neo beside the tracks, but Neo breaks free just as a train runs Smith down; the chase resumes when Smith survives and bursts from the train.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "electrified third-rail",
+  "oncoming TRAIN",
+  "escalator",
+  "Agent Smith's glasses"
+ ],
+ "uncertain": [],
+ "_mind_pass": "ran: 322 words vs fixed 150",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To stop being killed — to survive this train and reject the death Smith is forcing on him.",
+   "feels": "Terror at the inevitability bearing down, but underneath it a refusal that has only just caught up with the power in him; the belief Morpheus named ('he's beginning to believe') is now converting into actual will, and that is what makes the impossible leap possible.",
+   "shows": "Gritted pain, bulging veins, then a flat, self-naming declaration — 'My name is Neo' — and a body that obeys it.",
+   "basis": "The scene marks the turn explicitly: 'He is not ready to die.' His reclaiming of identity ('My name is Neo,' not 'Mr. Anderson') precedes the impossible upward hurl. sc-181 established 'He's beginning to believe,' and sc-183 shows his real body dying, so this is the moment his conviction overrides physical doom.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Agent Smith",
+     "belief": "That Smith is an unstoppable force whose 'inevitability' is real and final.",
+     "wrong_because": "The very act of throwing Smith into the ceiling disproves it: Smith's certainty is a claim, not a law, and Neo has just bent it."
+    },
+    {
+     "other": "Agent Smith",
+     "belief": "That Smith is finished once the train barrels over him.",
+     "wrong_because": "Smith bursts from the last car, glasses intact — Neo's belief that the train ended him is about to be shattered, which is why Neo is running rather than standing."
+    }
+   ]
+  },
+  {
+   "who": "Agent Smith",
+   "wants": "To make Neo watch his own death arrive and then to end him — to convert the abstract 'inevitability' he serves into a personal, witnessed fact.",
+   "feels": "Rage carried over from sc-182 (the smile that 'falls' into warping fury when his gun clicks empty), now disciplined into a cold, ceremonial cruelty; he is genuinely certain, which is why the choke-hold is a performance of finality rather than a struggle.",
+   "shows": "Machine-calm narration of the oncoming train, the intimate 'Good-bye, Mr. Anderson,' and the controlled tightening of the hold — dominance presented as inevitability rather than effort.",
+   "basis": "He frames the train as 'the sound of inevitability... your death,' and uses the choke-hold to force Neo to look at the headlight — staging, not just killing. sc-182 shows his calm is a mask over rage, and his use of 'Mr. Anderson' is a deliberate denial of Neo's identity.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo is 'Mr. Anderson' — a nameable, categorizable anomaly whose death is a foregone administrative conclusion.",
+     "wrong_because": "Neo's 'My name is Neo' is immediately followed by a physically impossible act; Smith's categorizing certainty is exactly what blinds him to what Neo is becoming."
+    },
+    {
+     "other": "Neo",
+     "belief": "That he has won — that the train will complete what the choke-hold began.",
+     "wrong_because": "Neo backflips free and Smith is the one struck; Smith's fury on bursting out shows his belief in his own victory was premature."
+    }
+   ]
+  },
+  {
+   "who": "TRAIN",
+   "wants": "N/A — no legible inner life; it is an instrument both men read meaning into.",
+   "feels": "N/A",
+   "shows": "N/A",
+   "basis": "The scene gives the train no reaction or intention; it is an object both characters project onto (Smith: 'inevitability'; Neo: the thing he refuses). Per instruction, no mind is invented to fill the field.",
+   "grounding": "in_this_scene"
+  }
+ ],
+ "connects_back": [
+  "sc-181: Morpheus's 'He's beginning to believe' — this is the scene where belief becomes will and produces the physically impossible.",
+  "sc-182: Smith's fury after the empty-gun stalemate and his loss of glasses — the rage that now drives the 'enjoy watching you die' cruelty, and the identity-denial of 'Mr. Anderson.'",
+  "sc-183: Trinity watching Neo's real body jerk and cough blood — the physical death underway that makes Neo's refusal to die a defiance of two deaths at once."
+ ],
+ "sets_up": [
+  "ev-034: Neo's survival here keeps him alive to flee into the hotel, be shot by Smith, and die — the resurrection arc requires that he first, here, choose not to die.",
+  "ev-034: Smith's survival (bursting from the train, glasses intact) establishes him as an unstoppable pursuer who cannot be killed by conventional means, forcing Neo into flight rather than continued combat.",
+  "The resumed chase makes the hotel-hallway ambush and shooting in ev-034 possible: Smith is back on his feet and hunting."
+ ],
+ "dramatic_function": "It is the story's hinge from victimhood to agency: Neo's refusal to accept the death Smith has authored converts nascent belief into real power, while Smith's survival re-establishes him as an unkillable threat — so the scene both crowns Neo's awakening and immediately reopens the chase that will carry him toward his death and resurrection."
+}

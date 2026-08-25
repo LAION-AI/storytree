@@ -1,0 +1,34 @@
+{
+ "scene_id": "sc-006",
+ "location": "HALL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Agent Brown",
+  "another unit of police"
+ ],
+ "summary": "Trinity bursts out of a room into the hall just as Agent Brown enters, leading another unit of police. She immediately races to the opposite end of the hall and exits through a broken window onto the fire escape, fleeing the agents and police who have just arrived.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "safety",
+   "before": "Inside the building, briefly clear of pursuit after the fight.",
+   "after": "Escaping through a broken window onto the fire escape as Agent Brown and police arrive.",
+   "evidence": "She bursts out of the room as Agent Brown enters the hall, leading another unit of police. Trinity races to the opposite end, exiting through a broken window onto the fire escape."
+  }
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "Trinity flees through the hall onto the fire escape as Agent Brown leads police into the building."
+ },
+ "objects_that_matter": [
+  "broken window",
+  "fire escape"
+ ],
+ "uncertain": [
+  "Whether the police see Trinity before she exits through the window.",
+  "The time of day."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 34 words vs fixed 150"
+}

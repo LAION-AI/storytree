@@ -1,0 +1,27 @@
+{
+ "scene_id": "sc-126",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Cypher"
+ ],
+ "summary": "Tank is again at the monitors, searching the Matrix, when the phone rings. He answers it with the word \"Operator.\" A voice over the line, Cypher, urgently demands an exit, shouting \"I need an exit!  Fast!\" Tank recognizes the caller and responds with his name, \"Cypher?\"",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "knowledge",
+   "before": "Searching the Matrix alone at the monitors, unaware of who is contacting him",
+   "after": "Recognizes the caller on the phone as Cypher",
+   "evidence": "TANK\nOperator.\nCYPHER (V.O.)\nI need an exit!  Fast!\nTANK\nCypher?"
+  }
+ ],
+ "event_hint": {
+  "kind": "a communication",
+  "one_line": "Cypher calls Tank at the main deck demanding a fast exit, and Tank recognizes him.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 27 words vs fixed 150"
+}

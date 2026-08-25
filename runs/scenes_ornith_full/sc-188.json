@@ -1,0 +1,26 @@
+{
+ "scene_id": "sc-188",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "TANK",
+  "NEO"
+ ],
+ "summary": "Inside the hovercraft, Tank answers an incoming call by identifying himself as 'Operator.' The voice on the other end is Neo, who—speaking from within the Matrix—demands an immediate exit, shouting 'Mr. Wizard, get me the hell out of here!' The scene is a brief radio exchange connecting Tank in the real world with Neo, who is fleeing and reaching out for extraction.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "condition",
+   "before": "Out of contact, running and unaccounted for after the others lost him.",
+   "after": "Back in contact and actively calling for rescue from inside the Matrix.",
+   "evidence": "NEO (V.O.)\nOperator.\nTANK\nOperator.\nNEO (V.O.)\nMr. Wizard, get me the hell out of\nhere!"
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Neo phones the hovercraft mid-flight to demand extraction while Agents pursue him.",
+  "continues_from_earlier": true
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 17 words vs fixed 150"
+}

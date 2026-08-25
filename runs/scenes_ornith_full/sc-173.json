@@ -1,0 +1,36 @@
+{
+ "scene_id": "sc-173",
+ "location": "ROOFTOP",
+ "time_of_day": "DAY",
+ "present": [
+  "AGENT SMITH",
+  "AGENT BROWN",
+  "AGENT JONES"
+ ],
+ "summary": "The three Agents charge out onto the rooftop through the roof access door, which slams open — but Neo, Trinity and Morpheus are already gone. Agent Smith curses. Agent Brown reports that the trace was completed and Agent Jones that they have their position; Brown adds that Sentinels are standing by, and Jones orders the strike. Smith, unable to stand listening to them, moves to the edge of the building and looks out at the city, saying the targets are not out yet.",
+ "what_changes": [
+  {
+   "who": "AGENT SMITH",
+   "axis": "condition",
+   "before": "Charging out with the others in pursuit, expecting to catch the fugitives.",
+   "after": "Frustrated and apart from the others, unable to stand listening to them, looking out at the city.",
+   "evidence": "Agent Smith can't stand listening to them.  He moves to the edge of the building, looking out at the surrounding city."
+  },
+  {
+   "who": "AGENT JONES",
+   "axis": "standing",
+   "before": "Having only the completed trace and the fugitives' position.",
+   "after": "In command, ordering the Sentinel strike.",
+   "evidence": "AGENT JONES Order the strike."
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "The Agents arrive too late on the rooftop and switch to ordering a Sentinel strike on the fugitives' traced position."
+ },
+ "uncertain": [
+  "Whether the strike is actually carried out or whether Neo, Trinity and Morpheus escape it."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 83 words vs fixed 150"
+}

@@ -1,0 +1,29 @@
+{
+ "scene_id": "sc-099",
+ "location": "STAIRS",
+ "time_of_day": "DAY",
+ "present": [
+  "Morpheus",
+  "Mouse"
+ ],
+ "summary": "On the stairs during the day, Morpheus stops in his tracks as Mouse's scream is overwhelmed and silenced by the sound of machine gun fire, indicating Mouse is being attacked.",
+ "what_changes": [
+  {
+   "who": "Mouse",
+   "axis": "condition",
+   "before": "screaming and alive",
+   "after": "overwhelmed by gunfire, presumed under attack",
+   "evidence": "Mouse's SCREAM is drowned out by the report of MACHINE GUN FIRE"
+  }
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "The agents' assault overtakes Mouse as gunfire drowns his scream."
+ },
+ "uncertain": [
+  "Whether Mouse survives the gunfire.",
+  "Why Morpheus is on the stairs and whether he can reach Mouse."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 19 words vs fixed 150"
+}

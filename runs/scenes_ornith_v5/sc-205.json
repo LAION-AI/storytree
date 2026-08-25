@@ -1,0 +1,38 @@
+{
+ "scene_id": "sc-205",
+ "location": "ALLEY",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Agents Brown and Jones"
+ ],
+ "summary": "In an alley in daylight, Neo scrambles up a fire escape while bullets spark and ricochet around him, as Agents Brown and Jones close the gap behind him.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "On the ground in the alley under fire from the Agents.",
+   "after": "Scrambling up the fire escape, gaining height while bullets spark and ricochet around him.",
+   "evidence": "Neo scrambles up the fire escape, BULLETS SPARKING and RICOCHETING around him"
+  },
+  {
+   "who": "Agents Brown and Jones",
+   "axis": "standing",
+   "before": "Pursuing Neo from a distance.",
+   "after": "Closing the gap on him as they chase him up the alley.",
+   "evidence": "as Agents Brown and Jones close the gap."
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Neo flees up a fire escape under gunfire as the Agents close in.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "fire escape",
+  "bullets"
+ ],
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 0 speaker(s), 24w — no exchange to read"
+}

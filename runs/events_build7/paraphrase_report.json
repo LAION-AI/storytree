@@ -1,0 +1,32 @@
+[
+ {
+  "path": "/summary",
+  "outcome": "1 span(s) elided",
+  "words": 10,
+  "role": "action",
+  "before": "An overwhelming sound presses in on Neo until it resolves into a mundane alarm clock waking him late at 9:15 A.M. The scene shifts to the downtown office of Met",
+  "after": "An overwhelming sound presses in on Neo until it resolves into a mundane alarm clock waking him late at 9:15 A.M. The scene shifts to the downtown office of Met",
+  "file": "events.json",
+  "node": "ev-005"
+ },
+ {
+  "path": "/state_triples[1]/registers/knowledge/exit",
+  "outcome": "1 span(s) rewritten",
+  "words": 10,
+  "role": "action",
+  "before": "Identified as the downtown office of Meta CorTechs, a software development company.",
+  "after": "Identified as the downtown headquarters of Meta CorTechs, a software development firm.",
+  "file": "events.json",
+  "node": "ev-005"
+ },
+ {
+  "path": "/carried_uncertainty[1]/what",
+  "outcome": "1 span(s) rewritten",
+  "words": 8,
+  "role": "action",
+  "before": "What the Agents specifically intend to do to Neo, since Morpheus says 'I'm not sure what they're going to do.'",
+  "after": "What the Agents specifically intend to do to Neo, since Morpheus says 'I have no idea what their plans are.'",
+  "file": "events.json",
+  "node": "ev-006"
+ }
+]

@@ -1,0 +1,37 @@
+{
+ "scene_id": "sc-010",
+ "location": "BACK STAIRWELL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Agent Brown"
+ ],
+ "summary": "Trinity crashes through a window with an explosion of glass and wood and falls onto a back stairwell, tumbling and bouncing down the stairs bleeding and broken but still alive. She wheels on the smashed opening above with her gun instantly in her hand, trained and waiting for Agent Brown, but is met only by a slight wind hissing against the broken glass. Trinity tries to move and everything hurts; she tells herself to get up, insisting she is fine, then stands and limps down the rest of the stairs.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "She crashes with an EXPLOSION of GLASS and WOOD, then falls onto a back stairwell, tumbling, bouncing down stairs bleeding, broken --",
+   "after": "She stands and limps down the rest of the stairs.",
+   "evidence": "She stands and limps down the rest of the stairs."
+  },
+  {
+   "who": "Trinity",
+   "axis": "safety",
+   "before": "her gun instantly in her hand, trained, waiting for Agent Brown",
+   "after": "but is met by only a slight WIND that HISSES against the fanged maw of broken glass.",
+   "evidence": "trained, waiting for Agent Brown but is met by only a slight WIND that HISSES against the fanged maw of broken glass."
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Trinity survives a fall through a window during the rooftop pursuit and keeps moving down the stairwell.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "her gun"
+ ],
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 92 words vs fixed 150"
+}

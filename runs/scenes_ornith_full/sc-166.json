@@ -1,0 +1,120 @@
+{
+ "scene_id": "sc-166",
+ "location": "EXECUTIVE OFFICE",
+ "time_of_day": "DAY",
+ "present": [
+  "Agent Jones",
+  "Agent Smith",
+  "Agent Brown",
+  "Neo",
+  "Morpheus"
+ ],
+ "summary": "Agent Jones throws open the door and wades through puddles pooling in the carpet as alarms sound and water rushes. Agent Smith, hearing the sound, understands the seriousness of the attack and turns to a wall of windows just as a helicopter drops into view, with Neo in the back bay aiming a mounted .50 machine gun. Agent Smith says \"No.\" The gun fires and bullets explode through the window in crashing glass while the Agents go for their weapons. Neo is too close and the .50 caliber too fast, perforating the room. Agent Jones is hit first, jack-knifing back with blood arcing out in a flash of light; then Agent Brown, still firing, falls; and finally Agent Smith. After the three fall, Neo stares at Morpheus and shouts at him to get up, then grabs a climbing rope and attaches one end to his harness.",
+ "what_changes": [
+  {
+   "who": "Agent Jones, Agent Brown, Agent Smith",
+   "axis": "condition",
+   "before": "Armed Agents who go for their weapons against the helicopter assault.",
+   "after": "All three are shot and destroyed by the .50 caliber fire.",
+   "evidence": "Agent Jones is hit first, his body jack-knifing back, blood arcing out with a sudden flash of light -- Then Agent Brown, his GUN still FIRING as his body falls. And finally Agent Smith."
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Attacking from the helicopter, focused on eliminating the Agents.",
+   "after": "Turns his attention to the downed Morpheus, urgently willing him to rise and preparing a climbing rope to move him.",
+   "evidence": "Neo stares at Morpheus, trying to will him into action. NEO Get up, Morpheus! Get up! Neo grabs the climbing rope and attaches one end to his harness."
+  }
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Neo gunship-strikes the Executive Office from a helicopter, kills the three Agents, and moves to rescue Morpheus."
+ },
+ "objects_that_matter": [
+  "mounted .50 machine gun",
+  "wall of windows",
+  "climbing rope",
+  "harness",
+  "the Agents' weapons"
+ ],
+ "_mind_pass": "ran: 170 words vs fixed 150",
+ "minds": [
+  {
+   "who": "Agent Smith",
+   "wants": "To register and name the threat the instant he comprehends it, asserting control through recognition.",
+   "feels": "The cold, precise comprehension of a system recognizing an existential breach — the helicopter is not just an attack but an impossibility, the rescued Morpheus becoming an active rescuer. There is genuine calculation beneath the single word.",
+   "shows": "A single flat 'No.' — denial, refusal, and assessment compressed into one syllable before he turns toward the window.",
+   "basis": "The summary states Smith 'hearing the sound, understands the seriousness of the attack' and only then says 'No' as the helicopter drops into view. The word is timed to comprehension, not to surprise.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo remains a manageable variable — dangerous but ultimately containable within the rules of their world.",
+     "wrong_because": "Neo has just learned to move as the Agents move (sc-163) and now commands the very machines of the Matrix; Smith underestimates how far past 'only human' Neo has crossed, and this miscalculation costs him his current form."
+    }
+   ]
+  },
+  {
+   "who": "Agent Jones",
+   "wants": "To reassert physical dominance and terminate the intrusion, as he has done repeatedly.",
+   "feels": "The residual arrogance of the rooftop — he was a breath from killing Neo moments ago ('Only human...') and now, reconstituted as the pilot, expects to re-establish control. The suddenness of his destruction leaves no time for recalibration.",
+   "shows": "He goes for his weapon alongside the others, the same reflexive lethal response, and is hit first — jack-knifing back before any adjustment is possible.",
+   "basis": "In sc-163 Jones had Neo at gunpoint and pronounced him 'Only human,' then dissolved into the pilot (same scene) to reappear here throwing open the door. He is shot first here, the continuity of his overconfidence intact.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo is prey — the man he nearly executed on the roof.",
+     "wrong_because": "The man he dismissed as 'only human' now commands a helicopter gunship and kills him before he can fire. His belief is not merely outdated but lethally inverted."
+    }
+   ]
+  },
+  {
+   "who": "Agent Brown",
+   "wants": "To return fire and hold position against the assault.",
+   "feels": "The disciplined reflex of an Agent under attack — no comprehension of scale, only the procedural response: draw, fire, neutralize. He dies mid-action, still firing, which is the signature of an Agent who never grasps that procedure has become obsolete.",
+   "shows": "His gun is still firing as his body falls — the last visible act is pure function, no hesitation, no realization.",
+   "basis": "The text specifies Brown falls 'his GUN still FIRING,' indicating he never stopped executing the combat protocol even as he was destroyed.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That this is a conventional engagement winnable by superior firepower and coordination.",
+     "wrong_because": "The .50 caliber at close range makes their weapons irrelevant; Brown's continued firing is proof he never updated his assessment before death."
+    }
+   ]
+  },
+  {
+   "who": "Neo",
+   "wants": "To reach and extract Morpheus — the entire assault is instrumental to this single objective.",
+   "feels": "A ferocious, focused urgency that has fully converted fear (sc-163: 'Trinity! Help.') into decisive, overwhelming action. The man who moments ago was nearly killed now commands annihilation, and the shift is total rather than triumphant — his attention snaps instantly from killing to saving.",
+   "shows": "Methodical, merciless fire that clears the room of Agents, then an immediate pivot: staring at Morpheus, shouting 'Get up,' and rigging the climbing rope. The violence and the tenderness are the same drive.",
+   "basis": "In sc-163 Neo was on the ground begging for help; here he delivers the assault and, the instant the Agents fall, 'stares at Morpheus, trying to will him into action' and prepares the rope. The rescue, not the kill, is where his mind lands.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus is still reachable — that a shouted command can pull him back from whatever the Agents did to him.",
+     "wrong_because": "Morpheus does not respond to the shouting; Neo's belief that willpower alone will rouse him is immediately disproven, forcing Neo to physically descend and seize him."
+    },
+    {
+     "other": "The Agents",
+     "belief": "That concentrated overwhelming force can end them.",
+     "wrong_because": "Neo does not yet know Agents reconstitute into other bodies/forms (Jones just became the pilot in sc-163); destroying these three bodies ends an encounter, not the threat."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-163: Neo learning to move as the Agents move — the rooftop near-death that seeds his new capability and his shift from prey to predator.",
+  "sc-163: Agent Jones dissolving into the helicopter pilot, explaining his re-entry here by throwing open the door.",
+  "sc-164/sc-165: Trinity loading the helicopter pilot program, which makes the aerial assault in this scene possible.",
+  "ev-037: The lobby assault established Neo and Trinity's lethal momentum moving up through the building toward Morpheus."
+ ],
+ "sets_up": [
+  "Neo's physical descent by rope to reach and carry the unresponsive Morpheus out of the building.",
+  "The confrontation with Agents who will return in new forms, having learned these bodies are not permanent kills.",
+  "The escape from the building with a rescued-but-incapacitated Morpheus, requiring others to extract them."
+ ],
+ "dramatic_function": "This scene is the story's pivot from victim to agent: it converts Neo's rooftop terror into decisive, overwhelming power, executes the spectacular 'impossible rescue' of Morpheus, and simultaneously demonstrates both how far Neo has ascended and how much he still does not understand about the enemy he is now willing to annihilate for the man he came to save."
+}

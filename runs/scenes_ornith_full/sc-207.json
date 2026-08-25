@@ -1,0 +1,27 @@
+{
+ "scene_id": "sc-207",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "TANK",
+  "TRINITY"
+ ],
+ "summary": "On the main deck, another SYSTEM ALARM SOUNDS, signaling escalating danger. TANK reports the worsening situation — 'They've burned through the outer hull.' — meaning the attackers are now penetrating deeper than before. TRINITY responds by urging Neo onward: 'Hurry, Neo.' The scene is a brief exchange of status and pressure as the threat closes in.",
+ "what_changes": [
+  {
+   "who": "TANK / TRINITY",
+   "axis": "safety",
+   "before": "The outer hull was still holding against the attackers.",
+   "after": "The attackers have 'burned through the outer hull', so the breach has worsened and danger is closer.",
+   "evidence": "Another SYSTEM ALARM SOUNDS. TANK They've burned through the outer hull."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "As attackers break through the outer hull, the crew feels the pressure mount and urges Neo to move faster.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 17 words vs fixed 150"
+}

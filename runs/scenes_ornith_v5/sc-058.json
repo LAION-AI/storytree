@@ -1,0 +1,31 @@
+{
+ "scene_id": "sc-058",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Apoc",
+  "Switch",
+  "Tank"
+ ],
+ "summary": "Inside the hovercraft, Apoc and Switch exchange looks with each other as Tank grabs for the disk.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "custody",
+   "before": "The disk is not yet in anyone's hands.",
+   "after": "Tank grabs for the disk, moving to seize it.",
+   "evidence": "Apoc and Switch exchange looks as Tank grabs for the disk."
+  }
+ ],
+ "event_hint": {
+  "kind": "a grab for an object",
+  "one_line": "Tank grabs for the disk as Apoc and Switch exchange looks."
+ },
+ "uncertain": [
+  "Whether Tank successfully takes the disk or is stopped.",
+  "What the exchanged looks between Apoc and Switch mean.",
+  "Whose disk it was before Tank grabbed for it."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 0 speaker(s), 13w — no exchange to read"
+}

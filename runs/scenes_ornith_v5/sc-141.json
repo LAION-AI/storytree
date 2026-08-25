@@ -1,0 +1,190 @@
+{
+ "scene_id": "sc-141",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "CYPHER",
+  "TRINITY",
+  "APOC",
+  "SWITCH",
+  "NEO",
+  "TANK",
+  "MORPHEUS"
+ ],
+ "summary": "Cypher, wearing Tank's operator headgear, stands over the crew jacked into the Matrix and reveals he has betrayed them. He tells Trinity he is 'tired of this war' and of Morpheus, then taunts the unconscious Morpheus. Trinity realizes 'You gave them Morpheus.' Cypher defends his choice of the Matrix over freedom, arguing 'the Matrix can be more real than this world.' He murders Apoc by yanking the cable from his neck, then Switch, despite Trinity's pleas. He explains the Agents 'promised to take me back' so he can 'go back to sleep and when I wake up, I'll be fat and rich.' He then stands over Neo, testing whether Neo is the One by threatening to pull his plug, demanding Trinity answer 'yes or no' whether she believed Morpheus. Trinity whispers 'yes,' and at that moment Tank — charred and bloody — levels a gun and fires 'a CRACKLING BOLT of LIGHTNING' that knocks Cypher flying.",
+ "what_changes": [
+  {
+   "who": "TRINITY",
+   "axis": "knowledge",
+   "before": "Confused about the dead crew and Cypher's presence, asking 'You killed them.'",
+   "after": "Understands Cypher has betrayed Morpheus to the enemy: 'My God. Morpheus. You gave them Morpheus.'",
+   "evidence": "TRINITY: My God.  Morpheus.  You gave them Morpheus."
+  },
+  {
+   "who": "APOC",
+   "axis": "condition",
+   "before": "Alive and conscious, reacting to the revelation with 'What?!'",
+   "after": "Dead, murdered when Cypher pulls his plug: 'He grabs hold of the cable in Apoc's neck, twists it and yanks it out.'",
+   "evidence": "He grabs hold of the cable in Apoc's neck, twists it and yanks it out."
+  },
+  {
+   "who": "SWITCH",
+   "axis": "condition",
+   "before": "Alive, pleading 'Not like this.  Not like this.'",
+   "after": "Dead: 'She suddenly feels her body severed from her mind as she is murdered.'",
+   "evidence": "She suddenly feels her body severed from her mind as she is murdered."
+  },
+  {
+   "who": "CYPHER",
+   "axis": "allegiance",
+   "before": "Pretending loyalty as a crew member",
+   "after": "Openly aligned with the Matrix/Agents, choosing to return: 'If I have to choose between that and the Matrix, I choose the Matrix.'",
+   "evidence": "If I have to choose between that and the Matrix, I choose the Matrix."
+  },
+  {
+   "who": "CYPHER",
+   "axis": "standing",
+   "before": "In control, mocking Neo's potential saviour status",
+   "after": "Struck down mid-speech by Tank's lightning bolt: 'He FIRES a CRACKLING BOLT of LIGHTNING that knocks Cypher flying backwards.'",
+   "evidence": "He FIRES a CRACKLING BOLT of LIGHTNING that knocks Cypher flying backwards."
+  },
+  {
+   "who": "TANK",
+   "axis": "condition",
+   "before": "Presumed dead ('He had an accident')",
+   "after": "Alive and armed, intervening to stop Cypher: 'Charred and bloody, Tank levels the gun.'",
+   "evidence": "Charred and bloody, Tank levels the gun."
+  },
+  {
+   "who": "TRINITY",
+   "axis": "resolve",
+   "before": "Defending the truth of freedom against Cypher: 'The Matrix isn't real!'",
+   "after": "Affirms belief in Neo as the One, answering Cypher's demand: '... yes.'",
+   "evidence": "Trinity stares at Neo as a single word falls soundlessly from her lips."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid / betrayal",
+  "one_line": "Cypher murders the jacked-in crew to cut a deal with the Machines, only to be shot down by a surviving Tank at the last moment.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "Tank's operator headgear",
+  "the plug cables in the crew's necks",
+  "the gun that fires lightning",
+  "Trinity's body hanging in coma-like stillness",
+  "the silent bodies of the crew"
+ ],
+ "uncertain": [
+  "Whether Morpheus is physically present on the deck or only referred to as jacked in elsewhere.",
+  "Whether Cypher survives the lightning bolt.",
+  "Whether Tank is truly unharmed beyond being 'charred and bloody.'"
+ ],
+ "_mind_pass": "ran: 5 speakers — an exchange",
+ "minds": [
+  {
+   "who": "CYPHER",
+   "wants": "To complete his betrayal cleanly — kill the crew, collect his reward of being reinserted into the Matrix — while savoring the vindication of being proven right about Morpheus.",
+   "feels": "A deep, exhausted resentment that has curdled into something pleasurable now that he holds power over the people he resented. His weariness ('tired of this war') is genuine, but it has converted into cruelty rather than mere defeat.",
+   "shows": "Smug, theatrical confidence. He nuzzles the unconscious Trinity, mocks Morpheus with 'Surprise, asshole,' laughs about the 'American dream,' and performs a leisurely, taunting control.",
+   "basis": "He delivers a long monologue of grievances ('tired of this ship, of being cold, of eating the same goddamn goop') and frames murder as philosophy ('there, you have to watch a man die'). He calls Morpheus a 'jagoff' and savors imagining Morpheus's torture. His belief about Neo drives the climax: 'If Neo is the One, then in the next few seconds there has to be some kind of miracle to stop me.'",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "MORPHEUS",
+     "belief": "That Morpheus lied and tricked the crew into servitude, that freedom under him is a con.",
+     "wrong_because": "Morpheus's prophecy about the One is about to be vindicated by Neo (Trinity's 'yes' plus Tank's intervention), and Morpheus's leadership evidently inspires genuine loyalty — Trinity defends him, Neo and Trinity will risk everything to rescue him."
+    },
+    {
+     "other": "NEO",
+     "belief": "That Neo is not the One and therefore cannot be saved — that pulling his plug will prove the prophecy false.",
+     "wrong_because": "This is the fatal miscalculation: his own taunt ('some kind of miracle to stop me') is answered by Tank's lightning bolt at the last instant. He is wrong about Neo's protected status."
+    },
+    {
+     "other": "TRINITY",
+     "belief": "That she can be coerced into admitting Morpheus's prophecy was 'bullshit,' and that her belief is shaky enough to break.",
+     "wrong_because": "Trinity answers 'yes' — she holds the belief firmly even under the threat of Neo's death."
+    },
+    {
+     "other": "TANK",
+     "belief": "That Tank is dead ('He had an accident'), removing the last obstacle to his plan.",
+     "wrong_because": "Tank is alive, charred and armed, and is the one who kills him."
+    }
+   ]
+  },
+  {
+   "who": "TRINITY",
+   "wants": "To stop the killings and save the crew — first by reasoning with Cypher, then by pleading — and finally to hold to the truth under his coercion.",
+   "feels": "Horrified comprehension dawning into terror. She moves from confusion ('You killed them') to the sick realization about Morpheus ('My God. Morpheus. You gave them Morpheus'), then into helpless pleading as her crewmates are murdered one by one.",
+   "shows": "She argues ('He set us free,' 'The Matrix isn't real!'), pleads ('Oh no, please don't'), curses him ('Goddamn you, Cypher!'), and finally, under direct threat to Neo, whispers 'yes.'",
+   "basis": "Her arc across the scene: recognizing the betrayal, defending Morpheus, begging for Switch's life, and then the single word 'yes' that falls 'soundlessly' as she stares at Neo — the answer Cypher demanded about whether she believed Morpheus.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "CYPHER",
+     "belief": "That he cannot go back — 'you're out, Cypher. You can't go back' — that his deal is impossible.",
+     "wrong_because": "Cypher reveals the Agents have 'promised to take me back,' to reinsert his body; her belief about the mechanics of his betrayal is mistaken (though the audience is left whether the Machines would honor it)."
+    },
+    {
+     "other": "NEO",
+     "belief": "That he is the One — affirmed in her whispered 'yes' even as Cypher threatens his life.",
+     "wrong_because": "Not shown to be wrong in this scene; rather, it is the belief she stakes against Cypher's coercion."
+    }
+   ]
+  },
+  {
+   "who": "APOC",
+   "wants": "To understand what is happening and, in his last instant, to reach Trinity for safety.",
+   "feels": "Dawning dread — from shocked protest ('What?!') to vulnerable confusion, calling out 'Trinity?' as he realizes he is the target.",
+   "shows": "Only brief vocal reactions ('What?!', 'Trinity?') before he is murdered; his death is described physically ('a scream caught in his throat, his hands reaching for nothing').",
+   "basis": "His two lines and the stage direction that Trinity 'looks up at Apoc, her face going white' mark him as the first victim; his 'Trinity?' is a plea toward her just before Cypher yanks his plug.",
+   "grounding": "in_this_scene",
+   "believes_about": []
+  },
+  {
+   "who": "SWITCH",
+   "wants": "To be spared a death like this — to die with some dignity rather than murdered in her chair.",
+   "feels": "Terror mixed with a specific plea about the manner of her death.",
+   "shows": "A single repeated protest — 'Not like this. Not like this.' — before she is murdered.",
+   "basis": "Her only lines are 'Not like this. Not like this,' spoken as Cypher takes hold of her plug and Trinity's eyes meet hers ('she knows she's next').",
+   "grounding": "in_this_scene",
+   "believes_about": []
+  },
+  {
+   "who": "TANK",
+   "wants": "To stop Cypher before he kills Neo — and to avenge Dozer (whose body he stepped over in sc-139) and the murdered crew.",
+   "feels": "Fury and survival — having survived whatever 'accident' Cypher inflicted (he was reported as having 'an accident' in sc-140), he arrives wounded ('charred and bloody') and ready to kill.",
+   "shows": "Silent action: he levels the gun and fires 'a CRACKLING BOLT of LIGHTNING,' announcing himself only with 'Believe it or not, you piece of shit, you're still going to burn.'",
+   "basis": "Sc-139 shows Cypher stepping over Tank's brother Dozer's sizzling body; sc-140 reports Tank 'had an accident' (a lie). Here he appears 'charred and bloody' and armed, intervening at the exact moment Cypher is about to kill Neo — the 'miracle' Cypher mocked.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "CYPHER",
+     "belief": "That Cypher is a traitor who must be stopped and will burn for it.",
+     "wrong_because": "Not shown to be wrong; his assessment of Cypher is accurate."
+    }
+   ]
+  },
+  {
+   "who": "NEO",
+   "wants": "Nothing he can act on — he is unconscious, jacked in, entirely at Cypher's mercy.",
+   "feels": "Nothing legible: he is comatose throughout, the object over which the others struggle.",
+   "shows": "Nothing — his body is inert; the scene uses him as the focal threat, not an agent.",
+   "basis": "He is referred to only as the body Cypher stands over ('He stands over Neo,' 'Look into his eyes, Trinity'); he has no lines and no action. Trinity's eyes are 'wide with fear' toward him but he does not react.",
+   "grounding": "in_this_scene",
+   "believes_about": []
+  }
+ ],
+ "connects_back": [
+  "Sc-140: Cypher's lie that Tank 'had an accident' — the deception that lets Cypher believe the deck is clear, which this scene's reveal of a living Tank overturns.",
+  "Sc-139: Cypher stepping over Dozer's sizzling body establishes the violence already done and that Tank/Dozer were his first victims.",
+  "The earlier phone calls (sc-138/140) in which Trinity and Neo left the Matrix, leaving the deck's crew defenseless and jacked in — the condition that makes the massacre possible.",
+  "Morpheus's prophecy of the One, which the crew has been debating and which Cypher now tries to disprove by killing Neo."
+ ],
+ "sets_up": [
+  "Cypher's elimination leaves only Neo and Trinity (and the wounded Tank) aboard — clearing the crew to re-enter the Matrix to rescue Morpheus (ev-026).",
+  "The confirmation of Neo as the One (Trinity's 'yes' surviving the test, and the 'miracle' of Tank's intervention) sets the crew's faith that Neo can bring Morpheus back.",
+  "Morpheus remaining in Agent custody (Cypher having 'given them Morpheus') directly enables the interrogation and the rescue mission (ev-025, ev-028)."
+ ],
+ "dramatic_function": "This is the betrayal's payoff and the story's darkest turn: it converts Cypher's private treachery into public, irreversible loss (Apoc and Switch dead, Morpheus captured), while staging a philosophical argument about reality versus comfort so the film's central theme is fought over as people die. It also functions as the false-ending trap — Cypher's taunt about a 'miracle' is answered by Tank's survival, restoring the crew's fighting chance and reconfirming Neo as the One at the moment all seemed lost."
+}

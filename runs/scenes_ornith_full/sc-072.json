@@ -1,0 +1,28 @@
+{
+ "scene_id": "sc-072",
+ "location": "HALL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Everyone"
+ ],
+ "summary": "In the hall of the ship, the environment is quiet and dark, and everyone is asleep.",
+ "what_changes": [
+  {
+   "who": "Everyone",
+   "axis": "condition",
+   "before": "Awake and active elsewhere on the ship",
+   "after": "Asleep in the quiet, dark hall",
+   "evidence": "The ship is quiet and dark.  Everyone is asleep."
+  }
+ ],
+ "event_hint": {
+  "kind": "a lull",
+  "one_line": "The ship settles into quiet darkness as the crew sleeps."
+ },
+ "uncertain": [
+  "Whether this follows immediately after the Sentinel has passed in the neighbouring scenes.",
+  "Who exactly comprises 'everyone' in the hall."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 11 words vs fixed 150"
+}

@@ -1,0 +1,25 @@
+{
+ "scene_id": "sc-110",
+ "location": "STAIRWELL",
+ "time_of_day": "DAY",
+ "present": [
+  "Agent Brown"
+ ],
+ "summary": "In the stairwell, Agent Brown listens to his earpiece, receiving information through it while standing there.",
+ "what_changes": [
+  {
+   "who": "Agent Brown",
+   "axis": "knowledge",
+   "before": "Not yet receiving communication through his earpiece",
+   "after": "Listening to his earpiece, taking in information",
+   "evidence": "Agent Brown listens to his earpiece."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "An agent receives word through his earpiece during the building sweep.",
+  "continues_from_earlier": true
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 10 words vs fixed 150"
+}

@@ -1,0 +1,31 @@
+{
+ "scene_id": "sc-115",
+ "location": "HALL",
+ "time_of_day": "DAY",
+ "present": [
+  "Agent Brown",
+  "Agent Smith"
+ ],
+ "summary": "In the hall, Agent Brown and Agent Smith stand over Morpheus's jacket. Agent Brown demands, \"Where are they?\" The two agents have found Morpheus's abandoned jacket but not Morpheus himself, and Brown voices the immediate question of the fugitives' whereabouts.",
+ "what_changes": [
+  {
+   "who": "Agent Brown",
+   "axis": "knowledge",
+   "before": "Standing over Morpheus's jacket without its owner present",
+   "after": "Demanding to know where the fugitives are",
+   "evidence": "Agent Brown and Agent Smith stand over Morpheus's jacket. AGENT BROWN Where are they?"
+  }
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Agents reach an empty hall and demand the fugitives' location.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether Agent Smith speaks or responds.",
+  "Whether anyone answers Brown's question.",
+  "Where the fugitives actually are."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 18 words vs fixed 150"
+}

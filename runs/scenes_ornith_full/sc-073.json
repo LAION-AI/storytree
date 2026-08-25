@@ -1,0 +1,97 @@
+{
+ "scene_id": "sc-073",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Cypher",
+  "Neo"
+ ],
+ "summary": "Neo comes up behind Cypher at the operator's chair on the main deck, startling him. Cypher shows Neo the monitors displaying the Matrix as encoded data, explaining that the brain learns to translate it. Cypher pours a homemade alcohol Dozer makes and they drink; Neo nearly chokes. Cypher confirms Neo was told he is here to save the world, then reveals Morpheus has believed he found the One before — five times since Cypher arrived — and that all five predecessors are dead, killed after Morpheus got them believing, each dying against an Agent. Cypher advises Neo to run from Agents. Neo thanks him for the drink and leaves for the ladder as Cypher wishes him sweet dreams.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Fascinated by the screens and unaware of what Morpheus told him implies for others like him.",
+   "after": "Learns that Morpheus has believed he found the One before and that all five predecessors died.",
+   "evidence": "this ain't the first time Morpheus thought he found the One. ... Five. Since I've been here. ... Dead. All dead."
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Sober, curious, stepping closer to the screens.",
+   "after": "Red-faced, coughing, and gulping down shots of harsh alcohol.",
+   "evidence": "it almost kills him. ... Red-faced, Neo finally stops coughing. ... Neo gulps down another shot."
+  },
+  {
+   "who": "Cypher",
+   "axis": "trust",
+   "before": "Startled and guarded when Neo sneaks up.",
+   "after": "Confides a secret in Neo, explicitly asking him not to tell Morpheus.",
+   "evidence": "I'm going to let you in on a little secret here. Now don't tell him I told you this"
+  }
+ ],
+ "event_hint": {
+  "kind": "a quiet conversation",
+  "one_line": "Cypher, drinking on the main deck, initiates Neo into the ship's dark history of false Ones and warns him about Agents.",
+  "continues_from_earlier": false
+ },
+ "uncertain": [
+  "Whether Cypher's friendliness is genuine or manipulative — the text only shows him being confiding.",
+  "How much Neo already knew about the previous Ones before Cypher tells him."
+ ],
+ "_mind_pass": "ran: 453 words vs fixed 150",
+ "minds": [
+  {
+   "who": "Cypher",
+   "wants": "To recruit Neo into his private disillusionment — to have the 'One' hear from an insider that the prophecy is a death sentence, so that Cypher's own cynicism gets validated and, ideally, Neo stops believing too.",
+   "feels": "Bitter, resigned, and lonely in his knowledge. He has watched five young true-believers die, and his contempt for Morpheus ('amp up believing in bullshit') is really grief he's armoured over. The drink is his coping mechanism; the confession is his way of spreading the weight of it.",
+   "shows": "Easy, avuncular, conspiratorial camaraderie — the 'little secret,' the back-slap, the shared grumbling about the blue pill. He performs the role of the seasoned crewmate welcoming the new guy.",
+   "basis": "He stages the whole exchange as a bonding ritual (pouring drinks, 'I know what you're thinking,' 'don't tell him I told you'), then pivots from small talk about the screens directly into undermining Morpheus's central claim. The secrecy clause ('don't tell him') signals he's not just chatting — he's working an angle against Morpheus. His advice to run from Agents reads as someone who has stopped believing survival is worth anything, yet warns Neo anyway.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus is a dangerous zealot who 'amps people up' on a lie and gets them killed — a fanatic, not a prophet.",
+     "wrong_because": "Cypher frames Morpheus's faith as the cause of the deaths, but the story he tells actually shows the candidates dying against Agents regardless — the faith may be what keeps the crew going ('Maybe it keeps all of us going'), which he half-admits, undercutting his own certainty."
+    },
+    {
+     "other": "Neo",
+     "belief": "That Neo is a fresh, impressionable true-believer he can inoculate against Morpheus's prophecy — a peer-in-the-making.",
+     "wrong_because": "He assumes Neo is buying the 'save the world' line and needs deprogramming. But Neo is quiet, watchful, and 'unsure' rather than fervent — Cypher is arguing against a conviction Neo may not actually hold yet, misreading his silence as belief."
+    }
+   ]
+  },
+  {
+   "who": "Neo",
+   "wants": "To understand this world and his place in it — to get his bearings among people who claim he's something he doesn't feel he is.",
+   "feels": "Overwhelmed and out of his depth: dazzled by the screens, physically floored by the liquor, and now quietly shaken by the news that he is the sixth in a line of dead men. The coughing fit is the body's honest reaction to all of it at once.",
+   "shows": "Curiosity and politeness — he asks questions, nods, accepts the drink, says 'thanks.' He lets himself look rattled (red-faced, coughing) but keeps engaging rather than retreating, even as the news lands.",
+   "basis": "His eyes 'light up' at the data; he asks 'Is that...?' and 'Do you always look at it encoded?' — genuine hunger to learn. When Cypher raises the previous Ones, Neo drives the interrogation himself ('How many?', 'What happened?', 'How?'), and his 'Really?' is flat, not triumphant. He looks 'down at his drink' rather than rising to Cypher's 'save the world' provocation.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Cypher",
+     "belief": "That Cypher is a plain-spoken, sympathetic ally giving him the straight dope that others won't — a trustworthy insider.",
+     "wrong_because": "He has no way yet to know Cypher is steering him toward despair and is himself the ship's future betrayer. He takes the 'little secret' as a gift of friendship, not yet as a maneuver."
+    },
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus's certainty about him is singular and special — that he is uniquely chosen.",
+     "wrong_because": "Cypher just told him he is the sixth; the 'specialness' Neo may have half-absorbed is actually a repeating pattern, and the cost of Morpheus's certainty is death. This belief is being dismantled in real time."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "The frozen, silent terror of hiding from the Sentinel (sc-071/sc-070) — the sudden mortal stakes of the real world — makes Cypher's 'run from an Agent' warning land with immediate force rather than as abstract lore.",
+  "The ship's power-down and near-death brush give the crew (and Neo) a reason to be awake, wired, and talking in the dark main deck.",
+  "Morpheus's restraint of Neo ('Don't move, it'll hear you') in sc-071 reinforces the theme of fear and obedience that Cypher now reframes as 'run your ass off.'"
+ ],
+ "sets_up": [
+  "ev-018: Cypher's regret for leaving the Matrix and his turn toward betrayal — this conversation is the seed of his resentment and his later deal.",
+  "ev-021: Neo questioning Morpheus's certainty at the Oracle's building, given the deaths of five previous candidates — Cypher has just handed Neo the exact doubt he will voice.",
+  "ev-023: Cypher killing Dozer and shooting Tank — the 'little secret' against Morpheus and the contempt for the mission shown here foreshadow his violent rejection of the crew.",
+  "Neo's hardened, less-naive stance toward the prophecy as the crew moves toward the Oracle."
+ ],
+ "dramatic_function": "This is the corruption-of-innocence scene in miniature: it takes the wonder of the previous scene and injects doubt, reframing the prophecy as a graveyard and installing the audience's dread of Cypher beneath a surface of warmth. It converts the abstract 'One' myth into mortal cost, arms Neo with a dangerous idea, and plants the betrayal that the outline promises, all under the cover of a friendly drink."
+}

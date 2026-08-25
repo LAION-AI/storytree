@@ -1,0 +1,103 @@
+{
+ "scene_id": "sc-162",
+ "location": "EXECUTIVE OFFICE",
+ "time_of_day": "DAY",
+ "present": [
+  "AGENT JONES",
+  "AGENT BROWN",
+  "AGENT SMITH"
+ ],
+ "summary": "In the executive office, the three Agents hear fire alarms blast and feel explosions thundering through the building, with emergency sprinklers beginning to shower the room. Brown recognizes that 'they are actually attacking.' Smith reacts violently, smashing a table, and commands the others to 'Find them and destroy them!' Jones acknowledges the order by nodding and touching his earpiece, presumably to coordinate the search.",
+ "what_changes": [
+  {
+   "who": "AGENT SMITH",
+   "axis": "resolve",
+   "before": "Reacting to the attack on the building",
+   "after": "Issues an aggressive command to hunt down and kill the intruders",
+   "evidence": "Agent Smith smashes a table. AGENT SMITH Find them and destroy them!"
+  },
+  {
+   "who": "AGENT JONES",
+   "axis": "action",
+   "before": "Listening to Smith's command",
+   "after": "Moves to execute the order by communicating through his earpiece",
+   "evidence": "AGENT SMITH Find them and destroy them! Agent Jones nods and touches his earpiece."
+  },
+  {
+   "who": "AGENT BROWN",
+   "axis": "knowledge",
+   "before": "Hearing the alarms without full understanding",
+   "after": "Recognizes the intruders are actively attacking the building",
+   "evidence": "AGENT BROWN They are actually attacking."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "The Agents respond to Neo and Trinity's assault on the building by mobilizing to hunt them down.",
+  "continues_from_earlier": true
+ },
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "AGENT SMITH",
+   "wants": "To convert the shock of the attack into immediate, total retaliation — to end the ambiguity of pursuit and issue a kill order.",
+   "feels": "The violence has crossed from intrusion into open war, and something in Smith experiences that escalation as personal. The table-smashing is not tactical; it is the one moment an Agent's composure cracks into physical fury. He feels the insult of being attacked inside the system he embodies.",
+   "shows": "Pure command — 'Find them and destroy them!' — delivered as clean authority. He lets only the smashed table betray that the order cost him his calm.",
+   "basis": "The stage direction 'Agent Smith smashes a table' precedes his line, the only Agent given a physical outburst. His command is the loudest and most absolute of the scene. In sc-159 he was already the one framing the intruders' intent ('I think they're trying to save him'), so the attack confirms a personal adversary he has been tracking.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "AGENT BROWN",
+     "belief": "That Brown's observation is merely a status report to be acted on, not a competing interpretation.",
+     "wrong_because": "Brown has actually reached the same conclusion independently and is registering the strategic reality, not waiting for Smith to tell him what it means."
+    },
+    {
+     "other": "AGENT JONES",
+     "belief": "That Jones's nod is simple obedience to a command.",
+     "wrong_because": "Jones has already begun his own read of the situation (sc-159) and is coordinating independently through the earpiece, not merely receiving orders."
+    }
+   ]
+  },
+  {
+   "who": "AGENT BROWN",
+   "wants": "To name the reality accurately before anyone acts — to establish what is actually happening rather than react to noise.",
+   "feels": "A cold, analytical recalibration. The explosions are not accidents or isolated incidents; they resolve into a pattern — 'actually attacking' — and Brown feels the shift from suspicion to certainty. He is the one who understands before anyone gives an order.",
+   "shows": "A single declarative sentence, flat and diagnostic. He shows comprehension, not alarm, and lets Smith take the emotional lead while he supplies the assessment.",
+   "basis": "His line 'They are actually attacking' is a recognition statement, not a reaction — the word 'actually' marks a correction of a prior underestimation. He speaks before the second explosion, before Smith's outburst, positioning him as the first to correctly read the escalation. In sc-159 the Agents were still guessing at intent; Brown is the one who closes that gap.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "AGENT SMITH",
+     "belief": "That Smith's violent command is the appropriate and controlled response to a confirmed attack.",
+     "wrong_because": "Smith's response is partly personal fury disguised as command; Brown reads it as pure tactical authority and does not see the crack in Smith's composure."
+    }
+   ]
+  },
+  {
+   "who": "AGENT JONES",
+   "wants": "To translate the order into coordinated action before the intruders can complete whatever they are doing.",
+   "feels": "Operational focus. While Smith feels and Brown assesses, Jones moves — he is already reaching for the mechanism (the earpiece) that turns a command into a building-wide search. He feels no need to verbalize because his function is execution, not interpretation.",
+   "shows": "A nod and a touch to the earpiece — minimal, efficient, the least expressive of the three. He shows only compliance and the beginning of coordination.",
+   "basis": "He opens the scene mid-report ('Lower level --'), already tracking where the disturbance originates, and closes it by activating his earpiece — the only Agent given an action that extends beyond the room. His arc in the scene is from observation to execution.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "AGENT SMITH",
+     "belief": "That the command 'Find them and destroy them' is an order he is receiving and executing.",
+     "wrong_because": "Jones was already independently tracking the threat ('Lower level --') before Smith spoke; he is converging on the same objective, not simply obeying."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-159, where Jones and Smith were still trying to interpret the intruders' intent ('I think they're trying to save him') — this scene is the answer to that uncertainty.",
+  "sc-160–161, Neo and Trinity's cable-snap and the elevator explosion in the lobby — the physical assault the Agents are now hearing and feeling from the executive office.",
+  "The rescue of Morpheus (ev-028): the building is under attack precisely because Morpheus is being extracted, which the Agents in sc-159 had already begun to suspect."
+ ],
+ "sets_up": [
+  "ev-029: the Agents charging out onto the roof to discover their quarry has already escaped — the hunt Smith orders here is what carries them there.",
+  "ev-030: the subway pursuit and Trinity's rescue — the mobilization begun in this office extends into the chase for the escapees.",
+  "ev-031 and ev-034: Smith's singular, personal drive to 'destroy' the intruders culminates in his solo confrontation with and killing of Neo."
+ ],
+ "dramatic_function": "It converts the rescue's success into the counterattack's beginning — the moment the hunted become the hunters — and, in Smith's cracked composure, plants the personal vengeance that will drive him long after the tactical objective is lost."
+}

@@ -1,0 +1,130 @@
+{
+ "scene_id": "sc-163",
+ "location": "ROOF",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Trinity",
+  "PILOT",
+  "Agent Jones"
+ ],
+ "summary": "On a rooftop where the roof-access tower is engulfed in flames, Neo and Trinity stand among a pile of fallen enemies as a Pilot in an army helicopter radios that they are under attack. The Pilot is overtaken by a \"swarm of static\" and becomes Agent Jones. Trinity drops the final Marine and sees the threat; Neo reads the fear on her face, whirls around, and fills his hands with guns at thought-speed, emptying both barrels at the charging Agent without effect. When his guns click empty, Neo calls for Trinity's help. The action enters bullet-time: Neo twists and ducks between the incoming rounds but is still grazed, one bullet shearing open his shoulder and another cutting his thigh, leaving him on the ground as Agent Jones stands over him, raises his gun, and says \"Only human...\" A sharp metal click stops the Agent; he whirls to face the muzzle of Trinity's .45 pressed to his head. Trinity says \"Dodge this!\" and fires three shots, the Agent's body flying back in mercurial light and landing as the Pilot. Trinity helps Neo up and asks how he moved like the Agents; Neo says it \"wasn't fast enough.\" He checks his shoulder, insists he is fine, and urges they keep moving. Seeing the helicopter, Neo asks if Trinity can fly it; she says \"Not yet\" and pulls out a cellular phone.",
+ "what_changes": [
+  {
+   "who": "PILOT",
+   "axis": "allegiance",
+   "before": "An army-helicopter pilot reporting the attack: \"I repeat, we are under attack!\"",
+   "after": "Transformed into the enemy Agent: \"his face, his whole body dissolves, consumed by spreading locust-like swarm of static as Agent Jones emerges.\"",
+   "evidence": "his face, his whole body dissolves, consumed by spreading locust-like swarm of static as Agent Jones emerges."
+  },
+  {
+   "who": "Neo",
+   "axis": "capability",
+   "before": "Still ordinary enough to be caught: \"Until the hammers click against the empty metal.\"",
+   "after": "Moving beyond normal speed, though not perfectly: \"You moved like they moved.  I've never seen anyone move that fast.\"",
+   "evidence": "You moved like they moved.  I've never seen anyone move that fast."
+  },
+  {
+   "who": "Agent Jones",
+   "axis": "condition",
+   "before": "Dominant, about to finish Neo: \"He has only time to look up, to see Agent Jones standing over him, raising his gun a final time.\"",
+   "after": "Destroyed and reverted: \"The body flies back with a flash of mercurial light and when it hits the ground, it is the pilot.\"",
+   "evidence": "The body flies back with a flash of mercurial light and when it hits the ground, it is the pilot."
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Whole and aggressive at the start of the fight.",
+   "after": "Wounded but functional: \"He checks his shoulder wound.\" ... \"I'm fine.  Come on, we have to keep moving.\"",
+   "evidence": "He checks his shoulder wound."
+  },
+  {
+   "who": "Trinity",
+   "axis": "standing",
+   "before": "The one being protected while Neo fights: \"Screaming, he whirls, guns filling his hands with thought-speed.\"",
+   "after": "The savior who ends the threat and takes initiative: \"Immediately, he whirls around and turns straight into the muzzle of Trinity's .45\" ... \"She pulls out the cellular phone.\"",
+   "evidence": "turns straight into the muzzle of Trinity's .45"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "The rooftop escape turns into a near-fatal ambush when the helicopter pilot becomes Agent Jones, until Trinity saves the wounded Neo.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether Neo's new speed is permanent or will keep improving.",
+  "What Trinity intends to do with the cellular phone."
+ ],
+ "_mind_pass": "ran: 364 words vs fixed 150",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To keep Trinity alive and get them off the roof — the immediate objective replacing any lingering doubt about himself.",
+   "feels": "Shocked and quietly terrified: he has just glimpsed a capacity in himself (moving like an Agent) and, in the same breath, its limit — he was still cut open. The two facts war inside him: proof he is more than ordinary, proof he is not yet enough.",
+   "shows": "Brusque competence and denial of injury. He screams for help, fights, then on his feet insists \"I'm fine\" and pushes for movement, deflecting Trinity's wonder with \"It wasn't fast enough.\"",
+   "basis": "He empties two guns at thought-speed, calls for Trinity, moves between bullets yet is grazed (shoulder, thigh); afterward he checks the wound, says he's fine, and redirects to escape. His deflection of her awe ('wasn't fast enough') names the gap between what he did and what he feared it should have been.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "himself",
+     "belief": "That he is still only 'human,' still short of what the situation demands.",
+     "wrong_because": "He just did something no ordinary person — and no one Trinity has ever seen — can do; his measure is already wrong because he is improving faster than he can register."
+    },
+    {
+     "other": "Agent Jones",
+     "belief": "That the Agent is a thing that can be killed by outgunning it.",
+     "wrong_because": "The guns had no effect; only Trinity's point-blank shot ends it — a fact Neo has not yet worked out."
+    }
+   ]
+  },
+  {
+   "who": "Trinity",
+   "wants": "To keep Neo alive — by watching his back when his new speed fails, and by reading exactly what just happened to him.",
+   "feels": "A rapid swing from dread (reading the threat in Neo's face before he does) to lethal focus to a searching, almost reverent alarm: she has witnessed a category error — a human moving like a machine — and it reorganizes everything she thought she knew about him.",
+   "shows": "Total operational calm: she drops the last Marine, puts her .45 to the Agent's head, fires, then steadies Neo and asks the one question that matters. She conceals whatever the answer might mean for her belief in him.",
+   "basis": "She sees the danger through Neo's face, saves him at the decisive click, helps him up, and immediately interrogates the anomaly ('how did you do that? You moved like they moved'). Her 'Not yet' before pulling the phone shows she is already planning the next move while processing this one.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That he is now demonstrably extraordinary — possibly what Morpheus claimed.",
+     "wrong_because": "inferred: she reads his speed as arrival, when the scene shows it as a threshold he has only just crossed and will keep crossing; her belief may outrun what he can yet reliably do."
+    },
+    {
+     "other": "Agent Jones",
+     "belief": "That he can be destroyed — and that she knows the method (point-blank shot).",
+     "wrong_because": "inferred: she acts with certainty, but the Agents' true nature (programs that jump bodies) is something neither of them yet understands; her confidence is practical, not comprehension."
+    }
+   ]
+  },
+  {
+   "who": "Agent Jones",
+   "wants": "To erase the anomaly and reassert the order the rebels have disrupted.",
+   "feels": "Cold, predatory satisfaction curdling into the impersonal urgency of a program whose certainty has just been breached — first by a human matching his speed, then by a gun at his head. The contempt ('Only human...') is partly reassurance to himself that the hierarchy still holds.",
+   "shows": "Dominance and ritual: he charges, stands over Neo, delivers the verdict, and is interrupted mid-triumph by the click he is just fast enough to hear. He dies mid-turn, denied the finish.",
+   "basis": "He overtakes the Pilot, charges, stands over the wounded Neo and pronounces 'Only human...' before the click stops him and Trinity's shot reverts him to the Pilot.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo is 'only human' — killable, inferior, beneath him.",
+     "wrong_because": "The very fact that Neo moved like an Agent and survived contradicts it; Jones's contempt is the mistake that will keep underestimating him."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "The rooftop standoff is the direct continuation of the escape begun in the elevator shaft (sc-160) and the lobby explosion (sc-161).",
+  "Agent Jones reaching the roof answers Agent Smith's order in sc-162 ('Find them and destroy them!'), Jones having touched his earpiece to coordinate.",
+  "The Agents' ability to seize a body (the Pilot) is the same rule the rescue event already relied on; here it is turned against the crew.",
+  "Neo's emerging speed pays off the 'there is no spoon' training and the crew's growing conviction (Tank's 'the One') from the rescue event."
+ ],
+ "sets_up": [
+  "The conviction that Neo is becoming something beyond ordinary — the seed ev-029's regroup will let the crew act on.",
+  "Trinity's point-blank method of killing an Agent, which the subway ambush (ev-030) will force her to use again under pressure.",
+  "Neo's unfinished duel with the Agents, which ev-031 and ev-034 will escalate into a one-on-one reckoning with Smith.",
+  "The cellular-phone exit Trinity reaches for, the mechanism the group will need to escape the coming subway pursuit.",
+  "The unresolved question of whether Neo's speed is stable — the liability that will be tested when Smith catches him alone."
+ ],
+ "dramatic_function": "To convert the rescue's external triumph into an internal threshold: it proves Neo is more than human while brutally reminding him (and the audience) he is not there yet, and it hands Trinity the knowledge and the method that will let her keep him alive long enough to become what she now suspects he is."
+}

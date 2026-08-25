@@ -1,0 +1,29 @@
+{
+ "scene_id": "sc-052",
+ "location": "MESS HALL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "MOUSE",
+  "everyone"
+ ],
+ "summary": "MOUSE bursts into the mess hall and interrupts dinner by announcing, \"Morpheus is fighting Neo!\" The news instantly sends everyone bolting for the door.",
+ "what_changes": [
+  {
+   "who": "everyone",
+   "axis": "condition",
+   "before": "eating dinner in the mess hall",
+   "after": "rushing out of the room toward the fight",
+   "evidence": "All at once, everyone bolts for the door."
+  }
+ ],
+ "event_hint": {
+  "kind": "interruption",
+  "one_line": "MOUSE bursts in to announce the Morpheus-Neo fight, sending everyone running."
+ },
+ "uncertain": [
+  "Whether MOUSE runs out with everyone or stays behind.",
+  "Who exactly constitutes \"everyone\" in the mess hall."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 1 speaker(s), 23w — no exchange to read"
+}

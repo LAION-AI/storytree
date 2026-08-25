@@ -1,0 +1,33 @@
+{
+ "scene_id": "sc-135",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Cypher"
+ ],
+ "summary": "In the main deck, Tank finishes loading the exit program. As he does, Cypher pulls back a heavy blanket, exposing a high-tech rifle.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "condition",
+   "before": "Loading the exit program",
+   "after": "Finishing loading the exit program",
+   "evidence": "Tank finishes loading the exit program"
+  },
+  {
+   "who": "Cypher",
+   "axis": "condition",
+   "before": "Hidden behind a heavy blanket",
+   "after": "Reveals a high-tech rifle",
+   "evidence": "Cypher pulls back a heavy blanket, exposing a high-tech rifle"
+  }
+ ],
+ "event_hint": {
+  "kind": "preparation",
+  "one_line": "Tank completes the exit program while Cypher uncovers a weapon.",
+  "continues_from_earlier": true
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 0 speaker(s), 20w — no exchange to read"
+}

@@ -1,0 +1,31 @@
+{
+ "scene_id": "sc-090",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Cypher",
+  "Tank"
+ ],
+ "summary": "On the Main Deck, sweat rolls down Cypher's face and neck while, at the operator's station, Tank is typing rapidly. Tank then stops to ask, 'What is that...?', indicating something on the screens has caught his attention.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "knowledge",
+   "before": "typing rapidly at the operator's station",
+   "after": "noticing something unexplained and asking about it",
+   "evidence": "At the operator's station, Tank is typing rapidly. ... What is that...?"
+  }
+ ],
+ "event_hint": {
+  "kind": "operation",
+  "one_line": "Tank is working the operator's station when something on the screens makes him ask 'What is that...?'",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "What Tank is seeing that prompts his question.",
+  "Why Cypher is sweating.",
+  "Whether anyone else is present on the Main Deck."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 28 words vs fixed 150"
+}

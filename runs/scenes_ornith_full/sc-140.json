@@ -1,0 +1,40 @@
+{
+ "scene_id": "sc-140",
+ "location": "TV REPAIR SHOP",
+ "time_of_day": "DAY",
+ "present": [
+  "TRINITY",
+  "CYPHER"
+ ],
+ "summary": "Trinity waits as a phone rings unanswered, each ring tightening her gut, until Cypher's voice answers her, greeting her by name. She demands to know where Tank is, and Cypher replies that Tank 'had an accident,' which Trinity repeats in shock. The scene holds on her reaction as the call intercuts with another location.",
+ "what_changes": [
+  {
+   "who": "TRINITY",
+   "axis": "knowledge",
+   "before": "Waiting for an unanswered ring, not knowing who is on the line or why no one is picking up.",
+   "after": "Cypher is on the line and she learns something has happened to Tank.",
+   "evidence": "CYPHER (V.O.) Hello, Trinity. TRINITY Cypher? Where's Tank? CYPHER (V.O.) He had an accident."
+  },
+  {
+   "who": "TRINITY",
+   "axis": "condition",
+   "before": "Anxious but composed, her tension only from the unanswered ringing.",
+   "after": "Shocked, recoiling at the news of Tank's accident.",
+   "evidence": "CYPHER (V.O.) He had an accident. TRINITY An accident?!"
+  }
+ ],
+ "event_hint": {
+  "kind": "a phone call",
+  "one_line": "Cypher reaches Trinity by phone and tells her Tank has had an accident.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the ringing phone"
+ ],
+ "uncertain": [
+  "What exactly happened to Tank, since Cypher only says 'He had an accident.'",
+  "Which location the INTERCUT connects to; the scene itself does not show it."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 36 words vs fixed 150"
+}

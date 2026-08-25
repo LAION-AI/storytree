@@ -1,0 +1,40 @@
+{
+ "scene_id": "sc-157",
+ "location": "EXECUTIVE OFFICE",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Agent Jones",
+  "Agent Brown",
+  "Agent Smith",
+  "Morpheus"
+ ],
+ "summary": "In an executive office, Agents Jones and Brown burst in on Agent Smith, who has Morpheus in custody. When Brown demands to know what Smith was doing, Jones cuts him off with 'You don't know,' and Smith plays ignorant, asking 'Know what?' Smith then listens to his earphone and is left disbelieving what he hears.",
+ "what_changes": [
+  {
+   "who": "Agent Smith",
+   "axis": "custody",
+   "before": "Holding Morpheus in the office.",
+   "after": "Releases him as the other agents arrive.",
+   "evidence": "Agent Smith releases Morpheus."
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "knowledge",
+   "before": "Feigning ignorance, asking 'Know what?'",
+   "after": "Listening to his earphone, not believing what he is hearing.",
+   "evidence": "Agent Smith listens to his earphone, not believing what he is hearing."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid aftermath",
+  "one_line": "The agents regroup after taking Morpheus, and Smith receives shocking news through his earphone.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "What Agent Smith was actually doing when the others burst in.",
+  "What Smith is hearing through his earphone that he cannot believe.",
+  "The exact time of day."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 54 words vs fixed 150"
+}

@@ -1,0 +1,110 @@
+{
+ "scene_id": "sc-008",
+ "location": "ROOF",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Agent Brown",
+  "cops"
+ ],
+ "summary": "On the roof, Trinity runs as Agent Brown rises over the parapet leading the cops in pursuit. She begins leaping from one roof to the next with clean, gliding movements, contrasted with the wild jumps of the cops, while Agent Brown moves with the same unnatural grace. As the roof falls away into a wide back alley with the next building over 40 feet away, Trinity remains perfectly calm and launches herself across, hanging in flight before landing and somersaulting up, still running. A cop says 'Jesus Christ -- that's impossible!' as they stare slack-jawed, because Agent Brown duplicates the impossible move exactly, landing and rolling up onto one knee. The chase continues up and over the rooftops until Trinity sees her only chance 50 feet beyond where her path drops into a paved chasm.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "Being pursued across the rooftops with Agent Brown rising over the parapet leading the cops.",
+   "after": "She has put distance and an impossible gap between herself and the cops, and now sees 'her only chance' to keep escaping.",
+   "evidence": "Ahead, she sees her only chance, 50 feet beyond the point where her path drops away into a paved chasm"
+  },
+  {
+   "who": "cops",
+   "axis": "knowledge",
+   "before": "Confident they have cornered her at the alley gap: 'That's it, we got her now.'",
+   "after": "Stunned disbelief that she cleared an impossible jump, and that Brown matched it: 'Jesus Christ -- that's impossible!' as 'They stare, slack-jawed'.",
+   "evidence": "They stare, slack-jawed, as Agent Brown duplicates the move exactly"
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Trinity leads Agent Brown and the cops on a rooftop chase, clearing impossible gaps that Brown matches.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "rooftops",
+  "the 40-foot gap between buildings",
+  "the paved chasm"
+ ],
+ "uncertain": [
+  "Whether Trinity clears the final gap into the paved chasm — the scene cuts off mid-action.",
+  "The time of day, though the landscape is described as 'dark'."
+ ],
+ "_mind_pass": "ran: 204 words vs fixed 150",
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To keep moving and not let the gap behind her close — to reach the one exit Morpheus named before the trace and the Agents collapse her options.",
+   "feels": "A trained, narrowed focus in which fear has been converted into forward attention; the calm is real, not a mask over panic, because panic would cost her the jump.",
+   "shows": "A perfectly calm face, eyes fixed on a point beyond the far roof, and clean gliding movement even as she launches at an impossible gap.",
+   "basis": "Her face is 'perfectly calm, staring at some point beyond the other roof' while she drives at the edge; earlier (sc-005) she 'takes a deep breath, centering herself' on Morpheus's command, so the calm is a discipline she can summon, not an absence of stakes.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Agent Brown",
+     "belief": "He is a pursuer bound by the same physical limits she is straining against, so distance and impossible gaps will slow or stop him.",
+     "wrong_because": "He matches her impossible 40-foot jump exactly and with 'unnatural grace,' proving he is not limited the way a human is — the one thing she is relying on (that the gap buys her) is false."
+    },
+    {
+     "other": "the cops",
+     "belief": "They are no longer a real threat; the distance and the impossible jump have put them out of the chase.",
+     "wrong_because": "They are stunned ('slack-jawed') but still pursuing, and their disbelief is exactly what makes them reckless rather than finished."
+    }
+   ]
+  },
+  {
+   "who": "Agent Brown",
+   "wants": "To close the distance and reassert control over the target, matching her every move rather than being outpaced.",
+   "feels": "Nothing like exertion or doubt — an unhurried, exact certainty that no gap she can take is beyond him, which reads as grace precisely because there is no effort behind it.",
+   "shows": "The 'same unnatural grace' as Trinity, duplicating the impossible jump exactly and landing composed on one knee while the cops gawk.",
+   "basis": "He 'has the same unnatural grace' and 'duplicates the move exactly, landing, rolling over a shoulder up onto one knee' in direct contrast to the cops' wild, failed attempts; he rose over the parapet 'leading the cops' (sc-006 he entered the hall leading police), i.e. he is directing the pursuit, not scrambling in it.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "She is prey whose options are finite; every escape she can attempt is one he can replicate, so capture is only a matter of persistence.",
+     "wrong_because": "He cannot yet see that her willingness to risk the chasm and her knowledge of an exit (the Wells and Lake phone Morpheus gave her) is a category of escape he cannot simply 'duplicate' — he mistakes physical matching for total containment."
+    }
+   ]
+  },
+  {
+   "who": "cops",
+   "wants": "To finish the cornering they thought they had — to be the ones who take her down at the gap.",
+   "feels": "A certainty that curdles into shock: first the satisfaction of 'we got her now,' then the ugly realization that they are about to watch something their bodies can't do, which drops them into helpless spectatorship.",
+   "shows": "They slow and hold back at the edge, then gawk slack-jawed, voicing disbelief ('Jesus Christ -- that's impossible!') instead of continuing the pursuit.",
+   "basis": "'The cops slow, realizing they are about to see something ugly'; one says 'That's it, we got her now,' then 'Jesus Christ -- that's impossible!' as 'They stare, slack-jawed' at both Trinity and Brown clearing the gap.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "She is a normal fugitive who will fall or be caught at a 40-foot gap — 'That's it, we got her now.'",
+     "wrong_because": "She clears the impossible jump cleanly and keeps running, so their read of her as cornered was wrong from the moment they said it."
+    },
+    {
+     "other": "Agent Brown",
+     "belief": "He is one of them, a fellow pursuer on their side of the physical line.",
+     "wrong_because": "He duplicates the 'impossible' move exactly, revealing he belongs to a different order of being than the police — something they have no framework to register, hence their stunned silence rather than understanding."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "Trinity's centered calm traces to sc-005, where Morpheus tells her to 'focus' and she composes herself before dropping the traced line.",
+  "The rooftop route is forced by sc-007, where Agent Smith blocks the alley below and 'she can only go up,' and by sc-006, where Brown entered the hall leading police — he has been on her since the hotel room.",
+  "The Wells and Lake phone Morpheus named in sc-005 is the exit her calm forward focus is oriented toward, which is why she keeps running past the gap rather than fighting."
+ ],
+ "sets_up": [
+  "ev-001: Trinity's desperate 50-foot jump into the paved chasm / dark building, crashing through a window and tumbling down a stairwell injured but alive, then reaching the Wells and Lake phone.",
+  "ev-001: The Agents' failure to catch her here redirects their pursuit to Neo as the next target.",
+  "ev-002: With Trinity gone and the booth destroyed, the hunt shifts to Neo, who is then woken and drawn out ('Follow the white rabbit')."
+ ],
+ "dramatic_function": "The chase dramatizes the film's central reveal in motion — that the Agents are not men but a force that can duplicate the impossible — by letting Trinity's human极限 be matched exactly, so the audience learns the rules of this world through the cops' shock rather than through exposition."
+}

@@ -1,0 +1,41 @@
+{
+ "scene_id": "sc-162",
+ "location": "EXECUTIVE OFFICE",
+ "time_of_day": "DAY",
+ "present": [
+  "AGENT JONES",
+  "AGENT BROWN",
+  "AGENT SMITH"
+ ],
+ "summary": "Fire alarms blast in the executive office as explosions rock the building. Agent Jones identifies the source as the \"Lower level,\" and Agent Brown registers that \"They are actually attacking.\" Another enormous explosion thunders above, shaking the building, while the alarm sounds and emergency sprinklers begin showering the room. Agent Smith smashes a table and orders, \"Find them and destroy them!\" Agent Jones nods and touches his earpiece, initiating the response.",
+ "what_changes": [
+  {
+   "who": "AGENT JONES and AGENT BROWN",
+   "axis": "knowledge",
+   "before": "Hearing alarms without clear interpretation",
+   "after": "Recognizing that the intruders are actively attacking",
+   "evidence": "AGENT JONES: Lower level -- AGENT BROWN: They are actually attacking."
+  },
+  {
+   "who": "AGENT SMITH",
+   "axis": "resolve",
+   "before": "Reacting to the escalating attack",
+   "after": "Committing to an aggressive counter-response",
+   "evidence": "Agent Smith smashes a table. AGENT SMITH: Find them and destroy them!"
+  },
+  {
+   "who": "AGENT JONES",
+   "axis": "standing",
+   "before": "Receiving the order",
+   "after": "Acting on it by contacting others",
+   "evidence": "Agent Jones nods and touches his earpiece."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "As Neo and Trinity's assault rocks the building, Agent Smith orders his fellow Agents to hunt and destroy them.",
+  "continues_from_earlier": true
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 61 words vs fixed 150"
+}

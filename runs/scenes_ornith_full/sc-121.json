@@ -1,0 +1,159 @@
+{
+ "scene_id": "sc-121",
+ "location": "WALL",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "CYPHER",
+  "Agent Smith",
+  "Morpheus",
+  "Trinity"
+ ],
+ "summary": "Neo listens as gunfire fades, but FOOTSTEPS RISING FAST approach and two arms smash through the wall, hurling Neo against the iron stack pipe with fingers gouging his throat. Cypher identifies the attacker: \"It's an Agent!\" Morpheus bursts through the plaster and lath, diving onto Agent Smith and pinning him before he can reach his weapon. In the crawlspace, Trinity scrambles past Cypher. Morpheus squeezes Agent Smith's throat and orders Trinity to take Neo out, declaring \"He is all that matters.\" Neo realizes what Morpheus intends and protests, \"No! Morpheus! Don't!\" Morpheus commands \"Trinity! Go!\" Trinity, fists balling in frustration, relays the order down to Apoc, while Neo insists \"We can't leave him!\" and Trinity answers \"We have to!\" She grabs Neo's ankle and they skid down the inside of the wall, using the lath as a brake.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "Listening, momentarily safe as the gunfire quiets",
+   "after": "Choked against the pipe, his throat about to collapse under an Agent's grip",
+   "evidence": "fingers gouging into his neck... Just as Neo's throat is about to collapse"
+  },
+  {
+   "who": "Morpheus",
+   "axis": "allegiance",
+   "before": "Absent from the immediate struggle, elsewhere",
+   "after": "Explodes through the wall to save Neo, sacrificing himself by pinning the Agent",
+   "evidence": "Morpheus explodes through the tattered plaster and lath, diving on top of Agent Smith"
+  },
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Unaware of Morpheus's plan to stay behind",
+   "after": "Glimpses the sacrifice and protests helplessly against it",
+   "evidence": "Neo suddenly glimpses what is happening but is powerless to stop it. No. No! Morpheus! Don't!"
+  },
+  {
+   "who": "Trinity",
+   "axis": "resolve",
+   "before": "Scrambling toward Morpheus, calling his name",
+   "after": "Accepts his order, frustrated, and forces Neo to flee down the wall",
+   "evidence": "Trinity's fists ball in frustration... We have to! She grabs his ankle and they begin almost falling"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "An Agent ambushes the crew in the wall; Morpheus pins it to buy time, ordering Trinity to get Neo out.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the iron stack pipe",
+  "the tattered plaster and lath",
+  "the wet terrazzo floor",
+  "Agent Smith's weapon",
+  "the lath used as a brake"
+ ],
+ "uncertain": [
+  "Whether Apoc responds to Trinity's order to go",
+  "Whether Morpheus survives his confrontation with Agent Smith"
+ ],
+ "_mind_pass": "ran: 185 words vs fixed 150",
+ "minds": [
+  {
+   "who": "Morpheus",
+   "wants": "To pin the Agent long enough for Trinity to get Neo out, and to make that order stick against Neo's refusal.",
+   "feels": "A settled, almost peaceful certainty — he has already decided his life is the price and is spending it without flinching.",
+   "shows": "Iron grip on Smith's throat and a commander's bark ('He is all that matters,' 'Trinity! Go!') — all function, no tremor.",
+   "basis": "He explodes through the wall specifically to save Neo, then immediately converts himself into a rearguard, framing Neo as 'all that matters' and barking the order twice when it's resisted. His calm is the residue of ev-023, where he is the one traded to the Agents — he's already living toward that capture.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo is 'all that matters' — the One, worth any sacrifice, including Morpheus himself.",
+     "wrong_because": "He is betting the entire crew and his own life on a prophecy Neo does not yet believe in; the coming debate (ev-024) will treat that bet as possibly suicidal, and Neo's later rescue of Morpheus inverts the very hierarchy Morpheus asserts here."
+    },
+    {
+     "other": "Agent Smith",
+     "belief": "He can hold the Agent, or at least deny it the weapon, long enough to matter.",
+     "wrong_because": "He is pinning an Agent who will shortly be the one interrogating and capturing him (ev-025); the physical pin is a delay, not a victory, and he cannot know how close he is to becoming a prisoner."
+    }
+   ]
+  },
+  {
+   "who": "Neo",
+   "wants": "To stop Morpheus from staying behind — to refuse the rescue that costs Morpheus his life.",
+   "feels": "The sick lurch of understanding that the man who just saved him is about to die for him, and that he is too weak (throat crushed) to do anything about it.",
+   "shows": "Helpless, repeated protest — 'No. No! Morpheus! Don't!' — while literally pinned and powerless.",
+   "basis": "The facts note Neo 'suddenly glimpses what is happening' and protests against it; his physical helplessness (choked against the pipe) mirrors his moral helplessness to override Morpheus's decision.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "Morpheus is making a needless, unbearable sacrifice that Neo must prevent.",
+     "wrong_because": "He doesn't yet grasp that this self-sacrifice is Morpheus's entire worldview in action — and that he himself will soon be the one insisting on risking everything to bring Morpheus back (ev-026), completing the reversal Morpheus can't foresee."
+    }
+   ]
+  },
+  {
+   "who": "Trinity",
+   "wants": "To reach Morpheus and stay with him — but to obey him and get Neo out alive.",
+   "feels": "Torn clean in two: her instinct is toward Morpheus ('Morpheus!'), her duty is the order he just gave, and she hates that the order is right.",
+   "shows": "Fists balling in frustration, then snapping 'We have to!' and physically seizing Neo's ankle to force the retreat — obedience performed as aggression.",
+   "basis": "She calls Morpheus's name while scrambling toward him, then her fists ball in frustration before she relays 'Go!' and drags a resisting Neo down the wall. The gap between reaching-for and forcing-away is the whole reading.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "Obeying him now means saving Neo at the cost of losing Morpheus.",
+     "wrong_because": "She is enacting the extraction that will strand Morpheus for the Agents (ev-023/ev-025), yet she will be central to the rescue that reverses this loss (ev-026–ev-028) — so this obedience is not the end of Morpheus she fears it is."
+    },
+    {
+     "other": "Neo",
+     "belief": "Neo will resist being saved and must be physically overruled.",
+     "wrong_because": "Correct in the moment — but she cannot yet know this same Neo will soon override the whole crew to go back for Morpheus, the exact loyalty she is now forcing him to betray."
+    }
+   ]
+  },
+  {
+   "who": "Cypher",
+   "wants": "To identify the threat and let the stronger fighters deal with it while he stays clear of the Agent.",
+   "feels": "A cold, self-preserving distance — he names the danger ('It's an Agent!') rather than engaging it, already mentally elsewhere.",
+   "shows": "A single diagnostic line, no action toward the fight; he lets the identification stand in for participation.",
+   "basis": "His only contribution is the label 'It's an Agent!' while Morpheus and Trinity do the physical work; his inaction here is legible against ev-023, where he is the one who has already traded the crew to the Agents and will kill them.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "Morpheus's willingness to die for the crew is exactly the kind of loyalty Cypher has decided is worthless — worth betraying.",
+     "wrong_because": "Cypher reads that self-sacrifice as folly to be sold off, not foreseeing that it is precisely what binds and ultimately saves the remaining crew (Neo's rescue of Morpheus, ev-026–ev-028)."
+    }
+   ]
+  },
+  {
+   "who": "Agent Smith",
+   "wants": "To kill Neo, then reach his weapon and finish the room.",
+   "feels": "Focused, unhurried predatory certainty — he has Neo helpless and treats the human pinning him as a problem to be disposed of, not a real threat.",
+   "shows": "Only arms and a throat-gouging grip are visible; his intent reads entirely through the violence of the ambush, not dialogue.",
+   "basis": "He smashes through the wall and gouges Neo's throat, and only fails because Morpheus reaches the weapon first; his goal is inferable from the target he chooses (Neo) and the immediacy of the kill.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "This human pinning him is a temporary obstacle, quickly shed.",
+     "wrong_because": "He underestimates that this same man will be worth capturing alive and interrogating (ev-025); the pin that foils his kill here is what delivers Morpheus into the Agents' hands — a bigger prize Smith couldn't have planned for in this scramble."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "The wall-ambush continues the in-walls firefight of sc-119/sc-120, where the crew was pinned between plaster and the Cop's gunfire.",
+  "The Cop's realization in sc-118 ('They're in the walls!') is what drives the crew's exposure that this Agent now exploits.",
+  "Morpheus's sudden arrival to save Neo reverses his absence from the immediate scuffle, re-establishing him as the crew's protector just before he is traded away in ev-023."
+ ],
+ "sets_up": [
+  "The self-sacrificial extraction that strands Morpheus for the Agents (ev-023) — this is the moment his capture becomes possible.",
+  "Neo's later insistence on risking everything to rescue Morpheus (ev-026), completing the reversal of 'He is all that matters.'",
+  "The interrogation of the captured Morpheus by Agent Smith (ev-025), the direct consequence of Morpheus choosing to be the one who stays.",
+  "Trinity's role in both the loss and the rescue of Morpheus (ev-026–ev-028), seeded by her forced obedience here."
+ ],
+ "dramatic_function": "It converts a chaotic wall-fight into a moral crisis by forcing the crew to choose who is worth saving — Morpheus's declaration that Neo 'is all that matters' plants the prophecy's logic in the present and sets the crew's survival against his capture, turning physical escape into the first payment on the sacrifice the outline has already promised."
+}

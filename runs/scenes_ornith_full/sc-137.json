@@ -1,0 +1,40 @@
+{
+ "scene_id": "sc-137",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Cypher",
+  "Dozer"
+ ],
+ "summary": "A white bolt of lightning explodes against Tank's chair and blasts him into the air. Cypher checks the gun, unable to believe he missed, and says \"Shit.\" Tank gets to his feet and lunges, but Cypher fires again, shooting square into his chest, and Dozer cries out \"No!\"",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "condition",
+   "before": "Seated, unharmed, when the bolt hits his chair.",
+   "after": "Blown into the air and then shot in the chest, collapsing.",
+   "evidence": "a white bolt of LIGHTNING EXPLODES against Tank's chair, blasting him into the air"
+  },
+  {
+   "who": "Cypher",
+   "axis": "condition",
+   "before": "Frustrated that his first shot missed.",
+   "after": "Having fired again, hitting Tank in the chest.",
+   "evidence": "Cypher checks the GUN, unable to believe he missed."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Cypher turns his rifle on Tank aboard the ship, shooting him.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the GUN",
+  "Tank's chair",
+  "the rifle"
+ ],
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 45 words vs fixed 150"
+}

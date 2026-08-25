@@ -1,0 +1,40 @@
+{
+ "scene_id": "sc-034",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Neo",
+  "Morpheus",
+  "Human hands and arms"
+ ],
+ "summary": "Inside the hovercraft, a metal harness opens and drops the half-conscious Neo onto the floor. Human hands and arms help him up, and as he rises he finds himself looking straight at Morpheus. Neo smiles. Morpheus greets him, saying, \"Welcome to the real world, Neo.\" Immediately afterward, Neo passes out.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Half-conscious and being lowered to the floor by the harness",
+   "after": "Helped upright by human hands and arms, able to look at Morpheus and smile",
+   "evidence": "The metal harness opens and drops the half-conscious Neo onto the floor. Human hands and arms help him up as he finds himself looking straight at Morpheus."
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Awake, smiling at Morpheus after being welcomed",
+   "after": "Passes out",
+   "evidence": "MORPHEUS\nWelcome to the real world, Neo.\nNeo passes out."
+  }
+ ],
+ "event_hint": {
+  "kind": "a rescue recovery",
+  "one_line": "Neo is brought aboard the hovercraft and briefly regains consciousness to be greeted by Morpheus before passing out.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "The metal harness"
+ ],
+ "uncertain": [
+  "Whether the human hands and arms belong to Morpheus or to other crew members"
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 41 words vs fixed 150"
+}

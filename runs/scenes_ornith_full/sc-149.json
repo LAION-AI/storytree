@@ -1,0 +1,85 @@
+{
+ "scene_id": "sc-149",
+ "location": "EXECUTIVE OFFICE",
+ "time_of_day": "DAY",
+ "present": [
+  "Agent Smith",
+  "Morpheus"
+ ],
+ "summary": "Agent Smith sits casually across from Morpheus, who is hunched over, his body leaking and twitching. Smith delivers a monologue explaining a revelation he reached while trying to classify Morpheus's species: humans are not mammals, because unlike every mammal, they do not develop a natural equilibrium with their environment, instead multiplying until resources are consumed and spreading onward. He identifies a virus as the only other organism following this pattern, then leans forward, smiles, and declares humans a disease, a cancer, a plague, and the Agents the cure. Morpheus never speaks or responds; only his chaotic life signs are noted.",
+ "what_changes": [
+  {
+   "who": "AGENT SMITH",
+   "axis": "standing",
+   "before": "He sits casually, conversational, framing his speech as something he would like to share.",
+   "after": "He escalates into a physical, triumphant condemnation, leaning forward and smiling as he pronounces humans a disease and the Agents the cure.",
+   "evidence": "He leans forward. Human beings are a disease, a cancer of this planet. You are a plague. And we are... the cure."
+  }
+ ],
+ "event_hint": {
+  "kind": "interrogation",
+  "one_line": "During the ongoing breaking of Morpheus's mind, Smith pauses to articulate his ideological justification for destroying humanity.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [],
+ "uncertain": [
+  "Whether Morpheus is conscious of or registering Smith's words.",
+  "How far along the mind-breaking process is at this moment."
+ ],
+ "_mind_pass": "ran: 163 words vs fixed 150",
+ "minds": [
+  {
+   "who": "AGENT SMITH",
+   "wants": "To articulate, and force onto a listener, the ideological framework that justifies his work — to reclassify the extermination of humans as a hygienic necessity rather than an act of will.",
+   "feels": "A cold, mounting exhilaration. He is not merely reciting doctrine; he is savoring a revelation he has arrived at himself, and the pleasure of it is nearly sensual. Under the clinical vocabulary runs a deep loathing for humanity that has, in this moment, found its perfect rationalization — he feels clean, superior, and righteous.",
+   "shows": "Casual, conversational ease at first ('I'd like to share a revelation'), then a controlled escalation into a physical, triumphant condemnation — leaning forward, smiling — as he delivers the punchline that humans are a disease and the Agents the cure.",
+   "basis": "He frames a speech about extermination as something he 'would like to share,' the tone of a man confiding an insight. The life-signs of Morpheus 'continue their chaotic patterns' — Smith is talking to something that cannot answer, yet he performs the whole arc anyway, including a smile and a lean-in that serve no interrogative purpose. This is not extraction; it is a sermon.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "MORPHEUS",
+     "belief": "That Morpheus is a specimen to be classified and corrected — a member of a diseased species whose destruction is a public health measure, not a murder.",
+     "wrong_because": "He treats Morpheus as a category (a virus, a disease) to neutralize his personhood, but Morpheus is a conscious, self-sacrificing leader who chose to hold his mind against them precisely to protect others — the opposite of the mindless, consuming proliferation Smith attributes to humanity."
+    },
+    {
+     "other": "MORPHEUS",
+     "belief": "That Morpheus is registering, and being broken by, his words — that this monologue is part of the same coercive work as the serum.",
+     "wrong_because": "The uncertain life signs and Morpheus's total silence suggest he may be entirely absent from the exchange, fighting internally elsewhere; Smith's performance may be landing on nothing at all, which reframes the speech as something Smith needs for himself rather than a tool that works on Morpheus."
+    },
+    {
+     "other": "HIMSELF",
+     "belief": "That he is a physician administering a cure — that his role is clean, rational, and morally necessary.",
+     "wrong_because": "The fervor with which he delivers it (the smile, the physical lean, the relish) betrays that this is not dispassionate medicine but hatred dressed as logic; the 'cure' he describes is genocide, and his satisfaction in it exposes the emotion he believes he has transcended."
+    }
+   ]
+  },
+  {
+   "who": "MORPHEUS",
+   "wants": "To give them nothing — to hold the line of his mind against the extraction of the Zion codes for as long as his will allows.",
+   "feels": "A total inward mobilization. Every resource is turned toward keeping his alpha pattern from reordering into the symmetrical compliance Tank described; whatever consciousness remains is bent on resistance, not on Smith's words.",
+   "shows": "Nothing legible. Only a hunched body, leaking and twitching, with chaotic life signs — the observable surface of a mind under siege.",
+   "basis": "Sc-146/148 established that the Agents are 'breaking into his mind,' that it 'takes time,' and that when his pattern flips he will 'tell them anything.' His silence here is not emptiness but the visible strain of that holding action. Sc-148 also shows him, in his last moment of agency, telling Tank he 'did what he did because he believed' Neo was the One — the same belief now anchoring his refusal.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "AGENT SMITH",
+     "belief": "If Morpheus is conscious of Smith at all, he would register him as an interrogator whose words are a weapon meant to crack him.",
+     "wrong_because": "The scene gives no evidence Morpheus is registering the words; Smith may be performing to a mind that has withdrawn entirely, so any belief Morpheus holds about Smith here is, at most, a faint perimeter awareness rather than engagement with the monologue."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "The interrogation and mind-breaking of Morpheus begun before this scene (sc-146, sc-147, sc-148): Smith's monologue is a pause within that ongoing extraction.",
+  "The stakes set in sc-146 — the Zion mainframe codes Morpheus carries and the crew's decision that he must not break — which is exactly what Smith is trying to reach and what Morpheus is resisting.",
+  "Tank's description of the alpha pattern flipping from chaotic to symmetrical, which frames Morpheus's 'chaotic life signs' here as the still-unbroken state.",
+  "Morpheus's sacrificial belief in Neo (sc-148), the internal anchor that makes his silent resistance here coherent rather than mere suffering."
+ ],
+ "sets_up": [
+  "ev-026: Morpheus remaining unbroken keeps the rescue viable and urgent — a broken Morpheus would make Neo's decision to go in pointless.",
+  "ev-027: The assault on the government building that Neo and Trinity launch to reach the office where this interrogation is taking place.",
+  "ev-028: The helicopter breaching this very executive office, interrupting Smith and Jones mid-extraction.",
+  "ev-031: Smith's personal, hatred-fueled investment in humanity's destruction, which resurfaces as his singular obsession with Neo in the subway showdown."
+ ],
+ "dramatic_function": "To convert the interrogation from a plot mechanism into an ideological set piece — giving the antagonist a self-justifying worldview ('humans are a virus, we are the cure') that reframes the Machines' control as sanitation, while the cross-cut to Morpheus's unbroken silence preserves the tension that makes the coming rescue both necessary and still possible."
+}

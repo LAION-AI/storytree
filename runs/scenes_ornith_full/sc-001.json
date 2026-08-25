@@ -1,0 +1,94 @@
+{
+ "scene_id": "sc-001",
+ "location": "HEART O' THE CITY HOTEL",
+ "time_of_day": "NIGHT",
+ "present": [
+  "POLICE OFFICERS",
+  "BIG COP",
+  "TRINITY"
+ ],
+ "summary": "Four armed police officers creep with flashlights down a soot-blackened hallway of the fire-gutted Heart O' the City Hotel and take positions on either side of Room 303. The biggest cop violently kicks the door in, and the others pour in behind him with guns thrust forward, shouting 'Police! Freeze!' The room is nearly bare, lit only by the glow of a computer on a fold-up table. Trinity, a woman in black leather, is sitting there with her hands still on the keyboard. Ordered to put her hands behind her head, she slowly complies, moving from typing to surrender.",
+ "what_changes": [
+  {
+   "who": "TRINITY",
+   "axis": "custody",
+   "before": "Alone and in control, working at the computer with her hands on the keyboard.",
+   "after": "Detained, hands placed behind her head in surrender to the police.",
+   "evidence": "She slowly puts her hands behind her head."
+  },
+  {
+   "who": "POLICE OFFICERS",
+   "axis": "safety",
+   "before": "Cautiously approaching, creeping down the hall and readying themselves outside Room 303.",
+   "after": "Storming into the room with guns thrust before them, having breached the door.",
+   "evidence": "The biggest of them violently kicks in the door. The other cops pour in behind him, guns thrust before them."
+  }
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Police raid a hotel room and take Trinity into custody at gunpoint.",
+  "continues_from_earlier": false
+ },
+ "uncertain": [
+  "Whether Trinity is actually dangerous or why the police are raiding her.",
+  "What Trinity was doing on the computer before the police arrived.",
+  "Whether the other three officers besides the Big Cop speak."
+ ],
+ "_mind_pass": "ran: 155 words vs fixed 150",
+ "minds": [
+  {
+   "who": "TRINITY",
+   "wants": "To finish whatever she was doing on the computer — to buy the last few seconds of her task before the room is breached.",
+   "feels": "A cold, trained alertness rather than panic: she registers the breach, calculates that resistance is futile, and chooses compliance as the smarter move.",
+   "shows": "Stillness, hands lingering on the keyboard, then a slow, deliberate movement of her hands behind her head — surrender performed without haste or visible fear.",
+   "basis": "The facts note she is 'Alone and in control, working at the computer' before, and 'slowly puts her hands behind her head' after. The slowness of the compliance, rather than a flinching scramble, reads as deliberate control, not terror. The event shape (she will defeat the squad) means her surrender here is not genuine helplessness.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "BIG COP / POLICE OFFICERS",
+     "belief": "She reads them as ordinary police — a routine threat she can manage and likely survive.",
+     "wrong_because": "She does not yet know these officers are already dead or that Agents are about to assert jurisdiction; her model of the danger is out of date."
+    }
+   ]
+  },
+  {
+   "who": "BIG COP",
+   "wants": "To dominate the entry — to seize control of the room and its occupant before anyone inside can react or reach a weapon.",
+   "feels": "Adrenaline-sharpened aggression and the authority of the breach; he expects a dangerous suspect and wants to overwhelm rather than negotiate.",
+   "shows": "The violent kick that breaks the door, the shouted commands ('Freeze!', 'Hands behind your head! Now! Do it!'), gun thrust forward — pure escalation, no parley.",
+   "basis": "He 'violently kicks in the door' and barks rapid, imperative commands, the loudest and first voice, which marks him as the one driving force. The raid framing and guns-thrust posture indicate he anticipates a threat worth overwhelming force.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "TRINITY",
+     "belief": "He believes she is a compliant, outmatched suspect whose surrender is real and whose danger is now neutralized.",
+     "wrong_because": "Her surrender is a calculated pause, not defeat; the event shows she will turn on the squad and be the last one standing, so his read of her as controlled is dangerously wrong."
+    }
+   ]
+  },
+  {
+   "who": "POLICE OFFICERS",
+   "wants": "To secure the room and back up the Big Cop's entry — to cover angles and lock down the suspect as a unit.",
+   "feels": "Taut, coordinated readiness; they are keyed for a fight but find only one unarmed-seeming woman, which shifts them from breach-tension to wary containment.",
+   "shows": "They 'pour in behind him, guns thrust before them,' moving as a formation; they echo the command to put hands behind the head but otherwise act as a disciplined group rather than individuals.",
+   "basis": "The summary distinguishes the Big Cop's kick and shout from the others who 'pour in behind him with guns thrust forward,' indicating a supporting tactical role. The group obeys the same commands and holds the room, with no indication any of them break formation or speak independently.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "TRINITY",
+     "belief": "As a unit they read her slow compliance as the room being safely contained — a lone woman giving up.",
+     "wrong_because": "The event shape reveals she is far more dangerous than a lone surrendering woman; their collective read underestimates her and sets up their defeat."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "Nothing precedes this scene within the event (continues_from_earlier: false), so the scene's tension does not depend on prior beats here — it opens the event cold."
+ ],
+ "sets_up": [
+  "Trinity's apparent surrender is the setup for her reversal — the moment the squad believes it has her that enables her to defeat them and stand alone.",
+  "The computer she was working on, and her being caught at it, sets up her contact with Morpheus, the traced line, and the flight to the phone at Wells and Lake.",
+  "The police raid's failure to truly hold her sets up the Agents arriving to assert jurisdiction over the situation."
+ ],
+ "dramatic_function": "This scene establishes the stakes and Trinity's capability by first showing her cornered and controlled-by-force, so that her coming reversal reads as shocking competence rather than routine; it is the calm, controlled beat that makes the violence of the event's turn land."
+}

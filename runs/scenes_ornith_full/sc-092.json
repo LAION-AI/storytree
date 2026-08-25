@@ -1,0 +1,26 @@
+{
+ "scene_id": "sc-092",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "TANK"
+ ],
+ "summary": "On the main deck, the monitors suddenly glitch as though the Matrix had an electronic seizure. Seeing this, Tank reacts with alarm, exclaiming \"Oh shit! Oh shit!\"",
+ "what_changes": [
+  {
+   "who": "TANK",
+   "axis": "condition",
+   "before": "Working at his station, he registers something odd, asking \"What is that...?\"",
+   "after": "The glitch throws him into alarmed alarm, exclaiming \"Oh shit!  Oh shit!\"",
+   "evidence": "The monitors suddenly glitch as though the Matrix had an electronic seizure. TANK Oh shit!  Oh shit!"
+  }
+ ],
+ "event_hint": {
+  "kind": "system failure",
+  "one_line": "The ship's monitors glitch, and Tank reacts with alarm.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 20 words vs fixed 150"
+}

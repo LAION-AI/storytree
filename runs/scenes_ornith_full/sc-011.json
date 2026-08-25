@@ -1,0 +1,103 @@
+{
+ "scene_id": "sc-011",
+ "location": "STREET",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Agent Smith",
+  "Agent Jones",
+  "Agent Brown"
+ ],
+ "summary": "Hurt from her fall, Trinity emerges from an alley and sees the telephone booth at the end of the block, then races toward it as the phone begins to ring. A garbage truck u-turns across the street and accelerates, its headlights arcing at the booth as if taking aim. Trinity reaches the booth and answers the phone just as the truck barrels through it, smashing it into Plexiglas pulp against a brick wall. When the dust settles, a black loafer steps down from the cab and Agent Smith inspects the wreckage, finding no body — Trinity is gone. Agents Jones and Brown join him. They confirm she escaped, that their informant is real, that they now have the name of the crew's next target, 'Neo,' and that a search is already running. The camera then zooms into the severed phone handset, falls through its mouthpiece into digital darkness, and emerges from a computer screen where a search engine runs relentlessly before drifting away.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "safety",
+   "before": "Trapped on the street, hurt and exposed, racing the truck toward the ringing phone booth.",
+   "after": "Gone — having answered the phone and escaped, leaving 'no body' behind in the wreckage.",
+   "evidence": "She answers the phone. There is a frozen instant of silence before the hulking mass of dark metal lurches up onto the sidewalk -- Barreling through the booth, bulldozing it into a brick wall, SMASHING it to PLEXIGLAS PULP. ... There is no body.  Trinity is gone."
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "knowledge",
+   "before": "Frustrated that Trinity escaped, grinding his molars at the empty wreckage.",
+   "after": "Almost smiling, reassured that the informant is real and they now have the name of the next target, 'Neo.'",
+   "evidence": "His jaw sets as he grinds his molars in frustration. ... Agent Smith almost smiles. ... AGENT BROWN The name is Neo."
+  },
+  {
+   "who": "The Agents",
+   "axis": "standing",
+   "before": "Reacting to a failed capture, with Jones noting 'She got out.'",
+   "after": "Regaining the initiative, launching a search with a concrete lead: 'We'll need a search running.' 'It's already begun.'",
+   "evidence": "AGENT SMITH We'll need a search running. AGENT JONES It's already begun."
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Trinity barely escapes through the phone booth as the Agents' truck destroys it, then the Agents pivot to hunting 'Neo'.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether the Agents' truck was driven deliberately to destroy the booth or merely to stop Trinity.",
+  "Exactly what time of day this is, though it reads as night given the street light and shadows."
+ ],
+ "_mind_pass": "ran: 340 words vs fixed 150",
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To reach the ringing phone and answer it before the truck reaches the booth — a matter of inches and a single grab.",
+   "feels": "Running on pure will through a body that is broken from the stairwell fall (sc-010); terror and pain are present but subordinated to a trained, narrowing focus on the one exit.",
+   "shows": "Only the external machine of escape: gritted endurance, the race, the answer, then nothing — she is gone before the wreckage settles, leaving no body for the Agents to read.",
+   "basis": "She is 'obviously hurt,' 'gritting through the pain,' focused 'in completely' as the phone rings; she answers 'just as' the truck arrives and vanishes, confirmed by 'There is no body. Trinity is gone.'",
+   "grounding": "from_earlier_scenes"
+  },
+  {
+   "who": "Agent Smith",
+   "wants": "First to capture/kill Trinity; then, the instant that fails, to convert the failure into the larger prize — the identity of the crew's next target.",
+   "feels": "Raw frustration at letting prey slip (he 'grinds his molars'), which he does not linger in; it is quickly displaced by cold satisfaction that the informant has delivered — the hunt has a name.",
+   "shows": "A brief, private tell of anger (the set jaw), then near-composure and an 'almost smile' as he reframes the loss as irrelevant ('It doesn't matter').",
+   "basis": "His jaw sets and he grinds his molars; then 'It doesn't matter,' 'Yes,' and 'Agent Smith almost smiles' as the informant's reality and the name 'Neo' are confirmed; he orders the search.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "That her escape is a trivial, forgettable event — a loose end, not a real setback.",
+     "wrong_because": "Her survival is exactly what carries the warning back to the crew and keeps the resistance one step ahead; dismissing her as 'doesn't matter' is the arrogance that lets her and Morpheus keep operating."
+    },
+    {
+     "other": "the informant (Cypher, unnamed here)",
+     "belief": "That the informant is a reliable asset now proven 'real,' and that the name 'Neo' is a clean lever to pull the whole crew down.",
+     "wrong_because": "He trusts the source that is, in fact, betraying his own crew for personal gain; the certainty that the pipeline is sound is the trap closing around the Agents as much as around Neo."
+    }
+   ]
+  },
+  {
+   "who": "Agents Jones and Brown",
+   "wants": "To re-establish operational control after the failed capture by locking onto the new lead and setting the search in motion.",
+   "feels": "A collective, untroubled recalibration rather than disappointment — they treat Trinity's escape as data, not defeat, and are already ahead, the search 'already begun.'",
+   "shows": "Flat, factual reportage ('She got out,' 'The informant is real,' 'The name is Neo,' 'It's already begun') — no visible frustration, only the smooth machinery of the system resuming its pursuit.",
+   "basis": "Jones names the escape without alarm; Brown confirms the informant and the name; Jones confirms the search is already running — all delivered as calm confirmations rather than reactions.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That 'Neo' is a knowable, locatable target whose name is sufficient to bring him in — that naming equals catching.",
+     "wrong_because": "The name leads them to a man who is 'The One' and who will slip their grasp repeatedly; the confidence that a name grants control is precisely what the coming events undermine."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "Trinity's injuries and limping descent in the stairwell (sc-010) are why she is 'obviously hurt' and 'gritting through the pain' as she races the booth.",
+  "The rooftop chase and the 50-foot jump through the window (sc-008, sc-009) are the reason she is on this street, bleeding and desperate for the one remaining exit.",
+  "Morpheus's traced-line warning during the Hotel Raid (ev-001) set the clock that makes the ringing phone her only way out.",
+  "The Agents' established superhuman capability and jurisdiction-asserting pursuit (sc-008, ev-001) make the garbage-truck ram a plausible, in-character escalation."
+ ],
+ "sets_up": [
+  "The confirmation that 'Neo' is the crew's next target directs the Agents' hunt toward Neo's apartment, initiating the pursuit of ev-002.",
+  "The 'search already begun' and the relentlessly running search engine motivate how the Agents will locate and confront Neo (ev-003).",
+  "Trinity's survival and escape keep her available to later guide Neo (ev-005) and to remain part of the crew through the unplugging (ev-006, ev-007).",
+  "The informant's proven reliability hardens the crew's internal betrayal, the consequence of which the coming events will unfold."
+ ],
+ "dramatic_function": "To close Trinity's escape beat on a near-miss that withholds the Agents their kill, while pivoting the entire narrative from hunted (Trinity) to hunter (the Agents) by handing them the name 'Neo' — converting a tactical failure into the hook that drags the story toward its true protagonist."
+}

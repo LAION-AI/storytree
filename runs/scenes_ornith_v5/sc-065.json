@@ -1,0 +1,100 @@
+{
+ "scene_id": "sc-065",
+ "location": "CITY STREET - TRAINING PROGRAM",
+ "time_of_day": "DAY",
+ "present": [
+  "Morpheus",
+  "Neo",
+  "A cop",
+  "A beautiful woman in a red dress",
+  "Agent Smith"
+ ],
+ "summary": "Morpheus leads Neo through a crowded downtown street that is actually a training program. He explains that the Matrix is a system that is their enemy, and that the ordinary people inside it are still part of that system and therefore enemies. When Neo gets distracted by a woman in a red dress, Morpheus reveals the danger: the crowd can become Agents. Neo turns to find Agent Smith leveling a gun at his face, and he screams. Morpheus freezes the program, then teaches that Agents are sentient programs who can inhabit anyone not yet unplugged, and that every human who has fought one has died — but Neo will succeed because their strength and speed are bound by rules, whereas Neo's are not. When Neo asks if this means he can dodge bullets, Morpheus says that when he is ready, he won't have to. The lesson is interrupted when Morpheus' cell phone rings and Tank reports trouble.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Neo believes he is inside the real Matrix and is confused when it freezes.",
+   "after": "Neo learns he is in a training program and that Agents are sentient programs who can be anyone still plugged in.",
+   "evidence": "This -- this isn't the Matrix? No, it's another training program designed to teach you one thing"
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Neo is a struggling trainee, bumped and shouldered off the path.",
+   "after": "Neo is told he can become stronger and faster than any Agent, since their power is bound by rules.",
+   "evidence": "their strength and their speed are still based on a world that is built by rules. Because of that they will never be as strong or as fast as you can be"
+  },
+  {
+   "who": "Neo",
+   "axis": "resolve",
+   "before": "Neo is distracted and casual, looking at the woman in the red dress.",
+   "after": "Neo is confronted with the lethal stakes of fighting Agents and his destined role.",
+   "evidence": "Every single man or woman who has stood their ground, who has fought an Agent, has died. But where they failed, you will succeed"
+  }
+ ],
+ "event_hint": {
+  "kind": "a training program",
+  "one_line": "Morpheus trains Neo in a simulated city street, revealing the nature of Agents and Neo's potential to surpass them.",
+  "continues_from_earlier": false
+ },
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Morpheus",
+   "wants": "To break Neo's remaining attachment to the Matrix as a benign or neutral place, and to install in him the lethal seriousness required to survive — fast, before an Agent actually finds them.",
+   "feels": "A fierce, almost messianic certainty mixed with urgency. He is carrying the weight of five previous candidates who died (the belief Cypher will later voice is already true), and this colors his teaching with a pressure he will not name: he cannot afford another failure. His confidence in 'you will succeed' is partly faith, partly a necessary performance.",
+   "shows": "Unshakable calm and pedagogical control — moving 'effortlessly' through the crowd, freezing the program without effort, delivering doctrine in clean, quotable lines. Even the red-dress catch is turned into a lesson rather than a reprimand.",
+   "basis": "He reframes the entire crowd as 'our enemy,' then uses Neo's glance at the woman in red not to scold but to demonstrate the danger ('Look again' → Agent Smith). His 'I won't lie to you' before the death statistic, and the certainty that Neo will exceed Agents, show a man managing a trainee's fear while steering him toward a destiny.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo is the One and will succeed where every fighter before him died.",
+     "wrong_because": "This is faith, not fact — the outline's later events (Cypher's warning about five dead candidates, the brutal dojo beating) show this belief is unproven and possibly a dangerous over-investment. Morpheus's certainty is the article of a religion, not a reading of evidence."
+    },
+    {
+     "other": "Neo",
+     "belief": "That Neo is ready to be told the truth about Agents and death without breaking.",
+     "wrong_because": "Neo just screamed in terror and is still a trainee who gets bumped off the path and distracted by a pretty woman; Morpheus is pushing harder and faster than Neo's composure warrants, betting the boy can carry the weight."
+    },
+    {
+     "other": "the people in the street",
+     "belief": "That they are 'still a part of the system and that makes them our enemy.'",
+     "wrong_because": "This is a strategic framing, not the whole truth — Morpheus himself says they are 'the very people we are trying to save.' His 'enemy' language is a teaching tool to harden Neo, flattening the moral complexity he actually holds."
+    }
+   ]
+  },
+  {
+   "who": "Neo",
+   "wants": "To grasp what this world actually is and what is being asked of him — while staying one step ahead of the fear that just made him scream.",
+   "feels": "Overwhelmed and reeling. He has just learned his reality can freeze on command and that a gun can appear at his face from a stranger; the scream is involuntary terror, and the aftermath — 'What? Are you trying to tell me I can dodge bullets?' — is a reflex back toward skepticism because believing the truth is more frightening than doubting it.",
+   "shows": "Confusion, a reflexive joke, a defensive 'I was...' when caught looking, and the head-scratch — he lets his bewilderment show freely because he has no reason yet to hide it from Morpheus.",
+   "basis": "He is 'constantly bumped and shouldered' (physically out of his depth), gets caught staring at the red dress and fumbles, screams when the gun appears, and keeps asking questions ('This isn't the Matrix?', 'What are they?', 'Someone?', 'Why?') — a mind trying to rebuild its model of reality in real time.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus is a reliable guide whose astonishing claims can be trusted now that the 'Matrix' froze on command.",
+     "wrong_because": "Neo has no way yet to verify Morpheus's central promise — that he'll surpass Agents — and his skeptical joke reveals he only half-believes; he is trusting on authority and awe, not understanding, which Cypher will shortly exploit."
+    },
+    {
+     "other": "himself",
+     "belief": "That he is an ordinary man being asked to do impossible things.",
+     "wrong_because": "The whole training is premised on Neo being more than ordinary; his self-conception lags far behind what Morpheus (and the world) expects of him, and the gap is the engine of his arc."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "The 'your mind makes it real' lesson from sc-062 is what licenses the simulated street feeling real enough to terrify Neo.",
+  "The earlier sparring/rooftop failure (ev-013) established Neo as a struggling trainee whose doubt, not his body, is the obstacle — Morpheus is now attacking that doubt with doctrine.",
+  "The red-dress distraction works because Neo is still an ordinary young man, consistent with Trinity's intimate attention to him (sc-063) and Cypher's resentment that such an unremarkable person is being elevated (sc-064, ev-018)."
+ ],
+ "sets_up": [
+  "ev-016 restates this exact training, so the Agent-ambush lesson is the template Neo will be tested against when real Agents pursue the crew.",
+  "ev-018 (Cypher's warning about five dead candidates) pays off the pressure under Morpheus's 'you will succeed' — the faith asserted here will be challenged.",
+  "The promise that Neo can exceed Agents' rule-bound limits sets the expectation that the story will later force him to actually fulfill under lethal pressure."
+ ],
+ "dramatic_function": "This is the exposition scene that converts Neo's personal confusion into the story's real stakes: it reclassifies the Matrix's ordinary inhabitants as threats, introduces Agents as the lethal gatekeepers, and reframes Neo from a frightened trainee into a prophesied exception — giving the audience the rules the rest of the film will test."
+}

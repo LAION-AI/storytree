@@ -1,0 +1,26 @@
+{
+ "scene_id": "sc-128",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Trinity"
+ ],
+ "summary": "On the Main Deck the PHONE RINGS. Tank answers it. Trinity's voice comes over the line as a V.O., addressing him by name: \"Tank, it's me.\" The scene is just this phone contact being established.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "knowledge",
+   "before": "Hears the phone ring without knowing who is calling",
+   "after": "Learns the caller is Trinity",
+   "evidence": "The PHONE RINGS. Tank answers. TRINITY (V.O.) Tank, it's me."
+  }
+ ],
+ "event_hint": {
+  "kind": "phone contact",
+  "one_line": "Trinity reaches Tank by phone from outside.",
+  "continues_from_earlier": false
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 13 words vs fixed 150"
+}

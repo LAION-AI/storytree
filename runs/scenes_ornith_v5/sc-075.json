@@ -1,0 +1,188 @@
+{
+ "scene_id": "sc-075",
+ "location": "MESS HALL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "TANK",
+  "APOC",
+  "MOUSE",
+  "SWITCH",
+  "DOZER",
+  "NEO",
+  "MORPHEUS"
+ ],
+ "summary": "The crew eats a gray, gooey single-celled-protein breakfast in the mess hall, trading jokes about how the machines can't replicate real food. Mouse brags that he wrote the Agent training program and offers Neo a secret encounter with \"the woman in the red dress\" he designed, pitching indulgence as human nature while the others mock him. Morpheus enters, orders everyone to twelve-hour standby, and announces he is taking Neo to see the Oracle, then leaves. Neo, not knowing who \"her\" is, is told by Tank that it is the Oracle.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Neo does not know who Morpheus means when he says he is taking him to see \"her.\"",
+   "after": "Neo learns the person is the Oracle, the figure he is being taken to meet.",
+   "evidence": "NEO: See who? TANK: The Oracle."
+  },
+  {
+   "who": "NEO",
+   "axis": "standing",
+   "before": "Neo is a newcomer eating with the crew, absorbing their casual banter about the food and the world.",
+   "after": "Morpheus singles him out for a special, privileged step: \"I'm taking Neo to see her,\" marking him as the one being taken to the Oracle.",
+   "evidence": "MORPHEUS: I want everyone on twelve-hour standby.  We're going in.  I'm taking Neo to see her."
+  },
+  {
+   "who": "MOUSE",
+   "axis": "standing",
+   "before": "Mouse joins the general breakfast conversation about the food.",
+   "after": "He elevates himself by revealing authorship of the training program and offering Neo a private, sensual encounter, casting himself as an enabler against the \"hypocrites.\"",
+   "evidence": "MOUSE: So I understand you've run through the Agent training program?  You know, I wrote that program."
+  }
+ ],
+ "event_hint": {
+  "kind": "a gathering before a mission",
+  "one_line": "The crew shares a last casual meal before Morpheus announces they are going in to see the Oracle, singling Neo out for the journey.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the gray yogurt-like protein breakfast",
+  "the Agent training program",
+  "the woman in the red dress",
+  "the Oracle"
+ ],
+ "uncertain": [
+  "Whether this meal is breakfast specifically or just called that; the script says \"breakfast\" but time of day is unspecified.",
+  "What \"going in\" precisely entails beyond reaching the Oracle."
+ ],
+ "_mind_pass": "ran: 7 speakers — an exchange",
+ "minds": [
+  {
+   "who": "MOUSE",
+   "wants": "To impress the crew and especially Neo by claiming authorship of the Agent training program and offering him a private encounter with 'the woman in the red dress,' thereby converting his technical authorship into social and sexual currency.",
+   "feels": "A hungry, adolescent pride in his own cleverness; he has built something forbidden and wants witnesses to it. The pitch about 'denying our impulses' is less a philosophy he has reasoned toward than an excuse to make his own appetite respectable.",
+   "shows": "Braggadocio and a leering, conspiratorial ease — 'sidles up,' casts himself as a worldly enabler, dismisses the others as hypocrites. He performs casual control over something taboo.",
+   "basis": "He announces 'I wrote that program,' then pivots immediately to offering Neo 'a more personalized milieu' with a woman he 'designed,' and frames refusal as self-denial. The crew's 'Here it comes' and 'digital pimp' tell us this is a rehearsed routine.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo will be grateful and impressed by the offer, and that this is the natural way to bond with the newcomer.",
+     "wrong_because": "Neo has no stake in Mouse's ego and no interest in the construct; he only asks 'Of who?' The offer lands as noise, not a gift."
+    },
+    {
+     "other": "APOC",
+     "belief": "That the others mock him out of prudishness or jealousy — that they are 'hypocrites' who secretly want what he offers.",
+     "wrong_because": "Their contempt ('Shut up, Mouse,' 'The digital pimp hard at work') is boredom and mild disgust, not repressed desire; they have seen this performance before and find it tiresome."
+    }
+   ]
+  },
+  {
+   "who": "APOC",
+   "wants": "To keep the meal easy and to puncture Mouse before Mouse can work up a full head of steam — to police the table's mood.",
+   "feels": "Wearied familiarity with Mouse's routines; he has heard the Cream of Wheat and red-dress pitches enough to predict them and to pre-empt them with a groan.",
+   "shows": "Terse, timed put-downs — 'Shut up, Mouse' the instant Mouse gets going, and 'Here it comes' as Mouse sidles to Neo. He lets the others do the color commentary.",
+   "basis": "He cuts Mouse off twice at the exact moments Mouse is about to escalate, and signals the crew with 'Here it comes,' showing he knows the script by heart.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "MOUSE",
+     "belief": "That Mouse is a predictable nuisance whose provocations are more embarrassing than dangerous.",
+     "wrong_because": "This is only the crew's casual reading; it has no access to whether Mouse's neediness is harmless. (Nothing here proves it either way.)"
+    }
+   ]
+  },
+  {
+   "who": "SWITCH",
+   "wants": "To deflate Mouse's self-importance with wit rather than brute force — to win the exchange on style.",
+   "feels": "Amused contempt, and a sharpness that enjoys landing a line. Switch treats Mouse as material, not a threat.",
+   "shows": "Dry, clever jabs — correcting Mouse's logic ('technically neither did you') and branding him 'The digital pimp hard at work.' Cool, unhurried superiority.",
+   "basis": "The two lines are precisely aimed — one undercuts Mouse's premise, the other names his role — and both are delivered as sport, not anger.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "MOUSE",
+     "belief": "That Mouse is a figure of fun whose grandstanding is safely contained by mockery.",
+     "wrong_because": "Like the others, Switch reads Mouse as harmless clown; the scene gives no reason to think Mouse is anything but that, but the mockery is a settled verdict, not a tested one."
+    }
+   ]
+  },
+  {
+   "who": "TANK",
+   "wants": "To look after Neo — to make the newcomer feel fed, included, and initiated — while staying easy with the rest of the crew.",
+   "feels": "A warm, big-brother protectiveness. He is the one who physically serves Neo ('Here you go, buddy') and the one who closes the scene by supplying the name Neo lacks.",
+   "shows": "Buddy-casual warmth and a steady, explanatory helpfulness. He plays along with the banter but keeps Neo in his care.",
+   "basis": "He slides Neo the food with 'buddy,' sits with the crew, and, when Morpheus names 'her,' Tank is the one who answers Neo's 'See who?' with 'The Oracle.'",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo is a green newcomer to be gently shepherded through the crew and the world.",
+     "wrong_because": "Tank cannot yet know Neo is being set apart as 'the One' Morpheus will stake the crew on; his warmth is toward a rookie, not a prophecy."
+    }
+   ]
+  },
+  {
+   "who": "DOZER",
+   "wants": "To anchor the banter in fact — to be the one who names what they are actually eating and why — keeping the mood light but grounded.",
+   "feels": "A practical, slightly proud competence; he makes the fuel that keeps them alive and is content to be the straight man explaining it.",
+   "shows": "A calm, factual interjection about the single-celled protein, delivered without rancor. He doesn't join the mockery of Mouse; he just supplies the real answer.",
+   "basis": "His speech is the only technical description in the scene, delivered plainly amid the jokes, and the facts match the ship's self-sufficiency (he also 'makes' the alcohol in sc-073).",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo is simply another mouth to feed and brief, a new crewmate to be oriented.",
+     "wrong_because": "Dozer has no reason yet to see Neo as anything but a newcomer; the special errand Morpheus is about to announce is not his to know."
+    }
+   ]
+  },
+  {
+   "who": "NEO",
+   "wants": "To take the crew's measure, to belong enough to eat with them, and to learn what he can without exposing how far behind he is.",
+   "feels": "A wary, absorbing curiosity; he is still new enough that everything — the food, the jokes, the hierarchies — is data. He is quietly out of his depth.",
+   "shows": "Sparse, reactive participation — he scoops the food, asks 'Of who?' and 'See who?' — letting the crew perform while he watches.",
+   "basis": "He says almost nothing of his own initiative; his only lines are questions that reveal gaps ('Of who?', 'See who?'), and he accepts Tank's serving and Tank's answer.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "MOUSE",
+     "belief": "That Mouse is simply an eager, slightly strange crewmate offering information.",
+     "wrong_because": "Neo has no framework yet for Mouse's neediness or for how the crew reads him; he takes the offer at face value rather than as a status play."
+    },
+    {
+     "other": "MORPHEUS",
+     "belief": "That Morpheus is an unknowable, imposing figure whose plans happen around Neo rather than to him.",
+     "wrong_because": "This scene reassigns Neo from bystander to the specific object of Morpheus's errand ('I'm taking Neo to see her'), but Neo still doesn't grasp the weight Morpheus places on him."
+    }
+   ]
+  },
+  {
+   "who": "MORPHEUS",
+   "wants": "To move the crew to readiness and to take Neo the next, decisive step — to the Oracle — without explanation or debate.",
+   "feels": "A taut, forward-leaning certainty. He carries the whole weight of the prophecy (and, unknown to the crew, the fresh warning from Cypher in sc-073) and refuses to let it show as doubt.",
+   "shows": "Command and economy — he enters, issues one order, names the mission and the one exception ('I'm taking Neo to see her'), and leaves without lingering. He does not explain 'her' to Neo; the gap itself is instruction.",
+   "basis": "His entire presence is four lines that reorganize the room: standby, 'We're going in,' and singling Neo out. He doesn't answer Neo's 'See who?' — Tank does — which keeps Morpheus's authority intact and the destination mythic.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo is ready, or ready enough, to be taken to the Oracle and to begin carrying the prophecy.",
+     "wrong_because": "Neo still doesn't even know who 'her' is and is processing the crew's casual world; Morpheus's certainty runs well ahead of Neo's actual readiness — the same certainty Cypher warned is fatal in sc-073."
+    },
+    {
+     "other": "CYPHER",
+     "belief": "That Cypher, left on the ship, remains a loyal crewman while Morpheus takes the risk of going in.",
+     "wrong_because": "Cypher has already bargained to hand Morpheus to the Agents (sc-074); Morpheus's 'going in' is walking straight into the trap Morpheus does not know exists."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-073: Cypher's warning that Morpheus has believed in five previous 'Ones,' all dead — the certainty with which Morpheus now takes Neo to the Oracle is exactly the faith Cypher called a 'mindjob.'",
+  "sc-074: Cypher's deal to deliver Morpheus to Agent Smith — the 'going in' Morpheus announces is the movement Cypher has already sold, though no one at this table knows it.",
+  "The crew's casual, lived-in banter about the Matrix's fake food establishes the normalcy that Cypher has rejected and that this meal momentarily restores before the mission."
+ ],
+ "sets_up": [
+  "ev-021 (The Oracle's Prophecy): Morpheus taking Neo to 'see her' and the crew going on standby is the departure that leads directly to the Oracle's apartment and her test of Neo.",
+  "ev-022 (Mouse's Death and the Hotel Raid): Mouse's introduction here — his authorship of programs, his presence on the crew — establishes the character who will be left behind and killed at the Hotel Lafayette.",
+  "ev-023 (Escape and Extraction): The 'going in' and Cypher's unobserved presence on the ship set the conditions for Cypher to kill Dozer and shoot Tank during the extraction.",
+  "Neo's singling-out ('I'm taking Neo to see her') deepens the divide Cypher resents, which fuels Cypher's later actions."
+ ],
+ "dramatic_function": "This scene restores the crew's ordinary humanity — appetite, humor, hierarchy — as a last calm before the mission, while quietly doing two things at once: it marks Neo as chosen (raising him in the crew's eyes and in the story's), and it stages the departure under a false premise, since the audience knows Cypher has already sold that departure. The banter and Mouse's indulgence-vs-duty pitch also give the film its thesis about what 'being human' costs, right before the crew is asked to pay it."
+}

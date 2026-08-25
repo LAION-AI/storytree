@@ -1,0 +1,93 @@
+scenes: 224
+
+stage 1 — reusing segmentation from runs/events_build7_24/segmentation.json: 47 events
+  roster: 396 spellings -> 364 entities
+  limited to the first 12 events for iteration
+
+stage 2 — composing 12 events in waves of 1
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1] !
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+    [1/1]
+  11 composed (1 failed)
+lint: 0 placeholder entries, 12 conceding-unchanged, 0 unmoved-with-exit, 0 quotes outside reading, 7 entities without registers
+chain repair: 0 entries chained, 0 unmoved-exit contradictions fixed, 4 participant lists synced, 0 placeholders left
+
+entity canonicalisation: 0 variants folded, 0 renames, 97 -> 97 entities
+
+stage 2p — verifying joins before repair
+    [3/10]
+    [6/10]
+    [9/10]
+    [10/10]
+  {'state_breaks': 25, 'contradictions': 10, 'missing_links': 6}
+  25 findings routed to regeneration
+
+stage 2a — auditing and regenerating failed entities
+  round 1: 40 entities with faults, 38 regenerated, 2 rejected, 1 outward-effect blocks rewritten
+  round 2: 3 entities with faults, 1 regenerated, 2 rejected, 0 outward-effect blocks rewritten
+  39 regenerated, 4 rejected, 5 faults left
+
+stage 2b — reconciling prose to the finished triples
+    [3/11]
+    [6/11]
+    [9/11]
+    [11/11]
+  11/11 reconciled
+
+stage 3 — verifying 10 joins
+    [3/10]
+    [6/10]
+    [9/10]
+    [10/10]
+  {'state_breaks': 10, 'contradictions': 6, 'missing_links': 3}
+
+verbatim gate — event layer
+  exact runs (>= 8 source words): 27 in 6/11 nodes, longest 10
+  near hits (review only): 81
+  fix: python3 distill/paraphrase_pass.py --nodes <out> \
+         --source reconstruct/runs/matrix/script.normalized.txt --ports <ports> --model <small model>
+
+11 events, 126 state triples, 437 register entries in 3546s
+wrote runs/events_build10/events.json
+checked 1 file(s) against script.normalized.txt
+  exact runs (>= 8 words): 27 in 6 node(s)
+  near hits (review only):  81
+  escalating failed spans to ornith-1.5-397b on 8110,8111
+  ev-003     (unmoved registers)          exit re-synced to entry on 2 register(s)
+  ev-005     /action                      1 span(s) rewritten
+  ev-005     /prose_before_reconcile/summ 1 span(s) rewritten
+  ev-005     /prose_before_reconcile/acti 1 span(s) rewritten
+  ev-006     /action                      kept: names and numbers only
+  ev-006     /carried_uncertainty[1]/what 1 span(s) rewritten
+  ev-006     /prose_before_reconcile/acti kept: names and numbers only
+  ev-007     /action                      1 span(s) rewritten
+  ev-007     /state_triples[1]/registers/ 1 span(s) rewritten
+  ev-007     /prose_before_reconcile/summ 1 span(s) rewritten
+  ev-007     /prose_before_reconcile/acti 1 span(s) rewritten
+  ev-010     /prose_before_reconcile/acti 1 span(s) rewritten
+  ev-011     /state_triples[4]/registers/ 1 span(s) rewritten
+  ev-011     /state_triples[4]/registers/ 1 span(s) rewritten
+  ev-011     /state_triples[8]/registers/ 2 span(s) rewritten
+  ev-011     /state_triples[8]/registers/ 2 span(s) rewritten
+  ev-011     /state_triples[8]/registers/ 1 span(s) rewritten
+  ev-011     /state_triples[8]/registers/ 1 span(s) rewritten
+  ev-011     /state_triples[9]/registers/ 1 span(s) rewritten
+  ev-011     /state_triples[9]/registers/ 1 span(s) rewritten
+  ev-011     /state_triples[11]/registers 1 span(s) rewritten
+  ev-011     /state_triples[11]/registers 1 span(s) rewritten
+  ev-011     /prose_before_reconcile/acti 1 span(s) rewritten
+  ev-011     (unmoved registers)          exit re-synced to entry on 5 register(s)
+  ev-012     (entity name)                shortened everywhere it occurs
+
+25 field(s) touched: {'exit re-synced to entry on 2 register(s)': 1, '1 span(s) rewritten': 18, 'kept': 2, '2 span(s) rewritten': 2, 'exit re-synced to entry on 5 register(s)': 1, 'shortened everywhere it occurs': 1}
+runs remaining after the pass: 2
+report -> runs/events_build10/paraphrase_report.json

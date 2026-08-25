@@ -1,0 +1,100 @@
+{
+ "scene_id": "sc-185",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Trinity",
+  "Morpheus"
+ ],
+ "summary": "In the hovercraft, Tank is searching the Matrix when Trinity asks what just happened; Tank answers that he doesn't know and has lost him. Morpheus begins to say that \"he's on the run\" when a siren suddenly sounds, prompting Tank to curse, and Morpheus bolts to the ladder.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "knowledge",
+   "before": "He is tracking someone in the Matrix, then loses him.",
+   "after": "He no longer knows where the person is.",
+   "evidence": "TANK\nI don't know.  I lost him."
+  },
+  {
+   "who": "Morpheus",
+   "axis": "condition",
+   "before": "He is speaking, interpreting what is happening.",
+   "after": "He reacts to the siren by rushing to the ladder.",
+   "evidence": "Suddenly, a SIREN SOUNDS.\nTANK\nOh shit!\nMorpheus bolts to the ladder."
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "The crew loses track of Neo in the Matrix, then an alarm interrupts them as Morpheus rushes to the ladder.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "What the siren is warning about.",
+  "Whether Morpheus reaches the ladder or why he goes there."
+ ],
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Tank",
+   "wants": "To locate Neo on the screen and report his status back to the crew.",
+   "feels": "A professional's alarm spiking into genuine fear — he has just watched Neo nearly killed (sc-183) and now the visual feed has gone dark at the worst possible moment, and the siren tells him the reason may be that their own ship is now the target.",
+   "shows": "Only the one word that breaks past discipline — 'Oh shit!' — before he presumably returns to his task. The curse is the crack in the operator's composure.",
+   "basis": "He reports 'I lost him' (the tracking failure), then the SIREN sounds and his single line 'Oh shit!' is the only emotional leak; the event shape says the siren signals incoming Sentinels, so his curse is a recognition of a new, lethal threat, not just losing the feed.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That losing him on-screen means he is unaccounted-for and possibly caught, not that he has escaped.",
+     "wrong_because": "Neo is in fact fleeing toward an exit (the hotel phone), but the feed cut has erased him from Tank's sight, so Tank can only register the worst-case absence."
+    }
+   ]
+  },
+  {
+   "who": "Trinity",
+   "wants": "To understand what she just witnessed — Neo apparently being killed — and to get a read on whether he is still alive.",
+   "feels": "Dread she has no room to express; she just saw Neo coughing blood with wild life-signs (sc-183), and now the crew's attention is being ripped away from him by the alarm, leaving her with no answer at the moment she most needs one.",
+   "shows": "A plain question, 'What just happened?' — framed as a request for information so it can be answered, not as the panic it also is.",
+   "basis": "Her line follows immediately after sc-183, where she cried 'Jesus, he's killing him!' watching Neo's body jerk and cough blood; her question here is the continuation of that horror, and no one actually answers it before the siren cuts them off.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That he is about to give her an interpretation ('He's on the run --') that will settle the question.",
+     "wrong_because": "He cannot finish it — the siren interrupts, and whatever reassurance she hoped for is replaced by an emergency that redirects all of them."
+    }
+   ]
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To make sense of the chaos for the others and to get to his post the instant the ship's alarm sounds.",
+   "feels": "The quick, unconflicted shift of a commander: he reads the situation ('He's on the run'), then the siren instantly reorders his priorities to the defense of the ship, with no wasted motion or visible doubt.",
+   "shows": "The interrupted sentence 'He's on the run --' and then pure physical response — he bolts to the ladder. He lets nothing else show; the body does the deciding.",
+   "basis": "He begins an interpretive statement and is cut off by the SIREN, then immediately 'bolts to the ladder'; the event shape identifies this as the Sentinel-attack protocol, so his movement is trained, pre-decided action, not confusion.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo is 'on the run' and therefore still in the fight and reachable — a commander's working assumption meant to steady the crew.",
+     "wrong_because": "He states it as fact but has no confirmation; within the larger event Neo is about to be shot and killed (ev-034), so Morpheus's read is both hopeful and, for the moment, unfalsified."
+    },
+    {
+     "other": "Trinity",
+     "belief": "That she can be steadied by being given an interpretation rather than by reassurance.",
+     "wrong_because": "He never gets to test this — the siren ends the exchange before his words can land on her."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "Trinity's 'What just happened?' is the direct continuation of her horror in sc-183 watching Neo's body jerk and cough blood.",
+  "Tank 'losing him' follows the subway fight (sc-182/184) where Neo's movement and the train's passage would break line-of-sight tracking.",
+  "The SIREN is the first sign of the Sentinel attack named in ev-033, which the crew could not yet see coming in the subway scenes."
+ ],
+ "sets_up": [
+  "The shift of all attention from Neo to the ship's defense, which is why Neo's flatline (ev-034) happens while the crew is occupied elsewhere.",
+  "Morpheus moving to the ladder/EMP station, enabling the EMP discharge that clears the Sentinels (ev-035).",
+  "The urgency that forces the crew to locate and use an exit quickly, leading to Neo being pulled out (ev-035)."
+ ],
+ "dramatic_function": "It pivots the entire sequence from a single combat in the Matrix to a two-front crisis, yoking Neo's fate to the ship's survival and using the siren to sever Trinity's question unanswered — so that the personal stakes (is Neo alive?) and the tactical stakes (the Sentinel attack) collide and neither can be resolved before the other demands action."
+}

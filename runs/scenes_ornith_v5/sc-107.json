@@ -1,0 +1,30 @@
+{
+ "scene_id": "sc-107",
+ "location": "ROOM 1313",
+ "time_of_day": "DAY",
+ "present": [
+  "Agent Smith",
+  "Mouse"
+ ],
+ "summary": "In Room 1313, Agent Smith stands over the dead body of Mouse and then moves his hand to his earpiece, signaling contact with his unit.",
+ "what_changes": [
+  {
+   "who": "Agent Smith",
+   "axis": "condition",
+   "before": "standing over Mouse's dead body after killing him",
+   "after": "reaching to his earpiece to report to his fellow Agents",
+   "evidence": "Agent Smith stands over Mouse's dead body, his hand going to his earpiece."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Agent Smith kills Mouse in Room 1313 and reports in via his earpiece.",
+  "continues_from_earlier": false
+ },
+ "objects_that_matter": [
+  "earpiece",
+  "Mouse's dead body"
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 0 speaker(s), 18w — no exchange to read"
+}

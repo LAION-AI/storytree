@@ -1,0 +1,45 @@
+{
+ "scene_id": "sc-057",
+ "location": "DOJO",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "MORPHEUS",
+  "NEO",
+  "Tank"
+ ],
+ "summary": "In the Dojo, Morpheus rubs his face and then smiles. Neo interrupts to say he recognizes what Morpheus is doing, but Morpheus reframes it: he is only trying to free Neo's mind and can merely show him the door, insisting Neo himself must step through. He then orders Tank to load the jump program, moving the training to a new test.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Unaware of Morpheus's true purpose, caught up in the physical sparring.",
+   "after": "He recognizes the intent behind the training, claiming to understand it.",
+   "evidence": "NEO: I know what you're trying to do --"
+  },
+  {
+   "who": "MORPHEUS",
+   "axis": "knowledge",
+   "before": "Acting as the one who fights and pushes Neo physically.",
+   "after": "Reframes his role as only a guide who can 'show you the door,' placing the responsibility on Neo.",
+   "evidence": "I'm trying to free your mind, Neo, but all I can do is show you the door. You're the one that has to step through."
+  },
+  {
+   "who": "Tank",
+   "axis": "condition",
+   "before": "Idle between programs in the training.",
+   "after": "Given a direct order to load the next test.",
+   "evidence": "Tank, load the jump program."
+  }
+ ],
+ "event_hint": {
+  "kind": "a training session",
+  "one_line": "Morpheus ends the sparring by telling Neo he must choose to free his own mind, then orders the jump program loaded.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the door",
+  "the jump program"
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 48 words vs fixed 150"
+}

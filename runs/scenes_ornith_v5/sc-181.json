@@ -1,0 +1,79 @@
+{
+ "scene_id": "sc-181",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Morpheus"
+ ],
+ "summary": "On the main deck, Trinity cannot understand what Neo is doing and asks, \"What is he doing?\" Morpheus answers that \"He's beginning to believe,\" indicating Neo is starting to accept his abilities.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "belief",
+   "before": "Not yet believing in himself",
+   "after": "Beginning to believe",
+   "evidence": "He's beginning to believe."
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "As Neo is pursued by Agent Smith, Trinity and Morpheus watch from the ship.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To get someone — Morpheus, but really herself — to make sense of Neo's behavior, which no longer maps onto anything she knows about survival or combat.",
+   "feels": "Disorientation shading toward fear. Neo has stopped running from a gun pointed at him (sc-178, sc-180), and for someone who has watched him be hunted, that refusal to flee reads as either madness or a death wish. She is reaching for an explanation that will let her stop being afraid.",
+   "shows": "A single, flat question — \"What is he doing?\" — delivered as confusion rather than alarm. She keeps it cognitive, not emotional.",
+   "basis": "Her line 'What is he doing?' is genuine puzzlement, and the stage direction 'Trinity is unable to understand' states the concealment outright: she cannot parse his action. This contrasts with sc-179 where her instruction was a clean, urgent 'Run, Neo. Run.' — she expected flight, and he did not flee.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That his stillness/turning back toward danger is a mistake or a failure of self-preservation she needs explained.",
+     "wrong_because": "It is not a mistake — Morpheus names it as the beginning of belief. She reads his non-flight as confusion or recklessness when it is actually the first sign of him accepting what he is."
+    },
+    {
+     "other": "Morpheus",
+     "belief": "That he can interpret what she cannot — that he has a framework she lacks for understanding Neo.",
+     "wrong_because": ""
+    }
+   ]
+  },
+  {
+   "who": "Morpheus",
+   "wants": "To reframe Neo's action from something alarming into its true meaning, and in doing so to steady Trinity — and confirm his own faith — that Neo is becoming what he has insisted he would be.",
+   "feels": "Satisfaction, near-triumph. Where Trinity sees a man failing to run, Morpheus sees the prophecy resolving: the thing he has believed in without evidence (his whole arc as the one who found and trained 'the One') is finally producing visible proof.",
+   "shows": "Calm, oracular certainty — a four-word diagnosis, 'He's beginning to believe,' offered as obvious fact rather than hope. He does not argue; he declares.",
+   "basis": "His answer reinterprets her confusion as a spiritual milestone. Across the event (ev-033) he has remained confident Neo will make it in time even as the ship is breached; this line is of a piece with that unshakable conviction. He reads the same 'gunfighter's resolve' (sc-180) that Trinity reads as danger, and sees belief where she sees risk.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo is now truly beginning to believe he is the One.",
+     "wrong_because": "This belief is about to be tested to the breaking: ev-034 has Neo physically dominated and shot dead before any resurrection. Morpheus is reading a genuine shift, but he is ahead of the evidence — belief has begun, yet it is not yet enough to save Neo."
+    },
+    {
+     "other": "Trinity",
+     "belief": "That her confusion comes from not understanding Neo, and that an explanation will settle her.",
+     "wrong_because": ""
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-178/sc-180: Neo facing Agent Smith's gun and turning back with 'gunfighter's resolve' instead of running — the behavior Trinity cannot parse here.",
+  "sc-179: Trinity's 'Run, Neo. Run.' establishes her expectation of flight, which Neo violated, producing her 'What is he doing?'",
+  "Morpheus's role as the believer who identified and trained Neo, giving him the interpretive frame he deploys here."
+ ],
+ "sets_up": [
+  "ev-034: Neo's death and resurrection — the belief that has 'begun' here is exactly what must carry him past death; Morpheus's confidence is the counterweight to the coming flatline.",
+  "The crew's willingness to stake everything on Neo (the EMP timing in ev-033/ev-035) rests on the conviction Morpheus voices here.",
+  "Trinity's later role in Neo's return (ev-035) is seeded by her here being the one who does not yet understand him but is being asked to."
+ ],
+ "dramatic_function": "It translates an external chase into an internal turning point, letting the audience see Neo's transformation through the split between Trinity's fear and Morpheus's faith — a brief stillness of interpretation before the story commits to death and resurrection."
+}

@@ -1,0 +1,40 @@
+{
+ "scene_id": "sc-097",
+ "location": "ROOM 1313",
+ "time_of_day": "DAY",
+ "present": [
+  "Mouse"
+ ],
+ "summary": "In Room 1313, Mouse hears a helicopter and goes to the draped windows as his cellular rings. He answers it, and Tank's voice warns him over the phone that 'They cut the hardline! It's a trap! Get out!' Mouse yanks open the curtain and says 'Oh no,' discovering the windows are bricked up. As he spins around, the rumble of combat boots builds and then explodes into the room.",
+ "what_changes": [
+  {
+   "who": "Mouse",
+   "axis": "knowledge",
+   "before": "Going about his business, unaware of danger.",
+   "after": "Learns it is a trap and that escape is blocked.",
+   "evidence": "They cut the hardline! It's a trap! Get out!"
+  },
+  {
+   "who": "Mouse",
+   "axis": "safety",
+   "before": "Mobile and able to reach the windows.",
+   "after": "Trapped — windows bricked up, combat boots storming in.",
+   "evidence": "The windows are bricked up. Mouse spins as the RUMBLE of combat BOOTS BUILDS, then explodes into the room."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Mouse is cornered in Room 1313 as the trap closes around him.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "cellular",
+  "helicopter",
+  "draped windows",
+  "bricked up windows",
+  "combat boots"
+ ],
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 59 words vs fixed 150"
+}

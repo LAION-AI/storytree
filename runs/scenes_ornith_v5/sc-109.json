@@ -1,0 +1,29 @@
+{
+ "scene_id": "sc-109",
+ "location": "ROOM 1313",
+ "time_of_day": "DAY",
+ "present": [
+  "AGENT SMITH"
+ ],
+ "summary": "In Room 1313, Agent Smith is on a call when the line goes dead in his ear. He reacts to the disconnection and, using it, relays the location of his targets: he states they are on the eighth floor, repeating it for emphasis.",
+ "what_changes": [
+  {
+   "who": "AGENT SMITH",
+   "axis": "knowledge",
+   "before": "On a call whose status is unclear until the connection fails",
+   "after": "In possession of and reporting the targets' floor location",
+   "evidence": "Agent Smith hears the LINE CLICK dead. AGENT SMITH: Eighth floor. They're on the eighth floor."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Agent Smith reports the targets' location after his call drops.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the phone line / earpiece"
+ ],
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 1 speaker(s), 21w — no exchange to read"
+}

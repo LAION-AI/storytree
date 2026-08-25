@@ -1,0 +1,166 @@
+{
+ "scene_id": "sc-156",
+ "location": "GOVERNMENT BUILDING",
+ "time_of_day": "DAY",
+ "present": [
+  "Trinity",
+  "Neo",
+  "GUARD",
+  "GUARD #4",
+  "soldiers",
+  "security guards"
+ ],
+ "summary": "Trinity and Neo, in long black coats, push through the revolving doors into the government building lobby, Neo carrying a duffel bag and Trinity a large metal suitcase, drawing nervous glances as they cross to the security station. Neo calmly walks through the metal detector, which immediately wails; a guard asks him to remove metallic items, but Neo instead sets down his bag, throws open his coat to reveal an arsenal of guns, knives and grenades on a climbing harness, and in a blur kills three guards before they hit the floor. A fourth guard dives for cover and radios for backup, then looks up to see Trinity set off the metal detector and is killed. Backup arrives as a wave of soldiers blocking the elevators, turning the concrete lobby into a roar of gunfire with explosive-tipped bullets cratering the walls, answered by Neo and Trinity's sub-hand machine gun and throwing knives, used with deadly precision. Bodies slump to the marbled floor while the two hardly break their stride.",
+ "what_changes": [
+  {
+   "who": "Neo and Trinity",
+   "axis": "safety",
+   "before": "Two armed figures moving through a lobby under routine, passive security screening.",
+   "after": "The lobby becomes a battlefield where they have killed the guards and soldiers and press on unharmed.",
+   "evidence": "The concrete cavern of the lobby becomes a white noise ROAR of GUNFIRE. ... Bodies slump down to the marbled floor while Neo and Trinity hardly even break their stride."
+  },
+  {
+   "who": "the security guards",
+   "axis": "safety",
+   "before": "In control of the checkpoint, able to issue a routine order to Neo.",
+   "after": "Three killed instantly and a fourth killed after his call for backup fails to save him.",
+   "evidence": "In a split second, three guards are dead before they hit the ground. A fourth guard dives for cover, clutching his radio."
+  },
+  {
+   "who": "the government forces",
+   "axis": "safety",
+   "before": "Able to summon reinforcements to contain the intruders at the elevators.",
+   "after": "The backup soldiers are cut down by Neo and Trinity's weapons fire.",
+   "evidence": "The backup arrives. A wave of soldiers blocking the elevators. ... They are met by the quivering spit of a SUB-HAND MACHINE GUN and the RAZORED WHISTLE of throwing knives."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Neo and Trinity storm the government building lobby, gunning down guards and soldiers to fight their way inside.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "duffel bag",
+  "large metal suitcase",
+  "metal detector",
+  "metal detection wand",
+  "arsenal of guns, knives and grenades",
+  "climbing harness",
+  "radio",
+  "SUB-HAND MACHINE GUN",
+  "throwing knives",
+  "EXPLOSIVE-tipped BULLETS",
+  "revolving doors",
+  "elevators"
+ ],
+ "uncertain": [
+  "Whether Neo and Trinity reach the elevators or Morpheus within this scene.",
+  "The exact number of soldiers killed beyond what is described."
+ ],
+ "_mind_pass": "ran: 257 words vs fixed 150",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To clear the lobby fast and reach the elevators, converting himself from a suspect at a checkpoint into the leading edge of the rescue.",
+   "feels": "A cold, deliberate certainty. He is no longer trying to pass as ordinary; he has committed to being seen as a threat, and the commitment reads as calm rather than fear.",
+   "shows": "The 'game face' — dark glasses, unhurried movements, the slow setting-down of the bag and the deliberate opening of the coat. He lets the detector wail and the guard's order hang rather than comply.",
+   "basis": "He 'calmly' passes through the detector, sets the bag down slowly, and opens his coat with theatrical deliberation before moving 'in a blur.' The scene notes his weapons are used 'like extensions of their bodies.' ev-026 has him requesting the arsenal, so this is the first use of what he chose.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "the guards",
+     "belief": "They are an obstacle to be neutralized, not people to be negotiated with.",
+     "wrong_because": "He treats them as pure function, but their deaths are what will summon the soldiers — they are already shaping the fight he thinks he is simply executing."
+    },
+    {
+     "other": "himself",
+     "belief": "That he can walk through this unharmed.",
+     "wrong_because": "inferred — the soldiers with explosive-tipped rounds are the first real test of that certainty, and the scene cannot yet confirm it will hold."
+    }
+   ]
+  },
+  {
+   "who": "Trinity",
+   "wants": "The same breach as Neo, executed as one unit with him, refusing the role of backup or passenger.",
+   "feels": "Resolved and synchronized. ev-026 established that she chose this mission over Neo's objection, so her presence here is an assertion of that choice as much as a tactical move.",
+   "shows": "She mirrors Neo's game face and stride, carrying the metal suitcase and setting off her own detector — the kill of Guard #4 happens almost as a byproduct of her continuing forward, not as a pause.",
+   "basis": "She walks 'hardly even break[ing] their stride' in lockstep with Neo; her detector trips and Guard #4 dies in the same breath. ev-026 has her invoke rank to join despite Neo's doubts, making this the proof-of-competence she is staking.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That she has already answered his doubt by being here and performing.",
+     "wrong_because": "inferred — she may believe the demonstration settles the rank dispute from ev-026, but the coming events will keep testing whether they move as equals."
+    },
+    {
+     "other": "the soldiers",
+     "belief": "That they are the same kind of threat the guards were — manageable at her pace.",
+     "wrong_because": "The explosive-tipped rounds and the 'wave' of soldiers are a categorically heavier engagement than the checkpoint; her stride assumes a parity the scene has not yet confirmed."
+    }
+   ]
+  },
+  {
+   "who": "GUARD (at the detector)",
+   "wants": "To complete a routine screening and move these two odd-looking visitors along.",
+   "feels": "A flicker of unease beneath the script — they read as wrong, but he has no framework for how wrong until it is too late.",
+   "shows": "Polite procedure: he moves in with the wand and recites the standard line about keys and loose change.",
+   "basis": "His dialogue is boilerplate checkpoint language ('Would you please remove any metallic items'), delivered while Neo is already deciding to reveal the arsenal.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That he is a compliant civilian who will empty his pockets when asked.",
+     "wrong_because": "The coat opens onto an arsenal; his expectation of a routine interaction is exactly what leaves him dead before he hits the ground."
+    }
+   ]
+  },
+  {
+   "who": "GUARD #4",
+   "wants": "To survive by getting help on the radio and getting low.",
+   "feels": "Pure survival panic — the first of his group to grasp that this is not a screening but an ambush.",
+   "shows": "He dives for cover and shouts for backup, then looks up — a reflexive need to see the threat he is reporting.",
+   "basis": "He 'dives for cover, clutching his radio' and calls 'Backup! Send in the backup!' His death coincides with looking up at Trinity tripping the detector.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "the backup",
+     "belief": "That calling for reinforcements will save him — that the system will respond in time.",
+     "wrong_because": "The backup arrives, but he is already dead as it does; the cavalry is what Neo and Trinity then slaughter, not what rescues him."
+    },
+    {
+     "other": "Trinity",
+     "belief": "inferred — that the second figure is a secondary threat or an afterthought while he deals with Neo.",
+     "wrong_because": "She is the immediate cause of his death; his attention and his gun are oriented toward Neo's side of the fight."
+    }
+   ]
+  },
+  {
+   "who": "the soldiers (backup)",
+   "wants": "To contain the two intruders at the elevators and stop the breach.",
+   "feels": "inferred — the confidence of a mass response: a 'wave' sent to overwhelm what a single guard could not hold.",
+   "shows": "They arrive as a blocking force at the elevators and open fire with explosive-tipped rounds.",
+   "basis": "The summary states backup 'arrives... A wave of soldiers blocking the elevators,' and they bring heavier weaponry than the guards had.",
+   "grounding": "extrapolated",
+   "believes_about": [
+    {
+     "other": "Neo and Trinity",
+     "belief": "That two people, however armed, can be pinned down and stopped by overwhelming firepower in an open lobby.",
+     "wrong_because": "Their precision and synchronization turn the open space into a kill zone against the soldiers themselves; numbers do not translate into the advantage the soldiers assume."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "ev-026: Neo and Trinity's request for and receipt of the arsenal is the loadout being deployed here for the first time.",
+  "ev-026: Trinity's decision to override Neo's objection and join the mission is what puts her at Neo's side in this breach rather than waiting behind.",
+  "sc-154: Tank's 'They're coming for you' to the dying Morpheus frames this assault as the answer to that promise — the rescue is now in motion.",
+  "sc-153: Smith's desperation to get inside Zion and his torture of Morpheus establish the clock this lobby-crossing is racing against."
+ ],
+ "sets_up": [
+  "ev-027: The cleared path to the elevators makes possible boarding one, rigging it as a bomb, and riding the counterweights to the roof.",
+  "ev-027: The soldiers' explosive-tipped ammunition and the two-on-many firefight establish the lethal rhythm that carries up through the building.",
+  "ev-028: Reaching the roof sets up Trinity piloting the helicopter into the executive office to extract Morpheus.",
+  "ev-029: The rooftop escape and the Agents' pursuit are made necessary by the very public, body-leaving breach that begins in this lobby."
+ ],
+ "dramatic_function": "To convert the crew's debate and preparation into irreversible action — the rescue is no longer argued, it is underway — and to establish Neo and Trinity as a synchronized, nearly unstoppable force so that the coming escalation with soldiers and Agents reads as earned rather than asserted."
+}

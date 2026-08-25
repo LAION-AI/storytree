@@ -1,0 +1,29 @@
+{
+ "scene_id": "sc-111",
+ "location": "STAIRWELL",
+ "time_of_day": "DAY",
+ "present": [
+  "Boots"
+ ],
+ "summary": "In the stairwell during the day, boots clatter up the marble staircase. No one speaks. The scene registers only the sound and motion of someone ascending the stairs.",
+ "what_changes": [
+  {
+   "who": "Boots",
+   "axis": "condition",
+   "before": "not yet on the stairs",
+   "after": "clattering up the marble staircase",
+   "evidence": "Boots clatter up the marble staircase."
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Someone runs up the stairwell.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Who the boots belong to.",
+  "Whether the ascent is pursuit or escape."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 10 words vs fixed 150"
+}

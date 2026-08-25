@@ -1,0 +1,31 @@
+{
+ "scene_id": "sc-221",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "A sentinel",
+  "Morpheus",
+  "Neo",
+  "TRINITY"
+ ],
+ "summary": "On the Main Deck, a sentinel descends towards Morpheus. On the screen, Neo dives for the phone. Trinity shouts \"Now!\" and Morpheus turns the key.",
+ "what_changes": [
+  {
+   "who": "Morpheus",
+   "axis": "condition",
+   "before": "A sentinel descends towards Morpheus.",
+   "after": "Morpheus turns the key.",
+   "evidence": "Morpheus turns the key. Trinity: Now!"
+  }
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Sentinels attack the ship as the crew races to bring Neo back through the phone."
+ },
+ "uncertain": [
+  "Whether turning the key succeeds in reaching Neo.",
+  "The identity of the person on the screen relative to the action."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 25 words vs fixed 150"
+}

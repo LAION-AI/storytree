@@ -1,0 +1,32 @@
+{
+ "scene_id": "sc-179",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Morpheus",
+  "Trinity",
+  "Tank"
+ ],
+ "summary": "On the Main Deck, Morpheus and Trinity stand behind Tank, all three riveted to the scrolling code on his screen. Trinity speaks into the connection with Neo and urges him to run, repeating the command.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "Watching the scrolling code with the others, silent",
+   "after": "Speaking urgently to Neo, telling him to flee",
+   "evidence": "Morpheus and Trinity stand behind Tank riveted to the scrolling code."
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "Trinity urges Neo to run as the crew watches him through the code.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether Neo can hear or obey Trinity's command",
+  "What has happened to Neo to make running necessary",
+  "The exact nature of the scrolling code they are watching"
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 1 speaker(s), 18w — no exchange to read"
+}

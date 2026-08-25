@@ -1,0 +1,92 @@
+{
+ "scene_id": "sc-182",
+ "location": "SUBWAY STATION",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Agent Smith"
+ ],
+ "summary": "In the subway station, Neo whip-draws his gun at lightning speed as Agent Smith opens fire. Both men blast away at impossible speed, moving through bullet-time until they are nearly on top of each other, rolling up out of a mirrored move that ends with each jamming his gun tight to the other's head. They freeze in a kind of embrace — Neo sweating and panting, Agent Smith machine-calm and smiling. Smith says Neo is empty; Neo pulls the trigger and it clicks. Neo replies that Smith is empty too. The smile falls from Smith's face; he yanks his trigger and it clicks. Smith's face warps with rage and he attacks with fists flying, Neo retreating until a knife-hand cuts his forearm and a kick slams him against a steel column. Neo ducks under a punch that crunches into the beam, steel chunks exploding. Neo leaps into the air and delivers a neck-snapping reverse round-house, sending Smith's glasses flying. Smith glares with ice-blue eyes and vows he will enjoy watching Neo die, then attacks with unrelenting fury, pounding Neo like jackhammers.",
+ "what_changes": [
+  {
+   "who": "Agent Smith",
+   "axis": "condition",
+   "before": "Machine-calm and confident, smiling while he believes Neo has run out of bullets.",
+   "after": "His composure shatters into rage once he realises he too is empty, and he switches from gunplay to a furious physical assault.",
+   "evidence": "Agent Smith machine-calm.  Agent Smith smiles. / The smile falls.  Agent Smith yanks his TRIGGER.  CLICK. / Agent Smith's face warps with rage and he attacks, fists flying at furious speed"
+  },
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "Locked in a balanced standoff, gun to Smith's head, both equally armed and matched.",
+   "after": "Wounded and driven back — a knife-hand opens his forearm, a kick slams him against a column — losing the parity of the standoff.",
+   "evidence": "A knife-hand opens his forearm, and a kick sends him slamming back against a steel column."
+  },
+  {
+   "who": "Agent Smith",
+   "axis": "standing",
+   "before": "Even with Neo, guns jammed head to head in a mutual stalemate.",
+   "after": "Asserting dominance and relish in the kill, declaring his intention to watch Neo die before overwhelming him.",
+   "evidence": "his eyes ice blue. / I'm going to enjoy watching you die, Mr. Anderson. / Agent Smith attacks with unrelenting fury, fists pounding Neo like jackhammers."
+  }
+ ],
+ "event_hint": {
+  "kind": "a fight",
+  "one_line": "Neo and Agent Smith exchange gunfire to a deadlock, then to empty guns, then to a brutal hand-to-hand brawl in the subway station.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "guns",
+  "bullets",
+  "steel column / beam",
+  "Agent Smith's glasses"
+ ],
+ "uncertain": [
+  "Whether either combatant is truly gaining a lasting advantage, since the scene ends mid-fight with Smith pressing the attack.",
+  "Whether Neo's neck-snapping reverse round-house actually hurt Agent Smith or only knocked his glasses off."
+ ],
+ "_mind_pass": "ran: 237 words vs fixed 150",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To hold the standoff as proof that he is no longer prey — to make Smith meet him as an equal and, in doing so, confirm the belief that has just begun to form in him.",
+   "feels": "A raw, newly-arrived steadiness underneath the physical strain. The gunfighter's resolve from the platform (sc-180) is real but untested, so there is fear and exhaustion in the body (sweating, panting) that the will is trying to overrule.",
+   "shows": "Outward strain and exertion, but a flat, unflinching reply — \"So are you\" — delivered without flinching even with a gun to his own head. He lets Smith see effort, never doubt.",
+   "basis": "In sc-180 his eyes hold \"something fixed and hard like a gunfighter's resolve\"; sc-181 has Morpheus say \"He's beginning to believe.\" Here he whip-draws at lightning speed, holds the gun to Smith's head, and answers Smith's \"You're empty\" with a level \"So are you,\" pulling a trigger he knows clicks.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Agent Smith",
+     "belief": "That parity is real — that if he matches Smith move for move, he can force an equal and survive the encounter on even terms.",
+     "wrong_because": "The standoff is a momentary illusion; Smith is not bound by the same limits and, once the guns are empty, simply discards the rules and overpowers him physically — the parity Neo feels is not something Smith intends to honor."
+    }
+   ]
+  },
+  {
+   "who": "Agent Smith",
+   "wants": "To reassert total control — to erase the insult of being matched by a human and to convert humiliation into the pure pleasure of domination.",
+   "feels": "Rage that is genuinely destabilizing. His \"machine-calm\" is a program's certainty of superiority, and the realization that he, too, is empty is not a setback but an outrage — something that should not be able to happen to him.",
+   "shows": "First a smile and a cool, almost intimate taunt (\"You're empty\"), then, when the click lands, the smile falls and the face \"warps with rage.\" He narrates his own relish — \"I'm going to enjoy watching you die\" — turning fury into a performance of dominance.",
+   "basis": "He is \"machine-calm\" and smiling at the standoff, confident Neo is empty; the smile drops at his own CLICK, his face \"warps with rage,\" and he escalates from gunplay to a \"furious\" physical assault, explicitly framing the killing as enjoyment.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo is just another anomaly to be erased, and that once the tricks are spent, domination is a foregone conclusion — the smile assumes victory is already his.",
+     "wrong_because": "He reads Neo's exhaustion and the empty gun as weakness, not as the threshold of the belief Morpheus names; he does not yet understand what Neo is becoming, which is precisely why his certainty is about to be punished."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-180: Neo's fixed, gunfighter's resolve on the platform is what lets him hold the gun to Smith's head without flinching.",
+  "sc-181: Morpheus's \"He's beginning to believe\" is the inner event this fight externalizes — Neo is testing a belief against a program that cannot be matched by old rules.",
+  "sc-179: Trinity's \"Run, Neo. Run.\" frames Neo as prey; this scene is his first refusal of that role."
+ ],
+ "sets_up": [
+  "ev-034: Smith's shift to unrelenting physical fury — and his belief that Neo is merely an anomaly to be broken — makes possible the beating in the subway and the execution-style shooting in the hotel, which in turn sets up Neo's death.",
+  "ev-034: Neo's willingness to stay in the fight on even terms, rather than flee to the exit, keeps him in the Matrix long enough to be cornered and killed — the parity he wants becomes the trap he must die in.",
+  "ev-035: The fury that drives Smith to overwhelm Neo is what strands Neo in the hotel, forcing the crew's EMP and the desperate escape that follows."
+ ],
+ "dramatic_function": "To convert Neo's internal, just-born belief into a physical contest where the old rules of the Matrix break down for both combatants, and to expose Smith's fatal flaw — the certainty that a human cannot equal him — so that the story can take Neo all the way to death before the resurrection the outline promises."
+}

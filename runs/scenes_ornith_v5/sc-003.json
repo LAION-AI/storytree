@@ -1,0 +1,103 @@
+{
+ "scene_id": "sc-003",
+ "location": "HEART O' THE CITY HOTEL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "The Big Cop",
+  "the other cops",
+  "Trinity"
+ ],
+ "summary": "In the abandoned hotel, the Big Cop flicks out his cuffs while the other cops hold a bead on Trinity. They believe they have her, \"until the Big Cop reaches with the cuffs and Trinity moves.\" She moves \"smooth and fast, inhumanly fast\": her palm snaps up and his nose explodes, blood erupting; her leg kicks with \"the force of a wrecking ball\" and he flies back into the cop farthest from her. Trinity moves again as \"BULLETS RAKING the walls\" and flashlights sweep in panic while the remaining cops try to stop \"a leather-clad ghost.\" A gun still in a cop's hand is \"snatched, twisted, and FIRED.\" After a final violent exchange of gunfire, \"Trinity is the only one standing.\" A flashlight rocks slowly to a stop, and Trinity says, \"Shit.\"",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "custody",
+   "before": "The cops have her cornered and believe they've got her, the Big Cop reaching with the cuffs.",
+   "after": "She breaks free and becomes the sole survivor standing over the dead cops.",
+   "evidence": "they know they've got her, until the Big Cop reaches with the cuffs and Trinity moves"
+  },
+  {
+   "who": "the cops",
+   "axis": "condition",
+   "before": "Armed and in control, holding a bead on Trinity with cuffs drawn.",
+   "after": "All of them are dead, leaving Trinity as the only one standing.",
+   "evidence": "There is a final violent exchange of GUNFIRE and when it's over, Trinity is the only one standing."
+  }
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "A police attempt to cuff Trinity turns into a firefight she wins.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the Big Cop's cuffs",
+  "guns",
+  "flashlights",
+  "a flashlight"
+ ],
+ "uncertain": [
+  "Whether any cop besides Trinity survives the gunfire.",
+  "The precise reason Trinity says \"Shit\" — whether it is frustration, relief, or something else."
+ ],
+ "_mind_pass": "ran: 1 speaker, 157w >= p75 (125w) for this work",
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To stop being handled. To convert the moment of physical contact — the cuff reaching for her — into the moment she stops being the arrested and becomes the one who decides who lives.",
+   "feels": "A cold, pre-emptive readiness. She is not reacting to the cuffs; she has already decided, before the Big Cop's arm extends, that the first touch will be the last thing any of them controls. The whole exchange runs on a clock only she can read, and there is no panic in her, only execution — until the stillness afterward, when the body catches up and the word 'Shit' leaks out.",
+   "shows": "Nothing until she moves, then only speed and violence: the palm, the kick, the snatch-twist-fire. She lets them see a cornered woman right up to the instant she lets them see a ghost. At the end she shows only a single dropped curse over the dead.",
+   "basis": "The scene turns on 'they know they've got her, until the Big Cop reaches with the cuffs and Trinity moves' — the trigger is contact, not threat. In sc-001 she complied ('hands behind her head') and let them think the arrest was real; here the same setup is inverted. The description 'smooth and fast, inhumanly fast' and 'leather-clad ghost' marks the gap between what she lets them believe and what she is. The event shape confirms she survives and escapes. Her final 'Shit' is the only crack in the composure, matching the uncertainty flag about its meaning.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "the Big Cop and the squad",
+     "belief": "That they are doing a routine cuff on a woman they have already won.",
+     "wrong_because": "They have confused her earlier compliance with helplessness; they are about to discover the thing they are arresting is not a person they can physically control."
+    }
+   ]
+  },
+  {
+   "who": "The Big Cop",
+   "wants": "To close the arrest the way he's closed a hundred before — reach, cuff, done — and reassert the control the situation seemed to hand him in sc-001.",
+   "feels": "Nothing that survives the first instant. Confidence, then a total and immediate absence of anything, because her palm lands before the reach is even finished; he never gets to register that he has misread the whole thing.",
+   "shows": "The casual authority of a man flicking out cuffs on a compliant suspect — right up until his body becomes 'a two-hundred-fifty pound sack of limp meat.'",
+   "basis": "The narration's 'They've done this a hundred times, they know they've got her' is his interior state made visible: procedural certainty. His reaching with the cuffs is the gesture of that certainty, and it is exactly the gesture that kills him. He is the first casualty of the gap between what the squad believes and what Trinity is.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "That she is a 'little girl' they can handle — the same assumption voiced outside in sc-002 ('I think we can handle one little girl') — and that the cuffs are the end of her agency.",
+     "wrong_because": "The cuffs are the beginning of her violence; the contact he treats as the finish is the trigger she was waiting for."
+    }
+   ]
+  },
+  {
+   "who": "the other cops",
+   "wants": "To finish the job the Big Cop started — hold the bead, back him up, and walk her out — and then, once she moves, simply to stop the thing they can no longer track.",
+   "feels": "Certainty that curdles, within one blink, into pure reactive panic. Their training gives them no category for 'a leather-clad ghost,' so they substitute volume: raking the walls, sweeping lights, firing at motion. They are not fighting an opponent they understand; they are flailing at something that moved faster than their shared sense of what is possible.",
+   "shows": "First the disciplined bead of a controlled arrest, then panic made visible — sweeping flashlights, bullets going wild, a gun that gets 'snatched, twisted, and FIRED' out of one of their own hands. They let her see exactly how completely they have lost it.",
+   "basis": "'the other cops holding a bead' then 'flashlights sweeping with panic as the remaining cops try to stop a leather-clad ghost,' and the gun taken from a cop's hand — they go from control to being disarmed and killed inside a few lines. The event shape confirms none of them survive. Their panic is legible precisely against the Big Cop's prior certainty.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "That she is one unarmed woman they outnumber and outgun, and that their weapons make the outcome a formality.",
+     "wrong_because": "Their numbers and guns are useless against something that moves faster than they can aim; the superiority they counted on is exactly what gets them all killed."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "Trinity's feigned compliance in sc-001 (hands behind her head) is the setup this scene inverts: the same 'arrest' posture becomes the moment she strikes.",
+  "The squad's overconfidence echoes the Lieutenant's 'I think we can handle one little girl' in sc-002 — the Big Cop's certainty is that assumption in action.",
+  "The cuffs drawn on a supposedly cornered Trinity pay off the raid begun when the Big Cop kicked in Room 303.",
+  "The 'inhumanly fast' quality of her movement is the first on-page evidence of the superhuman physicality later confirmed in the rooftop chase of ev-001."
+ ],
+ "sets_up": [
+  "Trinity's survival as the sole standing figure makes her escape across the rooftops and the chase of ev-001 possible.",
+  "The pile of dead officers is what prompts the Agents' arrival and their revelation that 'your men are already dead,' escalating the pursuit in ev-001.",
+  "The demonstration that she is far more than 'one little girl' reframes the threat the Agents are now hunting and sharpens their turn toward Neo as the next target.",
+  "Her dropped 'Shit' — the first slip of composure — plants the human cost and urgency under the superhuman, which the flight and injury of ev-001 will answer."
+ ],
+ "dramatic_function": "To detonate the false premise of the raid — that Trinity is a catchable suspect — and, in doing so, reveal to the audience (and to the cops who die for the miscalculation) that the rules of this world do not apply to her; it converts a procedural arrest into a display of her inhuman capability and pivots the story from containment to pursuit."
+}

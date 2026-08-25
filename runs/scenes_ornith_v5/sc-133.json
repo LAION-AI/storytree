@@ -1,0 +1,30 @@
+{
+ "scene_id": "sc-133",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Cypher"
+ ],
+ "summary": "On the Main Deck, Tank punches the exit command, then says \"Got him.\" Immediately after, Cypher's body twitches in its harness, jerking itself awake.",
+ "what_changes": [
+  {
+   "who": "Cypher",
+   "axis": "condition",
+   "before": "unconscious in the harness",
+   "after": "jerking awake as his body twitches",
+   "evidence": "Cypher's body twitches in its harness, jerking itself awake."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Tank pulls Cypher out of the Matrix and Cypher's real body wakes.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "whether Tank's \"Got him\" means he reached Cypher or captured someone",
+  "why Cypher is being extracted"
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 1 speaker(s), 20w — no exchange to read"
+}

@@ -1,0 +1,32 @@
+{
+ "scene_id": "sc-183",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Neo"
+ ],
+ "summary": "Inside the hovercraft, Trinity watches Neo as his body jerks, coughing blood, with his life signs going wild. Reacting to what she sees, Trinity says, \"Jesus, he's killing him!\", registering alarm over whatever is happening to Neo.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Neo is being watched while his body jerks and his life signs go wild.",
+   "after": "Neo's distress deepens as he is mouth coughing blood, prompting Trinity's alarm.",
+   "evidence": "Trinity watches Neo as his body jerks, mouth coughing blood, his life signs going wild."
+  },
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "Trinity watches Neo as his body jerks, mouth coughing blood, his life signs going wild.",
+   "after": "Trinity reacts with alarm, exclaiming that someone is killing Neo.",
+   "evidence": "TRINITY\nJesus, he's killing him!"
+  }
+ ],
+ "event_hint": {
+  "kind": "a wake",
+  "one_line": "Trinity watches Neo convulsing and coughing blood aboard the hovercraft and cries out in alarm."
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 22 words vs fixed 150"
+}

@@ -1,0 +1,37 @@
+{
+ "scene_id": "sc-129",
+ "location": "STREET",
+ "time_of_day": "DAY",
+ "present": [
+  "NEO",
+  "TRINITY"
+ ],
+ "summary": "Neo, Trinity and the others move quickly down a back street. Neo asks whether Morpheus is alive; Trinity relays the question to Tank over the comms, and Tank confirms Morpheus is alive but being moved to an unknown location. Trinity tells Neo he's alive, and Neo is again gripped by a sense of inevitability. Trinity demands an exit; Tank reports they are near Cypher, and though Trinity is surprised, Tank explains he sent Cypher to Franklin and Erie, which Trinity acknowledges.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Uncertain whether Morpheus survives the capture",
+   "after": "Learns Morpheus is alive, though being moved somewhere unknown",
+   "evidence": "NEO: Is Morpheus alive? ... TRINITY: He's alive."
+  },
+  {
+   "who": "TRINITY",
+   "axis": "knowledge",
+   "before": "Assuming Cypher is unavailable or elsewhere",
+   "after": "Learns Tank sent Cypher to Franklin and Erie, giving them a route",
+   "evidence": "TRINITY: Cypher, I thought -- TANK (V.O.): So did we. I sent him to Franklin and Erie."
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "The fleeing crew confirms Morpheus is alive and routes toward Cypher's exit while being pursued.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Where exactly Morpheus is being taken",
+  "Whether Cypher's placement at Franklin and Erie is a coincidence or part of Tank's plan"
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 76 words vs fixed 150"
+}

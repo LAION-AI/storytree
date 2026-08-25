@@ -1,0 +1,29 @@
+{
+ "scene_id": "sc-128",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Trinity"
+ ],
+ "summary": "On the Main Deck, the PHONE RINGS and Tank answers it. Trinity speaks over the phone (V.O.), identifying herself to him: 'Tank, it's me.'",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "knowledge",
+   "before": "Receives an incoming phone call without knowing who is on the line",
+   "after": "Learns the caller is Trinity, who identifies herself",
+   "evidence": "The PHONE RINGS.  Tank answers. TRINITY (V.O.) Tank, it's me."
+  }
+ ],
+ "event_hint": {
+  "kind": "a phone contact",
+  "one_line": "Trinity reaches Tank by phone and identifies herself to him."
+ },
+ "uncertain": [
+  "Whether Tank already knew Trinity was out on the street, or whether this call is his first confirmation of her.",
+  "What Trinity wants or will ask for next, since she only identifies herself here."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 1 speaker(s), 13w — no exchange to read"
+}

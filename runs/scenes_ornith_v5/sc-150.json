@@ -1,0 +1,98 @@
+{
+ "scene_id": "sc-150",
+ "location": "CONSTRUCT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Neo",
+  "Trinity",
+  "TANK"
+ ],
+ "summary": "In the white space of the construct, Neo and Trinity stand together as Neo answers his ringing cell phone. On the other end, Tank asks what he needs, adding, \"Besides a miracle...\" Neo replies that he wants \"Guns. Lots of guns.\"",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "resolve",
+   "before": "Standing with Trinity in the construct, answering his ringing phone",
+   "after": "He commits to arming himself, demanding \"Guns. Lots of guns.\"",
+   "evidence": "NEO\nGuns.  Lots of guns.\n"
+  },
+  {
+   "who": "TANK",
+   "axis": "knowledge",
+   "before": "He does not yet know what Neo requires to proceed",
+   "after": "He learns Neo's request, having asked, \"What do you need?\"",
+   "evidence": "TANK (V.O.)\nOkay.  What do you need?  Besides\na miracle..."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Neo calls Tank from the construct to load the weapons he will need to go back in and rescue Morpheus.",
+  "continues_from_earlier": true
+ },
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To be armed — the specific, practical means to go back into the building and bring Morpheus out alive.",
+   "feels": "The paralysis of sc-148 has been converted into forward motion. He has just confessed to Trinity that he is 'just another guy,' that he does not believe he is the One — so what is driving him now is not prophecy or destiny but a plain, chosen conviction ('I believe I can bring him back'). The request for guns is him accepting that he has no supernatural protection to rely on; he is going in mortal and knows it.",
+   "shows": "Calm, terse, decisive. He does not explain, justify, or hedge — just names the requirement: 'Guns. Lots of guns.'",
+   "basis": "The scene opens with him already standing with Trinity after the decision made in sc-148 ('I'm going in... I believe I can bring him back'). His line 'Guns. Lots of guns.' is a hard, unqualified commitment. Tank's 'Besides a miracle...' acknowledges the near-hopelessness, and Neo does not argue the odds — he just arms for them.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "That having stripped her of the illusion that he is the One, he no longer needs to perform certainty for her — he can now simply act.",
+     "wrong_because": "He has misread what her faith costs her; telling her he isn't the One does not free him from her, it wounds the thing she has staked everything on, and she will answer his suicide run not with relief but by suiting up beside him — a reaction he has not yet seen coming."
+    },
+    {
+     "other": "Himself",
+     "belief": "That he is 'just another guy' who will have to do this the hard, human, ballistic way.",
+     "wrong_because": "The event about to unfold (dodging bullets, surviving shots that should kill him) will prove he is not merely a man with guns — but at this instant he genuinely does not believe it, and arming to the teeth is the honest expression of that self-doubt."
+    }
+   ]
+  },
+  {
+   "who": "Trinity",
+   "wants": "To stay with him — she has said he can't go back, and failing that, she will not let him go alone.",
+   "feels": "She is caught between two blows at once: Morpheus's capture and near-death, and Neo's shattering declaration that he is not the One — the very thing her faith is built on. In sc-148 she was 'unable to tell him what she wants to'; now she is silent here, absorbing both, and her answer will be action, not words.",
+   "shows": "Nothing legible in this scene beyond standing beside him — she is present, watching him make the call, saying nothing.",
+   "basis": "She is named as present and standing with Neo. In sc-148 she fought his decision ('You can't!') and was left speechless by his confession. Her silence here is the residue of that stalled confession and the beginning of her choice to go with him.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That he is wrong about himself — he has to be the One, it 'can't be true' that he's just another guy.",
+     "wrong_because": "On the page of what he just told her, he is not wrong; he has every reason to believe what the Oracle told him. Her refusal to accept it is faith, not evidence — and the drama of the coming assault is precisely that his 'ordinary' courage will outperform any prophecy."
+    }
+   ]
+  },
+  {
+   "who": "TANK",
+   "wants": "To give Neo what he needs to go in — having been talked from 'this is suicide' into reluctant participation, he now wants to be the one who makes the rescue possible.",
+   "feels": "He is grieving Morpheus as a father (sc-148) and terrified by the odds ('Three of them!'), yet Neo's 'I believe I can bring him back' has converted him. His 'Besides a miracle...' is gallows humor masking how close to impossible this is — he's along for it now, and asking 'What do you need?' is him committing.",
+   "shows": "A dry, wry tone over the phone — the 'miracle' joke — and a practical readiness to load whatever Neo asks for.",
+   "basis": "In sc-148 Tank argued hard against the plan, then Neo won him over with 'I believe in something... I believe I can bring him back.' Here he opens by asking what Neo needs, the joke 'Besides a miracle...' carrying his awareness of the near-impossibility.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo understands the suicide-level risk and is going in anyway on faith — that this is courage, not delusion.",
+     "wrong_because": "He cannot know (as the coming events will show) that Neo is about to exceed the very physics that make this a 'miracle'; from where Tank stands, arming a 'just another guy' against Agents is an act of desperate hope, not a bet on the superhuman."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "Neo's decision in sc-148 to go back in ('I'm going in... I believe I can bring him back') is the act this scene executes.",
+  "Neo's confession to Trinity that he is 'not the One' (sc-148) colors why he arms like a mortal man rather than relying on destiny.",
+  "Tank's arc in sc-148 from opposition ('this is loco... suicide') to reluctant support explains his 'What do you need?' and his gallows-humor 'miracle' line.",
+  "Trinity's stalled confession and inability to speak in sc-148 explains her silence here.",
+  "The Agents' decision to deploy sentinels and press the interrogation (sc-147, sc-149) establishes the closing clock that makes speed essential."
+ ],
+ "sets_up": [
+  "The arming that makes the lobby firefight and counterweight descent of the Government Building Assault possible.",
+  "Neo's demand for heavy firepower sets up his use of the .50 caliber machine gun in the helicopter during the Rescue of Morpheus.",
+  "The 'lots of guns' loadout underwrites the whole assault on a military-controlled building held by three Agents."
+ ],
+ "dramatic_function": "It is the pivot from decision to action — the quiet, practical beat that turns Neo's crisis of faith into a concrete plan, translating 'I believe I can bring him back' into ordnance, and launching the rescue while holding the tension between his self-doubt and the superhuman capability the story is about to reveal."
+}

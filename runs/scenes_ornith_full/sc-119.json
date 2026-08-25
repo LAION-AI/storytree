@@ -1,0 +1,39 @@
+{
+ "scene_id": "sc-119",
+ "location": "WALL",
+ "time_of_day": "DAY",
+ "present": [
+  "Trinity",
+  "Cypher",
+  "the Cop",
+  "Neo"
+ ],
+ "summary": "Inside the wall, the Cop OPENS FIRE into the cramped space, \"BULLETS PUNCHING shafts of light like swords into the box of soot-black space.\" Trinity reacts by pulling Cypher free of the incoming rounds, and Neo answers by grabbing his GUN and \"BLASTING wildly through the plaster and lath\" back toward the threat.",
+ "what_changes": [
+  {
+   "who": "Cypher",
+   "axis": "safety",
+   "before": "Trapped and exposed inside the soot-black space as the Cop fires into it",
+   "after": "Pulled free of the line of fire by Trinity",
+   "evidence": "Trinity pulls Cypher free just as the Cop OPENS FIRE"
+  },
+  {
+   "who": "Neo",
+   "axis": "standing",
+   "before": "Reacting to the attack without a weapon in hand",
+   "after": "Armed and firing back through the wall",
+   "evidence": "Neo finds his GUN first and begins BLASTING wildly"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Cops open fire into the wall where the crew is hiding, and the crew fights back.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether the Cop is hit by Neo's return fire, since the scene ends mid-action.",
+  "Whether Cypher is wounded by the bullets before Trinity pulls him free."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 41 words vs fixed 150"
+}

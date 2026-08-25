@@ -1,0 +1,98 @@
+{
+ "scene_id": "sc-085",
+ "location": "KITCHEN",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "ORACLE (OLD WOMAN)",
+  "NEO"
+ ],
+ "summary": "Neo enters a kitchen where an OLD WOMAN is peering into the oven. She confirms she is the Oracle, bakes cookies, and unsettles Neo by predicting he will knock over a vase — which he promptly does. She examines him like a doctor, then tells him he is not the One but has 'the gift' and is 'waiting for something.' She delivers bad news: Morpheus believes in Neo so blindly he will sacrifice his own life to save Neo's, and Neo will have to choose which of them dies. Neo is shaken, but the Oracle reassures him that he controls his own life and that a cookie will make him feel better; the tightness in his chest begins to fade.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Uncertain whether he is the One, telling the Oracle 'Honestly? I don't know.'",
+   "after": "Told plainly that he is not the One and that he is waiting for something else, perhaps his next life.",
+   "evidence": "ORACLE: 'Sorry, kid. You got the gift but looks like you're waiting for something.' NEO: 'What?' ORACLE: 'Your next life, maybe. Who knows?'"
+  },
+  {
+   "who": "NEO",
+   "axis": "condition",
+   "before": "Breathless and terrified by the prophecy that Morpheus will die to save him and that he must choose who lives.",
+   "after": "Calmed by the Oracle's reassurance and a cookie, the physical panic subsiding.",
+   "evidence": "Neo takes a cookie, the tightness in his chest slowly beginning to fade."
+  },
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Amused that Morpheus 'almost had me convinced,' treating the prophecy as fate he disbelieves.",
+   "after": "Learns Morpheus's belief is so absolute he will sacrifice his life, forcing Neo into a lethal choice.",
+   "evidence": "ORACLE: 'You're going to have to make a choice. In one hand, you will have Morpheus's life. In the other hand, you will have your own. One of you is going to die.'"
+  }
+ ],
+ "event_hint": {
+  "kind": "a consultation",
+  "one_line": "Neo visits the Oracle, who tells him he is not the One and warns that Morpheus will die to save him unless Neo chooses otherwise.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether Neo is truly not the One or whether the Oracle is guiding him rather than stating fixed fact.",
+  "Whether the Oracle's prediction about Morpheus's death is certain fate or a consequence of Morpheus's belief."
+ ],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "ORACLE (OLD WOMAN)",
+   "wants": "To steer Neo toward self-knowledge and toward Morpheus without ever appearing to steer him — to make him choose freely while believing he was only told facts.",
+   "feels": "A calm, almost maternal amusement layered over genuine care for a frightened young man she already likes; beneath the grandmotherly fussing is the unshakable steadiness of someone who has done this many times and knows exactly what she is doing. She is not reading the future so much as arranging a person.",
+   "shows": "Bumbling domesticity — oven mitts, cookies, a cigarette, a wink, 'not too bright' teasing — a woman performing harmless old-lady-ness so completely that Neo drops his guard before he knows he had it up.",
+   "basis": "She engineers the vase moment ('don't worry about the vase' -> he breaks it) then reframes it as a question of choice rather than fate, and she administers the prophecy in two doses — softening 'not the One' with a cookie, then the Morpheus news only after checking he truly wants to hear it ('Are you sure you want to hear this?'). Her reassurance that he'll 'feel better' the moment he leaves is a promise she visibly makes good on within the scene.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That he has a good soul and is worth protecting, and that he is not yet the One but is on a path ('waiting for something').",
+     "wrong_because": "Her 'you're not the One' is a guide's provocation, not a fixed verdict — Morpheus in sc-082 calls her a guide who helps you 'find the path,' and the coming events (Neo choosing to rescue Morpheus, ev-026) will act as the very choice she has loaded him toward; whether she is stating fate or manufacturing it is the thing she deliberately leaves unresolved."
+    },
+    {
+     "other": "Morpheus",
+     "belief": "That his faith is so absolute he will die for Neo, and that this faith is both the movement's great asset ('without him we are lost') and its most dangerous liability.",
+     "wrong_because": "She presents his willingness to die as near-certain, but frames it as flowing from belief rather than necessity ('believes it so blindly') — meaning the outcome is contingent on what Neo does, which is precisely the lever she is placing in Neo's hand."
+    }
+   ]
+  },
+  {
+   "who": "NEO",
+   "wants": "To keep his footing — to be told the truth without being overwhelmed by it, and to hold onto the one thing he keeps insisting on: that he doesn't believe in any of this and therefore controls his own life.",
+   "feels": "A mounting vertigo. Every certainty he clung to ('I don't believe in this stuff,' sc-083) is being quietly dismantled — first by the vase he broke after being warned about it, then by the diagnosis he 'already knew,' then by a death-prophecy that lands in his body ('Neo can't breathe'). The terror is real even while his mind keeps trying to dismiss it as 'fate crap.'",
+   "shows": "Defensive irony and almost-laughter ('Morpheus... he almost had me convinced'), polite awkwardness ('Shit, I'm sorry'), and a willingness to play along with the exam — a young man performing skepticism to hide how shaken he is, until the Morpheus news breaks the performance entirely.",
+   "basis": "He backs away from the door in sc-083 insisting he won't believe anything; here he still claims not to know/not to believe, yet he submits to the physical exam and asks 'How did you know...?' — curiosity that betrays investment. His panic is somatic ('can't breathe,' 'tightness in his chest'), and the cookie visibly calms him, proving the Oracle's suggestion works on him even as he thinks he's resisting.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "The Oracle",
+     "belief": "That she is 'just an old lady' telling fortunes, and that her predictions are optional 'fate crap' he can decline to believe in.",
+     "wrong_because": "Her accuracy is already total within the scene (the vase, the 'but what' exchange, the chest-tightness that fades exactly as promised), so his belief that he can simply not-believe his way out of it is the last shield of a man who has not yet grasped that her guidance is directional, not decorative."
+    },
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus's certainty is something Neo can shrug off as the old man's problem ('he almost had me convinced'), a burden that stays on Morpheus's side of the room.",
+     "wrong_because": "The Oracle hands him the truth that this belief will cost Morpheus his life and that Neo himself will hold the choice of who dies — so Neo's assumption that he can remain a disbelieving bystander to Morpheus's faith is about to be destroyed by the rescue decision in ev-026."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-083: Neo's insistence that he 'doesn't believe in anything anymore' is the exact stance the Oracle works around and quietly undermines here.",
+  "sc-083: Morpheus's confession about the five dead candidates and his wrenching faith in Neo is the emotional debt the Oracle now cashes — she tells Neo precisely what that faith will cost.",
+  "sc-082: Morpheus's framing of the Oracle as a 'guide' who helps you 'find the path' (not one who is 'right or wrong') is the key to reading her 'not the One' as guidance rather than verdict.",
+  "sc-084: The Potentials and 'there is no spoon' establish that reality here bends to belief — the metaphysical ground that makes the Oracle's suggestion ('you'll feel better') physically take effect on Neo."
+ ],
+ "sets_up": [
+  "Neo's loaded choice between Morpheus's life and his own (ev-021 restated), which becomes actionable the moment the crew is trapped and Morpheus is taken.",
+  "Neo's decision to go back for Morpheus against the crew's counsel (ev-026) — the first real exercise of the 'you're in control of your own life' the Oracle just installed in him.",
+  "The somatic proof that the Oracle's suggestions manifest in his body, seeding the later, larger manifestations of his agency inside the Matrix.",
+  "The secret Neo must carry about the verdict (ev-021), which isolates him from the crew and colors every interaction on the return to the Hotel Lafayette."
+ ],
+ "dramatic_function": "The scene converts an abstract prophecy into a personal, bodily stakes-structure: it takes Neo from ironic disbeliever to a young man who now carries a lethal choice he cannot talk his way out of, and it plants the specific idea — 'you control your own life' — that will drive his rebellion against fate in the events to come, all while keeping the Oracle's true role (guide, not fortune-teller) deliberately ambiguous so that Neo's eventual defiance reads as freedom rather than fulfillment of a script."
+}

@@ -1,0 +1,117 @@
+{
+ "scene_id": "sc-025",
+ "location": "CAR",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "NEO",
+  "TRINITY",
+  "SWITCH"
+ ],
+ "summary": "Neo reluctantly removes his shirt and, on Trinity's instruction, lies back. Trinity presses a glass-nosed device over his navel while Switch plugs its cable into the front-seat cigarette lighter. Trinity tells Neo they believe he is bugged and urges him to relax, then turns a dial so the machine sucks hard at his stomach. Neo screams in pain as Trinity watches a pressure-gauge needle climb. On a small monitor projecting an ultrasound-like image, his insides begin to slither and churn, and something wiggles beneath his skin. Switch warns the target is moving and that Trinity will lose it; Trinity refuses and calls \"Clear.\" After the word hangs in Neo's ear, Trinity squeezes a trigger and electric current hammers into him, causing rigid convulsions beneath the flickering car lamp until a bug rockets wetly out of his stomach through the extractor's coils. Neo cries out in shock that the thing is real. Trinity lifts a glass cage at the end of the tubing showing a small fluke-like bug flipping and squirming, then rolls down the window and dumps it out.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Ignorant of what is inside him, asking \"What is this thing?\"",
+   "after": "Confronted with the physical proof that a real bug was inside him, exclaiming \"Jesus Christ!  It's real?!\"",
+   "evidence": "NEO\nJesus Christ!  It's real?!\nThat thing is real?!"
+  },
+  {
+   "who": "NEO",
+   "axis": "condition",
+   "before": "Able-bodied but carrying a hidden infestation: \"something wiggles beneath his skin inside his stomach.\"",
+   "after": "Relieved of the bug but physically violated by the extraction: \"Electric current hammers into Neo and rigid convulsions take hold of him\"",
+   "evidence": "Something finally rockets wetly out of Neo's stomach\nthrough the extractor's coils."
+  },
+  {
+   "who": "TRINITY",
+   "axis": "custody",
+   "before": "Attempting a controlled suction extraction: \"the cylinder sucking hard at his stomach.\"",
+   "after": "Escalating to a violent electrical shock when the bug resists: \"No I'm not.  Clear.\" ... \"Trinity squeezes a trigger.\"",
+   "evidence": "TRINITY\nNo I'm not.  Clear.\nThe foreboding word hangs in Neo's ear for a moment when\nTrinity squeezes a trigger."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid on the body",
+  "one_line": "The crew extracts a surveillance bug from Neo's stomach using a specialized extractor.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the extractor device (glass snout, dial, pressure gauge, trigger)",
+  "the cigarette lighter",
+  "the small monitor projecting an ultrasound-like image",
+  "the bug",
+  "the glass cage",
+  "the car window",
+  "the flickering car lamp"
+ ],
+ "_mind_pass": "ran: 224 words vs fixed 150",
+ "minds": [
+  {
+   "who": "NEO",
+   "wants": "To keep some shred of control and dignity over a body that is being treated as a crime scene, while also, underneath the resistance, wanting the truth about what's happening to him.",
+   "feels": "Raw terror and humiliation. He is being held down by a machine sealed to his navel, told he's 'bugged' like an appliance, and every explanation only deepens his sense that his own body is not his. The pain is real, but the deeper violation is the loss of authorship over himself.",
+   "shows": "Grudging compliance — he strips, lies back, asks 'What is this thing?' — then raw, involuntary reaction: screaming, gasping, convulsing. His final 'Jesus Christ! It's real?!' is shock that bypasses all his guardedness.",
+   "basis": "In sc-023 he tried to bolt ('Fine' — opening the door) and was talked down by Trinity's 'you have to trust me.' Here he 'grudgingly strips,' the residue of that coerced surrender. His questions are attempts to stay a participant rather than a patient. The scream and convulsions are involuntary, but his 'It's real?!' reveals a mind that had not truly believed the abstract warning until the body proved it.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "TRINITY",
+     "belief": "That she is dangerous and possibly hostile — a captor performing a strange torture-ritual with a device that looks like an instrument of pain.",
+     "wrong_because": "She is extracting a real surveillance bug to save him; her coldness is competence under pressure, not cruelty. He cannot yet tell the difference between being protected and being used."
+    },
+    {
+     "other": "HIMSELF",
+     "belief": "That 'bugged' is a metaphor or paranoia — that nothing could actually be inside him.",
+     "wrong_because": "The extraction produces a physical bug; his entire model of his own body and reality is about to collapse over the next several events."
+    }
+   ]
+  },
+  {
+   "who": "TRINITY",
+   "wants": "To get the bug out before it moves out of reach, without killing or permanently damaging the one person the prophecy says they need.",
+   "feels": "Compressed urgency and a flicker of something she won't name — the weight of having vouched for this stranger ('you have to trust me') now literally on the line. If she fails, she's failed Morpheus's One and endangered the crew. She can't afford to feel the horror of what she's doing to a semi-consenting man; the procedure has to be clinical.",
+   "shows": "Flat, instructional calm — 'Lie back,' 'Try to relax,' 'Come on, come on...' — and a refusal to break the seal or soften the shock even as he screams. Her watching the gauge instead of his face is the discipline of someone doing a necessary violence and not letting herself look at the person it's being done to.",
+   "basis": "In sc-023 she chose persuasion over force ('Neo, please') while Switch held the gun; here she continues that same strategy — she talks him down and then operates on him rather than restraining him. Her 'No I'm not' to Switch's warning is the crew's operator priority: the objective over the patient's comfort. She dumps the bug without ceremony, which reads as relief masked as efficiency.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That he is still the terrified hacker who needs to be managed and talked into things, not yet someone who can be trusted with the full truth.",
+     "wrong_because": "This is the first moment he stops being a liability and starts being proven real — the beginning of the man who will become the crew's equal, which she cannot yet see."
+    }
+   ]
+  },
+  {
+   "who": "SWITCH",
+   "wants": "To keep the operation moving and the asset alive, while staying ready for the scenario where this whole thing goes wrong — because in sc-023 he was the one holding the gun.",
+   "feels": "Watchful, impatient, and the least able to afford sentiment. He's the one who called Neo 'coppertop' and threatened him; his job in the car is threat-assessment, so while Trinity works the body he works the risk — 'It's on the move,' 'You're gonna lose it' — and his anxiety comes out as pressure on Trinity.",
+   "shows": "Functional alerts and a plug snapped into the lighter; he stays hands-on-the-hardware and lets Trinity run the procedure. He does not comfort Neo — that isn't his role, and the gun from the last scene has simply been set down, not holstered.",
+   "basis": "In sc-023 Switch was the hard one — gun trained, 'coppertop,' 'our way or the highway.' His lines here ('It's on the move / You're gonna lose it') are the same operator-brain that reached for the weapon: scanning for failure. He's present but peripheral, which fits a man whose contribution is force and contingency, not the delicate work.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo is a potential threat and a liability first, a person second — the 'coppertop' framing still governs him.",
+     "wrong_because": "Nothing in this scene yet disproves it to Switch; he has no reason to believe Neo is anything but the dangerous variable he was warned about."
+    },
+    {
+     "other": "TRINITY",
+     "belief": "That she might lose the target under pressure — hence the warning.",
+     "wrong_because": "She won't; her 'No I'm not' is correct, and Switch's doubt underestimates her control."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-023: Trinity's 'you have to trust me' and Neo's coerced decision to stay in the car is the exact trust-debt this scene cashes in — he submits because he already gave her his word.",
+  "sc-023: Switch holding Neo at gunpoint establishes the crew's threat-posture that makes Switch's watchful, gun-adjacent role here legible rather than gratuitous.",
+  "sc-022: the bridge pickup and Neo's disorientation carry forward into his 'What is this thing?' — he still doesn't know what world he's in or who these people are."
+ ],
+ "sets_up": [
+  "ev-006: the bug's removal is the crew's proof that Neo is genuinely targeted/monitored, clearing the path to treat him as the One worth unplugging rather than a random recruit.",
+  "ev-006: Neo's first direct, physical encounter with the reality that his perceived world is false ('It's real?!') is the initial crack in his consensus reality that the red pill and unplugging will widen.",
+  "ev-005: the crew's ability to work on Neo in a moving car without him bolting signals the fragile operational trust that lets them bring him to the Hotel Lafayette next."
+ ],
+ "dramatic_function": "It converts the abstract 'you're being watched' of the chase into physical, undeniable proof inside Neo's own body — the first concrete, irreversible demonstration that his reality is a construct and that these strangers are real protectors, not captors. It is the story's first bodily betrayal of the Matrix, and it shifts Neo from resisted captive to someone who has begun, against himself, to be saved."
+}

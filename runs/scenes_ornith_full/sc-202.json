@@ -1,0 +1,34 @@
+{
+ "scene_id": "sc-202",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Morpheus",
+  "Trinity"
+ ],
+ "summary": "Inside the hovercraft, Tank announces that he is going to make the call, and Morpheus urges him to do it. Then, suddenly, the lights go red. Trinity says no, Morpheus looks up, and Morpheus announces that they are coming.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "action",
+   "before": "About to make the call",
+   "after": "Interrupted by the red lights and the arrival of the enemy",
+   "evidence": "TANK I'm going to make the call. MORPHEUS Do it! Suddenly, the lights go red."
+  },
+  {
+   "who": "Morpheus",
+   "axis": "knowledge",
+   "before": "Focused on getting the call made",
+   "after": "Aware the enemy has arrived",
+   "evidence": "Morpheus looks up. MORPHEUS Here they come."
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "As Tank prepares to make the call, the red lights signal that the enemy has found them.",
+  "continues_from_earlier": true
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 30 words vs fixed 150"
+}

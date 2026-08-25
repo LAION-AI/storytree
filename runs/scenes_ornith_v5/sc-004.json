@@ -1,0 +1,26 @@
+{
+ "scene_id": "sc-004",
+ "location": "HEART O' THE CITY HOTEL",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Agent Brown",
+  "Agent Smith"
+ ],
+ "summary": "Outside the Heart O' The City Hotel, the two agents split up: \"Agent Brown enters the hotel while Agent Smith heads for the alley.\" Brown goes inside the building they just approached, while Smith moves toward the alley instead.",
+ "what_changes": [
+  {
+   "who": "Agent Smith",
+   "axis": "location",
+   "before": "approaching the hotel alongside Agent Brown",
+   "after": "diverging to head for the alley alone",
+   "evidence": "Agent Brown enters the hotel while Agent Smith heads for the alley."
+  }
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "The two agents split up outside the hotel as the operation closes in on Trinity.",
+  "continues_from_earlier": true
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 0 speaker(s), 18w — no exchange to read"
+}

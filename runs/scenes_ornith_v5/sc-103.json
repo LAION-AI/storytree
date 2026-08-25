@@ -1,0 +1,100 @@
+{
+ "scene_id": "sc-103",
+ "location": "HALL",
+ "time_of_day": "DAY",
+ "present": [
+  "CYPHER",
+  "MORPHEUS",
+  "TRINITY"
+ ],
+ "summary": "He rushes down the eighth-floor hall and finds the windows bricked up. Cypher declares that this is what they changed and that the group is trapped with no way out, while the sound of heavy boot-steps closes in around them. Morpheus demands Trinity's phone; she resists, warning that they'll be able to track it. Morpheus insists they have no choice, then rips off his jacket.",
+ "what_changes": [
+  {
+   "who": "the group (Cypher)",
+   "axis": "safety",
+   "before": "rushing down the hall, apparently searching for an exit",
+   "after": "trapped, having discovered the windows are bricked up",
+   "evidence": "he finds the bricked-up windows. That's what they changed. We're trapped. There's no way out."
+  },
+  {
+   "who": "MORPHEUS",
+   "axis": "custody",
+   "before": "Trinity holding her phone, refusing to hand it over",
+   "after": "Morpheus taking command of the phone despite the tracking risk",
+   "evidence": "MORPHEUS Give me your phone. TRINITY They'll be able to track it. MORPHEUS We have no choice."
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "The group is cornered in the eighth-floor hall as boot-steps close in, prompting Morpheus to seize Trinity's phone to mislead their pursuers.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "bricked-up windows",
+  "phone",
+  "jacket"
+ ],
+ "uncertain": [
+  "Whether the phone is actually handed over or used.",
+  "Why Morpheus rips off his jacket."
+ ],
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "CYPHER",
+   "wants": "To make the others understand, and accept, that escape is impossible — to stop the futile running.",
+   "feels": "A cold, settled certainty of doom, edged with something that reads almost like relief: the trap has closed, the struggle is over, and there is no more need to pretend there is a way out.",
+   "shows": "A flat, declarative pronouncement — short sentences, no panic, no command. He names the fact and lets it land.",
+   "basis": "He is the one who reaches the bricked windows and frames them ('That's what they changed. We're trapped. There's no way out.'), reading the environment rather than reacting with Morpheus's command-energy. The facts establish the group shifts from searching to trapped on his word.",
+   "grounding": "in_this_scene"
+  },
+  {
+   "who": "MORPHEUS",
+   "wants": "To take control of the one remaining variable — the phone — and turn even the liability of being tracked into a plan.",
+   "feels": "Command reflex firing under pressure: he refuses to let the closing vice dictate terms, converting a trap (they'll track the phone) into a tool. The jacket ripped off is him shedding weight to act, not to flee in panic.",
+   "shows": "Curt orders — 'Give me your phone.' 'We have no choice.' — and a physical gesture of readiness. No visible fear, only decisive motion.",
+   "basis": "He answers Cypher's declaration of no-way-out not with despair but with a demand for the phone and an insistence ('We have no choice') that reframes the tracking risk as the only available play. The event shape shows him repeatedly sacrificing his own safety to steer the group (holding Smith down later).",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "TRINITY",
+     "belief": "That she will yield the phone once he frames it as unavoidable — that her loyalty to the mission overrides her hesitation.",
+     "wrong_because": "Her warning is not mere caution but an operational truth he is choosing to override; he treats her resistance as something a command can dissolve, when it is a real tactical cost he is accepting on her behalf."
+    },
+    {
+     "other": "CYPHER",
+     "belief": "That Cypher's 'we're trapped' is despair shared by all — a morale problem to be countered with action.",
+     "wrong_because": "inferred — Cypher's flatness may be resignation of a different, more settled kind than Morpheus assumes; Morpheus reads it as fear to be rallied against, not yet knowing it is the calm of a man who has already decided the crew is lost."
+    }
+   ]
+  },
+  {
+   "who": "TRINITY",
+   "wants": "To keep the phone out of a traceable position — to deny the pursuers the one thing that would pin the group's location.",
+   "feels": "A technician's dread: she instantly sees the consequence Morpheus is about to choose (they'll track it) and resists the loss of that last piece of control.",
+   "shows": "A single objection, then silence — she states the risk and stops, yielding the argument to Morpheus's authority without further fight.",
+   "basis": "Her line 'They'll be able to track it' is the resistance noted in the facts; she offers the operational objection and then goes quiet as Morpheus overrides her ('We have no choice'), showing she registers the cost but submits to his command.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "MORPHEUS",
+     "belief": "That he is weighing the tracking risk against their need and choosing the lesser danger.",
+     "wrong_because": "inferred — she does not yet know he is about to use the phone as deliberate bait/decoy, turning the trace into a weapon; she reads his seizure of it as necessity, not yet as the first move of the misdirection that will let Neo escape."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "The bricked-up windows Cypher identifies as 'what they changed' follow the Matrix-glitch logic and Agent Smith's environmental tampering established in ev-022 and sc-100/102.",
+  "The closing 'boot-steps' are the police/Agents swarming the eighth floor, continuing the hotel raid from sc-102 where Morpheus heard them below.",
+  "The group's flight down the hall continues the desperate escape after Mouse's death (sc-100/101) left them without comms support.",
+  "Morpheus's instinct to commandeer and sacrifice — here the phone, later his own freedom in ev-022 — is the same reflex that will see him hold Smith down."
+ ],
+ "sets_up": [
+  "ev-022: Morpheus using the phone as a decoy to mislead the pursuers and buying time for the group's escape through the building.",
+  "ev-022: Morpheus's capture — the misdirection plan that grows out of this phone-seizure ultimately separates him from the others and leads to his sacrifice.",
+  "ev-024: The crew's later debate over Morpheus's fate, seeded by his willingness here to take the dangerous, self-exposing option.",
+  "ev-026: Trinity's readiness to defy a suicidal calculus in a rescue — her submission to Morpheus's command here is the same trust she later transfers to Neo."
+ ],
+ "dramatic_function": "It converts the crew from fleeing to cornered and installs Morpheus's self-sacrificial command as the engine of the escape — the moment he turns their greatest liability (a traceable phone) into a deliberate gambit, which will cost him his freedom and set the rescue plot in motion."
+}

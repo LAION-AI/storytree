@@ -1,0 +1,30 @@
+{
+ "scene_id": "sc-222",
+ "location": "OVERFLOW PIT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "sentinels"
+ ],
+ "summary": "In the overflow pit, a blinding shock of white light floods the chamber; the sentinels blink and fall instantly dead, filling the pit with their cold metal carcasses.",
+ "what_changes": [
+  {
+   "who": "sentinels",
+   "axis": "condition",
+   "before": "active machines filling the pit",
+   "after": "dead, their cold metal carcasses filling the pit",
+   "evidence": "sentinels blink and fall instantly dead, filling the pit with their cold metal carcasses."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "A blast of white light destroys the sentinels in the overflow pit.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "white light",
+  "cold metal carcasses"
+ ],
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 26 words vs fixed 150"
+}

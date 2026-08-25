@@ -1,0 +1,133 @@
+{
+ "scene_id": "sc-176",
+ "location": "SUBWAY - OLD MAN'S POV",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Trinity",
+  "the old man",
+  "Agent Smith"
+ ],
+ "summary": "Seen through the old man's eyes, Trinity hangs up and confesses to Neo that when she visited the Oracle, the Oracle told her she would fall in love. As a rumble grows, the ground shakes, a phone rings, and a train blasts into the station, interrupting her. Neo draws close and whispers a promise to hear the rest before he closes the booth door and exits. The ringing phone rings again; Trinity lifts the receiver, and in the flashing train-light Neo sees the old man transform into Agent Smith, who raises a gun and fires. The bullet bursts through the plastic window just as Trinity disappears, and the handset hangs in the air as the bullet shatters the ear-piece.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "knowledge",
+   "before": "Holding back a long-fearful secret, telling Neo, \"I've never told anyone this before.  I think I've been afraid to.\"",
+   "after": "She begins to reveal it: \"she told me that I was going to fall in love...\" before the train's rumble drowns her voice.",
+   "evidence": "When I went to the Oracle, she told me... she told me that I was going to fall in love..."
+  },
+  {
+   "who": "the old man",
+   "axis": "allegiance",
+   "before": "A hunched figure hidden in the far corner, seen only as the point-of-view through which the world rumbles.",
+   "after": "Revealed as the enemy: \"the old man in the flashing train-light as he becomes -- Agent Smith, raising a fistful of black gun-metal.\"",
+   "evidence": "the old man in the flashing train-light as he becomes -- Agent Smith, raising a fistful of black gun-metal."
+  },
+  {
+   "who": "Trinity",
+   "axis": "safety",
+   "before": "Close enough to Neo to kiss, about to answer the escape phone.",
+   "after": "She vanishes mid-escape as the shot meant for her destroys the booth: \"The handset hanging in the air as the BULLET HITS, SHATTERING the EAR-PIECE.\"",
+   "evidence": "The handset hanging in the air as the BULLET HITS, SHATTERING the EAR-PIECE."
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Whispering a tender promise to Trinity, lips near hers.",
+   "after": "Crying out in horror as he witnesses the ambush: \"NEO / No!\"",
+   "evidence": "In the darkness of the far corner, Neo sees the old man in the flashing train-light as he becomes -- Agent Smith"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Agent Smith ambushes Trinity at the subway escape phone, interrupting her confession to Neo.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the phone / receiver / handset",
+  "the graffiti-covered booth",
+  "the train",
+  "the plastic window",
+  "the ear-piece",
+  "Agent Smith's gun"
+ ],
+ "uncertain": [
+  "Whether Trinity has escaped successfully or been killed, since she \"disappears\" but the bullet still strikes the booth.",
+  "What the full content of the Oracle's prophecy was, since the rumble drowns the rest of Trinity's words."
+ ],
+ "_mind_pass": "ran: 234 words vs fixed 150",
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To get the Oracle's secret out of her before it's too late — to make Neo know what she feels before the escape separates them.",
+   "feels": "A rare, naked fear of her own vulnerability; the prophecy told her she would fall in love, which means she already knows what she feels for Neo and is terrified of it, because loving someone in their world is a death sentence.",
+   "shows": "A halting, almost apologetic confession ('I don't know what it means or even if it matters') that she frames as something she 'has been afraid to' say — letting him see the fear but not yet the full weight of the declaration.",
+   "basis": "She says 'I've never told anyone this before. I think I've been afraid to,' then reveals the Oracle told her 'I was going to fall in love' — a confession interrupted by the train. Her careful, hesitant framing shows she is measuring how much to reveal.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That telling him now, in this fragile moment of closeness, is safe and will be received as the intimacy she intends.",
+     "wrong_because": "The moment is already breached — the old man is watching, and Smith is about to strike; her instinct that they have a quiet private window is exactly what the ambush exploits."
+    },
+    {
+     "other": "the old man",
+     "belief": "That he is merely a harmless, forgotten drunk in the corner — invisible, irrelevant to her.",
+     "wrong_because": "He is Agent Smith in disguise, and he is the single most lethal thing in the station; her failure to register him is what makes the ambush possible."
+    }
+   ]
+  },
+  {
+   "who": "Neo",
+   "wants": "To hold the tenderness of the moment — to draw the rest of her secret out of her and keep her close — while also urgently needing her to escape.",
+   "feels": "Drawn toward her, hopeful, on the verge of reciprocating something real, then ripped into pure protective horror the instant he registers the threat.",
+   "shows": "First a soft whisper and a promise ('Promise me you'll tell me the rest?') — deliberately gentle, buying time for intimacy — then an involuntary cry of 'No!' when he sees the gun.",
+   "basis": "He is 'drawn towards her, their lips close enough to kiss,' whispers a promise, then 'sees the old man in the flashing train-light as he becomes -- Agent Smith' and screams 'No!' — the shift from lover to protector is the whole beat.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "That she is about to escape cleanly — that closing the booth door sends her to safety.",
+     "wrong_because": "Smith is waiting at the exact exit Neo sends her to; the escape route itself has been turned into the trap, which Neo cannot yet know."
+    },
+    {
+     "other": "the old man",
+     "belief": "That the hunched figure in the corner is no one — part of the scenery, not a player.",
+     "wrong_because": "It is Agent Smith, and Neo only realizes it at the moment of the shot, too late to intervene; his earlier disregard of the man is the gap Smith used."
+    }
+   ]
+  },
+  {
+   "who": "Agent Smith",
+   "wants": "To kill Trinity — to end the escape and punish the crew — by using the one vantage point no one bothered to watch.",
+   "feels": "Patient, predatory satisfaction: he has let them believe they were safe, let the lovers have their moment, precisely so the kill lands when their guard is lowest.",
+   "shows": "Nothing until the last instant — he stays perfectly disguised as the inert old man, revealing himself only in the strobing train-light, a single motion: 'raising a fistful of black gun-metal.'",
+   "basis": "In sc-174 the old man's 'eyes grow wide, glowing white' as he watches Morpheus escape, marking him as Smith in disguise; here he stays hidden in 'the darkness of the far corner' until the train's light betrays him firing at Trinity.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "That she is a target he can simply shoot and end.",
+     "wrong_because": "She 'disappears' mid-escape — she makes the exit just before the bullet arrives, so his certainty of the kill is already being defeated even as he fires."
+    },
+    {
+     "other": "Neo",
+     "belief": "That Neo, rapt on Trinity, will not be watching the corner — that the lover's focus is a blind spot.",
+     "wrong_because": "It is exactly in the flashing train-light that Neo's eyes land on him and he 'becomes -- Agent Smith' to Neo's sight; the witness he discounted sees him."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-174: the old man's 'glowing white' eyes as he watches Morpheus escape establish him as Agent Smith lying in wait in this very station.",
+  "sc-173/sc-175: the completed trace and Smith's furious determination to not be 'free of the Matrix' drive his ambush of the fleeing crew at the only exit.",
+  "Trinity's Oracle confession picks up her long-held secret and pays forward ev-032, where Morpheus asks if she now believes in Neo."
+ ],
+ "sets_up": [
+  "ev-031 (Showdown with Agent Smith): Trinity's escape and Smith's failed shot strand Neo alone in the station with Smith, forcing the one-on-one confrontation.",
+  "The interruption of Trinity's prophecy ('But...') leaves the full content of the Oracle's words unresolved, to be answered in ev-032.",
+  "Neo's helpless 'No!' as Trinity vanishes establishes that escape is possible but perilous — the pattern the rest of the crew must now survive in ev-033–ev-035."
+ ],
+ "dramatic_function": "The scene weaponizes intimacy against the characters: it lets Trinity and Neo reach their most tender, vulnerable moment precisely so Smith can ambush them at their least guarded, turning the lovers' confession into the trap's bait and converting the escape route into the battlefield where Neo will be forced to stand alone."
+}

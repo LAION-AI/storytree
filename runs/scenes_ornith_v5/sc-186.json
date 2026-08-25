@@ -1,0 +1,106 @@
+{
+ "scene_id": "sc-186",
+ "location": "COCKPIT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Morpheus",
+  "Trinity",
+  "Tank"
+ ],
+ "summary": "Morpheus climbs into the cockpit and sees the sentinels on the hologram radar, prompting Trinity to say \"Oh no.\" She asks how long they have, and Morpheus answers \"Five minutes. Maybe six.\" He lifts the headset and orders Tank to charge the E.M.P., which Tank confirms. Trinity protests that he can't use it until Neo is out, and Morpheus reassures her, saying \"He's going to make it.\"",
+ "what_changes": [
+  {
+   "who": "Morpheus",
+   "axis": "knowledge",
+   "before": "Unaware of the immediate threat until he enters the cockpit",
+   "after": "Sees the sentinels on the hologram radar and knows they are under attack",
+   "evidence": "On the hologram radar, he sees the sentinels."
+  },
+  {
+   "who": "Tank",
+   "axis": "action",
+   "before": "Idle until Morpheus gives the order",
+   "after": "Charging the E.M.P. in response to Morpheus's command",
+   "evidence": "MORPHEUS\nTank, charge the E.M.P."
+  },
+  {
+   "who": "Trinity",
+   "axis": "resolve",
+   "before": "Quietly alarmed, asking how long they have",
+   "after": "Actively objecting to the E.M.P. order, insisting Neo must be out first",
+   "evidence": "TRINITY\nYou can't use that until Neo is\nout!"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "With sentinels closing in, Morpheus orders the E.M.P. charged while Trinity insists they wait for Neo.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether Neo will make it back before the E.M.P. must be used."
+ ],
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Morpheus",
+   "wants": "To get the ship combat-ready against the incoming Sentinels without the crew fracturing over the timing of the E.M.P.",
+   "feels": "A cold, split allegiance: the soldier in him has already accepted that Neo may not make it and that the ship's survival demands the E.M.P. regardless, while the believer who anointed Neo as the One cannot afford to act as though that loss is certain.",
+   "shows": "Flat operational calm. He reads the radar, gives a time estimate, issues the charge order, and answers Trinity with reassurance rather than argument.",
+   "basis": "He moves straight from seeing the sentinels to 'Five minutes. Maybe six.' to 'Tank, charge the E.M.P.' with no visible hesitation, yet when Trinity protests he says 'I know, Trinity' — acknowledging her point rather than correcting it — and then overrides the fear with 'He's going to make it.' His grounding is 'from_earlier_scenes,' since the Oracle's prophecy and his lifelong investment in Neo (established well before this film's events and dramatized in his guidance so far) are what make his confidence something more than optimism.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "Neo will make it back before the E.M.P. must be detonated.",
+     "wrong_because": "The coming event (ev-034) has Neo ambushed and shot in the chest, his vital signs flatlining; he will not make it under his own power and will only survive through Trinity's intervention, so Morpheus's calm certainty is, in the observable near term, mistaken."
+    },
+    {
+     "other": "Trinity",
+     "belief": "That he can steady her by issuing reassurance, that what she needs from him right now is confidence rather than shared fear.",
+     "wrong_because": "Trinity's alarm is not ignorance she can be talked down from; she knows exactly what the E.M.P. means for Neo (she has just watched his body convulse and cough blood in sc-183), so his reassurance meets a fear that is already fully informed, not a panic that needs correcting."
+    }
+   ]
+  },
+  {
+   "who": "Trinity",
+   "wants": "To stop Morpheus from making the E.M.P. usable before Neo is out — to keep the weapon from becoming an option that could be triggered while Neo is still jacked in.",
+   "feels": "Terror that has now acquired a specific object: she has just seen Neo's body jerking and coughing blood (sc-183), so the abstract 'sentinels are coming' instantly becomes 'the thing that will kill Neo if we fire the E.M.P. now.'",
+   "shows": "A two-beat collapse — first the involuntary 'Oh no' at the radar, then the practical question 'How long?' — before she hardens into a direct objection: 'You can't use that until Neo is out!'",
+   "basis": "Her 'Oh no' is a reaction to the same radar image Morpheus just read, placing her emotionally ahead of his procedural response; her 'How long?' shows her trying to calculate the window for Neo; and her protest names the exact conflict. Grounding is 'from_earlier_scenes,' because her urgency only makes sense against having just witnessed Neo's physical distress in sc-183.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus's order to charge the E.M.P. means he is willing to sacrifice Neo — that he is choosing the ship over Neo's life.",
+     "wrong_because": "Morpheus explicitly tells her 'I know, Trinity,' meaning he fully registers that the E.M.P. cannot be used until Neo is out; he is preparing a defensive capability, not deciding to fire it on Neo. She reads his readiness as indifference when it is really preparation under a constraint he shares."
+    }
+   ]
+  },
+  {
+   "who": "Tank",
+   "wants": "To execute Morpheus's order instantly and correctly so the ship has its one defense ready the moment it's needed.",
+   "feels": "The jolt of the siren from sc-185 ('Oh shit!') converting, at his station, into focused procedure — he is the operator who must not hesitate, because a fumbled charge kills everyone.",
+   "shows": "A single clipped 'Yes, sir.' from off-screen (V.O.), offering no emotion, no opinion on the Neo question, and no hesitation.",
+   "basis": "His only line is the immediate confirmation of the charge order; his grounding is 'in_this_scene,' since his role here is defined entirely by instantaneous compliance and there is no textual basis to attribute to him a stake in the Morpheus–Trinity conflict.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus's command is a clear, legitimate order requiring nothing from Tank but speed.",
+     "wrong_because": "Invisible to Tank's operational frame is the moral collision the order triggers in Trinity; he can treat it as pure procedure only because he is not the one being asked to reconcile the ship's survival with Neo's life. This belief is not so much wrong as necessarily incomplete from his station."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "The siren and Morpheus bolting for the ladder at the end of sc-185, which is what brings him into the cockpit to read the radar here.",
+  "Trinity having just watched Neo's body convulse and cough blood in sc-183, which gives her 'Oh no' and her E.M.P. protest their specific terror.",
+  "Tank losing Neo's signal in sc-185 ('I lost him'), leaving the crew unable to confirm Neo's position even as they prepare the weapon that would kill him."
+ ],
+ "sets_up": [
+  "The E.M.P. being armed and therefore available for Morpheus to fire when the Sentinels breach the ship (ev-035), clearing the attack.",
+  "The imminent collision between the countdown Morpheus has set ('five, maybe six minutes') and Neo's not making it in time — his being shot and flatlining (ev-034) — which is what makes Trinity's objection here the thing that will later force her choice to go after Neo.",
+  "The pressure under which Tank must locate and initiate the hotel exit (ev-033) while the weapon that would kill a still-jacked Neo is being charged."
+ ],
+ "dramatic_function": "It converts the off-screen threat announced by the siren into a hard, shared deadline and forces the crew's two competing loyalties — survival of the ship versus survival of the prophesied One — into open conflict, so that Morpheus's stated faith and Trinity's terror become a ticking clock the audience measures Neo's flight against."
+}

@@ -1,0 +1,34 @@
+{
+ "scene_id": "sc-144",
+ "location": "GOVERNMENT BUILDING",
+ "time_of_day": "DAY",
+ "present": [
+  "Agent Jones",
+  "Marines"
+ ],
+ "summary": "A military helicopter sets down on the roof of a government highrise in the middle of downtown. Agent Jones gets out of the helicopter, flanked by columns of Marines. They open the roof access door and enter the top floor maintenance level of the hotel.",
+ "what_changes": [
+  {
+   "who": "Agent Jones",
+   "axis": "location",
+   "before": "inside the helicopter",
+   "after": "on the roof, moving into the building",
+   "evidence": "Agent Jones gets out of the helicopter, flanked by columns of Marines."
+  },
+  {
+   "who": "Agent Jones and the Marines",
+   "axis": "location",
+   "before": "on the roof",
+   "after": "inside the building's maintenance level",
+   "evidence": "They open the roof access door and enter the top floor maintenance level of the hotel."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Agent Jones arrives by helicopter with Marines and enters the government building.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 0 speaker(s), 50w — no exchange to read"
+}

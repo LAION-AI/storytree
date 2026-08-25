@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Storytree Explorer — top down to the scene layer</title>
+<style>
+:root{--ground:#e9ebee;--surface:#f7f8fa;--surface-2:#eef0f3;--sunken:#dfe3e8;
+--ink:#161a1f;--ink-2:#39424d;--muted:#66717e;--faint:#93a0ae;
+--line:#cfd6de;--line-soft:#dde3ea;--heat:#c2451a;--heat-soft:#f0d5c9;--heat-ink:#8f3212;
+--quench:#2f6f8f;--quench-soft:#cfdfe8;--quench-ink:#23566f;--good:#3f7d55;
+--good-soft:#d6e6db;--crit:#b03b26;--crit-soft:#f2d7d1;--viol:#6d4e8f;--viol-soft:#e2d9ee;
+--shadow:0 1px 2px rgba(20,28,38,.07),0 8px 24px -12px rgba(20,28,38,.22);
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#101419;--surface:#171d24;--surface-2:#1d242c;--sunken:#0b0e12;
+  --ink:#e4e8ec;--ink-2:#b9c2cc;--muted:#8b96a3;--faint:#5f6b78;--line:#2b343e;--line-soft:#222a33;
+  --heat:#e2723f;--heat-soft:#3a2318;--heat-ink:#f0a077;--quench:#6aa8c6;
+  --quench-soft:#152935;--quench-ink:#9cc9dd;--good:#67a97e;--good-soft:#17281d;
+  --crit:#d4715c;--crit-soft:#2e1713;--viol:#b39bd6;--viol-soft:#272038;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0}
+a{color:var(--quench)}:focus-visible{outline:2px solid var(--heat)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.wrap{max-width:1000px;margin:0 auto;padding:0 26px 120px}
+header.top{border-bottom:1px solid var(--line);background:var(--surface);margin-bottom:26px}
+header.top .wrap{padding-top:44px;padding-bottom:30px}
+.kicker{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--heat);font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(28px,4.6vw,40px);line-height:1.12;letter-spacing:-.02em;margin-bottom:14px}
+.standfirst{font-size:18px;color:var(--ink-2);max-width:60ch;font-family:var(--serif);line-height:1.5}
+.meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px;font-size:12.5px;color:var(--faint);font-family:var(--mono)}
+.toolbar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line);padding:9px 0;margin-bottom:26px}
+.toolbar .wrap{display:flex;gap:8px;flex-wrap:wrap;padding:0;max-width:1000px}
+.tod{font-size:12px;font-family:var(--mono);color:var(--ink-2);padding:6px 12px;cursor:pointer;border:1px solid var(--line-soft);border-radius:999px;background:var(--surface-2);transition:.15s}
+.tod:hover{border-color:var(--quench);color:var(--quench)}
+.tog{font-size:12px;color:var(--muted);padding:6px 10px;cursor:pointer;border:1px dashed var(--line);border-radius:999px;background:transparent;margin-left:auto}
+.tog:hover{border-color:var(--heat);color:var(--heat)}
+.layer{padding:26px 0 4px}
+.layer .head{display:flex;align-items:baseline;gap:14px;margin-bottom:4px;cursor:pointer}
+.layer .z{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--heat);font-weight:700;min-width:34px}
+.layer h2{font-size:25px;letter-spacing:-.015em}
+.layer .zcount{font-family:var(--mono);font-size:12.5px;color:var(--faint);margin-left:auto;white-space:nowrap}
+.layer:not(.open) .body{display:none}
+.layer .chev{color:var(--faint);font-size:13px;font-family:var(--mono)}
+.rule{height:1px;background:var(--line-soft);margin:6px 0 20px}
+.plaq{border:1px solid var(--line-soft);border-radius:9px;margin:16px 0;overflow:hidden;background:var(--surface)}
+.plaq>.t{display:flex;align-items:center;gap:10px;padding:13px 17px;cursor:pointer;border-bottom:1px solid transparent}
+.plaq.open>.t{border-bottom-color:var(--line-soft);background:var(--surface-2)}
+.plaq>.t .chev{font-size:11px;color:var(--faint);transform:translateY(-1px)}
+.plaq.open>.t .chev{transform:rotate(90deg)}
+.plaq>.b{display:none;padding:15px 18px}
+.plaq.open>.b{display:block}
+.fld{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);font-weight:700;margin:14px 0 5px}
+.fld:first-child{margin-top:0}
+p.p{margin:0 0 10px;max-width:72ch}
+p.p:last-child{margin-bottom:0}
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;padding:16px 19px;margin:14px 0}
+.eyebrow{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700;margin-bottom:7px}
+.chain{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:12px 0}
+.chain .ev{font-family:var(--mono);font-size:12px;color:var(--quench);font-weight:700;text-align:right}
+.chain .wh{font-size:13.5px;line-height:1.5}
+.chain .wh .cau{display:block;color:var(--muted);font-size:12.5px;margin-top:3px}
+.chain .wh .cau b{color:var(--faint);font-weight:600;text-transform:uppercase;font-size:10.5px}
+.cat{border-top:1px solid var(--line-soft);padding:10px 0 4px}
+.cat b{font-size:12px;color:var(--ink-2)}
+.scene-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.scn{border:1px solid var(--line-soft);border-radius:7px;padding:10px 12px;background:var(--surface-2)}
+.scn .id{font-family:var(--mono);font-size:11px;color:var(--quench);font-weight:700}
+.scn .loc{font-size:12px;color:var(--muted);margin:1px 0 6px}
+.scn .sum{font-size:12.5px;color:var(--ink-2);line-height:1.45;max-height:64px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+.badge{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:2px 7px;border-radius:999px;border:1px solid;vertical-align:2px}
+.badge.th{color:var(--quench-ink);background:var(--quench-soft);border-color:var(--quench)}
+footer{border-top:1px solid var(--line);margin-top:60px;padding:24px 0 40px;color:var(--faint);font-size:12.5px;font-family:var(--mono)}
+pre{background:var(--sunken);border:1px solid var(--line);border-radius:7px;padding:12px 14px;overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:1.5;margin:10px 0;white-space:pre-wrap}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="kicker">Storytree · workflow view</div>
+  <h1>Storytree Explorer</h1>
+  <div class="standfirst">One story, reconstructed top down — from the story root down to the
+    scene layer. Every layer is a distinct artefact of the distill pipeline; open any node to
+    read what the model wrote and why it belongs to the causal spine.</div>
+  <div class="meta"><span id="m-source">The Matrix · screenplay</span><span id="m-count">·</span></div>
+</div></header>
+
+<div class="toolbar"><div class="wrap" id="toc"></div></div>
+
+<div class="wrap">
+  <div id="status">Loading <code>explorer/storytree.json</code>…</div>
+  <main id="app"></main>
+  <footer>Explorer data rebuilt from <code>runs/</code> with
+    <code>python tools/build_explorer_data.py</code>.</footer>
+</div>
+
+<script>
+const ESC=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const TXT=v=>typeof v==='string'?v:(v===null||v===undefined?'':JSON.stringify(v,null,2));
+const JO=a=>Array.isArray(a)?a.join(', '):(a||'');
+const F=v=>v?`<p class="p">${ESC(TXT(v))}</p>`:'';
+function fld(t,v){ return v?`<div class="fld">${t}</div>${F(v)}`:''; }
+function plt(title,inner){ return `<div class="plaq"><div class="t"><span class="chev">▸</span><b>${title}</b></div><div class="b">${inner}</div></div>`; }
+function bind(){ document.querySelectorAll('.plaq>.t').forEach(t=>t.addEventListener('click',()=>t.parentElement.classList.toggle('open'))); }
+
+function renderRoot(r){ return fld('Logline',r.logline)+fld('Premise',r.premise)+
+  fld('Genre',(r.genre_primary||'')+' '+(r.genre_secondary?'/ '+r.genre_secondary:''))+
+  fld('Audience',r.audience)+fld('POV',r.pov)+fld('Setting',r.setting)+fld('Writing style',r.style)+
+  `<div class="card"><div class="eyebrow">Narrative vector</div>`+
+  `Goal — <b>${ESC(r.narrative_vector.goal)}</b><br>`+
+  `Motivation — <b>${ESC(r.narrative_vector.motivation)}</b><br>`+
+  `Conflict — <b>${ESC(r.narrative_vector.conflict)}</b><br>`+
+  `Generative question — <b>${ESC(r.narrative_vector.generative_question)}</b></div>`+
+  fld('State dimensions',JO(r.state_dimensions))+fld('Constraints',JO(r.constraints))+
+  fld('Keep in mind',JO(r.keep_in_mind)); }
+function renderExpose(d){ const sec=Object.entries(d.synopsis||{}).map(([k,v])=>`<div class="cat"><b>${ESC(k)}</b><p class="p">${ESC(v.text)}</p></div>`).join('');
+  return fld('Jacket copy',d.jacket_copy)+`<div class="card"><div class="eyebrow">Synopsis (${ESC(d.synopsis_word_count)} words)</div>${sec}</div>`+
+    fld('Ending first',(d.ending_first||{}).ending); }
+function renderMeta(m){ let h='';
+  const cd=m.central_dilemma||{};
+  if(Object.keys(cd).length){ h+=`<div class="card"><div class="eyebrow">Central dilemma</div>`;
+    for(const[k,v]of Object.entries(cd)) h+=`<b>${ESC(k)}</b> — ${ESC(TXT(v))}<br>`; h+='</div>'; }
+  if(Array.isArray(m.big_questions)&&m.big_questions.length){ h+='<div class="fld">Big questions</div>';
+    m.big_questions.forEach(q=>h+=plt(q.question||TXT(q),fld('Why central',q.why_central))); }
+  const zones=[['external','External conflicts',o=>[o.name,fld('Parties',JO(o.parties)),fld('Stakes',o.stakes)],'w50'],
+               ['internal','Internal conflicts',o=>[o.character,fld('Torn between',JO(o.torn_between)),fld('What it costs',o.what_it_costs)],'w50'],
+               ['relationships','Relationship arcs',o=>[JO(o.pair)+' · '+ESC(o.arc),fld('What changes',o.what_changes)],'w50'],
+               ['perspectives','Perspectives on the dilemma',o=>[o.label+' — '+ESC(o.throughline),fld('Stance',o.stance_on_dilemma)],'wt']];
+  zones.forEach(z=>{
+    const arr=m[z[0]]||[]; if(!Array.isArray(arr)||!arr.length)return;
+    h+=`<div class="fld">${z[1]} (${arr.length})</div>`;
+    arr.forEach(o=>{ const[tit,b1,b2]=z[2](o); h+=plt(tit, (b1||'')+ (b2||'')); });
+  });
+  return h; }
+function renderPlots(ps){ return ps.map(p=>{const def=p.definition||{}; const ch=(p.chain||[]).map(c=>
+    `<span class="ev">${ESC(c.event_id)}</span><span class="wh">${ESC(c.why_in_plot)}
+     <span class="cau"><b>caused by prev</b> ${ESC(c.caused_by_previous)}</span></span>`).join('');
+  return plt(`<b>${ESC(p.name)}</b> <span class="badge th">${ESC(def.throughline)}</span>`,
+    fld('Theme / dilemma',def.theme_or_dilemma)+fld('Summary',def.summary)+
+    `<div class="fld">Causal chain (${(p.chain||[]).length})</div><div class="chain">${ch}</div>`); }).join(''); }
+function renderEvents(es){ return es.map(e=>plt(`<b>${ESC(e.title)}</b> <span class="badge th">${ESC(e.event_id)}</span>`,
+  fld('Summary',e.summary)+fld('Participants',JO(e.participants))+fld('Locations',JO(e.locations))+
+  fld('Scene ids',JO(e.scene_ids))+(e.carried_uncertainty?fld('Uncertainty carried',e.carried_uncertainty):''))).join(''); }
+function renderEntities(ents){ const K=[['appearance','Appearance'],['clothing','Clothing'],['life_situation','Life situation'],
+  ['key_relationships','Relationships'],['personality_big_five','Big Five'],['coping_with_problems','Coping'],
+  ['dreams_and_goals_short','Dreams'],['goals_long_term','Long goals'],['fears','Fears'],['intellect_and_skills','Skills'],
+  ['background_story','Background'],['typical_sentences_style','Voice'],['secrets_never_said','Secrets']];
+  return ents.map(e=>plt(`<b>${ESC(e.name)}</b> <span class="badge th">${ESC(e.kind||'')}</span>`,
+    fld('Age / gender',e.age_and_gender)+K.map(([k,l])=>fld(l,e[k])).join(''))).join(''); }
+function renderScenes(sc){ const g=`<div class="scene-grid">${sc.list.map(s=>
+    `<div class="scn"><div class="id">${ESC(s.scene_id)}</div><div class="loc">${ESC(s.location)} · ${ESC(s.time_of_day)}</div><div class="sum">${ESC(s.summary)}</div></div>`).join('')}</div>`;
+  return `<div class="card"><div class="eyebrow">${sc.list.length} scenes → events</div><div class="scroll"><pre>${ESC(JSON.stringify(sc.by_event,null,1))}</pre></div></div>`+g; }
+const ZONES=[['external','External conflicts',o=>[o.name,fld('Party',JO(o.parties)),fld('Stakes',o.stakes)]],['internal','Internal conflicts',o=>[o.character,fld('Torn between',JO(o.torn_between)),fld('What it costs',o.what_it_costs)]],['relationships','Relationship arcs',o=>[JO(o.pair)+' — '+ESC(o.arc),fld('What changes',o.what_changes)],'w'],['perspectives','Perspectives on the dilemma',o=>[o.label+' '+ESC(o.throughline),fld('Stance',o.stance_on_dilemma)]]];
+function build(D){ const L=D.layers;
+  const tocEl=document.getElementById('toc'); const app=document.getElementById('app');
+    const rows=D.map(([z,t,dt,fn,c],i)=>`<section class="layer open" id="layer-${i+1}">`+
+    `<div class="head"><span class="z">Z${z}</span><h2>${t}</h2><span class="zcount">${c}</span><span class="chev">▾</span></div>`+
+    `<div class="rule"></div><div class="body"></div></section>`).join('');
+  app.innerHTML=rows;
+  D.forEach(([z,t],i)=>{ const b=document.createElement('button'); b.className='tod'; b.textContent=`Z${z} ${t}`;
+    b.onclick=()=>document.getElementById('layer-'+(i+1)).scrollIntoView({behavior:'smooth'}); tocEl.appendChild(b); });
+  ['expand all','collapse'].forEach((lab)=>{ const b=document.createElement('button'); b.className='tog'; b.textContent=lab;
+    b.onclick=()=>{ document.querySelectorAll('.layer,.plaq').forEach(x=>x.classList.toggle('open',lab==='expand all'));
+      document.querySelectorAll('.body>.chev').forEach(x=>x.textContent=lab==='expand all'?'▾':'▸'); }; tocEl.appendChild(b); });
+  D.forEach(([z,t,dt,fn],i)=>{ const body=document.querySelector('#layer-'+(i+1)+' .body'); body.innerHTML=fn(dt); });
+  bind();
+  document.getElementById('m-count').textContent=countMsg(D);
+}
+function cnt(o){ if(Array.isArray(o))return `${o.length} items`; return `${Object.keys(o).length} keys`; }
+function countMsg(D){ return `${D[0][2].title||'story'} → ${D[4][2].length} events → ${D[6][2].list.length} scenes`; }
+
+let DIMS=[];
+fetch('./explorer/storytree.json').then(r=>{ if(!r.ok)throw new Error('HTTP '+r.status); return r.json(); })
+.then(d=>{ document.getElementById('status').style.display='none'; build(d); })
+.catch(e=>{ const s=document.getElementById('status');
+  s.innerHTML=`<div class="card"><div class="eyebrow">Load error</div>Could not open
+  <code>explorer/storytree.json</code>: <b>${ESC(e.message)}</b>.<br>Serve via GitHub Pages or open over HTTP.</div>`; });
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+{
+ "scene_id": "sc-021",
+ "location": "NEO'S APARTMENT",
+ "time_of_day": "NIGHT",
+ "present": [
+  "Neo",
+  "MORPHEUS (V.O.)"
+ ],
+ "summary": "Neo bolts upright in bed, disoriented, checking that his body is normal and wondering if the prior events were a dream. The phone rings and terrifies him, but its insistent ringing compels him out of bed to answer. Morpheus speaks from the other end, warning that the line is tapped so he must be brief. He explains that the Agents reached Neo first but have underestimated his importance, and that Neo would likely be dead if they knew what Morpheus knows. Neo, confused and frightened, demands to know what is happening to him. Morpheus declares that Neo is 'the One,' revealing that while Neo spent years looking for him, he has spent his life looking for Neo. Morpheus then asks whether Neo still wants to meet, and Neo agrees. Morpheus directs him to the Adams Street bridge and hangs up, leaving Neo to close his eyes, unsure of what he has done.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Waking in confusion, he does not understand what is happening to him, asking 'What are you talking about? What the hell is happening to me?'",
+   "after": "He is told he is 'the One' and that Morpheus has been searching for him, gaining an identity and purpose he did not have.",
+   "evidence": "You're the One, Neo.  You see, you may have spent the last few years looking for me, but I've spent most of my life looking for you."
+  },
+  {
+   "who": "Neo",
+   "axis": "resolve",
+   "before": "He is frightened and reactive, nearly paralyzed by the ringing phone and sickened by Morpheus's revelations.",
+   "after": "He actively commits to continuing, choosing to meet Morpheus despite the danger.",
+   "evidence": "Do you still want to meet? NEO ... Yes."
+  },
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "He briefly believes he is safe back home, taking 'a deep, everything-is-okay breath' before the phone shatters that illusion.",
+   "after": "He is drawn back into the threat, accepting a dangerous assignment and left 'unsure of what he has done.'",
+   "evidence": "He starts to take a deep, everything-is-okay breath when -- The PHONE RINGS."
+  }
+ ],
+ "event_hint": {
+  "kind": "a phone contact",
+  "one_line": "Morpheus reaches Neo by phone after the Agents' interrogation to reveal Neo is 'the One' and set up a meeting.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether Neo's memories of the prior events actually occurred or were a dream.",
+  "Whether the Agents' claims about Morpheus being a terrorist are true or propaganda.",
+  "What will happen at the Adams Street bridge meeting."
+ ],
+ "_mind_pass": "ran: 189 words vs fixed 150",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To regain footing — to confirm the interrogation was only a nightmare and that he is safely back in his own body and life.",
+   "feels": "Raw and regressed: he has been physically and psychologically violated (the mouth, the bug, the helplessness before the Agents), and his nervous system is still in the aftermath of that violation even though his waking eyes find his body intact.",
+   "shows": "A childlike self-inspection — checking his mouth, his stomach — then an attempted 'everything-is-okay' breath, i.e., he performs the ritual of reassurance for himself.",
+   "basis": "He bolts upright screaming, then deliberately verifies 'His mouth is normal. His stomach looks fine,' and begins a calming breath — behaviors of someone trying to talk himself down from terror. The FACTS axis 'safety' notes the everything-is-okay breath that gets shattered.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Himself / his own experience",
+     "belief": "That if his body checks out as normal, then what happened wasn't real — that he can reason his way back to safety.",
+     "wrong_because": "The phone's 'gravitational' pull and his terror prove the trauma was real and still has him; the relief is a false floor about to collapse."
+    },
+    {
+     "other": "Morpheus",
+     "belief": "Before this call, Neo likely held the Agents' framing of Morpheus as a dangerous terrorist (sc-020) and feared him.",
+     "wrong_because": "Morpheus's concern here — reaching out to warn and protect him — contradicts the terrorist image, though Neo has not yet revised the belief."
+    }
+   ]
+  },
+  {
+   "who": "Neo",
+   "wants": "To make the overwhelming stop making sense in a way he can survive — to get an explanation that restores some control.",
+   "feels": "Frightened and sick; the revelation that he is 'the One' does not exhilarate him, it nauseates him, because it replaces 'I'm nobody' (sc-018) with a target on his back he did not choose.",
+   "shows": "Only protest and a bare 'Yes' — he cannot yet argue, so he asks 'What the hell is happening to me?' and then consents with a single word he does not fully understand.",
+   "basis": "He asks 'What are you talking about? What the hell is happening to me?' and 'Neo feels sick' at the declaration, then answers '...Yes' after a beat. The FACTS 'knowledge' and 'resolve' axes capture this shift from confusion to a frightened commitment.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Himself",
+     "belief": "He still believes he is 'nobody' who 'didn't do anything' (echo of sc-018), so 'you're the One' cannot compute.",
+     "wrong_because": "The entire event to come is built on the premise that he is not nobody; his self-concept is the thing the coming events will dismantle (ev-006 onward)."
+    },
+    {
+     "other": "The choice he is making",
+     "belief": "He believes saying 'Yes' is a discrete decision he can still reverse or fully comprehend.",
+     "wrong_because": "The closing line — 'unsure of what he has done' — shows the consent has already outrun his understanding; there is no going back to the 'everything-is-okay' life."
+    }
+   ]
+  },
+  {
+   "who": "MORPHEUS (V.O.)",
+   "wants": "To reach Neo first, re-anchor him, and secure his commitment to the meeting before the Agents or Neo's own fear reclaims him.",
+   "feels": "Urgent and disciplined — he is operating under a tapped line with a closing window, yet he deliberately spends his few words on identity ('You're the One') before logistics, because he knows reassurance of purpose is what will hold Neo.",
+   "shows": "Compressed, controlled speech: 'I must be brief,' a rapid threat assessment, then the revelatory line, then a single yes/no question and an address. He withholds everything else and hangs up on his own terms (CLICK).",
+   "basis": "He names the tap, compresses the danger, reframes the Agents as having 'underestimated' Neo, and — crucially — counters the 'I'm nobody' wound from sc-018 with 'I've spent most of my life looking for you.' He ends the call decisively with directions and CLICK.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "He believes Neo is 'the One' and therefore of supreme importance — worth the risk of contacting him right after an Agent interrogation.",
+     "wrong_because": "This is conviction, not yet confirmed fact within the story's present; the coming events (ev-006–010) will test whether this belief is prophecy or something else — but as of this scene it is held as certainty."
+    },
+    {
+     "other": "The Agents",
+     "belief": "He believes they 'underestimated how important you are' and would kill Neo if they knew what he knows.",
+     "wrong_because": "Reasonable and protective, but it also assumes the Agents' interest is limited; it frames Neo's value in a way that justifies Morpheus's own long search and his gamble here."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "Neo's screaming awakening and self-check respond directly to the physical/psychological violation and helplessness of the interrogation (sc-020) and his fall from the scaffold (sc-018).",
+  "His 'What the hell is happening to me?' and nausea answer the 'I'm nobody, I didn't do anything' crisis from sc-018.",
+  "Morpheus countering the Agents' 'terrorist' narrative (sc-020) by presenting himself as Neo's protector and lifelong seeker.",
+  "The tapped-line brevity and the bridge rendezvous continue Morpheus's established method of remote, controlled guidance (sc-018)."
+ ],
+ "sets_up": [
+  "Neo's frightened but active 'Yes' makes possible his walk to the Adams Street bridge, the armed car pickup, and his submission to the bug extraction (ev-004).",
+  "The reframing of Neo as 'the One' lays the identity groundwork that ev-006 (taking the red pill / unplugging) and ev-010 (the prophecy) will build on.",
+  "Morpheus's claim that Neo would be dead if the Agents knew his importance raises the stakes for the extraction and escape in ev-004 and the danger of remaining plugged in (ev-006).",
+  "Neo's 'unsure of what he has done' foreshadows the point of no return: once he commits, he cannot go back to the 'everything-is-okay' life."
+ ],
+ "dramatic_function": "To convert Neo's post-traumatic retreat into an active, if terrified, commitment — replacing the 'nobody' wound with a burdensome identity and re-establishing Morpheus as guide — so that the story can cross from the interrogation's aftermath into the escape and unplugging that follow."
+}

@@ -1,0 +1,40 @@
+{
+ "scene_id": "sc-049",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "MORPHEUS",
+  "TANK",
+  "NEO"
+ ],
+ "summary": "On the main deck, a computer monitor shows a download meter filling in while the title bar reads \"Combat Series 10 of 12\" with fighting styles like \"Savate, Jujitsu, Ken Po, Drunken Boxing\" flashing beneath it. Morpheus enters and asks about Neo, and Tank answers that Neo has gone \"Ten hours straight\" and calls him \"a machine.\" Neo's body spasms, his eyes open, and he exclaims, \"This is incredible. I know kung fu.\" Morpheus then challenges him: \"Show me.\"",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "condition",
+   "before": "Still downloading combat programs, passive",
+   "after": "Awake and exhilarated, claiming mastery of martial arts",
+   "evidence": "Neo's body spasms and relaxes as his eyes open, breath hissing from his lips. He looks like he just orgasmed. NEO This is incredible. I know kung fu."
+  },
+  {
+   "who": "MORPHEUS",
+   "axis": "standing",
+   "before": "Entering to check on Neo's progress",
+   "after": "Taking command, demanding a demonstration of the learned skill",
+   "evidence": "Morpheus walks in. MORPHEUS How is he? ... MORPHEUS Show me."
+  }
+ ],
+ "event_hint": {
+  "kind": "training",
+  "one_line": "Neo completes a combat download and declares he knows kung fu, prompting Morpheus to demand a demonstration.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "computer monitor",
+  "download meter",
+  "Combat Series 10 of 12",
+  "fighting style programs"
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 93 words vs fixed 150"
+}

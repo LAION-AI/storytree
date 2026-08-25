@@ -1,0 +1,42 @@
+{
+ "scene_id": "sc-209",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Neo",
+  "Trinity",
+  "Morpheus",
+  "sentinels"
+ ],
+ "summary": "On the main deck, Neo's body jerks and everyone registers it as the life monitors snap flatline. Trinity screams and Morpheus stumbles back in disbelief, repeating that it can't be. Then lasers sear through the main deck as the sentinels slice open the hull.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Alive and jacked in, his life monitors presumably still reading.",
+   "after": "His body jerks and the life monitors snap flatline — he appears dead.",
+   "evidence": "Neo's body jerks, and everyone hears it as the LIFE MONITORS SNAP FLATLINE."
+  },
+  {
+   "who": "Morpheus",
+   "axis": "condition",
+   "before": "Steady, watching the operation.",
+   "after": "Stumbles back in disbelief, insisting what he sees can't be true.",
+   "evidence": "Morpheus stumbles back in disbelief. MORPHEUS No, it can't be. It can't be."
+  },
+  {
+   "who": "main deck",
+   "axis": "safety",
+   "before": "An intact interior where the crew monitors Neo.",
+   "after": "Lasers sear through it as the sentinels slice open the hull.",
+   "evidence": "Lasers suddenly sear through the main deck as the sentinels slice open the hull."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "As Neo flatlines aboard the ship, the sentinels breach the main deck.",
+  "continues_from_earlier": true
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 45 words vs fixed 150"
+}

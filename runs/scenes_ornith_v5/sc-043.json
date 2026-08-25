@@ -1,0 +1,93 @@
+{
+ "scene_id": "sc-043",
+ "location": "CONSTRUCT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "MORPHEUS",
+  "NEO"
+ ],
+ "summary": "Inside the Construct, Morpheus clicks off the television and defines the Matrix as control, then opens the remote to reveal the truth while holding up a coppertop battery as a symbol of what humans are reduced to. Neo rejects this, shouting that it is not possible, but Morpheus replies that he only promised the truth, not ease. Overwhelmed, Neo demands to be let out, insisting he wants out.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "In denial, refusing to accept the nature of the Matrix",
+   "after": "Confronted with the truth but still resisting belief",
+   "evidence": "NEO No! I don't believe it! It's not possible!"
+  },
+  {
+   "who": "MORPHEUS",
+   "axis": "trust",
+   "before": "Presenting himself as a revealer of difficult truths",
+   "after": "Acknowledging the hardship while maintaining his honesty",
+   "evidence": "MORPHEUS I didn't say that it would be easy, Neo. I just said that it would be the truth."
+  },
+  {
+   "who": "NEO",
+   "axis": "custody",
+   "before": "Trapped within the revelation he cannot accept",
+   "after": "Desperately demanding release from the situation",
+   "evidence": "NEO Stop! Let me out! I want out!"
+  }
+ ],
+ "event_hint": {
+  "kind": "a revelation",
+  "one_line": "Morpheus reveals the true nature of the Matrix to a resisting Neo, who demands to escape the truth.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "television",
+  "remote control",
+  "coppertop battery"
+ ],
+ "uncertain": [],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "MORPHEUS",
+   "wants": "To force Neo to accept the truth of the battery's meaning rather than let him retreat into denial, completing the revelation he has been building across the prior scenes.",
+   "feels": "A grim, practiced compassion — he has delivered this exact blow before (\"For the longest time, I wouldn't believe it\") and knows the rejection is coming, so he steadies himself against Neo's pain without softening the message.",
+   "shows": "Cool, unhurried authority: he clicks off the TV, names the Matrix flatly as \"control,\" and offers only the barest consolation (\"I didn't say that it would be easy\").",
+   "basis": "He defines the Matrix as 'Control,' opens the remote to expose its mechanics, and holds up the coppertop battery as the payoff of the fetus-field/power-plant footage from sc-041/sc-042. His line 'I didn't say that it would be easy... I just said that it would be the truth' separates comfort from honesty deliberately. When Neo demands out, Morpheus does not grant it — matching the event shape where Neo's body physically rejects the truth and must be restrained.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That Neo is the one worth breaking the rule for — that this horror will ultimately be borne and transformed rather than destroy him.",
+     "wrong_because": "Unconfirmed at this moment: Neo's immediate trajectory is collapse into unconsciousness (the event) and then despair that he cannot return; Morpheus's faith is a wager, not yet a fact, which is why he must watch Neo shatter before he can speak of prophecy in ev-010."
+    }
+   ]
+  },
+  {
+   "who": "NEO",
+   "wants": "To escape the truth — to have the revelation stopped and reversed ('Stop! Let me out! I want out!') because accepting it would annihilate the world he knew.",
+   "feels": "Cognitive and existential overwhelm — the battery as the terminal symbol of humans-as-power is too large to integrate, so his mind converts the horror into a demand for physical exit, the same rejection that will convulse his body on the ship.",
+   "shows": "Outright, vocal refusal ('No! I don't believe it! It's not possible!') and then a shift from denial to desperate command — trying to seize control of the situation by demanding release.",
+   "basis": "His 'It's not possible!' directly answers Morpheus's battery reveal, which caps the fetus-field and power-plant exposition (sc-041/042). The progression 'No!' -> 'Stop! Let me out!' shows denial failing into panic. The event confirms this inner rejection manifests physically, requiring restraint and the removal of the neural cable.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "MORPHEUS",
+     "belief": "That Morpheus is inflicting this as a cruelty he could stop if he chose — that 'let me out' is a request Morpheus is refusing out of hardness.",
+     "wrong_because": "Morpheus frames himself as a bearer of truth, not a tormentor ('I just said that it would be the truth'); the 'out' Neo demands is not something Morpheus can grant mid-revelation, and the real exit leads to physical collapse, not relief. Neo reads cruelty where Morpheus intends liberation."
+    },
+    {
+     "other": "MORPHEUS",
+     "belief": "That the world he knew — the 'world you know' from sc-040 — was real and that his life before this moment still holds, so the battery must be impossible.",
+     "wrong_because": "The entire prior sequence (the 'desert of the real,' the fetus fields, the power plant) has already established that his former world was the simulation; his 'not possible' is the last defense of a reality that no longer exists."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "The Coppertop battery is the payoff object for the fetus-fields (sc-041) and power-plant (sc-042) exposition — the 'human being into this' Morpheus names only makes sense against those images.",
+  "The remote control and television were established in sc-040 as Morpheus's tools for showing the 'desert of the real'; here clicking the TV off and opening the remote marks the shift from showing to naming.",
+  "Morpheus's 'I didn't say it would be easy' echoes his own earlier admission in sc-042 ('For the longest time, I wouldn't believe it'), positioning Neo's rejection as expected and familiar."
+ ],
+ "sets_up": [
+  "Neo's demand to be let out and his mind's rejection of the truth set in motion the physical rejection on the Nebuchadnezzar's main deck (the event), where he thrashes and must be restrained until the neural cable is removed.",
+  "The fact that Neo 'wants out' but cannot be returned makes possible Morpheus's confirmation in the next event that Neo can never go back, along with the apology for freeing an older mind.",
+  "Neo's collapse into unconsciousness after rejecting the revelation sets the condition for Trinity's care and the crew's orientation of him (his training, his lack of jacks) that follow."
+ ],
+ "dramatic_function": "This scene is the detonation point of the revelation — it converts the accumulated exposition of the previous scenes into an emotional crisis, dramatizing the cost of truth by showing a mind actively refusing to survive its own awakening. It is the necessary breaking of Neo before any rebuilding (prophecy, training) can begin."
+}

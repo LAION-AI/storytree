@@ -1,0 +1,43 @@
+{
+ "scene_id": "sc-208",
+ "location": "HALL",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Agent Brown",
+  "Agent Smith"
+ ],
+ "summary": "In the hall, Neo hears a phone ringing and counts down to 303 as Agent Brown reaches the broken window behind him. Neo grabs the handle of door 303 and throws it open, only to find Agent Smith waiting with a .45 cocked. Frozen, unable to move or think, Neo is shot—BOOM.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "safety",
+   "before": "Fleeing down the hall toward door 303, still ahead of the pursuing Agents.",
+   "after": "Cornered and shot at point-blank range, helpless before Agent Smith's gun.",
+   "evidence": "Agent Smith, waiting, .45 cocked. Neo can't move-- can't think-- BOOM."
+  },
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "Acting with purpose, grabbing the handle and throwing open door 303.",
+   "after": "Paralyzed, unable to move or think as the gun fires.",
+   "evidence": "Neo grabs the handle of 303, throwing open the door to find Agent Smith, waiting, .45 cocked. Neo can't move-- can't think--"
+  }
+ ],
+ "event_hint": {
+  "kind": "chase",
+  "one_line": "The Agents close in and trap Neo at the end of the hall, where Smith shoots him.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "the ringing phone",
+  "door 303",
+  "Agent Smith's .45"
+ ],
+ "uncertain": [
+  "Whether Neo is killed by the shot or only wounded.",
+  "The significance of the phone ringing and the door numbers."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 45 words vs fixed 150"
+}

@@ -1,0 +1,30 @@
+{
+ "scene_id": "sc-125",
+ "location": "STREET",
+ "time_of_day": "DAY",
+ "present": [
+  "Trinity"
+ ],
+ "summary": "On the street in daylight, a manhole cover cracks open and two eyes peek out. As a truck rattles over the cover, the eyes withdraw; once the truck's thunder dopplers away, the cover opens fully and Trinity climbs out onto the street.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "Hidden beneath the street, only two eyes peeking through a cracked manhole cover.",
+   "after": "The cover opens and she climbs out onto the street.",
+   "evidence": "the cover opens.  Trinity climbs out."
+  }
+ ],
+ "event_hint": {
+  "kind": "escape",
+  "one_line": "Trinity emerges from a manhole onto the street after hiding from a passing truck.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "manhole cover",
+  "truck"
+ ],
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 31 words vs fixed 150"
+}

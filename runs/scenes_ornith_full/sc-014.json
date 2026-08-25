@@ -1,0 +1,28 @@
+{
+ "scene_id": "sc-014",
+ "location": "NEO'S APARTMENT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "NEO"
+ ],
+ "summary": "An alarm clock sounds, slowly dragging Neo to consciousness. He strains to read the clock-face, which shows 9:15 A.M., then curses: \"Shitshitshit.\"",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "condition",
+   "before": "Asleep, unconscious in his apartment",
+   "after": "Woken by the alarm clock, alarmed by the time",
+   "evidence": "The sound is an ALARM CLOCK, slowly dragging Neo to consciousness. He strains to read the clock-face: 9:15 A.M."
+  }
+ ],
+ "event_hint": {
+  "kind": "a morning wake",
+  "one_line": "Neo is jolted awake by his alarm and realizes he overslept."
+ },
+ "uncertain": [
+  "Whether Neo overslept for a specific appointment or is simply late",
+  "What Neo intended to be doing at this hour"
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 23 words vs fixed 150"
+}

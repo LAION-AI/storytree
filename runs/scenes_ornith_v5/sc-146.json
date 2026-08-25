@@ -1,0 +1,136 @@
+{
+ "scene_id": "sc-146",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Neo",
+  "Morpheus",
+  "Trinity",
+  "Cypher"
+ ],
+ "summary": "In the main deck, Tank drapes a sheet over his dead brother while the other bodies are covered. Neo sees Morpheus covered in a cold sweat and asks what is being done to him; Tank explains the Agents are breaking into his mind, \"like hacking a computer,\" and that eventually his alpha pattern will change from a chaotic to an ordered symmetrical one, at which point \"Morpheus will tell them anything they want to know.\" Tank reveals what they want: the codes to Zion's mainframe computer that every ship's leader carries, which an Agent could use to destroy Zion. He urges Trinity that \"Zion is more important than me. Or you, or even Morpheus.\" Trinity sees Cypher's corpse, and \"Rage overtakes her and she kicks him,\" cursing. Neo insists \"There has to be something that we can do,\" and Tank answers that they must \"pull the plug.\" Trinity is appalled, asking if he is going to kill Morpheus; Tank replies they have no other choice.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "resolve",
+   "before": "Explaining the mechanics and stakes of Morpheus's interrogation with a degree of patience, answering Neo's questions about time and what the Agents want.",
+   "after": "Fixing on a hard, utilitarian decision: sacrificing Morpheus to protect Zion, overriding Trinity's horror.",
+   "evidence": "TANK There is. We have to pull the plug. TRINITY You're going to kill him? Kill Morpheus?! TANK Trinity, we don't have any other choice."
+  },
+  {
+   "who": "Morpheus",
+   "axis": "condition",
+   "before": "Covered with a cold sweat while the Agents break into his mind.",
+   "after": "His alpha pattern is shown changing from a chaotic pattern to an ordered symmetrical one, the sign he will break and reveal everything.",
+   "evidence": "The monitor waves change from a chaotic pattern to an ordered symmetrical one. TANK When it does, Morpheus will tell them anything they want to know."
+  },
+  {
+   "who": "Trinity",
+   "axis": "allegiance",
+   "before": "Pacing relentlessly, absorbed in anxiety over Morpheus.",
+   "after": "Flaring into rage at Cypher's betrayal, then into protective protest against Tank's plan to kill Morpheus.",
+   "evidence": "Trinity sees Cypher's dead body. Rage overtakes her and she kicks him. TRINITY Goddamnit! Goddamnit!"
+  },
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "Confused about what is happening to Morpheus, asking, \"What are they doing to him?\"",
+   "after": "Understanding the full stakes and searching for a way to act: \"There has to be something that we can do.\"",
+   "evidence": "NEO There has to be something that we can do."
+  }
+ ],
+ "event_hint": {
+  "kind": "wake",
+  "one_line": "In the aftermath of the failed rescue, the crew confronts Morpheus's capture and the necessity of killing him to protect Zion.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether Tank ultimately pulls the plug in this scene or whether Neo/Trinity intervene before he does.",
+  "How much time has elapsed since the previous scene's events.",
+  "Whether Neo resists the decision to let Morpheus die."
+ ],
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Tank",
+   "wants": "To force the crew to accept the utilitarian necessity of killing Morpheus before the Agents extract Zion's codes.",
+   "feels": "Gutted by the fresh death of his brother Dozer — yet he channels that grief into cold, hard logic because feeling it would stop him from doing what he believes he must.",
+   "shows": "Clinical patience as he explains the 'hacking' mechanics to Neo, then a flat, final decree to Trinity: 'We have to pull the plug... we don't have any other choice.'",
+   "basis": "He just unplugged a wounded Trinity and took her into his arms over Dozer in sc-143; here he covers his brother's body himself and immediately pivots to explaining stakes. His 'Zion is more important than me. Or you, or even Morpheus' is a plea disguised as a principle — he is arguing himself into it as much as arguing them down.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "That she will, as a leader, ultimately agree Zion outweighs any one life — including Morpheus.",
+     "wrong_because": "He underestimates how personally, not politically, Trinity is bound to Morpheus; her imminent protest shows she does not share his calculus."
+    },
+    {
+     "other": "Neo",
+     "belief": "That Neo is a newcomer who needs the situation explained and will fall in line once he understands.",
+     "wrong_because": "Neo's 'There has to be something that we can do' signals refusal to accept the forced choice — the very refusal that will drive the rescue."
+    }
+   ]
+  },
+  {
+   "who": "Neo",
+   "wants": "To find a way to save Morpheus rather than accept his execution.",
+   "feels": "Horror mixed with a dawning, unwilling comprehension of the stakes; he is being initiated into the real cost of this war and recoiling from it.",
+   "shows": "A rapid chain of questions ('What are they doing to him?', 'How much time?', 'What do they want?') that reads as confusion but is really him searching the problem for an exit — landing on 'There has to be something that we can do.'",
+   "basis": "He is the newest crew member and genuinely does not know the rules, which licenses the exposition; but his final line is not a question, it is a refusal, and it directly resists Tank's 'no other choice.'",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "That Tank is resigned to giving up on Morpheus out of cold necessity.",
+     "wrong_because": "Tank is not resigned — he is grieving and has already converted that grief into decisive action; Neo reads the logic and misses the wound underneath."
+    },
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus is a lost cause, a mind about to be broken.",
+     "wrong_because": "This is the man who will later be rescued and return; Neo's belief here is what his arc will overturn."
+    }
+   ]
+  },
+  {
+   "who": "Trinity",
+   "wants": "To hold onto Morpheus — to refuse the trade of his life for Zion's safety.",
+   "feels": "Terror for Morpheus, grief over Dozer, and a fury at Cypher's betrayal that has nowhere safe to go.",
+   "shows": "Relentless pacing, then a flash of rage she can discharge safely — kicking Cypher's corpse and cursing — before turning that fury outward at Tank's proposal: 'You're going to kill him? Kill Morpheus?!'",
+   "basis": "In sc-143 she was the one physically comforting Tank over Dozer; here her anxiety has narrowed entirely onto Morpheus. The kick at Cypher is the one emotion she can express without consequence, and it immediately bleeds into her defense of Morpheus.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "That proposing to 'pull the plug' makes Tank a betrayer of Morpheus, equivalent to what Cypher did.",
+     "wrong_because": "Tank's motive is the opposite of Cypher's — Cypher acted from selfish despair, Tank from sacrificial duty; her rage conflates them."
+    },
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus can still be saved if she refuses to let him be killed.",
+     "wrong_because": "At this moment, by every fact Tank has laid out, he genuinely cannot — her belief is what the coming rescue will either vindicate or expose as denial."
+    }
+   ]
+  },
+  {
+   "who": "Cypher",
+   "wants": "Nothing now — he is dead.",
+   "feels": "Nothing now — he is dead.",
+   "shows": "Nothing — a body under a sheet, then a target for Trinity's boot.",
+   "basis": "The text covers his body and has Trinity kick it; he has no agency or reaction in the scene.",
+   "grounding": "in_this_scene",
+   "believes_about": []
+  }
+ ],
+ "connects_back": [
+  "Tank's fresh grief and charred wounds from losing Dozer and being burned in sc-143, which is the emotional fuel he is suppressing as he argues to kill Morpheus.",
+  "Morpheus's interrogation and the injection in sc-145, which is the 'breaking into his mind' Tank is describing and the reason the alpha-pattern warning is real.",
+  "The codes-to-Zion stakes that make Morpheus, as ship leader, the single point of failure Tank is trying to seal off."
+ ],
+ "sets_up": [
+  "The moral imperative that will push Neo and Trinity to attempt the rescue of Morpheus rather than let him die (ev-027/ev-028).",
+  "The specific danger the rescue must beat: the Agents obtaining Zion's mainframe codes through Morpheus (ev-028).",
+  "Trinity's protective, personal stake in Morpheus that will carry through the assault and the rooftop regroup (ev-028/ev-029)."
+ ],
+ "dramatic_function": "This scene converts the crew's shock over Dozer's death and Morpheus's capture into a single impossible choice — kill the man they love to save the city — so that Neo's refusal of that false binary becomes the engine that launches the rescue and defines his emerging role as the one who will not accept the 'no other choice.'"
+}

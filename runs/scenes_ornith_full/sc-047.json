@@ -1,0 +1,93 @@
+{
+ "scene_id": "sc-047",
+ "location": "NEO'S ROOM",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Neo",
+  "TANK"
+ ],
+ "summary": "Neo lies awake in his bed when Tank enters to introduce himself as Neo's operator. After a handshake, Neo notices Tank has no jacks, and Tank explains that he and his brother Dozer are pure, born-free humans from Zion. Neo, unfamiliar with the term, learns that Zion is the last human city, hidden deep underground near the earth's core. Tank expresses his excitement about what Neo might be capable of if Morpheus's belief in him is correct, then urges they begin their work.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "knowledge",
+   "before": "A newly freed mind who does not know who will run him or what the human resistance is called or where it lives.",
+   "after": "He now knows his operator is Tank, that Zion is the last human city deep underground near the earth's core, and that Tank and Dozer are born-free humans.",
+   "evidence": "NEO\nZion?\nTANK\nIf this war ended tomorrow, Zion\nis where the party would be.\nNEO\nIt's a city?\nTANK\nThe last human city.  The only\nplace we got left.\nNEO\nWhere is it?\nTANK\nDeep underground.  Near the\nearth's core, where it's still\nwarm."
+  },
+  {
+   "who": "Neo",
+   "axis": "trust",
+   "before": "Cautious and wary, reacting to a stranger entering his room.",
+   "after": "He accepts the handshake and engages in open conversation with his new operator.",
+   "evidence": "He offers his hand and Neo shakes it.  He notices that\nTank doesn't have any jacks."
+  }
+ ],
+ "event_hint": {
+  "kind": "introduction",
+  "one_line": "Neo meets Tank, his operator, who explains his born-free nature and the existence of Zion before urging Neo to begin training."
+ },
+ "uncertain": [],
+ "_mind_pass": "ran: 203 words vs fixed 150",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To get his bearings — to understand who this stranger is, what the world he has entered actually is, and whether any of it can be trusted.",
+   "feels": "Raw and disoriented from the trauma of being unplugged (sc-044), carrying Morpheus's heavy claim that he is 'The One' (sc-045), and now confronting a reality that keeps refusing to make ordinary sense. Underneath the questions is a quiet, wary testing of whether he has landed among people he can rely on.",
+   "shows": "A terse, understated curiosity. He names what he notices ('You don't have...') rather than alarming himself aloud, accepts the handshake, and asks plain, grounded questions about Zion. He stays controlled instead of panicking again.",
+   "basis": "He answers 'No.' to sleep — the residue of sc-044's vomiting and blackout. He shakes Tank's hand despite being a stranger, then immediately flags the missing jacks, then pursues 'Zion?' / 'It's a city?' / 'Where is it?' as someone building a map from zero. This is his first unpressured conversation since Morpheus's revelation.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Tank",
+     "belief": "That this open, grinning, plain-speaking man is safe — more approachable and guileless than the shadowy Morpheus.",
+     "wrong_because": "Neo is reading Tank's warmth and lack of jacks as guilelessness, but friendliness here is not a guarantee of loyalty; the crew still has its own tensions (Cipher's resentment is already on the deck in sc-044) that Neo cannot yet see."
+    },
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus's certainty about him may be real, and that this operator's excitement ('if Morpheus is right') is evidence weighing toward it.",
+     "wrong_because": "Tank's eagerness is genuine but rests entirely on the same unverified prophecy Neo is still absorbing; Neo is letting another man's faith stand in for proof he does not yet have."
+    }
+   ]
+  },
+  {
+   "who": "TANK",
+   "wants": "To win Neo over quickly and get him into training — to convert this frightened new mind into a functioning member of the crew under Morpheus's banner.",
+   "feels": "Genuine, almost boyish exhilaration at being part of something historic, mixed with operator's practicality. He is proud of being 'born free' and lets that pride do the work of putting Neo at ease.",
+   "shows": "A bright, informal, jokey manner ('Any holes?', 'where the party would be', 'Goddamn, I got to tell you') that masks the discipline underneath. He volunteers the born-free/Zion facts as a trust-building overture, then admits he's 'not supposed to talk about any of that' before pivoting hard to 'let's get to it.'",
+   "basis": "He opens with a casual 'Morning. Did you sleep?' rather than formalities, uses humor to defuse the jack observation, delivers exposition with relish, and explicitly ties his excitement to Morpheus's belief before cutting himself off and redirecting to work.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That Neo might genuinely be The One and that he, Tank, is about to help train a legend.",
+     "wrong_because": "This rests wholly on Morpheus's faith, not on anything Neo has yet done; Tank is investing excitement in a possibility that the training to come (ev-012 onward) has not yet confirmed."
+    },
+    {
+     "other": "Neo",
+     "belief": "That Neo is scared but tractable — that warmth and a fast pace will settle him and make him compliant.",
+     "wrong_because": "He underestimates how much Neo is silently evaluating rather than simply being led; Neo's wariness (sc-044's 'Don't touch me!') means the handshake is a calculation, not surrender."
+    },
+    {
+     "other": "Morpheus",
+     "belief": "That Morpheus's authority and the 'not supposed to talk about that' rule are worth honoring even while he bends them.",
+     "wrong_because": "He believes he is only bending a rule out of excitement, but his looseness already exposes Neo to the prophecy's weight ahead of any structured orientation — the kind of leak that has consequences on a tightly held ship."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "Neo's 'No.' about sleep and his overall rawness are the direct aftermath of being violently unplugged and blacking out in sc-044.",
+  "Tank's 'if Morpheus is right' and Neo's receptivity depend on Morpheus's prophecy revelation in sc-045 that Neo may be The One.",
+  "The missing-jack observation only has meaning because Neo has just learned, in sc-044, that freed crew members carry physical jacks/ports.",
+  "Tank's role as 'operator' is the concrete answer to Neo being told in sc-045 that training is coming."
+ ],
+ "sets_up": [
+  "ev-011: Tank's self-introduction as operator and his born-free explanation lay the groundwork for the fuller orientation on the operator's role that follows.",
+  "ev-012: Tank's 'we got a lot to do, let's get to it' directly initiates the combat-training downloads he will run for Neo.",
+  "ev-013 and ev-014: Establishing Tank as Neo's operator sets up the loading of training programs (jump, dojo) that Tank will manage.",
+  "ev-015: Neo's growing ease with the crew, begun here with Tank, makes Trinity's later intimate caretaking of an exhausted Neo plausible.",
+  "ev-016: Tank's early breach of the 'not supposed to talk about that' rule foreshadows the crew's looser handling of the One-secret that later strains the ship."
+ ],
+ "dramatic_function": "This scene converts the ominous, shadowed prophecy of sc-045 into a human, welcoming reality: it introduces the first genuinely warm figure on the ship, delivers the world-building facts (born-free, Zion) as an act of trust rather than a lecture, and re-anchors Neo — and the audience — from awe into the practical, workaday machinery of the resistance just before training begins."
+}

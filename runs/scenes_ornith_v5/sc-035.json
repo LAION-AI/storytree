@@ -1,0 +1,116 @@
+{
+ "scene_id": "sc-035",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "MORPHEUS",
+  "TRINITY",
+  "NEO"
+ ],
+ "summary": "In the hovercraft, time is unclear and whispering voices are heard. Morpheus reports to Trinity that they have succeeded and found him; Trinity voices doubt, but Morpheus insists he knows rather than hopes. Neo's eyes flutter open and he sees Morpheus' face above him, lit angelically by a light stick. Neo asks if he is dead; Morpheus answers he is far from it.",
+ "what_changes": [
+  {
+   "who": "NEO",
+   "axis": "condition",
+   "before": "Unconscious or dead-seeming, with only his eyes moving.",
+   "after": "His eyes flutter open and he becomes conscious enough to speak.",
+   "evidence": "Neo's eyes flutter open.  We see Morpheus' face above us"
+  },
+  {
+   "who": "NEO",
+   "axis": "knowledge",
+   "before": "Uncertain whether he has died.",
+   "after": "Told by Morpheus he is far from dead.",
+   "evidence": "NEO (O.S.) ... am I dead? MORPHEUS Far from it."
+  },
+  {
+   "who": "MORPHEUS",
+   "axis": "knowledge",
+   "before": "Trinity hopes their search succeeded.",
+   "after": "Morpheus asserts certainty that they found him.",
+   "evidence": "MORPHEUS (O.S.) I don't have to hope it.  I know it."
+  }
+ ],
+ "event_hint": {
+  "kind": "a wake",
+  "one_line": "Neo regains consciousness after being rescued, as Morpheus and Trinity confirm they found him.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "light stick"
+ ],
+ "uncertain": [
+  "Whether Trinity is physically present in the hovercraft or only heard as a voice.",
+  "How much time has passed since Neo passed out in sc-034."
+ ],
+ "_mind_pass": "ran: 3 speakers — an exchange",
+ "minds": [
+  {
+   "who": "MORPHEUS",
+   "wants": "To confirm, without hedging, that the search has found exactly the one they were looking for — to remove doubt from the moment.",
+   "feels": "A steady, almost reverent certainty. He is not relieved so much as vindicated; the outcome matches a conviction he already held before the body was pulled from the sewer.",
+   "shows": "A calm, low voice and the declarative correction of Trinity — 'I don't have to hope it. I know it' — then, leaning over Neo with the light stick, the gentleness of 'Far from it.'",
+   "basis": "His line replaces Trinity's 'hope' with 'know,' and the scene frames his face as 'angelic in the fluorescent glow of a light stick,' an almost messianic staging. In sc-034 he greeted Neo with 'Welcome to the real world, Neo,' as if the arrival were expected, and the upcoming event has him explaining prophecy — so his certainty here reads as faith already in place, not a conclusion just reached.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "NEO",
+     "belief": "That this half-conscious, atrophied man pulled out of the sewer is 'him' — the one they sought.",
+     "wrong_because": "Not yet tested against what Neo himself will do; Morpheus's certainty runs ahead of any proof Neo has given, which is the tension ev-010 (the prophecy) will later lean on."
+    },
+    {
+     "other": "TRINITY",
+     "belief": "That her doubt is a weakness to be corrected rather than a legitimate caution.",
+     "wrong_because": "Trinity's wariness is grounded and will prove protective later; Morpheus treats it as something his certainty overrides, not something to be reckoned with."
+    }
+   ]
+  },
+  {
+   "who": "TRINITY",
+   "wants": "To keep the moment honest by naming the risk that they may have gotten it wrong.",
+   "feels": "Apprehension that refuses to be talked out of itself — a protective skepticism that has survived too much to celebrate prematurely.",
+   "shows": "Only a whisper of restraint: 'I hope you're right.' She stays off-page (O.S.), letting Morpheus carry the voice of certainty while she remains the note of caution.",
+   "basis": "Her single line deliberately counters Morpheus's triumph with 'hope' rather than affirmation, and she is rendered as a voice only — 'uncertain whether Trinity is physically present' — which keeps her emotionally at a distance from the rapturous framing Morpheus provides. Morpheus feels the need to correct her, which means her doubt carries weight in the room.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "MORPHEUS",
+     "belief": "That his 'I know it' is faith overriding evidence, and that faith can be wrong.",
+     "wrong_because": "In this case the search did succeed, so her fear of error is (for now) unfounded — yet it is precisely the caution that Morpheus's certainty will need later."
+    },
+    {
+     "other": "NEO",
+     "belief": "That this rescued stranger may not be the one Morpheus claims.",
+     "wrong_because": "She has no evidence against him yet; her doubt is about the pattern of hope disappointing her, not about anything Neo has done."
+    }
+   ]
+  },
+  {
+   "who": "NEO",
+   "wants": "To locate himself — to determine whether he has crossed out of life entirely.",
+   "feels": "Disorientation and a thin, raw fear. He last knew himself drowning in waste (sc-033) and passing out on a hovercraft floor (sc-034); waking to an angelic face and whispering voices, his first read of the situation is that he may be dead.",
+   "shows": "Eyes fluttering open and a single fragile question — '... am I dead?' — the ellipsis marking that speech is effort.",
+   "basis": "The scene shows only his eyes opening and one whispered question; his prior scene ended with him losing consciousness, so waking confused is continuous. His question is the minimal, honest expression of someone who cannot yet tell survival from death.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "MORPHEUS",
+     "belief": "That the glowing face above him is some figure of the afterlife — an angel or death — rather than a man holding a light stick.",
+     "wrong_because": "The 'angelic' glow is only a light stick; the figure is Morpheus, fully alive, and Neo is 'far from' dead. His misreading is the whole point of Morpheus's reply."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-034: Neo passing out after 'Welcome to the real world' — this scene is his first return to consciousness from that blackout.",
+  "sc-033: Neo nearly drowning and being snatched into the machine — the crew's belief that they 'found him' depends on that rescue having been of the right person.",
+  "The whispering, timelessness of the hovercraft infirmary, continuous with the disorientation of the sewer extraction."
+ ],
+ "sets_up": [
+  "ev-008: Neo fully waking in the infirmary and being told the true year — his 'am I dead?' opens the arc of him learning what the real world actually is.",
+  "ev-008: The crew introductions and the revelation that the Matrix is a simulation — Morpheus's certainty that Neo is 'him' is what licenses the entire education that follows.",
+  "ev-010: Morpheus's prophecy about Neo — the 'I know it' here is the seed of the messianic framing Morpheus will make explicit once Neo is awake.",
+  "The Trinity/Morpheus tension over faith versus caution, which will resurface when Morpheus's certainty about Neo is tested."
+ ],
+ "dramatic_function": "To convert the chaotic rescue into a quiet, mythic arrival: it establishes Morpheus's unshakable belief in Neo before Neo can speak for himself, lets Trinity's doubt register as the counterweight, and stages Neo's rebirth ('Far from it') as the threshold between the old life and the real world he is about to be taught to see."
+}

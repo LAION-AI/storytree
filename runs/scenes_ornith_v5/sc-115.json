@@ -1,0 +1,33 @@
+{
+ "scene_id": "sc-115",
+ "location": "HALL",
+ "time_of_day": "DAY",
+ "present": [
+  "Agent Brown",
+  "Agent Smith"
+ ],
+ "summary": "In the hall during the day, Agent Brown and Agent Smith stand over Morpheus's jacket. Agent Brown demands to know where 'they' are.",
+ "what_changes": [
+  {
+   "who": "Agent Brown",
+   "axis": "knowledge",
+   "before": "Standing over the jacket without stating what they want.",
+   "after": "Openly demanding the location of the people he is hunting.",
+   "evidence": "AGENT BROWN\nWhere are they?"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "Agents search the building for the fugitives and close in on their trail.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "Morpheus's jacket"
+ ],
+ "uncertain": [
+  "Who 'they' refers to specifically, though likely the escaped individuals.",
+  "Whether Agent Smith speaks or acts, since only Agent Brown has dialogue."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 1 speaker(s), 18w — no exchange to read"
+}

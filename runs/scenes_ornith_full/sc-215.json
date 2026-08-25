@@ -1,0 +1,35 @@
+{
+ "scene_id": "sc-215",
+ "location": "MAIN DECK",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Trinity",
+  "Tank",
+  "Morpheus"
+ ],
+ "summary": "On the main deck, Trinity screams as the monitors jump back to life, and Tank and Morpheus look at each other as if it is a miracle. Trinity then commands, 'Now get up!'",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "condition",
+   "before": "In tears, Morpheus takes hold of the EMP switch. Trinity whispers in Neo's ear.",
+   "after": "Trinity screams as the monitors jump back to life.",
+   "evidence": "Trinity screams as the monitors jump back to life."
+  },
+  {
+   "who": "Tank and Morpheus",
+   "axis": "knowledge",
+   "before": "Morpheus takes hold of the EMP switch.",
+   "after": "Tank and Morpheus look at each other. It is a miracle.",
+   "evidence": "Tank and Morpheus look at each other. It is a miracle."
+  }
+ ],
+ "event_hint": {
+  "kind": "a wake",
+  "one_line": "The crew's grief over Neo's death is interrupted when the monitors return to life and Trinity calls for action.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [],
+ "minds": [],
+ "_mind_pass": "skipped: 27 words vs fixed 150"
+}

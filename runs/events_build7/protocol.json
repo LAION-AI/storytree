@@ -1,0 +1,268 @@
+{
+ "seconds": 1381.0,
+ "scenes": 224,
+ "events": 6,
+ "scenes_per_event": {
+  "min": 1,
+  "max": 20,
+  "mean": 37.33
+ },
+ "coverage": "224/224",
+ "state_triples": 69,
+ "register_entries": 290,
+ "canonicalisation": {
+  "variants_folded": 0,
+  "renames_applied": 0,
+  "entities_before": 57,
+  "entities_after": 57,
+  "mapping": {}
+ },
+ "chain_repair": {
+  "entries_chained": 0,
+  "contradictions_fixed": 0,
+  "participants_synced": 3,
+  "placeholders_left": 0
+ },
+ "build5_repairs": {
+  "change_cleared_on_unmoved": 0,
+  "orphan_unchanged_because": 0,
+  "quotes_stripped": 18,
+  "future_claims_flagged": 2,
+  "register_text_deduped": 0,
+  "pipeline_reasons_rewritten": 14,
+  "placeholder_registers_dropped": 0,
+  "text_tidied": 19,
+  "outside_names_flagged": 9,
+  "entries_carried": 7
+ },
+ "regeneration": {
+  "rounds": [
+   {
+    "round": 1,
+    "entities": 6,
+    "regenerated": 5,
+    "rejected": 1
+   },
+   {
+    "round": 2,
+    "entities": 1,
+    "regenerated": 0,
+    "rejected": 1
+   }
+  ],
+  "regenerated": 5,
+  "rejected": 2,
+  "faults_remaining": 10
+ },
+ "duplicate_merge": {
+  "entities_merged": 0,
+  "registers_merged": 0,
+  "conflicts": []
+ },
+ "reconcile": {
+  "reconciled": 6,
+  "of": 6
+ },
+ "lint": {
+  "placeholder_entries": 0,
+  "conceding_unchanged": 5,
+  "unmoved_with_exit": 0,
+  "quotes_outside_reading": 0,
+  "participants_mismatch": 0,
+  "missing_registers": 0,
+  "entity_absent_from_evidence_scene": 3,
+  "moved_but_identical": 0,
+  "entities_without_registers": 0,
+  "examples": [
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-001",
+    "detail": "No shift in position is recorded beyond starting toward the hotel with Smith"
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-001",
+    "detail": "He is given no action beyond getting out of the car; nothing further happens to or through him"
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-003",
+    "detail": "They appear only in the rooftop scene and do not move beyond it."
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-003",
+    "detail": "He appears only in the final scene and does not move beyond it."
+   },
+   {
+    "kind": "entity_absent",
+    "event": "ev-006",
+    "detail": "Morpheus cites sc-017 whose inventory is ['agent', 'another', 'brown', 'cellular', 'cop', 'cops']"
+   },
+   {
+    "kind": "entity_absent",
+    "event": "ev-006",
+    "detail": "Agent Smith cites sc-019 whose inventory is ['agents', 'neo', 'skyscraper', 'trinity']"
+   },
+   {
+    "kind": "entity_absent",
+    "event": "ev-006",
+    "detail": "Agent Smith cites sc-019 whose inventory is ['agents', 'neo', 'skyscraper', 'trinity']"
+   },
+   {
+    "kind": "conceding_unchanged",
+    "event": "ev-006",
+    "detail": "He is a system functionary who completes his delivery and exits; his role does not develop beyond the handoff."
+   }
+  ]
+ },
+ "verbatim": {
+  "exact_runs": 3,
+  "near_hits": 15,
+  "nodes_with_runs": 2,
+  "nodes": 6,
+  "longest_run_words": 10
+ },
+ "affects_outside": 18,
+ "verify": [
+  {
+   "state_breaks": [],
+   "contradictions": [
+    {
+     "detail": "Agent Brown's positional register is marked moved:false with change:'unchanged', but its own unchanged_because and exit describe him entering the hotel and taking the front door \u2014 a positional advance from 'moving toward the entrance' to being inside on a separate route. The register is declared static while narrating movement."
+    },
+    {
+     "detail": "Agent Brown's status register claims he 'carries out the split exactly as Smith directs,' crediting him with executing a coordinated division of the hunt, while the emotional register keeps him as 'the instrument, not the speaker' with nothing to register. The status exit narrates a level of purposeful participation the other registers deny him."
+    }
+   ],
+   "missing_links": [
+    {
+     "detail": "ev-001's affects_outside states the annihilation 'clears the way for the Agents to take the operation from the police,' and ev-002 realises exactly that: Smith now directs the pursuit unilaterally, splitting Brown and himself without any reference to the Lieutenant. Neither node marks this hand-off \u2014 ev-001 frames it as a consequence still playing out off-screen, and ev-002 simply shows the Agents running the operation with the police already gone."
+    }
+   ],
+   "between": [
+    "ev-001",
+    "ev-002"
+   ]
+  },
+  {
+   "state_breaks": [],
+   "contradictions": [],
+   "missing_links": [],
+   "between": [
+    "ev-002",
+    "ev-003"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Trinity's physical register enters ev-004 with the exact exit text from ev-003 ('On her feet and moving again despite the pain, gritting through it to reach the phone') yet is declared unchanged, which narrates her as still mid-escape in the booth while ev-003 already closed that action with her gone before the truck hit. The later event's own summary places her at a party recruiting Neo, so the carried-forward entry/exit describe a moment that has already ended, leaving her physical state unaccounted for between the two events.",
+     "entity": "Trinity",
+     "register": "physical"
+    },
+    {
+     "detail": "Trinity's safety register enters ev-004 with ev-003's exit ('Answering the phone and gone before the truck reaches the booth; no body left behind, no pursuer on her') declared unchanged, but that is a completed evasion at the prior event's close, not a standing safety condition at the open of a scene where she is stationary at a party. The register is narrated as though the escape is still resolving, with nothing marking the transition to her settled, unthreatened state.",
+     "entity": "Trinity",
+     "register": "safety"
+    },
+    {
+     "detail": "Trinity's emotional register enters ev-004 carrying ev-003's exit ('a ferocious narrowing of attention onto the one point of escape, pain present but refused') declared unchanged, which describes her during the rooftop chase, not while calmly recruiting Neo at a gathering. The entry is a carried-over escape-state with no accounting for how it holds across the change of scene.",
+     "entity": "Trinity",
+     "register": "emotional"
+    },
+    {
+     "detail": "Trinity's positional register enters ev-004 with ev-003's exit ('Answering the phone in the booth and gone before the garbage truck destroys it') declared unchanged, but that is a transient action at the prior event's end, not a position held at the open of the later event. Nothing in ev-004 records her leaving the booth or arriving at the party, so her location across the join is unaccounted for.",
+     "entity": "Trinity",
+     "register": "positional"
+    },
+    {
+     "detail": "Trinity's status register enters ev-004 with ev-003's exit ('A hunted operative cut off from her exit, taking direction from Morpheus') declared unchanged, yet ev-004's own relational register and summary show her acting as an emissary recruiting Neo at a party, no longer cut off or mid-escape. The carried-forward hunted-and-cut-off status contradicts the settled recruiter role the later event otherwise presents.",
+     "entity": "Trinity",
+     "register": "status"
+    },
+    {
+     "detail": "Trinity's knowledge register enters ev-004 carrying ev-003's exit ('Believes Agents are an overwhelming, potentially terminal escalation, and that Morpheus has the situation mapped') declared unchanged, which is fine as content, but it is presented as the open-state of a scene where she is calmly delivering warnings to Neo \u2014 the prior event's freshly-escaped framing is carried across without any marker that time and situation have moved on.",
+     "entity": "Trinity",
+     "register": "knowledge"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "ev-004's Trinity registers assert she is simultaneously still in her escape (physical/emotional/safety/positional exits quote the booth-and-pain moment as unchanged) and already a settled emissary recruiting Neo at a party (relational/status/summary). The later event's own nodes cannot both be true at its open: she is either mid-escape in the booth or standing at a gathering, and the carried-forward entries force both."
+    },
+    {
+     "detail": "The Agents' ev-003 exit state ('They possess the name of the crew's next target \u2014 Neo \u2014 and a search is already running') is presented in ev-004's affects_outside as though newly tightening around Neo, but ev-004's own nodes never carry the Agents forward or mark that they already hold the name, so the later event reads the name acquisition as if it were news rather than an established prior outcome."
+    }
+   ],
+   "missing_links": [
+    {
+     "detail": "ev-003's affects_outside states the Agents now have the name Neo and a search running; ev-004's affects_outside realises exactly this by describing the Agents tightening pressure on a contacted, moving Neo \u2014 but neither event's scene-level nodes carry the Agents across the join to state that the name is what enables the later surveillance. The outward effect (a named target) is realised downstream without either node saying so."
+    }
+   ],
+   "between": [
+    "ev-003",
+    "ev-004"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's emotional register exits ev-004 as 'both unnerved and relieved that his isolating obsession has been witnessed and named aloud,' but ev-005 opens with him 'detached and inwardly elsewhere,' treating the ultimatum as petty friction. The relief of being witnessed and named is dropped without anything in ev-005 accounting for its disappearance; the event only records intensity draining into detachment, not the loss of relief.",
+     "entity": "Neo",
+     "register": "emotional"
+    },
+    {
+     "detail": "Neo's relational register exits ev-004 as 'rapt and recruited, trusting a stranger,' and ev-005 declares this register 'unchanged' because the recruiting bond is 'neither tested nor altered.' Yet ev-005's own emotional and status registers describe the intensity of recruitment draining into flat detachment and the recruited target being folded back into an ordinary employee. The event both asserts the recruiting bond persists unchanged and narrates that bond draining away, leaving the exit state internally at odds.",
+     "entity": "Neo",
+     "register": "relational"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "ev-005's Neo relational register claims the recruiting bond is 'neither tested nor altered by this reprimand,' while the same event's emotional register says 'the intensity of being recruited drains away into flat detachment' and its status register says 'the recruited target is folded back into an ordinary employee.' The event simultaneously asserts the bond is unchanged and that recruitment's intensity has drained, which are incompatible descriptions of the same through-line."
+    },
+    {
+     "detail": "ev-005's Neo safety register exits with the exact wording 'Told he is in danger and being watched, yet assured the crowd is safe while the threat stays outside,' but ev-005 takes place in a downtown office, not the party crowd. The assurance tied to the crowd no longer applies in the new setting, yet the exit state retains crowd-specific language unchanged, contradicting the relocated position."
+    }
+   ],
+   "missing_links": [
+    {
+     "detail": "ev-004's affects_outside explicitly states Neo 'is now a marked, watched target with his name already in the Agents' hands' and that the Agents 'now have a target who has been contacted and set in motion, tightening the pressure on him.' ev-005 realises exactly this outward effect: Neo is reached by the ordinary world's machinery at his workplace, lectured and disciplined, held in a false calm that keeps him 'reachable by the ordinary world's machinery.' The tightening of pressure the earlier event promised is realised here, and neither node marks the connection."
+    }
+   ],
+   "between": [
+    "ev-004",
+    "ev-005"
+   ]
+  },
+  {
+   "state_breaks": [
+    {
+     "detail": "Neo's safety register exits ev-005 with the threat still outside and the crowd safe, but enters ev-006 with no safety register at all, even though the later event is precisely about that threat closing in. The danger that was deferred is realised, yet nothing in Neo's ev-006 safety triple (or any register) records the transition from 'threat stays outside' to being surrounded by it.",
+     "entity": "Neo",
+     "register": "safety"
+    },
+    {
+     "detail": "RHINEHEART is a stated presence in ev-005 (lecturing Neo, delivering the ultimatum) but has no state triple in ev-006 despite the Agents' raid occurring in his office. No node accounts for his absence or his state during the seizure.",
+     "entity": "RHINEHEART",
+     "register": "positional"
+    }
+   ],
+   "contradictions": [
+    {
+     "detail": "ev-006 gives Neo's knowledge change as 'learning that capture is the worse of two exits,' which requires that Neo was presented with and understood two exits. But the ledge status node says the test only changed 'from refusal to a failed attempt,' and the scaffold/roof nodes insist Neo never engaged the climb as a real option. One side implies Neo weighed two exits; the other implies he never genuinely took the ledge route, so 'the worse of two exits' has no supported basis in the same event's own nodes."
+    }
+   ],
+   "missing_links": [
+    {
+     "detail": "ev-005's affects_outside explicitly enables 'the reprimand can serve as the prelude to the police, the interrogation room, and the physical modification.' ev-006 realises exactly this \u2014 the Agents/cops seize Neo and load him into the sedan bound for interrogation. Neither event's state layer records this handoff; the earlier event names the consequence only in affects_outside, and the later event begins with the seizure already underway, so the connective tissue between 'petty friction' and 'physical custody' is carried entirely by affects_outside rather than by a Neo register that moves from 'threat stays outside' to 'threat has arrived.'"
+    }
+   ],
+   "between": [
+    "ev-005",
+    "ev-006"
+   ]
+  }
+ ]
+}

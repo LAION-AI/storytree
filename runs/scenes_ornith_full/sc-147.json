@@ -1,0 +1,35 @@
+{
+ "scene_id": "sc-147",
+ "location": "GOVERNMENT BUILDING",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "MORPHEUS",
+  "AGENT SMITH",
+  "AGENT BROWN",
+  "AGENT JONES"
+ ],
+ "summary": "In a room in the government building, Morpheus is 'fighting to hold his mind together' while the three Agents 'stand over him.' They speak among themselves about the interrogation they have been running on him. Smith declares, 'Never send a human to do a machine's job.' Brown reasons that if the insider 'has failed, they will sever the connection as soon as possible, unless' the operatives are dead. Jones concludes, 'They are dead. In either case --' Smith then ends the deliberation: 'We have no choice but to continue as planned. Deploy the sentinels. Immediately.'",
+ "what_changes": [
+  {
+   "who": "THE AGENTS",
+   "axis": "resolve",
+   "before": "Debating whether Morpheus's allies have succeeded or died and whether the connection will be severed",
+   "after": "Settled on proceeding regardless and ordering the sentinels deployed",
+   "evidence": "We have no choice but to continue as planned.  Deploy the sentinels.  Immediately."
+  },
+  {
+   "who": "MORPHEUS",
+   "axis": "condition",
+   "before": "Still resisting the interrogation of his mind",
+   "after": "Understood by the Agents as defeated, prompting them to move to physical attack",
+   "evidence": "Morpheus is fighting to hold his mind together.  The Agents stand over him."
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid",
+  "one_line": "The Agents conclude Morpheus's interrogation has run its course and order the sentinels to attack the real ship.",
+  "continues_from_earlier": true
+ },
+ "minds": [],
+ "_mind_pass": "skipped: 70 words vs fixed 150"
+}

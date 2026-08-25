@@ -1,0 +1,29 @@
+{
+ "scene_id": "sc-132",
+ "location": "STREET",
+ "time_of_day": "DAY",
+ "present": [
+  "Trinity"
+ ],
+ "summary": "On a street in daylight, Trinity sees the TV repair shop. The scene gives no dialogue and no further action beyond her noticing the shop.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "knowledge",
+   "before": "moving down the street without the shop in view",
+   "after": "has spotted the TV repair shop",
+   "evidence": "Trinity sees the TV repair shop."
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "The crew races toward an exit while Trinity locates the TV repair shop.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether the others are still with Trinity in this exact moment",
+  "What Trinity intends to do after seeing the shop"
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 10 words vs fixed 150"
+}

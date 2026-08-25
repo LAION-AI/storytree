@@ -1,0 +1,134 @@
+{
+ "scene_id": "sc-156",
+ "location": "GOVERNMENT BUILDING",
+ "time_of_day": "DAY",
+ "present": [
+  "Neo",
+  "Trinity",
+  "GUARD",
+  "GUARD #4",
+  "soldiers",
+  "guards"
+ ],
+ "summary": "Neo and Trinity, in long black coats, push through the revolving doors of the government building lobby, Neo carrying a duffel bag and Trinity a large metal suitcase, drawing nervous glances as they cross to the security station. Neo calmly passes through the metal detector, which immediately WAILS, and a guard asks him to remove metallic items. Neo sets down his duffel bag and throws open his coat to reveal an arsenal of guns, knives and grenades slung from a climbing harness. In a blur of motion he kills three guards before they hit the ground; a fourth guard dives for cover and radios for backup, then looks up as Trinity sets off the metal detector and is killed. Backup arrives as a wave of soldiers blocking the elevators, and the lobby becomes a roar of gunfire, with explosive-tipped bullets cratering the slate walls and pillars while Neo and Trinity answer with a sub-hand machine gun and throwing knives, used with deadly precision. Bodies slump to the marbled floor as Neo and Trinity hardly break their stride.",
+ "what_changes": [
+  {
+   "who": "Neo and Trinity",
+   "axis": "safety",
+   "before": "Armed infiltrators moving through the lobby under the pretense of a routine security check, Neo 'calmly passes through the METAL DETECTOR'.",
+   "after": "Open, dominant attackers who have turned the lobby into a killing field: 'Bodies slump down to the marbled floor while Neo and Trinity hardly even break their stride.'",
+   "evidence": "Neo slowly sets down his duffel bag and throws open his coat, revealing an arsenal of guns, knives and grenades slung from a climbing harness."
+  },
+  {
+   "who": "The guards / security",
+   "axis": "condition",
+   "before": "A functioning security station with a guard following procedure: 'Would you please remove any metallic items you are carrying: keys, loose change --'.",
+   "after": "The security detail is wiped out and overrun: 'three guards are dead before they hit the ground' and the fourth's call for help is answered only by a firefight that kills him too.",
+   "evidence": "In a split second, three guards are dead before they hit the ground."
+  }
+ ],
+ "event_hint": {
+  "kind": "raid",
+  "one_line": "Neo and Trinity blast their way through the government building lobby to reach Morpheus.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "duffel bag",
+  "large metal suitcase",
+  "metal detector",
+  "metal detection wand",
+  "climbing harness with guns, knives and grenades",
+  "radio",
+  "SUB-HAND MACHINE GUN",
+  "throwing knives"
+ ],
+ "uncertain": [
+  "Whether the 'backup' soldiers are defeated or merely held off, since the scene ends before the firefight resolves.",
+  "Whether Neo and Trinity's objective in the building is specifically to rescue Morpheus, as the scene itself does not state their goal."
+ ],
+ "_mind_pass": "ran: 2 speakers — an exchange",
+ "minds": [
+  {
+   "who": "Neo",
+   "wants": "To force a path through the lobby without losing momentum — to convert the element of surprise into forward motion toward Morpheus.",
+   "feels": "A cold, pre-decided readiness. He has already accepted the violence before the doors, so the metal detector's wail is not a setback but his cue. Under the stillness is the certainty of someone who has committed fully and is now simply executing.",
+   "shows": "Deliberate calm: he passes through 'calmly,' sets the bag down 'slowly,' and only then reveals the arsenal. He lets the guard finish the procedural sentence before dismantling the procedure — the slowness is the point.",
+   "basis": "The stage direction 'Neo calmly passes through the METAL DETECTOR' and 'Neo slowly sets down his duffel bag and throws open his coat' — the studied slowness against an imminent kill. ev-026 establishes he requested and received the arsenal himself, so the harness is his own choice, not improvisation.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "The guards / security",
+     "belief": "They are an obstacle to be removed with precision, not a threat to be feared — functionally already dead the moment he decides.",
+     "wrong_because": "inferred"
+    },
+    {
+     "other": "Trinity",
+     "belief": "She will move in exact lockstep with him — the synchronized kill implies he trusts her to be where his plan needs her without a word.",
+     "wrong_because": "inferred"
+    }
+   ]
+  },
+  {
+   "who": "Trinity",
+   "wants": "To stay welded to Neo's tempo and clear her side of the lobby so neither of them breaks stride.",
+   "feels": "Focused and unsentimental, the same resolve that made her invoke her rank to join this mission in ev-026. She is proving — to Neo and to herself — that she belongs in this assault, not behind it.",
+   "shows": "She says nothing and needs to. Her only 'line' is setting off the metal detector at the exact beat that gets GUARD #4 killed — she lets the environment announce her, then kills him. Total economy of motion, mirroring Neo.",
+   "basis": "ev-026: Trinity 'moved by Neo's resolve and defying his objection, invokes her rank to join the mission.' Here she carries a 'large metal suitcase' and triggers the detector on her own beat, then kills the fourth guard — initiative without coordination, exactly her established pattern of acting on her own decision.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "That matching his lethality is how she earns her place beside him on this rescue.",
+     "wrong_because": "inferred"
+    }
+   ]
+  },
+  {
+   "who": "GUARD",
+   "wants": "To process one more routine civilian through a standard security check.",
+   "feels": "Mild, procedural alertness — he has noticed these two only as slightly off ('nervous glances'), nothing more. Then, at the reveal, raw shock.",
+   "shows": "Polite procedure: 'Would you please remove any metallic items you are carrying.' He reaches for his wand, treating Neo as a compliant citizen. His only break from script is 'Holy shit --' — which is also the last thing he gets to say.",
+   "basis": "The guard's dialogue is pure by-the-book courtesy, and he 'moves over toward Neo, raising his metal detection wand' — expecting to pat down a traveler, not face an arsenal. His 'Holy shit --' marks the instant his model of the situation collapses.",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "Neo",
+     "belief": "A slightly eccentric man who forgot to empty his pockets — someone to be processed, not someone lethal.",
+     "wrong_because": "He reads the coat as ordinary outerwear; Neo is wearing a pre-rigged climbing harness of weapons (ev-026) and has already decided to kill him before the coat opens."
+    }
+   ]
+  },
+  {
+   "who": "GUARD #4",
+   "wants": "To survive by raising the alarm and getting backup between himself and the attackers.",
+   "feels": "Pure survival panic — the one who read the situation fast enough to know this is not a robbery but an assault, and that cover and reinforcements are his only chance.",
+   "shows": "He breaks procedure entirely: dives for cover and screams 'Backup! Send in the backup!' into his radio. His mistake is legible in the action itself — he 'looks up' at the worst possible moment.",
+   "basis": "He is the only guard who does not stay frozen in procedure; he dives and radios. The text explicitly ties his death to the look: 'He looks up as Trinity sets off the metal detector. It is the last thing he sees.'",
+   "grounding": "in_this_scene",
+   "believes_about": [
+    {
+     "other": "The backup / soldiers",
+     "belief": "That calling for backup will save him — that help arriving is the thing that stops the threat.",
+     "wrong_because": "The backup's arrival only escalates the lobby into a killing field; his call produces a firefight, not a rescue, and he is dead before it resolves."
+    },
+    {
+     "other": "Trinity",
+     "belief": "That the woman at the detector is a secondary concern compared to the man who just killed three guards.",
+     "wrong_because": "inferred — he looks up toward Neo's side of the station and Trinity is the one who kills him; he misjudges which of the two is his immediate executioner."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "ev-026: Neo and Trinity armed themselves deliberately in the Construct and downloaded combat skills, so the harness, the suitcase, and their 'weapons like extensions of their bodies' are the payoff of that preparation, not improvisation.",
+  "ev-026: Trinity's decision to override Neo and join the mission is what puts her in this lobby at his side, killing in sync with him.",
+  "sc-153: Smith's desperate need to break Morpheus and get the Zion codes is the ticking clock that makes this assault urgent — every second saved in the lobby is a second toward beating the interrogation.",
+  "sc-154: Tank's 'They're coming for you' to the dying Morpheus is the promise this scene begins to fulfill."
+ ],
+ "sets_up": [
+  "ev-027: The overrun lobby and the wave of soldiers they are already holding off make possible the push to the elevators, where they will rig the car as a bomb and ride the counterweights to the roof.",
+  "ev-028: Clearing the lobby's security and soldiers is the necessary precondition for Trinity reaching the helicopter and Neo reaching a firing position to extract Morpheus from the executive office.",
+  "ev-026–ev-028: The 'deadly precision' and weapons-as-extensions-of-the-body established here are what allow the rooftop and helicopter maneuvers that follow to be survivable."
+ ],
+ "dramatic_function": "To convert the rescue decision of ev-026 into irreversible, high-velocity action — the story crosses from planning into open war. It establishes Neo and Trinity as a single, unstoppable unit and demonstrates that inside the Matrix they are no longer prey to the system's enforcers but its executioners, raising the stakes and tempo for the assault that follows."
+}

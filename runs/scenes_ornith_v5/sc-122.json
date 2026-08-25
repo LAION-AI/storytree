@@ -1,0 +1,112 @@
+{
+ "scene_id": "sc-122",
+ "location": "BASEMENT",
+ "time_of_day": "DAY",
+ "present": [
+  "Trinity",
+  "Neo",
+  "Cypher",
+  "the others",
+  "gas-masked figures"
+ ],
+ "summary": "The group crashes through the ceiling of the basement's main mechanical room, a dark concrete cavern holding four enormous boilers, into a firefight. Gas-masked figures fire grenade launchers, and smoke blossoms from the green metal canisters. Trinity keeps moving, searches the floor, and finds the cover of the catch basin. As Cypher watches her pry open the grate, a gas can bounces near him. Trinity urges him on, but as a cloud envelops him he seems to trip, and Trinity watches him disappear into the smoke before she follows the others down the wet-black hole.",
+ "what_changes": [
+  {
+   "who": "Trinity",
+   "axis": "standing",
+   "before": "In the midst of the firefight, she is still searching for an exit.",
+   "after": "She locates the way out and opens it.",
+   "evidence": "Searching the floor, she finds what she needs; the cover of the catch basin."
+  },
+  {
+   "who": "Cypher",
+   "axis": "safety",
+   "before": "He is with the group, watching Trinity work.",
+   "after": "He is lost, enveloped and hidden by the gas smoke.",
+   "evidence": "Cypher seems to trip as the cloud envelops him. Trinity watches Cypher disappear into the smoke"
+  }
+ ],
+ "event_hint": {
+  "kind": "a raid / escape under fire",
+  "one_line": "Trinity leads the crew through a gassed-out basement firefight toward the catch-basin exit, losing Cypher in the smoke.",
+  "continues_from_earlier": true
+ },
+ "objects_that_matter": [
+  "four enormous boilers",
+  "grenade launchers",
+  "green metal canisters",
+  "the cover of the catch basin",
+  "the grate",
+  "a gas can",
+  "the wet-black hole"
+ ],
+ "uncertain": [
+  "Whether Cypher's trip is accidental or deliberate (he only 'seems to trip').",
+  "Whether Cypher is dead, incapacitated, or merely separated.",
+  "Who exactly 'the others' are beyond Neo and Trinity."
+ ],
+ "_mind_pass": "ran: 1 speaker, 131w >= p75 (125w) for this work",
+ "minds": [
+  {
+   "who": "Trinity",
+   "wants": "To get the crew out through the catch basin before the gas takes them.",
+   "feels": "A commander's narrowed focus — she has converted the chaos into a single task (find the cover, open it, move) and is holding panic at bay by staying in motion.",
+   "shows": "Only urgency: she keeps moving, pries the grate, and barks \"Come on!\" at Cypher. Nothing of her interior state leaks past the command.",
+   "basis": "The scene says 'Trinity never stops moving' and 'searching the floor, she finds what she needs'; she urges Cypher ('Come on!') and only after he vanishes does she follow the others. The prior scene established she is under orders to get Neo out at any cost (sc-121: 'you must get Neo out').",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Cypher",
+     "belief": "That his 'trip' is an accident — that he is a crewmate caught by the gas and lost in the smoke.",
+     "wrong_because": "The text flags it as only seeming to be a trip; the event shape reveals Cypher is a traitor who has already begun bargaining his crew to the Agents, so his disappearance may be deliberate rather than misfortune."
+    },
+    {
+     "other": "the crew",
+     "belief": "That she is still leading a whole crew toward an exit together.",
+     "wrong_because": "She does not yet know the group is already fragmenting — Morpheus has just been sacrificed behind her, and Cypher is actively betraying them."
+    }
+   ]
+  },
+  {
+   "who": "Cypher",
+   "wants": "To be gone from this firefight — and, on the level the scene hides, to separate himself from the crew so his betrayal can proceed.",
+   "feels": "Whatever his motive, he is choosing to go down into the smoke rather than keep running with the others; the ambiguity is that the text only lets us see him 'seem to trip.'",
+   "shows": "He watches Trinity work, then appears to stumble as the cloud envelops him — a disappearance that reads, to anyone watching, as an accident.",
+   "basis": "He 'watches her pry open the grate' rather than helping; a gas can 'bounces near him'; he 'seems to trip as the cloud envelops him.' The facts file marks the trip as possibly deliberate and his fate as uncertain. Earlier (sc-119) Trinity had to pull him free, establishing him as the one who lags and must be rescued.",
+   "grounding": "from_the_event_shape",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "That she will read his disappearance as an accident and move on without suspicion.",
+     "wrong_because": "The text itself undermines the accident ('seems to trip'), and Trinity's watchful eye ('Trinity watches Cypher disappear') leaves open that she registers something off — even if she cannot yet name it."
+    }
+   ]
+  },
+  {
+   "who": "Neo",
+   "wants": "To escape — but with the crew intact, resisting the logic of leaving people behind.",
+   "feels": "Still raw from the moment just before, where he was overruled and forced to abandon Morpheus against his will ('We can't leave him!' / 'We have to!').",
+   "shows": "Nothing distinct in this scene; he is folded into 'the others' who go down the hole. His interior state is carried over, not re-expressed here.",
+   "basis": "In sc-121 Neo protested abandoning Morpheus and was physically dragged away by Trinity; here he is listed only among 'the others' with no action or line of his own.",
+   "grounding": "from_earlier_scenes",
+   "believes_about": [
+    {
+     "other": "Trinity",
+     "belief": "That her insistence on moving and leaving people is cold or wrong.",
+     "wrong_because": "She is executing Morpheus's own final order ('He is all that matters') — her ruthlessness is loyalty to the mission Morpheus gave, not indifference."
+    }
+   ]
+  }
+ ],
+ "connects_back": [
+  "sc-121: Morpheus's order that Trinity get Neo out, and Neo's resistance to leaving people behind, both carry into this escape.",
+  "sc-119: Cypher as the one who had to be pulled free — the crewmate who lags and is rescued — sets the pattern for his disappearance here.",
+  "The firefight and ceiling-crash entry continue the action of the building escape begun in sc-119–121."
+ ],
+ "sets_up": [
+  "ev-023: Cypher's survival and separation from the crew makes possible his later betrayal — killing Dozer, shooting Tank, and murdering Apoc and Switch.",
+  "ev-023: The crew reaching extraction with Neo but losing Cypher in the smoke lets the traitor act from a position the others believe empty.",
+  "ev-024: The crew's belief that Cypher was simply lost in the firefight makes his later reveal as the traitor a shock."
+ ],
+ "dramatic_function": "The scene closes the building-escape action while quietly planting the story's real turn — Cypher's disappearance is the first visible crack of his betrayal, and it lets the film shed Morpheus and Cypher so the survivors can reach extraction carrying the cost of the mission."
+}

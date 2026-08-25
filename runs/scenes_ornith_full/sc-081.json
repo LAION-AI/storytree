@@ -1,0 +1,32 @@
+{
+ "scene_id": "sc-081",
+ "location": "BUILDING",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Morpheus",
+  "Neo",
+  "a blind man"
+ ],
+ "summary": "Inside a building, Morpheus and Neo encounter a blind man who exchanges a nod with Morpheus. An elevator then opens, and Neo follows Morpheus inside it, the two of them entering the lift together.",
+ "what_changes": [
+  {
+   "who": "Neo",
+   "axis": "condition",
+   "before": "standing in the building with Morpheus",
+   "after": "following Morpheus inside the elevator",
+   "evidence": "An elevator opens and Neo follows Morpheus inside."
+  }
+ ],
+ "event_hint": {
+  "kind": "movement",
+  "one_line": "Morpheus and Neo move through a building and enter an elevator.",
+  "continues_from_earlier": true
+ },
+ "uncertain": [
+  "Whether the blind man is a resident of the building, a guide, or a threat.",
+  "What floor or destination the elevator is taking them to.",
+  "Whether the elevator opening is a normal event or a signal."
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 19 words vs fixed 150"
+}

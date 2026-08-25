@@ -1,0 +1,38 @@
+{
+ "scene_id": "sc-185",
+ "location": "HOVERCRAFT",
+ "time_of_day": "UNSPECIFIED",
+ "present": [
+  "Tank",
+  "Trinity",
+  "Morpheus"
+ ],
+ "summary": "Inside the hovercraft, Tank is searching the Matrix when Trinity asks what just happened. Tank says he doesn't know and has lost him. Morpheus begins to explain that \"he's on the run\" but is cut off when a siren suddenly sounds. Tank swears, and Morpheus bolts to the ladder.",
+ "what_changes": [
+  {
+   "who": "Tank",
+   "axis": "knowledge",
+   "before": "Tracking the target in the Matrix.",
+   "after": "Has lost him and doesn't know what happened.",
+   "evidence": "I don't know.  I lost him."
+  },
+  {
+   "who": "Morpheus",
+   "axis": "condition",
+   "before": "Standing, interpreting events as the target being on the run.",
+   "after": "Reacting to an alarm by bolting to the ladder.",
+   "evidence": "Suddenly, a SIREN SOUNDS. TANK Oh shit! Morpheus bolts to the ladder."
+  }
+ ],
+ "event_hint": {
+  "kind": "a chase",
+  "one_line": "The crew loses track of Neo in the Matrix, then an alarm sends them scrambling."
+ },
+ "objects_that_matter": [
+  "the Matrix",
+  "the SIREN",
+  "the ladder"
+ ],
+ "minds": [],
+ "_mind_pass": "skipped: 34 words vs fixed 150"
+}
