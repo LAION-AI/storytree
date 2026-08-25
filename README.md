@@ -4,10 +4,10 @@
 layers, what each node contains, real examples from *The Matrix*, and where the measurements
 are.
 
-**Explore the recovered tree live:** the [Storytree Explorer](storytree-explorer.html)
+**Explore the recovered tree live:** the [Storytree Explorer](https://projects.laion.ai/storytree/webapp/storytree-explorer.html)
 renders the top-down chain — story root, exposé, meta layer, plots, events, entities,
 scene layer — from a single data file. Rebuild it with
-`python tools/build_explorer_data.py` (re-run automatically by the Pages workflow).
+`python tools/build_explorer_data.py` (the Pages site is deployed from the `main` branch).
 
 
 Generate screenplays as an explicit, inspectable graph — and run the same machinery

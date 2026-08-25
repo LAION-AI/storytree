@@ -27,5 +27,5 @@ git commit -q -F "$MSG"
 
 TOKEN="$(grep -E '^GH_TOKEN=' .env | cut -d= -f2-)"
 [ -n "$TOKEN" ] || { echo "no GH_TOKEN in .env"; exit 1; }
-git push "https://x-access-token:${TOKEN}@github.com/christophschuhmann/storytree.git" main 2>&1 \
+git push "https://x-access-token:${TOKEN}@github.com/LAION-AI/storytree.git" main 2>&1 \
   | sed -E 's/gh[pousr]_[A-Za-z0-9]+/[REDACTED]/g' | tail -2
