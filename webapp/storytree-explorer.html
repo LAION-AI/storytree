@@ -156,23 +156,26 @@ function renderScenes(sc){ const g=`<div class="scene-grid">${sc.list.map(s=>
 const ZONES=[['external','External conflicts',o=>[o.name,fld('Party',JO(o.parties)),fld('Stakes',o.stakes)]],['internal','Internal conflicts',o=>[o.character,fld('Torn between',JO(o.torn_between)),fld('What it costs',o.what_it_costs)]],['relationships','Relationship arcs',o=>[JO(o.pair)+' — '+ESC(o.arc),fld('What changes',o.what_changes)],'w'],['perspectives','Perspectives on the dilemma',o=>[o.label+' '+ESC(o.throughline),fld('Stance',o.stance_on_dilemma)]]];
 function build(D){ const L=D.layers;
   const tocEl=document.getElementById('toc'); const app=document.getElementById('app');
-    const rows=D.map(([z,t,dt,fn,c],i)=>`<section class="layer open" id="layer-${i+1}">`+
+  const Z=[
+    ['1','Story Root',L.story_root,x=>renderRoot(x),'premise + vector'],
+    ['2','Expose',L.expose,x=>renderExpose(x),Object.keys(L.expose.synopsis||{}).length+' sections'],
+    ['3','Meta Layer',L.meta,x=>renderMeta(x),cnt(L.meta)],
+    ['4','Plots',L.plots,x=>renderPlots(x),L.plots.length+' throughlines'],
+    ['5','Events',L.events,x=>renderEvents(x),L.events.length+' events'],
+    ['6','Entities',L.entities,x=>renderEntities(x),L.entities.length+' characters'],
+    ['7','Scenes',L.scenes,x=>renderScenes(x),L.scenes.list.length+' scenes']];
+  app.innerHTML=Z.map(([z,t,dt,fn,c],i)=>`<section class="layer open" id="layer-${i+1}">`+
     `<div class="head"><span class="z">Z${z}</span><h2>${t}</h2><span class="zcount">${c}</span><span class="chev">▾</span></div>`+
     `<div class="rule"></div><div class="body"></div></section>`).join('');
-  app.innerHTML=rows;
-  D.forEach(([z,t],i)=>{ const b=document.createElement('button'); b.className='tod'; b.textContent=`Z${z} ${t}`;
+  Z.forEach(([z,t],i)=>{ const b=document.createElement('button'); b.className='tod'; b.textContent=`Z${z} ${t}`;
     b.onclick=()=>document.getElementById('layer-'+(i+1)).scrollIntoView({behavior:'smooth'}); tocEl.appendChild(b); });
-  ['expand all','collapse'].forEach((lab)=>{ const b=document.createElement('button'); b.className='tog'; b.textContent=lab;
-    b.onclick=()=>{ document.querySelectorAll('.layer,.plaq').forEach(x=>x.classList.toggle('open',lab==='expand all'));
-      document.querySelectorAll('.body>.chev').forEach(x=>x.textContent=lab==='expand all'?'▾':'▸'); }; tocEl.appendChild(b); });
-  D.forEach(([z,t,dt,fn],i)=>{ const body=document.querySelector('#layer-'+(i+1)+' .body'); body.innerHTML=fn(dt); });
+  ['expand all','collapse'].forEach(lab=>{ const b=document.createElement('button'); b.className='tog'; b.textContent=lab;
+    b.onclick=()=>document.querySelectorAll('.layer,.plaq').forEach(x=>x.classList.toggle('open',lab==='expand all')); tocEl.appendChild(b); });
+  Z.forEach(([z,t,dt,fn],i)=>{ document.querySelector('#layer-'+(i+1)+' .body').innerHTML=fn(dt); });
   bind();
-  document.getElementById('m-count').textContent=countMsg(D);
 }
-function cnt(o){ if(Array.isArray(o))return `${o.length} items`; return `${Object.keys(o).length} keys`; }
-function countMsg(D){ return `${D[0][2].title||'story'} → ${D[4][2].length} events → ${D[6][2].list.length} scenes`; }
+function cnt(o){ return Array.isArray(o)?o.length+' items':Object.keys(o).length+' keys'; }
 
-let DIMS=[];
 fetch('./explorer/storytree.json').then(r=>{ if(!r.ok)throw new Error('HTTP '+r.status); return r.json(); })
 .then(d=>{ document.getElementById('status').style.display='none'; build(d); })
 .catch(e=>{ const s=document.getElementById('status');
