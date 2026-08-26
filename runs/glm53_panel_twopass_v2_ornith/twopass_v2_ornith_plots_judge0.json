@@ -1,0 +1,30 @@
+{
+ "arm": "twopass_v2_ornith",
+ "layer": "plots",
+ "judge": 0,
+ "port": 8222,
+ "dur_s": 21.8,
+ "scores": {
+  "P1": 2,
+  "P2": 2,
+  "P3": 2,
+  "P4": 3,
+  "P5": 1
+ },
+ "mean": 2,
+ "raw": {
+  "P1": 2,
+  "P2": 2,
+  "P3": 2,
+  "P4": 3,
+  "P5": 1,
+  "evidence": {
+   "P1": "P1 fails on 'Cut the Loss' ev-031->ev-040 where doubled serum (ev-031) does not cause Sentinel hunt (ev-040) and on 'Loyalty Over Survival' ev-025->ev-030 where Morpheus's crawlspace sacrifice does not cause TV-repair-shop wake, both marked enabled-by but are and-then",
+   "P2": "P2 fails on 'A Community Wrestling the Question' which by definition lives out both horns (Cypher self-preservation and Tank/Dozer sacrifice) and on 'Cut the Loss' ev-044 which reframes Trinity's kiss/miracle as world-logic cut-loss, mixing stances",
+   "P3": "P3 fails as ev-044 (Death, the Kiss, and the Miracle) is padded into all five plots but belongs only to sacrifice/loyalty, while 'Cut the Loss' and 'Living Argument' miss required rescue events ev-033/ev-034 that actually cause ev-035",
+   "P4": "P4 is split: 'Wager on a Man' ev-025->ev-032->ev-038->ev-044 and 'Living Argument' ev-025->ev-031->ev-035->ev-044 have setup/turn/resolution, but 'Cut the Loss' ev-044/ev-046 leaves world-calculation unresolved/overturned by miracle and 'Community' ev-044 does not close doubters/believers split",
+   "P5": "P5 fails catastrophically on non-redundancy: ev-044 appears as resolution in all five plots, ev-025 in three plots (Wager, Living Argument, Loyalty) and ev-031 in three plots (Cut the Loss, Wager, Living Argument) rehashing the same sacrifice/interrogation beat"
+  },
+  "commentary": "Hard marking: causal integrity collapses on world-logic and relationship chains using enabled-by for thematically related but causally independent events; perspective discipline breaks on society plot as both-horns retelling; membership is padded by forcing ev-044 miracle into cut-loss; arcs are complete only for Neo and Morpheus; redundancy is fatal with ev-044 in every plot."
+ }
+}

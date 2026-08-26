@@ -78,6 +78,21 @@ Ganzfilm-Retellings statt Perspektiven) — schnellster Composer, schwächstes
 Plot-Ergebnis (Muse 3.33 > v8 2.73 > Qwen 2.07). Rolle eher Durchsatz/
 Draft/Judge als Ein-Schuss-Composer.
 
+### Plot-Layer Zwei-Pass-Kampagne (26.08. abends) — Seed schlaegt Struktur
+
+Voller Report: **`docs/plots-twopass-campaign.md`**. Zwei-Pass
+(Membership-Pass, dann Ketten mit Enum-erzwungener Kausalitaet +
+Link-Verify; `distill/plot_layer_twopass.py`) mit Ornith UND Muse getestet,
+alles per 3x-GLM-Panel: v1-Ornith 2.13, **v2-Muse 2.07 = v2-Ornith 2.07**
+(identische Dimensionsform, P5 1.33) — bei gleichem Geruest ist der
+Composer egal. Ursache sauber isoliert: Pass-0-Seed aus den
+Meta-*Dilemma*-Perspektiven -> alle 5 Plots erzaehlen dieselbe
+Spaetfilm-Sequenz (ev-025/030/031/032/034 in 3-4 Plots). Muse Ein-Pass
+(3.33, filmweite Identitaeten) bleibt Bestwert. Was BLEIBT: erstmals 0
+Strukturfehler in allen Ketten (Enum + Lint), Verify->Regenerate greift.
+Naechster Schritt (v3, noch nicht gelaufen): v2-Maschinerie + filmweiter
+Throughline-Seed + Arc-Closure-Gate, zuerst mit Muse.
+
 ### ⚠️ OFFEN / BEKANNT
 
 - **Plot-Layer P5 Non-Redundancy**: endemisch für Muse — die Climax-Events `ev-010/032/038/046` müssen 4–5× vorkommen. Der Judge zählt nur Frequenz. Lösung (a) Judge-Rubric anpassen ("recycled peak mit distinktem Kontext = kein Rehash") oder (b) `prompt_a` um `load_bearing_event` erweitern (je Plot andere Ursache).
