@@ -1,0 +1,74 @@
+{
+ "arm": "muse12",
+ "layer": "root",
+ "judge": 2,
+ "port": 8224,
+ "dur_s": 119.3,
+ "scores": {
+  "RT1 Genre precision": 5,
+  "RT2 Audience identification": 4,
+  "RT3 Elevator pitch dual test": 5,
+  "RT4 Entity roster coverage": 3,
+  "RT5 Plot identification": 5,
+  "RT6 Per-plot description": 5,
+  "RT7 Writing style unnamed-author test": 5,
+  "RT8 Dramatic structure": 5,
+  "RT9 Human-experience topics and dilemmas": 5,
+  "RT10 Protagonist identification value": 5
+ },
+ "mean": 4.7,
+ "raw": {
+  "scores": [
+   {
+    "dim": "RT1 Genre precision",
+    "score": 5,
+    "note": "Primary Sci-Fi + Cyberpunk Action Thriller precisely matches simulation/pod fields (ev-013) and wire-fu lobby/helicopter combat (ev-033-034)."
+   },
+   {
+    "dim": "RT2 Audience identification",
+    "score": 4,
+    "note": "Two specific groups with why/promise tied to Baudrillard disks (ev-004) and rooftop physics (ev-003); top-level 'Adult 16+' label is generic."
+   },
+   {
+    "dim": "RT3 Elevator pitch dual test",
+    "score": 5,
+    "note": "Logline condenses hunt/red-pill/re-enter-to-rescue hook; premise expands beat-by-beat ev-004 to ev-045 without inventing scenes."
+   },
+   {
+    "dim": "RT4 Entity roster coverage",
+    "score": 3,
+    "note": "Covers Neo/Trinity/Morpheus/Smith/Cypher/Tank plus systems, but omits Oracle (ev-023 sc-085) and Zion/Nebuchadnezzar as distinct entities."
+   },
+   {
+    "dim": "RT5 Plot identification",
+    "score": 5,
+    "note": "Four plots correctly isolate Awakening, Morpheus rescue, Cypher betrayal, crew survival, each mapped to distinct ev chains (ev-010, ev-032, ev-029, ev-019)."
+   },
+   {
+    "dim": "RT6 Per-plot description",
+    "score": 5,
+    "note": "Each plot gives who-wants-what/resists/cost/resolution with ev anchors, e.g., Awakening cost ev-007/ev-011/ev-044 and payoff ev-045 sc-216."
+   },
+   {
+    "dim": "RT7 Writing style unnamed-author test",
+    "score": 5,
+    "note": "Describes tech-noir/wire-fu via green code, liquefying mirrors (ev-010 sc-030), frozen-time reveals (ev-018) without naming Wachowskis."
+   },
+   {
+    "dim": "RT8 Dramatic structure",
+    "score": 5,
+    "note": "3-act with 5 turning points correctly placed: white rabbit ev-004, red pill ev-010, failed tests ev-015-016, Oracle trap ev-023-025, resurrection ev-043-045."
+   },
+   {
+    "dim": "RT9 Human-experience topics and dilemmas",
+    "score": 5,
+    "note": "Three dilemmas (truth/illusion, preservation/sacrifice, fate/choice) present both horns as defensible with ev-010 vs ev-020, ev-025 vs ev-032, ev-023 vs ev-039."
+   },
+   {
+    "dim": "RT10 Protagonist identification value",
+    "score": 5,
+    "note": "Strength (truth-seeking to courage ev-004/ev-010/ev-032), vulnerability (alarm-clock drone ev-005/ev-006), connection as same splinter costed ev-011/ev-039/ev-043."
+   }
+  ]
+ }
+}

@@ -162,7 +162,8 @@ def main() -> int:
                       + ch, schema=SPINE_SCHEMA)
         return json.loads(r.text)["facts"]
     facts = []
-    for res in run_parallel(list(enumerate(chunks)), work, max_workers=2):
+    for res in run_parallel(list(enumerate(chunks)), work,
+                            max_workers=min(4, max(1, len(chunks)))):
         if isinstance(res, Exception):
             print("chunk fail:", res, flush=True); continue
         facts.extend(res)

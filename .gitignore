@@ -78,3 +78,9 @@ runs/v4_enriched/
 runs/v4_ornith*/
 runs/v4_qwen_fresh/
 .github/workflows/
+
+# unclean scene dirs and event intermediates carry verbatim source runs - never re-add
+runs/scenes_ornith_full/
+runs/scenes_ornith_v5/
+runs/*/events.partial.json
+runs/*/paraphrase_report.json

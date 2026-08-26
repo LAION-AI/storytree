@@ -1,0 +1,74 @@
+{
+ "arm": "explorer_default",
+ "layer": "root",
+ "judge": 0,
+ "port": 8222,
+ "dur_s": 76.5,
+ "scores": {
+  "RT1 Genre precision": 5,
+  "RT2 Audience identification": 5,
+  "RT3 Elevator pitch dual test": 5,
+  "RT4 Entity roster coverage": 4,
+  "RT5 Plot identification": 5,
+  "RT6 Per-plot description": 5,
+  "RT7 Writing style unnamed-author test": 4,
+  "RT8 Dramatic structure": 5,
+  "RT9 Human-experience topics and dilemmas": 5,
+  "RT10 Protagonist identification value": 5
+ },
+ "mean": 4.8,
+ "raw": {
+  "scores": [
+   {
+    "dim": "RT1 Genre precision",
+    "score": 5,
+    "note": "Primary 'sci-fi action/philosophical thriller' + 'messianic myth' precisely matches farm simulation (ev-013) and prophecy arc (ev-023, ev-045)."
+   },
+   {
+    "dim": "RT2 Audience identification",
+    "score": 5,
+    "note": "Three distinct groups with why_this_group + reader_promise anchored in ev-001/ev-003, ev-010/ev-013, ev-005 — not generic demographics."
+   },
+   {
+    "dim": "RT3 Elevator pitch dual test",
+    "score": 5,
+    "note": "Logline (hacker→dream-prison→choice for Morpheus) and premise (reality as farm) sell to viewer and guide writer via generative question."
+   },
+   {
+    "dim": "RT4 Entity roster coverage",
+    "score": 4,
+    "note": "Covers Neo/Trinity/Morpheus/Smith/Cypher/Tank/Oracle/Matrix/Sentinels; Mouse/Apoc/Switch/Dozer deaths (ev-023, ev-029) folded into Nebuchadnezzar, not individually rostered."
+   },
+   {
+    "dim": "RT5 Plot identification",
+    "score": 5,
+    "note": "Five correctly separated plots: awakening, systemic hunt, betrayal, rescue, Sentinel survival — each with distinct want/resistance, no conflation."
+   },
+   {
+    "dim": "RT6 Per-plot description",
+    "score": 5,
+    "note": "Each plot has who_wants_what/what_resists/cost/resolution with ev citations (e.g., awakening cost ev-007/ev-011, rescue ev-032/ev-034)."
+   },
+   {
+    "dim": "RT7 Writing style unnamed-author test",
+    "score": 4,
+    "note": "Describes lean procedural action + koan dialogue and mundane-as-ominous visuals without naming Wachowskis, testable against ev-015/ev-016."
+   },
+   {
+    "dim": "RT8 Dramatic structure",
+    "score": 5,
+    "note": "3-act with six turning points mapped to ev/sc: ev-004 inciting, ev-010 PP1, ev-023 midpoint, ev-032 PP2, ev-044-045 climax, ev-046 resolution."
+   },
+   {
+    "dim": "RT9 Human-experience topics and dilemmas",
+    "score": 5,
+    "note": "Five dilemmas with side_a/side_b and anchored_in: truth vs lie ev-010 vs ev-020, fate vs will ev-039, sacrifice ev-032, identity ev-007/ev-045."
+   },
+   {
+    "dim": "RT10 Protagonist identification value",
+    "score": 5,
+    "note": "Admirable stubborn refusal (ev-007 mouth sealed, ev-015 dojo) + vulnerable fraud dread (ev-005) linked as same trait — flaw and virtue are one."
+   }
+  ]
+ }
+}

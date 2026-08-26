@@ -1,0 +1,74 @@
+{
+ "arm": "explorer_default",
+ "layer": "root",
+ "judge": 2,
+ "port": 8224,
+ "dur_s": 120.3,
+ "scores": {
+  "RT1 Genre precision": 4,
+  "RT2 Audience identification": 5,
+  "RT3 Elevator pitch dual test": 5,
+  "RT4 Entity roster coverage": 4,
+  "RT5 Plot identification": 5,
+  "RT6 Per-plot description": 5,
+  "RT7 Writing style unnamed-author test": 5,
+  "RT8 Dramatic structure": 5,
+  "RT9 Human-experience topics and dilemmas": 5,
+  "RT10 Protagonist identification value": 5
+ },
+ "mean": 4.8,
+ "raw": {
+  "scores": [
+   {
+    "dim": "RT1 Genre precision",
+    "score": 4,
+    "note": "Primary 'sci-fi action/philosophical thriller' is accurate but slash dilutes precision; secondary 'Messianic coming-of-age myth' is theme more than market genre."
+   },
+   {
+    "dim": "RT2 Audience identification",
+    "score": 5,
+    "note": "Three distinct groups with why/promise and ev-anchors (ev-001/003, ev-010/013, ev-005); action, philosophy, routine-escape promises clearly differentiated."
+   },
+   {
+    "dim": "RT3 Elevator pitch dual test",
+    "score": 5,
+    "note": "Logline gives hacker-to-One choice arc; premise poses farm-reality what-if (ev-011/013) — complementary industry and audience pitches."
+   },
+   {
+    "dim": "RT4 Entity roster coverage",
+    "score": 4,
+    "note": "11 entities cover protagonist, antagonist systems, traitor and oracle; individual victims Mouse/Apoc/Switch/Dozer (ev-023/029) collapsed into Nebuchadnezzar collective."
+   },
+   {
+    "dim": "RT5 Plot identification",
+    "score": 5,
+    "note": "Five plots isolate awakening, systemic hunt, betrayal, rescue, Sentinel survival — each with distinct want/resistance and ev-anchored stakes."
+   },
+   {
+    "dim": "RT6 Per-plot description",
+    "score": 5,
+    "note": "Each plot has who-wants-what, resistance, cost, resolution with ev citations (ev-007, ev-032, ev-045); costs remain consequential and specific."
+   },
+   {
+    "dim": "RT7 Writing style unnamed-author test",
+    "score": 5,
+    "note": "Style via craft terms — lean procedural action + koan dialogue, mundane as ominous/impossible as matter-of-fact — no author named, test passed."
+   },
+   {
+    "dim": "RT8 Dramatic structure",
+    "score": 5,
+    "note": "3-act with six ev/sc-anchored turning points from inciting ev-004 to red pill ev-010, midpoint ev-023, wager ev-032, climax ev-044-045."
+   },
+   {
+    "dim": "RT9 Human-experience topics and dilemmas",
+    "score": 5,
+    "note": "Five dilemmas with both sides and ev mirrors (truth vs lie ev-010 vs ev-020, fate vs will ev-039, sacrifice ev-032) — no strawman."
+   },
+   {
+    "dim": "RT10 Protagonist identification value",
+    "score": 5,
+    "note": "Admirable refusal (ev-007/015) and vulnerable fraud routine (ev-005) linked as same trait; connection explains cost and why audience wants it."
+   }
+  ]
+ }
+}

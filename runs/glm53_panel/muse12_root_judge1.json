@@ -1,0 +1,74 @@
+{
+ "arm": "muse12",
+ "layer": "root",
+ "judge": 1,
+ "port": 8223,
+ "dur_s": 152.1,
+ "scores": {
+  "RT1 Genre precision": 5,
+  "RT2 Audience identification": 5,
+  "RT3 Elevator pitch dual test": 4,
+  "RT4 Entity roster coverage": 3,
+  "RT5 Plot identification": 5,
+  "RT6 Per-plot description": 5,
+  "RT7 Writing style unnamed-author test": 5,
+  "RT8 Dramatic structure": 5,
+  "RT9 Human-experience topics and dilemmas": 5,
+  "RT10 Protagonist identification value": 5
+ },
+ "mean": 4.7,
+ "raw": {
+  "scores": [
+   {
+    "dim": "RT1 Genre precision",
+    "score": 5,
+    "note": "Primary Sci-Fi + Cyberpunk Action Thriller precisely matches simulation, pod fields, Agents and wire-fu with anchored rules."
+   },
+   {
+    "dim": "RT2 Audience identification",
+    "score": 5,
+    "note": "Adult 16+ plus two anchored groups with why/promise: simulation-theory and martial-arts action, each tied to ev/sc."
+   },
+   {
+    "dim": "RT3 Elevator pitch dual test",
+    "score": 4,
+    "note": "Logline hooks hacker/Agents/red pill/rescue clearly; premise expands beat-by-beat but logline is long at ~45 words."
+   },
+   {
+    "dim": "RT4 Entity roster coverage",
+    "score": 3,
+    "note": "Covers Neo/Trinity/Morpheus/Smith/Cypher/Tank and Matrix/phones/pods/Sentinels but omits Oracle and Zion as entities."
+   },
+   {
+    "dim": "RT5 Plot identification",
+    "score": 5,
+    "note": "Four distinct threads correctly isolated: Awakening, Rescue of Morpheus, Cypher Betrayal, Crew Survival vs Sentinels."
+   },
+   {
+    "dim": "RT6 Per-plot description",
+    "score": 5,
+    "note": "Each plot has who-wants-what, resistance, cost and resolution fully anchored (e.g., flatline ev-044, steak ev-020)."
+   },
+   {
+    "dim": "RT7 Writing style unnamed-author test",
+    "score": 5,
+    "note": "Tech-noir/wire-fu, code rain, liquefying mirrors, belief-bending physics described without naming Wachowskis, anchored."
+   },
+   {
+    "dim": "RT8 Dramatic structure",
+    "score": 5,
+    "note": "3-act with 5 anchored turning points: white rabbit, red pill, desert/jump midpoint, Oracle trap, death/resurrection climax."
+   },
+   {
+    "dim": "RT9 Human-experience topics and dilemmas",
+    "score": 5,
+    "note": "Three universal dilemmas with two defensible sides each, anchored: truth/illusion, sacrifice/preservation, fate/choice."
+   },
+   {
+    "dim": "RT10 Protagonist identification value",
+    "score": 5,
+    "note": "Admirable truth-seeking, relatable drone vulnerability, and connection via same splinter all tested and anchored with costs."
+   }
+  ]
+ }
+}

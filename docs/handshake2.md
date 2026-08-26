@@ -1,29 +1,153 @@
 # Handshake 2 — Session-Übergabe
 
-Stand: 26.08.2026 · Repo: **github.com/LAION-AI/storytree** (public, transferiert von christophschuhmann/storytree, alte URL redirectet) · Live: https://projects.laion.ai/storytree/webapp/storytree-explorer.html
+Stand: 26.08.2026 · Repo: **github.com/LAION-AI/storytree** (public; transferiert von christophschuhmann/storytree, alte URL redirectet) · Live: https://projects.laion.ai/storytree/webapp/storytree-explorer.html
 
-## Aktueller bester Stand (alles PASS, gepusht)
-- Root v3 `runs/story_root_v3/` (5.0, RT1–10, inkl. identification_value mit ev-Zitaten) · Exposé `runs/expose_v1/` (5.0) · Meta `runs/meta_layer_v2b/` · Entities `runs/entity_trial_v2/profiles.json` · Events `runs/events_build10_full/events.json` (**ev-033 reinstated**) · Plots `runs/plot_layer_v8/plots_covered.json` (**47/47 Events, 224/224 Szenen**)
-- Explorer: `webapp/storytree-explorer.html` + Daten via `python3 tools/build_explorer_data.py` (liest story_root_v3 + plots_covered)
-- Gate: `python3 tools/pipeline_gate.py [--plots ...]` — 18 Assertions, Exit 1 bei Verstoß. Runner: `tools/run_storytree.sh`
+---
 
-## OFFEN: Muse-Spark-Pipeline (der Grund für diesen Handshake)
-Ziel: ganze Pipeline mit Muse statt Ornith in `runs/*_muse/`. 
-- Zen-API (ohne Key!): POST `https://opencode.ai/zen/v1/responses` `{"model":"muse-spark-1.2-contributor-free","input":"..."}` → Antwort `output[]`, Text steckt in items type==message → content[].text
-- Shim existiert: `tools/zen_shim.py` (Port 8222, OpenAI→Zen). **BUG**: Muse ignoriert JSON-Schema (kein Grammar-Layer wie llama.cpp) → `chunk fail: 'facts'`. 
-- **FIX TO DO**: im Shim Prompt-Zusatz „Respond with ONLY raw JSON" + tolerantes Parsing (```-Fences strippen, erstes `{`..letztes `}` extrahieren). Dann: `python3 distill/root_layer.py --out runs/story_root_muse --ports 8222 --model muse-spark-1.2-contributor-free`, danach plot_layer (+plot_cover) und expose_layer gleiche Flags.
-- Free-Model-Budgets: muse-spark-1.2-free ctx=1.05M out=131k (bester), nemotron-3-ultra 1M/128k, deepseek-v4-flash-free 200k/128k.
+## 🔄 KONTEXT RESET (Status quo nach Muse-1.2-Durchlauf)
 
-## Infrastruktur
-- tmux-Session **storytree**: 7 Panes opencode TUIs (muse-spark free), Aufgaben je Layer; Reports in `runs/muse_eval/*.md` (root 8.7, meta pass, entities 6.4 — Brown/Jones blur, plots 5/10 — Overlap, expose fand Jacket-Copy-Truncation-Bug). Watchdog `~/.local/bin/stwatch.sh` auto-retryt Stream-Errors + erlaubt Permissions, Log `runs/tmux_watchdog.log`.
-- opencode 1.17.17 installiert, Config `~/.config/opencode/opencode.json` (Provider ornith→localhost:8110).
+Dieser Abschnitt ersetzt alle früheren "aktuellen besten Stand"-Angaben. Der komplette Tree wurde **einmal komplett mit Muse 1.2** (`muse-spark-1.2-contributor-free` via Zen-API) durchlaufen. Ornith (8110/8111) läuft noch als Fallback. Muse-Baseline ist `runs/*_muse*`.
 
-## Gotchas
-- Heredocs: nur kleine, quoted (`<<'EOF'`); große Dateien mehrfach anhängen oder editor nutzen; JS nach jedem Patch `node --check`.
-- Push: origin = LAION-AI/storytree; `tools/publish.sh` umgestellt. Token HAT KEINE `workflow`-Scope → `.github/` bleibt gitignored. Pages = branch deploy von main/root.
-- Vor public-push: kein Leak (`tools/check_no_leak.py`). `.env` nie committen.
+### Muse-Pipeline-Durchlauf — TOTAL 1692s (~28 min)
 
-## Nächste Schritte nach Reset
-1. Zen-Shim-Fix (oben) → Muse-Root-Lauf zu Ende → Plots+Cover+Gate → Exposé → Vergleich Ornith vs Muse
-2. Reparieren: expose_v1 jacket_copy truncation („…save one he"), Entity Brown/Jones-Differenzierung
-3. Multi-Judge-Panel über plot samples v1–v8 (Drift-Messung steht noch aus)
+`tools/run_muse_pipeline.sh` (Stage-Timing in `runs/muse_pipeline_timing.md`, Pro-Stage-Logs `runs/muse_<stage>.log`).
+
+| Stage | Modell | Ergebnis | Score | Zeit | Output |
+|---|---|---|---|---|---|
+| root  | Muse 1.2 | **PASS** | mean **4.7** | 638s | `runs/story_root_muse` |
+| plots | Muse 1.2 | FAIL | **2.6** (P1=2 P2=3 P3=2 P4=4 P5=2) | 695s | `runs/plot_layer_muse` |
+| cover | Muse 1.2 | 8 missing Events zugewiesen | **GATE ALL PASS** | 101s | `plot_layer_muse/plots_covered.json` |
+| expose| Muse 1.2 | **PASS** | mean **4.44** | 258s | `runs/expose_muse` |
+| explorer | — | | 0s | data | `webapp/explorer/storytree.json` (539 kB) |
+
+Artefakte:
+- Root: `runs/story_root_muse/story_root.json` + `judgement.json` (PASS, 4.7).
+- Plots v1 (Original-Prompt): `runs/plot_layer_muse` — 5 Plots, keine faults, P1/P3/P5 unten.
+- Plots v2 (verbesserter Prompt + aggressiver Repair): `runs/plot_layer_muse_v2` — **REGRESSION** 2.6 → 2.0 (siehe unten).
+- Exposé: `runs/expose_muse/expose.json`+`.md` (PASS, 8 Sections, 2253 synopsis-words).
+- Per-Call-Timing in `runs/muse_timing.jsonl` (`dur_s, attempts, prompt_tokens, completion_tokens, ok, port, model`).
+
+### Plot-Layer: Versuch mit verbessertem Repair — RÜCKGANG (2.6 → 2.0)
+
+`runs/plot_layer_muse_v2`: Prompt verschärft (PERSPECTIVE DISCIPLINE, NON-REDUNDANCY) + mechanischer Repair, der *überlappende* Events entfernt.
+
+- **Ergebnis: mean 2.0** (P4=2, P5=1) — **verschlechtert** gegenüber 2.6.
+- **Diagnose**: Überlappung ist **kein Bug**. `ev-010` (Oracle), `ev-032` (Ressurrektion/Wette), `ev-038` (Telefon-Bühne), `ev-046` (Endkampf) sind die **strukturelle Wirbelsäule** → sie müssen 4–5× vorkommen, weil Perspektiven dort konvergieren. Der Repair entfernte sie → **P4 "arcs truncate before true resolutions"**.
+- **Lehre**: Frequenz-basierte P5-Reparatur zerstört P4. Overlap per *Streichen* = Counterproduktiv. Gelöst durch **distincte Kontexte** im `caused_by_previous`/`why_in_plot`, nicht durch Entfernen.
+
+### Muse vs Ornith — Vergleich (Layer für Layer)
+
+| Layer | Ornith | Muse 1.2 | Δ | Bemerkung |
+|---|---|---|---|---|
+| Events / Scenes | baseline build10 | **baseline unverändert** (statischer Input) | — | wurden NICHT regeneriert |
+| Meta | meta_layer_v2b | pass | — | unverändert |
+| Entities | entity_trial_v2 | 6.4 (eval) | — | Brown/Jones-Differenzierung defizitär |
+| Root | v3: 5.0 / **8.7** | Muse: **4.7** | -0.1 (Rubric) |
+| Plots | v8: gate-PASS (Quali 5/10) | Muse: **2.6 / 2.0** | Muse deutlich schlechter | Overlap + P3 Membership |
+| Expose | v1: 5.0 (mit Jacket-Copy-Bug) | Muse: **4.44** | -0.56 |
+
+> Muse nutzt ein anderes Skalierung (1–5 mean vs Ornith 1–10). 4.44 Muse ≈ stark befriedigend, aber < 5.0 Ornith-Expose.
+
+### GLM-5.3-Panel (26.08. nachmittags) — gemeinsamer Judge über beide Arme
+
+Voller Report: **`docs/glm53-panel-report.md`**. 3×-GLM-5.3-Panel (via Zen,
+`tools/glm_panel_judge.py`, Rubrics byte-identisch zu den Layer-Judges,
+Arme anonymisiert): Root 4.80 vs 4.73 (tie, PASS), Exposé 4.30 vs 4.44
+(tie, PASS), **Plots 2.73 (v8/online) vs 3.33 (Muse) — Ranking invertiert**:
+v8s 4.6 war Selbst-Judgement durch den eigenen Composer. P1 (same-plot
+enablement) ist auf beiden Armen der Universaldefekt (6/6 Judge-Pässe);
+distinkte Kontexte für geteilte Klimax-Events funktionieren (Muse P5 3.33
+vs v8 2.00). Jacket-Copy-Truncation liegt im **Default**-Exposé (expose_v1,
+online) und kostet dort X1/X5/X7.
+
+**Lokales GLM-5.3-Serving: unmöglich auf dieser Maschine** (8× A100/SM80 —
+alle Sparse-MLA-Kernel Hopper-only; vLLM/SGLang-Support nur als frische
+PRs, llama.cpp/GGUF gar nicht; FP8 299 GiB, BF16 599 GiB > freie Disk).
+Details und H100-Sizing (8×H100 TP8 bzw. 4×H200 TP4) im Report, §3.
+
+### ⚠️ OFFEN / BEKANNT
+
+- **Plot-Layer P5 Non-Redundancy**: endemisch für Muse — die Climax-Events `ev-010/032/038/046` müssen 4–5× vorkommen. Der Judge zählt nur Frequenz. Lösung (a) Judge-Rubric anpassen ("recycled peak mit distinktem Kontext = kein Rehash") oder (b) `prompt_a` um `load_bearing_event` erweitern (je Plot andere Ursache).
+- **Exposé Jacket-Copy-Truncation** ("…save one he"): Bug existiert weiter (Handhack-Step 2 offen).
+- **Entity Brown/Jones-Differenzierung**: bleibt defizitär.
+- **Zeit**: Muse langsam (~32 tok/s Completion; Ø 137s/Call). 3 Shims = echte Parallelität, aber ZeN selbst Engpass (Sublinear-Speedup ab ≥4 Calls; 2× HTTP 503 beobachtet).
+
+---
+
+## 🛠️ NEUER CODE
+
+### 1. `tools/zen_shim.py` (neu geschrieben — der Muse-1.2-Fix)
+
+OpenAI `chat/completions`-Kompatibilitätsschicht → Zen `/v1/responses`.
+
+- **Bug gefixt**: Muse ignoriert `response_format: json_schema` (kein Grammar-Layer). Shim erkennt das Schema, **betet es als Prompt-Zusatz** "Respond with ONLY raw JSON…" + tolerantestes Parsen (Fences strippen, erstes `{`..letztes `}`, 1 Retry mit Reminder).
+- **ThreadingHTTPServer**: parallele Requests in einem Port wirklich parallel (jeweils ein Thread pro Request).
+- **Zeit-Logging**: je Upstream-Call JSONL in `runs/muse_timing.jsonl` (`dur_s, attempts, prompt_tokens, completion_tokens, ok, port, model`).
+- Upstream-Fehler → HTTP **502**, damit `EndpointPool` selbst retried (3×).
+- Env: `PORT` (default 8222), `SHIM_LOG`.
+
+### 2. `distill/plot_layer.py` (geändert)
+
+- `work()` → `chain_for(name, mode="initial"|"repair", forbid=())` mit verbessertem Prompt: **PERSPECTIVE DISCIPLINE** / **MEMBERSHIP** (kein Padding) / **SELF-CONTAINED CAUSALITY** (kein Cross-Plot-Enablement).
+- **Repair-Runde jetzt strukturell-only**: repariert nur echte Defekte (Duplikate innerhalb einer Chain, falsche Story-Order, unbekannte IDs, Ketten < 5). **Globale Überlappung wird NICHT als Defekt gewertet / gelöscht** — sie wird über distincte Kontexte gelöst.
+- `max_workers=2` → `min(4, len(plots))`.
+
+### 3. `tools/plot_cover.py`
+
+- Ports/Model **env-gesteuert**: `MUSE_PORTS`, `MUSE_MODEL` (Default Ornith 8110/8111, unverändert für den Ornith-Fall).
+
+### 4. `tools/run_muse_pipeline.sh` (neu)
+
+Orchestrator mit Stage-Zeit-Tracking:
+```
+PORTS=8222,8223,8224 MODEL=muse-spark-1.2-contributor-free \
+  setsid nohup bash tools/run_muse_pipeline.sh > runs/muse_pipeline.log 2>&1 < /dev/null & disown
+```
+
+### 5. Infrastruktur (aktuell laufend)
+
+- **3 Shim-Instanzen** detached (setsid): 8222 / 8223 / 8224.
+- `EndpointPool` verteilt Calls round-robin über die Ports.
+- Muse-Freigrenzen: ctx 1.05M / out 131k Tokens.
+- tmux-Session **storytree** (7 Panes) mit opencode TUIs; Reports `runs/muse_eval/*.md`; Watchdog `~/.local/bin/stwatch.sh`.
+
+---
+
+## ➡️ WHERE TO CONTINUE (nächste Schritte, Priorisiert)
+
+> ⚠️ Ein `runs/plot_layer_muse_v3/` (26.08. 11:57, self-judged 1.8 FAIL)
+> wurde NICHT von der Haupt-Session erzeugt — Provenienz unklar (vermutlich
+> tmux-TUI/Watchdog). Nicht committed; vor Verwendung Prompt-Stand prüfen.
+
+**Priorität A — Plot-Layer P5 nicht durch Löschen, sondern durch Kontext**
+Option (b): `prompt_a` um `load_bearing_event` erweitern — jeder Plot definiert den geteilten Peak mit einer *anderen* `caused_by`/`why_in_plot`. Dann 3. Lauf:
+```
+PORTS=8222,8223,8224 MODEL=muse-spark-1.2-contributor-free \
+python3 distill/plot_layer.py --meta runs/meta_layer_v2b/meta.json \
+  --events runs/events_build10_full/events.json --out runs/plot_layer_muse_v3 \
+  --ports 8222,8223,8224 --model muse-spark-1.2-contributor-free
+MUSE_PORTS=8222,8223,8224 MUSE_MODEL=muse-spark-1.2-contributor-free \
+  python3 tools/plot_cover.py runs/plot_layer_muse_v3/plots.json \
+    runs/plot_layer_muse_v3/plots_covered.json
+python3 tools/pipeline_gate.py --plots runs/plot_layer_muse_v3/plots_covered.json
+```
+
+**Priorität B — Exposé Jacket-Copy-Truncation** (`distill/expose_layer.py` / Schema `maxLength` oder Stop-String). Handshake-Step 2.
+
+**Priorität C — Entity Brown/Jones-Differenzierung** (Prompt + erneut).
+
+**Priorität D — Multi-Judge-Panel** über Plot-Samples v1–v8 (Drift-Messung — *noch offen*).
+
+---
+
+## 📂 SCHNELL-REFERENZ
+
+Shims starten:
+```
+for p in 8222 8223 8224; do PORT=$p setsid nohup python3 tools/zen_shim.py > runs/shim_$p.log 2>&1 < /dev/null & disown; done
+```
+Shim testen (gibt pures JSON zurück):
+```
+curl -sS -X POST http://127.0.0.1:8222/v1/chat/completions -H 'Content-Type: application/json' -d '{"model":"muse-spark-1.2-contributor-free","messages":[{"role":"user","content":"nur ein JSON: {\"x\":1}"}],"response_format":{"type":"json_schema","json_schema":{"name":"k","schema":{"type":"object","properties":{"x":{"type":"integer"}}}}}}'
+```
+

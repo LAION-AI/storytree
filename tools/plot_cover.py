@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Coverage repair: assign every event missing from a plot sample to at least
 one existing plot (multi-assignment allowed), then rebuild ordered chains."""
-import json, re, sys
+import json, os, re, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / 'distill'))
 sys.path.insert(0, '/home/deployer/laion/project-alexandria/screenplay/src')
@@ -23,8 +23,10 @@ for d in plots.values():
 missing = [e for e in events if e['event_id'] not in covered]
 print(f'missing events: {len(missing)}')
 
-pool = EndpointPool([8110, 8111], 'ornith-1.5-397b', temperature=0.4,
-                    max_tokens=8000, timeout=1800)
+pool = EndpointPool([int(p) for p in os.environ.get(
+                        'MUSE_PORTS', '8110,8111').split(',')],
+                    os.environ.get('MUSE_MODEL', 'ornith-1.5-397b'),
+                    temperature=0.4, max_tokens=8000, timeout=1800)
 schema = grammar_safe({'type': 'object', 'properties': {'assignments': {
     'type': 'array', 'minItems': len(missing), 'maxItems': len(missing),
     'items': {'type': 'object', 'properties': {
