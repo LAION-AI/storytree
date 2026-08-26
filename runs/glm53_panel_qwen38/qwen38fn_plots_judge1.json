@@ -1,0 +1,30 @@
+{
+ "arm": "qwen38fn",
+ "layer": "plots",
+ "judge": 1,
+ "port": 8223,
+ "dur_s": 19.3,
+ "scores": {
+  "P1": 2,
+  "P2": 2,
+  "P3": 2,
+  "P4": 3,
+  "P5": 1
+ },
+ "mean": 2,
+ "raw": {
+  "P1": 2,
+  "P2": 2,
+  "P3": 2,
+  "P4": 3,
+  "P5": 1,
+  "evidence": {
+   "P1": "Awakening ev-005 to ev-006 is and-then temporal collapse with no same-plot enablement, and ev-014 to ev-020 claims causation via ev-015-019 which are absent from its chain; Identity Crisis ev-020 similarly cites off-chain training",
+   "P2": "Awakening 18 events ev-004 through ev-047 and Identity Crisis 21 events ev-004 through ev-047 each retell the whole film as Truth vs lie and Who am I rather than one disciplined stance",
+   "P3": "Awakening pads ev-029 Cypher murder and ev-032 rescue, Identity Crisis pads ev-020 Cypher steak deal unrelated to Neo identity, Betrayal pads ev-032 Neo rescue, while Choice omits essential ev-023 Oracle verdict where Neo is told he is not the One",
+   "P4": "Awakening, Identity Crisis and Rescue close at ev-044 to ev-047, but Betrayal resolves at ev-029 Tank kills Cypher then dangles to ev-032, and Choice lacks ev-023 turn, forcing arcs to stretch to ev-045 for closure",
+   "P5": "Awakening and Identity Crisis share 15 events ev-004,005,006,007,008,010,012,013,014,020,032,038,044,045,047; Rescue ev-025,031,032,039,044, Betrayal ev-025,031,032 and Choice ev-032,038,039,045 all rehash the same capture-rescue-death beats"
+  },
+  "commentary": "Layer is dominated by two whole-film retellings (Awakening and Identity Crisis) that inflate P1-P3 and destroy P5; Rescue, Betrayal and Choice are tighter but overlap heavily and misplace members, leaving only P4 partially intact via forced extensions to ev-047."
+ }
+}

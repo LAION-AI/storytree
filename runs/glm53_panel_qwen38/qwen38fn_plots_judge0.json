@@ -1,0 +1,30 @@
+{
+ "arm": "qwen38fn",
+ "layer": "plots",
+ "judge": 0,
+ "port": 8222,
+ "dur_s": 19.7,
+ "scores": {
+  "P1": 2,
+  "P2": 2,
+  "P3": 2,
+  "P4": 3,
+  "P5": 1
+ },
+ "mean": 2,
+ "raw": {
+  "P1": 2,
+  "P2": 2,
+  "P3": 2,
+  "P4": 3,
+  "P5": 1,
+  "evidence": {
+   "P1": "Awakening chain ev-004->ev-005->ev-006 is and-then without same-plot enablement and ev-014->ev-020 relies on off-plot ev-015-019; Choice ev-032->ev-037 skips ev-033/ev-034 and Identity Crisis ev-008->ev-010 skips ev-009 and ev-010->ev-012 skips ev-011 breaking within-plot causation",
+   "P2": "Awakening claims Truth vs comfortable lie but includes identity/power events ev-032 ev-038 ev-044 ev-045 ev-047 and Cypher pleasure events ev-020 ev-029, retelling the whole film rather than one stance, while Identity Crisis, Rescue, Betrayal and Choice each hold a single stance",
+   "P3": "Awakening pads 19 events with Betrayal/Rescue/Choice material ev-020 ev-029 ev-032 ev-038 ev-044 ev-045 that do not earn place on truth-vs-lie; Identity Crisis omits necessary ev-009 Bug Removed and ev-011 Born Into Real World while retaining tangential ev-020",
+   "P4": "Awakening ev-004 to ev-047 and Identity Crisis ev-004 to ev-047 show full setup-turn-resolution, but Choice ends at ev-045 without final resolution ev-047 flight and Rescue starts at ev-025 with no early setup, leaving uneven arcs with dangling determinism payoff",
+   "P5": "Awakening and Identity Crisis rehash 13 shared events ev-004 ev-005 ev-006 ev-007 ev-008 ev-010 ev-012 ev-013 ev-014 ev-032 ev-038 ev-044 ev-045 ev-047; Betrayal ev-025 ev-026 ev-031 ev-032 and Rescue ev-025 ev-031 ev-032 ev-039 ev-044 and Choice ev-014 ev-022 ev-032 ev-038 ev-039 ev-045 all reuse same core events"
+  },
+  "commentary": "Layer is dominated by two master-retellings (Awakening and Identity Crisis) that duplicate most of the film, inflating membership and destroying non-redundancy; Rescue and Betrayal are causally tight and disciplined but are cannibalized by the master plots, leaving overall causal integrity and perspective discipline low despite locally complete arcs."
+ }
+}

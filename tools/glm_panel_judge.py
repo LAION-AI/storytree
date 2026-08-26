@@ -118,22 +118,28 @@ def main() -> int:
     ap.add_argument("--model", default="muse-spark-1.2-contributor-free")
     ap.add_argument("--events", default="runs/events_build10_full/events.json")
     ap.add_argument("--judges", type=int, default=3)
+    ap.add_argument("--arms", default=None,
+                    help="JSON {arm: {layer: path}} overriding the default arms")
+    ap.add_argument("--layers", default="root,plots,expose",
+                    help="comma list of layers to judge")
     a = ap.parse_args()
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
     ports = [int(p) for p in a.ports.split(",")]
+    arms = json.loads(a.arms) if a.arms else ARMS
+    layers = [l for l in a.layers.split(",") if l]
 
     events = json.loads((ROOT / a.events).read_text(encoding="utf-8"))["events"]
     digest = ml.build_digest(events)
 
     tasks = []  # (arm, layer, judge_idx)
-    for arm, paths in ARMS.items():
-        for layer in ("root", "plots", "expose"):
+    for arm in arms:
+        for layer in layers:
             for j in range(a.judges):
                 tasks.append((arm, layer, j))
 
     def run_one(t):
         arm, layer, j = t
-        artifact = json.loads((ROOT / ARMS[arm][layer]).read_text(
+        artifact = json.loads((ROOT / arms[arm][layer]).read_text(
             encoding="utf-8"))
         prompt, schema, dims = judge_prompt(layer, artifact, digest)
         pool = EndpointPool([ports[j % len(ports)]], a.model,
@@ -159,9 +165,9 @@ def main() -> int:
 
     # aggregate: per (arm, layer) average over judges, per dim and overall
     summary = {}
-    for arm in ARMS:
+    for arm in arms:
         summary[arm] = {}
-        for layer in ("root", "plots", "expose"):
+        for layer in layers:
             rs = [r for r in recs if r["arm"] == arm and r["layer"] == layer]
             dims = sorted(rs[0]["scores"].keys()) if rs else []
             per_dim = {d: round(statistics.mean(

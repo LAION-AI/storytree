@@ -1,0 +1,30 @@
+{
+ "arm": "qwen38fn",
+ "layer": "plots",
+ "judge": 2,
+ "port": 8224,
+ "dur_s": 21.8,
+ "scores": {
+  "P1": 2,
+  "P2": 2,
+  "P3": 2,
+  "P4": 4,
+  "P5": 1
+ },
+ "mean": 2.2,
+ "raw": {
+  "P1": 2,
+  "P2": 2,
+  "P3": 2,
+  "P4": 4,
+  "P5": 1,
+  "evidence": {
+   "P1": "The Awakening ev-005 follows ev-004 only by 'night collapses into morning' and ev-020 justifies via ev-015-019 not in same plot, and The Choice ev-032 and ev-037 cite ev-025/026 and ev-033/034 not in its chain — and-then without same-plot enablement",
+   "P2": "The Awakening (truth vs lie) and The Identity Crisis (who am I) both span ev-004 to ev-047 as 18- and 21-event whole-film retellings rather than one stance, reusing identical beats under different theme labels",
+   "P3": "The Awakening pads ev-009 Bug Removed and ev-032/ev-038 rescue/fight (self-sacrifice beats belonging to The Rescue) for truth-vs-lie, while The Choice omits ev-023 Oracle verdict where Neo is told he is not the One — the essential deterministic beat",
+   "P4": "The Rescue ev-025 sacrifice → ev-032 decision → ev-033/034 assault → ev-044 resurrection and The Betrayal ev-020 deal → ev-029 murders → ev-032 counter-choice each show setup-turn-resolution, and even sprawling Awakening/Identity Crisis close at ev-045 One Awakens/ev-047 flight",
+   "P5": "The Awakening and The Identity Crisis share 15 identical events (ev-004,005,006,007,008,010,012,013,014,020,032,038,044,045,047) and Rescue/Betrayal/Choice all recycle ev-025 capture, ev-032 rescue decision and ev-039 Smith fight — same story rehashed under new dilemmas"
+  },
+  "commentary": "Hard marking: P1 fails same-plot causation in the two mega-plots and Choice; P2 both mega-plots are retellings not stances; P3 Awakening padded with technical/rescue beats and Choice missing ev-023 verdict; P4 is strongest — all plots close their arcs; P5 catastrophic overlap between Awakening and Identity Crisis plus recycling of capture/rescue core across all five plots."
+ }
+}

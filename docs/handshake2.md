@@ -65,6 +65,19 @@ alle Sparse-MLA-Kernel Hopper-only; vLLM/SGLang-Support nur als frische
 PRs, llama.cpp/GGUF gar nicht; FP8 299 GiB, BF16 599 GiB > freie Disk).
 Details und H100-Sizing (8×H100 TP8 bzw. 4×H200 TP4) im Report, §3.
 
+### Qwen3.8-Flash-Next lokal (26.08. nachmittags) — LÄUFT auf 4×A100
+
+Volles Protokoll: **`docs/qwen38-flash-next-protokoll.md`** (8 Startup-
+Hürden mit Fixes — Pflichtlektüre vor jedem Neustart). Serving:
+`tools/serve_qwen38fn.sh` (Port 8130, TP4+EP, GPUs 4–7; **Ornith 8111
+dafür gestoppt**, 8110 läuft). Gemessen: 54 tok/s single, **1305 tok/s**
+bei 32 Streams. `response_format: json_schema` liefert pures JSON trotz
+Reasoner-Modell; gegen den einen Server `--ports 8130,8130,8130,8130`.
+Plot-Layer damit generiert: GLM-Panel **2.07 FAIL** (P5=1 — zwei
+Ganzfilm-Retellings statt Perspektiven) — schnellster Composer, schwächstes
+Plot-Ergebnis (Muse 3.33 > v8 2.73 > Qwen 2.07). Rolle eher Durchsatz/
+Draft/Judge als Ein-Schuss-Composer.
+
 ### ⚠️ OFFEN / BEKANNT
 
 - **Plot-Layer P5 Non-Redundancy**: endemisch für Muse — die Climax-Events `ev-010/032/038/046` müssen 4–5× vorkommen. Der Judge zählt nur Frequenz. Lösung (a) Judge-Rubric anpassen ("recycled peak mit distinktem Kontext = kein Rehash") oder (b) `prompt_a` um `load_bearing_event` erweitern (je Plot andere Ursache).
