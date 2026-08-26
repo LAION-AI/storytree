@@ -1,0 +1,30 @@
+{
+ "arm": "v8_refined",
+ "layer": "plots",
+ "judge": 1,
+ "port": 8223,
+ "dur_s": 30.7,
+ "scores": {
+  "P1": 2,
+  "P2": 3,
+  "P3": 2,
+  "P4": 3,
+  "P5": 2
+ },
+ "mean": 2.4,
+ "raw": {
+  "P1": 2,
+  "P2": 3,
+  "P3": 2,
+  "P4": 3,
+  "P5": 2,
+  "evidence": {
+   "P1": "The Reluctant One chain ev-014->ev-015->ev-016 and ev-032->ev-045 depends on off-chain ev-010/ev-013/ev-023/ev-044; Hunter chain ev-039->ev-045 skips ev-044 revival, leaving and-then gaps vs Rescue ev-025->ev-026->ev-031 which is internally caused",
+   "P2": "Hunter and the Chosen defines freedom vs determinism via prophecy ev-014/ev-023 but chain holds only ev-037/ev-038/ev-039 subway fight, overlapping Reluctant One's identity/destiny stance instead of one distinct perspective",
+   "P3": "Reluctant One omits essential ev-044 Death/Kiss/Miracle between ev-032 and ev-045 and pads ev-015 sparring; Hunter omits prophecy setup ev-014/ev-022; Awakening omits ev-012 Waking/Rebuilding between ev-011 and ev-013",
+   "P4": "Rescue ev-025 to ev-035 and Betrayer ev-020 to ev-029 and Awakening ev-004 to ev-014 close full arcs, but Hunter starts at ev-037 with no setup and Reluctant One lacks ev-044 bridge to ev-045 leaving truncated setup-turn-resolution",
+   "P5": "ev-045 climaxes both Reluctant One and Hunter and the Chosen, ev-032 is the turn for both Reluctant One and Rescue, and ev-014 appears in both Reluctant One and Awakening, rehashing identical beats across plots"
+  },
+  "commentary": "Two plots (Rescue, Betrayer) are causally tight and complete, but Reluctant One and Hunter/Chosen share the same climax ev-045, share turns ev-032/ev-014, and rely on external events ev-044/ev-023 for causality and membership, forcing low P1/P3/P5 under hard marking while P2/P4 remain middling."
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "arm": "v8_refined",
+ "layer": "plots",
+ "judge": 2,
+ "port": 8224,
+ "dur_s": 41.6,
+ "scores": {
+  "P1": 2,
+  "P2": 4,
+  "P3": 2,
+  "P4": 3,
+  "P5": 2
+ },
+ "mean": 2.6,
+ "raw": {
+  "P1": 2,
+  "P2": 4,
+  "P3": 2,
+  "P4": 3,
+  "P5": 2,
+  "evidence": {
+   "P1": "Reluctant One ev-014 cites ev-010/ev-013, ev-032 cites ev-023/ev-026/ev-031, ev-045 cites ev-044 outside chain; Awakening ev-006 not caused by ev-004 within plot; Hunter ev-045 not caused by ev-039 without ev-044",
+   "P2": "Each plot holds one stance - Rescue stays on self-preservation vs self-sacrifice from ev-025 sacrifice to ev-032 wager to ev-034 pull, Reluctant One stays on identity, Betrayer on meaning vs pleasure without retelling",
+   "P3": "Reluctant One omits ev-023 Oracle verdict and ev-044 death/kiss, Rescue omits ev-033 assault between ev-032 and ev-034, Hunter omits ev-014 prophecy and ev-044, Betrayer pads ev-023 as Cypher payoff",
+   "P4": "Rescue and Betrayer close setup-turn-resolution but Hunter starts at ev-037 with no ev-014 setup and jumps ev-039->ev-045, Awakening resolves early at ev-014, leaving Hunter dangling",
+   "P5": "Reluctant One and Hunter rehash same ev-045 climax - halting bullets/destroying Smith as becoming One vs overriding fate - with overlapping freedom/determinism theme and shared events ev-008/ev-014/ev-032/ev-045"
+  },
+  "commentary": "Layer is thematically disciplined but causally leaky and membership-inaccurate: Reluctant One and Hunter depend on outside events and share the same ev-045 payoff, Rescue/Betrayer are tight while Awakening/Hunter truncate arcs, hard-marked for missing verdict/assault/death beats and redundancy."
+ }
+}

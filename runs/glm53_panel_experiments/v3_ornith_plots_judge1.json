@@ -1,0 +1,30 @@
+{
+ "arm": "v3_ornith",
+ "layer": "plots",
+ "judge": 1,
+ "port": 8223,
+ "dur_s": 30.2,
+ "scores": {
+  "P1": 2,
+  "P2": 3,
+  "P3": 2,
+  "P4": 2,
+  "P5": 2
+ },
+ "mean": 2.2,
+ "raw": {
+  "P1": 2,
+  "P2": 3,
+  "P3": 2,
+  "P4": 2,
+  "P5": 2,
+  "evidence": {
+   "P1": "Plot 'Trust forged through doubt into devotion' self-flags three invalid causal links: ev-030 not caused by ev-021, ev-044 not caused by ev-032, ev-047 not caused by ev-044",
+   "P2": "Plot 'Trust forged...' ev-032 (Neo Chooses to Rescue Morpheus) stretches the relationship stance to cover a Morpheus-wager, while other plots maintain one stance",
+   "P3": "Plot 'A system that preserves itself...' chain stops at ev-018 but summary requires ev-029,031,040,042,044,045,046; Plot 'Trust...' pads ev-032 which belongs to Morpheus rescue",
+   "P4": "Plot 'A system...' has setup ev-001/ev-003 and turns ev-007/ev-011/ev-013/ev-018 with no resolution (missing ev-031 capture, ev-029 betrayal, ev-045 Agent destruction); Plot 'Trust...' resolution dangles as two unlinked wakings ev-044 and ev-047",
+   "P5": "Plots 'Faith in a man over a prophecy' and 'Certainty that must survive its own disillusionment' duplicate 10 events ev-014,015,016,022,025,026,031,035,038,044,045 rehashing same prophecy/faith material"
+  },
+  "commentary": "Three plots show strong internal causality and complete arcs, but the relationship plot admits three broken causal links and pads a Morpheus-rescue event, the society plot is truncated at ev-018 missing its betrayal/capture/resolution, and the objective and impact faith plots are near-identical rehashes, driving hard marks on P1, P3, P4, P5 with only moderate perspective drift on P2."
+ }
+}

@@ -66,6 +66,12 @@ def main() -> int:
     ap.add_argument("--scenes", default="runs/scenes_ornith_v5_clean")
     ap.add_argument("--out", required=True)
     ap.add_argument("--ports", default="8110")
+    ap.add_argument("--seed", choices=["throughline", "meta"],
+                    default="throughline",
+                    help="v3 'throughline': film-spanning identities worded "
+                         "from the digest (the v2 'meta' seed anchored all "
+                         "five plots on the central dilemma and was the "
+                         "campaign's dominant failure cause)")
     ap.add_argument("--model", default="ornith-1.5-397b")
     a = ap.parse_args()
 
@@ -117,23 +123,55 @@ def main() -> int:
                              "summary"],
                 "additionalProperties": False}}},
         "required": ["plots"], "additionalProperties": False})
-    p0 = ("Word the five PLOTS of this story, one per given perspective, in "
-          "the given order. A plot is ONE stance on the central dilemma told "
-          "as a causal chain. Name each plot after its stance and carrier "
-          "(who owns the perspective), not after the whole story. "
-          "CENTRAL DILEMMA: " + dilemma +
-          " THE FIVE PERSPECTIVES (one plot each, keep this order): " +
-          json.dumps(perspectives, ensure_ascii=False)[:14000])
+    if a.seed == "meta":
+        p0 = ("Word the five PLOTS of this story, one per given perspective, "
+              "in the given order. A plot is ONE stance on the central "
+              "dilemma told as a causal chain. Name each plot after its "
+              "stance and carrier (who owns the perspective), not after the "
+              "whole story. CENTRAL DILEMMA: " + dilemma +
+              " THE FIVE PERSPECTIVES (one plot each, keep this order): " +
+              json.dumps(perspectives, ensure_ascii=False)[:14000])
+    else:
+        # v3 seed: film-spanning throughlines. The v2 meta seed made all
+        # five plots stances on ONE late-film decision; every judge then
+        # saw the same sequence retold five times (P5 1.33). A plot must
+        # be a throughline of the WHOLE story.
+        p0 = ("Define the five PLOTS of this story, exactly one per "
+              "classic throughline (objective_story, main_character, "
+              "impact_character, relationship, society). A plot is ONE "
+              "perspective on a theme or dilemma of human existence, told "
+              "as a causal chain that SPANS THE WHOLE STORY: its stance is "
+              "tested from the earliest events and resolved by the story's "
+              "final events -- never a stance on a single mid-story "
+              "decision. Name each plot after its stance and its carrier "
+              "(the character, bond or system that owns the perspective). "
+              "The central dilemma may inform themes but must not be the "
+              "frame of every plot. CENTRAL DILEMMA (context only): "
+              + dilemma + " THE EVENT LAYER: " + digest[:55000])
     plots = json.loads(pool.call(ml.SYSTEM, p0, schema=def_schema).text)["plots"]
-    for plot, persp in zip(plots, perspectives):
-        plot["throughline"] = persp.get("throughline", plot["throughline"])
+    if a.seed == "meta":
+        for plot, persp in zip(plots, perspectives):
+            plot["throughline"] = persp.get("throughline", plot["throughline"])
+    else:
+        # one plot per throughline, procedurally enforced: keep the first
+        # holder of each type, reassign surplus holders to the missing types
+        first_holder = {}
+        surplus = []
+        for plot in plots:
+            if plot["throughline"] in first_holder:
+                surplus.append(plot)
+            else:
+                first_holder[plot["throughline"]] = plot
+        missing = [tl for tl in THROUGHLINES if tl not in first_holder]
+        for plot, tl in zip(surplus, missing):
+            plot["throughline"] = tl
     print("defined 5 plots:", [p["name"] for p in plots], flush=True)
 
     # ---- Pass A: membership per plot (sees ALL definitions for discipline).
     mem_schema = grammar_safe({
         "type": "object",
         "properties": {"members": {
-            "type": "array", "minItems": 4, "maxItems": 30, "items": {
+            "type": "array", "minItems": 6, "maxItems": 30, "items": {
                 "type": "object",
                 "properties": {
                     "event_id": {"type": "string", "enum": list(event_ids)},
@@ -156,10 +194,12 @@ def main() -> int:
             "plots, but only include it here if it tips THIS stance, and "
             "say WHY in this plot's own terms, never in another plot's "
             "terms): " + all_defs +
-            "\nRules: no padding (an event the protagonist merely appears "
-            "in does not qualify); include the setup, every turn, and the "
-            "resolution of THIS arc; 'connective' entries are allowed when "
-            "they carry causation between turns. "
+            "\nRules: this plot spans the WHOLE story -- its stance is "
+            "tested from the earliest events on, so include the early-story "
+            "events that seed it, every turn, and the resolution that "
+            "closes it near the story's end. No padding (an event the "
+            "protagonist merely appears in does not qualify); 'connective' "
+            "entries are allowed when they carry causation between turns. "
             "EVENT LAYER: " + digest[:55000])
         r = pool.call(ml.SYSTEM, prompt, schema=mem_schema)
         return plot["name"], json.loads(r.text)["members"]
@@ -195,6 +235,8 @@ def main() -> int:
     # v2 ARC GATE: each plot needs setup + turn(s) + a resolution that sits
     # in the final third of the story. Repair adds ONLY the missing roles.
     third = 2 * len(event_ids) // 3
+    quarter = 3 * len(event_ids) // 4
+    first_third = len(event_ids) // 3
     add_schema_tpl = {
         "type": "object",
         "properties": {"additions": {
@@ -213,15 +255,21 @@ def main() -> int:
     def arc_faults(members):
         roles = {m["role"] for m in members}
         faults = []
-        if "setup" not in roles:
+        setups = [m for m in members if m["role"] == "setup"]
+        if not setups:
             faults.append("no setup")
+        elif min(order[m["event_id"]] for m in setups) > first_third:
+            faults.append("setup does not start in the first third -- the "
+                          "stance must be seeded early")
         if "turn" not in roles:
             faults.append("no turn")
         res = [m for m in members if m["role"] == "resolution"]
         if not res:
             faults.append("no resolution")
-        elif max(order[m["event_id"]] for m in res) < third:
-            faults.append("resolution not in the final third")
+        elif max(order[m["event_id"]] for m in res) < quarter:
+            faults.append("resolution does not CLOSE the arc -- it must be "
+                          "the late-story event where this stance is "
+                          "decided or paid off")
         return faults
 
     for plot in plots:

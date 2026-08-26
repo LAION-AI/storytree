@@ -95,3 +95,66 @@ scope), strengthen the arc gate to closure ("the resolution event must
 turn on this plot's stance and nothing may dangle after it"), and run it
 on Muse first (best composer). Artifacts: `runs/plot_layer_twopass_v*`,
 panels in `runs/glm53_panel_twopass*`; code `distill/plot_layer_twopass.py`.
+
+
+---
+
+# Addendum (same day, evening): refinement loop, best-of-N, v3 seed fix
+
+Same instrument as above (3x GLM-5.3 panel). Three experiments ran in
+parallel; all panel numbers in one sweep (`runs/glm53_panel_experiments`).
+
+## Self-critique -> revise loop (`distill/plot_layer_refine.py`)
+
+Round 0 = the existing one-pass artifact; each round: hard self-critique
+with executable instructions -> per-plot revision with cross-plot view ->
+structural guard -> keep only if the self-judged mean does not drop.
+
+| Arm | Baseline (panel) | Self-judge after loop | Panel after loop |
+|---|---|---|---|
+| Muse (from 3.33 layer) | 3.33 | loop rejected its own revision (3.2 -> 2.2), artifact unchanged | 3.33 (identical file) |
+| Ornith (from v8 2.73) | 2.73 | revised twice, scored itself **4.0 PASS, flat 4s** | **2.53 (-0.20)** |
+
+The hypothesis "self-refinement needs a calibrated self-judge" was
+confirmed in both directions: the calibrated composer (Muse) correctly
+detected that its revision was worse and kept the original (no-op); the
+inflated composer (Ornith) degraded the artifact while awarding itself a
+straight-4.0 pass. **Self-critique -> self-revision is falsified for this
+task in both calibration regimes.** The valuable component is the
+accept-only-if-better guard, not the revision.
+
+## Best-of-N (five Muse one-pass samples, same prompt, temp 0.5)
+
+Panel scores: **3.33 (original), 3.33 (s2)**, 2.93 (s3), 2.87 (s4),
+2.47 (s5). Mean ~2.99, max 3.33 twice out of five. The 3.33 was not a
+lucky outlier -- it is the muse one-pass **ceiling**, hit reproducibly.
+Selection insures against bad draws (spread 0.86) but does not beat the
+ceiling. Best-of-5 = 3.33.
+
+## Two-pass v3 (film-spanning throughline seed, closure arc gate)
+
+| Arm | v2 (dilemma seed) | v3 (throughline seed) |
+|---|---|---|
+| Muse | 2.07 | **3.00** (+0.93) |
+| Ornith | 2.07 | 2.07 (P1 1.67) |
+
+The seed diagnosis was correct and the fix moved Muse +0.93 -- and
+v3-muse has **P4 = 4.0, the best arc-completeness of any arm in the whole
+campaign** (the closure gate worked). But P1 = 2 and P5 = 2 still drag it
+below the one-pass ceiling. Ornith did not benefit at all from the fixed
+scaffold.
+
+## Where the campaign lands
+
+Eleven plot arms measured under one instrument. The ceiling is **3.33**
+(Muse one-pass, reproducible); no structural, refinement or selection
+scheme has beaten it; **P1 never exceeded 3.0 on any arm**. This is the
+event-layer lesson replaying at layer scale: the mechanically harvestable
+gains are harvested; the wall that remains (genuine causal enablement,
+distinct framing of shared peaks) is composer capability. Ranked next
+steps: (1) a stronger composer via HYPRLAB API (Grok/Opus -- the only
+replicated gain in the project's history is a model swap), on BOTH the
+one-pass prompt and the v3 scaffold; (2) cross-model link verification
+(Muse composes, a different model refutes, Muse regenerates with named
+faults); (3) revisit the P5 rubric wording (convergent climax events with
+genuinely distinct framing still read as rehash to the judges).

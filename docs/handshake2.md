@@ -93,6 +93,19 @@ Strukturfehler in allen Ketten (Enum + Lint), Verify->Regenerate greift.
 Naechster Schritt (v3, noch nicht gelaufen): v2-Maschinerie + filmweiter
 Throughline-Seed + Arc-Closure-Gate, zuerst mit Muse.
 
+### Plot-Experimente Runde 2 (26.08. spaet) — Ceiling bestaetigt
+
+Addendum in **`docs/plots-twopass-campaign.md`**. (1) Self-Critique->Revise
+(`distill/plot_layer_refine.py`): bei Muse verwirft der Guard die eigene
+Revision (No-Op), bei Ornith **verschlechtert** sie das Layer 2.73->2.53
+bei Selbst-Note 4.0 — Idee in beiden Kalibrierungs-Regimen falsifiziert.
+(2) Best-of-5 Muse Ein-Pass: 3.33/3.33/2.93/2.87/2.47 — **3.33 ist das
+reproduzierbare Ceiling**, Selektion versichert nur gegen schlechte Draws.
+(3) Zwei-Pass v3 (filmweiter Seed): Muse 2.07->3.00 (+0.93, bestes P4=4.0
+der Kampagne), Ornith unveraendert 2.07. **P1 nie ueber 3.0, in 11 Armen.**
+Naechster Hebel: staerkerer Composer via HYPRLAB (Ein-Pass UND v3-Geruest),
+danach Cross-Model-Link-Verify.
+
 ### ⚠️ OFFEN / BEKANNT
 
 - **Plot-Layer P5 Non-Redundancy**: endemisch für Muse — die Climax-Events `ev-010/032/038/046` müssen 4–5× vorkommen. Der Judge zählt nur Frequenz. Lösung (a) Judge-Rubric anpassen ("recycled peak mit distinktem Kontext = kein Rehash") oder (b) `prompt_a` um `load_bearing_event` erweitern (je Plot andere Ursache).
