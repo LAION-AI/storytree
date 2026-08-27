@@ -4,6 +4,15 @@ Stand: 26.08.2026 · Repo: **github.com/LAION-AI/storytree** (public; transferie
 
 ---
 
+## 📌 NORMATIV
+
+- **`docs/00-DEFAULT-PIPELINE.md`** — der sanktionierte Default-Pfad pro
+  Layer (Modell, Prozess, bester Run, Evidenz) + die Judging-Regeln.
+- **`docs/EXPERIMENT-LOG.md`** — vollstaendiges Experimentprotokoll
+  (Paper-Vorbereitung): alle Phasen, Zahlen, Reasoning-Kette.
+
+---
+
 ## 🔄 KONTEXT RESET (Status quo nach Muse-1.2-Durchlauf)
 
 Dieser Abschnitt ersetzt alle früheren "aktuellen besten Stand"-Angaben. Der komplette Tree wurde **einmal komplett mit Muse 1.2** (`muse-spark-1.2-contributor-free` via Zen-API) durchlaufen. Ornith (8110/8111) läuft noch als Fallback. Muse-Baseline ist `runs/*_muse*`.
