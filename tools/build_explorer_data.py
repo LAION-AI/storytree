@@ -19,8 +19,9 @@ def main() -> int:
     # z1 story root
     data["layers"]["story_root"] = load(R / "story_root_v3/story_root.json")
 
-    # z2 expose / treatment
-    exp = load(R / "expose_v1/expose.json")
+    # z2 expose / treatment — muse arm: GLM panel 4.44 vs 4.30, and it is
+    # free of expose_v1's jacket-copy truncation that all three judges hit
+    exp = load(R / "expose_muse/expose.json")
     data["layers"]["expose"] = {
         "jacket_copy": exp.get("jacket_copy", ""),
         "ending_first": exp.get("ending_first", {}).get("ending", ""),
@@ -39,8 +40,9 @@ def main() -> int:
         "perspectives": meta.get("perspectives", {}).get("perspectives", []),
     }
 
-    # z4 plots (post-sample v8: 5 distinct throughlines)
-    plots = load(R / "plot_layer_v8/plots.json")
+    # z4 plots — muse one-pass: 3.33 vs v8's 2.73 under the GLM panel, and
+    # the ranking is judge-invariant (even the Ornith panel prefers it)
+    plots = load(R / "plot_layer_muse/plots.json")
     data["layers"]["plots"] = [
         {"name": name, "definition": p["definition"],
          "chain": [{"event_id": m.get("event_id"), "why_in_plot": m.get("why_in_plot"),
