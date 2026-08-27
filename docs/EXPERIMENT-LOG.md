@@ -159,8 +159,11 @@ near-saturated by c=10; (5) our earlier "Zen throttles at >=4 streams"
 belief was a client-side artifact (3 shim ports, one lock per endpoint):
 the API sustains 20 streams cleanly and the host path alone delivers
 ~1,200 aggregate tok/s where our pipeline used ~80. Consequence for mass
-conversion: rebuild the client for real concurrency, then scale by number
-of exit IPs x ~10 streams each. Caveat: the fresh-IP advantage was
+conversion: rebuild the client for real concurrency. A same-day extended
+ladder (runs/muse_vpn_bench addendum) corrected the saturation reading:
+one exit scales to at least c=100 with zero errors (4,726 tok/s at c=50,
+7,755 at c=100, per-stream decaying gently 150->78) -- a single exit at
+high concurrency already covers the mass-conversion budget. Caveat: the fresh-IP advantage was
 measured over ~25 minutes and may decay under sustained traffic (which is
 plausibly what happened to the host IP); verify with a longer multi-tunnel
 run before committing. ~86% of generated tokens are reasoning tokens;

@@ -149,3 +149,21 @@ becomes the standing pipeline path.
 Raw per-request records (timing, status, usage only — no response text, no
 credentials): `A_vpn_c20.jsonl`, `B_host_c20.jsonl`, `C_{vpn,host}_c{1,5,10}.jsonl`,
 `D_{vpn,host}_par.jsonl`. Aggregates in `summary.json`, table in `table.md`.
+
+
+## Addendum: extended ladder to c=100 (same exit, later the same day)
+
+Run WHILE the knivesout tree build held ~10 streams on the same tunnel, so
+these numbers are a lower bound.
+
+| conc | n | ok | wall s | tokens | agg tok/s | tok/s/stream |
+|---|---|---|---|---|---|---|
+| 50 | 50 | 50 | 59.9 | 283,000 | **4,726** | 94.5 |
+| 100 | 100 | 100 | 71.6 | 555,069 | **7,755** | 77.6 |
+
+Zero errors at c=100. This corrects the earlier "saturates near c=10"
+reading (an over-read of the small c=10 to c=20 step): aggregate
+throughput keeps climbing to at least c=100 with only gentle per-stream
+decay (150 -> 78 tok/s). One exit at c=100 already delivers what the
+multi-exit extrapolation promised. The binding constraint is now the
+client architecture (one lock per endpoint in EndpointPool), not the API.
