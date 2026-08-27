@@ -158,3 +158,26 @@ one-pass prompt and the v3 scaffold; (2) cross-model link verification
 (Muse composes, a different model refutes, Muse regenerates with named
 faults); (3) revisit the P5 rubric wording (convergent climax events with
 genuinely distinct framing still read as rehash to the judges).
+
+
+## Judge x composer matrix (27.08.)
+
+Both one-pass arms judged by three 3-judge panels, artifacts anonymised
+(`runs/judge_matrix_ornith`, `runs/judge_matrix_muse`; GLM row from the
+original panel):
+
+| Judge | v8 (Ornith-composed) | Muse-composed | delta |
+|---|---|---|---|
+| Ornith panel | 3.53 | 3.87 | +0.33 |
+| Muse panel | 2.60 | 3.07 | +0.47 |
+| GLM-5.3 panel | 2.73 | 3.33 | +0.60 |
+
+Findings: (1) the ranking Muse > v8 is judge-invariant -- even Ornith
+prefers the layer it did not write. (2) Anonymised, Ornith shows no
+self-preference; its earlier 4.6 self-score was an in-pipeline context
+effect. But Ornith scores P1 at 4.33 on BOTH arms where GLM sees 2.0-2.33:
+composer and judge share the same and-then blindness -- the strongest
+argument yet that link verification must come from a different model.
+(3) Muse-panel and GLM-panel are the same model/instrument, so their gap
+is test-retest reliability: +-0.15-0.25 drift between panel draws;
+between-arm differences under ~0.3 should not be over-read.
