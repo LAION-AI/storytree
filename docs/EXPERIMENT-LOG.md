@@ -139,3 +139,29 @@ instrument sampled twice → test-retest reliability ±0.15–0.25; gaps under
    prompt and the v3 scaffold; cross-model link verification (motivated by
    the shared-blind-spot finding); P5 rubric wording for genuinely
    convergent climax events.
+
+
+## Phase 8 — Zen throughput study through a VPN exit (27.08.)
+
+Design: KVM VM (Debian cloud image, slirp networking) with an OpenVPN
+tunnel; realistic plot-judgment payloads (~15-20k input tokens, reasoning
+effort high); conditions VPN vs direct host at concurrency 1/5/10/20 plus
+a simultaneous both-exits run. Full data: `runs/muse_vpn_bench/`
+(148/148 ok, 0 errors, 828,877 generated tokens).
+
+Findings: (1) the API carries NO authentication at all, so metering can
+only be per-IP; (2) throttling is invisible in status codes -- it appears
+purely as a lower per-stream token rate, constant per exit IP and flat
+across concurrency (VPN exit ~173 tok/s/stream vs our long-used host IP
+~79; ratio 2.19x from c=1 to c=20); (3) running both exits simultaneously
+degraded neither -- per-IP budgets are independent; (4) a single IP is
+near-saturated by c=10; (5) our earlier "Zen throttles at >=4 streams"
+belief was a client-side artifact (3 shim ports, one lock per endpoint):
+the API sustains 20 streams cleanly and the host path alone delivers
+~1,200 aggregate tok/s where our pipeline used ~80. Consequence for mass
+conversion: rebuild the client for real concurrency, then scale by number
+of exit IPs x ~10 streams each. Caveat: the fresh-IP advantage was
+measured over ~25 minutes and may decay under sustained traffic (which is
+plausibly what happened to the host IP); verify with a longer multi-tunnel
+run before committing. ~86% of generated tokens are reasoning tokens;
+`output_tokens` already includes `reasoning_tokens` (subset, not addend).
