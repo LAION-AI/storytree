@@ -16,6 +16,17 @@ screenplay text
   → plot layer → exposé → story root
 ```
 
+### Two extensions of this pipeline
+
+- **[`reasoning_traces/`](../reasoning_traces/)** — after a tree is built,
+  reconstructs the chain-of-thought that would justify each layer's output,
+  and packages it as fine-tuning data. Runs either as a batch over existing
+  trees or as a daemon that traces trees as this pipeline finishes them.
+- **[series-season-storytree-pipeline](https://github.com/LAION-AI/series-season-storytree-pipeline)** (separate repo, currently
+  private) — applies this same layer order to a whole TV season instead of
+  one film, adding a "Stage 0" that reconstructs scene boundaries in
+  transcripts that have no `INT./EXT.` headings.
+
 ## Per-layer defaults
 
 | Layer | Model | Process | Best run | Score / gate |

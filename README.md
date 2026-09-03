@@ -4,6 +4,17 @@
 layers, what each node contains, real examples from *The Matrix*, and where the measurements
 are.
 
+### Map of the parts
+
+| I want to… | go to |
+|---|---|
+| understand the layers and what a tree contains | [`docs/storytree-structure.md`](docs/storytree-structure.md) |
+| **run the pipeline that is in production today** | [`docs/00-DEFAULT-PIPELINE.md`](docs/00-DEFAULT-PIPELINE.md) — the normative recipe: which script, which model, which order |
+| see the layer generators and their prompts | [`distill/`](distill/) |
+| **generate chain-of-thought reasoning traces** from built trees, for fine-tuning a smaller model | [`reasoning_traces/`](reasoning_traces/) |
+| extend this from single films to **whole TV seasons** | [`series-season-storytree-pipeline`](https://github.com/LAION-AI/series-season-storytree-pipeline) — separate repo, currently private |
+| know what was measured, and what failed | [`docs/EXPERIMENT-LOG.md`](docs/EXPERIMENT-LOG.md), [`docs/07-quality-evaluation.md`](docs/07-quality-evaluation.md) |
+
 **Explore the recovered tree live:** the [Storytree Explorer](https://projects.laion.ai/storytree/webapp/storytree-explorer.html)
 renders the top-down chain — story root, exposé, meta layer, plots, events, entities,
 scene layer — from a single data file. Rebuild it with
