@@ -31,14 +31,34 @@ BAD = "no tags here, just prose"
 class FakeClient:
     model = "fake"
 
-    def __init__(self, script=None):
+    def __init__(self, script=None, artifacts=None):
         self.script = list(script or [GOOD])
+        self.artifacts = list(artifacts or [])
         self.calls = []
+        self.budgets = []
 
     def generate(self, user, instructions=None, max_output_tokens=4096):
         self.calls.append(user)
-        text = self.script.pop(0) if len(self.script) > 1 else self.script[0]
+        self.budgets.append(max_output_tokens)
+        if self.artifacts and ("NOW BUILD" in user or "Resend the COMPLETE" in user):
+            items = self.artifacts
+            text = items.pop(0) if len(items) > 1 else items[0]
+        else:
+            text = self.script.pop(0) if len(self.script) > 1 else self.script[0]
         return text, {"in": 1, "out": 1}
+
+
+class FlakyClient(FakeClient):
+    """Raises incomplete once, then behaves like FakeClient."""
+
+    def generate(self, user, instructions=None, max_output_tokens=4096):
+        from zen_client import ZenError
+        if not getattr(self, "_flaked", False):
+            self._flaked = True
+            self.calls.append(user)
+            self.budgets.append(max_output_tokens)
+            raise ZenError("incomplete response, status=incomplete")
+        return super().generate(user, instructions, max_output_tokens)
 
 
 class FakeJudge:
@@ -196,6 +216,55 @@ def main():
     t9jobs = cc7.t9_prose()
     check("t9 card adherence present", "CARD ADHERENCE" in t9jobs[0][3])
     check("t9 has required keys", t9jobs[0][4] == ("scene_id", "scene_text"))
+
+    print("\nparallel + budget escalation + retry-errors")
+    arts = {
+        "themes": {"big_questions": [], "central_dilemma": {}},
+        "external": {"conflicts": []},
+        "internal": {"internal_conflicts": []},
+        "relationships": {"relationship_arcs": []},
+        "perspectives": {"perspectives": []},
+    }
+    art_blocks = ["<artifact>\n```json\n%s\n```\n</artifact>" % json.dumps(a)
+                  for a in arts.values()]
+    fc7 = FakeClient(script=["<reasoning>r</reasoning>"], artifacts=art_blocks)
+    cc7p = G.Chain("s", {"logline": "x"}, per_layer=5, workers=3, client=fc7)
+    recs7 = cc7p.run_step("t1")
+    check("parallel t1: 5 traces", len(recs7) == 5, str(len(recs7)))
+    check("parallel t1: 10 calls, no repairs", len(fc7.calls) == 10,
+          str(len(fc7.calls)))
+    check("parallel t1: tids unique",
+          len({r["tid"] for r in recs7}) == 5)
+    check("parallel t1: all ingested", len(cc7p.meta) == 5)
+    keymap = {"themes": "big_questions", "external": "conflicts",
+              "internal": "internal_conflicts",
+              "relationships": "relationship_arcs",
+              "perspectives": "perspectives"}
+    check("parallel t1: every artifact fits its section",
+          all(keymap[r["part"]] in (r.get("artifact") or {}) for r in recs7))
+
+    fc8 = FlakyClient(script=[GOOD])
+    cc8 = G.Chain("s", {"logline": "x"}, client=fc8)
+    rec8 = cc8.call("tid-b", "CTX")
+    check("escalation: recovered after incomplete",
+          rec8.get("artifact") == {"a": 1} and "error" not in rec8)
+    check("escalation: retry used bigger budget",
+          fc8.budgets[1] > fc8.budgets[0], str(fc8.budgets))
+    check("escalation: flagged in usage",
+          rec8.get("usage", {}).get("budget_retry") is True)
+
+    import tempfile, os
+    with tempfile.TemporaryDirectory() as tmp:
+        p = os.path.join(tmp, "g.jsonl")
+        with open(p, "w") as f:
+            f.write('{"tid": "a", "artifact": {"x": 1}}\n')
+            f.write('{"tid": "b", "error": "boom", "reasoning": "r"}\n')
+        kept, dropped = G.drop_error_records(p)
+        check("retry-errors: counts", (kept, dropped) == (1, 1),
+              str((kept, dropped)))
+        rest = [json.loads(l) for l in open(p)]
+        check("retry-errors: only good kept",
+              [r["tid"] for r in rest] == ["a"])
 
     print("\n%d passed, %d failed" % (len(PASS), len(FAIL)))
     return 1 if FAIL else 0

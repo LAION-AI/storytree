@@ -35,6 +35,7 @@ import os
 import re
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -150,13 +151,23 @@ def _parse(text):
 
 
 class Chain:
+    # Steps whose jobs are independent: safe to run in parallel. t5 and t7
+    # stay sequential -- skeletons cohere with each other, and each filled
+    # event continues the previous one's exit states.
+    PARALLEL_STEPS = {"t1", "t3", "t6", "t8", "t9"}
+
+    # Output-budget escalation against "incomplete" responses (high-effort
+    # reasoning eating the whole budget): one retry at 1.5x, hard cap.
+    ESCALATE_CAP = 24576
+
     def __init__(self, seed, root, per_layer=5, max_tokens=8192,
-                 single_call=False, client=None):
+                 single_call=False, workers=1, client=None):
         self.seed = seed
         self.root = root
         self.N = per_layer
         self.max_tokens = max_tokens
         self.single_call = single_call
+        self.workers = max(1, workers)
         self.client = client or ZenClient()
         self.meta = {}
         self.plots = []
@@ -172,20 +183,37 @@ class Chain:
     def tid(self, step, part):
         return "%s::topdown::%s::%s" % (self.seed, step, part)
 
+    def _gen(self, user, instructions, budget):
+        """One API call with budget escalation. Returns (text, usage,
+        escalated). Raises ZenError for anything but incomplete-once."""
+        try:
+            text, usage = self.client.generate(
+                user, instructions=instructions, max_output_tokens=budget)
+            return text, usage, False
+        except ZenError as e:
+            if "incomplete" not in str(e):
+                raise
+            big = min(self.ESCALATE_CAP, int(budget * 1.5))
+            if big <= budget:
+                raise
+            text, usage = self.client.generate(
+                user, instructions=instructions, max_output_tokens=big)
+            return text, usage, True
+
     def call(self, tid, user, required_keys=()):
         """One trace: deliberate, then build. On unusable artifact, one
         repair call reusing the same deliberation (never a third)."""
         t0 = time.time()
+        escalated = False
         try:
             if self.single_call:
-                raw, usage = self.client.generate(
-                    user, instructions=SYS, max_output_tokens=self.max_tokens)
+                raw, usage, esc = self._gen(user, SYS, self.max_tokens)
+                escalated |= esc
                 reasoning, artifact = _parse(raw)
                 usage = {"mode": "single", "calls": [usage]}
             else:
-                r1, u1 = self.client.generate(
-                    user, instructions=REASON_SYS,
-                    max_output_tokens=self.max_tokens)
+                r1, u1, esc1 = self._gen(user, REASON_SYS, self.max_tokens)
+                escalated |= esc1
                 reasoning, _ = _parse(r1)
                 if not reasoning:
                     # Fall back to the raw text: an untagged deliberation is
@@ -196,17 +224,17 @@ class Chain:
                     return {"tid": tid, "seed": self.seed,
                             "error": "empty deliberation, artifact call skipped",
                             "gen_s": round(time.time() - t0, 1)}
-                r2, u2 = self.client.generate(
+                r2, u2, esc2 = self._gen(
                     "DELIBERATION (decided, do not reopen):\n" + reasoning +
                     "\n\nNOW BUILD FROM IT, using this context:\n" + user,
-                    instructions=ARTIFACT_SYS,
-                    max_output_tokens=self.max_tokens)
+                    ARTIFACT_SYS, self.max_tokens)
+                escalated |= esc2
                 _, artifact = _parse(r2)
                 usage = {"mode": "two-call", "calls": [u1, u2]}
             missing = [k for k in required_keys
                        if not isinstance(artifact, dict) or k not in artifact]
             if missing:
-                r3, u3 = self.client.generate(
+                r3, u3, esc3 = self._gen(
                     "DELIBERATION (decided, do not reopen):\n" + (reasoning or "") +
                     "\n\nCONTEXT:\n" + user +
                     "\n\nYour artifact was unusable%s. Resend the COMPLETE "
@@ -214,12 +242,14 @@ class Chain:
                     "nothing else." % (" (missing: %s)" % ", ".join(missing)
                                        if isinstance(artifact, dict)
                                        else " (not JSON at all)"),
-                    instructions=ARTIFACT_SYS,
-                    max_output_tokens=self.max_tokens)
+                    ARTIFACT_SYS, self.max_tokens)
+                escalated |= esc3
                 _, artifact = _parse(r3)
                 usage["repair"] = u3
                 missing = [k for k in required_keys
                            if not isinstance(artifact, dict) or k not in artifact]
+            if escalated:
+                usage["budget_retry"] = True
             rec = {"tid": tid, "seed": self.seed, "reasoning": reasoning,
                    "artifact": artifact, "usage": usage,
                    "model": self.client.model, "gen_s": round(time.time() - t0, 1),
@@ -446,10 +476,23 @@ class Chain:
         else:
             jobs = []
         recs = []
-        for tid, st, part, user, required in jobs:
-            if tid in skip:
-                continue
-            rec = self.call(tid, user, required_keys=required)
+        pending = [(i, tid, st, part, user, required)
+                   for i, (tid, st, part, user, required) in enumerate(jobs)
+                   if tid not in skip]
+        done_recs = {}
+        if self.workers > 1 and step in self.PARALLEL_STEPS and len(pending) > 1:
+            with ThreadPoolExecutor(max_workers=self.workers) as ex:
+                futs = {ex.submit(self.call, tid, user, required): i
+                        for i, tid, st, part, user, required in pending}
+                for fut in as_completed(futs):
+                    done_recs[futs[fut]] = fut.result()
+        else:
+            for i, tid, st, part, user, required in pending:
+                done_recs[i] = self.call(tid, user, required)
+        meta = {i: (st, part) for i, tid, st, part, user, required in pending}
+        for i in sorted(done_recs):
+            rec = done_recs[i]
+            st, part = meta[i]
             rec.update({"step": st, "part": part})
             recs.append(rec)
             self._ingest(st, part, rec.get("artifact"))
@@ -492,6 +535,20 @@ def load_jsonl(path):
     return recs
 
 
+def drop_error_records(path):
+    """Delete error records so --resume regenerates exactly those tids.
+
+    Returns (kept, dropped). Note: dependents already built on fallback
+    input are NOT rebuilt -- only the failed tids themselves are retried.
+    """
+    recs = load_jsonl(path)
+    kept = [r for r in recs if not r.get("error")]
+    with open(path, "w", encoding="utf-8") as f:
+        for r in kept:
+            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    return len(kept), len(recs) - len(kept)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     src = ap.add_mutually_exclusive_group(required=True)
@@ -504,6 +561,13 @@ def main(argv=None):
     ap.add_argument("--steps", default="t1,t2,t3,t4,t5,t6,t7,t8,t9")
     ap.add_argument("--model", default=os.environ.get("ZEN_MODEL", "muse-spark-1.3-contributor-free"))
     ap.add_argument("--max-tokens", type=int, default=8192)
+    ap.add_argument("--workers", type=int, default=4,
+                    help="parallel requests for independent steps "
+                         "(t1/t3/t6/t8/t9; t5/t7 stay sequential). Default 4.")
+    ap.add_argument("--retry-errors", action="store_true",
+                    help="drop error records from --out first, so resume "
+                         "regenerates exactly those tids (dependents built on "
+                         "fallback input are not rebuilt).")
     ap.add_argument("--single-call", action="store_true",
                     help="legacy cheap mode: reasoning+artifact in one call. "
                          "Default is two-call (deliberate first, build second), "
@@ -526,13 +590,16 @@ def main(argv=None):
     client = ZenClient(model=args.model)
     chain = Chain(seed, root, per_layer=args.per_layer,
                   max_tokens=args.max_tokens, single_call=args.single_call,
-                  client=client)
+                  workers=args.workers, client=client)
     if args.resume_in:
         chain.load_state([r for r in load_jsonl(args.resume_in)
                           if r.get("artifact")])
 
     done = set()
     out_path = Path(args.out)
+    if args.retry_errors and out_path.exists():
+        kept, dropped = drop_error_records(str(out_path))
+        print("retry-errors: dropped %d, kept %d" % (dropped, kept))
     prior = []
     if out_path.exists():
         prior = load_jsonl(str(out_path))

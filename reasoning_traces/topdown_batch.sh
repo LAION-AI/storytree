@@ -43,6 +43,7 @@ done
 [ -n "$OUT_DIR" ] || { echo "missing --out-dir" >&2; exit 2; }
 
 PER_LAYER="${PER_LAYER:-5}"
+WORKERS="${WORKERS:-4}"
 ZEN_MODEL="${ZEN_MODEL:-muse-spark-1.3-contributor-free}"
 MAX_TOKENS="${MAX_TOKENS:-8192}"
 HERE="$(cd "$(dirname "$0")/.." && pwd)"
@@ -62,7 +63,7 @@ if [ -n "$MAX_FILMS" ]; then
   SLUGS=("${SLUGS[@]:0:$MAX_FILMS}")
 fi
 
-echo "films: ${#SLUGS[@]}  per_layer: $PER_LAYER  model: $ZEN_MODEL  judge: ${JUDGE:-off}"
+echo "films: ${#SLUGS[@]}  per_layer: $PER_LAYER  workers: $WORKERS  model: $ZEN_MODEL  judge: ${JUDGE:-off}"
 echo "out: $OUT_DIR"
 
 if [ -n "$LIST_ONLY" ]; then
@@ -82,7 +83,7 @@ for slug in "${SLUGS[@]}"; do
     echo "=== $slug $(date -u +%FT%TZ) ==="
     python3 "$HERE/reasoning_traces/topdown_generate.py" \
       --hf-dir "$HF_DIR" --film "$slug" \
-      --out "$gen" --per-layer "$PER_LAYER" \
+      --out "$gen" --per-layer "$PER_LAYER" --workers "$WORKERS" \
       --model "$ZEN_MODEL" --max-tokens "$MAX_TOKENS" || {
         echo "GENERATE FAILED for $slug"; exit 1; }
     if [ -n "$JUDGE" ]; then
