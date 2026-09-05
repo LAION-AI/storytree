@@ -266,6 +266,30 @@ def main():
         check("retry-errors: only good kept",
               [r["tid"] for r in rest] == ["a"])
 
+    print("\nquota fail-fast")
+    from zen_client import ZenError, is_quota_error
+    check("is_quota_error detects FreeUsageLimit",
+          is_quota_error(ZenError("HTTP 429 FreeUsageLimitError ...")))
+    check("other errors are not quota",
+          not is_quota_error(ZenError("incomplete response")))
+
+    class QuotaClient(FakeClient):
+        def generate(self, user, instructions=None, max_output_tokens=4096):
+            self.calls.append(user)
+            raise ZenError("HTTP 429 FreeUsageLimitError: Rate limit exceeded")
+
+    qc = QuotaClient()
+    ccq = G.Chain("s", {"logline": "x"}, client=qc)
+    recq = ccq.call("tid-q", "CTX")
+    check("quota: error flagged quota_exhausted",
+          recq.get("quota_exhausted") is True, str(recq))
+    try:
+        ccq.run_step("t1")
+        check("quota: run_step raises QuotaExhausted", False, "no raise")
+    except G.QuotaExhausted as q:
+        check("quota: run_step raises QuotaExhausted", True)
+        check("quota: carries tids", len(q.tids) >= 1)
+
     print("\n%d passed, %d failed" % (len(PASS), len(FAIL)))
     return 1 if FAIL else 0
 

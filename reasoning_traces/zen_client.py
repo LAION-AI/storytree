@@ -29,6 +29,15 @@ class ZenError(Exception):
     pass
 
 
+def is_quota_error(err):
+    """True for exhausted free-tier quota (FreeUsageLimitError).
+
+    Retrying these is pointless until the quota resets -- callers must stop
+    the run instead of burning every remaining job into error records.
+    """
+    return "FreeUsageLimit" in str(err)
+
+
 class ZenClient:
     def __init__(self, model=DEFAULT_MODEL, api_key=None, base=BASE,
                  timeout=600, retries=3):

@@ -41,7 +41,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from topdown_pairs import _cut  # noqa: E402
-from zen_client import ZenClient, ZenError  # noqa: E402
+from zen_client import ZenClient, ZenError, is_quota_error  # noqa: E402
 
 SYS = ("You are a story architect working TOP-DOWN: from an abstract story "
        "root you derive ever more concrete layers. Commit late: open "
@@ -150,6 +150,15 @@ def _parse(text):
     return reasoning, artifact
 
 
+class QuotaExhausted(Exception):
+    """Free-tier quota gone: stop the run, resume later with --retry-errors."""
+
+    def __init__(self, tids):
+        super().__init__("quota exhausted at %s (+%d more)" %
+                         (tids[0], len(tids) - 1))
+        self.tids = tids
+
+
 class Chain:
     # Steps whose jobs are independent: safe to run in parallel. t5 and t7
     # stay sequential -- skeletons cohere with each other, and each filled
@@ -185,13 +194,14 @@ class Chain:
 
     def _gen(self, user, instructions, budget):
         """One API call with budget escalation. Returns (text, usage,
-        escalated). Raises ZenError for anything but incomplete-once."""
+        escalated). Quota errors (FreeUsageLimit) are raised immediately --
+        no escalation, no point."""
         try:
             text, usage = self.client.generate(
                 user, instructions=instructions, max_output_tokens=budget)
             return text, usage, False
         except ZenError as e:
-            if "incomplete" not in str(e):
+            if is_quota_error(e) or "incomplete" not in str(e):
                 raise
             big = min(self.ESCALATE_CAP, int(budget * 1.5))
             if big <= budget:
@@ -260,8 +270,13 @@ class Chain:
                                 else "unparsable model output")
             return rec
         except ZenError as e:
-            return {"tid": tid, "seed": self.seed, "error": str(e)[:300],
-                    "gen_s": round(time.time() - t0, 1)}
+            rec = {"tid": tid, "seed": self.seed, "error": str(e)[:300],
+                   "gen_s": round(time.time() - t0, 1)}
+            if is_quota_error(e):
+                # Fail-fast marker: run_step/main stop the whole run so the
+                # remaining jobs are NOT burned into error records.
+                rec["quota_exhausted"] = True
+            return rec
 
     def ctx(self, obj, budget=6000):
         return _cut(obj, budget)
@@ -496,6 +511,10 @@ class Chain:
             rec.update({"step": st, "part": part})
             recs.append(rec)
             self._ingest(st, part, rec.get("artifact"))
+        quota = [r["tid"] for r in recs if r.get("quota_exhausted")]
+        if quota:
+            # Abort the chain: every further call would fail the same way.
+            raise QuotaExhausted(quota)
         return recs
 
     def _ingest(self, step, part, artifact):
@@ -608,16 +627,22 @@ def main(argv=None):
     out = out_path.open("a", encoding="utf-8")
     n_new = n_err = 0
     with out:
-        for step in [s for s in args.steps.split(",") if s in Chain.STEPS]:
-            for rec in chain.run_step(step, skip=done):
-                out.write(json.dumps(rec, ensure_ascii=False) + "\n")
-                out.flush()
-                done.add(rec["tid"])
-                n_new += 1
-                n_err += bool(rec.get("error"))
-                print("%s %-8s %s" % (
-                    "ERROR" if rec.get("error") else "ok",
-                    rec.get("step"), rec["tid"]), flush=True)
+        try:
+            for step in [s for s in args.steps.split(",") if s in Chain.STEPS]:
+                for rec in chain.run_step(step, skip=done):
+                    out.write(json.dumps(rec, ensure_ascii=False) + "\n")
+                    out.flush()
+                    done.add(rec["tid"])
+                    n_new += 1
+                    n_err += bool(rec.get("error"))
+                    print("%s %-8s %s" % (
+                        "QUOTA" if rec.get("quota_exhausted")
+                        else "ERROR" if rec.get("error") else "ok",
+                        rec.get("step"), rec["tid"]), flush=True)
+        except QuotaExhausted as q:
+            print("QUOTA_EXHAUSTED: %s -- resume later with --retry-errors"
+                  % q, flush=True)
+            return 3
     print("wrote %d new (%d errors)" % (n_new, n_err))
     return 0
 

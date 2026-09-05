@@ -22,6 +22,13 @@
 #   bash reasoning_traces/topdown_batch.sh --hf-dir ... --out-dir ... --max-films 3
 #   # dry run: just list the films that would run:
 #   bash reasoning_traces/topdown_batch.sh --hf-dir ... --out-dir ... --list-films
+#   # drop stale error records, then resume exactly those tids:
+#   bash reasoning_traces/topdown_batch.sh --hf-dir ... --out-dir ... --clean-errors
+#
+# Quota: on FreeUsageLimit the generator aborts the film (exit 3) and this
+# loop STOPS entirely -- retrying only makes sense after the quota resets.
+# Resume then with --clean-errors (or --retry-errors per film).
+#
 #
 # Env overrides: PER_LAYER (default 5), ZEN_MODEL, MAX_TOKENS (default 8192).
 set -u
@@ -35,6 +42,7 @@ while [ $# -gt 0 ]; do
     --max-films) MAX_FILMS="$2"; shift 2;;
     --judge) JUDGE=1; shift;;
     --list-films) LIST_ONLY=1; shift;;
+    --clean-errors) CLEAN_ERRORS=1; shift;;
     *) echo "unknown arg: $1" >&2; exit 2;;
   esac
 done
@@ -74,6 +82,23 @@ fi
 [ -n "${OPENCODE_API_KEY:-}" ] || {
   echo "OPENCODE_API_KEY is not set. Export it first." >&2; exit 2; }
 
+if [ -n "${CLEAN_ERRORS:-}" ]; then
+  python3 -c "
+import json, glob, os
+kept = dropped = 0
+for f in glob.glob('$OUT_DIR/gen/*.jsonl'):
+    recs = [json.loads(l) for l in open(f) if l.strip()]
+    good = [r for r in recs if not r.get('error')]
+    if len(good) != len(recs):
+        with open(f, 'w') as fh:
+            for r in good:
+                fh.write(json.dumps(r, ensure_ascii=False) + '\n')
+        dropped += len(recs) - len(good)
+    kept += len(good)
+print('clean-errors: kept %d, dropped %d' % (kept, dropped))
+"
+fi
+
 n_ok=0; n_fail=0
 for slug in "${SLUGS[@]}"; do
   gen="$OUT_DIR/gen/$slug.jsonl"
@@ -84,8 +109,14 @@ for slug in "${SLUGS[@]}"; do
     python3 "$HERE/reasoning_traces/topdown_generate.py" \
       --hf-dir "$HF_DIR" --film "$slug" \
       --out "$gen" --per-layer "$PER_LAYER" --workers "$WORKERS" \
-      --model "$ZEN_MODEL" --max-tokens "$MAX_TOKENS" || {
-        echo "GENERATE FAILED for $slug"; exit 1; }
+      --model "$ZEN_MODEL" --max-tokens "$MAX_TOKENS"
+    rc=$?
+    if [ $rc -eq 3 ]; then
+      echo "QUOTA_EXHAUSTED -- stopping the whole batch (resume later with --clean-errors)"
+      exit 3
+    elif [ $rc -ne 0 ]; then
+      echo "GENERATE FAILED for $slug (exit $rc)"; exit 1
+    fi
     if [ -n "$JUDGE" ]; then
       python3 "$HERE/reasoning_traces/topdown_judge.py" \
         --in "$gen" --out "$judge" \
@@ -94,7 +125,12 @@ for slug in "${SLUGS[@]}"; do
     fi
     echo "=== $slug DONE $(date -u +%FT%TZ) ==="
   } >>"$log" 2>&1
-  if [ $? -eq 0 ]; then
+  rc=$?
+  if [ $rc -eq 3 ]; then
+    echo "STOP  quota exhausted at $slug -- resume later with --clean-errors"
+    echo "done: $n_ok ok, $n_fail failed, stopped on quota"
+    exit 3
+  elif [ $rc -eq 0 ]; then
     n_ok=$((n_ok+1)); echo "ok    $slug"
   else
     n_fail=$((n_fail+1)); echo "FAIL  $slug  (see $log)"
