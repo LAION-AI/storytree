@@ -59,6 +59,10 @@ def main():
     check("parse: artifact extracted", a == {"a": 1}, repr(a))
     r2, a2 = G._parse(BAD)
     check("parse: malformed -> (None, None)", r2 is None and a2 is None)
+    r3, a3 = G._parse("<reasoning>x</reasoning><artifact>```json\n{\"a\": 1}\n```\ntrailing chatter {oops")
+    check("parse: trailing chatter repaired", a3 == {"a": 1}, repr(a3))
+    check("balanced-json skips braces in strings",
+          G._balanced_json('{\"t\": \"a{b}c\"} tail') == {"t": "a{b}c"})
 
     c = G.Chain("s", {"logline": "x"}, per_layer=2, client=FakeClient())
     check("t1 capped at per_layer", len(c.t1_meta()) == 2, str(len(c.t1_meta())))

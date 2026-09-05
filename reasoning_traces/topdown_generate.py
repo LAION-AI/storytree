@@ -101,6 +101,37 @@ RE_META = {
 REGISTERS = "physical, positional, knowledge, relational, emotional, status, safety"
 
 
+def _balanced_json(text):
+    """Parse the first balanced {...} block. Fallback for fenced JSON with
+    trailing chatter or a broken fence -- never invents structure, only
+    repairs framing."""
+    start = text.find("{")
+    if start < 0:
+        return None
+    depth, instr, esc = 0, False, False
+    for i in range(start, len(text)):
+        ch = text[i]
+        if instr:
+            if esc:
+                esc = False
+            elif ch == "\\":
+                esc = True
+            elif ch == '"':
+                instr = False
+        elif ch == '"':
+            instr = True
+        elif ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                try:
+                    return json.loads(text[start:i + 1])
+                except Exception:
+                    return None
+    return None
+
+
 def _parse(text):
     m = re.search(r"<reasoning>(.*?)</reasoning>", text, re.S)
     reasoning = m.group(1).strip() if m else None
@@ -114,7 +145,7 @@ def _parse(text):
         try:
             artifact = json.loads(blob)
         except Exception:
-            pass
+            artifact = _balanced_json(blob)
     return reasoning, artifact
 
 
