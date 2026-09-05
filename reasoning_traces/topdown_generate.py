@@ -172,7 +172,9 @@ class Chain:
     def tid(self, step, part):
         return "%s::topdown::%s::%s" % (self.seed, step, part)
 
-    def call(self, tid, user):
+    def call(self, tid, user, required_keys=()):
+        """One trace: deliberate, then build. On unusable artifact, one
+        repair call reusing the same deliberation (never a third)."""
         t0 = time.time()
         try:
             if self.single_call:
@@ -200,20 +202,32 @@ class Chain:
                     instructions=ARTIFACT_SYS,
                     max_output_tokens=self.max_tokens)
                 _, artifact = _parse(r2)
-                if artifact is None:
-                    m = re.search(r"```json(.*?)```", r2, re.S)
-                    if m:
-                        try:
-                            artifact = json.loads(m.group(1).strip())
-                        except Exception:
-                            pass
                 usage = {"mode": "two-call", "calls": [u1, u2]}
+            missing = [k for k in required_keys
+                       if not isinstance(artifact, dict) or k not in artifact]
+            if missing:
+                r3, u3 = self.client.generate(
+                    "DELIBERATION (decided, do not reopen):\n" + (reasoning or "") +
+                    "\n\nCONTEXT:\n" + user +
+                    "\n\nYour artifact was unusable%s. Resend the COMPLETE "
+                    "artifact now: <artifact> with one ```json fenced block, "
+                    "nothing else." % (" (missing: %s)" % ", ".join(missing)
+                                       if isinstance(artifact, dict)
+                                       else " (not JSON at all)"),
+                    instructions=ARTIFACT_SYS,
+                    max_output_tokens=self.max_tokens)
+                _, artifact = _parse(r3)
+                usage["repair"] = u3
+                missing = [k for k in required_keys
+                           if not isinstance(artifact, dict) or k not in artifact]
             rec = {"tid": tid, "seed": self.seed, "reasoning": reasoning,
                    "artifact": artifact, "usage": usage,
                    "model": self.client.model, "gen_s": round(time.time() - t0, 1),
                    "prompt": user}
-            if not reasoning or artifact is None:
-                rec["error"] = "unparsable model output"
+            if not reasoning or artifact is None or missing:
+                rec["error"] = ("unparsable model output, repair failed"
+                                if artifact is None or missing
+                                else "unparsable model output")
             return rec
         except ZenError as e:
             return {"tid": tid, "seed": self.seed, "error": str(e)[:300],
@@ -223,12 +237,21 @@ class Chain:
         return _cut(obj, budget)
 
     # -- steps ---------------------------------------------------------
+    META_REQUIRED = {
+        "themes": ("big_questions", "central_dilemma"),
+        "external": ("conflicts",),
+        "internal": ("internal_conflicts",),
+        "relationships": ("relationship_arcs",),
+        "perspectives": ("perspectives",),
+    }
+
     def t1_meta(self):
         jobs = []
         for section in list(RE_META)[:self.N]:
             user = ("STORY ROOT:\n%s\n\nWrite the '%s' part of the META layer. %s"
                     % (self.ctx(self.root), section, RE_META[section]))
-            jobs.append((self.tid("meta", section), "meta", section, user))
+            jobs.append((self.tid("meta", section), "meta", section, user,
+                         self.META_REQUIRED[section]))
         return jobs
 
     def t2_plots(self):
@@ -238,7 +261,7 @@ class Chain:
                 "big question with a thread; name rejected threads in reasoning. "
                 "Artifact: {\"plots\": [{...}]}"
                 % (self.ctx(self.root), self.ctx(self.meta), self.N))
-        return [(self.tid("plots", "all"), "plots", "all", user)]
+        return [(self.tid("plots", "all"), "plots", "all", user, ("plots",))]
 
     def t3_entities(self):
         jobs = []
@@ -251,7 +274,8 @@ class Chain:
                     "relationships. Invent no factual past beyond the layers "
                     "above. Artifact: {\"name\": ..., \"type\": ..., ...}"
                     % (self.ctx(self.meta), self.ctx(self.plots), extra, name))
-            jobs.append((self.tid("entity", "p%02d" % i), "entity", name, user))
+            jobs.append((self.tid("entity", "p%02d" % i), "entity", name, user,
+                         ("name",)))
         return jobs
 
     def _cast_names(self):
@@ -273,29 +297,35 @@ class Chain:
                 "\"synopsis\": {...}, \"jacket_copy\": ...}"
                 % (self.ctx(self.root), self.ctx(self.meta),
                    self.ctx(self.plots), self.ctx(self.entities)))
-        return [(self.tid("expose", "all"), "expose", "all", user)]
+        return [(self.tid("expose", "all"), "expose", "all", user,
+                 ("ending_first", "synopsis", "jacket_copy"))]
 
     def t5_skeletons(self):
         jobs = []
-        prev = []
+        known = list(self.skeletons)
         for i in range(self.N):
-            user = ("EXPOSE:\n%s\n\nPLOTS:\n%s\n\nENTITIES:\n%s\n\nSKELETONS SO "
-                    "FAR:\n%s\n\nDefine event skeleton #%d (at most %d events "
-                    "total): the ONE question it answers, its owner plot "
-                    "(exactly one), scene count 1-4, pivot sketch. Artifact: "
+            user = ("EXPOSE:\n%s\n\nPLOTS:\n%s\n\nENTITIES:\n%s\n\nSKELETONS "
+                    "ALREADY FIXED:\n%s\n\nSKELETONS SO FAR THIS RUN:\n%s\n\n"
+                    "Define event skeleton #%d (at most %d events total): the "
+                    "ONE question it answers, its owner plot (exactly one, by "
+                    "id), scene count 1-4, pivot sketch. GROUNDING RULE: use "
+                    "NO proper noun that is not in ENTITIES or PLOTS above -- "
+                    "no new names, places, or objects; the pivot is described "
+                    "through known entities only. Artifact: "
                     "{\"event_id\": \"ev-%03d\", \"question\": ..., "
                     "\"owner_plot\": ..., \"n_scenes\": ...}"
                     % (self.ctx(self.expose), self.ctx(self.plots),
-                       self.ctx(self.entities), self.ctx(prev, 2000),
+                       self.ctx(self.entities), self.ctx(known, 2000),
+                       self.ctx([{"event_id": "ev-%03d" % (k + 1)}
+                                 for k in range(i)], 500),
                        i + 1, self.N, i + 1))
             jobs.append((self.tid("skeleton", "ev-%03d" % (i + 1)),
-                         "skeleton", "ev-%03d" % (i + 1), user))
-            prev.append({"event_id": "ev-%03d" % (i + 1)})
+                         "skeleton", "ev-%03d" % (i + 1), user,
+                         ("event_id", "question", "owner_plot", "n_scenes")))
         return jobs
 
     def t6_chains(self):
         jobs = []
-        ev_ids = [s.get("event_id") for s in self.skeletons]
         for p in self.plots[:self.N]:
             pname = (p.get("plot_id") or p.get("name") or p.get("spine")
                      or "plot")
@@ -307,9 +337,7 @@ class Chain:
                     "\"why\": ...}]}"
                     % (self.ctx(p), self.ctx(self.skeletons), pname))
             jobs.append((self.tid("chain", str(pname)[:24]), "chain",
-                         str(pname)[:24], user))
-        void = [e for e in ev_ids]
-        _ = void
+                         str(pname)[:24], user, ("plot", "chain")))
         return jobs
 
     def t7_events(self):
@@ -327,7 +355,8 @@ class Chain:
                     % (self.ctx(s), self.ctx(prev, 2000), self.ctx(self.plots),
                        self.ctx(self.entities), REGISTERS))
             jobs.append((self.tid("event", s.get("event_id", "?")), "event",
-                         s.get("event_id", "?"), user))
+                         s.get("event_id", "?"), user,
+                         ("event_id", "summary", "state_triples")))
             prev = s
         return jobs
 
@@ -342,7 +371,8 @@ class Chain:
                     "shows/conceals per speaker), dramatic_function (its job, "
                     "and what it is NOT doing), uncertain[]. Artifact: the card."
                     % (self.ctx(ev, 3000), self.ctx(prev_cards, 3000), sid))
-            jobs.append((self.tid("card", sid), "card", sid, user))
+            jobs.append((self.tid("card", sid), "card", sid, user,
+                         ("scene_id", "summary", "what_changes")))
             prev_cards.append({"scene_id": sid})
         return jobs
 
@@ -369,7 +399,12 @@ class Chain:
             user = ("TREE ABOVE:\n%s\n\nTARGET CARD:\n%s\n\nNEIGHBOUR CARDS "
                     "(context only):\n%s\n\nBLIND RULE: you see NO other scene's "
                     "prose -- only cards. Decide what happens from the card, do "
-                    "not describe seen prose. Reason (craft: what this scene is "
+                    "not describe seen prose. CARD ADHERENCE (grounding): every "
+                    "person you name must be in the card's present list or the "
+                    "tree above; every object you use must be in the card or the "
+                    "tree above; every fact (who knows what, who is where, who "
+                    "is hurt) must match the card's entry states. You may invent "
+                    "WORDS, never FACTS. Reason (craft: what this scene is "
                     "for + rejected alternative; psychology per speaker: "
                     "perception, wants, theory of mind incl. where a model of "
                     "the other is WRONG, trajectory in phases with triggers; "
@@ -382,7 +417,8 @@ class Chain:
                        self.ctx(card, 3000),
                        self.ctx({"before": before, "after": after}, 4000)))
             sid = card.get("scene_id", "sc-%03d" % (i + 1))
-            jobs.append((self.tid("prose", sid), "prose", sid, user))
+            jobs.append((self.tid("prose", sid), "prose", sid, user,
+                         ("scene_id", "scene_text")))
         return jobs
 
     # -- driver --------------------------------------------------------
@@ -410,10 +446,10 @@ class Chain:
         else:
             jobs = []
         recs = []
-        for tid, st, part, user in jobs:
+        for tid, st, part, user, required in jobs:
             if tid in skip:
                 continue
-            rec = self.call(tid, user)
+            rec = self.call(tid, user, required_keys=required)
             rec.update({"step": st, "part": part})
             recs.append(rec)
             self._ingest(st, part, rec.get("artifact"))

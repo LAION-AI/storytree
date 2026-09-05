@@ -69,7 +69,12 @@ def main():
     check("run_step t2 without meta: no jobs, no calls", c.run_step("t2") == [])
     check("no calls happened", len(c.client.calls) == 0, str(len(c.client.calls)))
 
-    c2 = G.Chain("s", {"logline": "x"}, per_layer=2, client=FakeClient())
+    c2 = G.Chain("s", {"logline": "x"}, per_layer=2, client=FakeClient(script=[
+        "<reasoning>r1</reasoning>",
+        "<artifact>\n```json\n{\"big_questions\": [], \"central_dilemma\": {}}\n```\n</artifact>",
+        "<reasoning>r2</reasoning>",
+        "<artifact>\n```json\n{\"conflicts\": []}\n```\n</artifact>",
+    ]))
     recs = c2.run_step("t1")
     check("t1 runs 2 traces x 2 calls", len(recs) == 2 and len(c2.client.calls) == 4,
           str(len(c2.client.calls)))
@@ -159,6 +164,38 @@ def main():
     tids = [r["tid"] for r in recs4]
     check("t6 makes 2 chain calls", len(recs4) == 2, str(len(recs4)))
     check("t6 tids unique (HF name key)", len(set(tids)) == 2, str(tids))
+
+    print("\nrepair retry + grounding rules")
+    R_OK = "<reasoning>deliberation done</reasoning>"
+    A_BAD = "<artifact>\n```json\n{\"nope\": 1}\n```\n</artifact>"
+    A_GOOD = "<artifact>\n```json\n{\"event_id\": \"ev-001\", \"summary\": \"s\", \"state_triples\": []}\n```\n</artifact>"
+    fc5 = FakeClient(script=[R_OK, A_BAD, A_GOOD])
+    cc5 = G.Chain("s", {"logline": "x"}, client=fc5)
+    rec5 = cc5.call("tid-r", "CTX", required_keys=("event_id", "summary"))
+    check("repair: 3 calls total", len(fc5.calls) == 3, str(len(fc5.calls)))
+    check("repair: artifact recovered", rec5.get("artifact", {}).get("event_id") == "ev-001")
+    check("repair: no error recorded", "error" not in rec5, str(rec5.get("error")))
+    check("repair: usage notes repair", "repair" in rec5.get("usage", {}))
+    check("repair call names missing keys", "summary" in fc5.calls[2], fc5.calls[2][:120])
+
+    fc6 = FakeClient(script=[R_OK, A_BAD, A_BAD])
+    cc6 = G.Chain("s", {"logline": "x"}, client=fc6)
+    rec6 = cc6.call("tid-r2", "CTX", required_keys=("event_id",))
+    check("repair failed twice -> error kept, reasoning kept",
+          "error" in rec6 and rec6.get("reasoning") == "deliberation done",
+          str(rec6))
+
+    cc7 = G.Chain("s", {"logline": "x"}, per_layer=2,
+                  client=FakeClient(script=[GOOD]))
+    cc7.expose = {"ending_first": "x"}
+    t5jobs = cc7.t5_skeletons()
+    check("t5 has required keys", t5jobs[0][4] == ("event_id", "question", "owner_plot", "n_scenes"))
+    check("t5 grounding rule present", "NO proper noun" in t5jobs[0][3])
+    cc7.events = [{"event_id": "ev-001"}]
+    cc7.skeletons = [{"event_id": "ev-001", "n_scenes": 2}]
+    t9jobs = cc7.t9_prose()
+    check("t9 card adherence present", "CARD ADHERENCE" in t9jobs[0][3])
+    check("t9 has required keys", t9jobs[0][4] == ("scene_id", "scene_text"))
 
     print("\n%d passed, %d failed" % (len(PASS), len(FAIL)))
     return 1 if FAIL else 0
