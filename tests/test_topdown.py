@@ -205,6 +205,24 @@ def main():
           "error" in rec6 and rec6.get("reasoning") == "deliberation done",
           str(rec6))
 
+    print("\ntype gate in generator")
+    R_T = "<reasoning>" + "x" * 600 + "</reasoning>"
+    A_WRONGTYPE = ("<artifact>\n```json\n{\"event_id\": \"ev-001\", "
+                   "\"summary\": \"s\", \"state_triples\": {\"not\": \"a list\"}}\n```\n</artifact>")
+    A_RIGHT = ("<artifact>\n```json\n{\"event_id\": \"ev-001\", "
+               "\"summary\": \"s\", \"state_triples\": []}\n```\n</artifact>")
+    fc9 = FakeClient(script=[R_T, A_WRONGTYPE, A_RIGHT])
+    cc9 = G.Chain("s", {"logline": "x"}, client=fc9)
+    rec9 = cc9.call("tid-t", "CTX", required_keys=("event_id", "summary"),
+                    step="event", part="ev-001")
+    check("type error triggers repair (3 calls)", len(fc9.calls) == 3,
+          str(len(fc9.calls)))
+    check("type error repaired, no error", "error" not in rec9
+          and rec9.get("artifact", {}).get("state_triples") == [],
+          str(rec9.get("error")))
+    check("repair prompt names the type violation",
+          "state_triples" in fc9.calls[2], fc9.calls[2][:200])
+
     cc7 = G.Chain("s", {"logline": "x"}, per_layer=2,
                   client=FakeClient(script=[GOOD]))
     cc7.expose = {"ending_first": "x"}

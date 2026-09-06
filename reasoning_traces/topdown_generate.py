@@ -43,6 +43,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from topdown_pairs import _cut  # noqa: E402
 from zen_client import ZenClient, ZenError, is_quota_error  # noqa: E402
 
+try:
+    from session_validate import validate as schema_validate
+except ImportError:  # pragma: no cover - standalone use
+    def schema_validate(record):
+        return []
+
 SYS = ("You are a story architect working TOP-DOWN: from an abstract story "
        "root you derive ever more concrete layers. Commit late: open "
        "possibilities, do not close them. Never invent proper nouns the "
@@ -210,7 +216,7 @@ class Chain:
                 user, instructions=instructions, max_output_tokens=big)
             return text, usage, True
 
-    def call(self, tid, user, required_keys=()):
+    def call(self, tid, user, required_keys=(), step=None, part=None):
         """One trace: deliberate, then build. On unusable artifact, one
         repair call reusing the same deliberation (never a third)."""
         t0 = time.time()
@@ -243,31 +249,50 @@ class Chain:
                 usage = {"mode": "two-call", "calls": [u1, u2]}
             missing = [k for k in required_keys
                        if not isinstance(artifact, dict) or k not in artifact]
-            if missing:
+            type_errs = []
+            if isinstance(artifact, dict) and step is not None:
+                # Key AND type gate (session_validate.py): catches e.g.
+                # ending_first as {"ending": ...} instead of a plain string.
+                probe = {"tid": tid, "seed": self.seed, "step": step,
+                         "part": part, "reasoning": reasoning or "x" * 600,
+                         "artifact": artifact}
+                type_errs = [e for e in schema_validate(probe)
+                             if e.startswith("artifact")]
+            issues = (["missing: %s" % ", ".join(missing)] if missing else []) \
+                + type_errs[:4]
+            if issues:
                 r3, u3, esc3 = self._gen(
                     "DELIBERATION (decided, do not reopen):\n" + (reasoning or "") +
                     "\n\nCONTEXT:\n" + user +
-                    "\n\nYour artifact was unusable%s. Resend the COMPLETE "
-                    "artifact now: <artifact> with one ```json fenced block, "
-                    "nothing else." % (" (missing: %s)" % ", ".join(missing)
-                                       if isinstance(artifact, dict)
-                                       else " (not JSON at all)"),
+                    "\n\nYour artifact was unusable:\n- " + "\n- ".join(issues) +
+                    "\nResend the COMPLETE artifact now: <artifact> with one "
+                    "```json fenced block, nothing else. Respect the exact "
+                    "value types (string stays string, never wrap it in an "
+                    "object).",
                     ARTIFACT_SYS, self.max_tokens)
                 escalated |= esc3
                 _, artifact = _parse(r3)
                 usage["repair"] = u3
                 missing = [k for k in required_keys
                            if not isinstance(artifact, dict) or k not in artifact]
+                if isinstance(artifact, dict) and step is not None:
+                    probe["artifact"] = artifact
+                    type_errs = [e for e in schema_validate(probe)
+                                 if e.startswith("artifact")]
+                else:
+                    type_errs = []
             if escalated:
                 usage["budget_retry"] = True
             rec = {"tid": tid, "seed": self.seed, "reasoning": reasoning,
                    "artifact": artifact, "usage": usage,
                    "model": self.client.model, "gen_s": round(time.time() - t0, 1),
                    "prompt": user}
-            if not reasoning or artifact is None or missing:
-                rec["error"] = ("unparsable model output, repair failed"
-                                if artifact is None or missing
-                                else "unparsable model output")
+            if not reasoning or artifact is None or missing or type_errs:
+                rec["error"] = ("unparsable model output, repair failed: %s" %
+                                "; ".join((["missing: %s" % ", ".join(missing)]
+                                           if missing else []) + type_errs[:3])) \
+                    if artifact is None or missing or type_errs \
+                    else "unparsable model output"
             return rec
         except ZenError as e:
             rec = {"tid": tid, "seed": self.seed, "error": str(e)[:300],
@@ -497,13 +522,13 @@ class Chain:
         done_recs = {}
         if self.workers > 1 and step in self.PARALLEL_STEPS and len(pending) > 1:
             with ThreadPoolExecutor(max_workers=self.workers) as ex:
-                futs = {ex.submit(self.call, tid, user, required): i
+                futs = {ex.submit(self.call, tid, user, required, st, part): i
                         for i, tid, st, part, user, required in pending}
                 for fut in as_completed(futs):
                     done_recs[futs[fut]] = fut.result()
         else:
             for i, tid, st, part, user, required in pending:
-                done_recs[i] = self.call(tid, user, required)
+                done_recs[i] = self.call(tid, user, required, st, part)
         meta = {i: (st, part) for i, tid, st, part, user, required in pending}
         for i in sorted(done_recs):
             rec = done_recs[i]
