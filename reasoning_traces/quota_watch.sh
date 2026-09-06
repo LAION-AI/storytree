@@ -18,11 +18,15 @@ done
 HERE="$(cd "$(dirname "$0")/.." && pwd)"
 
 while true; do
+  # NOTE: probe with a generous budget and demand the actual answer text.
+  # A 64-token probe always returns status=incomplete under high reasoning
+  # effort, which looks like an error but means the quota is FINE.
   if python3 -c "
 import sys; sys.path.insert(0, '$HERE/reasoning_traces')
 from zen_client import ZenClient
 try:
-    t, u = ZenClient().generate('Reply with exactly: PONG', max_output_tokens=64)
+    t, u = ZenClient().generate('Reply with exactly: PONG', max_output_tokens=2048)
+    assert 'PONG' in t, 'no answer text: %r' % t[:100]
     print('quota back:', repr(t[:60]))
 except Exception as e:
     print('waiting:', str(e)[:120])
