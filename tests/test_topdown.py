@@ -28,6 +28,32 @@ GOOD = ("<reasoning>considered A, rejected B because C</reasoning>\n"
 BAD = "no tags here, just prose"
 
 
+def _art(obj):
+    return "<artifact>\n```json\n%s\n```\n</artifact>" % json.dumps(obj)
+
+
+# Schema-valid artifacts per T1 section (the type gate rejects anything else).
+VALID_ARTS = {
+    "themes": {"big_questions": ["q one here", "q two here", "q three here"],
+               "central_dilemma": {"statement": "a dilemma statement here",
+                                   "poles": ["pole one", "pole two"]}},
+    "external": {"conflicts": [{"parties": ["A", "B"], "over": "over this thing",
+                                "stakes": "these stakes here"}] * 3},
+    "internal": {"internal_conflicts": [
+        {"whose": "X", "torn_between": ["a one", "b two"], "anchored_in": "anchored here ok"},
+        {"whose": "Y", "torn_between": ["c three", "d four"], "anchored_in": "anchored here ok"}]},
+    "relationships": {"relationship_arcs": [
+        {"between": ["A", "B"], "start": "start state here", "turn": "turning point here",
+         "end": "end state here ok"},
+        {"between": ["C", "D"], "start": "start state here", "turn": "turning point here",
+         "end": "end state here ok"}]},
+    "perspectives": {"perspectives": [
+        {"holder": "H1", "stance": "stance one here"}, {"holder": "H2", "stance": "stance two here"},
+        {"holder": "H3", "stance": "stance three here"}]},
+}
+SECTIONS = ["themes", "external", "internal", "relationships", "perspectives"]
+
+
 class FakeClient:
     model = "fake"
 
@@ -89,12 +115,9 @@ def main():
     check("run_step t2 without meta: no jobs, no calls", c.run_step("t2") == [])
     check("no calls happened", len(c.client.calls) == 0, str(len(c.client.calls)))
 
-    c2 = G.Chain("s", {"logline": "x"}, per_layer=2, client=FakeClient(script=[
-        "<reasoning>r1</reasoning>",
-        "<artifact>\n```json\n{\"big_questions\": [], \"central_dilemma\": {}}\n```\n</artifact>",
-        "<reasoning>r2</reasoning>",
-        "<artifact>\n```json\n{\"conflicts\": []}\n```\n</artifact>",
-    ]))
+    c2 = G.Chain("s", {"logline": "x"}, per_layer=2, client=FakeClient(
+        script=["<reasoning>r1</reasoning>", "<reasoning>r2</reasoning>"],
+        artifacts=[_art(VALID_ARTS["themes"]), _art(VALID_ARTS["external"])]))
     recs = c2.run_step("t1")
     check("t1 runs 2 traces x 2 calls", len(recs) == 2 and len(c2.client.calls) == 4,
           str(len(c2.client.calls)))
@@ -166,29 +189,47 @@ def main():
 
     print("\nHF-shaped plots")
     PLOTS = {"plots": [
-        {"definition": {"summary": "Find it."}, "name": "search"},
-        {"definition": {"summary": "Hide it."}, "name": "hide"},
+        {"plot_id": "pl-01", "spine": "find the hidden thing",
+         "agent": "Ana", "goal": "the key", "resistance": "the locked door",
+         "stakes": "the house", "outcome": "found at dawn"},
+        {"plot_id": "pl-02", "spine": "hide the hidden thing",
+         "agent": "Ben", "goal": "silence", "resistance": "Ana herself",
+         "stakes": "their trust", "outcome": "exposed and lost"},
+        {"plot_id": "pl-03", "spine": "sell the hidden thing",
+         "agent": "Cyd", "goal": "money", "resistance": "the police",
+         "stakes": "freedom", "outcome": "caught running"},
     ]}
     A_PLOTS = "<artifact>\n```json\n%s\n```\n</artifact>" % json.dumps(PLOTS)
-    fc4 = FakeClient(script=["<reasoning>ok</reasoning>", A_PLOTS,
-                             "<reasoning>ok</reasoning>",
-                             "<artifact>\n```json\n{\"chain\": []}\n```\n</artifact>",
-                             "<reasoning>ok</reasoning>",
-                             "<artifact>\n```json\n{\"chain\": []}\n```\n</artifact>"])
+
+    def _chain(pname):
+        return ("<artifact>\n```json\n%s\n```\n</artifact>" % json.dumps(
+            {"plot": pname, "chain": [{"event_id": "ev-001",
+                                       "why": "it enables everything here"}]}))
+
+    fc4 = FakeClient(script=["<reasoning>ok</reasoning>"] * 5,
+                     artifacts=[A_PLOTS, _chain("pl-01"), _chain("pl-02"),
+                                _chain("pl-03"), _chain("lone")])
     cc4 = G.Chain("s", {"logline": "x"}, per_layer=5, client=fc4)
     cc4.meta = {"themes": {}}
     cc4.run_step("t2")
-    check("plots ingested", len(cc4.plots) == 2, str(len(cc4.plots)))
+    check("plots ingested", len(cc4.plots) == 3, str(len(cc4.plots)))
+    # name-fallback: a plot without plot_id still gets a unique chain tid
+    cc4.plots.append({"name": "lone", "spine": "a lone thread here",
+                      "agent": "Zed", "goal": "quiet", "resistance": "noise",
+                      "stakes": "sleep", "outcome": "dawn"})
     cc4.skeletons = [{"event_id": "ev-001"}, {"event_id": "ev-002"}]
     recs4 = cc4.run_step("t6")
     tids = [r["tid"] for r in recs4]
-    check("t6 makes 2 chain calls", len(recs4) == 2, str(len(recs4)))
-    check("t6 tids unique (HF name key)", len(set(tids)) == 2, str(tids))
+    check("t6 makes 4 chain calls", len(recs4) == 4, str(len(recs4)))
+    check("t6 tids unique (plot_id + name fallback)", len(set(tids)) == 4
+          and any("lone" in t for t in tids), str(tids))
 
     print("\nrepair retry + grounding rules")
     R_OK = "<reasoning>deliberation done</reasoning>"
     A_BAD = "<artifact>\n```json\n{\"nope\": 1}\n```\n</artifact>"
-    A_GOOD = "<artifact>\n```json\n{\"event_id\": \"ev-001\", \"summary\": \"s\", \"state_triples\": []}\n```\n</artifact>"
+    A_GOOD = ("<artifact>\n```json\n{\"event_id\": \"ev-001\", "
+              "\"summary\": \"a proper event summary here\", "
+              "\"state_triples\": []}\n```\n</artifact>")
     fc5 = FakeClient(script=[R_OK, A_BAD, A_GOOD])
     cc5 = G.Chain("s", {"logline": "x"}, client=fc5)
     rec5 = cc5.call("tid-r", "CTX", required_keys=("event_id", "summary"))
@@ -210,7 +251,8 @@ def main():
     A_WRONGTYPE = ("<artifact>\n```json\n{\"event_id\": \"ev-001\", "
                    "\"summary\": \"s\", \"state_triples\": {\"not\": \"a list\"}}\n```\n</artifact>")
     A_RIGHT = ("<artifact>\n```json\n{\"event_id\": \"ev-001\", "
-               "\"summary\": \"s\", \"state_triples\": []}\n```\n</artifact>")
+               "\"summary\": \"a proper event summary of sufficient length\", "
+               "\"state_triples\": []}\n```\n</artifact>")
     fc9 = FakeClient(script=[R_T, A_WRONGTYPE, A_RIGHT])
     cc9 = G.Chain("s", {"logline": "x"}, client=fc9)
     rec9 = cc9.call("tid-t", "CTX", required_keys=("event_id", "summary"),
@@ -236,16 +278,8 @@ def main():
     check("t9 has required keys", t9jobs[0][4] == ("scene_id", "scene_text"))
 
     print("\nparallel + budget escalation + retry-errors")
-    arts = {
-        "themes": {"big_questions": [], "central_dilemma": {}},
-        "external": {"conflicts": []},
-        "internal": {"internal_conflicts": []},
-        "relationships": {"relationship_arcs": []},
-        "perspectives": {"perspectives": []},
-    }
-    art_blocks = ["<artifact>\n```json\n%s\n```\n</artifact>" % json.dumps(a)
-                  for a in arts.values()]
-    fc7 = FakeClient(script=["<reasoning>r</reasoning>"], artifacts=art_blocks)
+    fc7 = FakeClient(script=["<reasoning>r</reasoning>"],
+                     artifacts=[_art(VALID_ARTS[s]) for s in SECTIONS])
     cc7p = G.Chain("s", {"logline": "x"}, per_layer=5, workers=3, client=fc7)
     recs7 = cc7p.run_step("t1")
     check("parallel t1: 5 traces", len(recs7) == 5, str(len(recs7)))
