@@ -42,7 +42,10 @@ def main():
             have.setdefault(r["seed"], set()).add(r["tid"])
 
     def has(seed, step, part):
-        return any(t.startswith("%s::topdown::%s::%s" % (seed, step, part))
+        # trailing whitespace is stripped: filenames cannot reliably hold it
+        # (see Miller chain repairs), so "x " and "x" are the same job.
+        want = ("%s::topdown::%s::%s" % (seed, step, part)).strip()
+        return any(t.strip().startswith(want)
                    for t in have.get(seed, set()))
 
     def plots_of(slug):
