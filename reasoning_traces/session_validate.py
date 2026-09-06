@@ -172,15 +172,17 @@ def main(argv=None):
 
     if args.merge and args.gen_dir:
         os.makedirs(args.gen_dir, exist_ok=True)
+        # Rebuild from parts (source of truth), dedup by tid. Parts hold one
+        # record per trace; (seed,step,part) dedup is WRONG here because the
+        # same entity name may legitimately cover several plots (p00-p03 all
+        # "Barry Egan") -- those are distinct traces with distinct tids.
+        by_seed = {}
         for r in clean:
-            out = os.path.join(args.gen_dir, r["seed"] + ".jsonl")
-            recs = [json.loads(l) for l in open(out)] if os.path.exists(out) else []
-            # dedup by (seed, step, part): tids were repaired over time, so
-            # tid-equality alone would keep stale copies next to fixed ones.
-            key = (r.get("seed"), r.get("step"), r.get("part"))
-            recs = [x for x in recs
-                    if (x.get("seed"), x.get("step"), x.get("part")) != key] + [r]
-            open(out, "w").write("\n".join(json.dumps(x, ensure_ascii=False) for x in recs) + "\n")
+            by_seed.setdefault(r["seed"], {})[r["tid"]] = r
+        for seed, recs in by_seed.items():
+            out = os.path.join(args.gen_dir, seed + ".jsonl")
+            ordered = sorted(recs.values(), key=lambda r: r.get("tid", ""))
+            open(out, "w").write("\n".join(json.dumps(x, ensure_ascii=False) for x in ordered) + "\n")
 
     print("clean: %d, rejects: %d" % (len(clean), len(rejects)))
     for f, errs in rejects:
