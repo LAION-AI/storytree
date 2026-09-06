@@ -16,6 +16,7 @@ import argparse
 import glob
 import json
 import os
+import re
 import sys
 
 STR = str
@@ -107,7 +108,7 @@ SCHEMAS = {
 }
 
 
-def validate(record):
+def validate(record, filename=None):
     """Return list of error strings (empty = clean)."""
     errs = []
     for k in ("tid", "seed", "step", "part", "reasoning", "artifact"):
@@ -115,6 +116,21 @@ def validate(record):
             errs.append("record: missing key '%s'" % k)
     if errs:
         return errs
+    # tid contract: <seed>::topdown::<step>::<tidpart>, where tidpart is the
+    # filename suffix. NOTE: for entity/chain records part carries the NAME
+    # while the tid carries the stable index (p00 / pl-01) -- same as the
+    # filename. A tid without the ::topdown:: infix (single underscores)
+    # is a schema violation, not a variant.
+    if filename:
+        base = os.path.basename(filename)
+        m = re.match(r"^(.+)__([a-z]+)__(.+)\.json$", base)
+        if m:
+            fseed, fstep, fpart = m.group(1), m.group(2), m.group(3)
+            exp = "%s::topdown::%s::%s" % (fseed, fstep, fpart)
+            if record.get("tid") != exp:
+                errs.append("tid: expected '%s', got '%s'" % (exp, record.get("tid")))
+            if record.get("seed") != fseed or record.get("step") != fstep:
+                errs.append("record: seed/step disagree with filename '%s'" % base)
     if not isinstance(record.get("reasoning"), str) or len(record["reasoning"]) < 500:
         errs.append("reasoning: expected string >= 500 chars, got %d" %
                     len(str(record.get("reasoning") or "")))
@@ -151,7 +167,7 @@ def main(argv=None):
         except Exception as e:
             rejects.append((f, ["unparsable JSON: %s" % str(e)[:120]]))
             continue
-        errs = validate(r)
+        errs = validate(r, filename=f)
         (clean if not errs else rejects).append((f, errs) if errs else r)
 
     if args.merge and args.gen_dir:
@@ -159,7 +175,11 @@ def main(argv=None):
         for r in clean:
             out = os.path.join(args.gen_dir, r["seed"] + ".jsonl")
             recs = [json.loads(l) for l in open(out)] if os.path.exists(out) else []
-            recs = [x for x in recs if x.get("tid") != r["tid"]] + [r]
+            # dedup by (seed, step, part): tids were repaired over time, so
+            # tid-equality alone would keep stale copies next to fixed ones.
+            key = (r.get("seed"), r.get("step"), r.get("part"))
+            recs = [x for x in recs
+                    if (x.get("seed"), x.get("step"), x.get("part")) != key] + [r]
             open(out, "w").write("\n".join(json.dumps(x, ensure_ascii=False) for x in recs) + "\n")
 
     print("clean: %d, rejects: %d" % (len(clean), len(rejects)))
