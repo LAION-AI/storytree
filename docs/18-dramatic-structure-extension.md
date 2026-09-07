@@ -23,6 +23,10 @@ The extension must describe the screenplay, not coerce it into a preferred
 template.  A classical three-act answer is one possible conclusion, never a
 default to be filled in without evidence.
 
+For the expanded controlled vocabulary, recognition criteria, Hero's-Journey
+maps, archetypal functions, and agent procedure, see the companion
+[Dramaturgy Cheat Sheet](19-dramaturgy-cheatsheet.md).
+
 ## Placement in the bottom-up pipeline
 
 Insert one new optional Meta substep after the existing `meta_section` and
