@@ -118,6 +118,52 @@ An event that merely repeats the same value, tactic, and consequence is not a
 turn.  A quiet scene can be a turn if knowledge, commitment, or relationship
 meaning changes.
 
+### The scene-turn ledger
+
+The most reliable input to macro analysis is a compact ledger of local changes.
+For every scene or event, state the *initial charged condition*, the pressure,
+the tactic, the outcome, and the *terminal charged condition*.  “They talk in a
+café” is a setting description; “a daughter tries to obtain forgiveness,
+conceals a fact, and leaves with the relationship changed from guarded contact
+to open rupture” is a dramatic unit.
+
+| Field | Question the agent should answer | Example of a useful value axis |
+| --- | --- | --- |
+| `focal_agent` | Whose immediate objective gives this unit its dramatic direction? | A detective, a couple, a family, an institution, or no single agent. |
+| `objective` | What does the focal agent want *in this unit*, not in the whole film? | Obtain access, prevent disclosure, win trust, escape, delay, expose. |
+| `opposition` | Who/what prevents the objective and by what method? | Rival, institutional rule, weather, contradictory desire, missing knowledge. |
+| `tactic_shift` | What changes when the first tactic fails? | Charm -> threat; concealment -> confession; flight -> cooperation. |
+| `entry_value` | What condition is initially positive/negative/unstable? | Trust, safety, status, freedom, knowledge, belonging, moral integrity. |
+| `exit_value` | What is materially different at the end? | Trust -> suspicion; safe -> exposed; ignorance -> knowledge. |
+| `cost_or_irreversibility` | What cannot simply be reset? | Evidence is released, a promise is made, a bridge is burned, a death occurs. |
+| `causal_outgoing_edge` | Which later choice or condition exists because of this one? | The failed negotiation makes the illegal plan necessary. |
+
+The ledger is a *derived analytic view*.  It must point to existing scene/event
+data and never replace it.  It makes “nothing happens” testable: a scene can
+be atmospheric, comic, or observational and still be valuable, but an agent
+should not call it a plot turn without a traceable change.
+
+### Value shifts are multi-dimensional
+
+Several values can turn at once, and the same event can be positive for one
+character and disastrous for another.  Record the affected perspective instead
+of flattening the event to “good” or “bad.”  Useful polarity families include:
+
+- **External condition:** life/death, safety/danger, freedom/confinement,
+  wealth/privation, order/chaos, success/failure.
+- **Interpersonal condition:** trust/betrayal, intimacy/distance,
+  belonging/exile, authority/subordination, loyalty/abandonment.
+- **Epistemic condition:** truth/lie, knowledge/ignorance, certainty/doubt,
+  recognition/misrecognition.
+- **Ethical condition:** justice/injustice, integrity/compromise,
+  responsibility/evasion, care/cruelty.
+- **Inner condition:** agency/helplessness, self-acceptance/shame,
+  hope/despair, coherence/fragmentation.
+
+Avoid treating a value map as a universal sentiment score.  A criminal gaining
+power may be a positive tactical change and a negative ethical one; the
+analysis should say which axis and whose perspective it means.
+
 ## 5. Exposition: what the audience must understand
 
 Exposition is **not the opening minutes** and not synonymous with backstory. It
@@ -154,6 +200,28 @@ For each entry record `claim`, `function`, `event_ids`, `scene_ids`,
 
 Do not flag “information delivered late” as a problem unless it prevents a
 coherent reading or violates a deliberate mystery/point-of-view design.
+
+### Modes of exposition and their dramatic effect
+
+Exposition is strongest when it also creates present-tense pressure.  The agent
+should identify *how* a fact reaches the audience, because delivery method
+changes function and may later explain a reveal.
+
+| Delivery mode | What it does well | Risk / distinction |
+| --- | --- | --- |
+| `dramatised_action` | Lets a rule, relationship, skill, or wound be inferred from conflict | Do not invent a rule merely because an action is visually striking. |
+| `goal_conflict` | Explains history while people pursue incompatible immediate aims | Often preferable to treating dialogue as “information dump.” |
+| `selective_dialogue` | Makes status, ideology, relationship, and necessary facts available efficiently | A character saying something does not prove it is true. |
+| `object_or_setting` | Encodes prior life through costume, space, document, ritual, technology, or damage | Record only if later action relies on the information. |
+| `demonstration` | Establishes genre rule by an instance of it | Distinguish a general rule from a one-off exception. |
+| `flashback_or_embedded_account` | Supplies prior causal information under a present trigger | Track speaker reliability and what the return changes. |
+| `voice_over_or_title_card` | Gives framing, time, attitude, or facts not otherwise dramatised | It may be ironic or partial, not neutral truth. |
+| `withholding` | Preserves mystery, surprise, or restricted perspective | Absence is intentional only when later form/evidence supports that reading. |
+
+The useful question is not “has the film explained enough?” but “what must the
+audience know *now* in order to understand the objective, the risk, the irony,
+or the coming change?”  A later reveal can be fair when the earlier work gives
+the audience meaningful questions and does not contradict established facts.
 
 ## 6. Structural anchors: controlled vocabulary
 
@@ -196,6 +264,24 @@ For a candidate anchor ask:
    surprises?  If not, consider `coincidence`, `deus_ex_machina`, or leave the
    interpretation open.
 
+### Anchor relationships and permissible overlap
+
+One event can legitimately perform several functions.  For example, a
+discovery can be both `recognition` and `midpoint`; a final confrontation can
+be `crisis`, `climax`, and `reversal`; a final image can be both `denouement`
+and `kiss_off`.  Do not create duplicate narrative facts.  Represent one
+anchored event with several `functions`, explaining each separately.
+
+Conversely, do not collapse distinct events merely because a beat-sheet would
+put them near each other.  The inciting disturbance (a problem enters the
+protagonist’s life) and the commitment (the protagonist chooses a costly
+response) are often separate.  The crisis (the final value-choice) and climax
+(the action that settles the question) are also often separate.
+
+An anchor is **global** only if it reorients the principal dramatic question or
+multiple major threads.  A local plot turn belongs in the Plot projection or a
+sequence rather than being inflated into a film-level `act_break`.
+
 ## 7. Act and macro-structure lenses
 
 Select at most one `primary_lens`; list credible alternatives.  Never report
@@ -230,6 +316,26 @@ Aristotelian analysis adds useful optional labels:
 - `catharsis` — a proposed audience effect (often pity/fear), therefore label
   as an interpretive effect, not an event fact.
 
+### Structural form by medium and seriality
+
+The same vocabulary can analyse a feature, episode, television season, play,
+or short, but the unit of resolution changes.  `screenplay_form` and
+`analysis_scope` must be set before interpreting a cliffhanger or climax.
+
+| Form | Common organising behaviour | What the Meta agent should record |
+| --- | --- | --- |
+| Short film | One concentrated situation/value shift; exposition may be compressed or deferred | Whether the ending reframes the setup; do not demand subplots or three full acts. |
+| Feature | One dominant question can hold several sequences and substantial aftermath | Main spine plus secondary threads; possible three-/five-act or other lens. |
+| Television episode | Teaser, act-outs, and a local episode question may coexist with a season arc | `episode_arc` versus `serial_arc`; mark act-out cliffhangers separately from final resolution. |
+| Pilot | Must establish repeatable engine as well as local story | `series_engine`, ensemble roles, future-question hooks; do not call all open threads defects. |
+| Season / serial | Multiple episode climaxes can lead to an arc climax | Scope anchors to season level and retain episode boundaries. |
+| Stage play | Entrances/exits, intervals, scenes, and five-act traditions may shape structure | Separate actual textual turn from externally imposed interval. |
+| Anthology | Each segment may have an independent core, joined by a theme/frame | Segment-level analyses plus the frame/binding principle. |
+
+For a serial work, do not use `unresolved_thread` when the text clearly
+defers resolution to a later episode/season.  Use `deferred_to_scope` and name
+the current scope instead.
+
 ## 8. Sequence analysis
 
 Use `sequences` only when there is a real intermediate unit.  A sequence entry
@@ -255,6 +361,28 @@ Useful sequence families include pursuit, investigation, courtship, training,
 trial, infiltration, escape, heist, journey, siege, negotiation, public
 performance, and homecoming.  These are descriptive labels, not genres.
 
+### Sequence escalation patterns
+
+An agent should state *how* a sequence rises rather than merely labelling it
+“more intense.”  Common patterns are:
+
+- `obstacle_ladder`: each attempt encounters a stronger or differently shaped
+  barrier;
+- `narrowing_options`: legal, safe, or relational alternatives disappear;
+- `expanding_scope`: private trouble affects family, institution, community,
+  or world;
+- `deepening_cost`: tactics begin to compromise a relationship, value, or
+  self-image;
+- `information_reversal`: the goal stays but its true conditions are revealed;
+- `time_compression`: a clock or pursuit makes delay progressively impossible;
+- `role_reversal`: pursuer becomes pursued, teacher becomes learner, dependent
+  becomes protector, or power changes hands;
+- `convergence`: independent threads begin to causally collide.
+
+The absence of a rising ladder is not automatically a weakness: a meditative,
+episodic, or anti-plot work may organize interest through contrast, recurrence,
+observation, or accumulating thematic resonance instead.
+
 ## 9. Dramatic engine: goals, conflict, stakes, escalation
 
 | Concept | Recognition | Meta field / question |
@@ -273,6 +401,49 @@ performance, and homecoming.  These are descriptive labels, not genres.
 Analyse conflict across `inner`, `interpersonal`, `institutional_or_social`,
 `environmental`, and `fate_or_chance` levels.  A complex story can turn several
 at once; do not assume external action is primary.
+
+### Agency, causality, and coincidence
+
+`protagonist_agency` describes the relation between a focal agent’s choice and
+the causal chain; it is not a moral score.  Use `high`, `mixed`, `low`, or
+`distributed` with evidence.
+
+- `high`: important later conditions are consequences of the character’s
+  choices under pressure.
+- `mixed`: external events create the problem, but consequential choices shape
+  response and ending.
+- `low`: events mainly happen to the focal character; this may be appropriate
+  to tragedy, social realism, horror, or an intentionally powerless viewpoint.
+- `distributed`: an ensemble, institution, group, or several protagonists share
+  causality; do not manufacture one “real” hero.
+
+Coincidence can credibly *create* a problem, especially in an inciting
+disturbance.  It is more structurally suspicious when it solves the central
+problem without earlier causal preparation.  The agent should document the
+causal chain, not apply this as a blanket prohibition.
+
+### Stakes map and escalation graph
+
+Where the evidence supports it, Meta can encode a compact cross-event map:
+
+```json
+{
+  "stakes_map": {
+    "focal_question": "Can the family remain together without accepting the lie?",
+    "layers": [
+      {"level": "personal", "at_risk": "self-respect", "event_ids": ["ev-014"]},
+      {"level": "interpersonal", "at_risk": "trust within the family", "event_ids": ["ev-019"]},
+      {"level": "social", "at_risk": "public standing", "event_ids": ["ev-027"]}
+    ],
+    "escalation_edges": [
+      {"from_event_id": "ev-014", "to_event_id": "ev-019", "change": "private concealment becomes relational betrayal"}
+    ]
+  }
+}
+```
+
+This is not a demand that every film have three escalating scales.  It is a
+way to explain visible escalation without hiding it in general prose.
 
 ## 10. Character and relationship arcs
 
@@ -306,6 +477,27 @@ foil, love story, mentor bond, family conflict, rivalry).  A B story often
 tests or expresses the theme through a relationship, but that is an analysis
 to prove, not a required slot.
 
+### Characterisation versus dramatic character
+
+Distinguish a character’s **characterisation** (occupation, costume, habit,
+biography, manner of speech) from their **dramatic character** (the choice they
+make when values conflict and consequences are real).  Both belong in the
+Entity layer; Meta uses them only to explain recurring pressure and change.
+
+For each focal character, an agent may ask:
+
+1. What does this person pursue when the story begins?
+2. What do they believe will protect or complete them?
+3. What contradiction, blind spot, duty, attachment, or value makes the goal
+   costly?
+4. Which events test that operating rule rather than merely inconvenience them?
+5. At the crisis, what choice is made between meaningful costs?
+6. What final action demonstrates continuity, revision, collapse, or an
+   unresolved relation to that rule?
+
+This produces an analytical arc without asserting authorial intention or
+medical/psychological fact.
+
 ## 11. Plot braid, subplots, convergence, and counterpoint
 
 The plot layer owns thread membership.  Meta should only describe the pattern:
@@ -328,6 +520,23 @@ For each substantial thread, record `onset_event_id`, `escalation_events`,
 `crossings_with_threads`, `anchor_coverage`, `discharge_event_id`, and
 `unresolved_status`.  A subplot is not defective merely because it ends open;
 report its relation to the central question.
+
+### Plot-thread function taxonomy
+
+In addition to A/B/C priority, classify what a thread *does* for the whole:
+
+| Thread function | How it supports the whole | Recognition test |
+| --- | --- | --- |
+| `causal_spine` | Carries the actions most directly answering the central question | Removing it collapses the principal chain. |
+| `thematic_counterpoint` | Tests the same value conflict through different people/outcome | Its ending changes the meaning of the A story. |
+| `relationship_mirror` | Makes an internal or social issue concrete in a bond | Turning events force intimacy, loyalty, separation, or repair. |
+| `pressure_source` | Supplies recurring opposition, deadline, institutional force, or consequence | It raises cost/constraint across other threads. |
+| `world_context` | Shows the wider system, history, or community affected by action | It changes interpretation or stakes rather than merely adding colour. |
+| `mystery_information` | Controls discovery and recontextualisation | It supplies questions/answers that alter choices. |
+| `relief_or_rhythm` | Varies tension, tone, and pace while retaining meaningful relation | It returns in a patterned way and affects the whole’s emotional shape. |
+
+“Comic relief” is not automatically disposable.  A comic thread can provide
+counterpoint, expose hierarchy, carry theme, or make later pathos legible.
 
 ## 12. Narration, time, point of view, and audience knowledge
 
@@ -355,6 +564,64 @@ report its relation to the central question.
   effect, not only its content.
 - `unreliable_account`: report only when the text supplies evidence of conflict
   between account and reality, not because the narrator is unlikeable.
+
+### Point of view, focalisation, and sympathy
+
+Record three distinct things:
+
+- **Narrative access:** whose perceptions, memories, and withheld information
+  shape what the audience can know?
+- **Dramatic focalisation:** through whose immediate objective and risk does a
+  sequence create pressure?
+- **Audience alignment:** with whom is the audience encouraged to spend time,
+  concern, or identification?
+
+They often overlap, but not always.  A film can focalise a villain’s plan while
+aligning sympathy elsewhere; an ensemble can distribute access and concern.
+Do not reduce point of view to camera presence or screen time alone.
+
+### Mystery, suspense, surprise: a practical test
+
+For every claimed information effect, make a small knowledge table:
+
+| Time | Audience knows | Focal character knows | Consequence anticipated |
+| --- | --- | --- | --- |
+| Before event | ... | ... | ... |
+| After disclosure | ... | ... | ... |
+
+If the audience knows a threat that the character does not and waits for them
+to encounter it, `dramatic_irony`/`suspense` may be supported.  If neither
+knows and both discover together, it is nearer `surprise`.  If the audience
+lacks an answer and pursues its solution over time, it is `mystery`.  These can
+coexist, but they should not be asserted as decorative labels.
+
+## 12a. Genre, tone, and the promise of premise
+
+Genre is an audience-facing contract about sources of interest and likely
+pressure, not a substitute for a plot.  A screenplay can be hybrid; list
+`primary`, `secondary`, and `confidence` rather than forcing a single shelf
+label.  Meta should record the observable **genre engine**—the recurring kind
+of question, obstacle, experience, or payoff promised by early events.
+
+| Genre engine | Typical dramatic question / evidence to seek | Structural caution |
+| --- | --- | --- |
+| Mystery / detective | What happened, who did it, why, and can truth be proved? Evidence is discovered, tested, reinterpreted. | A revelation must alter causality/meaning; do not call all delayed facts clues. |
+| Thriller | Can danger be identified, avoided, or overcome before time runs out? Threat, clock, and narrowing options recur. | “More danger” needs changing proximity/cost, not volume alone. |
+| Horror | Can characters survive/contact/understand a destabilising threat? Rules, violation, dread, and exposure are patterned. | Fear may be atmospheric; do not demand a heroic victory. |
+| Romance | Can a desired bond be formed, recognised, repaired, or ethically refused? Relationship turns carry primary stakes. | A partnership is not necessarily romance; identify mutual emotional contract. |
+| Comedy | Can a social/identity contradiction be exposed and reorganised? Misrecognition, escalation, reversal, and restoration may drive it. | Do not label any humorous scene “comic structure.” |
+| Tragedy | How does a choice, error, value conflict, or social force lead to irreversible loss? Reversal/recognition/catastrophe may concentrate. | A sad ending alone is not tragedy. |
+| Melodrama | How do moral/emotional stakes become legible through heightened relationships, sacrifice, and reversal? | Heightened expression is a style, not evidence of shallowness. |
+| Action / adventure | Can a goal be reached amid physical opposition, traversal, and escalating set-pieces? | Set-pieces require causal objective/outcome to be turns. |
+| Heist / caper | Can an operation be planned, assembled, executed, and survive complication? | The “plan” may be a false surface; record reversals of competence/loyalty. |
+| Coming-of-age | Can a young focal character revise identity, belonging, or responsibility? | Biological age is not enough; track an enacted transition. |
+| Social realism | How do institutions/material conditions shape agency and relationships? | Limited agency can be central form rather than deficient plotting. |
+| Musical | How do performance numbers externalise desire, conflict, fantasy, community, or transformation? | A number may advance state, reveal inner conflict, or pause action deliberately. |
+
+Tone (`comic`, `tragic`, `romantic`, `satirical`, `ironic`, `melancholic`,
+`suspenseful`, etc.) is a pattern of treatment and audience effect.  It is not
+proven by one joke, death, or dark image.  Record shifts when a tonal turn
+reframes the meaning of prior material.
 
 ## 13. Hero's Journey: two related but distinct maps
 
@@ -405,6 +672,31 @@ transformation, and return genuinely organise the work.  For every stage use
 Do not silently substitute a vaguely similar scene.  For example, a teacher may
 be a mentor in a relationship sense without the work having a Hero's Journey.
 
+### How to use the monomyth responsibly
+
+The Hero's Journey is most informative when it explains a *pattern of change*
+that ordinary act vocabulary misses: departure from a familiar order, repeated
+tests in a changed order, an ordeal/revelation, and a difficult integration of
+what was gained.  It is less useful for a procedural investigation, domestic
+ensemble, social panorama, static-character comedy, tragedy without return, or
+works built around collective rather than individual agency.
+
+The following distinctions prevent common false positives:
+
+| Do not equate | Why | Better question |
+| --- | --- | --- |
+| `inciting_incident` with `call_to_adventure` | A disturbance can happen without inviting a departure or quest. | Is a new path/world explicitly or functionally offered? |
+| `act_break` with `crossing_first_threshold` | A plot reorientation can occur inside the same social/world order. | Has return to the former mode become materially difficult or impossible? |
+| any hardship with `ordeal` | Trials can be preparatory and reversible. | Is this a central confrontation with death, identity, loss, or irreversible cost? |
+| any prize with `reward` / `boon` | A tactical win may not transform the journey. | Does the gain solve, expose, or reframe the core quest? |
+| final fight with `resurrection` | Spectacle alone does not demonstrate transformed action. | Does the final test require the character to act from changed understanding? |
+| an ending at home with `return_with_elixir` | Physical return need not integrate or share a transformed value. | What, if anything, is brought back into the original world? |
+
+For nonconforming work, store a short explanation such as: “Hero's-Journey
+lens not applicable: the ensemble has no singular departure-return arc; the
+organising form is parallel social counterpoint.”  This is more useful than a
+table full of forced `absent` stages.
+
 ## 14. Archetypal functions (not fixed character types)
 
 An archetype may be carried by several people, an institution, a temporary
@@ -432,6 +724,43 @@ critical lenses, not clinical facts and not required output.  Prefer the
 functional vocabulary above unless the text explicitly works at that symbolic
 level.
 
+### Role movement and character systems
+
+Archetypal function is time-dependent.  A seeming `mentor` can become a
+`shadow`; an apparent `threshold_guardian` can become an `ally`; a `trickster`
+can expose the rigidity of both hero and antagonist.  Record this as a role
+transition with the evidence that revises the audience/focal-character model:
+
+```json
+{
+  "function": "shapeshifter",
+  "carrier_entity_ids": ["ch-07"],
+  "role_shifts": [
+    {
+      "from": "ally",
+      "to": "antagonistic_force",
+      "anchor_id": "ds-05",
+      "basis": "The cited event reveals an incompatible goal and changes the protagonist's strategy."
+    }
+  ],
+  "status": "supported_inference"
+}
+```
+
+Character systems can also be analysed without archetypal language:
+
+- `foil`: makes a focal character’s value or strategy visible by contrast;
+- `double`: offers a parallel possible self/outcome, often more structurally
+  precise than “shadow”;
+- `confidant`: receives information that externalises an inner conflict;
+- `gatekeeper`: controls access to a resource, institution, or social world;
+- `witness`: observes, validates, misreads, or records a consequential action;
+- `chorus_or_community`: supplies a collective norm, commentary, or pressure;
+- `catalyst`: changes other characters while undergoing little change itself.
+
+These labels require proof of function over multiple events.  A character may
+have no named system role and still be dramatically essential.
+
 ## 15. Theme, premise, value, motif, setup, payoff, and irony
 
 | Concept | Meaning for analysis | Recognition / field |
@@ -454,6 +783,60 @@ level.
 | Poetic justice | Ending distributes consequence in a value-laden fitting way | Interpretive: do not confuse with legal justice. |
 | Deus ex machina | Resolution arrives from insufficiently prepared external intervention | Flag only when the intervention resolves a central conflict without causal preparation. |
 
+### Theme analysis: an evidentiary method
+
+Theme is not a one-word topic and not a moral lesson imposed on a film.  Start
+with repeated **value conflict**, not with an abstract noun.  For example,
+instead of reporting “theme: family,” identify a proposition or unresolved
+question such as “Does loyalty to family require complicity, or can care demand
+truth?”  Then test it against actions in different threads.
+
+1. List the values that turn repeatedly (for example, belonging versus
+   independence; truth versus protection; justice versus mercy).
+2. Identify the strongest proponents of competing positions and the costs each
+   position produces.
+3. Examine the crisis, climax, and denouement: what does the ending enact,
+   complicate, punish, reward, or leave unresolved?
+4. State a `controlling_idea` only when the causal ending pattern is clear;
+   otherwise keep an open `thematic_question` or competing readings.
+5. Cite cross-thread evidence.  One speech can articulate a theme but does not
+   prove the whole work adopts it.
+
+Useful output fields:
+
+```json
+{
+  "thematic_argument": {
+    "questions": ["..."],
+    "value_conflicts": [
+      {"positive": "truth", "negative_or_cost": "belonging", "event_ids": ["ev-...", "ev-..."]}
+    ],
+    "positions": [
+      {"carrier": "ch-01", "position": "...", "tested_by": ["ds-04", "ds-08"]}
+    ],
+    "ending_relation": "affirms|qualifies|ironises|refuses_to_resolve|ambiguous",
+    "status": "supported_inference"
+  }
+}
+```
+
+### Motif and image-pattern analysis
+
+Do not turn every repeated object into a symbol.  A motif becomes analytically
+useful when recurrence changes, contrasts, or accumulates meaning in relation
+to plot/character/value shifts.  Record:
+
+- `literal_function`: what the image/object/action is in the story world;
+- `occurrences`: ordered event/scene references, not a quotation collection;
+- `variation`: what changes in context, owner, state, or associated value;
+- `structural_function`: setup, callback, transition marker, memory trigger,
+  irony, or final image rhyme;
+- `interpretive_reading`: optional, confidence-labelled, grounded in pattern.
+
+An `image_rhyme` links opening and ending through a transformed or echoed image
+without requiring a literal repetition.  It can make the final state legible,
+but is not required for a coherent ending.
+
 ## 16. Endings and aftermath
 
 Describe the ending along several independent axes:
@@ -469,6 +852,29 @@ Describe the ending along several independent axes:
 
 An ending can be open while an emotional arc is complete; it can be closed in
 plot while morally unresolved.  Do not score closure as quality by itself.
+
+### Resolution, denouement, and kiss-off in more detail
+
+The **resolution** is the causal settling of a central question: an arrest,
+choice, separation, reconciliation, death, departure, public disclosure,
+acceptance, or refusal may do it.  The **denouement** lets consequences become
+legible: Who now knows what? Which relationship/state/world order remains?
+What costs have not vanished?  The **kiss-off** is a final concise gesture that
+may crystallise or complicate the meaning after the practical resolution.
+
+The three can be one event or substantially separated.  A serious analysis
+should state their relationship, for example:
+
+- “The climax resolves the external pursuit; the denouement shows that the
+  relationship cost remains; the final image ironises apparent victory.”
+- “No conventional denouement: the abrupt cut is a deliberate open-ending
+  gesture, leaving the central ethical question unresolved.”
+- “The post-climax revelation reclassifies the prior apparent resolution as a
+  false ending and creates a second, shorter causal movement.”
+
+Avoid calling the final chronological scene the climax simply because it is
+last.  Conversely, do not refuse a quiet final recognition as climax merely
+because there is no spectacle.
 
 ## 17. Additional useful diagnostics (never automatic verdicts)
 
@@ -487,6 +893,70 @@ bad.
 | `exposition_overload_risk` | Consecutive explanation delivers material without current conflict/choice; diagnose only from observable pacing/function. |
 | `perspective_gap` | A claimed audience-information effect is unsupported by narration order. |
 | `framework_overfit_risk` | Label selected mainly by expected position, not causal/function evidence. |
+
+### Quality dimensions for a dramatic-structure node
+
+Use this rubric to evaluate a generated `meta.dramatic_structure` node.  It is
+for evidence-based review, not a substitute for the existing StoryTree layer
+rubrics.
+
+| Dimension | A strong node | Common failure |
+| --- | --- | --- |
+| Grounding | Every major claim resolves to scenes/events and accurately describes their change | Elegant labels with no source references or references that do not support the claim. |
+| Causal reasoning | Turns explain altered objectives, tactics, stakes, knowledge, or outcomes | Beat-sheet positions are mistaken for causality. |
+| Lens fit | Selects the least-forcing form and names alternatives/ambiguity | Treats three acts or Hero's Journey as universal. |
+| Scope control | Distinguishes local sequence/plot turns from global anchors and current scope from serial deferral | Inflates every obstacle into a midpoint or treats season hooks as defects. |
+| Temporal accuracy | Keeps discourse and chronology distinct; represents frames/parallel stories | Sorts flashbacks as if they were present action. |
+| Character/relationship discipline | Identifies enacted choices and arc pressure without mind-reading | Diagnoses people, attributes unsupported motives, or calls every friend a mentor. |
+| Theme and imagery restraint | Derives patterns across events and permits ambiguity | Reduces theme to a topic or makes every prop a symbol. |
+| Usefulness | A later adapter or human can navigate the film, inspect claims, and compare alternatives | Verbose plot retelling or opaque theoretical jargon. |
+
+## 17a. Failure modes and repair policy
+
+The system should not silently “repair” a screenplay analysis by inventing a
+classical pattern.  When a required property cannot be established, preserve
+the uncertainty in JSON and emit a narrow diagnostic.
+
+| Failure mode | Why it happens | Correct repair |
+| --- | --- | --- |
+| Position anchoring | Model learns page-percentage heuristics | Re-run anchor reasoning from event value/strategy changes; retain position as only a secondary cue. |
+| Summary masquerading as analysis | Long text repeats events without relating them | Require `change`, `function`, and causal outgoing effect for every anchor. |
+| Single-hero bias | Framework priors ignore ensembles/institutions | Use `distributed` agency, thread-level focal agents, and ensemble/parallel lens. |
+| Over-psychologising | Model fills “need/wound/misbelief” fields speculatively | Require explicit enactment or repeated evidence; otherwise omit/mark ambiguous. |
+| Archetype overfit | Stock labels are easy to generate | Apply archetypal pass last and demand role evidence over time. |
+| False precision | Exact percentages/confidence simulate certainty | Use bounded confidence and uncertainty reasons; omit numerical precision unsupported by evidence. |
+| Chronology collapse | Events are sorted by disclosure despite flashbacks | Preserve `screen_position`, `story_position`, and separate timeline branches. |
+| Duplicate evidence | Same event is rewritten into every Meta field | Reference shared anchor IDs and offer short field-specific rationale only. |
+| Premature defect diagnosis | Atypical form is treated as bad structure | First identify lens, scope, genre engine, and intended information design. |
+
+## 17b. Minimal versus rich output
+
+The agent should choose the smallest valid representation.  A short,
+linear, tightly focused film may need only a core question, five anchors, two
+acts or a simple form label, an exposition note, and ending relation.  A long
+ensemble mystery may need multiple timelines, sequence clusters, a plot braid,
+information effects, several local climaxes, and alternatives.
+
+Minimum viable node:
+
+```json
+{
+  "analysis_scope": {"primary_lens": "three_act", "narration_mode": "linear"},
+  "dramatic_core": {"central_dramatic_question": "..."},
+  "anchors": [
+    {"kind": "inciting_incident", "event_ids": ["ev-..."], "change": "..."},
+    {"kind": "commitment", "event_ids": ["ev-..."], "change": "..."},
+    {"kind": "midpoint", "event_ids": ["ev-..."], "change": "..."},
+    {"kind": "crisis", "event_ids": ["ev-..."], "change": "..."},
+    {"kind": "climax", "event_ids": ["ev-..."], "change": "..."}
+  ],
+  "ending": {"central_question_result": "..."}
+}
+```
+
+Do not pad this minimum with `Hero's Journey`, motif, or diagnostics fields
+unless they add grounded explanatory value.  A rich node must remain an index
+into StoryTree, not become a second free-form screenplay summary.
 
 ## 18. Agent procedure
 
