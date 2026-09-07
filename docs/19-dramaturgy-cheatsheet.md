@@ -991,7 +991,371 @@ into StoryTree, not become a second free-form screenplay summary.
 - Does the ending analysis answer the actual dramatic question or document its
   deliberate reframing/open status?
 
-## 19. Source notes and scope
+## 19. Core conflict, pressure, and the constricted option-space
+
+This section adds a stricter causal vocabulary for the analysis of conflict and
+suspense.  It is compatible with the existing Event and Meta layers: every
+claim must be a derived pattern over goals, resistance, choices, state changes,
+and audience information—not a free-floating label.
+
+### The core conflict is not just the loudest conflict
+
+A screenplay can contain fights, arguments, romantic setbacks, institutional
+barriers, comic frictions, and subplots without all of them being the **core
+conflict**.  The core conflict is the collision whose outcome most directly
+settles, transforms, or deliberately leaves open the main dramatic question.
+It normally has a focal agent or distributed focal group, a continuing goal or
+value, a credible opposing force, and a chain of consequences that reaches the
+climax.
+
+| Question | Evidence required | Do not mistake it for |
+| --- | --- | --- |
+| What does the focal agent/group seek, preserve, escape, prove, expose, or become? | Repeated scene/event objectives and choices | A one-scene desire. |
+| What force, value, system, person, or self-conflict resists it? | Counteractions, constraints, incompatible aims, relation changes | A colourful minor obstacle. |
+| Why can it not be solved once and forgotten? | Binding constraint, escalating cost, clock, duty, dependency, consequence | Mere narrative delay. |
+| What development would collapse if this conflict vanished? | Downstream causal edges and the climax question | A local subplot that does not change the main line. |
+
+Use `core_conflicts` as an array, not a singular field, for ensemble and
+parallel work.  Each entry should say its scope (`global`, `thread`, `episode`,
+`relationship`, `institutional`) and relation to any central question.
+
+```json
+{
+  "core_conflicts": [
+    {
+      "id": "cc-01",
+      "scope": "global",
+      "focal_entity_ids": ["ch-01"],
+      "goal_or_value": "...",
+      "opposition": "...",
+      "binding_constraints": ["bc-01"],
+      "central_question": "...",
+      "escalation_event_ids": ["ev-...", "ev-..."],
+      "settlement_anchor_id": "ds-...",
+      "status": "supported_inference"
+    }
+  ]
+}
+```
+
+### Goal, obstacle, coercion, constraint, pressure, suspense
+
+These terms must remain distinct:
+
+| Term | Exact meaning | Strong recognition cue |
+| --- | --- | --- |
+| `goal_or_need` | A desired state, object, relation, action, identity, or value | A character repeatedly acts, sacrifices, or speaks to obtain/protect it. |
+| `obstacle` | Something makes a goal harder to reach | A resource, opponent, rule, environment, or knowledge gap blocks a tactic. |
+| `conflict` | Goals/values/courses of action are incompatible | Two active positions cannot both prevail without a change/loss. |
+| `coercion` | A power demands an unwanted action or choice | Sanction, threat, dependency, force, institutional order, blackmail. |
+| `reactance` | Resistance motivated by lost autonomy | After restriction, the focal agent also seeks to reclaim freedom/control. |
+| `constraint` | The future option-space becomes smaller | Time, injury, exposure, loss, promise, resource depletion, irreversible action. |
+| `action_pressure` | Deferral/inertia now has a real cost | The agent must choose, act, or accept an escalating loss. |
+| `suspense` | Anticipation of uncertain consequential outcomes | Audience can foresee more than one meaningful future and wants the answer. |
+
+An obstacle without a meaningful cost may be only friction.  A conflict without
+a constraint may be indefinitely postponable.  Coercion may cause no dramatic
+resistance if it happens to match the person's desire.  Suspense needs an
+open future; an outcome that is virtually certain can still be tragic or
+beautiful, but has less uncertainty-based tension.
+
+### Binding constraints / the crucible
+
+Use `binding_constraints` to explain why characters remain in a painful
+conflict rather than simply leaving.  Valid evidence can include love, kinship,
+care, work, debt, law, oath, shared mission, geography, physical confinement,
+reputation, dependency, a deadline, a prior act's consequence, or a social
+order.  A constraint must be situated in this screenplay, not a generic claim
+that “family is complicated.”
+
+```json
+{
+  "binding_constraints": [
+    {
+      "id": "bc-01",
+      "kind": "dependency",
+      "claim": "The focal character cannot abandon the conflict without exposing a dependent person to the stated harm.",
+      "event_ids": ["ev-..."],
+      "lost_options": ["leave_without_cost", "delay_decision"],
+      "pressure_effect": "The conflict must be answered now rather than deferred.",
+      "status": "observed"
+    }
+  ]
+}
+```
+
+### Escalation versus repetition
+
+For every major conflict run, ask whether each response changes the next
+available action.  Escalation can be external (risk, scale, proximity,
+opposition), interpersonal (trust, loyalty, status, intimacy), ethical (moral
+cost), epistemic (new knowledge changes strategy), or internal (a former
+self-protective rule becomes untenable).
+
+Flag `static_conflict_risk` only when repeated moves remain at the same value,
+tactic, leverage, and consequence.  Flag `unearned_escalation_risk` when a
+leap in intensity has no prior bridge of motive, action, or circumstance.  A
+ritual, farce, or intentionally oppressive repetition can be deliberate form;
+then describe the pattern and its effect instead of declaring a failure.
+
+## 20. Dilemmas, causal engines, and the Story Mind perspective map
+
+### High-stakes dilemma
+
+A genuine dilemma is more than “a difficult decision.”  It has two or more
+credible options, each tied to a meaningful value/goal, where selecting one
+destroys or seriously compromises the value attached to another.  The agent
+must explain why the decision cannot be delayed or solved by an already
+established painless third option.
+
+| Required property | Test |
+| --- | --- |
+| Competing legitimate claims | Could an intelligent, humane person credibly defend each path from the screenplay's perspective? |
+| Material loss | Does option A actually sacrifice the core benefit of B, and vice versa? |
+| Constraint | What deadline, coercion, dependency, prior action, power relation, or physical limit prevents postponement? |
+| Irreversible causality | Does the decision alter the state and force later events/aftermath? |
+| Embodiment | Are the competing values carried by real characters, relations, institutions, and actions—not only abstract dialogue? |
+
+```json
+{
+  "dilemmas": [
+    {
+      "id": "dl-01",
+      "scope": "global|thread|relationship",
+      "focal_entity_ids": ["ch-..."],
+      "option_a": {"value_or_goal": "...", "loss_if_chosen": "..."},
+      "option_b": {"value_or_goal": "...", "loss_if_chosen": "..."},
+      "constraint": "...",
+      "why_deferral_fails": "...",
+      "decision_anchor_id": "ds-...",
+      "consequence_event_ids": ["ev-..."],
+      "status": "observed|supported_inference"
+    }
+  ]
+}
+```
+
+### Core inequity: “is” versus pressured “should”
+
+An optional `core_inequity` states the gap that a film repeatedly pressures:
+the actual situation and the required/desirable/feared alternative.  It is not
+an assertion of objective morality and must preserve competing viewpoints.
+
+```json
+{
+  "core_inequity": {
+    "actual_condition": "...",
+    "pressured_ideal_or_need": "...",
+    "value_conflict": ["...", "..."],
+    "focal_scopes": ["individual", "relationship", "institution"],
+    "event_ids": ["ev-..."],
+    "status": "supported_inference"
+  }
+}
+```
+
+Examples of *forms* of question include order/chaos, autonomy/obligation,
+justice/mercy, truth/protection, belonging/independence, care/self-preservation,
+and dignity/collective survival.  Always restate them in screenplay-specific
+language; never reduce a culturally situated story to a generic label alone.
+
+### Optional causal-engine patterns
+
+The following labels help explain a whole pattern only when multiple causal
+links support it:
+
+- `value_domino`: a value-led choice creates collateral cost, requiring a
+  harder version of the same or revised value in the next step;
+- `stress_test`: escalating conditions test whether an ideology, strategy,
+  relationship, or system can survive;
+- `fractal_echo`: one conflict is echoed at individual, relationship, and
+  societal scales, with meaningful structural linkage;
+- `inversion_helix`: one figure's method transforms another, whose later
+  changed stance forces the first to confront their original belief.
+
+Do not infer an engine from repeated vocabulary alone.  The output must name
+the events that form each causal edge.
+
+### Dramatica-inspired four perspectives: optional and partial by design
+
+This is an analytical lens, not a required StoryTree layer.  It can clarify a
+work that examines one problem through several views:
+
+| Perspective | Practical question | Candidate sources |
+| --- | --- | --- |
+| Objective Story (`they`) | What shared-system conflict/action affects the world of the story? | Events, plots, institutions, ensemble state. |
+| Main Character (`I`) | What subjective pressure, blind spot, commitment, or coping pattern does a focal agent live through? | Entity arc, scene minds, choices under pressure. |
+| Impact Character (`you`) | Who/what persistently embodies an alternative approach that challenges the focal agent? | Repeated contrast and relationship turns. |
+| Relationship Story (`we`) | How does the bond between focal and impact forces change independently of their external task? | Shared events, relation state, mutual decisions. |
+
+Use a `perspective_map` only when it adds explanatory value.  An ensemble may
+have several focal pairs; a procedural may have no Impact Character; a film can
+be `partial`, `weak`, or `not_applicable`.  Domains such as `situation`,
+`activity`, `fixed_mind`, and `manipulation` are broad problem lenses and must
+not be treated as psychological diagnoses.
+
+## 21. Premise, character pressure, audience engagement, and contract
+
+### Premise / controlling proposition
+
+A premise is an optional causal compression of what the story demonstrates
+about a character/value under its core conflict.  A useful form is:
+
+```text
+character trait, commitment, or value + tested conflict -> enacted consequence
+```
+
+It is neither a plot summary, genre label, author biography, nor compulsory
+moral.  A work with unresolved or plural viewpoints may support only a
+`thematic_question` or `thematic_constellation`, and ensemble work may have
+multiple thread-level propositions.
+
+When a proposition is emitted, validate it in this order:
+
+1. infer a candidate from climax plus aftermath;
+2. locate earlier events that make the causal chain probable;
+3. test whether major threads support, complicate, or contradict it;
+4. state the ending relation (`affirms`, `qualifies`, `ironises`, `refuses`,
+   `ambiguous`) rather than overclaiming consensus.
+
+### Character pressure profile
+
+An entity profile describes a person; a Meta pressure profile explains what
+makes their choices dramatically consequential.
+
+```json
+{
+  "character_pressure_profiles": [
+    {
+      "entity_id": "ch-...",
+      "enduring_drive": "...",
+      "active_goal_shifts": [
+        {"anchor_id": "ds-...", "from": "...", "to": "...", "trigger": "...", "cost": "..."}
+      ],
+      "capabilities_and_limits": ["..."],
+      "inner_value_conflicts": ["..."],
+      "decisive_choice_anchor_id": "ds-...",
+      "agency": "high|mixed|low|distributed",
+      "status": "supported_inference"
+    }
+  ]
+}
+```
+
+An enduring drive may differ from the active goal of a particular scene; goal
+shifts become meaningful when a trigger and price are visible.  “Maximum
+capacity” is a continuity test: if a result relies on ignoring an established
+ability/resource, record a narrowly evidenced question.  Do not mistake low
+agency under oppression, tragedy, or systemic realism for automatically weak
+construction.
+
+### Sympathy, identification, empathy, and immersion
+
+These are optional audience-effect hypotheses:
+
+| Effect | Meaning | Evidence to capture |
+| --- | --- | --- |
+| `sympathy` | Concern for vulnerability, suffering, humiliation, loss, danger, isolation, or unfairness | Situation/predicament and its treatment. |
+| `identification` | Desire that a character achieve a goal | Clear goal, understandable stake, value code, repair project, or relation. |
+| `empathy` | Imaginative sharing of a felt subjective state | Embodied, sensory, relational, and viewpoint-specific presentation. |
+| `transport` | Sustained absorption in the story world | Coherent detail, tone, access, emotion, and causal continuity. |
+
+They must not be declared universal responses.  A morally compromised character
+can still attract sympathy/identification through vulnerability, a code,
+competence, care, repair, or a shared value conflict.  Conversely, deliberate
+distance can be a valid aesthetic strategy.
+
+### Audience contract and information fairness
+
+Genre, tone, point of view, narrator reliability, and strong setup questions
+make an implicit audience contract.  Store observable patterns, not market
+assumptions:
+
+- `genre_engine`: recurring kind of question, obstacle, experience, and
+  anticipated payoff;
+- `tone_register`: a sustained treatment pattern and any prepared shift;
+- `reliability_contract`: reliable, restricted, unreliability signalled,
+  contested, or unknown;
+- `promise_payoff_links`: introduced expectation -> later answer/reframe;
+- `information_fairness`: whether revelation revises prior evidence without
+  contradicting it arbitrarily.
+
+An unreliable account works as a form when its unreliability is part of the
+established information design.  A mystery can withhold an answer; it should
+not erase the significance of the evidence already offered without a prepared
+recontextualisation.
+
+## 22. Meta-layer build order and validation
+
+### Recommended bottom-up pass order
+
+1. Read ordered events and their before/after states; create a compact change
+   ledger.
+2. Extract active goals, resistance, options, constraints, and action pressure
+   per focal thread.
+3. Mark candidate core conflicts, core inequities, dilemmas, and suspense
+   questions with event/scene references.
+4. Identify escalation edges, local sequence peaks, global anchors, and the
+   least-forcing macro lens.
+5. Derive character pressure profiles, plot braid roles, audience-information
+   patterns, theme/premise candidates, and ending relation.
+6. Apply optional Story Mind perspectives, Hero's Journey, and archetypal
+   functions only after the grounded core is complete.
+7. Validate references, chronology, scope, duplicates, causal support, and
+   uncertainty before emitting JSON.
+
+### Cross-layer division of labour
+
+| Need | Source / owner | Meta action |
+| --- | --- | --- |
+| Local scene objective, tactic, embodied pressure | Scene facts / minds | Cite; do not overwrite. |
+| Causal unit and state change | Event | Use as primary anchor evidence. |
+| State, desire, relation, capability | Entity | Derive pressure/arc only with evidence. |
+| Thread membership/spine | Plot | Describe braid, function, convergence, and discharge. |
+| World/theme perspectives | Existing Meta | Refine core inequity/perspective map. |
+| Condensed story account | Exposé / root | Consume structural projection downstream. |
+
+### Added validation invariants
+
+- A `core_conflict` must cite at least two development events or explicitly be
+  marked local/early/unfinished.
+- A `binding_constraint` must state which option is lost or why delay fails.
+- A `dilemma` must name a loss for each path; otherwise downgrade it to an
+  `obstacle` or `decision`.
+- An `escalation_edge` must identify a changed cost, tactic, information,
+  power, scope, time, or irreversibility.
+- A `suspense_question` must specify audience knowledge and at least two
+  relevant possible outcomes, unless it is `dread` with an anticipated but
+  unpreventable outcome.
+- A `premise_proposition` must be tested against climax and aftermath; use a
+  question when the ending does not support a conclusion.
+- A `perspective_map` must be allowed to be partial/not applicable; never fill
+  empty Dramatica slots.
+- Every interpretation should retain status, confidence, alternatives where
+  relevant, and references resolving to lower layers.
+
+## 23. Top-down use without contaminating bottom-up analysis
+
+The same concepts are useful to a generation/planning pipeline, but planned
+intent must never be confused with observed structure.
+
+```text
+brief/root/exposé
+  -> optional dramatic intent
+  -> optional pressure, dilemma, and causal-engine plan
+  -> plots/events/scenes
+  -> bottom-up observed dramatic-structure analysis
+  -> plan-versus-observation comparison
+```
+
+Top-down `dramatic_intent` may propose a central question, value conflict,
+desired pressure progression, possible dilemma, thread roles, genre promise,
+and desired ending relation.  Each must be `soft`, revisable, and clearly
+versioned as *planned*.  After generation, the bottom-up layer reports only
+what events/scenes support.  Drift may be valuable creative discovery rather
+than an error; record it before deciding whether to revise the plan or tree.
+
+## 24. Source notes and scope
 
 This cheat sheet synthesises traditional poetics, screenwriting vocabulary, and
 the reviewed `screenwriting-skills` collection.  The latter explicitly combines
@@ -1000,6 +1364,13 @@ conflict, premise/theme work, Chekhov, and Ozu; its skill texts are useful
 craft guidance, not a universal ontology.  The Hero's-Journey material
 distinguishes Campbell's comparative 17-stage monomyth from Vogler's practical
 12-stage adaptation.
+
+The current extension additionally distils James N. Frey's *How to Write a
+Damn Good Novel* volumes I and II, an internal `Architecture of the Story Mind`
+reference, and an internal text on conflict, coercion, action pressure, and
+suspense.  Their prescriptive writing advice has been converted here into
+optional evidence tests; it does not override StoryTree's bottom-up provenance
+or force a particular dramatic tradition on a screenplay.
 
 Useful public starting points:
 
