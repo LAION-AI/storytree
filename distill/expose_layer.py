@@ -53,6 +53,10 @@ def main() -> int:
     ap.add_argument("--out", required=True)
     ap.add_argument("--ports", default="8110,8111")
     ap.add_argument("--model", default="ornith-1.5-397b")
+    ap.add_argument("--drama", default="",
+                    help="optional drama_structure.json; when given, its "
+                         "digest joins the layer context (opt-in, see "
+                         "docs/20-drama-structure-layer.md)")
     a = ap.parse_args()
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
     root = json.loads(Path(a.root).read_text(encoding="utf-8"))
@@ -71,6 +75,13 @@ def main() -> int:
                [{k: e.get(k) for k in ("name", "role", "appearance",
                   "skills", "background")} for e in ents],
                ensure_ascii=False)[:12000])
+    if a.drama and Path(a.drama).is_file():
+        import drama_structure_layer as dl
+        ctx += ("\nDRAMA STRUCTURE LAYER (lens, anchors, acts, ending -- "
+                "use it to pace the synopsis and honour the actual ending "
+                "type; do not contradict it):\n"
+                + dl.drama_digest(json.loads(
+                    Path(a.drama).read_text(encoding="utf-8"))))
     prompt = ("Write the EXPOSE of this story in three parts. (1) "
               "ending_first: tell how it ends, plainly. (2) synopsis: five "
               "to ten numbered sections (keys s01, s02, ...) that retell "
@@ -82,7 +93,28 @@ def main() -> int:
               "and let the human-experience questions surface through what "
               "happens rather than as statements. (3) jacket_copy: back-"
               "cover text that sells the book without spoiling the ending. "
-              "Everything must agree with the layers below; invent nothing."
+              "Everything must agree with the layers below; invent nothing. "
+              "PROSE STYLE FOR FLUENCY (applies to synopsis and "
+              "ending_first): vary sentence length naturally, mostly "
+              "10-25 words, the way a skilled novelist paces a paragraph "
+              "-- NOT uniform short bursts. Avoid BOTH failure modes: (a) "
+              "long hypotactic sentences that stack several events, names "
+              "or parentheticals with commas until the reader must re-read "
+              "them, and (b) monotonous staccato -- a run of clipped "
+              "subject-verb-object sentences back to back ('He packs. He "
+              "rides. He buys.') reads as a robotic list, not prose. "
+              "Instead connect two or three closely related beats with a "
+              "single light conjunction (and, but, so, when) into one "
+              "smooth sentence, then let the next sentence breathe on its "
+              "own -- normal narrative rhythm, not a checklist. When "
+              "several things happen, spread them across a few such "
+              "sentences rather than packing them into one dense sentence "
+              "or chopping them into isolated fragments. Avoid comma-"
+              "separated lists of proper nouns or places; if multiple "
+              "entities or locations matter, introduce them one at a time "
+              "across sentences, each carrying its own brief context. A "
+              "reader must never have to re-read a sentence to parse it, "
+              "and must never feel like they are reading a bullet list."
               + ctx)
     expose = json.loads(pool.call(ml.SYSTEM, prompt,
                                   schema=EXPOSE_SCHEMA).text)

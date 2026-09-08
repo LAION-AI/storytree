@@ -416,8 +416,67 @@ def plot_specs(slug):
         }
 
 
+# ---------------------------------------------------------------- drama
+def drama_specs(slug):
+    """4 specs per film, one per generative pass of the drama layer.
+
+    Mirrors distill/drama_structure_layer.py: every pass saw the condensed
+    dramaturgy cheat sheet plus the event digest, later passes additionally
+    saw the earlier passes' results. Absent for trees built before the layer
+    existed -- the builder then simply yields nothing.
+    """
+    import drama_structure_layer as dl
+    drama = _load(TREES / slug / "drama" / "drama_structure.json")
+    meta = _load(TREES / slug / "meta" / "meta.json")
+    events = (_load(TREES / slug / "events" / "events.json", {}) or {}).get("events", [])
+    if not drama or not events or not drama.get("anchors"):
+        return
+    digest = ml.build_digest(events)
+    cheat = dl.CHEATSHEET_PATH.read_text(encoding="utf-8")
+    base = ("DRAMATURGY REFERENCE (working rules and vocabulary):\n"
+            f"{cheat}\n\n")
+    tail = f"\n\nTHE EVENT LAYER OF THE STORY (in screen order):\n{digest[:55000]}"
+    scope = _j(drama.get("analysis_scope") or {})
+    anchors_view = _j([{k: x.get(k) for k in
+                        ("id", "kind", "event_ids", "screen_position",
+                         "change")} for x in drama["anchors"]])
+
+    parts = {
+        "mode": (
+            dl.PROMPTS["mode"],
+            base + ("THE META LAYER (condensed):\n"
+                    + dl.meta_condensed(meta or {})) + tail,
+            {k: drama.get(k) for k in
+             ("analysis_scope", "dramatic_core", "exposition")}),
+        "anchors": (
+            dl.PROMPTS["anchors"],
+            base + f"THE STRUCTURAL MODE ALREADY DETERMINED:\n{scope}" + tail,
+            {"anchors": drama["anchors"]}),
+        "acts": (
+            dl.PROMPTS["acts"],
+            base + (f"THE STRUCTURAL MODE:\n{scope}\n\n"
+                    f"THE ANCHORS (in screen order):\n{anchors_view}") + tail,
+            {"acts": drama.get("acts"), "sequences": drama.get("sequences")}),
+        "patterns_ending": (
+            dl.PROMPTS["patterns_ending"],
+            base + f"THE ANCHORS (in screen order):\n{anchors_view}" + tail,
+            {k: drama.get(k) for k in
+             ("hero_journey", "ending", "diagnostics")}),
+    }
+    for part, (task, context, target) in parts.items():
+        if part == "acts" and not drama.get("acts"):
+            continue
+        if part == "patterns_ending" and not drama.get("ending"):
+            continue
+        yield {
+            "tid": f"{slug}::drama_structure::{part}",
+            "slug": slug, "layer": "drama_structure", "part": part,
+            "task": task, "context": context, "target": target,
+        }
+
+
 BUILDERS = [scene_specs, event_specs, meta_specs, entity_specs,
-            root_specs, expose_specs, plot_specs]
+            root_specs, expose_specs, plot_specs, drama_specs]
 
 
 def all_specs(slugs):

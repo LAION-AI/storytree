@@ -135,6 +135,10 @@ def main() -> int:
     ap.add_argument("--out", required=True)
     ap.add_argument("--ports", default="8110,8111")
     ap.add_argument("--model", default="ornith-1.5-397b")
+    ap.add_argument("--drama", default="",
+                    help="optional drama_structure.json; when given, its "
+                         "digest joins the layer context (opt-in, see "
+                         "docs/20-drama-structure-layer.md)")
     a = ap.parse_args()
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
     script = Path(a.script).read_text(encoding="utf-8")
@@ -148,6 +152,13 @@ def main() -> int:
                                               else ents.get("entities", []))]
     layers_ctx = ("META LAYER:\n" + json.dumps(meta, ensure_ascii=False)[:30000]
                   + "\nENTITY ROSTER:\n" + json.dumps(ent_names))
+    if a.drama and Path(a.drama).is_file():
+        import drama_structure_layer as dl
+        layers_ctx += ("\nDRAMA STRUCTURE LAYER (lens, anchors, acts -- "
+                       "anchors reference event ids; use it for the "
+                       "dramatic_structure field, do not contradict it):\n"
+                       + dl.drama_digest(json.loads(
+                           Path(a.drama).read_text(encoding="utf-8"))))
 
     # Phase 1: map spine facts per script chunk.
     chunks = [script[i:i + 45000] for i in range(0, len(script), 45000)]

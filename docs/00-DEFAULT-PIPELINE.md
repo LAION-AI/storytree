@@ -12,9 +12,14 @@ Reverse direction (screenplay → tree), which is what this repo runs:
 
 ```
 screenplay text
-  → scene layer → event layer → meta layer → entity layer
-  → plot layer → exposé → story root
+  → scene layer → event layer → meta layer (→ drama structure layer)
+  → entity layer → plot layer → exposé → story root
 ```
+
+The **drama structure layer** (lens, anchors, acts, Hero's-Journey statuses,
+ending axes) runs right after meta in `tools/build_tree.sh`; feeding it into
+plots/root/exposé is opt-in (`DRAMA_TO_UPPER=1`) until panel-measured — see
+`docs/20-drama-structure-layer.md`.
 
 ### Two extensions of this pipeline
 

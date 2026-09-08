@@ -1,5 +1,13 @@
 # 18 — Dramatic-Structure Extension
 
+> **Implementation note (2026-09).** This proposal has been implemented, with
+> one deliberate change: the analysis lives in a **separate drama structure
+> layer** (`<tree>/drama/drama_structure.json`, generator
+> `distill/drama_structure_layer.py`), not as a `meta.dramatic_structure`
+> subtree. Rationale and the as-built design:
+> [20 — The Drama Structure Layer](20-drama-structure-layer.md). The schema
+> ideas, evaluation rubric and phase plan below otherwise still apply.
+
 ## Purpose
 
 StoryTree already reconstructs a screenplay bottom-up:

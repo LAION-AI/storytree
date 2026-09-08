@@ -34,7 +34,16 @@ RUBRIC = (
     "nothing padded, nothing missing. "
     "P4 Arc completeness - setup, turns and resolution across the span; "
     "nothing dangling. "
-    "P5 Non-redundancy - plots must not rehash one another. "
+    "P5 Non-redundancy - a plot rehashes another only when it retells the "
+    "SAME events with the SAME framing and stance. When several plots "
+    "converge on a shared structural event (a climax, revelation or "
+    "turning point that genuinely affects multiple perspectives), that "
+    "overlap is NOT a defect by itself and must not be marked down as "
+    "rehash -- judge whether EACH plot's account of the shared event is "
+    "grounded in its own distinct stance and stakes; only penalise P5 when "
+    "two plots frame the SAME event the SAME way, or when a plot's chain "
+    "is largely a retelling of another plot's chain rather than its own "
+    "throughline. "
     "Integers 1-5, hard marking as usual.")
 DIMS = ["P1", "P2", "P3", "P4", "P5"]
 
@@ -46,9 +55,21 @@ def main() -> int:
     ap.add_argument("--out", required=True)
     ap.add_argument("--ports", default="8110,8111")
     ap.add_argument("--model", default="ornith-1.5-397b")
+    ap.add_argument("--drama", default="",
+                    help="optional drama_structure.json; when given, its "
+                         "digest is added to the composer context (opt-in, "
+                         "see docs/20-drama-structure-layer.md)")
     a = ap.parse_args()
 
     ml = _load("_ml", str(Path(__file__).resolve().parent / "meta_layer.py"))
+    drama_ctx = ""
+    if a.drama and Path(a.drama).is_file():
+        dl = _load("_dl", str(Path(__file__).resolve().parent
+                              / "drama_structure_layer.py"))
+        drama_ctx = (" THE DRAMA STRUCTURE LAYER (lens, anchors, acts -- "
+                     "anchors reference event ids): "
+                     + dl.drama_digest(json.loads(
+                         Path(a.drama).read_text(encoding="utf-8"))))
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     meta = json.loads(Path(a.meta).read_text(encoding="utf-8"))
@@ -90,7 +111,7 @@ def main() -> int:
         "events: each event conditions the next INSIDE the plot. Cover the "
         "classic perspectives where the material supports them. Summarise "
         "each plot in about three sentences. CENTRAL DILEMMA: " + dilemma +
-        " BIG QUESTIONS: " + questions +
+        " BIG QUESTIONS: " + questions + drama_ctx +
         " THE EVENT LAYER: " + digest[:60000])
     plots = json.loads(pool.call(ml.SYSTEM, prompt_a,
                                  schema=def_schema).text)["plots"]
@@ -129,18 +150,31 @@ def main() -> int:
                 "- SELF-CONTAINED CAUSALITY: each event must be caused or "
                 "enabled by the PREVIOUS event in THIS chain. Do not lean on "
                 "something another plot supplies; if a cause is absent, add "
-                "the missing event so causal gaps close inside this plot.")
+                "the missing event so causal gaps close inside this plot.\n"
+                "- SHARED PEAKS ARE FINE: if this plot's arc turns on a "
+                "structural event other plots will also cite (a climax, "
+                "revelation or turning point), include it -- do not skip it "
+                "to look distinct. Frame it in THIS plot's own stance and "
+                "stakes; that distinct framing is what makes it non-"
+                "redundant, not the absence of the event.")
         else:
             mode_txt = (
                 "The previous attempt at this plot's chain was judged weak: "
-                "it duplicated events, leaned on events over-used by other "
-                "plots, or was too thin. Rebuild the chain from scratch:\n"
+                "it duplicated events, was too thin, or read as a retelling "
+                "of another plot rather than its own throughline. Rebuild "
+                "the chain from scratch:\n"
                 "- PERSPECTIVE DISCIPLINE: only events that tip THIS plot's "
                 "stance and its specific carrier.\n"
                 "- MEMBERSHIP: drop filler, keep only CORE transformations "
                 "that set up, turn and resolve this plot's arc.\n"
-                "- NON-REDUNDANCY: avoid recycling this plot's load-bearing "
-                "peaks from every other plot.\n"
+                "- CONVERGENCE, NOT AVOIDANCE: if this plot's arc genuinely "
+                "turns on a structural event other plots also cite (a "
+                "climax, revelation or turning point), KEEP it -- do not "
+                "drop or dodge it to look distinct. Instead, ground it "
+                "explicitly in THIS plot's own stance: state what the event "
+                "means for THIS plot's stakes and carrier, in terms another "
+                "plot's account would not use. Redundancy is about "
+                "identical framing, not shared event IDs.\n"
                 "- SELF-CONTAINED: each entry caused by the previous entry "
                 "in THIS chain.")
         return (
@@ -189,6 +223,22 @@ def main() -> int:
                         "chain": chain}
         print(name + ": {} events, faults {}".format(len(chain), bad[:2]),
               flush=True)
+
+    # Hard-fail instead of silently completing with a thin/empty plot layer.
+    # Root cause of a real production bug (found 27.08.-28.08. mass run):
+    # run_parallel swallows per-plot exceptions (transient 502s from a
+    # burned exit pool), so under sustained pool collapse EVERY chain_for()
+    # call can fail and `chains` ends up {} -- yet nothing downstream
+    # noticed, so the tree "completed" with an empty plots.json (mean 1,
+    # vacuous FAIL) instead of retrying once the pool recovered. Raise here
+    # so the outer pool_worker.sh retry loop (up to MAX_TRIES, with
+    # backoff) gets a real chance against a healthier pool, matching how a
+    # judge-call failure already aborts this script.
+    if len(chains) < max(1, (len(plots) + 1) // 2):
+        raise RuntimeError(
+            "plot layer research mostly failed ({} / {} plots got a chain) "
+            "-- refusing to write a thin/empty plot layer; let the caller "
+            "retry".format(len(chains), len(plots)))
 
     # --- Repair round for STRUCTURAL violations only (real faults).
     # IMPORTANT (per judging diagnostics): the cross-plot overlap -- events

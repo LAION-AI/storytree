@@ -130,6 +130,7 @@ toward scenes, because there are many scenes and only one root:
 | `entity_profile` | character/object profiled | ~6 |
 | `meta_section` | meta section (themes, external, internal, relationships) | 4 |
 | `plot_chain` | plot | ~4 |
+| `drama_structure` | generative pass of the drama layer (mode, anchors, acts, patterns_ending) — only for trees that have `drama/` ([docs/20](../docs/20-drama-structure-layer.md)) | 4 |
 | `plot_identify` | film | 1 |
 | `meta_perspectives` | film | 1 |
 | `root` | film | 1 |

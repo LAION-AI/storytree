@@ -12,6 +12,7 @@ are.
 | **run the pipeline that is in production today** | [`docs/00-DEFAULT-PIPELINE.md`](docs/00-DEFAULT-PIPELINE.md) — the normative recipe: which script, which model, which order |
 | see the layer generators and their prompts | [`distill/`](distill/) |
 | **generate chain-of-thought reasoning traces** from built trees, for fine-tuning a smaller model | [`reasoning_traces/`](reasoning_traces/) |
+| analyse **dramatic structure** (lens, anchors, acts, Hero's Journey, ending) as its own layer | [`docs/20-drama-structure-layer.md`](docs/20-drama-structure-layer.md), cheat sheet in [`docs/19`](docs/19-dramaturgy-cheatsheet.md) |
 | extend this from single films to **whole TV seasons** | [`series-season-storytree-pipeline`](https://github.com/LAION-AI/series-season-storytree-pipeline) — separate repo, currently private |
 | know what was measured, and what failed | [`docs/EXPERIMENT-LOG.md`](docs/EXPERIMENT-LOG.md), [`docs/07-quality-evaluation.md`](docs/07-quality-evaluation.md) |
 
