@@ -122,6 +122,36 @@ def test_drama_digest_is_compact_and_navigational():
     assert out["ending"]["plot_closure"] == "closed"
 
 
+def test_plan_view_strips_everything_top_down_cannot_know():
+    d = _drama([{"start_boundary": "START", "end_boundary": "ds-01",
+                 "label": "setup", "dramatic_question": "q?",
+                 "state_delta": "x", "confidence": "high"}])
+    d["analysis_scope"]["primary_lens"] = "three_act"
+    d["dramatic_core"] = {"central_dramatic_question": "who pays?"}
+    d["exposition"] = {"initial_world": "w",
+                       "established": [{"function": "want", "claim": "c",
+                                        "evidence": [{"event_id": "ev-001",
+                                                      "scene_id": "sc-001",
+                                                      "grounding": "g"}]}],
+                       "closes_or_reframes_event_id": "ev-002"}
+    d["ending"] = {"plot_closure": "closed"}
+    plan = dl.plan_view(d)
+    blob = json.dumps(plan)
+    # No pointer into material that does not exist at planning time.
+    assert "ev-001" not in blob and "sc-001" not in blob
+    assert "ev-002" not in blob
+    assert "evidence" not in blob
+    assert plan["version"] == "plan-1.0"
+    # ...but the decisions themselves survive, including act boundaries,
+    # which reference anchor ids and stay valid inside the plan.
+    assert plan["anchors"][0]["kind"] == "inciting_incident"
+    assert plan["anchors"][0]["intended_position"] is not None
+    assert plan["acts"][0]["start_boundary"] == "START"
+    assert plan["acts"][0]["end_boundary"] == "ds-01"
+    assert plan["exposition"]["establishes"][0]["claim"] == "c"
+    assert plan["ending"]["plot_closure"] == "closed"
+
+
 def test_meta_condensed_keeps_only_the_needed_slice():
     meta = {"themes": {"central_dilemma": {"name": "duty vs love"},
                        "big_questions": [{"question": "what is owed?",

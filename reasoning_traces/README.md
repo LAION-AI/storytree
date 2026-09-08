@@ -131,10 +131,27 @@ toward scenes, because there are many scenes and only one root:
 | `meta_section` | meta section (themes, external, internal, relationships) | 4 |
 | `plot_chain` | plot | ~4 |
 | `drama_structure` | generative pass of the drama layer (mode, anchors, acts, patterns_ending) — only for trees that have `drama/` ([docs/20](../docs/20-drama-structure-layer.md)) | 4 |
+| `drama_plan` | the **top-down** direction: root + plots + meta → the structural plan, with every reference to not-yet-existing events stripped | 1 |
 | `plot_identify` | film | 1 |
 | `meta_perspectives` | film | 1 |
 | `root` | film | 1 |
 | `expose` | film | 1 |
+
+### One trace type runs the other way: `drama_plan`
+
+Every other layer here reconstructs how an analyst read a finished film.
+`drama_plan` reconstructs how a *planner* would decide the structure in the
+forward direction, seeing only what the top-down path has at that point —
+the story root, the plot outlines and the meta layer, never events or
+scenes, which do not exist yet when the structure is chosen.
+
+Its target is `plan_view()` of the observed structure: the same decisions
+with every pointer into not-yet-existing material removed. That is a
+synthesised supervision signal and the README says so plainly — a structure
+derived bottom-up, presented as the plan a planner could have committed to.
+It is the same hindsight logic as everything else here, applied to the other
+direction, and it is what the top-down pilot's step `t2b` is trained to
+produce.
 
 ### Bottom-up, with one deliberate exception
 
@@ -188,8 +205,13 @@ export STORYTREE_TREES=/path/to/trees
 export SCREENPLAY_KU_SRC=/path/to/project-alexandria/screenplay/src
 export TRACE_OUT=/path/to/output
 
+# Model endpoints. The OpenCode Zen free tier that the original 91k-trace
+# run used is closed to external clients since 2026-09-08; the working route
+# is a local shim fleet in front of a paid GLM-5.3 endpoint (same model):
+bash ../tools/serve_hyprlab.sh 8300 3
+
 # One-off batch over trees that already exist
-python3 trace_run.py --ports 8100,8101,8102 --workers 40
+python3 trace_run.py --ports 8300,8301,8302 --workers 40
 
 # ...or run continuously alongside the pipeline
 python3 cot_follower.py --ports 8110,8111 --workers 15

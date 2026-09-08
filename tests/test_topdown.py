@@ -342,6 +342,60 @@ def main():
         check("quota: run_step raises QuotaExhausted", True)
         check("quota: carries tids", len(q.tids) >= 1)
 
+    # -- t2b: the planned dramatic structure ---------------------------
+    print("\ndrama structure plan (t2b)")
+    cd = G.Chain("s", {"logline": "x"}, per_layer=2, client=FakeClient())
+    check("t2b without meta/plots: no jobs, no calls",
+          cd.run_step("t2b") == [] and len(cd.client.calls) == 0)
+    check("t2b sits between plots and entities in STEPS",
+          G.Chain.STEPS.index("t2b") == G.Chain.STEPS.index("t2") + 1
+          and G.Chain.STEPS.index("t2b") < G.Chain.STEPS.index("t3"))
+
+    DRAMA_ART = {
+        "analysis_scope": {"primary_lens": "three_act",
+                           "narration_mode": "linear",
+                           "why_this_lens": "two reorientations",
+                           "alternatives": []},
+        "dramatic_core": {"central_dramatic_question": "does he choose?"},
+        "exposition": {"initial_world": "w", "establishes": []},
+        "anchors": [{"id": "ds-01", "kind": "inciting_incident",
+                     "intended_change": "the offer arrives",
+                     "why_this_function": "it demands a response",
+                     "intended_position": 0.12}],
+        "acts": [{"label": "setup", "start_boundary": "START",
+                  "end_boundary": "ds-01", "dramatic_question": "q?",
+                  "state_delta": "d"}],
+        "hero_journey": {"applicability": "partial", "why": "-", "stages": []},
+        "ending": {"plot_closure": "closed"},
+    }
+    cd2 = G.Chain("s", {"logline": "x"}, per_layer=2, client=FakeClient(
+        script=["<reasoning>weighed episodic, rejected it</reasoning>"],
+        artifacts=[_art(DRAMA_ART)]))
+    cd2.meta = {"themes": VALID_ARTS["themes"]}
+    cd2.plots = [{"name": "p1", "agent": "A"}]
+    recs_d = cd2.run_step("t2b")
+    check("t2b produces one trace", len(recs_d) == 1, str(len(recs_d)))
+    check("t2b artifact ingested into .drama",
+          (cd2.drama or {}).get("anchors", [{}])[0].get("id") == "ds-01",
+          str(cd2.drama))
+    prompt = cd2.client.calls[-1] if cd2.client.calls else ""
+    ptxt = prompt if isinstance(prompt, str) else str(prompt)
+    check("t2b prompt carries the dramaturgy cheat sheet",
+          "FUNCTION BEATS PERCENTILE" in ptxt.upper()
+          or "least-forcing" in ptxt)
+    check("t2b prompt forbids event ids (none exist yet)",
+          "NO event ids" in ptxt or "no event ids" in ptxt.lower())
+
+    # the exposé must now see the plan
+    cd2.entities = [{"name": "A"}]
+    jobs = cd2.t4_expose()
+    check("t4 expose context includes the structure plan",
+          "DRAMATIC STRUCTURE PLAN" in jobs[0][3])
+    cd3 = G.Chain("s", {"logline": "x"}, per_layer=2, client=FakeClient())
+    cd3.meta, cd3.plots, cd3.entities = {"a": 1}, [{"name": "p"}], [{"name": "A"}]
+    check("t4 expose unchanged when no plan was built",
+          "DRAMATIC STRUCTURE PLAN" not in cd3.t4_expose()[0][3])
+
     print("\n%d passed, %d failed" % (len(PASS), len(FAIL)))
     return 1 if FAIL else 0
 

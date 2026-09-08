@@ -1,11 +1,11 @@
 # 20 — The Drama Structure Layer
 
-**Status: implemented and offline-tested** (7 tests over the deterministic
-parts, module imports, spec-builder integration). The first live end-to-end
-run is pending: at the time of writing every Muse/Zen egress path is down
-(0/1085 pool candidates healthy). Nothing else blocks it — the stage is
-wired into `build_tree.sh`, so the next tree built after the pool recovers
-gets a drama layer automatically.
+**Status: implemented in both directions and offline-tested.** 8 offline
+tests cover the deterministic parts (screen positions, anchor ordering, the
+audit, `plan_view`); 8 more cover the top-down step `t2b` and its hand-off
+to the exposé; all 69 top-down tests pass, as do the 22 pair tests. The
+live route is `tools/serve_hyprlab.sh` → GLM-5.3 (§8a.4); the first live
+build is running against The Matrix and its results land in §12.
 
 This document explains, in plain language, what the
 drama structure layer is, why it is its own layer rather than a rewrite of
@@ -203,31 +203,127 @@ hindsight traces work). Additions:
 
 ## 8. Where it sits — top-down
 
-The forward path gets the same layer as a *plan*, per the user-chosen order:
-first the skeleton, then both analysis layers, then the prose-facing exposé
-written with both in mind:
+The forward path gets the same layer as a *plan*, in the order the pipeline
+can actually support:
 
 ```
-brief → story root → plot outlines
-      → meta layer (planned)
-      → DRAMA STRUCTURE LAYER (planned: intended lens, intended anchors)
-      → exposé          ← written WITH meta + drama structure in context
-      → entities → events → scenes → prose
+brief → story root → meta layer (t1) → plot outlines (t2)
+      → DRAMA STRUCTURE PLAN (t2b)   ← intended lens, intended anchors
+      → entities (t3)
+      → exposé (t4)                  ← written WITH meta + drama plan
+      → event skeletons → chains → events → scene cards → prose
 ```
 
-Two rules keep this honest (both from doc 18 §Top-down counterpart):
+This is implemented in `reasoning_traces/topdown_generate.py` as step
+**`t2b`** (`Chain.t2b_drama`), sitting between plots and entities. The
+placement is forced by availability, not preference: the plan needs the
+root, the meta layer and the plot outlines, all of which exist after `t2`,
+and the exposé is the first consumer that benefits from knowing the intended
+shape. `t4_expose` now receives the plan and is told to pace the synopsis
+along its acts and land its ending. When no plan was built, the exposé
+prompt is byte-identical to before, so old runs stay comparable.
 
-1. The planned layer uses the **same schema** as the observed one — planned
-   anchors instead of found anchors. Downstream generation may deviate from
-   the plan only by recording the deviation.
-2. After a forward tree is generated, the normal **bottom-up analyzer runs
-   over the result** and the observed structure is compared with the plan.
-   Structural drift becomes measurable instead of anecdotal.
+### The schema cannot simply be reused — and why
 
-The top-down pilot (`reasoning_traces/topdown_generate.py`, doc 16) does not
-yet include this step; its insertion point is after the root/plots stages and
-before exposé generation. That wiring is the next top-down work item, not
-part of this change.
+Doc 18 proposed that the plan "uses the same schema with planned rather than
+observed anchors". Taken literally that does not work: in the observed
+schema every anchor references `event_ids` from a closed enum, and **at
+planning time no events exist** — they are only invented at `t7`, five steps
+later. An anchor in the forward direction is an intention ("a commitment
+that closes off retreat"), not a pointer.
+
+The resolution is a plan-shaped variant, produced by
+`drama_structure_layer.plan_view()`:
+
+| observed | plan |
+|---|---|
+| `anchors[].event_ids` (enum of real events) | *dropped* |
+| `anchors[].change` | `intended_change` |
+| `screen_position` (computed from event order) | `intended_position` (a target the planner states) |
+| `evidence[]` with event/scene ids | *dropped* |
+| `exposition.closes_or_reframes_event_id` | *dropped* |
+| act boundaries by anchor id | unchanged — plan-internal, still valid |
+| lens, acts, Hero's-Journey statuses, ending axes | unchanged |
+| `version: "1.0"` | `version: "plan-1.0"` |
+
+The version string is how any downstream tool tells an intention from an
+observation.
+
+### Measuring structural drift
+
+The point of planning the structure is to find out afterwards whether the
+generated story actually has it. After a forward run:
+
+1. build the tree bottom-up from the generated scenes, up to the drama
+   layer, giving an **observed** structure with real event references;
+2. match planned anchors to observed ones by kind and order;
+3. report, per anchor: found / missing / found-but-displaced (planned
+   position vs. observed `screen_position`), plus observed anchors the plan
+   never asked for.
+
+Step 3 is the same shape as `tools/compare_root_vs_drama.py`, which already
+does this matching between the root's turning points and the drama layer's
+anchors. Generalising that comparator to plan-vs-observed is the remaining
+piece; the two artifacts it needs both exist now.
+
+## 8a. Does the design hold up? Four things worth knowing
+
+These came out of actually wiring both directions and building the layer on
+a real film. They are recorded here rather than smoothed over.
+
+**1. The overlap with `root.dramatic_structure` is real, and the direction
+resolves it.** The story root has always emitted its own
+`dramatic_structure` — an act count plus a handful of turning points, each
+with a free-text `where` naming event and scene ids. That is the same
+subject the new layer covers, in less detail and with no controlled
+vocabulary. The two can disagree, and by default they are built
+independently, so nothing stops them.
+
+- *Bottom-up*: the drama layer is built **before** root, so with
+  `DRAMA_TO_UPPER=1` root receives it and is told to fill its
+  `dramatic_structure` from the analysis and not contradict it. The flag is
+  therefore not only an experiment — it is also the consistency mechanism.
+  With the flag off, `tools/compare_root_vs_drama.py` measures how far apart
+  the two drifted.
+- *Top-down*: the dependency reverses. Root is decided first and legitimately
+  constrains the plan, which is why `t2b`'s context includes the root.
+
+Neither direction is wrong, but the artifact means different things in each,
+which is what the `version` field records.
+
+**2. Anchors are grounded in events, and only loosely in scenes.** The
+analyst sees the event digest, which lists each event's scene ids but not
+what happens in those scenes. So when it writes an evidence pointer
+`(ev-012, sc-041)` it can pick a *member* scene of the right event but has
+no basis for choosing *which* member. The audit enforces membership, not
+aptness — a wrong-but-member scene id passes.
+
+This is inherited from the meta layer, which has exactly the same shape, so
+the drama layer is no worse than its sibling. It is still a real weakness.
+The fix is affordable: a one-line-per-scene index (id, location, ~110-char
+summary) for The Matrix is 29.4k characters against the event digest's
+29.7k, taking the prompt from ~11k to ~17k tokens. That is a change to the
+layer's inputs and therefore needs a measured comparison before it becomes
+the default — it is the obvious next experiment, not an oversight.
+
+**3. Passes can outgrow an 8k output budget.** On The Matrix (47 events, 224
+scenes) the `mode` pass twice produced exactly 8,000 completion tokens —
+`finish_reason=length`, which `EndpointPool` rejects outright rather than
+accepting a truncated artifact. Each truncation burns a full retry
+(~100 seconds). The layer now asks for 16k, unlike the 8k the other layers
+use, because its per-item rationales are long.
+
+**4. The free model route is gone; the layer is model-agnostic anyway.** As
+of 2026-09-08 the OpenCode Zen free tier refuses every non-OpenCode client
+(`MissingSessionID`: *"OpenCode's free tier can only be used in OpenCode"*),
+which is what the whole VPN/proxy exit pool existed to work around — the
+pool now reports 0/1084 healthy for that reason, not because of IP metering.
+`tools/hyprlab_shim.py` + `tools/serve_hyprlab.sh` provide the same local
+`EndpointPool` interface against a paid OpenAI-compatible endpoint serving
+**GLM-5.3 — the same model Muse 1.2 was**, so model identity is preserved
+and only the route changed. That upstream intermittently answers valid
+requests with a 400 that resolves on retry, so the shim retries transient
+codes itself instead of burning the pool's attempts.
 
 ## 9. Novels, series, exotic forms
 
@@ -274,6 +370,12 @@ and once per season arc.
 | `docs/18-dramatic-structure-extension.md` | original proposal: schema rationale, label plan, rubric |
 | `tools/build_tree.sh` | runs the stage after meta; `DRAMA_TO_UPPER=1` feeds it upward |
 | `distill/plot_layer.py` / `root_layer.py` / `expose_layer.py` | accept optional `--drama` context |
-| `reasoning_traces/trace_specs.py` (`drama_specs`) | 4 hindsight-trace specs per film |
-| `tests/test_drama_structure.py` | offline tests of the deterministic parts |
+| `reasoning_traces/trace_specs.py` (`drama_specs`) | 4 hindsight-trace specs per film, bottom-up |
+| `reasoning_traces/trace_specs.py` (`drama_plan_specs`) | 1 spec per film for the top-down (planning) direction |
+| `reasoning_traces/topdown_generate.py` (`t2b_drama`) | the top-down generator step; feeds `t4_expose` |
+| `tools/compare_root_vs_drama.py` | cross-layer consistency: root turning points vs. drama anchors |
+| `tools/hyprlab_shim.py`, `tools/serve_hyprlab.sh` | local `EndpointPool`-compatible route to GLM-5.3 (see §8a.4) |
+| `tools/build_explorer_data.py`, `webapp/storytree-explorer.html` | the explorer's drama zone: anchor timeline, acts, Hero's-Journey table, ending axes |
+| `tests/test_drama_structure.py` | offline tests of the deterministic parts, incl. `plan_view` |
+| `tests/test_topdown.py` | offline tests of the `t2b` step and the exposé hand-off |
 | `<tree>/drama/drama_structure.json` | the artifact |

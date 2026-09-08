@@ -406,6 +406,61 @@ def meta_condensed(meta: Dict[str, Any]) -> str:
     return json.dumps(keep, ensure_ascii=False, indent=1)
 
 
+def plan_view(drama: Dict[str, Any]) -> Dict[str, Any]:
+    """Convert an OBSERVED structure into a PLAN-shaped one.
+
+    The top-down path decides its structure before any events exist, so it
+    cannot reference `event_ids` -- an anchor there is an intention ("a
+    commitment that closes off retreat"), not a pointer. This strips every
+    reference to material that does not yet exist and keeps only what a
+    planner could legitimately state in advance:
+
+      * anchors keep id, kind, also_functions_as, change and rationale, and
+        gain `intended_position` (the observed screen position, which a
+        planner states as a target rather than reads off);
+      * acts keep their anchor-id boundaries -- those are plan-internal and
+        stay valid;
+      * exposition keeps its claims but loses evidence pointers;
+      * hero-journey stages, ending axes and the mode carry over unchanged.
+
+    Used two ways: to seed a top-down plan from a reference film, and to
+    build the target of a top-down reasoning trace (see
+    reasoning_traces/trace_specs.py `drama_plan_specs`).
+    """
+    scope = dict(drama.get("analysis_scope") or {})
+    ex = dict(drama.get("exposition") or {})
+    plan: Dict[str, Any] = {
+        "version": "plan-1.0",
+        "analysis_scope": scope,
+        "dramatic_core": dict(drama.get("dramatic_core") or {}),
+        "exposition": {
+            "initial_world": ex.get("initial_world"),
+            "establishes": [{"function": e.get("function"),
+                             "claim": e.get("claim")}
+                            for e in ex.get("established") or []],
+        },
+        "anchors": [{
+            "id": a.get("id"),
+            "kind": a.get("kind"),
+            "also_functions_as": a.get("also_functions_as") or [],
+            "intended_change": a.get("change"),
+            "why_this_function": a.get("why_this_function"),
+            "intended_position": a.get("screen_position"),
+        } for a in drama.get("anchors") or []],
+        "acts": [{k: x.get(k) for k in
+                  ("label", "start_boundary", "end_boundary",
+                   "dramatic_question", "state_delta")}
+                 for x in drama.get("acts") or []],
+        "sequences": [{k: s.get(k) for k in
+                       ("label", "objective", "escalation_pattern",
+                        "outcome", "value_shift")}
+                      for s in drama.get("sequences") or []],
+        "hero_journey": drama.get("hero_journey") or {},
+        "ending": drama.get("ending") or {},
+    }
+    return plan
+
+
 def drama_digest(drama: Dict[str, Any], cap: int = 12000) -> str:
     """Compact rendering for consumption by upper layers (plots/root/expose).
 
@@ -545,8 +600,12 @@ def main() -> int:
     print("events: {} | scenes: {} | cheatsheet: {} chars".format(
         len(events), len(scene_ids), len(cheat)), flush=True)
 
+    # 16k, not the 8k other layers use: the anchors and mode passes carry a
+    # per-item rationale plus evidence, and at 8k a Matrix-sized film hit
+    # finish_reason=length -- which EndpointPool rejects outright, so a
+    # truncated draft costs a full retry rather than degrading gracefully.
     pool = EndpointPool([int(p) for p in a.ports.split(",")], a.model,
-                        temperature=0.4, max_tokens=8000, timeout=1800)
+                        temperature=0.4, max_tokens=16000, timeout=1800)
     bad = [p for p, ok in pool.health() if not ok]
     if bad:
         print("unhealthy endpoints: {}".format(bad))
@@ -670,8 +729,11 @@ def main() -> int:
             print("  regeneration error: {}".format(exc), flush=True)
             break
 
-    leaks = sum(1 for _ in V.scan_node(
-        {k: v for k, v in drama.items() if k != "version"}, source_index))
+    # Count only EXACT runs, the same measure meta_layer reports, so the two
+    # layers' verbatim numbers are comparable.
+    leaks = sum(1 for probe in V.scan_node(
+        {k: v for k, v in drama.items() if k != "version"}, source_index)
+        if probe[1].kind == "exact")
     (out / "drama_structure.json").write_text(
         json.dumps(drama, indent=1, ensure_ascii=False), encoding="utf-8")
     (out / "protocol.json").write_text(json.dumps({

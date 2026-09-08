@@ -475,8 +475,76 @@ def drama_specs(slug):
         }
 
 
+# ------------------------------------------------------- drama (top-down)
+TOPDOWN_DRAMA_TASK = (
+    "You are PLANNING a story, not analysing a finished one. The story root, "
+    "the plot outlines and the meta layer below are already decided; no "
+    "scenes or events exist yet. Lay down the DRAMATIC STRUCTURE this story "
+    "should have: the least-forcing structural lens and narration mode, the "
+    "central dramatic question, what the exposition must establish, the "
+    "sequence of structural anchors the story needs (using the controlled "
+    "vocabulary, each stating what it must change and why that function is "
+    "required here, with an intended position in the running order), the act "
+    "segmentation those anchors imply, whether a Hero's-Journey shape genuinely "
+    "fits, and the kind of ending the material is heading toward. Anchors are "
+    "INTENTIONS at this stage -- they name what has to happen, not where it "
+    "already happens, so they carry no event references. Choose the simplest "
+    "structure the story actually needs; an honest 'ambiguous' lens or an "
+    "absent Hero's Journey is better than a template imposed on the material.")
+
+
+def drama_plan_specs(slug):
+    """1 spec per film for the TOP-DOWN direction: root+plots+meta -> plan.
+
+    The bottom-up `drama_specs` reconstruct how an analyst read a finished
+    film. This one reconstructs how a planner would DECIDE the structure,
+    seeing only what the top-down path has at that point: the story root,
+    the plot outlines and the meta layer -- never events or scenes, which do
+    not exist yet in that direction.
+
+    The target is `plan_view()` of the observed structure: the same decisions
+    with every reference to not-yet-existing material stripped. That is a
+    synthesised supervision signal, honest about its own provenance -- a
+    structure derived bottom-up, presented as the plan a planner could have
+    committed to. The same hindsight logic as everything else here, applied
+    to the other direction.
+    """
+    import drama_structure_layer as dl
+    drama = _load(TREES / slug / "drama" / "drama_structure.json")
+    root = _load(TREES / slug / "root" / "story_root.json")
+    meta = _load(TREES / slug / "meta" / "meta.json")
+    plots = _load(TREES / slug / "plots" / "plots.json")
+    if not drama or not root or not drama.get("anchors"):
+        return
+    cheat = dl.CHEATSHEET_PATH.read_text(encoding="utf-8")
+    plot_outlines = []
+    for name, p in ((plots or {}).get("plots") or {}).items():
+        d = p.get("definition") or {}
+        plot_outlines.append({"name": name,
+                              "throughline": d.get("throughline"),
+                              "theme_or_dilemma": d.get("theme_or_dilemma"),
+                              "summary": d.get("summary")})
+    # The root's own coarse structure field is deliberately included: in the
+    # top-down direction it already exists and legitimately constrains the
+    # plan, which is the reverse of the bottom-up dependency.
+    context = (
+        f"DRAMATURGY REFERENCE (working rules and vocabulary):\n{cheat}\n\n"
+        f"THE STORY ROOT (already decided):\n{_j(root, 14000)}\n\n"
+        f"THE PLOT OUTLINES (already decided):\n{_j(plot_outlines, 9000)}\n\n"
+        f"THE META LAYER (already decided):\n"
+        f"{dl.meta_condensed(meta or {})}")
+    yield {
+        "tid": f"{slug}::drama_plan::all",
+        "slug": slug, "layer": "drama_plan", "part": "all",
+        "task": TOPDOWN_DRAMA_TASK,
+        "context": context,
+        "target": dl.plan_view(drama),
+    }
+
+
 BUILDERS = [scene_specs, event_specs, meta_specs, entity_specs,
-            root_specs, expose_specs, plot_specs, drama_specs]
+            root_specs, expose_specs, plot_specs, drama_specs,
+            drama_plan_specs]
 
 
 def all_specs(slugs):

@@ -24,7 +24,7 @@ OUT = os.path.join(str(config.TRACE_OUT), "traces_all_layers.jsonl")
 
 # cheapest-and-highest-value first, so partial results are useful early
 LAYER_ORDER = ["plot_identify", "plot_chain", "root", "expose",
-               "drama_structure",
+               "drama_structure", "drama_plan",
                "meta_perspectives", "meta_section", "entity_profile",
                "event_reconcile", "event_compose", "scene_minds",
                "scene_facts"]

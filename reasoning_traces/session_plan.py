@@ -71,6 +71,12 @@ def main():
         plots = plots_of(slug)
         if len(meta) == 5 and not has(slug, "plots", "all"):
             add(slug, "plots", "all", "t2")
+        # The dramatic-structure plan (t2b) needs root + meta + plots and is
+        # the exposé's structural input, so it is scheduled as soon as plots
+        # exist and before the exposé gate below.
+        # docs/20-drama-structure-layer.md §8.
+        if len(meta) == 5 and plots and not has(slug, "drama", "all"):
+            add(slug, "drama", "all", "t2b")
         if plots:
             # NOTE: entity records carry the entity NAME in part (tid holds
             # the p-index), so completion is counted, not matched.

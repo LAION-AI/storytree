@@ -186,6 +186,10 @@ class Chain:
         self.client = client or ZenClient()
         self.meta = {}
         self.plots = []
+        # The planned dramatic structure (step t2b). Unlike the bottom-up
+        # drama layer it holds intentions, not observations: its anchors
+        # carry no event ids because no events exist yet at this point.
+        self.drama = None
         self.entities = []
         self.expose = None
         self.skeletons = []
@@ -333,6 +337,74 @@ class Chain:
                 % (self.ctx(self.root), self.ctx(self.meta), self.N))
         return [(self.tid("plots", "all"), "plots", "all", user, ("plots",))]
 
+    # Condensed dramaturgy reference, shared with the bottom-up layer so the
+    # two directions speak the same vocabulary. Loaded once, lazily: it is
+    # ~9kB and only step t2b needs it.
+    _CHEAT = None
+
+    @classmethod
+    def cheatsheet(cls):
+        if cls._CHEAT is None:
+            p = (Path(__file__).resolve().parents[1] / "distill" / "prompts"
+                 / "dramaturgy_condensed.md")
+            try:
+                cls._CHEAT = p.read_text(encoding="utf-8")
+            except OSError:
+                cls._CHEAT = ""
+        return cls._CHEAT
+
+    def t2b_drama(self):
+        """Plan the dramatic structure, between plots and exposé.
+
+        This is the top-down counterpart of the bottom-up drama structure
+        layer (docs/20-drama-structure-layer.md). Placement follows from
+        what is available: it needs the root, the meta layer and the plot
+        outlines, which exist after t2, and the exposé (t4) is the first
+        consumer that benefits from knowing the intended shape.
+
+        The output is deliberately PLAN-shaped, matching
+        `drama_structure_layer.plan_view()`: anchors state what must change
+        and roughly where, never which event they sit on -- events are only
+        invented at t7. Binding plan anchors to generated events afterwards
+        is what makes structural drift measurable.
+        """
+        cheat = self.cheatsheet()
+        user = ("STORY ROOT:\n%s\n\nMETA:\n%s\n\nPLOTS:\n%s\n\n"
+                "%s\n\n"
+                "Lay down the DRAMATIC STRUCTURE this story should have. "
+                "Choose the least-forcing primary lens and narration mode "
+                "and say why, naming the credible alternatives you reject. "
+                "State the central dramatic question and what the exposition "
+                "must establish. Then give the ordered ANCHORS the story "
+                "needs, using the vocabulary above -- each with its kind, "
+                "what it must change, why that function is required here, "
+                "and intended_position as a fraction 0..1 of the running "
+                "order. Anchors are INTENTIONS: give them ids ds-01, ds-02, "
+                "... and NO event ids, because no events exist yet. Then the "
+                "acts those anchors imply (boundaries are anchor ids, or "
+                "START / END), whether a Hero's-Journey shape genuinely fits "
+                "(applicability organising / partial / not_applicable, with "
+                "the reason), and the intended ending on its axes. Choose "
+                "the simplest structure the story actually needs; an honest "
+                "'ambiguous' lens or an absent Hero's Journey beats a "
+                "template imposed on the material. Artifact: "
+                "{\"analysis_scope\": {\"primary_lens\": ..., "
+                "\"narration_mode\": ..., \"why_this_lens\": ..., "
+                "\"alternatives\": [...]}, \"dramatic_core\": "
+                "{\"central_dramatic_question\": ...}, \"exposition\": "
+                "{\"initial_world\": ..., \"establishes\": [...]}, "
+                "\"anchors\": [{\"id\": \"ds-01\", \"kind\": ..., "
+                "\"intended_change\": ..., \"why_this_function\": ..., "
+                "\"intended_position\": 0.12}], \"acts\": [{\"label\": ..., "
+                "\"start_boundary\": \"START\", \"end_boundary\": \"ds-03\", "
+                "\"dramatic_question\": ..., \"state_delta\": ...}], "
+                "\"hero_journey\": {\"applicability\": ..., \"why\": ..., "
+                "\"stages\": [...]}, \"ending\": {...}}"
+                % (self.ctx(self.root), self.ctx(self.meta),
+                   self.ctx(self.plots), cheat))
+        return [(self.tid("drama", "all"), "drama", "all", user,
+                 ("analysis_scope", "anchors", "acts"))]
+
     def t3_entities(self):
         jobs = []
         names = self._cast_names()
@@ -359,14 +431,24 @@ class Chain:
         return agents[:self.N]
 
     def t4_expose(self):
-        user = ("ROOT:\n%s\n\nMETA:\n%s\n\nPLOTS:\n%s\n\nENTITIES:\n%s\n\nTell "
+        # The planned structure (t2b) joins the exposé context when it
+        # exists: the synopsis should follow the intended acts and land the
+        # intended ending, rather than re-deciding the shape in prose.
+        drama_block = ""
+        if self.drama:
+            drama_block = ("DRAMATIC STRUCTURE PLAN (follow it: pace the "
+                           "synopsis along these acts and land this ending; "
+                           "do not contradict it):\n%s\n\n"
+                           % self.ctx(self.drama, 4000))
+        user = ("ROOT:\n%s\n\nMETA:\n%s\n\nPLOTS:\n%s\n\n%sENTITIES:\n%s\n\nTell "
                 "the story once. ending_first: how it ends, plainly, with cost "
                 "and final image. synopsis: 5 numbered causal sections s01..s05 "
                 "introducing every named entity in context. jacket_copy: sell "
                 "without spoiling. Artifact: {\"ending_first\": ..., "
                 "\"synopsis\": {...}, \"jacket_copy\": ...}"
                 % (self.ctx(self.root), self.ctx(self.meta),
-                   self.ctx(self.plots), self.ctx(self.entities)))
+                   self.ctx(self.plots), drama_block,
+                   self.ctx(self.entities)))
         return [(self.tid("expose", "all"), "expose", "all", user,
                  ("ending_first", "synopsis", "jacket_copy"))]
 
@@ -492,13 +574,15 @@ class Chain:
         return jobs
 
     # -- driver --------------------------------------------------------
-    STEPS = ["t1", "t2", "t3", "t4", "t5", "t6", "t7", "t8", "t9"]
+    STEPS = ["t1", "t2", "t2b", "t3", "t4", "t5", "t6", "t7", "t8", "t9"]
 
     def run_step(self, step, skip=()):
         if step == "t1":
             jobs = self.t1_meta()
         elif step == "t2":
             jobs = self.t2_plots() if self.meta else []
+        elif step == "t2b":
+            jobs = self.t2b_drama() if (self.meta and self.plots) else []
         elif step == "t3":
             jobs = self.t3_entities() if self.plots else []
         elif step == "t4":
@@ -549,6 +633,8 @@ class Chain:
             self.meta[part] = artifact
         elif step == "plots":
             self.plots = artifact.get("plots", [])[:self.N]
+        elif step == "drama":
+            self.drama = artifact
         elif step == "entity":
             self.entities.append(artifact)
         elif step == "expose":

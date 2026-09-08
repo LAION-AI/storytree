@@ -74,6 +74,33 @@ p.p:last-child{margin-bottom:0}
 .scn .sum{font-size:12.5px;color:var(--ink-2);line-height:1.45;max-height:64px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
 .badge{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:2px 7px;border-radius:999px;border:1px solid;vertical-align:2px}
 .badge.th{color:var(--quench-ink);background:var(--quench-soft);border-color:var(--quench)}
+.badge.ok{color:var(--good);background:var(--good-soft);border-color:var(--good)}
+.badge.amb{color:var(--heat-ink);background:var(--heat-soft);border-color:var(--heat)}
+.badge.off{color:var(--muted);background:var(--surface-2);border-color:var(--line)}
+/* Drama structure: the anchors carry a real 0..1 screen position, so they
+   are drawn on an axis rather than listed. Acts are bands under the axis. */
+.tl{position:relative;margin:26px 0 10px;padding:0 4px}
+.tl .axis{position:relative;height:3px;background:var(--line);border-radius:2px}
+.tl .acts{position:relative;height:22px;margin-bottom:7px}
+.tl .act{position:absolute;top:0;height:22px;border:1px solid var(--quench);background:var(--quench-soft);
+  border-radius:4px;font-size:10.5px;color:var(--quench-ink);font-weight:700;line-height:20px;
+  text-align:center;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding:0 5px}
+.tl .pin{position:absolute;top:-5px;width:13px;height:13px;margin-left:-6.5px;border-radius:50%;
+  background:var(--heat);border:2px solid var(--surface);cursor:pointer}
+.tl .pin.dim{background:var(--faint)}
+.tl .labs{position:relative;height:96px;margin-top:9px}
+.tl .lab{position:absolute;font-size:10px;font-family:var(--mono);color:var(--ink-2);
+  transform:translateX(-50%);text-align:center;width:88px;line-height:1.3}
+.tl .lab .pct{color:var(--faint)}
+.tl .scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-top:2px}
+.axes{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:9px;margin:12px 0}
+.axbox{border:1px solid var(--line-soft);border-radius:7px;padding:9px 12px;background:var(--surface-2)}
+.axbox .k{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:700}
+.axbox .v{font-size:13.5px;color:var(--ink);font-weight:600;margin-top:2px}
+.hjrow{display:grid;grid-template-columns:190px auto 1fr;gap:6px 12px;align-items:baseline;
+  padding:6px 0;border-top:1px solid var(--line-soft);font-size:13px}
+.hjrow .st{font-family:var(--mono);font-size:11px;color:var(--ink-2)}
+@media(max-width:640px){.tl .lab{width:64px;font-size:9px}.hjrow{grid-template-columns:1fr;gap:2px}}
 footer{border-top:1px solid var(--line);margin-top:60px;padding:24px 0 40px;color:var(--faint);font-size:12.5px;font-family:var(--mono)}
 pre{background:var(--sunken);border:1px solid var(--line);border-radius:7px;padding:12px 14px;overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:1.5;margin:10px 0;white-space:pre-wrap}
 </style>
@@ -153,6 +180,82 @@ function renderMeta(m){ let h='';
     arr.forEach(o=>{ const[tit,b1,b2]=z[2](o); h+=plt(tit, (b1||'')+ (b2||'')); });
   });
   return h; }
+/* ---- drama structure layer (docs/20-drama-structure-layer.md) ----------
+   Anchors have a deterministic screen_position (0..1, computed from event
+   order, never guessed by the model), so they are drawn on an axis. Act
+   bands sit above it, spanning from their start boundary to their end. */
+const STAT={supported:'ok',observed:'ok',supported_inference:'th',ambiguous:'amb',
+            absent:'off',not_applicable:'off'};
+function anchorPos(a){ return typeof a.screen_position==='number'?a.screen_position:null; }
+function renderTimeline(d){
+  const an=(d.anchors||[]).filter(a=>anchorPos(a)!==null);
+  if(!an.length) return '';
+  const posOf=id=>{ if(id==='START')return 0; if(id==='END')return 1;
+    const a=(d.anchors||[]).find(x=>x.id===id); return a?anchorPos(a):null; };
+  const bands=(d.acts||[]).map((ac,i)=>{
+    const s=posOf(ac.start_boundary), e=posOf(ac.end_boundary);
+    if(s===null||e===null||e<=s) return '';
+    return `<div class="act" style="left:${(s*100).toFixed(2)}%;width:${((e-s)*100).toFixed(2)}%"
+      title="${ESC(ac.label)} — ${ESC(ac.dramatic_question||'')}">${ESC(ac.label)}</div>`;
+  }).join('');
+  /* stagger labels over three rows so neighbouring anchors stay readable */
+  const pins=an.map(a=>`<div class="pin${a.status==='ambiguous'?' dim':''}"
+      style="left:${(anchorPos(a)*100).toFixed(2)}%" title="${ESC(a.kind)} — ${ESC(a.change||'')}"></div>`).join('');
+  const labs=an.map((a,i)=>`<div class="lab" style="left:${(anchorPos(a)*100).toFixed(2)}%;top:${(i%3)*31}px">
+      <b>${ESC((a.kind||'').replace(/_/g,' '))}</b><br><span class="pct">${ESC(a.id)} · ${Math.round(anchorPos(a)*100)}%</span></div>`).join('');
+  return `<div class="tl"><div class="acts">${bands}</div><div class="axis">${pins}</div>
+    <div class="labs">${labs}</div>
+    <div class="scale"><span>opening</span><span>screen position →</span><span>ending</span></div></div>`;
+}
+function renderDrama(d){
+  const sc=d.analysis_scope||{}, core=d.dramatic_core||{}, ex=d.exposition||{},
+        hj=d.hero_journey||{}, en=d.ending||{};
+  let h='';
+  h+=`<div class="card"><div class="eyebrow">Structural mode</div>`+
+     `<b>${ESC((sc.primary_lens||'').replace(/_/g,' '))}</b> <span class="badge th">${ESC(sc.narration_mode)}</span> `+
+     `<span class="badge ${sc.confidence==='high'?'ok':'amb'}">confidence ${ESC(sc.confidence)}</span>`+
+     fld('Why this lens',sc.why_this_lens);
+  (sc.alternatives||[]).forEach(a=>h+=plt(
+     `rejected: <b>${ESC((a.lens||'').replace(/_/g,' '))}</b> <span class="badge off">${ESC(a.confidence)}</span>`,
+     F(a.why_not_primary)));
+  h+='</div>';
+  h+=fld('Central dramatic question',core.central_dramatic_question)+
+     fld('Values at stake',JO(core.values_at_stake))+
+     fld('Clock / urgency',core.clock_or_urgency);
+  h+=`<div class="fld">Anchors and acts (${(d.anchors||[]).length} anchors, ${(d.acts||[]).length} acts)</div>`;
+  h+=renderTimeline(d);
+  (d.anchors||[]).forEach(a=>{
+    const also=(a.also_functions_as||[]).length?` <span class="badge off">also ${ESC(a.also_functions_as.join(', ').replace(/_/g,' '))}</span>`:'';
+    h+=plt(`<span class="ev">${ESC(a.id)}</span> <b>${ESC((a.kind||'').replace(/_/g,' '))}</b>`+
+      ` <span class="badge ${STAT[a.status]||'th'}">${ESC(a.status)}</span>${also}`,
+      fld('What changes',a.change)+fld('Why this function',a.why_this_function)+
+      fld('Events',JO(a.event_ids))+fld('Screen position',anchorPos(a)===null?'':Math.round(anchorPos(a)*100)+'%')+
+      ((a.evidence||[]).map(e=>`<div class="cat"><b>${ESC(e.event_id)} / ${ESC(e.scene_id)}</b><p class="p">${ESC(e.grounding)}</p></div>`).join('')));
+  });
+  (d.acts||[]).forEach(ac=>h+=plt(`<b>${ESC(ac.label)}</b> <span class="badge th">${ESC(ac.start_boundary)} → ${ESC(ac.end_boundary)}</span>`,
+    fld('Governing question',ac.dramatic_question)+fld('State delta',ac.state_delta)));
+  if((d.sequences||[]).length){ h+=`<div class="fld">Sequences (${d.sequences.length})</div>`;
+    d.sequences.forEach(s=>h+=plt(`<b>${ESC(s.label)}</b> <span class="badge off">${ESC((s.escalation_pattern||'').replace(/_/g,' '))}</span>`,
+      fld('Objective',s.objective)+fld('Outcome',s.outcome)+fld('Value shift',s.value_shift)+fld('Events',JO(s.event_ids)))); }
+  h+=`<div class="card"><div class="eyebrow">Exposition</div>`+fld('Initial world',ex.initial_world)+
+     fld('Closed or reframed at',ex.closes_or_reframes_event_id);
+  (ex.established||[]).forEach(e=>h+=plt(`<span class="badge th">${ESC(e.function)}</span> ${ESC((e.claim||'').slice(0,90))}`,
+     F(e.claim)+(e.evidence||[]).map(v=>`<div class="cat"><b>${ESC(v.event_id)} / ${ESC(v.scene_id)}</b><p class="p">${ESC(v.grounding)}</p></div>`).join('')));
+  h+='</div>';
+  h+=`<div class="card"><div class="eyebrow">Hero's journey — ${ESC(hj.applicability)}</div>`+F(hj.why);
+  (hj.stages||[]).forEach(s=>h+=`<div class="hjrow"><b>${ESC((s.stage||'').replace(/_/g,' '))}</b>`+
+     `<span class="badge ${STAT[s.status]||'off'}">${ESC(s.status)}</span>`+
+     `<span class="st">${ESC(s.note)}${(s.anchor_ids||[]).length?' ['+ESC(s.anchor_ids.join(', '))+']':''}</span></div>`);
+  h+='</div>';
+  const AX=[['plot_closure','Plot closure'],['central_question_result','Question result'],
+            ['fortune_direction','Fortune'],['character_movement','Character'],['final_gesture','Final gesture']];
+  h+=`<div class="fld">Ending</div><div class="axes">`+
+     AX.map(([k,l])=>`<div class="axbox"><div class="k">${l}</div><div class="v">${ESC((en[k]||'').replace(/_/g,' '))}</div></div>`).join('')+
+     `</div>`+fld('Resolution / denouement / final gesture',en.resolution_denouement_relation);
+  if((d.diagnostics||[]).length){ h+=`<div class="fld">Diagnostics (pointers, not verdicts)</div>`;
+    d.diagnostics.forEach(x=>h+=plt(`<span class="badge ${x.severity==='warning'?'amb':'off'}">${ESC(x.severity)}</span> ${ESC((x.code||'').replace(/_/g,' '))}`,F(x.evidence))); }
+  return h;
+}
 function renderPlots(ps){ return ps.map(p=>{const def=p.definition||{}; const ch=(p.chain||[]).map(c=>
     `<span class="ev">${ESC(c.event_id)}</span><span class="wh">${ESC(c.why_in_plot)}
      <span class="cau"><b>caused by prev</b> ${ESC(c.caused_by_previous)}</span></span>`).join('');
@@ -178,6 +281,11 @@ function build(D){ const L=D.layers;
     ['1','Story Root',L.story_root,x=>renderRoot(x),'premise + vector'],
     ['2','Expose',L.expose,x=>renderExpose(x),Object.keys(L.expose.synopsis||{}).length+' sections'],
     ['3','Meta Layer',L.meta,x=>renderMeta(x),cnt(L.meta)],
+    /* Drama structure is a sibling of the meta layer, not a level of its
+       own in the tree; it is shown next to meta because that is where it
+       is built. Omitted entirely for trees that predate the layer. */
+    ...(L.drama?[['3b','Drama Structure',L.drama,x=>renderDrama(x),
+        ((L.drama.anchors||[]).length)+' anchors · '+((L.drama.acts||[]).length)+' acts']]:[]),
     ['4','Plots',L.plots,x=>renderPlots(x),L.plots.length+' throughlines'],
     ['5','Events',L.events,x=>renderEvents(x),L.events.length+' events'],
     ['6','Entities',L.entities,x=>renderEntities(x),L.entities.length+' characters'],

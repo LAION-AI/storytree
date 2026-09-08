@@ -40,6 +40,23 @@ def main() -> int:
         "perspectives": meta.get("perspectives", {}).get("perspectives", []),
     }
 
+    # drama structure — sibling of meta (docs/20-drama-structure-layer.md).
+    # Optional: trees built before the layer existed simply omit the zone.
+    drama_path = R / "drama_matrix/drama_structure.json"
+    if drama_path.exists():
+        d = load(drama_path)
+        data["layers"]["drama"] = {
+            "analysis_scope": d.get("analysis_scope", {}),
+            "dramatic_core": d.get("dramatic_core", {}),
+            "exposition": d.get("exposition", {}),
+            "anchors": d.get("anchors", []),
+            "acts": d.get("acts", []),
+            "sequences": d.get("sequences", []),
+            "hero_journey": d.get("hero_journey", {}),
+            "ending": d.get("ending", {}),
+            "diagnostics": d.get("diagnostics", []),
+        }
+
     # z4 plots — muse one-pass: 3.33 vs v8's 2.73 under the GLM panel, and
     # the ranking is judge-invariant (even the Ornith panel prefers it)
     plots = load(R / "plot_layer_muse/plots.json")

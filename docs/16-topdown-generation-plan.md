@@ -190,6 +190,10 @@ META (central_dilemma, big_questions, conflicts, arcs, perspectives)
   │  T2: name one thread per perspective (summaries only)
   v
 PLOT SUMMARIES (plot_identify: spine/agent/goal/resistance/stakes/outcome)
+  │  T2b: decide the intended shape — lens, anchors, acts, ending
+  v
+DRAMATIC STRUCTURE PLAN (anchors as intentions, no event ids yet;
+              docs/20-drama-structure-layer.md §8)
   │  T3: cast the threads (profiles, state vars, arc sketches)
   v
 ENTITIES (profiles + relationships; arcs sketched, not filled)
@@ -227,8 +231,9 @@ transition (§6).
 |---|---|---|
 | T1 | root → meta | dilemma, questions, conflicts, arcs, perspectives |
 | T2 | meta → plot summaries | plot definitions (no chains) |
+| T2b | root + meta + plots → dramatic structure plan | intended lens, anchors as intentions, acts, ending axes ([docs/20](20-drama-structure-layer.md)) |
 | T3 | meta + plot summaries → entities | cast, profiles, relationships, arc sketches |
-| T4 | root + meta + plots + entities → exposé | ending-first, synopsis sections, jacket copy |
+| T4 | root + meta + plots + **structure plan** + entities → exposé | ending-first, synopsis sections, jacket copy |
 | T5 | exposé + plots + entities → event skeletons | event list, per-event question, owner plot, scene counts |
 | T6 | event skeletons + plot summaries → plot chains | per-plot ordered event membership, causal links |
 | T7 | event skeletons + scenes-context → filled events | state triples, reconciled prose, verified chain |

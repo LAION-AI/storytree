@@ -78,6 +78,19 @@ META_PERSP = {"perspectives": [{"holder": _str_min(1), "stance": _str_min(10)}, 
 PLOTS = {"plots": [{"plot_id": STR, "spine": _str_min(10), "agent": _str_min(1),
                     "goal": _str_min(5), "resistance": _str_min(5),
                     "stakes": _str_min(5), "outcome": _str_min(5)}, (3, 5)]}
+# The planned dramatic structure (step t2b, docs/20-drama-structure-layer.md).
+# Only the three fields t2b declares as required are gated here; exposition,
+# hero_journey and ending are legitimately optional -- a minimal plan is a
+# valid plan, and the layer's own rule is "smallest valid representation".
+# Anchors carry NO event ids by design: no events exist at planning time.
+DRAMA = {"analysis_scope": {"primary_lens": STR, "narration_mode": STR,
+                            "why_this_lens": _str_min(30)},
+         "anchors": [{"id": STR, "kind": STR,
+                      "intended_change": _str_min(15),
+                      "why_this_function": _str_min(15)}, (3, 14)],
+         "acts": [{"label": _str_min(3), "start_boundary": STR,
+                   "end_boundary": STR,
+                   "dramatic_question": _str_min(10)}, (1, 6)]}
 ENTITY = {"name": _str_min(1), "type": STR, "profile": _str_min(20),
           "state_variables": LIST, "arc_sketch": _str_min(10), "relationships": LIST}
 EXPOSE = {"ending_first": _str_min(200),
@@ -98,6 +111,7 @@ SCHEMAS = {
     ("meta", "relationships"): META_REL,
     ("meta", "perspectives"): META_PERSP,
     ("plots", "all"): PLOTS,
+    ("drama", "all"): DRAMA,
     ("entity", None): ENTITY,
     ("expose", "all"): EXPOSE,
     ("skeleton", None): SKELETON,
