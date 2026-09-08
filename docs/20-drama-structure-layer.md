@@ -1,11 +1,12 @@
 # 20 — The Drama Structure Layer
 
-**Status: implemented in both directions and offline-tested.** 8 offline
-tests cover the deterministic parts (screen positions, anchor ordering, the
-audit, `plan_view`); 8 more cover the top-down step `t2b` and its hand-off
-to the exposé; all 69 top-down tests pass, as do the 22 pair tests. The
-live route is `tools/serve_hyprlab.sh` → GLM-5.3 (§8a.4); the first live
-build is running against The Matrix and its results land in §12.
+**Status: implemented in both directions, offline-tested, and built live on
+The Matrix** — 10 anchors, 4 act bands, zero audit faults on the first pass
+(§11). 8 offline tests cover the deterministic parts (screen positions,
+anchor ordering, the audit, `plan_view`); 8 more cover the top-down step
+`t2b` and its hand-off to the exposé; all 69 top-down tests pass, as do the
+22 pair tests. The live route is `tools/serve_hyprlab.sh` → GLM-5.3
+(§8a.5), since the free Muse/Zen route no longer accepts external clients.
 
 This document explains, in plain language, what the
 drama structure layer is, why it is its own layer rather than a rewrite of
@@ -266,7 +267,7 @@ does this matching between the root's turning points and the drama layer's
 anchors. Generalising that comparator to plan-vs-observed is the remaining
 piece; the two artifacts it needs both exist now.
 
-## 8a. Does the design hold up? Four things worth knowing
+## 8a. Does the design hold up? Five things worth knowing
 
 These came out of actually wiring both directions and building the layer on
 a real film. They are recorded here rather than smoothed over.
@@ -291,7 +292,46 @@ independently, so nothing stops them.
 Neither direction is wrong, but the artifact means different things in each,
 which is what the `version` field records.
 
-**2. Anchors are grounded in events, and only loosely in scenes.** The
+**2. The top-down direction leaked the answer, in three places.** This one
+was caught by *reading a generated trace*, not by reasoning about the code,
+and it is worth spelling out because it is easy to reintroduce.
+
+The first top-down trace opened: *"the story root, the five throughline
+outlines and the meta layer are already written, and they are riddled with
+event ids and causal claims"*, and then: *"The root's `dramatic_structure`
+field has already committed to act_count: 3 with named turning points at
+ev-004, ev-010, ev-023, ev-032, ev-044–045."* The planner had been handed
+the answer, so it spent its reasoning validating rather than deriving — the
+trace was worthless as supervision.
+
+Three separate leaks, all from the same cause: this root, meta layer and
+plot set were derived **bottom-up** from a finished film, while a genuine
+top-down run generates all three from a brief and none of them can contain
+event ids.
+
+| leak | fix |
+|---|---|
+| `root.dramatic_structure` — literally the answer to the step | `planning_root_view()` drops the field |
+| event/scene ids in the root, plot outlines and the meta layer's evidence pointers | the same helper, plus `ID_RE` scrubbing on the other two |
+| event ids inside the *target*'s own free-text rationales (`why_this_lens`: "the red-pill birth (ev-010/ev-011)") — the trace generator sees the target | `plan_view()` now unbinds text, not just structural fields |
+
+The third was only visible after fixing the first two: the regenerated trace
+*still* cited `ev-010`, because stripping `event_ids` lists does not touch
+prose that names the same events. Structural stripping alone is not enough.
+
+After all three fixes the trace carries **zero** event ids and names beats
+descriptively — "the pod, the near-drowning, 'no going back'" — which is
+what a planner who has not written any scenes yet would actually say. Both
+the trace spec and the generator step `t2b` use the same two helpers, so
+they see identical material.
+
+This is the hindsight-leakage failure mode from
+[`docs/05-model-behaviour.md`](05-model-behaviour.md) appearing in a new
+place, and it is the reason the bottom-up pipeline's own rule — *the model
+deliberating about scene 40 does not see scene 40* — has to be restated for
+every new direction, not assumed to carry over.
+
+**3. Anchors are grounded in events, and only loosely in scenes.** The
 analyst sees the event digest, which lists each event's scene ids but not
 what happens in those scenes. So when it writes an evidence pointer
 `(ev-012, sc-041)` it can pick a *member* scene of the right event but has
@@ -306,14 +346,14 @@ summary) for The Matrix is 29.4k characters against the event digest's
 layer's inputs and therefore needs a measured comparison before it becomes
 the default — it is the obvious next experiment, not an oversight.
 
-**3. Passes can outgrow an 8k output budget.** On The Matrix (47 events, 224
+**4. Passes can outgrow an 8k output budget.** On The Matrix (47 events, 224
 scenes) the `mode` pass twice produced exactly 8,000 completion tokens —
 `finish_reason=length`, which `EndpointPool` rejects outright rather than
 accepting a truncated artifact. Each truncation burns a full retry
 (~100 seconds). The layer now asks for 16k, unlike the 8k the other layers
 use, because its per-item rationales are long.
 
-**4. The free model route is gone; the layer is model-agnostic anyway.** As
+**5. The free model route is gone; the layer is model-agnostic anyway.** As
 of 2026-09-08 the OpenCode Zen free tier refuses every non-OpenCode client
 (`MissingSessionID`: *"OpenCode's free tier can only be used in OpenCode"*),
 which is what the whole VPN/proxy exit pool existed to work around — the
@@ -360,7 +400,117 @@ and once per season arc.
   is the instrument for the DRAMA_TO_UPPER A/B and for spot-checking corpus
   batches.
 
-## 11. File map
+## 11. What the first live build produced (The Matrix)
+
+Built 2026-09-08 from the reference tree's own artifacts
+(`runs/events_build10_full` + `runs/meta_layer_v2b`, 47 events over 224
+scenes), GLM-5.3 via the Hyprlab shims. Reproduce with:
+
+```bash
+bash tools/serve_hyprlab.sh 8300 3
+python3 distill/drama_structure_layer.py \
+  --events runs/events_build10_full/events.json \
+  --meta   runs/meta_layer_v2b/meta.json \
+  --out    runs/drama_matrix --ports 8300,8301,8302 --model glm-5.3 \
+  --source distill/runs/matrix/script.normalized.txt
+```
+
+**21 minutes, 10 anchors, 4 act bands, 10 sequences, audit round 1: 0
+faults, 0 verbatim runs.** A clean first pass — every cited event existed,
+every cited scene belonged to its cited event, the acts were contiguous
+from START to END, and every `supported` Hero's-Journey stage cited an
+anchor. No regeneration round was needed.
+
+### The discipline held where it matters
+
+The interesting test is whether the layer obeys *function beats percentile*
+when the two disagree. On The Matrix they do:
+
+- The **Oracle scene (ev-023, 42%)** is labelled `reframing_reveal`, with
+  `midpoint` and `recognition` as secondary functions, and the argument is
+  functional, not positional: *"Neo stops pursuing 'being the One' and
+  begins operating as an ordinary man bound by loyalty."*
+- The event nearest the literal middle (ev-025, 52%) is labelled
+  `pinch_point`, not midpoint.
+
+The lens rejections are specific rather than pro-forma: `archplot` was
+rejected because it "describes the plot-class, not the act machinery";
+`kishotenketsu` because "the spine is conflict-driven and goal-directed;
+the twist is earned by causality". The Hero's Journey came out `organising`
+with 11 of 12 stages `supported` and `reward` left `ambiguous` — refused
+rather than forced. The single diagnostic, `unresolved_thread`, scoped
+itself correctly: *"expected for a franchise instalment, flagged as
+context."*
+
+### Cross-layer agreement with the story root
+
+`tools/compare_root_vs_drama.py` on the same film, with the two layers built
+**independently** (no `DRAMA_TO_UPPER`):
+
+| | |
+|---|---|
+| root turning points matched to a drama anchor | **6 of 6** |
+| anchors the root does not name | 4 (`opening_situation`, `first_trial`, `pinch_point`, `all_is_lost`) |
+| acts | root 3; drama 3 + 1 coda band ("Denouement — Escape and the new world") |
+
+Every beat the root independently located, the drama layer located too, on
+the same events. The root is a strict subset — which is the expected healthy
+shape, since the root names ~5 beats and the layer may name up to 14. The
+apparent 3-vs-4 act difference is a closing denouement band, not a
+disagreement; the comparator now separates coda bands from acts so this
+reads correctly instead of looking like a contradiction.
+
+This is a single film and therefore evidence, not proof. It is, though, the
+cheapest available check that the layer is describing the same story the
+rest of the tree describes, and it can be run over any tree that has both
+artifacts.
+
+### Reasoning traces
+
+Five specs for this film, both directions, generated through the same
+runner as every other layer:
+
+| tid | context | target |
+|---|---|---|
+| `drama_structure::mode` | 44.1k chars | 4.9k |
+| `drama_structure::anchors` | 41.1k | 13.4k |
+| `drama_structure::acts` | 45.1k | 8.0k |
+| `drama_structure::patterns_ending` | 43.2k | 4.8k |
+| `drama_plan::all` (top-down) | 33.8k | 24.5k |
+
+The bottom-up contexts each carry the condensed cheat sheet plus the event
+digest, exactly as the generator saw them. The top-down context carries the
+cheat sheet, the story root, the plot outlines and the condensed meta layer,
+all three unbound from event references per §8a.2 — the planning direction
+has no events, so nothing it sees may name one.
+
+The traces show the cheat sheet doing its job, which is the point of putting
+it in the context. From the `mode` trace, ruling out a lens rather than
+asserting one:
+
+> The spine is a single active protagonist […] that smells like archplot.
+> But archplot describes the plot-class, not the act machinery; the task
+> asks for the least-forcing structural lens, and I should test whether the
+> act structure is actually visible.
+
+From the `patterns_ending` trace, reaching for the false-positive table
+before labelling anything:
+
+> That smells like a genuine monomyth rather than an overfit — but the
+> reference warns me about false positives, so I should test each stage
+> against its trap before concluding.
+
+And the `acts` trace independently noticed the same three-acts-plus-coda
+tension described above, and reasoned about it instead of smoothing it over:
+
+> That's a problem: ds-08 is the crisis, not an act boundary per se... or is
+> it? […] the target has four units […] So the analyst treated the
+> denouement as a separate short unit rather than fold[ing it in].
+
+That is the behaviour hindsight traces are supposed to teach: exploring,
+noticing friction, and resolving it — not narrating the answer backwards.
+
+## 12. File map
 
 | file | role |
 |---|---|
@@ -374,7 +524,7 @@ and once per season arc.
 | `reasoning_traces/trace_specs.py` (`drama_plan_specs`) | 1 spec per film for the top-down (planning) direction |
 | `reasoning_traces/topdown_generate.py` (`t2b_drama`) | the top-down generator step; feeds `t4_expose` |
 | `tools/compare_root_vs_drama.py` | cross-layer consistency: root turning points vs. drama anchors |
-| `tools/hyprlab_shim.py`, `tools/serve_hyprlab.sh` | local `EndpointPool`-compatible route to GLM-5.3 (see §8a.4) |
+| `tools/hyprlab_shim.py`, `tools/serve_hyprlab.sh` | local `EndpointPool`-compatible route to GLM-5.3 (see §8a.5) |
 | `tools/build_explorer_data.py`, `webapp/storytree-explorer.html` | the explorer's drama zone: anchor timeline, acts, Hero's-Journey table, ending axes |
 | `tests/test_drama_structure.py` | offline tests of the deterministic parts, incl. `plan_view` |
 | `tests/test_topdown.py` | offline tests of the `t2b` step and the exposé hand-off |

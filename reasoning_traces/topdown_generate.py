@@ -369,6 +369,17 @@ class Chain:
         is what makes structural drift measurable.
         """
         cheat = self.cheatsheet()
+        # The root this pilot is seeded with comes from a finished film, so
+        # it carries a `dramatic_structure` field and event ids -- i.e. the
+        # answer to this very step. planning_root_view() removes both; a
+        # root that genuinely came from a brief would have neither.
+        root_view = self.root
+        try:
+            sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "distill"))
+            import drama_structure_layer as _dl
+            root_view = _dl.planning_root_view(self.root)
+        except Exception:
+            pass  # never let a missing sibling break the pilot
         user = ("STORY ROOT:\n%s\n\nMETA:\n%s\n\nPLOTS:\n%s\n\n"
                 "%s\n\n"
                 "Lay down the DRAMATIC STRUCTURE this story should have. "
@@ -400,7 +411,7 @@ class Chain:
                 "\"dramatic_question\": ..., \"state_delta\": ...}], "
                 "\"hero_journey\": {\"applicability\": ..., \"why\": ..., "
                 "\"stages\": [...]}, \"ending\": {...}}"
-                % (self.ctx(self.root), self.ctx(self.meta),
+                % (self.ctx(root_view), self.ctx(self.meta),
                    self.ctx(self.plots), cheat))
         return [(self.tid("drama", "all"), "drama", "all", user,
                  ("analysis_scope", "anchors", "acts"))]

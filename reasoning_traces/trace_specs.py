@@ -524,15 +524,26 @@ def drama_plan_specs(slug):
                               "throughline": d.get("throughline"),
                               "theme_or_dilemma": d.get("theme_or_dilemma"),
                               "summary": d.get("summary")})
-    # The root's own coarse structure field is deliberately included: in the
-    # top-down direction it already exists and legitimately constrains the
-    # plan, which is the reverse of the bottom-up dependency.
+    # Everything the planner is shown must be scrubbed of pointers into a
+    # film that does not exist yet. The root additionally loses its own
+    # `dramatic_structure`, which is the answer to this very task
+    # (planning_root_view). These three artifacts all carry event ids only
+    # because THIS tree was derived bottom-up -- the meta layer's evidence
+    # pointers, the plot outlines' causal claims, the root's turning points.
+    # A top-down run generates all three from a brief and has none of them.
+    # Found by reading a trace that had been handed the answer; the cheat
+    # sheet itself is left untouched, its `ev-...` are schema placeholders.
+    def unbind(obj):
+        return json.loads(dl.ID_RE.sub("[a beat]", json.dumps(obj)))
+
     context = (
         f"DRAMATURGY REFERENCE (working rules and vocabulary):\n{cheat}\n\n"
-        f"THE STORY ROOT (already decided):\n{_j(root, 14000)}\n\n"
-        f"THE PLOT OUTLINES (already decided):\n{_j(plot_outlines, 9000)}\n\n"
+        f"THE STORY ROOT (already decided):\n"
+        f"{_j(dl.planning_root_view(root), 14000)}\n\n"
+        f"THE PLOT OUTLINES (already decided):\n"
+        f"{_j(unbind(plot_outlines), 9000)}\n\n"
         f"THE META LAYER (already decided):\n"
-        f"{dl.meta_condensed(meta or {})}")
+        f"{dl.ID_RE.sub('[a beat]', dl.meta_condensed(meta or {}))}")
     yield {
         "tid": f"{slug}::drama_plan::all",
         "slug": slug, "layer": "drama_plan", "part": "all",

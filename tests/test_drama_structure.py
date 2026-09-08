@@ -127,6 +127,9 @@ def test_plan_view_strips_everything_top_down_cannot_know():
                  "label": "setup", "dramatic_question": "q?",
                  "state_delta": "x", "confidence": "high"}])
     d["analysis_scope"]["primary_lens"] = "three_act"
+    # free-text rationales point into the finished film just as surely as an
+    # event_ids list does -- they must be unbound too, not only stripped
+    d["analysis_scope"]["why_this_lens"] = "the birth (ev-010/ev-011) turns it"
     d["dramatic_core"] = {"central_dramatic_question": "who pays?"}
     d["exposition"] = {"initial_world": "w",
                        "established": [{"function": "want", "claim": "c",
@@ -140,6 +143,7 @@ def test_plan_view_strips_everything_top_down_cannot_know():
     # No pointer into material that does not exist at planning time.
     assert "ev-001" not in blob and "sc-001" not in blob
     assert "ev-002" not in blob
+    assert "ev-010" not in blob and "ev-011" not in blob  # prose references
     assert "evidence" not in blob
     assert plan["version"] == "plan-1.0"
     # ...but the decisions themselves survive, including act boundaries,
@@ -150,6 +154,27 @@ def test_plan_view_strips_everything_top_down_cannot_know():
     assert plan["acts"][0]["end_boundary"] == "ds-01"
     assert plan["exposition"]["establishes"][0]["claim"] == "c"
     assert plan["ending"]["plot_closure"] == "closed"
+
+
+def test_planning_root_view_removes_the_answer_and_the_ids():
+    root = {
+        "logline": "A courier learns his cargo is a person.",
+        "dramatic_structure": {"act_count": 3, "turning_points": [
+            {"name": "midpoint", "where": "ev-023 / sc-089: the verdict"}]},
+        "plot_briefs": [{"name": "p", "resolution": "settled at ev-044"}],
+        "rules_of_the_world": ["nobody survives sc-101 unaided"],
+    }
+    v = dl.planning_root_view(root)
+    blob = json.dumps(v)
+    # the field that IS the task must not be handed to the planner
+    assert "dramatic_structure" not in v
+    # ...nor any pointer into a film that does not exist yet
+    assert "ev-023" not in blob and "sc-089" not in blob
+    assert "ev-044" not in blob and "sc-101" not in blob
+    assert "[a beat]" in blob
+    # everything a brief-derived root would legitimately carry survives
+    assert v["logline"] == root["logline"]
+    assert v["plot_briefs"][0]["name"] == "p"
 
 
 def test_meta_condensed_keeps_only_the_needed_slice():

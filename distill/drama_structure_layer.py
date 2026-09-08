@@ -38,6 +38,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -406,6 +407,12 @@ def meta_condensed(meta: Dict[str, Any]) -> str:
     return json.dumps(keep, ensure_ascii=False, indent=1)
 
 
+# Pointers into a finished film: `ev-012`, `sc-041`. Used to unbind an
+# observed analysis for the top-down (planning) direction, where none of
+# the material they point at exists yet.
+ID_RE = re.compile(r"\b(?:ev|sc)-\d{2,}\b")
+
+
 def plan_view(drama: Dict[str, Any]) -> Dict[str, Any]:
     """Convert an OBSERVED structure into a PLAN-shaped one.
 
@@ -423,10 +430,17 @@ def plan_view(drama: Dict[str, Any]) -> Dict[str, Any]:
       * exposition keeps its claims but loses evidence pointers;
       * hero-journey stages, ending axes and the mode carry over unchanged.
 
+    Free text is unbound too, not just the structural fields: a rationale
+    reading "the red-pill birth (ev-010/ev-011)" is as much a pointer into a
+    finished film as an `event_ids` list, and leaving it in leaks the answer
+    into any trace built from this target. Structural stripping alone is not
+    enough -- that was measured, not assumed.
+
     Used two ways: to seed a top-down plan from a reference film, and to
     build the target of a top-down reasoning trace (see
     reasoning_traces/trace_specs.py `drama_plan_specs`).
     """
+    drama = json.loads(ID_RE.sub("[a beat]", json.dumps(drama or {})))
     scope = dict(drama.get("analysis_scope") or {})
     ex = dict(drama.get("exposition") or {})
     plan: Dict[str, Any] = {
@@ -459,6 +473,41 @@ def plan_view(drama: Dict[str, Any]) -> Dict[str, Any]:
         "ending": drama.get("ending") or {},
     }
     return plan
+
+
+def planning_root_view(root: Dict[str, Any]) -> Dict[str, Any]:
+    """The story root as a TOP-DOWN planner may legitimately see it.
+
+    Two things have to go, and both were found by reading a generated trace
+    rather than by reasoning about the code:
+
+    1. `dramatic_structure` — the root's own act count and turning points.
+       In the forward direction that field *is* the answer the planner is
+       being asked for. Handing it over makes the step a rubber stamp; a
+       trace generated that way taught nothing, because the model spent its
+       reasoning validating a given answer instead of deriving one.
+    2. Event and scene ids anywhere else in the root. A root that came from
+       a brief cannot contain them -- they only exist because this root was
+       itself derived bottom-up from a finished film. Leaving them in leaks
+       the very structure the planner should be proposing.
+
+    This is the same hindsight-leakage failure mode documented in
+    docs/05-model-behaviour.md, in a new place. Used by both the top-down
+    generator step (`topdown_generate.t2b_drama`) and the top-down trace
+    spec (`reasoning_traces/trace_specs.drama_plan_specs`) so the two see
+    identical material.
+    """
+    def scrub(v):
+        if isinstance(v, str):
+            return ID_RE.sub("[a beat]", v)
+        if isinstance(v, list):
+            return [scrub(x) for x in v]
+        if isinstance(v, dict):
+            return {k: scrub(x) for k, x in v.items()}
+        return v
+
+    return {k: scrub(v) for k, v in (root or {}).items()
+            if k != "dramatic_structure"}
 
 
 def drama_digest(drama: Dict[str, Any], cap: int = 12000) -> str:

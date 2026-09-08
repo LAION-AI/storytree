@@ -85,9 +85,20 @@ def compare(root: Dict[str, Any], drama: Dict[str, Any]) -> Dict[str, Any]:
                   "position": a.get("screen_position")}
                  for i, a in enumerate(anchors) if i not in matched_anchor_idx]
 
+    # A raw act count misleads: a three-act analysis routinely carries a
+    # closing denouement/coda band, so `len(acts)` reads 4 while the lens
+    # says three_act. Report the labels too, and count coda bands apart, so
+    # a difference of one is visibly explained rather than looking like a
+    # contradiction between the layers.
+    CODA = ("denouement", "coda", "epilogue", "aftermath")
+    acts_list = drama.get("acts") or []
+    coda = [x for x in acts_list
+            if any(w in (x.get("label") or "").lower() for w in CODA)]
     root_acts = (root.get("dramatic_structure") or {}).get("act_count")
     return {
-        "act_count": {"root": root_acts, "drama": len(drama.get("acts") or [])},
+        "act_count": {"root": root_acts, "drama": len(acts_list),
+                      "drama_excluding_coda": len(acts_list) - len(coda)},
+        "act_labels": [x.get("label") for x in acts_list],
         "primary_lens": (drama.get("analysis_scope") or {}).get("primary_lens"),
         "root_points": len(tps),
         "drama_anchors": len(anchors),
@@ -112,9 +123,15 @@ def main() -> int:
         print(json.dumps(rep, indent=1, ensure_ascii=False))
         return 0
 
-    print("lens: {} | acts: root says {}, drama says {}".format(
-        rep["primary_lens"], rep["act_count"]["root"],
-        rep["act_count"]["drama"]))
+    ac = rep["act_count"]
+    extra = ("" if ac["drama"] == ac["drama_excluding_coda"]
+             else " ({} + {} coda band(s))".format(
+                 ac["drama_excluding_coda"],
+                 ac["drama"] - ac["drama_excluding_coda"]))
+    print("lens: {} | acts: root says {}, drama says {}{}".format(
+        rep["primary_lens"], ac["root"], ac["drama"], extra))
+    print("      drama acts: {}".format(" / ".join(
+        str(l) for l in rep["act_labels"])))
     print("root turning points: {} | drama anchors: {} | matched: {}\n".format(
         rep["root_points"], rep["drama_anchors"], rep["matched"]))
     for r in rep["rows"]:
